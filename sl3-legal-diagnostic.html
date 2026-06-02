@@ -24,17 +24,27 @@
   .q-text { font-size: 14px; line-height: 1.6; color: #1C1B1F; font-weight: 500; }
   .q-sub { font-size: 12px; color: #7A7875; margin-top: 6px; font-weight: 400; line-height: 1.5; }
   .q-yn { display: flex; gap: 8px; align-items: center; padding-top: 2px; }
-  .yn-btn { width: 52px; height: 30px; border: 1.5px solid #D0CEC8; border-radius: 4px; font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 600; background: white; cursor: pointer; color: #9A9890; display: flex; align-items: center; justify-content: center; letter-spacing: .06em; transition: all .15s; user-select: none; }
+  .yn-btn {
+    width: 52px; height: 30px; border: 1.5px solid #D0CEC8; border-radius: 4px;
+    font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 600;
+    background: white; cursor: pointer; color: #9A9890;
+    display: flex; align-items: center; justify-content: center;
+    letter-spacing: .06em; transition: all .15s; user-select: none;
+  }
   .yn-btn:hover { border-color: #1B7A68; color: #1B7A68; }
   .yn-btn.selected-yes { background: #1B7A68; border-color: #1B7A68; color: white; }
-  .yn-btn.selected-no { background: #C24A2E; border-color: #C24A2E; color: white; }
+  .yn-btn.selected-no  { background: #C24A2E; border-color: #C24A2E; color: white; }
+
+  /* Score tracker */
   .score-bar { background: white; border: .5px solid #D0CEC8; border-radius: 8px; padding: 16px 24px; margin-bottom: 28px; display: flex; align-items: center; gap: 16px; }
   .score-label { font-family: 'DM Mono', monospace; font-size: 11px; color: #9A9890; letter-spacing: .06em; text-transform: uppercase; }
   .score-pips { display: flex; gap: 6px; }
   .pip { width: 28px; height: 8px; border-radius: 4px; background: #EDECEA; transition: background .2s; }
   .pip.yes { background: #1B7A68; }
-  .pip.no { background: #C24A2E; }
+  .pip.no  { background: #C24A2E; }
   .score-count { font-family: 'DM Mono', monospace; font-size: 18px; font-weight: 500; color: #1B7A68; margin-left: auto; }
+
+  /* Result panel */
   .result { background: #1C1B1F; border-radius: 8px; padding: 32px 28px; margin-bottom: 32px; display: none; }
   .result.visible { display: block; }
   .result-label { font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,.4); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 12px; }
@@ -45,6 +55,7 @@
   .result-cta:hover { background: #156659; }
   .reset-btn { background: none; border: 1px solid rgba(255,255,255,.2); color: rgba(255,255,255,.5); font-family: 'DM Mono', monospace; font-size: 11px; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-left: 10px; transition: .15s; }
   .reset-btn:hover { border-color: rgba(255,255,255,.4); color: rgba(255,255,255,.8); }
+
   .next-steps { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 40px; }
   .step-card { background: white; border: .5px solid #D0CEC8; border-radius: 8px; padding: 20px 22px; }
   .step-label { font-family: 'Syne', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: #1B7A68; margin-bottom: 8px; }
@@ -53,14 +64,21 @@
   .footer { border-top: .5px solid #D0CEC8; padding-top: 24px; display: flex; justify-content: space-between; align-items: flex-end; }
   .footer-name { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 600; color: #1C1B1F; }
   .footer-creds { font-size: 11px; color: #7A7875; margin-top: 3px; font-family: 'DM Mono', monospace; line-height: 1.6; }
-  .footer-contact { text-align: right; font-size: 11px; font-family: 'DM Mono', monospace; line-height: 1.9; }
-  .footer-contact a { color: #1B7A68; text-decoration: none; transition: opacity .15s; }
-  .footer-contact a:hover { opacity: .75; }
-  @media (max-width: 600px) { .page { padding: 32px 20px; } .q-card { grid-template-columns: 28px 1fr; } .q-yn { grid-column: 1 / -1; justify-content: flex-start; } .next-steps { grid-template-columns: 1fr; } .footer { flex-direction: column; gap: 16px; } .footer-contact { text-align: left; } }
+  .footer-contact { text-align: right; font-size: 11px; color: #7A7875; font-family: 'DM Mono', monospace; line-height: 1.8; }
+  .footer-contact a { color: #1B7A68; text-decoration: none; }
+  @media (max-width: 600px) {
+    .page { padding: 32px 20px; }
+    .q-card { grid-template-columns: 28px 1fr; }
+    .q-yn { grid-column: 1 / -1; justify-content: flex-start; }
+    .next-steps { grid-template-columns: 1fr; }
+    .footer { flex-direction: column; gap: 16px; }
+    .footer-contact { text-align: left; }
+  }
 </style>
 </head>
 <body>
 <div class="page">
+
   <div class="header">
     <div>
       <div><span class="brand-dot"></span><span class="brand-name">Aloha AI Consulting</span></div>
@@ -68,9 +86,12 @@
       <div class="doc-sub">SL3 · 5-question assessment · answer all five to see your result</div>
     </div>
   </div>
+
   <div class="intro">
     <p>Before any AI workflow conversation, this diagnostic tells you <strong>exactly where to start</strong> — and what to build first. Answer all five. Your score maps directly to a recommended engagement path.</p>
   </div>
+
+  <!-- Score bar -->
   <div class="score-bar">
     <span class="score-label">Your answers</span>
     <div class="score-pips">
@@ -82,7 +103,9 @@
     </div>
     <span class="score-count" id="score-display">—</span>
   </div>
+
   <div class="questions">
+
     <div class="q-card" id="card-1">
       <div class="q-num">01</div>
       <div>
@@ -94,6 +117,7 @@
         <button class="yn-btn" onclick="answer(1, false)">NO</button>
       </div>
     </div>
+
     <div class="q-card" id="card-2">
       <div class="q-num">02</div>
       <div>
@@ -105,6 +129,7 @@
         <button class="yn-btn" onclick="answer(2, false)">NO</button>
       </div>
     </div>
+
     <div class="q-card" id="card-3">
       <div class="q-num">03</div>
       <div>
@@ -116,6 +141,7 @@
         <button class="yn-btn" onclick="answer(3, false)">NO</button>
       </div>
     </div>
+
     <div class="q-card" id="card-4">
       <div class="q-num">04</div>
       <div>
@@ -127,6 +153,7 @@
         <button class="yn-btn" onclick="answer(4, false)">NO</button>
       </div>
     </div>
+
     <div class="q-card" id="card-5">
       <div class="q-num">05</div>
       <div>
@@ -138,15 +165,19 @@
         <button class="yn-btn" onclick="answer(5, false)">NO</button>
       </div>
     </div>
+
   </div>
+
+  <!-- Result panel (hidden until all 5 answered) -->
   <div class="result" id="result-panel">
     <div class="result-label">Your result</div>
     <div class="result-band" id="result-band"></div>
     <div class="result-title" id="result-title"></div>
     <div class="result-desc" id="result-desc"></div>
-    <a href="mailto:collins.ra@northeastern.edu?subject=Legal AI Workflow — Discovery Call Request" class="result-cta">Request 20-minute discovery call</a>
+    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=collins.ra@northeastern.edu&su=Legal%20AI%20Workflow%20—%20Discovery%20Call%20Request" target="_blank" class="result-cta">Request 20-minute discovery call</a>
     <button class="reset-btn" onclick="reset()">Start over</button>
   </div>
+
   <div class="next-steps">
     <div class="step-card">
       <div class="step-label">Score 0–1</div>
@@ -169,6 +200,7 @@
       <div class="step-desc">Walk through your score together, identify the highest-value build, and define scope before any engagement begins.</div>
     </div>
   </div>
+
   <div class="footer">
     <div>
       <div class="footer-name">RN Collins</div>
@@ -180,33 +212,61 @@
       </div>
     </div>
     <div class="footer-contact">
-      <a href="mailto:collins.ra@northeastern.edu">collins.ra@northeastern.edu</a><br>
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=collins.ra@northeastern.edu&su=Legal%20AI%20Workflow%20—%20Discovery%20Call%20Request" target="_blank">collins.ra@northeastern.edu</a><br>
       <a href="tel:+18606814438">860-681-4438</a><br>
       <a href="https://rncollins.com/aloha-ai-consulting" target="_blank">rncollins.com/aloha-ai-consulting</a>
     </div>
   </div>
+
 </div>
+
 <script>
   const answers = {};
+
   const RESULTS = {
-    low: { band: "Score 0–1 · Foundation first", title: "Your firm is pre-AI-workflow.", desc: "The first build is governance: a usage policy, an approved tool stack, and a basic hallucination review protocol. Everything else sits on top of that. This is the highest-leverage starting point — building on an unstable foundation creates risk, not efficiency." },
-    mid: { band: "Score 2–3 · Ready to build", title: "You have awareness without infrastructure.", desc: "The right move is a workflow audit: map the three highest-volume non-billable tasks and design one AI-assisted prompt sequence for each — using whichever platform fits your firm's stack. Start narrow, prove value, expand." },
-    high: { band: "Score 4–5 · Ready to scale", title: "You have the foundation.", desc: "The opportunity is systematizing what's already working — prompt libraries, document automation templates, and staff training that makes the system consistent across the whole team, not just the one attorney who figured it out." }
+    low: {
+      band: "Score 0–1 · Foundation first",
+      title: "Your firm is pre-AI-workflow.",
+      desc: "The first build is governance: a usage policy, an approved tool stack, and a basic hallucination review protocol. Everything else sits on top of that. This is the highest-leverage starting point — building on an unstable foundation creates risk, not efficiency."
+    },
+    mid: {
+      band: "Score 2–3 · Ready to build",
+      title: "You have awareness without infrastructure.",
+      desc: "The right move is a workflow audit: map the three highest-volume non-billable tasks and design one AI-assisted prompt sequence for each — using whichever platform fits your firm's stack. Start narrow, prove value, expand."
+    },
+    high: {
+      band: "Score 4–5 · Ready to scale",
+      title: "You have the foundation.",
+      desc: "The opportunity is systematizing what's already working — prompt libraries, document automation templates, and staff training that makes the system consistent across the whole team, not just the one attorney who figured it out."
+    }
   };
+
   function answer(q, isYes) {
     answers[q] = isYes;
+
+    // Update button styles for this question
     const card = document.getElementById('card-' + q);
     const btns = card.querySelectorAll('.yn-btn');
     btns[0].className = 'yn-btn' + (isYes ? ' selected-yes' : '');
     btns[1].className = 'yn-btn' + (!isYes ? ' selected-no' : '');
     card.classList.add('answered');
+
+    // Update pip
     const pip = document.getElementById('pip-' + q);
     pip.className = 'pip ' + (isYes ? 'yes' : 'no');
+
+    // Calculate score
     const answered = Object.keys(answers).length;
     const yesCount = Object.values(answers).filter(Boolean).length;
-    if (answered === 5) { document.getElementById('score-display').textContent = yesCount + ' / 5 YES'; showResult(yesCount); }
-    else { document.getElementById('score-display').textContent = answered + ' / 5'; }
+
+    if (answered === 5) {
+      document.getElementById('score-display').textContent = yesCount + ' / 5 YES';
+      showResult(yesCount);
+    } else {
+      document.getElementById('score-display').textContent = answered + ' / 5';
+    }
   }
+
   function showResult(score) {
     const key = score <= 1 ? 'low' : score <= 3 ? 'mid' : 'high';
     const r = RESULTS[key];
@@ -217,6 +277,7 @@
     panel.classList.add('visible');
     panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
+
   function reset() {
     Object.keys(answers).forEach(k => delete answers[k]);
     for (let i = 1; i <= 5; i++) {
