@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Regulatory Intelligence Sample — Aloha AI Consulting</title>
+<title>Regulatory Intelligence Layer — Aloha AI Consulting</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Syne:wght@500;700&family=Manrope:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Manrope', sans-serif; background: #F6F3EC; color: #1C1B1F; }
+  body { font-family: 'Manrope', sans-serif; background: #F6F3EC; color: #1C1B1F; min-height: 100vh; }
   .page { max-width: 760px; margin: 0 auto; padding: 60px 48px; }
   .header { margin-bottom: 48px; padding-bottom: 28px; border-bottom: 1px solid #D0CEC8; }
   .brand-name { font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #1B7A68; margin-bottom: 12px; }
@@ -22,24 +22,34 @@
   .oeg-def { font-family: 'Cormorant Garamond', serif; font-size: 20px; color: white; line-height: 1.5; font-style: italic; }
   .oeg-ex { font-size: 12px; color: rgba(255,255,255,.6); margin-top: 14px; line-height: 1.65; }
   .gap-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 32px; }
-  .gap-card { background: white; border: .5px solid #D0CEC8; border-radius: 8px; padding: 18px 20px; }
-  .gap-q { font-size: 12px; font-weight: 600; color: #1C1B1F; margin-bottom: 6px; line-height: 1.4; }
-  .gap-a-wrong { font-size: 11px; color: #C24A2E; font-family: 'DM Mono', monospace; margin-bottom: 4px; line-height: 1.5; }
+  .gap-card { background: white; border: .5px solid #D0CEC8; border-radius: 8px; padding: 18px 20px; cursor: default; transition: box-shadow .15s; }
+  .gap-card:hover { box-shadow: 0 2px 12px rgba(0,0,0,.06); }
+  .gap-q { font-size: 12px; font-weight: 600; color: #1C1B1F; margin-bottom: 8px; line-height: 1.4; }
+  .gap-label { font-size: 9px; letter-spacing: .07em; text-transform: uppercase; color: #B8B4AE; margin-bottom: 3px; margin-top: 8px; }
+  .gap-a-wrong { font-size: 11px; color: #C24A2E; font-family: 'DM Mono', monospace; line-height: 1.5; }
   .gap-a-right { font-size: 11px; color: #1B7A68; font-family: 'DM Mono', monospace; line-height: 1.5; }
-  .gap-label { font-size: 9px; letter-spacing: .07em; text-transform: uppercase; color: #B8B4AE; margin-bottom: 2px; }
   .layer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 32px; }
-  .layer-card { background: white; border: .5px solid #D0CEC8; border-radius: 8px; padding: 16px 18px; }
+  .layer-card { background: white; border: .5px solid #D0CEC8; border-radius: 8px; padding: 16px 18px; transition: border-color .15s, box-shadow .15s; }
+  .layer-card:hover { border-color: #1B7A68; box-shadow: 0 2px 10px rgba(27,122,104,.08); }
   .layer-name { font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 700; color: #1B7A68; margin-bottom: 6px; }
   .layer-desc { font-size: 11px; color: #5A5855; line-height: 1.55; }
   .layer-price { font-family: 'DM Mono', monospace; font-size: 10px; color: #B8B4AE; margin-top: 8px; }
   .proof { background: white; border: .5px solid #D0CEC8; border-radius: 8px; padding: 20px 24px; margin-bottom: 36px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-  .proof-item dt { font-family: 'DM Mono', monospace; font-size: 10px; color: #B8B4AE; letter-spacing: .06em; margin-bottom: 4px; }
-  .proof-item dd { font-size: 13px; color: #1C1B1F; font-weight: 500; line-height: 1.4; }
-  .footer { border-top: .5px solid #D0CEC8; padding-top: 22px; display: flex; justify-content: space-between; align-items: flex-end; }
+  .proof-item dt { font-family: 'DM Mono', monospace; font-size: 10px; color: #B8B4AE; letter-spacing: .06em; margin-bottom: 4px; text-transform: uppercase; }
+  .proof-item dd { font-size: 13px; color: #1C1B1F; font-weight: 500; line-height: 1.45; }
+  .cta-band { background: #1B7A68; border-radius: 8px; padding: 28px; margin-bottom: 36px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+  .cta-text { color: white; }
+  .cta-title { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; margin-bottom: 4px; }
+  .cta-sub { font-size: 12px; color: rgba(255,255,255,.7); }
+  .cta-btn { display: inline-block; background: white; color: #1B7A68; font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: .06em; padding: 11px 22px; border-radius: 5px; text-decoration: none; white-space: nowrap; transition: background .15s; }
+  .cta-btn:hover { background: #F0FAF8; }
+  .footer { border-top: .5px solid #D0CEC8; padding-top: 24px; display: flex; justify-content: space-between; align-items: flex-end; }
   .footer-name { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 600; }
   .footer-creds { font-size: 11px; color: #7A7875; margin-top: 3px; font-family: 'DM Mono', monospace; line-height: 1.65; }
-  .footer-contact { text-align: right; font-size: 11px; color: #7A7875; font-family: 'DM Mono', monospace; line-height: 1.8; }
-  .footer-contact a { color: #1B7A68; text-decoration: none; }
+  .footer-contact { text-align: right; font-size: 11px; font-family: 'DM Mono', monospace; line-height: 1.9; }
+  .footer-contact a { color: #1B7A68; text-decoration: none; transition: opacity .15s; }
+  .footer-contact a:hover { opacity: .75; }
+  @media (max-width: 600px) { .page { padding: 32px 20px; } .gap-grid { grid-template-columns: 1fr; } .layer-grid { grid-template-columns: 1fr; } .cta-band { flex-direction: column; align-items: flex-start; } .footer { flex-direction: column; gap: 16px; } .footer-contact { text-align: left; } .proof { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -125,6 +135,13 @@
       <dd>JD Candidate, Northeastern University School of Law — navigate DEA scheduling procedure, read § 811(c) eight-factor analysis, apply administrative law</dd>
     </div>
   </div>
+  <div class="cta-band">
+    <div class="cta-text">
+      <div class="cta-title">Request a 20-minute discovery call</div>
+      <div class="cta-sub">We'll identify the specific regulatory gap in your program and scope a build.</div>
+    </div>
+    <a href="mailto:collins.ra@northeastern.edu?subject=Regulatory Intelligence Layer — Discovery Call Request" class="cta-btn">Get in touch →</a>
+  </div>
   <div class="footer">
     <div>
       <div class="footer-name">RN Collins</div>
@@ -132,8 +149,8 @@
     </div>
     <div class="footer-contact">
       <a href="mailto:collins.ra@northeastern.edu">collins.ra@northeastern.edu</a><br>
-      860-681-4438<br>
-      rncollins.com/aloha-ai-consulting
+      <a href="tel:+18606814438">860-681-4438</a><br>
+      <a href="https://rncollins.com/aloha-ai-consulting" target="_blank">rncollins.com/aloha-ai-consulting</a>
     </div>
   </div>
 </div>
