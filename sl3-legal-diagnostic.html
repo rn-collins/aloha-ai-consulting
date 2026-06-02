@@ -53,8 +53,9 @@
   .footer { border-top: .5px solid #D0CEC8; padding-top: 24px; display: flex; justify-content: space-between; align-items: flex-end; }
   .footer-name { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 600; color: #1C1B1F; }
   .footer-creds { font-size: 11px; color: #7A7875; margin-top: 3px; font-family: 'DM Mono', monospace; line-height: 1.6; }
-  .footer-contact { text-align: right; font-size: 11px; color: #7A7875; font-family: 'DM Mono', monospace; line-height: 1.8; }
-  .footer-contact a { color: #1B7A68; text-decoration: none; }
+  .footer-contact { text-align: right; font-size: 11px; font-family: 'DM Mono', monospace; line-height: 1.9; }
+  .footer-contact a { color: #1B7A68; text-decoration: none; transition: opacity .15s; }
+  .footer-contact a:hover { opacity: .75; }
   @media (max-width: 600px) { .page { padding: 32px 20px; } .q-card { grid-template-columns: 28px 1fr; } .q-yn { grid-column: 1 / -1; justify-content: flex-start; } .next-steps { grid-template-columns: 1fr; } .footer { flex-direction: column; gap: 16px; } .footer-contact { text-align: left; } }
 </style>
 </head>
@@ -171,12 +172,17 @@
   <div class="footer">
     <div>
       <div class="footer-name">RN Collins</div>
-      <div class="footer-creds">Neuroscientist · MS Anatomy & Neurobiology, BU School of Medicine<br>JD Candidate · Northeastern University School of Law<br>AI Workflow Developer · Croke Fairchild Duarte & Beres<br>Law Clerk · Gordon Rees Scully Mansukhani · Antithesis Law</div>
+      <div class="footer-creds">
+        Neuroscientist · MS Anatomy & Neurobiology, BU School of Medicine<br>
+        JD Candidate · Northeastern University School of Law<br>
+        AI Workflow Developer · Croke Fairchild Duarte & Beres<br>
+        Law Clerk · Gordon Rees Scully Mansukhani · Antithesis Law
+      </div>
     </div>
     <div class="footer-contact">
       <a href="mailto:collins.ra@northeastern.edu">collins.ra@northeastern.edu</a><br>
-      860-681-4438<br>
-      rncollins.com/aloha-ai-consulting
+      <a href="tel:+18606814438">860-681-4438</a><br>
+      <a href="https://rncollins.com/aloha-ai-consulting" target="_blank">rncollins.com/aloha-ai-consulting</a>
     </div>
   </div>
 </div>
