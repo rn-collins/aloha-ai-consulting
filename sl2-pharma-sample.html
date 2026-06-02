@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Regulatory Intelligence Sample — Aloha AI Consulting</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Syne:wght@500;700&family=Manrope:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Manrope', sans-serif; background: #F6F3EC; color: #1C1B1F; }
+  .page { max-width: 760px; margin: 0 auto; padding: 60px 48px; }
+  .header { margin-bottom: 48px; padding-bottom: 28px; border-bottom: 1px solid #D0CEC8; }
+  .brand-name { font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #1B7A68; margin-bottom: 12px; }
+  .doc-title { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 600; line-height: 1.15; color: #1C1B1F; }
+  .doc-sub { font-size: 12px; color: #7A7875; font-family: 'DM Mono', monospace; margin-top: 8px; letter-spacing: .03em; }
+  .tag { display: inline-block; background: #D4EDE8; color: #1B7A68; font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 500; padding: 3px 9px; border-radius: 20px; margin-top: 10px; letter-spacing: .04em; }
+  .intro { font-size: 14px; line-height: 1.75; color: #3A3835; margin-bottom: 36px; padding: 22px 26px; background: white; border: .5px solid #D0CEC8; border-radius: 8px; }
+  .intro strong { color: #1B7A68; }
+  h2 { font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #7A7875; margin-bottom: 16px; }
+  .oeg-box { background: #1C1B1F; border-radius: 8px; padding: 28px; margin-bottom: 32px; }
+  .oeg-label { font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,.4); letter-spacing: .08em; margin-bottom: 12px; }
+  .oeg-def { font-family: 'Cormorant Garamond', serif; font-size: 20px; color: white; line-height: 1.5; font-style: italic; }
+  .oeg-ex { font-size: 12px; color: rgba(255,255,255,.6); margin-top: 14px; line-height: 1.65; }
+  .gap-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 32px; }
+  .gap-card { background: white; border: .5px solid #D0CEC8; border-radius: 8px; padding: 18px 20px; }
+  .gap-q { font-size: 12px; font-weight: 600; color: #1C1B1F; margin-bottom: 6px; line-height: 1.4; }
+  .gap-a-wrong { font-size: 11px; color: #C24A2E; font-family: 'DM Mono', monospace; margin-bottom: 4px; line-height: 1.5; }
+  .gap-a-right { font-size: 11px; color: #1B7A68; font-family: 'DM Mono', monospace; line-height: 1.5; }
+  .gap-label { font-size: 9px; letter-spacing: .07em; text-transform: uppercase; color: #B8B4AE; margin-bottom: 2px; }
+  .layer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 32px; }
+  .layer-card { background: white; border: .5px solid #D0CEC8; border-radius: 8px; padding: 16px 18px; }
+  .layer-name { font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 700; color: #1B7A68; margin-bottom: 6px; }
+  .layer-desc { font-size: 11px; color: #5A5855; line-height: 1.55; }
+  .layer-price { font-family: 'DM Mono', monospace; font-size: 10px; color: #B8B4AE; margin-top: 8px; }
+  .proof { background: white; border: .5px solid #D0CEC8; border-radius: 8px; padding: 20px 24px; margin-bottom: 36px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .proof-item dt { font-family: 'DM Mono', monospace; font-size: 10px; color: #B8B4AE; letter-spacing: .06em; margin-bottom: 4px; }
+  .proof-item dd { font-size: 13px; color: #1C1B1F; font-weight: 500; line-height: 1.4; }
+  .footer { border-top: .5px solid #D0CEC8; padding-top: 22px; display: flex; justify-content: space-between; align-items: flex-end; }
+  .footer-name { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 600; }
+  .footer-creds { font-size: 11px; color: #7A7875; margin-top: 3px; font-family: 'DM Mono', monospace; line-height: 1.65; }
+  .footer-contact { text-align: right; font-size: 11px; color: #7A7875; font-family: 'DM Mono', monospace; line-height: 1.8; }
+  .footer-contact a { color: #1B7A68; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="header">
+    <div class="brand-name">⬤ Aloha AI Consulting</div>
+    <div class="doc-title">Regulatory Intelligence Layer:<br>What It Is and What It Solves</div>
+    <div class="doc-sub">SL2 · Biopharma / Life Sciences · methodology overview</div>
+    <span class="tag">Sample Brief</span>
+  </div>
+  <div class="intro">Standard AI tools hallucinate on exactly the facts that matter most in drug development: wrong APQ figures, wrong statutory triggers, wrong CFR citations, wrong case names. The <strong>Regulatory Intelligence Layer (RIL)</strong> is a primary-source data methodology built to close that gap — statutes, administrative records, docket filings, APQ data, CPT coding records, case law — organized to answer the specific questions operators need answered before making commercial or capital decisions.</div>
+  <h2>The Operator Execution Gap — where AI breaks in your domain</h2>
+  <div class="oeg-box">
+    <div class="oeg-label">OEG — Defined</div>
+    <div class="oeg-def">"The specific analytical deficiency between what an operator needs to know and what current AI tools can reliably produce in the regulatory domain."</div>
+    <div class="oeg-ex">Example: Ask any major LLM for the current DEA Annual Production Quota for psilocybin research, the status of a § 811(j) interim final rule, or whether a specific molecule's IND triggers REMS requirements. You will get confident, plausible, and wrong answers. The RIL exists because the wrong answer at that stage of development is not a minor inconvenience — it is a capital allocation error.</div>
+  </div>
+  <h2>Where general AI fails — specific examples</h2>
+  <div class="gap-grid">
+    <div class="gap-card">
+      <div class="gap-q">What is the current DEA APQ for Schedule I research-grade psilocybin?</div>
+      <div class="gap-label">General AI output</div>
+      <div class="gap-a-wrong">× Hallucinated figure with confident citation to a DEA notice that does not exist</div>
+      <div class="gap-label">RIL answer</div>
+      <div class="gap-a-right">✓ Verified from DEA Federal Register docket filings, cross-referenced against sponsor trial dose assumptions</div>
+    </div>
+    <div class="gap-card">
+      <div class="gap-q">Does this molecule's trial design trigger a § 811(j) 90-day interim final rule?</div>
+      <div class="gap-label">General AI output</div>
+      <div class="gap-a-wrong">× Vague recitation of the statute without applying it to the specific program's facts</div>
+      <div class="gap-label">RIL answer</div>
+      <div class="gap-a-right">✓ Applied to the program's specific IND structure, scheduling petition status, and treaty obligations</div>
+    </div>
+    <div class="gap-card">
+      <div class="gap-q">What is the CPT coding pathway for psychedelic-assisted therapy reimbursement?</div>
+      <div class="gap-label">General AI output</div>
+      <div class="gap-a-wrong">× Generic answer about AMA process without current payer posture or timeline</div>
+      <div class="gap-label">RIL answer</div>
+      <div class="gap-a-right">✓ Built from AMA Editorial Panel records, CMS coverage determination data, and payer policy precedent</div>
+    </div>
+    <div class="gap-card">
+      <div class="gap-q">What exclusivity instruments are available for this program and when do they expire?</div>
+      <div class="gap-label">General AI output</div>
+      <div class="gap-a-wrong">× List of exclusivity types without program-specific application or stacking analysis</div>
+      <div class="gap-label">RIL answer</div>
+      <div class="gap-a-right">✓ Per-program exclusivity stack across NCE, orphan, patent term extension, pediatric, and FDORA instruments</div>
+    </div>
+  </div>
+  <h2>Three intelligence layer products</h2>
+  <div class="layer-grid">
+    <div class="layer-card">
+      <div class="layer-name">Regulatory Intelligence Layer</div>
+      <div class="layer-desc">DEA scheduling procedure, APQ data, statutory triggers, scheduling petition status, treaty constraints. Single domain/jurisdiction set.</div>
+      <div class="layer-price">$8,000–$12,000 build · $1,500/mo</div>
+    </div>
+    <div class="layer-card">
+      <div class="layer-name">Scientific Intelligence Layer</div>
+      <div class="layer-desc">Mechanism-of-action records, clinical trial landscape, peer-reviewed evidence base, IND-stage safety and efficacy data organized for operator use.</div>
+      <div class="layer-price">$5,000–$7,500 build · $1,500/mo</div>
+    </div>
+    <div class="layer-card">
+      <div class="layer-name">Policy / Legal Intelligence Layer</div>
+      <div class="layer-desc">State legislative landscape, international regulatory frameworks, comparative access pathways, enforcement trend analysis.</div>
+      <div class="layer-price">$4,000–$6,000 build · $1,500/mo</div>
+    </div>
+  </div>
+  <h2>Engagement credentials</h2>
+  <div class="proof">
+    <div class="proof-item">
+      <dt>Regulatory intelligence methodology</dt>
+      <dd>Five-module architecture developed covering DEA scheduling procedure, combination-product analysis, APQ forecasting, CPT reimbursement pathways, and exclusivity stacking across NCE, orphan, patent term extension, pediatric, and FDORA instruments</dd>
+    </div>
+    <div class="proof-item">
+      <dt>AI legislative scoring</dt>
+      <dd>Advanced Legislative Scorer, AISLE Project, Brown University Center for Technological Responsibility — AI regulation analysis at scale</dd>
+    </div>
+    <div class="proof-item">
+      <dt>Neuroscience credential</dt>
+      <dd>MS Anatomy & Neurobiology, Boston University School of Medicine — can read a clinical trial, evaluate a mechanism of action, evaluate evidence-based claims</dd>
+    </div>
+    <div class="proof-item">
+      <dt>Legal credential</dt>
+      <dd>JD Candidate, Northeastern University School of Law — navigate DEA scheduling procedure, read § 811(c) eight-factor analysis, apply administrative law</dd>
+    </div>
+  </div>
+  <div class="footer">
+    <div>
+      <div class="footer-name">RN Collins</div>
+      <div class="footer-creds">Neuroscientist · MS Anatomy & Neurobiology, BU School of Medicine<br>JD Candidate · Northeastern University School of Law</div>
+    </div>
+    <div class="footer-contact">
+      <a href="mailto:collins.ra@northeastern.edu">collins.ra@northeastern.edu</a><br>
+      860-681-4438<br>
+      rncollins.com/aloha-ai-consulting
+    </div>
+  </div>
+</div>
+</body>
+</html>

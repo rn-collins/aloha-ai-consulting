@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Legal AI Workflow Readiness Diagnostic — Aloha AI Consulting</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Syne:wght@500;700&family=Manrope:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Manrope', sans-serif; background: #F6F3EC; color: #1C1B1F; min-height: 100vh; }
+  .page { max-width: 760px; margin: 0 auto; padding: 60px 48px; }
+  .header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 52px; padding-bottom: 32px; border-bottom: 1px solid #D0CEC8; }
+  .brand { display: flex; flex-direction: column; gap: 4px; }
+  .brand-dot { width: 10px; height: 10px; border-radius: 50%; background: #1B7A68; display: inline-block; margin-right: 8px; }
+  .brand-name { font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #1B7A68; }
+  .doc-title { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 600; line-height: 1.15; color: #1C1B1F; margin-top: 2px; }
+  .doc-sub { font-size: 12px; color: #7A7875; font-family: 'DM Mono', monospace; margin-top: 6px; letter-spacing: .04em; }
+  .intro { background: white; border: .5px solid #D0CEC8; border-radius: 8px; padding: 24px 28px; margin-bottom: 40px; }
+  .intro p { font-size: 14px; line-height: 1.7; color: #3A3835; }
+  .intro strong { color: #1B7A68; font-weight: 600; }
+  .questions { display: flex; flex-direction: column; gap: 20px; margin-bottom: 40px; }
+  .q-card { background: white; border: .5px solid #D0CEC8; border-radius: 8px; padding: 24px 28px; display: grid; grid-template-columns: 32px 1fr auto; gap: 16px; align-items: start; }
+  .q-num { font-family: 'DM Mono', monospace; font-size: 11px; color: #B8B4AE; font-weight: 500; padding-top: 2px; }
+  .q-text { font-size: 14px; line-height: 1.6; color: #1C1B1F; font-weight: 500; }
+  .q-sub { font-size: 12px; color: #7A7875; margin-top: 6px; font-weight: 400; line-height: 1.5; }
+  .q-yn { display: flex; gap: 8px; align-items: center; padding-top: 2px; }
+  .yn-btn { width: 48px; height: 28px; border: 1px solid #D0CEC8; border-radius: 4px; font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; background: white; cursor: pointer; color: #7A7875; display: flex; align-items: center; justify-content: center; letter-spacing: .04em; }
+  .yn-btn.yes { border-color: #1B7A68; color: #1B7A68; }
+  .yn-btn.no  { border-color: #C24A2E; color: #C24A2E; }
+  .scoring { background: #1C1B1F; border-radius: 8px; padding: 32px 28px; margin-bottom: 32px; }
+  .scoring-title { font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.4); margin-bottom: 20px; }
+  .score-row { display: grid; grid-template-columns: 80px 1fr; gap: 16px; align-items: baseline; margin-bottom: 14px; }
+  .score-range { font-family: 'DM Mono', monospace; font-size: 13px; color: #7FB3D3; font-weight: 500; }
+  .score-desc { font-size: 13px; color: rgba(255,255,255,.75); line-height: 1.5; }
+  .score-highlight { color: white; font-weight: 600; }
+  .next-steps { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 40px; }
+  .step-card { background: white; border: .5px solid #D0CEC8; border-radius: 8px; padding: 20px 22px; }
+  .step-label { font-family: 'Syne', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: #1B7A68; margin-bottom: 8px; }
+  .step-title { font-size: 13px; font-weight: 600; color: #1C1B1F; margin-bottom: 6px; }
+  .step-desc { font-size: 12px; color: #7A7875; line-height: 1.55; }
+  .footer { border-top: .5px solid #D0CEC8; padding-top: 24px; display: flex; justify-content: space-between; align-items: flex-end; }
+  .footer-name { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 600; color: #1C1B1F; }
+  .footer-creds { font-size: 11px; color: #7A7875; margin-top: 3px; font-family: 'DM Mono', monospace; line-height: 1.6; }
+  .footer-contact { text-align: right; font-size: 11px; color: #7A7875; font-family: 'DM Mono', monospace; line-height: 1.8; }
+  .footer-contact a { color: #1B7A68; text-decoration: none; }
+  @media print { body { background: white; } .page { padding: 32px 40px; } }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="header">
+    <div class="brand">
+      <div><span class="brand-dot"></span><span class="brand-name">Aloha AI Consulting</span></div>
+      <div class="doc-title">Legal AI Workflow<br>Readiness Diagnostic</div>
+      <div class="doc-sub">SL3 · 5-question pre-call assessment · takes 3 minutes</div>
+    </div>
+  </div>
+  <div class="intro">
+    <p>Before any AI workflow conversation, this diagnostic tells you <strong>exactly where to start</strong> — and what to build first. Five questions. No jargon. Your score maps directly to a recommended engagement path.</p>
+  </div>
+  <div class="questions">
+    <div class="q-card">
+      <div class="q-num">01</div>
+      <div>
+        <div class="q-text">Does your firm have a documented AI usage policy that attorneys have actually read?</div>
+        <div class="q-sub">Not a draft on someone's hard drive — a policy that governs how AI tools are used in client work, research, and drafting right now.</div>
+      </div>
+      <div class="q-yn"><div class="yn-btn yes">YES</div><div class="yn-btn no">NO</div></div>
+    </div>
+    <div class="q-card">
+      <div class="q-num">02</div>
+      <div>
+        <div class="q-text">Are attorneys currently using AI tools for legal research or drafting without firm-level oversight?</div>
+        <div class="q-sub">This includes personal ChatGPT, Claude, Copilot, or other consumer AI subscriptions, browser-based tools, or any AI that isn't on the firm's approved stack.</div>
+      </div>
+      <div class="q-yn"><div class="yn-btn yes">YES</div><div class="yn-btn no">NO</div></div>
+    </div>
+    <div class="q-card">
+      <div class="q-num">03</div>
+      <div>
+        <div class="q-text">Could you name the three workflow steps in your firm that consume the most non-billable attorney time per week?</div>
+        <div class="q-sub">Research intake, document review, memo summarization, client update drafting — the steps where the work is repetitive but the attorney still has to do it.</div>
+      </div>
+      <div class="q-yn"><div class="yn-btn yes">YES</div><div class="yn-btn no">NO</div></div>
+    </div>
+    <div class="q-card">
+      <div class="q-num">04</div>
+      <div>
+        <div class="q-text">Has your firm evaluated any legal-specific AI platform or tool in the last 12 months?</div>
+        <div class="q-sub">An evaluation means someone sat down and actually tested it against a real workflow — not just attended a demo webinar.</div>
+      </div>
+      <div class="q-yn"><div class="yn-btn yes">YES</div><div class="yn-btn no">NO</div></div>
+    </div>
+    <div class="q-card">
+      <div class="q-num">05</div>
+      <div>
+        <div class="q-text">Do you have someone — internally or externally — whose job it is to ensure AI outputs are accurate before they reach clients or filings?</div>
+        <div class="q-sub">Accuracy review, hallucination checking, citation verification — a defined person or process, not just "the attorney is responsible."</div>
+      </div>
+      <div class="q-yn"><div class="yn-btn yes">YES</div><div class="yn-btn no">NO</div></div>
+    </div>
+  </div>
+  <div class="scoring">
+    <div class="scoring-title">What your score means</div>
+    <div class="score-row">
+      <div class="score-range">0–1 YES</div>
+      <div class="score-desc"><span class="score-highlight">Foundation first.</span> Your firm is pre-AI-workflow. The first build is governance: a usage policy, an approved tool stack, and a basic hallucination review protocol. Everything else sits on top of that.</div>
+    </div>
+    <div class="score-row">
+      <div class="score-range">2–3 YES</div>
+      <div class="score-desc"><span class="score-highlight">Ready to build.</span> You have awareness without infrastructure. The right move is a workflow audit: map the three highest-volume non-billable tasks and design one AI-assisted prompt sequence for each — using whichever platform fits your firm's stack. Start narrow, prove value, expand.</div>
+    </div>
+    <div class="score-row">
+      <div class="score-range">4–5 YES</div>
+      <div class="score-desc"><span class="score-highlight">Ready to scale.</span> You have the foundation. The opportunity is systematizing what's already working — prompt libraries, document automation templates, and staff training that makes the system consistent across the whole team, not just the one attorney who figured it out.</div>
+    </div>
+  </div>
+  <div class="next-steps">
+    <div class="step-card">
+      <div class="step-label">Score 0–1</div>
+      <div class="step-title">Governance + Policy Build</div>
+      <div class="step-desc">AI usage policy · approved tool stack · hallucination review protocol · staff orientation. From $150/hr.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-label">Score 2–3</div>
+      <div class="step-title">Workflow Audit + Pilot</div>
+      <div class="step-desc">Map 3 workflows · design AI prompt sequences · pilot with 2–3 attorneys · document what works. Platform-agnostic. From $150/hr.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-label">Score 4–5</div>
+      <div class="step-title">Prompt Library + Automation</div>
+      <div class="step-desc">20-prompt master library · document intake automation · firm-wide training · quality review protocol. From $150/hr.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-label">All scores</div>
+      <div class="step-title">20-Minute Discovery Call</div>
+      <div class="step-desc">Walk through your score together, identify the highest-value build, and define scope before any engagement begins.</div>
+    </div>
+  </div>
+  <div class="footer">
+    <div>
+      <div class="footer-name">RN Collins</div>
+      <div class="footer-creds">Neuroscientist · MS Anatomy & Neurobiology, BU School of Medicine<br>JD Candidate · Northeastern University School of Law<br>AI Workflow Developer · Croke Fairchild Duarte & Beres<br>Law Clerk · Gordon Rees Scully Mansukhani · Antithesis Law</div>
+    </div>
+    <div class="footer-contact">
+      <a href="mailto:collins.ra@northeastern.edu">collins.ra@northeastern.edu</a><br>
+      860-681-4438<br>
+      rncollins.com/aloha-ai-consulting
+    </div>
+  </div>
+</div>
+</body>
+</html>
