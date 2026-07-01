@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Find Your Track — Aloha AI Consulting</title>
+<meta name="description" content="Not sure where to start? Answer 6 questions and get a specific service line recommendation from Aloha AI Consulting.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Syne:wght@600;700&family=Manrope:wght@400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0A1A12;
+  --ink2:#0D1F17;
+  --teal:#1B7A68;
+  --teal-light:#2A9B86;
+  --cream:#F6F3EC;
+  --muted:#5C7A6E;
+  --border:#1A3028;
+  --text:#E8F0EC;
+  --card-bg:#0F2218;
+  --card-hover:#142A1E;
+  --card-selected:#1B7A68;
+}
+html,body{height:100%;background:var(--ink);color:var(--text);font-family:'Manrope',sans-serif;font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased}
+
+/* ── Layout ── */
+#app{min-height:100vh;display:flex;flex-direction:column}
+.top-bar{display:flex;align-items:center;justify-content:space-between;padding:1.1rem 2rem;border-bottom:1px solid var(--border);flex-shrink:0}
+.top-brand{font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-decoration:none}
+.top-brand span{color:var(--teal)}
+.progress-bar{height:2px;background:var(--border);flex:1;margin:0 1.5rem;border-radius:1px;overflow:hidden}
+.progress-fill{height:100%;background:var(--teal);transition:width .4s ease;border-radius:1px}
+.step-counter{font-family:'DM Mono',monospace;font-size:.7rem;color:var(--muted);letter-spacing:.08em;white-space:nowrap}
+
+/* ── Screen system ── */
+.screen{display:none;flex:1;flex-direction:column;justify-content:center;align-items:center;padding:3rem 2rem;animation:fadeIn .3s ease}
+.screen.active{display:flex}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── Question screen ── */
+.q-inner{width:100%;max-width:680px}
+.q-eyebrow{font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:.9rem}
+.q-text{font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem,3.5vw,2rem);font-weight:500;line-height:1.25;color:var(--cream);margin-bottom:.5rem}
+.q-sub{font-size:.82rem;color:var(--muted);margin-bottom:1.75rem}
+.options{display:flex;flex-direction:column;gap:.6rem}
+.opt{background:var(--card-bg);border:1px solid var(--border);padding:.85rem 1.1rem;cursor:pointer;transition:all .18s;text-align:left;width:100%;color:var(--text);font-family:'Manrope',sans-serif;font-size:.86rem;line-height:1.5;border-radius:2px;position:relative}
+.opt:hover{background:var(--card-hover);border-color:var(--teal)}
+.opt.selected{background:rgba(27,122,104,.15);border-color:var(--teal);color:#fff}
+.opt.selected::after{content:'✓';position:absolute;right:1rem;top:50%;transform:translateY(-50%);color:var(--teal);font-size:.85rem}
+.q-nav{display:flex;align-items:center;justify-content:space-between;margin-top:1.5rem}
+.btn-next{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;background:var(--teal);color:#fff;border:none;padding:.6rem 1.4rem;cursor:pointer;transition:background .2s;border-radius:2px}
+.btn-next:hover{background:var(--teal-light)}
+.btn-next:disabled{opacity:.35;cursor:not-allowed}
+.btn-back{font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;background:none;border:none;color:var(--muted);cursor:pointer;padding:.4rem 0}
+.btn-back:hover{color:var(--text)}
+.btn-skip{font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;background:none;border:none;color:var(--muted);cursor:pointer;margin-left:auto}
+.btn-skip:hover{color:var(--text)}
+.multi-note{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.08em;color:var(--muted);margin-bottom:1rem}
+
+/* ── Result screen ── */
+.result-inner{width:100%;max-width:720px}
+.result-eyebrow{font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:.75rem}
+.result-headline{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,4vw,2.25rem);font-weight:500;line-height:1.2;color:var(--cream);margin-bottom:.35rem}
+.result-sub{font-size:.82rem;color:var(--muted);margin-bottom:2rem}
+
+.rec-card{border:1px solid var(--teal);padding:1.4rem 1.5rem;margin-bottom:1rem;background:rgba(27,122,104,.07)}
+.rec-label{font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:.4rem}
+.rec-name{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:.6rem}
+.rec-why{font-size:.84rem;color:var(--text);line-height:1.7}
+
+.sec-card{border:1px solid var(--border);padding:1.1rem 1.5rem;margin-bottom:1.75rem;background:var(--card-bg)}
+.sec-label{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem}
+.sec-name{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;color:var(--text);margin-bottom:.4rem}
+.sec-why{font-size:.8rem;color:var(--muted);line-height:1.65}
+
+.result-actions{display:flex;gap:.75rem;flex-wrap:wrap;align-items:center;margin-bottom:1.5rem}
+.btn-book{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;background:var(--teal);color:#fff;border:none;padding:.65rem 1.4rem;cursor:pointer;text-decoration:none;display:inline-block;transition:background .2s;border-radius:2px}
+.btn-book:hover{background:var(--teal-light)}
+.btn-share{font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;background:none;border:1px solid var(--border);color:var(--muted);padding:.6rem 1.1rem;cursor:pointer;transition:all .2s;border-radius:2px}
+.btn-share:hover{border-color:var(--teal);color:var(--teal)}
+.btn-restart{font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;background:none;border:none;color:var(--muted);cursor:pointer;padding:.4rem 0}
+.btn-restart:hover{color:var(--text)}
+.share-confirm{font-family:'DM Mono',monospace;font-size:.7rem;color:var(--teal);display:none;margin-left:.5rem}
+.result-note{font-size:.78rem;color:var(--muted);border-top:1px solid var(--border);padding-top:1rem;line-height:1.7}
+
+/* ── Intro screen ── */
+.intro-inner{width:100%;max-width:580px;text-align:left}
+.intro-eyebrow{font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem}
+.intro-headline{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4.5vw,2.6rem);font-weight:500;line-height:1.2;color:var(--cream);margin-bottom:1rem}
+.intro-body{font-size:.88rem;color:var(--muted);line-height:1.8;margin-bottom:2rem}
+.intro-meta{font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted);margin-bottom:1.5rem}
+.btn-start{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;background:var(--teal);color:#fff;border:none;padding:.75rem 2rem;cursor:pointer;transition:background .2s;border-radius:2px;font-size:.8rem}
+.btn-start:hover{background:var(--teal-light)}
+
+@media(max-width:600px){
+  .top-bar{padding:.9rem 1.1rem}
+  .screen{padding:2rem 1.1rem}
+  .result-actions{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+<div id="app">
+  <div class="top-bar">
+    <a href="/" class="top-brand"><span>Aloha AI</span> &nbsp;·&nbsp; Find Your Track</a>
+    <div class="progress-bar"><div class="progress-fill" id="progress" style="width:0%"></div></div>
+    <div class="step-counter" id="step-counter">&nbsp;</div>
+  </div>
+
+  <!-- INTRO -->
+  <div class="screen active" id="screen-intro">
+    <div class="intro-inner">
+      <div class="intro-eyebrow">Not sure where to start?</div>
+      <h1 class="intro-headline">Six questions.<br>A specific recommendation.</h1>
+      <p class="intro-body">Whether you're running a regulated-industry organization, a law firm, a restaurant, or a consulting practice — this assessment routes you to the service line or starting point that fits your situation. Hard recommendation, not a maybe.</p>
+      <div class="intro-meta">6 questions · 2 minutes · Specific result with a booking link</div>
+      <button class="btn-start" onclick="startAssessment()">Start →</button>
+    </div>
+  </div>
+
+  <!-- QUESTIONS -->
+  <div class="screen" id="screen-q">
+    <div class="q-inner">
+      <div class="q-eyebrow" id="q-eyebrow">Question 1 of 6</div>
+      <div class="q-text" id="q-text"></div>
+      <div class="q-sub" id="q-sub"></div>
+      <div class="multi-note" id="multi-note" style="display:none">Select all that apply</div>
+      <div class="options" id="options"></div>
+      <div class="q-nav">
+        <button class="btn-back" id="btn-back" onclick="goBack()">← Back</button>
+        <button class="btn-skip" id="btn-skip" onclick="skipQuestion()" style="display:none">Skip →</button>
+        <button class="btn-next" id="btn-next" onclick="goNext()" disabled>Continue →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESULT -->
+  <div class="screen" id="screen-result">
+    <div class="result-inner">
+      <div class="result-eyebrow">Your assessment result</div>
+      <div class="result-headline" id="result-headline"></div>
+      <div class="result-sub" id="result-sub"></div>
+      <div class="rec-card" id="primary-card">
+        <div class="rec-label">Primary recommendation</div>
+        <div class="rec-name" id="primary-name"></div>
+        <div class="rec-why" id="primary-why"></div>
+      </div>
+      <div class="sec-card" id="secondary-card" style="display:none">
+        <div class="sec-label">Also worth exploring</div>
+        <div class="sec-name" id="secondary-name"></div>
+        <div class="sec-why" id="secondary-why"></div>
+      </div>
+      <div class="result-actions">
+        <a id="btn-book-result" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous&ismsaljsauthenabled&ep=plink" target="_blank" rel="noopener" class="btn-book">Book a scoping call →</a>
+        <button class="btn-share" onclick="shareResult()">Copy result link</button>
+        <span class="share-confirm" id="share-confirm">Copied ✓</span>
+      </div>
+      <button class="btn-restart" onclick="restart()">← Start over</button>
+      <div class="result-note" id="result-note"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── Questions ──────────────────────────────────────────────────────────
+const QUESTIONS = [
+  {
+    id: 'q1',
+    eyebrow: 'Question 1 of 6',
+    text: 'What best describes your organization or role?',
+    sub: '',
+    multi: false,
+    opts: [
+      { id: 'regulated', label: 'Regulated-industry organization', desc: 'Psychedelic health, biopharma, cannabis, legaltech, digital health' },
+      { id: 'lawfirm',   label: 'Law firm or in-house legal team', desc: 'Any size, any practice area' },
+      { id: 'general',   label: 'General business', desc: 'Restaurant, agency, nonprofit, hospitality, creative studio, or any other sector' },
+      { id: 'consultant',label: 'Consultant, coach, or specialist', desc: 'I have domain expertise I need systematized or amplified' },
+      { id: 'practice',  label: 'Building or running a consulting practice', desc: 'I want to turn expertise into a scalable AI-powered operation' },
+    ]
+  },
+  {
+    id: 'q2',
+    eyebrow: 'Question 2 of 6',
+    text: 'What is your most pressing pain right now?',
+    sub: 'Pick the one that costs you the most.',
+    multi: false,
+    opts: [
+      { id: 'suppression', label: 'My content is not reaching its audience', desc: 'Reach dropped, growth stalled, platform algorithms are working against me' },
+      { id: 'hallucination', label: 'AI gives me wrong answers for my domain', desc: 'Wrong citations, wrong regulatory data, wrong clinical information' },
+      { id: 'customtool', label: 'I need a custom tool that does not exist yet', desc: 'A specific intelligence system, knowledge platform, or AI product for my use case' },
+      { id: 'competitors', label: 'My competitors are moving and I am tracking it manually', desc: 'I know I need a system — I just do not have one' },
+      { id: 'legalai',    label: 'My legal team needs AI that actually works', desc: 'Research, drafting, workflow — I need the whole system built properly' },
+      { id: 'consulting', label: 'I want to build a consulting practice or run AI strategy', desc: 'Either as a new revenue stream or as ongoing management for an organization' },
+      { id: 'manual',     label: 'I am doing too much manually', desc: 'Content, research, DMs, proposals, follow-up, social posts — AI should be handling this' },
+    ]
+  },
+  {
+    id: 'q3',
+    eyebrow: 'Question 3 of 6',
+    text: 'What does success look like for you?',
+    sub: 'Select up to two.',
+    multi: true,
+    max: 2,
+    opts: [
+      { id: 'reach',    label: 'Content reaching more of the audience it should', desc: '' },
+      { id: 'intel',    label: 'Reliable intelligence on regulations, competitors, or the market', desc: '' },
+      { id: 'tool',     label: 'A deployed tool or platform that works without me watching it', desc: '' },
+      { id: 'system',   label: 'A knowledge system built around my expertise', desc: '' },
+      { id: 'legal',    label: 'Legal research and workflow running faster and more accurately', desc: '' },
+      { id: 'automate', label: 'Automations that handle the repetitive work', desc: '' },
+    ]
+  },
+  {
+    id: 'q4',
+    eyebrow: 'Question 4 of 6',
+    text: 'Where are you with AI tools right now?',
+    sub: '',
+    multi: false,
+    opts: [
+      { id: 'scratch', label: 'Starting from scratch', desc: 'No current AI tools or systems' },
+      { id: 'stuck',   label: 'I have tools but they are not connected or producing useful output', desc: '' },
+      { id: 'upgrade', label: 'I have tools — I need the system built around them', desc: 'Workflows, knowledge bases, integrations' },
+    ]
+  },
+  {
+    id: 'q5',
+    eyebrow: 'Question 5 of 6',
+    text: 'What kind of engagement are you looking for?',
+    sub: '',
+    multi: false,
+    opts: [
+      { id: 'project',  label: 'One-time project or build', desc: 'Define the scope, build it, done' },
+      { id: 'retainer', label: 'Ongoing — someone managing this long-term', desc: 'Retainer or fractional arrangement' },
+      { id: 'diy',      label: 'A resource I can use myself', desc: 'Guide, template, tool, or starting-point product' },
+      { id: 'fulltime', label: 'Senior AI leadership at the organizational level', desc: 'Not a project — a role' },
+    ]
+  },
+  {
+    id: 'q6',
+    eyebrow: 'Question 6 of 6',
+    text: 'What is your timeline?',
+    sub: '',
+    multi: false,
+    skipable: true,
+    opts: [
+      { id: 'now',      label: 'I need something in the next 30 days', desc: '' },
+      { id: 'quarter',  label: 'Next quarter — I am planning ahead', desc: '' },
+      { id: 'exploring',label: 'I am exploring with no specific deadline', desc: '' },
+    ]
+  },
+];
+
+// ── Service line definitions ───────────────────────────────────────────
+const SL = {
+  SL0: {
+    name: 'SL0 — Bespoke Intelligence Build',
+    why: 'You need something that does not exist yet — a custom intelligence tool, knowledge platform, or AI product built to your exact use case. SL0 is the bespoke build track: scoped, deployed live, and doing real work from day one. No existing product will fit; this is the engagement when the domain is too specialized or the output needs to be a deployed application rather than a document.',
+    sec: 'SL0 builds custom tools from scratch — intelligence systems, knowledge directories, multi-layer AI platforms — for any sector.'
+  },
+  SL1: {
+    name: 'SL1 — AI Content Systems',
+    why: 'Your content and expertise need a system behind them, not just better prompts. SL1 builds the full stack — knowledge base, prompt library, EDSA framework, suppression monitoring, research connector stack — so your content reaches the audience that needs it and sounds like you at every touchpoint. For creators, consultants, and regulated-industry publishers alike.',
+    sec: 'SL1 builds the complete AI content infrastructure: knowledge base, prompt library, EDSA framework, suppression monitoring.'
+  },
+  SL2: {
+    name: 'SL2 — Regulatory, Scientific & Policy Intelligence',
+    why: 'Your domain requires primary-source intelligence that AI cannot hallucinate. SL2 builds a verified regulatory, scientific, and policy intelligence layer — every record sourced from a named primary authority, machine-readable, queryable at generation time. DEA scheduling, FDA guidance, CPT coding, clinical literature, docket tracking — built for biopharma, legaltech, psychedelic health, digital health, and cannabis.',
+    sec: 'SL2 is primary-source regulatory and scientific intelligence for regulated sectors: biopharma, legaltech, digital health, cannabis, psychedelic health.'
+  },
+  SL3: {
+    name: 'SL3 — AI Consulting Practice Build + AI Strategy Management',
+    why: 'You are building toward a practice — either a consulting operation or an organization that needs AI managed at a senior level long-term. SL3 covers both paths: Path 1 is the consulting practice build with a revenue-share structure; Path 2 is the AI strategy management retainer for organizations that want ongoing strategic management without a full-time hire.',
+    sec: 'SL3 covers consulting practice builds (revenue share model) and AI strategy management retainers for organizations.'
+  },
+  SL4: {
+    name: 'SL4 — Legal AI Workflow Development',
+    why: 'Your legal team is implementing AI and needs someone who has done actual legal work under attorney supervision and built AI systems in parallel — not a developer who learned a platform from a dashboard. SL4 covers any LLM on any platform: Harvey, Claude, ChatGPT, Gemini, multi-model stacks, or custom internal builds. Structured intake systems, knowledge bases built to Bluebook standard, document synthesis, workflow automation, attorney training.',
+    sec: 'SL4 covers legal AI workflow design and implementation for any firm or in-house team — any platform, any LLM.'
+  },
+  SL5: {
+    name: 'SL5 — Platform Performance Monitoring',
+    why: 'Your content is reaching fewer people and nobody at the platform will tell you why. SL5 is continuous performance monitoring for Instagram, YouTube, TikTok, LinkedIn, and Google Business — tracking reach signals, algorithmic shifts, and account health across platforms with a monthly brief that tells you what changed and what to do about it. Covers any business with a social presence, not just regulated sectors.',
+    sec: 'SL5 monitors your platform reach signals continuously and delivers a monthly brief on what changed and what to do.'
+  },
+  SL6: {
+    name: 'SL6 — Market & Competitive Intelligence Layer',
+    why: 'Your competitors are making moves you are tracking manually — checking their sites, watching their socials, reading the reviews, piecing it together. SL6 builds the live competitive and market intelligence layer that does it for you: Yelp reviews, competitor pricing, social sentiment, tourism data, foot traffic patterns, sector signals — updated automatically so you do not have to remember to check anything.',
+    sec: 'SL6 builds a live market and competitive intelligence system for any industry — automated, continuously updated.'
+  },
+  BIZ: {
+    name: 'AI Business Integration',
+    why: 'Your business has work AI could be handling and is not. AI Business Integration starts with a scoped intake to find where AI creates the most leverage for your specific operation — content, research, booking and follow-up, customer communications, DM responses, proposals, social posts — and then builds, drafts, or automates whatever that turns out to be. One-time project or ongoing. Any sector. On Oahu or remote.',
+    sec: 'AI Business Integration covers any business in any sector — intake, identify leverage, build or automate whatever that is.'
+  },
+  CAO: {
+    name: 'Fractional Chief AI Officer',
+    why: 'Your organization needs dedicated senior AI leadership — not a project, not an outside consultant arriving with a deliverable, but someone inside the operation making AI decisions at the executive level. The Fractional CAO engagement puts senior AI strategy at the leadership layer: systems, teams, partnerships, and the full AI roadmap across all functions.',
+    sec: 'The Fractional CAO engagement is senior AI leadership inside your organization — strategic, operational, long-term.'
+  },
+  SL8: {
+    name: 'SL8 — AI Consulting Practice Build',
+    why: 'You are not buying consulting from Aloha AI. You are hiring Aloha AI to build a consulting practice inside your organization that your team will own and run. Your organization has domain expertise, peer relationships, and credibility in a specific field — but not the AI consulting infrastructure to monetize it. SL8 builds the service lines, the AI workflow systems, the client acquisition pipeline, the delivery infrastructure, and trains your team to use the tools and deliver the work. Revenue structure: retainer for the build plus a share of consulting revenue the practice generates.',
+    sec: 'SL8 is for organizations with domain expertise that want to launch an AI consulting practice they will own and run. Aloha AI builds the infrastructure; your organization owns and operates the practice.'
+  },
+  SL7: {
+    name: 'SL7 — Platform Suppression Practice',
+    why: 'Your organization is in a regulated sector — psychedelic health, cannabis, harm reduction, legaltech, biopharma — and your content is being systematically suppressed. Platform suppression in regulated sectors is silent: no violation notice, no appeal pathway. SL7 is dedicated intelligence and advisory practice tracking DEA scheduling enforcement, platform policy against regulated content, state AI governance changes, and EU AI Act extraterritorial reach. Monthly deliverable: the Platform Intelligence Brief with your suppression status, documented signal shifts, and a specific response plan.',
+    sec: 'SL7 is for regulated organizations experiencing active platform suppression — clinical, cannabis, harm reduction, or legaltech content. Intelligence and advisory, monthly brief.'
+  },
+  PROD: {
+    name: 'Self-Service Products — Start Here',
+    why: 'The highest-leverage starting point for you right now is a resource you can apply immediately. The product catalog includes the AI Law Series (14 memos covering copyright, EU AI Act, employment law, liability, SaMD, and more), regulatory intelligence products, the Law Clerk Field Guide, and the AI Build Budget Calculator. Gumroad. No scoping call required.',
+    sec: 'The product catalog has self-service resources across legal, regulatory, and AI domains — immediately accessible on Gumroad.'
+  },
+  AUDIT: {
+    name: 'Content Compliance Audit — Starting Point',
+    why: 'The fastest on-ramp for a regulated organization that needs a diagnosis before a build. The Content Compliance Audit reviews your current AI content usage, platform exposure, and policy risk and delivers a prioritized fix list. It is designed as the entry point before a full SL1 or SL2 engagement — structured, scoped, and actionable within days.',
+    sec: 'The Content Compliance Audit is the entry-level starting point — a fast diagnostic before committing to a full build.'
+  }
+};
+
+// ── Scoring weights ────────────────────────────────────────────────────
+function scoreAnswers(answers) {
+  const score = {};
+  const add = (sl, pts) => { score[sl] = (score[sl] || 0) + pts; };
+
+  // Q1 — org type
+  const q1 = answers.q1?.[0];
+  if (q1 === 'regulated')  { add('SL2',3); add('SL1',2); add('SL0',2); add('SL5',1); add('SL7',1); }
+  if (q1 === 'lawfirm')    { add('SL4',3); add('SL2',1); }
+  if (q1 === 'general')    { add('BIZ',3); add('SL6',2); add('SL5',1); }
+  if (q1 === 'consultant') { add('SL1',3); add('SL0',2); add('SL3',1); }
+  if (q1 === 'practice')   { add('SL8',3); add('SL3',1); add('SL1',1); }
+
+  // Q2 — main pain
+  const q2 = answers.q2?.[0];
+  if (q2 === 'suppression')   { add('SL1',2); add('SL5',2); add('SL7',1); }
+  if (q2 === 'hallucination') { add('SL2',3); add('SL0',2); }
+  if (q2 === 'customtool')    { add('SL0',3); add('SL2',1); }
+  if (q2 === 'competitors')   { add('SL6',3); add('BIZ',1); }
+  if (q2 === 'legalai')       { add('SL4',3); add('SL2',1); }
+  if (q2 === 'consulting')    { add('SL8',2); add('SL3',2); add('SL1',1); }
+  if (q2 === 'manual')        { add('BIZ',3); add('SL1',1); add('SL6',1); }
+
+  // Q3 — success looks like (multi)
+  const q3 = answers.q3 || [];
+  if (q3.includes('reach'))    { add('SL1',2); add('SL5',1); }
+  if (q3.includes('intel'))    { add('SL2',2); add('SL6',2); }
+  if (q3.includes('tool'))     { add('SL0',2); add('SL3',1); }
+  if (q3.includes('system'))   { add('SL1',2); add('SL0',1); }
+  if (q3.includes('legal'))    { add('SL4',2); }
+  if (q3.includes('automate')) { add('BIZ',2); add('SL0',1); }
+
+  // Q4 — existing tools
+  const q4 = answers.q4?.[0];
+  if (q4 === 'stuck')   { add('SL1',1); add('SL3',1); }
+  if (q4 === 'upgrade') { add('SL0',1); add('SL1',1); }
+
+  // Q5 — engagement type
+  const q5 = answers.q5?.[0];
+  if (q5 === 'project')  { add('SL0',1); add('BIZ',1); }
+  if (q5 === 'retainer') { add('SL3',2); add('CAO',1); }
+  if (q5 === 'diy')      { add('PROD',3); add('AUDIT',1); }
+  if (q5 === 'fulltime') { add('CAO',3); add('SL3',1); }
+
+  // Q6 — timeline
+  const q6 = answers.q6?.[0];
+  if (q6 === 'now')       { add('PROD',2); add('AUDIT',1); }
+  if (q6 === 'exploring') { add('PROD',1); }
+
+  // Special: if regulated + retainer → bump AUDIT as secondary candidate
+  if (q1 === 'regulated' && q5 === 'retainer') { add('SL2',1); }
+  // If law firm + retainer → SL3 or CAO secondary
+  if (q1 === 'lawfirm' && q5 === 'retainer')   { add('SL3',1); }
+
+  return score;
+}
+
+function getTopTwo(score) {
+  const sorted = Object.entries(score).sort((a,b)=>b[1]-a[1]);
+  const primary = sorted[0]?.[0];
+  const secondary = sorted[1]?.[0] && sorted[1][1] > 0 ? sorted[1][0] : null;
+  // Don't show secondary if it's the same family
+  if (primary === secondary) return [primary, null];
+  return [primary, secondary];
+}
+
+function headlineFor(primary) {
+  const map = {
+    SL0: 'You need a custom build.',
+    SL1: 'You need a content system.',
+    SL2: 'You need primary-source intelligence.',
+    SL3: 'You need a practice build or AI strategy management.',
+    SL4: 'You need legal AI workflow development.',
+    SL5: 'You need platform performance monitoring.',
+    SL6: 'You need a market intelligence layer.',
+    BIZ: 'You need AI Business Integration.',
+    SL8: 'You need the AI Consulting Practice Build — built for your organization to own.',
+    SL7: 'You need the Platform Suppression Practice.',
+    CAO: 'You need a Fractional Chief AI Officer.',
+    PROD: 'Start with a self-service resource.',
+    AUDIT: 'Start with a Content Compliance Audit.',
+  };
+  return map[primary] || 'Here is your recommendation.';
+}
+
+function subFor(primary, answers) {
+  const q1 = answers.q1?.[0];
+  const org = {
+    regulated:'For a regulated-industry organization.',
+    lawfirm:'For a law firm or in-house legal team.',
+    general:'For a general business.',
+    consultant:'For a consultant, coach, or specialist.',
+    practice:'For someone building or running a consulting practice.',
+  };
+  return org[q1] || 'Based on your answers.';
+}
+
+function noteFor(primary, secondary) {
+  if (primary === 'PROD') {
+    return 'Browse the product catalog at aloha-ai-consulting.vercel.app/#products — AI Law Series, regulatory intelligence products, and more. All available immediately on Gumroad.';
+  }
+  if (primary === 'AUDIT') {
+    return 'The Content Compliance Audit is the fastest entry point — a diagnostic review of your AI content usage, platform exposure, and policy risk, delivered with a prioritized fix list. Book through the link above.';
+  }
+  return 'If your situation involves multiple service lines or you want to talk through the recommendation before committing, the scoping call is the right next step.';
+}
+
+// ── State ──────────────────────────────────────────────────────────────
+let currentQ = 0;
+let answers = {};
+let selectedOpts = [];
+
+function startAssessment() {
+  document.getElementById('screen-intro').classList.remove('active');
+  document.getElementById('screen-q').classList.add('active');
+  renderQuestion(0);
+}
+
+function renderQuestion(idx) {
+  currentQ = idx;
+  const q = QUESTIONS[idx];
+  selectedOpts = answers[q.id] ? [...answers[q.id]] : [];
+
+  document.getElementById('q-eyebrow').textContent = q.eyebrow;
+  document.getElementById('q-text').textContent = q.text;
+  document.getElementById('q-sub').textContent = q.sub || '';
+  document.getElementById('multi-note').style.display = q.multi ? 'block' : 'none';
+  document.getElementById('btn-back').style.display = idx === 0 ? 'none' : 'inline';
+  document.getElementById('btn-skip').style.display = q.skipable ? 'inline' : 'none';
+
+  updateProgress(idx);
+
+  const container = document.getElementById('options');
+  container.innerHTML = '';
+  q.opts.forEach(opt => {
+    const btn = document.createElement('button');
+    btn.className = 'opt' + (selectedOpts.includes(opt.id) ? ' selected' : '');
+    btn.innerHTML = '<strong>' + opt.label + '</strong>' + (opt.desc ? '<br><span style="font-size:.78rem;color:var(--muted)">' + opt.desc + '</span>' : '');
+    btn.onclick = () => toggleOpt(opt.id, q);
+    container.appendChild(btn);
+  });
+
+  updateNextBtn(q);
+}
+
+function toggleOpt(id, q) {
+  if (q.multi) {
+    const max = q.max || 99;
+    if (selectedOpts.includes(id)) {
+      selectedOpts = selectedOpts.filter(x => x !== id);
+    } else {
+      if (selectedOpts.length < max) selectedOpts.push(id);
+    }
+  } else {
+    selectedOpts = [id];
+  }
+  // Re-render option styles
+  document.querySelectorAll('.opt').forEach((btn, i) => {
+    const optId = q.opts[i].id;
+    btn.classList.toggle('selected', selectedOpts.includes(optId));
+  });
+  updateNextBtn(q);
+}
+
+function updateNextBtn(q) {
+  document.getElementById('btn-next').disabled = selectedOpts.length === 0;
+}
+
+function goNext() {
+  const q = QUESTIONS[currentQ];
+  answers[q.id] = [...selectedOpts];
+
+  if (currentQ < QUESTIONS.length - 1) {
+    renderQuestion(currentQ + 1);
+  } else {
+    showResult();
+  }
+}
+
+function goBack() {
+  if (currentQ > 0) renderQuestion(currentQ - 1);
+}
+
+function skipQuestion() {
+  if (currentQ < QUESTIONS.length - 1) {
+    renderQuestion(currentQ + 1);
+  } else {
+    showResult();
+  }
+}
+
+function updateProgress(idx) {
+  const pct = Math.round((idx / QUESTIONS.length) * 100);
+  document.getElementById('progress').style.width = pct + '%';
+  document.getElementById('step-counter').textContent = (idx + 1) + ' / ' + QUESTIONS.length;
+}
+
+function showResult(fromParam) {
+  document.getElementById('screen-q').classList.remove('active');
+  document.getElementById('screen-result').classList.add('active');
+  document.getElementById('progress').style.width = '100%';
+  document.getElementById('step-counter').textContent = 'Done';
+
+  let primary, secondary;
+  if (fromParam) {
+    const parts = fromParam.split('-');
+    primary = parts[0]?.toUpperCase();
+    secondary = parts[1]?.toUpperCase() || null;
+  } else {
+    const score = scoreAnswers(answers);
+    [primary, secondary] = getTopTwo(score);
+    // Update URL for sharing
+    const slug = secondary ? primary.toLowerCase() + '-' + secondary.toLowerCase() : primary.toLowerCase();
+    const url = window.location.pathname + '?result=' + slug;
+    try { window.history.replaceState({}, '', url); } catch(e) {}
+  }
+
+  if (!primary || !SL[primary]) primary = 'BIZ';
+
+  document.getElementById('result-headline').textContent = headlineFor(primary);
+  document.getElementById('result-sub').textContent = fromParam ? 'Shared result.' : subFor(primary, answers);
+  document.getElementById('primary-name').textContent = SL[primary].name;
+  document.getElementById('primary-why').textContent = SL[primary].why;
+
+  if (secondary && SL[secondary]) {
+    document.getElementById('secondary-card').style.display = 'block';
+    document.getElementById('secondary-name').textContent = SL[secondary].name;
+    document.getElementById('secondary-why').textContent = SL[secondary].sec;
+  }
+
+  document.getElementById('result-note').textContent = noteFor(primary, secondary);
+}
+
+function shareResult() {
+  const url = window.location.href;
+  navigator.clipboard?.writeText(url).then(() => {
+    const el = document.getElementById('share-confirm');
+    el.style.display = 'inline';
+    setTimeout(() => el.style.display = 'none', 2500);
+  }).catch(() => {
+    prompt('Copy this link:', url);
+  });
+}
+
+function restart() {
+  answers = {};
+  selectedOpts = [];
+  currentQ = 0;
+  document.getElementById('screen-result').classList.remove('active');
+  try { window.history.replaceState({}, '', window.location.pathname); } catch(e) {}
+  // Show intro
+  document.getElementById('screen-intro').classList.add('active');
+  document.getElementById('progress').style.width = '0%';
+  document.getElementById('step-counter').textContent = '\u00a0';
+}
+
+// ── Load from URL param ────────────────────────────────────────────────
+window.addEventListener('DOMContentLoaded', () => {
+  const params = new URLSearchParams(window.location.search);
+  const result = params.get('result');
+  if (result) {
+    document.getElementById('screen-intro').classList.remove('active');
+    showResult(result);
+  }
+});
+</script>
+</body>
+</html>
