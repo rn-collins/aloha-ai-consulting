@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Legal AI Workflow Teardown — Aloha AI</title>
+<meta name="description" content="Map a legal task to a trustworthy AI workflow with verification checkpoints, and score hallucination risk before it reaches a filing. Workflow design and regulatory-tech intelligence for BigLaw partners, GCs, eDiscovery counsel, and legal-AI buyers. By RN Collins, Aloha AI.">
+<link rel="canonical" href="https://aloha-ai-consulting.vercel.app/teardowns/legal-ai-workflow">
+<meta name="theme-color" content="#14201C">
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Legal AI Workflow Teardown — Aloha AI">
+<meta property="og:description" content="Not a chatbot. An instrument that maps a legal task to a verified AI workflow and scores hallucination risk — with the human checkpoints each task actually needs.">
+<meta property="og:image" content="https://aloha-ai-consulting.vercel.app/teardowns/legal-ai-workflow/og-image.png">
+<meta property="og:url" content="https://aloha-ai-consulting.vercel.app/teardowns/legal-ai-workflow">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Legal AI Workflow Teardown — Aloha AI">
+<meta name="twitter:description" content="Score hallucination risk by legal task. See the verification checkpoints a trustworthy AI workflow requires.">
+<meta name="twitter:image" content="https://aloha-ai-consulting.vercel.app/teardowns/legal-ai-workflow/og-image.png">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<script>document.documentElement.className+=' js';</script>
+<link rel="stylesheet" href="./aloha-ds.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Legal AI Workflow Teardown",
+"applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://aloha-ai-consulting.vercel.app/teardowns/legal-ai-workflow",
+"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+"creator":{"@type":"Person","name":"RN Collins","jobTitle":"Founder, Aloha AI",
+"description":"Neuroscientist (MS), JD candidate, and AI systems builder for regulated industries","knowsAbout":["Legal-AI workflow design","AI hallucination risk","Verification-first workflows","Regulatory intelligence","Neuroscience of trust"]},
+"about":"Designing trustworthy, verification-first AI workflows for legal tasks and scoring hallucination risk"}
+</script>
+<style>
+  /* ---- page-specific ---- */
+  .hero{background:radial-gradient(120% 130% at 85% -10%,#1e332c 0%,var(--ink) 55%);color:var(--cream);
+    padding-block:clamp(48px,8vw,92px) clamp(40px,6vw,72px);border-bottom:3px solid var(--teal)}
+  .hero .display{color:var(--cream);max-width:18ch;margin-bottom:var(--s4)}
+  .hero .kicker{color:var(--teal-mint)}
+  .hero .lead{color:#CFDAD5;max-width:58ch}
+  .hero__cta{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:var(--s5)}
+  .hero__meta{margin-top:var(--s5);font-family:var(--mono);font-size:var(--fs-xs);color:#9FB6AE;letter-spacing:.04em;line-height:1.8}
+  .hero__meta b{color:var(--cream)}
+  .livebadge{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:var(--fs-xs);
+    letter-spacing:.08em;text-transform:uppercase;color:#CDE7DF;border:1px solid #2F4A42;border-radius:var(--r-pill);padding:.34rem .72rem;margin-bottom:var(--s4)}
+  .livebadge .dot{width:7px;height:7px;border-radius:50%;background:var(--teal-mint);animation:pulse 2.2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(127,224,196,.5)}70%{box-shadow:0 0 0 7px rgba(127,224,196,0)}100%{box-shadow:0 0 0 0 rgba(127,224,196,0)}}
+  .statbar{background:var(--paper);border-bottom:1px solid var(--line)}
+  .statbar__in{display:flex;flex-wrap:wrap;gap:var(--s6);padding-block:var(--s4)}
+  .statbar .stat{flex:1;min-width:150px}
+  .statbar .k{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .statbar .v{font-family:var(--serif);font-size:1.15rem;color:var(--ink);margin-top:.15rem}
+  .sec-head{margin-bottom:var(--s6);max-width:70ch}
+  .sec-head .h2{margin-bottom:var(--s3)}
+  /* OEG */
+  .oeg{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh-2)}
+  @media(max-width:760px){.oeg{grid-template-columns:1fr}}
+  .oeg__col{background:#fff;padding:var(--s5)}
+  .oeg__col.bad{background:var(--red-l)}
+  .oeg__tag{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.09em;text-transform:uppercase;margin-bottom:var(--s3);display:flex;align-items:center;gap:.45rem;flex-wrap:wrap}
+  .oeg__col.bad .oeg__tag{color:var(--red)}
+  .oeg__col.good .oeg__tag{color:var(--green)}
+  .oeg__q{font-family:var(--serif);font-size:1.05rem;font-style:italic;margin-bottom:.7rem}
+  .oeg__why{margin-top:var(--s4);padding-top:var(--s3);border-top:1px dashed var(--line);font-size:var(--fs-sm);color:var(--muted)}
+  .fakecite{font-family:var(--mono);font-size:.82rem;background:#fff;border:1px solid var(--red-bd);border-radius:var(--r-sm);padding:.55rem .7rem;margin:.3rem 0 .6rem;color:var(--red)}
+  .realcite{font-family:var(--mono);font-size:.82rem;background:var(--teal-l);border:1px solid #BADFD6;border-radius:var(--r-sm);padding:.55rem .7rem;margin:.3rem 0 .6rem;color:var(--teal-d)}
+  /* checkpoints list in output */
+  .chk{list-style:none;margin:.7rem 0 0;padding:0}
+  .chk li{display:flex;gap:.5rem;align-items:flex-start;margin-bottom:.4rem;font-size:.9rem;color:#D6E4DF}
+  .chk li::before{content:"✓";color:var(--teal-mint);font-family:var(--mono);flex:none}
+  /* risk meter */
+  .meter{height:10px;border-radius:var(--r-pill);background:#0E1815;border:1px solid #2C463E;overflow:hidden;margin:.5rem 0 .3rem}
+  .meter__fill{height:100%;width:0;border-radius:var(--r-pill);transition:width .5s var(--ease),background .5s var(--ease);background:var(--teal-mint)}
+  .togs{display:grid;gap:.4rem;margin-bottom:var(--s4)}
+  .tog{display:flex;align-items:center;gap:.6rem;font-family:var(--sans);font-size:.9rem;color:var(--cream);
+    min-height:44px;padding:.4rem .2rem;cursor:pointer}
+  .tog input{width:20px;height:20px;flex:none;accent-color:var(--teal);min-height:auto}
+  /* process */
+  .steps{counter-reset:step;display:grid;gap:var(--s5)}
+  .step{display:grid;grid-template-columns:auto 1fr;gap:var(--s4);align-items:start}
+  .step__n{counter-increment:step;width:44px;height:44px;border-radius:12px;background:var(--teal);color:#fff;
+    font-family:var(--serif);font-size:1.3rem;display:grid;place-items:center;flex:none}
+  .step__n::before{content:counter(step)}
+  /* then vs now */
+  .tvn{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-top:var(--s3)}
+  .tvn .box{border:1px solid var(--line);border-radius:var(--r-sm);padding:.75rem .85rem}
+  .tvn .box.now{border-color:var(--green-bd);background:var(--green-l)}
+  .tvn .lab{font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.2rem}
+  .tvn .val{font-size:.9rem}
+  .card__ic svg{width:20px;height:20px}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="#top" aria-label="Aloha AI home">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#1B7A68"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#1B7A68" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      Aloha&nbsp;AI
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav__links" id="navlinks">
+        <li><a href="#stats">Signal</a></li>
+        <li><a href="#gap">The Gap</a></li>
+        <li><a href="#scorer">Risk scorer</a></li>
+        <li><a href="#method">Workflow</a></li>
+        <li><a href="#cost">Cost</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li class="nav__cta"><a class="btn btn--primary btn--sm" href="#start">Get started →</a></li>
+      </ul>
+    </nav>
+    <button class="nav__burger" id="burger" aria-label="Open menu" aria-controls="navlinks" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+<span id="top"></span>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-h">
+  <div class="wrap">
+    <span class="livebadge"><span class="dot" aria-hidden="true"></span> Live · retrieved 2026-07-04</span>
+    <p class="eyebrow kicker">Legal AI · Workflow</p>
+    <h1 class="display" id="hero-h">A legal AI workflow you can defend, not a chatbot you have to babysit.</h1>
+    <p class="lead">This teardown maps a legal task to a trustworthy AI workflow, marks the <em>verification checkpoints</em> it actually needs, and scores hallucination risk before anything reaches a brief. The failure mode isn't a bad answer. It's a <em>confident, fluent, fabricated</em> one that a signature makes your problem.</p>
+    <div class="hero__cta">
+      <a class="btn btn--primary" href="#scorer">Score your task →</a>
+      <a class="btn btn--ghost" href="#gap">See a fabricated citation</a>
+    </div>
+    <p class="hero__meta">Built by <b>RN&nbsp;Collins</b>. Neuroscience (MS) · Administrative&nbsp;Law (JD&nbsp;candidate) · AI&nbsp;systems<br>Tailored for: <b id="foryou">partners, GCs, eDiscovery counsel &amp; legal-AI buyers</b></p>
+  </div>
+</section>
+
+<!-- STAT BAR -->
+<div class="statbar" id="stats">
+  <div class="wrap statbar__in">
+    <div class="stat"><div class="k">Legal tasks mapped</div><div class="v">5 workflows</div></div>
+    <div class="stat"><div class="k">Verification checkpoints</div><div class="v">14 defined</div></div>
+    <div class="stat"><div class="k">Steps that need a human</div><div class="v">100% before filing</div></div>
+    <div class="stat"><div class="k">Fabrication tolerance</div><div class="v">Zero on citations</div></div>
+  </div>
+</div>
+
+<!-- WHO IT'S FOR -->
+<section class="section" aria-labelledby="aud-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Who this is for</p>
+      <h2 class="h2" id="aud-h">Built for the people whose name is on the signature block</h2>
+      <p class="lead">The same teardown reads four ways, because the exposure differs by seat.</p>
+    </div>
+    <div class="grid grid-4 keep-2">
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">§</div><h3>BigLaw partners</h3><p class="small muted">You certify the filing. Know which steps a model can draft and which ones a human must verify before you sign.</p></div>
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">◆</div><h3>GCs &amp; CLOs</h3><p class="small muted">You own the department's AI policy. Turn "be careful" into named checkpoints and a defensible workflow.</p></div>
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">⛃</div><h3>eDiscovery counsel</h3><p class="small muted">Review at scale where a hallucinated privilege call or coding rationale compounds silently.</p></div>
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">✦</div><h3>Legal-AI buyers</h3><p class="small muted">Evaluating tools like Harvey? A neutral frame for what "trustworthy" has to mean before procurement.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- OEG -->
+<section class="section section--paper" id="gap" aria-labelledby="gap-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The Operator Execution Gap · live</p>
+      <h2 class="h2" id="gap-h">Ask a generic AI to cite-check a holding. Watch it invent a case.</h2>
+      <p class="lead">Large language models fail most confidently exactly where a lawyer's exposure is highest: the citation. Same request, two answers: the fluent-but-fabricated generic reply, and the verified, source-checked one. The distance between them is a Rule&nbsp;11 problem.</p>
+    </div>
+    <div class="oeg reveal">
+      <div class="oeg__col bad">
+        <p class="oeg__tag">✕&nbsp;Generic LLM · unverified</p>
+        <p class="oeg__q">"Give me a controlling case for the proposition that a forum-selection clause survives novation, with a pin cite."</p>
+        <p><strong>"Certainly. The leading authority is:"</strong></p>
+        <p class="fakecite">Hartwell v. Meridian Logistics, Inc., 612 F.3d 448, 456 (9th Cir. 2011) — "a valid forum-selection clause is presumed to survive novation absent express extinguishment."</p>
+        <p class="oeg__why">Reads perfectly. Correct reporter format, plausible circuit, confident pin cite. <strong>The case does not exist.</strong> Neither the parties, the volume, nor the holding are real. The model assembled a citation shaped like the answer you wanted.</p>
+      </div>
+      <div class="oeg__col good">
+        <p class="oeg__tag">✓&nbsp;Aloha AI workflow · source-verified <span class="chip chip--src">Checkpoint: retrieval + reporter check</span></p>
+        <p class="oeg__q">Same request, run through a verification-first workflow:</p>
+        <p><strong>No citation is returned until it resolves against a real reporter.</strong> The workflow retrieves candidate authority from a citator/database, confirms the case exists, that it stands for the stated proposition, and that it remains good law, then surfaces the pin cite <em>with</em> its verification trail.</p>
+        <p class="realcite">STATUS: no verified controlling authority located for this exact proposition in the requested circuit. Escalate to human research. Do not draft around an unconfirmed cite.</p>
+        <p class="oeg__why"><span class="chip chip--hi"><span class="ic" aria-hidden="true"></span>Confidence: High</span> &nbsp;Why you can rely on it: the workflow is built to return "not found" rather than fabricate. An honest null beats a confident invention every time in a filing.</p>
+      </div>
+    </div>
+    <p class="small muted reveal" style="margin-top:var(--s4);max-width:72ch"><strong>OEG</strong>, the Operator Execution Gap, is the distance between what AI <em>says</em> and what a professional can <em>certify to a court</em>. Closing it with verification checkpoints is the entire job. <em>Illustrative fabrication shown for demonstration; not from any real matter.</em></p>
+  </div>
+</section>
+
+<!-- RISK SCORER -->
+<section class="section" id="scorer" aria-labelledby="scorer-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The instrument</p>
+      <h2 class="h2" id="scorer-h">Legal-AI Hallucination Risk Scorer</h2>
+      <p class="lead">Pick a legal task, flag the conditions that apply, and the scorer returns a hallucination-risk level <em>and</em> the specific verification checkpoints that workflow needs. Everything runs locally in your browser; nothing you enter is sent anywhere.</p>
+    </div>
+    <div class="grid grid-2">
+      <form class="tool reveal" aria-labelledby="score-t" onsubmit="event.preventDefault();calcRisk()">
+        <h3 id="score-t">Score a task</h3>
+        <div class="field"><label for="task">Legal task</label>
+          <select id="task">
+            <option value="cite">Cite-checking / authority verification</option>
+            <option value="contract">Contract review &amp; redlining</option>
+            <option value="memo">Research memo drafting</option>
+            <option value="ediscovery">eDiscovery review &amp; coding</option>
+            <option value="depo">Deposition prep</option>
+          </select></div>
+        <fieldset style="border:0;margin:0;padding:0">
+          <legend class="field" style="font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.1em;text-transform:uppercase;color:var(--muted-on-ink);margin-bottom:.4rem;padding:0">Conditions</legend>
+          <div class="togs">
+            <label class="tog"><input type="checkbox" id="c-filing"> High-stakes filing or court submission</label>
+            <label class="tog"><input type="checkbox" id="c-novel"> Novel or unfamiliar jurisdiction</label>
+            <label class="tog"><input type="checkbox" id="c-privilege"> Privilege or confidentiality in scope</label>
+            <label class="tog"><input type="checkbox" id="c-noreview"> Limited time for human review</label>
+          </div>
+        </fieldset>
+        <button class="btn btn--primary" type="submit">Score hallucination risk →</button>
+      </form>
+      <div class="out reveal" role="status" aria-live="polite" aria-atomic="true">
+        <div class="out__lab">Hallucination risk level</div>
+        <div class="out__big" id="risk-head">—</div>
+        <div class="meter" aria-hidden="true"><div class="meter__fill" id="risk-fill"></div></div>
+        <div class="out__lab" style="margin-top:.8rem">Required verification checkpoints</div>
+        <ul class="chk" id="risk-chk"><li>Pick a task and conditions to see the workflow it requires.</li></ul>
+        <div class="flag" id="risk-flag"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section section--paper" id="method" aria-labelledby="how-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">How it works · workflow design</p>
+      <h2 class="h2" id="how-h">Three stages, with the human on the load-bearing one</h2>
+      <p class="lead">A trustworthy legal-AI workflow isn't "use a better model." It's a designed pipeline: intake, AI drafting bounded by checkpoints, and human verification before anything is certified.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Intake &amp; task framing (RIL)</h3><p class="muted">Scope the task, the jurisdiction, and the stakes up front. The Regulatory Intelligence Layer decides which parts a model may touch and grounds retrieval in real authority, not the model's memory.</p></div></div>
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">AI drafting with checkpoints (ROL)</h3><p class="muted">The model drafts inside guardrails: every citation must resolve against a citator, every factual claim carries a source, and the workflow is built to return "not found" instead of inventing. This is the Resolve-to-Operator Layer: output an attorney can actually work from.</p></div></div>
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Human verification &amp; sign-off</h3><p class="muted">A qualified human verifies the load-bearing steps (cites, holdings, privilege calls) before certification. Monitors re-check their sources on a schedule (Upstash · Vercel · Exa) so citators and rule changes stay current rather than freezing on build day.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- COST OF GETTING IT WRONG -->
+<section class="section" id="cost" aria-labelledby="cost-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The cost of getting it wrong</p>
+      <h2 class="h2" id="cost-h">What one fabricated citation costs</h2>
+      <p class="lead">This is not hypothetical. As of retrieval (2026-07-04), U.S. courts have repeatedly sanctioned lawyers for filing AI-fabricated citations under Federal Rule of Civil Procedure&nbsp;11 (and its analogues, e.g., Bankruptcy Rule&nbsp;9011). Public trackers have catalogued dozens of such sanction opinions, with the count rising through 2025 into 2026.</p>
+    </div>
+    <div class="grid grid-2">
+      <div class="card reveal"><h3>The exposure is layered <span class="chip chip--hi">High impact</span></h3>
+        <div class="tvn">
+          <div class="box"><div class="lab">Monetary</div><div class="val">Rule 11 monetary sanctions have been imposed on signing and supervising attorneys for briefs containing fabricated AI citations.</div></div>
+          <div class="box"><div class="lab">Case-level</div><div class="val">Courts have struck filings, disqualified counsel, and referred attorneys to state bars.</div></div>
+          <div class="box"><div class="lab">Reputational</div><div class="val">Published, named-in-the-opinion: a durable, searchable record that follows the lawyer and the firm.</div></div>
+          <div class="box now"><div class="lab">Preventable</div><div class="val">A retrieval + citator checkpoint catches the fabrication before signature. That is the whole value.</div></div>
+        </div>
+        <p class="small muted" style="margin-top:var(--s4)">Cited generally, retrieved 2026-07-04, from public legal-industry reporting and court-rule sources. Specific matters are not named here; confirm current authority before relying on any figure.</p>
+      </div>
+      <form class="tool reveal" aria-labelledby="cost-t" onsubmit="event.preventDefault();calcCost()">
+        <h3 id="cost-t">Rework-cost estimator</h3>
+        <div class="field"><label for="hours">Attorney hours to unwind &amp; refile after a bad cite is caught</label>
+          <input id="hours" type="number" inputmode="numeric" min="0" step="1" value="40"></div>
+        <div class="field"><label for="brate">Blended hourly rate (USD)</label>
+          <select id="brate"><option value="450">$450 (associate)</option><option value="750" selected>$750 (blended)</option><option value="1200">$1,200 (partner)</option></select></div>
+        <button class="btn btn--primary" type="submit">Estimate the cost →</button>
+        <div class="out" role="status" aria-live="polite" aria-atomic="true" style="margin-top:var(--s5)">
+          <div class="out__lab">Illustrative rework exposure (before any sanction)</div>
+          <div class="out__big" id="cost-num">$—</div>
+          <ul><li>Excludes monetary sanctions, bar referrals, and reputational cost, all documented outcomes in AI-fabrication cases.</li><li>This is the price of trusting an unverified cite instead of running the checkpoint.</li></ul>
+          <div class="flag">Illustrative model, not legal advice. Verify against your facts and current authority.</div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- PROVENANCE LEDGER -->
+<section class="section section--paper" id="sources" aria-labelledby="src-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Audit-ready provenance</p>
+      <h2 class="h2" id="src-h">Every claim, traced to its source</h2>
+      <p class="lead">The rigor is the product. Each claim carries its source, retrieval date, and a confidence rating, so this teardown holds up in a procurement review, not just a pitch.</p>
+    </div>
+    <div class="table-wrap reveal">
+      <table class="data">
+        <caption class="small muted" style="text-align:left;padding:.6rem .8rem">Provenance ledger, data retrieved 2026-07-04</caption>
+        <thead><tr><th scope="col">Claim</th><th scope="col">Source</th><th scope="col">Retrieved</th><th scope="col">Confidence</th></tr></thead>
+        <tbody>
+          <tr><td>Attorneys must certify filings are non-frivolous and factually/legally grounded, the duty AI outputs do not discharge</td><td><span class="cite">Fed. R. Civ. P. 11(b)–(c)</span></td><td>2026-07-04</td><td><span class="chip chip--hi">High</span></td></tr>
+          <tr><td>U.S. courts have sanctioned lawyers for filing AI-fabricated citations; outcomes include monetary sanctions, disqualification, and bar referrals</td><td><span class="cite">Public legal-industry reporting (2025–2026)</span> · court-rule sources</td><td>2026-07-04</td><td><span class="chip chip--med">Med · reported</span></td></tr>
+          <tr><td>Analogous certification duty applies in bankruptcy filings, cited in at least one AI-citation sanction opinion</td><td><span class="cite">Fed. R. Bankr. P. 9011</span></td><td>2026-07-04</td><td><span class="chip chip--med">Med · reported</span></td></tr>
+          <tr><td>Public trackers have catalogued dozens of AI-fabrication sanction opinions, count rising through 2025 into 2026</td><td><span class="cite">Aggregated sanctions trackers (reported)</span></td><td>2026-07-04</td><td><span class="chip chip--med">Med · reported</span></td></tr>
+          <tr><td>The "Hartwell v. Meridian Logistics" citation on this page is fabricated on purpose to demonstrate the failure mode</td><td><span class="cite">Illustrative, not a real case</span></td><td>2026-07-04</td><td><span class="chip chip--hi">High · by construction</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small muted reveal" style="margin-top:var(--s4);max-width:72ch"><strong>Verification checkpoint:</strong> claims are cited generally as of the retrieval date; no specific matter is named. Re-confirm current authority and rule text before relying on any statement in practice.</p>
+  </div>
+</section>
+
+<!-- DIFFERENTIATION -->
+<section class="section" aria-labelledby="dif-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Why this, not a generic legal chatbot</p>
+      <h2 class="h2" id="dif-h">The combination no competitor holds</h2>
+      <p class="lead">Most legal-AI tools optimize fluency. This is built on named, defensible frameworks, so you leave with a workflow you can govern, not a prompt you have to trust.</p>
+    </div>
+    <div class="grid grid-4 keep-2">
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">OEG</p><h3 class="h3">Operator Execution Gap</h3><p class="small muted">The gap between what AI says and what a professional can certify to a court.</p></div>
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">RIL → ROL</p><h3 class="h3">Intelligence → Operator Layer</h3><p class="small muted">Source-grounded retrieval resolved into output an attorney can actually work from.</p></div>
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">VFW</p><h3 class="h3">Verification-First Workflow</h3><p class="small muted">Checkpoints designed in from the start. The workflow returns "not found" before it fabricates.</p></div>
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">Neuro</p><h3 class="h3">Calibrated trust</h3><p class="small muted">Fluency drives automation bias: humans over-trust confident text. Surfacing the verification trail is a debiasing cue, not decoration.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section--paper" id="faq" aria-labelledby="faq-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Questions</p>
+      <h2 class="h2" id="faq-h">What people ask first</h2>
+    </div>
+    <div class="reveal">
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq1"><span>Is this legal advice?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq1"><div class="acc__panel-inner">No. This is workflow design and regulatory-tech intelligence. RN Collins is a JD candidate, not a licensed attorney; nothing here is legal advice or creates an attorney–client relationship. It's built to help the licensed professionals who do give that advice run AI safely.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq2"><span>Does this replace lawyer review?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq2"><div class="acc__panel-inner">The opposite. The entire design places a qualified human on the load-bearing steps (cites, holdings, privilege calls) before anything is certified. The workflow makes review faster and more targeted; it never removes it.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq3"><span>How is this different from a tool like Harvey?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq3"><div class="acc__panel-inner">This is a neutral teardown of what a trustworthy workflow has to include, whatever tool you buy, rather than a competing product. Use it to evaluate any legal-AI vendor: does it ground citations in a citator, surface a verification trail, and fail to "not found" rather than fabricate?</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq4"><span>Can I get one tailored to my practice or department?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq4"><div class="acc__panel-inner">Yes, that's the point. This is a reference build; a tailored teardown for your practice group, matter types, or AI policy is what Aloha AI produces, usually within days of a scoping conversation. Use the contact link below.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq5"><span>What data do you collect from me?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq5"><div class="acc__panel-inner">None. There is no login, no tracking, and no cookies. Every calculation runs locally in your browser and nothing you enter leaves your device, a deliberate choice for privilege-sensitive users.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- THE SERVICE / OFFER -->
+<section class="section" id="start" aria-labelledby="offer-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The service</p>
+      <h2 class="h2" id="offer-h">How this becomes yours</h2>
+      <p class="lead">Firms adopt AI with no verification layer, and one hallucinated citation is a Rule 11 sanctions risk. I build a verification-gated workflow built into the exact tasks your team runs, so the tool speeds work without creating exposure.</p>
+    </div>
+    <div class="grid grid-3 reveal">
+      <div class="card"><div class="card__ic" aria-hidden="true">1</div><h3>What I build</h3><p class="small muted">An AI workflow mapped to your firm's real tasks (cite-check, contract review, research) with human checkpoints where a wrong answer is unrecoverable.</p></div>
+      <div class="card"><div class="card__ic" aria-hidden="true">2</div><h3>What you get</h3><ul class="small muted" style="padding-left:1.1rem;margin:.35rem 0 0"><li>A mapped AI workflow with verification checkpoints</li><li>A hallucination-risk scorecard for your tasks</li><li>Team-ready SOPs, not a vague AI policy</li></ul></div>
+      <div class="card"><div class="card__ic" aria-hidden="true">3</div><h3>How to start</h3><p class="small muted">A 20-minute scoping call. If it's a fit, a tailored build turns around in days, not weeks.</p></div>
+    </div>
+    <p class="lead reveal" style="margin-top:var(--s5)"><strong>Pricing.</strong> Engagements start from <strong>$1,000 per workflow</strong> (or $200/hr), scoped to your firm, scoped to what your operation actually needs. Three-month minimum on any retainer; 30 days' notice to stop.</p>
+  </div>
+</section>
+<!-- CTA HIERARCHY -->
+<section class="section section--ink" id="contact" aria-labelledby="cta-h">
+  <div class="wrap" style="text-align:center">
+    <p class="eyebrow">Aloha AI · Honolulu</p>
+    <h2 class="h2" id="cta-h" style="max-width:24ch;margin-inline:auto">Ready when you are.</h2>
+    <p class="lead" style="margin:var(--s4) auto var(--s5);text-align:center">Convinced, curious, or comparing: there's a path for each.</p>
+    <div style="display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn--primary" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Start with a Systems Audit →</a>
+      <a class="btn btn--ghost" href="https://aloha-ai-consulting.vercel.app/tools/ai-readiness-scorecard" target="_blank" rel="noopener">Take the 2-minute assessment</a>
+    </div>
+    <p class="small" style="margin-top:var(--s5);color:var(--muted-on-ink)">Prefer email? <a href="#" data-email style="color:var(--teal-mint)">Email RN</a> &nbsp;·&nbsp; or connect on <a href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noopener" style="color:var(--teal-mint)">LinkedIn</a></p>
+    <p id="emailReveal" hidden style="margin-top:.5rem;font-family:var(--mono);font-size:.8rem;color:#CFDAD5"></p>
+  </div>
+</section>
+<footer class="footer" aria-labelledby="foot-h">
+  <div class="wrap">
+    <h2 id="foot-h" class="small" style="position:absolute;left:-999px">Site footer</h2>
+    <div class="footer__grid">
+      <div>
+        <a class="nav__brand" href="#top" style="color:var(--cream)" aria-label="Aloha AI home"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#7FE0C4"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#7FE0C4" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg> Aloha&nbsp;AI</a>
+        <p class="small" style="margin-top:var(--s3);max-width:38ch;color:#9FB6AE">AI implementation built around how humans actually trust and use it, for regulated or reputation-sensitive professions.</p>
+      </div>
+      <div>
+        <h4>This site</h4>
+        <ul>
+          <li><a href="#gap">The gap</a></li>
+          <li><a href="#method">How it works</a></li>
+          <li><a href="#start">The service</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Aloha AI</h4>
+        <ul>
+          <li><a href="https://aloha-ai-consulting.vercel.app" target="_blank" rel="noopener">The practice</a></li>
+          <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a call</a></li>
+          <li><a href="https://aloha-ai-consulting.vercel.app/tools/ai-readiness-scorecard" target="_blank" rel="noopener">Assessment</a></li>
+          <li><a href="https://rn-portfolio-khaki.vercel.app" target="_blank" rel="noopener">Portfolio → RN Builds</a></li>
+          <li><a href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://aloha-ai-consulting.vercel.app/privacy" target="_blank" rel="noopener">Privacy</a></li>
+          <li><a href="https://aloha-ai-consulting.vercel.app/terms" target="_blank" rel="noopener">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="disc small">Regulatory intelligence, not legal advice. RN Collins is a JD candidate, not a licensed attorney; nothing here is legal or tax advice or an attorney–client relationship. Confirm all figures against the operative source before relying on them.</p>
+    <p class="fine">Aloha AI · a DBA of Rayven-Nikkita Collins LLC · Honolulu, HI · No tracking, no cookies · Illustrative risk modeling; not legal advice.</p>
+  </div>
+</footer>
+
+<script>
+  // ---- mobile nav ----
+  (function(){
+    var b=document.getElementById('burger'),l=document.getElementById('navlinks');
+    function set(o){b.setAttribute('aria-expanded',o);l.classList.toggle('open',o);b.setAttribute('aria-label',o?'Close menu':'Open menu');}
+    b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true');});
+    l.addEventListener('click',function(e){if(e.target.tagName==='A')set(false);});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});
+  })();
+  // ---- accordion ----
+  document.querySelectorAll('.acc__btn').forEach(function(btn){
+    var panel=document.getElementById(btn.getAttribute('aria-controls'));
+    btn.addEventListener('click',function(){
+      var open=btn.getAttribute('aria-expanded')==='true';
+      btn.setAttribute('aria-expanded',!open);
+      panel.style.maxHeight=open?null:panel.scrollHeight+'px';
+    });
+  });
+  // ---- personalization slot ?for= ----
+  (function(){var p=new URLSearchParams(location.search).get('for');if(p){document.getElementById('foryou').textContent=p;}})();
+  // ---- risk scorer ----
+  var BASE={cite:3,contract:2,memo:2,ediscovery:2,depo:1};
+  var CHK={
+    cite:['Retrieve every citation from a citator/database before drafting','Confirm each case exists and stands for the stated proposition','Verify the case is still good law (no negative treatment)','Human sign-off on all authority before filing'],
+    contract:['Ground clause interpretation in the actual document text, not model memory','Flag any defined term or cross-reference the model asserts but cannot locate','Human review of every material redline and risk call'],
+    memo:['Source every factual and legal assertion; no uncited claims','Verify quoted language against the primary source','Attorney review of the analysis and conclusions before circulation'],
+    ediscovery:['Sample and QC model coding decisions against a human-reviewed set','Route every privilege/confidentiality call to human confirmation','Log rationale so coding is defensible and auditable'],
+    depo:['Verify every fact and exhibit reference against the record','Confirm any cited testimony or authority actually exists','Attorney owns the outline and question strategy']
+  };
+  function calcRisk(){
+    var t=document.getElementById('task').value, s=BASE[t];
+    var filing=document.getElementById('c-filing').checked,
+        novel=document.getElementById('c-novel').checked,
+        priv=document.getElementById('c-privilege').checked,
+        norev=document.getElementById('c-noreview').checked;
+    if(filing)s+=2; if(novel)s+=2; if(priv)s+=1; if(norev)s+=2;
+    var level,color,pct,flag;
+    if(s>=7){level='Critical';color='var(--red-bd)';pct=100;flag='⚑ Do not let AI output reach a filing without full human verification of every load-bearing step.';}
+    else if(s>=5){level='High';color='#E7B36B';pct=78;flag='⚑ Verification checkpoints are mandatory here, not optional.';}
+    else if(s>=3){level='Moderate';color='var(--teal-mint)';pct=52;flag='⚑ Usable with checkpoints in place and a human on final review.';}
+    else{level='Lower';color='var(--teal-mint)';pct=30;flag='⚑ Lower risk, but the checkpoints below still apply before any external use.';}
+    document.getElementById('risk-head').textContent=level+' risk';
+    var f=document.getElementById('risk-fill');f.style.width=pct+'%';f.style.background=color;
+    var chk=CHK[t].slice();
+    if(filing)chk.push('Extra: independent second-pass verification because this is court-bound');
+    if(novel)chk.push('Extra: confirm jurisdiction-specific rules, model priors are weakest here');
+    if(priv)chk.push('Extra: keep privileged content local; no third-party model exposure');
+    if(norev)chk.push('Extra: if review time is short, reduce scope. Do not skip checkpoints');
+    var ul=document.getElementById('risk-chk');ul.innerHTML='';
+    chk.forEach(function(x){var li=document.createElement('li');li.textContent=x;ul.appendChild(li);});
+    document.getElementById('risk-flag').textContent=flag;
+  }
+  // ---- cost estimator ----
+  function fmt(n){return '$'+Math.round(n).toLocaleString('en-US');}
+  function calcCost(){var h=+document.getElementById('hours').value||0,r=+document.getElementById('brate').value||750;
+    document.getElementById('cost-num').textContent=fmt(h*r);}
+  calcRisk();calcCost();
+  // ---- reveal on scroll ----
+  (function(){
+    if(matchMedia('(prefers-reduced-motion:reduce)').matches){document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in');});return;}
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(e){io.observe(e);});
+  })();
+</script>
+<script>
+/* email assembled at runtime (not scrapable); copy + mail app + reveal + Gmail */
+(function(){var u='collins.ra',dm='northeastern.edu',a=u+'@'+dm,su=encodeURIComponent('Aloha AI — build inquiry');
+document.querySelectorAll('[data-email]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();
+try{navigator.clipboard&&navigator.clipboard.writeText(a);}catch(_){}
+var o=document.getElementById('emailReveal');if(o){o.hidden=false;o.innerHTML='Copied ✓ &nbsp;<a href="mailto:'+a+'?subject='+su+'" style="color:#7FE0C4">'+a+'</a> &nbsp;·&nbsp; <a href="https://mail.google.com/mail/?view=cm&fs=1&to='+a+'&su='+su+'" target="_blank" rel="noopener" style="color:#7FE0C4">Open in Gmail</a>';}
+window.location.href='mailto:'+a+'?subject='+su;});});})();
+</script>
+</body>
+</html>

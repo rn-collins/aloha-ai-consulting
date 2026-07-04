@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Content Suppression & Platform Visibility Audit (EDSA) — Aloha AI</title>
+<meta name="description" content="A platform-policy-grounded audit of why credible health and wellness content gets throttled — and an EDSA-structured reach-recovery plan. Score your suppression risk, see what generic AI gets wrong, and trace every fix to a real policy category. By RN Collins, Aloha AI.">
+<link rel="canonical" href="https://aloha-ai-consulting.vercel.app/monitors/suppression-audit">
+<meta name="theme-color" content="#14201C">
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Content Suppression & Platform Visibility Audit (EDSA) — Aloha AI">
+<meta property="og:description" content="Not 'post more consistently.' A policy-grounded diagnosis of what actually suppresses credible health content — and the EDSA fixes that recover reach.">
+<meta property="og:image" content="https://aloha-ai-consulting.vercel.app/monitors/suppression-audit/og-image.png">
+<meta property="og:url" content="https://aloha-ai-consulting.vercel.app/monitors/suppression-audit">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Content Suppression & Platform Visibility Audit (EDSA) — Aloha AI">
+<meta name="twitter:description" content="Score your suppression risk against real platform-policy categories. Every fix mapped to the EDSA framework.">
+<meta name="twitter:image" content="https://aloha-ai-consulting.vercel.app/monitors/suppression-audit/og-image.png">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<script>document.documentElement.className+=' js';</script>
+<link rel="stylesheet" href="./aloha-ds.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Content Suppression & Platform Visibility Audit (EDSA)",
+"applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://aloha-ai-consulting.vercel.app/monitors/suppression-audit",
+"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+"creator":{"@type":"Person","name":"RN Collins","jobTitle":"Founder, Aloha AI",
+"description":"Neuroscientist (MS), JD candidate, and AI systems builder for regulated industries","knowsAbout":["Platform content policy","Health & wellness advertising compliance","Regulatory intelligence","AI content operations","Neuroscience of trust"]},
+"about":"Why credible health and wellness content is throttled by platform policy, and how to recover reach using the EDSA framework"}
+</script>
+<style>
+  /* ---- page-specific ---- */
+  .hero{background:radial-gradient(120% 130% at 85% -10%,#1e332c 0%,var(--ink) 55%);color:var(--cream);
+    padding-block:clamp(48px,8vw,92px) clamp(40px,6vw,72px);border-bottom:3px solid var(--teal)}
+  .hero .display{color:var(--cream);max-width:18ch;margin-bottom:var(--s4)}
+  /* gradient-clipped accent with solid fallback */
+  .hero .display .grad{color:var(--teal-mint)}
+  @supports((-webkit-background-clip:text) or (background-clip:text)){
+    .hero .display .grad{background:linear-gradient(92deg,#7FE0C4,#4FC7A6);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+  }
+  .hero .kicker{color:var(--teal-mint)}
+  .hero .lead{color:#CFDAD5;max-width:56ch}
+  .hero__cta{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:var(--s5)}
+  .hero__meta{margin-top:var(--s5);font-family:var(--mono);font-size:var(--fs-xs);color:#9FB6AE;letter-spacing:.04em;line-height:1.8}
+  .hero__meta b{color:var(--cream)}
+  .livebadge{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:var(--fs-xs);
+    letter-spacing:.08em;text-transform:uppercase;color:#CDE7DF;border:1px solid #2F4A42;border-radius:var(--r-pill);padding:.34rem .72rem;margin-bottom:var(--s4)}
+  .livebadge .dot{width:7px;height:7px;border-radius:50%;background:var(--teal-mint);animation:pulse 2.2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(127,224,196,.5)}70%{box-shadow:0 0 0 7px rgba(127,224,196,0)}100%{box-shadow:0 0 0 0 rgba(127,224,196,0)}}
+  .statbar{background:var(--paper);border-bottom:1px solid var(--line)}
+  .statbar__in{display:flex;flex-wrap:wrap;gap:var(--s6);padding-block:var(--s4)}
+  .statbar .stat{flex:1;min-width:150px}
+  .statbar .k{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .statbar .v{font-family:var(--serif);font-size:1.15rem;color:var(--ink);margin-top:.15rem}
+  .sec-head{margin-bottom:var(--s6);max-width:70ch}
+  .sec-head .h2{margin-bottom:var(--s3)}
+  /* OEG */
+  .oeg{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh-2)}
+  @media(max-width:760px){.oeg{grid-template-columns:1fr}}
+  .oeg__col{background:#fff;padding:var(--s5)}
+  .oeg__col.bad{background:var(--red-l)}
+  .oeg__tag{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.09em;text-transform:uppercase;margin-bottom:var(--s3);display:flex;align-items:center;gap:.45rem;flex-wrap:wrap}
+  .oeg__col.bad .oeg__tag{color:var(--red)}
+  .oeg__col.good .oeg__tag{color:var(--green)}
+  .oeg__q{font-family:var(--serif);font-size:1.05rem;font-style:italic;margin-bottom:.7rem}
+  .oeg__why{margin-top:var(--s4);padding-top:var(--s3);border-top:1px dashed var(--line);font-size:var(--fs-sm);color:var(--muted)}
+  /* EDSA legend rows */
+  .edsa{display:grid;gap:.55rem;margin-top:var(--s3)}
+  .edsa__row{display:grid;grid-template-columns:auto 1fr;gap:.7rem;align-items:baseline}
+  .edsa__k{font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-d);
+    border:1px solid #BADFD6;background:var(--teal-l);border-radius:var(--r-pill);padding:.18rem .5rem;white-space:nowrap}
+  .edsa__v{font-size:.9rem}
+  /* checkbox risk grid */
+  .risks{display:grid;grid-template-columns:1fr 1fr;gap:.4rem;margin-top:.2rem}
+  @media(max-width:520px){.risks{grid-template-columns:1fr}}
+  .risks label{display:flex;gap:.5rem;align-items:flex-start;font-family:var(--sans);font-size:.86rem;
+    letter-spacing:normal;text-transform:none;color:#D6E4DF;line-height:1.35;cursor:pointer;margin:0}
+  .risks input[type=checkbox]{width:auto;min-height:0;margin-top:.12rem;accent-color:var(--teal-mint)}
+  .meter{height:10px;border-radius:var(--r-pill);background:#20302B;overflow:hidden;margin:.5rem 0 .2rem}
+  .meter__fill{height:100%;width:0;border-radius:var(--r-pill);background:var(--teal-mint);transition:width var(--dur) var(--ease)}
+  /* process */
+  .steps{counter-reset:step;display:grid;gap:var(--s5)}
+  .step{display:grid;grid-template-columns:auto 1fr;gap:var(--s4);align-items:start}
+  .step__n{counter-increment:step;width:44px;height:44px;border-radius:12px;background:var(--teal);color:#fff;
+    font-family:var(--serif);font-size:1.3rem;display:grid;place-items:center;flex:none}
+  .step__n::before{content:counter(step)}
+  .card__ic svg{width:20px;height:20px}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="#top" aria-label="Aloha AI home">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#1B7A68"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#1B7A68" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      Aloha&nbsp;AI
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav__links" id="navlinks">
+        <li><a href="#signals">Signals</a></li>
+        <li><a href="#gap">The Gap</a></li>
+        <li><a href="#audit">Run the audit</a></li>
+        <li><a href="#sources">Method</a></li>
+        <li><a href="#ip">Frameworks</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li class="nav__cta"><a class="btn btn--primary btn--sm" href="#start">Get started →</a></li>
+      </ul>
+    </nav>
+    <button class="nav__burger" id="burger" aria-label="Open menu" aria-controls="navlinks" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+<span id="top"></span>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-h">
+  <div class="wrap">
+    <span class="livebadge"><span class="dot" aria-hidden="true"></span> Policy-grounded · reviewed 2026-07-04</span>
+    <p class="eyebrow kicker">Content &amp; Visibility · Platform Systems</p>
+    <h1 class="display" id="hero-h">Your health content isn't bad. It's <span class="grad">flagged</span>.</h1>
+    <p class="lead">Credible health, wellness, and regulated-industry content gets throttled for reasons that have nothing to do with quality. Platform policy is the cause. This audit diagnoses <em>what</em> is suppressing your reach, grounded in real policy categories, and returns an <strong>EDSA</strong>-structured plan to recover it. Not "post more consistently."</p>
+    <div class="hero__cta">
+      <a class="btn btn--primary" href="#audit">Score your suppression risk →</a>
+      <a class="btn btn--ghost" href="#gap">See what AI gets wrong</a>
+    </div>
+    <p class="hero__meta">Built by <b>RN&nbsp;Collins</b> · Neuroscience (MS) · Administrative&nbsp;Law (JD&nbsp;candidate) · AI&nbsp;systems<br>Tailored for: <b id="foryou">health &amp; wellness brands and regulated-industry creators</b></p>
+  </div>
+</section>
+
+<!-- SIGNAL BAR -->
+<div class="statbar" id="signals">
+  <div class="wrap statbar__in">
+    <div class="stat"><div class="k">Primary throttle</div><div class="v">Unproven health claims</div></div>
+    <div class="stat"><div class="k">Ad eligibility gate</div><div class="v">LegitScript cert.</div></div>
+    <div class="stat"><div class="k">Recovery structure</div><div class="v">EDSA (4-part)</div></div>
+    <div class="stat"><div class="k">Platforms covered</div><div class="v">Meta · Google · TikTok · IG</div></div>
+  </div>
+</div>
+
+<!-- WHO IT'S FOR -->
+<section class="section" aria-labelledby="aud-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Who this is for</p>
+      <h2 class="h2" id="aud-h">For people who publish rigorous content and watch it disappear</h2>
+      <p class="lead">The problem isn't reach tactics. It's that policy systems read careful, evidence-based health content as a risk. Four seats feel it differently.</p>
+    </div>
+    <div class="grid grid-4 keep-2">
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">✚</div><h3>Health &amp; wellness brands</h3><p class="small muted">You cite studies and still get ads disapproved. Know which claim category triggered it before you rewrite blind.</p></div>
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">◎</div><h3>Visibility strategists</h3><p class="small muted">Give clients a policy-grounded diagnosis, not a hashtag list. Give them a fix that survives the next review.</p></div>
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">§</div><h3>Regulated-industry creators</h3><p class="small muted">Supplements, telehealth, mental-health, medical. Publish inside the policy line without hollowing out the message.</p></div>
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">✦</div><h3>Clinicians who publish</h3><p class="small muted">Evidence-forward content that keeps getting demoted. Recover reach without diluting the science.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- OEG -->
+<section class="section section--paper" id="gap" aria-labelledby="gap-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The Operator Execution Gap · live</p>
+      <h2 class="h2" id="gap-h">Ask a generic AI why your reach dropped. Watch it guess.</h2>
+      <p class="lead">Ask the tools most creators reach for and you get engagement folklore: post consistently, use trending audio, add hashtags. None of it names the policy mechanism that actually suppressed the post. Same question, two answers. The distance between them is why the "fix" never works.</p>
+    </div>
+    <div class="oeg reveal">
+      <div class="oeg__col bad">
+        <p class="oeg__tag">✕&nbsp;Generic AI · engagement folklore</p>
+        <p class="oeg__q">"My evidence-based supplement post got no reach. Why, and how do I fix it?"</p>
+        <p><strong>"The algorithm probably deprioritized it for low engagement. Post more consistently, use 20–30 trending hashtags, hook viewers in the first 3 seconds, and repost at peak times. Reach will recover."</strong></p>
+        <p class="oeg__why">Confident. Generic. <strong>Wrong about the cause</strong> — so every "fix" treats a policy problem as a scheduling problem, and the throttle stays exactly where it was.</p>
+      </div>
+      <div class="oeg__col good">
+        <p class="oeg__tag">✓&nbsp;Aloha AI · platform-policy grounded <span class="chip chip--src">Policy category</span></p>
+        <p class="oeg__q">Same post, diagnosed against the actual policy surface:</p>
+        <p><strong>The suppression is a claims problem, not a schedule problem.</strong> Phrases that imply a direct physiological effect, such as "boosts metabolism," "balances hormones," or "detoxifies," fall under platforms' <strong>health-and-wellness / unproven-claims</strong> category, which restricts distribution and ad eligibility regardless of how many studies you attach.</p>
+        <p>The EDSA fix: keep the <em>Evidence</em>, reframe the <em>claim</em> as discussion rather than promise, respect the reader's <em>self-determination</em> ("here's what the research explores" not "this will fix you"), and give a compliant <em>action</em>. Same rigor, inside the policy line.</p>
+        <p class="oeg__why"><span class="chip chip--hi"><span class="ic" aria-hidden="true"></span>Confidence: High</span> &nbsp;Why you can rely on it: it maps to published platform health-and-wellness policy categories and the LegitScript ad-eligibility gate, described in the method ledger below, with review dates.</p>
+      </div>
+    </div>
+    <p class="small muted reveal" style="margin-top:var(--s4);max-width:70ch"><strong>OEG</strong> (the Operator Execution Gap) is the distance between what AI <em>says</em> caused a problem and what actually did. Naming the real mechanism is the entire job.</p>
+  </div>
+</section>
+
+<!-- WHAT SUPPRESSES / THE SUBSTANCE -->
+<section class="section" aria-labelledby="chg-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">What actually suppresses reach</p>
+      <h2 class="h2" id="chg-h">Four throttles, and the EDSA move that clears each</h2>
+      <p class="lead">These are policy categories platforms publish and enforce, not folklore. Each maps to one part of the EDSA structure: <strong>E</strong>vidence · <strong>D</strong>iscussion · <strong>S</strong>elf-determination · <strong>A</strong>ction.</p>
+    </div>
+    <div class="grid grid-2">
+      <div class="card reveal"><h3>Unproven / prohibited health claims <span class="chip chip--hi">High risk</span></h3>
+        <div class="edsa"><div class="edsa__row"><span class="edsa__k">Throttle</span><span class="edsa__v">Cure/diagnosis/direct-effect language ("balances hormones," "cures anxiety") triggers the health-and-wellness restriction: distribution and ad eligibility both drop.</span></div><div class="edsa__row"><span class="edsa__k">EDSA · Discussion</span><span class="edsa__v">Reframe the promise as inquiry: "what the research explores," not "what this does to you."</span></div></div></div>
+      <div class="card reveal"><h3>Ad-eligibility gate (certification) <span class="chip chip--hi">High risk</span></h3>
+        <div class="edsa"><div class="edsa__row"><span class="edsa__k">Throttle</span><span class="edsa__v">Many health, pharmacy, telehealth and addiction-treatment advertisers must be LegitScript-certified to run ads on Google, Meta and others. Uncertified = disapproved.</span></div><div class="edsa__row"><span class="edsa__k">EDSA · Evidence</span><span class="edsa__v">Establish verifiable legitimacy (licensing, certification path) so paid distribution is even available.</span></div></div></div>
+      <div class="card reveal"><h3>Off-platform links &amp; sourcing <span class="chip chip--med">Moderate</span></h3>
+        <div class="edsa"><div class="edsa__row"><span class="edsa__k">Throttle</span><span class="edsa__v">Outbound links and unvetted product/source URLs are commonly deprioritized in organic feeds; risky domains can flag the whole post.</span></div><div class="edsa__row"><span class="edsa__k">EDSA · Action</span><span class="edsa__v">Give a compliant next step natively; move commercial links to a low-risk destination the platform trusts.</span></div></div></div>
+      <div class="card reveal"><h3>Sensitive-audience targeting <span class="chip chip--med">Nuance</span></h3>
+        <div class="edsa"><div class="edsa__row"><span class="edsa__k">Throttle</span><span class="edsa__v">Body-image and health-condition targeting is restricted (e.g., minor exclusions, placement limits). Configuration, not content, suppresses reach here.</span></div><div class="edsa__row"><span class="edsa__k">EDSA · Self-determination</span><span class="edsa__v">Speak to the reader as decision-maker; drop exploitative framing that trips sensitive-category rules.</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIT TOOL + COST -->
+<section class="section section--paper" id="audit" aria-labelledby="exp-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The instrument</p>
+      <h2 class="h2" id="exp-h">Run the EDSA suppression-risk audit</h2>
+      <p class="lead">Pick your content type and platform, check the risk factors that apply, and the tool returns a suppression-risk score plus the specific EDSA fixes for your situation. Everything runs locally in your browser; nothing is sent anywhere.</p>
+    </div>
+    <div class="grid grid-2">
+      <form class="tool reveal" aria-labelledby="exp-t" onsubmit="event.preventDefault();calcAudit()">
+        <h3 id="exp-t">Suppression-risk audit</h3>
+        <div class="field"><label for="ctype">Content type</label>
+          <select id="ctype">
+            <option value="supp">Supplement / nutraceutical</option>
+            <option value="tele">Telehealth / clinical service</option>
+            <option value="mental">Mental-health / wellness education</option>
+            <option value="device">Medical device / diagnostic</option>
+            <option value="edu">General health education / creator</option>
+          </select></div>
+        <div class="field"><label for="plat">Primary platform</label>
+          <select id="plat">
+            <option value="meta">Meta (Facebook / Instagram)</option>
+            <option value="google">Google (Search / YouTube ads)</option>
+            <option value="tiktok">TikTok</option>
+            <option value="linkedin">LinkedIn</option>
+          </select></div>
+        <div class="field"><label id="rlab" for="r1">Risk factors present (check all that apply)</label>
+          <div class="risks" role="group" aria-labelledby="rlab">
+            <label><input type="checkbox" id="r1" value="claim"> Direct-effect / cure claims</label>
+            <label><input type="checkbox" value="prohib"> Prohibited terms (e.g. "cures," "guaranteed")</label>
+            <label><input type="checkbox" value="link"> Outbound commercial links</label>
+            <label><input type="checkbox" value="source"> Unvetted / weak sourcing</label>
+            <label><input type="checkbox" value="cert"> Running ads without certification</label>
+            <label><input type="checkbox" value="sensitive"> Sensitive-audience targeting</label>
+          </div>
+        </div>
+        <button class="btn btn--primary" type="submit">Score my risk →</button>
+      </form>
+      <div class="out reveal" role="status" aria-live="polite">
+        <div class="out__lab">Your suppression-risk score</div>
+        <div class="out__big" id="aud-score">—</div>
+        <div class="meter" aria-hidden="true"><div class="meter__fill" id="aud-meter"></div></div>
+        <ul id="aud-list"><li>Select your content type, platform, and risk factors to see specific EDSA fixes.</li></ul>
+        <div class="flag" id="aud-flag"></div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="sec-head reveal">
+      <p class="eyebrow">The cost of getting it wrong</p>
+      <h2 class="h2">What suppressed reach actually costs</h2>
+      <p class="lead">Chasing engagement tactics against a policy throttle burns budget on impressions that never arrive. Here's the price of diagnosing the wrong cause.</p>
+    </div>
+    <div class="grid grid-2">
+      <form class="tool reveal" aria-labelledby="wrong-t" onsubmit="event.preventDefault();calcWrong()">
+        <h3 id="wrong-t">Suppressed-reach cost calculator</h3>
+        <div class="field"><label for="spend">Monthly content / ad spend (USD)</label>
+          <input id="spend" type="number" inputmode="numeric" min="0" step="100" value="8000"></div>
+        <div class="field"><label for="supp">Est. share of reach suppressed by policy issues</label>
+          <select id="supp"><option value="0.25">25% (mild throttling)</option><option value="0.45" selected>45% (moderate)</option><option value="0.65">65% (severe / repeat flags)</option></select></div>
+        <button class="btn btn--primary" type="submit">Calculate the cost →</button>
+      </form>
+      <div class="out reveal" role="status" aria-live="polite">
+        <div class="out__lab">Annualized spend reaching no one</div>
+        <div class="out__big" id="wrong-num">$—</div>
+        <ul><li>Plus the compounding cost: repeat flags lower account-level trust, so future posts start throttled.</li><li>This is the price of treating a policy problem as a posting-schedule problem.</li></ul>
+        <div class="flag">Illustrative model. Not legal or platform-policy advice. Scoped to your own facts in a real audit.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="how" aria-labelledby="how-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">How it works</p>
+      <h2 class="h2" id="how-h">A repeatable audit method, not a one-off reach hack</h2>
+      <p class="lead">Every Aloha AI audit runs the same three-stage pipeline, so the diagnosis holds up against the next policy update, not just the current feed.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Regulatory Intelligence Layer (RIL)</h3><p class="muted">Read the actual policy surfaces: published platform content and ad standards, health-and-wellness categories, and certification requirements, captured with source and review date. No engagement folklore.</p></div></div>
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Resolve to an Operator Layer (ROL) via EDSA</h3><p class="muted">Raw policy becomes a content decision you can act on: which claim to reframe, which link to move, what to certify. Structured as Evidence · Discussion · Self-determination · Action, it closes the Operator Execution Gap.</p></div></div>
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Auto-refresh &amp; alert</h3><p class="muted">Platform policies change often. The audit re-checks its policy sources on a schedule (Upstash · Vercel · Exa) and can ping you when a standard shifts, so your content system doesn't drift back into suppression.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- METHOD / PROVENANCE LEDGER -->
+<section class="section section--paper" id="sources" aria-labelledby="src-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Audit-ready method ledger</p>
+      <h2 class="h2" id="src-h">The basis for every diagnosis, traced and confidence-scored</h2>
+      <p class="lead">The rigor is the product. Each element carries its basis, review date, and a confidence rating. We describe published policy <em>categories</em> and cite the certification concept; we do not fabricate specific policy quotes.</p>
+    </div>
+    <div class="table-wrap reveal">
+      <table class="data">
+        <caption class="small muted" style="text-align:left;padding:.6rem .8rem">Method ledger — reviewed 2026-07-04</caption>
+        <thead><tr><th scope="col">Element</th><th scope="col">Basis</th><th scope="col">Reviewed</th><th scope="col">Confidence</th></tr></thead>
+        <tbody>
+          <tr><td>Platforms restrict distribution &amp; ad eligibility for unproven / prohibited health claims (cure, diagnosis, direct-effect language)</td><td><span class="cite">Meta Transparency Center — Health &amp; Wellness ad standards (category, not verbatim quote)</span></td><td>2026-07-04</td><td><span class="chip chip--hi">High</span></td></tr>
+          <tr><td>LegitScript certification is required to advertise many healthcare, pharmacy, telehealth &amp; addiction-treatment services on major platforms (Google, Meta, and others)</td><td><span class="cite">LegitScript — Healthcare Certification (concept &amp; platform recognition)</span></td><td>2026-07-04</td><td><span class="chip chip--hi">High</span></td></tr>
+          <tr><td>Sensitive-audience targeting (body-image, health conditions) carries restrictions: minor exclusions, placement limits, tracking limits</td><td><span class="cite">Meta Health &amp; Wellness restricted-goods policy (category description)</span></td><td>2026-07-04</td><td><span class="chip chip--med">Med · category-level</span></td></tr>
+          <tr><td>EDSA structure: Evidence · Discussion · Self-determination · Action, reframing claims to stay inside policy without losing rigor</td><td><span class="cite">RN Collins — EDSA framework (Aloha AI named IP)</span></td><td>2026-07-04</td><td><span class="chip chip--hi">High</span></td></tr>
+          <tr><td>Outbound links &amp; risky domains commonly deprioritized in organic distribution</td><td><span class="cite">Platform content-distribution norms (interpretive; verify per platform)</span></td><td>2026-07-04</td><td><span class="chip chip--med">Med · interpretive</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small muted reveal" style="margin-top:var(--s4);max-width:74ch"><strong>Verification checkpoint:</strong> platform policies change frequently and vary by region and account. Figures describe policy categories as reviewed on the date shown; confirm the operative policy text on each platform before acting on any single claim.</p>
+  </div>
+</section>
+
+<!-- DIFFERENTIATION / NAMED IP -->
+<section class="section" id="ip" aria-labelledby="dif-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Why this, not a growth agency</p>
+      <h2 class="h2" id="dif-h">Named frameworks, not reach hacks</h2>
+      <p class="lead">Most reach advice is folklore done confidently. This is built on named, defensible frameworks, so you leave able to publish inside the policy line yourself, not renting a hashtag list.</p>
+    </div>
+    <div class="grid grid-4 keep-2">
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">EDSA</p><h3 class="h3">EDSA Framework</h3><p class="small muted">Evidence · Discussion · Self-determination · Action. The central structure that keeps rigorous health content compliant and un-suppressed.</p></div>
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">RIL → ROL</p><h3 class="h3">Regulatory Intelligence Layer</h3><p class="small muted">Policy-surface monitoring resolved into content decisions you can act on.</p></div>
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">OEG</p><h3 class="h3">Operator Execution Gap</h3><p class="small muted">The gap between what AI says caused a throttle and the policy mechanism that actually did.</p></div>
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">Cert. gate</p><h3 class="h3">Ad-eligibility mapping</h3><p class="small muted">LegitScript &amp; category gates mapped to your services, so paid reach is even available before you spend.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section--paper" id="faq" aria-labelledby="faq-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Questions</p>
+      <h2 class="h2" id="faq-h">What people ask first</h2>
+    </div>
+    <div class="reveal">
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq1"><span>Is this legal advice?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq1"><div class="acc__panel-inner">No. This is platform-policy and regulatory intelligence, not legal advice. RN Collins is a JD candidate, not a licensed attorney; nothing here is legal advice or creates an attorney–client relationship. It's designed to make platform policy legible and to help you publish rigorous content that survives review.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq2"><span>Are you quoting exact platform policies?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq2"><div class="acc__panel-inner">We describe published policy <em>categories</em> (the health-and-wellness restrictions, the certification gate, sensitive-audience rules) and cite the concept, not fabricated verbatim quotes. Platform policies change often and vary by region and account, so every element in the method ledger carries a review date and a verification checkpoint.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq3"><span>Won't compliant reframing water down my message?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq3"><div class="acc__panel-inner">That's exactly what EDSA is built to prevent. The framework keeps the Evidence intact and reframes only the <em>claim structure</em>: promise becomes discussion, prescription becomes self-determination. You keep the rigor and the substance; you drop the phrasing that trips the policy filter.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq4"><span>Can I get an audit for my specific brand and platforms?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq4"><div class="acc__panel-inner">Yes. That's the product. This is a reference build; a tailored audit plus a content system for your exact platforms, services, and claim library is what Aloha AI produces. Use the contact link below.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq5"><span>What data do you collect from me?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq5"><div class="acc__panel-inner">None. There is no login, no tracking, and no cookies. Every calculation runs locally in your browser and nothing you enter leaves your device.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- THE SERVICE / OFFER -->
+<section class="section" id="start" aria-labelledby="offer-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The service</p>
+      <h2 class="h2" id="offer-h">How this becomes yours</h2>
+      <p class="lead">Health and wellness brands and regulated-industry creators lose reach they can't explain, then burn budget chasing the wrong fix. I audit your content and platforms against real policy categories and build an EDSA-structured content system that recovers reach without hollowing out the message.</p>
+    </div>
+    <div class="grid grid-3 reveal">
+      <div class="card"><div class="card__ic" aria-hidden="true">1</div><h3>What I build</h3><p class="small muted">A suppression audit scoped to your platforms, services, and claim library, plus an EDSA content system and a compliant tag/phrasing bank.</p></div>
+      <div class="card"><div class="card__ic" aria-hidden="true">2</div><h3>What you get</h3><ul class="small muted" style="padding-left:1.1rem;margin:.35rem 0 0"><li>A policy-grounded diagnosis with confidence scores</li><li>An EDSA rewrite system for your recurring content</li><li>Certification / ad-eligibility mapping</li><li>Change-alerts when a platform policy shifts</li></ul></div>
+      <div class="card"><div class="card__ic" aria-hidden="true">3</div><h3>How to start</h3><p class="small muted">A 20-minute scoping call. If it's a fit, a tailored audit turns around in days, not weeks.</p></div>
+    </div>
+    <p class="lead reveal" style="margin-top:var(--s5)"><strong>Pricing:</strong> audits + content systems start from <strong>$4,000 build + $1,500/mo</strong>, scoped to your platforms. Three-month minimum on any retainer; 30 days' notice to stop.</p>
+  </div>
+</section>
+<!-- CTA HIERARCHY -->
+<section class="section section--ink" id="contact" aria-labelledby="cta-h">
+  <div class="wrap" style="text-align:center">
+    <p class="eyebrow">Aloha AI · Honolulu</p>
+    <h2 class="h2" id="cta-h" style="max-width:24ch;margin-inline:auto">Ready when you are.</h2>
+    <p class="lead" style="margin:var(--s4) auto var(--s5);text-align:center">Convinced, curious, or comparing: there's a path for each.</p>
+    <div style="display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn--primary" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Start with a Systems Audit →</a>
+      <a class="btn btn--ghost" href="https://aloha-ai-consulting.vercel.app/tools/ai-readiness-scorecard" target="_blank" rel="noopener">Take the 2-minute assessment</a>
+    </div>
+    <p class="small" style="margin-top:var(--s5);color:var(--muted-on-ink)">Prefer email? <a href="#" data-email style="color:var(--teal-mint)">Email RN</a> &nbsp;·&nbsp; or connect on <a href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noopener" style="color:var(--teal-mint)">LinkedIn</a></p>
+    <p id="emailReveal" hidden style="margin-top:.5rem;font-family:var(--mono);font-size:.8rem;color:#CFDAD5"></p>
+  </div>
+</section>
+<footer class="footer" aria-labelledby="foot-h">
+  <div class="wrap">
+    <h2 id="foot-h" class="small" style="position:absolute;left:-999px">Site footer</h2>
+    <div class="footer__grid">
+      <div>
+        <a class="nav__brand" href="#top" style="color:var(--cream)" aria-label="Aloha AI home"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#7FE0C4"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#7FE0C4" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg> Aloha&nbsp;AI</a>
+        <p class="small" style="margin-top:var(--s3);max-width:38ch;color:#9FB6AE">AI implementation built around how humans actually trust and use it, for regulated or reputation-sensitive professions.</p>
+      </div>
+      <div>
+        <h4>This site</h4>
+        <ul>
+          <li><a href="#gap">The gap</a></li>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#start">The service</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Aloha AI</h4>
+        <ul>
+          <li><a href="https://aloha-ai-consulting.vercel.app" target="_blank" rel="noopener">The practice</a></li>
+          <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a call</a></li>
+          <li><a href="https://aloha-ai-consulting.vercel.app/tools/ai-readiness-scorecard" target="_blank" rel="noopener">Assessment</a></li>
+          <li><a href="https://rn-portfolio-khaki.vercel.app" target="_blank" rel="noopener">Portfolio → RN Builds</a></li>
+          <li><a href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://aloha-ai-consulting.vercel.app/privacy" target="_blank" rel="noopener">Privacy</a></li>
+          <li><a href="https://aloha-ai-consulting.vercel.app/terms" target="_blank" rel="noopener">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="disc small">Regulatory and platform intelligence, not legal advice. RN Collins is a JD candidate, not a licensed attorney; nothing here is legal advice or an attorney–client relationship. Platform policies described are categories as reviewed on the date shown and change frequently. Confirm the operative policy before relying on it.</p>
+    <p class="fine">Aloha AI · a DBA of Rayven-Nikkita Collins LLC · Honolulu, HI · No tracking, no cookies · Policy categories reviewed 2026-07-04; confirm operative platform policy before publishing.</p>
+  </div>
+</footer>
+
+<script>
+  // ---- mobile nav ----
+  (function(){
+    var b=document.getElementById('burger'),l=document.getElementById('navlinks');
+    function set(o){b.setAttribute('aria-expanded',o);l.classList.toggle('open',o);b.setAttribute('aria-label',o?'Close menu':'Open menu');}
+    b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true');});
+    l.addEventListener('click',function(e){if(e.target.tagName==='A')set(false);});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});
+  })();
+  // ---- accordion ----
+  document.querySelectorAll('.acc__btn').forEach(function(btn){
+    var panel=document.getElementById(btn.getAttribute('aria-controls'));
+    btn.addEventListener('click',function(){
+      var open=btn.getAttribute('aria-expanded')==='true';
+      btn.setAttribute('aria-expanded',!open);
+      panel.style.maxHeight=open?null:panel.scrollHeight+'px';
+    });
+  });
+  // ---- personalization slot ?for= ----
+  (function(){var p=new URLSearchParams(location.search).get('for');if(p){document.getElementById('foryou').textContent=p;}})();
+  // ---- calculators ----
+  function fmt(n){return '$'+Math.round(n).toLocaleString('en-US');}
+  function calcAudit(){
+    var ctype=document.getElementById('ctype').value,
+        plat=document.getElementById('plat').value,
+        boxes=document.querySelectorAll('#audit .risks input[type=checkbox]'),
+        picked=[];
+    boxes.forEach(function(b){if(b.checked)picked.push(b.value);});
+    // weighted policy-risk scoring
+    var W={claim:28,prohib:26,cert:22,sensitive:14,link:10,source:8};
+    var score=0;picked.forEach(function(v){score+=W[v]||0;});
+    // content-type / platform amplifiers
+    if((ctype==='supp'||ctype==='device')&&picked.indexOf('claim')>-1)score+=8;
+    if((ctype==='tele')&&picked.indexOf('cert')<0)score+=6;   // telehealth typically needs cert
+    if(plat==='meta'&&picked.indexOf('sensitive')>-1)score+=6;
+    if(score>100)score=100;
+    var band=score>=66?'High':score>=33?'Moderate':'Low';
+    document.getElementById('aud-score').textContent=score+' / 100 · '+band;
+    document.getElementById('aud-meter').style.width=score+'%';
+    var fixes=[];
+    if(picked.indexOf('claim')>-1)fixes.push('EDSA · Discussion — reframe direct-effect claims as "what the research explores," not a promise of outcome.');
+    if(picked.indexOf('prohib')>-1)fixes.push('EDSA · Discussion — strip prohibited terms ("cures," "guaranteed," "miracle"); these trigger the health-claims restriction outright.');
+    if(picked.indexOf('cert')>-1)fixes.push('EDSA · Evidence — map your services to the LegitScript / certification gate; paid reach is unavailable until you clear it.');
+    if(picked.indexOf('sensitive')>-1)fixes.push('EDSA · Self-determination — remove exploitative body-image framing and tighten audience config (exclude minors, respect placement limits).');
+    if(picked.indexOf('link')>-1)fixes.push('EDSA · Action — move commercial links off the post; give a native, low-risk next step the platform trusts.');
+    if(picked.indexOf('source')>-1)fixes.push('EDSA · Evidence — attach primary, credible sourcing; weak or risky domains flag the whole post.');
+    if(!picked.length)fixes.push('No flagged factors selected — low policy exposure. Keep sourcing primary and claims in discussion form to stay clear.');
+    // content-type specific note
+    if(ctype==='tele')fixes.push('Telehealth note: certification and licensing legibility usually gate ad eligibility before content even matters.');
+    else if(ctype==='mental')fixes.push('Mental-health note: sensitive-category rules are strict here — lead with self-determination, never diagnosis.');
+    var ul=document.getElementById('aud-list');ul.innerHTML='';
+    fixes.forEach(function(x){var li=document.createElement('li');li.textContent=x;ul.appendChild(li);});
+    var flag=band==='High'?'⚑ High suppression risk — a claims or certification issue is likely capping your reach regardless of posting cadence.'
+            :band==='Moderate'?'⚑ Moderate risk — targeted EDSA reframes should recover meaningful reach.'
+            :'⚑ Low risk — mostly clear; keep claims in discussion form and sourcing primary.';
+    document.getElementById('aud-flag').textContent=flag;
+  }
+  function calcWrong(){var spend=+document.getElementById('spend').value||0,sh=+document.getElementById('supp').value||0.45;
+    document.getElementById('wrong-num').textContent=fmt(spend*sh*12);}
+  calcAudit();calcWrong();
+  // ---- reveal on scroll ----
+  (function(){
+    if(matchMedia('(prefers-reduced-motion:reduce)').matches){document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in');});return;}
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(e){io.observe(e);});
+  })();
+</script>
+<script>
+/* email assembled at runtime (not scrapable); copy + mail app + reveal + Gmail */
+(function(){var u='collins.ra',dm='northeastern.edu',a=u+'@'+dm,su=encodeURIComponent('Aloha AI — build inquiry');
+document.querySelectorAll('[data-email]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();
+try{navigator.clipboard&&navigator.clipboard.writeText(a);}catch(_){}
+var o=document.getElementById('emailReveal');if(o){o.hidden=false;o.innerHTML='Copied ✓ &nbsp;<a href="mailto:'+a+'?subject='+su+'" style="color:#7FE0C4">'+a+'</a> &nbsp;·&nbsp; <a href="https://mail.google.com/mail/?view=cm&fs=1&to='+a+'&su='+su+'" target="_blank" rel="noopener" style="color:#7FE0C4">Open in Gmail</a>';}
+window.location.href='mailto:'+a+'?subject='+su;});});})();
+</script>
+</body>
+</html>

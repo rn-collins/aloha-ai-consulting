@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neuro-Architecture & Biophilic Design Intelligence — Aloha AI</title>
+<meta name="description" content="A neuroscience-grounded way to design spaces — and the AI tools for them — that measurably support human nervous systems. Score any space against salutogenic mechanisms, see what generic AI gets wrong, and trace every claim to published research. By RN Collins, Aloha AI.">
+<link rel="canonical" href="https://aloha-ai-consulting.vercel.app/monitors/biophilic-neuroarch">
+<meta name="theme-color" content="#14201C">
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Neuro-Architecture & Biophilic Design Intelligence — Aloha AI">
+<meta property="og:description" content="Not 'add plants for wellness.' A mechanism-grounded read of how space regulates the nervous system — scored, cited, and dated.">
+<meta property="og:image" content="https://aloha-ai-consulting.vercel.app/monitors/biophilic-neuroarch/og-image.png">
+<meta property="og:url" content="https://aloha-ai-consulting.vercel.app/monitors/biophilic-neuroarch">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Neuro-Architecture & Biophilic Design Intelligence — Aloha AI">
+<meta name="twitter:description" content="Score your space against salutogenic mechanisms. Every claim cited, dated, confidence-scored.">
+<meta name="twitter:image" content="https://aloha-ai-consulting.vercel.app/monitors/biophilic-neuroarch/og-image.png">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<script>document.documentElement.className+=' js';</script>
+<link rel="stylesheet" href="./aloha-ds.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Neuro-Architecture & Biophilic Design Intelligence",
+"applicationCategory":"DesignApplication","operatingSystem":"Web","url":"https://aloha-ai-consulting.vercel.app/monitors/biophilic-neuroarch",
+"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+"creator":{"@type":"Person","name":"RN Collins","jobTitle":"Founder, Aloha AI",
+"description":"Neuroscientist (MS) and AI systems builder for regulated industries; author of four Journal of Biophilic Design articles","knowsAbout":["Neuroscience","Biophilic design","Salutogenic design","Neuro-architecture","Attention restoration theory","AI adoption"]},
+"about":"Neuroscience-grounded biophilic and salutogenic design for spaces and the AI tools that support them"}
+</script>
+<style>
+  /* ---- page-specific ---- */
+  .hero{background:radial-gradient(120% 130% at 82% -10%,#1e332c 0%,var(--ink) 55%);color:var(--cream);
+    padding-block:clamp(48px,8vw,92px) clamp(40px,6vw,72px);border-bottom:3px solid var(--teal)}
+  .hero .display{color:var(--cream);max-width:17ch;margin-bottom:var(--s4)}
+  .hero .kicker{color:var(--teal-mint)}
+  .hero .lead{color:#CFDAD5;max-width:58ch}
+  .hero__cta{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:var(--s5)}
+  .hero__meta{margin-top:var(--s5);font-family:var(--mono);font-size:var(--fs-xs);color:#9FB6AE;letter-spacing:.04em;line-height:1.8}
+  .hero__meta b{color:var(--cream)}
+  .livebadge{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:var(--fs-xs);
+    letter-spacing:.08em;text-transform:uppercase;color:#CDE7DF;border:1px solid #2F4A42;border-radius:var(--r-pill);padding:.34rem .72rem;margin-bottom:var(--s4)}
+  .livebadge .dot{width:7px;height:7px;border-radius:50%;background:var(--teal-mint);animation:pulse 2.2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(127,224,196,.5)}70%{box-shadow:0 0 0 7px rgba(127,224,196,0)}100%{box-shadow:0 0 0 0 rgba(127,224,196,0)}}
+  @media(prefers-reduced-motion:reduce){.livebadge .dot{animation:none}}
+  .statbar{background:var(--paper);border-bottom:1px solid var(--line)}
+  .statbar__in{display:flex;flex-wrap:wrap;gap:var(--s6);padding-block:var(--s4)}
+  .statbar .stat{flex:1;min-width:150px}
+  .statbar .k{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .statbar .v{font-family:var(--serif);font-size:1.15rem;color:var(--ink);margin-top:.15rem}
+  .sec-head{margin-bottom:var(--s6);max-width:70ch}
+  .sec-head .h2{margin-bottom:var(--s3)}
+  /* OEG */
+  .oeg{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh-2)}
+  @media(max-width:760px){.oeg{grid-template-columns:1fr}}
+  .oeg__col{background:#fff;padding:var(--s5)}
+  .oeg__col.bad{background:var(--red-l)}
+  .oeg__tag{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.09em;text-transform:uppercase;margin-bottom:var(--s3);display:flex;align-items:center;gap:.45rem;flex-wrap:wrap}
+  .oeg__col.bad .oeg__tag{color:var(--red)}
+  .oeg__col.good .oeg__tag{color:var(--green)}
+  .oeg__q{font-family:var(--serif);font-size:1.05rem;font-style:italic;margin-bottom:.7rem}
+  .oeg__why{margin-top:var(--s4);padding-top:var(--s3);border-top:1px dashed var(--line);font-size:var(--fs-sm);color:var(--muted)}
+  /* scorer toggles */
+  .toggles{display:grid;gap:.5rem;margin:var(--s3) 0 var(--s4)}
+  .tgl{display:flex;align-items:flex-start;gap:.7rem;border:1px solid var(--line);border-radius:var(--r-sm);padding:.7rem .8rem;background:#fff;cursor:pointer;min-height:44px}
+  .tgl:focus-within{box-shadow:var(--sh-focus)}
+  .tgl input{margin-top:.2rem;width:20px;height:20px;flex:none;accent-color:var(--teal-d)}
+  .tgl__t{font-weight:600;font-size:.95rem}
+  .tgl__d{font-size:var(--fs-xs);color:var(--muted);display:block;margin-top:.1rem}
+  .scorebar{height:12px;border-radius:var(--r-pill);background:var(--teal-l);overflow:hidden;margin:.5rem 0}
+  .scorebar__fill{height:100%;background:var(--teal);width:0;transition:width var(--dur) var(--ease)}
+  @media(prefers-reduced-motion:reduce){.scorebar__fill{transition:none}}
+  /* process */
+  .steps{counter-reset:step;display:grid;gap:var(--s5)}
+  .step{display:grid;grid-template-columns:auto 1fr;gap:var(--s4);align-items:start}
+  .step__n{counter-increment:step;width:44px;height:44px;border-radius:12px;background:var(--teal);color:#fff;
+    font-family:var(--serif);font-size:1.3rem;display:grid;place-items:center;flex:none}
+  .step__n::before{content:counter(step)}
+  .card__ic svg{width:20px;height:20px}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="#top" aria-label="Aloha AI home">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#1B7A68"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#1B7A68" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      Aloha&nbsp;AI
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav__links" id="navlinks">
+        <li><a href="#status">Signals</a></li>
+        <li><a href="#gap">The Gap</a></li>
+        <li><a href="#scorer">Score a space</a></li>
+        <li><a href="#evidence">Evidence base</a></li>
+        <li><a href="#method">Method</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li class="nav__cta"><a class="btn btn--primary btn--sm" href="#start">Get started →</a></li>
+      </ul>
+    </nav>
+    <button class="nav__burger" id="burger" aria-label="Open menu" aria-controls="navlinks" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+<span id="top"></span>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-h">
+  <div class="wrap">
+    <span class="livebadge"><span class="dot" aria-hidden="true"></span> Evidence base · retrieved 2026-07-04</span>
+    <p class="eyebrow kicker">Design Intelligence · Neuro-Architecture</p>
+    <h1 class="display" id="hero-h">Space shapes the nervous system. Design it on purpose.</h1>
+    <p class="lead">Not "add a few plants for wellness." A neuroscience-grounded read of <em>how</em> a room regulates attention, stress, and safety: scored against published mechanisms, traced to real research, and turned into a prioritized design decision you can defend to a client, a review board, or an editor.</p>
+    <div class="hero__cta">
+      <a class="btn btn--primary" href="#scorer">Score a space →</a>
+      <a class="btn btn--ghost" href="#gap">See what generic AI gets wrong</a>
+    </div>
+    <p class="hero__meta">Built by <b>RN&nbsp;Collins</b> — Neuroscience (MS) · 4 articles in the <b>Journal of Biophilic Design</b> · AI&nbsp;systems<br>Tailored for: <b id="foryou">architects, design researchers, urban designers &amp; interior content leaders</b></p>
+  </div>
+</section>
+
+<!-- SIGNAL BAR -->
+<div class="statbar" id="status">
+  <div class="wrap statbar__in">
+    <div class="stat"><div class="k">Mechanisms scored</div><div class="v">6 nervous-system pathways</div></div>
+    <div class="stat"><div class="k">Grounding framework</div><div class="v">Salutogenic + biophilic</div></div>
+    <div class="stat"><div class="k">Evidence retrieved</div><div class="v">2026-07-04</div></div>
+    <div class="stat"><div class="k">Runs</div><div class="v">Locally · no data leaves device</div></div>
+  </div>
+</div>
+
+<!-- WHO IT'S FOR -->
+<section class="section" aria-labelledby="aud-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Who this is for</p>
+      <h2 class="h2" id="aud-h">Built for people who have to justify a design, not just feel it</h2>
+      <p class="lead">The same instrument reads four ways, because the burden of proof differs by seat.</p>
+    </div>
+    <div class="grid grid-4 keep-2">
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">◆</div><h3>Architects</h3><p class="small muted">Move from "it feels calm" to a mechanism a client or planning board will accept.</p></div>
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">§</div><h3>Design researchers</h3><p class="small muted">A structured, cited read of a space against named restorative theories. No vibes required.</p></div>
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">$</div><h3>Urban designers</h3><p class="small muted">Score public realm and streetscape against prospect-refuge and restoration at scale.</p></div>
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">✦</div><h3>Interior / content leaders</h3><p class="small muted">Publish home &amp; wellness content that holds up because the mechanism is real.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- OEG -->
+<section class="section section--paper" id="gap" aria-labelledby="gap-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The Operator Execution Gap · applied to design</p>
+      <h2 class="h2" id="gap-h">Ask a generic AI to make a space "calming." Watch it reach for a plant.</h2>
+      <p class="lead">Generic models pattern-match "biophilic" to décor. They can't tell you <em>which nervous-system pathway</em> a change recruits, whether it's supported, or what to prioritize when budget is tight. Same brief, two answers: the fluent-but-decorative one, and the mechanism-grounded one. The distance between them is what an un-defensible design costs.</p>
+    </div>
+    <div class="oeg reveal">
+      <div class="oeg__col bad">
+        <p class="oeg__tag">✕&nbsp;Generic LLM · unsourced</p>
+        <p class="oeg__q">"How do I make this open-plan office feel calmer and healthier?"</p>
+        <p><strong>"Add plants and natural wood tones for a biophilic wellness vibe, use soft lighting, and hang some nature art — it'll instantly feel more relaxing and boost productivity."</strong></p>
+        <p class="oeg__why">Fluent. Pleasant. <strong>Mechanism-blind</strong> — it names décor, not the pathways that actually regulate stress and attention, and it can't tell you what to fund first.</p>
+      </div>
+      <div class="oeg__col good">
+        <p class="oeg__tag">✓&nbsp;Aloha AI · mechanism-grounded <span class="chip chip--src">Salutogenic read</span></p>
+        <p class="oeg__q">Same brief, answered from the research:</p>
+        <p>Start with the <strong>autonomic recovery</strong> levers, not the décor. A genuine <strong>view of nature</strong> and <strong>daylight</strong> are the highest-leverage moves: they engage the pathway behind Ulrich's <em>Stress Recovery Theory</em> and support attention via <em>soft fascination</em> (Kaplan). Then treat the open plan's real deficit: <strong>refuge</strong>. Open-plan is nearly all prospect and no refuge, which reads as low-grade vigilance (Appleton's <em>prospect-refuge</em>).</p>
+        <p>Prioritize: (1) daylight + real views, (2) acoustic and visual refuge nooks, (3) natural materials and air quality. Nature art is a weak proxy, worth doing only where a real view is impossible.</p>
+        <p class="oeg__why"><span class="chip chip--hi"><span class="ic" aria-hidden="true"></span>Confidence: High on mechanism</span> &nbsp;Why you can rely on it: each lever maps to a named, published theory in the ledger below, with retrieval dates. Effect sizes vary by context; this ranks levers, it doesn't promise a number.</p>
+      </div>
+    </div>
+    <p class="small muted reveal" style="margin-top:var(--s4);max-width:70ch"><strong>OEG</strong> — the Operator Execution Gap — is the distance between what AI <em>says</em> and what a designer can <em>defend and build</em>. Closing it is the entire job.</p>
+  </div>
+</section>
+
+<!-- WHAT CHANGES / THE MECHANISMS -->
+<section class="section" aria-labelledby="chg-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The substance</p>
+      <h2 class="h2" id="chg-h">Six pathways a space acts on — décor vs. mechanism</h2>
+      <p class="lead">Biophilic design isn't a style; it's a set of levers on specific nervous-system systems. The left box is how it's usually sold. The right box is what's actually being recruited.</p>
+    </div>
+    <div class="grid grid-2">
+      <div class="card reveal"><h3>View of nature &amp; daylight <span class="chip chip--hi">High leverage</span></h3>
+        <p class="small muted">Décor read: "a nice window." Mechanism: visual access to nature and circadian daylight support <strong>parasympathetic recovery</strong> and reduce sustained stress (Ulrich, Stress Recovery Theory).</p></div>
+      <div class="card reveal"><h3>Soft fascination / greenery <span class="chip chip--hi">High leverage</span></h3>
+        <p class="small muted">Décor read: "plants look good." Mechanism: gently engaging natural stimuli let <strong>directed attention</strong> replenish (Kaplan &amp; Kaplan, Attention Restoration Theory).</p></div>
+      <div class="card reveal"><h3>Prospect &amp; refuge <span class="chip chip--hi">High leverage</span></h3>
+        <p class="small muted">Décor read: "open and airy." Mechanism: humans want to see out (<strong>prospect</strong>) while feeling sheltered (<strong>refuge</strong>); imbalance reads as vigilance (Appleton, prospect-refuge theory).</p></div>
+      <div class="card reveal"><h3>Natural materials &amp; complexity <span class="chip chip--med">Moderate</span></h3>
+        <p class="small muted">Décor read: "wood is trendy." Mechanism: natural materials and ordered complexity are non-rhythmic sensory stimuli associated with preference and comfort (14 Patterns of Biophilic Design).</p></div>
+      <div class="card reveal"><h3>Acoustics <span class="chip chip--med">Moderate</span></h3>
+        <p class="small muted">Décor read: "it's a bit loud." Mechanism: uncontrollable noise is a chronic stressor; acoustic refuge supports a <strong>sense of coherence</strong> (Antonovsky, salutogenesis).</p></div>
+      <div class="card reveal"><h3>Air &amp; thermal quality <span class="chip chip--med">Moderate</span></h3>
+        <p class="small muted">Décor read: "open a window." Mechanism: fresh air, ventilation and thermal variability are direct salutogenic resources, not aesthetics (salutogenic design).</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SCORER (INSTRUMENT) -->
+<section class="section section--paper" id="scorer" aria-labelledby="scorer-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The instrument</p>
+      <h2 class="h2" id="scorer-h">Biophilic Design Scorer</h2>
+      <p class="lead">Toggle the attributes a space actually has. The tool returns a salutogenic / neuro score and a <em>prioritized</em> set of recommendations, highest-leverage mechanism first. Everything runs locally in your browser; nothing you enter leaves your device.</p>
+    </div>
+    <div class="grid grid-2">
+      <form class="tool reveal" aria-labelledby="sc-t" onsubmit="event.preventDefault();scoreSpace()">
+        <h3 id="sc-t">Space attributes</h3>
+        <div class="field"><label for="sptype">Space type</label>
+          <select id="sptype">
+            <option value="work">Workplace / office</option>
+            <option value="home">Home / interior</option>
+            <option value="care">Healthcare / care setting</option>
+            <option value="public">Public realm / streetscape</option>
+          </select></div>
+        <div class="toggles" id="attrs">
+          <label class="tgl"><input type="checkbox" id="a_light" checked><span><span class="tgl__t">Daylight &amp; circadian light</span><span class="tgl__d">Real daylight access, not just bright lamps</span></span></label>
+          <label class="tgl"><input type="checkbox" id="a_view"><span><span class="tgl__t">View of nature</span><span class="tgl__d">A genuine window view of greenery, water or sky</span></span></label>
+          <label class="tgl"><input type="checkbox" id="a_green"><span><span class="tgl__t">Greenery / soft fascination</span><span class="tgl__d">Living plants or dynamic natural stimuli in view</span></span></label>
+          <label class="tgl"><input type="checkbox" id="a_mat"><span><span class="tgl__t">Natural materials</span><span class="tgl__d">Wood, stone, natural textures and ordered complexity</span></span></label>
+          <label class="tgl"><input type="checkbox" id="a_refuge"><span><span class="tgl__t">Prospect &amp; refuge balance</span><span class="tgl__d">Sheltered nooks that still let you see out</span></span></label>
+          <label class="tgl"><input type="checkbox" id="a_acou"><span><span class="tgl__t">Acoustic comfort</span><span class="tgl__d">Controllable noise; quiet is achievable</span></span></label>
+          <label class="tgl"><input type="checkbox" id="a_air"><span><span class="tgl__t">Air &amp; thermal quality</span><span class="tgl__d">Fresh ventilation and comfortable thermal range</span></span></label>
+        </div>
+        <button class="btn btn--primary" type="submit">Score this space →</button>
+      </form>
+      <div class="out reveal" role="status" aria-live="polite">
+        <div class="out__lab">Salutogenic / neuro score</div>
+        <div class="out__big" id="sc-num">—</div>
+        <div class="scorebar" aria-hidden="true"><div class="scorebar__fill" id="sc-fill"></div></div>
+        <div class="out__lab" style="margin-top:var(--s3)">Prioritized recommendations</div>
+        <ul id="sc-list"><li>Toggle attributes and score to see your priorities.</li></ul>
+        <div class="flag" id="sc-flag"></div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- COST OF GETTING IT WRONG -->
+    <div class="sec-head reveal">
+      <p class="eyebrow">The cost of getting it wrong</p>
+      <h2 class="h2">What a decorative "wellness" spend buys you</h2>
+      <p class="lead">The common error: pouring budget into nature <em>imagery</em> and plants while the real levers — daylight, views, refuge — go unaddressed. Here's how much of a project's biophilic budget lands on weak-proxy moves.</p>
+    </div>
+    <div class="grid grid-2">
+      <form class="tool reveal" aria-labelledby="wrong-t" onsubmit="event.preventDefault();calcWrong()">
+        <h3 id="wrong-t">Misallocation estimator</h3>
+        <div class="field"><label for="budget">Biophilic / wellness design budget (USD)</label>
+          <input id="budget" type="number" inputmode="numeric" min="0" step="500" value="60000"></div>
+        <div class="field"><label for="decor">Share going to décor proxies (art, faux plants, finishes)</label>
+          <select id="decor"><option value="0.3">30%</option><option value="0.5" selected>50%</option><option value="0.7">70%</option></select></div>
+        <button class="btn btn--primary" type="submit">Estimate the misallocation →</button>
+      </form>
+      <div class="out reveal" role="status" aria-live="polite">
+        <div class="out__lab">Spend on weak-proxy moves before high-leverage levers</div>
+        <div class="out__big" id="wrong-num">$—</div>
+        <ul><li>This is budget spent on décor that pattern-matches "biophilic" but recruits the weakest mechanisms.</li><li>Re-sequenced behind daylight, views and refuge, the same dollars do more work.</li></ul>
+        <div class="flag">Illustrative model, not a guarantee of outcomes. Effect sizes vary by context. Verify against your project and the mechanisms below.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="method" aria-labelledby="how-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">How it works</p>
+      <h2 class="h2" id="how-h">A repeatable design-intelligence method — not a mood board</h2>
+      <p class="lead">Every Aloha AI instrument runs the same three-stage pipeline. It's why the read stays grounded next month, not just today.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Research Intelligence Layer (RIL)</h3><p class="muted">Peer-reviewed mechanisms only: Ulrich, Kaplan, Appleton, Antonovsky, the 14 Patterns framework, captured with source and retrieval date. No Pinterest-grade "wellness" claims.</p></div></div>
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Resolve to a Design Layer (ROL)</h3><p class="muted">Raw theory becomes a decision a designer can act on: which lever, for which nervous-system pathway, with what confidence and what priority. That closes the Operator Execution Gap.</p></div></div>
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Auto-refresh &amp; alert</h3><p class="muted">The evidence base re-checks its primary sources on a schedule (Upstash · Vercel · Exa) and can flag you when new biophilic or neuro-architecture research lands, so the read never goes stale.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- EVIDENCE BASE / PROVENANCE -->
+<section class="section section--paper" id="evidence" aria-labelledby="src-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Audit-ready evidence base</p>
+      <h2 class="h2" id="src-h">Every mechanism, traced to real research</h2>
+      <p class="lead">The rigor is the product. Each claim carries its mechanism, the real concept name, a retrieval date, and a confidence rating, so a design memo can survive a review board. We cite established theories and their mechanisms; we do <em>not</em> invent specific effect-size statistics.</p>
+    </div>
+    <div class="table-wrap reveal">
+      <table class="data">
+        <caption class="small muted" style="text-align:left;padding:.6rem .8rem">Evidence ledger — retrieved 2026-07-04</caption>
+        <thead><tr><th scope="col">Mechanism (what the space acts on)</th><th scope="col">Real concept &amp; source</th><th scope="col">Retrieved</th><th scope="col">Confidence</th></tr></thead>
+        <tbody>
+          <tr><td>View of nature supports stress recovery / parasympathetic restoration</td><td><span class="cite">Stress Recovery Theory</span> · Ulrich, "View Through a Window May Influence Recovery From Surgery," <em>Science</em> (1984)</td><td>2026-07-04</td><td><span class="chip chip--hi">High</span></td></tr>
+          <tr><td>Natural stimuli replenish depleted directed attention via soft fascination</td><td><span class="cite">Attention Restoration Theory</span> · Kaplan &amp; Kaplan, <em>The Experience of Nature</em> (1989)</td><td>2026-07-04</td><td><span class="chip chip--hi">High</span></td></tr>
+          <tr><td>People prefer seeing out (prospect) while sheltered (refuge); imbalance reads as vigilance</td><td><span class="cite">Prospect-Refuge Theory</span> · Appleton, <em>The Experience of Landscape</em> (1975)</td><td>2026-07-04</td><td><span class="chip chip--med">Med · contested magnitude</span></td></tr>
+          <tr><td>Environments can act as health-generating resources (sense of coherence)</td><td><span class="cite">Salutogenesis</span> · Antonovsky (1979/1987), applied to salutogenic design</td><td>2026-07-04</td><td><span class="chip chip--hi">High</span></td></tr>
+          <tr><td>Nature-in-space, natural analogues and space conditions as design patterns</td><td><span class="cite">14 Patterns of Biophilic Design</span> · Browning et&nbsp;al., Terrapin Bright Green (2014)</td><td>2026-07-04</td><td><span class="chip chip--med">Med · framework</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small muted reveal" style="margin-top:var(--s4);max-width:72ch"><strong>Verification checkpoint:</strong> concept names and sources are current as of the retrieval date. Effect sizes are context-dependent and not asserted here; re-confirm the primary literature before quoting any figure in a report or filing.</p>
+  </div>
+</section>
+
+<!-- DIFFERENTIATION -->
+<section class="section" aria-labelledby="dif-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Why this, not a generic AI</p>
+      <h2 class="h2" id="dif-h">The combination no décor tool holds</h2>
+      <p class="lead">Most "biophilic AI" is a style filter. This is built on named, defensible frameworks, so you leave speaking the mechanism, not renting a mood board.</p>
+    </div>
+    <div class="grid grid-4 keep-2">
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">RIL → ROL</p><h3 class="h3">Research Intelligence Layer</h3><p class="small muted">Peer-reviewed mechanisms resolved into a designer-ready decision layer.</p></div>
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">OEG</p><h3 class="h3">Operator Execution Gap</h3><p class="small muted">The gap between what AI says and what a designer can defend and build.</p></div>
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">SNS</p><h3 class="h3">Salutogenic-Neuro Score</h3><p class="small muted">Ranks a space's levers by nervous-system pathway, not by aesthetic.</p></div>
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">EDSA</p><h3 class="h3">EDSA Framework</h3><p class="small muted">Keeps regulated wellness &amp; design content compliant and un-suppressed across platforms.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section--paper" id="faq" aria-labelledby="faq-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Questions</p>
+      <h2 class="h2" id="faq-h">What people ask first</h2>
+    </div>
+    <div class="reveal">
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq1"><span>Does this promise a specific health outcome?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq1"><div class="acc__panel-inner">No. It ranks design levers by the strength of the published mechanism behind them. The output is illustrative, not a guarantee of outcomes. Effect sizes vary by context, population and execution. We deliberately do not fabricate specific study statistics; we name the real theory and let you verify the primary source.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq2"><span>How current is the evidence?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq2"><div class="acc__panel-inner">Every claim carries a retrieval date (2026-07-04 in this build) and its real concept name and source. Production instruments re-check the literature on a schedule and can alert you when new biophilic or neuro-architecture research lands, so the read stays accurate rather than freezing on the day it shipped.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq3"><span>Can I get one tuned to my building type or content niche?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq3"><div class="acc__panel-inner">Yes. This is a reference build; a tailored version for your building typology, research program, or editorial brand is what Aloha AI produces, usually within days of a scoping conversation. Use the contact link below.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq4"><span>What data do you collect from me?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq4"><div class="acc__panel-inner">None. There is no login, no tracking, and no cookies. Every calculation runs locally in your browser and nothing you enter leaves your device.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- THE SERVICE / OFFER -->
+<section class="section" id="start" aria-labelledby="offer-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The service</p>
+      <h2 class="h2" id="offer-h">How this becomes yours</h2>
+      <p class="lead">Designers, researchers and content leaders make biophilic claims they can't fully defend, because the mechanism lives in scattered literature, not in the tool they're using. I build a tailored instrument for your typology that scores against published mechanisms and resolves them into design decisions you can stand behind.</p>
+    </div>
+    <div class="grid grid-3 reveal">
+      <div class="card"><div class="card__ic" aria-hidden="true">1</div><h3>What I build</h3><p class="small muted">A private scorer and evidence base scoped to your building type, research program, or editorial brand: mechanism-grounded, dated, and confidence-scored.</p></div>
+      <div class="card"><div class="card__ic" aria-hidden="true">2</div><h3>What you get</h3><ul class="small muted" style="padding-left:1.1rem;margin:.35rem 0 0"><li>A live, cited scoring instrument for your spaces</li><li>An audit-ready evidence ledger you can put in a design memo</li><li>Change-alerts when new relevant research lands</li></ul></div>
+      <div class="card"><div class="card__ic" aria-hidden="true">3</div><h3>How to start</h3><p class="small muted">A 20-minute scoping call. If it's a fit, a tailored build turns around in days, not weeks.</p></div>
+    </div>
+    <p class="lead reveal" style="margin-top:var(--s5)"><strong>Pricing —</strong> engagements start from <strong>$4,000 build + $1,500/mo</strong>, scoped to your project. Three-month minimum on any retainer; 30 days' notice to stop.</p>
+  </div>
+</section>
+<!-- CTA HIERARCHY -->
+<section class="section section--ink" id="contact" aria-labelledby="cta-h">
+  <div class="wrap" style="text-align:center">
+    <p class="eyebrow">Aloha AI · Honolulu</p>
+    <h2 class="h2" id="cta-h" style="max-width:24ch;margin-inline:auto">Ready when you are.</h2>
+    <p class="lead" style="margin:var(--s4) auto var(--s5);text-align:center">Convinced, curious, or comparing. There's a path for each.</p>
+    <div style="display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn--primary" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Start with a Systems Audit →</a>
+      <a class="btn btn--ghost" href="https://aloha-ai-consulting.vercel.app/tools/ai-readiness-scorecard" target="_blank" rel="noopener">Take the 2-minute assessment</a>
+    </div>
+    <p class="small" style="margin-top:var(--s5);color:var(--muted-on-ink)">Prefer email? <a href="#" data-email style="color:var(--teal-mint)">Email RN</a> &nbsp;·&nbsp; or connect on <a href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noopener" style="color:var(--teal-mint)">LinkedIn</a></p>
+    <p id="emailReveal" hidden style="margin-top:.5rem;font-family:var(--mono);font-size:.8rem;color:#CFDAD5"></p>
+  </div>
+</section>
+<footer class="footer" aria-labelledby="foot-h">
+  <div class="wrap">
+    <h2 id="foot-h" class="small" style="position:absolute;left:-999px">Site footer</h2>
+    <div class="footer__grid">
+      <div>
+        <a class="nav__brand" href="#top" style="color:var(--cream)" aria-label="Aloha AI home"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#7FE0C4"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#7FE0C4" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg> Aloha&nbsp;AI</a>
+        <p class="small" style="margin-top:var(--s3);max-width:38ch;color:#9FB6AE">AI implementation built around how humans actually trust and use it, for regulated or reputation-sensitive professions.</p>
+      </div>
+      <div>
+        <h4>This site</h4>
+        <ul>
+          <li><a href="#gap">The gap</a></li>
+          <li><a href="#method">How it works</a></li>
+          <li><a href="#start">The service</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Aloha AI</h4>
+        <ul>
+          <li><a href="https://aloha-ai-consulting.vercel.app" target="_blank" rel="noopener">The practice</a></li>
+          <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a call</a></li>
+          <li><a href="https://aloha-ai-consulting.vercel.app/tools/ai-readiness-scorecard" target="_blank" rel="noopener">Assessment</a></li>
+          <li><a href="https://rn-portfolio-khaki.vercel.app" target="_blank" rel="noopener">Portfolio → RN Builds</a></li>
+          <li><a href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://aloha-ai-consulting.vercel.app/privacy" target="_blank" rel="noopener">Privacy</a></li>
+          <li><a href="https://aloha-ai-consulting.vercel.app/terms" target="_blank" rel="noopener">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="disc small">Design intelligence, not a guarantee of outcomes. Grounded in published mechanisms; effect sizes vary by context. RN Collins holds an MS in neuroscience and has published in the Journal of Biophilic Design; this is research-grounded design intelligence, not medical, structural-engineering, or code-compliance advice. Confirm all claims against the primary literature and applicable codes before relying on them.</p>
+    <p class="fine">Aloha AI · a DBA of Rayven-Nikkita Collins LLC · Honolulu, HI · No tracking, no cookies · Evidence retrieved 2026-07-04; confirm against the primary literature before publishing.</p>
+  </div>
+</footer>
+
+<script>
+  // ---- mobile nav ----
+  (function(){
+    var b=document.getElementById('burger'),l=document.getElementById('navlinks');
+    function set(o){b.setAttribute('aria-expanded',o);l.classList.toggle('open',o);b.setAttribute('aria-label',o?'Close menu':'Open menu');}
+    b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true');});
+    l.addEventListener('click',function(e){if(e.target.tagName==='A')set(false);});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});
+  })();
+  // ---- accordion ----
+  document.querySelectorAll('.acc__btn').forEach(function(btn){
+    var panel=document.getElementById(btn.getAttribute('aria-controls'));
+    btn.addEventListener('click',function(){
+      var open=btn.getAttribute('aria-expanded')==='true';
+      btn.setAttribute('aria-expanded',!open);
+      panel.style.maxHeight=open?null:panel.scrollHeight+'px';
+    });
+  });
+  // ---- personalization slot ?for= ----
+  (function(){var p=new URLSearchParams(location.search).get('for');if(p){document.getElementById('foryou').textContent=p;}})();
+  // ---- scorer ----
+  function fmt(n){return '$'+Math.round(n).toLocaleString('en-US');}
+  // weights = mechanism leverage (out of 100)
+  var LEV=[
+    {id:'a_light',w:20,t:'Daylight & circadian light',rec:'Maximize real daylight — it engages parasympathetic recovery (Ulrich) and anchors circadian rhythm.'},
+    {id:'a_view', w:20,t:'View of nature',rec:'Secure a genuine window view of nature — the highest-leverage stress-recovery lever (Ulrich, Stress Recovery Theory).'},
+    {id:'a_refuge',w:18,t:'Prospect & refuge balance',rec:'Add sheltered refuge that still sees out — imbalance reads as low-grade vigilance (Appleton).'},
+    {id:'a_green',w:14,t:'Greenery / soft fascination',rec:'Bring living greenery or dynamic natural stimuli into view to replenish directed attention (Kaplan, ART).'},
+    {id:'a_acou', w:12,t:'Acoustic comfort',rec:'Give people control over noise; uncontrollable sound is a chronic stressor (salutogenesis).'},
+    {id:'a_air',  w:10,t:'Air & thermal quality',rec:'Improve ventilation and thermal comfort — direct salutogenic resources, not aesthetics.'},
+    {id:'a_mat',  w:6, t:'Natural materials',rec:'Introduce natural materials and ordered complexity to support preference and comfort (14 Patterns).'}
+  ];
+  function scoreSpace(){
+    var type=document.getElementById('sptype').value,score=0,missing=[];
+    LEV.forEach(function(m){
+      if(document.getElementById(m.id).checked){score+=m.w;}else{missing.push(m);}
+    });
+    // context nudge: refuge matters more in workplace/public; view matters more in care/home
+    var note='';
+    if((type==='work'||type==='public')&&!document.getElementById('a_refuge').checked){note='For a '+(type==='work'?'workplace':'public space')+', refuge is the most under-served lever — prioritize it.';}
+    else if((type==='care'||type==='home')&&!document.getElementById('a_view').checked){note='For a '+(type==='care'?'care setting':'home')+', a real view of nature is the single highest-value addition.';}
+    document.getElementById('sc-num').textContent=score+' / 100';
+    document.getElementById('sc-fill').style.width=score+'%';
+    var ul=document.getElementById('sc-list');ul.innerHTML='';
+    if(missing.length===0){var li=document.createElement('li');li.textContent='Strong across all six pathways. Protect what you have and document the mechanisms.';ul.appendChild(li);}
+    else{
+      missing.sort(function(a,b){return b.w-a.w;}).slice(0,4).forEach(function(m){
+        var li=document.createElement('li');li.innerHTML='<strong>'+m.t+'</strong> — '+m.rec;ul.appendChild(li);
+      });
+    }
+    document.getElementById('sc-flag').textContent=note||'Prioritized highest-leverage mechanism first. Illustrative ranking, not a guarantee of outcomes.';
+  }
+  function calcWrong(){var b=+document.getElementById('budget').value||0,d=+document.getElementById('decor').value||0.5;
+    document.getElementById('wrong-num').textContent=fmt(b*d);}
+  scoreSpace();calcWrong();
+  // ---- reveal on scroll ----
+  (function(){
+    if(matchMedia('(prefers-reduced-motion:reduce)').matches){document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in');});return;}
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(e){io.observe(e);});
+  })();
+</script>
+<script>
+/* email assembled at runtime (not scrapable); copy + mail app + reveal + Gmail */
+(function(){var u='collins.ra',dm='northeastern.edu',a=u+'@'+dm,su=encodeURIComponent('Aloha AI — build inquiry');
+document.querySelectorAll('[data-email]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();
+try{navigator.clipboard&&navigator.clipboard.writeText(a);}catch(_){}
+var o=document.getElementById('emailReveal');if(o){o.hidden=false;o.innerHTML='Copied ✓ &nbsp;<a href="mailto:'+a+'?subject='+su+'" style="color:#7FE0C4">'+a+'</a> &nbsp;·&nbsp; <a href="https://mail.google.com/mail/?view=cm&fs=1&to='+a+'&su='+su+'" target="_blank" rel="noopener" style="color:#7FE0C4">Open in Gmail</a>';}
+window.location.href='mailto:'+a+'?subject='+su;});});})();
+</script>
+</body>
+</html>

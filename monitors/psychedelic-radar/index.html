@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Psychedelic Regulatory Radar — Aloha AI</title>
+<meta name="description" content="A primary-source-grounded status monitor for psilocybin, MDMA-assisted therapy, and ketamine telehealth across states + federal. See what generic AI gets confidently wrong, check any substance × state, and trace every figure to its source. By RN Collins, Aloha AI.">
+<link rel="canonical" href="https://aloha-ai-consulting.vercel.app/monitors/psychedelic-radar">
+<meta name="theme-color" content="#14201C">
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Psychedelic Regulatory Radar — Aloha AI">
+<meta property="og:description" content="Not a headline scraper. A sourced instrument tracking psilocybin, MDMA-assisted therapy, and ketamine telehealth — and what generic AI gets confidently wrong.">
+<meta property="og:image" content="https://aloha-ai-consulting.vercel.app/monitors/psychedelic-radar/og-image.png">
+<meta property="og:url" content="https://aloha-ai-consulting.vercel.app/monitors/psychedelic-radar">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Psychedelic Regulatory Radar — Aloha AI">
+<meta name="twitter:description" content="Psilocybin, MDMA-assisted therapy, ketamine telehealth. Every figure cited, dated, confidence-scored.">
+<meta name="twitter:image" content="https://aloha-ai-consulting.vercel.app/monitors/psychedelic-radar/og-image.png">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<script>document.documentElement.className+=' js';</script>
+<link rel="stylesheet" href="./aloha-ds.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Psychedelic Regulatory Radar",
+"applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://aloha-ai-consulting.vercel.app/monitors/psychedelic-radar",
+"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+"creator":{"@type":"Person","name":"RN Collins","jobTitle":"Founder, Aloha AI",
+"description":"Neuroscientist (MS), JD candidate, and AI systems builder for regulated industries","knowsAbout":["Controlled substances regulation","Psychedelic-assisted therapy policy","Telehealth prescribing law","Regulatory intelligence","Neuroscience of trust"]},
+"about":"Multi-state and federal regulatory status of psilocybin, MDMA-assisted therapy, and ketamine telehealth"}
+</script>
+<style>
+  /* ---- page-specific ---- */
+  .hero{background:radial-gradient(120% 130% at 85% -10%,#1e332c 0%,var(--ink) 55%);color:var(--cream);
+    padding-block:clamp(48px,8vw,92px) clamp(40px,6vw,72px);border-bottom:3px solid var(--teal)}
+  .hero .display{color:var(--cream);max-width:17ch;margin-bottom:var(--s4)}
+  .hero .kicker{color:var(--teal-mint)}
+  .hero .lead{color:#CFDAD5;max-width:58ch}
+  .hero__cta{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:var(--s5)}
+  .hero__meta{margin-top:var(--s5);font-family:var(--mono);font-size:var(--fs-xs);color:#9FB6AE;letter-spacing:.04em;line-height:1.8}
+  .hero__meta b{color:var(--cream)}
+  .livebadge{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:var(--fs-xs);
+    letter-spacing:.08em;text-transform:uppercase;color:#CDE7DF;border:1px solid #2F4A42;border-radius:var(--r-pill);padding:.34rem .72rem;margin-bottom:var(--s4)}
+  .livebadge .dot{width:7px;height:7px;border-radius:50%;background:var(--teal-mint);animation:pulse 2.2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(127,224,196,.5)}70%{box-shadow:0 0 0 7px rgba(127,224,196,0)}100%{box-shadow:0 0 0 0 rgba(127,224,196,0)}}
+  .statbar{background:var(--paper);border-bottom:1px solid var(--line)}
+  .statbar__in{display:flex;flex-wrap:wrap;gap:var(--s6);padding-block:var(--s4)}
+  .statbar .stat{flex:1;min-width:150px}
+  .statbar .k{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .statbar .v{font-family:var(--serif);font-size:1.15rem;color:var(--ink);margin-top:.15rem}
+  .sec-head{margin-bottom:var(--s6);max-width:70ch}
+  .sec-head .h2{margin-bottom:var(--s3)}
+  /* OEG */
+  .oeg{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh-2)}
+  @media(max-width:760px){.oeg{grid-template-columns:1fr}}
+  .oeg__col{background:#fff;padding:var(--s5)}
+  .oeg__col.bad{background:var(--red-l)}
+  .oeg__tag{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.09em;text-transform:uppercase;margin-bottom:var(--s3);display:flex;align-items:center;gap:.45rem;flex-wrap:wrap}
+  .oeg__col.bad .oeg__tag{color:var(--red)}
+  .oeg__col.good .oeg__tag{color:var(--green)}
+  .oeg__q{font-family:var(--serif);font-size:1.05rem;font-style:italic;margin-bottom:.7rem}
+  .oeg__why{margin-top:var(--s4);padding-top:var(--s3);border-top:1px dashed var(--line);font-size:var(--fs-sm);color:var(--muted)}
+  /* status explorer */
+  .expl-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s5)}
+  @media(max-width:760px){.expl-grid{grid-template-columns:1fr}}
+  .status-line{display:flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.06em;text-transform:uppercase;margin-bottom:var(--s3)}
+  .status-dot{width:9px;height:9px;border-radius:50%;flex:none}
+  .st-legal .status-dot{background:var(--green)}.st-legal{color:var(--green)}
+  .st-limited .status-dot{background:#B8860B}.st-limited{color:#8a6508}
+  .st-illegal .status-dot{background:var(--red)}.st-illegal{color:var(--red)}
+  .kv{display:grid;grid-template-columns:auto 1fr;gap:.35rem .8rem;margin-top:var(--s3);font-size:var(--fs-sm)}
+  .kv dt{font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);align-self:start}
+  /* process */
+  .steps{counter-reset:step;display:grid;gap:var(--s5)}
+  .step{display:grid;grid-template-columns:auto 1fr;gap:var(--s4);align-items:start}
+  .step__n{counter-increment:step;width:44px;height:44px;border-radius:12px;background:var(--teal);color:#fff;
+    font-family:var(--serif);font-size:1.3rem;display:grid;place-items:center;flex:none}
+  .step__n::before{content:counter(step)}
+  .aud__ic,.card__ic svg{width:20px;height:20px}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="#top" aria-label="Aloha AI home">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#1B7A68"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#1B7A68" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      Aloha&nbsp;AI
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav__links" id="navlinks">
+        <li><a href="#status">Status</a></li>
+        <li><a href="#gap">The Gap</a></li>
+        <li><a href="#explorer">Check status</a></li>
+        <li><a href="#sources">Sources</a></li>
+        <li><a href="#method">Method</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li class="nav__cta"><a class="btn btn--primary btn--sm" href="#start">Get started →</a></li>
+      </ul>
+    </nav>
+    <button class="nav__burger" id="burger" aria-label="Open menu" aria-controls="navlinks" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+<span id="top"></span>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-h">
+  <div class="wrap">
+    <span class="livebadge"><span class="dot" aria-hidden="true"></span> Live · retrieved 2026-07-04</span>
+    <p class="eyebrow kicker">Regulatory Intelligence · Psychedelics</p>
+    <h1 class="display" id="hero-h">Psychedelic regulation, told straight, with the receipts.</h1>
+    <p class="lead">A sourced instrument, not a headline scraper. Track psilocybin, MDMA-assisted therapy, and ketamine telehealth across <em>every</em> state and the federal line. See exactly what generic AI gets confidently wrong, and trace every status to its primary source. So it holds up in a board deck <em>and</em> in a compliance memo.</p>
+    <div class="hero__cta">
+      <a class="btn btn--primary" href="#explorer">Check a substance × state →</a>
+      <a class="btn btn--ghost" href="#gap">See what AI gets wrong</a>
+    </div>
+    <p class="hero__meta">Built by <b>RN&nbsp;Collins</b>. Neuroscience (MS) · Administrative&nbsp;Law (JD&nbsp;candidate) · AI&nbsp;systems<br>Tailored for: <b id="foryou">psychedelic-health orgs, ketamine-telehealth platforms &amp; legal-ops teams</b></p>
+  </div>
+</section>
+
+<!-- STATUS BAR -->
+<div class="statbar" id="status">
+  <div class="wrap statbar__in">
+    <div class="stat"><div class="k">MDMA-assisted therapy (federal)</div><div class="v">Not FDA-approved</div></div>
+    <div class="stat"><div class="k">Psilocybin (federal)</div><div class="v">Schedule I</div></div>
+    <div class="stat"><div class="k">Regulated psilocybin access</div><div class="v">OR + CO only</div></div>
+    <div class="stat"><div class="k">Ketamine telehealth flexibility</div><div class="v">Through Dec 31, 2026</div></div>
+  </div>
+</div>
+
+<!-- WHO IT'S FOR -->
+<section class="section" aria-labelledby="aud-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Who this is for</p>
+      <h2 class="h2" id="aud-h">Built for the people who can't afford a confident wrong answer</h2>
+      <p class="lead">The same radar reads four ways, because the stakes differ by seat.</p>
+    </div>
+    <div class="grid grid-4 keep-2">
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">◆</div><h3>Psychedelic-health orgs</h3><p class="small muted">Clinics, retreats, facilitators. Know exactly what's licensable where before you build a program.</p></div>
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">✚</div><h3>Ketamine-telehealth platforms</h3><p class="small muted">Track the tele-prescribing extension cliff and the pending permanent rule. This is the risk that ends a business line overnight.</p></div>
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">§</div><h3>Legal-ops &amp; counsel</h3><p class="small muted">A sourced, dated status you can cite, instead of a summary you have to re-verify against the Federal Register.</p></div>
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">$</div><h3>Funders &amp; boards</h3><p class="small muted">One screenshot that makes the federal-vs-state gap legible to a room in ten seconds.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- OEG -->
+<section class="section section--paper" id="gap" aria-labelledby="gap-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The Operator Execution Gap · live</p>
+      <h2 class="h2" id="gap-h">Ask a generic AI the one question that matters. Watch it fail.</h2>
+      <p class="lead">Large language models fail most confidently exactly where an operator's stakes are highest. Same question, two answers: the fluent-but-wrong generic reply, and the primary-source-grounded one. The distance between them is what a wrong assumption costs.</p>
+    </div>
+    <div class="oeg reveal">
+      <div class="oeg__col bad">
+        <p class="oeg__tag">✕&nbsp;Generic LLM · unsourced</p>
+        <p class="oeg__q">"Is MDMA-assisted therapy FDA-approved and legal nationwide now?"</p>
+        <p><strong>"Yes — MDMA-assisted therapy was approved by the FDA for PTSD, so licensed providers can offer it across the country."</strong></p>
+        <p class="oeg__why">Confident. Fluent. <strong>Flatly wrong</strong>, and wrong in the exact way that gets a clinical program, an investor deck, or a marketing claim into regulatory trouble.</p>
+      </div>
+      <div class="oeg__col good">
+        <p class="oeg__tag">✓&nbsp;Aloha AI · primary-source grounded <span class="chip chip--src">FDA · CSA</span></p>
+        <p class="oeg__q">Same question, answered from the record:</p>
+        <p><strong>No. MDMA-assisted therapy is not FDA-approved.</strong> In <strong>August 2024</strong> the FDA issued a <strong>Complete Response Letter</strong> to Lykos Therapeutics declining approval for PTSD; the FDA published the CRL on <strong>Sep&nbsp;4,&nbsp;2025</strong>. As of July 2026, Lykos is running an additional Phase 3 trial and preparing a resubmission. <strong>No approval exists</strong>.</p>
+        <p>MDMA remains a <strong>Schedule&nbsp;I</strong> controlled substance federally, meaning no accepted medical use and no legal prescribing pathway. There is <strong>no state</strong> where MDMA-assisted therapy is a licensed, above-ground service. Legal, above-ground psychedelic <em>therapy</em> today means regulated <strong>psilocybin</strong> (Oregon, Colorado), not MDMA.</p>
+        <p class="oeg__why"><span class="chip chip--hi"><span class="ic" aria-hidden="true"></span>Confidence: High</span> &nbsp;Why you can rely on it: it maps to the FDA CRL, the published record, and the CSA schedules, cited below with retrieval dates.</p>
+      </div>
+    </div>
+    <p class="small muted reveal" style="margin-top:var(--s4);max-width:70ch"><strong>OEG</strong>, the Operator Execution Gap, is the distance between what AI <em>says</em> and what a regulated operator can <em>act on</em>. Closing it is the entire job.</p>
+  </div>
+</section>
+
+<!-- SUBSTANCE × STATE EXPLORER -->
+<section class="section" id="explorer" aria-labelledby="exp-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The instrument</p>
+      <h2 class="h2" id="exp-h">Check any substance × state</h2>
+      <p class="lead">Pick a substance and a jurisdiction. The tool returns the current legal status, the operative program (if any), and the FDA / DEA posture, grounded in the framework below. Everything runs locally in your browser; nothing is sent anywhere.</p>
+    </div>
+    <div class="expl-grid">
+      <form class="tool reveal" aria-labelledby="expl-t" onsubmit="event.preventDefault();lookupStatus()">
+        <h3 id="expl-t">Status explorer</h3>
+        <div class="field"><label for="sub">Substance / modality</label>
+          <select id="sub">
+            <option value="psilocybin">Psilocybin (regulated / therapeutic)</option>
+            <option value="mdma">MDMA-assisted therapy</option>
+            <option value="ketamine">Ketamine (telehealth prescribing)</option>
+          </select></div>
+        <div class="field"><label for="state">Jurisdiction</label>
+          <select id="state">
+            <option value="OR">Oregon</option>
+            <option value="CO">Colorado</option>
+            <option value="CA">California</option>
+            <option value="NY">New York</option>
+            <option value="TX">Texas</option>
+            <option value="FL">Florida</option>
+            <option value="OTHER">Any other U.S. state</option>
+          </select></div>
+        <button class="btn btn--primary" type="submit">Check status →</button>
+      </form>
+      <div class="out reveal" role="status" aria-live="polite">
+        <div class="out__lab">Current status</div>
+        <div class="status-line" id="st-line"><span class="status-dot"></span><span id="st-label">—</span></div>
+        <div class="out__big" id="st-head" style="font-size:1.15rem">Pick a substance + state.</div>
+        <dl class="kv" id="st-kv"></dl>
+        <div class="flag" id="st-flag"></div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- COST OF GETTING IT WRONG -->
+    <div class="sec-head reveal">
+      <p class="eyebrow">The cost of getting it wrong</p>
+      <h2 class="h2">What one wrong assumption costs</h2>
+      <p class="lead">The most common error we see: a ketamine-telehealth platform building on the assumption that tele-prescribing flexibility is permanent. It isn't. It runs on a temporary extension through Dec&nbsp;31,&nbsp;2026. Model the revenue exposed to that cliff.</p>
+    </div>
+    <div class="grid grid-2">
+      <form class="tool reveal" aria-labelledby="wrong-t" onsubmit="event.preventDefault();calcWrong()">
+        <h3 id="wrong-t">Telehealth-cliff exposure calculator</h3>
+        <div class="field"><label for="mrr">Monthly revenue from tele-prescribed controlled Rx (USD)</label>
+          <input id="mrr" type="number" inputmode="numeric" min="0" step="1000" value="250000"></div>
+        <div class="field"><label for="dep">Share of revenue dependent on the flexibility</label>
+          <select id="dep"><option value="0.5">50% (partly in-person)</option><option value="0.8" selected>80% (mostly remote)</option><option value="1">100% (fully remote)</option></select></div>
+        <button class="btn btn--primary" type="submit">Calculate the exposure →</button>
+      </form>
+      <div class="out reveal" role="status" aria-live="polite">
+        <div class="out__lab">Annualized revenue exposed if the flexibility lapses</div>
+        <div class="out__big" id="wrong-num">$—</div>
+        <ul><li>This is revenue that assumes remote prescribing without a prior in-person exam stays lawful past the current extension.</li><li>The flexibility is temporary through Dec&nbsp;31,&nbsp;2026; a permanent DEA/HHS rule and a possible "special registration" regime are still pending.</li></ul>
+        <div class="flag">Illustrative model, not legal advice. Verify against the operative Federal Register extension and any final rule.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT ACTUALLY GOVERNS -->
+<section class="section section--paper" aria-labelledby="chg-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">What actually governs</p>
+      <h2 class="h2" id="chg-h">Three substances, three completely different regimes</h2>
+      <p class="lead">The single biggest source of confusion in this space is treating "psychedelics" as one legal category. They are not. Each moves on its own track.</p>
+    </div>
+    <div class="grid grid-2">
+      <div class="card reveal"><h3>Psilocybin <span class="chip chip--med">State-regulated, Sch I federally</span></h3>
+        <p class="small muted">Schedule I under the federal CSA. But Oregon (Measure 109 / ORS 475A, services live since 2023) and Colorado (Prop 122 / SB23-290, first session Jun 2025) run <strong>state-licensed supervised-use</strong> programs. Not a prescription model; facilitated administration at licensed centers.</p></div>
+      <div class="card reveal"><h3>MDMA-assisted therapy <span class="chip chip--med">Not approved</span></h3>
+        <p class="small muted">Schedule I. The FDA declined approval (CRL, Aug 2024; published Sep 2025). No above-ground legal service anywhere in the U.S. Resubmission pending; watch the additional Phase 3 trial and any FDA advisory-committee action.</p></div>
+      <div class="card reveal"><h3>Ketamine <span class="chip chip--hi">Sch III · legal, prescribable</span></h3>
+        <p class="small muted">Schedule III and FDA-approved (as an anesthetic; esketamine/Spravato for depression). Legally prescribable today. The live risk is <strong>how</strong> it's prescribed: telehealth without a prior in-person exam runs on a temporary DEA flexibility.</p></div>
+      <div class="card reveal"><h3>The federal / state gap <span class="chip chip--med">Nuance</span></h3>
+        <p class="small muted">"Legal in my state" never means "legal federally." Oregon and Colorado programs operate despite federal Schedule I status: an enforcement-discretion posture, not federal legalization. Map each activity to <em>both</em> layers.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="method" aria-labelledby="how-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">How it works</p>
+      <h2 class="h2" id="how-h">A repeatable intelligence method, not a one-off scrape</h2>
+      <p class="lead">Every Aloha AI monitor runs the same three-stage pipeline. It's why the facts stay right next month, not just today.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Regulatory Intelligence Layer (RIL)</h3><p class="muted">Primary sources only: Federal Register, CSA schedules, FDA actions, state statutes and agency dashboards, each captured with source and retrieval date. No headline aggregation.</p></div></div>
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Resolve to an Operator Layer (ROL)</h3><p class="muted">Raw law becomes a decision an operator can act on: what's licensable where, what changes for whom, with what confidence, closing the Operator Execution Gap.</p></div></div>
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Auto-refresh &amp; alert</h3><p class="muted">The monitor re-checks its primary sources on a schedule (Upstash · Vercel · Exa) and can ping you when an FDA action posts, a state rule changes, or the telehealth extension moves, so it never goes stale.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SOURCES / PROVENANCE -->
+<section class="section section--paper" id="sources" aria-labelledby="src-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Audit-ready provenance</p>
+      <h2 class="h2" id="src-h">Every status, traced to its primary source</h2>
+      <p class="lead">The admin-law rigor is the product. Each fact carries its source, retrieval date, and a confidence rating, so the same artifact that opens a conversation can support a compliance memo.</p>
+    </div>
+    <div class="table-wrap reveal">
+      <table class="data">
+        <caption class="small muted" style="text-align:left;padding:.6rem .8rem">Provenance ledger, data retrieved 2026-07-04</caption>
+        <thead><tr><th scope="col">Fact</th><th scope="col">Primary source</th><th scope="col">Retrieved</th><th scope="col">Confidence</th></tr></thead>
+        <tbody>
+          <tr><td>MDMA-assisted therapy not FDA-approved; Complete Response Letter issued Aug 2024, published Sep 4, 2025; resubmission pending</td><td><span class="cite">FDA CRL (Lykos Therapeutics)</span> · MAPS statement 2025-09-04</td><td>2026-07-04</td><td><span class="chip chip--hi">High</span></td></tr>
+          <tr><td>MDMA and psilocybin remain Schedule I under the federal Controlled Substances Act (no accepted medical use)</td><td><span class="cite">21 CFR §1308.11</span> · DEA Drug Scheduling</td><td>2026-07-04</td><td><span class="chip chip--hi">High</span></td></tr>
+          <tr><td>Ketamine is Schedule III and FDA-approved; legally prescribable</td><td><span class="cite">21 CFR §1308.13</span> · FDA labeling</td><td>2026-07-04</td><td><span class="chip chip--hi">High</span></td></tr>
+          <tr><td>Oregon psilocybin services live since 2023 under Measure 109 / ORS 475A; program operating but contracting (center count declined 2024–2026)</td><td><span class="cite">ORS 475A</span> · Oregon Health Authority — Oregon Psilocybin Services</td><td>2026-07-04</td><td><span class="chip chip--med">Med · verify center count vs OHA</span></td></tr>
+          <tr><td>Colorado natural-medicine program: first regulated psilocybin session Jun 6, 2025; ~34 licensed healing centers by Feb 2026; ibogaine/DMT/mescaline expansion in rulemaking</td><td><span class="cite">Prop 122 / SB23-290</span> · CO DORA — Natural Medicine</td><td>2026-07-04</td><td><span class="chip chip--med">Med · verify counts vs DORA</span></td></tr>
+          <tr><td>DEA/HHS telemedicine flexibilities for controlled-substance prescribing extended through Dec 31, 2026 (fourth temporary extension); permanent rule pending</td><td><span class="cite">Fed. Reg. 2025-24123</span> · DEA press release 2025-12-31</td><td>2026-07-04</td><td><span class="chip chip--hi">High</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small muted reveal" style="margin-top:var(--s4);max-width:70ch"><strong>Verification checkpoint:</strong> figures are current as of the retrieval date. State program counts move month-to-month, so re-confirm against the live OHA / DORA dashboards and the operative Federal Register documents before relying on any figure in a filing or a filing-adjacent decision.</p>
+  </div>
+</section>
+
+<!-- DIFFERENTIATION -->
+<section class="section" aria-labelledby="dif-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Why this, not a generic monitor</p>
+      <h2 class="h2" id="dif-h">The combination no competitor holds</h2>
+      <p class="lead">Most tools are one thing done adequately. This is built on named, defensible frameworks, so you leave speaking the language, not renting a dashboard.</p>
+    </div>
+    <div class="grid grid-4 keep-2">
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">RIL → ROL</p><h3 class="h3">Regulatory Intelligence Layer</h3><p class="small muted">Primary-source monitoring resolved into an operator-ready decision layer.</p></div>
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">OEG</p><h3 class="h3">Operator Execution Gap</h3><p class="small muted">The gap between what AI says and what an operator can act on.</p></div>
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">APQ Gap</p><h3 class="h3">APQ Gap Model</h3><p class="small muted">Scores approval-pathway and quota exposure for scheduled substances against real demand.</p></div>
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">EDSA</p><h3 class="h3">EDSA Framework</h3><p class="small muted">Keeps regulated health content compliant and un-suppressed across platforms.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section--paper" id="faq" aria-labelledby="faq-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Questions</p>
+      <h2 class="h2" id="faq-h">What people ask first</h2>
+    </div>
+    <div class="reveal">
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq1"><span>Is this legal or medical advice?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq1"><div class="acc__panel-inner">No. This is primary-source regulatory intelligence. RN Collins is a JD candidate, not a licensed attorney; nothing here is legal, tax, or medical advice or creates an attorney–client relationship. It's designed to make the record legible and to support the professionals who do give that advice.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq2"><span>How current is the data?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq2"><div class="acc__panel-inner">Every figure carries a retrieval date (2026-07-04 in this build) and its primary source. This is a fast-moving space, and FDA actions and state program counts change month to month. Production monitors re-check their sources on a schedule and can alert you when something shifts, so the artifact stays accurate rather than freezing on the day it shipped.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq3"><span>Can I get one for my specific substance, program, or state?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq3"><div class="acc__panel-inner">Yes, that's the point. This is a reference build; a tailored version for your molecule, modality, state, or telehealth footprint is what Aloha AI produces, usually within days of a scoping conversation. Use the contact link below.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq4"><span>What data do you collect from me?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq4"><div class="acc__panel-inner">None. There is no login, no tracking, and no cookies. Every calculation runs locally in your browser and nothing you enter leaves your device.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- THE SERVICE / OFFER -->
+<section class="section" id="start" aria-labelledby="offer-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The service</p>
+      <h2 class="h2" id="offer-h">How this becomes yours</h2>
+      <p class="lead">Psychedelic-health and ketamine-telehealth operators can't tell settled law from wishful headlines, and the gap is expensive. I build a tailored radar for your substances, states, and model that tracks the primary sources and resolves them into decisions.</p>
+    </div>
+    <div class="grid grid-3 reveal">
+      <div class="card"><div class="card__ic" aria-hidden="true">1</div><h3>What I build</h3><p class="small muted">A private radar scoped to your substances (psilocybin / MDMA / ketamine), states, and delivery model, sourced and dated.</p></div>
+      <div class="card"><div class="card__ic" aria-hidden="true">2</div><h3>What you get</h3><ul class="small muted" style="padding-left:1.1rem;margin:.35rem 0 0"><li>A live, cited status radar for your program</li><li>An audit-ready provenance ledger you can cite</li><li>Change-alerts when a state program or federal rule moves</li></ul></div>
+      <div class="card"><div class="card__ic" aria-hidden="true">3</div><h3>How to start</h3><p class="small muted">A 20-minute scoping call. If it's a fit, a tailored build turns around in days, not weeks.</p></div>
+    </div>
+    <p class="lead reveal" style="margin-top:var(--s5)"><strong>Pricing.</strong> Tailored radars start from <strong>$4,000 to build + $1,500/mo</strong> to keep them live, scoped to what your operation actually needs. Three-month minimum on any retainer; 30 days' notice to stop.</p>
+  </div>
+</section>
+<!-- CTA HIERARCHY -->
+<section class="section section--ink" id="contact" aria-labelledby="cta-h">
+  <div class="wrap" style="text-align:center">
+    <p class="eyebrow">Aloha AI · Honolulu</p>
+    <h2 class="h2" id="cta-h" style="max-width:24ch;margin-inline:auto">Ready when you are.</h2>
+    <p class="lead" style="margin:var(--s4) auto var(--s5);text-align:center">Convinced, curious, or comparing, there's a path for each.</p>
+    <div style="display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn--primary" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Start with a Systems Audit →</a>
+      <a class="btn btn--ghost" href="https://aloha-ai-consulting.vercel.app/tools/ai-readiness-scorecard" target="_blank" rel="noopener">Take the 2-minute assessment</a>
+    </div>
+    <p class="small" style="margin-top:var(--s5);color:var(--muted-on-ink)">Prefer email? <a href="#" data-email style="color:var(--teal-mint)">Email RN</a> &nbsp;·&nbsp; or connect on <a href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noopener" style="color:var(--teal-mint)">LinkedIn</a></p>
+    <p id="emailReveal" hidden style="margin-top:.5rem;font-family:var(--mono);font-size:.8rem;color:#CFDAD5"></p>
+  </div>
+</section>
+<footer class="footer" aria-labelledby="foot-h">
+  <div class="wrap">
+    <h2 id="foot-h" class="small" style="position:absolute;left:-999px">Site footer</h2>
+    <div class="footer__grid">
+      <div>
+        <a class="nav__brand" href="#top" style="color:var(--cream)" aria-label="Aloha AI home"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#7FE0C4"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#7FE0C4" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg> Aloha&nbsp;AI</a>
+        <p class="small" style="margin-top:var(--s3);max-width:38ch;color:#9FB6AE">AI implementation built around how humans actually trust and use it, for regulated or reputation-sensitive professions.</p>
+      </div>
+      <div>
+        <h4>This site</h4>
+        <ul>
+          <li><a href="#gap">The gap</a></li>
+          <li><a href="#method">How it works</a></li>
+          <li><a href="#start">The service</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Aloha AI</h4>
+        <ul>
+          <li><a href="https://aloha-ai-consulting.vercel.app" target="_blank" rel="noopener">The practice</a></li>
+          <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a call</a></li>
+          <li><a href="https://aloha-ai-consulting.vercel.app/tools/ai-readiness-scorecard" target="_blank" rel="noopener">Assessment</a></li>
+          <li><a href="https://rn-portfolio-khaki.vercel.app" target="_blank" rel="noopener">Portfolio → RN Builds</a></li>
+          <li><a href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://aloha-ai-consulting.vercel.app/privacy" target="_blank" rel="noopener">Privacy</a></li>
+          <li><a href="https://aloha-ai-consulting.vercel.app/terms" target="_blank" rel="noopener">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="disc small">Regulatory intelligence, not legal advice. RN Collins is a JD candidate, not a licensed attorney; nothing here is legal or tax advice or an attorney–client relationship. Confirm all figures against the operative source before relying on them.</p>
+    <p class="fine">Aloha AI · a DBA of Rayven-Nikkita Collins LLC · Honolulu, HI · No tracking, no cookies · Data retrieved 2026-07-04; confirm against the operative state and federal sources before relying on it.</p>
+  </div>
+</footer>
+
+<script>
+  // ---- mobile nav ----
+  (function(){
+    var b=document.getElementById('burger'),l=document.getElementById('navlinks');
+    function set(o){b.setAttribute('aria-expanded',o);l.classList.toggle('open',o);b.setAttribute('aria-label',o?'Close menu':'Open menu');}
+    b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true');});
+    l.addEventListener('click',function(e){if(e.target.tagName==='A')set(false);});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});
+  })();
+  // ---- accordion ----
+  document.querySelectorAll('.acc__btn').forEach(function(btn){
+    var panel=document.getElementById(btn.getAttribute('aria-controls'));
+    btn.addEventListener('click',function(){
+      var open=btn.getAttribute('aria-expanded')==='true';
+      btn.setAttribute('aria-expanded',!open);
+      panel.style.maxHeight=open?null:panel.scrollHeight+'px';
+    });
+  });
+  // ---- personalization slot ?for= ----
+  (function(){var p=new URLSearchParams(location.search).get('for');if(p){document.getElementById('foryou').textContent=p;}})();
+  // ---- status explorer ----
+  var DATA={
+    psilocybin:{
+      OR:{s:'limited',lab:'State-regulated · Sch I federally',head:'Legal, supervised use under Oregon Measure 109',prog:'Oregon Psilocybin Services (ORS 475A). Services live since 2023; facilitated administration at licensed centers, not a prescription.',fed:'Schedule I federally, no prescribing pathway; program operates under state law + federal enforcement discretion.',flag:'⚑ Center count has been contracting (2024–2026). Confirm current licensed-center status against the OHA dashboard.'},
+      CO:{s:'limited',lab:'State-regulated · Sch I federally',head:'Legal, supervised use under Colorado Prop 122',prog:'Natural Medicine program (Prop 122 / SB23-290). First regulated session Jun 6, 2025; ~34 licensed healing centers by Feb 2026.',fed:'Schedule I federally. Ibogaine / DMT / mescaline expansion was in rulemaking as of 2026.',flag:'⚑ Program is early and rules are still moving. Verify scope and counts against CO DORA.'},
+      OTHER:{s:'illegal',lab:'No regulated program · Sch I',head:'No above-ground legal psilocybin program',prog:'Only Oregon and Colorado run state-licensed supervised-use programs. Some cities have decriminalized possession, but that is not the same as a legal service.',fed:'Schedule I federally and under state law absent a program.',flag:'⚑ Decriminalization ≠ legal service. Do not build a facilitated-use offering here without a licensing pathway.'}
+    },
+    mdma:{
+      ANY:{s:'illegal',lab:'Not FDA-approved · Sch I',head:'No legal above-ground MDMA-assisted therapy anywhere',prog:'No state licenses MDMA-assisted therapy. FDA declined approval (CRL Aug 2024, published Sep 4, 2025); resubmission pending.',fed:'Schedule I federally, no accepted medical use, no legal prescribing pathway.',flag:'⚑ Any "MDMA therapy" offering today is outside the legal, above-ground track. Watch FDA resubmission and advisory-committee action.'}
+    },
+    ketamine:{
+      ANY:{s:'legal',lab:'Schedule III · FDA-approved · prescribable',head:'Legal and prescribable; the risk is the telehealth model',prog:'Ketamine is Schedule III and FDA-approved (anesthetic; esketamine/Spravato for depression). Off-label ketamine for mental health is prescribed nationwide.',fed:'Prescribable by DEA-registered practitioners. Tele-prescribing without a prior in-person exam runs on a temporary DEA/HHS flexibility.',flag:'⚑ The live risk: the telemedicine flexibility is temporary through Dec 31, 2026. A permanent rule is pending, so model the cliff.'}
+    }
+  };
+  function lookupStatus(){
+    var sub=document.getElementById('sub').value,state=document.getElementById('state').value,rec;
+    if(sub==='psilocybin'){rec=DATA.psilocybin[state]||DATA.psilocybin.OTHER;}
+    else if(sub==='mdma'){rec=DATA.mdma.ANY;}
+    else{rec=DATA.ketamine.ANY;}
+    var line=document.getElementById('st-line');
+    line.className='status-line st-'+rec.s;
+    document.getElementById('st-label').textContent=rec.lab;
+    document.getElementById('st-head').textContent=rec.head;
+    var kv=document.getElementById('st-kv');kv.innerHTML='';
+    function row(k,v){var dt=document.createElement('dt');dt.textContent=k;var dd=document.createElement('dd');dd.textContent=v;kv.appendChild(dt);kv.appendChild(dd);}
+    row('Program',rec.prog);
+    row('FDA / DEA posture',rec.fed);
+    document.getElementById('st-flag').textContent=rec.flag;
+  }
+  function fmt(n){return '$'+Math.round(n).toLocaleString('en-US');}
+  function calcWrong(){var mrr=+document.getElementById('mrr').value||0,dep=+document.getElementById('dep').value||0.8;
+    document.getElementById('wrong-num').textContent=fmt(mrr*12*dep);}
+  lookupStatus();calcWrong();
+  // ---- reveal on scroll ----
+  (function(){
+    if(matchMedia('(prefers-reduced-motion:reduce)').matches){document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in');});return;}
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(e){io.observe(e);});
+  })();
+</script>
+<script>
+/* email assembled at runtime (not scrapable); copy + mail app + reveal + Gmail */
+(function(){var u='collins.ra',dm='northeastern.edu',a=u+'@'+dm,su=encodeURIComponent('Aloha AI — build inquiry');
+document.querySelectorAll('[data-email]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();
+try{navigator.clipboard&&navigator.clipboard.writeText(a);}catch(_){}
+var o=document.getElementById('emailReveal');if(o){o.hidden=false;o.innerHTML='Copied ✓ &nbsp;<a href="mailto:'+a+'?subject='+su+'" style="color:#7FE0C4">'+a+'</a> &nbsp;·&nbsp; <a href="https://mail.google.com/mail/?view=cm&fs=1&to='+a+'&su='+su+'" target="_blank" rel="noopener" style="color:#7FE0C4">Open in Gmail</a>';}
+window.location.href='mailto:'+a+'?subject='+su;});});})();
+</script>
+</body>
+</html>

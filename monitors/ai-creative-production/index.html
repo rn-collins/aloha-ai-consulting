@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Creative Production Intelligence — Aloha AI</title>
+<meta name="description" content="Turn ad-hoc AI generation into a repeatable, on-brand production pipeline. Score your production readiness, see what generic AI gets wrong about creative consistency, and trace every method claim to its source. By RN Collins, Aloha AI.">
+<link rel="canonical" href="https://aloha-ai-consulting.vercel.app/monitors/ai-creative-production">
+<meta name="theme-color" content="#14201C">
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI Creative Production Intelligence — Aloha AI">
+<meta property="og:description" content="Not a prompt library. A grounded system that turns ad-hoc AI generation into a repeatable, on-brand production pipeline.">
+<meta property="og:image" content="https://aloha-ai-consulting.vercel.app/monitors/ai-creative-production/og-image.png">
+<meta property="og:url" content="https://aloha-ai-consulting.vercel.app/monitors/ai-creative-production">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Creative Production Intelligence — Aloha AI">
+<meta name="twitter:description" content="Score your AI production readiness. Every method step sourced, staged, confidence-scored.">
+<meta name="twitter:image" content="https://aloha-ai-consulting.vercel.app/monitors/ai-creative-production/og-image.png">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<script>document.documentElement.className+=' js';</script>
+<link rel="stylesheet" href="./aloha-ds.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"AI Creative Production Intelligence",
+"applicationCategory":"MultimediaApplication","operatingSystem":"Web","url":"https://aloha-ai-consulting.vercel.app/monitors/ai-creative-production",
+"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+"creator":{"@type":"Person","name":"RN Collins","jobTitle":"Founder, Aloha AI",
+"description":"Neuroscientist (MS), JD candidate, and AI systems builder for regulated and reputation-sensitive work","knowsAbout":["Generative AI production","Creative pipeline engineering","Brand consistency systems","Neuroscience of visual trust"]},
+"about":"Turning ad-hoc AI creative generation into a repeatable, on-brand production pipeline"}
+</script>
+<style>
+  /* ---- page-specific ---- */
+  .hero{background:radial-gradient(120% 130% at 85% -10%,#1e332c 0%,var(--ink) 55%);color:var(--cream);
+    padding-block:clamp(48px,8vw,92px) clamp(40px,6vw,72px);border-bottom:3px solid var(--teal)}
+  .hero .display{color:var(--cream);max-width:18ch;margin-bottom:var(--s4)}
+  /* gradient-clipped headline with SOLID fallback */
+  .hero .display .grad{color:var(--cream)}
+  @supports((-webkit-background-clip:text) or (background-clip:text)){
+    .hero .display .grad{background:linear-gradient(92deg,var(--teal-mint),#BFF3E4 60%,var(--cream));
+      -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+  }
+  .hero .kicker{color:var(--teal-mint)}
+  .hero .lead{color:#CFDAD5;max-width:56ch}
+  .hero__cta{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:var(--s5)}
+  .hero__meta{margin-top:var(--s5);font-family:var(--mono);font-size:var(--fs-xs);color:#9FB6AE;letter-spacing:.04em;line-height:1.8}
+  .hero__meta b{color:var(--cream)}
+  .livebadge{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:var(--fs-xs);
+    letter-spacing:.08em;text-transform:uppercase;color:#CDE7DF;border:1px solid #2F4A42;border-radius:var(--r-pill);padding:.34rem .72rem;margin-bottom:var(--s4)}
+  .livebadge .dot{width:7px;height:7px;border-radius:50%;background:var(--teal-mint);animation:pulse 2.2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(127,224,196,.5)}70%{box-shadow:0 0 0 7px rgba(127,224,196,0)}100%{box-shadow:0 0 0 0 rgba(127,224,196,0)}}
+  .statbar{background:var(--paper);border-bottom:1px solid var(--line)}
+  .statbar__in{display:flex;flex-wrap:wrap;gap:var(--s6);padding-block:var(--s4)}
+  .statbar .stat{flex:1;min-width:150px}
+  .statbar .k{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .statbar .v{font-family:var(--serif);font-size:1.15rem;color:var(--ink);margin-top:.15rem}
+  .sec-head{margin-bottom:var(--s6);max-width:70ch}
+  .sec-head .h2{margin-bottom:var(--s3)}
+  /* OEG */
+  .oeg{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh-2)}
+  @media(max-width:760px){.oeg{grid-template-columns:1fr}}
+  .oeg__col{background:#fff;padding:var(--s5)}
+  .oeg__col.bad{background:var(--red-l)}
+  .oeg__tag{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.09em;text-transform:uppercase;margin-bottom:var(--s3);display:flex;align-items:center;gap:.45rem;flex-wrap:wrap}
+  .oeg__col.bad .oeg__tag{color:var(--red)}
+  .oeg__col.good .oeg__tag{color:var(--green)}
+  .oeg__q{font-family:var(--serif);font-size:1.05rem;font-style:italic;margin-bottom:.7rem}
+  .oeg__why{margin-top:var(--s4);padding-top:var(--s3);border-top:1px dashed var(--line);font-size:var(--fs-sm);color:var(--muted)}
+  /* then vs now */
+  .tvn{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-top:var(--s3)}
+  .tvn .box{border:1px solid var(--line);border-radius:var(--r-sm);padding:.75rem .85rem}
+  .tvn .box.now{border-color:var(--green-bd);background:var(--green-l)}
+  .tvn .lab{font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.2rem}
+  .tvn .val{font-size:.9rem}
+  /* process */
+  .steps{counter-reset:step;display:grid;gap:var(--s5)}
+  .step{display:grid;grid-template-columns:auto 1fr;gap:var(--s4);align-items:start}
+  .step__n{counter-increment:step;width:44px;height:44px;border-radius:12px;background:var(--teal);color:#fff;
+    font-family:var(--serif);font-size:1.3rem;display:grid;place-items:center;flex:none}
+  .step__n::before{content:counter(step)}
+  .aud__ic,.card__ic svg{width:20px;height:20px}
+  /* readiness meter */
+  .meter{height:12px;border-radius:var(--r-pill);background:#0E1815;border:1px solid #2C463E;overflow:hidden;margin:.5rem 0 .2rem}
+  .meter__fill{height:100%;width:0;background:linear-gradient(90deg,var(--teal),var(--teal-mint));transition:width .5s var(--ease)}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="#top" aria-label="Aloha AI home">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#1B7A68"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#1B7A68" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      Aloha&nbsp;AI
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav__links" id="navlinks">
+        <li><a href="#status">Signal</a></li>
+        <li><a href="#gap">The Gap</a></li>
+        <li><a href="#readiness">Score readiness</a></li>
+        <li><a href="#method">Method</a></li>
+        <li><a href="#differ">Frameworks</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li class="nav__cta"><a class="btn btn--primary btn--sm" href="#start">Get started →</a></li>
+      </ul>
+    </nav>
+    <button class="nav__burger" id="burger" aria-label="Open menu" aria-controls="navlinks" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+<span id="top"></span>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-h">
+  <div class="wrap">
+    <span class="livebadge"><span class="dot" aria-hidden="true"></span> Live · updated 2026-07-04</span>
+    <p class="eyebrow kicker">Content Systems · Creative Production</p>
+    <h1 class="display" id="hero-h">Stop generating one-offs. Build a <span class="grad">production pipeline</span>.</h1>
+    <p class="lead">A grounded creative system, not a prompt library. Turn ad-hoc AI generation into a <em>repeatable, on-brand</em> pipeline, so the tenth shot looks like the first, the studio scales past one operator, and the work holds up in a client review <em>and</em> on a festival screen.</p>
+    <div class="hero__cta">
+      <a class="btn btn--primary" href="#readiness">Score your readiness →</a>
+      <a class="btn btn--ghost" href="#gap">See what AI gets wrong</a>
+    </div>
+    <p class="hero__meta">Built by <b>RN&nbsp;Collins</b>. Neuroscience (MS) · Visual-trust research · AI&nbsp;systems<br>Tailored for: <b id="foryou">AI filmmakers, studios &amp; creative directors</b></p>
+  </div>
+</section>
+
+<!-- STATUS BAR -->
+<div class="statbar" id="status">
+  <div class="wrap statbar__in">
+    <div class="stat"><div class="k">Pipeline stages tracked</div><div class="v">6 · brief → delivery</div></div>
+    <div class="stat"><div class="k">Quality gates</div><div class="v">4 · per asset</div></div>
+    <div class="stat"><div class="k">Consistency method</div><div class="v">CCL locked-reference</div></div>
+    <div class="stat"><div class="k">Typical build turnaround</div><div class="v">Days, not weeks</div></div>
+  </div>
+</div>
+
+<!-- WHO IT'S FOR -->
+<section class="section" aria-labelledby="aud-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Who this is for</p>
+      <h2 class="h2" id="aud-h">Built for the people whose name is on the frame</h2>
+      <p class="lead">The same pipeline reads four ways, because what "on-brand and repeatable" means shifts with the seat.</p>
+    </div>
+    <div class="grid grid-4 keep-2">
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">✦</div><h3>AI filmmakers</h3><p class="small muted">Award-track directors who need shot-to-shot character and world consistency across a whole cut, not a lucky frame.</p></div>
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">◆</div><h3>Creative directors</h3><p class="small muted">Agency CDs shipping AI work on brand guidelines, where "close enough" gets the account pulled.</p></div>
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">▲</div><h3>Studio founders</h3><p class="small muted">Teams scaling past one prompt-whisperer. You need a system anyone on staff can run and repeat.</p></div>
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">$</div><h3>Producers</h3><p class="small muted">The person accountable for cost, timeline, and revisions, who needs volume without quality drift.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- OEG -->
+<section class="section section--paper" id="gap" aria-labelledby="gap-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The Operator Execution Gap · creative</p>
+      <h2 class="h2" id="gap-h">Ask a generic AI to be on-brand and repeatable. Watch it drift.</h2>
+      <p class="lead">Generative models are dazzling on the single hero frame and unreliable across the fifty that follow. Same brief, two outcomes: the fluent, interchangeable one-off, and the grounded pipeline output that stays on-brand at volume. The distance between them is what a missed deadline or a re-shot campaign costs.</p>
+    </div>
+    <div class="oeg reveal">
+      <div class="oeg__col bad">
+        <p class="oeg__tag">✕&nbsp;Generic AI · ad-hoc prompting</p>
+        <p class="oeg__q">"Give me 40 shots of our hero character, on brand, ready to cut."</p>
+        <p><strong>"Here are 40 striking images."</strong> Each is beautiful, and each is a slightly different person, palette, and lens. The face drifts, the brand blue wanders, and shot 31 has six fingers. It looks like AI, and it looks like <em>anyone's</em> AI.</p>
+        <p class="oeg__why">Confident. Gorgeous. <strong>Unusable as a set</strong>, and unusable in exactly the way that blows a delivery date and burns client trust.</p>
+      </div>
+      <div class="oeg__col good">
+        <p class="oeg__tag">✓&nbsp;Aloha AI · grounded pipeline <span class="chip chip--src">CCL · brand-locked</span></p>
+        <p class="oeg__q">Same brief, run through a pipeline:</p>
+        <p><strong>A locked reference set drives every shot.</strong> Character, palette, and lens are pinned to a <strong>Creative Consistency Ledger</strong>; each asset passes <strong>four quality gates</strong> (identity, brand, artifact, deliverable-spec) before it's accepted. Shot 31 either matches or gets flagged and re-run, automatically.</p>
+        <p>The output isn't 40 pretty pictures. It's a <strong>coherent set</strong> that reads as one authored body of work, on <em>your</em> brand, reproducible next week when the client asks for three more.</p>
+        <p class="oeg__why"><span class="chip chip--hi"><span class="ic" aria-hidden="true"></span>Confidence: High</span> &nbsp;Why you can rely on it: consistency is enforced by an explicit reference ledger and gate criteria, not by re-rolling until a frame happens to match.</p>
+      </div>
+    </div>
+    <p class="small muted reveal" style="margin-top:var(--s4);max-width:70ch"><strong>OEG</strong>, the Operator Execution Gap, is the distance between what AI <em>generates</em> and what a studio can <em>ship on brand, on deadline, again</em>. Closing it is the entire job.</p>
+  </div>
+</section>
+
+<!-- WHAT CHANGES -->
+<section class="section" aria-labelledby="chg-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">What actually changes</p>
+      <h2 class="h2" id="chg-h">Ad-hoc generation → production pipeline, by studio consequence</h2>
+      <p class="lead">The four shifts that move real cost, real timeline, and real reputation when you replace prompt-luck with a system.</p>
+    </div>
+    <div class="grid grid-2">
+      <div class="card reveal"><h3>Brand consistency <span class="chip chip--hi">High impact</span></h3>
+        <div class="tvn"><div class="box"><div class="lab">Ad-hoc (now)</div><div class="val">Palette, character, and style drift shot to shot; every deliverable is a re-negotiation.</div></div><div class="box now"><div class="lab">Pipeline</div><div class="val">Locked reference ledger + brand gate. On-brand is enforced, not hoped for.</div></div></div></div>
+      <div class="card reveal"><h3>Throughput at volume <span class="chip chip--hi">High impact</span></h3>
+        <div class="tvn"><div class="box"><div class="lab">Ad-hoc (now)</div><div class="val">One operator re-rolling for hours; output scales linearly with human patience.</div></div><div class="box now"><div class="lab">Pipeline</div><div class="val">Batched generation with auto-gating; volume scales without a proportional quality drop.</div></div></div></div>
+      <div class="card reveal"><h3>Revision cost <span class="chip chip--med">Moderate</span></h3>
+        <div class="tvn"><div class="box"><div class="lab">Ad-hoc (now)</div><div class="val">"Make three more like these" means starting over; no reproducible source of truth.</div></div><div class="box now"><div class="lab">Pipeline</div><div class="val">The reference set regenerates matching assets on demand, so revisions are cheap and fast.</div></div></div></div>
+      <div class="card reveal"><h3>Team scale <span class="chip chip--med">Nuance</span></h3>
+        <div class="tvn"><div class="box"><div class="lab">Common assumption</div><div class="val">"Just hire another prompt person."</div></div><div class="box now"><div class="lab">Reality</div><div class="val">A documented pipeline makes the studio the asset. Anyone on staff runs it to the same standard.</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- READINESS TOOL -->
+<section class="section section--paper" id="readiness" aria-labelledby="rd-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The instrument</p>
+      <h2 class="h2" id="rd-h">Score your AI production readiness</h2>
+      <p class="lead">Answer four questions about your creative context. The tool returns a readiness score and a prioritized set of pipeline recommendations for <em>your</em> studio. Everything runs locally in your browser; nothing is sent anywhere.</p>
+    </div>
+    <div class="grid grid-2">
+      <form class="tool reveal" aria-labelledby="rd-t" onsubmit="event.preventDefault();calcReadiness()">
+        <h3 id="rd-t">Production Readiness assessment</h3>
+        <div class="field"><label for="format">Primary deliverable format</label>
+          <select id="format">
+            <option value="film">Narrative / short film (shot-to-shot continuity)</option>
+            <option value="campaign">Ad / brand campaign (multi-asset set)</option>
+            <option value="social">High-volume social / performance creative</option>
+            <option value="concept">Concept / pitch / mood work</option>
+          </select></div>
+        <div class="field"><label for="volume">Monthly output volume</label>
+          <select id="volume">
+            <option value="low">Under 50 assets</option>
+            <option value="mid" selected>50–500 assets</option>
+            <option value="high">500+ assets</option>
+          </select></div>
+        <div class="field"><label for="brand">Brand-consistency requirement</label>
+          <select id="brand">
+            <option value="strict">Strict: locked brand guidelines / recurring character</option>
+            <option value="moderate" selected>Moderate: recognizable house style</option>
+            <option value="loose">Loose: exploratory / one-off pieces</option>
+          </select></div>
+        <div class="field"><label for="flow">Current workflow</label>
+          <select id="flow">
+            <option value="adhoc" selected>Ad-hoc prompting, one operator</option>
+            <option value="templated">Saved prompts / presets, no gates</option>
+            <option value="partial">Some reference-locking, manual QA</option>
+            <option value="mature">Documented pipeline with review gates</option>
+          </select></div>
+        <button class="btn btn--primary" type="submit">Score my readiness →</button>
+      </form>
+      <div class="out reveal" role="status" aria-live="polite">
+        <div class="out__lab">Your production readiness</div>
+        <div class="out__big" id="rd-score">—</div>
+        <div class="meter" aria-hidden="true"><div class="meter__fill" id="rd-meter"></div></div>
+        <div class="out__lab" style="margin-top:var(--s3)">Prioritized pipeline recommendations</div>
+        <ul id="rd-list"><li>Answer the four questions to see your prioritized build plan.</li></ul>
+        <div class="flag" id="rd-flag"></div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="sec-head reveal">
+      <p class="eyebrow">The cost of getting it wrong</p>
+      <h2 class="h2">What ad-hoc generation actually costs</h2>
+      <p class="lead">The most common miss: pricing a job on hero-frame speed, then eating the re-rolls, QA, and revisions that a pipeline would prevent. Here's the price of shipping without a system.</p>
+    </div>
+    <div class="grid grid-2">
+      <form class="tool reveal" aria-labelledby="cost-t" onsubmit="event.preventDefault();calcCost()">
+        <h3 id="cost-t">Re-roll waste calculator</h3>
+        <div class="field"><label for="assets">Accepted assets needed per month</label>
+          <input id="assets" type="number" inputmode="numeric" min="0" step="10" value="200"></div>
+        <div class="field"><label for="reroll">Discarded generations per accepted asset</label>
+          <select id="reroll"><option value="3">3× (light drift)</option><option value="6" selected>6× (typical ad-hoc)</option><option value="12">12× (strict brand, no gates)</option></select></div>
+        <div class="field"><label for="minutes">Operator minutes per generation + QA</label>
+          <input id="minutes" type="number" inputmode="numeric" min="0" step="0.5" value="3"></div>
+        <div class="field"><label for="wage">Loaded operator rate ($/hr)</label>
+          <input id="wage" type="number" inputmode="numeric" min="0" step="5" value="75"></div>
+        <button class="btn btn--primary" type="submit">Calculate the waste →</button>
+      </form>
+      <div class="out reveal" role="status" aria-live="polite">
+        <div class="out__lab">Monthly labor spent on discarded work</div>
+        <div class="out__big" id="cost-num">$—</div>
+        <ul id="cost-list"><li>This is labor that a reference-locked pipeline with auto-gating largely removes.</li></ul>
+        <div class="flag">Illustrative model, not a guarantee of outcomes. Calibrate against your own tools and rates.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="method" aria-labelledby="how-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">How it works</p>
+      <h2 class="h2" id="how-h">A repeatable production method, not a one-off prompt kit</h2>
+      <p class="lead">Every Aloha AI creative build runs the same three-stage pipeline. It's why the tenth shot stays on-brand, not just the first.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Creative Reference Layer (CRL)</h3><p class="muted">Your brand, characters, palette, and lens language captured as a locked reference set with provenance: the single source of truth every asset is generated against. No prompt-by-memory.</p></div></div>
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Resolve to a Production Layer (RPL)</h3><p class="muted">The reference set becomes a running pipeline: batched generation, four quality gates (identity, brand, artifact, deliverable-spec), and an accept/flag/re-run loop that closes the Operator Execution Gap between "looks nice" and "ships on brand."</p></div></div>
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Refresh &amp; version</h3><p class="muted">The pipeline re-checks against current model versions and your evolving brand on a schedule (Upstash · Vercel · Exa), and can alert you when a model update shifts output, so the system stays reproducible rather than silently drifting.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- METHOD / EVIDENCE BASE -->
+<section class="section section--paper" id="sources" aria-labelledby="src-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Method base · confidence-scored</p>
+      <h2 class="h2" id="src-h">Every pipeline claim, traced to its basis</h2>
+      <p class="lead">The rigor is the product. Each stage and quality gate carries its method basis, a source for any factual claim, and a confidence rating, so the pipeline is auditable, not a black box you have to trust on faith.</p>
+    </div>
+    <div class="table-wrap reveal">
+      <table class="data">
+        <caption class="small muted" style="text-align:left;padding:.6rem .8rem">Method ledger — reviewed 2026-07-04</caption>
+        <thead><tr><th scope="col">Pipeline stage / claim</th><th scope="col">Basis &amp; source</th><th scope="col">Reviewed</th><th scope="col">Confidence</th></tr></thead>
+        <tbody>
+          <tr><td>Locked-reference conditioning improves cross-shot character and style consistency vs. free-form prompting</td><td><span class="cite">Established diffusion practice</span> · reference/IP-adapter &amp; LoRA conditioning literature</td><td>2026-07-04</td><td><span class="chip chip--hi">High</span></td></tr>
+          <tr><td>Multi-gate automated QA (identity · brand · artifact · deliverable-spec) raises accept-rate consistency</td><td><span class="cite">Aloha AI internal method</span> · gate criteria defined per engagement</td><td>2026-07-04</td><td><span class="chip chip--med">Med · method</span></td></tr>
+          <tr><td>Visual coherence across a set increases perceived authorship and brand trust</td><td><span class="cite">Perceptual fluency research</span> · processing-fluency &amp; visual-consistency findings</td><td>2026-07-04</td><td><span class="chip chip--med">Med · interpretive</span></td></tr>
+          <tr><td>Batched generation with gating reduces operator time per accepted asset vs. manual re-rolling</td><td><span class="cite">Re-roll waste model</span> · calculator above; figures are illustrative</td><td>2026-07-04</td><td><span class="chip chip--med">Med · model</span></td></tr>
+          <tr><td>Pipeline documentation lets non-founder staff reproduce output to the same standard</td><td><span class="cite">Aloha AI delivery practice</span> · runbook shipped with every build</td><td>2026-07-04</td><td><span class="chip chip--hi">High</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small muted reveal" style="margin-top:var(--s4);max-width:70ch"><strong>Verification checkpoint:</strong> method claims reflect current generative-tooling practice as of the review date and are illustrative, not a guarantee of outcomes. Gate criteria and consistency targets are calibrated to your brand during scoping.</p>
+  </div>
+</section>
+
+<!-- DIFFERENTIATION -->
+<section class="section" id="differ" aria-labelledby="dif-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Why this, not a prompt pack</p>
+      <h2 class="h2" id="dif-h">The combination no template holds</h2>
+      <p class="lead">Most offerings are one thing done adequately: a preset library, a style LoRA, a hired hand. This is built on named, defensible frameworks, so you leave owning a system, not renting a look.</p>
+    </div>
+    <div class="grid grid-4 keep-2">
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">CRL → RPL</p><h3 class="h3">Creative Reference Layer</h3><p class="small muted">Your brand and characters as a locked reference set, resolved into a production-ready pipeline.</p></div>
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">OEG</p><h3 class="h3">Operator Execution Gap</h3><p class="small muted">The gap between what AI generates and what a studio can ship on brand, on deadline, again.</p></div>
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">CCL</p><h3 class="h3">Creative Consistency Ledger</h3><p class="small muted">The auditable source of truth that pins identity, palette, and lens across every asset.</p></div>
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">4-Gate QA</p><h3 class="h3">Quality-Gate Model</h3><p class="small muted">Identity · brand · artifact · deliverable-spec. Accept, flag, or auto-re-run every asset.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section--paper" id="faq" aria-labelledby="faq-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Questions</p>
+      <h2 class="h2" id="faq-h">What studios ask first</h2>
+    </div>
+    <div class="reveal">
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq1"><span>Do you replace my creative team or my taste?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq1"><div class="acc__panel-inner">No. The pipeline enforces <em>your</em> creative decisions at scale; it doesn't make them. You define the reference set, the brand, and the gate criteria; the system makes that authored intent reproducible so your team spends time directing, not re-rolling.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq2"><span>Which tools and models does this work with?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq2"><div class="acc__panel-inner">The method is tool-agnostic. It wraps around the generation stack you already use (diffusion image/video models, reference-conditioning, upscalers, editors). We build the reference ledger, gates, and refresh loop against your current pipeline rather than forcing a migration.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq3"><span>Can I get a pipeline for my specific studio or brand?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq3"><div class="acc__panel-inner">Yes, that's the point. This is a reference build; a tailored pipeline for your characters, brand guidelines, and deliverable formats is what Aloha AI produces, usually within days of a scoping conversation. Use the contact link below.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq4"><span>What data do you collect from me?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq4"><div class="acc__panel-inner">None. There is no login, no tracking, and no cookies. Every calculation on this page runs locally in your browser and nothing you enter leaves your device.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- THE SERVICE / OFFER -->
+<section class="section" id="start" aria-labelledby="offer-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The service</p>
+      <h2 class="h2" id="offer-h">How this becomes yours</h2>
+      <p class="lead">Studios and creative directors fly blind on why their AI output looks brilliant in isolation and inconsistent as a body of work, and burn hours re-rolling to force a match. I build a tailored production pipeline for your exact brand and formats that locks consistency and makes your output repeatable.</p>
+    </div>
+    <div class="grid grid-3 reveal">
+      <div class="card"><div class="card__ic" aria-hidden="true">1</div><h3>What I build</h3><p class="small muted">A private production pipeline scoped to your characters, brand guidelines, and deliverable formats: reference-locked, gated, and documented.</p></div>
+      <div class="card"><div class="card__ic" aria-hidden="true">2</div><h3>What you get</h3><ul class="small muted" style="padding-left:1.1rem;margin:.35rem 0 0"><li>A live, on-brand generation pipeline for your studio</li><li>A Creative Consistency Ledger + a runbook your team can operate</li><li>Version-alerts when a model update shifts your output</li></ul></div>
+      <div class="card"><div class="card__ic" aria-hidden="true">3</div><h3>How to start</h3><p class="small muted">A 20-minute scoping call. If it's a fit, a tailored build turns around in days, not weeks.</p></div>
+    </div>
+    <p class="lead reveal" style="margin-top:var(--s5)"><strong>Pricing.</strong> Engagements start from <strong>$4,000 build + $1,500/mo</strong>, scoped to your studio. Three-month minimum on any retainer; 30 days' notice to stop.</p>
+  </div>
+</section>
+<!-- CTA HIERARCHY -->
+<section class="section section--ink" id="contact" aria-labelledby="cta-h">
+  <div class="wrap" style="text-align:center">
+    <p class="eyebrow">Aloha AI · Honolulu</p>
+    <h2 class="h2" id="cta-h" style="max-width:24ch;margin-inline:auto">Ready when you are.</h2>
+    <p class="lead" style="margin:var(--s4) auto var(--s5);text-align:center">Convinced, curious, or comparing: there's a path for each.</p>
+    <div style="display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn--primary" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Start with a Systems Audit →</a>
+      <a class="btn btn--ghost" href="https://aloha-ai-consulting.vercel.app/tools/ai-readiness-scorecard" target="_blank" rel="noopener">Take the 2-minute assessment</a>
+    </div>
+    <p class="small" style="margin-top:var(--s5);color:var(--muted-on-ink)">Prefer email? <a href="#" data-email style="color:var(--teal-mint)">Email RN</a> &nbsp;·&nbsp; or connect on <a href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noopener" style="color:var(--teal-mint)">LinkedIn</a></p>
+    <p id="emailReveal" hidden style="margin-top:.5rem;font-family:var(--mono);font-size:.8rem;color:#CFDAD5"></p>
+  </div>
+</section>
+<footer class="footer" aria-labelledby="foot-h">
+  <div class="wrap">
+    <h2 id="foot-h" class="small" style="position:absolute;left:-999px">Site footer</h2>
+    <div class="footer__grid">
+      <div>
+        <a class="nav__brand" href="#top" style="color:var(--cream)" aria-label="Aloha AI home"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#7FE0C4"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#7FE0C4" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg> Aloha&nbsp;AI</a>
+        <p class="small" style="margin-top:var(--s3);max-width:38ch;color:#9FB6AE">AI implementation built around how humans actually trust and use it, for regulated or reputation-sensitive professions.</p>
+      </div>
+      <div>
+        <h4>This site</h4>
+        <ul>
+          <li><a href="#gap">The gap</a></li>
+          <li><a href="#method">How it works</a></li>
+          <li><a href="#start">The service</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Aloha AI</h4>
+        <ul>
+          <li><a href="https://aloha-ai-consulting.vercel.app" target="_blank" rel="noopener">The practice</a></li>
+          <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a call</a></li>
+          <li><a href="https://aloha-ai-consulting.vercel.app/tools/ai-readiness-scorecard" target="_blank" rel="noopener">Assessment</a></li>
+          <li><a href="https://rn-portfolio-khaki.vercel.app" target="_blank" rel="noopener">Portfolio → RN Builds</a></li>
+          <li><a href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://aloha-ai-consulting.vercel.app/privacy" target="_blank" rel="noopener">Privacy</a></li>
+          <li><a href="https://aloha-ai-consulting.vercel.app/terms" target="_blank" rel="noopener">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="disc small">Creative production intelligence: illustrative, not a guarantee of outcomes. Method claims reflect current generative-tooling practice and are calibrated to your brand during scoping. RN Collins is a JD candidate, not a licensed attorney; nothing here is legal advice.</p>
+    <p class="fine">Aloha AI · a DBA of Rayven-Nikkita Collins LLC · Honolulu, HI · No tracking, no cookies · Method reviewed 2026-07-04; calibrate to your own tools and brand before relying on any figure.</p>
+  </div>
+</footer>
+
+<script>
+  // ---- mobile nav ----
+  (function(){
+    var b=document.getElementById('burger'),l=document.getElementById('navlinks');
+    function set(o){b.setAttribute('aria-expanded',o);l.classList.toggle('open',o);b.setAttribute('aria-label',o?'Close menu':'Open menu');}
+    b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true');});
+    l.addEventListener('click',function(e){if(e.target.tagName==='A')set(false);});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});
+  })();
+  // ---- accordion ----
+  document.querySelectorAll('.acc__btn').forEach(function(btn){
+    var panel=document.getElementById(btn.getAttribute('aria-controls'));
+    btn.addEventListener('click',function(){
+      var open=btn.getAttribute('aria-expanded')==='true';
+      btn.setAttribute('aria-expanded',!open);
+      panel.style.maxHeight=open?null:panel.scrollHeight+'px';
+    });
+  });
+  // ---- personalization slot ?for= ----
+  (function(){var p=new URLSearchParams(location.search).get('for');if(p){document.getElementById('foryou').textContent=p;}})();
+  // ---- tools ----
+  function fmt(n){return '$'+Math.round(n).toLocaleString('en-US');}
+  function calcReadiness(){
+    var fmt2=document.getElementById('format').value,
+        vol=document.getElementById('volume').value,
+        brand=document.getElementById('brand').value,
+        flow=document.getElementById('flow').value,
+        score=0,recs=[],flag='';
+    // workflow maturity is the dominant lever
+    var flowScore={adhoc:10,templated:35,partial:60,mature:85}[flow];
+    score=flowScore;
+    // demand pressure: higher consistency need + higher volume raise the bar (lower readiness if workflow immature)
+    var pressure=0;
+    if(brand==='strict')pressure+=2; else if(brand==='moderate')pressure+=1;
+    if(vol==='high')pressure+=2; else if(vol==='mid')pressure+=1;
+    if(fmt2==='film'||fmt2==='campaign')pressure+=1;
+    // the gap between demand pressure and workflow maturity
+    if(flow==='adhoc'||flow==='templated'){score-=pressure*4;}
+    else{score+=Math.max(0,4-pressure)*2;}
+    score=Math.max(5,Math.min(98,Math.round(score)));
+    // recommendations, prioritized
+    if(flow==='adhoc'||flow==='templated'){
+      recs.push('Priority 1. Build a Creative Reference Layer: lock character, palette, and lens as a versioned reference set (single source of truth).');
+    }
+    if(brand==='strict'||brand==='moderate'){
+      recs.push('Priority '+(recs.length+1)+'. Add a brand quality gate: automatic reject/flag when an asset drifts from your guidelines.');
+    }
+    if(fmt2==='film'){recs.push('Priority '+(recs.length+1)+'. Add an identity gate for shot-to-shot character continuity across the cut.');}
+    else if(fmt2==='campaign'){recs.push('Priority '+(recs.length+1)+'. Add a set-coherence gate so the campaign reads as one authored body of work.');}
+    if(vol==='high'||vol==='mid'){recs.push('Priority '+(recs.length+1)+'. Batch generation with auto-gating so volume scales without a proportional QA burden.');}
+    if(flow==='mature'){recs.push('Priority '+(recs.length+1)+'. Add a model-version refresh loop so updates don’t silently drift your output.');}
+    if(!recs.length){recs.push('Your workflow is strong. Focus on documenting the runbook so non-founder staff can reproduce output.');}
+    // score band
+    var band;
+    if(score>=75)band='Pipeline-ready'; else if(score>=45)band='Partial pipeline'; else band='Ad-hoc, high drift risk';
+    document.getElementById('rd-score').textContent=score+' / 100 · '+band;
+    document.getElementById('rd-meter').style.width=score+'%';
+    var ul=document.getElementById('rd-list');ul.innerHTML='';
+    recs.forEach(function(x){var li=document.createElement('li');li.textContent=x;ul.appendChild(li);});
+    if(score<45)flag='⚑ Highest-value move: stop re-rolling for consistency and lock a reference set. It is the single biggest readiness gain.';
+    else if(score<75)flag='⚑ You have the pieces; the gap is enforcement. Gates turn a house style into a repeatable pipeline.';
+    else flag='⚑ You are close to a documented system. Protect it with versioning and a runbook.';
+    document.getElementById('rd-flag').textContent=flag;
+  }
+  function calcCost(){
+    var assets=+document.getElementById('assets').value||0,
+        reroll=+document.getElementById('reroll').value||0,
+        minutes=+document.getElementById('minutes').value||0,
+        wage=+document.getElementById('wage').value||0;
+    var totalGen=assets*(1+reroll);
+    var hours=totalGen*minutes/60;
+    var cost=hours*wage;
+    document.getElementById('cost-num').textContent=fmt(cost);
+    var ul=document.getElementById('cost-list');ul.innerHTML='';
+    [ 'Total generations run to accept '+assets.toLocaleString('en-US')+' assets: '+Math.round(totalGen).toLocaleString('en-US')+' (at '+reroll+'× discard).',
+      'Operator time: '+Math.round(hours).toLocaleString('en-US')+' hours/month at '+fmt(wage)+'/hr.',
+      'A reference-locked, auto-gated pipeline removes most of the discarded-generation labor above.'
+    ].forEach(function(x){var li=document.createElement('li');li.textContent=x;ul.appendChild(li);});
+  }
+  calcReadiness();calcCost();
+  // ---- reveal on scroll ----
+  (function(){
+    if(matchMedia('(prefers-reduced-motion:reduce)').matches){document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in');});return;}
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(e){io.observe(e);});
+  })();
+</script>
+<script>
+/* email assembled at runtime (not scrapable); copy + mail app + reveal + Gmail */
+(function(){var u='collins.ra',dm='northeastern.edu',a=u+'@'+dm,su=encodeURIComponent('Aloha AI — build inquiry');
+document.querySelectorAll('[data-email]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();
+try{navigator.clipboard&&navigator.clipboard.writeText(a);}catch(_){}
+var o=document.getElementById('emailReveal');if(o){o.hidden=false;o.innerHTML='Copied ✓ &nbsp;<a href="mailto:'+a+'?subject='+su+'" style="color:#7FE0C4">'+a+'</a> &nbsp;·&nbsp; <a href="https://mail.google.com/mail/?view=cm&fs=1&to='+a+'&su='+su+'" target="_blank" rel="noopener" style="color:#7FE0C4">Open in Gmail</a>';}
+window.location.href='mailto:'+a+'?subject='+su;});});})();
+</script>
+</body>
+</html>

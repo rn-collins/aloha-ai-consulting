@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creator Content & Knowledge System — Aloha AI</title>
+<meta name="description" content="An AI content and knowledge infrastructure for content-heavy experts — authors, researchers, newsletter writers, public-facing experts. Turn scattered expertise into a research-to-publication system that never starts from a blank page and never sounds like generic AI. By RN Collins, Aloha AI.">
+<link rel="canonical" href="https://aloha-ai-consulting.vercel.app/systems/creator-content">
+<meta name="theme-color" content="#14201C">
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Creator Content & Knowledge System — Aloha AI">
+<meta property="og:description" content="Not another AI writer. A source-grounded, voice-true content system that turns your scattered expertise into a research-to-publication engine — so you never start from a blank page.">
+<meta property="og:image" content="https://aloha-ai-consulting.vercel.app/systems/creator-content/og-image.png">
+<meta property="og:url" content="https://aloha-ai-consulting.vercel.app/systems/creator-content">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Creator Content & Knowledge System — Aloha AI">
+<meta name="twitter:description" content="Turn scattered expertise into a system that never starts from a blank page — and never sounds like everyone else.">
+<meta name="twitter:image" content="https://aloha-ai-consulting.vercel.app/systems/creator-content/og-image.png">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<script>document.documentElement.className+=' js';</script>
+<link rel="stylesheet" href="./aloha-ds.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Creator Content & Knowledge System",
+"applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://aloha-ai-consulting.vercel.app/systems/creator-content",
+"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+"creator":{"@type":"Person","name":"RN Collins","jobTitle":"Founder, Aloha AI",
+"description":"Neuroscientist (MS), JD candidate, and AI systems builder for regulated and reputation-sensitive professions","knowsAbout":["Retrieval-augmented generation","Source-grounded AI","Content systems","Knowledge management","Voice and style profiling","Neuroscience of trust"]},
+"about":"AI content and knowledge infrastructure for authors, researchers, and public-facing experts"}
+</script>
+<style>
+  /* ---- page-specific ---- */
+  .hero{background:radial-gradient(120% 130% at 85% -10%,#1e332c 0%,var(--ink) 55%);color:var(--cream);
+    padding-block:clamp(48px,8vw,92px) clamp(40px,6vw,72px);border-bottom:3px solid var(--teal)}
+  .hero .display{color:var(--cream);max-width:17ch;margin-bottom:var(--s4)}
+  .hero .kicker{color:var(--teal-mint)}
+  .hero .lead{color:#CFDAD5;max-width:58ch}
+  .hero__cta{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:var(--s5)}
+  .hero__meta{margin-top:var(--s5);font-family:var(--mono);font-size:var(--fs-xs);color:#9FB6AE;letter-spacing:.04em;line-height:1.8}
+  .hero__meta b{color:var(--cream)}
+  .livebadge{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:var(--fs-xs);
+    letter-spacing:.08em;text-transform:uppercase;color:#CDE7DF;border:1px solid #2F4A42;border-radius:var(--r-pill);padding:.34rem .72rem;margin-bottom:var(--s4)}
+  .livebadge .dot{width:7px;height:7px;border-radius:50%;background:var(--teal-mint);animation:pulse 2.2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(127,224,196,.5)}70%{box-shadow:0 0 0 7px rgba(127,224,196,0)}100%{box-shadow:0 0 0 0 rgba(127,224,196,0)}}
+  .statbar{background:var(--paper);border-bottom:1px solid var(--line)}
+  .statbar__in{display:flex;flex-wrap:wrap;gap:var(--s6);padding-block:var(--s4)}
+  .statbar .stat{flex:1;min-width:150px}
+  .statbar .k{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .statbar .v{font-family:var(--serif);font-size:1.15rem;color:var(--ink);margin-top:.15rem}
+  .sec-head{margin-bottom:var(--s6);max-width:70ch}
+  .sec-head .h2{margin-bottom:var(--s3)}
+  /* OEG */
+  .oeg{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh-2)}
+  @media(max-width:760px){.oeg{grid-template-columns:1fr}}
+  .oeg__col{background:#fff;padding:var(--s5)}
+  .oeg__col.bad{background:var(--red-l)}
+  .oeg__tag{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.09em;text-transform:uppercase;margin-bottom:var(--s3);display:flex;align-items:center;gap:.45rem;flex-wrap:wrap}
+  .oeg__col.bad .oeg__tag{color:var(--red)}
+  .oeg__col.good .oeg__tag{color:var(--green)}
+  .oeg__q{font-family:var(--serif);font-size:1.05rem;font-style:italic;margin-bottom:.7rem}
+  .oeg__why{margin-top:var(--s4);padding-top:var(--s3);border-top:1px dashed var(--line);font-size:var(--fs-sm);color:var(--muted)}
+  /* then vs now */
+  .tvn{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-top:var(--s3)}
+  .tvn .box{border:1px solid var(--line);border-radius:var(--r-sm);padding:.75rem .85rem}
+  .tvn .box.now{border-color:var(--green-bd);background:var(--green-l)}
+  .tvn .lab{font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.2rem}
+  .tvn .val{font-size:.9rem}
+  /* process */
+  .steps{counter-reset:step;display:grid;gap:var(--s5)}
+  .step{display:grid;grid-template-columns:auto 1fr;gap:var(--s4);align-items:start}
+  .step__n{counter-increment:step;width:44px;height:44px;border-radius:12px;background:var(--teal);color:#fff;
+    font-family:var(--serif);font-size:1.3rem;display:grid;place-items:center;flex:none}
+  .step__n::before{content:counter(step)}
+  .aud__ic,.card__ic svg{width:20px;height:20px}
+  /* readiness checklist */
+  .checks{display:grid;gap:.5rem}
+  .check{display:flex;align-items:flex-start;gap:.6rem;background:#0E1815;border:1px solid #33504f;border-radius:var(--r-sm);padding:.6rem .7rem;cursor:pointer}
+  .check input{width:18px;height:18px;margin-top:.15rem;accent-color:var(--teal);flex:none;min-height:0}
+  .check span{font-size:.92rem;color:var(--cream)}
+  .check .sub{display:block;font-family:var(--mono);font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted-on-ink);margin-top:.15rem}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="#top" aria-label="Aloha AI home">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#1B7A68"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#1B7A68" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      Aloha&nbsp;AI
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav__links" id="navlinks">
+        <li><a href="#who">Who it's for</a></li>
+        <li><a href="#gap">The Gap</a></li>
+        <li><a href="#readiness">Readiness</a></li>
+        <li><a href="#evidence">Evidence</a></li>
+        <li><a href="#method">How it works</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li class="nav__cta"><a class="btn btn--primary btn--sm" href="#start">Get started →</a></li>
+      </ul>
+    </nav>
+    <button class="nav__burger" id="burger" aria-label="Open menu" aria-controls="navlinks" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+<span id="top"></span>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-h">
+  <div class="wrap">
+    <span class="livebadge"><span class="dot" aria-hidden="true"></span> Method reviewed 2026-07-04</span>
+    <p class="eyebrow kicker">Content Systems · Creators &amp; Experts</p>
+    <h1 class="display" id="hero-h">Your expertise, turned into a system that never starts from a blank page.</h1>
+    <p class="lead">Not another AI writer that sounds like everyone else. A <em>source-grounded, voice-true</em> content and knowledge infrastructure, built on your notes, your research, and your actual voice, so every draft starts from what you already know and comes out sounding like <em>you</em>.</p>
+    <div class="hero__cta">
+      <a class="btn btn--primary" href="#readiness">Score your system readiness →</a>
+      <a class="btn btn--ghost" href="#gap">See what generic AI gets wrong</a>
+    </div>
+    <p class="hero__meta">Built by <b>RN&nbsp;Collins</b>. Neuroscience (MS) · Administrative&nbsp;Law (JD&nbsp;candidate) · AI&nbsp;systems<br>Tailored for: <b id="foryou">authors, researchers &amp; public-facing experts</b></p>
+  </div>
+</section>
+
+<!-- STAT BAR -->
+<div class="statbar" id="status">
+  <div class="wrap statbar__in">
+    <div class="stat"><div class="k">Where drafts start</div><div class="v">From your record</div></div>
+    <div class="stat"><div class="k">Grounding</div><div class="v">Your sources only</div></div>
+    <div class="stat"><div class="k">Voice</div><div class="v">Profiled &amp; enforced</div></div>
+    <div class="stat"><div class="k">Editing</div><div class="v">Human-in-the-loop</div></div>
+  </div>
+</div>
+
+<!-- WHO IT'S FOR -->
+<section class="section" id="who" aria-labelledby="aud-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Who this is for</p>
+      <h2 class="h2" id="aud-h">Built for experts whose reputation is the product</h2>
+      <p class="lead">If your name is on the work, generic AI output is a liability, not a shortcut. The same system serves four seats, because the blank page costs each of them differently.</p>
+    </div>
+    <div class="grid grid-4 keep-2">
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">✎</div><h3>Authors</h3><p class="small muted">Books, essays, columns. Draft from your own archive and voice, not a model's average of the internet.</p></div>
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">◈</div><h3>Researchers</h3><p class="small muted">Turn a decade of notes and papers into a queryable knowledge base that cites <em>your</em> sources, not hallucinated ones.</p></div>
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">✦</div><h3>Newsletter writers</h3><p class="small muted">Hold a publishing cadence without burning out. Repurpose across formats while the voice stays true.</p></div>
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">§</div><h3>Boutique expert firms</h3><p class="small muted">Codify a house voice and knowledge base so output stays consistent as the team grows.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- OEG -->
+<section class="section section--paper" id="gap" aria-labelledby="gap-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The Operator Execution Gap · content edition</p>
+      <h2 class="h2" id="gap-h">Ask a generic AI to write in your voice. Watch it flatten you.</h2>
+      <p class="lead">Large language models fail most confidently exactly where an expert's credibility is highest: on the specifics, the sources, and the voice. Same brief, two outputs: the fluent-but-generic reply, and the source-grounded, voice-true one. The distance between them is what publishing the wrong draft costs your reputation.</p>
+    </div>
+    <div class="oeg reveal">
+      <div class="oeg__col bad">
+        <p class="oeg__tag">✕&nbsp;Generic LLM · ungrounded</p>
+        <p class="oeg__q">"Draft my newsletter section on this topic, in my voice, with sources."</p>
+        <p><strong>"In today's fast-paced world, it's more important than ever to leverage cutting-edge strategies. Studies show that experts agree this approach delivers results. Let's dive in."</strong></p>
+        <p class="oeg__why">Fluent. Confident. <strong>Generic on three counts</strong> — vague claims, invented "studies," and a voice that belongs to no one. This is the output that makes a reader think <em>an AI wrote this</em> — and stop trusting the byline.</p>
+      </div>
+      <div class="oeg__col good">
+        <p class="oeg__tag">✓&nbsp;Aloha AI · source-grounded &amp; voice-true <span class="chip chip--src">Your archive</span></p>
+        <p class="oeg__q">Same brief, answered from your own record:</p>
+        <p><strong>Drafts only from your material.</strong> The system retrieves the relevant passages from <em>your</em> notes, papers, and past pieces (retrieval-augmented generation), assembles a draft grounded in those exact sources, and renders it through a <strong>profile of your actual voice</strong>: cadence, vocabulary, the moves you make.</p>
+        <p>Every claim traces to a source <em>you</em> supplied. Nothing is asserted that isn't in your record. Then it hands off to <strong>you</strong> to edit (human-in-the-loop, always) so the published piece is unmistakably yours.</p>
+        <p class="oeg__why"><span class="chip chip--hi"><span class="ic" aria-hidden="true"></span>Confidence: High</span> &nbsp;Why you can rely on it: the mechanisms below are established practice (retrieval-grounding, style profiling, and human review), not a promise that the model "just gets you."</p>
+      </div>
+    </div>
+    <p class="small muted reveal" style="margin-top:var(--s4);max-width:70ch"><strong>OEG</strong> (the Operator Execution Gap) is the distance between what generic AI <em>produces</em> and what a named expert can actually <em>publish</em>. Closing it is the entire job.</p>
+  </div>
+</section>
+
+<!-- WHAT CHANGES -->
+<section class="section" aria-labelledby="chg-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">What actually changes</p>
+      <h2 class="h2" id="chg-h">From a blank page to a system, by daily consequence</h2>
+      <p class="lead">Four shifts that move real time and real credibility. This is the difference between renting a chatbot and owning an infrastructure built on your knowledge.</p>
+    </div>
+    <div class="grid grid-2">
+      <div class="card reveal"><h3>Where a draft starts <span class="chip chip--hi">High impact</span></h3>
+        <div class="tvn"><div class="box"><div class="lab">Blank page (now)</div><div class="val">Every piece begins from zero, or from a generic model that doesn't know your work.</div></div><div class="box now"><div class="lab">With a system</div><div class="val">Drafts start from your own retrieved material; the hardest 60% is already on the page.</div></div></div></div>
+      <div class="card reveal"><h3>Whose voice ships <span class="chip chip--hi">High impact</span></h3>
+        <div class="tvn"><div class="box"><div class="lab">Blank page (now)</div><div class="val">AI output reads like everyone else's AI output: the reputational tell.</div></div><div class="box now"><div class="lab">With a system</div><div class="val">A voice/style profile enforces your cadence, so the byline still sounds earned.</div></div></div></div>
+      <div class="card reveal"><h3>Where sources live <span class="chip chip--med">Moderate</span></h3>
+        <div class="tvn"><div class="box"><div class="lab">Blank page (now)</div><div class="val">Notes scattered across apps; research re-found from scratch each time.</div></div><div class="box now"><div class="lab">With a system</div><div class="val">One grounded knowledge base you can query, with claims that trace to your own material.</div></div></div></div>
+      <div class="card reveal"><h3>Publishing cadence <span class="chip chip--med">Nuance</span></h3>
+        <div class="tvn"><div class="box"><div class="lab">Common assumption</div><div class="val">"AI lets me publish more, faster."</div></div><div class="box now"><div class="lab">Reality</div><div class="val">Only if it's grounded and edited. Volume without voice erodes trust. The system protects both.</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTRUMENT: READINESS + COST -->
+<section class="section section--paper" id="readiness" aria-labelledby="rd-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The instrument</p>
+      <h2 class="h2" id="rd-h">Content System Readiness &amp; Blank-Page Cost</h2>
+      <p class="lead">Check what you already have and set your volume. The tool returns a system-readiness score, what a content/knowledge build would connect, and an estimate of the time you'd reclaim. Everything runs locally in your browser; nothing is sent anywhere.</p>
+    </div>
+    <div class="grid grid-2">
+      <form class="tool reveal" aria-labelledby="rd-t" onsubmit="event.preventDefault();calcReady()">
+        <h3 id="rd-t">Readiness assessment</h3>
+        <fieldset style="border:0;padding:0;margin:0 0 var(--s4)">
+          <legend class="field" style="margin-bottom:.4rem;font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.1em;text-transform:uppercase;color:var(--muted-on-ink)">What do you already have?</legend>
+          <div class="checks">
+            <label class="check"><input type="checkbox" id="c_notes" checked><span>Scattered notes &amp; drafts<span class="sub">across docs, apps, inboxes</span></span></label>
+            <label class="check"><input type="checkbox" id="c_research"><span>A body of research or sources<span class="sub">papers, PDFs, transcripts, past work</span></span></label>
+            <label class="check"><input type="checkbox" id="c_voice"><span>A defined voice or style guide<span class="sub">so output sounds like you</span></span></label>
+            <label class="check"><input type="checkbox" id="c_repurpose"><span>A repurposing workflow<span class="sub">one idea → many formats</span></span></label>
+            <label class="check"><input type="checkbox" id="c_cadence"><span>A regular publishing cadence<span class="sub">newsletter, column, posts</span></span></label>
+          </div>
+        </fieldset>
+        <div class="field"><label for="vol">Publishing volume</label>
+          <select id="vol">
+            <option value="1">Occasional — a few pieces a month</option>
+            <option value="2" selected>Steady — roughly weekly</option>
+            <option value="3">High — multiple pieces a week</option>
+            <option value="4">Prolific — near-daily across formats</option>
+          </select></div>
+        <button class="btn btn--primary" type="submit">Score my readiness →</button>
+      </form>
+      <div class="out reveal" role="status" aria-live="polite">
+        <div class="out__lab">Your system-readiness score</div>
+        <div class="out__big" id="rd-head">—</div>
+        <ul id="rd-list"><li>Check what you have and set your volume to see specifics.</li></ul>
+        <div class="flag" id="rd-flag"></div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="sec-head reveal">
+      <p class="eyebrow">The cost of getting it wrong</p>
+      <h2 class="h2">What the blank page costs: expertise that never ships</h2>
+      <p class="lead">The most expensive line isn't the AI subscription. It's the hours lost re-finding sources and re-starting drafts, and the pieces that never get published at all. Here's a rough model of the blank-page tax.</p>
+    </div>
+    <div class="grid grid-2">
+      <form class="tool reveal" aria-labelledby="cost-t" onsubmit="event.preventDefault();calcCost()">
+        <h3 id="cost-t">Blank-page cost calculator</h3>
+        <div class="field"><label for="pieces">Pieces you aim to publish per month</label>
+          <input id="pieces" type="number" inputmode="numeric" min="0" step="1" value="8"></div>
+        <div class="field"><label for="hrs">Hours lost per piece to blank-page &amp; source-hunting</label>
+          <input id="hrs" type="number" inputmode="numeric" min="0" step="0.5" value="3"></div>
+        <div class="field"><label for="val">Your effective hourly value (USD)</label>
+          <select id="val"><option value="100">$100 / hr</option><option value="150" selected>$150 / hr</option><option value="250">$250 / hr</option><option value="400">$400 / hr</option></select></div>
+        <button class="btn btn--primary" type="submit">Calculate the tax →</button>
+      </form>
+      <div class="out reveal" role="status" aria-live="polite">
+        <div class="out__lab">Estimated annual blank-page tax</div>
+        <div class="out__big" id="cost-num">$—</div>
+        <ul id="cost-list"><li>Model your workflow to see the reclaimable time and cost.</li></ul>
+        <div class="flag">Illustrative model, not a guarantee. Calibrated to your real workflow during scoping.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="method" aria-labelledby="how-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">How it works</p>
+      <h2 class="h2" id="how-h">A build in three stages, discovery to handoff</h2>
+      <p class="lead">Every Aloha AI content system runs the same pipeline. It's why the output stays grounded and voice-true after the build ships, not just on day one.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Discovery: map your record &amp; voice</h3><p class="muted">We inventory your notes, research, and past work, and profile your actual voice: cadence, vocabulary, structure. This becomes the Regulatory-grade Intelligence Layer for your expertise (RIL): your sources, captured with provenance.</p></div></div>
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Build: the grounded, voice-true system</h3><p class="muted">Your material becomes a queryable knowledge base wired to retrieval-augmented generation, with a style profile enforcing your voice, resolving raw knowledge into an Output Layer you can publish from (ROL). Drafts never leave your record.</p></div></div>
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Handoff &amp; keep-current</h3><p class="muted">You own the system and the workflow. It can re-index new material on a schedule (Upstash · Vercel · Exa) so the knowledge base grows with you, and human-in-the-loop editing stays the last step, always.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- EVIDENCE LEDGER -->
+<section class="section section--paper" id="evidence" aria-labelledby="ev-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Why it doesn't sound like generic AI</p>
+      <h2 class="h2" id="ev-h">How the system prevents generic AI output: the evidence</h2>
+      <p class="lead">The rigor is the product. Each mechanism below is an established, verifiable practice, not a vibe. We name the mechanism, why it works, and how confident the field is in it, with a verification checkpoint.</p>
+    </div>
+    <div class="table-wrap reveal">
+      <table class="data">
+        <caption class="small muted" style="text-align:left;padding:.6rem .8rem">Evidence ledger: concepts reviewed 2026-07-04</caption>
+        <thead><tr><th scope="col">Mechanism</th><th scope="col">Why it works</th><th scope="col">Reviewed</th><th scope="col">Confidence</th></tr></thead>
+        <tbody>
+          <tr><td>Retrieval-augmented generation (RAG)</td><td>The model drafts from passages retrieved from <em>your</em> sources, not from its training average, reducing hallucination and grounding claims in real material.</td><td>2026-07-04</td><td><span class="chip chip--hi">High</span></td></tr>
+          <tr><td>Source-grounding &amp; provenance</td><td>Every claim traces to a supplied source, so output can be verified rather than trusted blindly: the difference between "sounds right" and "is cited."</td><td>2026-07-04</td><td><span class="chip chip--hi">High</span></td></tr>
+          <tr><td>Voice / style profiling</td><td>A structured profile of your cadence, vocabulary, and structural habits steers generation toward your voice, so drafts read as yours, not the model's default register.</td><td>2026-07-04</td><td><span class="chip chip--med">Med · calibrated per author</span></td></tr>
+          <tr><td>Human-in-the-loop editing</td><td>You remain the final editor. Human review is the established control for accuracy, judgment, and voice that no automated step fully replaces.</td><td>2026-07-04</td><td><span class="chip chip--hi">High</span></td></tr>
+          <tr><td>Knowledge base that compounds</td><td>Your notes and research accumulate in one queryable store, so each new piece draws on everything you've done; expertise compounds instead of scattering.</td><td>2026-07-04</td><td><span class="chip chip--med">Med · grows with use</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small muted reveal" style="margin-top:var(--s4);max-width:72ch"><strong>Verification checkpoint:</strong> these are widely documented techniques in current AI practice, described in general terms, not claims about any specific vendor's benchmark. Calibrate voice fidelity and grounding against your own material before relying on any output.</p>
+  </div>
+</section>
+
+<!-- DIFFERENTIATION / NAMED IP -->
+<section class="section" aria-labelledby="dif-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Why this, not a generic AI writer</p>
+      <h2 class="h2" id="dif-h">The combination no chatbot holds</h2>
+      <p class="lead">Most tools are one thing done adequately. This is built on named, defensible frameworks, so you leave owning an infrastructure, not renting a subscription.</p>
+    </div>
+    <div class="grid grid-4 keep-2">
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">RIL → ROL</p><h3 class="h3">Record → Output Layer</h3><p class="small muted">Your captured sources and voice, resolved into a system you can publish from.</p></div>
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">OEG</p><h3 class="h3">Operator Execution Gap</h3><p class="small muted">The gap between what generic AI produces and what a named expert can actually publish.</p></div>
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">EDSA</p><h3 class="h3">EDSA Framework</h3><p class="small muted">Keeps public-facing content compliant and un-suppressed across platforms, voice intact.</p></div>
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">HITL</p><h3 class="h3">Human-in-the-loop</h3><p class="small muted">You are always the final editor. The system drafts; the expert decides.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section--paper" id="faq" aria-labelledby="faq-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Questions</p>
+      <h2 class="h2" id="faq-h">What people ask first</h2>
+    </div>
+    <div class="reveal">
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq1"><span>Will this make my writing sound like AI?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq1"><div class="acc__panel-inner">The opposite is the point. Generic AI sounds like everyone else because it draws on a model's training average. This system drafts only from your own material, renders it through a profile of your actual voice, and hands off to you to edit. You remain the author. It removes the blank page, not your judgment.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq2"><span>Where do the facts and sources come from?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq2"><div class="acc__panel-inner">From material you supply. The system uses retrieval-augmented generation, so it drafts from passages in your own notes, research, and past work, and every claim traces back to a source you gave it. It is built to avoid asserting things that aren't in your record.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq3"><span>Can I get one tailored to my archive and voice?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq3"><div class="acc__panel-inner">Yes. That's the whole service. This page is a reference build; a version scoped to your body of work, your formats, and your voice is what Aloha AI produces, usually within days of a scoping conversation. Use the contact links below.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq4"><span>What data do you collect from me?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq4"><div class="acc__panel-inner">On this page, none. There is no login, no tracking, and no cookies. Every calculation runs locally in your browser and nothing you enter leaves your device. In a tailored build, your material stays yours; the system is scoped to your sources and your control.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- THE SERVICE / OFFER -->
+<section class="section" id="start" aria-labelledby="offer-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The service</p>
+      <h2 class="h2" id="offer-h">How this becomes yours</h2>
+      <p class="lead">Content-heavy experts lose hours to the blank page and risk their reputation on generic AI. I build a tailored content and knowledge system on <em>your</em> record and <em>your</em> voice, so you draft from what you already know and publish something unmistakably yours.</p>
+    </div>
+    <div class="grid grid-3 reveal">
+      <div class="card"><div class="card__ic" aria-hidden="true">1</div><h3>What I build</h3><p class="small muted">A grounded knowledge base and voice-true drafting workflow scoped to your archive, your formats, and your publishing cadence.</p></div>
+      <div class="card"><div class="card__ic" aria-hidden="true">2</div><h3>What you get</h3><ul class="small muted" style="padding-left:1.1rem;margin:.35rem 0 0"><li>A queryable knowledge base built on your sources</li><li>Drafts that start from your material and sound like you</li><li>Human-in-the-loop editing as the last step, always</li></ul></div>
+      <div class="card"><div class="card__ic" aria-hidden="true">3</div><h3>How to start</h3><p class="small muted">A 20-minute systems audit. If it's a fit, a tailored build turns around in days, not weeks.</p></div>
+    </div>
+    <p class="lead reveal" style="margin-top:var(--s5)"><strong>Pricing:</strong> self-serve kits from <strong>$127</strong>; done-for-you content/knowledge builds <strong>$5,000–$10,000</strong>, scoped to your archive and cadence. Optional keep-current retainer to re-index new material as you produce it.</p>
+  </div>
+</section>
+<!-- CTA HIERARCHY -->
+<section class="section section--ink" id="contact" aria-labelledby="cta-h">
+  <div class="wrap" style="text-align:center">
+    <p class="eyebrow">Aloha AI · Honolulu</p>
+    <h2 class="h2" id="cta-h" style="max-width:24ch;margin-inline:auto">Ready when you are.</h2>
+    <p class="lead" style="margin:var(--s4) auto var(--s5);text-align:center">Convinced, curious, or comparing, there's a path for each.</p>
+    <div style="display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn--primary" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Start with a Systems Audit →</a>
+      <a class="btn btn--ghost" href="https://aloha-ai-consulting.vercel.app/tools/ai-readiness-scorecard" target="_blank" rel="noopener">Take the 2-minute assessment</a>
+    </div>
+    <p class="small" style="margin-top:var(--s5);color:var(--muted-on-ink)">Prefer email? <a href="#" data-email style="color:var(--teal-mint)">Email RN</a> &nbsp;·&nbsp; or connect on <a href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noopener" style="color:var(--teal-mint)">LinkedIn</a></p>
+    <p id="emailReveal" hidden style="margin-top:.5rem;font-family:var(--mono);font-size:.8rem;color:#CFDAD5"></p>
+  </div>
+</section>
+<footer class="footer" aria-labelledby="foot-h">
+  <div class="wrap">
+    <h2 id="foot-h" class="small" style="position:absolute;left:-999px">Site footer</h2>
+    <div class="footer__grid">
+      <div>
+        <a class="nav__brand" href="#top" style="color:var(--cream)" aria-label="Aloha AI home"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#7FE0C4"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#7FE0C4" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg> Aloha&nbsp;AI</a>
+        <p class="small" style="margin-top:var(--s3);max-width:38ch;color:#9FB6AE">AI implementation built around how humans actually trust and use it, for regulated or reputation-sensitive professions.</p>
+      </div>
+      <div>
+        <h4>This site</h4>
+        <ul>
+          <li><a href="#gap">The gap</a></li>
+          <li><a href="#method">How it works</a></li>
+          <li><a href="#start">The service</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Aloha AI</h4>
+        <ul>
+          <li><a href="https://aloha-ai-consulting.vercel.app" target="_blank" rel="noopener">The practice</a></li>
+          <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a call</a></li>
+          <li><a href="https://aloha-ai-consulting.vercel.app/tools/ai-readiness-scorecard" target="_blank" rel="noopener">Assessment</a></li>
+          <li><a href="https://rn-portfolio-khaki.vercel.app" target="_blank" rel="noopener">Portfolio → RN Builds</a></li>
+          <li><a href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://aloha-ai-consulting.vercel.app/privacy" target="_blank" rel="noopener">Privacy</a></li>
+          <li><a href="https://aloha-ai-consulting.vercel.app/terms" target="_blank" rel="noopener">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="disc small">Content and knowledge systems intelligence: illustrative, not a guarantee of outcomes. Method claims reflect current AI practice (retrieval-augmented generation, source-grounding, voice profiling, human-in-the-loop editing) and are calibrated to your material and voice during scoping. RN Collins is a JD candidate, not a licensed attorney; nothing here is legal advice.</p>
+    <p class="fine">Aloha AI · a DBA of Rayven-Nikkita Collins LLC · Honolulu, HI · No tracking, no cookies · Method reviewed 2026-07-04; calibrate to your own material and voice before relying on any figure.</p>
+  </div>
+</footer>
+
+<script>
+  // ---- mobile nav ----
+  (function(){
+    var b=document.getElementById('burger'),l=document.getElementById('navlinks');
+    function set(o){b.setAttribute('aria-expanded',o);l.classList.toggle('open',o);b.setAttribute('aria-label',o?'Close menu':'Open menu');}
+    b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true');});
+    l.addEventListener('click',function(e){if(e.target.tagName==='A')set(false);});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});
+  })();
+  // ---- accordion ----
+  document.querySelectorAll('.acc__btn').forEach(function(btn){
+    var panel=document.getElementById(btn.getAttribute('aria-controls'));
+    btn.addEventListener('click',function(){
+      var open=btn.getAttribute('aria-expanded')==='true';
+      btn.setAttribute('aria-expanded',!open);
+      panel.style.maxHeight=open?null:panel.scrollHeight+'px';
+    });
+  });
+  // ---- personalization slot ?for= ----
+  (function(){var p=new URLSearchParams(location.search).get('for');if(p){document.getElementById('foryou').textContent=p;}})();
+  // ---- instrument ----
+  function fmt(n){return '$'+Math.round(n).toLocaleString('en-US');}
+  function calcReady(){
+    var have={notes:document.getElementById('c_notes').checked,research:document.getElementById('c_research').checked,
+      voice:document.getElementById('c_voice').checked,repurpose:document.getElementById('c_repurpose').checked,
+      cadence:document.getElementById('c_cadence').checked};
+    var vol=+document.getElementById('vol').value||2;
+    var n=Object.values(have).filter(Boolean).length;
+    var score=Math.round((n/5)*100);
+    var head=score+'% ready: '+(score>=80?'strong foundation':score>=50?'solid raw material':score>=20?'early, high-upside':'a blank slate to build on');
+    var connect=[];
+    if(have.notes) connect.push('Consolidate scattered notes into one queryable knowledge base.');
+    else connect.push('Start by capturing your working notes, the raw material a system draws from.');
+    if(have.research) connect.push('Index your research so drafts cite your own sources (retrieval-augmented generation).');
+    else connect.push('Fold in research and sources so claims trace to your material, not the model.');
+    if(have.voice) connect.push('Encode your existing style guide into an enforced voice profile.');
+    else connect.push('Build a voice profile from your past work so output sounds like you.');
+    if(have.repurpose) connect.push('Wire your repurposing flow to the system: one idea, many formats.');
+    if(have.cadence) connect.push('Protect your cadence: drafts start from your record, you edit and ship.');
+    // time reclaimed estimate scales with volume
+    var perWeek=[0,1.5,4,8,14][vol];
+    var flag='⚑ Estimated time reclaimed: ~'+perWeek+' hrs/week once the system is live. Hours moved from re-finding sources and blank-page starts to editing and publishing. Human-in-the-loop editing stays your final step.';
+    document.getElementById('rd-head').textContent=head;
+    var ul=document.getElementById('rd-list');ul.innerHTML='';
+    connect.slice(0,4).forEach(function(x){var li=document.createElement('li');li.textContent=x;ul.appendChild(li);});
+    document.getElementById('rd-flag').textContent=flag;
+  }
+  function calcCost(){
+    var pieces=+document.getElementById('pieces').value||0,hrs=+document.getElementById('hrs').value||0,val=+document.getElementById('val').value||150;
+    var annualHrs=pieces*hrs*12, annualCost=annualHrs*val, reclaimable=annualCost*0.6;
+    document.getElementById('cost-num').textContent=fmt(annualCost);
+    var ul=document.getElementById('cost-list');ul.innerHTML='';
+    [ 'That is about '+Math.round(annualHrs).toLocaleString('en-US')+' hours a year lost to the blank page and source-hunting.',
+      'A grounded, voice-true system typically reclaims a large share of that, on the order of '+fmt(reclaimable)+'/yr of recovered time.',
+      'The uncounted cost: the pieces that never ship, and the credibility risk of publishing generic AI output under your name.'
+    ].forEach(function(x){var li=document.createElement('li');li.textContent=x;ul.appendChild(li);});
+  }
+  calcReady();calcCost();
+  // ---- reveal on scroll ----
+  (function(){
+    if(matchMedia('(prefers-reduced-motion:reduce)').matches){document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in');});return;}
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(e){io.observe(e);});
+  })();
+</script>
+<script>
+/* email assembled at runtime (not scrapable); copy + mail app + reveal + Gmail */
+(function(){var u='collins.ra',dm='northeastern.edu',a=u+'@'+dm,su=encodeURIComponent('Aloha AI — build inquiry');
+document.querySelectorAll('[data-email]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();
+try{navigator.clipboard&&navigator.clipboard.writeText(a);}catch(_){}
+var o=document.getElementById('emailReveal');if(o){o.hidden=false;o.innerHTML='Copied ✓ &nbsp;<a href="mailto:'+a+'?subject='+su+'" style="color:#7FE0C4">'+a+'</a> &nbsp;·&nbsp; <a href="https://mail.google.com/mail/?view=cm&fs=1&to='+a+'&su='+su+'" target="_blank" rel="noopener" style="color:#7FE0C4">Open in Gmail</a>';}
+window.location.href='mailto:'+a+'?subject='+su;});});})();
+</script>
+</body>
+</html>

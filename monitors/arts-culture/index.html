@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Collection & Audience AI Concept — Cultural Intelligence · Aloha AI</title>
+<meta name="description" content="A mission-grounded AI concept tool for museums, galleries, and arts nonprofits. Select your institution type and goal to get a tailored AI-application concept — grounded in provenance, accessibility, and metadata standards, with every claim cited and confidence-scored. By RN Collins, Aloha AI.">
+<link rel="canonical" href="https://aloha-ai-consulting.vercel.app/monitors/arts-culture">
+<meta name="theme-color" content="#14201C">
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Collection & Audience AI Concept — Cultural Intelligence · Aloha AI">
+<meta property="og:description" content="Not 'add a chatbot.' A mission-aligned AI read for collections, curation, audience engagement, and provenance — grounded in real cultural-sector standards.">
+<meta property="og:image" content="https://aloha-ai-consulting.vercel.app/monitors/arts-culture/og-image.png">
+<meta property="og:url" content="https://aloha-ai-consulting.vercel.app/monitors/arts-culture">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Collection & Audience AI Concept — Cultural Intelligence · Aloha AI">
+<meta name="twitter:description" content="Select your institution + goal. Get a tailored AI-application concept, grounded in cultural-sector standards, cited and confidence-scored.">
+<meta name="twitter:image" content="https://aloha-ai-consulting.vercel.app/monitors/arts-culture/og-image.png">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<script>document.documentElement.className+=' js';</script>
+<link rel="stylesheet" href="./aloha-ds.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Collection & Audience AI Readiness Concept Tool",
+"applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://aloha-ai-consulting.vercel.app/monitors/arts-culture",
+"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+"creator":{"@type":"Person","name":"RN Collins","jobTitle":"Founder, Aloha AI",
+"description":"Neuroscientist (MS), JD candidate, and AI systems builder for regulated and reputation-sensitive institutions","knowsAbout":["Cultural heritage informatics","Museum collection metadata","Provenance research","Digital accessibility","AI adoption","Neuroscience of trust and aesthetics"]},
+"about":"AI applied to museum collections, curation, audience engagement, and provenance research"}
+</script>
+<style>
+  /* ---- page-specific ---- */
+  .hero{background:radial-gradient(120% 130% at 85% -10%,#1e332c 0%,var(--ink) 55%);color:var(--cream);
+    padding-block:clamp(48px,8vw,92px) clamp(40px,6vw,72px);border-bottom:3px solid var(--teal)}
+  .hero .display{color:var(--cream);max-width:17ch;margin-bottom:var(--s4)}
+  /* gradient headline WITH solid fallback (never bare color:transparent) */
+  .hero .display .grad{color:var(--teal-mint)}
+  @supports((-webkit-background-clip:text) or (background-clip:text)){
+    .hero .display .grad{background:linear-gradient(92deg,var(--teal-mint),#CDE7DF);
+      -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}}
+  .hero .kicker{color:var(--teal-mint)}
+  .hero .lead{color:#CFDAD5;max-width:57ch}
+  .hero__cta{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:var(--s5)}
+  .hero__meta{margin-top:var(--s5);font-family:var(--mono);font-size:var(--fs-xs);color:#9FB6AE;letter-spacing:.04em;line-height:1.8}
+  .hero__meta b{color:var(--cream)}
+  .livebadge{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:var(--fs-xs);
+    letter-spacing:.08em;text-transform:uppercase;color:#CDE7DF;border:1px solid #2F4A42;border-radius:var(--r-pill);padding:.34rem .72rem;margin-bottom:var(--s4)}
+  .livebadge .dot{width:7px;height:7px;border-radius:50%;background:var(--teal-mint)}
+  @media(prefers-reduced-motion:no-preference){.livebadge .dot{animation:pulse 2.2s infinite}}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(127,224,196,.5)}70%{box-shadow:0 0 0 7px rgba(127,224,196,0)}100%{box-shadow:0 0 0 0 rgba(127,224,196,0)}}
+  .statbar{background:var(--paper);border-bottom:1px solid var(--line)}
+  .statbar__in{display:flex;flex-wrap:wrap;gap:var(--s6);padding-block:var(--s4)}
+  .statbar .stat{flex:1;min-width:150px}
+  .statbar .k{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .statbar .v{font-family:var(--serif);font-size:1.15rem;color:var(--ink);margin-top:.15rem}
+  .sec-head{margin-bottom:var(--s6);max-width:72ch}
+  .sec-head .h2{margin-bottom:var(--s3)}
+  /* OEG */
+  .oeg{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh-2)}
+  @media(max-width:760px){.oeg{grid-template-columns:1fr}}
+  .oeg__col{background:#fff;padding:var(--s5)}
+  .oeg__col.bad{background:var(--red-l)}
+  .oeg__tag{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.09em;text-transform:uppercase;margin-bottom:var(--s3);display:flex;align-items:center;gap:.45rem;flex-wrap:wrap}
+  .oeg__col.bad .oeg__tag{color:var(--red)}
+  .oeg__col.good .oeg__tag{color:var(--green)}
+  .oeg__q{font-family:var(--serif);font-size:1.05rem;font-style:italic;margin-bottom:.7rem}
+  .oeg__why{margin-top:var(--s4);padding-top:var(--s3);border-top:1px dashed var(--line);font-size:var(--fs-sm);color:var(--muted)}
+  /* concept output detail boxes */
+  .tvn{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-top:var(--s3)}
+  .tvn .box{border:1px solid var(--line);border-radius:var(--r-sm);padding:.75rem .85rem}
+  .tvn .box.now{border-color:var(--green-bd);background:var(--green-l)}
+  .tvn .lab{font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.2rem}
+  .tvn .val{font-size:.9rem}
+  /* process */
+  .steps{counter-reset:step;display:grid;gap:var(--s5)}
+  .step{display:grid;grid-template-columns:auto 1fr;gap:var(--s4);align-items:start}
+  .step__n{counter-increment:step;width:44px;height:44px;border-radius:12px;background:var(--teal);color:#fff;
+    font-family:var(--serif);font-size:1.3rem;display:grid;place-items:center;flex:none}
+  .step__n::before{content:counter(step)}
+  .card__ic svg{width:20px;height:20px}
+  .out__spec{margin-top:var(--s4);padding-top:var(--s3);border-top:1px dashed var(--line)}
+  .out__spec .lab{font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.35rem}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="#top" aria-label="Aloha AI home">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#1B7A68"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#1B7A68" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      Aloha&nbsp;AI
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav__links" id="navlinks">
+        <li><a href="#landscape">Landscape</a></li>
+        <li><a href="#gap">The Gap</a></li>
+        <li><a href="#concept">Concept tool</a></li>
+        <li><a href="#evidence">Evidence</a></li>
+        <li><a href="#method">Method</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li class="nav__cta"><a class="btn btn--primary btn--sm" href="#start">Get started →</a></li>
+      </ul>
+    </nav>
+    <button class="nav__burger" id="burger" aria-label="Open menu" aria-controls="navlinks" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+<span id="top"></span>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-h">
+  <div class="wrap">
+    <span class="livebadge"><span class="dot" aria-hidden="true"></span> Concept build · grounded 2026-07-04</span>
+    <p class="eyebrow kicker">Cultural Intelligence · Arts &amp; Institutions</p>
+    <h1 class="display" id="hero-h">AI for your collection and your audience, <span class="grad">built on the standards you already answer to.</span></h1>
+    <p class="lead">This goes past "add a chatbot to the website." A bespoke AI build scoped to <em>your</em> institution (collection cataloguing, provenance research, audience engagement, accessibility, exhibition planning), grounded in the metadata, provenance, and accessibility standards the sector runs on. Every concept cited, dated, and confidence-scored.</p>
+    <div class="hero__cta">
+      <a class="btn btn--primary" href="#concept">Get your AI concept →</a>
+      <a class="btn btn--ghost" href="#gap">See what generic AI gets wrong</a>
+    </div>
+    <p class="hero__meta">Built by <b>RN&nbsp;Collins</b>. Neuroscience (MS) · Administrative&nbsp;Law (JD&nbsp;candidate) · AI&nbsp;systems<br>Tailored for: <b id="foryou">curators, museum directors &amp; arts-nonprofit leaders</b></p>
+  </div>
+</section>
+
+<!-- STATUS / LANDSCAPE BAR -->
+<div class="statbar" id="landscape">
+  <div class="wrap statbar__in">
+    <div class="stat"><div class="k">Web accessibility rule</div><div class="v">WCAG 2.1 AA · Apr 24 2026</div></div>
+    <div class="stat"><div class="k">Collection metadata</div><div class="v">CIDOC-CRM · Dublin Core</div></div>
+    <div class="stat"><div class="k">Provenance standard</div><div class="v">AAM / AAMD guidelines</div></div>
+    <div class="stat"><div class="k">Controlled vocabularies</div><div class="v">Getty AAT · ULAN · TGN</div></div>
+  </div>
+</div>
+
+<!-- WHO IT'S FOR -->
+<section class="section" aria-labelledby="aud-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Who this is for</p>
+      <h2 class="h2" id="aud-h">Built for the people who steward the record and the room</h2>
+      <p class="lead">The same concept engine reads four ways, because the mission looks different from each seat.</p>
+    </div>
+    <div class="grid grid-4 keep-2">
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">◆</div><h3>Museum directors</h3><p class="small muted">See where AI actually earns its keep (accessibility compliance, audience reach, collection throughput) before you fund a vendor.</p></div>
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">✦</div><h3>Curators &amp; registrars</h3><p class="small muted">Faster cataloguing and provenance triage that respects CIDOC-CRM and Getty vocabularies, not a black box that invents attributions.</p></div>
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">§</div><h3>Arts-nonprofit EDs</h3><p class="small muted">Audience engagement and accessibility that a grant panel and a board can both defend: mission-aligned, not gimmick.</p></div>
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">$</div><h3>Deans of arts &amp; galleries</h3><p class="small muted">One artifact that makes the case, and the risk, legible to a room in ten seconds.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- OEG -->
+<section class="section section--paper" id="gap" aria-labelledby="gap-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The Operator Execution Gap · live</p>
+      <h2 class="h2" id="gap-h">Ask a generic AI what to do. Watch it miss the mission.</h2>
+      <p class="lead">The default pitch to a cultural institution is "add an AI chatbot to your site." It sounds efficient and gets the sector exactly wrong, because it ignores standards, provenance risk, and access obligations. Same brief, two reads. The distance between them is what a wrong build costs a collection and an audience.</p>
+    </div>
+    <div class="oeg reveal">
+      <div class="oeg__col bad">
+        <p class="oeg__tag">✕&nbsp;Generic vendor · "add a chatbot"</p>
+        <p class="oeg__q">"We want AI for our museum — where do we start?"</p>
+        <p><strong>"Add an AI chatbot to your website so visitors can ask questions, and use AI to auto-write labels and auto-tag your whole collection. Quick win, launch in a week."</strong></p>
+        <p class="oeg__why">Fluent, cheap, demo-ready. <strong>Wrong for a cultural institution on three counts</strong> — it fabricates attributions, breaks your metadata standards, and can fail the accessibility rule you're now legally bound to.</p>
+      </div>
+      <div class="oeg__col good">
+        <p class="oeg__tag">✓&nbsp;Aloha AI · mission-grounded read <span class="chip chip--src">CIDOC-CRM · WCAG · AAM</span></p>
+        <p class="oeg__q">Same brief, answered from the sector's standards:</p>
+        <p><strong>Start where the risk and the payoff are highest, not where the demo is easiest.</strong> An AI cataloguing assist should map to <strong>CIDOC-CRM / Dublin Core</strong> fields and resolve terms against the <strong>Getty AAT / ULAN</strong>, with a human registrar approving every attribution. Nothing is auto-published.</p>
+        <p>A public "chatbot" only helps if it is <strong>grounded in your own catalogue</strong> (no invented provenance) and meets <strong>WCAG 2.1 AA</strong>, the standard DOJ requires of large public entities' web content and kiosks as of <strong>April 24, 2026</strong>. Provenance triage must follow <strong>AAM/AAMD</strong> due-diligence, not an LLM's guess.</p>
+        <p class="oeg__why"><span class="chip chip--hi"><span class="ic" aria-hidden="true"></span>Confidence: High</span> &nbsp;Why you can rely on it: it maps to published, verifiable sector standards, cited in the evidence table below with retrieval dates.</p>
+      </div>
+    </div>
+    <p class="small muted reveal" style="margin-top:var(--s4);max-width:70ch"><strong>OEG</strong> (the Operator Execution Gap) is the distance between what generic AI <em>says</em> and what a cultural institution can <em>responsibly act on</em>. Closing it is the entire job.</p>
+  </div>
+</section>
+
+<!-- CONCEPT TOOL (INSTRUMENT) -->
+<section class="section" id="concept" aria-labelledby="concept-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The instrument</p>
+      <h2 class="h2" id="concept-h">Get your tailored AI-application concept</h2>
+      <p class="lead">Choose your institution type and your priority goal. The tool returns a mission-aligned AI-application concept and what a real build would include, grounded in the sector standards below. Everything runs locally in your browser; nothing is sent anywhere.</p>
+    </div>
+    <div class="grid grid-2">
+      <form class="tool reveal" aria-labelledby="concept-t" onsubmit="event.preventDefault();buildConcept()">
+        <h3 id="concept-t">Collection &amp; Audience AI concept builder</h3>
+        <div class="field"><label for="insttype">Institution type</label>
+          <select id="insttype">
+            <option value="museum">Art or history museum</option>
+            <option value="gallery">Gallery (commercial or university)</option>
+            <option value="nonprofit">Arts nonprofit / cultural org</option>
+            <option value="archive">Archive / special collections</option>
+          </select></div>
+        <div class="field"><label for="goal">Priority goal</label>
+          <select id="goal">
+            <option value="catalogue">Collection cataloguing</option>
+            <option value="provenance">Provenance research</option>
+            <option value="audience">Audience engagement</option>
+            <option value="access">Accessibility</option>
+            <option value="exhibition">Exhibition planning</option>
+          </select></div>
+        <button class="btn btn--primary" type="submit">Build my concept →</button>
+      </form>
+      <div class="out reveal" role="status" aria-live="polite">
+        <div class="out__lab">Your tailored AI concept</div>
+        <div class="out__big" id="concept-head">—</div>
+        <p id="concept-sub" class="small muted" style="margin-top:.35rem">Select an institution and goal to generate a concept.</p>
+        <div class="out__spec"><div class="lab">What a build would include</div><ul id="concept-list"><li>—</li></ul></div>
+        <div class="out__spec"><div class="lab">Standards it would honor</div><p class="small" id="concept-std" style="margin:0">—</p></div>
+        <div class="flag" id="concept-flag"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COST OF GETTING IT WRONG -->
+<section class="section section--paper" id="cost" aria-labelledby="cost-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The cost of getting it wrong</p>
+      <h2 class="h2" id="cost-h">A mis-served audience and a mis-catalogued collection both cost more than the build</h2>
+      <p class="lead">Two failure modes dominate careless cultural-AI projects. Estimate the exposure for your institution: order-of-magnitude, to make the stakes legible, not to replace a real assessment.</p>
+    </div>
+    <div class="grid grid-2">
+      <form class="tool reveal" aria-labelledby="cost-t" onsubmit="event.preventDefault();calcCost()">
+        <h3 id="cost-t">Mis-serve &amp; mis-catalogue estimator</h3>
+        <div class="field"><label for="visitors">Annual online + on-site visitors</label>
+          <input id="visitors" type="number" inputmode="numeric" min="0" step="1000" value="120000"></div>
+        <div class="field"><label for="objects">Objects to be catalogued / re-catalogued</label>
+          <input id="objects" type="number" inputmode="numeric" min="0" step="100" value="20000"></div>
+        <div class="field"><label for="excl">Est. share of audience currently excluded by inaccessible experiences</label>
+          <select id="excl"><option value="0.05">5% (conservative)</option><option value="0.13" selected>13% (approx. disability prevalence)</option><option value="0.20">20% (older + disabled audiences)</option></select></div>
+        <button class="btn btn--primary" type="submit">Estimate the exposure →</button>
+      </form>
+      <div class="out reveal" role="status" aria-live="polite">
+        <div class="out__lab">Order-of-magnitude exposure</div>
+        <div class="out__big" id="cost-num">—</div>
+        <ul id="cost-list"><li>Enter your figures to see the estimate.</li></ul>
+        <div class="flag">Illustrative model, not a guarantee of outcomes. Verify against your own attendance, remediation costs, and a professional accessibility audit.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="method" aria-labelledby="how-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">How it works</p>
+      <h2 class="h2" id="how-h">A repeatable method, not a one-off model drop</h2>
+      <p class="lead">Every Aloha AI build runs the same three-stage pipeline. It's why the concept holds up to a registrar, a grant panel, and an accessibility auditor, not just a demo.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Reference Intelligence Layer (RIL)</h3><p class="muted">Ground the build in real, published sector standards (CIDOC-CRM, Dublin Core, Getty vocabularies, WCAG, AAM/AAMD provenance guidelines) captured with source and retrieval date. No hallucinated attributions, no invented provenance.</p></div></div>
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Resolve to an Operator Layer (ROL)</h3><p class="muted">Standards become a build a curator or ED can act on: what the AI does, what stays under human approval, what changes for your audience, closing the Operator Execution Gap. Informed by neuro-aesthetics: how attention, trust, and memory actually form in a gallery.</p></div></div>
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Ground, refresh &amp; re-verify</h3><p class="muted">The build re-checks its grounding sources on a schedule (Upstash · Vercel · Exa) and flags when a standard revises (e.g. a WCAG update or a provenance-portal change) so it never quietly goes stale.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- EVIDENCE & METHOD TABLE -->
+<section class="section section--paper" id="evidence" aria-labelledby="ev-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Evidence &amp; method · grounded provenance</p>
+      <h2 class="h2" id="ev-h">Every concept traced to a real sector standard</h2>
+      <p class="lead">The rigor is the product. Each claim carries its source, retrieval date, and a confidence rating, so the same artifact that opens a conversation can support a grant narrative or a board memo. No fabricated citations.</p>
+    </div>
+    <div class="table-wrap reveal">
+      <table class="data">
+        <caption class="small muted" style="text-align:left;padding:.6rem .8rem">Evidence &amp; method ledger · grounded 2026-07-04</caption>
+        <thead><tr><th scope="col">Concept / claim</th><th scope="col">Primary source</th><th scope="col">Retrieved</th><th scope="col">Confidence</th></tr></thead>
+        <tbody>
+          <tr><td>CIDOC-CRM is the ISO standard reference ontology for interchange of cultural-heritage information; current version 7.1.3 (2024)</td><td><span class="cite">ISO 21127:2023</span> · cidoc-crm.org</td><td>2026-07-04</td><td><span class="chip chip--hi">High</span></td></tr>
+          <tr><td>Dublin Core provides a minimal cross-domain metadata element set, widely mapped to CIDOC-CRM for collections</td><td><span class="cite">DCMI / Dublin Core Element Set</span> · rdamsc.bath.ac.uk</td><td>2026-07-04</td><td><span class="chip chip--hi">High</span></td></tr>
+          <tr><td>Getty AAT, ULAN, TGN &amp; CONA are the controlled vocabularies for cataloguing art, artists, places &amp; objects; published as Linked Open Data</td><td><span class="cite">Getty Research Institute — Getty Vocabularies</span> · getty.edu</td><td>2026-07-04</td><td><span class="chip chip--hi">High</span></td></tr>
+          <tr><td>DOJ rule requires public entities serving 50,000+ to meet WCAG 2.1 AA for web content &amp; kiosks by Apr 24, 2026</td><td><span class="cite">28 CFR Part 35 (DOJ ADA Title II web rule)</span></td><td>2026-07-04</td><td><span class="chip chip--hi">High</span></td></tr>
+          <tr><td>Smithsonian Guidelines for Accessible Exhibition Design set label, alt-format &amp; circulation standards for galleries</td><td><span class="cite">Smithsonian Office of Visitor Accessibility</span> · access.si.edu</td><td>2026-07-04</td><td><span class="chip chip--med">Med · guideline</span></td></tr>
+          <tr><td>AAM/AAMD Nazi-era provenance guidelines (1998–99) define due-diligence for "covered objects" (pre-1946, acquired post-1932, EU 1932–46)</td><td><span class="cite">AAM Standards — Unlawful Appropriation (Nazi Era)</span> · aam-us.org</td><td>2026-07-04</td><td><span class="chip chip--hi">High</span></td></tr>
+          <tr><td>LIDO schema uses controlled vocabularies (ULAN, AAT) to harvest &amp; publish object metadata; LIDO Primer 2024</td><td><span class="cite">LIDO Schema — Primer (2024-09-11)</span> · lido-schema.org</td><td>2026-07-04</td><td><span class="chip chip--med">Med · community standard</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small muted reveal" style="margin-top:var(--s4);max-width:72ch"><strong>Verification checkpoint:</strong> standards are current as of the retrieval date. Some effective dates and version numbers evolve, so re-confirm against the issuing body before relying on any figure in a grant, filing, or board decision.</p>
+  </div>
+</section>
+
+<!-- DIFFERENTIATION / NAMED IP -->
+<section class="section" aria-labelledby="dif-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Why this, not a generic vendor</p>
+      <h2 class="h2" id="dif-h">The combination no chatbot vendor holds</h2>
+      <p class="lead">Most cultural-AI pitches are one trick done fast. This is built on named, defensible frameworks, so you leave speaking the language, not renting a widget.</p>
+    </div>
+    <div class="grid grid-4 keep-2">
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">RIL → ROL</p><h3 class="h3">Reference Intelligence Layer</h3><p class="small muted">Standard-grounded intelligence resolved into an operator-ready build a curator can act on.</p></div>
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">OEG</p><h3 class="h3">Operator Execution Gap</h3><p class="small muted">The gap between what generic AI says and what a cultural institution can responsibly act on.</p></div>
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">Neuro-aesthetics</p><h3 class="h3">Neuro-aesthetics</h3><p class="small muted">Engagement designed to how attention, trust, and memory actually form in front of an object, not vibes.</p></div>
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">EDSA</p><h3 class="h3">EDSA Framework</h3><p class="small muted">Keeps reputation-sensitive content compliant and un-suppressed across platforms.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section--paper" id="faq" aria-labelledby="faq-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Questions</p>
+      <h2 class="h2" id="faq-h">What curators ask first</h2>
+    </div>
+    <div class="reveal">
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq1"><span>Will AI invent attributions or provenance?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq1"><div class="acc__panel-inner">No. That's the whole design. Every attribution, term, and provenance note is grounded against your own catalogue and the Getty vocabularies, and a registrar or curator approves it before anything is published. The AI drafts and triages; a human decides. Nothing is auto-published.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq2"><span>How does this handle accessibility obligations?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq2"><div class="acc__panel-inner">Accessibility is a first-class constraint, not an afterthought. Any public-facing build targets WCAG 2.1 AA (the level the DOJ requires of large public entities' web content and kiosks as of April 24, 2026) and gallery-facing work references the Smithsonian accessible-exhibition guidelines. Confirm your specific obligations with counsel.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq3"><span>Can I get one scoped to my specific collection or program?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq3"><div class="acc__panel-inner">Yes. That's the point. This is a reference concept; a tailored build for your collection, metadata schema, and audience is what Aloha AI produces, usually within days of a scoping conversation. Use the contact link below.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq4"><span>What data do you collect from me?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq4"><div class="acc__panel-inner">None. There is no login, no tracking, and no cookies. Every calculation runs locally in your browser and nothing you enter leaves your device.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- THE SERVICE / OFFER -->
+<section class="section" id="start" aria-labelledby="offer-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The service</p>
+      <h2 class="h2" id="offer-h">How this becomes yours</h2>
+      <p class="lead">Museums, galleries, and arts nonprofits are pitched "add a chatbot" and left with something that breaks their metadata, risks their provenance, and fails their access obligations. I build a tailored AI system for your exact collection and audience, grounded in the standards you already answer to and resolved into decisions your team can act on.</p>
+    </div>
+    <div class="grid grid-3 reveal">
+      <div class="card"><div class="card__ic" aria-hidden="true">1</div><h3>What I build</h3><p class="small muted">A bespoke AI system scoped to your collection, metadata schema, and audience (cataloguing, provenance triage, engagement, or accessibility), sourced, standards-mapped, and human-in-the-loop.</p></div>
+      <div class="card"><div class="card__ic" aria-hidden="true">2</div><h3>What you get</h3><ul class="small muted" style="padding-left:1.1rem;margin:.35rem 0 0"><li>An AI build grounded in CIDOC-CRM, Getty vocabularies &amp; WCAG</li><li>An evidence &amp; method ledger you can put in a grant or board memo</li><li>Re-verification when a standard revises</li></ul></div>
+      <div class="card"><div class="card__ic" aria-hidden="true">3</div><h3>How to start</h3><p class="small muted">A 20-minute scoping call. If it's a fit, a tailored build turns around in days, not weeks.</p></div>
+    </div>
+    <p class="lead reveal" style="margin-top:var(--s5)"><strong>Pricing:</strong> bespoke builds start from <strong>$4,000 + $1,500/mo</strong>, scoped to your institution. Three-month minimum on any retainer; 30 days' notice to stop.</p>
+  </div>
+</section>
+<!-- CTA HIERARCHY -->
+<section class="section section--ink" id="contact" aria-labelledby="cta-h">
+  <div class="wrap" style="text-align:center">
+    <p class="eyebrow">Aloha AI · Honolulu</p>
+    <h2 class="h2" id="cta-h" style="max-width:24ch;margin-inline:auto">Ready when you are.</h2>
+    <p class="lead" style="margin:var(--s4) auto var(--s5);text-align:center">Convinced, curious, or comparing: there's a path for each.</p>
+    <div style="display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn--primary" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Start with a Systems Audit →</a>
+      <a class="btn btn--ghost" href="https://aloha-ai-consulting.vercel.app/tools/ai-readiness-scorecard" target="_blank" rel="noopener">Take the 2-minute assessment</a>
+    </div>
+    <p class="small" style="margin-top:var(--s5);color:var(--muted-on-ink)">Prefer email? <a href="#" data-email style="color:var(--teal-mint)">Email RN</a> &nbsp;·&nbsp; or connect on <a href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noopener" style="color:var(--teal-mint)">LinkedIn</a></p>
+    <p id="emailReveal" hidden style="margin-top:.5rem;font-family:var(--mono);font-size:.8rem;color:#CFDAD5"></p>
+  </div>
+</section>
+<footer class="footer" aria-labelledby="foot-h">
+  <div class="wrap">
+    <h2 id="foot-h" class="small" style="position:absolute;left:-999px">Site footer</h2>
+    <div class="footer__grid">
+      <div>
+        <a class="nav__brand" href="#top" style="color:var(--cream)" aria-label="Aloha AI home"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#7FE0C4"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#7FE0C4" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg> Aloha&nbsp;AI</a>
+        <p class="small" style="margin-top:var(--s3);max-width:38ch;color:#9FB6AE">AI implementation built around how humans actually trust and use it, for regulated or reputation-sensitive professions.</p>
+      </div>
+      <div>
+        <h4>This site</h4>
+        <ul>
+          <li><a href="#gap">The gap</a></li>
+          <li><a href="#method">How it works</a></li>
+          <li><a href="#start">The service</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Aloha AI</h4>
+        <ul>
+          <li><a href="https://aloha-ai-consulting.vercel.app" target="_blank" rel="noopener">The practice</a></li>
+          <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a call</a></li>
+          <li><a href="https://aloha-ai-consulting.vercel.app/tools/ai-readiness-scorecard" target="_blank" rel="noopener">Assessment</a></li>
+          <li><a href="https://rn-portfolio-khaki.vercel.app" target="_blank" rel="noopener">Portfolio → RN Builds</a></li>
+          <li><a href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://aloha-ai-consulting.vercel.app/privacy" target="_blank" rel="noopener">Privacy</a></li>
+          <li><a href="https://aloha-ai-consulting.vercel.app/terms" target="_blank" rel="noopener">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="disc small">Cultural-sector AI intelligence, not legal, tax, or conservation advice. RN Collins is a JD candidate, not a licensed attorney; nothing here is legal advice or an attorney–client relationship. Concepts are illustrative, not a guarantee of outcomes. Confirm all standards and effective dates against the issuing body before relying on them.</p>
+    <p class="fine">Aloha AI · a DBA of Rayven-Nikkita Collins LLC · Honolulu, HI · No tracking, no cookies · Standards grounded 2026-07-04; confirm against the issuing body before relying on any figure.</p>
+  </div>
+</footer>
+
+<script>
+  // ---- mobile nav ----
+  (function(){
+    var b=document.getElementById('burger'),l=document.getElementById('navlinks');
+    function set(o){b.setAttribute('aria-expanded',o);l.classList.toggle('open',o);b.setAttribute('aria-label',o?'Close menu':'Open menu');}
+    b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true');});
+    l.addEventListener('click',function(e){if(e.target.tagName==='A')set(false);});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});
+  })();
+  // ---- accordion ----
+  document.querySelectorAll('.acc__btn').forEach(function(btn){
+    var panel=document.getElementById(btn.getAttribute('aria-controls'));
+    btn.addEventListener('click',function(){
+      var open=btn.getAttribute('aria-expanded')==='true';
+      btn.setAttribute('aria-expanded',!open);
+      panel.style.maxHeight=open?null:panel.scrollHeight+'px';
+    });
+  });
+  // ---- personalization slot ?for= ----
+  (function(){var p=new URLSearchParams(location.search).get('for');if(p){document.getElementById('foryou').textContent=p;}})();
+  // ---- concept builder ----
+  var CONCEPTS={
+    catalogue:{head:'AI-assisted cataloguing, standards-mapped',
+      sub:'Draft records and controlled-vocabulary suggestions that a registrar approves. Never auto-published.',
+      list:['Ingest images + existing records; draft CIDOC-CRM / Dublin Core field values.','Suggest terms resolved against Getty AAT (materials, techniques) and ULAN (artist names).','Human-in-the-loop approval queue: every attribution reviewed before publish.','Backlog triage: rank un-catalogued objects by research value and gaps.'],
+      std:'CIDOC-CRM · Dublin Core · Getty AAT / ULAN · LIDO',
+      flag:'⚑ The AI drafts; a registrar decides. No auto-published attributions.'},
+    provenance:{head:'Provenance research triage, due-diligence aligned',
+      sub:'Surface gaps and flags for human provenance researchers, grounded in AAM/AAMD guidance.',
+      list:['Flag "covered objects": pre-1946, acquired post-1932, plausibly in Europe 1932–46.','Extract and structure ownership chains from files for researcher review.','Cross-reference public provenance databases; never assert a finding the AI can’t source.','Prioritize the collection by provenance-risk for limited researcher time.'],
+      std:'AAM/AAMD Nazi-era guidelines · Washington Principles · CIDOC-CRM',
+      flag:'⚑ Provenance is a human, evidentiary judgment. The AI triages and surfaces, it does not adjudicate.'},
+    audience:{head:'Grounded audience engagement, no invented facts',
+      sub:'Interpretive and wayfinding help drawn only from your own vetted catalogue.',
+      list:['A public assistant grounded strictly in your catalogue, with no fabricated art history.','Adaptive interpretation by reading level, language, and interest.','Neuro-aesthetics-informed sequencing: pacing attention and memory across a visit.','Analytics on what audiences actually ask, feeding curatorial and access decisions.'],
+      std:'WCAG 2.1 AA · your vetted catalogue · neuro-aesthetics',
+      flag:'⚑ A public tool only helps if it can’t invent provenance and meets WCAG 2.1 AA.'},
+    access:{head:'Accessibility as a first-class build',
+      sub:'Meet the DOJ web rule and extend access across the whole experience.',
+      list:['Draft alt text, transcripts, and plain-language labels for registrar review.','Audit web + kiosk experiences against WCAG 2.1 AA (DOJ deadline Apr 24, 2026).','Generate alternative formats referenced by Smithsonian exhibition guidelines.','Multilingual and reading-level variants of interpretive content.'],
+      std:'WCAG 2.1 AA · DOJ ADA Title II web rule · Smithsonian guidelines',
+      flag:'⚑ Accessibility is a legal obligation for large public entities. Confirm your scope with counsel.'},
+    exhibition:{head:'Exhibition planning intelligence',
+      sub:'Decision support for checklists, layout, and access, not a replacement for curatorial judgment.',
+      list:['Query your collection by theme, medium, and condition to draft checklists.','Model circulation and label legibility against accessible-design guidelines.','Surface loan, rights, and provenance flags early in planning.','Draft interpretive text grounded in vetted records for curator editing.'],
+      std:'Smithsonian accessible exhibition design · CIDOC-CRM · neuro-aesthetics',
+      flag:'⚑ Curatorial judgment leads; the AI accelerates the research and the compliance check.'}
+  };
+  function buildConcept(){
+    var goal=document.getElementById('goal').value,
+        inst=document.getElementById('insttype').selectedOptions[0].textContent,
+        c=CONCEPTS[goal];
+    document.getElementById('concept-head').textContent=c.head;
+    document.getElementById('concept-sub').textContent='For a '+inst.toLowerCase()+': '+c.sub;
+    var ul=document.getElementById('concept-list');ul.innerHTML='';
+    c.list.forEach(function(x){var li=document.createElement('li');li.textContent=x;ul.appendChild(li);});
+    document.getElementById('concept-std').textContent=c.std;
+    document.getElementById('concept-flag').textContent=c.flag;
+  }
+  // ---- cost estimator ----
+  function fmt(n){return '$'+Math.round(n).toLocaleString('en-US');}
+  function calcCost(){
+    var v=+document.getElementById('visitors').value||0,
+        o=+document.getElementById('objects').value||0,
+        e=+document.getElementById('excl').value||0.13;
+    var excluded=Math.round(v*e);
+    var recat=Math.round(o*12); // ~$12/object illustrative remediation of mis-catalogued records
+    document.getElementById('cost-num').textContent=fmt(recat)+' + '+excluded.toLocaleString('en-US')+' reached';
+    var ul=document.getElementById('cost-list');ul.innerHTML='';
+    [
+      'Mis-served audience: ≈'+excluded.toLocaleString('en-US')+' visitors/yr may be excluded by inaccessible experiences: lost reach, and exposure under the DOJ WCAG 2.1 AA rule.',
+      'Mis-catalogued collection: ≈'+fmt(recat)+' to remediate '+o.toLocaleString('en-US')+' records (illustrative ~$12/object) if attributions are auto-published without review.',
+      'Reputational cost of a wrong provenance claim is not modeled here, and is the one you can least afford.'
+    ].forEach(function(x){var li=document.createElement('li');li.textContent=x;ul.appendChild(li);});
+  }
+  buildConcept();calcCost();
+  // ---- reveal on scroll ----
+  (function(){
+    if(matchMedia('(prefers-reduced-motion:reduce)').matches){document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in');});return;}
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(e){io.observe(e);});
+  })();
+</script>
+<script>
+/* email assembled at runtime (not scrapable); copy + mail app + reveal + Gmail */
+(function(){var u='collins.ra',dm='northeastern.edu',a=u+'@'+dm,su=encodeURIComponent('Aloha AI — build inquiry');
+document.querySelectorAll('[data-email]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();
+try{navigator.clipboard&&navigator.clipboard.writeText(a);}catch(_){}
+var o=document.getElementById('emailReveal');if(o){o.hidden=false;o.innerHTML='Copied ✓ &nbsp;<a href="mailto:'+a+'?subject='+su+'" style="color:#7FE0C4">'+a+'</a> &nbsp;·&nbsp; <a href="https://mail.google.com/mail/?view=cm&fs=1&to='+a+'&su='+su+'" target="_blank" rel="noopener" style="color:#7FE0C4">Open in Gmail</a>';}
+window.location.href='mailto:'+a+'?subject='+su;});});})();
+</script>
+</body>
+</html>

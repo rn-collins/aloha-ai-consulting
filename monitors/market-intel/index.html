@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Market & Competitive Intelligence Monitor — Aloha AI</title>
+<meta name="description" content="A primary-source-grounded competitive-intelligence tool. Score your signal coverage, see the blind spots, and see what generic AI's stale market summary gets confidently wrong — every signal sourced, dated, confidence-scored. By RN Collins, Aloha AI.">
+<link rel="canonical" href="https://aloha-ai-consulting.vercel.app/monitors/market-intel">
+<meta name="theme-color" content="#14201C">
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Market & Competitive Intelligence Monitor — Aloha AI">
+<meta property="og:description" content="Not a headline scraper. A sourced instrument that scores your signal coverage and shows what generic AI's market summary gets confidently wrong.">
+<meta property="og:image" content="https://aloha-ai-consulting.vercel.app/monitors/market-intel/og-image.png">
+<meta property="og:url" content="https://aloha-ai-consulting.vercel.app/monitors/market-intel">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Market & Competitive Intelligence Monitor — Aloha AI">
+<meta name="twitter:description" content="Score your signal coverage. Every signal sourced, dated, confidence-scored.">
+<meta name="twitter:image" content="https://aloha-ai-consulting.vercel.app/monitors/market-intel/og-image.png">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<script>document.documentElement.className+=' js';</script>
+<link rel="stylesheet" href="./aloha-ds.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Market & Competitive Intelligence Monitor",
+"applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://aloha-ai-consulting.vercel.app/monitors/market-intel",
+"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+"creator":{"@type":"Person","name":"RN Collins","jobTitle":"Founder, Aloha AI",
+"description":"Neuroscientist (MS), JD candidate, and AI systems builder for regulated and reputation-sensitive industries","knowsAbout":["Competitive intelligence","Market monitoring","AI adoption","Regulatory intelligence","Neuroscience of trust"]},
+"about":"Primary-source competitive and market intelligence monitoring for founders and strategy teams"}
+</script>
+<style>
+  /* ---- page-specific ---- */
+  .hero{background:radial-gradient(120% 130% at 85% -10%,#1e332c 0%,var(--ink) 55%);color:var(--cream);
+    padding-block:clamp(48px,8vw,92px) clamp(40px,6vw,72px);border-bottom:3px solid var(--teal)}
+  .hero .display{color:var(--cream);max-width:16ch;margin-bottom:var(--s4)}
+  /* gradient headline w/ solid fallback */
+  .hero .display{color:var(--cream)}
+  @supports (-webkit-background-clip:text) or (background-clip:text){
+    .hero .display.grad{background:linear-gradient(90deg,var(--cream) 0%,var(--teal-mint) 120%);
+      -webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+  }
+  .hero .kicker{color:var(--teal-mint)}
+  .hero .lead{color:#CFDAD5;max-width:56ch}
+  .hero__cta{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:var(--s5)}
+  .hero__meta{margin-top:var(--s5);font-family:var(--mono);font-size:var(--fs-xs);color:#9FB6AE;letter-spacing:.04em;line-height:1.8}
+  .hero__meta b{color:var(--cream)}
+  .livebadge{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:var(--fs-xs);
+    letter-spacing:.08em;text-transform:uppercase;color:#CDE7DF;border:1px solid #2F4A42;border-radius:var(--r-pill);padding:.34rem .72rem;margin-bottom:var(--s4)}
+  .livebadge .dot{width:7px;height:7px;border-radius:50%;background:var(--teal-mint);animation:pulse 2.2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(127,224,196,.5)}70%{box-shadow:0 0 0 7px rgba(127,224,196,0)}100%{box-shadow:0 0 0 0 rgba(127,224,196,0)}}
+  .statbar{background:var(--paper);border-bottom:1px solid var(--line)}
+  .statbar__in{display:flex;flex-wrap:wrap;gap:var(--s6);padding-block:var(--s4)}
+  .statbar .stat{flex:1;min-width:150px}
+  .statbar .k{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .statbar .v{font-family:var(--serif);font-size:1.15rem;color:var(--ink);margin-top:.15rem}
+  .sec-head{margin-bottom:var(--s6);max-width:70ch}
+  .sec-head .h2{margin-bottom:var(--s3)}
+  /* OEG */
+  .oeg{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh-2)}
+  @media(max-width:760px){.oeg{grid-template-columns:1fr}}
+  .oeg__col{background:#fff;padding:var(--s5)}
+  .oeg__col.bad{background:var(--red-l)}
+  .oeg__tag{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.09em;text-transform:uppercase;margin-bottom:var(--s3);display:flex;align-items:center;gap:.45rem;flex-wrap:wrap}
+  .oeg__col.bad .oeg__tag{color:var(--red)}
+  .oeg__col.good .oeg__tag{color:var(--green)}
+  .oeg__q{font-family:var(--serif);font-size:1.05rem;font-style:italic;margin-bottom:.7rem}
+  .oeg__why{margin-top:var(--s4);padding-top:var(--s3);border-top:1px dashed var(--line);font-size:var(--fs-sm);color:var(--muted)}
+  /* signal chooser */
+  .sigrid{display:grid;grid-template-columns:1fr 1fr;gap:.55rem;margin-bottom:var(--s4)}
+  @media(max-width:520px){.sigrid{grid-template-columns:1fr}}
+  .sigopt{display:flex;align-items:flex-start;gap:.55rem;border:1px solid #33504f;border-radius:var(--r-sm);
+    padding:.6rem .7rem;cursor:pointer;background:#0E1815;min-height:44px}
+  .sigopt:hover{border-color:var(--teal)}
+  .sigopt input{width:18px;height:18px;margin-top:.15rem;accent-color:var(--teal-mint);flex:none;min-height:auto}
+  .sigopt span{font-size:.85rem;color:var(--cream);line-height:1.3}
+  .sigopt small{display:block;color:var(--muted-on-ink);font-size:.72rem;margin-top:.1rem}
+  /* score meter */
+  .meter{height:10px;border-radius:var(--r-pill);background:#1c2b26;overflow:hidden;margin:.5rem 0}
+  .meter>span{display:block;height:100%;background:linear-gradient(90deg,var(--teal),var(--teal-mint));width:0;transition:width .5s var(--ease)}
+  /* process */
+  .steps{counter-reset:step;display:grid;gap:var(--s5)}
+  .step{display:grid;grid-template-columns:auto 1fr;gap:var(--s4);align-items:start}
+  .step__n{counter-increment:step;width:44px;height:44px;border-radius:12px;background:var(--teal);color:#fff;
+    font-family:var(--serif);font-size:1.3rem;display:grid;place-items:center;flex:none}
+  .step__n::before{content:counter(step)}
+  .aud__ic,.card__ic svg{width:20px;height:20px}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="#top" aria-label="Aloha AI home">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#1B7A68"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#1B7A68" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      Aloha&nbsp;AI
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav__links" id="navlinks">
+        <li><a href="#status">Status</a></li>
+        <li><a href="#gap">The Gap</a></li>
+        <li><a href="#coverage">Score coverage</a></li>
+        <li><a href="#sources">Signals</a></li>
+        <li><a href="#method">Method</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li class="nav__cta"><a class="btn btn--primary btn--sm" href="#start">Get started →</a></li>
+      </ul>
+    </nav>
+    <button class="nav__burger" id="burger" aria-label="Open menu" aria-controls="navlinks" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+<span id="top"></span>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-h">
+  <div class="wrap">
+    <span class="livebadge"><span class="dot" aria-hidden="true"></span> Live · retrieved 2026-07-04</span>
+    <p class="eyebrow kicker">Market &amp; Competitive Intelligence</p>
+    <h1 class="display grad" id="hero-h">Know what your market is doing, with the receipts.</h1>
+    <p class="lead">A sourced instrument, not a headline scraper. Score <em>your</em> signal coverage, see the blind spots a competitor is already exploiting, and see exactly what a generic AI's stale "market summary" gets confidently wrong. Every signal traces to a verifiable public source and carries a date.</p>
+    <div class="hero__cta">
+      <a class="btn btn--primary" href="#coverage">Score your coverage →</a>
+      <a class="btn btn--ghost" href="#gap">See what AI gets wrong</a>
+    </div>
+    <p class="hero__meta">Built by <b>RN&nbsp;Collins</b> · Neuroscience (MS) · Administrative&nbsp;Law (JD&nbsp;candidate) · AI&nbsp;systems<br>Tailored for: <b id="foryou">founders, brand &amp; market leaders, and strategy teams</b></p>
+  </div>
+</section>
+
+<!-- STATUS BAR -->
+<div class="statbar" id="status">
+  <div class="wrap statbar__in">
+    <div class="stat"><div class="k">Signal categories tracked</div><div class="v">6 core streams</div></div>
+    <div class="stat"><div class="k">Public-source types</div><div class="v">SEC · postings · reviews · filings</div></div>
+    <div class="stat"><div class="k">Refresh cadence</div><div class="v">Daily → weekly</div></div>
+    <div class="stat"><div class="k">Every signal</div><div class="v">Sourced &amp; dated</div></div>
+  </div>
+</div>
+
+<!-- WHO IT'S FOR -->
+<section class="section" aria-labelledby="aud-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Who this is for</p>
+      <h2 class="h2" id="aud-h">Built for the people who can't afford a confident wrong read on the market</h2>
+      <p class="lead">The same monitor reads four ways, because the stakes differ by seat.</p>
+    </div>
+    <div class="grid grid-4 keep-2">
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">◆</div><h3>Founders</h3><p class="small muted">Know a competitor's pricing move, funding round, or hiring surge before it shows up in your churn.</p></div>
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">✦</div><h3>Brand &amp; market leaders</h3><p class="small muted">A sourced, dated read on category shifts and sentiment, not a summary you have to re-verify.</p></div>
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">$</div><h3>Strategy teams</h3><p class="small muted">One screenshot that makes the competitive picture legible to a board room in ten seconds.</p></div>
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">§</div><h3>Regulated / reputation-sensitive</h3><p class="small muted">Evidence-grade provenance for regulated or reputation-sensitive professions where a wrong claim carries real cost.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- OEG -->
+<section class="section section--paper" id="gap" aria-labelledby="gap-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The Operator Execution Gap · live</p>
+      <h2 class="h2" id="gap-h">Ask a generic AI "what's happening in my market." Watch it fail.</h2>
+      <p class="lead">Large language models answer market questions most confidently exactly where their training data is stalest. Same question, two answers: the fluent-but-outdated generic reply, and the primary-source, dated one. The distance between them is what a wrong assumption costs.</p>
+    </div>
+    <div class="oeg reveal">
+      <div class="oeg__col bad">
+        <p class="oeg__tag">✕&nbsp;Generic LLM · unsourced &amp; stale</p>
+        <p class="oeg__q">"Give me a competitive summary of my category — who's winning and what should I do?"</p>
+        <p><strong>"Your category is stable and growing steadily. Your main competitor is the market leader and is focused on enterprise. Pricing is flat across the space, and there's no major new entrant to worry about."</strong></p>
+        <p class="oeg__why">Confident. Fluent. <strong>Frozen on training data of unknown age</strong> — and blind to the funding round, the pricing change, and the hiring surge that happened last quarter. The exact way a strategy deck ends up wrong in the room.</p>
+      </div>
+      <div class="oeg__col good">
+        <p class="oeg__tag">✓&nbsp;Aloha AI · primary-source grounded <span class="chip chip--src">SEC · Postings · Reviews</span></p>
+        <p class="oeg__q">Same question, answered from live public signals:</p>
+        <p><strong>Three dated signals change the picture.</strong> A competitor posted <strong>14 sales roles in 60 days</strong> (job boards, retrieved 2026-07-04): a go-to-market push, not steady state. A second raised a round per a <strong>Form D filing</strong> (SEC EDGAR, dated) and quietly <strong>changed its pricing page</strong> (captured, timestamped). Review-platform sentiment on the incumbent <strong>dipped on one recurring complaint</strong>.</p>
+        <p>The generic "stable and flat" read misses all three. What this <em>does</em> tell you: where to defend on pricing, which competitor is staffing to attack, and the sentiment gap you can position into.</p>
+        <p class="oeg__why"><span class="chip chip--hi"><span class="ic" aria-hidden="true"></span>Confidence: High on filings · Med on sentiment</span> &nbsp;Why you can rely on it: each signal maps to a named public source with a retrieval date, listed below, not asserted from memory.</p>
+      </div>
+    </div>
+    <p class="small muted reveal" style="margin-top:var(--s4);max-width:70ch"><strong>OEG</strong>, the Operator Execution Gap, is the distance between what AI <em>says</em> about your market and what a leader can actually <em>act on</em>. Closing it is the entire job.</p>
+  </div>
+</section>
+
+<!-- WHAT WE WATCH -->
+<section class="section" aria-labelledby="chg-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">What actually moves the picture</p>
+      <h2 class="h2" id="chg-h">Six signal streams, by decision consequence</h2>
+      <p class="lead">The signals that move real money and real positioning, and the public source each is read from. Generic summaries collapse all six into "the market is fine."</p>
+    </div>
+    <div class="grid grid-2">
+      <div class="card reveal"><h3>Competitor moves <span class="chip chip--hi">High impact</span></h3>
+        <p class="small muted">Product launches, feature shifts, positioning changes, press. Read from newsrooms, changelogs, and captured pages: dated, not summarized.</p></div>
+      <div class="card reveal"><h3>Pricing &amp; packaging <span class="chip chip--hi">High impact</span></h3>
+        <p class="small muted">Timestamped captures of public pricing pages surface increases, new tiers, and quiet removals before your win-rate tells you.</p></div>
+      <div class="card reveal"><h3>Customer sentiment <span class="chip chip--med">Moderate</span></h3>
+        <p class="small muted">Review platforms and public forums, read for recurring complaints and shifts: an interpretive signal, flagged as such.</p></div>
+      <div class="card reveal"><h3>Hiring signals <span class="chip chip--med">Moderate</span></h3>
+        <p class="small muted">Public job postings reveal where a competitor is investing (a GTM surge, a new market, an R&amp;D bet) weeks before the launch.</p></div>
+      <div class="card reveal"><h3>Funding &amp; filings <span class="chip chip--hi">High impact</span></h3>
+        <p class="small muted">SEC EDGAR (Form D, 10-K, 8-K) and public round announcements: the highest-confidence signal of a competitor's next runway.</p></div>
+      <div class="card reveal"><h3>IP &amp; regulatory <span class="chip chip--med">Nuance</span></h3>
+        <p class="small muted">Patent &amp; trademark filings (USPTO) and relevant regulatory actions hint at direction: directional, confidence-scored.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- COVERAGE SCORER + COST -->
+<section class="section section--paper" id="coverage" aria-labelledby="exp-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The instrument</p>
+      <h2 class="h2" id="exp-h">Score your competitive-intelligence coverage</h2>
+      <p class="lead">Select what you actually track today and how often. The tool returns a coverage score, your specific blind spots, and what a monitor would watch for you, grounded in the six signal streams above. Everything runs locally in your browser; nothing is sent anywhere.</p>
+    </div>
+    <div class="grid grid-2">
+      <form class="tool reveal" aria-labelledby="cov-t" onsubmit="event.preventDefault();calcCoverage()">
+        <h3 id="cov-t">Coverage &amp; blind-spot scorer</h3>
+        <fieldset style="border:0;padding:0;margin:0 0 var(--s4)">
+          <legend class="field" style="font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.1em;text-transform:uppercase;color:var(--muted-on-ink);margin-bottom:.5rem;padding:0">Signals you track today</legend>
+          <div class="sigrid">
+            <label class="sigopt"><input type="checkbox" class="sig" value="competitors"><span>Competitor moves<small>launches, positioning</small></span></label>
+            <label class="sigopt"><input type="checkbox" class="sig" value="pricing"><span>Pricing changes<small>public pricing pages</small></span></label>
+            <label class="sigopt"><input type="checkbox" class="sig" value="sentiment"><span>Customer sentiment<small>reviews, forums</small></span></label>
+            <label class="sigopt"><input type="checkbox" class="sig" value="regulatory"><span>Regulatory / IP<small>filings, patents</small></span></label>
+            <label class="sigopt"><input type="checkbox" class="sig" value="hiring"><span>Hiring signals<small>public job posts</small></span></label>
+            <label class="sigopt"><input type="checkbox" class="sig" value="funding"><span>Funding &amp; filings<small>SEC, round news</small></span></label>
+          </div>
+        </fieldset>
+        <div class="field"><label for="cadence">How often you actually check</label>
+          <select id="cadence">
+            <option value="1">Daily / automated</option>
+            <option value="0.75" selected>Weekly</option>
+            <option value="0.45">Monthly</option>
+            <option value="0.2">Only when something breaks (ad hoc)</option>
+          </select></div>
+        <button class="btn btn--primary" type="submit">Score my coverage →</button>
+      </form>
+      <div class="out reveal" role="status" aria-live="polite">
+        <div class="out__lab">Your coverage score</div>
+        <div class="out__big" id="cov-head">—</div>
+        <div class="meter" aria-hidden="true"><span id="cov-bar"></span></div>
+        <ul id="cov-list"><li>Select your signals and cadence to see your blind spots.</li></ul>
+        <div class="flag" id="cov-flag"></div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="sec-head reveal">
+      <p class="eyebrow">The cost of getting it wrong</p>
+      <h2 class="h2">What one decision on stale intel costs</h2>
+      <p class="lead">The most common error we see: making a pricing, positioning, or hiring bet off a generic AI's frozen market summary instead of a dated signal. This is the price of acting on the stale answer.</p>
+    </div>
+    <div class="grid grid-2">
+      <form class="tool reveal" aria-labelledby="wrong-t" onsubmit="event.preventDefault();calcWrong()">
+        <h3 id="wrong-t">Stale-intel decision-risk calculator</h3>
+        <div class="field"><label for="ded">Size of the decision at stake (USD)</label>
+          <input id="ded" type="number" inputmode="numeric" min="0" step="1000" value="500000"></div>
+        <div class="field"><label for="rate">How wrong the stale read could be</label>
+          <select id="rate"><option value="0.10">Minor — 10% off</option><option value="0.25" selected>Material — 25% off</option><option value="0.50">Severe — 50% off</option></select></div>
+        <button class="btn btn--primary" type="submit">Calculate the risk →</button>
+      </form>
+      <div class="out reveal" role="status" aria-live="polite">
+        <div class="out__lab">Value exposed to a wrong-market decision</div>
+        <div class="out__big" id="wrong-num">$—</div>
+        <ul><li>Plus the opportunity cost of the move you didn't make because a signal was invisible to you.</li><li>This is the cost of trusting an undated "the market is stable" summary.</li></ul>
+        <div class="flag">Illustrative model, not advice. Verify each signal against its live public source before you act.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="method" aria-labelledby="how-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">How it works</p>
+      <h2 class="h2" id="how-h">A repeatable intelligence method, not a one-off scrape</h2>
+      <p class="lead">Every Aloha AI monitor runs the same three-stage pipeline. It's why the read stays right next month, not just today.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Retrieval Intelligence Layer (RIL)</h3><p class="muted">Primary and verifiable public sources only (SEC filings, public job postings, captured pricing pages, review platforms, patent &amp; trademark filings), captured with source and retrieval date. No headline aggregation.</p></div></div>
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Resolve to an Operator Layer (ROL)</h3><p class="muted">Raw signals become a decision a leader can act on: what changed, for whom, with what confidence, closing the Operator Execution Gap.</p></div></div>
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Auto-refresh &amp; alert</h3><p class="muted">The monitor re-checks its primary sources on a schedule (Upstash · Vercel · Exa) and can ping you when a competitor files, prices, or hires, so it never goes stale.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SIGNALS / PROVENANCE -->
+<section class="section section--paper" id="sources" aria-labelledby="src-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">What we monitor &amp; why</p>
+      <h2 class="h2" id="src-h">Every signal, traced to a verifiable public source</h2>
+      <p class="lead">The provenance rigor is the product. Each signal carries its source type, refresh cadence, and a confidence rating, so the same artifact that opens a board conversation can survive a challenge in the room.</p>
+    </div>
+    <div class="table-wrap reveal">
+      <table class="data">
+        <caption class="small muted" style="text-align:left;padding:.6rem .8rem">Signal ledger · categories illustrative; retrieved 2026-07-04</caption>
+        <thead><tr><th scope="col">Signal</th><th scope="col">Source type</th><th scope="col">Cadence</th><th scope="col">Confidence</th></tr></thead>
+        <tbody>
+          <tr><td>Competitor funding &amp; corporate events</td><td><span class="cite">SEC EDGAR</span> · Form D / 8-K / 10-K · public round announcements</td><td>Daily</td><td><span class="chip chip--hi">High</span></td></tr>
+          <tr><td>Pricing &amp; packaging changes</td><td><span class="cite">Public pricing pages</span> · timestamped captures</td><td>Weekly</td><td><span class="chip chip--hi">High</span></td></tr>
+          <tr><td>Hiring &amp; investment direction</td><td><span class="cite">Public job postings</span> · careers pages / job boards</td><td>Weekly</td><td><span class="chip chip--med">Med · directional</span></td></tr>
+          <tr><td>Customer sentiment &amp; recurring complaints</td><td><span class="cite">Review platforms</span> · public forums</td><td>Weekly</td><td><span class="chip chip--med">Med · interpretive</span></td></tr>
+          <tr><td>Product direction &amp; IP</td><td><span class="cite">USPTO</span> patent &amp; trademark filings · changelogs</td><td>Monthly</td><td><span class="chip chip--med">Med · directional</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small muted reveal" style="margin-top:var(--s4);max-width:70ch"><strong>Verification checkpoint:</strong> source categories above are illustrative and current as of the retrieval date. In a live monitor each signal links to its specific source; re-confirm against that source before acting on any figure.</p>
+  </div>
+</section>
+
+<!-- DIFFERENTIATION -->
+<section class="section" aria-labelledby="dif-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Why this, not a generic monitor</p>
+      <h2 class="h2" id="dif-h">The combination no competitor holds</h2>
+      <p class="lead">Most tools are one thing done adequately. This is built on named, defensible frameworks, so you leave speaking the language, not renting a dashboard.</p>
+    </div>
+    <div class="grid grid-4 keep-2">
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">RIL → ROL</p><h3 class="h3">Retrieval Intelligence Layer</h3><p class="small muted">Primary-source monitoring resolved into an operator-ready decision layer.</p></div>
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">OEG</p><h3 class="h3">Operator Execution Gap</h3><p class="small muted">The gap between what AI says about your market and what a leader can act on.</p></div>
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">EDSA</p><h3 class="h3">EDSA Framework</h3><p class="small muted">Keeps regulated and reputation-sensitive content compliant and un-suppressed across platforms.</p></div>
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">Sourced-first</p><h3 class="h3">Provenance ledger</h3><p class="small muted">Every signal → source type → cadence → confidence, so it holds up in the room.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section--paper" id="faq" aria-labelledby="faq-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Questions</p>
+      <h2 class="h2" id="faq-h">What people ask first</h2>
+    </div>
+    <div class="reveal">
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq1"><span>Is this advice, or a data source?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq1"><div class="acc__panel-inner">It's primary-source competitive intelligence and modeling — not legal, financial, or investment advice. RN Collins is a JD candidate, not a licensed attorney; nothing here creates an advisory or attorney–client relationship. Everything shown is illustrative; verify each signal against its source. It's designed to make the market legible and to support the people who make the decisions.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq2"><span>How current is the data?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq2"><div class="acc__panel-inner">Every signal carries a retrieval date (2026-07-04 in this build) and its source type. Production monitors re-check their sources on a schedule and can alert you when a competitor files, prices, or hires — so the artifact stays accurate rather than freezing on the day it shipped.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq3"><span>Can I get one for my specific market or competitor set?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq3"><div class="acc__panel-inner">Yes — that's the point. This is a reference build; a tailored version for your category, competitor list, and the signals that matter to you is what Aloha AI produces, usually within days of a scoping conversation. Use the contact link below.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq4"><span>What data do you collect from me?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq4"><div class="acc__panel-inner">None. There is no login, no tracking, and no cookies. Every calculation runs locally in your browser and nothing you enter leaves your device.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- THE SERVICE / OFFER -->
+<section class="section" id="start" aria-labelledby="offer-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The service</p>
+      <h2 class="h2" id="offer-h">How this becomes yours</h2>
+      <p class="lead">Founders, brand leaders, and strategy teams fly blind on how each competitor move, pricing shift, and category signal hits their position. I build a tailored monitor for your exact market that tracks the public sources and resolves them into decisions you can act on.</p>
+    </div>
+    <div class="grid grid-3 reveal">
+      <div class="card"><div class="card__ic" aria-hidden="true">1</div><h3>What I build</h3><p class="small muted">A private monitor scoped to your category, competitor set, and the signals that matter: sourced, dated, and confidence-scored.</p></div>
+      <div class="card"><div class="card__ic" aria-hidden="true">2</div><h3>What you get</h3><ul class="small muted" style="padding-left:1.1rem;margin:.35rem 0 0"><li>A live, cited monitor for your market</li><li>A provenance ledger you can put in a board deck</li><li>Change-alerts when a competitor files, prices, or hires</li></ul></div>
+      <div class="card"><div class="card__ic" aria-hidden="true">3</div><h3>How to start</h3><p class="small muted">A 20-minute scoping call. If it's a fit, a tailored build turns around in days, not weeks.</p></div>
+    </div>
+    <p class="lead reveal" style="margin-top:var(--s5)"><strong>Pricing.</strong> Tailored monitors start from <strong>$4,000 build + $1,500/mo</strong> to keep them live, scoped to your market. Three-month minimum on any retainer; 30 days' notice to stop.</p>
+  </div>
+</section>
+<!-- CTA HIERARCHY -->
+<section class="section section--ink" id="contact" aria-labelledby="cta-h">
+  <div class="wrap" style="text-align:center">
+    <p class="eyebrow">Aloha AI · Honolulu</p>
+    <h2 class="h2" id="cta-h" style="max-width:24ch;margin-inline:auto">Ready when you are.</h2>
+    <p class="lead" style="margin:var(--s4) auto var(--s5);text-align:center">Convinced, curious, or comparing: there's a path for each.</p>
+    <div style="display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn--primary" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Start with a Systems Audit →</a>
+      <a class="btn btn--ghost" href="https://aloha-ai-consulting.vercel.app/tools/ai-readiness-scorecard" target="_blank" rel="noopener">Take the 2-minute assessment</a>
+    </div>
+    <p class="small" style="margin-top:var(--s5);color:var(--muted-on-ink)">Prefer email? <a href="#" data-email style="color:var(--teal-mint)">Email RN</a> &nbsp;·&nbsp; or connect on <a href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noopener" style="color:var(--teal-mint)">LinkedIn</a></p>
+    <p id="emailReveal" hidden style="margin-top:.5rem;font-family:var(--mono);font-size:.8rem;color:#CFDAD5"></p>
+  </div>
+</section>
+<footer class="footer" aria-labelledby="foot-h">
+  <div class="wrap">
+    <h2 id="foot-h" class="small" style="position:absolute;left:-999px">Site footer</h2>
+    <div class="footer__grid">
+      <div>
+        <a class="nav__brand" href="#top" style="color:var(--cream)" aria-label="Aloha AI home"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#7FE0C4"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#7FE0C4" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg> Aloha&nbsp;AI</a>
+        <p class="small" style="margin-top:var(--s3);max-width:38ch;color:#9FB6AE">AI implementation built around how humans actually trust and use it, for regulated or reputation-sensitive professions.</p>
+      </div>
+      <div>
+        <h4>This site</h4>
+        <ul>
+          <li><a href="#gap">The gap</a></li>
+          <li><a href="#method">How it works</a></li>
+          <li><a href="#start">The service</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Aloha AI</h4>
+        <ul>
+          <li><a href="https://aloha-ai-consulting.vercel.app" target="_blank" rel="noopener">The practice</a></li>
+          <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a call</a></li>
+          <li><a href="https://aloha-ai-consulting.vercel.app/tools/ai-readiness-scorecard" target="_blank" rel="noopener">Assessment</a></li>
+          <li><a href="https://rn-portfolio-khaki.vercel.app" target="_blank" rel="noopener">Portfolio → RN Builds</a></li>
+          <li><a href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://aloha-ai-consulting.vercel.app/privacy" target="_blank" rel="noopener">Privacy</a></li>
+          <li><a href="https://aloha-ai-consulting.vercel.app/terms" target="_blank" rel="noopener">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="disc small">Competitive &amp; market intelligence, not legal, financial, or investment advice. RN Collins is a JD candidate, not a licensed attorney; nothing here is advice or an attorney–client relationship. All signals are illustrative; confirm each against its public source before relying on it.</p>
+    <p class="fine">Aloha AI · a DBA of Rayven-Nikkita Collins LLC · Honolulu, HI · No tracking, no cookies · Data retrieved 2026-07-04; verify signals against their live sources before acting.</p>
+  </div>
+</footer>
+
+<script>
+  // ---- mobile nav ----
+  (function(){
+    var b=document.getElementById('burger'),l=document.getElementById('navlinks');
+    function set(o){b.setAttribute('aria-expanded',o);l.classList.toggle('open',o);b.setAttribute('aria-label',o?'Close menu':'Open menu');}
+    b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true');});
+    l.addEventListener('click',function(e){if(e.target.tagName==='A')set(false);});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});
+  })();
+  // ---- accordion ----
+  document.querySelectorAll('.acc__btn').forEach(function(btn){
+    var panel=document.getElementById(btn.getAttribute('aria-controls'));
+    btn.addEventListener('click',function(){
+      var open=btn.getAttribute('aria-expanded')==='true';
+      btn.setAttribute('aria-expanded',!open);
+      panel.style.maxHeight=open?null:panel.scrollHeight+'px';
+    });
+  });
+  // ---- personalization slot ?for= ----
+  (function(){var p=new URLSearchParams(location.search).get('for');if(p){document.getElementById('foryou').textContent=p;}})();
+  // ---- coverage scorer ----
+  var SIGNALS={
+    competitors:{label:'competitor moves',watch:'competitor launches, positioning & press, dated from newsrooms and captured pages'},
+    pricing:{label:'pricing changes',watch:'timestamped captures of public pricing pages: increases, new tiers, quiet removals'},
+    sentiment:{label:'customer sentiment',watch:'review platforms and forums for recurring complaints and sentiment shifts'},
+    regulatory:{label:'regulatory / IP',watch:'USPTO patent & trademark filings and relevant regulatory actions'},
+    hiring:{label:'hiring signals',watch:'public job postings that reveal a GTM surge, a new market, or an R&D bet'},
+    funding:{label:'funding & filings',watch:'SEC EDGAR (Form D / 8-K / 10-K) and public round announcements'}
+  };
+  var ORDER=['competitors','pricing','sentiment','regulatory','hiring','funding'];
+  function calcCoverage(){
+    var tracked=[];
+    document.querySelectorAll('.sig').forEach(function(c){if(c.checked)tracked.push(c.value);});
+    var cad=+document.getElementById('cadence').value||0.2;
+    var breadth=tracked.length/ORDER.length;              // 0..1
+    var score=Math.round(breadth*cad*100);
+    var head,flag;
+    if(score>=75){head=score+'/100 · Strong coverage';flag='⚑ Coverage is strong. The value now is speed: dated, alerted signals so you act first, not the day after.';}
+    else if(score>=45){head=score+'/100 · Partial coverage';flag='⚑ You track some of the market, slowly. The blind spots below are where a competitor moves unseen.';}
+    else{head=score+'/100 · Blind in most of the market';flag='⚑ You are effectively flying blind. Most moves in your category reach you only after they hit revenue.';}
+    var blind=ORDER.filter(function(k){return tracked.indexOf(k)<0;});
+    var list=[];
+    if(cad<0.75)list.push('Cadence gap: checking '+(cad<=0.2?'only ad hoc':'monthly')+' means dated signals reach you late: a monitor refreshes daily to weekly.');
+    if(blind.length===0){list.push('You track all six streams. The remaining gap is cadence and dating, not breadth.');}
+    else{blind.forEach(function(k){list.push('Blind spot, '+SIGNALS[k].label+': a monitor would watch '+SIGNALS[k].watch+'.');});}
+    document.getElementById('cov-head').textContent=head;
+    document.getElementById('cov-bar').style.width=Math.max(4,score)+'%';
+    var ul=document.getElementById('cov-list');ul.innerHTML='';
+    list.forEach(function(x){var li=document.createElement('li');li.textContent=x;ul.appendChild(li);});
+    document.getElementById('cov-flag').textContent=flag;
+  }
+  // ---- cost-of-wrong ----
+  function fmt(n){return '$'+Math.round(n).toLocaleString('en-US');}
+  function calcWrong(){var d=+document.getElementById('ded').value||0,r=+document.getElementById('rate').value||0.25;
+    document.getElementById('wrong-num').textContent=fmt(d*r);}
+  calcCoverage();calcWrong();
+  // ---- reveal on scroll ----
+  (function(){
+    if(matchMedia('(prefers-reduced-motion:reduce)').matches){document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in');});return;}
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(e){io.observe(e);});
+  })();
+</script>
+<script>
+/* email assembled at runtime (not scrapable); copy + mail app + reveal + Gmail */
+(function(){var u='collins.ra',dm='northeastern.edu',a=u+'@'+dm,su=encodeURIComponent('Aloha AI — build inquiry');
+document.querySelectorAll('[data-email]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();
+try{navigator.clipboard&&navigator.clipboard.writeText(a);}catch(_){}
+var o=document.getElementById('emailReveal');if(o){o.hidden=false;o.innerHTML='Copied ✓ &nbsp;<a href="mailto:'+a+'?subject='+su+'" style="color:#7FE0C4">'+a+'</a> &nbsp;·&nbsp; <a href="https://mail.google.com/mail/?view=cm&fs=1&to='+a+'&su='+su+'" target="_blank" rel="noopener" style="color:#7FE0C4">Open in Gmail</a>';}
+window.location.href='mailto:'+a+'?subject='+su;});});})();
+</script>
+</body>
+</html>

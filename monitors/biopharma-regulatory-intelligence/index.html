@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Biopharma Regulatory Intelligence Layer — Aloha AI</title>
+<meta name="description" content="A primary-source-grounded intelligence layer for clinical-stage drug programs. Model your regulatory exposure by development stage, see what generic AI gets wrong about FDA pathways and exclusivity, and trace every figure to its source. By RN Collins, Aloha AI.">
+<link rel="canonical" href="https://aloha-ai-consulting.vercel.app/monitors/biopharma-regulatory-intelligence">
+<meta name="theme-color" content="#14201C">
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Biopharma Regulatory Intelligence Layer — Aloha AI">
+<meta property="og:description" content="Not a headline scraper. A sourced instrument that models your program's regulatory exposure and shows what generic AI gets confidently wrong about FDA pathways and exclusivity.">
+<meta property="og:image" content="https://aloha-ai-consulting.vercel.app/monitors/biopharma-regulatory-intelligence/og-image.png">
+<meta property="og:url" content="https://aloha-ai-consulting.vercel.app/monitors/biopharma-regulatory-intelligence">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Biopharma Regulatory Intelligence Layer — Aloha AI">
+<meta name="twitter:description" content="Model your program's regulatory exposure. Every figure cited, dated, confidence-scored.">
+<meta name="twitter:image" content="https://aloha-ai-consulting.vercel.app/monitors/biopharma-regulatory-intelligence/og-image.png">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<script>document.documentElement.className+=' js';</script>
+<link rel="stylesheet" href="./aloha-ds.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Biopharma Regulatory Intelligence Layer",
+"applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://aloha-ai-consulting.vercel.app/monitors/biopharma-regulatory-intelligence",
+"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+"creator":{"@type":"Person","name":"RN Collins","jobTitle":"Founder, Aloha AI",
+"description":"Neuroscientist (MS), JD candidate, and AI systems builder for regulated industries","knowsAbout":["FDA drug regulation","Hatch-Waxman exclusivity","Orphan drug designation","Controlled substances scheduling","Regulatory intelligence","AI adoption"]},
+"about":"FDA and DEA regulatory intelligence for clinical-stage biopharma drug programs"}
+</script>
+<style>
+  /* ---- page-specific ---- */
+  .hero{background:radial-gradient(120% 130% at 85% -10%,#1e332c 0%,var(--ink) 55%);color:var(--cream);
+    padding-block:clamp(48px,8vw,92px) clamp(40px,6vw,72px);border-bottom:3px solid var(--teal)}
+  .hero .display{color:var(--cream);max-width:16ch;margin-bottom:var(--s4)}
+  .hero .kicker{color:var(--teal-mint)}
+  .hero .lead{color:#CFDAD5;max-width:56ch}
+  .hero__cta{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:var(--s5)}
+  .hero__meta{margin-top:var(--s5);font-family:var(--mono);font-size:var(--fs-xs);color:#9FB6AE;letter-spacing:.04em;line-height:1.8}
+  .hero__meta b{color:var(--cream)}
+  .livebadge{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:var(--fs-xs);
+    letter-spacing:.08em;text-transform:uppercase;color:#CDE7DF;border:1px solid #2F4A42;border-radius:var(--r-pill);padding:.34rem .72rem;margin-bottom:var(--s4)}
+  .livebadge .dot{width:7px;height:7px;border-radius:50%;background:var(--teal-mint);animation:pulse 2.2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(127,224,196,.5)}70%{box-shadow:0 0 0 7px rgba(127,224,196,0)}100%{box-shadow:0 0 0 0 rgba(127,224,196,0)}}
+  .statbar{background:var(--paper);border-bottom:1px solid var(--line)}
+  .statbar__in{display:flex;flex-wrap:wrap;gap:var(--s6);padding-block:var(--s4)}
+  .statbar .stat{flex:1;min-width:150px}
+  .statbar .k{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .statbar .v{font-family:var(--serif);font-size:1.15rem;color:var(--ink);margin-top:.15rem}
+  .sec-head{margin-bottom:var(--s6);max-width:70ch}
+  .sec-head .h2{margin-bottom:var(--s3)}
+  /* OEG */
+  .oeg{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh-2)}
+  @media(max-width:760px){.oeg{grid-template-columns:1fr}}
+  .oeg__col{background:#fff;padding:var(--s5)}
+  .oeg__col.bad{background:var(--red-l)}
+  .oeg__tag{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.09em;text-transform:uppercase;margin-bottom:var(--s3);display:flex;align-items:center;gap:.45rem;flex-wrap:wrap}
+  .oeg__col.bad .oeg__tag{color:var(--red)}
+  .oeg__col.good .oeg__tag{color:var(--green)}
+  .oeg__q{font-family:var(--serif);font-size:1.05rem;font-style:italic;margin-bottom:.7rem}
+  .oeg__why{margin-top:var(--s4);padding-top:var(--s3);border-top:1px dashed var(--line);font-size:var(--fs-sm);color:var(--muted)}
+  /* then vs now */
+  .tvn{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-top:var(--s3)}
+  .tvn .box{border:1px solid var(--line);border-radius:var(--r-sm);padding:.75rem .85rem}
+  .tvn .box.now{border-color:var(--green-bd);background:var(--green-l)}
+  .tvn .lab{font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.2rem}
+  .tvn .val{font-size:.9rem}
+  /* process */
+  .steps{counter-reset:step;display:grid;gap:var(--s5)}
+  .step{display:grid;grid-template-columns:auto 1fr;gap:var(--s4);align-items:start}
+  .step__n{counter-increment:step;width:44px;height:44px;border-radius:12px;background:var(--teal);color:#fff;
+    font-family:var(--serif);font-size:1.3rem;display:grid;place-items:center;flex:none}
+  .step__n::before{content:counter(step)}
+  .aud__ic,.card__ic svg{width:20px;height:20px}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="#top" aria-label="Aloha AI home">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#1B7A68"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#1B7A68" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      Aloha&nbsp;AI
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav__links" id="navlinks">
+        <li><a href="#status">Status</a></li>
+        <li><a href="#gap">The Gap</a></li>
+        <li><a href="#exposure">Model exposure</a></li>
+        <li><a href="#sources">Sources</a></li>
+        <li><a href="#method">Method</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li class="nav__cta"><a class="btn btn--primary btn--sm" href="#start">Get started →</a></li>
+      </ul>
+    </nav>
+    <button class="nav__burger" id="burger" aria-label="Open menu" aria-controls="navlinks" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+<span id="top"></span>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-h">
+  <div class="wrap">
+    <span class="livebadge"><span class="dot" aria-hidden="true"></span> Live · retrieved 2026-07-04</span>
+    <p class="eyebrow kicker">Regulatory Intelligence · Biopharma</p>
+    <h1 class="display" id="hero-h">Your drug program's regulatory path, told straight. With the receipts.</h1>
+    <p class="lead">A sourced instrument, not a headline scraper. Model <em>your</em> program's regulatory exposure by development stage, see exactly what generic AI gets confidently wrong about FDA pathways and exclusivity, and trace every figure to its primary source. It holds up in a board update <em>and</em> in a regulatory strategy memo.</p>
+    <div class="hero__cta">
+      <a class="btn btn--primary" href="#exposure">Model your exposure →</a>
+      <a class="btn btn--ghost" href="#gap">See what AI gets wrong</a>
+    </div>
+    <p class="hero__meta">Built by <b>RN&nbsp;Collins</b> — Neuroscience (MS) · Administrative&nbsp;Law (JD&nbsp;candidate) · AI&nbsp;systems<br>Tailored for: <b id="foryou">regulatory-affairs leads, sponsors &amp; founders in clinical-stage biopharma</b></p>
+  </div>
+</section>
+
+<!-- STATUS BAR -->
+<div class="statbar" id="status">
+  <div class="wrap statbar__in">
+    <div class="stat"><div class="k">IND to proceed</div><div class="v">30-day default clock</div></div>
+    <div class="stat"><div class="k">NDA review goal</div><div class="v">6–10 mo (PDUFA)</div></div>
+    <div class="stat"><div class="k">NCE data exclusivity</div><div class="v">5 years</div></div>
+    <div class="stat"><div class="k">Orphan exclusivity</div><div class="v">7 years</div></div>
+  </div>
+</div>
+
+<!-- WHO IT'S FOR -->
+<section class="section" aria-labelledby="aud-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Who this is for</p>
+      <h2 class="h2" id="aud-h">Built for the people who can't afford a confident wrong answer</h2>
+      <p class="lead">The same intelligence layer reads four ways, because the stakes differ by seat.</p>
+    </div>
+    <div class="grid grid-4 keep-2">
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">◆</div><h3>Regulatory affairs</h3><p class="small muted">Sequence your IND, exclusivity, and scheduling milestones before they collide with your timeline.</p></div>
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">§</div><h3>Counsel &amp; GCs</h3><p class="small muted">A sourced, dated brief on exclusivity and pathway you can cite directly, without re-verification.</p></div>
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">$</div><h3>Founders &amp; boards</h3><p class="small muted">One screenshot that makes the regulatory risk and exclusivity runway legible to a room in ten seconds.</p></div>
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">✦</div><h3>Clinical-stage sponsors</h3><p class="small muted">Evidence-grade provenance that supports a diligence pack, a partnering deck, or an FDA interaction.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- OEG -->
+<section class="section section--paper" id="gap" aria-labelledby="gap-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The Operator Execution Gap · live</p>
+      <h2 class="h2" id="gap-h">Ask a generic AI the one question that matters. Watch it fail.</h2>
+      <p class="lead">Large language models fail most confidently exactly where a drug program's stakes are highest: pathway and exclusivity facts. Same question, two answers. The fluent-but-wrong generic reply, and the primary-source-grounded one. The distance between them is what a wrong assumption costs your runway.</p>
+    </div>
+    <div class="oeg reveal">
+      <div class="oeg__col bad">
+        <p class="oeg__tag">✕&nbsp;Generic LLM · unsourced</p>
+        <p class="oeg__q">"My small-molecule NCE gets orphan designation — how many years of market protection is that, and does designation itself block generics?"</p>
+        <p><strong>"Orphan designation gives you 7 years of exclusivity that starts the day FDA designates the drug, and it blocks all generics for the whole condition — so you're protected from filing onward."</strong></p>
+        <p class="oeg__why">Confident. Fluent. <strong>Wrong on three counts</strong> — and wrong in the exact way that mis-sequences a launch, a raise, or a partnering term sheet.</p>
+      </div>
+      <div class="oeg__col good">
+        <p class="oeg__tag">✓&nbsp;Aloha AI · primary-source grounded <span class="chip chip--src">21 CFR · FDCA</span></p>
+        <p class="oeg__q">Same question, answered from the record:</p>
+        <p><strong>Designation is not exclusivity.</strong> Orphan-drug exclusivity is <strong>7 years</strong> but runs <em>from the date of marketing approval</em>, not from designation (<span class="mono">21 CFR §316.31</span>). It protects only the <strong>approved indication or use</strong> — not the whole rare disease — and can be broken if the holder can't assure supply.</p>
+        <p>Separately, a small-molecule new active moiety may earn <strong>5-year NCE data exclusivity</strong> under Hatch-Waxman (a generic may file a Paragraph IV ANDA at year <strong>4</strong>). Orphan and NCE exclusivity are <strong>distinct clocks</strong> that can overlap. Plan to both.</p>
+        <p class="oeg__why"><span class="chip chip--hi"><span class="ic" aria-hidden="true"></span>Confidence: High</span> &nbsp;Why you can rely on it: it maps to 21 CFR Part 316, the FDCA exclusivity provisions, and FDA guidance, cited below with retrieval dates.</p>
+      </div>
+    </div>
+    <p class="small muted reveal" style="margin-top:var(--s4);max-width:70ch"><strong>OEG</strong> — the Operator Execution Gap — is the distance between what AI <em>says</em> and what a regulated sponsor can <em>act on</em>. Closing it is the entire job.</p>
+  </div>
+</section>
+
+<!-- WHAT CHANGES -->
+<section class="section" aria-labelledby="chg-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">What actually changes</p>
+      <h2 class="h2" id="chg-h">By development stage, by program consequence</h2>
+      <p class="lead">The four shifts that move real capital and real risk as a program advances. Each maps to a specific FDA or DEA gate. Generic AI blurs all of them.</p>
+    </div>
+    <div class="grid grid-2">
+      <div class="card reveal"><h3>The IND gate <span class="chip chip--hi">High impact</span></h3>
+        <div class="tvn"><div class="box"><div class="lab">Preclinical</div><div class="val">No human dosing until an IND is in effect (21 CFR Part 312).</div></div><div class="box now"><div class="lab">Ph1 onward</div><div class="val">IND may proceed 30 days after FDA receipt unless placed on clinical hold.</div></div></div></div>
+      <div class="card reveal"><h3>Marketing exclusivity <span class="chip chip--hi">High impact</span></h3>
+        <div class="tvn"><div class="box"><div class="lab">Pre-approval</div><div class="val">Patents run; regulatory exclusivity clocks have not started.</div></div><div class="box now"><div class="lab">At NDA approval</div><div class="val">5-yr NCE and/or 7-yr orphan exclusivity begin at approval, not before.</div></div></div></div>
+      <div class="card reveal"><h3>Review clock <span class="chip chip--med">Moderate</span></h3>
+        <div class="tvn"><div class="box"><div class="lab">Ph3 → NDA</div><div class="val">NDA filed under 21 CFR Part 314; user fees apply.</div></div><div class="box now"><div class="lab">PDUFA goal</div><div class="val">~10 mo standard / ~6 mo priority review target from filing.</div></div></div></div>
+      <div class="card reveal"><h3>Controlled-substance track <span class="chip chip--med">Nuance</span></h3>
+        <div class="tvn"><div class="box"><div class="lab">Common assumption</div><div class="val">"FDA approval means we can ship on day one."</div></div><div class="box now"><div class="lab">Reality</div><div class="val">A scheduled molecule needs a DEA scheduling action (21 CFR Part 1308) after approval before commercial distribution.</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPOSURE MODELER + COST -->
+<section class="section section--paper" id="exposure" aria-labelledby="exp-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The instrument</p>
+      <h2 class="h2" id="exp-h">Model your program's regulatory exposure</h2>
+      <p class="lead">Answer three questions. The tool returns the key milestones ahead, exclusivity and exposure notes, and what a Regulatory Intelligence Layer would monitor for <em>your</em> program, grounded in the framework above. Everything runs locally in your browser; nothing is sent anywhere.</p>
+    </div>
+    <div class="grid grid-2">
+      <form class="tool reveal" aria-labelledby="exp-t" onsubmit="event.preventDefault();calcExposure()">
+        <h3 id="exp-t">Program exposure &amp; timeline modeler</h3>
+        <div class="field"><label for="stage">Development stage</label>
+          <select id="stage">
+            <option value="preclinical">Preclinical</option>
+            <option value="ph1">Phase 1</option>
+            <option value="ph2" selected>Phase 2</option>
+            <option value="ph3">Phase 3</option>
+            <option value="nda">NDA / under review</option>
+          </select></div>
+        <div class="field"><label for="modality">Modality</label>
+          <select id="modality">
+            <option value="nce">Small molecule (new chemical entity)</option>
+            <option value="biologic">Biologic (BLA pathway)</option>
+            <option value="orphan">Orphan / rare-disease indication</option>
+          </select></div>
+        <div class="field"><label for="cs">Controlled substance?</label>
+          <select id="cs"><option value="no">No</option><option value="yes">Yes — scheduling likely</option></select></div>
+        <button class="btn btn--primary" type="submit">Model exposure →</button>
+      </form>
+      <div class="out reveal" role="status" aria-live="polite">
+        <div class="out__lab">Your key regulatory milestones &amp; exposure</div>
+        <div class="out__big" id="exp-head">—</div>
+        <ul id="exp-list"><li>Model your program to see specifics.</li></ul>
+        <div class="flag" id="exp-flag"></div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="sec-head reveal">
+      <p class="eyebrow">The cost of getting it wrong</p>
+      <h2 class="h2">What one wrong assumption costs</h2>
+      <p class="lead">The most common error we see: mis-dating an exclusivity clock, assuming it starts at designation or filing rather than at approval. Here's the price of acting on the generic answer instead of the sourced one.</p>
+    </div>
+    <div class="grid grid-2">
+      <form class="tool reveal" aria-labelledby="wrong-t" onsubmit="event.preventDefault();calcWrong()">
+        <h3 id="wrong-t">Exclusivity-runway timing calculator</h3>
+        <div class="field"><label for="peak">Est. peak annual revenue at risk (USD)</label>
+          <input id="peak" type="number" inputmode="numeric" min="0" step="1000000" value="120000000"></div>
+        <div class="field"><label for="years">Runway mis-estimated by (years of exclusivity)</label>
+          <select id="years"><option value="1">1 year</option><option value="2" selected>2 years</option><option value="3">3 years</option></select></div>
+        <button class="btn btn--primary" type="submit">Calculate the risk →</button>
+      </form>
+      <div class="out reveal" role="status" aria-live="polite">
+        <div class="out__lab">Revenue exposed to early generic/biosimilar entry</div>
+        <div class="out__big" id="wrong-num">$—</div>
+        <ul><li>Plus mis-timed launch spend, partnering terms priced on the wrong clock, and diligence findings that reprice a raise.</li><li>This is the cost of trusting an unsourced "exclusivity starts now" answer.</li></ul>
+        <div class="flag">Illustrative model. Not legal or regulatory advice. Verify against your facts and the operative FDA determination.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="method" aria-labelledby="how-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">How it works</p>
+      <h2 class="h2" id="how-h">A repeatable intelligence method, not a one-off scrape</h2>
+      <p class="lead">Every Aloha AI Regulatory Intelligence Layer runs the same three-stage pipeline. It's why the facts stay right next month, not just today.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Regulatory Intelligence Layer (RIL)</h3><p class="muted">Primary sources only: the FDCA, 21 CFR, FDA guidance, the Orange Book, dockets, and DEA scheduling actions, each captured with source and retrieval date. No headline aggregation.</p></div></div>
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Resolve to an Operator Layer (ROL)</h3><p class="muted">Raw law becomes a decision your program can act on: which milestone, which clock, for whom, with what confidence. This closes the Operator Execution Gap.</p></div></div>
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Auto-refresh &amp; alert</h3><p class="muted">The layer re-checks its primary sources on a schedule (Upstash · Vercel · Exa) and can ping you when a guidance updates, an exclusivity determination posts, or a scheduling docket opens, so it never goes stale.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SOURCES / PROVENANCE -->
+<section class="section section--paper" id="sources" aria-labelledby="src-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Audit-ready provenance</p>
+      <h2 class="h2" id="src-h">Every figure, traced to its primary source</h2>
+      <p class="lead">The admin-law rigor is the product. Each fact carries its source, retrieval date, and a confidence rating. The same artifact that opens a conversation can support a diligence pack or a regulatory memo.</p>
+    </div>
+    <div class="table-wrap reveal">
+      <table class="data">
+        <caption class="small muted" style="text-align:left;padding:.6rem .8rem">Provenance ledger — data retrieved 2026-07-04</caption>
+        <thead><tr><th scope="col">Fact</th><th scope="col">Primary source</th><th scope="col">Retrieved</th><th scope="col">Confidence</th></tr></thead>
+        <tbody>
+          <tr><td>An IND is required before human dosing; the study may generally proceed 30 days after FDA receipt unless placed on clinical hold</td><td><span class="cite">21 CFR Part 312</span> · FDA "Investigational New Drug (IND) Application"</td><td>2026-07-04</td><td><span class="chip chip--hi">High</span></td></tr>
+          <tr><td>NDA marketing applications reviewed under Part 314; PDUFA goal ~10 mo standard / ~6 mo priority review</td><td><span class="cite">21 CFR Part 314</span> · FDA drug review process (PDUFA goals)</td><td>2026-07-04</td><td><span class="chip chip--med">Med · goal, not a deadline</span></td></tr>
+          <tr><td>5-year NCE data exclusivity for a new active moiety; Paragraph IV ANDA may be filed at year 4 (Hatch-Waxman)</td><td><span class="cite">21 U.S.C. §355(j)(5)(F)(ii)</span> · FDA/FDLI Hatch-Waxman materials</td><td>2026-07-04</td><td><span class="chip chip--hi">High</span></td></tr>
+          <tr><td>7-year orphan-drug exclusivity runs from marketing approval and protects only the approved indication/use</td><td><span class="cite">21 CFR §316.31</span> · Orphan Drug Act (21 U.S.C. §360cc)</td><td>2026-07-04</td><td><span class="chip chip--hi">High</span></td></tr>
+          <tr><td>A controlled-substance molecule requires a DEA scheduling action before commercial distribution after FDA approval</td><td><span class="cite">21 CFR Part 1308</span> · CSA 21 U.S.C. §811 (eight-factor analysis)</td><td>2026-07-04</td><td><span class="chip chip--med">Med · interpretive</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small muted reveal" style="margin-top:var(--s4);max-width:70ch"><strong>Verification checkpoint:</strong> figures are current as of the retrieval date and the operative statute, regulation, or FDA determination. Re-confirm against the live source and your program's facts before using any figure in a regulatory submission or diligence pack.</p>
+  </div>
+</section>
+
+<!-- DIFFERENTIATION -->
+<section class="section" aria-labelledby="dif-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Why this, not a generic monitor</p>
+      <h2 class="h2" id="dif-h">The combination no competitor holds</h2>
+      <p class="lead">Most tools are one thing done adequately. This is built on named, defensible frameworks, so you leave speaking the language, not renting a dashboard.</p>
+    </div>
+    <div class="grid grid-4 keep-2">
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">RIL → ROL</p><h3 class="h3">Regulatory Intelligence Layer</h3><p class="small muted">Primary-source FDA/DEA monitoring resolved into a program-ready decision layer.</p></div>
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">OEG</p><h3 class="h3">Operator Execution Gap</h3><p class="small muted">The gap between what AI says and what a sponsor can act on.</p></div>
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">Exclusivity Clock Map</p><h3 class="h3">Exclusivity Clock Map</h3><p class="small muted">Sequences NCE, orphan, and patent clocks against your development timeline.</p></div>
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">EDSA</p><h3 class="h3">EDSA Framework</h3><p class="small muted">Keeps regulated health content compliant and un-suppressed across platforms.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section--paper" id="faq" aria-labelledby="faq-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Questions</p>
+      <h2 class="h2" id="faq-h">What people ask first</h2>
+    </div>
+    <div class="reveal">
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq1"><span>Is this legal or regulatory advice?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq1"><div class="acc__panel-inner">No. This is primary-source regulatory intelligence and modeling. RN Collins is a JD candidate, not a licensed attorney; nothing here is legal, tax, or regulatory advice or creates an attorney–client relationship. It's designed to make the record legible and to support the regulatory-affairs and legal professionals who do give that advice.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq2"><span>How current is the data?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq2"><div class="acc__panel-inner">Every figure carries a retrieval date (2026-07-04 in this build) and its primary source. Production layers re-check their sources on a schedule and can alert you when a guidance, exclusivity determination, or scheduling docket changes, so the artifact stays accurate rather than freezing on the day it shipped.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq3"><span>Can I get one for my specific molecule or program?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq3"><div class="acc__panel-inner">Yes. That's the point. This is a reference build; a tailored version for your molecule, modality, and indication is what Aloha AI produces, usually within days of a scoping conversation. Use the contact link below.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq4"><span>What data do you collect from me?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq4"><div class="acc__panel-inner">None. There is no login, no tracking, and no cookies. Every calculation runs locally in your browser and nothing you enter leaves your device.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- THE SERVICE / OFFER -->
+<section class="section" id="start" aria-labelledby="offer-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The service</p>
+      <h2 class="h2" id="offer-h">How this becomes yours</h2>
+      <p class="lead">Regulatory leads, counsel, and founders fly blind on how each FDA guidance, exclusivity determination, or scheduling action hits their program's timeline and runway. I build a tailored Regulatory Intelligence Layer for your exact program that tracks the primary sources and resolves them into decisions you can act on.</p>
+    </div>
+    <div class="grid grid-3 reveal">
+      <div class="card"><div class="card__ic" aria-hidden="true">1</div><h3>What I build</h3><p class="small muted">A private Regulatory Intelligence Layer scoped to your molecule, modality, and indication: sourced, dated, and confidence-scored.</p></div>
+      <div class="card"><div class="card__ic" aria-hidden="true">2</div><h3>What you get</h3><ul class="small muted" style="padding-left:1.1rem;margin:.35rem 0 0"><li>A live, cited layer for your program</li><li>An audit-ready provenance ledger for diligence and FDA interactions</li><li>Change-alerts when a guidance, exclusivity determination, or docket moves</li></ul></div>
+      <div class="card"><div class="card__ic" aria-hidden="true">3</div><h3>How to start</h3><p class="small muted">A Systems Audit and a 20-minute scoping call. If it's a fit, a tailored build turns around in days, not weeks.</p></div>
+    </div>
+    <p class="lead reveal" style="margin-top:var(--s5)"><strong>Pricing —</strong> a Regulatory Intelligence Layer starts from <strong>$8,000 build + $1,500/mo</strong> to keep it live; a full-stack engagement (multi-source monitoring, alerts, and program dashboards) runs <strong>$17,000–$25,500 build + $3,500/mo</strong>, scoped to what your program actually needs. Three-month minimum on any retainer; 30 days' notice to stop.</p>
+  </div>
+</section>
+<!-- CTA HIERARCHY -->
+<section class="section section--ink" id="contact" aria-labelledby="cta-h">
+  <div class="wrap" style="text-align:center">
+    <p class="eyebrow">Aloha AI · Honolulu</p>
+    <h2 class="h2" id="cta-h" style="max-width:24ch;margin-inline:auto">Ready when you are.</h2>
+    <p class="lead" style="margin:var(--s4) auto var(--s5);text-align:center">Convinced, curious, or comparing: there's a path for each.</p>
+    <div style="display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn--primary" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Start with a Systems Audit →</a>
+      <a class="btn btn--ghost" href="https://aloha-ai-consulting.vercel.app/tools/ai-readiness-scorecard" target="_blank" rel="noopener">Take the 2-minute assessment</a>
+    </div>
+    <p class="small" style="margin-top:var(--s5);color:var(--muted-on-ink)">Prefer email? <a href="#" data-email style="color:var(--teal-mint)">Email RN</a> &nbsp;·&nbsp; or connect on <a href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noopener" style="color:var(--teal-mint)">LinkedIn</a></p>
+    <p id="emailReveal" hidden style="margin-top:.5rem;font-family:var(--mono);font-size:.8rem;color:#CFDAD5"></p>
+  </div>
+</section>
+<footer class="footer" aria-labelledby="foot-h">
+  <div class="wrap">
+    <h2 id="foot-h" class="small" style="position:absolute;left:-999px">Site footer</h2>
+    <div class="footer__grid">
+      <div>
+        <a class="nav__brand" href="#top" style="color:var(--cream)" aria-label="Aloha AI home"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#7FE0C4"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#7FE0C4" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg> Aloha&nbsp;AI</a>
+        <p class="small" style="margin-top:var(--s3);max-width:38ch;color:#9FB6AE">AI implementation built around how humans actually trust and use it, for regulated or reputation-sensitive professions.</p>
+      </div>
+      <div>
+        <h4>This site</h4>
+        <ul>
+          <li><a href="#gap">The gap</a></li>
+          <li><a href="#method">How it works</a></li>
+          <li><a href="#start">The service</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Aloha AI</h4>
+        <ul>
+          <li><a href="https://aloha-ai-consulting.vercel.app" target="_blank" rel="noopener">The practice</a></li>
+          <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a call</a></li>
+          <li><a href="https://aloha-ai-consulting.vercel.app/tools/ai-readiness-scorecard" target="_blank" rel="noopener">Assessment</a></li>
+          <li><a href="https://rn-portfolio-khaki.vercel.app" target="_blank" rel="noopener">Portfolio → RN Builds</a></li>
+          <li><a href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://aloha-ai-consulting.vercel.app/privacy" target="_blank" rel="noopener">Privacy</a></li>
+          <li><a href="https://aloha-ai-consulting.vercel.app/terms" target="_blank" rel="noopener">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="disc small">Regulatory intelligence, not legal advice. RN Collins is a JD candidate, not a licensed attorney; nothing here is legal, tax, or regulatory advice or an attorney–client relationship. Confirm all figures against the operative statute, regulation, or FDA determination before relying on them.</p>
+    <p class="fine">Aloha AI · a DBA of Rayven-Nikkita Collins LLC · Honolulu, HI · No tracking, no cookies · Data retrieved 2026-07-04; confirm against the live source before any regulatory submission.</p>
+  </div>
+</footer>
+
+<script>
+  // ---- mobile nav ----
+  (function(){
+    var b=document.getElementById('burger'),l=document.getElementById('navlinks');
+    function set(o){b.setAttribute('aria-expanded',o);l.classList.toggle('open',o);b.setAttribute('aria-label',o?'Close menu':'Open menu');}
+    b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true');});
+    l.addEventListener('click',function(e){if(e.target.tagName==='A')set(false);});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});
+  })();
+  // ---- accordion ----
+  document.querySelectorAll('.acc__btn').forEach(function(btn){
+    var panel=document.getElementById(btn.getAttribute('aria-controls'));
+    btn.addEventListener('click',function(){
+      var open=btn.getAttribute('aria-expanded')==='true';
+      btn.setAttribute('aria-expanded',!open);
+      panel.style.maxHeight=open?null:panel.scrollHeight+'px';
+    });
+  });
+  // ---- personalization slot ?for= ----
+  (function(){var p=new URLSearchParams(location.search).get('for');if(p){document.getElementById('foryou').textContent=p;}})();
+  // ---- modeler ----
+  function fmt(n){return '$'+Math.round(n).toLocaleString('en-US');}
+  function calcExposure(){
+    var stage=document.getElementById('stage').value,
+        mod=document.getElementById('modality').value,
+        cs=document.getElementById('cs').value,
+        head='',list=[],flag='';
+    var stageMap={
+      preclinical:'Next gate: the IND',
+      ph1:'In-human, IND-governed',
+      ph2:'Efficacy signal. Plan the exclusivity map',
+      ph3:'Pivotal. Sequence toward the NDA',
+      nda:'Under review. Clocks about to start'};
+    head=stageMap[stage];
+    if(stage==='preclinical'){list.push('No human dosing until an IND is in effect (21 CFR Part 312).','Once submitted, the study may generally proceed 30 days after FDA receipt unless placed on clinical hold.');}
+    else if(stage==='ph1'){list.push('Operate under an active IND (21 CFR Part 312); safety is the gating question.','Begin sequencing exclusivity strategy now. Clocks start at approval, so early choices shape the runway.');}
+    else if(stage==='ph2'){list.push('Efficacy signal drives the pathway decision (standard vs. expedited).','Map your exclusivity clocks now. NCE and orphan run from approval, not from here.');}
+    else if(stage==='ph3'){list.push('Pivotal data supports the NDA/BLA under 21 CFR Part 314.','Confirm which exclusivity your active moiety qualifies for before you price partnering terms.');}
+    else {list.push('Marketing application under review; PDUFA goal ~10 mo standard / ~6 mo priority.','Exclusivity clocks (5-yr NCE, 7-yr orphan) begin at approval, not before.');}
+    if(mod==='nce'){list.push('As a new active moiety, target 5-yr NCE data exclusivity (Paragraph IV ANDA possible at year 4).');
+      flag='⚑ Your primary lever is NCE exclusivity. Do NOT assume it starts before approval.';}
+    else if(mod==='biologic'){list.push('Biologic → BLA pathway; reference-product exclusivity differs from small-molecule NCE. Confirm the applicable regime.');
+      flag='⚑ Biosimilar exclusivity rules differ from Hatch-Waxman. Map the correct clock.';}
+    else {list.push('Orphan exclusivity is 7 years from approval and protects only the approved indication (21 CFR §316.31).');
+      flag='⚑ Designation ≠ exclusivity. The 7-yr clock starts at approval, and only for the approved use.';}
+    if(cs==='yes'){list.push('Controlled substance: a DEA scheduling action (21 CFR Part 1308) is required after FDA approval before commercial distribution.');
+      flag='⚑ FDA approval alone does not clear launch. A DEA schedule must be assigned first.';}
+    list.push('What an RIL would monitor for you: FDA guidance updates, Orange Book/exclusivity determinations, PDUFA dates'+(cs==='yes'?', and DEA scheduling dockets.':'.'));
+    document.getElementById('exp-head').textContent=head;
+    var ul=document.getElementById('exp-list');ul.innerHTML='';
+    list.forEach(function(x){var li=document.createElement('li');li.textContent=x;ul.appendChild(li);});
+    document.getElementById('exp-flag').textContent=flag;
+  }
+  function calcWrong(){var peak=+document.getElementById('peak').value||0,yrs=+document.getElementById('years').value||1;
+    document.getElementById('wrong-num').textContent=fmt(peak*yrs);}
+  calcExposure();calcWrong();
+  // ---- reveal on scroll ----
+  (function(){
+    if(matchMedia('(prefers-reduced-motion:reduce)').matches){document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in');});return;}
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(e){io.observe(e);});
+  })();
+</script>
+<script>
+/* email assembled at runtime (not scrapable); copy + mail app + reveal + Gmail */
+(function(){var u='collins.ra',dm='northeastern.edu',a=u+'@'+dm,su=encodeURIComponent('Aloha AI: build inquiry');
+document.querySelectorAll('[data-email]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();
+try{navigator.clipboard&&navigator.clipboard.writeText(a);}catch(_){}
+var o=document.getElementById('emailReveal');if(o){o.hidden=false;o.innerHTML='Copied ✓ &nbsp;<a href="mailto:'+a+'?subject='+su+'" style="color:#7FE0C4">'+a+'</a> &nbsp;·&nbsp; <a href="https://mail.google.com/mail/?view=cm&fs=1&to='+a+'&su='+su+'" target="_blank" rel="noopener" style="color:#7FE0C4">Open in Gmail</a>';}
+window.location.href='mailto:'+a+'?subject='+su;});});})();
+</script>
+</body>
+</html>

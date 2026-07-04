@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Practice-Readiness Scorecard — Aloha AI</title>
+<meta name="description" content="Score your organization's readiness to build and run its own AI-consulting practice across six dimensions, see the specific gaps, and get a grounded build-it-yourself vs. have-it-built recommendation. By RN Collins, Aloha AI.">
+<link rel="canonical" href="https://aloha-ai-consulting.vercel.app/tools/practice-readiness">
+<meta name="theme-color" content="#14201C">
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI Practice-Readiness Scorecard — Aloha AI">
+<meta property="og:description" content="Can you build an AI-consulting practice in-house, or should you have it built and handed over? Score six dimensions, see the gaps, get a grounded call.">
+<meta property="og:image" content="https://aloha-ai-consulting.vercel.app/tools/practice-readiness/og-image.png">
+<meta property="og:url" content="https://aloha-ai-consulting.vercel.app/tools/practice-readiness">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Practice-Readiness Scorecard — Aloha AI">
+<meta name="twitter:description" content="A 0–100 readiness score, the specific gaps, and a build-vs-have-it-built recommendation.">
+<meta name="twitter:image" content="https://aloha-ai-consulting.vercel.app/tools/practice-readiness/og-image.png">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<script>document.documentElement.className+=' js';</script>
+<link rel="stylesheet" href="./aloha-ds.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"AI Practice-Readiness Scorecard",
+"applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://aloha-ai-consulting.vercel.app/tools/practice-readiness",
+"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+"creator":{"@type":"Person","name":"RN Collins","jobTitle":"Founder, Aloha AI",
+"description":"Neuroscientist (MS), JD candidate, and AI systems builder for regulated industries","knowsAbout":["Professional services operations","Productized services","AI adoption","Practice building","Neuroscience of trust"]},
+"about":"Assessing an organization's readiness to build and operate its own AI-consulting practice"}
+</script>
+<style>
+  /* ---- page-specific ---- */
+  .hero{background:radial-gradient(120% 130% at 85% -10%,#1e332c 0%,var(--ink) 55%);color:var(--cream);
+    padding-block:clamp(48px,8vw,92px) clamp(40px,6vw,72px);border-bottom:3px solid var(--teal)}
+  .hero .display{color:var(--cream);max-width:18ch;margin-bottom:var(--s4)}
+  .hero .kicker{color:var(--teal-mint)}
+  .hero .lead{color:#CFDAD5;max-width:58ch}
+  .hero__cta{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:var(--s5)}
+  .hero__meta{margin-top:var(--s5);font-family:var(--mono);font-size:var(--fs-xs);color:#9FB6AE;letter-spacing:.04em;line-height:1.8}
+  .hero__meta b{color:var(--cream)}
+  /* gradient headline with solid fallback */
+  .grad{color:var(--teal-mint)}
+  @supports((-webkit-background-clip:text) or (background-clip:text)){
+    .grad{background:linear-gradient(92deg,#7FE0C4,#CFE9DF);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  }
+  .livebadge{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:var(--fs-xs);
+    letter-spacing:.08em;text-transform:uppercase;color:#CDE7DF;border:1px solid #2F4A42;border-radius:var(--r-pill);padding:.34rem .72rem;margin-bottom:var(--s4)}
+  .livebadge .dot{width:7px;height:7px;border-radius:50%;background:var(--teal-mint);animation:pulse 2.2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(127,224,196,.5)}70%{box-shadow:0 0 0 7px rgba(127,224,196,0)}100%{box-shadow:0 0 0 0 rgba(127,224,196,0)}}
+  .statbar{background:var(--paper);border-bottom:1px solid var(--line)}
+  .statbar__in{display:flex;flex-wrap:wrap;gap:var(--s6);padding-block:var(--s4)}
+  .statbar .stat{flex:1;min-width:150px}
+  .statbar .k{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .statbar .v{font-family:var(--serif);font-size:1.15rem;color:var(--ink);margin-top:.15rem}
+  .sec-head{margin-bottom:var(--s6);max-width:70ch}
+  .sec-head .h2{margin-bottom:var(--s3)}
+  /* OEG */
+  .oeg{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh-2)}
+  @media(max-width:760px){.oeg{grid-template-columns:1fr}}
+  .oeg__col{background:#fff;padding:var(--s5)}
+  .oeg__col.bad{background:var(--red-l)}
+  .oeg__tag{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.09em;text-transform:uppercase;margin-bottom:var(--s3);display:flex;align-items:center;gap:.45rem;flex-wrap:wrap}
+  .oeg__col.bad .oeg__tag{color:var(--red)}
+  .oeg__col.good .oeg__tag{color:var(--green)}
+  .oeg__q{font-family:var(--serif);font-size:1.05rem;font-style:italic;margin-bottom:.7rem}
+  .oeg__why{margin-top:var(--s4);padding-top:var(--s3);border-top:1px dashed var(--line);font-size:var(--fs-sm);color:var(--muted)}
+  /* process */
+  .steps{counter-reset:step;display:grid;gap:var(--s5)}
+  .step{display:grid;grid-template-columns:auto 1fr;gap:var(--s4);align-items:start}
+  .step__n{counter-increment:step;width:44px;height:44px;border-radius:12px;background:var(--teal);color:#fff;
+    font-family:var(--serif);font-size:1.3rem;display:grid;place-items:center;flex:none}
+  .step__n::before{content:counter(step)}
+  .card__ic svg{width:20px;height:20px}
+  /* scorecard sliders */
+  .dim{margin-bottom:var(--s4)}
+  .dim__top{display:flex;justify-content:space-between;align-items:baseline;gap:.6rem;margin-bottom:.3rem}
+  .dim__lab{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.08em;text-transform:uppercase;color:var(--muted-on-ink)}
+  .dim__val{font-family:var(--serif);font-size:1.05rem;color:var(--teal-mint)}
+  .dim input[type=range]{width:100%;accent-color:var(--teal-mint);min-height:44px}
+  .dim__hint{font-size:.78rem;color:#9FB6AE;margin-top:.15rem}
+  .gauge{font-family:var(--serif);font-size:2.6rem;color:var(--teal-mint);line-height:1}
+  .verdict{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.09em;text-transform:uppercase;
+    display:inline-block;margin-top:.5rem;padding:.24rem .6rem;border-radius:var(--r-pill);border:1px solid #33504f}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="#top" aria-label="Aloha AI home">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#1B7A68"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#1B7A68" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      Aloha&nbsp;AI
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav__links" id="navlinks">
+        <li><a href="#state">The gap</a></li>
+        <li><a href="#audience">Who it's for</a></li>
+        <li><a href="#scorecard">Score readiness</a></li>
+        <li><a href="#method">How it works</a></li>
+        <li><a href="#ledger">Method</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li class="nav__cta"><a class="btn btn--primary btn--sm" href="#start">Get started →</a></li>
+      </ul>
+    </nav>
+    <button class="nav__burger" id="burger" aria-label="Open menu" aria-controls="navlinks" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+<span id="top"></span>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-h">
+  <div class="wrap">
+    <span class="livebadge"><span class="dot" aria-hidden="true"></span> Practice Build · AI Consulting</span>
+    <p class="eyebrow kicker">Practice Build · AI Consulting</p>
+    <h1 class="display" id="hero-h">You have the domain. The question is whether you can <span class="grad">stand up the practice</span>.</h1>
+    <p class="lead">Your organization already holds what most AI consultancies rent: real domain expertise, trust, and relationships. The open question is whether you can turn that into a durable AI-service practice <em>in-house</em>, or whether you should have one built and handed over. Score six readiness dimensions, see your specific gaps, and get a grounded call.</p>
+    <div class="hero__cta">
+      <a class="btn btn--primary" href="#scorecard">Score your readiness →</a>
+      <a class="btn btn--ghost" href="#oeg">See what the generic advice misses</a>
+    </div>
+    <p class="hero__meta">Built by <b>RN&nbsp;Collins</b>. Neuroscience (MS) · Administrative&nbsp;Law (JD&nbsp;candidate) · AI&nbsp;systems<br>Tailored for: <b id="foryou">nonprofits, agencies &amp; regulated-industry orgs with domain depth</b></p>
+  </div>
+</section>
+
+<!-- STAT BAR -->
+<div class="statbar" id="state">
+  <div class="wrap statbar__in">
+    <div class="stat"><div class="k">Readiness dimensions</div><div class="v">6 · scored 0–100</div></div>
+    <div class="stat"><div class="k">Billable-utilization sweet spot</div><div class="v">70–90% by firm type</div></div>
+    <div class="stat"><div class="k">Primary failure mode</div><div class="v">Stalled build</div></div>
+    <div class="stat"><div class="k">The output</div><div class="v">Build vs. have-it-built</div></div>
+  </div>
+</div>
+
+<!-- WHO IT'S FOR -->
+<section class="section" aria-labelledby="aud-h" id="audience">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Who this is for</p>
+      <h2 class="h2" id="aud-h">Organizations sitting on a practice they haven't built yet</h2>
+      <p class="lead">You have the expertise and the relationships. What you're deciding is whether to build the delivery machine yourself, for regulated or reputation-sensitive professions, where a wrong build is expensive.</p>
+    </div>
+    <div class="grid grid-4 keep-2">
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">◆</div><h3>Nonprofits &amp; advocacy</h3><p class="small muted">Deep issue expertise and funder trust. Want to offer AI-enabled services without diluting the mission.</p></div>
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">§</div><h3>Agencies</h3><p class="small muted">Existing client relationships. Deciding whether to add an AI service line or build a spin-out practice.</p></div>
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">✦</div><h3>Hospitality groups</h3><p class="small muted">Operational depth and a brand. Want a repeatable, monetizable AI offer, not a one-off tool.</p></div>
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">$</div><h3>Regulated-industry orgs</h3><p class="small muted">Domain authority in a compliance-sensitive field. Need a practice that holds up under scrutiny.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- OEG -->
+<section class="section section--paper" id="oeg" aria-labelledby="oeg-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The Operator Execution Gap · practice build</p>
+      <h2 class="h2" id="oeg-h">"Just hire an AI consultant" is the confident wrong answer.</h2>
+      <p class="lead">The generic advice for standing up a practice is fluent and reassuring, and it skips the parts that actually determine whether the build survives its first year. Same question, two answers. The distance between them is the cost of a stalled build.</p>
+    </div>
+    <div class="oeg reveal">
+      <div class="oeg__col bad">
+        <p class="oeg__tag">✕&nbsp;Generic advice · ungrounded</p>
+        <p class="oeg__q">"How do we build our own AI-consulting practice?"</p>
+        <p><strong>"Hire an AI consultant or take a course, pick a few tools, and start offering services. Your domain expertise is the hard part — the rest is easy once you have someone who knows AI."</strong></p>
+        <p class="oeg__why">Confident. Fluent. <strong>Wrong about where practices actually fail.</strong> Tooling and a hire don't produce a practice; delivery infrastructure, a real pipeline, priced offers, and utilized capacity do. This advice sends you into a stalled build.</p>
+      </div>
+      <div class="oeg__col good">
+        <p class="oeg__tag">✓&nbsp;Aloha AI · operations-grounded <span class="chip chip--src">PS operating fundamentals</span></p>
+        <p class="oeg__q">Same question, answered from how practices actually run:</p>
+        <p><strong>A practice is an operating system, not a skill.</strong> The binding constraints are rarely AI knowledge. They are: a <strong>productized, priced offer</strong> you can sell repeatably; <strong>delivery infrastructure</strong> (scoping, QA, handoff) so quality doesn't depend on one person; a <strong>client pipeline</strong> matched to your delivery capacity; and <strong>utilization</strong> in the healthy band (roughly <strong>70–90%</strong> billable, by firm type) that leaves room to sell and improve.</p>
+        <p>Miss the match between pipeline and capacity and you get one of two failure modes: <strong>bench risk</strong> (capacity idle, no demand) or <strong>delivery risk</strong> (sold more than you can deliver). Both stall the build. A hire fixes neither on its own.</p>
+        <p class="oeg__why"><span class="chip chip--hi"><span class="ic" aria-hidden="true"></span>Confidence: High</span> &nbsp;Why you can rely on it: it maps to documented professional-services operating fundamentals (utilization/capacity, pipeline-to-headcount matching, and productization) cited in the method ledger below.</p>
+      </div>
+    </div>
+    <p class="small muted reveal" style="margin-top:var(--s4);max-width:70ch"><strong>OEG</strong> (the Operator Execution Gap) is the distance between what generic advice <em>says</em> and what an organization can actually <em>build and run</em>. Closing it is the entire job.</p>
+  </div>
+</section>
+
+<!-- SCORECARD INSTRUMENT -->
+<section class="section" id="scorecard" aria-labelledby="sc-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The instrument</p>
+      <h2 class="h2" id="sc-h">Score your practice-readiness across six dimensions</h2>
+      <p class="lead">Rate your organization honestly on each dimension, 0–100. The scorecard returns a weighted readiness score, your specific gaps, and a grounded <em>build-it-yourself vs. have-it-built</em> recommendation. Everything runs locally in your browser; nothing is sent anywhere.</p>
+    </div>
+    <div class="grid grid-2">
+      <form class="tool reveal" aria-labelledby="sc-t" oninput="calcScore()" onsubmit="event.preventDefault();calcScore()">
+        <h3 id="sc-t">Practice-readiness scorecard</h3>
+
+        <div class="dim"><div class="dim__top"><span class="dim__lab">Domain expertise</span><span class="dim__val" id="v-domain">60</span></div>
+          <input type="range" id="d-domain" min="0" max="100" value="60" aria-describedby="h-domain">
+          <div class="dim__hint" id="h-domain">Depth and recognized authority in your field.</div></div>
+
+        <div class="dim"><div class="dim__top"><span class="dim__lab">Delivery infrastructure</span><span class="dim__val" id="v-delivery">30</span></div>
+          <input type="range" id="d-delivery" min="0" max="100" value="30" aria-describedby="h-delivery">
+          <div class="dim__hint" id="h-delivery">Repeatable scoping, QA, and handoff, so quality doesn't depend on one person.</div></div>
+
+        <div class="dim"><div class="dim__top"><span class="dim__lab">Client pipeline</span><span class="dim__val" id="v-pipeline">40</span></div>
+          <input type="range" id="d-pipeline" min="0" max="100" value="40" aria-describedby="h-pipeline">
+          <div class="dim__hint" id="h-pipeline">A demand source matched to your delivery capacity.</div></div>
+
+        <div class="dim"><div class="dim__top"><span class="dim__lab">Team capacity</span><span class="dim__val" id="v-capacity">35</span></div>
+          <input type="range" id="d-capacity" min="0" max="100" value="35" aria-describedby="h-capacity">
+          <div class="dim__hint" id="h-capacity">People and utilized time to deliver without burning out the core.</div></div>
+
+        <div class="dim"><div class="dim__top"><span class="dim__lab">AI / tooling literacy</span><span class="dim__val" id="v-ai">45</span></div>
+          <input type="range" id="d-ai" min="0" max="100" value="45" aria-describedby="h-ai">
+          <div class="dim__hint" id="h-ai">Working fluency with the AI tools and workflows you'd deliver.</div></div>
+
+        <div class="dim"><div class="dim__top"><span class="dim__lab">Monetizable IP</span><span class="dim__val" id="v-ip">25</span></div>
+          <input type="range" id="d-ip" min="0" max="100" value="25" aria-describedby="h-ip">
+          <div class="dim__hint" id="h-ip">A productized, priced offer, not bespoke work reinvented each time.</div></div>
+
+        <button class="btn btn--primary" type="submit">Recompute score →</button>
+      </form>
+      <div class="out reveal" role="status" aria-live="polite">
+        <div class="out__lab">Your practice-readiness score</div>
+        <div class="gauge" id="sc-num">—</div>
+        <span class="verdict" id="sc-verdict">Move a slider to compute</span>
+        <div class="out__lab" style="margin-top:var(--s4)">Your binding gaps</div>
+        <ul id="sc-gaps"><li>Rate the six dimensions to see where the build breaks.</li></ul>
+        <div class="flag" id="sc-flag"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COST OF STALL -->
+<section class="section section--paper" id="cost" aria-labelledby="cost-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The cost of a stalled build</p>
+      <h2 class="h2" id="cost-h">What a half-built practice costs while it isn't earning</h2>
+      <p class="lead">A practice you start but can't operationalize doesn't stall for free. It burns leadership hours, idles hires you brought on early, and defers revenue you could have been booking. Estimate the drag of a build that stretches past its intended launch.</p>
+    </div>
+    <div class="grid grid-2">
+      <form class="tool reveal" aria-labelledby="stall-t" oninput="calcStall()" onsubmit="event.preventDefault();calcStall()">
+        <h3 id="stall-t">Stalled-build cost estimator</h3>
+        <div class="field"><label for="months">Months the build slips past intended launch</label>
+          <input id="months" type="number" inputmode="numeric" min="0" step="1" value="6"></div>
+        <div class="field"><label for="burn">Monthly people cost tied to the build (USD)</label>
+          <input id="burn" type="number" inputmode="numeric" min="0" step="500" value="12000"></div>
+        <div class="field"><label for="rev">Monthly revenue the practice would earn once live (USD)</label>
+          <input id="rev" type="number" inputmode="numeric" min="0" step="500" value="20000"></div>
+        <button class="btn btn--primary" type="submit">Estimate the drag →</button>
+      </form>
+      <div class="out reveal" role="status" aria-live="polite">
+        <div class="out__lab">Estimated cost of the stall</div>
+        <div class="out__big" id="stall-num">$—</div>
+        <ul id="stall-list"><li>Enter your figures to model the drag.</li></ul>
+        <div class="flag">Illustrative model, not financial advice. It combines sunk people-cost with deferred revenue; verify against your own budget.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="method" aria-labelledby="how-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">How it works</p>
+      <h2 class="h2" id="how-h">Assess → design the practice → build &amp; hand over</h2>
+      <p class="lead">When the scorecard says have-it-built, this is the engagement. A repeatable method (the Build-Manage Loop), not a one-off consulting sprint.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Assess (RIL → ROL)</h3><p class="muted">We take a Readiness Intelligence read of your six dimensions and resolve it into an Operator-ready plan: what to build, in what order, and where you already have an edge to bank on.</p></div></div>
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Design the practice</h3><p class="muted">Service lines, productized offers, pricing, delivery infrastructure (scoping, QA, handoff), and a pipeline plan matched to your realistic capacity band.</p></div></div>
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Build &amp; hand over</h3><p class="muted">We stand up the delivery machine, train your team, seed the pipeline, and run the Build-Manage Loop until it holds, then hand you the keys. You own the practice; we're the on-ramp, not a permanent dependency.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- EVIDENCE / METHOD LEDGER -->
+<section class="section section--paper" id="ledger" aria-labelledby="led-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Evidence &amp; method ledger</p>
+      <h2 class="h2" id="led-h">Where the readiness dimensions come from</h2>
+      <p class="lead">The scorecard isn't vibes. Each dimension maps to a documented professional-services operating fundamental, or is marked as an honest judgment call where no single external benchmark applies.</p>
+    </div>
+    <div class="table-wrap reveal">
+      <table class="data">
+        <caption class="small muted" style="text-align:left;padding:.6rem .8rem">Method ledger: grounding for each readiness dimension · reviewed 2026-07-04</caption>
+        <thead><tr><th scope="col">Dimension / claim</th><th scope="col">Grounding</th><th scope="col">Confidence</th></tr></thead>
+        <tbody>
+          <tr><td>Healthy billable-utilization sits roughly 70–90% by firm type (consulting ~70–75%, agencies ~75–85%, law ~80–90%), with unbillable slack needed for BD and capability-building</td><td>Professional-services capacity &amp; utilization literature (Rocketlane; Birdview PSA)</td><td><span class="chip chip--hi">High</span></td></tr>
+          <tr><td>Pipeline must be matched to delivery capacity; mismatch creates bench risk (idle capacity) or delivery risk (oversold)</td><td>Headcount-vs-pipeline / capacity-utilization framing (Rocketlane; Birdview PSA)</td><td><span class="chip chip--hi">High</span></td></tr>
+          <tr><td>A productized, priced, repeatable offer (Monetizable IP) is what lets a service scale and forecast predictably vs. bespoke reinvention</td><td>Productized-services operating guidance (Parallax; Consulting Success; ManyRequests)</td><td><span class="chip chip--hi">High</span></td></tr>
+          <tr><td>Sustainable practices connect positioning, pipeline, conversion, delivery, and expansion as one operating system, not a single hire or tool</td><td>Professional-services growth-model framing (Rework resources)</td><td><span class="chip chip--med">Med · synthesized</span></td></tr>
+          <tr><td>Weighting the six dimensions (delivery infrastructure, pipeline, and monetizable IP weighted highest) as the binding constraints on a build</td><td>Aloha AI judgment, informed by the operating fundamentals above</td><td><span class="chip chip--med">Judgment-based</span></td></tr>
+          <tr><td>The specific 0–100 thresholds for the build-vs-have-it-built recommendation</td><td>Aloha AI judgment; calibrate to your organization in a scoping call</td><td><span class="chip chip--med">Judgment-based</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small muted reveal" style="margin-top:var(--s4);max-width:72ch"><strong>Honesty note:</strong> the operating fundamentals (utilization bands, pipeline-to-capacity matching, productization) are drawn from published professional-services sources. The dimension weights and score thresholds are Aloha AI's judgment, marked as such. No external benchmark sets them, and no citation is fabricated to imply otherwise.</p>
+  </div>
+</section>
+
+<!-- NAMED IP -->
+<section class="section" aria-labelledby="ip-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Why this, not a course or a single hire</p>
+      <h2 class="h2" id="ip-h">Built on named, defensible frameworks</h2>
+      <p class="lead">You leave speaking the language of how a practice actually runs, not renting a dashboard or a workshop.</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">RIL → ROL</p><h3 class="h3">Readiness Intelligence → Operator Layer</h3><p class="small muted">A structured read of your readiness, resolved into a plan you can act on: what to build, in what order.</p></div>
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">OEG</p><h3 class="h3">Operator Execution Gap</h3><p class="small muted">The distance between generic advice and a practice an organization can actually build and run.</p></div>
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">Build-Manage Loop</p><h3 class="h3">Build-Manage Loop</h3><p class="small muted">The delivery method that stands up the practice, runs it until it holds, then hands you the keys.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section--paper" id="faq" aria-labelledby="faq-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Questions</p>
+      <h2 class="h2" id="faq-h">What people ask first</h2>
+    </div>
+    <div class="reveal">
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq1"><span>Is this business or legal/financial advice?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq1"><div class="acc__panel-inner">It's business and AI-implementation guidance. It is not legal, tax, or financial advice, and nothing here creates an attorney–client relationship. RN Collins is a JD candidate, not a licensed attorney. The models are illustrative; verify against your own facts and advisors.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq2"><span>What does "have it built" actually mean?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq2"><div class="acc__panel-inner">Aloha AI designs and stands up your AI-consulting practice (service lines, productized offers, pricing, delivery infrastructure, pipeline seeding, and team training), then runs the Build-Manage Loop until it holds and hands it over. You own the practice. We're the on-ramp, not a permanent dependency.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq3"><span>How is the readiness score calculated?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq3"><div class="acc__panel-inner">Six dimensions, weighted so the binding constraints on a build (delivery infrastructure, client pipeline, and monetizable IP) count for more than raw domain expertise or tooling literacy. The weights and thresholds are Aloha AI's judgment, marked as such in the method ledger. It's a directional read, not a verdict; a scoping call calibrates it to your organization.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq4"><span>What data do you collect from me?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq4"><div class="acc__panel-inner">None. There is no login, no tracking, and no cookies. Every calculation runs locally in your browser and nothing you enter leaves your device.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- THE SERVICE / OFFER -->
+<section class="section" id="start" aria-labelledby="offer-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The service</p>
+      <h2 class="h2" id="offer-h">How this becomes yours</h2>
+      <p class="lead">You have domain depth and relationships but no delivery machine, so the AI practice stays a someday project while the window is open now. Aloha AI builds the practice for you and hands it over: service lines, pricing, delivery infrastructure, a seeded client pipeline, and a trained team.</p>
+    </div>
+    <div class="grid grid-3 reveal">
+      <div class="card"><div class="card__ic" aria-hidden="true">1</div><h3>What I build</h3><p class="small muted">A working AI-consulting practice inside your organization: productized offers, pricing, delivery infra, pipeline, and team training, scoped to your field.</p></div>
+      <div class="card"><div class="card__ic" aria-hidden="true">2</div><h3>What you get</h3><ul class="small muted" style="padding-left:1.1rem;margin:.35rem 0 0"><li>A live practice you own and operate</li><li>Delivery infrastructure that isn't person-dependent</li><li>A seeded pipeline and a trained team, with change-support as it scales</li></ul></div>
+      <div class="card"><div class="card__ic" aria-hidden="true">3</div><h3>How to start</h3><p class="small muted">A Systems Audit: a scoping conversation that turns your scorecard into a concrete build plan. If it's a fit, the build begins in weeks, not quarters.</p></div>
+    </div>
+    <p class="lead reveal" style="margin-top:var(--s5)"><strong>Pricing.</strong> Practice builds run as a <strong>retainer for the build + a share of the practice's revenue</strong>, scoped to your organization. Structured so we win when the practice earns, not before.</p>
+  </div>
+</section>
+<!-- CTA HIERARCHY -->
+<section class="section section--ink" id="contact" aria-labelledby="cta-h">
+  <div class="wrap" style="text-align:center">
+    <p class="eyebrow">Aloha AI · Honolulu</p>
+    <h2 class="h2" id="cta-h" style="max-width:24ch;margin-inline:auto">Ready when you are.</h2>
+    <p class="lead" style="margin:var(--s4) auto var(--s5);text-align:center">Convinced, curious, or comparing: there's a path for each.</p>
+    <div style="display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn--primary" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Start with a Systems Audit →</a>
+      <a class="btn btn--ghost" href="https://aloha-ai-consulting.vercel.app/tools/ai-readiness-scorecard" target="_blank" rel="noopener">Take the 2-minute assessment</a>
+    </div>
+    <p class="small" style="margin-top:var(--s5);color:var(--muted-on-ink)">Prefer email? <a href="#" data-email style="color:var(--teal-mint)">Email RN</a> &nbsp;·&nbsp; or connect on <a href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noopener" style="color:var(--teal-mint)">LinkedIn</a></p>
+    <p id="emailReveal" hidden style="margin-top:.5rem;font-family:var(--mono);font-size:.8rem;color:#CFDAD5"></p>
+  </div>
+</section>
+<footer class="footer" aria-labelledby="foot-h">
+  <div class="wrap">
+    <h2 id="foot-h" class="small" style="position:absolute;left:-999px">Site footer</h2>
+    <div class="footer__grid">
+      <div>
+        <a class="nav__brand" href="#top" style="color:var(--cream)" aria-label="Aloha AI home"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#7FE0C4"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#7FE0C4" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg> Aloha&nbsp;AI</a>
+        <p class="small" style="margin-top:var(--s3);max-width:38ch;color:#9FB6AE">AI implementation built around how humans actually trust and use it, for regulated or reputation-sensitive professions.</p>
+      </div>
+      <div>
+        <h4>This site</h4>
+        <ul>
+          <li><a href="#oeg">The gap</a></li>
+          <li><a href="#method">How it works</a></li>
+          <li><a href="#start">The service</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Aloha AI</h4>
+        <ul>
+          <li><a href="https://aloha-ai-consulting.vercel.app" target="_blank" rel="noopener">The practice</a></li>
+          <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a call</a></li>
+          <li><a href="https://aloha-ai-consulting.vercel.app/tools/ai-readiness-scorecard" target="_blank" rel="noopener">Assessment</a></li>
+          <li><a href="https://rn-portfolio-khaki.vercel.app" target="_blank" rel="noopener">Portfolio → RN Builds</a></li>
+          <li><a href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://aloha-ai-consulting.vercel.app/privacy" target="_blank" rel="noopener">Privacy</a></li>
+          <li><a href="https://aloha-ai-consulting.vercel.app/terms" target="_blank" rel="noopener">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="disc small">Business and AI-implementation guidance, not legal, tax, or financial advice. RN Collins is a JD candidate, not a licensed attorney; nothing here is legal or financial advice or an attorney–client relationship. Scores and calculators are illustrative; confirm against your own facts and advisors before relying on them.</p>
+    <p class="fine">Aloha AI · a DBA of Rayven-Nikkita Collins LLC · Honolulu, HI · No tracking, no cookies · Method reviewed 2026-07-04; readiness weights and thresholds are Aloha AI judgment, calibrate to your organization.</p>
+  </div>
+</footer>
+
+<script>
+  // ---- mobile nav ----
+  (function(){
+    var b=document.getElementById('burger'),l=document.getElementById('navlinks');
+    function set(o){b.setAttribute('aria-expanded',o);l.classList.toggle('open',o);b.setAttribute('aria-label',o?'Close menu':'Open menu');}
+    b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true');});
+    l.addEventListener('click',function(e){if(e.target.tagName==='A')set(false);});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});
+  })();
+  // ---- accordion ----
+  document.querySelectorAll('.acc__btn').forEach(function(btn){
+    var panel=document.getElementById(btn.getAttribute('aria-controls'));
+    btn.addEventListener('click',function(){
+      var open=btn.getAttribute('aria-expanded')==='true';
+      btn.setAttribute('aria-expanded',!open);
+      panel.style.maxHeight=open?null:panel.scrollHeight+'px';
+    });
+  });
+  // ---- personalization slot ?for= ----
+  (function(){var p=new URLSearchParams(location.search).get('for');if(p){document.getElementById('foryou').textContent=p;}})();
+  // ---- scorecard ----
+  function fmt(n){return '$'+Math.round(n).toLocaleString('en-US');}
+  var DIMS=[
+    {id:'domain',lab:'Domain expertise',w:1},
+    {id:'delivery',lab:'Delivery infrastructure',w:2},
+    {id:'pipeline',lab:'Client pipeline',w:2},
+    {id:'capacity',lab:'Team capacity',w:1.5},
+    {id:'ai',lab:'AI / tooling literacy',w:1},
+    {id:'ip',lab:'Monetizable IP',w:2}
+  ];
+  function calcScore(){
+    var totW=0,acc=0,vals={};
+    DIMS.forEach(function(d){
+      var v=+document.getElementById('d-'+d.id).value;
+      vals[d.id]=v;document.getElementById('v-'+d.id).textContent=v;
+      acc+=v*d.w;totW+=d.w;
+    });
+    var score=Math.round(acc/totW);
+    document.getElementById('sc-num').textContent=score+' / 100';
+    // gaps: weighted dims scoring < 50, sorted by weight then lowness
+    var gaps=DIMS.filter(function(d){return vals[d.id]<50;})
+      .sort(function(a,b){return (b.w-a.w)||(vals[a.id]-vals[b.id]);});
+    var ul=document.getElementById('sc-gaps');ul.innerHTML='';
+    if(!gaps.length){var li=document.createElement('li');li.textContent='No dimension scores below 50. Your gaps are refinement, not foundation.';ul.appendChild(li);}
+    else gaps.slice(0,4).forEach(function(d){var li=document.createElement('li');
+      li.textContent=d.lab+' ('+vals[d.id]+'/100)'+(d.w>=2?', a binding constraint on any build':'');ul.appendChild(li);});
+    // verdict
+    var vEl=document.getElementById('sc-verdict'),fEl=document.getElementById('sc-flag'),verdict,flag;
+    var coreLow=(vals.delivery<50)+(vals.pipeline<50)+(vals.ip<50);
+    if(score>=75&&coreLow===0){verdict='Build it yourself';
+      flag='⚑ You have the foundation. The move is disciplined execution: a Systems Audit can pressure-test the plan before you commit.';}
+    else if(score>=55){verdict='Build with support';
+      flag='⚑ Real strengths, real gaps. A guided build closes the binding constraints faster than going fully in-house or fully outsourced.';}
+    else {verdict='Have it built & handed over';
+      flag='⚑ The binding constraints (delivery, pipeline, or IP) aren’t in place yet, and building in-house from here usually stalls. Have the practice built and handed to you.';}
+    vEl.textContent=verdict;fEl.textContent=flag;
+  }
+  function calcStall(){
+    var m=+document.getElementById('months').value||0,
+        b=+document.getElementById('burn').value||0,
+        r=+document.getElementById('rev').value||0;
+    var sunk=m*b,deferred=m*r,total=sunk+deferred;
+    document.getElementById('stall-num').textContent=fmt(total);
+    var ul=document.getElementById('stall-list');ul.innerHTML='';
+    [['Sunk people-cost over the slip',fmt(sunk)],
+     ['Deferred revenue not yet earned',fmt(deferred)],
+     ['Combined drag of the stalled build',fmt(total)]].forEach(function(x){
+       var li=document.createElement('li');li.textContent=x[0]+': '+x[1];ul.appendChild(li);});
+    var li=document.createElement('li');li.textContent='This is the price of trusting the "just hire someone" answer over a real build plan.';ul.appendChild(li);
+  }
+  calcScore();calcStall();
+  // ---- reveal on scroll ----
+  (function(){
+    if(matchMedia('(prefers-reduced-motion:reduce)').matches){document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in');});return;}
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(e){io.observe(e);});
+  })();
+</script>
+<script>
+/* email assembled at runtime (not scrapable); copy + mail app + reveal + Gmail */
+(function(){var u='collins.ra',dm='northeastern.edu',a=u+'@'+dm,su=encodeURIComponent('Aloha AI — practice-build inquiry');
+document.querySelectorAll('[data-email]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();
+try{navigator.clipboard&&navigator.clipboard.writeText(a);}catch(_){}
+var o=document.getElementById('emailReveal');if(o){o.hidden=false;o.innerHTML='Copied ✓ &nbsp;<a href="mailto:'+a+'?subject='+su+'" style="color:#7FE0C4">'+a+'</a> &nbsp;·&nbsp; <a href="https://mail.google.com/mail/?view=cm&fs=1&to='+a+'&su='+su+'" target="_blank" rel="noopener" style="color:#7FE0C4">Open in Gmail</a>';}
+window.location.href='mailto:'+a+'?subject='+su;});});})();
+</script>
+</body>
+</html>

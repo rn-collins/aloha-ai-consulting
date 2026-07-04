@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI-Readiness Governance Scorecard — Aloha AI</title>
+<meta name="description" content="A governance-grounded readiness scorecard for organizations deciding whether they need a Fractional Chief AI Officer. Score your AI strategy, governance, adoption, risk, data, and ownership across NIST AI RMF, the EU AI Act, and ISO/IEC 42001 — and see the gaps. By RN Collins, Aloha AI.">
+<link rel="canonical" href="https://aloha-ai-consulting.vercel.app/tools/ai-readiness-scorecard">
+<meta name="theme-color" content="#14201C">
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI-Readiness Governance Scorecard — Aloha AI">
+<meta property="og:description" content="No one owns AI in your org yet. Score your readiness across six governance dimensions and see whether you need a Fractional Chief AI Officer or a one-off engagement.">
+<meta property="og:image" content="https://aloha-ai-consulting.vercel.app/tools/ai-readiness-scorecard/og-image.png">
+<meta property="og:url" content="https://aloha-ai-consulting.vercel.app/tools/ai-readiness-scorecard">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI-Readiness Governance Scorecard — Aloha AI">
+<meta name="twitter:description" content="Score your AI readiness across strategy, governance, adoption, risk, data, and ownership. Grounded in real frameworks, not vibes.">
+<meta name="twitter:image" content="https://aloha-ai-consulting.vercel.app/tools/ai-readiness-scorecard/og-image.png">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<script>document.documentElement.className+=' js';</script>
+<link rel="stylesheet" href="./aloha-ds.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"AI-Readiness Governance Scorecard",
+"applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://aloha-ai-consulting.vercel.app/tools/ai-readiness-scorecard",
+"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+"creator":{"@type":"Person","name":"RN Collins","jobTitle":"Founder, Aloha AI",
+"description":"Neuroscientist (MS), JD candidate, and AI systems builder for regulated industries","knowsAbout":["AI governance","Fractional Chief AI Officer","AI strategy","NIST AI Risk Management Framework","ISO/IEC 42001","EU AI Act","AI adoption"]},
+"about":"Whether an organization needs a Fractional Chief AI Officer to own AI strategy, governance, and adoption"}
+</script>
+<style>
+  /* ---- page-specific ---- */
+  .hero{background:radial-gradient(120% 130% at 85% -10%,#1e332c 0%,var(--ink) 55%);color:var(--cream);
+    padding-block:clamp(48px,8vw,92px) clamp(40px,6vw,72px);border-bottom:3px solid var(--teal)}
+  .hero .display{color:var(--cream);max-width:17ch;margin-bottom:var(--s4)}
+  .hero .kicker{color:var(--teal-mint)}
+  .hero .lead{color:#CFDAD5;max-width:58ch}
+  .hero__cta{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:var(--s5)}
+  .hero__meta{margin-top:var(--s5);font-family:var(--mono);font-size:var(--fs-xs);color:#9FB6AE;letter-spacing:.04em;line-height:1.8}
+  .hero__meta b{color:var(--cream)}
+  .livebadge{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:var(--fs-xs);
+    letter-spacing:.08em;text-transform:uppercase;color:#CDE7DF;border:1px solid #2F4A42;border-radius:var(--r-pill);padding:.34rem .72rem;margin-bottom:var(--s4)}
+  .livebadge .dot{width:7px;height:7px;border-radius:50%;background:var(--teal-mint);animation:pulse 2.2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(127,224,196,.5)}70%{box-shadow:0 0 0 7px rgba(127,224,196,0)}100%{box-shadow:0 0 0 0 rgba(127,224,196,0)}}
+  .statbar{background:var(--paper);border-bottom:1px solid var(--line)}
+  .statbar__in{display:flex;flex-wrap:wrap;gap:var(--s6);padding-block:var(--s4)}
+  .statbar .stat{flex:1;min-width:150px}
+  .statbar .k{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .statbar .v{font-family:var(--serif);font-size:1.15rem;color:var(--ink);margin-top:.15rem}
+  .sec-head{margin-bottom:var(--s6);max-width:70ch}
+  .sec-head .h2{margin-bottom:var(--s3)}
+  /* OEG */
+  .oeg{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh-2)}
+  @media(max-width:760px){.oeg{grid-template-columns:1fr}}
+  .oeg__col{background:#fff;padding:var(--s5)}
+  .oeg__col.bad{background:var(--red-l)}
+  .oeg__tag{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.09em;text-transform:uppercase;margin-bottom:var(--s3);display:flex;align-items:center;gap:.45rem;flex-wrap:wrap}
+  .oeg__col.bad .oeg__tag{color:var(--red)}
+  .oeg__col.good .oeg__tag{color:var(--green)}
+  .oeg__q{font-family:var(--serif);font-size:1.05rem;font-style:italic;margin-bottom:.7rem}
+  .oeg__why{margin-top:var(--s4);padding-top:var(--s3);border-top:1px dashed var(--line);font-size:var(--fs-sm);color:var(--muted)}
+  /* scorecard */
+  .toggles{display:grid;gap:.55rem}
+  .tog{display:flex;align-items:flex-start;gap:.7rem;border:1px solid var(--line);border-radius:var(--r-sm);padding:.7rem .8rem;background:#fff}
+  .tog:has(input:checked){border-color:var(--green-bd);background:var(--green-l)}
+  .tog input{margin-top:.25rem;width:20px;height:20px;flex:none;accent-color:var(--teal-d)}
+  .tog__lab{font-size:var(--fs-sm)}
+  .tog__dim{font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.15rem}
+  .gauge{font-family:var(--serif);font-size:clamp(2.6rem,6vw,3.6rem);line-height:1}
+  .gaplist li{margin-bottom:.35rem}
+  /* cost of drift */
+  .tvn{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-top:var(--s3)}
+  .tvn .box{border:1px solid var(--line);border-radius:var(--r-sm);padding:.75rem .85rem}
+  .tvn .box.now{border-color:var(--green-bd);background:var(--green-l)}
+  .tvn .lab{font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.2rem}
+  .tvn .val{font-size:.9rem}
+  /* process */
+  .steps{counter-reset:step;display:grid;gap:var(--s5)}
+  .step{display:grid;grid-template-columns:auto 1fr;gap:var(--s4);align-items:start}
+  .step__n{counter-increment:step;width:44px;height:44px;border-radius:12px;background:var(--teal);color:#fff;
+    font-family:var(--serif);font-size:1.3rem;display:grid;place-items:center;flex:none}
+  .step__n::before{content:counter(step)}
+  .aud__ic,.card__ic svg{width:20px;height:20px}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="#top" aria-label="Aloha AI home">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#1B7A68"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#1B7A68" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      Aloha&nbsp;AI
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav__links" id="navlinks">
+        <li><a href="#who">Who it's for</a></li>
+        <li><a href="#gap">The Gap</a></li>
+        <li><a href="#score">Score readiness</a></li>
+        <li><a href="#drift">Cost of drift</a></li>
+        <li><a href="#method">Method</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li class="nav__cta"><a class="btn btn--primary btn--sm" href="#start">Get started →</a></li>
+      </ul>
+    </nav>
+    <button class="nav__burger" id="burger" aria-label="Open menu" aria-controls="navlinks" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+<span id="top"></span>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-h">
+  <div class="wrap">
+    <span class="livebadge"><span class="dot" aria-hidden="true"></span> Framework-grounded · updated 2026-07-04</span>
+    <p class="eyebrow kicker">AI Strategy · Fractional Leadership</p>
+    <h1 class="display" id="hero-h">You know you should take AI seriously. Nobody owns it yet.</h1>
+    <p class="lead">That gap has a name and a cost. This scorecard reads your organization across six governance dimensions (strategy, governance, adoption, risk, data, ownership), scores your readiness 0–100, names your top gaps, and tells you honestly whether you need a <em>Fractional Chief AI Officer</em> or just a one-off engagement. Grounded in real AI-governance frameworks, not a vendor's slide.</p>
+    <div class="hero__cta">
+      <a class="btn btn--primary" href="#score">Score your readiness →</a>
+      <a class="btn btn--ghost" href="#gap">See why "just train the team" fails</a>
+    </div>
+    <p class="hero__meta">Built by <b>RN&nbsp;Collins</b> · Neuroscience (MS) · Administrative&nbsp;Law (JD&nbsp;candidate) · AI&nbsp;systems<br>Tailored for: <b id="foryou">founders, EDs, boards &amp; leaders with no one owning AI</b></p>
+  </div>
+</section>
+
+<!-- STAT BAR -->
+<div class="statbar" id="status">
+  <div class="wrap statbar__in">
+    <div class="stat"><div class="k">Dimensions scored</div><div class="v">6 governance areas</div></div>
+    <div class="stat"><div class="k">Grounded in</div><div class="v">NIST · EU AI Act · ISO 42001</div></div>
+    <div class="stat"><div class="k">Time to result</div><div class="v">Under 2 minutes</div></div>
+    <div class="stat"><div class="k">Data sent anywhere</div><div class="v">None · runs locally</div></div>
+  </div>
+</div>
+
+<!-- WHO IT'S FOR -->
+<section class="section" id="who" aria-labelledby="aud-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Who this is for</p>
+      <h2 class="h2" id="aud-h">Built for the seat that inherited AI without asking for it</h2>
+      <p class="lead">The same scorecard reads four ways, because "we should do something about AI" lands differently depending on where you sit.</p>
+    </div>
+    <div class="grid grid-4 keep-2">
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">◆</div><h3>Founders &amp; CEOs</h3><p class="small muted">You feel the pressure to have an AI answer. You don't have a person, a plan, or a way to know if you're exposed.</p></div>
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">§</div><h3>Executive directors</h3><p class="small muted">Nonprofit and mission-driven leaders whose funders now ask "what's your AI policy." There isn't one yet.</p></div>
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">$</div><h3>Boards &amp; committees</h3><p class="small muted">You're accountable for AI risk you can't currently see. You need a legible read before you can govern it.</p></div>
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">✦</div><h3>CLOs &amp; heads of AI</h3><p class="small muted">Named to own AI with no mandate or map. A scored baseline you can take to leadership on day one.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- OEG-style side-by-side -->
+<section class="section section--paper" id="gap" aria-labelledby="gap-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The Ownership Gap · governance vs. vibes</p>
+      <h2 class="h2" id="gap-h">"Just train the team on ChatGPT." Watch that answer collapse.</h2>
+      <p class="lead">The default reflex is to buy licenses and run a lunch-and-learn. That treats AI as a tooling problem. It's an ownership problem. Same situation, two responses: the generic training-first reflex, and the governance-grounded read that a Fractional CAO actually delivers. The distance between them is where the risk lives.</p>
+    </div>
+    <div class="oeg reveal">
+      <div class="oeg__col bad">
+        <p class="oeg__tag">✕&nbsp;Generic reflex · tool-first</p>
+        <p class="oeg__q">"We should take AI seriously — let's train everyone on ChatGPT and see what sticks."</p>
+        <p><strong>"Roll out licenses, run a training, encourage experimentation. Adoption will follow and we'll figure out policy later."</strong></p>
+        <p class="oeg__why">Feels like progress. <strong>Leaves four holes open</strong> — no one owns adoption, no one owns risk, there's no policy, and vendor/data governance is nobody's job. "Later" is when the incident happens.</p>
+      </div>
+      <div class="oeg__col good">
+        <p class="oeg__tag">✓&nbsp;Aloha AI · governance-grounded <span class="chip chip--src">NIST · ISO 42001</span></p>
+        <p class="oeg__q">Same situation, read as governance:</p>
+        <p><strong>Training is one lever of four, and not the first.</strong> Before adoption, someone has to <strong>own the decision</strong>: set the strategy, name accountability, and stand up the guardrails. Frameworks are explicit about this. NIST AI RMF makes <em>Govern</em> the cross-cutting function that holds the rest together; ISO/IEC 42001 puts AI oversight on <strong>top management</strong>, not the training calendar.</p>
+        <p>So the real read covers four fronts at once: <strong>adoption</strong> (who uses it, how, measured), <strong>risk ownership</strong> (who's accountable when it's wrong), <strong>policy</strong> (an actual AI policy, not a memo), and <strong>vendor governance</strong> (what data leaves, to whom, under what terms).</p>
+        <p class="oeg__why"><span class="chip chip--hi"><span class="ic" aria-hidden="true"></span>Confidence: High</span> &nbsp;Why you can rely on it: each front maps to a named duty in NIST AI RMF, the EU AI Act, or ISO/IEC 42001, cited in the method ledger below with retrieval dates.</p>
+      </div>
+    </div>
+    <p class="small muted reveal" style="margin-top:var(--s4);max-width:70ch"><strong>The Ownership Gap</strong> is the distance between having AI <em>tools</em> and having someone who <em>owns</em> them: strategy, governance, adoption, and risk. Training closes none of it. A Fractional CAO closes all of it.</p>
+  </div>
+</section>
+
+<!-- SCORECARD -->
+<section class="section" id="score" aria-labelledby="score-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The instrument</p>
+      <h2 class="h2" id="score-h">Score your AI-readiness across six governance dimensions</h2>
+      <p class="lead">Check what's true today, not what's on a roadmap. The scorecard returns a 0–100 readiness score, your weakest dimensions, and an honest call on whether you need ongoing fractional ownership or a one-off engagement. Everything runs locally in your browser; nothing is sent anywhere.</p>
+    </div>
+    <div class="grid grid-2">
+      <form class="tool reveal" aria-labelledby="sc-t" onsubmit="event.preventDefault();scoreReadiness()">
+        <h3 id="sc-t">AI-Readiness Scorecard</h3>
+        <div class="toggles">
+          <label class="tog"><input type="checkbox" data-dim="Strategy"><span class="tog__lab"><span class="tog__dim">Strategy</span>We have a written AI strategy tied to specific business outcomes, not just "explore AI."</span></label>
+          <label class="tog"><input type="checkbox" data-dim="Governance"><span class="tog__lab"><span class="tog__dim">Governance</span>We have an actual AI policy and an oversight structure (who approves what, who reviews risk).</span></label>
+          <label class="tog"><input type="checkbox" data-dim="Adoption"><span class="tog__lab"><span class="tog__dim">Adoption</span>AI use is measured and supported, not just permitted. We know who uses what, and whether it works.</span></label>
+          <label class="tog"><input type="checkbox" data-dim="Risk"><span class="tog__lab"><span class="tog__dim">Risk</span>Someone is explicitly accountable when an AI output is wrong, biased, or leaks data.</span></label>
+          <label class="tog"><input type="checkbox" data-dim="Data &amp; Vendors"><span class="tog__lab"><span class="tog__dim">Data &amp; Vendors</span>We govern what data leaves the org and vet AI vendors' data-handling terms before adopting them.</span></label>
+          <label class="tog"><input type="checkbox" data-dim="Ownership"><span class="tog__lab"><span class="tog__dim">Ownership</span>One named person owns AI end-to-end with a real mandate, not a side-of-desk volunteer.</span></label>
+        </div>
+        <button class="btn btn--primary" type="submit" style="margin-top:var(--s4)">Score my readiness →</button>
+      </form>
+      <div class="out reveal" role="status" aria-live="polite">
+        <div class="out__lab">Your AI-readiness score</div>
+        <div class="gauge" id="sc-num">—</div>
+        <div class="out__big" id="sc-head" style="margin-top:.4rem">Answer the six above to see your read.</div>
+        <div class="out__lab" style="margin-top:var(--s4)">Your biggest gaps</div>
+        <ul class="gaplist" id="sc-gaps"><li>Check the boxes that are true today.</li></ul>
+        <div class="flag" id="sc-flag"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COST OF DRIFT -->
+<section class="section section--paper" id="drift" aria-labelledby="drift-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The cost of getting it wrong</p>
+      <h2 class="h2" id="drift-h">What a leaderless AI rollout costs</h2>
+      <p class="lead">"We'll figure out who owns it later" isn't neutral. It accrues cost every quarter. Here's what drift looks like when no one holds the AI mandate, versus what changes the day someone does.</p>
+    </div>
+    <div class="grid grid-2">
+      <div class="card reveal"><h3>Shadow AI &amp; data leakage <span class="chip chip--hi">High cost</span></h3>
+        <div class="tvn"><div class="box"><div class="lab">Leaderless (drift)</div><div class="val">Staff paste client and internal data into consumer tools no one vetted. You learn the terms after the breach.</div></div><div class="box now"><div class="lab">With an owner</div><div class="val">Vetted tools, a data-handling policy, and vendor terms reviewed before adoption. Leakage designed out.</div></div></div></div>
+      <div class="card reveal"><h3>Stalled, wasted adoption <span class="chip chip--hi">High cost</span></h3>
+        <div class="tvn"><div class="box"><div class="lab">Leaderless (drift)</div><div class="val">Licenses bought, barely used. A few power users; everyone else defaults back. Spend with no measured return.</div></div><div class="box now"><div class="lab">With an owner</div><div class="val">Adoption is measured, supported, and tied to outcomes. Spend maps to results you can show a board.</div></div></div></div>
+      <div class="card reveal"><h3>Unowned risk &amp; compliance drift <span class="chip chip--med">Rising</span></h3>
+        <div class="tvn"><div class="box"><div class="lab">Leaderless (drift)</div><div class="val">No one accountable for a wrong or biased output. Governance duties (NIST, EU AI Act, ISO 42001) go unassigned.</div></div><div class="box now"><div class="lab">With an owner</div><div class="val">Named accountability and an oversight cadence. You can answer "who owns AI risk here" in one sentence.</div></div></div></div>
+      <div class="card reveal"><h3>Reputational &amp; funder exposure <span class="chip chip--med">Nuance</span></h3>
+        <div class="tvn"><div class="box"><div class="lab">Leaderless (drift)</div><div class="val">"What's your AI policy?" from a funder, client, or regulator meets an awkward silence.</div></div><div class="box now"><div class="lab">With an owner</div><div class="val">A real policy and a legible governance story: an asset in diligence, not a liability.</div></div></div></div>
+    </div>
+    <p class="small muted reveal" style="margin-top:var(--s4);max-width:70ch">The cost of drift is rarely a single line item. It's shadow spend, unrealized value, and unowned risk compounding quietly until an incident makes it visible all at once.</p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="method" aria-labelledby="how-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">How it works</p>
+      <h2 class="h2" id="how-h">Assess → Govern → Run: a repeatable strategy method</h2>
+      <p class="lead">A Fractional CAO engagement isn't a slide deck. It's the same three-stage pipeline every time, adapted from regulatory monitoring to strategy: read the ground truth, resolve it into governance, then run it.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Assess: Readiness Intelligence Layer (RIL)</h3><p class="muted">Ground truth first: current AI use, shadow tools, data flows, existing policy (or its absence), and where accountability actually sits. Scored against NIST AI RMF, the EU AI Act, and ISO/IEC 42001, not against a vendor's checklist.</p></div></div>
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Govern: Resolve to an Ownership Layer (ROL)</h3><p class="muted">The assessment becomes decisions leadership can act on: a written strategy, an AI policy, a named oversight structure, vendor and data-handling guardrails, and a prioritized adoption plan. The gaps close in an order that matches your risk, not alphabetically.</p></div></div>
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Run: ongoing fractional ownership</h3><p class="muted">Someone holds the mandate on a recurring cadence: driving adoption, keeping governance current as tools and rules shift, and answering to the board. From 2 days/week to full ownership, so it never goes leaderless again.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- EVIDENCE / METHOD LEDGER -->
+<section class="section section--paper" id="sources" aria-labelledby="src-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Evidence &amp; method ledger</p>
+      <h2 class="h2" id="src-h">Every readiness dimension, grounded in a real framework</h2>
+      <p class="lead">The scorecard's six dimensions aren't invented. Each maps to a named duty in a recognized AI-governance framework. Each entry carries its mechanism, the real source, a retrieval date, and a confidence rating, so the read holds up in a board conversation and in diligence.</p>
+    </div>
+    <div class="table-wrap reveal">
+      <table class="data">
+        <caption class="small muted" style="text-align:left;padding:.6rem .8rem">Method ledger · frameworks retrieved 2026-07-04</caption>
+        <thead><tr><th scope="col">Readiness dimension → mechanism</th><th scope="col">Framework &amp; real name</th><th scope="col">Retrieved</th><th scope="col">Confidence</th></tr></thead>
+        <tbody>
+          <tr><td>Governance &amp; ownership as a cross-cutting duty: culture, policies, roles, accountability, and oversight that hold strategy, adoption, and risk together</td><td><span class="cite">NIST AI RMF 1.0</span> (NIST AI 100-1), <em>Govern</em> function of the Core</td><td>2026-07-04</td><td><span class="chip chip--hi">High</span></td></tr>
+          <tr><td>Risk ownership &amp; measured management: mapping AI context and measuring/managing risk across the lifecycle, resourced by the govern function</td><td><span class="cite">NIST AI RMF 1.0</span>, <em>Map · Measure · Manage</em> functions</td><td>2026-07-04</td><td><span class="chip chip--hi">High</span></td></tr>
+          <tr><td>Top-management accountability: AI oversight as leadership's responsibility, with an AI policy and objectives tied to strategic direction (not delegated to a training calendar)</td><td><span class="cite">ISO/IEC 42001:2023</span> (AI Management System), Clause 5: Leadership</td><td>2026-07-04</td><td><span class="chip chip--hi">High</span></td></tr>
+          <tr><td>Documented risk management, data governance, and human oversight as standing obligations for higher-risk AI use</td><td><span class="cite">EU AI Act (Reg. 2024/1689)</span>, Art. 9 (risk management) · Art. 26 (deployer obligations)</td><td>2026-07-04</td><td><span class="chip chip--med">Med · scope-dependent</span></td></tr>
+          <tr><td>Adoption readiness: staff AI-literacy as an explicit organizational obligation, not an optional perk</td><td><span class="cite">EU AI Act (Reg. 2024/1689)</span>, Art. 4 — AI literacy (in application since Feb 2, 2025)</td><td>2026-07-04</td><td><span class="chip chip--med">Med · jurisdiction-dependent</span></td></tr>
+          <tr><td>Data &amp; vendor governance: third-party AI systems, datasets, and services as an in-scope governance concern, with lifecycle and supplier oversight</td><td><span class="cite">NIST AI RMF 1.0</span> (Govern, third-party risk) · <span class="cite">ISO/IEC 42001:2023</span> (supplier oversight)</td><td>2026-07-04</td><td><span class="chip chip--hi">High</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small muted reveal" style="margin-top:var(--s4);max-width:72ch"><strong>Verification checkpoint:</strong> frameworks are cited as of the retrieval date. NIST AI RMF 1.0 is voluntary guidance; the EU AI Act applies by jurisdiction and risk tier (full application Aug 2, 2026, with literacy and governance duties already live); ISO/IEC 42001 is a certifiable management-system standard. Confirm applicability to your organization before treating any duty as binding. See the disclaimer below: this is not legal advice.</p>
+  </div>
+</section>
+
+<!-- DIFFERENTIATION -->
+<section class="section" aria-labelledby="dif-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Why this, not a generic AI consultant</p>
+      <h2 class="h2" id="dif-h">The combination no vendor holds</h2>
+      <p class="lead">Most AI help is one thing done adequately: a training vendor, a tool reseller, a slide-deck strategist. This is fractional ownership built on named, defensible frameworks. You leave with governance you can run, not a dashboard you rent.</p>
+    </div>
+    <div class="grid grid-4 keep-2">
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">RIL → ROL</p><h3 class="h3">Readiness → Ownership Layer</h3><p class="small muted">Ground-truth assessment resolved into governance leadership can actually run.</p></div>
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">Ownership Gap</p><h3 class="h3">The Ownership Gap</h3><p class="small muted">The distance between owning AI tools and having someone own AI: strategy, risk, and all.</p></div>
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">Fractional CAO</p><h3 class="h3">Fractional ownership</h3><p class="small muted">Real accountability at 2 days/week to full-time, not a project that ends and re-opens the gap.</p></div>
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">Framework-first</p><h3 class="h3">Framework-grounded</h3><p class="small muted">NIST AI RMF, EU AI Act, and ISO/IEC 42001 as the spine. Defensible in a boardroom and in diligence.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section--paper" id="faq" aria-labelledby="faq-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Questions</p>
+      <h2 class="h2" id="faq-h">What people ask first</h2>
+    </div>
+    <div class="reveal">
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq1"><span>What actually is a Fractional Chief AI Officer?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq1"><div class="acc__panel-inner">A senior owner for your AI (strategy, governance, adoption, and risk) on a part-time, recurring basis. Instead of hiring a full-time CAIO you don't yet need (or leaving the role empty), someone holds the mandate 2 days a week up to full ownership: setting the strategy, standing up the policy and oversight, driving adoption, and answering to leadership. Fractional means real accountability without a full-time hire.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq2"><span>Do I need this, or just a one-off project?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq2"><div class="acc__panel-inner">That's exactly what the scorecard is built to tell you. If your gaps are concentrated in one area (say, you just need a policy written), a one-off assessment or engagement may be enough. If gaps span strategy, governance, adoption, and ownership together, that's a standing-ownership problem, and a one-off won't hold. The tool gives you an honest read either way; the recommendation isn't always "hire fractional."</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq3"><span>Is this legal or compliance advice?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq3"><div class="acc__panel-inner">No. This is AI-strategy and governance work grounded in public frameworks. RN Collins is a JD candidate, not a licensed attorney; nothing here is legal or compliance advice or creates an attorney–client relationship. The frameworks (NIST AI RMF, EU AI Act, ISO/IEC 42001) are cited so you and your counsel can act on them. The tool makes the landscape legible; it doesn't replace qualified advice.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq4"><span>What data do you collect from me?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq4"><div class="acc__panel-inner">None. There is no login, no tracking, and no cookies. The scorecard runs entirely in your browser and nothing you check leaves your device.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- THE SERVICE / OFFER -->
+<section class="section" id="start" aria-labelledby="offer-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The service</p>
+      <h2 class="h2" id="offer-h">How this becomes yours</h2>
+      <p class="lead">Founders, EDs, and boards know they should take AI seriously but have no one owning it: no strategy, no governance, no adoption plan. I step in as your Fractional Chief AI Officer. I assess where you actually stand, stand up the governance, and run it on a recurring cadence so the ownership gap stays closed.</p>
+    </div>
+    <div class="grid grid-3 reveal">
+      <div class="card"><div class="card__ic" aria-hidden="true">1</div><h3>What I build</h3><p class="small muted">A scored readiness baseline, a written AI strategy, an AI policy, an oversight structure, and vendor/data guardrails, grounded in NIST, the EU AI Act, and ISO/IEC 42001.</p></div>
+      <div class="card"><div class="card__ic" aria-hidden="true">2</div><h3>What you get</h3><ul class="small muted" style="padding-left:1.1rem;margin:.35rem 0 0"><li>An owner for AI: strategy, governance, adoption, risk</li><li>A governance story you can take to a board or funder</li><li>A measured adoption plan tied to real outcomes</li></ul></div>
+      <div class="card"><div class="card__ic" aria-hidden="true">3</div><h3>How to start</h3><p class="small muted">A Systems Audit: a structured read of where you stand today. If ongoing ownership is the right fit, we scope a fractional engagement from there.</p></div>
+    </div>
+    <p class="lead reveal" style="margin-top:var(--s5)"><strong>Pricing:</strong> Fractional Chief AI Officer <strong>from $8,000/mo</strong> (2 days/wk) to <strong>$20,000/mo</strong> (full ownership); a standalone <strong>assessment from $1,500</strong>. Scoped to what your organization actually needs; monthly, with 30 days' notice to stop.</p>
+  </div>
+</section>
+<!-- CTA HIERARCHY -->
+<section class="section section--ink" id="contact" aria-labelledby="cta-h">
+  <div class="wrap" style="text-align:center">
+    <p class="eyebrow">Aloha AI · Honolulu</p>
+    <h2 class="h2" id="cta-h" style="max-width:24ch;margin-inline:auto">Ready when you are.</h2>
+    <p class="lead" style="margin:var(--s4) auto var(--s5);text-align:center">Convinced, curious, or comparing: there's a path for each.</p>
+    <div style="display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn--primary" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Start with a Systems Audit →</a>
+      <a class="btn btn--ghost" href="https://aloha-ai-consulting.vercel.app/tools/ai-readiness-scorecard" target="_blank" rel="noopener">Take the 2-minute assessment</a>
+    </div>
+    <p class="small" style="margin-top:var(--s5);color:var(--muted-on-ink)">Prefer email? <a href="#" data-email style="color:var(--teal-mint)">Email RN</a> &nbsp;·&nbsp; or connect on <a href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noopener" style="color:var(--teal-mint)">LinkedIn</a></p>
+    <p id="emailReveal" hidden style="margin-top:.5rem;font-family:var(--mono);font-size:.8rem;color:#CFDAD5"></p>
+  </div>
+</section>
+<footer class="footer" aria-labelledby="foot-h">
+  <div class="wrap">
+    <h2 id="foot-h" class="small" style="position:absolute;left:-999px">Site footer</h2>
+    <div class="footer__grid">
+      <div>
+        <a class="nav__brand" href="#top" style="color:var(--cream)" aria-label="Aloha AI home"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#7FE0C4"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#7FE0C4" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg> Aloha&nbsp;AI</a>
+        <p class="small" style="margin-top:var(--s3);max-width:38ch;color:#9FB6AE">AI implementation built around how humans actually trust and use it, for regulated or reputation-sensitive professions.</p>
+      </div>
+      <div>
+        <h4>This site</h4>
+        <ul>
+          <li><a href="#gap">The gap</a></li>
+          <li><a href="#score">Score readiness</a></li>
+          <li><a href="#method">How it works</a></li>
+          <li><a href="#start">The service</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Aloha AI</h4>
+        <ul>
+          <li><a href="https://aloha-ai-consulting.vercel.app" target="_blank" rel="noopener">The practice</a></li>
+          <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a call</a></li>
+          <li><a href="https://aloha-ai-consulting.vercel.app/tools/ai-readiness-scorecard" target="_blank" rel="noopener">Assessment</a></li>
+          <li><a href="https://rn-portfolio-khaki.vercel.app" target="_blank" rel="noopener">Portfolio → RN Builds</a></li>
+          <li><a href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://aloha-ai-consulting.vercel.app/privacy" target="_blank" rel="noopener">Privacy</a></li>
+          <li><a href="https://aloha-ai-consulting.vercel.app/terms" target="_blank" rel="noopener">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="disc small">AI strategy and governance work, not legal advice. RN Collins is a JD candidate, not a licensed attorney; nothing here is legal or compliance advice or an attorney–client relationship. Frameworks (NIST AI RMF, EU AI Act, ISO/IEC 42001) are cited so you and qualified counsel can act on them; confirm applicability to your organization before relying on any duty.</p>
+    <p class="fine">Aloha AI · a DBA of Rayven-Nikkita Collins LLC · Honolulu, HI · No tracking, no cookies · Frameworks retrieved 2026-07-04; confirm current versions and applicability before relying on them.</p>
+  </div>
+</footer>
+
+<script>
+  // ---- mobile nav ----
+  (function(){
+    var b=document.getElementById('burger'),l=document.getElementById('navlinks');
+    function set(o){b.setAttribute('aria-expanded',o);l.classList.toggle('open',o);b.setAttribute('aria-label',o?'Close menu':'Open menu');}
+    b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true');});
+    l.addEventListener('click',function(e){if(e.target.tagName==='A')set(false);});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});
+  })();
+  // ---- accordion ----
+  document.querySelectorAll('.acc__btn').forEach(function(btn){
+    var panel=document.getElementById(btn.getAttribute('aria-controls'));
+    btn.addEventListener('click',function(){
+      var open=btn.getAttribute('aria-expanded')==='true';
+      btn.setAttribute('aria-expanded',!open);
+      panel.style.maxHeight=open?null:panel.scrollHeight+'px';
+    });
+  });
+  // ---- personalization slot ?for= ----
+  (function(){var p=new URLSearchParams(location.search).get('for');if(p){document.getElementById('foryou').textContent=p;}})();
+  // ---- scorecard ----
+  function scoreReadiness(){
+    var boxes=Array.prototype.slice.call(document.querySelectorAll('.tog input'));
+    var checked=boxes.filter(function(b){return b.checked;});
+    var gaps=boxes.filter(function(b){return !b.checked;}).map(function(b){return b.getAttribute('data-dim');});
+    var score=Math.round(checked.length/boxes.length*100);
+    document.getElementById('sc-num').textContent=score;
+    var head,flag;
+    // decode HTML entities for clean gap labels
+    function clean(s){var d=document.createElement('div');d.innerHTML=s;return d.textContent;}
+    if(score>=84){head='Mature. You likely need targeted support, not full ownership.';
+      flag='⚑ Recommendation: a one-off engagement or light advisory. You already have an owner and governance; hire fractional only to fill a specific gap.';}
+    else if(score>=50){head='Partial. Real gaps, but not a blank slate.';
+      flag='⚑ Recommendation: start with a Systems Audit, then a right-sized fractional engagement (likely 2 days/wk) to close the open dimensions in priority order.';}
+    else{head='Early. No one is truly owning AI yet. This is a fractional-CAO situation.';
+      flag=’⚑ Recommendation: a Fractional Chief AI Officer. Gaps span strategy, governance, and ownership together. A one-off project won\’t hold; this needs a standing owner.’;}
+    document.getElementById('sc-head').textContent=head;
+    var ul=document.getElementById('sc-gaps');ul.innerHTML='';
+    if(gaps.length===0){var li=document.createElement('li');li.textContent='No gaps flagged. Every dimension is covered. Rare, and worth verifying against reality.';ul.appendChild(li);}
+    else{gaps.forEach(function(g){var li=document.createElement('li');li.textContent=clean(g)+': currently unowned or undefined.';ul.appendChild(li);});}
+    document.getElementById('sc-flag').textContent=flag;
+  }
+  scoreReadiness();
+  document.querySelectorAll('.tog input').forEach(function(b){b.addEventListener('change',scoreReadiness);});
+  // ---- reveal on scroll ----
+  (function(){
+    if(matchMedia('(prefers-reduced-motion:reduce)').matches){document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in');});return;}
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(e){io.observe(e);});
+  })();
+</script>
+<script>
+/* email assembled at runtime (not scrapable); copy + mail app + reveal + Gmail */
+(function(){var u='collins.ra',dm='northeastern.edu',a=u+'@'+dm,su=encodeURIComponent('Aloha AI — Fractional CAO inquiry');
+document.querySelectorAll('[data-email]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();
+try{navigator.clipboard&&navigator.clipboard.writeText(a);}catch(_){}
+var o=document.getElementById('emailReveal');if(o){o.hidden=false;o.innerHTML='Copied ✓ &nbsp;<a href="mailto:'+a+'?subject='+su+'" style="color:#7FE0C4">'+a+'</a> &nbsp;·&nbsp; <a href="https://mail.google.com/mail/?view=cm&fs=1&to='+a+'&su='+su+'" target="_blank" rel="noopener" style="color:#7FE0C4">Open in Gmail</a>';}
+window.location.href='mailto:'+a+'?subject='+su;});});})();
+</script>
+</body>
+</html>

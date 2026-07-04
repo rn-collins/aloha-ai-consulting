@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luxury Brand Protection & Anti-Counterfeiting Intelligence — Aloha AI</title>
+<meta name="description" content="An IP-risk and counterfeit-signal monitor for luxury and consumer brands. Score your brand-protection exposure, see what generic AI gets wrong about takedowns, and trace every action to the Lanham Act, USPTO, and DMCA. By RN Collins, Aloha AI.">
+<link rel="canonical" href="https://aloha-ai-consulting.vercel.app/monitors/luxury-ip">
+<meta name="theme-color" content="#14201C">
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Luxury Brand Protection & Anti-Counterfeiting Intelligence — Aloha AI">
+<meta property="og:description" content="Not a takedown bot. A law-grounded instrument that scores your counterfeit exposure and shows what generic AI gets confidently wrong about IP enforcement.">
+<meta property="og:image" content="https://aloha-ai-consulting.vercel.app/monitors/luxury-ip/og-image.png">
+<meta property="og:url" content="https://aloha-ai-consulting.vercel.app/monitors/luxury-ip">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Luxury Brand Protection & Anti-Counterfeiting Intelligence — Aloha AI">
+<meta name="twitter:description" content="Score your brand-protection exposure. Every action traced to statute, dated, confidence-rated.">
+<meta name="twitter:image" content="https://aloha-ai-consulting.vercel.app/monitors/luxury-ip/og-image.png">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<script>document.documentElement.className+=' js';</script>
+<link rel="stylesheet" href="./aloha-ds.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Luxury Brand Protection & Anti-Counterfeiting Intelligence",
+"applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://aloha-ai-consulting.vercel.app/monitors/luxury-ip",
+"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+"creator":{"@type":"Person","name":"RN Collins","jobTitle":"Founder, Aloha AI",
+"description":"Neuroscientist (MS), JD candidate in IP research, and AI systems builder for regulated or reputation-sensitive professions","knowsAbout":["Trademark and IP law","Anti-counterfeiting","Brand protection","Neuroscience of brand trust","AI systems"]},
+"about":"IP-risk and counterfeit-signal intelligence for luxury and consumer brands, grounded in the Lanham Act, USPTO registration, and DMCA notice-and-takedown"}
+</script>
+<style>
+  /* ---- page-specific ---- */
+  .hero{background:radial-gradient(120% 130% at 85% -10%,#1e332c 0%,var(--ink) 55%);color:var(--cream);
+    padding-block:clamp(48px,8vw,92px) clamp(40px,6vw,72px);border-bottom:3px solid var(--teal)}
+  .hero .display{color:var(--cream);max-width:17ch;margin-bottom:var(--s4)}
+  .hero .kicker{color:var(--teal-mint)}
+  .hero .lead{color:#CFDAD5;max-width:56ch}
+  /* refined luxury headline treatment with solid fallback */
+  .hero .display{color:var(--cream)}
+  @supports((-webkit-background-clip:text) or (background-clip:text)){
+    .hero .display .grad{background:linear-gradient(92deg,#F7F4EC 0%,var(--teal-mint) 120%);
+      -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+  }
+  .hero__cta{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:var(--s5)}
+  .hero__meta{margin-top:var(--s5);font-family:var(--mono);font-size:var(--fs-xs);color:#9FB6AE;letter-spacing:.04em;line-height:1.8}
+  .hero__meta b{color:var(--cream)}
+  .livebadge{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:var(--fs-xs);
+    letter-spacing:.08em;text-transform:uppercase;color:#CDE7DF;border:1px solid #2F4A42;border-radius:var(--r-pill);padding:.34rem .72rem;margin-bottom:var(--s4)}
+  .livebadge .dot{width:7px;height:7px;border-radius:50%;background:var(--teal-mint);animation:pulse 2.2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(127,224,196,.5)}70%{box-shadow:0 0 0 7px rgba(127,224,196,0)}100%{box-shadow:0 0 0 0 rgba(127,224,196,0)}}
+  .statbar{background:var(--paper);border-bottom:1px solid var(--line)}
+  .statbar__in{display:flex;flex-wrap:wrap;gap:var(--s6);padding-block:var(--s4)}
+  .statbar .stat{flex:1;min-width:150px}
+  .statbar .k{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .statbar .v{font-family:var(--serif);font-size:1.15rem;color:var(--ink);margin-top:.15rem}
+  .sec-head{margin-bottom:var(--s6);max-width:70ch}
+  .sec-head .h2{margin-bottom:var(--s3)}
+  /* OEG */
+  .oeg{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh-2)}
+  @media(max-width:760px){.oeg{grid-template-columns:1fr}}
+  .oeg__col{background:#fff;padding:var(--s5)}
+  .oeg__col.bad{background:var(--red-l)}
+  .oeg__tag{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.09em;text-transform:uppercase;margin-bottom:var(--s3);display:flex;align-items:center;gap:.45rem;flex-wrap:wrap}
+  .oeg__col.bad .oeg__tag{color:var(--red)}
+  .oeg__col.good .oeg__tag{color:var(--green)}
+  .oeg__q{font-family:var(--serif);font-size:1.05rem;font-style:italic;margin-bottom:.7rem}
+  .oeg__why{margin-top:var(--s4);padding-top:var(--s3);border-top:1px dashed var(--line);font-size:var(--fs-sm);color:var(--muted)}
+  /* then vs now */
+  .tvn{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-top:var(--s3)}
+  .tvn .box{border:1px solid var(--line);border-radius:var(--r-sm);padding:.75rem .85rem}
+  .tvn .box.now{border-color:var(--green-bd);background:var(--green-l)}
+  .tvn .lab{font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.2rem}
+  .tvn .val{font-size:.9rem}
+  /* process */
+  .steps{counter-reset:step;display:grid;gap:var(--s5)}
+  .step{display:grid;grid-template-columns:auto 1fr;gap:var(--s4);align-items:start}
+  .step__n{counter-increment:step;width:44px;height:44px;border-radius:12px;background:var(--teal);color:#fff;
+    font-family:var(--serif);font-size:1.3rem;display:grid;place-items:center;flex:none}
+  .step__n::before{content:counter(step)}
+  .aud__ic,.card__ic svg{width:20px;height:20px}
+  /* exposure meter */
+  .meter{height:12px;border-radius:var(--r-pill);background:#0E1815;border:1px solid #2C463E;overflow:hidden;margin:.5rem 0 .2rem}
+  .meter__fill{height:100%;width:0;border-radius:var(--r-pill);background:var(--teal-mint);transition:width .5s var(--ease)}
+  @media(prefers-reduced-motion:reduce){.meter__fill{transition:none}}
+  .chk{display:flex;flex-wrap:wrap;gap:.5rem}
+  .chk label{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--sans);font-size:.9rem;
+    text-transform:none;letter-spacing:0;color:var(--cream);background:#0E1815;border:1px solid #33504f;
+    border-radius:var(--r-sm);padding:.5rem .7rem;min-height:44px;cursor:pointer}
+  .chk input{width:auto;min-height:0}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="#top" aria-label="Aloha AI home">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#1B7A68"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#1B7A68" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      Aloha&nbsp;AI
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav__links" id="navlinks">
+        <li><a href="#status">Status</a></li>
+        <li><a href="#gap">The Gap</a></li>
+        <li><a href="#exposure">Score exposure</a></li>
+        <li><a href="#sources">Sources</a></li>
+        <li><a href="#method">Method</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li class="nav__cta"><a class="btn btn--primary btn--sm" href="#start">Get started →</a></li>
+      </ul>
+    </nav>
+    <button class="nav__burger" id="burger" aria-label="Open menu" aria-controls="navlinks" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+<span id="top"></span>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-h">
+  <div class="wrap">
+    <span class="livebadge"><span class="dot" aria-hidden="true"></span> Live · retrieved 2026-07-04</span>
+    <p class="eyebrow kicker">IP &amp; Brand-Protection Intelligence</p>
+    <h1 class="display" id="hero-h">Brand protection, <span class="grad">grounded in the statute</span>. No takedown bots.</h1>
+    <p class="lead">A law-grounded instrument for luxury and consumer brands. Score <em>your</em> counterfeit and IP exposure, see exactly what generic AI gets confidently wrong about takedowns, and trace every recommended action to the <em>Lanham&nbsp;Act</em>, the <em>USPTO</em> register, and the <em>DMCA</em>. It holds up in a board update <em>and</em> in a cease-and-desist.</p>
+    <div class="hero__cta">
+      <a class="btn btn--primary" href="#exposure">Score your exposure →</a>
+      <a class="btn btn--ghost" href="#gap">See what AI gets wrong</a>
+    </div>
+    <p class="hero__meta">Built by <b>RN&nbsp;Collins</b> — Neuroscience of trust (MS) · Trademark &amp; IP Law (JD&nbsp;candidate) · AI&nbsp;systems<br>Tailored for: <b id="foryou">IP counsel, luxury houses &amp; brand-protection leads</b></p>
+  </div>
+</section>
+
+<!-- STATUS BAR -->
+<div class="statbar" id="status">
+  <div class="wrap statbar__in">
+    <div class="stat"><div class="k">Statutory basis</div><div class="v">Lanham Act §32 / §43</div></div>
+    <div class="stat"><div class="k">Counterfeit statutory damages</div><div class="v">$1k – $2M / mark</div></div>
+    <div class="stat"><div class="k">Registration authority</div><div class="v">USPTO · Principal Register</div></div>
+    <div class="stat"><div class="k">Platform takedown regime</div><div class="v">DMCA §512 (copyright)</div></div>
+  </div>
+</div>
+
+<!-- WHO IT'S FOR -->
+<section class="section" aria-labelledby="aud-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Who this is for</p>
+      <h2 class="h2" id="aud-h">Built for the people who can't afford a confident wrong answer on IP</h2>
+      <p class="lead">The same monitor reads four ways, because the stakes differ by seat.</p>
+    </div>
+    <div class="grid grid-4 keep-2">
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">§</div><h3>IP counsel &amp; GCs</h3><p class="small muted">A sourced, statute-mapped read of exposure you can cite directly, without re-verifying before you file.</p></div>
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">◆</div><h3>Luxury &amp; fashion houses</h3><p class="small muted">Where the counterfeit signal is loudest and brand trust is the whole asset. Prioritize what actually erodes it.</p></div>
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">✦</div><h3>Brand-protection leads</h3><p class="small muted">Turn a flood of marketplace listings into a ranked, defensible enforcement queue.</p></div>
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">$</div><h3>Boards &amp; investors</h3><p class="small muted">One screenshot that makes IP and dilution risk legible to a room in ten seconds.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- OEG -->
+<section class="section section--paper" id="gap" aria-labelledby="gap-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The Operator Execution Gap · live</p>
+      <h2 class="h2" id="gap-h">Ask a generic AI how to stop a counterfeiter. Watch it fail.</h2>
+      <p class="lead">Large language models fail most confidently exactly where a brand's stakes are highest. Same question, two answers: the fluent-but-wrong generic reply, and the law-grounded one. The distance between them is what a wrong enforcement move costs.</p>
+    </div>
+    <div class="oeg reveal">
+      <div class="oeg__col bad">
+        <p class="oeg__tag">✕&nbsp;Generic LLM · unsourced</p>
+        <p class="oeg__q">"Counterfeit listings are killing us. What do we do?"</p>
+        <p><strong>"Just file a trademark and send DMCA takedowns to every marketplace — that removes the fakes and you're protected."</strong></p>
+        <p class="oeg__why">Confident. Fluent. <strong>Wrong on the mechanism</strong> — and wrong in the way that gets a notice bounced, a mark refused, or an enforcement dollar spent on the lowest-value target.</p>
+      </div>
+      <div class="oeg__col good">
+        <p class="oeg__tag">✓&nbsp;Aloha AI · law-grounded <span class="chip chip--src">Lanham Act · USPTO · DMCA</span></p>
+        <p class="oeg__q">Same question, answered from the statutes:</p>
+        <p><strong>A DMCA notice is the wrong instrument for most counterfeits.</strong> The <strong>DMCA (17&nbsp;U.S.C. §512)</strong> is a <em>copyright</em> notice-and-takedown regime: it reaches copied images or designs, not the fake use of your <em>name or logo</em>. Trademark counterfeiting runs through the <strong>Lanham Act</strong>: infringement of a registered mark under <strong>§32 (15&nbsp;U.S.C. §1114)</strong> and false designation of origin under <strong>§43(a) (§1125(a))</strong>.</p>
+        <p>And you can only assert §32 with a <strong>federal registration</strong>, so the first move is confirming your marks are on the <strong>USPTO Principal Register</strong> for the right classes, not blasting takedowns. Where counterfeiting is proven, §1116–1117 unlock <strong>injunctions, seizure, and statutory damages of $1,000–$2,000,000 per mark</strong>: remedies a form notice never provides.</p>
+        <p class="oeg__why"><span class="chip chip--hi"><span class="ic" aria-hidden="true"></span>Confidence: High</span> &nbsp;Why you can rely on it: each mechanism maps to a specific statute section, cited below with retrieval dates. Application to your marks is interpretive (Med).</p>
+      </div>
+    </div>
+    <p class="small muted reveal" style="margin-top:var(--s4);max-width:70ch"><strong>OEG</strong> — the Operator Execution Gap — is the distance between what AI <em>says</em> and what a brand-protection lead can <em>act on</em>. Closing it is the entire job.</p>
+  </div>
+</section>
+
+<!-- WHAT CHANGES / THE SUBSTANCE -->
+<section class="section" aria-labelledby="chg-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The enforcement toolkit</p>
+      <h2 class="h2" id="chg-h">Four instruments, by what they actually reach</h2>
+      <p class="lead">Picking the wrong instrument is the most expensive mistake in brand protection. Match the harm to the statute that covers it.</p>
+    </div>
+    <div class="grid grid-2">
+      <div class="card reveal"><h3>§32 registered-mark infringement <span class="chip chip--hi">Strongest</span></h3>
+        <div class="tvn"><div class="box"><div class="lab">What generic AI says</div><div class="val">"Send a takedown."</div></div><div class="box now"><div class="lab">15 U.S.C. §1114</div><div class="val">Reaches use of a registered mark likely to cause confusion. Requires a USPTO registration: your foundation.</div></div></div></div>
+      <div class="card reveal"><h3>§43(a) false designation <span class="chip chip--hi">Broad</span></h3>
+        <div class="tvn"><div class="box"><div class="lab">Common gap</div><div class="val">"We never registered, so we're stuck."</div></div><div class="box now"><div class="lab">15 U.S.C. §1125(a)</div><div class="val">Covers unregistered marks &amp; false origin, providing a path when registration is pending or in a new class.</div></div></div></div>
+      <div class="card reveal"><h3>Counterfeiting remedies <span class="chip chip--hi">High leverage</span></h3>
+        <div class="tvn"><div class="box"><div class="lab">Assumption</div><div class="val">"Damages are hard to prove."</div></div><div class="box now"><div class="lab">15 U.S.C. §1116–1117</div><div class="val">Injunctions, seizure, and elective statutory damages up to $2M/mark for willful counterfeiting.</div></div></div></div>
+      <div class="card reveal"><h3>DMCA notice-and-takedown <span class="chip chip--med">Copyright only</span></h3>
+        <div class="tvn"><div class="box"><div class="lab">Misuse</div><div class="val">"DMCA any fake."</div></div><div class="box now"><div class="lab">17 U.S.C. §512</div><div class="val">Reaches copied images/designs, not name/logo misuse. Wrong notices risk §512(f) liability.</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPOSURE MODELER + COST -->
+<section class="section section--paper" id="exposure" aria-labelledby="exp-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The instrument</p>
+      <h2 class="h2" id="exp-h">Score your brand-protection exposure</h2>
+      <p class="lead">Answer five questions about your brand. The tool returns an exposure score and a <em>prioritized</em> protection queue grounded in the statute framework above. Everything runs locally in your browser; nothing is sent anywhere.</p>
+    </div>
+    <div class="grid grid-2">
+      <form class="tool reveal" aria-labelledby="exp-t" onsubmit="event.preventDefault();calcExposure()">
+        <h3 id="exp-t">Exposure scorer</h3>
+        <div class="field"><label for="cat">Brand category</label>
+          <select id="cat">
+            <option value="lux">Luxury / fashion / leather goods</option>
+            <option value="beauty">Beauty / fragrance / cosmetics</option>
+            <option value="cons">Consumer electronics / accessories</option>
+            <option value="other">Other consumer brand</option>
+          </select></div>
+        <div class="field"><label for="chan">Primary sales channels (select all)</label>
+          <div class="chk">
+            <label><input type="checkbox" class="chan" value="market" checked> Third-party marketplaces</label>
+            <label><input type="checkbox" class="chan" value="social"> Social commerce / DTC ads</label>
+            <label><input type="checkbox" class="chan" value="retail"> Own retail / e-com only</label>
+          </div></div>
+        <div class="field"><label for="exp">Observed counterfeit exposure</label>
+          <select id="exp">
+            <option value="3">High: active fakes across platforms</option>
+            <option value="2" selected>Moderate: recurring listings</option>
+            <option value="1">Low: occasional / none seen</option>
+          </select></div>
+        <div class="field"><label for="mark">Trademark registration status</label>
+          <select id="mark">
+            <option value="none">No federal registration</option>
+            <option value="pending">Application pending</option>
+            <option value="some" selected>Registered in some classes</option>
+            <option value="full">Registered across core classes</option>
+          </select></div>
+        <div class="field"><label for="geo">Geographic footprint</label>
+          <select id="geo">
+            <option value="us">US only</option>
+            <option value="multi" selected>US + a few key markets</option>
+            <option value="global">Global</option>
+          </select></div>
+        <button class="btn btn--primary" type="submit">Score exposure →</button>
+      </form>
+      <div class="out reveal" role="status" aria-live="polite">
+        <div class="out__lab">Your brand-protection exposure</div>
+        <div class="out__big" id="exp-head">—</div>
+        <div class="meter" aria-hidden="true"><div class="meter__fill" id="exp-meter"></div></div>
+        <div class="out__lab" id="exp-band" style="margin-top:.4rem">Score your brand to see your prioritized queue.</div>
+        <ul id="exp-list"><li>Answer the five questions to generate a ranked protection queue.</li></ul>
+        <div class="flag" id="exp-flag"></div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="sec-head reveal">
+      <p class="eyebrow">The cost of getting it wrong</p>
+      <h2 class="h2">What one wrong enforcement move costs</h2>
+      <p class="lead">The most common error we see: relying on DMCA takedowns for trademark counterfeits while marks go unregistered, leaving the §1117 statutory-damages remedy on the table. Here's what you forfeit.</p>
+    </div>
+    <div class="grid grid-2">
+      <form class="tool reveal" aria-labelledby="wrong-t" onsubmit="event.preventDefault();calcWrong()">
+        <h3 id="wrong-t">Forfeited-remedy calculator</h3>
+        <div class="field"><label for="marks">Distinct counterfeited marks / goods types</label>
+          <input id="marks" type="number" inputmode="numeric" min="1" step="1" value="6"></div>
+        <div class="field"><label for="will">Willfulness posture</label>
+          <select id="will"><option value="200000">Non-willful ceiling ($200k/mark)</option><option value="2000000" selected>Willful ceiling ($2M/mark)</option></select></div>
+        <button class="btn btn--primary" type="submit">Calculate forfeited leverage →</button>
+      </form>
+      <div class="out reveal" role="status" aria-live="polite">
+        <div class="out__lab">Max statutory-damages leverage available under §1117(c)</div>
+        <div class="out__big" id="wrong-num">$—</div>
+        <ul><li>This is the elective statutory-damages ceiling you can pursue for registered-mark counterfeiting. A DMCA form notice never provides this remedy.</li><li>Forfeited if marks aren't registered or the wrong instrument is used.</li></ul>
+        <div class="flag">Illustrative statutory ceiling only, not a damages estimate or legal advice. Awards are set by the court within the §1117(c) range.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="method" aria-labelledby="how-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">How it works</p>
+      <h2 class="h2" id="how-h">A repeatable intelligence method, not a one-off scrape</h2>
+      <p class="lead">Every Aloha AI monitor runs the same three-stage pipeline. It's why the facts stay right next month, not just today.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Regulatory Intelligence Layer (RIL)</h3><p class="muted">Primary sources only: the Lanham Act, U.S. Code, USPTO register records, and platform takedown policies, captured with source and retrieval date. No headline aggregation, no scraped forum lore.</p></div></div>
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Resolve to an Operator Layer (ROL)</h3><p class="muted">Raw statute becomes a decision a brand-protection lead can act on: which instrument reaches this harm, for which mark, with what confidence. This closes the Operator Execution Gap and grounds the neuroscience of brand trust in enforceable action.</p></div></div>
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Auto-refresh &amp; alert</h3><p class="muted">The monitor re-checks its primary sources on a schedule (Upstash · Vercel · Exa) and can ping you when a mark registers, a class opens, or a marketplace changes its takedown policy, so it never goes stale.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SOURCES / PROVENANCE -->
+<section class="section section--paper" id="sources" aria-labelledby="src-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Audit-ready provenance</p>
+      <h2 class="h2" id="src-h">Every action, traced to its statute</h2>
+      <p class="lead">The IP-law rigor is the product. Each mechanism carries its statute, retrieval date, and a confidence rating, so the same artifact that opens a conversation can support a cease-and-desist or a filing. No case citations are asserted; interpretive application is marked Med.</p>
+    </div>
+    <div class="table-wrap reveal">
+      <table class="data">
+        <caption class="small muted" style="text-align:left;padding:.6rem .8rem">Provenance ledger — data retrieved 2026-07-04</caption>
+        <thead><tr><th scope="col">Fact / mechanism</th><th scope="col">Primary source</th><th scope="col">Retrieved</th><th scope="col">Confidence</th></tr></thead>
+        <tbody>
+          <tr><td>Infringement of a federally registered mark (likelihood of confusion) is actionable under Lanham Act §32</td><td><span class="cite">15 U.S.C. §1114</span></td><td>2026-07-04</td><td><span class="chip chip--hi">High</span></td></tr>
+          <tr><td>False designation of origin / unregistered-mark protection under Lanham Act §43(a); dilution under §43(c)</td><td><span class="cite">15 U.S.C. §1125(a)</span> · <span class="cite">§1125(c)</span></td><td>2026-07-04</td><td><span class="chip chip--hi">High</span></td></tr>
+          <tr><td>Injunctive relief and remedies for trademark violations, including seizure of counterfeit goods</td><td><span class="cite">15 U.S.C. §1116</span></td><td>2026-07-04</td><td><span class="chip chip--hi">High</span></td></tr>
+          <tr><td>Elective statutory damages for use of a counterfeit mark: $1,000–$200,000 per mark; up to $2,000,000 if willful</td><td><span class="cite">15 U.S.C. §1117(c)</span></td><td>2026-07-04</td><td><span class="chip chip--hi">High</span></td></tr>
+          <tr><td>Federal trademark registration on the Principal Register (basis for §32 claims and enhanced remedies)</td><td><span class="cite">15 U.S.C. §1051</span> · USPTO.gov</td><td>2026-07-04</td><td><span class="chip chip--hi">High</span></td></tr>
+          <tr><td>DMCA notice-and-takedown reaches copyright (copied images/designs), a distinct regime from trademark; §512(f) penalizes knowing misrepresentation</td><td><span class="cite">17 U.S.C. §512</span></td><td>2026-07-04</td><td><span class="chip chip--hi">High</span></td></tr>
+          <tr><td>Which instrument applies to a given counterfeit signal, and its enforcement priority for your marks</td><td><span class="cite">Interpretive — statutes above applied to facts</span></td><td>2026-07-04</td><td><span class="chip chip--med">Med · interpretive</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small muted reveal" style="margin-top:var(--s4);max-width:70ch"><strong>Verification checkpoint:</strong> statute text is current as of the retrieval date; application to your specific marks, classes, and jurisdictions is interpretive. Confirm registration status on the USPTO register and consult licensed counsel before sending any notice or filing.</p>
+  </div>
+</section>
+
+<!-- DIFFERENTIATION -->
+<section class="section" aria-labelledby="dif-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Why this, not a generic monitor</p>
+      <h2 class="h2" id="dif-h">The combination no competitor holds</h2>
+      <p class="lead">Most tools are one thing done adequately. This sits at the intersection of IP law, the neuroscience of brand trust, and AI systems, built on named, defensible frameworks, so you leave speaking the language rather than renting a dashboard.</p>
+    </div>
+    <div class="grid grid-4 keep-2">
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">RIL → ROL</p><h3 class="h3">Regulatory Intelligence Layer</h3><p class="small muted">Primary-source IP-law monitoring resolved into an enforcement-ready decision layer.</p></div>
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">OEG</p><h3 class="h3">Operator Execution Gap</h3><p class="small muted">The gap between what AI says and what a brand-protection lead can act on.</p></div>
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">BTS</p><h3 class="h3">Brand-Trust Signal model</h3><p class="small muted">Prioritizes enforcement by what erodes trust fastest, grounded in the neuroscience of how buyers authenticate a brand.</p></div>
+      <div class="card reveal"><p class="mono small" style="color:var(--teal-d)">EDSA</p><h3 class="h3">EDSA Framework</h3><p class="small muted">Keeps reputation-sensitive brand content compliant and un-suppressed across platforms.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section--paper" id="faq" aria-labelledby="faq-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Questions</p>
+      <h2 class="h2" id="faq-h">What people ask first</h2>
+    </div>
+    <div class="reveal">
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq1"><span>Is this legal advice?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq1"><div class="acc__panel-inner">No. This is regulatory and IP intelligence and modeling, not legal advice. RN Collins is a JD candidate, not a licensed attorney; nothing here is legal advice or creates an attorney–client relationship. It's designed to make the IP landscape legible and to support the counsel and brand-protection teams who do give that advice.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq2"><span>Why is neuroscience relevant to counterfeiting?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq2"><div class="acc__panel-inner">Because a counterfeit's damage isn't only lost sales. It's the erosion of the trust cues a buyer's brain uses to authenticate a brand (logo, packaging, provenance signals). RN's background in the neuroscience of trust informs how the tool ranks enforcement: the listings that most corrupt those authentication cues get prioritized, because they do the most reputational harm.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq3"><span>How current is the data?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq3"><div class="acc__panel-inner">Every mechanism carries a retrieval date (2026-07-04 in this build) and its statute. Production monitors re-check their sources (USPTO status, U.S. Code, platform policies) on a schedule and can alert you when something changes, so the artifact stays accurate rather than freezing on the day it shipped.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq4"><span>Can I get one for my specific brand portfolio?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq4"><div class="acc__panel-inner">Yes, that's the point. This is a reference build; a tailored version scoped to your marks, classes, channels, and priority markets is what Aloha AI produces, usually within days of a scoping conversation. Use the contact link below.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="faq5"><span>What data do you collect from me?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="faq5"><div class="acc__panel-inner">None. There is no login, no tracking, and no cookies. Every calculation runs locally in your browser and nothing you enter leaves your device.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- THE SERVICE / OFFER -->
+<section class="section" id="start" aria-labelledby="offer-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The service</p>
+      <h2 class="h2" id="offer-h">How this becomes yours</h2>
+      <p class="lead">Luxury houses, IP counsel, and brand-protection leads fly blind on which counterfeit signals actually matter and which enforcement instrument reaches them. I build a tailored monitor for your exact portfolio that tracks the primary sources and resolves them into a prioritized, statute-grounded enforcement queue.</p>
+    </div>
+    <div class="grid grid-3 reveal">
+      <div class="card"><div class="card__ic" aria-hidden="true">1</div><h3>What I build</h3><p class="small muted">A private monitor scoped to your marks, classes, channels, and priority markets: sourced, dated, and confidence-scored.</p></div>
+      <div class="card"><div class="card__ic" aria-hidden="true">2</div><h3>What you get</h3><ul class="small muted" style="padding-left:1.1rem;margin:.35rem 0 0"><li>A live, statute-mapped exposure read for your portfolio</li><li>A prioritized enforcement queue you can hand to counsel</li><li>Change-alerts when a mark registers or a policy shifts</li></ul></div>
+      <div class="card"><div class="card__ic" aria-hidden="true">3</div><h3>How to start</h3><p class="small muted">A 20-minute scoping call. If it's a fit, a tailored build turns around in days, not weeks.</p></div>
+    </div>
+    <p class="lead reveal" style="margin-top:var(--s5)"><strong>Pricing:</strong> engagements start from <strong>$4,000 build + $1,500/mo</strong>, scoped to your brand. Three-month minimum on any retainer; 30 days' notice to stop.</p>
+  </div>
+</section>
+<!-- CTA HIERARCHY -->
+<section class="section section--ink" id="contact" aria-labelledby="cta-h">
+  <div class="wrap" style="text-align:center">
+    <p class="eyebrow">Aloha AI · Honolulu</p>
+    <h2 class="h2" id="cta-h" style="max-width:24ch;margin-inline:auto">Ready when you are.</h2>
+    <p class="lead" style="margin:var(--s4) auto var(--s5);text-align:center">Convinced, curious, or comparing: there's a path for each.</p>
+    <div style="display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn--primary" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Start with a Systems Audit →</a>
+      <a class="btn btn--ghost" href="https://aloha-ai-consulting.vercel.app/tools/ai-readiness-scorecard" target="_blank" rel="noopener">Take the 2-minute assessment</a>
+    </div>
+    <p class="small" style="margin-top:var(--s5);color:var(--muted-on-ink)">Prefer email? <a href="#" data-email style="color:var(--teal-mint)">Email RN</a> &nbsp;·&nbsp; or connect on <a href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noopener" style="color:var(--teal-mint)">LinkedIn</a></p>
+    <p id="emailReveal" hidden style="margin-top:.5rem;font-family:var(--mono);font-size:.8rem;color:#CFDAD5"></p>
+  </div>
+</section>
+<footer class="footer" aria-labelledby="foot-h">
+  <div class="wrap">
+    <h2 id="foot-h" class="small" style="position:absolute;left:-999px">Site footer</h2>
+    <div class="footer__grid">
+      <div>
+        <a class="nav__brand" href="#top" style="color:var(--cream)" aria-label="Aloha AI home"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#7FE0C4"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#7FE0C4" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg> Aloha&nbsp;AI</a>
+        <p class="small" style="margin-top:var(--s3);max-width:38ch;color:#9FB6AE">AI implementation built around how humans actually trust and use it, for regulated or reputation-sensitive professions.</p>
+      </div>
+      <div>
+        <h4>This site</h4>
+        <ul>
+          <li><a href="#gap">The gap</a></li>
+          <li><a href="#method">How it works</a></li>
+          <li><a href="#start">The service</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Aloha AI</h4>
+        <ul>
+          <li><a href="https://aloha-ai-consulting.vercel.app" target="_blank" rel="noopener">The practice</a></li>
+          <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a call</a></li>
+          <li><a href="https://aloha-ai-consulting.vercel.app/tools/ai-readiness-scorecard" target="_blank" rel="noopener">Assessment</a></li>
+          <li><a href="https://rn-portfolio-khaki.vercel.app" target="_blank" rel="noopener">Portfolio → RN Builds</a></li>
+          <li><a href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://aloha-ai-consulting.vercel.app/privacy" target="_blank" rel="noopener">Privacy</a></li>
+          <li><a href="https://aloha-ai-consulting.vercel.app/terms" target="_blank" rel="noopener">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="disc small">Regulatory/IP intelligence, not legal advice; RN Collins is a JD candidate, not a licensed attorney; nothing here is legal advice or an attorney–client relationship. Confirm all statute text and registration status against the operative source before relying on them.</p>
+    <p class="fine">Aloha AI · a DBA of Rayven-Nikkita Collins LLC · Honolulu, HI · No tracking, no cookies · Data retrieved 2026-07-04; confirm against the USPTO register and current U.S. Code before acting.</p>
+  </div>
+</footer>
+
+<script>
+  // ---- mobile nav ----
+  (function(){
+    var b=document.getElementById('burger'),l=document.getElementById('navlinks');
+    function set(o){b.setAttribute('aria-expanded',o);l.classList.toggle('open',o);b.setAttribute('aria-label',o?'Close menu':'Open menu');}
+    b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true');});
+    l.addEventListener('click',function(e){if(e.target.tagName==='A')set(false);});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});
+  })();
+  // ---- accordion ----
+  document.querySelectorAll('.acc__btn').forEach(function(btn){
+    var panel=document.getElementById(btn.getAttribute('aria-controls'));
+    btn.addEventListener('click',function(){
+      var open=btn.getAttribute('aria-expanded')==='true';
+      btn.setAttribute('aria-expanded',!open);
+      panel.style.maxHeight=open?null:panel.scrollHeight+'px';
+    });
+  });
+  // ---- personalization slot ?for= ----
+  (function(){var p=new URLSearchParams(location.search).get('for');if(p){document.getElementById('foryou').textContent=p;}})();
+  // ---- calculators ----
+  function fmt(n){return '$'+Math.round(n).toLocaleString('en-US');}
+  function calcExposure(){
+    var cat=document.getElementById('cat').value,
+        exp=+document.getElementById('exp').value,
+        mark=document.getElementById('mark').value,
+        geo=document.getElementById('geo').value,
+        chans=Array.prototype.map.call(document.querySelectorAll('.chan:checked'),function(c){return c.value;});
+    // base exposure from category
+    var score=0;
+    score += (cat==='lux'?30:cat==='beauty'?26:cat==='cons'?22:18);
+    // counterfeit exposure weight
+    score += exp*10;                                    // 10/20/30
+    // channel surface
+    if(chans.indexOf('market')>-1) score+=16;
+    if(chans.indexOf('social')>-1) score+=10;
+    if(chans.indexOf('retail')>-1) score+=2;
+    // registration posture reduces exposure (readiness to enforce)
+    var reg={none:22,pending:14,some:8,full:0}[mark];
+    score += reg;
+    // geography multiplier
+    score += (geo==='global'?12:geo==='multi'?6:0);
+    if(score>100) score=100; if(score<0) score=0;
+    var band = score>=70?'Elevated':score>=45?'Moderate':'Contained';
+    document.getElementById('exp-head').textContent=band+' exposure · '+score+'/100';
+    document.getElementById('exp-meter').style.width=score+'%';
+    document.getElementById('exp-band').textContent='Band: '+band+' — prioritized protection queue:';
+    // prioritized actions
+    var list=[];
+    if(mark==='none'){list.push('PRIORITY 1 — File federal trademark applications on the Principal Register for core classes (15 U.S.C. §1051). Without registration you cannot assert §32 or reach §1117(c) statutory damages.');}
+    else if(mark==='pending'){list.push('PRIORITY 1 — Track pending applications to registration; until issued, rely on §43(a) false-designation claims (15 U.S.C. §1125(a)) for unregistered marks.');}
+    else if(mark==='some'){list.push('PRIORITY 1 — Close registration gaps in classes where counterfeits appear; each unregistered class is a §32 blind spot.');}
+    else {list.push('PRIORITY 1 — Registration is solid. Move to active enforcement: assert §32 (15 U.S.C. §1114) on registered-mark counterfeits.');}
+    if(chans.indexOf('market')>-1){list.push('PRIORITY 2 — Marketplace counterfeits: pursue Lanham Act enforcement, not DMCA. §1116 supports injunctions/seizure; §1117(c) supports statutory damages.');}
+    if(chans.indexOf('social')>-1){list.push('PRIORITY 2 — Social/ad channels: where copied images/creative are used, DMCA §512 (17 U.S.C.) applies; for name/logo misuse use §43(a). Match the instrument to the harm.');}
+    if(exp===3){list.push('PRIORITY 3 — High active exposure: document willfulness now — willful counterfeiting raises the §1117(c) ceiling to $2M/mark.');}
+    if(geo!=='us'){list.push('PRIORITY 3 — Multi-market footprint: US registration does not reach foreign markets; scope registration and enforcement per jurisdiction.');}
+    list.push('Rank listings by brand-trust impact (BTS): those corrupting core authentication cues erode trust fastest and should lead the queue.');
+    var ul=document.getElementById('exp-list');ul.innerHTML='';
+    list.forEach(function(x){var li=document.createElement('li');li.textContent=x;ul.appendChild(li);});
+    var flag = mark==='none'
+      ? '⚑ Registration is the gate — do NOT send takedowns as your first move; secure the marks that unlock §32 and §1117 remedies.'
+      : '⚑ Match instrument to harm: Lanham Act for mark misuse, DMCA §512 only for copied copyrightable works. Verify registration before any notice.';
+    document.getElementById('exp-flag').textContent=flag;
+  }
+  function calcWrong(){var m=Math.max(1,+document.getElementById('marks').value||1),ceil=+document.getElementById('will').value||200000;
+    document.getElementById('wrong-num').textContent=fmt(m*ceil);}
+  calcExposure();calcWrong();
+  // ---- reveal on scroll ----
+  (function(){
+    if(matchMedia('(prefers-reduced-motion:reduce)').matches){document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in');});return;}
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(e){io.observe(e);});
+  })();
+</script>
+<script>
+/* email assembled at runtime (not scrapable); copy + mail app + reveal + Gmail */
+(function(){var u='collins.ra',dm='northeastern.edu',a=u+'@'+dm,su=encodeURIComponent('Aloha AI — build inquiry');
+document.querySelectorAll('[data-email]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();
+try{navigator.clipboard&&navigator.clipboard.writeText(a);}catch(_){}
+var o=document.getElementById('emailReveal');if(o){o.hidden=false;o.innerHTML='Copied ✓ &nbsp;<a href="mailto:'+a+'?subject='+su+'" style="color:#7FE0C4">'+a+'</a> &nbsp;·&nbsp; <a href="https://mail.google.com/mail/?view=cm&fs=1&to='+a+'&su='+su+'" target="_blank" rel="noopener" style="color:#7FE0C4">Open in Gmail</a>';}
+window.location.href='mailto:'+a+'?subject='+su;});});})();
+</script>
+</body>
+</html>
