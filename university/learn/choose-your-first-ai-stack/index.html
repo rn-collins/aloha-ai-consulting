@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Choose Your First AI Stack | Aloha AI University</title>
+<meta name="description" content="A lean starter AI stack for a small business. Decision criteria over hype: pick one assistant, one workspace-native tool, and one specialist, and stop there.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://aloha-ai-consulting.vercel.app/university/learn/choose-your-first-ai-stack">
+<meta name="theme-color" content="#0F5343">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Choose Your First AI Stack | Aloha AI University">
+<meta property="og:description" content="A lean starter AI stack for a small business. Decision criteria over hype.">
+<meta property="og:site_name" content="Aloha AI University">
+<meta property="og:image" content="https://aloha-ai-consulting.vercel.app/university/og-image.png">
+<meta property="og:url" content="https://aloha-ai-consulting.vercel.app/university/learn/choose-your-first-ai-stack">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Choose Your First AI Stack">
+<meta name="twitter:description" content="A lean starter AI stack for a small business. Criteria over hype.">
+<meta name="twitter:image" content="https://aloha-ai-consulting.vercel.app/university/og-image.png">
+<link rel="icon" href="/university/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style id="uni-ds">
+/* ============================================================
+   ALOHA AI UNIVERSITY — DESIGN SYSTEM  (university.css)
+   Shared stylesheet for every University page.
+   Premium, calm, high-trust. Brand-cohesive with the elevated
+   Aloha AI main site. v2.0 · 2026-07
+   ============================================================ */
+
+/* ---- 1. TOKENS ------------------------------------------- */
+:root{
+  /* Brand color */
+  --teal:#1B7A68; --teal-d:#0F5343; --teal-l:#E9F3F0; --mint:#7FE0C4;
+  --ink:#14201C; --ink-2:#25332E;
+  --cream:#F7F4EC; --cream-2:#EFEAE0; --paper:#FCFAF5; --white:#FFFFFF;
+  --muted:#4E5C56;            /* AA on cream/white */
+  --muted-ink:#B7C7C0;        /* AA on ink */
+  --line:#E4DFD3; --line-2:#C7BFAE;
+  --amber:#8A5A08; --amber-l:#FBF4E6; --amber-bd:#E4CE9E;
+
+  /* Type families */
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:"Manrope",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:"DM Mono","SFMono-Regular",Menlo,Consolas,monospace;
+
+  /* Type scale (fluid) */
+  --fs-display:clamp(2.6rem,6vw,4.4rem);
+  --fs-h1:clamp(2.2rem,5vw,3.4rem);
+  --fs-h2:clamp(1.7rem,3.4vw,2.5rem);
+  --fs-h3:1.35rem;
+  --fs-body:1.0625rem; --fs-lead:1.2rem; --fs-sm:.9rem; --fs-xs:.78rem;
+  --label:.72rem;
+
+  /* Space scale */
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px;
+  --s7:48px; --s8:64px; --s9:96px;
+
+  /* Radius, shadow, motion */
+  --r-sm:10px; --r:16px; --r-lg:22px; --r-pill:999px;
+  --sh-1:0 1px 2px rgba(20,32,28,.05);
+  --sh-2:0 2px 6px rgba(20,32,28,.05),0 14px 40px rgba(20,32,28,.08);
+  --sh-3:0 2px 4px rgba(20,32,28,.04),0 20px 52px -14px rgba(20,32,28,.16);
+  --sh-focus:0 0 0 3px rgba(27,122,104,.4);
+  --sh-focus-mint:0 0 0 3px rgba(127,224,196,.55);
+  --ease:cubic-bezier(.4,0,.2,1); --ease-out:cubic-bezier(.16,1,.3,1);
+  --dur:.24s; --dur-s:.14s;
+
+  --maxw:1120px; --measure:68ch; --nav-h:66px;
+
+  /* Editorial surfaces / gradients (within brand) */
+  --grad-hero:linear-gradient(158deg,var(--teal-d) 0%,var(--teal) 78%,#227e6b 100%);
+  --grad-ink:linear-gradient(180deg,#16241E 0%,var(--ink) 100%);
+  --grad-mint-rule:linear-gradient(90deg,var(--teal) 0%,var(--mint) 100%);
+  --texture-dot:radial-gradient(rgba(27,122,104,.05) 1px,transparent 1px);
+}
+
+/* ---- 2. BASE / RESET ------------------------------------- */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 14px);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);
+  font-size:var(--fs-body);line-height:1.65;font-weight:400;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{max-width:100%;display:block}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;letter-spacing:-.01em;line-height:1.08;margin:0;text-wrap:balance}
+h1{font-size:var(--fs-h1)} h2{font-size:var(--fs-h2)} h3{font-size:var(--fs-h3)}
+p{margin:0 0 1rem;text-wrap:pretty}
+a{color:var(--teal-d);text-underline-offset:2px;transition:color var(--dur-s) var(--ease)}
+a:hover{color:var(--teal)}
+strong{font-weight:700}
+:focus-visible{outline:none;box-shadow:var(--sh-focus);border-radius:6px}
+.section--ink :focus-visible,.hero :focus-visible{box-shadow:var(--sh-focus-mint)}
+::selection{background:var(--mint);color:var(--ink)}
+
+/* ---- 3. LAYOUT ------------------------------------------- */
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(20px,4vw,28px)}
+.section{padding-block:clamp(56px,8vw,104px);position:relative}
+.section + .section{border-top:1px solid var(--line)}
+.section--paper{background:var(--paper)}
+.section--ink{background:var(--grad-ink);color:var(--cream)}
+.section--ink h1,.section--ink h2,.section--ink h3{color:var(--cream)}
+.section--ink + .section,.section + .section--ink{border-top:0}
+.section--tint{background:var(--white)}
+/* subtle dot texture, opt-in, brand-tinted */
+.section--texture{background-image:var(--texture-dot);background-size:22px 22px}
+.section-head{max-width:var(--measure);margin-bottom:var(--s7)}
+/* accent rule system — an editorial hairline that reads intentional */
+.rule{height:2px;width:56px;border:0;border-radius:2px;background:var(--grad-mint-rule);margin:0 0 var(--s5)}
+.section--ink .rule{opacity:.9}
+.grid{display:grid;gap:var(--s5)}
+.grid-2{grid-template-columns:repeat(2,1fr)}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.grid-4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:900px){.grid-3,.grid-4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}}
+.stack-gap{margin-top:var(--s6)}
+
+/* ---- 4. TYPOGRAPHY HELPERS ------------------------------- */
+.eyebrow{font-family:var(--mono);font-size:var(--label);letter-spacing:.18em;
+  text-transform:uppercase;color:var(--teal-d);margin:0 0 var(--s4);font-weight:500;
+  display:inline-flex;align-items:center;gap:.6rem}
+.eyebrow::before{content:"";width:16px;height:2px;border-radius:2px;background:var(--grad-mint-rule);flex:none}
+.section--ink .eyebrow{color:var(--mint)}
+.section--ink .eyebrow::before{opacity:.95}
+.hero .eyebrow::before{opacity:.95}
+.display{font-size:var(--fs-display);letter-spacing:-.02em}
+.lead{font-size:var(--fs-lead);color:var(--muted);max-width:60ch;line-height:1.55}
+.section--ink .lead{color:var(--muted-ink)}
+.lead-line{font-family:var(--serif);font-size:1.4rem;color:var(--teal-d);max-width:44ch;line-height:1.3;font-weight:500}
+.mono{font-family:var(--mono)}
+.small{font-size:var(--fs-sm)} .muted{color:var(--muted)}
+.measure{max-width:var(--measure)}
+
+/* ---- 5. BUTTONS ------------------------------------------ */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  font-family:var(--mono);font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;
+  font-weight:500;text-decoration:none;cursor:pointer;
+  padding:.85rem 1.35rem;border-radius:var(--r-sm);border:1px solid transparent;
+  transition:all var(--dur) var(--ease);min-height:46px;line-height:1;white-space:nowrap}
+.btn--primary{background:var(--teal);color:#fff;box-shadow:0 1px 2px rgba(15,83,67,.28)}
+.btn--primary:hover{background:var(--teal-d);color:#fff;transform:translateY(-1px);box-shadow:0 8px 22px -6px rgba(15,83,67,.5)}
+.btn--ghost{background:transparent;border-color:var(--line-2);color:var(--ink)}
+.btn--ghost:hover{border-color:var(--teal);color:var(--teal-d);transform:translateY(-1px);box-shadow:var(--sh-1)}
+.btn--on-ink{background:var(--mint);color:var(--teal-d)}
+.btn--on-ink:hover{background:#9dedd6;color:var(--teal-d);transform:translateY(-1px);box-shadow:var(--sh-2)}
+.btn--outline-ink{background:transparent;border-color:rgba(127,224,196,.5);color:var(--cream)}
+.btn--outline-ink:hover{border-color:var(--mint);color:#fff;background:rgba(127,224,196,.1)}
+.btn--sm{padding:.55rem .9rem;min-height:40px;font-size:.7rem}
+.btn:active{transform:translateY(0)}
+.cta-row{display:flex;flex-wrap:wrap;gap:var(--s3);margin-top:var(--s6)}
+
+/* ---- 6. BADGES / TAGS ------------------------------------ */
+.badge{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--mono);
+  font-size:var(--fs-xs);letter-spacing:.05em;text-transform:uppercase;
+  padding:.3rem .65rem;border-radius:var(--r-pill);
+  border:1px solid var(--line);background:var(--white);color:var(--teal-d);font-weight:500}
+.badge--solid{background:var(--teal-l);border-color:#BADFD6}
+.section--ink .badge{background:rgba(127,224,196,.12);border-color:rgba(127,224,196,.3);color:var(--mint)}
+.price{font-family:var(--mono);font-size:var(--fs-sm);color:var(--teal-d);font-weight:500;letter-spacing:.02em}
+
+/* ---- 7. CARDS -------------------------------------------- */
+.card{position:relative;background:var(--white);border:1px solid var(--line);border-radius:var(--r);
+  padding:var(--s6);box-shadow:var(--sh-1);overflow:hidden;
+  transition:box-shadow var(--dur) var(--ease),transform var(--dur) var(--ease),border-color var(--dur) var(--ease)}
+.card h3{margin-bottom:var(--s3)}
+.card p{color:var(--muted);margin-bottom:var(--s4)}
+a.card{text-decoration:none;color:var(--ink);display:flex;flex-direction:column}
+.card--hover:hover{box-shadow:var(--sh-3);transform:translateY(-3px);border-color:var(--line-2)}
+/* an accent hairline that surfaces on hover — quiet until you touch it */
+.card--hover::after{content:"";position:absolute;left:0;right:0;top:0;height:2px;
+  background:var(--grad-mint-rule);transform:scaleX(0);transform-origin:left;opacity:0;
+  transition:transform var(--dur) var(--ease-out),opacity var(--dur) var(--ease)}
+.card--hover:hover::after{transform:scaleX(1);opacity:1}
+.card__more{margin-top:auto;font-family:var(--mono);font-size:var(--fs-xs);
+  letter-spacing:.05em;text-transform:uppercase;color:var(--teal-d);font-weight:500}
+a.card:hover .card__more{color:var(--teal)}
+.card__eyebrow{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.12em;
+  text-transform:uppercase;color:var(--teal);margin-bottom:var(--s3);font-weight:500}
+.section--paper .card{background:var(--white)}
+.section--ink .card{background:var(--ink-2);border-color:#33443C;color:var(--cream)}
+.section--ink .card p{color:var(--muted-ink)}
+
+/* ---- 8. HERO --------------------------------------------- */
+.hero{background:var(--grad-hero);
+  color:var(--cream);position:relative;overflow:hidden;border-bottom:3px solid var(--teal)}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(rgba(127,224,196,.06) 1px,transparent 1px);background-size:26px 26px;
+  -webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 72%);mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 72%)}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(60% 90% at 82% 8%,rgba(127,224,196,.16),transparent 60%)}
+.hero .wrap{position:relative;z-index:1;padding-block:clamp(64px,10vw,116px)}
+.hero .eyebrow{color:var(--mint)}
+.hero h1{color:#fff;max-width:16ch}
+.hero .lead{color:#E4F1EC;max-width:56ch;margin-top:var(--s5)}
+.hero--sm .wrap{padding-block:clamp(52px,7vw,84px)}
+
+/* ---- 9. PROSE (long-form) -------------------------------- */
+.prose{max-width:var(--measure);font-size:1.075rem}
+.prose > * + *{margin-top:1.15rem}
+.prose h2{font-size:var(--fs-h2);margin-top:2.4rem;margin-bottom:.4rem}
+.prose h3{font-size:var(--fs-h3);margin-top:1.8rem;margin-bottom:.2rem}
+.prose p{color:var(--ink);line-height:1.7}
+.prose a{text-decoration:underline}
+.prose ul,.prose ol{padding-left:1.3rem;color:var(--ink)}
+.prose li{margin-bottom:.5rem}
+.prose blockquote{border-left:3px solid var(--teal);padding:.2rem 0 .2rem 1.2rem;
+  margin:1.6rem 0;font-family:var(--serif);font-size:1.35rem;color:var(--teal-d);font-style:italic}
+.prose code{font-family:var(--mono);font-size:.86em;background:var(--cream-2);
+  padding:.12em .4em;border-radius:6px}
+.prose pre{background:var(--ink);color:var(--cream);padding:var(--s5);border-radius:var(--r);
+  overflow-x:auto;font-family:var(--mono);font-size:.85rem;line-height:1.6}
+.prose pre code{background:none;padding:0}
+.prose table{width:100%;border-collapse:collapse;font-size:var(--fs-sm);margin:1.4rem 0}
+.prose th,.prose td{text-align:left;padding:.6rem .8rem;border-bottom:1px solid var(--line)}
+.prose th{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.06em;
+  text-transform:uppercase;color:var(--teal-d);font-weight:500}
+
+/* ---- 10. ACCORDION (FAQ) --------------------------------- */
+.acc{border:1px solid var(--line);border-radius:var(--r);background:var(--white);overflow:hidden}
+.acc + .acc{margin-top:var(--s3)}
+.acc summary{list-style:none;cursor:pointer;padding:1.15rem 1.3rem;
+  font-family:var(--serif);font-size:1.25rem;font-weight:600;color:var(--ink);
+  display:flex;justify-content:space-between;gap:1rem;align-items:center;min-height:56px}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary:hover{color:var(--teal-d)}
+.acc summary::after{content:"+";font-family:var(--mono);font-size:1.4rem;color:var(--teal);
+  transition:transform var(--dur) var(--ease);flex:none;line-height:1}
+.acc[open] summary::after{transform:rotate(45deg)}
+.acc__body{padding:0 1.3rem 1.25rem;color:var(--muted);max-width:var(--measure)}
+.acc__body p:last-child{margin-bottom:0}
+
+/* ---- 11. NAV --------------------------------------------- */
+.skip{position:absolute;left:-999px;top:0;background:var(--teal-d);color:#fff;
+  padding:.7rem 1.1rem;border-radius:0 0 8px 0;z-index:200;
+  font-family:var(--mono);font-size:.82rem}
+.skip:focus{left:0;color:#fff}
+.nav{position:sticky;top:0;z-index:100;background:rgba(252,250,245,.88);
+  backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);
+  border-bottom:1px solid var(--line);height:var(--nav-h);
+  transition:box-shadow var(--dur) var(--ease),background var(--dur) var(--ease)}
+.nav.is-stuck{background:rgba(252,250,245,.94);box-shadow:0 1px 0 var(--line),0 8px 24px -14px rgba(20,32,28,.4)}
+.nav__in{max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(20px,4vw,28px);
+  height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.nav__brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--ink);
+  font-family:var(--mono);font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500}
+.nav__brand svg{flex:none}
+.nav__brand b{font-weight:500}
+.nav__brand .mk{color:var(--teal-d);font-weight:500}
+.nav__links{display:flex;align-items:center;gap:.15rem;list-style:none;margin:0;padding:0}
+.nav__links a{font-family:var(--mono);font-size:.73rem;letter-spacing:.04em;text-transform:uppercase;
+  color:var(--ink-2);text-decoration:none;padding:.5rem .55rem;border-radius:8px;white-space:nowrap}
+.nav__links a:hover{color:var(--teal-d);background:var(--teal-l)}
+.nav__links a[aria-current="page"]{color:var(--teal-d);background:var(--teal-l)}
+.nav__cta{margin-left:.35rem}
+.nav__burger{display:none;background:none;border:1px solid var(--line-2);border-radius:9px;
+  width:46px;height:46px;cursor:pointer;align-items:center;justify-content:center;color:var(--ink)}
+@media(max-width:1000px){
+  .nav__links{position:fixed;inset:var(--nav-h) 0 auto 0;flex-direction:column;align-items:stretch;
+    gap:0;background:var(--paper);border-bottom:1px solid var(--line);padding:var(--s3);
+    transform:translateY(-10px);opacity:0;visibility:hidden;
+    transition:all var(--dur) var(--ease);box-shadow:var(--sh-2);max-height:calc(100vh - var(--nav-h));overflow-y:auto}
+  .nav__links.open{opacity:1;visibility:visible;transform:translateY(0)}
+  .nav__links a{padding:.9rem .8rem;font-size:.82rem;border-radius:10px}
+  .nav__cta{margin:.5rem 0 0}
+  .nav__cta .btn{width:100%}
+  .nav__burger{display:inline-flex}
+}
+
+/* ---- 12. FOOTER ------------------------------------------ */
+.footer{background:var(--grad-ink);color:var(--muted-ink);padding-block:var(--s9) var(--s7);font-size:var(--fs-sm)}
+.footer a{color:#CFDAD5;text-decoration:none}.footer a:hover{color:#fff}
+.footer__top{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:var(--s7)}
+@media(max-width:760px){.footer__top{grid-template-columns:1fr;gap:var(--s6)}}
+.footer__brand{font-family:var(--serif);font-size:1.6rem;color:var(--cream);margin-bottom:var(--s3)}
+.footer h4{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.12em;text-transform:uppercase;
+  color:#8FA69E;margin-bottom:var(--s4);font-weight:500}
+.footer ul{list-style:none;margin:0;padding:0}.footer li{margin-bottom:.55rem}
+.footer__disc{border-left:2px solid var(--teal);padding-left:1rem;color:#9FB6AE;
+  margin-top:var(--s7);max-width:75ch;line-height:1.7;font-size:var(--fs-sm)}
+.footer__disc strong{color:#DFF0EA}
+.footer__fine{font-family:var(--mono);font-size:.68rem;color:#6C837B;margin-top:var(--s6);line-height:1.7}
+#email-reveal{color:var(--mint);font-weight:600}
+
+/* ---- 13. UTIL / MOTION ----------------------------------- */
+.js .reveal{opacity:0;transform:translateY(16px)}
+.js .reveal.in{opacity:1;transform:none;transition:opacity .6s var(--ease-out),transform .6s var(--ease-out)}
+.divider{height:1px;background:var(--line);border:0;margin-block:var(--s7)}
+.divider--accent{height:2px;background:var(--grad-mint-rule);border:0;border-radius:2px;width:100%;margin-block:var(--s7)}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1!important;transform:none!important}
+  html{scroll-behavior:auto}
+}
+
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="/university/" aria-label="Aloha AI University home">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1B7A68"/><path d="M7 15.5c2-5 3-5 5-5s3 0 5 5" stroke="#7FE0C4" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="8.5" r="1.6" fill="#7FE0C4"/></svg>
+      <span>Aloha AI <span class="mk">University</span></span>
+    </a>
+    <button class="nav__burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav__links" id="nav-links">
+      <li><a href="/university/start-here">Start Here</a></li>
+      <li><a href="/university/learn" aria-current="page">Learn</a></li>
+      <li><a href="/university/playbooks">Playbooks</a></li>
+      <li><a href="/university/templates">Templates</a></li>
+      <li><a href="/university/use-cases">Use Cases</a></li>
+      <li><a href="/university/tools">Tools</a></li>
+      <li><a href="/university/services">Services</a></li>
+      <li><a href="/university/about">About</a></li>
+      <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a Call</a></li>
+      <li class="nav__cta"><a class="btn btn--primary btn--sm" href="/university/assessment">Get Your AI Roadmap</a></li>
+    </ul>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero hero--sm">
+  <div class="wrap">
+    <p class="eyebrow">Lesson</p>
+    <h1 class="display">How to choose your first AI stack</h1>
+    <p class="lead">You don't need ten subscriptions. You need one assistant, one tool that already lives where you work, and maybe one specialist. Here's how to pick, without the hype.</p>
+    <div class="cta-row">
+      <a class="btn btn--primary" href="/university/assessment">Get Your AI Roadmap</a>
+      <a class="btn btn--ghost" href="/university/learn">Browse all lessons</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">The idea</p>
+      <h2>What this is</h2>
+      <p class="lead">A method for assembling a small, deliberate set of AI tools that fits a small business, instead of collecting subscriptions because a newsletter told you to.</p>
+    </div>
+    <div class="prose">
+      <p>A good starter stack has three slots at most: a general assistant for thinking and drafting, a tool built into the software you already use, and possibly one specialist for a job the first two do poorly. That's the whole thing. Restraint here saves money and, more importantly, saves the attention it takes to actually get good at a tool.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section--paper">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Fit</p>
+      <h2>Who this is for</h2>
+    </div>
+    <div class="prose">
+      <ul>
+        <li>Owners of small businesses and solo operators making their first real AI purchase.</li>
+        <li>Teams already paying for three or four AI tools nobody has learned, who want to cut back to what earns its keep.</li>
+        <li>Anyone stuck on the number of options who wants a decision rule, not a 40-tool comparison spreadsheet.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Timing</p>
+      <h2>When to use it</h2>
+    </div>
+    <div class="prose">
+      <ul>
+        <li>You're about to spend money on AI and want the decision to be intentional.</li>
+        <li>You already run one tool well and are wondering whether to add a second.</li>
+        <li>Your team's tools have crept upward and you want to prune to a stack you can defend.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section--paper">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Guardrails</p>
+      <h2>When not to use it</h2>
+      <p class="lead">Three moments where building a stack works against you.</p>
+    </div>
+    <div class="prose">
+      <details class="acc">
+        <summary>Before you have a real task</summary>
+        <div class="acc__body"><p>Don't build a stack in the abstract. Pick one recurring job that eats your time, then choose a tool for it. Tools chosen without a task go unused.</p></div>
+      </details>
+      <details class="acc">
+        <summary>When your data rules aren't settled</summary>
+        <div class="acc__body"><p>If you handle regulated or confidential data, decide your privacy and tier requirements first. A cheap consumer tool that violates a client agreement is not a bargain.</p></div>
+      </details>
+      <details class="acc">
+        <summary>When you're chasing the newest release</summary>
+        <div class="acc__body"><p>Switching stacks every time a model tops a benchmark burns the time you should spend getting fluent. For a first stack, stability beats novelty.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">The three slots</p>
+      <h2>Tools that work well</h2>
+      <p class="lead">Match a tool to each slot. You won't fill all three on day one, and that's fine.</p>
+      <p class="small muted">Pricing and plan names below were checked mid-2026 and shift often. Confirm current numbers on each vendor's site before you buy.</p>
+    </div>
+    <div class="prose">
+      <table>
+        <thead>
+          <tr><th scope="col">Slot</th><th scope="col">What it does</th><th scope="col">Common picks</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>General assistant</td><td>Drafting, brainstorming, summarizing, thinking out loud</td><td>ChatGPT (Free, Plus ~$20/mo, or Business), Claude (Free or paid), Gemini</td></tr>
+          <tr><td>Workspace-native</td><td>AI inside the email, docs, and files you already use</td><td>Microsoft 365 Copilot (add-on, ~$30/user/mo) if you're on Microsoft; Gemini in Google Workspace if you're on Google</td></tr>
+          <tr><td>Specialist (optional)</td><td>One job the generalists do poorly</td><td>Perplexity for sourced research; a meeting-notes tool; a design tool like Canva's AI features</td></tr>
+        </tbody>
+      </table>
+      <p><strong>The biggest lever most people miss:</strong> if you already pay for Microsoft 365 or Google Workspace, your workspace-native slot is often the highest-value add. It works on your real documents and, at the paid business tier, doesn't train on your data by default. Start there before buying a fourth standalone tool.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section--paper">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Workflow</p>
+      <h2>Step by step</h2>
+    </div>
+    <div class="prose">
+      <ol>
+        <li><strong>List your top three time-eaters.</strong> The recurring tasks that drain hours: email, proposals, notes, research, scheduling.</li>
+        <li><strong>Pick the one worth automating first.</strong> Highest frequency times highest annoyance wins.</li>
+        <li><strong>Set your data floor.</strong> Decide the minimum tier and privacy setting that task requires. Regulated data raises the floor.</li>
+        <li><strong>Fill the general-assistant slot.</strong> Try two free tiers on the same real task for a week. Keep the one whose output you trust and whose interface you enjoy.</li>
+        <li><strong>Check your workspace-native option.</strong> If you're already on Microsoft or Google, test their built-in AI on your actual files before buying anything else.</li>
+        <li><strong>Add a specialist only if a real gap remains.</strong> No gap, no purchase.</li>
+        <li><strong>Set a 30-day review.</strong> If a tool isn't used weekly, cancel it.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Prompts</p>
+      <h2>Example prompts to copy</h2>
+      <p class="lead">Use a general assistant to pressure-test your own choices.</p>
+    </div>
+    <div class="prose">
+      <pre>I run a [type] business with [N] people. We use [Microsoft 365 / Google
+Workspace]. Our three biggest time-drains are [A], [B], [C]. Recommend a
+lean AI stack of no more than three tools, explain what each is FOR, and
+tell me which ONE to start with this week. Flag anything I'd be paying
+for twice.</pre>
+      <pre>Compare [Tool A] and [Tool B] for this exact task: [describe task]. Give
+me a short table of the tradeoffs that actually matter for a small
+business, not a feature dump. End with a one-line recommendation and the
+main risk of that choice.</pre>
+      <pre>Here's my current list of AI subscriptions and what I use each for:
+[list]. Which are redundant? What could I cancel without losing a
+capability I actually rely on?</pre>
+    </div>
+  </div>
+</section>
+
+<section class="section--paper">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What good looks like</p>
+      <h2>A realistic example output</h2>
+    </div>
+    <div class="prose">
+      <p><strong>For a 4-person services firm on Google Workspace:</strong></p>
+      <ul>
+        <li><strong>Start here:</strong> Gemini in Google Workspace. It already sits in your Gmail and Docs, and at your paid tier it won't train on your data. Use it for email drafts and document cleanup.</li>
+        <li><strong>General assistant:</strong> One of Claude or ChatGPT, paid tier, for brainstorming and longer drafting where you want a separate scratchpad.</li>
+        <li><strong>Specialist:</strong> Hold off. Add a meeting-notes tool only if you run enough calls to justify it.</li>
+        <li><strong>Skip for now:</strong> A second general assistant. Two do the same job; pick one and get fluent.</li>
+      </ul>
+      <p class="small muted">Treat any specific price or plan name a model gives you as a claim to verify. Models routinely state outdated pricing.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Guardrails</p>
+      <h2>Risks and common mistakes</h2>
+    </div>
+    <div class="prose">
+      <details class="acc">
+        <summary>Buying breadth instead of depth</summary>
+        <div class="acc__body"><p>Three well-used tools beat eight half-learned ones. Depth is where the payoff lives.</p></div>
+      </details>
+      <details class="acc">
+        <summary>Paying twice for the same capability</summary>
+        <div class="acc__body"><p>Your workspace suite may already include what you're about to buy separately. Check before you subscribe.</p></div>
+      </details>
+      <details class="acc">
+        <summary>Ignoring the data tier to save $10</summary>
+        <div class="acc__body"><p>The cheap plan may train on your inputs or violate a client agreement. The savings aren't worth the exposure.</p></div>
+      </details>
+      <details class="acc">
+        <summary>Chasing benchmarks</summary>
+        <div class="acc__body"><p>The model that won this month's leaderboard is rarely worth re-training your team on.</p></div>
+      </details>
+      <details class="acc">
+        <summary>No cancel-by date</summary>
+        <div class="acc__body"><p>Unused subscriptions renew silently. Set a review and hold the line.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="section--paper">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Before you commit</p>
+      <h2>Human review checklist</h2>
+    </div>
+    <div class="prose">
+      <ul>
+        <li>Each tool maps to a specific recurring task, not a vague hope.</li>
+        <li>I confirmed I'm not paying twice for a capability already in my suite.</li>
+        <li>The tier and privacy settings meet my data obligations.</li>
+        <li>I verified today's pricing at the vendor's own site.</li>
+        <li>I picked one tool to start with this week, not all of them.</li>
+        <li>A 30-day usage review is on the calendar.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Keep going</p>
+      <h2>Related lessons</h2>
+    </div>
+    <div class="grid grid-3">
+      <a class="card card--hover" href="/university/learn/chatgpt-vs-claude-vs-gemini-vs-perplexity">
+        <span class="card__eyebrow">Lesson</span>
+        <h3>ChatGPT vs Claude vs Gemini vs Perplexity</h3>
+        <p>How the major assistants differ, and which one fits your general-assistant slot.</p>
+        <span class="card__more">Open lesson →</span>
+      </a>
+      <a class="card card--hover" href="/university/learn/privacy-and-confidentiality">
+        <span class="card__eyebrow">Lesson</span>
+        <h3>Privacy and confidentiality</h3>
+        <p>Set your data floor with confidence: tiers, training defaults, and client obligations.</p>
+        <span class="card__more">Open lesson →</span>
+      </a>
+      <a class="card card--hover" href="/university/learn/ai-for-email">
+        <span class="card__eyebrow">Lesson</span>
+        <h3>AI for email</h3>
+        <p>Put your first stack to work on the task that usually eats the most hours.</p>
+        <span class="card__more">Open lesson →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section--ink">
+  <div class="wrap" style="text-align:center">
+    <h2>Want a stack chosen for your business, not a generic list?</h2>
+    <p style="max-width:52ch;margin:var(--s4) auto">Take the AI Roadmap Assessment. It looks at your tools, your data, and your goals, then tells you exactly what to buy first and what to skip.</p>
+    <p><a class="btn btn--on-ink" href="/university/assessment">Take the AI Roadmap Assessment</a></p>
+  </div>
+</section>
+
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div>
+        <div class="footer__brand">Aloha AI <span style="color:var(--mint)">University</span></div>
+        <p style="max-width:38ch;color:#9FB6AE">Free, practical, honest generative-AI education for modern businesses. Built by Aloha AI and RN Collins.</p>
+        <p style="margin-top:var(--s4)"><a class="btn btn--on-ink btn--sm" href="/university/assessment">Get Your AI Roadmap</a></p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/university/start-here">Start Here</a></li>
+          <li><a href="/university/learn">Learn</a></li>
+          <li><a href="/university/playbooks">Playbooks</a></li>
+          <li><a href="/university/templates">Templates</a></li>
+          <li><a href="/university/use-cases">Use Cases</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Work with us</h4>
+        <ul>
+          <li><a href="/">← Aloha AI (main site)</a></li>
+          <li><a href="/university/tools">Tools</a></li>
+          <li><a href="/university/services">Services</a></li>
+          <li><a href="/university/about">About</a></li>
+          <li><a href="/university/contact">Contact</a></li>
+          <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a Call</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer__disc"><strong>Aloha AI University</strong> is free generative-AI education for modern businesses. RN Collins is a JD candidate, not a licensed attorney. Nothing here is legal, medical, or financial advice. Every page on this site runs entirely in your browser and sends nothing anywhere.</p>
+    <p class="footer__fine">© <span id="yr">2026</span> Aloha AI. All rights reserved.</p>
+  </div>
+</footer>
+<script id="uni-js">
+/* Aloha AI University — shared behavior (progressive enhancement) */
+(function () {
+  "use strict";
+  document.documentElement.classList.add("js");
+
+  /* ---- Mobile menu ---- */
+  var burger = document.querySelector(".nav__burger");
+  var links = document.getElementById("nav-links");
+  if (burger && links) {
+    var close = function () {
+      links.classList.remove("open");
+      burger.setAttribute("aria-expanded", "false");
+    };
+    var toggle = function () {
+      var open = links.classList.toggle("open");
+      burger.setAttribute("aria-expanded", open ? "true" : "false");
+    };
+    burger.addEventListener("click", toggle);
+    links.addEventListener("click", function (e) {
+      if (e.target.closest("a")) close();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && links.classList.contains("open")) {
+        close();
+        burger.focus();
+      }
+    });
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 1000) close();
+    });
+  }
+
+  /* ---- Nav elevation on scroll ---- */
+  var nav = document.querySelector(".nav");
+  if (nav) {
+    var onScroll = function () {
+      if (window.scrollY > 8) nav.classList.add("is-stuck");
+      else nav.classList.remove("is-stuck");
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
+
+  /* ---- Reveal on scroll ---- */
+  var reveals = document.querySelectorAll(".reveal");
+  if (reveals.length && "IntersectionObserver" in window) {
+    var io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) {
+            en.target.classList.add("in");
+            io.unobserve(en.target);
+          }
+        });
+      },
+      { rootMargin: "0px 0px -8% 0px", threshold: 0.08 }
+    );
+    reveals.forEach(function (el) { io.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add("in"); });
+  }
+
+  /* ---- Current year ---- */
+  var yr = document.getElementById("yr");
+  if (yr) yr.textContent = new Date().getFullYear();
+
+  /* ---- Email reveal (footer + contact) ---- */
+  document.querySelectorAll("[data-email-reveal]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var a = ["collins", "ra"].join(".") + "@" + ["northeastern", "edu"].join(".");
+      var out = document.getElementById(btn.getAttribute("aria-controls"));
+      if (out) out.innerHTML = '<a id="email-reveal" href="mailto:' + a + '">' + a + "</a>";
+      btn.setAttribute("disabled", "disabled");
+      btn.textContent = "Email revealed";
+    });
+  });
+})();
+
+</script>
+</body>
+</html>

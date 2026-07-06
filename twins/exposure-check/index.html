@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Is Your AI Twin Legally Exposed? &middot; Trust-Safe Twins | Aloha AI</title>
+<meta name="description" content="A six-minute, browser-local self-screen across the six places AI twins, avatars, and synthetic-voice agents actually get people into trouble. Score your exposure, then see where it goes next. By RN Collins, Aloha AI.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://aloha-ai-consulting.vercel.app/twins/exposure-check">
+<meta name="theme-color" content="#14201C">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Is Your AI Twin Legally Exposed?">
+<meta property="og:description" content="A six-minute self-screen across consent, disclosure, provenance, substantiation, platform, and sector rules. Scored locally in your browser. The front door to the Twin Readiness & Compliance Audit.">
+<meta property="og:site_name" content="Aloha AI">
+<meta property="og:image" content="https://aloha-ai-consulting.vercel.app/twins/exposure-check/og-image.png">
+<meta property="og:url" content="https://aloha-ai-consulting.vercel.app/twins/exposure-check">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Is Your AI Twin Legally Exposed?">
+<meta name="twitter:description" content="Six-minute exposure screen for AI twins and AI-UGC. Scored in your browser, nothing sent anywhere.">
+<meta name="twitter:image" content="https://aloha-ai-consulting.vercel.app/twins/exposure-check/og-image.png">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<style>
+  :root{
+    --teal:#1B7A68; --teal-dark:#0F5343; --cream:#F7F4EC;
+    --ink:#14201C; --mint:#7FE0C4;
+    --line:#d8d2c4; --low:#1B7A68; --mod:#B8860B; --high:#B23A2E;
+    --card:#ffffff;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--cream); color:var(--ink);
+    font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  .skip{
+    position:absolute; left:-999px; top:0; background:var(--ink); color:#fff;
+    padding:.6rem 1rem; border-radius:0 0 8px 0; z-index:20;
+  }
+  .skip:focus{left:0}
+  .wrap{max-width:760px; margin:0 auto; padding:1.25rem}
+  header.masthead{padding-top:2rem}
+  .kicker{
+    display:inline-block; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--teal-dark); font-weight:700; border:1px solid var(--line);
+    background:#fff; padding:.3rem .6rem; border-radius:999px;
+  }
+  .kicker a{color:var(--teal-dark); text-decoration:none}
+  .kicker a:hover{text-decoration:underline}
+  h1{font-size:1.9rem; line-height:1.2; margin:.8rem 0 .4rem}
+  .lede{font-size:1.05rem; color:#33413b; margin:.2rem 0 1rem}
+  .disclaimer{
+    background:#fff; border:1px solid var(--line); border-left:4px solid var(--high);
+    padding:.85rem 1rem; border-radius:8px; font-size:.9rem; margin:1rem 0;
+  }
+  .disclaimer strong{color:var(--high)}
+  .privacy{font-size:.85rem; color:#4a574f; margin:.6rem 0 1.4rem;
+    background:#fff; border:1px dashed var(--line); border-radius:8px; padding:.7rem .9rem}
+  fieldset{
+    border:1px solid var(--line); border-radius:12px; background:var(--card);
+    padding:1rem 1.1rem; margin:0 0 1rem;
+  }
+  legend{font-weight:700; padding:0 .4rem; font-size:1.02rem}
+  .dim-label{font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; color:var(--teal-dark); font-weight:700; margin:1.6rem 0 .5rem}
+  .opt{display:block; border:1px solid var(--line); border-radius:8px; padding:.6rem .75rem; margin:.4rem 0; cursor:pointer}
+  .opt:hover{border-color:var(--teal)}
+  .opt input{margin-right:.55rem}
+  .opt:has(input:checked){border-color:var(--teal); background:#f0f8f5; box-shadow:inset 0 0 0 1px var(--teal)}
+  input:focus-visible + span, .opt:focus-within{outline:3px solid var(--mint); outline-offset:2px}
+  :focus-visible{outline:3px solid var(--teal); outline-offset:2px; border-radius:4px}
+  .rule-note{font-size:.8rem; color:#5a665f; margin:.35rem .2rem 0}
+  .actions{display:flex; gap:.7rem; flex-wrap:wrap; margin:1.4rem 0}
+  button{
+    font:inherit; font-weight:700; border:none; border-radius:10px; padding:.8rem 1.3rem;
+    cursor:pointer; background:var(--teal); color:#fff;
+  }
+  button.secondary{background:#fff; color:var(--teal-dark); border:1px solid var(--line)}
+  button:hover{background:var(--teal-dark)}
+  button.secondary:hover{background:#f0f8f5}
+  .cta-link{
+    display:inline-block; background:var(--ink); color:#fff; text-decoration:none;
+    font-weight:700; padding:.85rem 1.4rem; border-radius:10px; margin-top:.4rem;
+  }
+  .cta-link:hover{background:var(--teal-dark)}
+  .cta-link.alt{background:#fff; color:var(--teal-dark); border:1px solid var(--teal)}
+  .cta-link.alt:hover{background:#f0f8f5}
+  .cta-row{display:flex; gap:.7rem; flex-wrap:wrap; align-items:center}
+  #result{margin-top:1.5rem}
+  .verdict{border-radius:14px; padding:1.2rem 1.3rem; color:#fff; margin-bottom:1rem}
+  .verdict h2{margin:.1rem 0 .3rem; font-size:1.5rem}
+  .verdict.low{background:var(--low)}
+  .verdict.mod{background:var(--mod)}
+  .verdict.high{background:var(--high)}
+  .score-big{font-size:2.4rem; font-weight:800; line-height:1}
+  .dimcard{background:#fff; border:1px solid var(--line); border-radius:10px; padding:.85rem 1rem; margin:.6rem 0}
+  .dimcard h3{margin:.1rem 0 .3rem; font-size:1.05rem; display:flex; justify-content:space-between; align-items:center; gap:.5rem}
+  .pill{font-size:.72rem; font-weight:700; padding:.2rem .55rem; border-radius:999px; color:#fff; white-space:nowrap}
+  .pill.low{background:var(--low)} .pill.mod{background:var(--mod)} .pill.high{background:var(--high)}
+  .fix{font-size:.92rem; margin:.3rem 0 0}
+  .fix strong{color:var(--teal-dark)}
+  .audit-box{background:#fff; border:2px solid var(--teal); border-radius:14px; padding:1.2rem 1.3rem; margin-top:1.2rem}
+  .audit-box h2{margin-top:0}
+  footer{font-size:.8rem; color:#5a665f; margin:2.5rem 0 3rem; border-top:1px solid var(--line); padding-top:1rem}
+  a{color:var(--teal-dark)}
+  .hidden{display:none}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    *{transition:none !important; animation:none !important}
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#form">Skip to the diagnostic</a>
+<div class="wrap">
+<header class="masthead">
+  <span class="kicker"><a href="/twins">Trust-Safe Twins</a> &middot; Aloha AI</span>
+  <h1>Is Your AI Twin Legally Exposed?</h1>
+  <p class="lede">A six-minute self-screen for anyone running an AI twin, avatar, or synthetic-voice agent. Twenty questions across the six places these deployments actually get people into trouble. You answer, your browser scores it, and you get a plain-language read on where you stand.</p>
+
+  <div class="disclaimer" role="note">
+    <strong>Not legal advice.</strong> This is an educational screening tool, not counsel. It is built by a JD candidate, not a licensed attorney, and it does not create an attorney&ndash;client relationship. Rules change and depend on your facts and jurisdiction. Treat any flag here as a prompt to get proper review, not a verdict.
+  </div>
+
+  <p class="privacy"><strong>Nothing leaves your browser.</strong> Every answer is scored locally on this page. There is no server call, no analytics, no tracking pixel, no cookie, and no form submission. Your responses are never sent anywhere and vanish when you close the tab.</p>
+</header>
+
+<main>
+<form id="form" novalidate>
+  <!-- Dimensions and questions are generated below; markers used for scoring -->
+</form>
+
+<div class="actions">
+  <button type="button" id="scoreBtn">Score my exposure</button>
+  <button type="button" class="secondary" id="resetBtn">Start over</button>
+</div>
+
+<section id="result" aria-live="polite"></section>
+</main>
+
+<footer>
+  <p>Trust-Safe Twins is Aloha AI&rsquo;s compliance-native system for AI twins and AI-UGC in regulated and reputation-sensitive fields. This screen is the front door to the <strong><a href="/twins">Twin Readiness &amp; Compliance Audit</a></strong>.</p>
+  <p>Rules referenced: EU AI Act Art. 50; Cal. Civ. Code &sect;3344 / AB 1836; TN ELVIS Act; NY Civ. Rights &sect;50-f; FTC 16 CFR 465 (Fake Reviews Rule) &amp; 16 CFR 255; FTC Operation AI Comply; FDA 21 U.S.C. &sect;331; C2PA Content Credentials; ABA Model Rules 5.5 &amp; 7.1; LinkedIn User Agreement &sect;8.2; CAN-SPAM. The NO FAKES Act is noted where relevant as <em>pending, not law</em>.</p>
+  <p>Educational use only &middot; JD candidate, not a licensed attorney &middot; not legal advice.</p>
+</footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  // Answer weights: 0 = clean/compliant, 1 = partial/uncertain, 2 = clear exposure.
+  // "na" answers are treated as not-applicable and excluded from that dimension's max.
+  var DIMENSIONS = [
+    {
+      id:"consent", name:"1. Consent & Likeness",
+      rule:"Cal. Civ. Code §3344 / AB 1836 (incl. deceased); TN ELVIS Act; NY §50-f. NO FAKES Act is pending, not law.",
+      fix:"Capture written, use-scoped consent for every cloned voice/likeness before it ships, and never clone a third party or a deceased person without their estate’s written grant.",
+      questions:[
+        {q:"Is every cloned voice or likeness in your twin backed by written, use-scoped consent from that person?",
+         opts:[["Yes, signed and use-scoped",0],["We have general permission but not use-scoped or in writing",1],["No signed consent on file",2]]},
+        {q:"Does your twin ever use a third party’s likeness or voice (a client, a public figure, a colleague)?",
+         opts:[["No, operator likeness only",0],["Yes, and we have their written grant",0],["Yes, without a written grant",2]]},
+        {q:"Does it replicate a deceased person’s likeness or voice?",
+         opts:[["No",0],["Yes, with the estate’s written authorization",1],["Yes, with no estate authorization",2],["Not applicable",'na']]},
+        {q:"Does your consent record set a scope and expiry (what uses, for how long) rather than an open-ended grant?",
+         opts:[["Yes, scope and expiry defined",0],["Consent exists but is open-ended",1],["No consent record at all",2]]}
+      ]
+    },
+    {
+      id:"disclosure", name:"2. AI Disclosure",
+      rule:"EU AI Act Art. 50(1) & 50(4) (deepfake/replica disclosure of real people); platform labeling policies.",
+      fix:"Disclose the twin is AI at first contact, and flag any realistic replica of a real person as synthetic. Tune it so disclosure doesn’t tank response, and keep it visible rather than hidden.",
+      questions:[
+        {q:"Does the twin clearly disclose that it is AI at first contact with a person?",
+         opts:[["Yes, up front every conversation",0],["Only if asked",1],["No disclosure",2]]},
+        {q:"If the twin depicts or imitates a real, identifiable person, is that disclosed as a synthetic replica?",
+         opts:[["Yes",0],["Sometimes / inconsistently",1],["No",2],["Not applicable, no real-person replica",'na']]},
+        {q:"Is the disclosure written into the system so it can’t be silently switched off by an operator?",
+         opts:[["Yes, enforced in the system",0],["It’s a guideline people are told to follow",1],["No, left to whoever runs it",2]]}
+      ]
+    },
+    {
+      id:"provenance", name:"3. Provenance & Labeling",
+      rule:"EU AI Act Art. 50(2) (machine-readable synthetic-media marking); C2PA Content Credentials; Meta / YouTube / TikTok AI-content labels.",
+      fix:"Mark synthetic outputs machine-readably (C2PA Content Credentials) and set the platform AI-content label. Engineer it so provenance survives to the label rather than being stripped on upload.",
+      questions:[
+        {q:"Do your twin’s image/video/audio outputs carry machine-readable synthetic-media marking (e.g., C2PA Content Credentials)?",
+         opts:[["Yes, credentials attached at generation",0],["Some outputs, inconsistently",1],["No marking",2]]},
+        {q:"When you post AI-generated content, do you set the platform’s AI / altered-content label (Meta, YouTube, TikTok)?",
+         opts:[["Yes, every time",0],["Occasionally",1],["No",2],["Not applicable, nothing posted to those platforms",'na']]},
+        {q:"Have you confirmed your provenance marking actually survives export/upload rather than being stripped?",
+         opts:[["Yes, verified end to end",0],["Assumed but not verified",1],["No / don’t know",2]]}
+      ]
+    },
+    {
+      id:"substantiation", name:"4. Substantiation of Claims",
+      rule:"FTC 16 CFR 465 (Fake Reviews Rule, ~$53k/violation); FTC Operation AI Comply (DoNotPay $193k); FTC Health Products Guidance & FDA 21 U.S.C. §331.",
+      fix:"Hold competent, written evidence for every efficacy, health, or AI-capability claim BEFORE it ships, and never generate or buy reviews, testimonials, or followers.",
+      questions:[
+        {q:"Does the twin make health, efficacy, or outcome claims (“this will cure/fix/guarantee…”)?",
+         opts:[["No such claims",0],["Yes, and each is backed by evidence held on file before it shipped",0],["Yes, without evidence on file",2]]},
+        {q:"Does it make AI-capability claims about what the system itself can do (“fully autonomous,” “replaces a lawyer,” etc.)?",
+         opts:[["No",0],["Yes, and they’re substantiated and accurate",0],["Yes, and they’re aspirational / unproven",2]]},
+        {q:"Are any reviews, testimonials, or endorsements it uses or generates from real, genuine experience?",
+         opts:[["Yes, all genuine with disclosed connections",0],["Mixed / unsure",1],["It generates or buys reviews, testimonials, or followers",2],["Not applicable, uses none",'na']]},
+        {q:"Is claim evidence gathered BEFORE a claim ships, not assembled after a complaint?",
+         opts:[["Yes, substantiate-then-ship is the rule",0],["We’d find it if challenged",1],["No process for this",2]]}
+      ]
+    },
+    {
+      id:"platform", name:"5. Platform & Channel",
+      rule:"LinkedIn User Agreement §8.2 (no scraping / automated messaging); CAN-SPAM (opt-out, honest headers, physical address).",
+      fix:"Stop automating or scraping LinkedIn, and make every email CAN-SPAM-compliant: honest headers, a real physical address, and a working opt-out honored promptly.",
+      questions:[
+        {q:"Does the twin scrape LinkedIn or send automated connection requests / messages there?",
+         opts:[["No",0],["Some automation, within tools’ stated limits",1],["Yes, automated scraping or messaging",2],["Not applicable, no LinkedIn use",'na']]},
+        {q:"Do the twin’s marketing emails include a clear, working opt-out (unsubscribe) that you honor promptly?",
+         opts:[["Yes",0],["Present but not reliably honored",1],["No opt-out",2],["Not applicable, no email is sent",'na']]},
+        {q:"Do those emails use honest From/Subject headers and include a valid physical mailing address?",
+         opts:[["Yes, both",0],["One but not the other",1],["Neither",2],["Not applicable",'na']]}
+      ]
+    },
+    {
+      id:"sector", name:"6. Sector Overlay (Legal / Health)",
+      rule:"Unauthorized Practice of Law & ABA Model Rules 5.5 / 7.1; FDA 21 U.S.C. §331. (Finance/SEC-FINRA is out of scope and needs separate review.)",
+      fix:"Keep the twin inside licensed lines: no legal or medical advice it isn’t authorized to give, no misleading communications, and name the responsible licensed professional.",
+      questions:[
+        {q:"Does the twin operate in a licensed field (law, medicine, or similar)?",
+         opts:[["No, not a regulated advice field",0],["Yes",1]]},
+        {q:"If so, could it give advice (legal or medical) that it isn’t licensed to give?",
+         opts:[["No, scoped to general info with a hand-off",0],["Possibly, the boundary isn’t enforced",1],["Yes, it gives specific legal/medical advice",2],["Not applicable",'na']]},
+        {q:"Do its communications carry a “not legal / not medical advice” notice and name the responsible licensed professional?",
+         opts:[["Yes, both per ABA 7.1",0],["One but not the other",1],["Neither",2],["Not applicable",'na']]}
+      ]
+    }
+  ];
+
+  // ---- Render ----
+  var form = document.getElementById("form");
+  DIMENSIONS.forEach(function(dim){
+    var label = document.createElement("p");
+    label.className = "dim-label";
+    label.textContent = dim.name;
+    form.appendChild(label);
+
+    dim.questions.forEach(function(item, qi){
+      var fs = document.createElement("fieldset");
+      var lg = document.createElement("legend");
+      lg.textContent = item.q;
+      fs.appendChild(lg);
+      var nm = dim.id + "_" + qi;
+      item.opts.forEach(function(opt, oi){
+        var lab = document.createElement("label");
+        lab.className = "opt";
+        var input = document.createElement("input");
+        input.type = "radio";
+        input.name = nm;
+        input.value = String(opt[1]);
+        var span = document.createElement("span");
+        span.textContent = opt[0];
+        lab.appendChild(input);
+        lab.appendChild(span);
+        fs.appendChild(lab);
+      });
+      var note = document.createElement("p");
+      note.className = "rule-note";
+      note.textContent = "Rule in view: " + dim.rule;
+      if(qi === 0) fs.appendChild(note); // one rule note per dimension (first question)
+      form.appendChild(fs);
+    });
+  });
+
+  // ---- Scoring ----
+  // Per dimension: points = sum of answered weights; max = 2 * (# applicable answered).
+  // ratio = points/max. Level: <=0.15 Low, <=0.45 Moderate, else High.
+  // Any single "2" answer forces that dimension to at least Moderate.
+  // Overall: worst-dimension rule + aggregate ratio.
+  function levelFor(ratio, hasHardFlag){
+    if(hasHardFlag && ratio <= 0.15) return "mod";
+    if(ratio <= 0.15) return "low";
+    if(ratio <= 0.45) return "mod";
+    return "high";
+  }
+  var LEVEL_TXT = {low:"Low", mod:"Moderate", high:"High"};
+
+  function scoreDimension(dim){
+    var points = 0, max = 0, answered = 0, total = 0, hardFlag = false;
+    dim.questions.forEach(function(item, qi){
+      total++;
+      var nm = dim.id + "_" + qi;
+      var checked = form.querySelector('input[name="'+nm+'"]:checked');
+      if(!checked) return;
+      answered++;
+      if(checked.value === "na") return; // excluded from max
+      var w = parseInt(checked.value, 10);
+      points += w; max += 2;
+      if(w === 2) hardFlag = true;
+    });
+    var ratio = max > 0 ? points/max : 0;
+    return {points:points, max:max, ratio:ratio, answered:answered, total:total,
+            hardFlag:hardFlag, level:levelFor(ratio, hardFlag)};
+  }
+
+  function render(results, agg){
+    var el = document.getElementById("result");
+    var order = {low:0, mod:1, high:2};
+    var overall = "low";
+    results.forEach(function(r){ if(order[r.s.level] > order[overall]) overall = r.s.level; });
+    // aggregate ratio can only raise, not lower, the overall
+    if(agg.ratio > 0.45) overall = "high";
+    else if(agg.ratio > 0.15 && overall === "low") overall = "mod";
+
+    var verdictCopy = {
+      low:"Low exposure. Your twin looks like it was built with the guardrails on. Keep the paperwork current as the rules move.",
+      mod:"Moderate exposure. A few real gaps to close before this scales. None are exotic; each has a known fix below.",
+      high:"High exposure. There are open gaps here that regulators and platforms are actively enforcing against. Worth closing before your next send."
+    };
+
+    var html = '';
+    html += '<div class="verdict '+overall+'">';
+    html += '<h2>Overall exposure: '+LEVEL_TXT[overall]+'</h2>';
+    html += '<p style="margin:.2rem 0 0">'+verdictCopy[overall]+'</p>';
+    html += '<p style="margin:.6rem 0 0"><span class="score-big">'+agg.points+'</span> <span style="opacity:.9">of '+agg.max+' possible exposure points across the dimensions you answered.</span></p>';
+    html += '</div>';
+
+    results.forEach(function(r){
+      var s = r.s;
+      html += '<div class="dimcard">';
+      html += '<h3>'+escapeHtml(r.dim.name)+' <span class="pill '+s.level+'">'+LEVEL_TXT[s.level]+'</span></h3>';
+      if(s.answered === 0){
+        html += '<p class="fix" style="color:#5a665f">Not answered.</p>';
+      } else if(s.level === "low"){
+        html += '<p class="fix">Clean on the rule in view: '+escapeHtml(r.dim.rule)+'</p>';
+      } else {
+        html += '<p class="fix"><strong>Rule at issue:</strong> '+escapeHtml(r.dim.rule)+'</p>';
+        html += '<p class="fix"><strong>Fix:</strong> '+escapeHtml(r.dim.fix)+'</p>';
+      }
+      html += '</div>';
+    });
+
+    html += '<div class="audit-box">';
+    html += '<h2>Where this goes next: the Twin Readiness &amp; Compliance Audit</h2>';
+    html += '<p>This screen shows you the shape of the risk. The audit closes it: a structured walk-through of consent records, disclosure, provenance, claim substantiation, channel hygiene, and sector rules for your specific deployment, with a remediation punch-list you can hand to your team or your counsel. Fixed at $2,500, delivered in two weeks.</p>';
+    html += '<div class="cta-row">';
+    html += '<a class="cta-link" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book the Twin Readiness &amp; Compliance Audit &rarr;</a>';
+    html += '<a class="cta-link alt" href="/twins">See how Trust-Safe Twins works &rarr;</a>';
+    html += '</div>';
+    html += '<p style="font-size:.82rem;color:#5a665f;margin:.7rem 0 0">Reminder: this tool is an educational screen, not legal advice, built by a JD candidate who is not a licensed attorney.</p>';
+    html += '</div>';
+
+    el.innerHTML = html;
+    el.scrollIntoView({block:"start"});
+  }
+
+  function escapeHtml(s){
+    return String(s).replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+
+  document.getElementById("scoreBtn").addEventListener("click", function(){
+    var results = [], aggPoints = 0, aggMax = 0;
+    DIMENSIONS.forEach(function(dim){
+      var s = scoreDimension(dim);
+      aggPoints += s.points; aggMax += s.max;
+      results.push({dim:dim, s:s});
+    });
+    var agg = {points:aggPoints, max:aggMax, ratio: aggMax>0 ? aggPoints/aggMax : 0};
+    render(results, agg);
+  });
+
+  document.getElementById("resetBtn").addEventListener("click", function(){
+    form.reset();
+    document.getElementById("result").innerHTML = "";
+    document.getElementById("form").scrollIntoView({block:"start"});
+  });
+})();
+</script>
+</body>
+</html>

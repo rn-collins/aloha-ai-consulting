@@ -4,37 +4,48 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI Strategy & Fractional Leadership — Aloha AI</title>
-<meta name="description" content="A senior AI operator running your strategy, governance, and adoption — a fractional Chief AI Officer for regulated or reputation-sensitive organizations taking AI seriously without a full-time hire. By RN Collins, Aloha AI.">
+<meta name="description" content="A senior AI operator running your strategy, governance, and adoption: a fractional AI Chief of Staff for founders, regulated organizations, and nonprofits taking AI seriously without a full-time hire. Neuroscience-informed, evidence-grounded. By RN Collins, Aloha AI.">
 <link rel="canonical" href="https://aloha-ai-consulting.vercel.app/strategy">
 <meta name="theme-color" content="#14201C">
 <meta property="og:type" content="website">
 <meta property="og:title" content="AI Strategy & Fractional Leadership — Aloha AI">
-<meta property="og:description" content="Strategy, governance, and a fractional Chief AI Officer for organizations taking AI seriously without a full-time hire.">
+<meta property="og:description" content="Strategy, governance, and a fractional AI Chief of Staff for organizations taking AI seriously without a full-time hire.">
 <meta property="og:image" content="./og-image.png">
 <meta property="og:url" content="https://aloha-ai-consulting.vercel.app/strategy">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="AI Strategy & Fractional Leadership — Aloha AI">
-<meta name="twitter:description" content="A fractional Chief AI Officer for regulated organizations — strategy, governance, adoption. By RN Collins.">
+<meta name="twitter:description" content="A fractional AI Chief of Staff for founders, regulated orgs, and nonprofits: strategy, governance, adoption. By RN Collins.">
 <meta name="twitter:image" content="./og-image.png">
 <link rel="icon" href="./favicon.svg" type="image/svg+xml">
 <script>document.documentElement.className+=' js';</script>
 <link rel="stylesheet" href="./aloha-ds.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Service","name":"AI Strategy & Fractional Leadership",
-"serviceType":"AI strategy, governance, and fractional Chief AI Officer leadership",
+"serviceType":"AI strategy, governance, and fractional AI Chief of Staff leadership",
 "url":"https://aloha-ai-consulting.vercel.app/strategy","areaServed":"US",
-"description":"A senior AI operator running strategy, governance, and adoption for regulated or reputation-sensitive organizations — a fractional Chief AI Officer without a full-time hire.",
+"description":"A senior AI operator running strategy, governance, and adoption for founders, regulated organizations, and nonprofits: a fractional AI Chief of Staff without a full-time hire.",
 "provider":{"@type":"Person","name":"RN Collins","jobTitle":"Founder, Aloha AI","description":"Neuroscientist (MS), JD candidate, and AI systems builder for regulated industries","knowsAbout":["AI strategy","AI governance","Fractional leadership","AI adoption","Neuroscience of trust"]},
 "brand":{"@type":"Organization","name":"Aloha AI"}}
 </script>
 <style>
-  .hero{position:relative;overflow:hidden;background:radial-gradient(130% 120% at 82% -12%,#20362d 0%,#18271F 44%,var(--ink) 80%);
-    color:var(--cream);padding-block:clamp(48px,8vw,92px) clamp(40px,6vw,72px);border-bottom:3px solid var(--teal)}
-  .hero .display{color:var(--cream);max-width:18ch;margin-bottom:var(--s4)}
+  .hero{position:relative;overflow:hidden;background:var(--grad-hero);
+    color:var(--cream);padding-block:clamp(56px,8.5vw,120px) clamp(44px,6vw,84px);border-bottom:3px solid var(--teal)}
+  .hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(127,224,196,.05) 1px,transparent 1px);
+    background-size:26px 26px;-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 70%);mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 70%);pointer-events:none}
+  .hero>.wrap{position:relative}
+  .hero .display{color:var(--cream);max-width:19ch;margin-bottom:var(--s4)}
   .hero .kicker{color:var(--teal-mint)}
-  .hero .lead{color:#CFDAD5;max-width:58ch}
+  .hero .lead{color:#CFDAD5;max-width:60ch}
   .hero em{color:var(--teal-mint);font-style:normal}
   .hero__cta{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:var(--s5)}
+  .hero__answers{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:var(--s5)}
+  .hero__answers .a{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.04em;color:#CDE7DF;
+    border:1px solid #2F4A42;border-radius:var(--r-pill);padding:.4rem .8rem;background:rgba(255,255,255,.03)}
+  .hero__answers .a b{color:var(--teal-mint);font-weight:500}
+  .livebadge{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:var(--fs-xs);
+    letter-spacing:.08em;text-transform:uppercase;color:#CDE7DF;border:1px solid #2F4A42;border-radius:var(--r-pill);padding:.34rem .72rem;margin-bottom:var(--s4)}
+  .livebadge .dot{width:7px;height:7px;border-radius:50%;background:var(--teal-mint);animation:pulse 2.2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(127,224,196,.5)}70%{box-shadow:0 0 0 7px rgba(127,224,196,0)}100%{box-shadow:0 0 0 0 rgba(127,224,196,0)}}
   .hero__meta{margin-top:var(--s5);font-family:var(--mono);font-size:var(--fs-xs);color:#9FB6AE;letter-spacing:.04em;line-height:1.8}
   .hero__meta b{color:var(--cream)}
   .sec-head{margin-bottom:var(--s6);max-width:72ch}
@@ -45,12 +56,13 @@
   .tool-card p{font-size:.82rem;color:var(--muted);margin:0 0 .7rem}
   .tool-card .go{margin-top:auto;font-family:var(--mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;color:var(--teal-d)}
   .live-dot{width:7px;height:7px;border-radius:50%;background:var(--green);display:inline-block;margin-right:.35rem}
-  .soon{color:var(--muted);border-color:var(--line)}
   .steps{counter-reset:step;display:grid;gap:var(--s5)}
   .step{display:grid;grid-template-columns:auto 1fr;gap:var(--s4);align-items:start}
   .step__n{counter-increment:step;width:44px;height:44px;border-radius:12px;background:var(--teal);color:#fff;
     font-family:var(--serif);font-size:1.3rem;display:grid;place-items:center;flex:none}
   .step__n::before{content:counter(step)}
+  .step__meta{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.06em;text-transform:uppercase;color:var(--teal-d);margin-top:.3rem}
+  .aud .card h3{margin-bottom:var(--s2)}
 </style>
 </head>
 <body>
@@ -67,6 +79,8 @@
         <li><a href="index.html#services">Services</a></li>
         <li><a href="index.html#moat">The moat</a></li>
         <li><a href="index.html#tools">Tools</a></li>
+        <li><a href="index.html#products">Products</a></li>
+        <li><a href="/university">University</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="index.html#faq">FAQ</a></li>
         <li class="nav__cta"><a class="btn btn--primary btn--sm" href="#start">Get started →</a></li>
@@ -84,31 +98,94 @@
 <!-- HERO -->
 <section class="hero" aria-labelledby="hero-h">
   <div class="wrap">
+    <span class="livebadge"><span class="dot" aria-hidden="true"></span> Fractional AI leadership · Honolulu · working across US</span>
     <p class="eyebrow kicker">AI Strategy &amp; Fractional Leadership</p>
     <h1 class="display" id="hero-h">A senior operator running your AI, without a full-time hire.</h1>
-    <p class="lead">Serious organizations know they need AI leadership, not another tool. But a full-time Chief AI Officer is a premature hire, and a strategy deck no one owns goes stale in a quarter. I embed as your <em>fractional Chief AI Officer</em>, setting the strategy, standing up the governance, and actually running the AI-enabled parts of your operation, for regulated or reputation-sensitive professions where a wrong move is expensive.</p>
+    <p class="lead">Serious organizations know they need AI leadership before they need one more tool. A full-time Chief AI Officer is a premature hire, and a strategy deck no one owns goes stale in a quarter. I embed as your <em>fractional AI Chief of Staff</em>: setting the strategy, standing up the governance, and running the AI-enabled parts of your operation. The work is neuroscience-informed and evidence-grounded, built for founders, regulated organizations, and nonprofits where a wrong move is expensive.</p>
     <div class="hero__cta">
-      <a class="btn btn--primary" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Start with a Systems Audit →</a>
-      <a class="btn btn--ghost" href="#tools">See the tools</a>
+      <a class="btn btn--primary" href="#start">Start with a Systems Audit →</a>
+      <a class="btn btn--ghost" href="#method">See how an engagement runs</a>
     </div>
-    <p class="hero__meta">RN&nbsp;Collins · Neuroscience (MS) · Administrative&nbsp;&amp; regulatory law (JD&nbsp;candidate) · 40+ AI systems shipped</p>
+    <div class="hero__answers">
+      <span class="a"><b>For</b> founders, regulated operators, boards &amp; funders, mission-driven nonprofits</span>
+      <span class="a"><b>Why trust it</b> neuroscience-informed, grounded in primary sources</span>
+    </div>
+    <p class="hero__meta">RN&nbsp;Collins · Neuroscience (MS) · Administrative&nbsp;&amp; regulatory law (JD&nbsp;candidate) · 35+ AI systems shipped, several in production</p>
   </div>
 </section>
 
-<!-- WHAT THIS COVERS -->
+<!-- WHAT AN ENGAGEMENT DELIVERS -->
 <section class="section" aria-labelledby="cov-h">
   <div class="wrap">
     <div class="sec-head reveal">
-      <p class="eyebrow">What this covers</p>
+      <p class="eyebrow">What an engagement delivers</p>
       <h2 class="h2" id="cov-h">Strategy, governance, and hands-on ownership, in plain terms</h2>
-      <p class="lead">This pillar is the leadership layer. It spans everything from a first AI strategy to bespoke intelligence builds to standing up your whole AI practice: done for you, then run for you.</p>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">This is the leadership layer of the practice. It spans a first AI strategy, the guardrails a regulated organization can defend, bespoke intelligence builds, and standing up your whole AI practice: done for you, then run for you.</p>
     </div>
     <div class="grid grid-2">
-      <div class="card reveal"><h3>AI strategy &amp; roadmap</h3><p class="small muted">Where AI actually earns its keep in your operation, sequenced by impact, not a vendor wishlist. A prioritized roadmap you can staff and fund, grounded in how your people will really adopt it.</p></div>
-      <div class="card reveal"><h3>Governance &amp; guardrails</h3><p class="small muted">The policies, review gates, and risk controls that let a regulated organization use AI without creating exposure: usage standards, human-in-the-loop checkpoints, and an AI-readiness posture leadership can defend.</p></div>
-      <div class="card reveal"><h3>Fractional Chief AI Officer</h3><p class="small muted">I embed and run the AI-enabled parts of your operation, so you stop being the bottleneck. Senior ownership on a fractional cadence: the seat, without the full-time headcount.</p></div>
-      <div class="card reveal"><h3>Bespoke intelligence &amp; practice builds</h3><p class="small muted">When the strategy calls for something custom, whether a private intelligence system or a whole AI practice stood up end to end, I design it, build it, and hand it over running.</p></div>
+      <div class="card reveal"><div class="card__ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg></div><h3>AI strategy &amp; roadmap</h3><p class="small muted">Where AI earns its keep in your operation, sequenced by impact rather than a vendor wishlist. A prioritized roadmap you can staff and fund, grounded in how your people will actually adopt it.</p></div>
+      <div class="card reveal"><div class="card__ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Governance &amp; guardrails</h3><p class="small muted">The policies, review gates, and risk controls that let a regulated organization use AI without creating exposure: usage standards, human-in-the-loop checkpoints, and an AI-readiness posture leadership can defend.</p></div>
+      <div class="card reveal"><div class="card__ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-7 8-7s8 3 8 7"/></svg></div><h3>Fractional AI Chief of Staff</h3><p class="small muted">I embed and run the AI-enabled parts of your operation, so you stop being the bottleneck. Senior ownership on a fractional cadence: the seat, without the full-time headcount.</p></div>
+      <div class="card reveal"><div class="card__ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/></svg></div><h3>Bespoke intelligence &amp; practice builds</h3><p class="small muted">When the strategy calls for something custom, from a private intelligence system to a whole AI practice stood up end to end, I design it, build it, and hand it over running.</p></div>
     </div>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section class="section section--paper section--texture aud" aria-labelledby="aud-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Who it's for</p>
+      <h2 class="h2" id="aud-h">Built for founders, regulated organizations, and nonprofits</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">The common thread is stakes. When a confident wrong answer costs a license, a filing, or a reputation, AI needs an owner who understands both the rules and how people come to trust the work.</p>
+    </div>
+    <div class="grid grid-4 keep-2">
+      <div class="card reveal"><h3 class="h3">Founders &amp; executives</h3><p class="small muted">Taking AI seriously, not ready to hire a full-time Chief AI Officer.</p></div>
+      <div class="card reveal"><h3 class="h3">Regulated operators</h3><p class="small muted">Psychedelics, cannabis, biopharma, digital health, where governance is not optional.</p></div>
+      <div class="card reveal"><h3 class="h3">Boards &amp; funders</h3><p class="small muted">Who need a defensible AI posture they can put in front of a room.</p></div>
+      <div class="card reveal"><h3 class="h3">Mission-driven nonprofits</h3><p class="small muted">Advocacy, cultural, and funder organizations building an AI practice that fits their values.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW AN ENGAGEMENT RUNS -->
+<section class="section" id="method" aria-labelledby="how-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">How an engagement runs</p>
+      <h2 class="h2" id="how-h">Audit, then scope, then build and run</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">The same path every engagement follows. Fast to prove, clear to continue, with a defined stopping point at each stage so you are never locked into work you have not seen the value of.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Audit</h3><p class="muted">A Systems Audit maps your AI stack, governance gaps, and readiness, then hands you a prioritized strategy in two weeks. It stands alone: many organizations take the audit, act on it themselves, and stop there.</p><p class="step__meta">$1,500–$2,500 · 2 weeks</p></div></div>
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Scope</h3><p class="muted">We agree the shape of the engagement, whether a bespoke build, an ongoing fractional-leadership retainer, or both, scoped to what your operation actually needs. Nothing proceeds without a written scope and a clear price.</p><p class="step__meta">Scoping call · no obligation</p></div></div>
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Build &amp; run</h3><p class="muted">I stand up the strategy and governance, build what is custom, and, where you want it, stay on to run the AI-enabled parts of the operation on a fractional cadence.</p><p class="step__meta">Build from $5,000 · Retainer from $4,000/mo</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- THE DIFFERENTIATOR -->
+<section class="section section--ink" id="why" aria-labelledby="why-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Why trust the work</p>
+      <h2 class="h2" id="why-h">A combination almost no one holds</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">Most AI advisors are technologists who learned some law, or lawyers who learned some AI. The edge here is holding several disciplines at once, and it cannot be faked or staffed around.</p>
+    </div>
+    <div class="grid grid-2">
+      <div class="card reveal"><h3>Adoption is a neuroscience problem</h3><p class="small muted">A rollout stalls not because the tool is bad, but because no one built the trust and habit around it. My background sits in how people learn, trust, and adopt, which is exactly what makes AI strategy stick past the launch deck.</p></div>
+      <div class="card reveal"><h3>The facts have to hold up</h3><p class="small muted">Strategy grounded in primary sources, not vibes. Governance a board and its regulators can defend. When the citation, the quota, and the statutory trigger have to be right, that rigor is the whole point.</p></div>
+    </div>
+    <div class="hero__answers" style="margin-top:var(--s6)">
+      <span class="a"><b>Neuroscience (MS)</b> Boston University School of Medicine</span>
+      <span class="a"><b>Administrative &amp; regulatory law</b> JD candidate, Northeastern</span>
+      <span class="a"><b>AI systems</b> 35+ builds shipped, several in production</span>
+    </div>
+    <p class="small reveal" style="margin-top:var(--s5)"><a href="about.html" style="color:var(--teal-mint)">Read the full story on About →</a> &nbsp;·&nbsp; <a href="https://rn-portfolio-khaki.vercel.app" target="_blank" rel="noopener" style="color:var(--teal-mint)">See the builds → RN Builds</a></p>
   </div>
 </section>
 
@@ -116,89 +193,57 @@
 <section class="section section--paper" id="tools" aria-labelledby="tools-h">
   <div class="wrap">
     <div class="sec-head reveal">
-      <p class="eyebrow">The tools that prove it</p>
-      <h2 class="h2" id="tools-h">Leadership, demonstrated, not asserted</h2>
-      <p class="lead">Working instruments from this pillar. Each is a live artifact of the strategy-and-governance practice, built to be used, not admired.</p>
+      <p class="eyebrow">Proof, not promises</p>
+      <h2 class="h2" id="tools-h">Leadership, demonstrated</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">Working instruments from this pillar. Each is a live artifact of the strategy-and-governance practice, built to be used rather than admired.</p>
     </div>
     <div class="grid grid-3">
-      <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/tools/ai-readiness-scorecard"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Strategy</span><h3>AI-Readiness Governance Scorecard</h3><p>Score your organization's AI governance and readiness: where you're exposed, where you're ready to move.</p><span class="go">Open →</span></a>
+      <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/tools/ai-readiness-scorecard"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Strategy</span><h3>AI-Readiness Governance Scorecard</h3><p>Score your organization's AI governance and readiness: where you are exposed, where you are ready to move.</p><span class="go">Open →</span></a>
       <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/monitors/biophilic-neuroarch"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Strategy</span><h3>Neuro-Architecture &amp; Biophilic Design Intelligence</h3><p>A bespoke intelligence build: score a space on salutogenic, neuroscience-grounded principles.</p><span class="go">Open →</span></a>
       <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/monitors/arts-culture"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Strategy</span><h3>Cultural Intelligence · Collection &amp; Audience</h3><p>A bespoke intelligence concept for arts &amp; cultural institutions: collection and audience, resolved into decisions.</p><span class="go">Open →</span></a>
     </div>
   </div>
 </section>
 
-<!-- HOW YOU BUY IT -->
-<section class="section" id="buy" aria-labelledby="buy-h">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="eyebrow">How you buy it</p>
-      <h2 class="h2" id="buy-h">Three ways this pillar is packaged</h2>
-      <p class="lead">Any pillar can be delivered as any offer. For AI Strategy &amp; Fractional Leadership, most engagements land in one of these three, usually starting with the Audit.</p>
-    </div>
-    <div class="grid grid-3 reveal">
-      <div class="card"><span class="chip chip--src">Start here</span><h3 style="margin-top:.5rem">Systems Audit</h3><p class="small muted">I map your AI/tool stack and readiness, find where it leaks time and risk, and hand you a prioritized strategy.</p><p class="mono small" style="color:var(--teal-d);margin:.3rem 0 0">$1,500–$2,500 · 2 weeks</p></div>
-      <div class="card"><h3>Fractional AI Chief of Staff</h3><p class="small muted">I embed and run the AI-enabled parts of your operation: the fractional Chief AI Officer seat, scaling to full CAO leadership.</p><p class="mono small" style="color:var(--teal-d);margin:.3rem 0 0">From $4,000/mo · CAO to $20,000/mo</p></div>
-      <div class="card"><h3>Build</h3><p class="small muted">A bespoke intelligence system or a whole AI practice stood up end to end, built, and handed to you running.</p><p class="mono small" style="color:var(--teal-d);margin:.3rem 0 0">$5,000–$10,000 · 4–6 weeks</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- WHO IT'S FOR -->
-<section class="section section--paper" aria-labelledby="aud-h">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="eyebrow">Who it's for</p>
-      <h2 class="h2" id="aud-h">Built for regulated or reputation-sensitive professions</h2>
-    </div>
-    <div class="grid grid-4 keep-2">
-      <div class="card reveal"><h3 class="h3">Founders &amp; executives</h3><p class="small muted">Taking AI seriously, not ready to hire a full-time Chief AI Officer.</p></div>
-      <div class="card reveal"><h3 class="h3">Regulated operators</h3><p class="small muted">Psychedelics, cannabis, biopharma, digital health, where governance is not optional.</p></div>
-      <div class="card reveal"><h3 class="h3">Boards &amp; funders</h3><p class="small muted">Who need a defensible AI posture they can put in front of a room.</p></div>
-      <div class="card reveal"><h3 class="h3">Mission-driven institutions</h3><p class="small muted">Nonprofits and cultural organizations building an AI practice that fits their values.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section class="section" id="method" aria-labelledby="how-h">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="eyebrow">How it works</p>
-      <h2 class="h2" id="how-h">Audit → scope → build &amp; run</h2>
-      <p class="lead">The same path every engagement follows. Fast to prove, clear to continue.</p>
-    </div>
-    <div class="steps">
-      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Audit</h3><p class="muted">A Systems Audit maps your AI stack, governance gaps, and readiness, then hands you a prioritized strategy in two weeks.</p></div></div>
-      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Scope</h3><p class="muted">We agree the shape of the engagement, whether a bespoke build, an ongoing fractional-leadership retainer, or both, scoped to what your operation actually needs.</p></div></div>
-      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Build &amp; run</h3><p class="muted">I stand up the strategy and governance, build what's custom, and, where you want it, stay on to run the AI-enabled parts of the operation.</p></div></div>
-    </div>
-  </div>
-</section>
-
 <!-- THE SERVICE / OFFER -->
-<section class="section section--paper" id="start" aria-labelledby="offer-h">
+<section class="section" id="start" aria-labelledby="offer-h">
   <div class="wrap">
     <div class="sec-head reveal">
       <p class="eyebrow">The service</p>
-      <h2 class="h2" id="offer-h">How this becomes yours</h2>
-      <p class="lead">You know AI belongs in your operation, but there's no senior owner for it, so it stalls, or worse, ships ungoverned. I embed as the fractional AI leader who sets the strategy, stands up the guardrails, and runs it, so you get senior ownership without a full-time hire.</p>
+      <h2 class="h2" id="offer-h">Three ways this pillar is packaged</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">You know AI belongs in your operation, but there is no senior owner for it, so it stalls, or worse, ships ungoverned. I embed as the fractional AI leader who sets the strategy, stands up the guardrails, and runs it. For most engagements, one of these three is the entry point, usually the Audit.</p>
     </div>
     <div class="grid grid-3 reveal">
-      <div class="card"><div class="card__ic" aria-hidden="true">1</div><h3>What I build</h3><p class="small muted">An AI strategy and governance framework scoped to your organization: roadmap, guardrails, and the operating model to run it.</p></div>
-      <div class="card"><div class="card__ic" aria-hidden="true">2</div><h3>What you get</h3><ul class="small muted" style="padding-left:1.1rem;margin:.35rem 0 0"><li>A prioritized AI roadmap you can fund and staff</li><li>Governance your board and regulators can defend</li><li>A senior operator running it on a fractional cadence</li></ul></div>
-      <div class="card"><div class="card__ic" aria-hidden="true">3</div><h3>How to start</h3><p class="small muted">A 20-minute scoping call. Most begin with a Systems Audit: the fastest proof, and it points to whatever comes next.</p></div>
+      <div class="card"><span class="chip chip--src">Start here</span><h3 style="margin-top:.5rem">Systems Audit</h3><p class="small muted">I map your AI stack, governance, and readiness, find where it leaks time and risk, and hand you a prioritized strategy you can act on.</p><p class="mono small" style="color:var(--teal-d);margin:.3rem 0 0">$1,500–$2,500 · 2 weeks</p></div>
+      <div class="card"><h3>Fractional AI Chief of Staff</h3><p class="small muted">I embed and run the AI-enabled parts of your operation: the fractional seat, scaling to full Chief AI Officer leadership.</p><p class="mono small" style="color:var(--teal-d);margin:.3rem 0 0">From $4,000/mo · full CAO to $20,000/mo</p></div>
+      <div class="card"><h3>Build</h3><p class="small muted">A bespoke intelligence system or a whole AI practice stood up end to end, built, and handed to you running.</p><p class="mono small" style="color:var(--teal-d);margin:.3rem 0 0">$5,000–$10,000 · 4–6 weeks</p></div>
     </div>
-    <p class="lead reveal" style="margin-top:var(--s5)"><strong>Pricing.</strong> Start with a <strong>Systems Audit ($1,500–$2,500 · 2 weeks)</strong>; fractional leadership runs <strong>from $4,000/mo</strong> (full Chief AI Officer $8,000–$20,000/mo), and bespoke builds run <strong>from $5,000</strong>, scoped to your organization. Three-month minimum on retainers; 30 days' notice to stop.</p>
+    <p class="lead reveal" style="margin-top:var(--s5)"><strong>Pricing.</strong> Transparent and scoped, never "let's talk." Start with a <strong>Systems Audit ($1,500–$2,500 · 2 weeks)</strong>; fractional leadership runs <strong>from $4,000/mo</strong> (full Chief AI Officer $8,000–$20,000/mo), and bespoke builds run <strong>$5,000–$10,000</strong>, scoped to your organization. Three-month minimum on retainers; 30 days' notice to stop.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section--paper" id="faq" aria-labelledby="faq-h">
+  <div class="wrap">
+    <div class="sec-head reveal"><p class="eyebrow">Questions</p><h2 class="h2" id="faq-h">What people ask first</h2><hr class="rule" aria-hidden="true"></div>
+    <div class="reveal">
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="f1"><span>What exactly does a fractional AI Chief of Staff do?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="f1"><div class="acc__panel-inner">I hold the seat a full-time Chief AI Officer would, on a fractional cadence. That means setting the AI strategy and roadmap, standing up governance and guardrails, and running the AI-enabled parts of your operation so you are not the bottleneck. Senior ownership, without the full-time headcount.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="f2"><span>Do we have to commit to a retainer to start?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="f2"><div class="acc__panel-inner">No. Most engagements begin with a Systems Audit, a fixed two-week piece of work that hands you a prioritized strategy. It stands on its own. Many organizations take the audit, act on it, and stop there. Retainers carry a three-month minimum with 30 days' notice to stop.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="f3"><span>What makes this different from a generic AI consultant?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="f3"><div class="acc__panel-inner">Two things. Everything is grounded in primary sources, so you can trust the facts, and everything is designed around how humans actually adopt tools, so your team uses it. That pairing of neuroscience, regulatory rigor, and hands-on AI building is the practice.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="f4"><span>Are you a licensed attorney?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="f4"><div class="acc__panel-inner">No. RN Collins is a JD candidate, not a licensed attorney. Aloha AI provides AI strategy and systems, not legal advice, and nothing here creates an attorney–client relationship or anything you should rely on as legal or financial advice. The work is built to support the licensed professionals who do give that advice.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="f5"><span>Which industries do you work in?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="f5"><div class="acc__panel-inner">Founders and executives across sectors, regulated operators (psychedelics, cannabis, biopharma, digital health, legal), boards and funders, and mission-driven nonprofits and cultural institutions. The common thread is that the facts have to be right and a reputation is on the line.</div></div></div>
+    </div>
   </div>
 </section>
 
 <!-- CTA HIERARCHY -->
 <section class="section section--ink" id="contact" aria-labelledby="cta-h">
   <div class="wrap" style="text-align:center">
-    <p class="eyebrow">Aloha AI · Honolulu</p>
+    <p class="eyebrow" style="justify-content:center">Aloha AI · Honolulu</p>
     <h2 class="h2" id="cta-h" style="max-width:24ch;margin-inline:auto">Ready when you are.</h2>
-    <p class="lead" style="margin:var(--s4) auto var(--s5);text-align:center">Convinced, curious, or comparing, there's a path for each.</p>
+    <p class="lead" style="margin:var(--s4) auto var(--s5);text-align:center">Convinced, curious, or comparing, there is a path for each.</p>
     <div style="display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap">
       <a class="btn btn--primary" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Start with a Systems Audit →</a>
       <a class="btn btn--ghost" href="https://aloha-ai-consulting.vercel.app/tools/ai-readiness-scorecard" target="_blank" rel="noopener">Take the 2-minute assessment</a>
@@ -220,17 +265,19 @@
       <div>
         <h4>This service</h4>
         <ul>
-          <li><a href="#cov-h">What this covers</a></li>
+          <li><a href="#cov-h">What it delivers</a></li>
+          <li><a href="#method">How an engagement runs</a></li>
+          <li><a href="#why">Why trust the work</a></li>
           <li><a href="#tools">The tools</a></li>
-          <li><a href="#buy">How you buy it</a></li>
-          <li><a href="#method">How it works</a></li>
           <li><a href="#start">The service</a></li>
+          <li><a href="#faq">FAQ</a></li>
         </ul>
       </div>
       <div>
         <h4>Aloha AI</h4>
         <ul>
           <li><a href="index.html">The practice</a></li>
+          <li><a href="about.html">About RN Collins</a></li>
           <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a call</a></li>
           <li><a href="https://aloha-ai-consulting.vercel.app/tools/ai-readiness-scorecard" target="_blank" rel="noopener">Assessment</a></li>
           <li><a href="https://rn-portfolio-khaki.vercel.app" target="_blank" rel="noopener">Portfolio → RN Builds</a></li>
@@ -240,7 +287,7 @@
         </ul>
       </div>
     </div>
-    <p class="disc small">Aloha AI provides AI strategy and systems, not legal advice. RN Collins is a JD candidate, not a licensed attorney; nothing here is legal or tax advice or an attorney–client relationship.</p>
+    <p class="disc small">Aloha AI provides AI strategy and systems, not legal or financial advice. RN Collins is a JD candidate, not a licensed attorney; nothing here is legal or tax advice, creates an attorney–client relationship, or should be relied on as such.</p>
     <p class="fine">Aloha AI · a DBA of Rayven-Nikkita Collins LLC · Honolulu, HI · No tracking, no cookies · © 2026</p>
   </div>
 </footer>
@@ -258,6 +305,7 @@
   try{navigator.clipboard&&navigator.clipboard.writeText(a);}catch(_){}
   var o=document.getElementById('emailReveal');if(o){o.hidden=false;o.innerHTML='Copied ✓ &nbsp;<a href="mailto:'+a+'?subject='+su+'" style="color:#7FE0C4">'+a+'</a> &nbsp;·&nbsp; <a href="https://mail.google.com/mail/?view=cm&fs=1&to='+a+'&su='+su+'" target="_blank" rel="noopener" style="color:#7FE0C4">Open in Gmail</a>';}
   window.location.href='mailto:'+a+'?subject='+su;});});})();
+  (function(){var nav=document.querySelector('.nav');if(!nav)return;var on=function(){nav.classList.toggle('is-stuck',window.scrollY>8);};on();window.addEventListener('scroll',on,{passive:true});})();
   (function(){if(matchMedia('(prefers-reduced-motion:reduce)').matches){document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in');});return;}
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
   document.querySelectorAll('.reveal').forEach(function(e){io.observe(e);});})();

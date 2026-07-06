@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Tool Evaluation Matrix | Aloha AI University</title>
+<meta name="description" content="A weighted scoring matrix to compare AI tools objectively — across capability, security, cost, ease of use, and support — so you choose on evidence, not hype.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://aloha-ai-consulting.vercel.app/university/templates/ai-tool-evaluation-matrix">
+<meta name="theme-color" content="#0F5343">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI Tool Evaluation Matrix | Aloha AI University">
+<meta property="og:description" content="Compare AI tools on weighted criteria you set in advance, so you choose on evidence, not the smoothest pitch.">
+<meta property="og:site_name" content="Aloha AI University">
+<meta property="og:image" content="https://aloha-ai-consulting.vercel.app/university/og-image.png">
+<meta property="og:url" content="https://aloha-ai-consulting.vercel.app/university/templates/ai-tool-evaluation-matrix">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Tool Evaluation Matrix">
+<meta name="twitter:description" content="Compare AI tools on weighted criteria you set in advance.">
+<meta name="twitter:image" content="https://aloha-ai-consulting.vercel.app/university/og-image.png">
+<link rel="icon" href="/university/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style id="uni-ds">
+/* ============================================================
+   ALOHA AI UNIVERSITY — DESIGN SYSTEM  (university.css)
+   Shared stylesheet for every University page.
+   Premium, calm, high-trust. Brand-cohesive with the elevated
+   Aloha AI main site. v2.0 · 2026-07
+   ============================================================ */
+
+/* ---- 1. TOKENS ------------------------------------------- */
+:root{
+  /* Brand color */
+  --teal:#1B7A68; --teal-d:#0F5343; --teal-l:#E9F3F0; --mint:#7FE0C4;
+  --ink:#14201C; --ink-2:#25332E;
+  --cream:#F7F4EC; --cream-2:#EFEAE0; --paper:#FCFAF5; --white:#FFFFFF;
+  --muted:#4E5C56;            /* AA on cream/white */
+  --muted-ink:#B7C7C0;        /* AA on ink */
+  --line:#E4DFD3; --line-2:#C7BFAE;
+  --amber:#8A5A08; --amber-l:#FBF4E6; --amber-bd:#E4CE9E;
+
+  /* Type families */
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:"Manrope",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:"DM Mono","SFMono-Regular",Menlo,Consolas,monospace;
+
+  /* Type scale (fluid) */
+  --fs-display:clamp(2.6rem,6vw,4.4rem);
+  --fs-h1:clamp(2.2rem,5vw,3.4rem);
+  --fs-h2:clamp(1.7rem,3.4vw,2.5rem);
+  --fs-h3:1.35rem;
+  --fs-body:1.0625rem; --fs-lead:1.2rem; --fs-sm:.9rem; --fs-xs:.78rem;
+  --label:.72rem;
+
+  /* Space scale */
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px;
+  --s7:48px; --s8:64px; --s9:96px;
+
+  /* Radius, shadow, motion */
+  --r-sm:10px; --r:16px; --r-lg:22px; --r-pill:999px;
+  --sh-1:0 1px 2px rgba(20,32,28,.05);
+  --sh-2:0 2px 6px rgba(20,32,28,.05),0 14px 40px rgba(20,32,28,.08);
+  --sh-3:0 2px 4px rgba(20,32,28,.04),0 20px 52px -14px rgba(20,32,28,.16);
+  --sh-focus:0 0 0 3px rgba(27,122,104,.4);
+  --sh-focus-mint:0 0 0 3px rgba(127,224,196,.55);
+  --ease:cubic-bezier(.4,0,.2,1); --ease-out:cubic-bezier(.16,1,.3,1);
+  --dur:.24s; --dur-s:.14s;
+
+  --maxw:1120px; --measure:68ch; --nav-h:66px;
+
+  /* Editorial surfaces / gradients (within brand) */
+  --grad-hero:linear-gradient(158deg,var(--teal-d) 0%,var(--teal) 78%,#227e6b 100%);
+  --grad-ink:linear-gradient(180deg,#16241E 0%,var(--ink) 100%);
+  --grad-mint-rule:linear-gradient(90deg,var(--teal) 0%,var(--mint) 100%);
+  --texture-dot:radial-gradient(rgba(27,122,104,.05) 1px,transparent 1px);
+}
+
+/* ---- 2. BASE / RESET ------------------------------------- */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 14px);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);
+  font-size:var(--fs-body);line-height:1.65;font-weight:400;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{max-width:100%;display:block}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;letter-spacing:-.01em;line-height:1.08;margin:0;text-wrap:balance}
+h1{font-size:var(--fs-h1)} h2{font-size:var(--fs-h2)} h3{font-size:var(--fs-h3)}
+p{margin:0 0 1rem;text-wrap:pretty}
+a{color:var(--teal-d);text-underline-offset:2px;transition:color var(--dur-s) var(--ease)}
+a:hover{color:var(--teal)}
+strong{font-weight:700}
+:focus-visible{outline:none;box-shadow:var(--sh-focus);border-radius:6px}
+.section--ink :focus-visible,.hero :focus-visible{box-shadow:var(--sh-focus-mint)}
+::selection{background:var(--mint);color:var(--ink)}
+
+/* ---- 3. LAYOUT ------------------------------------------- */
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(20px,4vw,28px)}
+.section{padding-block:clamp(56px,8vw,104px);position:relative}
+.section + .section{border-top:1px solid var(--line)}
+.section--paper{background:var(--paper)}
+.section--ink{background:var(--grad-ink);color:var(--cream)}
+.section--ink h1,.section--ink h2,.section--ink h3{color:var(--cream)}
+.section--ink + .section,.section + .section--ink{border-top:0}
+.section--tint{background:var(--white)}
+/* subtle dot texture, opt-in, brand-tinted */
+.section--texture{background-image:var(--texture-dot);background-size:22px 22px}
+.section-head{max-width:var(--measure);margin-bottom:var(--s7)}
+/* accent rule system — an editorial hairline that reads intentional */
+.rule{height:2px;width:56px;border:0;border-radius:2px;background:var(--grad-mint-rule);margin:0 0 var(--s5)}
+.section--ink .rule{opacity:.9}
+.grid{display:grid;gap:var(--s5)}
+.grid-2{grid-template-columns:repeat(2,1fr)}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.grid-4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:900px){.grid-3,.grid-4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}}
+.stack-gap{margin-top:var(--s6)}
+
+/* ---- 4. TYPOGRAPHY HELPERS ------------------------------- */
+.eyebrow{font-family:var(--mono);font-size:var(--label);letter-spacing:.18em;
+  text-transform:uppercase;color:var(--teal-d);margin:0 0 var(--s4);font-weight:500;
+  display:inline-flex;align-items:center;gap:.6rem}
+.eyebrow::before{content:"";width:16px;height:2px;border-radius:2px;background:var(--grad-mint-rule);flex:none}
+.section--ink .eyebrow{color:var(--mint)}
+.section--ink .eyebrow::before{opacity:.95}
+.hero .eyebrow::before{opacity:.95}
+.display{font-size:var(--fs-display);letter-spacing:-.02em}
+.lead{font-size:var(--fs-lead);color:var(--muted);max-width:60ch;line-height:1.55}
+.section--ink .lead{color:var(--muted-ink)}
+.lead-line{font-family:var(--serif);font-size:1.4rem;color:var(--teal-d);max-width:44ch;line-height:1.3;font-weight:500}
+.mono{font-family:var(--mono)}
+.small{font-size:var(--fs-sm)} .muted{color:var(--muted)}
+.measure{max-width:var(--measure)}
+
+/* ---- 5. BUTTONS ------------------------------------------ */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  font-family:var(--mono);font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;
+  font-weight:500;text-decoration:none;cursor:pointer;
+  padding:.85rem 1.35rem;border-radius:var(--r-sm);border:1px solid transparent;
+  transition:all var(--dur) var(--ease);min-height:46px;line-height:1;white-space:nowrap}
+.btn--primary{background:var(--teal);color:#fff;box-shadow:0 1px 2px rgba(15,83,67,.28)}
+.btn--primary:hover{background:var(--teal-d);color:#fff;transform:translateY(-1px);box-shadow:0 8px 22px -6px rgba(15,83,67,.5)}
+.btn--ghost{background:transparent;border-color:var(--line-2);color:var(--ink)}
+.btn--ghost:hover{border-color:var(--teal);color:var(--teal-d);transform:translateY(-1px);box-shadow:var(--sh-1)}
+.btn--on-ink{background:var(--mint);color:var(--teal-d)}
+.btn--on-ink:hover{background:#9dedd6;color:var(--teal-d);transform:translateY(-1px);box-shadow:var(--sh-2)}
+.btn--outline-ink{background:transparent;border-color:rgba(127,224,196,.5);color:var(--cream)}
+.btn--outline-ink:hover{border-color:var(--mint);color:#fff;background:rgba(127,224,196,.1)}
+.btn--sm{padding:.55rem .9rem;min-height:40px;font-size:.7rem}
+.btn:active{transform:translateY(0)}
+.cta-row{display:flex;flex-wrap:wrap;gap:var(--s3);margin-top:var(--s6)}
+
+/* ---- 6. BADGES / TAGS ------------------------------------ */
+.badge{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--mono);
+  font-size:var(--fs-xs);letter-spacing:.05em;text-transform:uppercase;
+  padding:.3rem .65rem;border-radius:var(--r-pill);
+  border:1px solid var(--line);background:var(--white);color:var(--teal-d);font-weight:500}
+.badge--solid{background:var(--teal-l);border-color:#BADFD6}
+.section--ink .badge{background:rgba(127,224,196,.12);border-color:rgba(127,224,196,.3);color:var(--mint)}
+.price{font-family:var(--mono);font-size:var(--fs-sm);color:var(--teal-d);font-weight:500;letter-spacing:.02em}
+
+/* ---- 7. CARDS -------------------------------------------- */
+.card{position:relative;background:var(--white);border:1px solid var(--line);border-radius:var(--r);
+  padding:var(--s6);box-shadow:var(--sh-1);overflow:hidden;
+  transition:box-shadow var(--dur) var(--ease),transform var(--dur) var(--ease),border-color var(--dur) var(--ease)}
+.card h3{margin-bottom:var(--s3)}
+.card p{color:var(--muted);margin-bottom:var(--s4)}
+a.card{text-decoration:none;color:var(--ink);display:flex;flex-direction:column}
+.card--hover:hover{box-shadow:var(--sh-3);transform:translateY(-3px);border-color:var(--line-2)}
+/* an accent hairline that surfaces on hover — quiet until you touch it */
+.card--hover::after{content:"";position:absolute;left:0;right:0;top:0;height:2px;
+  background:var(--grad-mint-rule);transform:scaleX(0);transform-origin:left;opacity:0;
+  transition:transform var(--dur) var(--ease-out),opacity var(--dur) var(--ease)}
+.card--hover:hover::after{transform:scaleX(1);opacity:1}
+.card__more{margin-top:auto;font-family:var(--mono);font-size:var(--fs-xs);
+  letter-spacing:.05em;text-transform:uppercase;color:var(--teal-d);font-weight:500}
+a.card:hover .card__more{color:var(--teal)}
+.card__eyebrow{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.12em;
+  text-transform:uppercase;color:var(--teal);margin-bottom:var(--s3);font-weight:500}
+.section--paper .card{background:var(--white)}
+.section--ink .card{background:var(--ink-2);border-color:#33443C;color:var(--cream)}
+.section--ink .card p{color:var(--muted-ink)}
+
+/* ---- 8. HERO --------------------------------------------- */
+.hero{background:var(--grad-hero);
+  color:var(--cream);position:relative;overflow:hidden;border-bottom:3px solid var(--teal)}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(rgba(127,224,196,.06) 1px,transparent 1px);background-size:26px 26px;
+  -webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 72%);mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 72%)}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(60% 90% at 82% 8%,rgba(127,224,196,.16),transparent 60%)}
+.hero .wrap{position:relative;z-index:1;padding-block:clamp(64px,10vw,116px)}
+.hero .eyebrow{color:var(--mint)}
+.hero h1{color:#fff;max-width:16ch}
+.hero .lead{color:#E4F1EC;max-width:56ch;margin-top:var(--s5)}
+.hero--sm .wrap{padding-block:clamp(52px,7vw,84px)}
+
+/* ---- 9. PROSE (long-form) -------------------------------- */
+.prose{max-width:var(--measure);font-size:1.075rem}
+.prose > * + *{margin-top:1.15rem}
+.prose h2{font-size:var(--fs-h2);margin-top:2.4rem;margin-bottom:.4rem}
+.prose h3{font-size:var(--fs-h3);margin-top:1.8rem;margin-bottom:.2rem}
+.prose p{color:var(--ink);line-height:1.7}
+.prose a{text-decoration:underline}
+.prose ul,.prose ol{padding-left:1.3rem;color:var(--ink)}
+.prose li{margin-bottom:.5rem}
+.prose blockquote{border-left:3px solid var(--teal);padding:.2rem 0 .2rem 1.2rem;
+  margin:1.6rem 0;font-family:var(--serif);font-size:1.35rem;color:var(--teal-d);font-style:italic}
+.prose code{font-family:var(--mono);font-size:.86em;background:var(--cream-2);
+  padding:.12em .4em;border-radius:6px}
+.prose pre{background:var(--ink);color:var(--cream);padding:var(--s5);border-radius:var(--r);
+  overflow-x:auto;font-family:var(--mono);font-size:.85rem;line-height:1.6}
+.prose pre code{background:none;padding:0}
+.prose table{width:100%;border-collapse:collapse;font-size:var(--fs-sm);margin:1.4rem 0}
+.prose th,.prose td{text-align:left;padding:.6rem .8rem;border-bottom:1px solid var(--line)}
+.prose th{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.06em;
+  text-transform:uppercase;color:var(--teal-d);font-weight:500}
+
+/* ---- 10. ACCORDION (FAQ) --------------------------------- */
+.acc{border:1px solid var(--line);border-radius:var(--r);background:var(--white);overflow:hidden}
+.acc + .acc{margin-top:var(--s3)}
+.acc summary{list-style:none;cursor:pointer;padding:1.15rem 1.3rem;
+  font-family:var(--serif);font-size:1.25rem;font-weight:600;color:var(--ink);
+  display:flex;justify-content:space-between;gap:1rem;align-items:center;min-height:56px}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary:hover{color:var(--teal-d)}
+.acc summary::after{content:"+";font-family:var(--mono);font-size:1.4rem;color:var(--teal);
+  transition:transform var(--dur) var(--ease);flex:none;line-height:1}
+.acc[open] summary::after{transform:rotate(45deg)}
+.acc__body{padding:0 1.3rem 1.25rem;color:var(--muted);max-width:var(--measure)}
+.acc__body p:last-child{margin-bottom:0}
+
+/* ---- 11. NAV --------------------------------------------- */
+.skip{position:absolute;left:-999px;top:0;background:var(--teal-d);color:#fff;
+  padding:.7rem 1.1rem;border-radius:0 0 8px 0;z-index:200;
+  font-family:var(--mono);font-size:.82rem}
+.skip:focus{left:0;color:#fff}
+.nav{position:sticky;top:0;z-index:100;background:rgba(252,250,245,.88);
+  backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);
+  border-bottom:1px solid var(--line);height:var(--nav-h);
+  transition:box-shadow var(--dur) var(--ease),background var(--dur) var(--ease)}
+.nav.is-stuck{background:rgba(252,250,245,.94);box-shadow:0 1px 0 var(--line),0 8px 24px -14px rgba(20,32,28,.4)}
+.nav__in{max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(20px,4vw,28px);
+  height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.nav__brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--ink);
+  font-family:var(--mono);font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500}
+.nav__brand svg{flex:none}
+.nav__brand b{font-weight:500}
+.nav__brand .mk{color:var(--teal-d);font-weight:500}
+.nav__links{display:flex;align-items:center;gap:.15rem;list-style:none;margin:0;padding:0}
+.nav__links a{font-family:var(--mono);font-size:.73rem;letter-spacing:.04em;text-transform:uppercase;
+  color:var(--ink-2);text-decoration:none;padding:.5rem .55rem;border-radius:8px;white-space:nowrap}
+.nav__links a:hover{color:var(--teal-d);background:var(--teal-l)}
+.nav__links a[aria-current="page"]{color:var(--teal-d);background:var(--teal-l)}
+.nav__cta{margin-left:.35rem}
+.nav__burger{display:none;background:none;border:1px solid var(--line-2);border-radius:9px;
+  width:46px;height:46px;cursor:pointer;align-items:center;justify-content:center;color:var(--ink)}
+@media(max-width:1000px){
+  .nav__links{position:fixed;inset:var(--nav-h) 0 auto 0;flex-direction:column;align-items:stretch;
+    gap:0;background:var(--paper);border-bottom:1px solid var(--line);padding:var(--s3);
+    transform:translateY(-10px);opacity:0;visibility:hidden;
+    transition:all var(--dur) var(--ease);box-shadow:var(--sh-2);max-height:calc(100vh - var(--nav-h));overflow-y:auto}
+  .nav__links.open{opacity:1;visibility:visible;transform:translateY(0)}
+  .nav__links a{padding:.9rem .8rem;font-size:.82rem;border-radius:10px}
+  .nav__cta{margin:.5rem 0 0}
+  .nav__cta .btn{width:100%}
+  .nav__burger{display:inline-flex}
+}
+
+/* ---- 12. FOOTER ------------------------------------------ */
+.footer{background:var(--grad-ink);color:var(--muted-ink);padding-block:var(--s9) var(--s7);font-size:var(--fs-sm)}
+.footer a{color:#CFDAD5;text-decoration:none}.footer a:hover{color:#fff}
+.footer__top{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:var(--s7)}
+@media(max-width:760px){.footer__top{grid-template-columns:1fr;gap:var(--s6)}}
+.footer__brand{font-family:var(--serif);font-size:1.6rem;color:var(--cream);margin-bottom:var(--s3)}
+.footer h4{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.12em;text-transform:uppercase;
+  color:#8FA69E;margin-bottom:var(--s4);font-weight:500}
+.footer ul{list-style:none;margin:0;padding:0}.footer li{margin-bottom:.55rem}
+.footer__disc{border-left:2px solid var(--teal);padding-left:1rem;color:#9FB6AE;
+  margin-top:var(--s7);max-width:75ch;line-height:1.7;font-size:var(--fs-sm)}
+.footer__disc strong{color:#DFF0EA}
+.footer__fine{font-family:var(--mono);font-size:.68rem;color:#6C837B;margin-top:var(--s6);line-height:1.7}
+#email-reveal{color:var(--mint);font-weight:600}
+
+/* ---- 13. UTIL / MOTION ----------------------------------- */
+.js .reveal{opacity:0;transform:translateY(16px)}
+.js .reveal.in{opacity:1;transform:none;transition:opacity .6s var(--ease-out),transform .6s var(--ease-out)}
+.divider{height:1px;background:var(--line);border:0;margin-block:var(--s7)}
+.divider--accent{height:2px;background:var(--grad-mint-rule);border:0;border-radius:2px;width:100%;margin-block:var(--s7)}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1!important;transform:none!important}
+  html{scroll-behavior:auto}
+}
+
+</style>
+<style>
+  .tmpl-copy{position:relative;margin-top:1.15rem}
+  .tmpl-copy pre{margin:0}
+  .tmpl-copy__btn{position:absolute;top:12px;right:12px;background:var(--mint);color:var(--teal-d);border:none;border-radius:8px;padding:.5rem .9rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;font-weight:600;cursor:pointer;min-height:38px}
+  .tmpl-copy__btn:hover{background:#9dedd6}
+  .tmpl-email{background:var(--white);border:1px dashed var(--teal);border-radius:var(--r);padding:1.1rem 1.3rem;margin-top:1.4rem}
+  .tmpl-email label{font-weight:600;display:block;margin-bottom:.5rem}
+  .tmpl-email input{width:100%;max-width:340px;min-height:44px;padding:.6rem .75rem;border:1px solid var(--line-2);border-radius:8px;font:inherit}
+  .tmpl-email button{margin-top:.7rem}
+  .tmpl-related a{display:block;background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:.85rem 1.1rem;margin-top:.7rem;text-decoration:none;color:var(--ink);font-weight:600}
+  .tmpl-related a:hover{box-shadow:var(--sh-2);border-color:var(--line-2)}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="/university/" aria-label="Aloha AI University home">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1B7A68"/><path d="M7 15.5c2-5 3-5 5-5s3 0 5 5" stroke="#7FE0C4" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="8.5" r="1.6" fill="#7FE0C4"/></svg>
+      <span>Aloha AI <span class="mk">University</span></span>
+    </a>
+    <button class="nav__burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav__links" id="nav-links">
+      <li><a href="/university/start-here">Start Here</a></li>
+      <li><a href="/university/learn">Learn</a></li>
+      <li><a href="/university/playbooks">Playbooks</a></li>
+      <li><a href="/university/templates" aria-current="page">Templates</a></li>
+      <li><a href="/university/use-cases">Use Cases</a></li>
+      <li><a href="/university/tools">Tools</a></li>
+      <li><a href="/university/services">Services</a></li>
+      <li><a href="/university/about">About</a></li>
+      <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a Call</a></li>
+      <li class="nav__cta"><a class="btn btn--primary btn--sm" href="/university/assessment">Get Your AI Roadmap</a></li>
+    </ul>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero hero--sm">
+  <div class="wrap">
+    <p class="eyebrow">Template</p>
+    <h1 class="display">AI Tool Evaluation Matrix</h1>
+    <p class="lead">Every AI vendor sounds great in a demo. This matrix makes you compare them the boring way — on weighted criteria you set before you look at a single product — so the tool you pick wins on evidence, not on whoever gave the smoothest pitch.</p>
+    <div class="cta-row">
+      <a class="btn btn--on-ink" href="#template">Get the matrix</a>
+      <a class="btn btn--outline-ink" href="/university/assessment">Get Your AI Roadmap</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="prose">
+      <h2>What this is</h2>
+      <p>A weighted scoring matrix for choosing between AI tools. You decide which criteria matter and how much each one counts, score every tool on your shortlist against the same scale, and let the weighted math surface a ranked answer. It doesn't replace judgment — it makes your judgment explicit, so a decision you can defend replaces a gut call you can't.</p>
+      <p>It works on a whiteboard, in a spreadsheet, or in the plain-text version below. What matters is that everyone scores against the same criteria with the same key, before anyone falls for a logo.</p>
+
+      <h2>Who it's for</h2>
+      <ul>
+        <li>Owners and operators picking between two or three AI tools, tired of feature lists that all read the same.</li>
+        <li>Department leads who have to justify a purchase to finance, IT, or a skeptical boss with something better than "it felt right."</li>
+        <li>Anyone running a procurement or pilot who has to show their work — why this tool, on what basis, over the alternatives.</li>
+      </ul>
+
+      <h2>What's inside</h2>
+      <ul>
+        <li>A weighted criteria table with sensible starting weights across capability, security, accuracy, ease of use, cost, integration, and support.</li>
+        <li>A fully worked example scoring three tools, with the arithmetic shown so you can watch weighting change the outcome.</li>
+        <li>A blank, copy-pastable matrix that drops into a spreadsheet, with a scoring key, the weighted-score formula, and a decision rule.</li>
+        <li>A hard rule on security: a tool that fails a data-security or compliance check is out, no matter how high it scores elsewhere.</li>
+      </ul>
+
+      <h2>How to use it</h2>
+      <ol>
+        <li><strong>Set criteria and weights first.</strong> Before you look at a single tool, agree on what matters and how much. Starting weights are below; adjust them to your business. Weights must sum to 100%.</li>
+        <li><strong>Define what "good" looks like.</strong> For each criterion, write a plain sentence describing a 5. That is what stops scoring from turning into a popularity contest.</li>
+        <li><strong>Score each tool 1–5.</strong> Same scale, same reviewers, same evidence. Score from a real trial where you can, not from the sales deck.</li>
+        <li><strong>Multiply and total.</strong> Weighted score = raw score × weight. Add the weighted scores per tool. Highest total leads.</li>
+        <li><strong>Apply the hard fail.</strong> Cross off any tool that can't meet your data-security or compliance bar, even if it "won" on points. Then pilot the leader before you sign.</li>
+      </ol>
+
+      <h2 id="template">The template</h2>
+      <h3>1 · Weighted criteria</h3>
+      <p>These weights are a defensible starting point for most small and mid-sized businesses. Move them to match your reality — a regulated firm might push security to 30%; a solo operator might weight ease of use higher. Just keep the column summing to 100.</p>
+
+      <table>
+        <thead>
+          <tr><th>Criterion</th><th>Weight (%)</th><th>What good looks like</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Capability / fit for your use case</td><td>25</td><td>Does the actual job you need, well, on your real inputs — not just an adjacent demo task.</td></tr>
+          <tr><td>Data security &amp; privacy</td><td>20</td><td>Clear data handling, no training on your data by default, meets your compliance needs, and can prove it.</td></tr>
+          <tr><td>Accuracy / reliability</td><td>15</td><td>Consistent, correct output you can trust; errors are rare, visible, and easy to catch.</td></tr>
+          <tr><td>Ease of use &amp; adoption</td><td>15</td><td>Your team can learn it fast and will actually use it, not abandon it after week one.</td></tr>
+          <tr><td>Cost / total cost of ownership</td><td>10</td><td>Fair price including setup, training, seats, and overage — not just the sticker on the pricing page.</td></tr>
+          <tr><td>Integration with your stack</td><td>10</td><td>Connects to the tools you already run without a custom project or brittle workarounds.</td></tr>
+          <tr><td>Vendor support &amp; roadmap</td><td>5</td><td>Responsive support, a credible company, and a roadmap heading where you need it to.</td></tr>
+          <tr><td><strong>Total</strong></td><td><strong>100</strong></td><td>Weights must sum to 100%.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>2 · Worked example</h3>
+      <p>Here is the matrix filled in for three imaginary tools so you can watch the weighting do its work. These are placeholders — Tool A, B, and C — not real products, and the scores are made up to show the arithmetic. Each cell shows the raw score (1–5) and, in parentheses, the weighted score: raw × weight (as a decimal). Capability weighted 25% with a raw 5 gives 5 × 0.25 = 1.25.</p>
+
+      <table>
+        <thead>
+          <tr><th>Criterion</th><th>Weight</th><th>Tool A<br>raw (weighted)</th><th>Tool B<br>raw (weighted)</th><th>Tool C<br>raw (weighted)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Capability / fit</td><td>0.25</td><td>5 (1.25)</td><td>4 (1.00)</td><td>3 (0.75)</td></tr>
+          <tr><td>Data security &amp; privacy</td><td>0.20</td><td>4 (0.80)</td><td>5 (1.00)</td><td>2 (0.40)</td></tr>
+          <tr><td>Accuracy / reliability</td><td>0.15</td><td>4 (0.60)</td><td>4 (0.60)</td><td>3 (0.45)</td></tr>
+          <tr><td>Ease of use &amp; adoption</td><td>0.15</td><td>3 (0.45)</td><td>4 (0.60)</td><td>5 (0.75)</td></tr>
+          <tr><td>Cost / TCO</td><td>0.10</td><td>3 (0.30)</td><td>2 (0.20)</td><td>5 (0.50)</td></tr>
+          <tr><td>Integration</td><td>0.10</td><td>4 (0.40)</td><td>3 (0.30)</td><td>3 (0.30)</td></tr>
+          <tr><td>Vendor support &amp; roadmap</td><td>0.05</td><td>4 (0.20)</td><td>5 (0.25)</td><td>3 (0.15)</td></tr>
+          <tr><td><strong>Weighted total (out of 5.00)</strong></td><td><strong>1.00</strong></td><td><strong>4.00</strong></td><td><strong>3.95</strong></td><td><strong>3.30</strong></td></tr>
+        </tbody>
+      </table>
+
+      <p>Read what the weighting reveals. Tool C scored a perfect 5 on ease of use and cost — the things that feel good in a demo — but its low security score (2) dragged it to last, because security carries real weight. Tool A and Tool B finish neck and neck (4.00 vs 3.95): A leads on raw capability, B leads on security. That is the moment to stop and think, not to trust the second decimal. And note this next part carefully: if your security bar is non-negotiable and Tool C can't clear it, C is <em>disqualified</em> before totals even matter — the 3.30 is irrelevant. Points break ties among tools that pass the gate. They don't let a tool buy its way past a hard fail.</p>
+
+      <h3>3 · Copy the blank matrix</h3>
+      <p>Paste this into a spreadsheet (it splits on the pipe <code>|</code>, or retype it as columns) and score your own shortlist. Fill the weighted cells with raw × weight, then total each tool's column.</p>
+
+      <div class="tmpl-copy">
+        <button class="tmpl-copy__btn" data-copy="tmpl1" type="button">Copy</button>
+        <pre id="tmpl1">AI TOOL EVALUATION MATRIX
+
+SCORING KEY (raw score, per criterion, per tool)
+  1 = poor        does not meet the need
+  2 = weak        meets it partially, with real gaps
+  3 = adequate    gets the job done, nothing special
+  4 = strong      clearly good, minor gaps
+  5 = excellent   best-in-class for your use case
+
+FORMULA
+  Weighted score = raw score (1-5) x weight (as a decimal)
+  Example: raw 4 on a 20% criterion = 4 x 0.20 = 0.80
+  Tool total = sum of that tool's weighted scores (out of a possible 5.00)
+
+Criterion                         | Weight | Tool A (raw / wtd) | Tool B (raw / wtd) | Tool C (raw / wtd)
+Capability / fit for use case     |  0.25  |     /              |     /              |     /
+Data security & privacy           |  0.20  |     /              |     /              |     /
+Accuracy / reliability            |  0.15  |     /              |     /              |     /
+Ease of use & adoption            |  0.15  |     /              |     /              |     /
+Cost / total cost of ownership    |  0.10  |     /              |     /              |     /
+Integration with your stack       |  0.10  |     /              |     /              |     /
+Vendor support & roadmap          |  0.05  |     /              |     /              |     /
+WEIGHTED TOTAL (out of 5.00)      |  1.00  |                    |                    |
+
+DECISION NOTE
+  Highest weighted total wins -- BUT any hard fail on data security or
+  compliance is disqualifying, regardless of the total. A tool that cannot
+  meet your security bar is out before totals matter. When totals are close
+  (within ~0.15), don't trust the decimal -- run a short real pilot to break
+  the tie. Weights must sum to 1.00 (100%).</pre>
+      </div>
+
+      <div class="tmpl-email">
+        <label for="email">Want the calculating spreadsheet version emailed to you? (optional)</label>
+        <input type="email" id="email" placeholder="you@company.com" autocomplete="email">
+        <div><button class="btn btn--primary btn--sm" data-email type="button">Send it my way</button></div>
+        <p data-email-msg style="margin:.7rem 0 0;color:var(--muted);font-size:.92rem" aria-live="polite"></p>
+      </div>
+
+      <blockquote><strong>Before you commit:</strong> a tool that fails your data-security or compliance requirements is disqualified regardless of its total score — points can't buy a tool past a hard fail. Verify vendor security claims yourself; "we're SOC 2" on a slide is not proof, so ask for the report and read your own contract terms. And run a real, short pilot on your actual work before you sign — a demo shows the tool at its best, a pilot shows it at yours. This is general education, not legal advice — check your own regulatory and contractual obligations before moving any data.</blockquote>
+
+      <h2>Related</h2>
+      <div class="tmpl-related">
+        <a href="/university/tools">Tools: our running shortlist of AI tools worth a look</a>
+        <a href="/university/templates/ai-use-case-inventory">Template: AI Use Case Inventory — decide what job you're buying for before you compare tools</a>
+        <a href="/university/learn/how-to-verify-ai-outputs">Lesson: How to verify AI outputs — how to score accuracy honestly</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--ink">
+  <div class="wrap" style="text-align:center">
+    <div style="max-width:56ch;margin-inline:auto">
+      <p class="eyebrow">Work with us</p>
+      <h2>Want a second set of eyes on your shortlist?</h2>
+      <p class="lead" style="margin-inline:auto">An hour to set your weights, score the contenders together, and pressure-test the security bar, so you leave with a defensible pick and a pilot plan. Bring your shortlist; we'll bring the hard questions.</p>
+      <div class="cta-row" style="justify-content:center">
+        <a class="btn btn--on-ink" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a working session</a>
+        <a class="btn btn--outline-ink" href="/university/assessment">Get Your AI Roadmap</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div>
+        <div class="footer__brand">Aloha AI <span style="color:var(--mint)">University</span></div>
+        <p style="max-width:38ch;color:#9FB6AE">Free, practical, honest generative-AI education for modern businesses. Built by Aloha AI and RN Collins.</p>
+        <p style="margin-top:var(--s4)"><a class="btn btn--on-ink btn--sm" href="/university/assessment">Get Your AI Roadmap</a></p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/university/start-here">Start Here</a></li>
+          <li><a href="/university/learn">Learn</a></li>
+          <li><a href="/university/playbooks">Playbooks</a></li>
+          <li><a href="/university/templates">Templates</a></li>
+          <li><a href="/university/use-cases">Use Cases</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Work with us</h4>
+        <ul>
+          <li><a href="/">← Aloha AI (main site)</a></li>
+          <li><a href="/university/tools">Tools</a></li>
+          <li><a href="/university/services">Services</a></li>
+          <li><a href="/university/about">About</a></li>
+          <li><a href="/university/contact">Contact</a></li>
+          <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a Call</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer__disc"><strong>Aloha AI University</strong> is free generative-AI education for modern businesses. RN Collins is a JD candidate, not a licensed attorney. Nothing here is legal, medical, or financial advice. Every page on this site runs entirely in your browser and sends nothing anywhere.</p>
+    <p class="footer__fine">© <span id="yr">2026</span> Aloha AI. All rights reserved.</p>
+  </div>
+</footer>
+<script id="uni-js">
+/* Aloha AI University — shared behavior (progressive enhancement) */
+(function () {
+  "use strict";
+  document.documentElement.classList.add("js");
+
+  /* ---- Mobile menu ---- */
+  var burger = document.querySelector(".nav__burger");
+  var links = document.getElementById("nav-links");
+  if (burger && links) {
+    var close = function () {
+      links.classList.remove("open");
+      burger.setAttribute("aria-expanded", "false");
+    };
+    var toggle = function () {
+      var open = links.classList.toggle("open");
+      burger.setAttribute("aria-expanded", open ? "true" : "false");
+    };
+    burger.addEventListener("click", toggle);
+    links.addEventListener("click", function (e) {
+      if (e.target.closest("a")) close();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && links.classList.contains("open")) {
+        close();
+        burger.focus();
+      }
+    });
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 1000) close();
+    });
+  }
+
+  /* ---- Nav elevation on scroll ---- */
+  var nav = document.querySelector(".nav");
+  if (nav) {
+    var onScroll = function () {
+      if (window.scrollY > 8) nav.classList.add("is-stuck");
+      else nav.classList.remove("is-stuck");
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
+
+  /* ---- Reveal on scroll ---- */
+  var reveals = document.querySelectorAll(".reveal");
+  if (reveals.length && "IntersectionObserver" in window) {
+    var io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) {
+            en.target.classList.add("in");
+            io.unobserve(en.target);
+          }
+        });
+      },
+      { rootMargin: "0px 0px -8% 0px", threshold: 0.08 }
+    );
+    reveals.forEach(function (el) { io.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add("in"); });
+  }
+
+  /* ---- Current year ---- */
+  var yr = document.getElementById("yr");
+  if (yr) yr.textContent = new Date().getFullYear();
+
+  /* ---- Email reveal (footer + contact) ---- */
+  document.querySelectorAll("[data-email-reveal]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var a = ["collins", "ra"].join(".") + "@" + ["northeastern", "edu"].join(".");
+      var out = document.getElementById(btn.getAttribute("aria-controls"));
+      if (out) out.innerHTML = '<a id="email-reveal" href="mailto:' + a + '">' + a + "</a>";
+      btn.setAttribute("disabled", "disabled");
+      btn.textContent = "Email revealed";
+    });
+  });
+})();
+
+</script>
+<script>
+(function(){
+  document.querySelectorAll('.tmpl-copy__btn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var pre=document.getElementById(btn.getAttribute('data-copy'));
+      if(!pre)return;
+      var text=pre.innerText,done=function(){var o=btn.textContent;btn.textContent='Copied!';setTimeout(function(){btn.textContent=o;},1600);};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(done,fallback);}else{fallback();}
+      function fallback(){var ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');}catch(e){}document.body.removeChild(ta);done();}
+    });
+  });
+  document.querySelectorAll('[data-email]').forEach(function(sb){
+    sb.addEventListener('click',function(){
+      var msg=sb.closest('.tmpl-email').querySelector('[data-email-msg]');
+      if(msg)msg.textContent='This template runs entirely in your browser — nothing is sent or stored. Copy the block above to use it now.';
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI for Knowledge Management | Aloha AI University</title>
+<meta name="description" content="Turn scattered docs, wikis, and Slack threads into a single answer engine your team can trust. A practical AI knowledge-management workflow with tools, prompts, and review steps.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://aloha-ai-consulting.vercel.app/university/use-cases/knowledge-management">
+<meta name="theme-color" content="#0F5343">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI for Knowledge Management | Aloha AI University">
+<meta property="og:description" content="Turn scattered docs, wikis, and Slack threads into a single answer engine your team can trust.">
+<meta property="og:site_name" content="Aloha AI University">
+<meta property="og:image" content="https://aloha-ai-consulting.vercel.app/university/og-image.png">
+<meta property="og:url" content="https://aloha-ai-consulting.vercel.app/university/use-cases/knowledge-management">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI for Knowledge Management | Aloha AI University">
+<meta name="twitter:description" content="Turn scattered docs, wikis, and Slack threads into a single answer engine your team can trust.">
+<meta name="twitter:image" content="https://aloha-ai-consulting.vercel.app/university/og-image.png">
+<link rel="icon" href="/university/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style id="uni-ds">
+/* ============================================================
+   ALOHA AI UNIVERSITY — DESIGN SYSTEM  (university.css)
+   Shared stylesheet for every University page.
+   Premium, calm, high-trust. Brand-cohesive with the elevated
+   Aloha AI main site. v2.0 · 2026-07
+   ============================================================ */
+
+/* ---- 1. TOKENS ------------------------------------------- */
+:root{
+  /* Brand color */
+  --teal:#1B7A68; --teal-d:#0F5343; --teal-l:#E9F3F0; --mint:#7FE0C4;
+  --ink:#14201C; --ink-2:#25332E;
+  --cream:#F7F4EC; --cream-2:#EFEAE0; --paper:#FCFAF5; --white:#FFFFFF;
+  --muted:#4E5C56;            /* AA on cream/white */
+  --muted-ink:#B7C7C0;        /* AA on ink */
+  --line:#E4DFD3; --line-2:#C7BFAE;
+  --amber:#8A5A08; --amber-l:#FBF4E6; --amber-bd:#E4CE9E;
+
+  /* Type families */
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:"Manrope",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:"DM Mono","SFMono-Regular",Menlo,Consolas,monospace;
+
+  /* Type scale (fluid) */
+  --fs-display:clamp(2.6rem,6vw,4.4rem);
+  --fs-h1:clamp(2.2rem,5vw,3.4rem);
+  --fs-h2:clamp(1.7rem,3.4vw,2.5rem);
+  --fs-h3:1.35rem;
+  --fs-body:1.0625rem; --fs-lead:1.2rem; --fs-sm:.9rem; --fs-xs:.78rem;
+  --label:.72rem;
+
+  /* Space scale */
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px;
+  --s7:48px; --s8:64px; --s9:96px;
+
+  /* Radius, shadow, motion */
+  --r-sm:10px; --r:16px; --r-lg:22px; --r-pill:999px;
+  --sh-1:0 1px 2px rgba(20,32,28,.05);
+  --sh-2:0 2px 6px rgba(20,32,28,.05),0 14px 40px rgba(20,32,28,.08);
+  --sh-3:0 2px 4px rgba(20,32,28,.04),0 20px 52px -14px rgba(20,32,28,.16);
+  --sh-focus:0 0 0 3px rgba(27,122,104,.4);
+  --sh-focus-mint:0 0 0 3px rgba(127,224,196,.55);
+  --ease:cubic-bezier(.4,0,.2,1); --ease-out:cubic-bezier(.16,1,.3,1);
+  --dur:.24s; --dur-s:.14s;
+
+  --maxw:1120px; --measure:68ch; --nav-h:66px;
+
+  /* Editorial surfaces / gradients (within brand) */
+  --grad-hero:linear-gradient(158deg,var(--teal-d) 0%,var(--teal) 78%,#227e6b 100%);
+  --grad-ink:linear-gradient(180deg,#16241E 0%,var(--ink) 100%);
+  --grad-mint-rule:linear-gradient(90deg,var(--teal) 0%,var(--mint) 100%);
+  --texture-dot:radial-gradient(rgba(27,122,104,.05) 1px,transparent 1px);
+}
+
+/* ---- 2. BASE / RESET ------------------------------------- */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 14px);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);
+  font-size:var(--fs-body);line-height:1.65;font-weight:400;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{max-width:100%;display:block}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;letter-spacing:-.01em;line-height:1.08;margin:0;text-wrap:balance}
+h1{font-size:var(--fs-h1)} h2{font-size:var(--fs-h2)} h3{font-size:var(--fs-h3)}
+p{margin:0 0 1rem;text-wrap:pretty}
+a{color:var(--teal-d);text-underline-offset:2px;transition:color var(--dur-s) var(--ease)}
+a:hover{color:var(--teal)}
+strong{font-weight:700}
+:focus-visible{outline:none;box-shadow:var(--sh-focus);border-radius:6px}
+.section--ink :focus-visible,.hero :focus-visible{box-shadow:var(--sh-focus-mint)}
+::selection{background:var(--mint);color:var(--ink)}
+
+/* ---- 3. LAYOUT ------------------------------------------- */
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(20px,4vw,28px)}
+.section{padding-block:clamp(56px,8vw,104px);position:relative}
+.section + .section{border-top:1px solid var(--line)}
+.section--paper{background:var(--paper)}
+.section--ink{background:var(--grad-ink);color:var(--cream)}
+.section--ink h1,.section--ink h2,.section--ink h3{color:var(--cream)}
+.section--ink + .section,.section + .section--ink{border-top:0}
+.section--tint{background:var(--white)}
+/* subtle dot texture, opt-in, brand-tinted */
+.section--texture{background-image:var(--texture-dot);background-size:22px 22px}
+.section-head{max-width:var(--measure);margin-bottom:var(--s7)}
+/* accent rule system — an editorial hairline that reads intentional */
+.rule{height:2px;width:56px;border:0;border-radius:2px;background:var(--grad-mint-rule);margin:0 0 var(--s5)}
+.section--ink .rule{opacity:.9}
+.grid{display:grid;gap:var(--s5)}
+.grid-2{grid-template-columns:repeat(2,1fr)}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.grid-4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:900px){.grid-3,.grid-4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}}
+.stack-gap{margin-top:var(--s6)}
+
+/* ---- 4. TYPOGRAPHY HELPERS ------------------------------- */
+.eyebrow{font-family:var(--mono);font-size:var(--label);letter-spacing:.18em;
+  text-transform:uppercase;color:var(--teal-d);margin:0 0 var(--s4);font-weight:500;
+  display:inline-flex;align-items:center;gap:.6rem}
+.eyebrow::before{content:"";width:16px;height:2px;border-radius:2px;background:var(--grad-mint-rule);flex:none}
+.section--ink .eyebrow{color:var(--mint)}
+.section--ink .eyebrow::before{opacity:.95}
+.hero .eyebrow::before{opacity:.95}
+.display{font-size:var(--fs-display);letter-spacing:-.02em}
+.lead{font-size:var(--fs-lead);color:var(--muted);max-width:60ch;line-height:1.55}
+.section--ink .lead{color:var(--muted-ink)}
+.lead-line{font-family:var(--serif);font-size:1.4rem;color:var(--teal-d);max-width:44ch;line-height:1.3;font-weight:500}
+.mono{font-family:var(--mono)}
+.small{font-size:var(--fs-sm)} .muted{color:var(--muted)}
+.measure{max-width:var(--measure)}
+
+/* ---- 5. BUTTONS ------------------------------------------ */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  font-family:var(--mono);font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;
+  font-weight:500;text-decoration:none;cursor:pointer;
+  padding:.85rem 1.35rem;border-radius:var(--r-sm);border:1px solid transparent;
+  transition:all var(--dur) var(--ease);min-height:46px;line-height:1;white-space:nowrap}
+.btn--primary{background:var(--teal);color:#fff;box-shadow:0 1px 2px rgba(15,83,67,.28)}
+.btn--primary:hover{background:var(--teal-d);color:#fff;transform:translateY(-1px);box-shadow:0 8px 22px -6px rgba(15,83,67,.5)}
+.btn--ghost{background:transparent;border-color:var(--line-2);color:var(--ink)}
+.btn--ghost:hover{border-color:var(--teal);color:var(--teal-d);transform:translateY(-1px);box-shadow:var(--sh-1)}
+.btn--on-ink{background:var(--mint);color:var(--teal-d)}
+.btn--on-ink:hover{background:#9dedd6;color:var(--teal-d);transform:translateY(-1px);box-shadow:var(--sh-2)}
+.btn--outline-ink{background:transparent;border-color:rgba(127,224,196,.5);color:var(--cream)}
+.btn--outline-ink:hover{border-color:var(--mint);color:#fff;background:rgba(127,224,196,.1)}
+.btn--sm{padding:.55rem .9rem;min-height:40px;font-size:.7rem}
+.btn:active{transform:translateY(0)}
+.cta-row{display:flex;flex-wrap:wrap;gap:var(--s3);margin-top:var(--s6)}
+
+/* ---- 6. BADGES / TAGS ------------------------------------ */
+.badge{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--mono);
+  font-size:var(--fs-xs);letter-spacing:.05em;text-transform:uppercase;
+  padding:.3rem .65rem;border-radius:var(--r-pill);
+  border:1px solid var(--line);background:var(--white);color:var(--teal-d);font-weight:500}
+.badge--solid{background:var(--teal-l);border-color:#BADFD6}
+.section--ink .badge{background:rgba(127,224,196,.12);border-color:rgba(127,224,196,.3);color:var(--mint)}
+.price{font-family:var(--mono);font-size:var(--fs-sm);color:var(--teal-d);font-weight:500;letter-spacing:.02em}
+
+/* ---- 7. CARDS -------------------------------------------- */
+.card{position:relative;background:var(--white);border:1px solid var(--line);border-radius:var(--r);
+  padding:var(--s6);box-shadow:var(--sh-1);overflow:hidden;
+  transition:box-shadow var(--dur) var(--ease),transform var(--dur) var(--ease),border-color var(--dur) var(--ease)}
+.card h3{margin-bottom:var(--s3)}
+.card p{color:var(--muted);margin-bottom:var(--s4)}
+a.card{text-decoration:none;color:var(--ink);display:flex;flex-direction:column}
+.card--hover:hover{box-shadow:var(--sh-3);transform:translateY(-3px);border-color:var(--line-2)}
+/* an accent hairline that surfaces on hover — quiet until you touch it */
+.card--hover::after{content:"";position:absolute;left:0;right:0;top:0;height:2px;
+  background:var(--grad-mint-rule);transform:scaleX(0);transform-origin:left;opacity:0;
+  transition:transform var(--dur) var(--ease-out),opacity var(--dur) var(--ease)}
+.card--hover:hover::after{transform:scaleX(1);opacity:1}
+.card__more{margin-top:auto;font-family:var(--mono);font-size:var(--fs-xs);
+  letter-spacing:.05em;text-transform:uppercase;color:var(--teal-d);font-weight:500}
+a.card:hover .card__more{color:var(--teal)}
+.card__eyebrow{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.12em;
+  text-transform:uppercase;color:var(--teal);margin-bottom:var(--s3);font-weight:500}
+.section--paper .card{background:var(--white)}
+.section--ink .card{background:var(--ink-2);border-color:#33443C;color:var(--cream)}
+.section--ink .card p{color:var(--muted-ink)}
+
+/* ---- 8. HERO --------------------------------------------- */
+.hero{background:var(--grad-hero);
+  color:var(--cream);position:relative;overflow:hidden;border-bottom:3px solid var(--teal)}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(rgba(127,224,196,.06) 1px,transparent 1px);background-size:26px 26px;
+  -webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 72%);mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 72%)}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(60% 90% at 82% 8%,rgba(127,224,196,.16),transparent 60%)}
+.hero .wrap{position:relative;z-index:1;padding-block:clamp(64px,10vw,116px)}
+.hero .eyebrow{color:var(--mint)}
+.hero h1{color:#fff;max-width:16ch}
+.hero .lead{color:#E4F1EC;max-width:56ch;margin-top:var(--s5)}
+.hero--sm .wrap{padding-block:clamp(52px,7vw,84px)}
+
+/* ---- 9. PROSE (long-form) -------------------------------- */
+.prose{max-width:var(--measure);font-size:1.075rem}
+.prose > * + *{margin-top:1.15rem}
+.prose h2{font-size:var(--fs-h2);margin-top:2.4rem;margin-bottom:.4rem}
+.prose h3{font-size:var(--fs-h3);margin-top:1.8rem;margin-bottom:.2rem}
+.prose p{color:var(--ink);line-height:1.7}
+.prose a{text-decoration:underline}
+.prose ul,.prose ol{padding-left:1.3rem;color:var(--ink)}
+.prose li{margin-bottom:.5rem}
+.prose blockquote{border-left:3px solid var(--teal);padding:.2rem 0 .2rem 1.2rem;
+  margin:1.6rem 0;font-family:var(--serif);font-size:1.35rem;color:var(--teal-d);font-style:italic}
+.prose code{font-family:var(--mono);font-size:.86em;background:var(--cream-2);
+  padding:.12em .4em;border-radius:6px}
+.prose pre{background:var(--ink);color:var(--cream);padding:var(--s5);border-radius:var(--r);
+  overflow-x:auto;font-family:var(--mono);font-size:.85rem;line-height:1.6}
+.prose pre code{background:none;padding:0}
+.prose table{width:100%;border-collapse:collapse;font-size:var(--fs-sm);margin:1.4rem 0}
+.prose th,.prose td{text-align:left;padding:.6rem .8rem;border-bottom:1px solid var(--line)}
+.prose th{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.06em;
+  text-transform:uppercase;color:var(--teal-d);font-weight:500}
+
+/* ---- 10. ACCORDION (FAQ) --------------------------------- */
+.acc{border:1px solid var(--line);border-radius:var(--r);background:var(--white);overflow:hidden}
+.acc + .acc{margin-top:var(--s3)}
+.acc summary{list-style:none;cursor:pointer;padding:1.15rem 1.3rem;
+  font-family:var(--serif);font-size:1.25rem;font-weight:600;color:var(--ink);
+  display:flex;justify-content:space-between;gap:1rem;align-items:center;min-height:56px}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary:hover{color:var(--teal-d)}
+.acc summary::after{content:"+";font-family:var(--mono);font-size:1.4rem;color:var(--teal);
+  transition:transform var(--dur) var(--ease);flex:none;line-height:1}
+.acc[open] summary::after{transform:rotate(45deg)}
+.acc__body{padding:0 1.3rem 1.25rem;color:var(--muted);max-width:var(--measure)}
+.acc__body p:last-child{margin-bottom:0}
+
+/* ---- 11. NAV --------------------------------------------- */
+.skip{position:absolute;left:-999px;top:0;background:var(--teal-d);color:#fff;
+  padding:.7rem 1.1rem;border-radius:0 0 8px 0;z-index:200;
+  font-family:var(--mono);font-size:.82rem}
+.skip:focus{left:0;color:#fff}
+.nav{position:sticky;top:0;z-index:100;background:rgba(252,250,245,.88);
+  backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);
+  border-bottom:1px solid var(--line);height:var(--nav-h);
+  transition:box-shadow var(--dur) var(--ease),background var(--dur) var(--ease)}
+.nav.is-stuck{background:rgba(252,250,245,.94);box-shadow:0 1px 0 var(--line),0 8px 24px -14px rgba(20,32,28,.4)}
+.nav__in{max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(20px,4vw,28px);
+  height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.nav__brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--ink);
+  font-family:var(--mono);font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500}
+.nav__brand svg{flex:none}
+.nav__brand b{font-weight:500}
+.nav__brand .mk{color:var(--teal-d);font-weight:500}
+.nav__links{display:flex;align-items:center;gap:.15rem;list-style:none;margin:0;padding:0}
+.nav__links a{font-family:var(--mono);font-size:.73rem;letter-spacing:.04em;text-transform:uppercase;
+  color:var(--ink-2);text-decoration:none;padding:.5rem .55rem;border-radius:8px;white-space:nowrap}
+.nav__links a:hover{color:var(--teal-d);background:var(--teal-l)}
+.nav__links a[aria-current="page"]{color:var(--teal-d);background:var(--teal-l)}
+.nav__cta{margin-left:.35rem}
+.nav__burger{display:none;background:none;border:1px solid var(--line-2);border-radius:9px;
+  width:46px;height:46px;cursor:pointer;align-items:center;justify-content:center;color:var(--ink)}
+@media(max-width:1000px){
+  .nav__links{position:fixed;inset:var(--nav-h) 0 auto 0;flex-direction:column;align-items:stretch;
+    gap:0;background:var(--paper);border-bottom:1px solid var(--line);padding:var(--s3);
+    transform:translateY(-10px);opacity:0;visibility:hidden;
+    transition:all var(--dur) var(--ease);box-shadow:var(--sh-2);max-height:calc(100vh - var(--nav-h));overflow-y:auto}
+  .nav__links.open{opacity:1;visibility:visible;transform:translateY(0)}
+  .nav__links a{padding:.9rem .8rem;font-size:.82rem;border-radius:10px}
+  .nav__cta{margin:.5rem 0 0}
+  .nav__cta .btn{width:100%}
+  .nav__burger{display:inline-flex}
+}
+
+/* ---- 12. FOOTER ------------------------------------------ */
+.footer{background:var(--grad-ink);color:var(--muted-ink);padding-block:var(--s9) var(--s7);font-size:var(--fs-sm)}
+.footer a{color:#CFDAD5;text-decoration:none}.footer a:hover{color:#fff}
+.footer__top{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:var(--s7)}
+@media(max-width:760px){.footer__top{grid-template-columns:1fr;gap:var(--s6)}}
+.footer__brand{font-family:var(--serif);font-size:1.6rem;color:var(--cream);margin-bottom:var(--s3)}
+.footer h4{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.12em;text-transform:uppercase;
+  color:#8FA69E;margin-bottom:var(--s4);font-weight:500}
+.footer ul{list-style:none;margin:0;padding:0}.footer li{margin-bottom:.55rem}
+.footer__disc{border-left:2px solid var(--teal);padding-left:1rem;color:#9FB6AE;
+  margin-top:var(--s7);max-width:75ch;line-height:1.7;font-size:var(--fs-sm)}
+.footer__disc strong{color:#DFF0EA}
+.footer__fine{font-family:var(--mono);font-size:.68rem;color:#6C837B;margin-top:var(--s6);line-height:1.7}
+#email-reveal{color:var(--mint);font-weight:600}
+
+/* ---- 13. UTIL / MOTION ----------------------------------- */
+.js .reveal{opacity:0;transform:translateY(16px)}
+.js .reveal.in{opacity:1;transform:none;transition:opacity .6s var(--ease-out),transform .6s var(--ease-out)}
+.divider{height:1px;background:var(--line);border:0;margin-block:var(--s7)}
+.divider--accent{height:2px;background:var(--grad-mint-rule);border:0;border-radius:2px;width:100%;margin-block:var(--s7)}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1!important;transform:none!important}
+  html{scroll-behavior:auto}
+}
+
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="/university/" aria-label="Aloha AI University home">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1B7A68"/><path d="M7 15.5c2-5 3-5 5-5s3 0 5 5" stroke="#7FE0C4" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="8.5" r="1.6" fill="#7FE0C4"/></svg>
+      <span>Aloha AI <span class="mk">University</span></span>
+    </a>
+    <button class="nav__burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav__links" id="nav-links">
+      <li><a href="/university/start-here">Start Here</a></li>
+      <li><a href="/university/learn">Learn</a></li>
+      <li><a href="/university/playbooks">Playbooks</a></li>
+      <li><a href="/university/templates">Templates</a></li>
+      <li><a href="/university/use-cases" aria-current="page">Use Cases</a></li>
+      <li><a href="/university/tools">Tools</a></li>
+      <li><a href="/university/services">Services</a></li>
+      <li><a href="/university/about">About</a></li>
+      <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a Call</a></li>
+      <li class="nav__cta"><a class="btn btn--primary btn--sm" href="/university/assessment">Get Your AI Roadmap</a></li>
+    </ul>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero hero--sm">
+  <div class="wrap">
+    <p class="eyebrow">Use case</p>
+    <h1 class="display">AI for Knowledge Management</h1>
+    <p class="lead">Your team already wrote the answers. They are buried in a wiki nobody updated, a Slack thread from March, and someone's inbox. This turns that pile into an answer engine that cites its own sources — and flags the ones that have gone stale.</p>
+    <div class="cta-row">
+      <a class="btn btn--on-ink" href="/university/assessment">Get Your AI Roadmap</a>
+      <a class="btn btn--outline-ink" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a Call</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">The idea</p>
+      <h2>What this use case is</h2>
+    </div>
+    <div class="prose reveal">
+      <p>Knowledge management with AI means grounding a language model in <em>your</em> documents, so it answers from what your company actually knows rather than from the open internet. You point it at a defined set of sources — handbooks, SOPs, contracts, past tickets, product docs — and it retrieves the relevant passage, drafts an answer, and shows you which document it came from.</p>
+      <p>The pattern has a technical name, retrieval-augmented generation, and you do not need it to run this. What you need is the discipline behind it: a fixed source set, answers that cite where they came from, and one person who owns keeping the sources current. Skip any of those three and you have built a confident liar.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--paper">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Who it helps</p>
+      <h2>Who this is for</h2>
+    </div>
+    <div class="grid grid-2">
+      <div class="card reveal"><h3>Support and success teams</h3><p>Drowning in repeat questions that already have a documented answer somewhere.</p></div>
+      <div class="card reveal"><h3>Operations leads</h3><p>Who wrote the SOPs and are tired of being the human search bar for everyone else.</p></div>
+      <div class="card reveal"><h3>New hires</h3><p>In their first 90 days, needing answers without interrupting three people to get one.</p></div>
+      <div class="card reveal"><h3>Small firms and solo operators</h3><p>Whose "knowledge base" is their own memory and a folder of PDFs named final_v3.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">The problem</p>
+      <h2>The business problem it solves</h2>
+    </div>
+    <div class="prose reveal">
+      <p>Knowledge does not disappear because it is wrong. It disappears because it is scattered. A policy lives in a PDF, its exception lives in a Slack DM, and the current version lives in one person's head. When that person is out, the work stops — or worse, someone guesses.</p>
+      <p>This workflow attacks three costs directly: the hours senior people spend re-answering solved questions, the inconsistency of ten people giving ten versions of one policy, and the onboarding drag of new hires who cannot find anything. You are not buying a smarter chatbot. You are making your best answers reusable.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--paper">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Inputs</p>
+      <h2>What you need going in</h2>
+    </div>
+    <div class="grid grid-2">
+      <div class="card reveal"><h3>A defined source set</h3><p>Decide what counts as truth: which folders, which docs, which version. Exclude drafts and superseded files.</p></div>
+      <div class="card reveal"><h3>Clean, current documents</h3><p>One canonical version of each policy. Archive the rest so the model cannot cite a dead one.</p></div>
+      <div class="card reveal"><h3>A named owner</h3><p>One person responsible for adding, retiring, and correcting sources. Not a committee.</p></div>
+      <div class="card reveal"><h3>A list of real questions</h3><p>The ones your team actually asks. Pull them from tickets, or ask three colleagues what they Slack you.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Tools</p>
+      <h2>Suggested tools</h2>
+    </div>
+    <div class="grid grid-3">
+      <div class="card reveal"><h3>Google NotebookLM</h3><p>Upload your source set and ask questions grounded strictly in it. Answers link to the exact passage. Fast to start and strong for a bounded document set.</p></div>
+      <div class="card reveal"><h3>ChatGPT or Claude Projects</h3><p>Attach reference files to a workspace and pin instructions so every answer draws from them. Good when the team already lives in one of these.</p></div>
+      <div class="card reveal"><h3>Notion AI or your wiki's built-in AI</h3><p>Search and answer across pages you already maintain. The lowest lift when your knowledge already lives there.</p></div>
+    </div>
+    <div class="prose reveal" style="margin-top:var(--s6)">
+      <blockquote><strong>On sensitive content:</strong> for regulated or confidential material, read the tool's data-handling terms before you upload. Consumer tiers may use your inputs for training; business and enterprise tiers — NotebookLM Enterprise on Google Cloud, for example — keep data in your own project and do not train on it. Match the tier to the sensitivity.</blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="section section--paper">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">The workflow</p>
+      <h2>Step by step</h2>
+    </div>
+    <div class="prose reveal">
+      <ol>
+        <li><strong>Scope the source set.</strong> List every document that should count as an authoritative answer. Ruthlessly exclude anything outdated.</li>
+        <li><strong>Deduplicate and label versions.</strong> Keep one canonical copy of each policy, date it, and archive the rest out of the tool's reach.</li>
+        <li><strong>Load the sources</strong> into your chosen tool as a single named workspace or notebook.</li>
+        <li><strong>Write a grounding instruction</strong> that tells the model to answer only from the sources and to say plainly when something is not covered.</li>
+        <li><strong>Test with your real question list.</strong> Confirm every answer cites a source and matches the document.</li>
+        <li><strong>Fix the gaps.</strong> Where the model cannot answer, that is a missing document, not a model failure. Write it.</li>
+        <li><strong>Publish access</strong> to the team and set a monthly review to retire stale sources.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">The prompt</p>
+      <h2>An example prompt</h2>
+    </div>
+    <div class="prose reveal">
+      <p>Paste this as the grounding instruction for your workspace or notebook:</p>
+      <pre><code>You are our internal knowledge assistant. Answer only using the
+documents loaded into this workspace.
+
+Rules:
+- Every answer must quote or paraphrase a specific source and name
+  the document it came from.
+- If the answer is not in the sources, reply exactly:
+  "Not covered in the current sources — flag for [owner name]."
+- If two sources conflict, say so and name both. Do not pick a winner.
+- Never use outside knowledge or fill gaps with assumptions.
+
+Question: What is our refund window for annual plans, and are there
+exceptions for enterprise contracts?</code></pre>
+      <p>What good looks like back: the assistant quotes the billing policy and the MSA by name, respects the contract override, and flags that the FAQ still lists an old 14-day window. That last flag is the real payoff — it caught a documentation bug you would have shipped to a customer.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--paper">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Guardrails</p>
+      <h2>What a human still owns</h2>
+    </div>
+    <div class="grid grid-2">
+      <div class="card reveal"><h3>Verify before you trust</h3><p>For any answer that drives a customer promise, money, or a legal position, open the cited source and confirm it says what the model claims.</p></div>
+      <div class="card reveal"><h3>Own the conflicts</h3><p>When the assistant flags contradicting sources, a person decides which is correct and fixes the losing document.</p></div>
+      <div class="card reveal"><h3>Watch for confident gaps</h3><p>An answer with no citation is unverified. Treat it as the model reaching outside the sources, not as fact.</p></div>
+      <div class="card reveal"><h3>Review monthly</h3><p>Retire superseded documents so the assistant can never cite a dead policy back to your team.</p></div>
+    </div>
+    <div class="prose reveal" style="margin-top:var(--s6)">
+      <blockquote>This is not legal, medical, or financial advice. An answer grounded in your documents is a fast first draft of the truth, not a ruling. A person owns the final word.</blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Keep going</p>
+      <h2>Related template and playbook</h2>
+    </div>
+    <div class="grid grid-2">
+      <a class="card card--hover reveal" href="/university/templates"><span class="card__eyebrow">Template</span><h3>Knowledge Base Source-Set Worksheet</h3><p>Scope your sources, label the canonical versions, and assign an owner before you load a single file.</p><span class="card__more">Get template →</span></a>
+      <a class="card card--hover reveal" href="/university/playbooks/internal-knowledge-base"><span class="card__eyebrow">Playbook</span><h3>Internal Knowledge Base</h3><p>The full build, from messy folders to a maintained answer engine your whole team actually uses.</p><span class="card__more">Open playbook →</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--ink">
+  <div class="wrap" style="text-align:center">
+    <div class="reveal" style="max-width:56ch;margin-inline:auto">
+      <p class="eyebrow">Next step</p>
+      <h2>Make your best answers reusable</h2>
+      <p class="lead" style="margin-inline:auto">Get a roadmap that names your highest-value knowledge gaps and the workflow to close them first.</p>
+      <div class="cta-row" style="justify-content:center">
+        <a class="btn btn--on-ink" href="/university/assessment">Get Your AI Roadmap</a>
+        <a class="btn btn--outline-ink" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a Call</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div>
+        <div class="footer__brand">Aloha AI <span style="color:var(--mint)">University</span></div>
+        <p style="max-width:38ch;color:#9FB6AE">Free, practical, honest generative-AI education for modern businesses. Built by Aloha AI and RN Collins.</p>
+        <p style="margin-top:var(--s4)"><a class="btn btn--on-ink btn--sm" href="/university/assessment">Get Your AI Roadmap</a></p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/university/start-here">Start Here</a></li>
+          <li><a href="/university/learn">Learn</a></li>
+          <li><a href="/university/playbooks">Playbooks</a></li>
+          <li><a href="/university/templates">Templates</a></li>
+          <li><a href="/university/use-cases">Use Cases</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Work with us</h4>
+        <ul>
+          <li><a href="/">← Aloha AI (main site)</a></li>
+          <li><a href="/university/tools">Tools</a></li>
+          <li><a href="/university/services">Services</a></li>
+          <li><a href="/university/about">About</a></li>
+          <li><a href="/university/contact">Contact</a></li>
+          <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a Call</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer__disc"><strong>Aloha AI University</strong> is free generative-AI education for modern businesses. RN Collins is a JD candidate, not a licensed attorney. Nothing here is legal, medical, or financial advice. Every page on this site runs entirely in your browser and sends nothing anywhere.</p>
+    <p class="footer__fine">© <span id="yr">2026</span> Aloha AI. All rights reserved.</p>
+  </div>
+</footer>
+<script id="uni-js">
+/* Aloha AI University — shared behavior (progressive enhancement) */
+(function () {
+  "use strict";
+  document.documentElement.classList.add("js");
+
+  /* ---- Mobile menu ---- */
+  var burger = document.querySelector(".nav__burger");
+  var links = document.getElementById("nav-links");
+  if (burger && links) {
+    var close = function () {
+      links.classList.remove("open");
+      burger.setAttribute("aria-expanded", "false");
+    };
+    var toggle = function () {
+      var open = links.classList.toggle("open");
+      burger.setAttribute("aria-expanded", open ? "true" : "false");
+    };
+    burger.addEventListener("click", toggle);
+    links.addEventListener("click", function (e) {
+      if (e.target.closest("a")) close();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && links.classList.contains("open")) {
+        close();
+        burger.focus();
+      }
+    });
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 1000) close();
+    });
+  }
+
+  /* ---- Nav elevation on scroll ---- */
+  var nav = document.querySelector(".nav");
+  if (nav) {
+    var onScroll = function () {
+      if (window.scrollY > 8) nav.classList.add("is-stuck");
+      else nav.classList.remove("is-stuck");
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
+
+  /* ---- Reveal on scroll ---- */
+  var reveals = document.querySelectorAll(".reveal");
+  if (reveals.length && "IntersectionObserver" in window) {
+    var io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) {
+            en.target.classList.add("in");
+            io.unobserve(en.target);
+          }
+        });
+      },
+      { rootMargin: "0px 0px -8% 0px", threshold: 0.08 }
+    );
+    reveals.forEach(function (el) { io.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add("in"); });
+  }
+
+  /* ---- Current year ---- */
+  var yr = document.getElementById("yr");
+  if (yr) yr.textContent = new Date().getFullYear();
+
+  /* ---- Email reveal (footer + contact) ---- */
+  document.querySelectorAll("[data-email-reveal]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var a = ["collins", "ra"].join(".") + "@" + ["northeastern", "edu"].join(".");
+      var out = document.getElementById(btn.getAttribute("aria-controls"));
+      if (out) out.innerHTML = '<a id="email-reveal" href="mailto:' + a + '">' + a + "</a>";
+      btn.setAttribute("disabled", "disabled");
+      btn.textContent = "Email revealed";
+    });
+  });
+})();
+
+</script>
+</body>
+</html>

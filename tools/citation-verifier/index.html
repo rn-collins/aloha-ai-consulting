@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Citation Verifier — catch fake case cites before you file — Aloha AI</title>
+<meta name="description" content="A citation hallucination-check that flags fake, impossible, or malformed case cites before an AI-drafted brief is filed. Deterministic structural checks run in your browser; a live case-law existence check runs through the backend. By RN Collins, Aloha AI.">
+<link rel="canonical" href="https://aloha-ai-consulting.vercel.app/tools/citation-verifier">
+<meta name="theme-color" content="#14201C">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Citation Verifier — catch fake case cites before you file — Aloha AI">
+<meta property="og:description" content="Flag fabricated, impossible, and malformed case citations before an AI-drafted filing reaches a court. Deterministic checks in your browser; a live existence check through the backend.">
+<meta property="og:image" content="https://aloha-ai-consulting.vercel.app/og-image.png">
+<meta property="og:url" content="https://aloha-ai-consulting.vercel.app/tools/citation-verifier">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Citation Verifier — catch fake case cites before you file — Aloha AI">
+<meta name="twitter:description" content="A citation hallucination-check for AI-drafted filings. Deterministic structural checks plus a live case-law existence check. By RN Collins.">
+<meta name="twitter:image" content="https://aloha-ai-consulting.vercel.app/og-image.png">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<script>document.documentElement.className+=' js';</script>
+<link rel="stylesheet" href="./aloha-ds.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Citation Verifier",
+"applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://aloha-ai-consulting.vercel.app/tools/citation-verifier",
+"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+"creator":{"@type":"Person","name":"RN Collins","jobTitle":"Founder, Aloha AI",
+"description":"Neuroscientist (MS), JD candidate, and AI systems builder for regulated industries","knowsAbout":["Legal AI workflow","Citation verification","Hallucination risk","AI governance","ABA Formal Opinion 512","Administrative law"]},
+"about":"Flagging fabricated, impossible, or malformed case-law citations in AI-drafted filings before they reach a court"}
+</script>
+<style>
+  .hero{position:relative;overflow:hidden;background:var(--grad-hero);
+    color:var(--cream);padding-block:clamp(56px,8vw,104px) clamp(44px,6vw,76px);border-bottom:3px solid var(--teal)}
+  .hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(127,224,196,.05) 1px,transparent 1px);
+    background-size:26px 26px;-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 70%);mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 70%);pointer-events:none}
+  .hero>.wrap{position:relative}
+  .hero .display{color:var(--cream);max-width:19ch;margin-bottom:var(--s4)}
+  .hero .kicker{color:var(--teal-mint)}
+  .hero .lead{color:#CFDAD5;max-width:60ch}
+  .hero em{color:var(--teal-mint);font-style:normal}
+  .grad{color:var(--teal-mint)}
+  @supports((-webkit-background-clip:text) or (background-clip:text)){
+    .grad{background:linear-gradient(92deg,#7FE0C4,#CFE9DF);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  }
+  .hero__cta{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:var(--s5)}
+  .hero__answers{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:var(--s5)}
+  .hero__answers .a{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.04em;color:#CDE7DF;
+    border:1px solid #2F4A42;border-radius:var(--r-pill);padding:.4rem .8rem;background:rgba(255,255,255,.03)}
+  .hero__answers .a b{color:var(--teal-mint);font-weight:500}
+  .hero__meta{margin-top:var(--s5);font-family:var(--mono);font-size:var(--fs-xs);color:#9FB6AE;letter-spacing:.04em;line-height:1.8}
+  .hero__meta b{color:var(--cream)}
+  .livebadge{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:var(--fs-xs);
+    letter-spacing:.08em;text-transform:uppercase;color:#CDE7DF;border:1px solid #2F4A42;border-radius:var(--r-pill);padding:.34rem .72rem;margin-bottom:var(--s4)}
+  .livebadge .dot{width:7px;height:7px;border-radius:50%;background:var(--teal-mint);animation:pulse 2.2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(127,224,196,.5)}70%{box-shadow:0 0 0 7px rgba(127,224,196,0)}100%{box-shadow:0 0 0 0 rgba(127,224,196,0)}}
+  .sec-head{margin-bottom:var(--s6);max-width:72ch}
+  .sec-head .h2{margin-bottom:var(--s3)}
+  .steps{counter-reset:step;display:grid;gap:var(--s5)}
+  .step{display:grid;grid-template-columns:auto 1fr;gap:var(--s4);align-items:start}
+  .step__n{counter-increment:step;width:44px;height:44px;border-radius:12px;background:var(--teal);color:#fff;
+    font-family:var(--serif);font-size:1.3rem;display:grid;place-items:center;flex:none}
+  .step__n::before{content:counter(step)}
+  .tool-card{display:flex;flex-direction:column;height:100%}
+  .tool-card .tag{font-family:var(--mono);font-size:.6rem;letter-spacing:.09em;text-transform:uppercase;color:var(--teal-d)}
+  .tool-card h3{font-size:1.05rem;margin:.25rem 0 .35rem}
+  .tool-card p{font-size:.82rem;color:var(--muted);margin:0 0 .7rem}
+  .tool-card .go{margin-top:auto;font-family:var(--mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;color:var(--teal-d)}
+  .live-dot{width:7px;height:7px;border-radius:50%;background:var(--green);display:inline-block;margin-right:.35rem}
+
+  /* ---- verifier instrument ---- */
+  .vf{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:var(--s5);box-shadow:var(--sh-2)}
+  .vf h3{margin:0 0 .4rem}
+  .vf label.fld{display:block;font-weight:600;margin-bottom:.4rem}
+  .vf textarea{width:100%;min-height:200px;padding:12px 14px;border:1px solid var(--line);border-radius:var(--r-sm);
+    font-family:var(--mono);font-size:.86rem;line-height:1.5;resize:vertical;background:var(--paper);color:var(--ink)}
+  .vf .hint{font-size:.78rem;color:var(--muted);margin-top:.5rem}
+  .vf .btnrow{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:var(--s4)}
+  .vf .btnrow .btn{min-height:44px}
+  .gauge-wrap{display:flex;gap:var(--s5);align-items:center;flex-wrap:wrap}
+  .rgauge{position:relative;width:132px;height:132px;border-radius:50%;
+    background:conic-gradient(var(--g,var(--green)) calc(var(--pct,0)*1%), #e7e1d3 0);
+    display:grid;place-items:center;flex:0 0 auto}
+  .rgauge::after{content:"";position:absolute;inset:14px;background:#fff;border-radius:50%}
+  .rgauge .num{position:relative;z-index:1;font-family:var(--serif);font-size:2.2rem;font-weight:800;color:var(--ink)}
+  .rgauge .of{position:relative;z-index:1;font-size:.68rem;color:var(--muted);margin-top:-4px}
+  .verdict h4{margin:0 0 .25rem;font-size:1.05rem}
+  .verdict p{margin:0;color:var(--muted);font-size:.85rem}
+  ul.cites{list-style:none;margin:var(--s4) 0 0;padding:0}
+  li.cite{border:1px solid var(--line);border-left-width:5px;border-radius:var(--r-sm);padding:12px 14px;margin:10px 0;background:var(--paper)}
+  li.cite.ok{border-left-color:var(--green)}
+  li.cite.warn{border-left-color:var(--amber,#B8852B)}
+  li.cite.flag{border-left-color:var(--red)}
+  .cite-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;flex-wrap:wrap}
+  .cite-text{font-weight:700;font-family:var(--mono);font-size:.82rem}
+  .badge{font-size:.68rem;font-weight:700;padding:4px 9px;border-radius:var(--r-pill);white-space:nowrap}
+  .badge.ok{background:var(--green-l,#e4f2ee);color:var(--teal-d)}
+  .badge.warn{background:#f6ecd6;color:#7a5714}
+  .badge.flag{background:var(--red-l);color:var(--red)}
+  .reason{margin:8px 0 0;font-size:.82rem;color:#40483f}
+  .reason .k{font-weight:700;color:var(--ink)}
+  .check-tag{display:inline-block;margin-top:6px;font-size:.72rem;color:var(--muted)}
+  .check-tag code{background:#eee7d6;padding:1px 6px;border-radius:5px;font-family:var(--mono)}
+  .gate{padding:12px 14px;border-radius:var(--r-sm);font-weight:700;margin-top:.5rem}
+  .gate.blocked{background:var(--red-l);color:var(--red)}
+  .gate.clear{background:var(--green-l,#e4f2ee);color:var(--teal-d)}
+  fieldset.gateset{border:1px solid var(--line);border-radius:var(--r-sm);margin:var(--s3) 0 0;padding:12px 14px}
+  fieldset.gateset legend{font-weight:700;padding:0 6px}
+  .gaterow{display:flex;gap:10px;align-items:flex-start;padding:7px 0;min-height:44px}
+  .gaterow input{margin-top:4px;width:20px;height:20px;flex:none;accent-color:var(--teal)}
+  .gaterow label{cursor:pointer;font-size:.9rem}
+  details.live{border:1px solid var(--line);border-radius:var(--r-sm);padding:4px 14px;background:var(--paper)}
+  details.live summary{cursor:pointer;font-weight:700;padding:10px 0;min-height:44px}
+  .tokrow{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end;margin:8px 0}
+  .tokrow label{font-weight:600;display:block;margin-bottom:6px;font-size:.85rem}
+  .vf input[type=password]{min-height:44px;padding:10px 12px;border:1px solid var(--line);border-radius:var(--r-sm);min-width:260px;font-size:.85rem;background:#fff;color:var(--ink)}
+  .livemsg{margin-top:10px;font-size:.85rem;padding:10px 12px;border-radius:var(--r-sm);background:var(--green-l,#eef4f1)}
+</style>
+</head>
+<body>
+<a class="skip" href="#tool">Skip to the verifier</a>
+
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="../../index.html" aria-label="Aloha AI home">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#1B7A68"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#1B7A68" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      Aloha&nbsp;AI
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav__links" id="navlinks">
+        <li><a href="../../index.html#services">Services</a></li>
+        <li><a href="../../index.html#moat">The moat</a></li>
+        <li><a href="../../index.html#tools">Tools</a></li>
+        <li><a href="../../index.html#products">Products</a></li>
+        <li><a href="/university">University</a></li>
+        <li><a href="../../index.html#about">About</a></li>
+        <li><a href="../../legal-ai.html">Legal AI</a></li>
+        <li class="nav__cta"><a class="btn btn--primary btn--sm" href="#start">Get started →</a></li>
+      </ul>
+    </nav>
+    <button class="nav__burger" id="burger" aria-label="Open menu" aria-controls="navlinks" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+<span id="top"></span>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-h">
+  <div class="wrap">
+    <span class="livebadge"><span class="dot" aria-hidden="true"></span> Live · Legal AI · citation hallucination-check</span>
+    <p class="eyebrow kicker">Aloha AI · a practice of RN Collins</p>
+    <h1 class="display" id="hero-h">Catch the <span class="grad">fake citation</span> before it reaches the court.</h1>
+    <p class="lead">Paste an AI-drafted brief and this tool reads every US reporter citation, flags the ones that mark a fabrication (an invented reporter series, an impossible year, a malformed volume or page), and returns a risk score with a per-citation verdict. The structural checks run <em>in your browser</em> with no network call. A live existence check against real case law is one click away.</p>
+    <div class="hero__cta">
+      <a class="btn btn--primary" href="#tool">Verify a brief →</a>
+      <a class="btn btn--ghost" href="#how">See how it works</a>
+    </div>
+    <div class="hero__answers">
+      <span class="a"><b>For</b> attorneys, legal teams &amp; anyone filing AI-drafted work</span>
+      <span class="a"><b>Why</b> a fabricated cite is a sanctions headline, and an ABA-512 duty</span>
+      <span class="a"><b>Trust</b> deterministic checks in your browser; nothing leaves it unless you say so</span>
+    </div>
+    <p class="hero__meta">Built by <b>RN&nbsp;Collins</b>. Neuroscience (MS) · Administrative&nbsp;&amp; regulatory law (JD&nbsp;candidate) · AI Workflow Developer, Am Law firm</p>
+  </div>
+</section>
+
+<!-- WHY IT MATTERS -->
+<section class="section" aria-labelledby="why-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Why this exists</p>
+      <h2 class="h2" id="why-h">A hallucinated case name is a filing you can't take back</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">Since 2023, courts have sanctioned lawyers for filing AI-fabricated citations. Generic AI hallucinates worst on exactly what a legal team can't get wrong: the citation, the reporter, the year. Under ABA Formal Opinion 512, the duty to verify AI-assisted output before it reaches a court sits with a licensed attorney and cannot be handed off to a tool. This instrument is the first gate: it catches the cites that are structurally impossible before a human even reads them, so the review that follows starts from a shorter, sharper list.</p>
+    </div>
+    <div class="grid grid-2">
+      <div class="card reveal"><h3>What it flags</h3><p class="small muted">Invented reporter series (there is no <strong>F.4d</strong> or <strong>F. Supp. 5th</strong>), years that can't exist (a published opinion dated in the future), and malformed volumes or pages. These are the fingerprints a fabricated cite usually leaves.</p></div>
+      <div class="card reveal"><h3>What it can't do alone</h3><p class="small muted">A well-formed citation can still point to no real opinion. The offline engine confirms structure only. Confirming that a plausible cite matches a real case takes the live existence check, and, in every case, a licensed attorney who opens the source.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- THE TOOL -->
+<section class="section section--paper" id="tool" aria-labelledby="tool-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The instrument</p>
+      <h2 class="h2" id="tool-h">Verify the citations in a draft</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">Paste a brief or passage and run the check. The structural engine runs on your device with no network calls. Load the sample to see it flag a set of illustrative fabrications alongside a real Supreme Court cite.</p>
+    </div>
+
+    <div class="vf reveal">
+      <h3>Paste a brief or passage</h3>
+      <p class="small muted" style="margin-top:0">The verifier reads United States reporter citations, checks each one for structural defects that mark a fabrication, and returns a risk score with a per-citation verdict. This engine runs on your device with no network calls.</p>
+      <label class="fld" for="draft">Draft text</label>
+      <textarea id="draft" aria-describedby="draftHint" placeholder="Paste your brief here, or load the sample."></textarea>
+      <p class="hint" id="draftHint">Nothing you paste leaves your browser unless you deliberately trigger the optional live check below.</p>
+      <div class="btnrow">
+        <button id="runBtn" type="button" class="btn btn--primary">Verify citations</button>
+        <button id="sampleBtn" type="button" class="btn btn--outline">Load sample brief</button>
+        <button id="clearBtn" type="button" class="btn btn--ghost">Clear</button>
+      </div>
+    </div>
+
+    <div class="vf reveal" id="results" hidden aria-live="polite" style="margin-top:var(--s4)">
+      <h3>Result</h3>
+      <div class="gauge-wrap">
+        <div class="rgauge" id="gauge" role="img" aria-label="Risk score gauge">
+          <div class="num" id="scoreNum">0</div>
+          <div class="of">of 100 risk</div>
+        </div>
+        <div class="verdict" id="verdict"></div>
+      </div>
+      <ul class="cites" id="citeList"></ul>
+    </div>
+
+    <div class="vf reveal" id="gateBlock" hidden style="margin-top:var(--s4)">
+      <h3>Pre-filing attorney checklist</h3>
+      <p class="small muted" style="margin-top:0">Under ABA Formal Opinion 512, the duty to verify AI-assisted output before it reaches a court is non-delegable. This draft stays blocked until a licensed attorney confirms each item and certifies.</p>
+      <div class="gate blocked" id="gate">Filing blocked — verification incomplete.</div>
+      <fieldset class="gateset" id="checklist">
+        <legend>Attorney sign-off gate</legend>
+        <div class="gaterow"><input type="checkbox" class="gatebox" id="g1"><label for="g1">I read every citation flagged as possible fabrication and confirmed whether the opinion exists.</label></div>
+        <div class="gaterow"><input type="checkbox" class="gatebox" id="g2"><label for="g2">I personally opened the reporter volume for each unverified citation and confirmed the case, holding, and pinpoint.</label></div>
+        <div class="gaterow"><input type="checkbox" class="gatebox" id="g3"><label for="g3">I confirmed each quotation and parenthetical matches the cited source.</label></div>
+        <div class="gaterow"><input type="checkbox" class="gatebox" id="g4"><label for="g4">As a licensed attorney, I take responsibility for the accuracy of every citation in this filing.</label></div>
+      </fieldset>
+    </div>
+
+    <div class="vf reveal" style="margin-top:var(--s4)">
+      <h3>Optional: live case-law verification</h3>
+      <details class="live">
+        <summary>Connect live case-law verification (CourtListener)</summary>
+        <p class="small muted">The offline engine confirms structure. It cannot confirm that a well-formed citation points to a real opinion. A live existence check against CourtListener adds that signal. Pasting a token in a browser is meant for personal demo use only; a firm deployment routes this call through the bundled Python backend proxy so the token never sits in a browser.</p>
+        <div class="tokrow">
+          <div>
+            <label for="clToken">CourtListener API token</label>
+            <input type="password" id="clToken" autocomplete="off" placeholder="paste token for a personal demo">
+          </div>
+          <button id="liveBtn" type="button" class="btn btn--outline">Run live check</button>
+        </div>
+        <div class="livemsg" id="liveMsg" hidden></div>
+      </details>
+    </div>
+
+    <div class="vf reveal" style="margin-top:var(--s4)">
+      <h3>Audit record</h3>
+      <p class="small muted" style="margin-top:0">Download the machine-readable audit record this tool emits: a timestamp, a SHA-256 hash of the draft, every per-citation verdict, and the gate status. It mirrors the record the Python backend writes for the file.</p>
+      <div class="btnrow">
+        <button id="auditBtn" type="button" class="btn btn--outline" disabled>Download audit record</button>
+      </div>
+    </div>
+
+    <p class="small muted reveal" style="margin-top:var(--s4);max-width:72ch"><strong>Demonstration tool. Not legal advice.</strong> RN Collins is a JD candidate, not a licensed attorney. This tool assists review; a licensed attorney certifies the filing, per ABA Formal Opinion 512 and Model Rules 1.1, 3.3, 5.1, and 5.3. The sample brief mixes real citations with illustrative fabrications; the fabricated citations are invented for demonstration and do not refer to real cases.</p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="how" aria-labelledby="how-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">How it works</p>
+      <h2 class="h2" id="how-h">Deterministic checks now, live existence check next</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">Two layers, in order. The fast structural layer runs on your device and needs no network. The live layer adds the one signal structure can't give: whether a plausible-looking cite matches a real published opinion.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Parse every citation</h3><p class="muted">The engine reads US reporter citations out of the draft: volume, reporter, page, and year, plus the case name where it can find one. This runs entirely in your browser.</p></div></div>
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Check the structure</h3><p class="muted">Each cite is tested against a known-reporter allow-list and series ceilings, so an invented series like F.4d or F. Supp. 5th is caught, along with impossible years and malformed volumes or pages. A defect this clear marks a likely fabrication.</p></div></div>
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Score and gate</h3><p class="muted">Verdicts roll into a 0–100 risk score. A pre-filing checklist stays blocked until a licensed attorney certifies each item, because the ABA-512 duty to verify is non-delegable.</p></div></div>
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Confirm existence, live</h3><p class="muted">The optional live check queries CourtListener for whether each well-formed cite matches a real opinion. In a browser this is a personal demo; a firm deployment routes it through a private backend so the token never sits client-side and CORS never blocks it.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD-GEN / THE SERVICE -->
+<section class="section section--paper" id="start" aria-labelledby="offer-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">This is a demonstration of what I build</p>
+      <h2 class="h2" id="offer-h">The version I build for your firm</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">What you're using is the public, in-browser demo. A governed, firm-deployed version routes the existence check through a private backend, keeps API tokens off the client, writes a signed audit record for each filing, and integrates with the tools your team already runs. This is one gate in the verification-gated legal AI workflows I design, on any platform, Harvey included.</p>
+    </div>
+    <div class="grid grid-3 reveal">
+      <div class="card"><div class="card__ic" aria-hidden="true">1</div><h3>What I build</h3><p class="small muted">A verification-gated citation check wired into your drafting workflow: private backend for the existence check, tokens off the client, an audit record per filing, and gates placed where sanctions risk actually lives.</p></div>
+      <div class="card"><div class="card__ic" aria-hidden="true">2</div><h3>What you get</h3><ul class="small muted" style="padding-left:1.1rem;margin:.35rem 0 0"><li>A citation gate that runs inside your stack, not a browser tab</li><li>An audit trail leadership can defend</li><li>Governance mapped to ABA 512 and your conduct duties</li><li>Firm/GC or founder advisory to keep it safe over time</li></ul></div>
+      <div class="card"><div class="card__ic" aria-hidden="true">3</div><h3>How to start</h3><p class="small muted">A short scoping call. Most firms begin with a Systems Audit: the fastest proof, and it points to the workflow worth gating first.</p></div>
+    </div>
+    <div class="hero__cta reveal" style="margin-top:var(--s5)">
+      <a class="btn btn--primary" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a build / scoping call →</a>
+      <a class="btn btn--ghost" href="../../legal-ai.html">See the Legal AI Workflow pillar</a>
+    </div>
+    <p class="small muted reveal" style="margin-top:var(--s4);max-width:72ch">Related work: the <a href="../../legal-ai.html">Legal AI Workflow &amp; Governance</a> pillar covers verification-gated workflows and trust-safe governance end to end. For governed AI twins and the wider trust operating system, see <a href="https://aloha-ai-consulting.vercel.app/twins" target="_blank" rel="noopener">Trust-Safe Twins</a> and the <a href="https://aloha-ai-consulting.vercel.app/trust-stack" target="_blank" rel="noopener">Regulated Trust Stack</a>.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section--ink" id="contact" aria-labelledby="cta-h">
+  <div class="wrap" style="text-align:center">
+    <p class="eyebrow">Aloha AI · Honolulu</p>
+    <h2 class="h2" id="cta-h" style="max-width:26ch;margin-inline:auto">Ready when you are.</h2>
+    <p class="lead" style="margin:var(--s4) auto var(--s5);text-align:center">Convinced, curious, or comparing, there's a path for each.</p>
+    <div style="display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn--primary" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Start with a Systems Audit →</a>
+      <a class="btn btn--ghost" href="https://aloha-ai-consulting.vercel.app/teardowns/legal-ai-workflow" target="_blank" rel="noopener">Score your workflow risk</a>
+    </div>
+    <p class="small" style="margin-top:var(--s5);color:var(--muted-on-ink)">Prefer email? <a href="#" data-email style="color:var(--teal-mint)">Email RN</a> &nbsp;·&nbsp; or connect on <a href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noopener" style="color:var(--teal-mint)">LinkedIn</a></p>
+    <p id="emailReveal" hidden style="margin-top:.5rem;font-family:var(--mono);font-size:.8rem;color:#CFDAD5"></p>
+  </div>
+</section>
+</main>
+
+<footer class="footer" aria-labelledby="foot-h">
+  <div class="wrap">
+    <h2 id="foot-h" class="small" style="position:absolute;left:-999px">Site footer</h2>
+    <div class="footer__grid">
+      <div>
+        <a class="nav__brand" href="../../index.html" style="color:var(--cream)" aria-label="Aloha AI home"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#7FE0C4"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#7FE0C4" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg> Aloha&nbsp;AI</a>
+        <p class="small" style="margin-top:var(--s3);max-width:38ch;color:#9FB6AE">AI implementation built around how humans actually trust and use it, for regulated or reputation-sensitive professions.</p>
+      </div>
+      <div>
+        <h4>This tool</h4>
+        <ul>
+          <li><a href="#why">Why it matters</a></li>
+          <li><a href="#tool">The verifier</a></li>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#start">The build</a></li>
+          <li><a href="../../legal-ai.html">Legal AI Workflow</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Aloha AI</h4>
+        <ul>
+          <li><a href="../../index.html">The practice</a></li>
+          <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a call</a></li>
+          <li><a href="https://aloha-ai-consulting.vercel.app/tools/ai-readiness-scorecard" target="_blank" rel="noopener">Assessment</a></li>
+          <li><a href="https://rn-portfolio-khaki.vercel.app" target="_blank" rel="noopener">Portfolio → RN Builds</a></li>
+          <li><a href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="../../privacy.html">Privacy</a></li>
+          <li><a href="../../terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="disc small">Demonstration tool. Not legal advice. Aloha AI provides AI workflow design, orchestration, and governance advisory, not legal advice. RN Collins is a JD candidate, not a licensed attorney; nothing here is legal or tax advice or an attorney–client relationship. This tool assists review; a licensed attorney certifies every citation before filing, per ABA Formal Opinion 512 and Model Rules 1.1, 3.3, 5.1, and 5.3. The sample brief's fabricated citations are illustrative and do not refer to real cases.</p>
+    <p class="fine">Aloha AI · a DBA of Rayven-Nikkita Collins LLC · Honolulu, HI · No tracking, no cookies · © 2026</p>
+  </div>
+</footer>
+
+<script>
+/* =====================================================================
+   Trust-Safe engine. Ported from the Python verifier:
+   parser.py + structural.py + scorer.py. Same reporter allow-list,
+   same series ceilings, same year logic, same 0-100 scoring.
+   Runs with zero network.
+   ===================================================================== */
+(function(){
+  "use strict";
+
+  var KNOWN_REPORTERS = new Set([
+    "U.S.","S. Ct.","L. Ed.","L. Ed. 2d",
+    "F.","F.2d","F.3d","F.4th",
+    "F. Supp.","F. Supp. 2d","F. Supp. 3d",
+    "F.R.D.","B.R.","Fed. Cl.","Ct. Cl.",
+    "A.","A.2d","A.3d",
+    "N.E.","N.E.2d","N.E.3d",
+    "N.W.","N.W.2d","N.W.3d",
+    "P.","P.2d","P.3d",
+    "S.E.","S.E.2d","S.E.3d",
+    "S.W.","S.W.2d","S.W.3d",
+    "So.","So. 2d","So. 3d",
+    "Cal.","Cal. 2d","Cal. 3d","Cal. 4th","Cal. 5th",
+    "Cal. App.","Cal. App. 2d","Cal. App. 3d","Cal. App. 4th","Cal. App. 5th",
+    "Cal. Rptr.","Cal. Rptr. 2d","Cal. Rptr. 3d",
+    "N.Y.","N.Y.2d","N.Y.3d",
+    "N.Y.S.","N.Y.S.2d","N.Y.S.3d",
+    "A.D.","A.D.2d","A.D.3d",
+    "Mass.","Mass. App. Ct."
+  ]);
+
+  var SERIES_CEILING = {
+    "F.":"F.4th", "F. Supp.":"F. Supp. 3d",
+    "A.":"A.3d", "P.":"P.3d", "N.E.":"N.E.3d", "N.W.":"N.W.3d",
+    "S.E.":"S.E.3d", "S.W.":"S.W.3d", "So.":"So. 3d",
+    "Cal. App.":"Cal. App. 5th", "Cal.":"Cal. 5th", "N.Y.":"N.Y.3d"
+  };
+
+  var ORDINALS = new Set(["2d","3d","4th","5th","6th","4d","5d","3rd","2nd"]);
+
+  var MOCK_KNOWN = {
+    "384 u.s. 436":"Miranda v. Arizona",
+    "347 u.s. 483":"Brown v. Board of Education",
+    "410 u.s. 113":"Roe v. Wade",
+    "556 u.s. 662":"Ashcroft v. Iqbal",
+    "550 u.s. 544":"Bell Atlantic Corp. v. Twombly",
+    "372 u.s. 335":"Gideon v. Wainwright",
+    "5 u.s. 137":"Marbury v. Madison",
+    "163 u.s. 537":"Plessy v. Ferguson",
+    "576 u.s. 644":"Obergefell v. Hodges",
+    "531 u.s. 98":"Bush v. Gore",
+    "505 u.s. 833":"Planned Parenthood v. Casey",
+    "491 u.s. 397":"Texas v. Johnson",
+    "418 u.s. 683":"United States v. Nixon",
+    "339 u.s. 763":"Johnson v. Eisentrager",
+    "135 s. ct. 2584":"Obergefell v. Hodges"
+  };
+
+  var VERIFIED_PRIMARY = "verified_primary", UNVERIFIED = "unverified", FLAGGED = "flagged_fabrication";
+
+  function normSpace(s){ return s.replace(/\s+/g," ").trim(); }
+  function normCite(s){ return normSpace(s).toLowerCase(); }
+
+  var RTOK = "(?:[A-Za-z][A-Za-z.]*(?:\\d(?:d|th))?|\\d(?:d|th))";
+  var CITE_SRC =
+    "(\\d{1,4})\\s+" +
+    "([A-Z][A-Za-z.]*(?:\\d(?:d|th))?(?:\\s+" + RTOK + ")*)" +
+    "\\s+(\\d{1,5})" +
+    "(?:\\s*\\((?:[A-Za-z0-9.\\s]*?)(\\d{4})\\))?";
+  var CITE_RE = new RegExp(CITE_SRC, "g");
+
+  var CASE_NAME_RE = new RegExp(
+    "([A-Z][A-Za-z.'\\-]+(?:\\s+[A-Za-z.'\\-]+){0,4}\\s+v\\.\\s+" +
+    "[A-Z][A-Za-z.'\\-]+(?:\\s+[A-Za-z.'\\-]+){0,4}),?\\s*$"
+  );
+  var REPORTER_TAIL = new Set(["Supp.","App.","Ct.","Ed.","2d","3d","4th","5th","6th"]);
+
+  function parseCitations(text){
+    var results = [], m;
+    CITE_RE.lastIndex = 0;
+    while((m = CITE_RE.exec(text)) !== null){
+      if(m[0].length === 0){ CITE_RE.lastIndex++; continue; }
+      var reporter = normSpace(m[2]);
+      if(!/[A-Za-z]/.test(reporter)) continue;
+      if(reporter.indexOf(".") === -1 && !REPORTER_TAIL.has(reporter)){
+        if(!/^[A-Z][a-z]/.test(reporter)) continue;
+      }
+      var year = m[4] ? parseInt(m[4],10) : null;
+      var preceding = normSpace(text.slice(0, m.index));
+      var tail = preceding.slice(-120);
+      var cn = CASE_NAME_RE.exec(tail);
+      var caseName = cn ? cn[1].trim().replace(/,+$/,"") : null;
+      results.push({
+        raw: m[0].trim(),
+        volume: parseInt(m[1],10),
+        reporter: reporter,
+        page: parseInt(m[3],10),
+        year: year,
+        caseName: caseName,
+        start: m.index,
+        end: m.index + m[0].length
+      });
+    }
+    return results;
+  }
+
+  function citeString(c){ return c.volume + " " + normSpace(c.reporter) + " " + c.page; }
+
+  function reporterRoot(reporter){
+    var parts = reporter.split(/\s+/);
+    if(parts.length && ORDINALS.has(parts[parts.length-1])){
+      return parts.slice(0,-1).join(" ");
+    }
+    var m = reporter.match(/^(.*?[A-Za-z.])(\d(?:d|th|rd|nd))$/);
+    if(m) return m[1];
+    return reporter;
+  }
+
+  function analyzeStructure(cite, currentYear){
+    var issues = [];
+    var reporter = normSpace(cite.reporter);
+
+    if(!KNOWN_REPORTERS.has(reporter)){
+      var root = reporterRoot(reporter);
+      var ceiling = SERIES_CEILING[root];
+      if(ceiling){
+        issues.push({code:"nonexistent_reporter", severity:"high",
+          message:"Reporter '" + reporter + "' does not exist. The " + root + " series stops at " + ceiling + "."});
+      } else {
+        issues.push({code:"unknown_reporter", severity:"medium",
+          message:"Reporter '" + reporter + "' is not in the known-reporter list. Confirm the reporter abbreviation and jurisdiction."});
+      }
+    }
+
+    if(cite.year !== null && cite.year !== undefined){
+      if(cite.year > currentYear){
+        issues.push({code:"future_year", severity:"high",
+          message:"Year " + cite.year + " is in the future (current year is " + currentYear + "). A published opinion cannot carry a future date."});
+      } else if(cite.year < 1754){
+        issues.push({code:"impossible_year", severity:"high",
+          message:"Year " + cite.year + " predates American case reporting; check the citation."});
+      }
+    }
+
+    if(cite.volume <= 0){
+      issues.push({code:"malformed_volume", severity:"high", message:"Volume " + cite.volume + " is not valid."});
+    }
+    if(cite.page <= 0){
+      issues.push({code:"malformed_page", severity:"high", message:"Page " + cite.page + " is not valid."});
+    }
+    return issues;
+  }
+
+  function scoreOne(verdict){
+    if(verdict === FLAGGED) return 100;
+    if(verdict === UNVERIFIED) return 55;
+    return 0;
+  }
+
+  function verdictFor(cite, issues, existence, checkedOnline){
+    var high = issues.filter(function(i){ return i.severity === "high"; });
+    var source = existence ? existence.source : "structural-only";
+    if(high.length){
+      return {cite:cite, verdict:FLAGGED, reason:high[0].message, source:source, issues:issues, existence:existence};
+    }
+    if(existence && !existence.error){
+      if(existence.found){
+        var reason = "Matched a real published opinion";
+        if(existence.matched) reason += ": " + existence.matched;
+        reason += " (source: " + existence.source + ").";
+        if(issues.length) reason += " Note: " + issues[0].message;
+        return {cite:cite, verdict:VERIFIED_PRIMARY, reason:reason, source:source, issues:issues, existence:existence};
+      } else {
+        var r2 = "No matching opinion found in " + existence.source +
+          ". Structure is plausible but existence could not be confirmed; possible fabrication.";
+        return {cite:cite, verdict:FLAGGED, reason:r2, source:source, issues:issues, existence:existence};
+      }
+    }
+    var reason3;
+    if(issues.length){
+      reason3 = "Structural caveat: " + issues[0].message + " Existence not checked online.";
+    } else {
+      reason3 = "Structure is well formed. Existence not confirmed against a case-law source; a licensed attorney must confirm the opinion exists.";
+    }
+    return {cite:cite, verdict:UNVERIFIED, reason:reason3, source:source, issues:issues, existence:existence};
+  }
+
+  function verifyText(text, existenceMap, checkedOnline, providerName){
+    var currentYear = new Date().getFullYear();
+    var cites = parseCitations(text);
+    var verdicts = cites.map(function(c, i){
+      var issues = analyzeStructure(c, currentYear);
+      var ex = existenceMap ? existenceMap[i] : null;
+      return verdictFor(c, issues, ex || null, checkedOnline);
+    });
+    var risk = verdicts.length
+      ? Math.round(verdicts.reduce(function(s,v){ return s + scoreOne(v.verdict); }, 0) / verdicts.length)
+      : 0;
+    var counts = {}; counts[VERIFIED_PRIMARY]=0; counts[UNVERIFIED]=0; counts[FLAGGED]=0;
+    verdicts.forEach(function(v){ counts[v.verdict]++; });
+    return {riskScore:risk, citations:verdicts, counts:counts,
+            provider:providerName || "none", checkedOnline:!!checkedOnline};
+  }
+
+  function mockExistence(cites){
+    var map = {};
+    cites.forEach(function(c, i){
+      var name = MOCK_KNOWN[normCite(citeString(c))];
+      map[i] = name
+        ? {found:true, matched:name, source:"mock", error:null}
+        : {found:false, matched:null, source:"mock", error:null};
+    });
+    return map;
+  }
+
+  window.TrustSafeEngine = {
+    parseCitations: parseCitations,
+    analyzeStructure: analyzeStructure,
+    verifyText: verifyText,
+    citeString: citeString,
+    mockExistence: mockExistence,
+    VERIFIED_PRIMARY: VERIFIED_PRIMARY, UNVERIFIED: UNVERIFIED, FLAGGED: FLAGGED
+  };
+
+  /* ---------------- UI wiring ---------------- */
+  function $(id){ return document.getElementById(id); }
+
+  var SAMPLE =
+"IN THE UNITED STATES DISTRICT COURT\n" +
+"MEMORANDUM IN SUPPORT OF DEFENDANT'S MOTION\n\n" +
+"The privilege against self-incrimination requires that a suspect in custody be advised of the right to\n" +
+"remain silent. Miranda v. Arizona, 384 U.S. 436 (1966). A complaint must contain sufficient factual\n" +
+"matter to state a claim that is plausible on its face. Ashcroft v. Iqbal, 556 U.S. 662 (2009).\n\n" +
+"Defendant relies on the Ninth Circuit's reasoning in United States v. Harmon, 612 F.4d 88 (9th Cir. 2018),\n" +
+"and on the rule announced in Carter v. Reliance Holdings, 1042 F.3d 771 (2029). See also Delgado v. State\n" +
+"Insurance Fund, 991 F. Supp. 5th 44 (S.D.N.Y. 2020). The panel in Whitfield v. Amalgamated Freight,\n" +
+"733 F.3d 1201 (7th Cir. 2013), reached the same result.";
+
+  var lastReport = null, lastText = "";
+
+  function badgeFor(verdict){
+    if(verdict === VERIFIED_PRIMARY) return {cls:"ok", label:"Verified — primary source"};
+    if(verdict === UNVERIFIED) return {cls:"warn", label:"Unverified"};
+    return {cls:"flag", label:"Flagged — possible fabrication"};
+  }
+  function checkTag(v){
+    if(v.issues && v.issues.length) return v.issues[0].code;
+    if(v.verdict === FLAGGED && v.existence && !v.existence.found) return "existence_not_found";
+    if(v.verdict === VERIFIED_PRIMARY) return "existence_matched";
+    return "structural_pass";
+  }
+
+  function render(report){
+    var pct = report.riskScore;
+    var g = $("gauge");
+    var col = pct >= 50 ? "var(--red)" : (pct >= 20 ? "#B8852B" : "var(--green)");
+    g.style.setProperty("--pct", pct);
+    g.style.setProperty("--g", col);
+    g.setAttribute("aria-label", "Risk score " + pct + " of 100");
+    $("scoreNum").textContent = pct;
+
+    var flags = report.counts[FLAGGED], warns = report.counts[UNVERIFIED], ok = report.counts[VERIFIED_PRIMARY];
+    var head;
+    if(pct >= 50) head = "High risk. Do not file. One or more citations look fabricated.";
+    else if(pct >= 20) head = "Moderate risk. Unverified citations remain; read each source before filing.";
+    else if(report.citations.length) head = "Lower risk, but every citation still needs personal verification.";
+    else head = "No citations detected. If the draft should cite authority, review the text.";
+    $("verdict").innerHTML = "<h4>" + head + "</h4><p>" + report.citations.length +
+      " citation(s) parsed &middot; " + ok + " verified &middot; " + warns +
+      " unverified &middot; " + flags + " flagged. Higher score means higher risk.</p>";
+
+    var list = $("citeList"); list.innerHTML = "";
+    report.citations.forEach(function(v){
+      var b = badgeFor(v.verdict);
+      var li = document.createElement("li"); li.className = "cite " + b.cls;
+      var name = v.cite.caseName ? (v.cite.caseName + ", ") : "";
+      var top = document.createElement("div"); top.className = "cite-top";
+      var t = document.createElement("span"); t.className = "cite-text";
+      t.textContent = name + citeString(v.cite) + (v.cite.year ? (" (" + v.cite.year + ")") : "");
+      var badge = document.createElement("span"); badge.className = "badge " + b.cls; badge.textContent = b.label;
+      top.appendChild(t); top.appendChild(badge);
+      var r = document.createElement("p"); r.className = "reason";
+      r.innerHTML = '<span class="k">Reason: </span>';
+      r.appendChild(document.createTextNode(v.reason));
+      var tag = document.createElement("div"); tag.className = "check-tag";
+      tag.innerHTML = "Check fired: <code>" + checkTag(v) + "</code>";
+      li.appendChild(top); li.appendChild(r); li.appendChild(tag);
+      list.appendChild(li);
+    });
+
+    $("results").hidden = false;
+    $("gateBlock").hidden = false;
+    $("auditBtn").disabled = false;
+    resetGate();
+  }
+
+  function runOffline(){
+    var text = $("draft").value.trim();
+    if(!text){ $("draft").focus(); return; }
+    lastText = text;
+    lastReport = verifyText(text, null, false, "none");
+    render(lastReport);
+  }
+
+  function gateBoxes(){ return Array.prototype.slice.call(document.querySelectorAll(".gatebox")); }
+  function resetGate(){ gateBoxes().forEach(function(b){ b.checked = false; }); updateGate(); }
+  function updateGate(){
+    var all = gateBoxes().every(function(b){ return b.checked; });
+    var gate = $("gate");
+    if(all){ gate.className = "gate clear"; gate.textContent = "Verification complete — attorney has certified this draft for filing."; }
+    else { gate.className = "gate blocked"; gate.textContent = "Filing blocked — verification incomplete."; }
+  }
+
+  async function sha256Hex(str){
+    if(window.crypto && window.crypto.subtle){
+      var buf = await window.crypto.subtle.digest("SHA-256", new TextEncoder().encode(str));
+      return Array.prototype.map.call(new Uint8Array(buf), function(b){ return b.toString(16).padStart(2,"0"); }).join("");
+    }
+    return "unavailable-no-subtlecrypto";
+  }
+  async function buildAudit(){
+    if(!lastReport) return;
+    var hash = await sha256Hex(lastText);
+    var counts = lastReport.counts;
+    var allSigned = gateBoxes().every(function(b){ return b.checked; });
+    var record = {
+      record_version: "1.0",
+      generated_at: new Date().toISOString(),
+      draft_sha256: hash,
+      drafter: "unspecified (AI-assisted draft)",
+      tool: "citation-verifier",
+      provider: lastReport.provider,
+      checked_online: lastReport.checkedOnline,
+      risk_score: lastReport.riskScore,
+      citation_counts: counts,
+      citations: lastReport.citations.map(function(v){
+        return {
+          cite: citeString(v.cite),
+          raw: v.cite.raw,
+          case_name: v.cite.caseName,
+          year: v.cite.year,
+          verdict: v.verdict,
+          reason: v.reason,
+          source_checked: v.source,
+          structural_issues: v.issues
+        };
+      }),
+      gate: {
+        status: "blocked_until_attorney_signoff",
+        blocked: !allSigned,
+        reason: counts[FLAGGED] + " citation(s) flagged as possible fabrication, " + counts[UNVERIFIED] +
+                " unverified. Under ABA Formal Op. 512 the supervising attorney must personally verify every citation before filing.",
+        who_must_sign: "supervising licensed attorney",
+        aba_basis: "ABA Formal Opinion 512; Model Rules 1.1, 3.3, 5.1, 5.3",
+        signed_off: allSigned,
+        signed_off_by: null,
+        signed_off_at: allSigned ? new Date().toISOString() : null
+      },
+      disclaimer: "This tool assists review. It does not provide legal advice and does not certify any citation. A licensed attorney is responsible for the accuracy of every citation before filing."
+    };
+    var blob = new Blob([JSON.stringify(record, null, 2)], {type:"application/json"});
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url; a.download = "citation-audit-" + Date.now() + ".json";
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+  async function runLive(){
+    var msg = $("liveMsg");
+    msg.hidden = false;
+    if(!lastReport){ msg.textContent = "Run the offline verification first, then start the live check."; return; }
+    var token = $("clToken").value.trim();
+    if(!token){ msg.textContent = "Add a CourtListener API token to run the live check."; return; }
+    msg.textContent = "Contacting CourtListener…";
+    try{
+      var resp = await fetch("https://www.courtlistener.com/api/rest/v4/citation-lookup/", {
+        method: "POST",
+        headers: { "Authorization": "Token " + token, "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({ text: lastText }).toString()
+      });
+      if(!resp.ok){ msg.textContent = "CourtListener returned HTTP " + resp.status + ". Offline structural results stand; confirm existence another way."; return; }
+      var data = await resp.json();
+      var byCite = {};
+      if(Array.isArray(data)){
+        data.forEach(function(it){ byCite[normCite(it.citation || "")] = it; });
+      }
+      var cites = lastReport.citations.map(function(v){ return v.cite; });
+      var map = {};
+      cites.forEach(function(c, i){
+        var already = lastReport.citations[i].issues.some(function(x){ return x.severity === "high"; });
+        if(already){ map[i] = null; return; }
+        var item = byCite[normCite(citeString(c))];
+        if(!item){ map[i] = {found:false, matched:null, source:"courtlistener", error:"not returned by citation-lookup"}; return; }
+        var clusters = item.clusters || [];
+        var found = clusters.length > 0 && (item.status === 200 || item.status == null);
+        map[i] = found
+          ? {found:true, matched:(clusters[0]||{}).case_name || null, source:"courtlistener", error:null}
+          : {found:false, matched:null, source:"courtlistener", error:null};
+      });
+      lastReport = verifyText(lastText, map, true, "courtlistener");
+      render(lastReport);
+      msg.textContent = "Live check complete. Verdicts updated with CourtListener existence results.";
+    } catch(e){
+      msg.textContent = "The browser blocked the CourtListener call (likely CORS). Your offline structural results are intact. " +
+        "A firm deployment routes this call through the bundled Python backend proxy, which is not subject to the browser's cross-origin restriction.";
+    }
+  }
+
+  $("runBtn").addEventListener("click", runOffline);
+  $("sampleBtn").addEventListener("click", function(){ $("draft").value = SAMPLE; $("draft").focus(); });
+  $("clearBtn").addEventListener("click", function(){
+    $("draft").value = ""; $("results").hidden = true; $("gateBlock").hidden = true;
+    $("auditBtn").disabled = true; lastReport = null; $("draft").focus();
+  });
+  $("checklist").addEventListener("change", updateGate);
+  $("auditBtn").addEventListener("click", buildAudit);
+  $("liveBtn").addEventListener("click", runLive);
+})();
+</script>
+<script>
+  /* nav burger + is-stuck */
+  (function(){var b=document.getElementById('burger'),l=document.getElementById('navlinks');
+  function set(o){b.setAttribute('aria-expanded',o);l.classList.toggle('open',o);b.setAttribute('aria-label',o?'Close menu':'Open menu');}
+  b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true');});
+  l.addEventListener('click',function(e){if(e.target.tagName==='A')set(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});})();
+  (function(){var u='collins.ra',dm='northeastern.edu',a=u+'@'+dm,su=encodeURIComponent('Aloha AI — citation verifier inquiry');
+  document.querySelectorAll('[data-email]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();
+  try{navigator.clipboard&&navigator.clipboard.writeText(a);}catch(_){}
+  var o=document.getElementById('emailReveal');if(o){o.hidden=false;o.innerHTML='Copied ✓ &nbsp;<a href="mailto:'+a+'?subject='+su+'" style="color:#7FE0C4">'+a+'</a> &nbsp;·&nbsp; <a href="https://mail.google.com/mail/?view=cm&fs=1&to='+a+'&su='+su+'" target="_blank" rel="noopener" style="color:#7FE0C4">Open in Gmail</a>';}
+  window.location.href='mailto:'+a+'?subject='+su;});});})();
+  (function(){var nav=document.querySelector('.nav');if(!nav)return;var on=function(){nav.classList.toggle('is-stuck',window.scrollY>8);};on();window.addEventListener('scroll',on,{passive:true});})();
+  (function(){if(matchMedia('(prefers-reduced-motion:reduce)').matches){document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in');});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(e){io.observe(e);});})();
+</script>
+</body>
+</html>

@@ -27,9 +27,16 @@
 "parentOrganization":{"@type":"Organization","name":"Rayven-Nikkita Collins LLC"}}
 </script>
 <style>
-  .hero{position:relative;overflow:hidden;background:radial-gradient(130% 120% at 82% -12%,#20362d 0%,#18271F 44%,var(--ink) 80%);
-    color:var(--cream);padding-block:clamp(56px,9vw,116px) clamp(44px,6vw,84px);border-bottom:3px solid var(--teal)}
-  .hero .display{color:var(--cream);max-width:20ch;margin-bottom:var(--s4)}
+  .hero{position:relative;overflow:hidden;background:var(--grad-hero);
+    color:var(--cream);padding-block:clamp(60px,9vw,128px) clamp(48px,6vw,88px);border-bottom:3px solid var(--teal)}
+  .hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(127,224,196,.05) 1px,transparent 1px);
+    background-size:26px 26px;-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 70%);mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 70%);pointer-events:none}
+  .hero>.wrap{position:relative}
+  .hero .display{color:var(--cream);max-width:18ch;margin-bottom:var(--s4)}
+  .hero__answers{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:var(--s5)}
+  .hero__answers .a{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.04em;color:#CDE7DF;
+    border:1px solid #2F4A42;border-radius:var(--r-pill);padding:.4rem .8rem;background:rgba(255,255,255,.03)}
+  .hero__answers .a b{color:var(--teal-mint);font-weight:500}
   .hero .kicker{color:var(--teal-mint)}
   .hero .lead{color:#CFDAD5;max-width:60ch}
   .hero em{color:var(--teal-mint);font-style:normal}
@@ -59,6 +66,12 @@
   .tool-card .go{margin-top:auto;font-family:var(--mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;color:var(--teal-d)}
   .live-dot{width:7px;height:7px;border-radius:50%;background:var(--green);display:inline-block;margin-right:.35rem}
   .soon{color:var(--muted);border-color:var(--line)}
+  .cred{display:grid;grid-template-columns:repeat(5,1fr);gap:.6rem}
+  @media(max-width:820px){.cred{grid-template-columns:1fr 1fr}}
+  .cred .c{border:1px solid var(--line);border-radius:var(--r-sm);padding:.85rem;background:var(--paper)}
+  .cred .c .t{font-family:var(--serif);font-size:.98rem;color:var(--ink);margin-bottom:.15rem}
+  .cred .c .d{font-size:.76rem;color:var(--muted)}
+  .cred__foot{margin-top:var(--s4);font-size:.85rem}
 </style>
 </head>
 <body>
@@ -75,6 +88,8 @@
         <li><a href="#services">Services</a></li>
         <li><a href="#moat">The moat</a></li>
         <li><a href="#tools">Tools</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="/university">University</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li class="nav__cta"><a class="btn btn--primary btn--sm" href="#start">Get started →</a></li>
@@ -95,12 +110,34 @@
     <span class="livebadge"><span class="dot" aria-hidden="true"></span> Honolulu · working across US regulated + creative sectors</span>
     <p class="eyebrow kicker">Aloha AI · a practice of RN Collins</p>
     <h1 class="display" id="hero-h">AI built around how humans actually trust and use it.</h1>
-    <p class="lead">Most consultants install a tool and leave. I build the human system around it, so your people <em>adopt</em> it, and the facts it gives you are <em>right</em>. For regulated or reputation-sensitive professions, where a confident wrong answer is expensive.</p>
+    <p class="lead">A neuroscience-informed AI strategy and regulatory-trust practice. Most consultants install a tool and leave. I build the human system around it, so your people <em>adopt</em> it and the facts it gives you are <em>right</em>. For regulated or reputation-sensitive work, where a confident wrong answer is expensive.</p>
     <div class="hero__cta">
       <a class="btn btn--primary" href="#start">Start with a Systems Audit →</a>
       <a class="btn btn--ghost" href="#tools">See the live tools</a>
     </div>
-    <p class="hero__meta">RN Collins · Neuroscience (MS) · Administrative &amp; regulatory law (JD candidate) · 40+ AI systems shipped</p>
+    <div class="hero__answers">
+      <span class="a"><b>For</b> law firms, founders, nonprofits, funders, biopharma &amp; psychedelic-adjacent teams</span>
+      <span class="a"><b>Why</b> the citation, the quota, the statutory trigger have to be right</span>
+    </div>
+    <p class="hero__meta">RN Collins · Neuroscience (MS) · Administrative &amp; regulatory law (JD candidate) · 35+ builds shipped, several in production</p>
+  </div>
+</section>
+
+<!-- CREDIBILITY STRIP -->
+<section class="section section--paper" aria-labelledby="cred-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Why trust the work</p>
+      <h2 class="h2" id="cred-h">Credibility you can check</h2>
+    </div>
+    <div class="cred reveal">
+      <div class="c"><div class="t">Neuroscience MS</div><div class="d">Anatomy &amp; Neurobiology, Boston University School of Medicine.</div></div>
+      <div class="c"><div class="t">JD candidate</div><div class="d">Administrative &amp; regulatory law, Northeastern Law.</div></div>
+      <div class="c"><div class="t">Peer-reviewed &amp; published</div><div class="d">Peer-reviewed publications and 40+ articles across legal and design press.</div></div>
+      <div class="c"><div class="t">In the trade press</div><div class="d">Cannabis Law Report, Fat Nugs Magazine, Journal of Biophilic Design.</div></div>
+      <div class="c"><div class="t">35+ builds shipped</div><div class="d">Several in production; live, sourced, and interactive. Proof, not slideware.</div></div>
+    </div>
+    <p class="cred__foot reveal"><a href="about.html#builds-h">See the builds on About →</a> &nbsp;·&nbsp; <a href="https://rn-portfolio-khaki.vercel.app" target="_blank" rel="noopener">The full portfolio → RN Builds</a> &nbsp;·&nbsp; <a href="about.html">Read the full story →</a></p>
   </div>
 </section>
 
@@ -124,6 +161,7 @@
     <div class="sec-head reveal">
       <p class="eyebrow">What I do</p>
       <h2 class="h2" id="svc-h">Four ways to put AI to work: adopted, and trustworthy</h2>
+      <hr class="rule" aria-hidden="true">
       <p class="lead">One practice, four service lines. Start where the pain is; they connect.</p>
     </div>
     <div class="grid grid-2">
@@ -141,13 +179,14 @@
     <div class="sec-head reveal">
       <p class="eyebrow">The differentiator</p>
       <h2 class="h2" id="moat-h">A combination almost no one holds</h2>
+      <hr class="rule" aria-hidden="true">
       <p class="lead">Most AI advisors are technologists who learned some law, or lawyers who learned some AI. The edge is holding all five at once, and it can't be faked or staffed around.</p>
     </div>
     <div class="moat reveal">
       <div class="m"><div class="t">Neuroscience</div><div class="d">How people learn, trust, and adopt.</div></div>
       <div class="m"><div class="t">Regulatory law</div><div class="d">Administrative law; 30+ jurisdictions researched.</div></div>
       <div class="m"><div class="t">Domain depth</div><div class="d">Psychedelics, cannabis, biopharma, digital health.</div></div>
-      <div class="m"><div class="t">AI systems</div><div class="d">40+ tools shipped, hands-on.</div></div>
+      <div class="m"><div class="t">AI systems</div><div class="d">35+ builds shipped, several in production.</div></div>
       <div class="m"><div class="t">Pattern recognition</div><div class="d">Across all four at once.</div></div>
     </div>
   </div>
@@ -160,11 +199,13 @@
       <p class="eyebrow">Proof, not promises</p>
       <h2 class="h2" id="tools-h">Live intelligence tools</h2>
       <p class="lead">Fifteen working instruments, each sourced and interactive: the practice, demonstrated.</p>
+      <p class="reveal" style="margin-top:var(--s3)"><a class="go" style="font-family:var(--mono);font-size:var(--fs-xs);text-transform:uppercase;letter-spacing:.06em;color:var(--teal-d)" href="/tools">See all free tools, grouped by category →</a></p>
     </div>
     <div class="grid grid-3">
       <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/monitors/cannabis-rescheduling"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Intelligence</span><h3>Cannabis Rescheduling Monitor</h3><p>Model your Schedule III exposure; every figure sourced and dated.</p><span class="go">Open →</span></a>
       <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/monitors/psychedelic-radar"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Intelligence</span><h3>Psychedelic Reg Radar</h3><p>Psilocybin, MDMA & ketamine status by state and federal posture.</p><span class="go">Open →</span></a>
       <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/teardowns/legal-ai-workflow"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Legal AI</span><h3>Legal AI Workflow Teardown</h3><p>Score hallucination risk; design verification into the workflow.</p><span class="go">Open →</span></a>
+      <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/tools/citation-verifier"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Legal AI</span><h3>Citation Verifier</h3><p>Flag fake, impossible, or malformed case cites before you file an AI-drafted brief.</p><span class="go">Open →</span></a>
       <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/intelligence/brand-perception"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Brand</span><h3>Brand-Perception Intelligence</h3><p>Diagnose brand trust by mechanism, not vibes.</p><span class="go">Open →</span></a>
       <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/monitors/ai-creative-production"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Creative</span><h3>AI Creative Production Intelligence</h3><p>Turn ad-hoc AI generation into a repeatable, on-brand pipeline.</p><span class="go">Open →</span></a>
       <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/monitors/biophilic-neuroarch"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Design</span><h3>Biophilic Design Intelligence</h3><p>Score a space on salutogenic, neuroscience-grounded principles.</p><span class="go">Open →</span></a>
@@ -177,6 +218,23 @@
       <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/systems/creator-content"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Content</span><h3>Creator Content System</h3><p>Turn scattered expertise into a research-to-publication engine.</p><span class="go">Open →</span></a>
       <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/monitors/private-ai-risk"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Risk</span><h3>Private-AI &amp; Data-Retention Risk</h3><p>Score your data-exposure risk across deployment modes.</p><span class="go">Open →</span></a>
       <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/tools/practice-readiness"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Strategy</span><h3>AI Practice-Readiness Scorecard</h3><p>Build the practice in-house, or have it built and handed over? Score six dimensions.</p><span class="go">Open →</span></a>
+      <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/twins/exposure-check"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Twins</span><h3>Is Your AI Twin Legally Exposed?</h3><p>Six-minute exposure screen for AI twins and AI-UGC, scored in your browser.</p><span class="go">Open →</span></a>
+      <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/twins"><span class="tag">New · Service line</span><h3>Trust-Safe Twins</h3><p>Governed AI twins for regulated professions: consent, provenance, disclosure, substantiation.</p><span class="go">Open →</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS / SELF-SERVE -->
+<section class="section section--paper" id="products" aria-labelledby="prod-self-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Products · self-serve</p>
+      <h2 class="h2" id="prod-self-h">The Regulated Trust Stack</h2>
+      <p class="lead">Six layers, one operating system for earning trust in regulated markets: ground truth, applied intelligence, compliance, production, persuasion, defense. Buy a single layer, take the whole stack, or run the free diagnostic first.</p>
+    </div>
+    <div class="grid grid-3">
+      <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/trust-stack"><span class="tag">New · Self-serve</span><h3>The Regulated Trust Stack</h3><p>All six layers as one bundle, priced below the sum of the parts, plus every layer on its own.</p><span class="go">Open →</span></a>
+      <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/trust-stack/leak-check"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Diagnostic</span><h3>Where Is Your Trust Stack Leaking?</h3><p>A six-layer self-assessment that returns your weakest layer in five minutes, scored in your browser.</p><span class="go">Open →</span></a>
     </div>
   </div>
 </section>
@@ -197,6 +255,22 @@
   </div>
 </section>
 
+<!-- UNIVERSITY -->
+<section class="section section--ink" id="university" aria-labelledby="uni-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Free education</p>
+      <h2 class="h2" id="uni-h">Aloha AI University</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">Learn practical generative AI for your business, free: foundations, workflows, playbooks, templates, and safe-use governance. When you want it built properly inside your business, that is what I do.</p>
+    </div>
+    <div class="hero__cta">
+      <a class="btn btn--primary" href="/university">Start learning free →</a>
+      <a class="btn btn--ghost" href="/university/assessment">Get your AI roadmap</a>
+    </div>
+  </div>
+</section>
+
 <!-- ABOUT -->
 <section class="section" id="about" aria-labelledby="about-h">
   <div class="wrap grid grid-2">
@@ -205,7 +279,7 @@
       <h2 class="h2" id="about-h" style="margin-bottom:var(--s3)">The person behind the practice</h2>
       <p class="muted">RN Collins is a neuroscientist (MS, Anatomy &amp; Neurobiology), a JD candidate in administrative and regulatory law, and a hands-on AI systems builder. Before building AI for regulated organizations, RN did regulatory and compliance work inside psychedelic clinical science and legal AI workflow inside an Am Law firm.</p>
       <p class="muted">That combination of how humans trust, what the rules are, and how to build the system is what Aloha AI runs on.</p>
-      <p><a class="btn btn--outline" href="about.html">Read the full story →</a></p>
+      <p><a class="btn btn--outline" href="about.html">Read the full story →</a> <a class="btn btn--outline" href="https://rn-portfolio-khaki.vercel.app" target="_blank" rel="noopener">See the builds → RN Builds</a></p>
     </div>
     <div class="reveal">
       <div class="card">
@@ -215,8 +289,8 @@
           <li>JD candidate, Northeastern Law</li>
           <li>Regulatory/compliance, psychedelic clinical science</li>
           <li>AI Workflow Developer, Am Law firm (Harvey)</li>
-          <li>Peer-reviewed articles + book chapters (in press)</li>
-          <li>40+ AI tools &amp; live intelligence systems shipped</li>
+          <li>Peer-reviewed publications + 40+ articles across legal and design press</li>
+          <li>35+ builds shipped, several in production</li>
         </ul>
       </div>
     </div>
@@ -286,6 +360,7 @@
           <li><a href="content.html">Content &amp; Adoption Systems</a></li>
           <li><a href="legal-ai.html">Legal AI Workflow</a></li>
           <li><a href="#tools">Live tools</a></li>
+          <li><a href="/tools">All free tools</a></li>
         </ul>
       </div>
       <div>
@@ -319,6 +394,7 @@
   try{navigator.clipboard&&navigator.clipboard.writeText(a);}catch(_){}
   var o=document.getElementById('emailReveal');if(o){o.hidden=false;o.innerHTML='Copied ✓ &nbsp;<a href="mailto:'+a+'?subject='+su+'" style="color:#7FE0C4">'+a+'</a> &nbsp;·&nbsp; <a href="https://mail.google.com/mail/?view=cm&fs=1&to='+a+'&su='+su+'" target="_blank" rel="noopener" style="color:#7FE0C4">Open in Gmail</a>';}
   window.location.href='mailto:'+a+'?subject='+su;});});})();
+  (function(){var nav=document.querySelector('.nav');if(!nav)return;var on=function(){nav.classList.toggle('is-stuck',window.scrollY>8);};on();window.addEventListener('scroll',on,{passive:true});})();
   (function(){if(matchMedia('(prefers-reduced-motion:reduce)').matches){document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in');});return;}
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
   document.querySelectorAll('.reveal').forEach(function(e){io.observe(e);});})();

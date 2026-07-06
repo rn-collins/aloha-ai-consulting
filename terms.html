@@ -56,6 +56,8 @@
         <li><a href="index.html#services">Services</a></li>
         <li><a href="index.html#moat">The moat</a></li>
         <li><a href="index.html#tools">Tools</a></li>
+        <li><a href="index.html#products">Products</a></li>
+        <li><a href="/university">University</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="index.html#faq">FAQ</a></li>
         <li class="nav__cta"><a class="btn btn--primary btn--sm" href="index.html#start">Get started →</a></li>
@@ -168,6 +170,7 @@
   b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true');});
   l.addEventListener('click',function(e){if(e.target.tagName==='A')set(false);});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});})();
+  (function(){var nav=document.querySelector('.nav');if(!nav)return;var on=function(){nav.classList.toggle('is-stuck',window.scrollY>8);};on();window.addEventListener('scroll',on,{passive:true});})();
   (function(){var u='collins.ra',dm='northeastern.edu',a=u+'@'+dm,su=encodeURIComponent('Aloha AI — terms inquiry');
   document.querySelectorAll('[data-email]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();
   try{navigator.clipboard&&navigator.clipboard.writeText(a);}catch(_){}

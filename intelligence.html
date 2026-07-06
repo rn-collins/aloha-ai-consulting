@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Regulatory & Market Intelligence — Aloha AI</title>
+<title>Regulatory &amp; Market Intelligence — Aloha AI</title>
 <meta name="description" content="Primary-source regulatory, scientific, policy, and competitive intelligence resolved into decisions you can put in a filing — for regulated or reputation-sensitive professions. By RN Collins, Aloha AI.">
 <link rel="canonical" href="https://aloha-ai-consulting.vercel.app/intelligence">
 <meta name="theme-color" content="#14201C">
@@ -27,16 +27,35 @@
 "provider":{"@type":"Person","name":"RN Collins","jobTitle":"Founder, Aloha AI","description":"Neuroscientist (MS), JD candidate, and AI systems builder for regulated industries","knowsAbout":["Regulatory intelligence","Competitive intelligence","Administrative law","Primary-source research","AI adoption"]},
 "brand":{"@type":"Organization","name":"Aloha AI"}}
 </script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Is this legal advice?","acceptedAnswer":{"@type":"Answer","text":"No. Aloha AI provides regulatory intelligence and AI systems, not legal advice. RN Collins is a JD candidate, not a licensed attorney, and nothing here creates an attorney–client relationship or grounds for reliance. The work is built to support the licensed professionals who do give that advice."}},
+{"@type":"Question","name":"How current is the regulatory content?","acceptedAnswer":{"@type":"Answer","text":"Every figure carries the source and the date it was retrieved, so it reflects a point in time. Regulatory records move; on a retainer, monitors re-check their primary sources on a schedule. Always confirm any figure against the operative source before relying on it."}},
+{"@type":"Question","name":"What counts as a primary source?","acceptedAnswer":{"@type":"Answer","text":"The Federal Register, the CFR, agency dockets and orders, court filings, and peer-reviewed science — the operative record itself, not a summary of it. Every claim traces back to one, with a retrieval date."}},
+{"@type":"Question","name":"Which sectors does this cover?","acceptedAnswer":{"@type":"Answer","text":"Regulated operators (cannabis, psychedelics, biopharma, digital health, legal) and reputation-sensitive fields (brand, IP, culture). The common thread: the facts have to be right, and a confident wrong answer is expensive."}}
+]}
+</script>
 <style>
-  .hero{position:relative;overflow:hidden;background:radial-gradient(130% 120% at 82% -12%,#20362d 0%,#18271F 44%,var(--ink) 80%);
-    color:var(--cream);padding-block:clamp(48px,8vw,92px) clamp(40px,6vw,72px);border-bottom:3px solid var(--teal)}
-  .hero .display{color:var(--cream);max-width:18ch;margin-bottom:var(--s4)}
+  .hero{position:relative;overflow:hidden;background:var(--grad-hero);
+    color:var(--cream);padding-block:clamp(56px,8.5vw,116px) clamp(44px,6vw,80px);border-bottom:3px solid var(--teal)}
+  .hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(127,224,196,.05) 1px,transparent 1px);
+    background-size:26px 26px;-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 70%);mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 70%);pointer-events:none}
+  .hero>.wrap{position:relative}
+  .hero .display{color:var(--cream);max-width:19ch;margin-bottom:var(--s4)}
   .hero .kicker{color:var(--teal-mint)}
-  .hero .lead{color:#CFDAD5;max-width:58ch}
+  .hero .lead{color:#CFDAD5;max-width:60ch}
   .hero em{color:var(--teal-mint);font-style:normal}
   .hero__cta{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:var(--s5)}
   .hero__meta{margin-top:var(--s5);font-family:var(--mono);font-size:var(--fs-xs);color:#9FB6AE;letter-spacing:.04em;line-height:1.8}
   .hero__meta b{color:var(--cream)}
+  .hero__answers{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:var(--s5)}
+  .hero__answers .a{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.04em;color:#CDE7DF;
+    border:1px solid #2F4A42;border-radius:var(--r-pill);padding:.4rem .8rem;background:rgba(255,255,255,.03)}
+  .hero__answers .a b{color:var(--teal-mint);font-weight:500}
+  .livebadge{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:var(--fs-xs);
+    letter-spacing:.08em;text-transform:uppercase;color:#CDE7DF;border:1px solid #2F4A42;border-radius:var(--r-pill);padding:.34rem .72rem;margin-bottom:var(--s4)}
+  .livebadge .dot{width:7px;height:7px;border-radius:50%;background:var(--teal-mint);animation:pulse 2.2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(127,224,196,.5)}70%{box-shadow:0 0 0 7px rgba(127,224,196,0)}100%{box-shadow:0 0 0 0 rgba(127,224,196,0)}}
   .sec-head{margin-bottom:var(--s6);max-width:72ch}
   .sec-head .h2{margin-bottom:var(--s3)}
   .tool-card{display:flex;flex-direction:column;height:100%}
@@ -44,6 +63,7 @@
   .tool-card h3{font-size:1.05rem;margin:.25rem 0 .35rem}
   .tool-card p{font-size:.82rem;color:var(--muted);margin:0 0 .7rem}
   .tool-card .go{margin-top:auto;font-family:var(--mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;color:var(--teal-d)}
+  .tool-card:hover .go{text-decoration:underline}
   .live-dot{width:7px;height:7px;border-radius:50%;background:var(--green);display:inline-block;margin-right:.35rem}
   .soon{color:var(--muted);border-color:var(--line)}
   .steps{counter-reset:step;display:grid;gap:var(--s5)}
@@ -51,6 +71,12 @@
   .step__n{counter-increment:step;width:44px;height:44px;border-radius:12px;background:var(--teal);color:#fff;
     font-family:var(--serif);font-size:1.3rem;display:grid;place-items:center;flex:none}
   .step__n::before{content:counter(step)}
+  /* provenance sample ledger */
+  .prov{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;margin-top:var(--s5)}
+  @media(max-width:820px){.prov{grid-template-columns:1fr 1fr}}
+  .prov .p{border:1px solid #2F4A42;border-radius:var(--r-sm);padding:.9rem;background:rgba(255,255,255,.03)}
+  .prov .p .t{font-family:var(--serif);font-size:1rem;color:var(--cream);margin-bottom:.2rem}
+  .prov .p .d{font-size:.78rem;color:var(--muted-on-ink)}
 </style>
 </head>
 <body>
@@ -67,8 +93,10 @@
         <li><a href="index.html#services">Services</a></li>
         <li><a href="index.html#moat">The moat</a></li>
         <li><a href="index.html#tools">Tools</a></li>
+        <li><a href="index.html#products">Products</a></li>
+        <li><a href="/university">University</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li class="nav__cta"><a class="btn btn--primary btn--sm" href="#start">Get started →</a></li>
       </ul>
     </nav>
@@ -84,66 +112,98 @@
 <!-- HERO -->
 <section class="hero" aria-labelledby="hero-h">
   <div class="wrap">
+    <span class="livebadge"><span class="dot" aria-hidden="true"></span> Live monitors · sourced &amp; dated · re-checked on a schedule</span>
     <p class="eyebrow kicker">Regulatory &amp; Market Intelligence</p>
     <h1 class="display" id="hero-h">Intelligence you can put in a filing, not a headline scraper.</h1>
-    <p class="lead">Generic AI hallucinates worst on exactly the things that matter: the citation, the quota, the statutory trigger. I build primary-source monitors that track the regulatory, scientific, policy, and competitive record and <em>resolve it into decisions</em>. Every figure is sourced, dated, and confidence-scored, so it holds up in a funder update <em>and</em> in a filing. For regulated or reputation-sensitive professions.</p>
+    <p class="lead">Generic AI is wrong most often on the exact things that carry weight: the citation, the quota, the statutory trigger. I build primary-source monitors that track the regulatory, scientific, policy, and competitive record and <em>resolve it into decisions</em>. Every figure is sourced, dated, and confidence-scored, so it holds up in a funder update <em>and</em> in a filing. For regulated or reputation-sensitive professions.</p>
     <div class="hero__cta">
-      <a class="btn btn--primary" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Start with a Systems Audit →</a>
-      <a class="btn btn--ghost" href="#tools">See the tools</a>
+      <a class="btn btn--primary" href="#start">Start with a Systems Audit →</a>
+      <a class="btn btn--ghost" href="#tools">See the live monitors</a>
+    </div>
+    <div class="hero__answers">
+      <span class="a"><b>For</b> counsel, regulatory affairs, founders, funders &amp; boards</span>
+      <span class="a"><b>Grounded in</b> the Federal Register, CFR, dockets, agency orders &amp; peer-reviewed science</span>
     </div>
     <p class="hero__meta">RN&nbsp;Collins · Neuroscience (MS) · Administrative&nbsp;&amp; regulatory law (JD&nbsp;candidate) · 30+ jurisdictions researched</p>
   </div>
 </section>
 
-<!-- WHAT THIS COVERS -->
+<!-- WHAT REGULATORY INTELLIGENCE MEANS HERE -->
 <section class="section" aria-labelledby="cov-h">
   <div class="wrap">
     <div class="sec-head reveal">
-      <p class="eyebrow">What this covers</p>
+      <p class="eyebrow">What this means here</p>
       <h2 class="h2" id="cov-h">Two kinds of intelligence, one standard of proof</h2>
-      <p class="lead">This pillar tracks both the rules and the field. Whether the question is a regulatory shift or a competitor's move, the answer is grounded in primary sources and resolved into something you can act on.</p>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">Regulatory intelligence here is a discipline, not a feed. It tracks both the rules and the field, and whether the question is a regulatory shift or a competitor's move, the answer traces to a primary source and resolves into something you can act on.</p>
     </div>
     <div class="grid grid-2">
-      <div class="card reveal"><h3>Regulatory, scientific &amp; policy intelligence</h3><p class="small muted">Primary-source monitoring of the record that governs you: Federal Register, CFR, dockets, agency orders, scientific and policy developments, captured with source and retrieval date, then resolved into what changes, for whom, with what confidence.</p></div>
+      <div class="card reveal"><h3>Regulatory, scientific &amp; policy intelligence</h3><p class="small muted">Primary-source monitoring of the record that governs you: the Federal Register, CFR, dockets, agency orders, and scientific and policy developments, each captured with its source and retrieval date, then resolved into what changes, for whom, and with what confidence.</p></div>
       <div class="card reveal"><h3>Market &amp; competitive intelligence</h3><p class="small muted">The same rigor turned on your field: who's moving, what's shifting, where the openings are, and, where it matters, IP and brand-protection exposure mapped to the statutes. Decisions, not a dashboard you rent.</p></div>
     </div>
-    <p class="small muted reveal" style="margin-top:var(--s4);max-width:70ch"><strong>The through-line.</strong> Every monitor runs the same pipeline: capture primary sources, resolve them into an operator-ready decision layer, then re-check on a schedule so the facts stay right next month, not just today.</p>
+    <p class="small muted reveal" style="margin-top:var(--s5);max-width:70ch"><strong>The through-line.</strong> Every monitor runs the same pipeline: capture primary sources, resolve them into an operator-ready decision layer, then re-check on a schedule so the facts stay right next month, not only today.</p>
   </div>
 </section>
 
-<!-- TOOLS -->
-<section class="section section--paper" id="tools" aria-labelledby="tools-h">
+<!-- MONITORS / INSTRUMENTS -->
+<section class="section section--paper section--texture" id="tools" aria-labelledby="tools-h">
   <div class="wrap">
     <div class="sec-head reveal">
-      <p class="eyebrow">The tools that prove it</p>
+      <p class="eyebrow">The instruments that prove it</p>
       <h2 class="h2" id="tools-h">Live monitors, each sourced and interactive</h2>
-      <p class="lead">Working instruments from this pillar: the practice, demonstrated. Every figure traces to a primary source with a retrieval date.</p>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">Working instruments from this pillar: the practice, demonstrated. Every figure traces to a primary source with a retrieval date, and each monitor reflects a point in time you can check.</p>
     </div>
     <div class="grid grid-3">
       <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/monitors/cannabis-rescheduling"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Regulatory</span><h3>Cannabis Rescheduling Monitor</h3><p>Model your Schedule III exposure; every figure sourced and dated.</p><span class="go">Open →</span></a>
       <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/monitors/psychedelic-radar"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Regulatory</span><h3>Psychedelic Regulatory Radar</h3><p>Psilocybin, MDMA &amp; ketamine status by state and federal posture.</p><span class="go">Open →</span></a>
+      <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/monitors/biopharma-regulatory-intelligence"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Regulatory</span><h3>Biopharma Regulatory Intelligence Layer</h3><p>Model your program's regulatory surface; every signal sourced and dated.</p><span class="go">Open →</span></a>
+      <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/monitors/suppression-audit"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Content</span><h3>Content Suppression Audit</h3><p>Diagnose platform throttling; recover reach with a defensible method.</p><span class="go">Open →</span></a>
+      <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/monitors/market-intel"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Market</span><h3>Market &amp; Competitive Intelligence Monitor</h3><p>Track the field: who's moving, what's shifting, where the openings are.</p><span class="go">Open →</span></a>
       <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/intelligence/brand-perception"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Market</span><h3>Brand-Perception AI Intelligence</h3><p>Diagnose brand trust by mechanism, not vibes.</p><span class="go">Open →</span></a>
       <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/monitors/luxury-ip"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · IP</span><h3>Luxury Brand Protection Intelligence</h3><p>Score IP &amp; counterfeit exposure, mapped to the statutes.</p><span class="go">Open →</span></a>
-      <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/monitors/biopharma-regulatory-intelligence"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Regulatory</span><h3>Biopharma Regulatory Intelligence Layer</h3><p>Full-stack regulatory intelligence for biopharma programs, sourced and dated.</p><span class="go">Open →</span></a>
-      <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/monitors/market-intel"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Market</span><h3>Market &amp; Competitive Intelligence Monitor</h3><p>Track the field: who's moving, what's shifting, where the openings are.</p><span class="go">Open →</span></a>
+      <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/monitors/arts-culture"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Culture</span><h3>Arts &amp; Cultural Intelligence</h3><p>Read collections and audiences with cultural precision.</p><span class="go">Open →</span></a>
+      <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/monitors/private-ai-risk"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Risk</span><h3>Private-AI &amp; Data-Retention Risk</h3><p>Score your data-exposure risk across deployment modes.</p><span class="go">Open →</span></a>
+      <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/tools/citation-verifier"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Legal AI</span><h3>Citation Verifier</h3><p>Flag fabricated or impossible case cites in an AI-drafted brief before it's filed.</p><span class="go">Open →</span></a>
     </div>
+    <p class="small muted reveal" style="margin-top:var(--s5)">Looking for the full set across every pillar? <a href="index.html#tools">See all live tools on the practice page →</a></p>
   </div>
 </section>
 
-<!-- HOW YOU BUY IT -->
-<section class="section" id="buy" aria-labelledby="buy-h">
+<!-- METHOD / PROVENANCE -->
+<section class="section section--ink" id="method" aria-labelledby="prov-h">
   <div class="wrap">
     <div class="sec-head reveal">
-      <p class="eyebrow">How you buy it</p>
-      <h2 class="h2" id="buy-h">How this pillar is packaged</h2>
-      <p class="lead">Any pillar can be delivered as any offer. Most intelligence engagements start with an Audit, then move to a tailored Build kept live on a retainer, or a self-serve tool you run yourself.</p>
+      <p class="eyebrow">Method &amp; provenance</p>
+      <h2 class="h2" id="prov-h">Primary-source discipline, so a figure survives scrutiny</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">The reason a number holds up is that you can trace it. Every claim in a monitor carries where it came from and when it was pulled, because a figure without provenance is a liability in a regulated setting.</p>
     </div>
-    <div class="grid grid-4 keep-2 reveal">
-      <div class="card"><span class="chip chip--src">Start here</span><h3 style="margin-top:.5rem">Systems Audit</h3><p class="small muted">I map where you're flying blind on the record, and hand you a prioritized intelligence plan.</p><p class="mono small" style="color:var(--teal-d);margin:.3rem 0 0">$1,500–$2,500 · 2 weeks</p></div>
-      <div class="card"><h3>Build</h3><p class="small muted">A private monitor scoped to your program or market: sourced, dated, confidence-scored, and handed to you.</p><p class="mono small" style="color:var(--teal-d);margin:.3rem 0 0">$5,000–$10,000 · 4–6 weeks</p></div>
-      <div class="card"><h3>Fractional AI Chief of Staff</h3><p class="small muted">I keep the intelligence live and run it into your decisions on an ongoing cadence.</p><p class="mono small" style="color:var(--teal-d);margin:.3rem 0 0">From $4,000/mo</p></div>
-      <div class="card"><h3>Self-serve tools</h3><p class="small muted">Use a live monitor above and run it yourself: the productized floor beneath the done-for-you work.</p><p class="mono small" style="color:var(--teal-d);margin:.3rem 0 0">From $127</p></div>
+    <div class="prov reveal">
+      <div class="p"><div class="t">Source</div><div class="d">The operative record itself: Federal Register, CFR, dockets, agency orders, court filings, peer-reviewed science.</div></div>
+      <div class="p"><div class="t">Retrieval date</div><div class="d">Every figure is stamped with when it was pulled, so it reads as a point in time you can re-verify.</div></div>
+      <div class="p"><div class="t">Confidence</div><div class="d">Each signal is scored as settled, contested, or projected, so certainty is never overstated.</div></div>
+      <div class="p"><div class="t">Re-check cadence</div><div class="d">On a retainer, sources are re-pulled on a schedule; a change in the record surfaces as an alert, not a surprise.</div></div>
     </div>
+    <p class="small reveal" style="margin-top:var(--s5);color:var(--muted-on-ink);max-width:72ch">Time-dated regulatory content reflects the record as of its retrieval date and can move afterward. Confirm any figure against the operative source before relying on it. This is regulatory intelligence and AI systems work, not legal advice, and nothing here creates grounds for reliance.</p>
+  </div>
+</section>
+
+<!-- WHY TRUST IT -->
+<section class="section" aria-labelledby="trust-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Why trust the work</p>
+      <h2 class="h2" id="trust-h">Built by someone trained to read the record</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">Regulatory intelligence is only as good as the person reading the primary source. The background here is neuroscience and regulated science on one side, administrative and regulatory law on the other, with the AI systems built in-house.</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card reveal"><h3 class="h3">Regulated-science training</h3><p class="small muted">Neuroscience (MS, Anatomy &amp; Neurobiology, Boston University) plus regulatory and compliance work inside psychedelic clinical science. Reading a scientific record for what it does and does not support is the day job.</p></div>
+      <div class="card reveal"><h3 class="h3">Administrative-law fluency</h3><p class="small muted">A JD candidate in administrative and regulatory law, with 30+ jurisdictions researched. Dockets, agency orders, and the Federal Register are the native material, not a foreign format.</p></div>
+      <div class="card reveal"><h3 class="h3">Systems built in-house</h3><p class="small muted">35+ builds shipped, several in production. The monitors on this page are built and maintained hands-on, so the method is demonstrable, not described.</p></div>
+    </div>
+    <p class="small muted reveal" style="margin-top:var(--s4)"><a href="about.html">Read the full story →</a> &nbsp;·&nbsp; <a href="https://rn-portfolio-khaki.vercel.app" target="_blank" rel="noopener">See the builds → RN Builds</a></p>
   </div>
 </section>
 
@@ -153,6 +213,7 @@
     <div class="sec-head reveal">
       <p class="eyebrow">Who it's for</p>
       <h2 class="h2" id="aud-h">Built for regulated or reputation-sensitive professions</h2>
+      <hr class="rule" aria-hidden="true">
     </div>
     <div class="grid grid-4 keep-2">
       <div class="card reveal"><h3 class="h3">Regulated operators</h3><p class="small muted">Cannabis, psychedelics, biopharma, digital health, who can't afford a confident wrong answer.</p></div>
@@ -164,27 +225,47 @@
 </section>
 
 <!-- HOW IT WORKS -->
-<section class="section" id="method" aria-labelledby="how-h">
+<section class="section" id="how" aria-labelledby="how-h">
   <div class="wrap">
     <div class="sec-head reveal">
       <p class="eyebrow">How it works</p>
       <h2 class="h2" id="how-h">Audit → scope → build &amp; run</h2>
+      <hr class="rule" aria-hidden="true">
       <p class="lead">The same path every engagement follows. Fast to prove, clear to continue.</p>
     </div>
     <div class="steps">
       <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Audit</h3><p class="muted">A Systems Audit finds where you're flying blind on the regulatory or market record and hands you a prioritized intelligence plan in two weeks.</p></div></div>
-      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Scope</h3><p class="muted">We define the exact program, market, or jurisdiction to monitor, the sources that govern it, and the decisions it needs to drive.</p></div></div>
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Scope</h3><p class="muted">We define the exact program, market, or jurisdiction to monitor, the primary sources that govern it, and the decisions it needs to drive.</p></div></div>
       <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Build &amp; run</h3><p class="muted">I build the tailored monitor and, on a retainer, keep it re-checking its primary sources and alerting you when a docket opens or a rule shifts.</p></div></div>
     </div>
   </div>
 </section>
 
+<!-- HOW YOU BUY IT -->
+<section class="section section--paper" id="buy" aria-labelledby="buy-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">How you buy it</p>
+      <h2 class="h2" id="buy-h">How this pillar is packaged</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">Any pillar can be delivered as any offer. Most intelligence engagements start with an Audit, then move to a tailored Build kept live on a retainer, or a self-serve tool you run yourself.</p>
+    </div>
+    <div class="grid grid-4 keep-2 reveal">
+      <div class="card"><span class="chip chip--src">Start here</span><h3 style="margin-top:.5rem">Systems Audit</h3><p class="small muted">I map where you're flying blind on the record, and hand you a prioritized intelligence plan.</p><p class="mono small" style="color:var(--teal-d);margin:.3rem 0 0">$1,500–$2,500 · 2 weeks</p></div>
+      <div class="card"><h3>Build</h3><p class="small muted">A private monitor scoped to your program or market: sourced, dated, confidence-scored, and handed to you.</p><p class="mono small" style="color:var(--teal-d);margin:.3rem 0 0">$5,000–$10,000 · 4–6 weeks</p></div>
+      <div class="card"><h3>Fractional AI Chief of Staff</h3><p class="small muted">I keep the intelligence live and run it into your decisions on an ongoing cadence.</p><p class="mono small" style="color:var(--teal-d);margin:.3rem 0 0">From $4,000/mo</p></div>
+      <div class="card"><h3>Self-serve tools</h3><p class="small muted">Use a live monitor above and run it yourself: the productized floor beneath the done-for-you work.</p><p class="mono small" style="color:var(--teal-d);margin:.3rem 0 0">From $127</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- THE SERVICE / OFFER -->
-<section class="section section--paper" id="start" aria-labelledby="offer-h">
+<section class="section" id="start" aria-labelledby="offer-h">
   <div class="wrap">
     <div class="sec-head reveal">
       <p class="eyebrow">The service</p>
       <h2 class="h2" id="offer-h">How this becomes yours</h2>
+      <hr class="rule" aria-hidden="true">
       <p class="lead">Operators, counsel, and funders fly blind on how each rule change or market move hits their position, and generic AI gets it confidently wrong. I build a tailored monitor for your exact program or market that tracks the primary sources and resolves them into decisions you can act on and cite.</p>
     </div>
     <div class="grid grid-3 reveal">
@@ -196,11 +277,29 @@
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="section section--paper" id="faq" aria-labelledby="faq-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Questions</p>
+      <h2 class="h2" id="faq-h">What people ask first</h2>
+      <hr class="rule" aria-hidden="true">
+    </div>
+    <div class="reveal">
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="f1"><span>Is this legal advice?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="f1"><div class="acc__panel-inner">No. Aloha AI provides regulatory intelligence and AI systems, not legal advice. RN Collins is a JD candidate, not a licensed attorney, and nothing here creates an attorney–client relationship or grounds for reliance. The work is built to support the licensed professionals who do give that advice.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="f2"><span>How current is the regulatory content?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="f2"><div class="acc__panel-inner">Every figure carries the source and the date it was retrieved, so it reflects a point in time. Regulatory records move; on a retainer, monitors re-check their primary sources on a schedule and surface changes as alerts. Confirm any figure against the operative source before relying on it.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="f3"><span>What counts as a primary source?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="f3"><div class="acc__panel-inner">The Federal Register, the CFR, agency dockets and orders, court filings, and peer-reviewed science — the operative record itself, not a summary of it. Every claim traces back to one, with a retrieval date, so it can be re-verified.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="f4"><span>Which sectors does this cover?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="f4"><div class="acc__panel-inner">Regulated operators (cannabis, psychedelics, biopharma, digital health, legal) and reputation-sensitive fields (brand, IP, culture). The common thread: the facts have to be right, and a confident wrong answer is expensive.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="f5"><span>Do you build custom monitors, or only the live ones shown?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="f5"><div class="acc__panel-inner">The live monitors above demonstrate the method. Most engagements are a private monitor scoped to your exact program, market, or jurisdictions, built to the same primary-source standard and kept live on a retainer.</div></div></div>
+    </div>
+  </div>
+</section>
+
 <!-- CTA HIERARCHY -->
 <section class="section section--ink" id="contact" aria-labelledby="cta-h">
   <div class="wrap" style="text-align:center">
     <p class="eyebrow">Aloha AI · Honolulu</p>
-    <h2 class="h2" id="cta-h" style="max-width:24ch;margin-inline:auto">Ready when you are.</h2>
+    <h2 class="h2" id="cta-h" style="max-width:24ch;margin-inline:auto">Stop flying blind on the record.</h2>
     <p class="lead" style="margin:var(--s4) auto var(--s5);text-align:center">Convinced, curious, or comparing, there's a path for each.</p>
     <div style="display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap">
       <a class="btn btn--primary" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Start with a Systems Audit →</a>
@@ -223,11 +322,11 @@
       <div>
         <h4>This service</h4>
         <ul>
-          <li><a href="#cov-h">What this covers</a></li>
-          <li><a href="#tools">The tools</a></li>
+          <li><a href="#cov-h">What it means here</a></li>
+          <li><a href="#tools">The monitors</a></li>
+          <li><a href="#method">Method &amp; provenance</a></li>
           <li><a href="#buy">How you buy it</a></li>
-          <li><a href="#method">How it works</a></li>
-          <li><a href="#start">The service</a></li>
+          <li><a href="#faq">FAQ</a></li>
         </ul>
       </div>
       <div>
@@ -243,7 +342,7 @@
         </ul>
       </div>
     </div>
-    <p class="disc small">Aloha AI provides regulatory intelligence and AI systems, not legal advice. RN Collins is a JD candidate, not a licensed attorney; nothing here is legal or tax advice or an attorney–client relationship. Confirm all figures against the operative source before relying on them.</p>
+    <p class="disc small">Aloha AI provides regulatory intelligence and AI systems, not legal advice. RN Collins is a JD candidate, not a licensed attorney; nothing here is legal or tax advice, an attorney–client relationship, or grounds for reliance. Time-dated regulatory content reflects a point in time; confirm all figures against the operative source before relying on them.</p>
     <p class="fine">Aloha AI · a DBA of Rayven-Nikkita Collins LLC · Honolulu, HI · No tracking, no cookies · © 2026</p>
   </div>
 </footer>
@@ -261,6 +360,7 @@
   try{navigator.clipboard&&navigator.clipboard.writeText(a);}catch(_){}
   var o=document.getElementById('emailReveal');if(o){o.hidden=false;o.innerHTML='Copied ✓ &nbsp;<a href="mailto:'+a+'?subject='+su+'" style="color:#7FE0C4">'+a+'</a> &nbsp;·&nbsp; <a href="https://mail.google.com/mail/?view=cm&fs=1&to='+a+'&su='+su+'" target="_blank" rel="noopener" style="color:#7FE0C4">Open in Gmail</a>';}
   window.location.href='mailto:'+a+'?subject='+su;});});})();
+  (function(){var nav=document.querySelector('.nav');if(!nav)return;var on=function(){nav.classList.toggle('is-stuck',window.scrollY>8);};on();window.addEventListener('scroll',on,{passive:true});})();
   (function(){if(matchMedia('(prefers-reduced-motion:reduce)').matches){document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in');});return;}
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
   document.querySelectorAll('.reveal').forEach(function(e){io.observe(e);});})();

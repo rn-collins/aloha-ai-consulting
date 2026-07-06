@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Regulated Trust Stack — Six layers, one operating system for trust | Aloha AI</title>
+<meta name="description" content="Six layers, one operating system for earning trust in regulated markets: ground truth, applied intelligence, compliance, production, persuasion, defense. Self-serve products and a bundle by RN Collins.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://aloha-ai-consulting.vercel.app/trust-stack">
+<meta name="theme-color" content="#14201C">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Regulated Trust Stack">
+<meta property="og:description" content="Six layers. One operating system for earning trust in regulated markets. Verify the truth, prove it, operate it cleanly, produce it, make people believe it, defend its reach.">
+<meta property="og:site_name" content="Aloha AI">
+<meta property="og:image" content="https://aloha-ai-consulting.vercel.app/trust-stack/og-image.png">
+<meta property="og:url" content="https://aloha-ai-consulting.vercel.app/trust-stack">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Regulated Trust Stack">
+<meta name="twitter:description" content="Six layers. One operating system for earning trust in regulated markets. Verify the truth, prove it, operate it cleanly, produce it, make people believe it, defend its reach.">
+<meta name="twitter:image" content="https://aloha-ai-consulting.vercel.app/trust-stack/og-image.png">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<script>document.documentElement.className+=' js';</script>
+<link rel="stylesheet" href="../aloha-ds.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Product","name":"The Regulated Trust Stack",
+"description":"Six layers, one operating system for earning trust in regulated markets. A bundle of six self-serve products by RN Collins.",
+"brand":{"@type":"Brand","name":"Aloha AI"},
+"offers":{"@type":"Offer","price":"697","priceCurrency":"USD","availability":"https://schema.org/InStock"}}
+</script>
+<style>
+  /* ---- HERO (shared pattern from homepage) ---- */
+  .hero{position:relative;overflow:hidden;background:var(--grad-hero);
+    color:var(--cream);padding-block:clamp(60px,9vw,128px) clamp(48px,6vw,88px);border-bottom:3px solid var(--teal)}
+  .hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(127,224,196,.05) 1px,transparent 1px);
+    background-size:26px 26px;-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 70%);mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 70%);pointer-events:none}
+  .hero>.wrap{position:relative}
+  .hero .display{color:var(--cream);max-width:16ch;margin-bottom:var(--s4)}
+  .hero .lead{color:#CFDAD5;max-width:62ch}
+  .hero em{color:var(--teal-mint);font-style:normal}
+  .hero__cta{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:var(--s5)}
+  .hero__meta{margin-top:var(--s5);font-family:var(--mono);font-size:var(--fs-xs);color:#9FB6AE;letter-spacing:.04em;line-height:1.8}
+  .livebadge{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:var(--fs-xs);
+    letter-spacing:.08em;text-transform:uppercase;color:#CDE7DF;border:1px solid #2F4A42;border-radius:var(--r-pill);padding:.34rem .72rem;margin-bottom:var(--s4)}
+  .livebadge .dot{width:7px;height:7px;border-radius:50%;background:var(--teal-mint);animation:pulse 2.2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(127,224,196,.5)}70%{box-shadow:0 0 0 7px rgba(127,224,196,0)}100%{box-shadow:0 0 0 0 rgba(127,224,196,0)}}
+  .sec-head{margin-bottom:var(--s6);max-width:72ch}
+  .sec-head .h2{margin-bottom:var(--s3)}
+
+  /* ---- LAYERED STACK VISUAL ---- */
+  .stackviz{display:grid;gap:var(--s2);counter-reset:layer -1;margin-top:var(--s5)}
+  .stackviz .layer{display:flex;align-items:center;gap:var(--s4);padding:var(--s4) var(--s5);
+    border:1px solid var(--line);border-radius:var(--r);background:#fff;box-shadow:var(--sh-1);
+    position:relative;transition:transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease)}
+  .stackviz .layer:hover{transform:translateX(3px);box-shadow:var(--sh-3)}
+  .stackviz .layer .n{flex:none;width:46px;height:46px;border-radius:11px;background:var(--grad-ink);color:var(--teal-mint);
+    display:grid;place-items:center;font-family:var(--mono);font-weight:600;font-size:.9rem}
+  .stackviz .layer .body{min-width:0}
+  .stackviz .layer .tag{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.1em;text-transform:uppercase;color:var(--teal-d)}
+  .stackviz .layer .name{font-family:var(--serif);font-size:1.02rem;color:var(--ink);margin-top:.1rem}
+  .stackviz .layer:nth-child(1){opacity:1}
+  .stackviz .layer::after{content:"";position:absolute;left:24px;bottom:calc(-1 * var(--s2) - 1px);height:var(--s2);width:2px;
+    background:var(--line-2)}
+  .stackviz .layer:last-child::after{display:none}
+
+  /* ---- PRODUCT CARDS ---- */
+  .prod{display:flex;flex-direction:column;height:100%}
+  .prod__top{display:flex;align-items:flex-start;justify-content:space-between;gap:var(--s3);margin-bottom:var(--s3)}
+  .prod__layer{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.1em;text-transform:uppercase;color:var(--teal-d)}
+  .prod__price{font-family:var(--serif);font-size:1.5rem;color:var(--ink);line-height:1;flex:none}
+  .prod h3{font-size:var(--fs-h3);margin-bottom:var(--s2)}
+  .prod h3 a{text-decoration:none;color:inherit}
+  .prod h3 a:hover{color:var(--teal-d)}
+  .prod__desc{font-size:.9rem;color:var(--muted);margin-bottom:var(--s3)}
+  .prod__meta{border-top:1px solid var(--line);padding-top:var(--s3);margin-top:auto}
+  .prod__meta .lab{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);display:block;margin-bottom:.25rem}
+  .prod__meta p{font-size:.82rem;color:var(--muted);margin:0 0 .7rem}
+  .prod__meta p:last-child{margin-bottom:0}
+  .prod .go{font-family:var(--mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;color:var(--teal-d);margin-top:var(--s3)}
+
+  /* ---- BUNDLE CALLOUT ---- */
+  .bundle{background:var(--grad-ink);color:var(--cream);border-radius:var(--r-lg);padding:clamp(28px,4vw,var(--s7));
+    box-shadow:var(--sh-2);position:relative;overflow:hidden}
+  .bundle::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(127,224,196,.06) 1px,transparent 1px);
+    background-size:24px 24px;pointer-events:none}
+  .bundle__in{position:relative;display:grid;grid-template-columns:1.3fr 1fr;gap:var(--s6);align-items:center}
+  @media(max-width:820px){.bundle__in{grid-template-columns:1fr}}
+  .bundle h2{color:var(--cream);margin-bottom:var(--s3)}
+  .bundle p{color:var(--muted-on-ink)}
+  .bundle__price{text-align:center;border:1px solid #33504f;border-radius:var(--r);padding:var(--s5);background:rgba(255,255,255,.03)}
+  .bundle__price .big{font-family:var(--serif);font-size:clamp(2.4rem,5vw,3.2rem);color:var(--teal-mint);line-height:1}
+  .bundle__price .strike{font-family:var(--mono);font-size:.85rem;color:#9FB6AE;text-decoration:line-through;margin-top:.3rem}
+  .bundle__price .off{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.08em;text-transform:uppercase;color:var(--teal-mint);margin-top:.2rem}
+  .bundle__price .btn{margin-top:var(--s4);width:100%;justify-content:center}
+  .bundle__note{font-family:var(--mono);font-size:.66rem;color:#8FA69E;margin-top:var(--s3);line-height:1.6}
+
+  /* ---- DIAGNOSTIC CTA ---- */
+  .diag{border:1px solid var(--line-2);border-radius:var(--r-lg);padding:clamp(24px,3.5vw,var(--s7));
+    background:var(--paper);text-align:center;box-shadow:var(--sh-1)}
+  .diag .h2{margin-bottom:var(--s3)}
+  .diag .lead{margin-inline:auto;text-align:center}
+  .diag .btn{margin-top:var(--s5)}
+
+  /* ---- TRUST SIGNAL STRIP ---- */
+  .signals{display:grid;grid-template-columns:repeat(5,1fr);gap:.6rem}
+  @media(max-width:820px){.signals{grid-template-columns:1fr 1fr}}
+  .signals .s{border:1px solid #2F4A42;border-radius:var(--r-sm);padding:.9rem;background:rgba(255,255,255,.03)}
+  .signals .s .t{font-family:var(--serif);font-size:1rem;color:var(--cream);margin-bottom:.2rem}
+  .signals .s .d{font-size:.78rem;color:var(--muted-on-ink)}
+
+  .flow{font-family:var(--serif);font-size:clamp(1.1rem,2vw,1.35rem);color:var(--teal-d);line-height:1.5;max-width:62ch}
+  .flow b{color:var(--ink);font-weight:600}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="/" aria-label="Aloha AI home">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#1B7A68"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#1B7A68" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      Aloha&nbsp;AI
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav__links" id="navlinks">
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/#moat">The moat</a></li>
+        <li><a href="/#tools">Tools</a></li>
+        <li><a href="/#products">Products</a></li>
+        <li><a href="/university">University</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#faq">FAQ</a></li>
+        <li class="nav__cta"><a class="btn btn--primary btn--sm" href="#bundle">Get the stack →</a></li>
+      </ul>
+    </nav>
+    <button class="nav__burger" id="burger" aria-label="Open menu" aria-controls="navlinks" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+<span id="top"></span>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-h">
+  <div class="wrap">
+    <span class="livebadge"><span class="dot" aria-hidden="true"></span> Self-serve products · six layers · one system</span>
+    <p class="eyebrow" style="color:var(--teal-mint)">Aloha AI · a practice of RN Collins</p>
+    <h1 class="display" id="hero-h">The Regulated Trust Stack</h1>
+    <p class="lead">Six layers, one operating system for earning trust in regulated markets. In regulated and reputation-sensitive work the scarce resource is trust, and trust is a nervous-system event. A platform's classifier, a human audience, a regulator, and a buyer all run the same appraisal loop. Every expensive failure is a <em>trust-appraisal failure</em> somewhere in that loop.</p>
+    <div class="hero__cta">
+      <a class="btn btn--primary" href="#bundle">Get all six layers · $697 →</a>
+      <a class="btn btn--ghost" href="/trust-stack/leak-check">Where is your stack leaking?</a>
+    </div>
+    <p class="hero__meta">Ground truth · Applied intelligence · Compliance · Production · Persuasion · Defense</p>
+  </div>
+</section>
+
+<!-- THE PROBLEM -->
+<section class="section" aria-labelledby="prob-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The problem</p>
+      <h2 class="h2" id="prob-h">One problem wearing six masks</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">A fabricated citation. A funder who catches you wrong on a live rule. A reporting miss that turns into a license event. Content the brain reads as noise and the classifier reads as threat. Distribution that quietly evaporates before anyone runs the numbers.</p>
+    </div>
+    <div class="grid grid-2">
+      <div class="card reveal"><h3>Most operators shop for six unrelated fixes</h3><p class="small muted">They treat each of these as its own emergency and buy a separate guide for each. The fixes never compound, because they were never one library to begin with.</p></div>
+      <div class="card reveal"><h3>Underneath, it is one loop</h3><p class="small muted">Appraise the source, scan for threat, then decide whether to grant reach, belief, a license, or a purchase. The classifier, the audience, the regulator, and the buyer all run it. Fix the loop once and every symptom moves.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY ONE SYSTEM / SEQUENCE LOGIC -->
+<section class="section section--paper section--texture" id="order" aria-labelledby="order-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The sequence logic</p>
+      <h2 class="h2" id="order-h">Why this is one system, not six guides</h2>
+      <hr class="rule" aria-hidden="true">
+    </div>
+    <p class="flow reveal"><b>Verify the truth</b> → prove it in a live market → operate it cleanly → produce it at scale → make people believe it → <b>defend its reach.</b></p>
+    <p class="lead reveal" style="margin-top:var(--s5)">You cannot run persuasion on facts you never verified. You cannot produce content at scale without a knowledge base that holds up. You cannot defend distribution you never engineered. The layers depend on each other in a fixed order, and the order is the point. Each layer stands on the one beneath it. Pull out a lower layer and everything above it inherits the crack.</p>
+
+    <div class="stackviz reveal" aria-hidden="true">
+      <div class="layer"><span class="n">L0</span><div class="body"><span class="tag">Ground Truth</span><div class="name">Primary-Source Regulatory Intelligence</div></div></div>
+      <div class="layer"><span class="n">L1</span><div class="body"><span class="tag">Applied Intelligence</span><div class="name">Multi-State Psilocybin Regulatory + Funder Map</div></div></div>
+      <div class="layer"><span class="n">L2</span><div class="body"><span class="tag">Compliance</span><div class="name">Oregon SB 303 Compliance Kit</div></div></div>
+      <div class="layer"><span class="n">L3</span><div class="body"><span class="tag">Production</span><div class="name">AI Content System (DIY)</div></div></div>
+      <div class="layer"><span class="n">L4</span><div class="body"><span class="tag">Persuasion</span><div class="name">EDSA · Neuroscience-of-Trust Content Architecture</div></div></div>
+      <div class="layer"><span class="n">L5</span><div class="body"><span class="tag">Defense</span><div class="name">Platform Suppression Playbook</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- THE SIX PRODUCTS -->
+<section class="section" id="layers" aria-labelledby="layers-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The six layers</p>
+      <h2 class="h2" id="layers-h">Each product stands on its own</h2>
+      <p class="lead">The stack is the dependency chain that connects them. Buy a single layer where the pain is, or take the whole system as a bundle.</p>
+    </div>
+    <div class="grid grid-3">
+
+      <article class="card card--hover prod reveal">
+        <div class="prod__top"><span class="prod__layer">Layer 0 · Ground Truth</span><span class="prod__price">$197</span></div>
+        <h3><a href="/trust-stack/regulatory-intelligence">Primary-Source Regulatory Intelligence · the IDR Engine</a></h3>
+        <p class="prod__desc">A professional methodology for pinning regulatory claims to primary sources. The ground truth everything else stands on.</p>
+        <div class="prod__meta">
+          <span class="lab">Who it's for</span>
+          <p>Regulated operators, in-house teams, and researchers who replace billable research hours with a repeatable, citeable method.</p>
+          <span class="lab">What's inside</span>
+          <p>The Interrogate–Document–Retrieve method, a source ledger with retrieval dates, and templates you can run across any jurisdiction.</p>
+        </div>
+        <a class="go" href="/trust-stack/regulatory-intelligence">Read more →</a>
+      </article>
+
+      <article class="card card--hover prod reveal">
+        <div class="prod__top"><span class="prod__layer">Layer 1 · Applied Intelligence</span><span class="prod__price">$147</span></div>
+        <h3><a href="/trust-stack/psilocybin-map">Multi-State Psilocybin Regulatory + Funder Map</a></h3>
+        <p class="prod__desc">Oregon, Colorado, New Mexico. Every statute pinned, every funder verified, every claim carrying a retrieval date and a place in the ledger.</p>
+        <div class="prod__meta">
+          <span class="lab">Who it's for</span>
+          <p>Founders, funders, and operators moving inside state psilocybin programs who need current, sourced status at a glance.</p>
+          <span class="lab">What's inside</span>
+          <p>State-by-state statutory map, a verified funder list, and the IDR ledger behind every entry. Reflects a point in time; re-verify before reliance.</p>
+        </div>
+        <a class="go" href="/trust-stack/psilocybin-map">Read more →</a>
+      </article>
+
+      <article class="card card--hover prod reveal">
+        <div class="prod__top"><span class="prod__layer">Layer 2 · Compliance</span><span class="prod__price">$247</span></div>
+        <h3><a href="/trust-stack/sb303-compliance-kit">Oregon SB 303 Compliance Kit</a></h3>
+        <p class="prod__desc">Compliance you engineer with the regulator, not a burden you survive. Built on audit-proof operations for licensed operators.</p>
+        <div class="prod__meta">
+          <span class="lab">Who it's for</span>
+          <p>Licensed Oregon psilocybin operators facing license-level stakes, and the teams who keep them audit-ready.</p>
+          <span class="lab">What's inside</span>
+          <p>SB 303 requirement breakdown, reporting workflows, and audit-preparation checklists. Reflects a point in time; confirm against the current rule.</p>
+        </div>
+        <a class="go" href="/trust-stack/sb303-compliance-kit">Read more →</a>
+      </article>
+
+      <article class="card card--hover prod reveal">
+        <div class="prod__top"><span class="prod__layer">Layer 3 · Production</span><span class="prod__price">$197</span></div>
+        <h3><a href="/trust-stack/ai-content-system">AI Content System (DIY)</a></h3>
+        <p class="prod__desc">A do-it-yourself production guide built on the Five-Domain Knowledge Base and grounded by the IDR Engine. Replaces a consulting build.</p>
+        <div class="prod__meta">
+          <span class="lab">Who it's for</span>
+          <p>Regulated organizations that want to produce trustworthy content at scale without hiring the build out.</p>
+          <span class="lab">What's inside</span>
+          <p>Knowledge-base architecture, voice profiles, production workflows, and guardrails that keep the facts sourced.</p>
+        </div>
+        <a class="go" href="/trust-stack/ai-content-system">Read more →</a>
+      </article>
+
+      <article class="card card--hover prod reveal">
+        <div class="prod__top"><span class="prod__layer">Layer 4 · Persuasion</span><span class="prod__price">$147</span></div>
+        <h3><a href="/trust-stack/edsa-framework">EDSA · Neuroscience-of-Trust Content Architecture</a></h3>
+        <p class="prod__desc">Engineering credibility for the audience's nervous system and the platform's classifier at the same time.</p>
+        <div class="prod__meta">
+          <span class="lab">Who it's for</span>
+          <p>Creators, nonprofits, and regulated brands who need content people believe and platforms will carry.</p>
+          <span class="lab">What's inside</span>
+          <p>The EDSA content architecture, trust-signal patterns, and a structure that reads as safe to both a human and a classifier.</p>
+        </div>
+        <a class="go" href="/trust-stack/edsa-framework">Read more →</a>
+      </article>
+
+      <article class="card card--hover prod reveal">
+        <div class="prod__top"><span class="prod__layer">Layer 5 · Defense</span><span class="prod__price">$147</span></div>
+        <h3><a href="/trust-stack/suppression-playbook">Platform Suppression Playbook</a></h3>
+        <p class="prod__desc">Nervous-system-aware monitoring for reduced content distribution. Defend the reach you engineered.</p>
+        <div class="prod__meta">
+          <span class="lab">Who it's for</span>
+          <p>Anyone whose distribution quietly erodes on a platform they do not control and who wants to catch it early.</p>
+          <span class="lab">What's inside</span>
+          <p>Suppression-detection methods, a monitoring cadence, and recovery moves to rebuild throttled reach.</p>
+        </div>
+        <a class="go" href="/trust-stack/suppression-playbook">Read more →</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- BUNDLE · HERO OFFER -->
+<section class="section section--paper" id="bundle" aria-labelledby="bundle-h">
+  <div class="wrap">
+    <div class="bundle reveal">
+      <div class="bundle__in">
+        <div>
+          <p class="eyebrow" style="color:var(--teal-mint)">The hero offer</p>
+          <h2 class="h2" id="bundle-h">Run the system instead of assembling it</h2>
+          <p>All six layers in one place, priced below the sum of the parts. This is the price of the full dependency chain in one voice and one shared vocabulary, so the layers actually compound instead of contradicting each other.</p>
+          <p class="small" style="color:#9FB6AE">Individually the six layers total $1,082. The bundle is $697, about 36% off. The saving is not the point; the system is.</p>
+        </div>
+        <div class="bundle__price">
+          <div class="big">$697</div>
+          <div class="strike">$1,082 bought separately</div>
+          <div class="off">All six layers · ~36% off</div>
+          <!-- RN manages the Gumroad product URL; this routes to the storefront/subpages until set -->
+          <a class="btn btn--primary" href="/trust-stack/leak-check" data-gumroad-product="trust-stack-bundle">Get the bundle →</a>
+          <p class="bundle__note">Checkout is handled by Gumroad. Not sure yet? Run the free diagnostic first.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE MOAT -->
+<section class="section section--ink" id="moat" aria-labelledby="moat-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The differentiator</p>
+      <h2 class="h2" id="moat-h">One mind behind all six layers</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">Four specialists could each write one of these. None could write all six from a single mind, because the through-line is a combination that does not otherwise sit in one operator.</p>
+    </div>
+    <div class="signals reveal">
+      <div class="s"><div class="t">Neuroscience</div><div class="d">MS, Anatomy &amp; Neurobiology. How the nervous system grants trust.</div></div>
+      <div class="s"><div class="t">Regulatory law</div><div class="d">Administrative &amp; regulatory law, JD candidate.</div></div>
+      <div class="s"><div class="t">AI systems</div><div class="d">35+ builds shipped, several in production.</div></div>
+      <div class="s"><div class="t">Published authority</div><div class="d">Peer-reviewed work and regulated-domain press.</div></div>
+      <div class="s"><div class="t">Pattern recognition</div><div class="d">Across all four at once, which is the actual moat.</div></div>
+    </div>
+    <p class="lead reveal" style="margin-top:var(--s6)">That is what lets one person say, and mean, that trust is a nervous-system event, then engineer every layer for how the nervous system grants it. Copy a single product and you copy a symptom. The system is the moat.</p>
+  </div>
+</section>
+
+<!-- DIAGNOSTIC CTA -->
+<section class="section" id="diagnostic" aria-labelledby="diag-h">
+  <div class="wrap">
+    <div class="diag reveal">
+      <p class="eyebrow" style="justify-content:center">Not sure where to start</p>
+      <h2 class="h2" id="diag-h">Where is your trust stack leaking?</h2>
+      <p class="lead">The diagnostic is the front door. It scores you on all six layers and returns your weakest one, plus the layer above it that is inheriting the damage, in about five minutes, with nothing sent anywhere. Most operators score low on three or more.</p>
+      <a class="btn btn--primary" href="/trust-stack/leak-check">Run the free diagnostic →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section--paper" id="faq" aria-labelledby="faq-h">
+  <div class="wrap">
+    <div class="sec-head reveal"><p class="eyebrow">Questions</p><h2 class="h2" id="faq-h">What people ask first</h2></div>
+    <div class="reveal">
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="f1"><span>Do I have to buy all six?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="f1"><div class="acc__panel-inner">No. Start at your weakest layer, which the diagnostic names. A weak lower layer keeps undermining the ones above it, so most people work downward to the floor before they work up. The bundle exists for anyone who wants the whole chain at once.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="f2"><span>Is this legal advice?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="f2"><div class="acc__panel-inner">No. RN Collins is a JD candidate, not your attorney, and nothing here creates an attorney-client relationship. The regulatory products are primary-source-pinned research tools to bring to your own counsel, not a substitute for them. Nothing here creates reliance.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="f3"><span>We are not in psychedelics. Does this apply to us?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="f3"><div class="acc__panel-inner">Yes. Layer 1 is the proof instance. The system is built for any regulated or reputation-sensitive market where a platform, an audience, a regulator, and a buyer all decide whether to trust you.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="f4"><span>How current is the regulatory content?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="f4"><div class="acc__panel-inner">The time-dated products (the psilocybin map and the SB 303 kit) reflect a point in time and carry retrieval dates on every claim. Rules move, so re-verify anything fast-moving against the cited primary source before you rely on it.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="f5"><span>Where do I start?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="f5"><div class="acc__panel-inner">Take the <a href="/trust-stack/leak-check">diagnostic</a>. It returns your weakest layer and the product that fixes it, and it routes you straight to that layer.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="f6"><span>How does checkout work?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="f6"><div class="acc__panel-inner">Products are sold through Gumroad. Each product page links to its checkout, and the bundle buys all six at $697. Downloads are delivered by Gumroad after purchase.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING CTA -->
+<section class="section section--ink" id="cta" aria-labelledby="cta-h">
+  <div class="wrap" style="text-align:center">
+    <p class="eyebrow" style="justify-content:center">Aloha AI · The Regulated Trust Stack</p>
+    <h2 class="h2" id="cta-h" style="max-width:26ch;margin-inline:auto">Run the system instead of assembling it.</h2>
+    <p class="lead" style="margin:var(--s4) auto var(--s5);text-align:center">Get all six layers in one place, or start at the layer the diagnostic names.</p>
+    <div style="display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn--primary" href="#bundle">Get the bundle · $697 →</a>
+      <a class="btn btn--ghost" href="/trust-stack/leak-check">Take the diagnostic</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer" aria-labelledby="foot-h">
+  <div class="wrap">
+    <h2 id="foot-h" class="small" style="position:absolute;left:-999px">Site footer</h2>
+    <div class="footer__grid">
+      <div>
+        <a class="nav__brand" href="/" style="color:var(--cream)" aria-label="Aloha AI home"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#7FE0C4"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#7FE0C4" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg> Aloha&nbsp;AI</a>
+        <p class="small" style="margin-top:var(--s3);max-width:38ch;color:#9FB6AE">Six layers, one operating system for earning trust in regulated markets. A self-serve line from the practice of RN Collins.</p>
+      </div>
+      <div>
+        <h4>The six layers</h4>
+        <ul>
+          <li><a href="/trust-stack/regulatory-intelligence">Regulatory Intelligence · $197</a></li>
+          <li><a href="/trust-stack/psilocybin-map">Psilocybin + Funder Map · $147</a></li>
+          <li><a href="/trust-stack/sb303-compliance-kit">SB 303 Compliance Kit · $247</a></li>
+          <li><a href="/trust-stack/ai-content-system">AI Content System · $197</a></li>
+          <li><a href="/trust-stack/edsa-framework">EDSA Framework · $147</a></li>
+          <li><a href="/trust-stack/suppression-playbook">Suppression Playbook · $147</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Practice</h4>
+        <ul>
+          <li><a href="/trust-stack/leak-check">Take the diagnostic</a></li>
+          <li><a href="#bundle">The bundle · $697</a></li>
+          <li><a href="/">Aloha AI home</a></li>
+          <li><a href="/about.html">About RN Collins</a></li>
+          <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a call</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="disc small">Not legal advice. RN Collins is a JD candidate, not a licensed attorney; nothing here is legal or tax advice or an attorney-client relationship, and nothing here creates reliance. The regulatory and health products are primary-source-pinned research and operating resources to bring to your own counsel, not a substitute for one. Time-dated content (the SB 303 kit, the psilocybin map) reflects a point in time; re-verify fast-moving items against the cited primary source before you rely on them.</p>
+    <p class="fine">Aloha AI · a DBA of Rayven-Nikkita Collins LLC · Honolulu, HI · Products sold via Gumroad · No tracking, no cookies · © 2026</p>
+  </div>
+</footer>
+
+<script>
+  (function(){var b=document.getElementById('burger'),l=document.getElementById('navlinks');
+  function set(o){b.setAttribute('aria-expanded',o);l.classList.toggle('open',o);b.setAttribute('aria-label',o?'Close menu':'Open menu');}
+  b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true');});
+  l.addEventListener('click',function(e){if(e.target.tagName==='A')set(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});})();
+  document.querySelectorAll('.acc__btn').forEach(function(btn){var p=document.getElementById(btn.getAttribute('aria-controls'));
+    btn.addEventListener('click',function(){var o=btn.getAttribute('aria-expanded')==='true';btn.setAttribute('aria-expanded',!o);p.style.maxHeight=o?null:p.scrollHeight+'px';});});
+  (function(){var nav=document.querySelector('.nav');if(!nav)return;var on=function(){nav.classList.toggle('is-stuck',window.scrollY>8);};on();window.addEventListener('scroll',on,{passive:true});})();
+  (function(){if(matchMedia('(prefers-reduced-motion:reduce)').matches){document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in');});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(e){io.observe(e);});})();
+</script>
+</body>
+</html>

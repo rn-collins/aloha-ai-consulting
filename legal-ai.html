@@ -3,40 +3,51 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Legal AI Workflow — Aloha AI</title>
-<meta name="description" content="Verification-gated AI workflows for law firms and legal teams — any platform — built so speed never becomes a sanctions risk. Firm/GC and legal-tech advisory. By RN Collins, Aloha AI.">
+<title>Legal AI Workflow &amp; Governance — Aloha AI</title>
+<meta name="description" content="Verification-gated AI workflows and trust-safe governance for law firms, legal teams, and regulated organizations — any platform, Harvey included — built so speed never becomes a sanctions risk. By RN Collins, Aloha AI.">
 <link rel="canonical" href="https://aloha-ai-consulting.vercel.app/legal-ai">
 <meta name="theme-color" content="#14201C">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Legal AI Workflow — Aloha AI">
-<meta property="og:description" content="Verification-gated AI workflows for law firms and legal teams — any platform — built so speed never becomes a sanctions risk.">
+<meta property="og:title" content="Legal AI Workflow &amp; Governance — Aloha AI">
+<meta property="og:description" content="Verification-gated AI workflows and trust-safe governance for law firms and legal teams — any platform — built so speed never becomes a sanctions risk.">
 <meta property="og:image" content="./og-image.png">
 <meta property="og:url" content="https://aloha-ai-consulting.vercel.app/legal-ai">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Legal AI Workflow — Aloha AI">
+<meta name="twitter:title" content="Legal AI Workflow &amp; Governance — Aloha AI">
 <meta name="twitter:description" content="Verification-gated legal AI workflows where speed never becomes a sanctions risk. By RN Collins.">
 <meta name="twitter:image" content="./og-image.png">
 <link rel="icon" href="./favicon.svg" type="image/svg+xml">
 <script>document.documentElement.className+=' js';</script>
 <link rel="stylesheet" href="./aloha-ds.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Service","name":"Legal AI Workflow",
-"serviceType":"Verification-gated AI workflow design and advisory for legal teams",
+{"@context":"https://schema.org","@type":"Service","name":"Legal AI Workflow & Governance",
+"serviceType":"Verification-gated AI workflow design, orchestration, and governance advisory for legal teams",
 "url":"https://aloha-ai-consulting.vercel.app/legal-ai","areaServed":"US",
-"description":"Verification-gated AI workflows for law firms and legal teams on any platform, built so speed never becomes a sanctions risk. Firm/GC and legal-tech founder advisory.",
-"provider":{"@type":"Person","name":"RN Collins","jobTitle":"Founder, Aloha AI","description":"Neuroscientist (MS), JD candidate, and AI systems builder for regulated industries","knowsAbout":["Legal AI workflow","Verification design","Hallucination risk","Administrative law","AI adoption"]},
+"description":"Verification-gated AI workflows and trust-safe governance for law firms, legal teams, and regulated organizations on any platform, built so speed never becomes a sanctions risk. Firm/GC and legal-tech founder advisory.",
+"provider":{"@type":"Person","name":"RN Collins","jobTitle":"Founder, Aloha AI","description":"Neuroscientist (MS), JD candidate, and AI systems builder for regulated industries","knowsAbout":["Legal AI workflow","AI orchestration","Verification design","Citation verification","Hallucination risk","AI governance","Administrative law","AI adoption"]},
 "brand":{"@type":"Organization","name":"Aloha AI"}}
 </script>
 <style>
-  .hero{position:relative;overflow:hidden;background:radial-gradient(130% 120% at 82% -12%,#20362d 0%,#18271F 44%,var(--ink) 80%);
-    color:var(--cream);padding-block:clamp(48px,8vw,92px) clamp(40px,6vw,72px);border-bottom:3px solid var(--teal)}
-  .hero .display{color:var(--cream);max-width:18ch;margin-bottom:var(--s4)}
+  .hero{position:relative;overflow:hidden;background:var(--grad-hero);
+    color:var(--cream);padding-block:clamp(60px,9vw,120px) clamp(48px,6vw,84px);border-bottom:3px solid var(--teal)}
+  .hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(127,224,196,.05) 1px,transparent 1px);
+    background-size:26px 26px;-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 70%);mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 70%);pointer-events:none}
+  .hero>.wrap{position:relative}
+  .hero .display{color:var(--cream);max-width:19ch;margin-bottom:var(--s4)}
   .hero .kicker{color:var(--teal-mint)}
-  .hero .lead{color:#CFDAD5;max-width:58ch}
+  .hero .lead{color:#CFDAD5;max-width:60ch}
   .hero em{color:var(--teal-mint);font-style:normal}
   .hero__cta{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:var(--s5)}
+  .hero__answers{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:var(--s5)}
+  .hero__answers .a{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.04em;color:#CDE7DF;
+    border:1px solid #2F4A42;border-radius:var(--r-pill);padding:.4rem .8rem;background:rgba(255,255,255,.03)}
+  .hero__answers .a b{color:var(--teal-mint);font-weight:500}
   .hero__meta{margin-top:var(--s5);font-family:var(--mono);font-size:var(--fs-xs);color:#9FB6AE;letter-spacing:.04em;line-height:1.8}
   .hero__meta b{color:var(--cream)}
+  .livebadge{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:var(--fs-xs);
+    letter-spacing:.08em;text-transform:uppercase;color:#CDE7DF;border:1px solid #2F4A42;border-radius:var(--r-pill);padding:.34rem .72rem;margin-bottom:var(--s4)}
+  .livebadge .dot{width:7px;height:7px;border-radius:50%;background:var(--teal-mint);animation:pulse 2.2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(127,224,196,.5)}70%{box-shadow:0 0 0 7px rgba(127,224,196,0)}100%{box-shadow:0 0 0 0 rgba(127,224,196,0)}}
   .sec-head{margin-bottom:var(--s6);max-width:72ch}
   .sec-head .h2{margin-bottom:var(--s3)}
   .tool-card{display:flex;flex-direction:column;height:100%}
@@ -51,6 +62,10 @@
   .step__n{counter-increment:step;width:44px;height:44px;border-radius:12px;background:var(--teal);color:#fff;
     font-family:var(--serif);font-size:1.3rem;display:grid;place-items:center;flex:none}
   .step__n::before{content:counter(step)}
+  .layer{display:grid;grid-template-columns:auto 1fr;gap:var(--s4);align-items:start}
+  .layer .k{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.08em;text-transform:uppercase;
+    color:var(--teal-d);white-space:nowrap;padding-top:.2rem}
+  .layer h3{font-size:var(--fs-h3);margin:0 0 .2rem}
 </style>
 </head>
 <body>
@@ -67,7 +82,9 @@
         <li><a href="index.html#services">Services</a></li>
         <li><a href="index.html#moat">The moat</a></li>
         <li><a href="index.html#tools">Tools</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="index.html#products">Products</a></li>
+        <li><a href="/university">University</a></li>
+        <li><a href="index.html#about">About</a></li>
         <li><a href="index.html#faq">FAQ</a></li>
         <li class="nav__cta"><a class="btn btn--primary btn--sm" href="#start">Get started →</a></li>
       </ul>
@@ -84,30 +101,82 @@
 <!-- HERO -->
 <section class="hero" aria-labelledby="hero-h">
   <div class="wrap">
-    <p class="eyebrow kicker">Legal AI Workflow</p>
-    <h1 class="display" id="hero-h">Legal AI that's fast, without ever becoming a sanctions risk.</h1>
-    <p class="lead">Generic AI hallucinates worst on exactly what a legal team can't get wrong: the citation, the holding, the procedural rule. The answer is to <em>build verification into the workflow</em>, so speed never outruns accuracy, rather than banning AI or trusting it blindly. I design verification-gated AI workflows for law firms and legal teams on any platform, drawing on hands-on work inside an Am Law firm. For regulated or reputation-sensitive professions.</p>
+    <span class="livebadge"><span class="dot" aria-hidden="true"></span> Legal AI · workflow, orchestration &amp; governance</span>
+    <p class="eyebrow kicker">Aloha AI · a practice of RN Collins</p>
+    <h1 class="display" id="hero-h">Legal AI that moves fast, and never becomes a sanctions risk.</h1>
+    <p class="lead">Generic AI hallucinates worst on exactly what a legal team can't get wrong: the citation, the holding, the procedural rule. The fix is to <em>build verification into the workflow</em>, so speed never outruns accuracy. I design verification-gated AI workflows, orchestrate them across tools, and set the governance around them for law firms, legal teams, and regulated organizations, on any platform, Harvey included, drawing on hands-on work inside an Am Law firm.</p>
     <div class="hero__cta">
       <a class="btn btn--primary" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Start with a Systems Audit →</a>
-      <a class="btn btn--ghost" href="#tools">See the tools</a>
+      <a class="btn btn--ghost" href="#tools">See the approach in action</a>
+    </div>
+    <div class="hero__answers">
+      <span class="a"><b>For</b> law firms, GCs, legal-tech founders &amp; regulated teams</span>
+      <span class="a"><b>Why</b> a fabricated citation in a filing is a sanctions headline</span>
+      <span class="a"><b>Trust</b> primary-source verification, on any platform you run</span>
     </div>
     <p class="hero__meta">RN&nbsp;Collins · Neuroscience (MS) · Administrative&nbsp;&amp; regulatory law (JD&nbsp;candidate) · AI Workflow Developer, Am Law firm</p>
   </div>
 </section>
 
+<!-- THE PROBLEM -->
+<section class="section" aria-labelledby="prob-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The problem</p>
+      <h2 class="h2" id="prob-h">Two ways legal AI goes wrong</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">Since 2023, courts have sanctioned lawyers for filing AI-fabricated citations. The reaction splits into two failures, and both cost you.</p>
+    </div>
+    <div class="grid grid-2">
+      <div class="card reveal"><h3>Banned, so people use it in the shadows</h3><p class="small muted">A blanket prohibition doesn't stop AI use; it drives it off the record, onto personal accounts, with no verification and no audit trail. The exposure moves out of sight, not out of existence.</p></div>
+      <div class="card reveal"><h3>Trusted blindly, so a fabrication ships</h3><p class="small muted">Speed without a verification gate is how a hallucinated case name reaches a filing. The <strong>Operator Execution Gap</strong>, the distance between what AI says and what you can put your bar standing behind, is exactly what has to be closed.</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- WHAT THIS COVERS -->
-<section class="section" aria-labelledby="cov-h">
+<section class="section section--paper section--texture" aria-labelledby="cov-h">
   <div class="wrap">
     <div class="sec-head reveal">
       <p class="eyebrow">What this covers</p>
-      <h2 class="h2" id="cov-h">Workflow design, plus advisory for firms and founders</h2>
-      <p class="lead">This pillar spans the hands-on build and the guidance around it, on any platform your firm already uses, no rip-and-replace.</p>
+      <h2 class="h2" id="cov-h">Workflow, orchestration, and the governance around them</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">One pillar spanning the hands-on build and the guidance around it, on any platform your firm already uses, with no rip-and-replace.</p>
     </div>
     <div class="grid grid-2">
-      <div class="card reveal"><h3>Verification-gated workflow design</h3><p class="small muted">The core build: AI workflows with verification checkpoints designed in, so every AI-assisted output is checked against source before it leaves the building. Scored for hallucination risk and platform-agnostic, so it works with whatever your firm already runs.</p></div>
-      <div class="card reveal"><h3>Firm &amp; GC advisory</h3><p class="small muted">Guidance for law firms and general counsel adopting AI: where it's safe to accelerate, where a human gate is non-negotiable, and how to roll it out so associates and staff actually use it, without creating exposure.</p></div>
-      <div class="card reveal"><h3>Legal-tech founder advisory</h3><p class="small muted">For the people building the tools: product and workflow advisory that bakes verification and trust into legal-AI products from the design stage, not as an afterthought.</p></div>
-      <div class="card reveal"><h3>Adoption that sticks</h3><p class="small muted">A legal-AI rollout fails on trust, not features. The same neuroscience-of-adoption lens that runs through the whole practice makes sure the workflow is used, not quietly worked around.</p></div>
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <h3>Verification-gated workflow design</h3><p class="small muted">The core build: AI workflows with verification checkpoints designed in, so every AI-assisted output is checked against source before it leaves the building. Scored for hallucination risk and platform-agnostic, so it works with whatever your firm already runs.</p></div>
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="5" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="m6.5 6.5 3 3m5 0 3-3m0 11-3-3m-5 0-3 3"/></svg></div>
+        <h3>Orchestration across tools</h3><p class="small muted">Harvey is one node, not the whole system. I orchestrate research, drafting, retrieval, and citation-verification across the tools you already license, so each does what it's best at and a human gate sits at every point that carries risk.</p></div>
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 4.5 3.2 7.9 8 9 4.8-1.1 8-4.5 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h3>Trust-safe governance</h3><p class="small muted">Firm and GC guidance mapped to the standards you answer to, including ABA Formal Opinion 512 on generative AI. Where it's safe to accelerate, where a human gate is non-negotiable, and how to document competence, confidentiality, and supervision.</p></div>
+      <div class="card card--hover reveal"><div class="card__ic" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9"/></svg></div>
+        <h3>Adoption that sticks</h3><p class="small muted">A legal-AI rollout fails on trust, not features. The same neuroscience-of-adoption lens that runs through the whole practice makes sure the workflow is used, not quietly worked around. That's also where legal-tech founders get product and workflow advisory, so verification is designed into the tool from the start.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- THE METHOD / VERIFICATION LAYERS -->
+<section class="section" id="method" aria-labelledby="layers-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The method</p>
+      <h2 class="h2" id="layers-h">Where verification sits in the workflow</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">Trust isn't a setting you toggle on. It's a set of gates placed where risk actually lives, so the fast steps stay fast and the load-bearing steps get checked.</p>
+    </div>
+    <div class="stack" style="gap:var(--s5)">
+      <div class="layer reveal"><span class="k">Layer 01 · Retrieval</span><div><h3>Ground the answer in a real source</h3><p class="muted small">Route research through authorities the model can actually cite, so the starting point is a document that exists, not a plausible-sounding memory.</p></div></div>
+      <hr class="divider" aria-hidden="true">
+      <div class="layer reveal"><span class="k">Layer 02 · Citation check</span><div><h3>Verify every citation against the record</h3><p class="muted small">Each case, statute, and pin cite is confirmed to exist and to say what the draft claims it says, before a human ever reads it as settled.</p></div></div>
+      <hr class="divider" aria-hidden="true">
+      <div class="layer reveal"><span class="k">Layer 03 · Human gate</span><div><h3>A named reviewer signs off on the load-bearing steps</h3><p class="muted small">Supervision is designed into the flow, so responsibility is explicit and the record shows who checked what, in line with professional-conduct duties.</p></div></div>
+      <hr class="divider" aria-hidden="true">
+      <div class="layer reveal"><span class="k">Layer 04 · Audit trail</span><div><h3>Leave a record leadership can defend</h3><p class="muted small">What the model produced, what was verified, and who approved it, captured so the firm can show its work if anyone asks.</p></div></div>
     </div>
   </div>
 </section>
@@ -116,38 +185,27 @@
 <section class="section section--paper" id="tools" aria-labelledby="tools-h">
   <div class="wrap">
     <div class="sec-head reveal">
-      <p class="eyebrow">The tools that prove it</p>
+      <p class="eyebrow">Proof, not promises</p>
       <h2 class="h2" id="tools-h">The approach, demonstrated</h2>
+      <hr class="rule" aria-hidden="true">
       <p class="lead">A working instrument from this pillar: score hallucination risk and see how verification is designed into a legal AI workflow.</p>
     </div>
     <div class="grid grid-3">
-      <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/teardowns/legal-ai-workflow"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Legal AI</span><h3>Legal AI Workflow Teardown</h3><p>Score hallucination risk; design verification into the workflow.</p><span class="go">Open →</span></a>
-    </div>
-  </div>
-</section>
-
-<!-- HOW YOU BUY IT -->
-<section class="section" id="buy" aria-labelledby="buy-h">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="eyebrow">How you buy it</p>
-      <h2 class="h2" id="buy-h">How this pillar is packaged</h2>
-      <p class="lead">Any pillar can be delivered as any offer. Legal AI usually starts with an Audit of your current workflow, then a per-workflow Build or ongoing advisory retainer.</p>
-    </div>
-    <div class="grid grid-3 reveal">
-      <div class="card"><span class="chip chip--src">Start here</span><h3 style="margin-top:.5rem">Systems Audit</h3><p class="small muted">I map your current AI usage and workflow, score where hallucination risk is highest, and hand you a prioritized fix.</p><p class="mono small" style="color:var(--teal-d);margin:.3rem 0 0">$1,500–$2,500 · 2 weeks</p></div>
-      <div class="card"><h3>Build</h3><p class="small muted">A verification-gated workflow for a specific legal task: designed, scored, and handed to your team, on your platform.</p><p class="mono small" style="color:var(--teal-d);margin:.3rem 0 0">$5,000–$10,000 · 4–6 weeks</p></div>
-      <div class="card"><h3>Fractional AI Chief of Staff</h3><p class="small muted">Ongoing firm/GC or legal-tech founder advisory: I run the AI adoption program and keep the guardrails current.</p><p class="mono small" style="color:var(--teal-d);margin:.3rem 0 0">From $4,000/mo</p></div>
+      <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/tools/citation-verifier"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Legal AI</span><h3>Citation Verifier</h3><p>Paste an AI-drafted brief; flag fake, impossible, or malformed case cites before filing.</p><span class="go">Open →</span></a>
+      <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/teardowns/legal-ai-workflow"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Legal AI</span><h3>Legal AI Workflow Teardown</h3><p>Score hallucination risk; design verification into the workflow, gate by gate.</p><span class="go">Open →</span></a>
+      <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/tools/ai-readiness-scorecard"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Governance</span><h3>AI-Readiness Scorecard</h3><p>Score governance across six dimensions and see whether a Fractional CAO fits.</p><span class="go">Open →</span></a>
+      <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/monitors/private-ai-risk"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Risk</span><h3>Private-AI &amp; Data-Retention Risk</h3><p>Score data-exposure risk across deployment modes, before client data goes near a model.</p><span class="go">Open →</span></a>
     </div>
   </div>
 </section>
 
 <!-- WHO IT'S FOR -->
-<section class="section section--paper" aria-labelledby="aud-h">
+<section class="section" aria-labelledby="aud-h">
   <div class="wrap">
     <div class="sec-head reveal">
       <p class="eyebrow">Who it's for</p>
       <h2 class="h2" id="aud-h">Built for regulated or reputation-sensitive professions</h2>
+      <hr class="rule" aria-hidden="true">
     </div>
     <div class="grid grid-4 keep-2">
       <div class="card reveal"><h3 class="h3">Law firms</h3><p class="small muted">Partners and practice groups adopting AI without risking a sanctions headline.</p></div>
@@ -159,17 +217,35 @@
 </section>
 
 <!-- HOW IT WORKS -->
-<section class="section" id="method" aria-labelledby="how-h">
+<section class="section section--paper section--texture" id="process" aria-labelledby="how-h">
   <div class="wrap">
     <div class="sec-head reveal">
       <p class="eyebrow">How it works</p>
       <h2 class="h2" id="how-h">Audit → scope → build &amp; run</h2>
+      <hr class="rule" aria-hidden="true">
       <p class="lead">The same path every engagement follows. Fast to prove, clear to continue.</p>
     </div>
     <div class="steps">
       <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Audit</h3><p class="muted">A Systems Audit maps your current AI usage, scores where hallucination risk is highest, and hands you a prioritized fix in two weeks.</p></div></div>
       <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Scope</h3><p class="muted">We choose the workflow to build, the verification gates it needs, and the platform it runs on, with no rip-and-replace of what already works.</p></div></div>
-      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Build &amp; run</h3><p class="muted">I design the verification-gated workflow and train your team on it, and, on a retainer, provide ongoing firm/GC or founder advisory to keep it safe as things change.</p></div></div>
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Build &amp; run</h3><p class="muted">I design the verification-gated workflow, orchestrate the tools around it, and train your team, and on a retainer provide ongoing firm/GC or founder advisory to keep it safe as things change.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW YOU BUY IT -->
+<section class="section" id="buy" aria-labelledby="buy-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">How you buy it</p>
+      <h2 class="h2" id="buy-h">How this pillar is packaged</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">Any pillar can be delivered as any offer. Legal AI usually starts with an Audit of your current workflow, then a per-workflow Build or ongoing advisory retainer.</p>
+    </div>
+    <div class="grid grid-3 reveal">
+      <div class="card"><span class="chip chip--src">Start here</span><h3 style="margin-top:.5rem">Systems Audit</h3><p class="small muted">I map your current AI usage and workflow, score where hallucination risk is highest, and hand you a prioritized fix.</p><p class="mono small" style="color:var(--teal-d);margin:.3rem 0 0">$1,500–$2,500 · 2 weeks</p></div>
+      <div class="card"><h3>Build</h3><p class="small muted">A verification-gated workflow for a specific legal task: designed, scored, orchestrated, and handed to your team, on your platform.</p><p class="mono small" style="color:var(--teal-d);margin:.3rem 0 0">$5,000–$10,000 · 4–6 weeks</p></div>
+      <div class="card"><h3>Fractional AI Chief of Staff</h3><p class="small muted">Ongoing firm/GC or legal-tech founder advisory: I run the AI adoption program and keep the guardrails current.</p><p class="mono small" style="color:var(--teal-d);margin:.3rem 0 0">From $4,000/mo</p></div>
     </div>
   </div>
 </section>
@@ -180,14 +256,34 @@
     <div class="sec-head reveal">
       <p class="eyebrow">The service</p>
       <h2 class="h2" id="offer-h">How this becomes yours</h2>
-      <p class="lead">Your firm wants the speed of AI but can't risk a fabricated citation in a filing, so adoption stalls, or runs ungoverned. I design verification-gated workflows on your existing platform, so AI accelerates the work without ever putting your bar standing at risk.</p>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">Your firm wants the speed of AI but can't risk a fabricated citation in a filing, so adoption stalls or runs ungoverned. I design verification-gated workflows on your existing platform, so AI accelerates the work without ever putting your bar standing at risk.</p>
     </div>
     <div class="grid grid-3 reveal">
-      <div class="card"><div class="card__ic" aria-hidden="true">1</div><h3>What I build</h3><p class="small muted">A verification-gated AI workflow scoped to a specific legal task: hallucination-risk scored, platform-agnostic.</p></div>
-      <div class="card"><div class="card__ic" aria-hidden="true">2</div><h3>What you get</h3><ul class="small muted" style="padding-left:1.1rem;margin:.35rem 0 0"><li>A workflow with verification designed in, on your platform</li><li>A hallucination-risk assessment you can show leadership</li><li>Firm/GC or founder advisory to keep it safe over time</li></ul></div>
+      <div class="card"><div class="card__ic" aria-hidden="true">1</div><h3>What I build</h3><p class="small muted">A verification-gated AI workflow scoped to a specific legal task: hallucination-risk scored, orchestrated across your tools, platform-agnostic.</p></div>
+      <div class="card"><div class="card__ic" aria-hidden="true">2</div><h3>What you get</h3><ul class="small muted" style="padding-left:1.1rem;margin:.35rem 0 0"><li>A workflow with verification designed in, on your platform</li><li>A hallucination-risk assessment you can show leadership</li><li>Governance mapped to ABA 512 and your conduct duties</li><li>Firm/GC or founder advisory to keep it safe over time</li></ul></div>
       <div class="card"><div class="card__ic" aria-hidden="true">3</div><h3>How to start</h3><p class="small muted">A 20-minute scoping call. Most begin with a Systems Audit: the fastest proof, and it points to whatever comes next.</p></div>
     </div>
     <p class="lead reveal" style="margin-top:var(--s5)"><strong>Pricing.</strong> Workflow builds start from <strong>$1,000 per workflow or $200/hr</strong> for advisory, scoped to your firm and platform; Audits from <strong>$1,500</strong>, ongoing advisory retainers from <strong>$4,000/mo</strong>. Three-month minimum on retainers; 30 days' notice to stop.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq" aria-labelledby="faq-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Questions</p>
+      <h2 class="h2" id="faq-h">What firms ask first</h2>
+      <hr class="rule" aria-hidden="true">
+    </div>
+    <div class="reveal">
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="f1"><span>Are you a licensed attorney?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="f1"><div class="acc__panel-inner">No. RN Collins is a JD candidate, not a licensed attorney. Aloha AI provides AI workflow design, orchestration, and governance advisory, not legal advice, and nothing here creates an attorney–client relationship. This is legal-adjacent AI systems and operations work, built to support the licensed professionals who do give that advice.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="f2"><span>Do you only work with Harvey?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="f2"><div class="acc__panel-inner">No. Harvey is one node in a larger system. The work is platform-agnostic and orchestrates across the tools you already license, so there's no rip-and-replace. If Harvey is part of your stack, it fits in; if it isn't, the approach still holds.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="f3"><span>How does verification actually stop a fabricated citation?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="f3"><div class="acc__panel-inner">Every citation is confirmed to exist and to support the claim it's attached to before a human reads it as settled, and a named reviewer signs off on the load-bearing steps. The gate sits between the model's output and anything that leaves the building, so an unverified cite can't reach a filing.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="f4"><span>How does this map to ABA Opinion 512 and my conduct duties?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="f4"><div class="acc__panel-inner">ABA Formal Opinion 512 addresses generative AI under duties of competence, confidentiality, communication, and supervision. The governance layer documents where AI is used, how outputs are verified, and who supervises them, so the workflow supports those duties. This is systems and documentation work, not a legal opinion on your obligations.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="f5"><span>What about client confidentiality and data retention?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="f5"><div class="acc__panel-inner">Deployment mode matters before any client data goes near a model. The scope covers where data lives, what a vendor retains, and which tasks belong on a private or contained deployment. The Private-AI &amp; Data-Retention Risk tool on this site scores that exposure as a starting point.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="f6"><span>Why does adoption need a neuroscience lens?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="f6"><div class="acc__panel-inner">A rollout stalls on trust and habit, not features. If associates and staff don't trust the tool, they route around it, and the verification you built never runs. Designing for how people actually learn and trust is what keeps the safe workflow the one they use.</div></div></div>
+    </div>
   </div>
 </section>
 
@@ -199,7 +295,7 @@
     <p class="lead" style="margin:var(--s4) auto var(--s5);text-align:center">Convinced, curious, or comparing, there's a path for each.</p>
     <div style="display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap">
       <a class="btn btn--primary" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Start with a Systems Audit →</a>
-      <a class="btn btn--ghost" href="https://aloha-ai-consulting.vercel.app/tools/ai-readiness-scorecard" target="_blank" rel="noopener">Take the 2-minute assessment</a>
+      <a class="btn btn--ghost" href="https://aloha-ai-consulting.vercel.app/teardowns/legal-ai-workflow" target="_blank" rel="noopener">Score your workflow risk</a>
     </div>
     <p class="small" style="margin-top:var(--s5);color:var(--muted-on-ink)">Prefer email? <a href="#" data-email style="color:var(--teal-mint)">Email RN</a> &nbsp;·&nbsp; or connect on <a href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noopener" style="color:var(--teal-mint)">LinkedIn</a></p>
     <p id="emailReveal" hidden style="margin-top:.5rem;font-family:var(--mono);font-size:.8rem;color:#CFDAD5"></p>
@@ -219,10 +315,11 @@
         <h4>This service</h4>
         <ul>
           <li><a href="#cov-h">What this covers</a></li>
+          <li><a href="#method">The method</a></li>
           <li><a href="#tools">The tools</a></li>
-          <li><a href="#buy">How you buy it</a></li>
-          <li><a href="#method">How it works</a></li>
+          <li><a href="#process">How it works</a></li>
           <li><a href="#start">The service</a></li>
+          <li><a href="#faq">FAQ</a></li>
         </ul>
       </div>
       <div>
@@ -238,7 +335,7 @@
         </ul>
       </div>
     </div>
-    <p class="disc small">Aloha AI provides AI workflow design and advisory, not legal advice. RN Collins is a JD candidate, not a licensed attorney; nothing here is legal or tax advice or an attorney–client relationship.</p>
+    <p class="disc small">Aloha AI provides AI workflow design, orchestration, and governance advisory, not legal advice. RN Collins is a JD candidate, not a licensed attorney; nothing here is legal or tax advice or an attorney–client relationship. This is legal-adjacent AI systems and operations work, never the practice of law.</p>
     <p class="fine">Aloha AI · a DBA of Rayven-Nikkita Collins LLC · Honolulu, HI · No tracking, no cookies · © 2026</p>
   </div>
 </footer>
@@ -256,6 +353,7 @@
   try{navigator.clipboard&&navigator.clipboard.writeText(a);}catch(_){}
   var o=document.getElementById('emailReveal');if(o){o.hidden=false;o.innerHTML='Copied ✓ &nbsp;<a href="mailto:'+a+'?subject='+su+'" style="color:#7FE0C4">'+a+'</a> &nbsp;·&nbsp; <a href="https://mail.google.com/mail/?view=cm&fs=1&to='+a+'&su='+su+'" target="_blank" rel="noopener" style="color:#7FE0C4">Open in Gmail</a>';}
   window.location.href='mailto:'+a+'?subject='+su;});});})();
+  (function(){var nav=document.querySelector('.nav');if(!nav)return;var on=function(){nav.classList.toggle('is-stuck',window.scrollY>8);};on();window.addEventListener('scroll',on,{passive:true});})();
   (function(){if(matchMedia('(prefers-reduced-motion:reduce)').matches){document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in');});return;}
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
   document.querySelectorAll('.reveal').forEach(function(e){io.observe(e);});})();

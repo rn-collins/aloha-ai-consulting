@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trust-Safe Twins — Governed AI Twins for Regulated Professions | Aloha AI</title>
+<meta name="description" content="Best-in-class AI twin and AI-UGC generation wrapped in a governance control plane: consent, provenance, disclosure, substantiation, red-team, and a human gate. Built for regulated and reputation-sensitive professions.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://aloha-ai-consulting.vercel.app/twins">
+<meta name="theme-color" content="#14201C">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Trust-Safe Twins — Governed AI Twins for Regulated Professions">
+<meta property="og:description" content="Everyone sells AI generation. Governance is the harder half. Trust-Safe Twins wraps best-in-class generation in a control plane built for regulated and reputation-sensitive professions.">
+<meta property="og:site_name" content="Aloha AI">
+<meta property="og:image" content="https://aloha-ai-consulting.vercel.app/twins/og-image.png">
+<meta property="og:url" content="https://aloha-ai-consulting.vercel.app/twins">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Trust-Safe Twins — Governed AI Twins for Regulated Professions">
+<meta name="twitter:description" content="Best-in-class AI generation wrapped in a governance control plane, for buyers who cannot afford legal exposure.">
+<meta name="twitter:image" content="https://aloha-ai-consulting.vercel.app/twins/og-image.png">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<script>document.documentElement.className+=' js';</script>
+<link rel="stylesheet" href="../aloha-ds.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Service","name":"Trust-Safe Twins",
+"serviceType":"Governed AI twin and AI-UGC generation for regulated professions",
+"provider":{"@type":"Organization","name":"Aloha AI","url":"https://aloha-ai-consulting.vercel.app/"},
+"areaServed":"US","url":"https://aloha-ai-consulting.vercel.app/twins",
+"description":"Best-in-class AI twin and AI-UGC generation wrapped in a six-layer governance control plane: consent, provenance, disclosure, substantiation, red-team, and a human gate."}
+</script>
+<style>
+  /* ---- Page-specific: Trust-Safe Twins ---- */
+  .hero{position:relative;overflow:hidden;background:var(--grad-hero);
+    color:var(--cream);padding-block:clamp(60px,9vw,128px) clamp(48px,6vw,88px);border-bottom:3px solid var(--teal)}
+  .hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(127,224,196,.05) 1px,transparent 1px);
+    background-size:26px 26px;-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 70%);mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 70%);pointer-events:none}
+  .hero>.wrap{position:relative}
+  .hero .display{color:var(--cream);max-width:20ch;margin-bottom:var(--s4)}
+  .hero .kicker{color:var(--teal-mint)}
+  .hero .lead{color:#CFDAD5;max-width:62ch}
+  .hero em{color:var(--teal-mint);font-style:normal}
+  .hero__cta{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:var(--s5)}
+  .hero__answers{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:var(--s5)}
+  .hero__answers .a{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.04em;color:#CDE7DF;
+    border:1px solid #2F4A42;border-radius:var(--r-pill);padding:.4rem .8rem;background:rgba(255,255,255,.03)}
+  .hero__answers .a b{color:var(--teal-mint);font-weight:500}
+  .livebadge{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:var(--fs-xs);
+    letter-spacing:.08em;text-transform:uppercase;color:#CDE7DF;border:1px solid #2F4A42;border-radius:var(--r-pill);padding:.34rem .72rem;margin-bottom:var(--s4)}
+  .livebadge .dot{width:7px;height:7px;border-radius:50%;background:var(--teal-mint);animation:pulse 2.2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(127,224,196,.5)}70%{box-shadow:0 0 0 7px rgba(127,224,196,0)}100%{box-shadow:0 0 0 0 rgba(127,224,196,0)}}
+
+  .sec-head{margin-bottom:var(--s6);max-width:72ch}
+  .sec-head .h2{margin-bottom:var(--s3)}
+
+  /* exposure list */
+  .exposure{border-left:2px solid var(--teal);padding-left:var(--s4)}
+  .exposure .h3{font-size:1.02rem;margin-bottom:.25rem}
+  .exposure p{font-size:.9rem;color:var(--muted);margin:0}
+  .section--ink .exposure{border-left-color:var(--teal-mint)}
+  .section--ink .exposure p{color:var(--muted-on-ink)}
+
+  /* six-layer governance visual */
+  .layers{counter-reset:layer;display:grid;gap:var(--s4)}
+  .layer{position:relative;display:grid;grid-template-columns:auto 1fr;gap:var(--s4);align-items:start;
+    background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:var(--s5)}
+  .layer__n{counter-increment:layer;width:38px;height:38px;border-radius:10px;background:var(--teal-l);color:var(--teal-d);
+    display:grid;place-items:center;font-family:var(--mono);font-size:.9rem;font-weight:600;flex:none}
+  .layer__n::before{content:counter(layer,decimal-leading-zero)}
+  .layer h3{font-size:var(--fs-h3);margin-bottom:.25rem}
+  .layer p{font-size:.9rem;color:var(--muted);margin:0 0 .55rem}
+  @media(min-width:821px){.layers{grid-template-columns:1fr 1fr}}
+
+  /* governed vs ungoverned comparison */
+  .compare{display:grid;gap:var(--s5)}
+  @media(min-width:821px){.compare{grid-template-columns:1fr 1fr}}
+  .compare__col{border:1px solid var(--line);border-radius:var(--r);background:#fff;padding:var(--s5)}
+  .compare__col--gov{border-color:var(--green-bd);background:var(--green-l)}
+  .compare__col--ung{border-color:var(--red-bd);background:var(--red-l)}
+  .compare__hd{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.09em;text-transform:uppercase;
+    display:flex;align-items:center;gap:.5rem;margin-bottom:var(--s4)}
+  .compare__col--gov .compare__hd{color:var(--green)}
+  .compare__col--ung .compare__hd{color:var(--red)}
+  .compare ul{list-style:none;margin:0;padding:0}
+  .compare li{position:relative;padding-left:1.6rem;margin-bottom:.7rem;font-size:.92rem;line-height:1.5}
+  .compare li::before{position:absolute;left:0;top:0;font-family:var(--mono);font-weight:700}
+  .compare__col--gov li::before{content:"✓";color:var(--green)}
+  .compare__col--ung li::before{content:"✕";color:var(--red)}
+
+  /* offer ladder cards */
+  .ladder{display:grid;gap:var(--s5)}
+  @media(min-width:821px){.ladder{grid-template-columns:repeat(2,1fr)}}
+  .offer{display:flex;flex-direction:column;height:100%}
+  .offer__step{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.1em;text-transform:uppercase;color:var(--teal-d)}
+  .offer h3{font-size:var(--fs-h3);margin:.3rem 0 .5rem}
+  .offer p{font-size:.92rem;color:var(--muted);margin:0 0 .8rem}
+  .offer__price{font-family:var(--mono);font-size:.82rem;color:var(--teal-d);margin-top:auto;padding-top:.6rem;border-top:1px solid var(--line)}
+  .offer__cta{margin-top:.9rem}
+
+  /* proof gates */
+  .gate .h3{font-size:1.02rem;margin-bottom:.25rem}
+  .gate p{font-size:.88rem;color:var(--muted-on-ink);margin:0}
+
+  .who-list{list-style:none;margin:0;padding:0;display:grid;gap:.7rem}
+  .who-list li{background:#fff;border:1px solid var(--line);border-radius:var(--r-sm);padding:.9rem 1.1rem;font-size:.92rem}
+
+  .cta-center{text-align:center}
+  .cta-center .lead{margin-inline:auto}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="/" aria-label="Aloha AI home">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#1B7A68"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#1B7A68" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      Aloha&nbsp;AI
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav__links" id="navlinks">
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/#moat">The moat</a></li>
+        <li><a href="/#tools">Tools</a></li>
+        <li><a href="/#products">Products</a></li>
+        <li><a href="/university">University</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li class="nav__cta"><a class="btn btn--primary btn--sm" href="#offers">Get started →</a></li>
+      </ul>
+    </nav>
+    <button class="nav__burger" id="burger" aria-label="Open menu" aria-controls="navlinks" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+<span id="top"></span>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-h">
+  <div class="wrap">
+    <span class="livebadge"><span class="dot" aria-hidden="true"></span> A governed-synthetic-operator line inside the Regulated Trust Stack</span>
+    <p class="eyebrow kicker">Aloha AI · Trust-Safe Twins</p>
+    <h1 class="display" id="hero-h">A Trust-Safe Twin is an AI twin that ships with its consent, provenance, and disclosure already attached.</h1>
+    <p class="lead">Everyone sells AI generation. The harder half is governance. A Trust-Safe Twin wraps best-in-class voice, avatar, and outbound engines in a six-layer control plane, so a regulated or reputation-sensitive team can put a twin to work without putting its <em>license, reputation, or legal position</em> at risk.</p>
+    <div class="hero__cta">
+      <a class="btn btn--primary" href="/twins/exposure-check">Check your exposure →</a>
+      <a class="btn btn--ghost" href="/twins/console">Open the console</a>
+      <a class="btn btn--ghost" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a readiness call</a>
+    </div>
+    <div class="hero__answers">
+      <span class="a"><b>For</b> psychedelic-health, cannabis, biopharma, legal &amp; regulated founders</span>
+      <span class="a"><b>Why</b> the consent, the disclosure, and the claim have to be right</span>
+    </div>
+  </div>
+</section>
+
+<!-- THE PROBLEM / EXPOSURE -->
+<section class="section section--paper" id="problem" aria-labelledby="prob-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The exposure</p>
+      <h2 class="h2" id="prob-h">An ungoverned twin is a liability you carry</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">The market is long on realism and short on trust. The tools that clone your voice, face, and outbound have no answer for the rules that govern them. That gap lands on the person who deployed the twin.</p>
+    </div>
+    <div class="grid grid-2 reveal" style="row-gap:var(--s5)">
+      <div class="exposure">
+        <h3 class="h3">FTC Fake Reviews Rule (16 CFR 465)</h3>
+        <p>Generating fabricated or experience-faking reviews and testimonials carries penalties reported near $53k per violation. A content twin that invents social proof walks straight into it.</p>
+      </div>
+      <div class="exposure">
+        <h3 class="h3">Likeness law: ELVIS Act, NO FAKES, right of publicity</h3>
+        <p>Cloning a voice or likeness without written, use-specific consent implicates CA §3344.1 / AB 1836, the TN ELVIS Act, and NY §50-f. The NO FAKES Act has been advancing in Congress.</p>
+      </div>
+      <div class="exposure">
+        <h3 class="h3">EU AI Act, Article 50</h3>
+        <p>AI interaction and synthetic media carry disclosure and machine-readable marking duties. An undisclosed twin is a compliance gap the moment it speaks to an EU-touching audience.</p>
+      </div>
+      <div class="exposure">
+        <h3 class="h3">Platform terms of service</h3>
+        <p>The LinkedIn User Agreement and CAN-SPAM govern how a twin may reach anyone. An autopilot twin puts your primary account and your sender reputation at risk.</p>
+      </div>
+    </div>
+    <p class="reveal" style="margin-top:var(--s6)"><a class="btn btn--outline" href="/twins/exposure-check">Is your AI twin legally exposed? Take the 6-minute screen →</a></p>
+  </div>
+</section>
+
+<!-- GOVERNED VS UNGOVERNED -->
+<section class="section" id="compare" aria-labelledby="cmp-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The difference</p>
+      <h2 class="h2" id="cmp-h">Governed generation versus the volume tools</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">Same generation quality on both sides. What changes is whether the output can stand in front of a general counsel, a regulator, or a platform trust team.</p>
+    </div>
+    <div class="compare reveal">
+      <div class="compare__col compare__col--ung">
+        <p class="compare__hd"><span class="chip chip--med">Ungoverned</span> An off-the-shelf clone tool</p>
+        <ul>
+          <li>Voice and likeness cloned with no signed, use-scoped consent on file.</li>
+          <li>No provenance credential, so the platform label cannot vouch for the asset.</li>
+          <li>Disclosure left to the operator to remember, or skipped entirely.</li>
+          <li>Health, efficacy, and capability claims ship unverified.</li>
+          <li>No red-team pass, so prompt-injection and impersonation go untested.</li>
+          <li>No human gate, so a bad output reaches an audience before anyone reviews it.</li>
+        </ul>
+      </div>
+      <div class="compare__col compare__col--gov">
+        <p class="compare__hd"><span class="chip chip--hi">Governed</span> A Trust-Safe Twin</p>
+        <ul>
+          <li>Signed, use-scoped voice and likeness consent, with rights-expiry tracking.</li>
+          <li>C2PA Content Credentials engineered to survive to the platform label.</li>
+          <li>Automatic AI and automated-interaction disclosure, on by default.</li>
+          <li>Every claim gated against an evidence file before it can ship.</li>
+          <li>Red-team suite run on a schedule, with results logged for audit.</li>
+          <li>A human review gate on outputs that carry legal or reputational weight.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE CONTROL PLANE: SIX LAYERS -->
+<section class="section section--ink section--texture" id="control-plane" aria-labelledby="cp-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The differentiator</p>
+      <h2 class="h2" id="cp-h">Six governance layers, each answering a specific rule</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">We orchestrate proven generation engines behind a control plane the rest of the market leaves open. Governed generation matters because consent, disclosure, and substantiation are legal and ethical obligations, not features. Each layer closes one of them.</p>
+    </div>
+    <div class="layers reveal">
+      <div class="layer" style="background:rgba(255,255,255,.03);border-color:#2F4A42">
+        <span class="layer__n" style="background:rgba(127,224,196,.14);color:var(--teal-mint)"></span>
+        <div>
+          <h3 style="color:var(--cream)">Consent &amp; likeness rights</h3>
+          <p style="color:var(--muted-on-ink)">Signed, use-scoped voice and likeness consent with rights-expiry management. No cloning without a documented right to do so.</p>
+          <span class="chip chip--src">CA §3344.1 / AB 1836 · TN ELVIS Act · NY §50-f</span>
+        </div>
+      </div>
+      <div class="layer" style="background:rgba(255,255,255,.03);border-color:#2F4A42">
+        <span class="layer__n" style="background:rgba(127,224,196,.14);color:var(--teal-mint)"></span>
+        <div>
+          <h3 style="color:var(--cream)">Provenance</h3>
+          <p style="color:var(--muted-on-ink)">C2PA Content Credentials on every asset, engineered to survive to the platform label so viewers can trace how it was made.</p>
+          <span class="chip chip--src">EU AI Act Art. 50(2) · C2PA</span>
+        </div>
+      </div>
+      <div class="layer" style="background:rgba(255,255,255,.03);border-color:#2F4A42">
+        <span class="layer__n" style="background:rgba(127,224,196,.14);color:var(--teal-mint)"></span>
+        <div>
+          <h3 style="color:var(--cream)">Disclosure</h3>
+          <p style="color:var(--muted-on-ink)">Automatic AI and automated-interaction labeling, tuned against the neuroscience of trust to disclose clearly while keeping the message readable.</p>
+          <span class="chip chip--src">EU AI Act Art. 50(1)–(5) · 16 CFR 255</span>
+        </div>
+      </div>
+      <div class="layer" style="background:rgba(255,255,255,.03);border-color:#2F4A42">
+        <span class="layer__n" style="background:rgba(127,224,196,.14);color:var(--teal-mint)"></span>
+        <div>
+          <h3 style="color:var(--cream)">Substantiation</h3>
+          <p style="color:var(--muted-on-ink)">Every health, efficacy, or AI-capability claim gated against an evidence file before it ships. A claim without support is a hard stop.</p>
+          <span class="chip chip--src">FTC Health Guidance · Operation AI Comply</span>
+        </div>
+      </div>
+      <div class="layer" style="background:rgba(255,255,255,.03);border-color:#2F4A42">
+        <span class="layer__n" style="background:rgba(127,224,196,.14);color:var(--teal-mint)"></span>
+        <div>
+          <h3 style="color:var(--cream)">Red-team</h3>
+          <p style="color:var(--muted-on-ink)">Injection firewall and a standing red-team suite covering direct, indirect, payload-splitting, and obfuscated attacks, run and logged on a schedule.</p>
+          <span class="chip chip--src">OWASP LLM01 · adversarial testing</span>
+        </div>
+      </div>
+      <div class="layer" style="background:rgba(255,255,255,.03);border-color:#2F4A42">
+        <span class="layer__n" style="background:rgba(127,224,196,.14);color:var(--teal-mint)"></span>
+        <div>
+          <h3 style="color:var(--cream)">Human gate</h3>
+          <p style="color:var(--muted-on-ink)">A QA veto gate and deterministic hard rules keep a person in the loop. Legal and health twins are scope-limited to intake and scheduling.</p>
+          <span class="chip chip--src">ABA 5.5 (UPL) · human-in-the-loop</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT A TWIN IS -->
+<section class="section section--paper" id="what" aria-labelledby="what-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">What a twin is</p>
+      <h2 class="h2" id="what-h">Two twins, one control plane</h2>
+    </div>
+    <div class="grid grid-2 reveal">
+      <div class="card">
+        <div class="card__ic" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l16-8-6 16-3-6-7-2z"/></svg>
+        </div>
+        <h3>Sales twin</h3>
+        <p class="small muted">Clones how you sell and runs outbound in your voice, up to the call. Deliverability-safe email, LinkedIn as a human-approved assist rather than autopilot, per-contact fit gating, and a human handoff at the moment of truth.</p>
+        <p style="margin:.6rem 0 0"><a class="btn btn--outline btn--sm" href="/twins/console">Open the console demo →</a></p>
+      </div>
+      <div class="card">
+        <div class="card__ic" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="14" height="14" rx="2"/><path d="M17 9l4-2v10l-4-2"/></svg>
+        </div>
+        <h3>Content / UGC twin</h3>
+        <p class="small muted">Clones how you look and sound to produce video and social content at scale. Consent-gated voice and avatar, provenance credentials that reach the platform label, and disclosure built in from the first frame.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section class="section" id="who" aria-labelledby="who-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Who it is for</p>
+      <h2 class="h2" id="who-h">Buyers who cannot use the volume tools without exposure</h2>
+    </div>
+    <ul class="who-list reveal">
+      <li>Psychedelic-health and cannabis organizations operating under shifting state and federal rules.</li>
+      <li>Biopharma regulatory-affairs and communications teams held to substantiation standards.</li>
+      <li>Boutique law firms and legal-tech companies with UPL and conflict-check obligations.</li>
+      <li>Regulated founders whose reputation and license depend on getting consent and disclosure right.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- OFFER LADDER -->
+<section class="section section--paper" id="offers" aria-labelledby="off-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">How to work together</p>
+      <h2 class="h2" id="off-h">The offer ladder: audit, build, retainer</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">Start with the audit so you know your exposure before you spend on a build. Most engagements move audit, then build, then a retainer that keeps the twin governed as the rules shift.</p>
+    </div>
+    <div class="ladder reveal">
+      <div class="card offer">
+        <span class="offer__step">Step 1 · Start here</span>
+        <h3>Twin Readiness &amp; Compliance Audit</h3>
+        <p>Find out exactly where an AI twin would put you in front of a regulator or a plaintiff, before you build one. A scored readiness report across all six layers, with the rule each gap touches, plus a go / fix-first / do-not-build call.</p>
+        <p class="offer__price">$2,500 fixed · 2 weeks</p>
+        <div class="offer__cta"><a class="btn btn--primary btn--sm" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book the audit →</a></div>
+      </div>
+      <div class="card offer">
+        <span class="offer__step">Step 2 · Build</span>
+        <h3>Built Twin — Sales or Content/UGC</h3>
+        <p>A working twin that performs at human level and ships with the full control plane wired in, plus an evidence-gate report showing it cleared the acceptance thresholds against your own human baseline.</p>
+        <p class="offer__price">Sales from $9,500 · Content/UGC from $12,500 · ~4–6 weeks</p>
+        <div class="offer__cta"><a class="btn btn--outline btn--sm" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Scope a build →</a></div>
+      </div>
+      <div class="card offer">
+        <span class="offer__step">Step 3 · Keep it governed</span>
+        <h3>Governed-Twin Retainer</h3>
+        <p>Keep the twin compliant and on-voice every month. Consent lifecycle, provenance and disclosure upkeep, substantiation refresh, red-team re-runs, and a monthly governance report as the rules move.</p>
+        <p class="offer__price">From $3,500/mo (to $8,000/mo full-service) · ongoing</p>
+        <div class="offer__cta"><a class="btn btn--outline btn--sm" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Talk retainer →</a></div>
+      </div>
+      <div class="card offer">
+        <span class="offer__step">Step 4 · Self-serve <em>(roadmap)</em></span>
+        <h3>Self-serve control-plane SaaS</h3>
+        <p>The six governance layers as a plug-in control plane you point at your own generation engines. On the roadmap, sequenced after the build and retainer offers.</p>
+        <p class="offer__price">From $297/mo (roadmap)</p>
+        <div class="offer__cta"><a class="btn btn--outline btn--sm" href="/twins/exposure-check">Start with the free screen →</a></div>
+      </div>
+    </div>
+    <p class="small muted reveal" style="margin-top:var(--s5)">Pricing is scoped and fixed where shown. Retainers carry a three-month minimum with 30 days' notice to stop. Built-twin pricing depends on scope, engines, and evidence-gate targets set during the audit.</p>
+  </div>
+</section>
+
+<!-- PROOF / EVIDENCE GATES -->
+<section class="section section--ink" id="proof" aria-labelledby="proof-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Proof, not slogan</p>
+      <h2 class="h2" id="proof-h">The evidence gates a twin clears before handoff</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">Trust-safe is a set of numbers you can put in front of a general counsel. Every Built Twin clears these gates against the client's own human baseline before it goes live.</p>
+    </div>
+    <div class="grid grid-4 keep-2 reveal">
+      <div class="gate"><h3 class="h3" style="color:var(--cream)">Voice ABX</h3><p>Blind ABX discrimination at or below about 55%, with a persona human panel scoring 4/5 or better.</p></div>
+      <div class="gate"><h3 class="h3" style="color:var(--cream)">RAGAS faithfulness</h3><p>Faithfulness at 0.90 or higher. A fabricated price or claim is a hard fail.</p></div>
+      <div class="gate"><h3 class="h3" style="color:var(--cream)">Injection-catch</h3><p>95% or higher on a red-team suite covering direct, indirect, payload-splitting, and obfuscated attacks.</p></div>
+      <div class="gate"><h3 class="h3" style="color:var(--cream)">Human baseline</h3><p>Reply, booking, or conversion that matches or beats your historical human numbers at equal-or-better safety.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq" aria-labelledby="faq-h">
+  <div class="wrap">
+    <div class="sec-head reveal"><p class="eyebrow">Questions</p><h2 class="h2" id="faq-h">What buyers ask first</h2></div>
+    <div class="reveal">
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="f1"><span>How is this different from HeyGen, Arcads, or a plain sales-twin service?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="f1"><div class="acc__panel-inner">Those tools generate. They carry no consent, provenance, disclosure, substantiation, red-team, or human-gate layer. We orchestrate best-in-class engines and add the governance that keeps regulated buyers out of court. You can pair us with the engine you already like.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="f2"><span>Do you build the generation models yourselves?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="f2"><div class="acc__panel-inner">No. We wrap proven engines for voice, avatar, and outbound in the control plane. The differentiator is governance and the evidence gates, not raw generation.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="f3"><span>Can a legal or health twin give advice?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="f3"><div class="acc__panel-inner">No. Legal and health twins are scope-limited to intake and scheduling to avoid unauthorized practice, with a licensed-professional disclosure attached. The twin routes anything substantive to a qualified human.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="f4"><span>What happens if a rule changes after we launch?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="f4"><div class="acc__panel-inner">That is what the Governed-Twin Retainer covers. The compliance surface moves monthly, so consent windows, disclosure defaults, and substantiation get refreshed as the rules shift.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="f5"><span>Where do we start?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="f5"><div class="acc__panel-inner">The Twin Readiness &amp; Compliance Audit. It tells you what a twin would expose you to before you spend on building one. The free <a href="/twins/exposure-check">exposure screen</a> is the fastest first step.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section--ink" id="contact" aria-labelledby="cta-h">
+  <div class="wrap cta-center">
+    <p class="eyebrow">Aloha AI · Trust-Safe Twins</p>
+    <h2 class="h2" id="cta-h" style="max-width:26ch;margin-inline:auto">See where your twin would leak.</h2>
+    <p class="lead" style="margin:var(--s4) auto var(--s5)">Run the free exposure screen, open the console, or book a readiness call. There's a path for whichever stage you're at.</p>
+    <div style="display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn--primary" href="/twins/exposure-check">Check your exposure →</a>
+      <a class="btn btn--ghost" href="/twins/console">Open the console</a>
+      <a class="btn btn--ghost" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a readiness call</a>
+    </div>
+    <p class="small" style="margin-top:var(--s5);color:var(--muted-on-ink)">Prefer email? <a href="#" data-email style="color:var(--teal-mint)">Email RN</a> &nbsp;·&nbsp; or connect on <a href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noopener" style="color:var(--teal-mint)">LinkedIn</a></p>
+    <p id="emailReveal" hidden style="margin-top:.5rem;font-family:var(--mono);font-size:.8rem;color:#CFDAD5"></p>
+  </div>
+</section>
+</main>
+
+<footer class="footer" aria-labelledby="foot-h">
+  <div class="wrap">
+    <h2 id="foot-h" class="small" style="position:absolute;left:-999px">Site footer</h2>
+    <div class="footer__grid">
+      <div>
+        <a class="nav__brand" href="/" style="color:var(--cream)" aria-label="Aloha AI home"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#7FE0C4"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#7FE0C4" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg> Aloha&nbsp;AI</a>
+        <p class="small" style="margin-top:var(--s3);max-width:38ch;color:#9FB6AE">Governed AI twins for regulated and reputation-sensitive professions: consent, provenance, disclosure, substantiation, red-team, and a human gate.</p>
+      </div>
+      <div>
+        <h4>Trust-Safe Twins</h4>
+        <ul>
+          <li><a href="#control-plane">The six governance layers</a></li>
+          <li><a href="#offers">The offer ladder</a></li>
+          <li><a href="/twins/exposure-check">Exposure screen</a></li>
+          <li><a href="/twins/console">Twin console</a></li>
+          <li><a href="/#tools">All live tools</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Practice</h4>
+        <ul>
+          <li><a href="/about.html">About RN Collins</a></li>
+          <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a call</a></li>
+          <li><a href="https://rn-portfolio-khaki.vercel.app" target="_blank" rel="noopener">Portfolio → RN Builds</a></li>
+          <li><a href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="/privacy.html">Privacy</a></li>
+          <li><a href="/terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="disc small">Not legal advice. Aloha AI provides governance systems and regulatory intelligence, not legal advice. RN Collins is a JD candidate, not a licensed attorney; nothing here is legal, medical, or tax advice, creates an attorney–client relationship, or should be relied on as such. Statutory and fast-moving items (including NO FAKES Act status and penalty figures) should be re-verified with qualified counsel before any public or client-facing use.</p>
+    <p class="fine">Aloha AI · a DBA of Rayven-Nikkita Collins LLC · Honolulu, HI · No tracking, no cookies · © 2026</p>
+  </div>
+</footer>
+
+<script>
+  (function(){var b=document.getElementById('burger'),l=document.getElementById('navlinks');
+  function set(o){b.setAttribute('aria-expanded',o);l.classList.toggle('open',o);b.setAttribute('aria-label',o?'Close menu':'Open menu');}
+  b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true');});
+  l.addEventListener('click',function(e){if(e.target.tagName==='A')set(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});})();
+  document.querySelectorAll('.acc__btn').forEach(function(btn){var p=document.getElementById(btn.getAttribute('aria-controls'));
+    btn.addEventListener('click',function(){var o=btn.getAttribute('aria-expanded')==='true';btn.setAttribute('aria-expanded',!o);p.style.maxHeight=o?null:p.scrollHeight+'px';});});
+  (function(){var u='collins.ra',dm='northeastern.edu',a=u+'@'+dm,su=encodeURIComponent('Trust-Safe Twins — inquiry');
+  document.querySelectorAll('[data-email]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();
+  try{navigator.clipboard&&navigator.clipboard.writeText(a);}catch(_){}
+  var o=document.getElementById('emailReveal');if(o){o.hidden=false;o.innerHTML='Copied ✓ &nbsp;<a href="mailto:'+a+'?subject='+su+'" style="color:#7FE0C4">'+a+'</a> &nbsp;·&nbsp; <a href="https://mail.google.com/mail/?view=cm&fs=1&to='+a+'&su='+su+'" target="_blank" rel="noopener" style="color:#7FE0C4">Open in Gmail</a>';}
+  window.location.href='mailto:'+a+'?subject='+su;});});})();
+  (function(){var nav=document.querySelector('.nav');if(!nav)return;var on=function(){nav.classList.toggle('is-stuck',window.scrollY>8);};on();window.addEventListener('scroll',on,{passive:true});})();
+  (function(){if(matchMedia('(prefers-reduced-motion:reduce)').matches){document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in');});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(e){io.observe(e);});})();
+</script>
+</body>
+</html>

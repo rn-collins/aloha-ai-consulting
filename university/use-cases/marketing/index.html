@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI for Marketing: A Practical Use Case for Small Businesses | Aloha AI University</title>
+<meta name="description" content="What AI for marketing actually looks like for a small service business: drafting, repurposing, briefs, and channel variants — with a human editor keeping voice, facts, and judgment intact.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://aloha-ai-consulting.vercel.app/university/use-cases/marketing">
+<meta name="theme-color" content="#0F5343">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI for Marketing: A Practical Use Case for Small Businesses | Aloha AI University">
+<meta property="og:description" content="Use AI to collapse time-to-draft, not judgment. Content drafting, repurposing, briefs, and channel variants — reviewed by a human before anything ships.">
+<meta property="og:site_name" content="Aloha AI University">
+<meta property="og:image" content="https://aloha-ai-consulting.vercel.app/university/og-image.png">
+<meta property="og:url" content="https://aloha-ai-consulting.vercel.app/university/use-cases/marketing">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI for Marketing: A Practical Use Case for Small Businesses">
+<meta name="twitter:description" content="A grounded look at AI for marketing — drafting, repurposing, and channel variants that still sound like you.">
+<meta name="twitter:image" content="https://aloha-ai-consulting.vercel.app/university/og-image.png">
+<link rel="icon" href="/university/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style id="uni-ds">
+/* ============================================================
+   ALOHA AI UNIVERSITY — DESIGN SYSTEM  (university.css)
+   Shared stylesheet for every University page.
+   Premium, calm, high-trust. Brand-cohesive with the elevated
+   Aloha AI main site. v2.0 · 2026-07
+   ============================================================ */
+
+/* ---- 1. TOKENS ------------------------------------------- */
+:root{
+  /* Brand color */
+  --teal:#1B7A68; --teal-d:#0F5343; --teal-l:#E9F3F0; --mint:#7FE0C4;
+  --ink:#14201C; --ink-2:#25332E;
+  --cream:#F7F4EC; --cream-2:#EFEAE0; --paper:#FCFAF5; --white:#FFFFFF;
+  --muted:#4E5C56;            /* AA on cream/white */
+  --muted-ink:#B7C7C0;        /* AA on ink */
+  --line:#E4DFD3; --line-2:#C7BFAE;
+  --amber:#8A5A08; --amber-l:#FBF4E6; --amber-bd:#E4CE9E;
+
+  /* Type families */
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:"Manrope",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:"DM Mono","SFMono-Regular",Menlo,Consolas,monospace;
+
+  /* Type scale (fluid) */
+  --fs-display:clamp(2.6rem,6vw,4.4rem);
+  --fs-h1:clamp(2.2rem,5vw,3.4rem);
+  --fs-h2:clamp(1.7rem,3.4vw,2.5rem);
+  --fs-h3:1.35rem;
+  --fs-body:1.0625rem; --fs-lead:1.2rem; --fs-sm:.9rem; --fs-xs:.78rem;
+  --label:.72rem;
+
+  /* Space scale */
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px;
+  --s7:48px; --s8:64px; --s9:96px;
+
+  /* Radius, shadow, motion */
+  --r-sm:10px; --r:16px; --r-lg:22px; --r-pill:999px;
+  --sh-1:0 1px 2px rgba(20,32,28,.05);
+  --sh-2:0 2px 6px rgba(20,32,28,.05),0 14px 40px rgba(20,32,28,.08);
+  --sh-3:0 2px 4px rgba(20,32,28,.04),0 20px 52px -14px rgba(20,32,28,.16);
+  --sh-focus:0 0 0 3px rgba(27,122,104,.4);
+  --sh-focus-mint:0 0 0 3px rgba(127,224,196,.55);
+  --ease:cubic-bezier(.4,0,.2,1); --ease-out:cubic-bezier(.16,1,.3,1);
+  --dur:.24s; --dur-s:.14s;
+
+  --maxw:1120px; --measure:68ch; --nav-h:66px;
+
+  /* Editorial surfaces / gradients (within brand) */
+  --grad-hero:linear-gradient(158deg,var(--teal-d) 0%,var(--teal) 78%,#227e6b 100%);
+  --grad-ink:linear-gradient(180deg,#16241E 0%,var(--ink) 100%);
+  --grad-mint-rule:linear-gradient(90deg,var(--teal) 0%,var(--mint) 100%);
+  --texture-dot:radial-gradient(rgba(27,122,104,.05) 1px,transparent 1px);
+}
+
+/* ---- 2. BASE / RESET ------------------------------------- */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 14px);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);
+  font-size:var(--fs-body);line-height:1.65;font-weight:400;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{max-width:100%;display:block}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;letter-spacing:-.01em;line-height:1.08;margin:0;text-wrap:balance}
+h1{font-size:var(--fs-h1)} h2{font-size:var(--fs-h2)} h3{font-size:var(--fs-h3)}
+p{margin:0 0 1rem;text-wrap:pretty}
+a{color:var(--teal-d);text-underline-offset:2px;transition:color var(--dur-s) var(--ease)}
+a:hover{color:var(--teal)}
+strong{font-weight:700}
+:focus-visible{outline:none;box-shadow:var(--sh-focus);border-radius:6px}
+.section--ink :focus-visible,.hero :focus-visible{box-shadow:var(--sh-focus-mint)}
+::selection{background:var(--mint);color:var(--ink)}
+
+/* ---- 3. LAYOUT ------------------------------------------- */
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(20px,4vw,28px)}
+.section{padding-block:clamp(56px,8vw,104px);position:relative}
+.section + .section{border-top:1px solid var(--line)}
+.section--paper{background:var(--paper)}
+.section--ink{background:var(--grad-ink);color:var(--cream)}
+.section--ink h1,.section--ink h2,.section--ink h3{color:var(--cream)}
+.section--ink + .section,.section + .section--ink{border-top:0}
+.section--tint{background:var(--white)}
+/* subtle dot texture, opt-in, brand-tinted */
+.section--texture{background-image:var(--texture-dot);background-size:22px 22px}
+.section-head{max-width:var(--measure);margin-bottom:var(--s7)}
+/* accent rule system — an editorial hairline that reads intentional */
+.rule{height:2px;width:56px;border:0;border-radius:2px;background:var(--grad-mint-rule);margin:0 0 var(--s5)}
+.section--ink .rule{opacity:.9}
+.grid{display:grid;gap:var(--s5)}
+.grid-2{grid-template-columns:repeat(2,1fr)}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.grid-4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:900px){.grid-3,.grid-4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}}
+.stack-gap{margin-top:var(--s6)}
+
+/* ---- 4. TYPOGRAPHY HELPERS ------------------------------- */
+.eyebrow{font-family:var(--mono);font-size:var(--label);letter-spacing:.18em;
+  text-transform:uppercase;color:var(--teal-d);margin:0 0 var(--s4);font-weight:500;
+  display:inline-flex;align-items:center;gap:.6rem}
+.eyebrow::before{content:"";width:16px;height:2px;border-radius:2px;background:var(--grad-mint-rule);flex:none}
+.section--ink .eyebrow{color:var(--mint)}
+.section--ink .eyebrow::before{opacity:.95}
+.hero .eyebrow::before{opacity:.95}
+.display{font-size:var(--fs-display);letter-spacing:-.02em}
+.lead{font-size:var(--fs-lead);color:var(--muted);max-width:60ch;line-height:1.55}
+.section--ink .lead{color:var(--muted-ink)}
+.lead-line{font-family:var(--serif);font-size:1.4rem;color:var(--teal-d);max-width:44ch;line-height:1.3;font-weight:500}
+.mono{font-family:var(--mono)}
+.small{font-size:var(--fs-sm)} .muted{color:var(--muted)}
+.measure{max-width:var(--measure)}
+
+/* ---- 5. BUTTONS ------------------------------------------ */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  font-family:var(--mono);font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;
+  font-weight:500;text-decoration:none;cursor:pointer;
+  padding:.85rem 1.35rem;border-radius:var(--r-sm);border:1px solid transparent;
+  transition:all var(--dur) var(--ease);min-height:46px;line-height:1;white-space:nowrap}
+.btn--primary{background:var(--teal);color:#fff;box-shadow:0 1px 2px rgba(15,83,67,.28)}
+.btn--primary:hover{background:var(--teal-d);color:#fff;transform:translateY(-1px);box-shadow:0 8px 22px -6px rgba(15,83,67,.5)}
+.btn--ghost{background:transparent;border-color:var(--line-2);color:var(--ink)}
+.btn--ghost:hover{border-color:var(--teal);color:var(--teal-d);transform:translateY(-1px);box-shadow:var(--sh-1)}
+.btn--on-ink{background:var(--mint);color:var(--teal-d)}
+.btn--on-ink:hover{background:#9dedd6;color:var(--teal-d);transform:translateY(-1px);box-shadow:var(--sh-2)}
+.btn--outline-ink{background:transparent;border-color:rgba(127,224,196,.5);color:var(--cream)}
+.btn--outline-ink:hover{border-color:var(--mint);color:#fff;background:rgba(127,224,196,.1)}
+.btn--sm{padding:.55rem .9rem;min-height:40px;font-size:.7rem}
+.btn:active{transform:translateY(0)}
+.cta-row{display:flex;flex-wrap:wrap;gap:var(--s3);margin-top:var(--s6)}
+
+/* ---- 6. BADGES / TAGS ------------------------------------ */
+.badge{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--mono);
+  font-size:var(--fs-xs);letter-spacing:.05em;text-transform:uppercase;
+  padding:.3rem .65rem;border-radius:var(--r-pill);
+  border:1px solid var(--line);background:var(--white);color:var(--teal-d);font-weight:500}
+.badge--solid{background:var(--teal-l);border-color:#BADFD6}
+.section--ink .badge{background:rgba(127,224,196,.12);border-color:rgba(127,224,196,.3);color:var(--mint)}
+.price{font-family:var(--mono);font-size:var(--fs-sm);color:var(--teal-d);font-weight:500;letter-spacing:.02em}
+
+/* ---- 7. CARDS -------------------------------------------- */
+.card{position:relative;background:var(--white);border:1px solid var(--line);border-radius:var(--r);
+  padding:var(--s6);box-shadow:var(--sh-1);overflow:hidden;
+  transition:box-shadow var(--dur) var(--ease),transform var(--dur) var(--ease),border-color var(--dur) var(--ease)}
+.card h3{margin-bottom:var(--s3)}
+.card p{color:var(--muted);margin-bottom:var(--s4)}
+a.card{text-decoration:none;color:var(--ink);display:flex;flex-direction:column}
+.card--hover:hover{box-shadow:var(--sh-3);transform:translateY(-3px);border-color:var(--line-2)}
+/* an accent hairline that surfaces on hover — quiet until you touch it */
+.card--hover::after{content:"";position:absolute;left:0;right:0;top:0;height:2px;
+  background:var(--grad-mint-rule);transform:scaleX(0);transform-origin:left;opacity:0;
+  transition:transform var(--dur) var(--ease-out),opacity var(--dur) var(--ease)}
+.card--hover:hover::after{transform:scaleX(1);opacity:1}
+.card__more{margin-top:auto;font-family:var(--mono);font-size:var(--fs-xs);
+  letter-spacing:.05em;text-transform:uppercase;color:var(--teal-d);font-weight:500}
+a.card:hover .card__more{color:var(--teal)}
+.card__eyebrow{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.12em;
+  text-transform:uppercase;color:var(--teal);margin-bottom:var(--s3);font-weight:500}
+.section--paper .card{background:var(--white)}
+.section--ink .card{background:var(--ink-2);border-color:#33443C;color:var(--cream)}
+.section--ink .card p{color:var(--muted-ink)}
+
+/* ---- 8. HERO --------------------------------------------- */
+.hero{background:var(--grad-hero);
+  color:var(--cream);position:relative;overflow:hidden;border-bottom:3px solid var(--teal)}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(rgba(127,224,196,.06) 1px,transparent 1px);background-size:26px 26px;
+  -webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 72%);mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 72%)}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(60% 90% at 82% 8%,rgba(127,224,196,.16),transparent 60%)}
+.hero .wrap{position:relative;z-index:1;padding-block:clamp(64px,10vw,116px)}
+.hero .eyebrow{color:var(--mint)}
+.hero h1{color:#fff;max-width:16ch}
+.hero .lead{color:#E4F1EC;max-width:56ch;margin-top:var(--s5)}
+.hero--sm .wrap{padding-block:clamp(52px,7vw,84px)}
+
+/* ---- 9. PROSE (long-form) -------------------------------- */
+.prose{max-width:var(--measure);font-size:1.075rem}
+.prose > * + *{margin-top:1.15rem}
+.prose h2{font-size:var(--fs-h2);margin-top:2.4rem;margin-bottom:.4rem}
+.prose h3{font-size:var(--fs-h3);margin-top:1.8rem;margin-bottom:.2rem}
+.prose p{color:var(--ink);line-height:1.7}
+.prose a{text-decoration:underline}
+.prose ul,.prose ol{padding-left:1.3rem;color:var(--ink)}
+.prose li{margin-bottom:.5rem}
+.prose blockquote{border-left:3px solid var(--teal);padding:.2rem 0 .2rem 1.2rem;
+  margin:1.6rem 0;font-family:var(--serif);font-size:1.35rem;color:var(--teal-d);font-style:italic}
+.prose code{font-family:var(--mono);font-size:.86em;background:var(--cream-2);
+  padding:.12em .4em;border-radius:6px}
+.prose pre{background:var(--ink);color:var(--cream);padding:var(--s5);border-radius:var(--r);
+  overflow-x:auto;font-family:var(--mono);font-size:.85rem;line-height:1.6}
+.prose pre code{background:none;padding:0}
+.prose table{width:100%;border-collapse:collapse;font-size:var(--fs-sm);margin:1.4rem 0}
+.prose th,.prose td{text-align:left;padding:.6rem .8rem;border-bottom:1px solid var(--line)}
+.prose th{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.06em;
+  text-transform:uppercase;color:var(--teal-d);font-weight:500}
+
+/* ---- 10. ACCORDION (FAQ) --------------------------------- */
+.acc{border:1px solid var(--line);border-radius:var(--r);background:var(--white);overflow:hidden}
+.acc + .acc{margin-top:var(--s3)}
+.acc summary{list-style:none;cursor:pointer;padding:1.15rem 1.3rem;
+  font-family:var(--serif);font-size:1.25rem;font-weight:600;color:var(--ink);
+  display:flex;justify-content:space-between;gap:1rem;align-items:center;min-height:56px}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary:hover{color:var(--teal-d)}
+.acc summary::after{content:"+";font-family:var(--mono);font-size:1.4rem;color:var(--teal);
+  transition:transform var(--dur) var(--ease);flex:none;line-height:1}
+.acc[open] summary::after{transform:rotate(45deg)}
+.acc__body{padding:0 1.3rem 1.25rem;color:var(--muted);max-width:var(--measure)}
+.acc__body p:last-child{margin-bottom:0}
+
+/* ---- 11. NAV --------------------------------------------- */
+.skip{position:absolute;left:-999px;top:0;background:var(--teal-d);color:#fff;
+  padding:.7rem 1.1rem;border-radius:0 0 8px 0;z-index:200;
+  font-family:var(--mono);font-size:.82rem}
+.skip:focus{left:0;color:#fff}
+.nav{position:sticky;top:0;z-index:100;background:rgba(252,250,245,.88);
+  backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);
+  border-bottom:1px solid var(--line);height:var(--nav-h);
+  transition:box-shadow var(--dur) var(--ease),background var(--dur) var(--ease)}
+.nav.is-stuck{background:rgba(252,250,245,.94);box-shadow:0 1px 0 var(--line),0 8px 24px -14px rgba(20,32,28,.4)}
+.nav__in{max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(20px,4vw,28px);
+  height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.nav__brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--ink);
+  font-family:var(--mono);font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500}
+.nav__brand svg{flex:none}
+.nav__brand b{font-weight:500}
+.nav__brand .mk{color:var(--teal-d);font-weight:500}
+.nav__links{display:flex;align-items:center;gap:.15rem;list-style:none;margin:0;padding:0}
+.nav__links a{font-family:var(--mono);font-size:.73rem;letter-spacing:.04em;text-transform:uppercase;
+  color:var(--ink-2);text-decoration:none;padding:.5rem .55rem;border-radius:8px;white-space:nowrap}
+.nav__links a:hover{color:var(--teal-d);background:var(--teal-l)}
+.nav__links a[aria-current="page"]{color:var(--teal-d);background:var(--teal-l)}
+.nav__cta{margin-left:.35rem}
+.nav__burger{display:none;background:none;border:1px solid var(--line-2);border-radius:9px;
+  width:46px;height:46px;cursor:pointer;align-items:center;justify-content:center;color:var(--ink)}
+@media(max-width:1000px){
+  .nav__links{position:fixed;inset:var(--nav-h) 0 auto 0;flex-direction:column;align-items:stretch;
+    gap:0;background:var(--paper);border-bottom:1px solid var(--line);padding:var(--s3);
+    transform:translateY(-10px);opacity:0;visibility:hidden;
+    transition:all var(--dur) var(--ease);box-shadow:var(--sh-2);max-height:calc(100vh - var(--nav-h));overflow-y:auto}
+  .nav__links.open{opacity:1;visibility:visible;transform:translateY(0)}
+  .nav__links a{padding:.9rem .8rem;font-size:.82rem;border-radius:10px}
+  .nav__cta{margin:.5rem 0 0}
+  .nav__cta .btn{width:100%}
+  .nav__burger{display:inline-flex}
+}
+
+/* ---- 12. FOOTER ------------------------------------------ */
+.footer{background:var(--grad-ink);color:var(--muted-ink);padding-block:var(--s9) var(--s7);font-size:var(--fs-sm)}
+.footer a{color:#CFDAD5;text-decoration:none}.footer a:hover{color:#fff}
+.footer__top{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:var(--s7)}
+@media(max-width:760px){.footer__top{grid-template-columns:1fr;gap:var(--s6)}}
+.footer__brand{font-family:var(--serif);font-size:1.6rem;color:var(--cream);margin-bottom:var(--s3)}
+.footer h4{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.12em;text-transform:uppercase;
+  color:#8FA69E;margin-bottom:var(--s4);font-weight:500}
+.footer ul{list-style:none;margin:0;padding:0}.footer li{margin-bottom:.55rem}
+.footer__disc{border-left:2px solid var(--teal);padding-left:1rem;color:#9FB6AE;
+  margin-top:var(--s7);max-width:75ch;line-height:1.7;font-size:var(--fs-sm)}
+.footer__disc strong{color:#DFF0EA}
+.footer__fine{font-family:var(--mono);font-size:.68rem;color:#6C837B;margin-top:var(--s6);line-height:1.7}
+#email-reveal{color:var(--mint);font-weight:600}
+
+/* ---- 13. UTIL / MOTION ----------------------------------- */
+.js .reveal{opacity:0;transform:translateY(16px)}
+.js .reveal.in{opacity:1;transform:none;transition:opacity .6s var(--ease-out),transform .6s var(--ease-out)}
+.divider{height:1px;background:var(--line);border:0;margin-block:var(--s7)}
+.divider--accent{height:2px;background:var(--grad-mint-rule);border:0;border-radius:2px;width:100%;margin-block:var(--s7)}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1!important;transform:none!important}
+  html{scroll-behavior:auto}
+}
+
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="/university/" aria-label="Aloha AI University home">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1B7A68"/><path d="M7 15.5c2-5 3-5 5-5s3 0 5 5" stroke="#7FE0C4" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="8.5" r="1.6" fill="#7FE0C4"/></svg>
+      <span>Aloha AI <span class="mk">University</span></span>
+    </a>
+    <button class="nav__burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav__links" id="nav-links">
+      <li><a href="/university/start-here">Start Here</a></li>
+      <li><a href="/university/learn">Learn</a></li>
+      <li><a href="/university/playbooks">Playbooks</a></li>
+      <li><a href="/university/templates">Templates</a></li>
+      <li><a href="/university/use-cases" aria-current="page">Use Cases</a></li>
+      <li><a href="/university/tools">Tools</a></li>
+      <li><a href="/university/services">Services</a></li>
+      <li><a href="/university/about">About</a></li>
+      <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a Call</a></li>
+      <li class="nav__cta"><a class="btn btn--primary btn--sm" href="/university/assessment">Get Your AI Roadmap</a></li>
+    </ul>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero hero--sm">
+  <div class="wrap">
+    <p class="eyebrow">Use case</p>
+    <h1 class="display">AI for Marketing</h1>
+    <p class="lead">For a small service business, AI does not replace your marketing instincts. It shortens the distance between "I have something worth saying" and a solid first draft — so the newsletter goes out, one long post becomes a week of channel content, and you stop staring at a blank page at 11pm. You still decide what is true, what sounds like you, and what ships.</p>
+    <div class="cta-row">
+      <a class="btn btn--on-ink" href="/university/assessment">Get Your AI Roadmap</a>
+      <a class="btn btn--outline-ink" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a Strategy Session</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What it is</p>
+      <h2>Marketing help that speeds the mechanical work, not the thinking</h2>
+    </div>
+    <div class="prose">
+      <p>"AI for marketing" gets stretched to mean almost anything, so here is the concrete version for a small service business. It is a set of everyday drafting jobs where a language model does the first ninety percent and you finish the last ten. Nothing runs on its own; a person edits and approves everything before it reaches an audience.</p>
+      <p>In practice, that is a handful of repeatable tasks:</p>
+      <ul>
+        <li><strong>Content drafting.</strong> A blog post, a newsletter, a landing-page section, an FAQ — built from a short brief and facts you supply, not conjured from thin air.</li>
+        <li><strong>Repurposing.</strong> Turning one thing you already made — a talk, a client win, a long article — into the shorter pieces each channel wants.</li>
+        <li><strong>Briefs and outlines.</strong> Shaping a rough idea into an angle, a hook, and a section-by-section outline before anyone writes a word.</li>
+        <li><strong>SEO support.</strong> Grouping keywords by intent, drafting titles and meta descriptions, spotting questions your page should answer. Not gaming search — answering it better.</li>
+        <li><strong>Ad and social variants.</strong> Three versions of a headline, five hooks for a post, two subject lines to test — the variation work that is tedious by hand.</li>
+      </ul>
+      <p>What it is <em>not</em>: a "post for me while I sleep" button, or a source of facts. The model is a fast, tireless drafter with no knowledge of your business and no way to know what is true. That part is yours, and it is why this stays valuable rather than embarrassing.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--paper">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Who it helps</p>
+      <h2>The people doing marketing on top of everything else</h2>
+    </div>
+    <div class="prose">
+      <ul>
+        <li><strong>The founder-marketer.</strong> You run the business and you are also the marketing department. Publishing is the thing that slips when a project heats up. You want to keep a rhythm without hiring, and to spend your scarce time editing rather than starting from zero.</li>
+        <li><strong>The solo or two-person marketing team.</strong> You have the strategy and the taste; you do not have the hours to produce every asset by hand. AI covers the volume of first drafts and variants so your judgment lands where it counts.</li>
+        <li><strong>Small agencies.</strong> You produce for several clients, each with a distinct voice. A per-client voice guide plus a repurposing workflow lets a small team hold consistency across accounts without burning out the writers.</li>
+        <li><strong>Not a fit:</strong> anyone hoping to mass-produce pages to flood search, publish without reading the output, or fabricate testimonials and stats. That path damages trust and, in regulated fields, can cross legal lines. This use case is built for people who care what goes out under their name.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">The problem</p>
+      <h2>Consistent publishing is a bandwidth problem, and AI moves the bottleneck</h2>
+    </div>
+    <div class="prose">
+      <p>Most small businesses know marketing compounds. The newsletter with two thousand engaged readers, the blog that ranks for a real question, the presence that makes cold calls warm — those get built by showing up week after week. And that is exactly what breaks. The strategy is fine. The publishing schedule dies because there is no time.</p>
+      <p>The costs are familiar. There is the blank-page cost: the twenty minutes of dread before a draft starts, multiplied across every piece, which quietly makes the whole task easy to postpone. There is thin bandwidth: one person cannot write a blog post, cut it into eight social posts, and draft two ad variants in an afternoon and still run the business. And there is inconsistency: content that arrives in bursts when things are slow and vanishes when they are busy — the opposite of what compounding needs.</p>
+      <p>AI attacks one part of this precisely. It collapses time-to-draft. The dread of the blank page mostly disappears when you are reacting to a draft instead of conjuring one, and reacting is faster than creating. What it does <em>not</em> collapse is judgment — the angle, the truth of the claims, the voice, the decision to publish. Keep those with the human and the quality holds. Hand those to the machine and you get fast, forgettable content that costs you trust. The win is a steady rhythm at a bar you would defend, not a firehose of filler.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--paper">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Inputs</p>
+      <h2>Give the model context, and it stops sounding like nobody</h2>
+      <p class="lead">The gap between generic AI output and drafts you would actually send is almost entirely the inputs. Gather these once, reuse them, and every draft improves.</p>
+    </div>
+    <div class="grid grid-2">
+      <div class="card"><h3>A brand voice sample</h3><p>Two or three pieces you have published and are proud of — a newsletter, a post, a page. The model matches patterns; show it the pattern you want.</p></div>
+      <div class="card"><h3>Positioning and ICP</h3><p>Who you serve, what you do for them, and how you are different, in one honest paragraph. Without this, every draft drifts toward bland and universal.</p></div>
+      <div class="card"><h3>Past top performers</h3><p>The three posts or emails that landed best, and if you know it, why. This teaches the model your winning angles, not just your tone.</p></div>
+      <div class="card"><h3>Offer details</h3><p>What you are actually promoting — the service, the price if public, the real proof points, the specific outcome a client can expect. Fabrication risk lives here, so be precise.</p></div>
+      <div class="card"><h3>Keywords, when relevant</h3><p>The terms and questions your audience actually searches, grouped by intent. Useful for blog and page work; skip it for pure brand posts.</p></div>
+      <div class="card"><h3>Keep it in one place</h3><p>Save these as a voice guide plus a positioning brief. It becomes the block you paste atop every prompt, and the reason your drafts sound like your business rather than a stranger.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Suggested tools</p>
+      <h2>A small, honest stack; start with one paid chat tool</h2>
+      <p class="lead">You can run this whole use case with a single AI assistant and a document. Prices below are current as of mid-2026 and change often — confirm on the vendor's site before you buy. Do not take any number here as gospel.</p>
+    </div>
+    <div class="grid grid-2">
+      <div class="card"><h3>AI assistant (the core)</h3><p>ChatGPT Plus or Claude Pro, each around $20/month at the time of writing. Either handles drafting, repurposing, briefs, and variants well. The free tiers are genuinely fine for trying this out; upgrade once you are using it weekly and hitting limits. Confirm current pricing before you subscribe.</p></div>
+      <div class="card"><h3>A writing &amp; repurposing workflow</h3><p>More a habit than a purchase: a saved voice guide, a set of reusable prompts, and one document where drafts live before they ship. Build it inside your AI tool's projects or saved-prompts feature. The workflow, not a shiny app, is what makes output consistent.</p></div>
+      <div class="card"><h3>Visuals (optional)</h3><p>Canva has a free tier and a Pro plan (roughly $15/month for one person, subject to change) if you need on-brand graphics for social posts. Plenty of small businesses ship text-first content and add visuals later.</p></div>
+      <div class="card"><h3>A scheduler (optional)</h3><p>Buffer or your platform's native scheduler to queue approved posts so publishing does not depend on you being at your desk. Free tiers exist and cover a one-person cadence. Verify current limits and pricing before committing.</p></div>
+      <div class="card"><h3>What you can skip</h3><p>You do not need an "AI marketing suite," an autoposter, or anything that publishes without you reading it first. Added cost and added risk, little added value at this scale. Start lean; add a tool only when a real bottleneck justifies it.</p></div>
+      <div class="card"><h3>Guardrail note</h3><p>Whatever you adopt, keep a human approval step and mind your industry's advertising and disclosure rules. Prices, plans, and features shift constantly; treat any figure here as a starting point to verify, not a quote.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--paper">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Workflow</p>
+      <h2>From brief to measured result, with a human edit in the middle</h2>
+    </div>
+    <div class="prose">
+      <ol>
+        <li><strong>Write a one-line brief.</strong> Decide the single job before opening the AI: the piece, the audience, the one thing a reader should feel or do. "A post for founder-clients on why our onboarding takes two weeks, ending with a soft invite to book a call." A tight brief is half the quality.</li>
+        <li><strong>Load your context.</strong> Paste your voice sample, positioning, and the real facts for this piece at the top of the prompt. This is the step people skip and then wonder why the draft is generic. Do not skip it.</li>
+        <li><strong>Generate one strong draft.</strong> Ask with explicit rules: length, the one call to action, no clichés, no invented facts or stats. One good draft beats ten mediocre options.</li>
+        <li><strong>Edit like a human.</strong> Read every line in your head. Cut the sentence that sounds like a machine, fix any claim you cannot stand behind, and add the specific detail only you know. This is where the piece becomes yours.</li>
+        <li><strong>Repurpose into variants.</strong> Feed the edited piece back and ask for the channel versions you need — a short post, a caption, a newsletter blurb, three subject lines. Keep the voice; change the shape.</li>
+        <li><strong>Take final approval.</strong> Fact-check every claim, confirm the voice, confirm nothing was fabricated, and check compliance and disclosure requirements. A person signs off before a single word publishes. No exceptions.</li>
+        <li><strong>Schedule.</strong> Queue the approved pieces across the week so the rhythm holds even when your week does not.</li>
+        <li><strong>Measure and feed it back.</strong> Note what landed — opens, saves, replies, real conversations. Add the winners to your "top performers" input so next month's drafts start smarter. The loop compounds.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Example prompt</p>
+      <h2>Turn one long piece into a week of channel content</h2>
+      <p class="lead">Copy this, fill the brackets, and paste your real voice sample. It is written to fight the two things that make AI content bad: fabrication and cliché.</p>
+    </div>
+    <div class="prose">
+<pre><code>You are helping me repurpose one long-form piece into a week of
+channel-specific posts. Match my voice exactly.
+
+My voice — write like these real samples, not like a marketer:
+[paste 2-3 things you have actually published]
+
+My business / positioning:
+[one honest paragraph: who I serve, what I do, how I differ]
+
+The source piece:
+[paste the article, talk transcript, or long post]
+
+Produce a 5-day plan:
+- Day 1: a LinkedIn post (under 150 words) built on the single
+  strongest idea in the source. Start with a concrete hook, not
+  a throat-clear. End with one low-friction line, no hard sell.
+- Day 2: two short variants of that post to test.
+- Day 3: an Instagram/threads caption (under 80 words).
+- Day 4: a 60-word newsletter blurb linking to the full piece.
+- Day 5: three subject lines for that newsletter.
+
+Hard rules:
+- Use ONLY facts and claims present in the source or my brief.
+  Invent nothing — no stats, quotes, results, or client names.
+  If a post would be stronger with a number I did not give you,
+  leave a [NEED: ...] placeholder instead of making one up.
+- Ban these words and any close cousin: unlock, leverage,
+  elevate, seamless, game-changer, dive in, in today's world,
+  robust, delve, revolutionize.
+- Vary sentence length. No more than one em dash per post.
+- Sound like a person who knows the topic, not like an ad.</code></pre>
+    </div>
+  </div>
+</section>
+
+<section class="section section--paper">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Example output</p>
+      <h2>What a genuinely good draft looks like</h2>
+      <p class="lead">A realistic Day 1 result for a small bookkeeping firm, plus two test variants. Note the specifics, the plain language, and the absence of the usual AI tells. A human would still edit it, but it is a real starting point.</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card">
+        <p class="card__eyebrow">LinkedIn — main post</p>
+        <p>Most clients come to us mid-panic, three weeks before a tax deadline, with a shoebox of receipts and a bank feed nobody has touched since spring.</p>
+        <p>We used to say yes to the rush and quietly hate it. Now we do the boring thing instead: a clean-up month first, then monthly books, then the deadline never becomes an event again.</p>
+        <p>Slower to start, far calmer to live with. If your books only get attention when something is on fire, that is the pattern worth breaking — not the fire.</p>
+      </div>
+      <div class="card">
+        <p class="card__eyebrow">Variant A — shorter hook</p>
+        <p>A shoebox of receipts and a bank feed untouched since spring. That is how most of our clients arrive — three weeks before a deadline, already stressed.</p>
+        <p>The fix is unglamorous: one clean-up month, then monthly books, then no more deadline panic. Slower to start, much calmer to run. Want the checklist we use? It is yours.</p>
+      </div>
+      <div class="card">
+        <p class="card__eyebrow">Variant B — question open</p>
+        <p>When did your books last get attention that was not driven by a deadline?</p>
+        <p>If the honest answer is "not since spring," you are in good company — and it is a pattern worth breaking. A clean-up month, then a monthly rhythm, and the deadline stops being a crisis.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Human review</p>
+      <h2>What a person must check before anything publishes</h2>
+      <p class="lead">The approval step is not a formality. It is the reason this use case builds trust instead of eroding it. Before a piece ships, a human confirms:</p>
+    </div>
+    <div class="prose">
+      <ul>
+        <li><strong>Every claim is true.</strong> Fact-check numbers, outcomes, and any "we help clients do X" statement against reality. Models state falsehoods with total confidence; you are the fact-checker.</li>
+        <li><strong>Nothing is fabricated.</strong> No invented statistics, no made-up quotes, no client names or results that did not happen. If the draft has a number you did not supply, cut it or verify it.</li>
+        <li><strong>The voice is yours.</strong> Read it aloud. If a line sounds like an ad or like nobody in particular, rewrite it. Consistent voice is what makes content recognizable as you.</li>
+        <li><strong>It is on-brand and on-message.</strong> The angle matches your positioning, the call to action is the one you meant, and the tone fits the platform.</li>
+        <li><strong>Legal and compliance are handled.</strong> Advertising claims, required disclosures, testimonial and endorsement rules, and any industry-specific regulation are your responsibility. Finance, health, and legal each carry strict rules about what you may claim and how. Confirm what applies to you.</li>
+      </ul>
+      <blockquote><strong>Not legal advice.</strong> Compliance with advertising law, disclosure requirements, and platform rules is the user's responsibility, and the specifics vary by industry and jurisdiction. This page is educational and is not legal advice. RN Collins is a JD candidate, not a licensed attorney; for anything regulated, get qualified counsel before you publish.</blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="section section--paper">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Related template</p>
+      <h2>Start from a structured brief and voice guide</h2>
+    </div>
+    <a class="card card--hover" href="/university/templates">
+      <span class="card__eyebrow">Template</span>
+      <h3>Content brief &amp; voice-guide templates</h3>
+      <p>A content brief you can hand to any AI tool and a voice-guide format that captures how your business actually sounds — the two inputs that turn generic drafts into content worth publishing. Copy them, adapt them, reuse them on every piece.</p>
+      <span class="card__more">Get the templates →</span>
+    </a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Related playbook</p>
+      <h2>Go deeper on turning one piece into many</h2>
+    </div>
+    <a class="card card--hover" href="/university/playbooks/content-repurposing">
+      <span class="card__eyebrow">Playbook</span>
+      <h3>Content Repurposing Playbook</h3>
+      <p>A complete, buildable system for taking one strong asset and producing a week of channel-specific content from it, with the human review gate wired in. The natural next step once this use case is part of your routine.</p>
+      <span class="card__more">Open the playbook →</span>
+    </a>
+  </div>
+</section>
+
+<section class="section section--ink">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Do it with us</p>
+      <h2>Want help building this?</h2>
+      <p class="lead">We will set up your voice guide, your reusable prompts, and a repurposing workflow that fits how you actually publish — with the human approval step built in, so nothing generic or unverified ships under your name. You keep the judgment; we make the mechanical part fast.</p>
+    </div>
+    <div class="cta-row">
+      <a class="btn btn--on-ink" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a Call</a>
+      <a class="btn btn--outline-ink" href="/university/assessment">Get Your AI Roadmap</a>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div>
+        <div class="footer__brand">Aloha AI <span style="color:var(--mint)">University</span></div>
+        <p style="max-width:38ch;color:#9FB6AE">Free, practical, honest generative-AI education for modern businesses. Built by Aloha AI and RN Collins.</p>
+        <p style="margin-top:var(--s4)"><a class="btn btn--on-ink btn--sm" href="/university/assessment">Get Your AI Roadmap</a></p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/university/start-here">Start Here</a></li>
+          <li><a href="/university/learn">Learn</a></li>
+          <li><a href="/university/playbooks">Playbooks</a></li>
+          <li><a href="/university/templates">Templates</a></li>
+          <li><a href="/university/use-cases">Use Cases</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Work with us</h4>
+        <ul>
+          <li><a href="/">← Aloha AI (main site)</a></li>
+          <li><a href="/university/tools">Tools</a></li>
+          <li><a href="/university/services">Services</a></li>
+          <li><a href="/university/about">About</a></li>
+          <li><a href="/university/contact">Contact</a></li>
+          <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a Call</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer__disc"><strong>Aloha AI University</strong> is free generative-AI education for modern businesses. RN Collins is a JD candidate, not a licensed attorney. Nothing here is legal, medical, or financial advice. Every page on this site runs entirely in your browser and sends nothing anywhere.</p>
+    <p class="footer__fine">© <span id="yr">2026</span> Aloha AI. All rights reserved.</p>
+  </div>
+</footer>
+<script id="uni-js">
+/* Aloha AI University — shared behavior (progressive enhancement) */
+(function () {
+  "use strict";
+  document.documentElement.classList.add("js");
+
+  /* ---- Mobile menu ---- */
+  var burger = document.querySelector(".nav__burger");
+  var links = document.getElementById("nav-links");
+  if (burger && links) {
+    var close = function () {
+      links.classList.remove("open");
+      burger.setAttribute("aria-expanded", "false");
+    };
+    var toggle = function () {
+      var open = links.classList.toggle("open");
+      burger.setAttribute("aria-expanded", open ? "true" : "false");
+    };
+    burger.addEventListener("click", toggle);
+    links.addEventListener("click", function (e) {
+      if (e.target.closest("a")) close();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && links.classList.contains("open")) {
+        close();
+        burger.focus();
+      }
+    });
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 1000) close();
+    });
+  }
+
+  /* ---- Nav elevation on scroll ---- */
+  var nav = document.querySelector(".nav");
+  if (nav) {
+    var onScroll = function () {
+      if (window.scrollY > 8) nav.classList.add("is-stuck");
+      else nav.classList.remove("is-stuck");
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
+
+  /* ---- Reveal on scroll ---- */
+  var reveals = document.querySelectorAll(".reveal");
+  if (reveals.length && "IntersectionObserver" in window) {
+    var io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) {
+            en.target.classList.add("in");
+            io.unobserve(en.target);
+          }
+        });
+      },
+      { rootMargin: "0px 0px -8% 0px", threshold: 0.08 }
+    );
+    reveals.forEach(function (el) { io.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add("in"); });
+  }
+
+  /* ---- Current year ---- */
+  var yr = document.getElementById("yr");
+  if (yr) yr.textContent = new Date().getFullYear();
+
+  /* ---- Email reveal (footer + contact) ---- */
+  document.querySelectorAll("[data-email-reveal]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var a = ["collins", "ra"].join(".") + "@" + ["northeastern", "edu"].join(".");
+      var out = document.getElementById(btn.getAttribute("aria-controls"));
+      if (out) out.innerHTML = '<a id="email-reveal" href="mailto:' + a + '">' + a + "</a>";
+      btn.setAttribute("disabled", "disabled");
+      btn.textContent = "Email revealed";
+    });
+  });
+})();
+
+</script>
+</body>
+</html>

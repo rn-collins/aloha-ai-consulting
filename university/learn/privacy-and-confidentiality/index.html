@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy and Confidentiality Basics for AI Tools | Aloha AI University</title>
+<meta name="description" content="What is safe to paste into an AI tool, what is not, and how consumer, business, and enterprise tiers differ on training and retention. Vendor policies verified mid-2026.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://aloha-ai-consulting.vercel.app/university/learn/privacy-and-confidentiality">
+<meta name="theme-color" content="#0F5343">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Privacy and Confidentiality Basics for AI Tools | Aloha AI University">
+<meta property="og:description" content="What is safe to paste into an AI tool, what is not, and how consumer, business, and enterprise tiers differ on training and retention. Vendor policies verified mid-2026.">
+<meta property="og:site_name" content="Aloha AI University">
+<meta property="og:image" content="https://aloha-ai-consulting.vercel.app/university/og-image.png">
+<meta property="og:url" content="https://aloha-ai-consulting.vercel.app/university/learn/privacy-and-confidentiality">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Privacy and Confidentiality Basics for AI Tools">
+<meta name="twitter:description" content="What is safe to paste into an AI tool, what is not, and how consumer, business, and enterprise tiers differ. Vendor policies verified mid-2026.">
+<meta name="twitter:image" content="https://aloha-ai-consulting.vercel.app/university/og-image.png">
+<link rel="icon" href="/university/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style id="uni-ds">
+/* ============================================================
+   ALOHA AI UNIVERSITY — DESIGN SYSTEM  (university.css)
+   Shared stylesheet for every University page.
+   Premium, calm, high-trust. Brand-cohesive with the elevated
+   Aloha AI main site. v2.0 · 2026-07
+   ============================================================ */
+
+/* ---- 1. TOKENS ------------------------------------------- */
+:root{
+  /* Brand color */
+  --teal:#1B7A68; --teal-d:#0F5343; --teal-l:#E9F3F0; --mint:#7FE0C4;
+  --ink:#14201C; --ink-2:#25332E;
+  --cream:#F7F4EC; --cream-2:#EFEAE0; --paper:#FCFAF5; --white:#FFFFFF;
+  --muted:#4E5C56;            /* AA on cream/white */
+  --muted-ink:#B7C7C0;        /* AA on ink */
+  --line:#E4DFD3; --line-2:#C7BFAE;
+  --amber:#8A5A08; --amber-l:#FBF4E6; --amber-bd:#E4CE9E;
+
+  /* Type families */
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:"Manrope",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:"DM Mono","SFMono-Regular",Menlo,Consolas,monospace;
+
+  /* Type scale (fluid) */
+  --fs-display:clamp(2.6rem,6vw,4.4rem);
+  --fs-h1:clamp(2.2rem,5vw,3.4rem);
+  --fs-h2:clamp(1.7rem,3.4vw,2.5rem);
+  --fs-h3:1.35rem;
+  --fs-body:1.0625rem; --fs-lead:1.2rem; --fs-sm:.9rem; --fs-xs:.78rem;
+  --label:.72rem;
+
+  /* Space scale */
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px;
+  --s7:48px; --s8:64px; --s9:96px;
+
+  /* Radius, shadow, motion */
+  --r-sm:10px; --r:16px; --r-lg:22px; --r-pill:999px;
+  --sh-1:0 1px 2px rgba(20,32,28,.05);
+  --sh-2:0 2px 6px rgba(20,32,28,.05),0 14px 40px rgba(20,32,28,.08);
+  --sh-3:0 2px 4px rgba(20,32,28,.04),0 20px 52px -14px rgba(20,32,28,.16);
+  --sh-focus:0 0 0 3px rgba(27,122,104,.4);
+  --sh-focus-mint:0 0 0 3px rgba(127,224,196,.55);
+  --ease:cubic-bezier(.4,0,.2,1); --ease-out:cubic-bezier(.16,1,.3,1);
+  --dur:.24s; --dur-s:.14s;
+
+  --maxw:1120px; --measure:68ch; --nav-h:66px;
+
+  /* Editorial surfaces / gradients (within brand) */
+  --grad-hero:linear-gradient(158deg,var(--teal-d) 0%,var(--teal) 78%,#227e6b 100%);
+  --grad-ink:linear-gradient(180deg,#16241E 0%,var(--ink) 100%);
+  --grad-mint-rule:linear-gradient(90deg,var(--teal) 0%,var(--mint) 100%);
+  --texture-dot:radial-gradient(rgba(27,122,104,.05) 1px,transparent 1px);
+}
+
+/* ---- 2. BASE / RESET ------------------------------------- */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 14px);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);
+  font-size:var(--fs-body);line-height:1.65;font-weight:400;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{max-width:100%;display:block}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;letter-spacing:-.01em;line-height:1.08;margin:0;text-wrap:balance}
+h1{font-size:var(--fs-h1)} h2{font-size:var(--fs-h2)} h3{font-size:var(--fs-h3)}
+p{margin:0 0 1rem;text-wrap:pretty}
+a{color:var(--teal-d);text-underline-offset:2px;transition:color var(--dur-s) var(--ease)}
+a:hover{color:var(--teal)}
+strong{font-weight:700}
+:focus-visible{outline:none;box-shadow:var(--sh-focus);border-radius:6px}
+.section--ink :focus-visible,.hero :focus-visible{box-shadow:var(--sh-focus-mint)}
+::selection{background:var(--mint);color:var(--ink)}
+
+/* ---- 3. LAYOUT ------------------------------------------- */
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(20px,4vw,28px)}
+.section{padding-block:clamp(56px,8vw,104px);position:relative}
+.section + .section{border-top:1px solid var(--line)}
+.section--paper{background:var(--paper)}
+.section--ink{background:var(--grad-ink);color:var(--cream)}
+.section--ink h1,.section--ink h2,.section--ink h3{color:var(--cream)}
+.section--ink + .section,.section + .section--ink{border-top:0}
+.section--tint{background:var(--white)}
+/* subtle dot texture, opt-in, brand-tinted */
+.section--texture{background-image:var(--texture-dot);background-size:22px 22px}
+.section-head{max-width:var(--measure);margin-bottom:var(--s7)}
+/* accent rule system — an editorial hairline that reads intentional */
+.rule{height:2px;width:56px;border:0;border-radius:2px;background:var(--grad-mint-rule);margin:0 0 var(--s5)}
+.section--ink .rule{opacity:.9}
+.grid{display:grid;gap:var(--s5)}
+.grid-2{grid-template-columns:repeat(2,1fr)}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.grid-4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:900px){.grid-3,.grid-4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}}
+.stack-gap{margin-top:var(--s6)}
+
+/* ---- 4. TYPOGRAPHY HELPERS ------------------------------- */
+.eyebrow{font-family:var(--mono);font-size:var(--label);letter-spacing:.18em;
+  text-transform:uppercase;color:var(--teal-d);margin:0 0 var(--s4);font-weight:500;
+  display:inline-flex;align-items:center;gap:.6rem}
+.eyebrow::before{content:"";width:16px;height:2px;border-radius:2px;background:var(--grad-mint-rule);flex:none}
+.section--ink .eyebrow{color:var(--mint)}
+.section--ink .eyebrow::before{opacity:.95}
+.hero .eyebrow::before{opacity:.95}
+.display{font-size:var(--fs-display);letter-spacing:-.02em}
+.lead{font-size:var(--fs-lead);color:var(--muted);max-width:60ch;line-height:1.55}
+.section--ink .lead{color:var(--muted-ink)}
+.lead-line{font-family:var(--serif);font-size:1.4rem;color:var(--teal-d);max-width:44ch;line-height:1.3;font-weight:500}
+.mono{font-family:var(--mono)}
+.small{font-size:var(--fs-sm)} .muted{color:var(--muted)}
+.measure{max-width:var(--measure)}
+
+/* ---- 5. BUTTONS ------------------------------------------ */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  font-family:var(--mono);font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;
+  font-weight:500;text-decoration:none;cursor:pointer;
+  padding:.85rem 1.35rem;border-radius:var(--r-sm);border:1px solid transparent;
+  transition:all var(--dur) var(--ease);min-height:46px;line-height:1;white-space:nowrap}
+.btn--primary{background:var(--teal);color:#fff;box-shadow:0 1px 2px rgba(15,83,67,.28)}
+.btn--primary:hover{background:var(--teal-d);color:#fff;transform:translateY(-1px);box-shadow:0 8px 22px -6px rgba(15,83,67,.5)}
+.btn--ghost{background:transparent;border-color:var(--line-2);color:var(--ink)}
+.btn--ghost:hover{border-color:var(--teal);color:var(--teal-d);transform:translateY(-1px);box-shadow:var(--sh-1)}
+.btn--on-ink{background:var(--mint);color:var(--teal-d)}
+.btn--on-ink:hover{background:#9dedd6;color:var(--teal-d);transform:translateY(-1px);box-shadow:var(--sh-2)}
+.btn--outline-ink{background:transparent;border-color:rgba(127,224,196,.5);color:var(--cream)}
+.btn--outline-ink:hover{border-color:var(--mint);color:#fff;background:rgba(127,224,196,.1)}
+.btn--sm{padding:.55rem .9rem;min-height:40px;font-size:.7rem}
+.btn:active{transform:translateY(0)}
+.cta-row{display:flex;flex-wrap:wrap;gap:var(--s3);margin-top:var(--s6)}
+
+/* ---- 6. BADGES / TAGS ------------------------------------ */
+.badge{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--mono);
+  font-size:var(--fs-xs);letter-spacing:.05em;text-transform:uppercase;
+  padding:.3rem .65rem;border-radius:var(--r-pill);
+  border:1px solid var(--line);background:var(--white);color:var(--teal-d);font-weight:500}
+.badge--solid{background:var(--teal-l);border-color:#BADFD6}
+.section--ink .badge{background:rgba(127,224,196,.12);border-color:rgba(127,224,196,.3);color:var(--mint)}
+.price{font-family:var(--mono);font-size:var(--fs-sm);color:var(--teal-d);font-weight:500;letter-spacing:.02em}
+
+/* ---- 7. CARDS -------------------------------------------- */
+.card{position:relative;background:var(--white);border:1px solid var(--line);border-radius:var(--r);
+  padding:var(--s6);box-shadow:var(--sh-1);overflow:hidden;
+  transition:box-shadow var(--dur) var(--ease),transform var(--dur) var(--ease),border-color var(--dur) var(--ease)}
+.card h3{margin-bottom:var(--s3)}
+.card p{color:var(--muted);margin-bottom:var(--s4)}
+a.card{text-decoration:none;color:var(--ink);display:flex;flex-direction:column}
+.card--hover:hover{box-shadow:var(--sh-3);transform:translateY(-3px);border-color:var(--line-2)}
+/* an accent hairline that surfaces on hover — quiet until you touch it */
+.card--hover::after{content:"";position:absolute;left:0;right:0;top:0;height:2px;
+  background:var(--grad-mint-rule);transform:scaleX(0);transform-origin:left;opacity:0;
+  transition:transform var(--dur) var(--ease-out),opacity var(--dur) var(--ease)}
+.card--hover:hover::after{transform:scaleX(1);opacity:1}
+.card__more{margin-top:auto;font-family:var(--mono);font-size:var(--fs-xs);
+  letter-spacing:.05em;text-transform:uppercase;color:var(--teal-d);font-weight:500}
+a.card:hover .card__more{color:var(--teal)}
+.card__eyebrow{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.12em;
+  text-transform:uppercase;color:var(--teal);margin-bottom:var(--s3);font-weight:500}
+.section--paper .card{background:var(--white)}
+.section--ink .card{background:var(--ink-2);border-color:#33443C;color:var(--cream)}
+.section--ink .card p{color:var(--muted-ink)}
+
+/* ---- 8. HERO --------------------------------------------- */
+.hero{background:var(--grad-hero);
+  color:var(--cream);position:relative;overflow:hidden;border-bottom:3px solid var(--teal)}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(rgba(127,224,196,.06) 1px,transparent 1px);background-size:26px 26px;
+  -webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 72%);mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 72%)}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(60% 90% at 82% 8%,rgba(127,224,196,.16),transparent 60%)}
+.hero .wrap{position:relative;z-index:1;padding-block:clamp(64px,10vw,116px)}
+.hero .eyebrow{color:var(--mint)}
+.hero h1{color:#fff;max-width:16ch}
+.hero .lead{color:#E4F1EC;max-width:56ch;margin-top:var(--s5)}
+.hero--sm .wrap{padding-block:clamp(52px,7vw,84px)}
+
+/* ---- 9. PROSE (long-form) -------------------------------- */
+.prose{max-width:var(--measure);font-size:1.075rem}
+.prose > * + *{margin-top:1.15rem}
+.prose h2{font-size:var(--fs-h2);margin-top:2.4rem;margin-bottom:.4rem}
+.prose h3{font-size:var(--fs-h3);margin-top:1.8rem;margin-bottom:.2rem}
+.prose p{color:var(--ink);line-height:1.7}
+.prose a{text-decoration:underline}
+.prose ul,.prose ol{padding-left:1.3rem;color:var(--ink)}
+.prose li{margin-bottom:.5rem}
+.prose blockquote{border-left:3px solid var(--teal);padding:.2rem 0 .2rem 1.2rem;
+  margin:1.6rem 0;font-family:var(--serif);font-size:1.35rem;color:var(--teal-d);font-style:italic}
+.prose code{font-family:var(--mono);font-size:.86em;background:var(--cream-2);
+  padding:.12em .4em;border-radius:6px}
+.prose pre{background:var(--ink);color:var(--cream);padding:var(--s5);border-radius:var(--r);
+  overflow-x:auto;font-family:var(--mono);font-size:.85rem;line-height:1.6}
+.prose pre code{background:none;padding:0}
+.prose table{width:100%;border-collapse:collapse;font-size:var(--fs-sm);margin:1.4rem 0}
+.prose th,.prose td{text-align:left;padding:.6rem .8rem;border-bottom:1px solid var(--line)}
+.prose th{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.06em;
+  text-transform:uppercase;color:var(--teal-d);font-weight:500}
+
+/* ---- 10. ACCORDION (FAQ) --------------------------------- */
+.acc{border:1px solid var(--line);border-radius:var(--r);background:var(--white);overflow:hidden}
+.acc + .acc{margin-top:var(--s3)}
+.acc summary{list-style:none;cursor:pointer;padding:1.15rem 1.3rem;
+  font-family:var(--serif);font-size:1.25rem;font-weight:600;color:var(--ink);
+  display:flex;justify-content:space-between;gap:1rem;align-items:center;min-height:56px}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary:hover{color:var(--teal-d)}
+.acc summary::after{content:"+";font-family:var(--mono);font-size:1.4rem;color:var(--teal);
+  transition:transform var(--dur) var(--ease);flex:none;line-height:1}
+.acc[open] summary::after{transform:rotate(45deg)}
+.acc__body{padding:0 1.3rem 1.25rem;color:var(--muted);max-width:var(--measure)}
+.acc__body p:last-child{margin-bottom:0}
+
+/* ---- 11. NAV --------------------------------------------- */
+.skip{position:absolute;left:-999px;top:0;background:var(--teal-d);color:#fff;
+  padding:.7rem 1.1rem;border-radius:0 0 8px 0;z-index:200;
+  font-family:var(--mono);font-size:.82rem}
+.skip:focus{left:0;color:#fff}
+.nav{position:sticky;top:0;z-index:100;background:rgba(252,250,245,.88);
+  backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);
+  border-bottom:1px solid var(--line);height:var(--nav-h);
+  transition:box-shadow var(--dur) var(--ease),background var(--dur) var(--ease)}
+.nav.is-stuck{background:rgba(252,250,245,.94);box-shadow:0 1px 0 var(--line),0 8px 24px -14px rgba(20,32,28,.4)}
+.nav__in{max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(20px,4vw,28px);
+  height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.nav__brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--ink);
+  font-family:var(--mono);font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500}
+.nav__brand svg{flex:none}
+.nav__brand b{font-weight:500}
+.nav__brand .mk{color:var(--teal-d);font-weight:500}
+.nav__links{display:flex;align-items:center;gap:.15rem;list-style:none;margin:0;padding:0}
+.nav__links a{font-family:var(--mono);font-size:.73rem;letter-spacing:.04em;text-transform:uppercase;
+  color:var(--ink-2);text-decoration:none;padding:.5rem .55rem;border-radius:8px;white-space:nowrap}
+.nav__links a:hover{color:var(--teal-d);background:var(--teal-l)}
+.nav__links a[aria-current="page"]{color:var(--teal-d);background:var(--teal-l)}
+.nav__cta{margin-left:.35rem}
+.nav__burger{display:none;background:none;border:1px solid var(--line-2);border-radius:9px;
+  width:46px;height:46px;cursor:pointer;align-items:center;justify-content:center;color:var(--ink)}
+@media(max-width:1000px){
+  .nav__links{position:fixed;inset:var(--nav-h) 0 auto 0;flex-direction:column;align-items:stretch;
+    gap:0;background:var(--paper);border-bottom:1px solid var(--line);padding:var(--s3);
+    transform:translateY(-10px);opacity:0;visibility:hidden;
+    transition:all var(--dur) var(--ease);box-shadow:var(--sh-2);max-height:calc(100vh - var(--nav-h));overflow-y:auto}
+  .nav__links.open{opacity:1;visibility:visible;transform:translateY(0)}
+  .nav__links a{padding:.9rem .8rem;font-size:.82rem;border-radius:10px}
+  .nav__cta{margin:.5rem 0 0}
+  .nav__cta .btn{width:100%}
+  .nav__burger{display:inline-flex}
+}
+
+/* ---- 12. FOOTER ------------------------------------------ */
+.footer{background:var(--grad-ink);color:var(--muted-ink);padding-block:var(--s9) var(--s7);font-size:var(--fs-sm)}
+.footer a{color:#CFDAD5;text-decoration:none}.footer a:hover{color:#fff}
+.footer__top{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:var(--s7)}
+@media(max-width:760px){.footer__top{grid-template-columns:1fr;gap:var(--s6)}}
+.footer__brand{font-family:var(--serif);font-size:1.6rem;color:var(--cream);margin-bottom:var(--s3)}
+.footer h4{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.12em;text-transform:uppercase;
+  color:#8FA69E;margin-bottom:var(--s4);font-weight:500}
+.footer ul{list-style:none;margin:0;padding:0}.footer li{margin-bottom:.55rem}
+.footer__disc{border-left:2px solid var(--teal);padding-left:1rem;color:#9FB6AE;
+  margin-top:var(--s7);max-width:75ch;line-height:1.7;font-size:var(--fs-sm)}
+.footer__disc strong{color:#DFF0EA}
+.footer__fine{font-family:var(--mono);font-size:.68rem;color:#6C837B;margin-top:var(--s6);line-height:1.7}
+#email-reveal{color:var(--mint);font-weight:600}
+
+/* ---- 13. UTIL / MOTION ----------------------------------- */
+.js .reveal{opacity:0;transform:translateY(16px)}
+.js .reveal.in{opacity:1;transform:none;transition:opacity .6s var(--ease-out),transform .6s var(--ease-out)}
+.divider{height:1px;background:var(--line);border:0;margin-block:var(--s7)}
+.divider--accent{height:2px;background:var(--grad-mint-rule);border:0;border-radius:2px;width:100%;margin-block:var(--s7)}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1!important;transform:none!important}
+  html{scroll-behavior:auto}
+}
+
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="/university/" aria-label="Aloha AI University home">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1B7A68"/><path d="M7 15.5c2-5 3-5 5-5s3 0 5 5" stroke="#7FE0C4" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="8.5" r="1.6" fill="#7FE0C4"/></svg>
+      <span>Aloha AI <span class="mk">University</span></span>
+    </a>
+    <button class="nav__burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav__links" id="nav-links">
+      <li><a href="/university/start-here">Start Here</a></li>
+      <li><a href="/university/learn" aria-current="page">Learn</a></li>
+      <li><a href="/university/playbooks">Playbooks</a></li>
+      <li><a href="/university/templates">Templates</a></li>
+      <li><a href="/university/use-cases">Use Cases</a></li>
+      <li><a href="/university/tools">Tools</a></li>
+      <li><a href="/university/services">Services</a></li>
+      <li><a href="/university/about">About</a></li>
+      <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a Call</a></li>
+      <li class="nav__cta"><a class="btn btn--primary btn--sm" href="/university/assessment">Get Your AI Roadmap</a></li>
+    </ul>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero hero--sm">
+  <div class="wrap">
+    <p class="eyebrow">Lesson · Trust &amp; Safety</p>
+    <h1 class="display">Privacy and confidentiality basics</h1>
+    <p class="lead">Before you paste one more thing into a chat box: here is what the tool keeps, who can see it, and the real gap between a free login and a business contract.</p>
+    <div class="cta-row">
+      <a class="btn btn--primary" href="/university/assessment">Get Your AI Roadmap</a>
+      <a class="btn btn--ghost" href="/university/learn">Browse all lessons</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What this is</p>
+      <h2>A working rule for what goes in the chat box</h2>
+      <p class="lead">Every time you paste text into ChatGPT, Claude, Gemini, or Copilot, it leaves your computer and lands on a vendor's servers. Three questions decide whether that is fine or a problem.</p>
+    </div>
+    <div class="prose">
+      <p>Is it stored? For how long? And can it be used to train a future model that other people will use? The answers depend almost entirely on which tier you are on. A personal free login and a paid business plan from the same company can handle your data in completely different ways.</p>
+      <p>Most people never learn that difference. That is how confidential client details end up in a system nobody at the company controls.</p>
+      <p class="small muted">Vendor policies described here were checked in mid-2026. Data terms change often, so treat this as a starting map. Confirm each vendor's current policy at the source before you rely on it.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section--paper">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Who this is for</p>
+      <h2>People who handle other people's data</h2>
+    </div>
+    <div class="prose">
+      <ul>
+        <li>Owners and managers about to let a team use AI tools, who want one clear rule instead of a vague worry.</li>
+        <li>Anyone in a regulated or contract-bound field: healthcare, law, finance, education, or any business that signed confidentiality terms with clients.</li>
+        <li>Solo operators who handle client lists, health details, or financials and want to keep using AI without breaking a promise they made.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">When to use it</p>
+      <h2>Run this thinking before anything non-public</h2>
+    </div>
+    <div class="prose">
+      <ul>
+        <li>Before you draft your team's AI usage rule or hand anyone a login.</li>
+        <li>Before pasting a customer record, contract, medical note, financial statement, résumé, or anything with a name attached to a fact.</li>
+        <li>When choosing between a free tool and a paid business tier, so privacy terms drive the decision instead of price.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section--paper">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">When NOT to rely on it alone</p>
+      <h2>What this lesson does not replace</h2>
+      <p class="lead">This gives you a sensible default. It does not stand in for these.</p>
+    </div>
+    <div class="prose">
+      <details class="acc">
+        <summary>A signed contract</summary>
+        <div class="acc__body"><p>If your client agreement, HIPAA obligations, or a data processing agreement forbid sending data to third parties, this lesson does not override that. Read the contract.</p></div>
+      </details>
+      <details class="acc">
+        <summary>Legal review of vendor terms</summary>
+        <div class="acc__body"><p>Nothing here is legal advice. RN Collins is a JD candidate, not a licensed attorney. For anything high-stakes, have a qualified lawyer read the vendor's data terms and your own obligations.</p></div>
+      </details>
+      <details class="acc">
+        <summary>The assumption that a paid plan is a vault</summary>
+        <div class="acc__body"><p>Paid tiers reduce risk; they do not make a tool private by default. Human reviewers can still see flagged content, and misconfigured settings are common.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Tools</p>
+      <h2>How the tiers actually differ</h2>
+      <p class="lead">The pattern is consistent: consumer plans may use your chats to improve models unless you opt out, while business and enterprise plans do not train on your data by default. Retention also drops as you move up.</p>
+    </div>
+    <div class="prose">
+      <p class="small muted">Simplified comparison, verified mid-2026. Always re-check current terms at each vendor's own privacy page.</p>
+      <table>
+        <thead>
+          <tr><th>Vendor / tier</th><th>Trains on your content by default?</th><th>Retention</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>ChatGPT Free / Plus / Pro (consumer)</td><td>Yes, unless you opt out in Data Controls</td><td>Kept until you delete; deleted chats purged within ~30 days. A copy of temporary chats is held ~30 days for abuse monitoring.</td></tr>
+          <tr><td>ChatGPT Business / Enterprise</td><td>No, not by default</td><td>Admin controls retention; deleted conversations removed within ~30 days.</td></tr>
+          <tr><td>Claude (consumer)</td><td>Only if you leave "Improve Claude for everyone" on; opted-in chats can be retained up to 5 years. Off returns you to 30-day retention with no training.</td><td>30 days when training is off; up to 5 years when on.</td></tr>
+          <tr><td>Claude for Work / API / Enterprise</td><td>No. API standard log retention is ~7 days. Zero Data Retention available for qualifying Enterprise customers.</td><td>~7 days (API) to as low as zero (ZDR).</td></tr>
+          <tr><td>Microsoft 365 Copilot (paid business)</td><td>No. Content stays in your tenant and is not used to train the underlying models.</td><td>Governed by your Microsoft 365 tenant policies.</td></tr>
+          <tr><td>Gemini in Google Workspace (paid business)</td><td>No. Workspace data is not used to train models outside your organization.</td><td>Governed by your Workspace admin policies.</td></tr>
+        </tbody>
+      </table>
+      <p><strong>One nuance to know:</strong> even when a vendor says it does not train on your data, most reserve the right to have a human review content flagged for safety or abuse. Anthropic's mid-2026 policy is explicit that conversations flagged for safety review can be used in ways that override a stated training preference, and it does not spell out what triggers a flag. Treat "not used for training" as strong protection, not an absolute guarantee of secrecy.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section--paper">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Step-by-step workflow</p>
+      <h2>Sort, set the rule, then paste</h2>
+    </div>
+    <div class="prose">
+      <ol>
+        <li><strong>Sort your data into three buckets.</strong> Green: already public, no identifiable person or secret. Yellow: internal but not sensitive (draft copy, generic process notes). Red: any real name tied to health, money, legal status, or a promise of confidentiality.</li>
+        <li><strong>Set the rule.</strong> Green goes anywhere. Yellow goes only into a business or enterprise tier with training off. Red does not go in at all unless a contract and configuration specifically permit it.</li>
+        <li><strong>Strip before you paste.</strong> For yellow items, remove names and identifiers first. "Client A, a 54-year-old" carries far less risk than a real name.</li>
+        <li><strong>Check the account settings once, in writing.</strong> Confirm the tier, the training toggle, and the retention setting. Screenshot it. Settings get changed and reset.</li>
+        <li><strong>Turn off training and history where you can.</strong> On consumer tiers, use data controls and temporary or incognito modes for anything you would not want retained.</li>
+        <li><strong>Write it down for the team.</strong> A one-page rule everyone can follow beats a perfect policy nobody reads.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Example prompts</p>
+      <h2>Copy-pastable starters</h2>
+      <p class="lead">Use these to have the tool help build your own policy. None of them contain real confidential data.</p>
+    </div>
+    <div class="prose">
+      <pre>You are helping a small business write a plain-language AI usage rule.
+Our team uses [ChatGPT Business / Gemini in Workspace]. Draft a one-page
+policy covering: what data is never allowed in AI tools, what must be
+anonymized first, which tier and settings are required, and who to ask
+when unsure. Keep it under 300 words and write it for non-technical staff.</pre>
+      <pre>I'm about to paste the text below into an AI tool. Before I do, tell me:
+does it contain any personal identifiers, health, financial, or legal
+details that would make it risky to send to a third party? List anything
+I should remove or mask first. Do not store or repeat the content back.
+
+[paste ONLY non-confidential sample text here to test the process]</pre>
+      <pre>Rewrite this internal note so it keeps the useful structure but removes
+every name, account number, and detail that could identify a real person
+or client. Replace them with generic placeholders like [Client A].</pre>
+    </div>
+  </div>
+</section>
+
+<section class="section--paper">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Example output</p>
+      <h2>What the policy prompt might return</h2>
+    </div>
+    <div class="prose">
+      <p><em>AI Usage Rule — [Company]</em></p>
+      <ol>
+        <li>Never paste into any AI tool: client names tied to health or financial details, Social Security or account numbers, passwords, signed contracts, or anything covered by a confidentiality agreement.</li>
+        <li>Internal drafts and generic notes are allowed only in our approved Business plan, with model training turned off.</li>
+        <li>Before pasting anything about a specific person, replace their name with a placeholder.</li>
+        <li>When unsure, ask [name] before pasting. A five-minute question beats a data leak.</li>
+      </ol>
+      <p class="small muted">Realistic, but the model may invent settings names or overstate a protection. That is exactly why the review step exists.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Risks &amp; common mistakes</p>
+      <h2>Where this goes wrong</h2>
+    </div>
+    <div class="prose">
+      <details class="acc">
+        <summary>Assuming free equals private</summary>
+        <div class="acc__body"><p>On most consumer tiers, your chats can train the next model unless you opt out. This is the single most common mistake.</p></div>
+      </details>
+      <details class="acc">
+        <summary>Pasting client data to save five minutes</summary>
+        <div class="acc__body"><p>A confidentiality breach is not undone by deleting the chat afterward.</p></div>
+      </details>
+      <details class="acc">
+        <summary>Trusting a browser extension or unknown app</summary>
+        <div class="acc__body"><p>Third-party wrappers may route your text through servers with no clear policy. Prefer the vendor's own app.</p></div>
+      </details>
+      <details class="acc">
+        <summary>Letting the model describe its own privacy terms</summary>
+        <div class="acc__body"><p>Models frequently get their own vendor's policy wrong. Verify at the source, not by asking the chatbot.</p></div>
+      </details>
+      <details class="acc">
+        <summary>Setting the policy once and forgetting it</summary>
+        <div class="acc__body"><p>Vendors update terms and defaults reset. Re-check quarterly.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="section--paper">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Human review checklist</p>
+      <h2>Confirm before you paste</h2>
+    </div>
+    <div class="prose">
+      <ul>
+        <li>I confirmed which tier we are actually on, not the one we think we bought.</li>
+        <li>I verified the training and retention settings at the vendor's own page, today.</li>
+        <li>No red-bucket data (names tied to health, money, legal status, or a confidentiality promise) is in this prompt.</li>
+        <li>Yellow-bucket data has been anonymized before pasting.</li>
+        <li>I have written approval where a contract or regulation is involved.</li>
+        <li>The team rule is written in plain language and someone owns questions about it.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Related lessons</p>
+      <h2>Keep going</h2>
+    </div>
+    <div class="grid grid-3">
+      <a class="card card--hover" href="/university/learn/when-not-to-use-ai">
+        <span class="card__eyebrow">Judgment</span>
+        <h3>When Not to Use AI</h3>
+        <p>The cases where the right move is to close the chat box and do it yourself.</p>
+        <span class="card__more">Open lesson →</span>
+      </a>
+      <a class="card card--hover" href="/university/learn/how-to-verify-ai-outputs">
+        <span class="card__eyebrow">Quality</span>
+        <h3>How to Verify AI Outputs</h3>
+        <p>A practical routine for catching invented facts before they reach a client.</p>
+        <span class="card__more">Open lesson →</span>
+      </a>
+      <a class="card card--hover" href="/university/learn/choose-your-first-ai-stack">
+        <span class="card__eyebrow">Setup</span>
+        <h3>Choose Your First AI Stack</h3>
+        <p>Pick the tools and tiers that fit your data obligations, not just your budget.</p>
+        <span class="card__more">Open lesson →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section--ink">
+  <div class="wrap" style="text-align:center">
+    <div style="max-width:56ch;margin-inline:auto">
+      <p class="eyebrow">Next step</p>
+      <h2>Not sure which tier your business actually needs?</h2>
+      <p class="lead" style="margin-inline:auto">The AI Roadmap Assessment maps your data, your obligations, and your goals to a plan you can act on this week.</p>
+      <div class="cta-row" style="justify-content:center">
+        <a class="btn btn--on-ink" href="/university/assessment">Take the AI Roadmap Assessment</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div>
+        <div class="footer__brand">Aloha AI <span style="color:var(--mint)">University</span></div>
+        <p style="max-width:38ch;color:#9FB6AE">Free, practical, honest generative-AI education for modern businesses. Built by Aloha AI and RN Collins.</p>
+        <p style="margin-top:var(--s4)"><a class="btn btn--on-ink btn--sm" href="/university/assessment">Get Your AI Roadmap</a></p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/university/start-here">Start Here</a></li>
+          <li><a href="/university/learn">Learn</a></li>
+          <li><a href="/university/playbooks">Playbooks</a></li>
+          <li><a href="/university/templates">Templates</a></li>
+          <li><a href="/university/use-cases">Use Cases</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Work with us</h4>
+        <ul>
+          <li><a href="/">← Aloha AI (main site)</a></li>
+          <li><a href="/university/tools">Tools</a></li>
+          <li><a href="/university/services">Services</a></li>
+          <li><a href="/university/about">About</a></li>
+          <li><a href="/university/contact">Contact</a></li>
+          <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a Call</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer__disc"><strong>Aloha AI University</strong> is free generative-AI education for modern businesses. RN Collins is a JD candidate, not a licensed attorney. Nothing here is legal, medical, or financial advice. Every page on this site runs entirely in your browser and sends nothing anywhere.</p>
+    <p class="footer__fine">© <span id="yr">2026</span> Aloha AI. All rights reserved.</p>
+  </div>
+</footer>
+<script id="uni-js">
+/* Aloha AI University — shared behavior (progressive enhancement) */
+(function () {
+  "use strict";
+  document.documentElement.classList.add("js");
+
+  /* ---- Mobile menu ---- */
+  var burger = document.querySelector(".nav__burger");
+  var links = document.getElementById("nav-links");
+  if (burger && links) {
+    var close = function () {
+      links.classList.remove("open");
+      burger.setAttribute("aria-expanded", "false");
+    };
+    var toggle = function () {
+      var open = links.classList.toggle("open");
+      burger.setAttribute("aria-expanded", open ? "true" : "false");
+    };
+    burger.addEventListener("click", toggle);
+    links.addEventListener("click", function (e) {
+      if (e.target.closest("a")) close();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && links.classList.contains("open")) {
+        close();
+        burger.focus();
+      }
+    });
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 1000) close();
+    });
+  }
+
+  /* ---- Nav elevation on scroll ---- */
+  var nav = document.querySelector(".nav");
+  if (nav) {
+    var onScroll = function () {
+      if (window.scrollY > 8) nav.classList.add("is-stuck");
+      else nav.classList.remove("is-stuck");
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
+
+  /* ---- Reveal on scroll ---- */
+  var reveals = document.querySelectorAll(".reveal");
+  if (reveals.length && "IntersectionObserver" in window) {
+    var io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) {
+            en.target.classList.add("in");
+            io.unobserve(en.target);
+          }
+        });
+      },
+      { rootMargin: "0px 0px -8% 0px", threshold: 0.08 }
+    );
+    reveals.forEach(function (el) { io.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add("in"); });
+  }
+
+  /* ---- Current year ---- */
+  var yr = document.getElementById("yr");
+  if (yr) yr.textContent = new Date().getFullYear();
+
+  /* ---- Email reveal (footer + contact) ---- */
+  document.querySelectorAll("[data-email-reveal]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var a = ["collins", "ra"].join(".") + "@" + ["northeastern", "edu"].join(".");
+      var out = document.getElementById(btn.getAttribute("aria-controls"));
+      if (out) out.innerHTML = '<a id="email-reveal" href="mailto:' + a + '">' + a + "</a>";
+      btn.setAttribute("disabled", "disabled");
+      btn.textContent = "Email revealed";
+    });
+  });
+})();
+
+</script>
+</body>
+</html>

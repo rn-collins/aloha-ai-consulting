@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Content Repurposing Playbook | Aloha AI University</title>
+<meta name="description" content="Turn one source asset — a webinar, podcast, talk, or long blog — into a week of derivative content without losing your voice or fabricating claims. Manual, semi-automated, and fully built versions with a voice guide and a fact-preservation rule.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://aloha-ai-consulting.vercel.app/university/playbooks/content-repurposing">
+<meta name="theme-color" content="#0F5343">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI Content Repurposing Playbook | Aloha AI University">
+<meta property="og:description" content="One source asset into many channel-ready pieces — with a voice guide, a fact-preservation rule, and human editing so nothing sounds generic or made up.">
+<meta property="og:site_name" content="Aloha AI University">
+<meta property="og:image" content="https://aloha-ai-consulting.vercel.app/university/og-image.png">
+<meta property="og:url" content="https://aloha-ai-consulting.vercel.app/university/playbooks/content-repurposing">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Content Repurposing Playbook">
+<meta name="twitter:description" content="Multiply one asset into LinkedIn posts, a newsletter, video scripts, and threads — in your voice, with claims you can defend.">
+<meta name="twitter:image" content="https://aloha-ai-consulting.vercel.app/university/og-image.png">
+<link rel="icon" href="/university/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style id="uni-ds">
+/* ============================================================
+   ALOHA AI UNIVERSITY — DESIGN SYSTEM  (university.css)
+   Shared stylesheet for every University page.
+   Premium, calm, high-trust. Brand-cohesive with the elevated
+   Aloha AI main site. v2.0 · 2026-07
+   ============================================================ */
+
+/* ---- 1. TOKENS ------------------------------------------- */
+:root{
+  /* Brand color */
+  --teal:#1B7A68; --teal-d:#0F5343; --teal-l:#E9F3F0; --mint:#7FE0C4;
+  --ink:#14201C; --ink-2:#25332E;
+  --cream:#F7F4EC; --cream-2:#EFEAE0; --paper:#FCFAF5; --white:#FFFFFF;
+  --muted:#4E5C56;            /* AA on cream/white */
+  --muted-ink:#B7C7C0;        /* AA on ink */
+  --line:#E4DFD3; --line-2:#C7BFAE;
+  --amber:#8A5A08; --amber-l:#FBF4E6; --amber-bd:#E4CE9E;
+
+  /* Type families */
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:"Manrope",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:"DM Mono","SFMono-Regular",Menlo,Consolas,monospace;
+
+  /* Type scale (fluid) */
+  --fs-display:clamp(2.6rem,6vw,4.4rem);
+  --fs-h1:clamp(2.2rem,5vw,3.4rem);
+  --fs-h2:clamp(1.7rem,3.4vw,2.5rem);
+  --fs-h3:1.35rem;
+  --fs-body:1.0625rem; --fs-lead:1.2rem; --fs-sm:.9rem; --fs-xs:.78rem;
+  --label:.72rem;
+
+  /* Space scale */
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px;
+  --s7:48px; --s8:64px; --s9:96px;
+
+  /* Radius, shadow, motion */
+  --r-sm:10px; --r:16px; --r-lg:22px; --r-pill:999px;
+  --sh-1:0 1px 2px rgba(20,32,28,.05);
+  --sh-2:0 2px 6px rgba(20,32,28,.05),0 14px 40px rgba(20,32,28,.08);
+  --sh-3:0 2px 4px rgba(20,32,28,.04),0 20px 52px -14px rgba(20,32,28,.16);
+  --sh-focus:0 0 0 3px rgba(27,122,104,.4);
+  --sh-focus-mint:0 0 0 3px rgba(127,224,196,.55);
+  --ease:cubic-bezier(.4,0,.2,1); --ease-out:cubic-bezier(.16,1,.3,1);
+  --dur:.24s; --dur-s:.14s;
+
+  --maxw:1120px; --measure:68ch; --nav-h:66px;
+
+  /* Editorial surfaces / gradients (within brand) */
+  --grad-hero:linear-gradient(158deg,var(--teal-d) 0%,var(--teal) 78%,#227e6b 100%);
+  --grad-ink:linear-gradient(180deg,#16241E 0%,var(--ink) 100%);
+  --grad-mint-rule:linear-gradient(90deg,var(--teal) 0%,var(--mint) 100%);
+  --texture-dot:radial-gradient(rgba(27,122,104,.05) 1px,transparent 1px);
+}
+
+/* ---- 2. BASE / RESET ------------------------------------- */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 14px);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);
+  font-size:var(--fs-body);line-height:1.65;font-weight:400;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{max-width:100%;display:block}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;letter-spacing:-.01em;line-height:1.08;margin:0;text-wrap:balance}
+h1{font-size:var(--fs-h1)} h2{font-size:var(--fs-h2)} h3{font-size:var(--fs-h3)}
+p{margin:0 0 1rem;text-wrap:pretty}
+a{color:var(--teal-d);text-underline-offset:2px;transition:color var(--dur-s) var(--ease)}
+a:hover{color:var(--teal)}
+strong{font-weight:700}
+:focus-visible{outline:none;box-shadow:var(--sh-focus);border-radius:6px}
+.section--ink :focus-visible,.hero :focus-visible{box-shadow:var(--sh-focus-mint)}
+::selection{background:var(--mint);color:var(--ink)}
+
+/* ---- 3. LAYOUT ------------------------------------------- */
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(20px,4vw,28px)}
+.section{padding-block:clamp(56px,8vw,104px);position:relative}
+.section + .section{border-top:1px solid var(--line)}
+.section--paper{background:var(--paper)}
+.section--ink{background:var(--grad-ink);color:var(--cream)}
+.section--ink h1,.section--ink h2,.section--ink h3{color:var(--cream)}
+.section--ink + .section,.section + .section--ink{border-top:0}
+.section--tint{background:var(--white)}
+/* subtle dot texture, opt-in, brand-tinted */
+.section--texture{background-image:var(--texture-dot);background-size:22px 22px}
+.section-head{max-width:var(--measure);margin-bottom:var(--s7)}
+/* accent rule system — an editorial hairline that reads intentional */
+.rule{height:2px;width:56px;border:0;border-radius:2px;background:var(--grad-mint-rule);margin:0 0 var(--s5)}
+.section--ink .rule{opacity:.9}
+.grid{display:grid;gap:var(--s5)}
+.grid-2{grid-template-columns:repeat(2,1fr)}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.grid-4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:900px){.grid-3,.grid-4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}}
+.stack-gap{margin-top:var(--s6)}
+
+/* ---- 4. TYPOGRAPHY HELPERS ------------------------------- */
+.eyebrow{font-family:var(--mono);font-size:var(--label);letter-spacing:.18em;
+  text-transform:uppercase;color:var(--teal-d);margin:0 0 var(--s4);font-weight:500;
+  display:inline-flex;align-items:center;gap:.6rem}
+.eyebrow::before{content:"";width:16px;height:2px;border-radius:2px;background:var(--grad-mint-rule);flex:none}
+.section--ink .eyebrow{color:var(--mint)}
+.section--ink .eyebrow::before{opacity:.95}
+.hero .eyebrow::before{opacity:.95}
+.display{font-size:var(--fs-display);letter-spacing:-.02em}
+.lead{font-size:var(--fs-lead);color:var(--muted);max-width:60ch;line-height:1.55}
+.section--ink .lead{color:var(--muted-ink)}
+.lead-line{font-family:var(--serif);font-size:1.4rem;color:var(--teal-d);max-width:44ch;line-height:1.3;font-weight:500}
+.mono{font-family:var(--mono)}
+.small{font-size:var(--fs-sm)} .muted{color:var(--muted)}
+.measure{max-width:var(--measure)}
+
+/* ---- 5. BUTTONS ------------------------------------------ */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  font-family:var(--mono);font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;
+  font-weight:500;text-decoration:none;cursor:pointer;
+  padding:.85rem 1.35rem;border-radius:var(--r-sm);border:1px solid transparent;
+  transition:all var(--dur) var(--ease);min-height:46px;line-height:1;white-space:nowrap}
+.btn--primary{background:var(--teal);color:#fff;box-shadow:0 1px 2px rgba(15,83,67,.28)}
+.btn--primary:hover{background:var(--teal-d);color:#fff;transform:translateY(-1px);box-shadow:0 8px 22px -6px rgba(15,83,67,.5)}
+.btn--ghost{background:transparent;border-color:var(--line-2);color:var(--ink)}
+.btn--ghost:hover{border-color:var(--teal);color:var(--teal-d);transform:translateY(-1px);box-shadow:var(--sh-1)}
+.btn--on-ink{background:var(--mint);color:var(--teal-d)}
+.btn--on-ink:hover{background:#9dedd6;color:var(--teal-d);transform:translateY(-1px);box-shadow:var(--sh-2)}
+.btn--outline-ink{background:transparent;border-color:rgba(127,224,196,.5);color:var(--cream)}
+.btn--outline-ink:hover{border-color:var(--mint);color:#fff;background:rgba(127,224,196,.1)}
+.btn--sm{padding:.55rem .9rem;min-height:40px;font-size:.7rem}
+.btn:active{transform:translateY(0)}
+.cta-row{display:flex;flex-wrap:wrap;gap:var(--s3);margin-top:var(--s6)}
+
+/* ---- 6. BADGES / TAGS ------------------------------------ */
+.badge{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--mono);
+  font-size:var(--fs-xs);letter-spacing:.05em;text-transform:uppercase;
+  padding:.3rem .65rem;border-radius:var(--r-pill);
+  border:1px solid var(--line);background:var(--white);color:var(--teal-d);font-weight:500}
+.badge--solid{background:var(--teal-l);border-color:#BADFD6}
+.section--ink .badge{background:rgba(127,224,196,.12);border-color:rgba(127,224,196,.3);color:var(--mint)}
+.price{font-family:var(--mono);font-size:var(--fs-sm);color:var(--teal-d);font-weight:500;letter-spacing:.02em}
+
+/* ---- 7. CARDS -------------------------------------------- */
+.card{position:relative;background:var(--white);border:1px solid var(--line);border-radius:var(--r);
+  padding:var(--s6);box-shadow:var(--sh-1);overflow:hidden;
+  transition:box-shadow var(--dur) var(--ease),transform var(--dur) var(--ease),border-color var(--dur) var(--ease)}
+.card h3{margin-bottom:var(--s3)}
+.card p{color:var(--muted);margin-bottom:var(--s4)}
+a.card{text-decoration:none;color:var(--ink);display:flex;flex-direction:column}
+.card--hover:hover{box-shadow:var(--sh-3);transform:translateY(-3px);border-color:var(--line-2)}
+/* an accent hairline that surfaces on hover — quiet until you touch it */
+.card--hover::after{content:"";position:absolute;left:0;right:0;top:0;height:2px;
+  background:var(--grad-mint-rule);transform:scaleX(0);transform-origin:left;opacity:0;
+  transition:transform var(--dur) var(--ease-out),opacity var(--dur) var(--ease)}
+.card--hover:hover::after{transform:scaleX(1);opacity:1}
+.card__more{margin-top:auto;font-family:var(--mono);font-size:var(--fs-xs);
+  letter-spacing:.05em;text-transform:uppercase;color:var(--teal-d);font-weight:500}
+a.card:hover .card__more{color:var(--teal)}
+.card__eyebrow{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.12em;
+  text-transform:uppercase;color:var(--teal);margin-bottom:var(--s3);font-weight:500}
+.section--paper .card{background:var(--white)}
+.section--ink .card{background:var(--ink-2);border-color:#33443C;color:var(--cream)}
+.section--ink .card p{color:var(--muted-ink)}
+
+/* ---- 8. HERO --------------------------------------------- */
+.hero{background:var(--grad-hero);
+  color:var(--cream);position:relative;overflow:hidden;border-bottom:3px solid var(--teal)}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(rgba(127,224,196,.06) 1px,transparent 1px);background-size:26px 26px;
+  -webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 72%);mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 72%)}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(60% 90% at 82% 8%,rgba(127,224,196,.16),transparent 60%)}
+.hero .wrap{position:relative;z-index:1;padding-block:clamp(64px,10vw,116px)}
+.hero .eyebrow{color:var(--mint)}
+.hero h1{color:#fff;max-width:16ch}
+.hero .lead{color:#E4F1EC;max-width:56ch;margin-top:var(--s5)}
+.hero--sm .wrap{padding-block:clamp(52px,7vw,84px)}
+
+/* ---- 9. PROSE (long-form) -------------------------------- */
+.prose{max-width:var(--measure);font-size:1.075rem}
+.prose > * + *{margin-top:1.15rem}
+.prose h2{font-size:var(--fs-h2);margin-top:2.4rem;margin-bottom:.4rem}
+.prose h3{font-size:var(--fs-h3);margin-top:1.8rem;margin-bottom:.2rem}
+.prose p{color:var(--ink);line-height:1.7}
+.prose a{text-decoration:underline}
+.prose ul,.prose ol{padding-left:1.3rem;color:var(--ink)}
+.prose li{margin-bottom:.5rem}
+.prose blockquote{border-left:3px solid var(--teal);padding:.2rem 0 .2rem 1.2rem;
+  margin:1.6rem 0;font-family:var(--serif);font-size:1.35rem;color:var(--teal-d);font-style:italic}
+.prose code{font-family:var(--mono);font-size:.86em;background:var(--cream-2);
+  padding:.12em .4em;border-radius:6px}
+.prose pre{background:var(--ink);color:var(--cream);padding:var(--s5);border-radius:var(--r);
+  overflow-x:auto;font-family:var(--mono);font-size:.85rem;line-height:1.6}
+.prose pre code{background:none;padding:0}
+.prose table{width:100%;border-collapse:collapse;font-size:var(--fs-sm);margin:1.4rem 0}
+.prose th,.prose td{text-align:left;padding:.6rem .8rem;border-bottom:1px solid var(--line)}
+.prose th{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.06em;
+  text-transform:uppercase;color:var(--teal-d);font-weight:500}
+
+/* ---- 10. ACCORDION (FAQ) --------------------------------- */
+.acc{border:1px solid var(--line);border-radius:var(--r);background:var(--white);overflow:hidden}
+.acc + .acc{margin-top:var(--s3)}
+.acc summary{list-style:none;cursor:pointer;padding:1.15rem 1.3rem;
+  font-family:var(--serif);font-size:1.25rem;font-weight:600;color:var(--ink);
+  display:flex;justify-content:space-between;gap:1rem;align-items:center;min-height:56px}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary:hover{color:var(--teal-d)}
+.acc summary::after{content:"+";font-family:var(--mono);font-size:1.4rem;color:var(--teal);
+  transition:transform var(--dur) var(--ease);flex:none;line-height:1}
+.acc[open] summary::after{transform:rotate(45deg)}
+.acc__body{padding:0 1.3rem 1.25rem;color:var(--muted);max-width:var(--measure)}
+.acc__body p:last-child{margin-bottom:0}
+
+/* ---- 11. NAV --------------------------------------------- */
+.skip{position:absolute;left:-999px;top:0;background:var(--teal-d);color:#fff;
+  padding:.7rem 1.1rem;border-radius:0 0 8px 0;z-index:200;
+  font-family:var(--mono);font-size:.82rem}
+.skip:focus{left:0;color:#fff}
+.nav{position:sticky;top:0;z-index:100;background:rgba(252,250,245,.88);
+  backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);
+  border-bottom:1px solid var(--line);height:var(--nav-h);
+  transition:box-shadow var(--dur) var(--ease),background var(--dur) var(--ease)}
+.nav.is-stuck{background:rgba(252,250,245,.94);box-shadow:0 1px 0 var(--line),0 8px 24px -14px rgba(20,32,28,.4)}
+.nav__in{max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(20px,4vw,28px);
+  height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.nav__brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--ink);
+  font-family:var(--mono);font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500}
+.nav__brand svg{flex:none}
+.nav__brand b{font-weight:500}
+.nav__brand .mk{color:var(--teal-d);font-weight:500}
+.nav__links{display:flex;align-items:center;gap:.15rem;list-style:none;margin:0;padding:0}
+.nav__links a{font-family:var(--mono);font-size:.73rem;letter-spacing:.04em;text-transform:uppercase;
+  color:var(--ink-2);text-decoration:none;padding:.5rem .55rem;border-radius:8px;white-space:nowrap}
+.nav__links a:hover{color:var(--teal-d);background:var(--teal-l)}
+.nav__links a[aria-current="page"]{color:var(--teal-d);background:var(--teal-l)}
+.nav__cta{margin-left:.35rem}
+.nav__burger{display:none;background:none;border:1px solid var(--line-2);border-radius:9px;
+  width:46px;height:46px;cursor:pointer;align-items:center;justify-content:center;color:var(--ink)}
+@media(max-width:1000px){
+  .nav__links{position:fixed;inset:var(--nav-h) 0 auto 0;flex-direction:column;align-items:stretch;
+    gap:0;background:var(--paper);border-bottom:1px solid var(--line);padding:var(--s3);
+    transform:translateY(-10px);opacity:0;visibility:hidden;
+    transition:all var(--dur) var(--ease);box-shadow:var(--sh-2);max-height:calc(100vh - var(--nav-h));overflow-y:auto}
+  .nav__links.open{opacity:1;visibility:visible;transform:translateY(0)}
+  .nav__links a{padding:.9rem .8rem;font-size:.82rem;border-radius:10px}
+  .nav__cta{margin:.5rem 0 0}
+  .nav__cta .btn{width:100%}
+  .nav__burger{display:inline-flex}
+}
+
+/* ---- 12. FOOTER ------------------------------------------ */
+.footer{background:var(--grad-ink);color:var(--muted-ink);padding-block:var(--s9) var(--s7);font-size:var(--fs-sm)}
+.footer a{color:#CFDAD5;text-decoration:none}.footer a:hover{color:#fff}
+.footer__top{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:var(--s7)}
+@media(max-width:760px){.footer__top{grid-template-columns:1fr;gap:var(--s6)}}
+.footer__brand{font-family:var(--serif);font-size:1.6rem;color:var(--cream);margin-bottom:var(--s3)}
+.footer h4{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.12em;text-transform:uppercase;
+  color:#8FA69E;margin-bottom:var(--s4);font-weight:500}
+.footer ul{list-style:none;margin:0;padding:0}.footer li{margin-bottom:.55rem}
+.footer__disc{border-left:2px solid var(--teal);padding-left:1rem;color:#9FB6AE;
+  margin-top:var(--s7);max-width:75ch;line-height:1.7;font-size:var(--fs-sm)}
+.footer__disc strong{color:#DFF0EA}
+.footer__fine{font-family:var(--mono);font-size:.68rem;color:#6C837B;margin-top:var(--s6);line-height:1.7}
+#email-reveal{color:var(--mint);font-weight:600}
+
+/* ---- 13. UTIL / MOTION ----------------------------------- */
+.js .reveal{opacity:0;transform:translateY(16px)}
+.js .reveal.in{opacity:1;transform:none;transition:opacity .6s var(--ease-out),transform .6s var(--ease-out)}
+.divider{height:1px;background:var(--line);border:0;margin-block:var(--s7)}
+.divider--accent{height:2px;background:var(--grad-mint-rule);border:0;border-radius:2px;width:100%;margin-block:var(--s7)}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1!important;transform:none!important}
+  html{scroll-behavior:auto}
+}
+
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="/university/" aria-label="Aloha AI University home">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1B7A68"/><path d="M7 15.5c2-5 3-5 5-5s3 0 5 5" stroke="#7FE0C4" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="8.5" r="1.6" fill="#7FE0C4"/></svg>
+      <span>Aloha AI <span class="mk">University</span></span>
+    </a>
+    <button class="nav__burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav__links" id="nav-links">
+      <li><a href="/university/start-here">Start Here</a></li>
+      <li><a href="/university/learn">Learn</a></li>
+      <li><a href="/university/playbooks" aria-current="page">Playbooks</a></li>
+      <li><a href="/university/templates">Templates</a></li>
+      <li><a href="/university/use-cases">Use Cases</a></li>
+      <li><a href="/university/tools">Tools</a></li>
+      <li><a href="/university/services">Services</a></li>
+      <li><a href="/university/about">About</a></li>
+      <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a Call</a></li>
+      <li class="nav__cta"><a class="btn btn--primary btn--sm" href="/university/assessment">Get Your AI Roadmap</a></li>
+    </ul>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero hero--sm">
+  <div class="wrap">
+    <p class="eyebrow">Playbook · Marketing</p>
+    <h1 class="display">One asset, a week of content — still in your voice</h1>
+    <p class="lead">You already made the hard thing: the webinar, the podcast episode, the long essay, the recorded talk. This turns that one asset into a week of LinkedIn posts, a newsletter, short-form video scripts, and threads that still sound like you and never claim something you did not actually say. AI does the drafting; a voice guide and a fact-preservation rule keep it honest; you do the final edit.</p>
+    <div class="cta-row">
+      <a class="btn btn--on-ink" href="#manual">Start with the manual version</a>
+      <a class="btn btn--outline-ink" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Have us build it</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">01 · The business problem</p>
+      <h2>You make one good thing, then it disappears</h2>
+    </div>
+    <div class="prose">
+      <p>You spent weeks on a webinar. Two hundred people saw it live, a few dozen watched the replay, and then it went quiet. The insight is still good — but it is trapped in a sixty-minute recording nobody has time to rewatch. The same fate meets your best podcast episodes, your longest and most careful blog posts, and the talk you gave at that conference. You built assets with a long shelf life and then let them expire in a week.</p>
+      <p>The obvious fix is to chop each asset into many smaller pieces for the channels where your audience actually is. The problem is that doing this by hand is grinding work. Pulling the quotable moments, rewriting them for LinkedIn versus a newsletter versus a thirty-second video, and matching each to the platform's format takes hours per source — hours that never make the calendar, because the next webinar is already being planned.</p>
+      <p>AI closes that gap. But it introduces two new dangers that most people ignore: the drafts come out sounding like generic AI content, and they quietly invent statistics, quotes, and claims you never made. This playbook exists to get the speed without either of those failures.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--paper">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">02 · Why it matters</p>
+      <h2>Repetition builds a reputation; one-shot content builds nothing</h2>
+    </div>
+    <div class="prose">
+      <p>Nobody remembers a single post. People remember a person who shows up saying consistent, useful things over and over, in the places they already scroll. Repurposing is how one hour of real thinking becomes ten touchpoints — and ten touchpoints is how a stranger starts to recognize your name.</p>
+      <p>The arithmetic is what makes it worth systematizing. If turning a webinar into a full week of channel content takes you six hours by hand, you will do it maybe once and then quietly stop. Compress the drafting to twenty minutes of review over AI output, keep an hour for real human editing, and the same asset now yields eight to twelve finished pieces at a quality you would sign. That is the difference between a content habit and a content wish.</p>
+      <p>There is a quieter benefit too. When you repurpose from a real source you actually created, every derivative piece is grounded in something you genuinely believe and said out loud. That is the opposite of the empty, everywhere-at-once content that makes audiences tune out — and it is why the fact-preservation rule below is not a nicety but the whole engine.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">03 · Who this is for</p>
+      <h2>People who create long things and want them to travel</h2>
+    </div>
+    <div class="prose">
+      <ul>
+        <li><strong>The founder or expert who publishes.</strong> You write essays, host a podcast, or give talks, and you know each one should become a dozen posts — but the repurposing never happens because you are busy making the next big thing.</li>
+        <li><strong>The solo marketer or small team.</strong> You are responsible for a content calendar with no staff to feed it. One strong source per week, well repurposed, can fill most of it.</li>
+        <li><strong>The consultant or coach with recorded calls and talks.</strong> Your best material is already spoken and captured. You want it working for you on LinkedIn and in a newsletter, in your voice, without hiring a ghostwriter.</li>
+        <li><strong>Not a fit:</strong> anyone who wants a bot to autopost AI slop with no human review, or who has no genuine source asset to repurpose from. This playbook amplifies real thinking, not the appearance of it.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section section--paper">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">04 · What this workflow accomplishes</p>
+      <h2>From one source to a channel-ready set, in your voice</h2>
+    </div>
+    <div class="prose">
+      <p>By the end of a build, you have a repeatable loop that runs each time you publish something long:</p>
+      <ul>
+        <li><strong>Capture</strong> a clean transcript of the source asset, so the AI works from your actual words, not a summary of them.</li>
+        <li><strong>Extract</strong> a voice guide once, from writing you have already published, so every draft is measured against how you actually sound.</li>
+        <li><strong>Mine</strong> the transcript for atomic ideas — the standalone points, stories, and quotable lines worth their own piece.</li>
+        <li><strong>Repurpose</strong> each idea per channel — LinkedIn post, newsletter section, short-form video script, X thread, quote-graphic caption, SEO snippet — under a rule that forbids inventing facts.</li>
+        <li><strong>Generate</strong> hook and headline variants so you can pick the strongest opening rather than settling for the first.</li>
+        <li><strong>Edit</strong> every piece by hand before it publishes, because the human pass is where voice and truth are protected.</li>
+      </ul>
+      <p>The AI does the ninety percent that is transcribing, mining, and drafting. You keep the ten percent that is judgment: does this sound like me, and is every claim in it true?</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">05 · Tools you will need</p>
+      <h2>Pick a tier and start; you can grow into more</h2>
+      <p class="lead">The manual version needs one AI chat tool, a transcript, and somewhere to keep your drafts. Prices below are current as of mid-2026 and change often — confirm before you buy.</p>
+    </div>
+    <div class="grid grid-2">
+      <div class="card"><h3>AI assistant <span class="price">required</span></h3><p>ChatGPT Plus or Claude Pro, both about $20/month, for mining transcripts, drafting per channel, and generating hook variants. The paid tiers give you the stronger models and the longer context you will want when feeding in a full hour-long transcript.</p></div>
+      <div class="card"><h3>Transcription</h3><p>A transcription tool to turn the audio or video into text. Otter and Descript are common; many podcast hosts and video platforms now include built-in transcripts, and Descript doubles as an editor if you also want to cut short-form clips. Accuracy on names and jargon varies, so always proofread.</p></div>
+      <div class="card"><h3>A place to keep drafts</h3><p>Notion is a natural home — one page per source, with the transcript, voice guide, and each channel's drafts together. Notion's AI features are bundled into the Business plan (about $20/user/month); the older standalone $10 AI add-on has been removed. A plain Google Doc works fine to start.</p></div>
+      <div class="card"><h3>Scheduling / publishing</h3><p>Buffer or Hypefury to queue and space out posts across channels, or each platform's native scheduler if you prefer to stay in-app. Scheduling is optional for the manual version — you can just post by hand — but it is what makes a weekly cadence stick.</p></div>
+      <div class="card"><h3>Automation glue <span class="price">optional</span></h3><p>Zapier to move a finished transcript into your drafting workspace and route approved pieces to your scheduler. Zapier's Professional plan starts around $19.99/month annual for 750 tasks; a multi-step Zap burns one task per step per run, so budget by steps, not runs.</p></div>
+      <div class="card"><h3>Honest limits</h3><p>None of this removes the editing. AI repurposing is a strong first-draft engine, not a publish button. Budget real human time on every piece — that is where the voice stays yours and the facts stay true. See the risks section before you automate anything.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--paper" id="manual">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">06 · Three ways to run it</p>
+      <h2>Manual, semi-automated, fully implemented</h2>
+      <p class="lead">Same loop, three levels of build. Start at the left even if you plan to end at the right — doing it by hand teaches you what "sounds like me" and "provably true" actually look like, and that judgment is what you encode later.</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card">
+        <span class="badge badge--solid">Manual</span>
+        <h3>One transcript, one AI chat, one focused afternoon</h3>
+        <p>Build your voice guide once from published work. Get a clean transcript. Mine it for atomic ideas, run the per-channel prompt that forbids inventing facts, then edit every draft against your voice guide and verify every claim before you post.</p>
+        <p class="small muted">Honest expectation: the first pass is slow, maybe an afternoon for one source. That is the tuition you pay to build the automated version well.</p>
+      </div>
+      <div class="card">
+        <span class="badge badge--solid">Semi-automated</span>
+        <h3>The tools transcribe and draft; you review at two gates</h3>
+        <p>Store your voice guide once. Auto-transcribe each source and proofread names and jargon. The AI batch-mines and batch-drafts. Then a fact-check pass (gate one) and a voice-and-send pass (gate two) before anything queues.</p>
+        <p class="small muted">Where most creators should live for a while: fast enough to be consistent, slow enough to stay unmistakably yours.</p>
+      </div>
+      <div class="card">
+        <span class="badge badge--solid">Fully implemented</span>
+        <h3>A scheduled loop with a mandatory editing gate</h3>
+        <p>A new transcript or episode triggers the loop in Zapier or Make. It cleans the transcript, attaches your voice guide and fact-preservation rule, drafts per channel plus hooks into a "Needs review" view, and pings you. Nothing publishes until you edit and approve.</p>
+        <p class="small muted">"Fully implemented" does not mean "posts by itself." It means everything except the judgment is automated.</p>
+      </div>
+    </div>
+    <div class="prose stack-gap">
+      <blockquote>Reality check: this is a real build with real maintenance — transcription mishears names, models drift toward generic phrasing, and a broken Zap fails silently. Budget a few hours a month, and never remove the editing gate to "save time." The gate is where your voice and credibility are protected. An unedited AI post that invents a statistic will cost you more trust than the whole system saves you in hours.</blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">07 · Step-by-step build</p>
+      <h2>From zero to the semi-automated loop</h2>
+    </div>
+    <div class="prose">
+      <ol>
+        <li><strong>Extract your voice guide.</strong> Run the voice-guide prompt over three or four published pieces. Save the result in a doc titled "Voice Guide" and treat it as living: revise it when your writing shifts or when a draft sounds off despite following it.</li>
+        <li><strong>Set up your source workspace.</strong> Create a template — a Notion page or doc — with sections for Transcript, Atomic ideas, LinkedIn, Newsletter, Video scripts, Thread, Captions, SEO snippets, and Status (Draft / Fact-checked / Edited / Scheduled / Published).</li>
+        <li><strong>Transcribe and clean.</strong> Transcribe your source asset and read the whole thing once, fixing wrong names, terms, and mishears. This is the single most important quality step — every downstream piece inherits these words.</li>
+        <li><strong>Mine atomic ideas.</strong> Run the idea-extractor prompt over the cleaned transcript. Review the list, keep the ideas that stand on their own, and star the two or three strongest to lead with.</li>
+        <li><strong>Draft per channel.</strong> For each starred idea, run the per-channel prompt with your voice guide attached and the fact-preservation rule in force. Generate one piece per channel you actually use — do not spread yourself across platforms you will not maintain.</li>
+        <li><strong>Generate hook variants.</strong> Run the hook-and-headline prompt on your lead pieces to produce several openings each. Pick the strongest by hand; a good hook is the difference between a read and a scroll.</li>
+        <li><strong>Fact-check and edit.</strong> With the transcript open, verify every quote, number, and claim in every draft, then edit each piece into your voice. Cut generic phrasing on sight. Only then mark it Edited.</li>
+        <li><strong>Add automation last.</strong> Once the manual loop is smooth, wire the repetitive moves (transcript in → mine → draft → review view → scheduler) in Zapier or Make, keeping the editing gate as a hard stop. Automate what you have validated, never the judgment.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="section section--paper">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">08 · Prompts and templates</p>
+      <h2>Copy these, then make them yours</h2>
+    </div>
+    <div class="prose">
+      <h3>Voice guide from your own writing</h3>
+<pre><code>Below are 3-4 pieces I have actually written and published:
+[paste your writing samples]
+
+Study them and produce a reusable "voice guide" I can attach to
+future drafting tasks. Include:
+1. Tone in 3-5 adjectives, with a one-line reason for each.
+2. Sentence rhythm and length patterns you notice.
+3. Words and phrases I clearly favor.
+4. Words, cliches, and patterns I clearly avoid.
+5. How I open and how I close.
+6. A short "do NOT sound like this" list of generic phrasings
+   that would break the voice.
+
+Base every point ONLY on the samples. Do not invent traits I did
+not demonstrate. Output as a labeled list I can paste later.</code></pre>
+
+      <h3>Transcript to atomic ideas</h3>
+<pre><code>Below is a transcript of something I created:
+[paste transcript]
+
+Extract the standalone ideas worth their own piece of content.
+For each, output:
+- A one-line summary of the idea.
+- The type: insight / story / framework / quotable line / data point.
+- The exact wording from the transcript it came from (verbatim),
+  with a rough location marker.
+
+Rules:
+- Only use what is actually in the transcript. Do not add ideas,
+  examples, or claims that are not present.
+- For quotable lines and data points, quote them EXACTLY. If a
+  number or claim is ambiguous in the transcript, flag it rather
+  than cleaning it up.
+Return a numbered list, strongest ideas first.</code></pre>
+
+      <h3>Per-channel repurposing (fact-preservation rule)</h3>
+<pre><code>Repurpose ONE idea into content for the channel I name.
+
+My voice guide:
+[paste voice guide]
+
+The source idea and its exact transcript wording:
+[paste one idea + verbatim source]
+
+Channel: [LinkedIn post | newsletter section | 30-sec video
+script | X thread | quote-graphic caption | SEO snippet]
+
+Hard rules:
+- Use ONLY facts, numbers, quotes, and examples present in the
+  source above. Do NOT invent statistics, studies, quotes, names,
+  or outcomes. If a claim would strengthen the piece but is not in
+  the source, leave it out and tell me what I would need to add.
+- Match my voice guide. Avoid generic AI phrasing.
+- Format natively for the channel (length, line breaks, hook).
+Output the piece, then a one-line "claims used" note listing every
+factual claim and where in the source it came from.</code></pre>
+
+      <h3>Hook and headline variants</h3>
+<pre><code>Here is a finished piece:
+[paste the draft]
+
+My voice guide:
+[paste voice guide]
+
+Write 6 alternative opening hooks (or headlines) for it. Vary the
+angle: curiosity, a concrete number from the piece, a contrarian
+take, a direct question, a short story open, a plain-value open.
+
+Rules:
+- Every hook must be true to the piece — no bait the content does
+  not deliver, no invented stats.
+- Keep my voice. No "unlock", "game-changer", or hollow hype.
+Number them and mark the one you think is strongest, with a reason.</code></pre>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">09 · Risks and review points</p>
+      <h2>Where this goes wrong, and how to catch it</h2>
+    </div>
+    <div class="measure">
+      <details class="acc"><summary>Fabricated stats and quotes</summary><div class="acc__body"><p>The single biggest failure mode: the model invents a statistic, a study, or a quote you never said to make a piece punchier. The prompts forbid invention and require a "claims used" trace, and your editing gate is where you verify every claim against the transcript before publishing.</p></div></details>
+      <details class="acc"><summary>AI-tell and sameness</summary><div class="acc__body"><p>Even truthful drafts can come out sounding like everyone else's AI content — the same rhythms, the same empty transitions. The fixes are the voice guide, a ruthless human edit, and cutting any line that could have been written about anything.</p></div></details>
+      <details class="acc"><summary>Copyright and attribution</summary><div class="acc__body"><p>Repurposing your own work is straightforward. Repurposing someone else's talk, article, or podcast is not — quoting, clipping, and reframing others' material raises copyright and attribution questions. When in doubt, attribute clearly, quote sparingly, and get permission; do not pass another person's ideas off as your own.</p></div></details>
+      <details class="acc"><summary>Platform authenticity</summary><div class="acc__body"><p>Audiences and platforms increasingly penalize content that reads as automated or inauthentic. Post as a human who reviewed the work, keep a real cadence rather than a firehose, and do not disguise AI-assisted drafts as spontaneous.</p></div></details>
+      <details class="acc"><summary>Legal, medical, financial guardrail</summary><div class="acc__body"><p>This playbook is educational, not legal, medical, or financial advice. RN Collins is a JD candidate, not a licensed attorney. For copyright, contracts, or regulated-industry content, get qualified counsel for your jurisdiction and situation.</p></div></details>
+      <details class="acc"><summary>Review cadence</summary><div class="acc__body"><p>Read a sample of published pieces weekly for voice drift, re-check your fact-preservation discipline monthly, and revisit your voice guide quarterly as your writing evolves.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="section section--paper">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">10 · KPIs that tell the truth</p>
+      <h2>Measure reach and fidelity, not just output</h2>
+    </div>
+    <div class="prose">
+      <table>
+        <thead><tr><th>Metric</th><th>What it tells you</th><th>Healthy signal</th></tr></thead>
+        <tbody>
+          <tr><td>Pieces per source</td><td>How much leverage you get from one asset</td><td>8–12 usable pieces from a strong long-form source</td></tr>
+          <tr><td>Time per finished piece</td><td>Whether the workflow is actually saving effort</td><td>Falling toward a few edited minutes each, editing included</td></tr>
+          <tr><td>Engagement per channel</td><td>Whether the repurposed pieces land where you post</td><td>Trending up as you tune hooks and formats</td></tr>
+          <tr><td>"Still sounds like you" check</td><td>Whether voice survived the drafting</td><td>You (or a reader who knows you) can't tell it was AI-assisted</td></tr>
+          <tr><td>Claim-accuracy rate</td><td>Whether the fact-preservation rule is holding</td><td>Zero published pieces with an unverifiable claim</td></tr>
+          <tr><td>Publishing consistency</td><td>Whether the system produces a real cadence</td><td>You hit your weekly plan without heroics</td></tr>
+        </tbody>
+      </table>
+      <p>Watch the two qualitative rows hardest. A single fabricated stat or an obviously generic post costs more trust than a dozen quiet weeks — fidelity is the metric that protects every other one.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--ink">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:0">
+      <p class="eyebrow">Do it with us</p>
+      <h2>Want Aloha AI to build this for you?</h2>
+      <p class="lead">We turn your webinars, podcasts, and talks into a working, human-in-the-loop repurposing system — voice guide, fact-preservation rule, per-channel drafting, and an editing gate wired in from day one — and hand it over documented, so one source keeps earning its keep for a week.</p>
+      <div class="cta-row">
+        <a class="btn btn--on-ink" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a Call</a>
+        <a class="btn btn--outline-ink" href="/university/assessment">Get Your AI Roadmap</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div>
+        <div class="footer__brand">Aloha AI <span style="color:var(--mint)">University</span></div>
+        <p style="max-width:38ch;color:#9FB6AE">Free, practical, honest generative-AI education for modern businesses. Built by Aloha AI and RN Collins.</p>
+        <p style="margin-top:var(--s4)"><a class="btn btn--on-ink btn--sm" href="/university/assessment">Get Your AI Roadmap</a></p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/university/start-here">Start Here</a></li>
+          <li><a href="/university/learn">Learn</a></li>
+          <li><a href="/university/playbooks">Playbooks</a></li>
+          <li><a href="/university/templates">Templates</a></li>
+          <li><a href="/university/use-cases">Use Cases</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Work with us</h4>
+        <ul>
+          <li><a href="/">← Aloha AI (main site)</a></li>
+          <li><a href="/university/tools">Tools</a></li>
+          <li><a href="/university/services">Services</a></li>
+          <li><a href="/university/about">About</a></li>
+          <li><a href="/university/contact">Contact</a></li>
+          <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a Call</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer__disc"><strong>Aloha AI University</strong> is free generative-AI education for modern businesses. RN Collins is a JD candidate, not a licensed attorney. Nothing here is legal, medical, or financial advice. Every page on this site runs entirely in your browser and sends nothing anywhere.</p>
+    <p class="footer__fine">© <span id="yr">2026</span> Aloha AI. All rights reserved.</p>
+  </div>
+</footer>
+<script id="uni-js">
+/* Aloha AI University — shared behavior (progressive enhancement) */
+(function () {
+  "use strict";
+  document.documentElement.classList.add("js");
+
+  /* ---- Mobile menu ---- */
+  var burger = document.querySelector(".nav__burger");
+  var links = document.getElementById("nav-links");
+  if (burger && links) {
+    var close = function () {
+      links.classList.remove("open");
+      burger.setAttribute("aria-expanded", "false");
+    };
+    var toggle = function () {
+      var open = links.classList.toggle("open");
+      burger.setAttribute("aria-expanded", open ? "true" : "false");
+    };
+    burger.addEventListener("click", toggle);
+    links.addEventListener("click", function (e) {
+      if (e.target.closest("a")) close();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && links.classList.contains("open")) {
+        close();
+        burger.focus();
+      }
+    });
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 1000) close();
+    });
+  }
+
+  /* ---- Nav elevation on scroll ---- */
+  var nav = document.querySelector(".nav");
+  if (nav) {
+    var onScroll = function () {
+      if (window.scrollY > 8) nav.classList.add("is-stuck");
+      else nav.classList.remove("is-stuck");
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
+
+  /* ---- Reveal on scroll ---- */
+  var reveals = document.querySelectorAll(".reveal");
+  if (reveals.length && "IntersectionObserver" in window) {
+    var io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) {
+            en.target.classList.add("in");
+            io.unobserve(en.target);
+          }
+        });
+      },
+      { rootMargin: "0px 0px -8% 0px", threshold: 0.08 }
+    );
+    reveals.forEach(function (el) { io.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add("in"); });
+  }
+
+  /* ---- Current year ---- */
+  var yr = document.getElementById("yr");
+  if (yr) yr.textContent = new Date().getFullYear();
+
+  /* ---- Email reveal (footer + contact) ---- */
+  document.querySelectorAll("[data-email-reveal]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var a = ["collins", "ra"].join(".") + "@" + ["northeastern", "edu"].join(".");
+      var out = document.getElementById(btn.getAttribute("aria-controls"));
+      if (out) out.innerHTML = '<a id="email-reveal" href="mailto:' + a + '">' + a + "</a>";
+      btn.setAttribute("disabled", "disabled");
+      btn.textContent = "Email revealed";
+    });
+  });
+})();
+
+</script>
+</body>
+</html>

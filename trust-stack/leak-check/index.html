@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Where Is Your Trust Stack Leaking?</title>
+<meta name="description" content="A five-minute six-layer self-assessment for regulated operators. Score all six layers of The Regulated Trust Stack and find your weakest one. Scoring runs in your browser; nothing is sent anywhere.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://aloha-ai-consulting.vercel.app/trust-stack/leak-check">
+<meta name="theme-color" content="#14201C">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Where Is Your Trust Stack Leaking?">
+<meta property="og:description" content="A six-layer self-assessment for regulated operators. Find your weakest trust layer in five minutes, in your browser.">
+<meta property="og:site_name" content="Aloha AI">
+<meta property="og:image" content="https://aloha-ai-consulting.vercel.app/trust-stack/leak-check/og-image.png">
+<meta property="og:url" content="https://aloha-ai-consulting.vercel.app/trust-stack/leak-check">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Where Is Your Trust Stack Leaking?">
+<meta name="twitter:description" content="A six-layer self-assessment for regulated operators. Find your weakest trust layer in five minutes.">
+<meta name="twitter:image" content="https://aloha-ai-consulting.vercel.app/trust-stack/leak-check/og-image.png">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<style>
+  :root{
+    --teal:#1B7A68; --teal-dark:#145b4e; --cream:#F7F4EC; --ink:#14201C;
+    --crack:#B8860B; --leak:#A63A2A; --solid:#1B7A68;
+    --card:#ffffff; --line:#dcd6c8; --mint:#7FE0C4;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--cream); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.55; padding:2rem 1rem;
+  }
+  .wrap{max-width:760px; margin:0 auto}
+  header h1{font-size:1.9rem; margin:.2rem 0; color:var(--teal-dark)}
+  header p.sub{margin:.3rem 0 0; font-size:1.02rem}
+  .intro{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:1.1rem 1.25rem; margin:1.25rem 0}
+  fieldset{
+    border:1px solid var(--line); border-radius:12px; margin:1rem 0; padding:1rem 1.25rem;
+    background:var(--card);
+  }
+  legend{font-weight:700; color:var(--teal-dark); padding:0 .4rem; font-size:1.1rem}
+  .layername{font-size:.85rem; color:var(--teal); font-weight:600; text-transform:uppercase; letter-spacing:.04em; margin:.2rem 0 .8rem}
+  .q{margin:1rem 0 1.2rem}
+  .q > p{margin:0 0 .5rem; font-weight:600}
+  .opt{display:block; padding:.5rem .7rem; margin:.3rem 0; border:1px solid var(--line); border-radius:8px; cursor:pointer; transition:.12s}
+  .opt:hover{border-color:var(--teal)}
+  .opt input{margin-right:.55rem}
+  .opt:has(input:checked){background:#eaf3f0; border-color:var(--teal)}
+  button{
+    background:var(--teal); color:#fff; border:none; border-radius:10px;
+    font-size:1.05rem; font-weight:700; padding:.85rem 1.6rem; cursor:pointer; margin:.5rem 0 1rem;
+  }
+  button:hover{background:var(--teal-dark)}
+  button.secondary{background:transparent; color:var(--teal-dark); border:1px solid var(--teal)}
+  #results{display:none; margin-top:1.5rem}
+  #results.show{display:block}
+  .bar{display:flex; align-items:center; gap:.75rem; margin:.55rem 0}
+  .bar .lbl{flex:0 0 200px; font-weight:600; font-size:.92rem}
+  .track{flex:1; background:#e7e2d5; border-radius:6px; height:20px; overflow:hidden}
+  .fill{height:100%; border-radius:6px}
+  .band{flex:0 0 78px; text-align:right; font-size:.82rem; font-weight:700}
+  .diagnosis{background:var(--card); border:1px solid var(--line); border-left:5px solid var(--teal); border-radius:10px; padding:1.1rem 1.25rem; margin:1.25rem 0}
+  .diagnosis h2{margin:.1rem 0 .6rem; color:var(--teal-dark)}
+  .start{background:#eaf3f0; border-radius:10px; padding:1rem 1.25rem; margin:1rem 0; font-size:1.05rem}
+  .warn{color:var(--leak); font-weight:700}
+  .err{color:var(--leak); font-weight:600; margin:.5rem 0}
+  footer{font-size:.82rem; color:#6b6a5f; margin-top:2rem; border-top:1px solid var(--line); padding-top:1rem}
+  .legend-key{font-size:.82rem; color:#555; margin:.4rem 0 0}
+  .legend-key span{font-weight:700}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--teal-dark);outline-offset:3px}
+  .skip{position:absolute;left:-999px;top:0;background:var(--teal-dark);color:#fff;padding:12px 16px;z-index:99}
+  .skip:focus{left:8px;top:8px}
+  .topbar{background:var(--teal-dark);color:var(--cream);padding:12px 0;margin:-2rem -1rem 1.5rem;}
+  .topbar .in{max-width:760px;margin:0 auto;padding:0 1rem;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+  .topbar a{color:var(--cream);text-decoration:none;font-weight:700}
+  .topbar a.back{color:var(--mint,#7FE0C4)}
+  .start a.btn{display:inline-flex;min-height:44px;align-items:center;padding:10px 18px;border-radius:10px;background:var(--teal);color:#fff;text-decoration:none;font-weight:700;margin-top:.7rem;margin-right:.5rem}
+  .start a.btn.alt{background:transparent;color:var(--teal-dark);border:2px solid var(--teal)}
+  @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<div class="topbar"><div class="in"><a href="/trust-stack">Aloha AI · The Regulated Trust Stack</a><a class="back" href="/trust-stack">← All six layers</a></div></div>
+<main id="main"><div class="wrap">
+<header>
+  <h1>Where Is Your Trust Stack Leaking?</h1>
+  <p class="sub">A six-layer self-assessment for regulated operators &middot; Aloha AI &middot; RN Collins</p>
+</header>
+
+<div class="intro">
+  <p>Trust is a nervous-system event. Platforms, audiences, regulators, and buyers all run the same loop: appraise the source, scan for threat, grant or deny. This tool scores your operation on all six layers of the Regulated Trust Stack, then returns your weakest layer, the layers above it inheriting the damage, and where to start.</p>
+  <p style="margin-bottom:0"><strong>Answer for what is true today, not what you intend.</strong> Nothing you enter is sent anywhere; scoring runs entirely in your browser.</p>
+</div>
+
+<form id="diag"></form>
+
+<p id="err" class="err" role="alert" aria-live="polite"></p>
+<button id="scoreBtn" type="button">See where it&rsquo;s leaking</button>
+<button id="resetBtn" type="button" class="secondary" style="display:none">Start over</button>
+
+<section id="results" aria-live="polite">
+  <h2 style="color:var(--teal-dark)">Your trust stack</h2>
+  <p class="legend-key"><span style="color:var(--solid)">Solid 70&ndash;100%</span> &nbsp;&middot;&nbsp; <span style="color:var(--crack)">Cracked 40&ndash;69%</span> &nbsp;&middot;&nbsp; <span style="color:var(--leak)">Leaking 0&ndash;39%</span></p>
+  <div id="bars"></div>
+  <div id="diagnosis" class="diagnosis"></div>
+  <div id="start" class="start"></div>
+</section>
+
+<footer>
+  Not legal advice. RN Collins is a JD candidate; this diagnostic is a self-assessment tool, not a substitute for your counsel. All scoring happens locally in your browser and nothing is transmitted.
+</footer>
+</div></main>
+
+<script>
+const LAYERS = [
+  {id:0, url:"/trust-stack/regulatory-intelligence", name:"Ground Truth", tag:"Layer 0 &middot; Ground Truth",
+   product:"Primary-Source Regulatory Intelligence &mdash; <em>The IDR Engine</em>",
+   qs:[
+    {q:"When your team states a rule, statute, or fact, how is it backed?",
+     a:["Pinned to a primary source (statute, rule, docket) with a citation on file","Backed by a secondary source we trust","Backed by “we’ve always known this” or a doc of unknown origin","Usually unbacked; we assert it and move on"]},
+    {q:"If a claim in your public content were challenged tomorrow, could you produce the source within an hour?",
+     a:["Yes, for essentially all claims","Yes for most, with some digging","For a minority","No"]},
+    {q:"If you use AI for facts or citations, is every output verified against the primary source before use?",
+     a:["Always verified before use","Usually; some slip through","Rarely; we mostly trust the output","We don’t verify, or don’t know if anyone does"]},
+    {q:"Is there a repeatable method anyone can follow to turn a raw source into a cited fact?",
+     a:["Yes, documented and followed","Yes but informal / one person holds it","No method; it’s ad hoc","No"]}
+   ]},
+  {id:1, url:"/trust-stack/psilocybin-map", name:"Applied Intelligence", tag:"Layer 1 &middot; Applied Intelligence",
+   product:"Multi-State Psilocybin Regulatory + Funder Map &mdash; <em>APQ Gap Model</em>",
+   qs:[
+    {q:"For the live regulatory landscape you operate in, how current is your view?",
+     a:["Maintained continuously; we know what changed this month","Refreshed a few times a year","A snapshot from launch we half-trust","We don’t track changes systematically"]},
+    {q:"Could you hand a funder a defensible, sourced map of the market without scrambling?",
+     a:["Yes, it exists and is current","Partially; we’d assemble it under pressure","We’d build it from scratch and hope","No"]},
+    {q:"How often does someone catch you wrong on a live rule in a high-stakes room?",
+     a:["Effectively never; we verify before we speak","Rarely","Occasionally, and it stings","We wouldn’t necessarily know"]}
+   ]},
+  {id:2, url:"/trust-stack/sb303-compliance-kit", name:"Compliance", tag:"Layer 2 &middot; Compliance",
+   product:"Oregon SB 303 Compliance Kit &mdash; <em>Audit-Proof Operations</em>",
+   qs:[
+    {q:"Is every operational duty pinned to the specific statute or rule that imposes it?",
+     a:["Yes, mapped duty-by-duty to the cites","The big ones are; edges are fuzzy","We know roughly what’s required","No mapping"]},
+    {q:"Are your required reports built from the actual reportable fields the regulator expects?",
+     a:["Yes, forms built from the real fields","Mostly; some fields improvised","We report what we think is needed","We’re not confident what’s reportable"]},
+    {q:"If audited next week, how much scrambling would it take?",
+     a:["Little; records are audit-ready now","Some; we’d tidy up","A lot; it would consume the team","We’d likely fail"]},
+    {q:"A single reporting miss can be a license-level event. Do you have a control that catches misses before the deadline?",
+     a:["Yes, a real control on schedule","Informal; one person watches it","We rely on remembering","No"]}
+   ]},
+  {id:3, url:"/trust-stack/ai-content-system", name:"Production", tag:"Layer 3 &middot; Production",
+   product:"AI Content System DIY &mdash; <em>Five-Domain Knowledge Base</em>",
+   qs:[
+    {q:"When you produce content at volume, is it grounded in your verified knowledge base?",
+     a:["Yes, production draws from a verified base","Sometimes; depends who’s writing","Rarely; we write from memory or the open web","No grounding"]},
+    {q:"Does your content sound like one consistent voice regardless of who or what produced it?",
+     a:["Yes, a defined voice anyone/any tool can hit","Roughly; it drifts","It’s inconsistent","No defined voice"]},
+    {q:"Could you scale output tomorrow without a consultant or a bottleneck person?",
+     a:["Yes, documented and repeatable","Partly; one person is the bottleneck","No; scaling means chaos","We can’t scale"]}
+   ]},
+  {id:4, url:"/trust-stack/edsa-framework", name:"Persuasion", tag:"Layer 4 &middot; Persuasion",
+   product:"EDSA &mdash; <em>Neuroscience-of-Trust Content Architecture</em>",
+   qs:[
+    {q:"Is your content built on a deliberate credibility sequence, or just tips and hooks?",
+     a:["Built on a deliberate trust-earning architecture","Some structure, mostly instinct","Tips and hooks","No structure"]},
+    {q:"Do you know why your converting content converts, well enough to reproduce it on purpose?",
+     a:["Yes, we can reproduce it deliberately","Somewhat","It feels like luck","No"]},
+    {q:"Do you design content so a platform classifier does not read it as threat?",
+     a:["Yes, we design for the classifier’s threat appraisal","We’re vaguely aware of it","We write and hope it gets through","We don’t consider the classifier"]}
+   ]},
+  {id:5, url:"/trust-stack/suppression-playbook", name:"Defense", tag:"Layer 5 &middot; Defense",
+   product:"Platform Suppression Playbook &mdash; <em>Platform-Risk Intelligence</em>",
+   qs:[
+    {q:"Do you have a baseline for normal reach, so you’d notice a quiet drop?",
+     a:["Yes, we track a reach baseline","We’d notice a big drop eventually","Only if someone complained","No baseline"]},
+    {q:"If reach fell 40% next week with no announcement, would you know within days?",
+     a:["Yes, within days","Within weeks","Maybe, eventually","No"]},
+    {q:"Do you have a response protocol for suspected suppression, rather than panic?",
+     a:["Yes, a defined protocol","Informal playbook in one head","We’d improvise","No"]}
+   ]}
+];
+
+const form = document.getElementById('diag');
+LAYERS.forEach(L=>{
+  const fs = document.createElement('fieldset');
+  const leg = document.createElement('legend');
+  leg.innerHTML = L.tag;
+  fs.appendChild(leg);
+  const nm = document.createElement('div');
+  nm.className='layername';
+  nm.textContent = L.name;
+  fs.appendChild(nm);
+  L.qs.forEach((item,qi)=>{
+    const wrap = document.createElement('div');
+    wrap.className='q';
+    const p = document.createElement('p');
+    p.textContent = (L.id+"."+(qi+1)+"  ")+item.q;
+    wrap.appendChild(p);
+    const nameKey = "L"+L.id+"Q"+qi;
+    item.a.forEach((txt,ai)=>{
+      const val = 3-ai; // A=3 ... D=0
+      const lbl = document.createElement('label');
+      lbl.className='opt';
+      lbl.innerHTML = '<input type="radio" name="'+nameKey+'" value="'+val+'"> '+txt;
+      wrap.appendChild(lbl);
+    });
+    fs.appendChild(wrap);
+  });
+  form.appendChild(fs);
+});
+
+function bandOf(pct){
+  if(pct>=70) return {name:"Solid", color:"var(--solid)"};
+  if(pct>=40) return {name:"Cracked", color:"var(--crack)"};
+  return {name:"Leaking", color:"var(--leak)"};
+}
+
+document.getElementById('scoreBtn').addEventListener('click', ()=>{
+  const err = document.getElementById('err');
+  const perLayer = [];
+  let unanswered = 0;
+  LAYERS.forEach(L=>{
+    let score=0, max=L.qs.length*3;
+    L.qs.forEach((item,qi)=>{
+      const sel = form.querySelector('input[name="L'+L.id+'Q'+qi+'"]:checked');
+      if(sel) score+=parseInt(sel.value,10); else unanswered++;
+    });
+    perLayer.push({L, score, max, pct: Math.round(score/max*100)});
+  });
+  if(unanswered>0){
+    err.textContent = "Please answer all questions ("+unanswered+" left) for an honest score.";
+    return;
+  }
+  err.textContent="";
+  render(perLayer);
+});
+
+function render(perLayer){
+  const bars = document.getElementById('bars');
+  bars.innerHTML='';
+  perLayer.forEach(r=>{
+    const b = bandOf(r.pct);
+    const row = document.createElement('div');
+    row.className='bar';
+    row.innerHTML =
+      '<div class="lbl">L'+r.L.id+' &middot; '+r.L.name+'</div>'+
+      '<div class="track"><div class="fill" style="width:'+r.pct+'%;background:'+b.color+'"></div></div>'+
+      '<div class="band" style="color:'+b.color+'">'+b.name+'</div>';
+    bars.appendChild(row);
+  });
+
+  // weakest = lowest pct; ties broken by lowest layer id (deeper foundation first)
+  let weakest = perLayer.slice().sort((a,b)=> a.pct-b.pct || a.L.id-b.L.id )[0];
+  const leaking = perLayer.filter(r=>r.pct<40).length;
+  const cracked = perLayer.filter(r=>r.pct>=40 && r.pct<70).length;
+  const above = perLayer.filter(r=> r.L.id>weakest.L.id);
+
+  const dg = document.getElementById('diagnosis');
+  let aboveTxt = above.length
+    ? "Because the stack is a dependency chain, this weakness is undermining the "+above.length+" layer"+(above.length>1?"s":"")+" resting on it ("+above.map(r=>"L"+r.L.id+" "+r.L.name).join(", ")+"). A leak this low means even a strong layer above it is standing on cracked ground."
+    : "This is the top of your stack, but it still rests on everything below it &mdash; confirm those layers are solid before you trust the reach this layer produces.";
+  dg.innerHTML =
+    '<h2>Your weakest layer: L'+weakest.L.id+' &middot; '+weakest.L.name+' ('+weakest.pct+'%)</h2>'+
+    '<p>'+aboveTxt+'</p>'+
+    '<p>'+
+      (leaking>=3
+        ? '<span class="warn">'+leaking+' of your six layers are leaking.</span> That is the common pattern for regulated operators, and it is exactly why the stack is one system: fixing one layer surfaces the next gap the moment the fix lands.'
+        : (leaking+cracked>=3
+            ? (leaking+cracked)+' of your six layers are cracked or leaking. Stabilize the lowest one first; the layers above it inherit its condition.'
+            : 'Your stack is mostly holding. Reinforce the weakest layer before you scale, so growth does not amplify the crack.'))+
+    '</p>';
+
+  const start = document.getElementById('start');
+  start.innerHTML =
+    '<strong>Start here:</strong> '+weakest.L.product+'.<br>'+
+    '<span style="font-size:.92rem">Start at the lowest leaking layer, not the loudest one. The pain you feel is usually up top (Persuasion or Defense); the leverage is at the deepest weak layer, because it stabilizes everything above it.</span><br>'+
+    '<a class="btn" href="'+weakest.L.url+'">Fix L'+weakest.L.id+' &middot; '+weakest.L.name+' &rarr;</a>'+
+    '<a class="btn alt" href="/trust-stack">Get all six layers &middot; the bundle &rarr;</a>';
+
+  document.getElementById('results').classList.add('show');
+  document.getElementById('resetBtn').style.display='inline-block';
+  document.getElementById('results').scrollIntoView({behavior:'smooth'});
+}
+
+document.getElementById('resetBtn').addEventListener('click', ()=>{
+  form.reset();
+  document.getElementById('results').classList.remove('show');
+  document.getElementById('resetBtn').style.display='none';
+  document.getElementById('err').textContent='';
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+</script>
+</body>
+</html>

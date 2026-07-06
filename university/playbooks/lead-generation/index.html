@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Lead Generation Playbook for Service Businesses | Aloha AI University</title>
+<meta name="description" content="A complete, buildable AI lead generation system for service businesses: find fit-first prospects, enrich them, and open real conversations without spam. Manual, semi-automated, and fully built versions.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://aloha-ai-consulting.vercel.app/university/playbooks/lead-generation">
+<meta name="theme-color" content="#0F5343">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI Lead Generation Playbook for Service Businesses | Aloha AI University">
+<meta property="og:description" content="Build a repeatable AI system that turns attention into qualified conversations — fit-first sourcing, enrichment, and outreach you would be proud to send.">
+<meta property="og:site_name" content="Aloha AI University">
+<meta property="og:image" content="https://aloha-ai-consulting.vercel.app/university/og-image.png">
+<meta property="og:url" content="https://aloha-ai-consulting.vercel.app/university/playbooks/lead-generation">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Lead Generation Playbook for Service Businesses">
+<meta name="twitter:description" content="A fit-first AI lead generation system you can build this week — sourcing, enrichment, and outreach that respects the reader.">
+<meta name="twitter:image" content="https://aloha-ai-consulting.vercel.app/university/og-image.png">
+<link rel="icon" href="/university/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style id="uni-ds">
+/* ============================================================
+   ALOHA AI UNIVERSITY — DESIGN SYSTEM  (university.css)
+   Shared stylesheet for every University page.
+   Premium, calm, high-trust. Brand-cohesive with the elevated
+   Aloha AI main site. v2.0 · 2026-07
+   ============================================================ */
+
+/* ---- 1. TOKENS ------------------------------------------- */
+:root{
+  /* Brand color */
+  --teal:#1B7A68; --teal-d:#0F5343; --teal-l:#E9F3F0; --mint:#7FE0C4;
+  --ink:#14201C; --ink-2:#25332E;
+  --cream:#F7F4EC; --cream-2:#EFEAE0; --paper:#FCFAF5; --white:#FFFFFF;
+  --muted:#4E5C56;            /* AA on cream/white */
+  --muted-ink:#B7C7C0;        /* AA on ink */
+  --line:#E4DFD3; --line-2:#C7BFAE;
+  --amber:#8A5A08; --amber-l:#FBF4E6; --amber-bd:#E4CE9E;
+
+  /* Type families */
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:"Manrope",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:"DM Mono","SFMono-Regular",Menlo,Consolas,monospace;
+
+  /* Type scale (fluid) */
+  --fs-display:clamp(2.6rem,6vw,4.4rem);
+  --fs-h1:clamp(2.2rem,5vw,3.4rem);
+  --fs-h2:clamp(1.7rem,3.4vw,2.5rem);
+  --fs-h3:1.35rem;
+  --fs-body:1.0625rem; --fs-lead:1.2rem; --fs-sm:.9rem; --fs-xs:.78rem;
+  --label:.72rem;
+
+  /* Space scale */
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px;
+  --s7:48px; --s8:64px; --s9:96px;
+
+  /* Radius, shadow, motion */
+  --r-sm:10px; --r:16px; --r-lg:22px; --r-pill:999px;
+  --sh-1:0 1px 2px rgba(20,32,28,.05);
+  --sh-2:0 2px 6px rgba(20,32,28,.05),0 14px 40px rgba(20,32,28,.08);
+  --sh-3:0 2px 4px rgba(20,32,28,.04),0 20px 52px -14px rgba(20,32,28,.16);
+  --sh-focus:0 0 0 3px rgba(27,122,104,.4);
+  --sh-focus-mint:0 0 0 3px rgba(127,224,196,.55);
+  --ease:cubic-bezier(.4,0,.2,1); --ease-out:cubic-bezier(.16,1,.3,1);
+  --dur:.24s; --dur-s:.14s;
+
+  --maxw:1120px; --measure:68ch; --nav-h:66px;
+
+  /* Editorial surfaces / gradients (within brand) */
+  --grad-hero:linear-gradient(158deg,var(--teal-d) 0%,var(--teal) 78%,#227e6b 100%);
+  --grad-ink:linear-gradient(180deg,#16241E 0%,var(--ink) 100%);
+  --grad-mint-rule:linear-gradient(90deg,var(--teal) 0%,var(--mint) 100%);
+  --texture-dot:radial-gradient(rgba(27,122,104,.05) 1px,transparent 1px);
+}
+
+/* ---- 2. BASE / RESET ------------------------------------- */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 14px);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);
+  font-size:var(--fs-body);line-height:1.65;font-weight:400;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{max-width:100%;display:block}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;letter-spacing:-.01em;line-height:1.08;margin:0;text-wrap:balance}
+h1{font-size:var(--fs-h1)} h2{font-size:var(--fs-h2)} h3{font-size:var(--fs-h3)}
+p{margin:0 0 1rem;text-wrap:pretty}
+a{color:var(--teal-d);text-underline-offset:2px;transition:color var(--dur-s) var(--ease)}
+a:hover{color:var(--teal)}
+strong{font-weight:700}
+:focus-visible{outline:none;box-shadow:var(--sh-focus);border-radius:6px}
+.section--ink :focus-visible,.hero :focus-visible{box-shadow:var(--sh-focus-mint)}
+::selection{background:var(--mint);color:var(--ink)}
+
+/* ---- 3. LAYOUT ------------------------------------------- */
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(20px,4vw,28px)}
+.section{padding-block:clamp(56px,8vw,104px);position:relative}
+.section + .section{border-top:1px solid var(--line)}
+.section--paper{background:var(--paper)}
+.section--ink{background:var(--grad-ink);color:var(--cream)}
+.section--ink h1,.section--ink h2,.section--ink h3{color:var(--cream)}
+.section--ink + .section,.section + .section--ink{border-top:0}
+.section--tint{background:var(--white)}
+/* subtle dot texture, opt-in, brand-tinted */
+.section--texture{background-image:var(--texture-dot);background-size:22px 22px}
+.section-head{max-width:var(--measure);margin-bottom:var(--s7)}
+/* accent rule system — an editorial hairline that reads intentional */
+.rule{height:2px;width:56px;border:0;border-radius:2px;background:var(--grad-mint-rule);margin:0 0 var(--s5)}
+.section--ink .rule{opacity:.9}
+.grid{display:grid;gap:var(--s5)}
+.grid-2{grid-template-columns:repeat(2,1fr)}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.grid-4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:900px){.grid-3,.grid-4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}}
+.stack-gap{margin-top:var(--s6)}
+
+/* ---- 4. TYPOGRAPHY HELPERS ------------------------------- */
+.eyebrow{font-family:var(--mono);font-size:var(--label);letter-spacing:.18em;
+  text-transform:uppercase;color:var(--teal-d);margin:0 0 var(--s4);font-weight:500;
+  display:inline-flex;align-items:center;gap:.6rem}
+.eyebrow::before{content:"";width:16px;height:2px;border-radius:2px;background:var(--grad-mint-rule);flex:none}
+.section--ink .eyebrow{color:var(--mint)}
+.section--ink .eyebrow::before{opacity:.95}
+.hero .eyebrow::before{opacity:.95}
+.display{font-size:var(--fs-display);letter-spacing:-.02em}
+.lead{font-size:var(--fs-lead);color:var(--muted);max-width:60ch;line-height:1.55}
+.section--ink .lead{color:var(--muted-ink)}
+.lead-line{font-family:var(--serif);font-size:1.4rem;color:var(--teal-d);max-width:44ch;line-height:1.3;font-weight:500}
+.mono{font-family:var(--mono)}
+.small{font-size:var(--fs-sm)} .muted{color:var(--muted)}
+.measure{max-width:var(--measure)}
+
+/* ---- 5. BUTTONS ------------------------------------------ */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  font-family:var(--mono);font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;
+  font-weight:500;text-decoration:none;cursor:pointer;
+  padding:.85rem 1.35rem;border-radius:var(--r-sm);border:1px solid transparent;
+  transition:all var(--dur) var(--ease);min-height:46px;line-height:1;white-space:nowrap}
+.btn--primary{background:var(--teal);color:#fff;box-shadow:0 1px 2px rgba(15,83,67,.28)}
+.btn--primary:hover{background:var(--teal-d);color:#fff;transform:translateY(-1px);box-shadow:0 8px 22px -6px rgba(15,83,67,.5)}
+.btn--ghost{background:transparent;border-color:var(--line-2);color:var(--ink)}
+.btn--ghost:hover{border-color:var(--teal);color:var(--teal-d);transform:translateY(-1px);box-shadow:var(--sh-1)}
+.btn--on-ink{background:var(--mint);color:var(--teal-d)}
+.btn--on-ink:hover{background:#9dedd6;color:var(--teal-d);transform:translateY(-1px);box-shadow:var(--sh-2)}
+.btn--outline-ink{background:transparent;border-color:rgba(127,224,196,.5);color:var(--cream)}
+.btn--outline-ink:hover{border-color:var(--mint);color:#fff;background:rgba(127,224,196,.1)}
+.btn--sm{padding:.55rem .9rem;min-height:40px;font-size:.7rem}
+.btn:active{transform:translateY(0)}
+.cta-row{display:flex;flex-wrap:wrap;gap:var(--s3);margin-top:var(--s6)}
+
+/* ---- 6. BADGES / TAGS ------------------------------------ */
+.badge{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--mono);
+  font-size:var(--fs-xs);letter-spacing:.05em;text-transform:uppercase;
+  padding:.3rem .65rem;border-radius:var(--r-pill);
+  border:1px solid var(--line);background:var(--white);color:var(--teal-d);font-weight:500}
+.badge--solid{background:var(--teal-l);border-color:#BADFD6}
+.section--ink .badge{background:rgba(127,224,196,.12);border-color:rgba(127,224,196,.3);color:var(--mint)}
+.price{font-family:var(--mono);font-size:var(--fs-sm);color:var(--teal-d);font-weight:500;letter-spacing:.02em}
+
+/* ---- 7. CARDS -------------------------------------------- */
+.card{position:relative;background:var(--white);border:1px solid var(--line);border-radius:var(--r);
+  padding:var(--s6);box-shadow:var(--sh-1);overflow:hidden;
+  transition:box-shadow var(--dur) var(--ease),transform var(--dur) var(--ease),border-color var(--dur) var(--ease)}
+.card h3{margin-bottom:var(--s3)}
+.card p{color:var(--muted);margin-bottom:var(--s4)}
+a.card{text-decoration:none;color:var(--ink);display:flex;flex-direction:column}
+.card--hover:hover{box-shadow:var(--sh-3);transform:translateY(-3px);border-color:var(--line-2)}
+/* an accent hairline that surfaces on hover — quiet until you touch it */
+.card--hover::after{content:"";position:absolute;left:0;right:0;top:0;height:2px;
+  background:var(--grad-mint-rule);transform:scaleX(0);transform-origin:left;opacity:0;
+  transition:transform var(--dur) var(--ease-out),opacity var(--dur) var(--ease)}
+.card--hover:hover::after{transform:scaleX(1);opacity:1}
+.card__more{margin-top:auto;font-family:var(--mono);font-size:var(--fs-xs);
+  letter-spacing:.05em;text-transform:uppercase;color:var(--teal-d);font-weight:500}
+a.card:hover .card__more{color:var(--teal)}
+.card__eyebrow{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.12em;
+  text-transform:uppercase;color:var(--teal);margin-bottom:var(--s3);font-weight:500}
+.section--paper .card{background:var(--white)}
+.section--ink .card{background:var(--ink-2);border-color:#33443C;color:var(--cream)}
+.section--ink .card p{color:var(--muted-ink)}
+
+/* ---- 8. HERO --------------------------------------------- */
+.hero{background:var(--grad-hero);
+  color:var(--cream);position:relative;overflow:hidden;border-bottom:3px solid var(--teal)}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(rgba(127,224,196,.06) 1px,transparent 1px);background-size:26px 26px;
+  -webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 72%);mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 72%)}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(60% 90% at 82% 8%,rgba(127,224,196,.16),transparent 60%)}
+.hero .wrap{position:relative;z-index:1;padding-block:clamp(64px,10vw,116px)}
+.hero .eyebrow{color:var(--mint)}
+.hero h1{color:#fff;max-width:16ch}
+.hero .lead{color:#E4F1EC;max-width:56ch;margin-top:var(--s5)}
+.hero--sm .wrap{padding-block:clamp(52px,7vw,84px)}
+
+/* ---- 9. PROSE (long-form) -------------------------------- */
+.prose{max-width:var(--measure);font-size:1.075rem}
+.prose > * + *{margin-top:1.15rem}
+.prose h2{font-size:var(--fs-h2);margin-top:2.4rem;margin-bottom:.4rem}
+.prose h3{font-size:var(--fs-h3);margin-top:1.8rem;margin-bottom:.2rem}
+.prose p{color:var(--ink);line-height:1.7}
+.prose a{text-decoration:underline}
+.prose ul,.prose ol{padding-left:1.3rem;color:var(--ink)}
+.prose li{margin-bottom:.5rem}
+.prose blockquote{border-left:3px solid var(--teal);padding:.2rem 0 .2rem 1.2rem;
+  margin:1.6rem 0;font-family:var(--serif);font-size:1.35rem;color:var(--teal-d);font-style:italic}
+.prose code{font-family:var(--mono);font-size:.86em;background:var(--cream-2);
+  padding:.12em .4em;border-radius:6px}
+.prose pre{background:var(--ink);color:var(--cream);padding:var(--s5);border-radius:var(--r);
+  overflow-x:auto;font-family:var(--mono);font-size:.85rem;line-height:1.6}
+.prose pre code{background:none;padding:0}
+.prose table{width:100%;border-collapse:collapse;font-size:var(--fs-sm);margin:1.4rem 0}
+.prose th,.prose td{text-align:left;padding:.6rem .8rem;border-bottom:1px solid var(--line)}
+.prose th{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.06em;
+  text-transform:uppercase;color:var(--teal-d);font-weight:500}
+
+/* ---- 10. ACCORDION (FAQ) --------------------------------- */
+.acc{border:1px solid var(--line);border-radius:var(--r);background:var(--white);overflow:hidden}
+.acc + .acc{margin-top:var(--s3)}
+.acc summary{list-style:none;cursor:pointer;padding:1.15rem 1.3rem;
+  font-family:var(--serif);font-size:1.25rem;font-weight:600;color:var(--ink);
+  display:flex;justify-content:space-between;gap:1rem;align-items:center;min-height:56px}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary:hover{color:var(--teal-d)}
+.acc summary::after{content:"+";font-family:var(--mono);font-size:1.4rem;color:var(--teal);
+  transition:transform var(--dur) var(--ease);flex:none;line-height:1}
+.acc[open] summary::after{transform:rotate(45deg)}
+.acc__body{padding:0 1.3rem 1.25rem;color:var(--muted);max-width:var(--measure)}
+.acc__body p:last-child{margin-bottom:0}
+
+/* ---- 11. NAV --------------------------------------------- */
+.skip{position:absolute;left:-999px;top:0;background:var(--teal-d);color:#fff;
+  padding:.7rem 1.1rem;border-radius:0 0 8px 0;z-index:200;
+  font-family:var(--mono);font-size:.82rem}
+.skip:focus{left:0;color:#fff}
+.nav{position:sticky;top:0;z-index:100;background:rgba(252,250,245,.88);
+  backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);
+  border-bottom:1px solid var(--line);height:var(--nav-h);
+  transition:box-shadow var(--dur) var(--ease),background var(--dur) var(--ease)}
+.nav.is-stuck{background:rgba(252,250,245,.94);box-shadow:0 1px 0 var(--line),0 8px 24px -14px rgba(20,32,28,.4)}
+.nav__in{max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(20px,4vw,28px);
+  height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.nav__brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--ink);
+  font-family:var(--mono);font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500}
+.nav__brand svg{flex:none}
+.nav__brand b{font-weight:500}
+.nav__brand .mk{color:var(--teal-d);font-weight:500}
+.nav__links{display:flex;align-items:center;gap:.15rem;list-style:none;margin:0;padding:0}
+.nav__links a{font-family:var(--mono);font-size:.73rem;letter-spacing:.04em;text-transform:uppercase;
+  color:var(--ink-2);text-decoration:none;padding:.5rem .55rem;border-radius:8px;white-space:nowrap}
+.nav__links a:hover{color:var(--teal-d);background:var(--teal-l)}
+.nav__links a[aria-current="page"]{color:var(--teal-d);background:var(--teal-l)}
+.nav__cta{margin-left:.35rem}
+.nav__burger{display:none;background:none;border:1px solid var(--line-2);border-radius:9px;
+  width:46px;height:46px;cursor:pointer;align-items:center;justify-content:center;color:var(--ink)}
+@media(max-width:1000px){
+  .nav__links{position:fixed;inset:var(--nav-h) 0 auto 0;flex-direction:column;align-items:stretch;
+    gap:0;background:var(--paper);border-bottom:1px solid var(--line);padding:var(--s3);
+    transform:translateY(-10px);opacity:0;visibility:hidden;
+    transition:all var(--dur) var(--ease);box-shadow:var(--sh-2);max-height:calc(100vh - var(--nav-h));overflow-y:auto}
+  .nav__links.open{opacity:1;visibility:visible;transform:translateY(0)}
+  .nav__links a{padding:.9rem .8rem;font-size:.82rem;border-radius:10px}
+  .nav__cta{margin:.5rem 0 0}
+  .nav__cta .btn{width:100%}
+  .nav__burger{display:inline-flex}
+}
+
+/* ---- 12. FOOTER ------------------------------------------ */
+.footer{background:var(--grad-ink);color:var(--muted-ink);padding-block:var(--s9) var(--s7);font-size:var(--fs-sm)}
+.footer a{color:#CFDAD5;text-decoration:none}.footer a:hover{color:#fff}
+.footer__top{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:var(--s7)}
+@media(max-width:760px){.footer__top{grid-template-columns:1fr;gap:var(--s6)}}
+.footer__brand{font-family:var(--serif);font-size:1.6rem;color:var(--cream);margin-bottom:var(--s3)}
+.footer h4{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.12em;text-transform:uppercase;
+  color:#8FA69E;margin-bottom:var(--s4);font-weight:500}
+.footer ul{list-style:none;margin:0;padding:0}.footer li{margin-bottom:.55rem}
+.footer__disc{border-left:2px solid var(--teal);padding-left:1rem;color:#9FB6AE;
+  margin-top:var(--s7);max-width:75ch;line-height:1.7;font-size:var(--fs-sm)}
+.footer__disc strong{color:#DFF0EA}
+.footer__fine{font-family:var(--mono);font-size:.68rem;color:#6C837B;margin-top:var(--s6);line-height:1.7}
+#email-reveal{color:var(--mint);font-weight:600}
+
+/* ---- 13. UTIL / MOTION ----------------------------------- */
+.js .reveal{opacity:0;transform:translateY(16px)}
+.js .reveal.in{opacity:1;transform:none;transition:opacity .6s var(--ease-out),transform .6s var(--ease-out)}
+.divider{height:1px;background:var(--line);border:0;margin-block:var(--s7)}
+.divider--accent{height:2px;background:var(--grad-mint-rule);border:0;border-radius:2px;width:100%;margin-block:var(--s7)}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1!important;transform:none!important}
+  html{scroll-behavior:auto}
+}
+
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="/university/" aria-label="Aloha AI University home">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1B7A68"/><path d="M7 15.5c2-5 3-5 5-5s3 0 5 5" stroke="#7FE0C4" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="8.5" r="1.6" fill="#7FE0C4"/></svg>
+      <span>Aloha AI <span class="mk">University</span></span>
+    </a>
+    <button class="nav__burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav__links" id="nav-links">
+      <li><a href="/university/start-here">Start Here</a></li>
+      <li><a href="/university/learn">Learn</a></li>
+      <li><a href="/university/playbooks" aria-current="page">Playbooks</a></li>
+      <li><a href="/university/templates">Templates</a></li>
+      <li><a href="/university/use-cases">Use Cases</a></li>
+      <li><a href="/university/tools">Tools</a></li>
+      <li><a href="/university/services">Services</a></li>
+      <li><a href="/university/about">About</a></li>
+      <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a Call</a></li>
+      <li class="nav__cta"><a class="btn btn--primary btn--sm" href="/university/assessment">Get Your AI Roadmap</a></li>
+    </ul>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero hero--sm">
+  <div class="wrap">
+    <p class="eyebrow">Playbook · Growth</p>
+    <h1 class="display">AI lead generation that earns the reply</h1>
+    <p class="lead">A fit-first system that turns your ideal-client definition into a short list of real people worth talking to — enriched with genuine context and reached with a message you would be glad to receive. No scraped-then-blasted lists. No mail-merge pretending to be a relationship.</p>
+    <div class="cta-row">
+      <a class="btn btn--on-ink" href="#manual">Start with the manual version</a>
+      <a class="btn btn--outline-ink" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Have us build it</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">01 · The business problem</p>
+      <h2>You need the right conversations, not more noise</h2>
+    </div>
+    <div class="prose">
+      <p>Agencies, consultancies, fractional operators, boutique firms — they live or die by pipeline. But the two usual ways of building it both break. Referrals are wonderful and completely unpredictable; you cannot forecast a quarter on hope. Bought lists blasted through a cold-email tool feel efficient right up until your domain reputation tanks, your reply rate sits at half a percent, and the few replies you get are annoyed.</p>
+      <p>The real problem is not volume. It is that finding people who genuinely fit your offer, learning enough to say something true, and doing that every week is slow manual work — the kind that gets dropped the moment client work heats up. So pipeline arrives in feast-or-famine waves, and the famine always shows up at the worst time.</p>
+      <p>AI does not fix this by letting you send more. It fixes it by collapsing the hours between "here is my ideal client" and "here is a warm, specific first message to a person who matches" — so the work actually gets done, week after week, at a quality you would put your name on.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--paper">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">02 · Why it matters</p>
+      <h2>Consistency compounds; spikes evaporate</h2>
+    </div>
+    <div class="prose">
+      <p>A predictable trickle of qualified conversations changes how you run everything else. You price with confidence instead of discounting out of fear. You turn down bad-fit work because another conversation is already booked. You plan hiring against a number you trust rather than a feeling.</p>
+      <p>The economics are stark. If sourcing and personalization take forty-five minutes per prospect done well, you will realistically touch a handful of people a week and then stop. Compress that to five minutes of review over an AI draft, and the same person reaches thirty or forty fitting prospects a week without lowering the bar. That is the difference between a channel that works and one that stays a good intention.</p>
+      <p>There is a reputational dividend too. Outreach that clearly understands the recipient earns replies even when the answer is "not now" — and "not now, but stay in touch" is a pipeline asset. Spray-and-pray earns spam complaints, which quietly poison every future email from that domain.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">03 · Who this is for</p>
+      <h2>Owners and small teams who sell expertise</h2>
+    </div>
+    <div class="prose">
+      <ul>
+        <li><strong>The founder-seller.</strong> You are the person who closes, and prospecting is what falls off the calendar first. You want a review-ready short list you can act on in a coffee break.</li>
+        <li><strong>The small agency or consultancy (2–20 people).</strong> You have a clear ideal-client profile but no full-time SDR, and you want outreach that reads like a senior person wrote it, because one effectively did.</li>
+        <li><strong>The fractional executive or specialist.</strong> Your market is narrow and named — a few hundred companies, not a few million — so precision beats volume every time, and generic lists are useless to you.</li>
+        <li><strong>Not a fit:</strong> high-volume transactional B2C, or anyone hoping to send ten thousand identical emails a day. This is built for quality and defensibility, not blast radius.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section section--paper">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">04 · What this workflow accomplishes</p>
+      <h2>From a definition to a warm first message, repeatably</h2>
+    </div>
+    <div class="prose">
+      <p>By the end of a build, you have a loop that runs on a schedule you choose:</p>
+      <ul>
+        <li><strong>Define</strong> a precise ideal-client profile (ICP) and disqualifiers, written down so the system and any teammate apply the same standard.</li>
+        <li><strong>Source</strong> companies and named contacts that match, from a real data provider rather than guesswork.</li>
+        <li><strong>Enrich</strong> each one with genuine context — recent news, role, a plausible trigger — so there is something true to say.</li>
+        <li><strong>Qualify</strong> against your disqualifiers so bad-fit names never reach the outreach step.</li>
+        <li><strong>Draft</strong> a personalized first message and one follow-up, in your voice, that a human reviews before anything sends.</li>
+        <li><strong>Track</strong> what happens so you learn which segments and angles actually convert.</li>
+      </ul>
+      <p>A human always approves before a message goes out. The AI does the ninety percent that is research and drafting; you keep the ten percent that is judgment.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">05 · Tools you will need</p>
+      <h2>Pick a tier and start; you can grow into more</h2>
+      <p class="lead">You do not need all of these. The manual version needs one AI chat tool and a spreadsheet. Prices below are current as of mid-2026 and change often — confirm before you buy.</p>
+    </div>
+    <div class="grid grid-2">
+      <div class="card"><h3>AI assistant <span class="price">required</span></h3><p>ChatGPT Plus or Claude Pro, both about $20/month, for research synthesis, qualification, and drafting. Free tiers work for testing; paid tiers give you the stronger models and higher limits you will want once this is real.</p></div>
+      <div class="card"><h3>A place to keep the list</h3><p>Google Sheets or Airtable (free tiers are fine to start) as your working pipeline: one row per prospect, columns for fit signals, status, and the drafted message.</p></div>
+      <div class="card"><h3>Data / enrichment source</h3><p>Apollo.io is a common choice; paid plans run roughly $49/user/month (Basic) to $79 (Professional) on annual billing, and the credit system — not the sticker price — is the real cost driver, so watch usage. LinkedIn Sales Navigator (about $99/month) is an alternative for people-first sourcing.</p></div>
+      <div class="card"><h3>Sending + sequencing</h3><p>Your normal email plus a light sequencing layer. Apollo includes sequencing; a standalone tool works too. Keep daily volume low and human-approved — deliverability is a reputation you are renting, not a dial to crank.</p></div>
+      <div class="card"><h3>Automation glue <span class="price">optional</span></h3><p>Zapier or Make to move rows between steps. Zapier's Professional plan starts around $19.99/month annual for 750 tasks; a multi-step Zap burns one task per step per run, so budget by steps, not runs.</p></div>
+      <div class="card"><h3>Guardrail note</h3><p>Whatever you use, respect anti-spam law and platform terms: honor unsubscribes, identify yourself, and do not scrape where terms forbid it. This is not legal advice — see the risks section.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--paper">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">06 · Three ways to run it</p>
+      <h2>Manual, semi-automated, fully implemented</h2>
+      <p class="lead">Same loop, three levels of build. Start at the left even if you plan to end at the right — doing it by hand teaches you what "good" looks like, and that judgment is what you encode later.</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card">
+        <span class="badge badge--solid">Manual</span>
+        <h3>One chat, one sheet, forty-five focused minutes</h3>
+        <p>Write your ICP with the prompt below. Pull ten fits by hand. Research each in the assistant, draft in your voice, read every word, and send a few a day from your own inbox.</p>
+        <p class="small muted">Honest expectation: the first pass is slow. That is the tuition you pay to build the automated version well.</p>
+      </div>
+      <div class="card">
+        <span class="badge badge--solid">Semi-automated</span>
+        <h3>The tools source; you review at two gates</h3>
+        <p>Save your ICP as a search in Apollo or Sales Navigator. Export a batch of 25–50 with enrichment. The AI runs a qualification pass (gate one) and batch-drafts messages. You approve and send (gate two).</p>
+        <p class="small muted">Where most service businesses should live for a while: fast enough to be consistent, slow enough to stay excellent.</p>
+      </div>
+      <div class="card">
+        <span class="badge badge--solid">Fully implemented</span>
+        <h3>A scheduled loop with a mandatory approval gate</h3>
+        <p>A weekly schedule pulls new matches, dedupes, qualifies, and drafts into a database. The batch lands in a "Needs review" view and pings you. Nothing sends until you flip a status to Approved.</p>
+        <p class="small muted">"Fully implemented" does not mean "sends by itself." It means everything except the judgment is automated.</p>
+      </div>
+    </div>
+    <div class="prose stack-gap">
+      <blockquote>Reality check: the full build has real maintenance. Enrichment data drifts, prompts need re-tuning, and a broken Zap fails silently. Budget a few hours a month, and never remove the approval gate to "save time." The gate is the whole point.</blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">07 · Step-by-step build</p>
+      <h2>From zero to the semi-automated loop</h2>
+    </div>
+    <div class="prose">
+      <ol>
+        <li><strong>Write and store the ICP.</strong> Run the ICP prompt. Paste the result into a doc titled "ICP + Disqualifiers" and treat it as version-controlled: date it, update it when a segment converts unusually well or badly.</li>
+        <li><strong>Build the pipeline sheet.</strong> Columns: Company, Contact, Title, Link, Fit signals, Trigger, Disqualifier check, Draft message, Draft follow-up, Status (New / Reviewed / Approved / Sent / Replied / Meeting), Notes.</li>
+        <li><strong>Configure your data source.</strong> Translate the ICP into filters in Apollo or Sales Navigator and save the search. Confirm your export/credit allowance before batching, since credits expire per cycle.</li>
+        <li><strong>Export a starter batch.</strong> Pull 25 matches with available enrichment. Spot-check five rows by hand — is the data actually right? Bad inputs make confident, wrong drafts.</li>
+        <li><strong>Run the qualification pass.</strong> Review the flags, delete the true fails, and note patterns (a disqualifier you keep hitting may belong in your saved-search filters).</li>
+        <li><strong>Draft with your voice guide.</strong> Paste two or three emails you have actually sent as a voice sample, then run the personalization prompt per row. Edit until it sounds like you, not a tool.</li>
+        <li><strong>Approve and send.</strong> Read every draft. Send a small daily batch from a warmed inbox, log outcomes, and only scale volume once replies look healthy.</li>
+        <li><strong>Add automation last.</strong> Once the manual loop is smooth, wire the repetitive moves (export → dedupe → draft → review view) in Zapier or Make, keeping the approval gate as a hard stop. Automate what you have validated, never the judgment.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="section section--paper">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">08 · Prompts and templates</p>
+      <h2>Copy these, then make them yours</h2>
+    </div>
+    <div class="prose">
+      <h3>ICP + disqualifiers</h3>
+<pre><code>You are helping me define an ideal client profile for my service business.
+
+My business: [what you do, in one sentence]
+My best past clients: [2-3 examples and why they were great]
+My worst-fit clients: [1-2 examples and what went wrong]
+
+Produce:
+1. A tight ICP: industry, company size, revenue band, and the
+   buyer role who signs off.
+2. A "why now" trigger list: 4-6 observable signals that a
+   company is likely ready for what I offer (e.g. new funding,
+   a specific hire, a public initiative).
+3. Hard disqualifiers: 4-6 signals that mean I should NOT reach
+   out, even if other things match.
+Format as three labeled lists. Be specific and observable, not
+aspirational. Ask me one clarifying question if my inputs are thin.</code></pre>
+
+      <h3>Qualification pass</h3>
+<pre><code>Here is my ICP and my hard disqualifiers:
+[paste ICP + disqualifiers]
+
+Below is a batch of prospects with enrichment data:
+[paste rows: company, title, headcount, notes]
+
+For each row, output: KEEP or CUT, and one short reason tied to
+a specific ICP criterion or disqualifier. If a row lacks the
+data to judge, mark NEEDS-CHECK rather than guessing. Do not
+invent facts about any company.</code></pre>
+
+      <h3>Personalized outreach draft</h3>
+<pre><code>Write a first-touch email and one follow-up.
+
+About me / my offer: [one or two sentences]
+My voice — match this tone exactly:
+[paste 2-3 real emails you've sent]
+
+The prospect:
+Company: [name]  Contact: [name, title]
+Genuine context I found: [the real trigger or detail]
+
+Rules:
+- Under 90 words for the first email. One clear, low-friction ask.
+- Open with the specific context, not "I hope this finds you well."
+- No flattery, no fake urgency, no "quick question" subject lines.
+- Only reference facts I gave you. If context is weak, say so and
+  suggest what I should find before sending.
+- Follow-up: 2-3 sentences, adds a new angle, easy to ignore.</code></pre>
+
+      <h3>Reply triage (optional)</h3>
+<pre><code>Classify this reply as: Interested / Not now / Not a fit /
+Referral / Unsubscribe. Then draft a two-sentence response that
+matches the category. Reply text:
+[paste]</code></pre>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">09 · Risks and review points</p>
+      <h2>Where this goes wrong, and how to catch it</h2>
+    </div>
+    <div class="measure">
+      <details class="acc"><summary>Fabricated context</summary><div class="acc__body"><p>The biggest failure mode: the model invents a "recent funding round" that never happened. The prompts forbid invention, and your approval gate is where you verify claims before they embarrass you.</p></div></details>
+      <details class="acc"><summary>Deliverability collapse</summary><div class="acc__body"><p>Volume without warming, honest unsubscribes, and real personalization will burn your domain. Keep daily sends low, authenticate your domain (SPF/DKIM/DMARC), and never send cold at scale from your primary domain.</p></div></details>
+      <details class="acc"><summary>Legal and platform compliance</summary><div class="acc__body"><p>Anti-spam rules (such as CAN-SPAM in the US and similar regimes elsewhere), data-protection law, and platform terms all constrain what you may collect and send. This is educational, not legal advice; RN Collins is a JD candidate, not a licensed attorney. Get qualified counsel for your jurisdiction and industry.</p></div></details>
+      <details class="acc"><summary>Sameness at scale</summary><div class="acc__body"><p>If every message uses the same skeleton, personalization becomes theater. Review for variety, and rotate openings and angles.</p></div></details>
+      <details class="acc"><summary>Bad data in, confident junk out</summary><div class="acc__body"><p>Enrichment providers are often wrong. Spot-check, and treat every field as a claim to verify, not a fact.</p></div></details>
+      <details class="acc"><summary>Review cadence</summary><div class="acc__body"><p>Read a sample of sent messages weekly, revisit your ICP monthly against who actually replied, and audit disqualifier hits quarterly.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="section section--paper">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">10 · KPIs that tell the truth</p>
+      <h2>Measure conversations, not activity</h2>
+    </div>
+    <div class="prose">
+      <table>
+        <thead><tr><th>Metric</th><th>What it tells you</th><th>Healthy signal</th></tr></thead>
+        <tbody>
+          <tr><td>Qualified prospects sourced / week</td><td>Whether the top of the loop is running</td><td>Hits your weekly target consistently</td></tr>
+          <tr><td>Positive reply rate</td><td>Whether fit + message are landing</td><td>Trending up as you tune; raw numbers vary by market</td></tr>
+          <tr><td>Meetings booked / week</td><td>The real output that matters</td><td>Stable enough to forecast against</td></tr>
+          <tr><td>Spam / unsubscribe rate</td><td>Whether you are damaging reputation</td><td>Very low; investigate any spike immediately</td></tr>
+          <tr><td>Time per approved message</td><td>Whether automation is paying off</td><td>Falling toward a few minutes each</td></tr>
+          <tr><td>Meeting → opportunity rate</td><td>Whether you are sourcing genuine fit</td><td>Rising as your ICP sharpens</td></tr>
+        </tbody>
+      </table>
+      <p>Watch reply <em>quality</em>, not just quantity. Ten thoughtful "not now, but stay in touch" replies are worth more than fifty unsubscribe clicks.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--ink">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:0">
+      <p class="eyebrow">Do it with us</p>
+      <h2>Want Aloha AI to build this for you?</h2>
+      <p class="lead">We translate your ICP into a working, human-in-the-loop lead system — sourcing, enrichment, qualification, and voice-matched drafting — and hand it over documented, with the approval gate wired in from day one.</p>
+      <div class="cta-row">
+        <a class="btn btn--on-ink" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a Call</a>
+        <a class="btn btn--outline-ink" href="/university/assessment">Get Your AI Roadmap</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div>
+        <div class="footer__brand">Aloha AI <span style="color:var(--mint)">University</span></div>
+        <p style="max-width:38ch;color:#9FB6AE">Free, practical, honest generative-AI education for modern businesses. Built by Aloha AI and RN Collins.</p>
+        <p style="margin-top:var(--s4)"><a class="btn btn--on-ink btn--sm" href="/university/assessment">Get Your AI Roadmap</a></p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/university/start-here">Start Here</a></li>
+          <li><a href="/university/learn">Learn</a></li>
+          <li><a href="/university/playbooks">Playbooks</a></li>
+          <li><a href="/university/templates">Templates</a></li>
+          <li><a href="/university/use-cases">Use Cases</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Work with us</h4>
+        <ul>
+          <li><a href="/">← Aloha AI (main site)</a></li>
+          <li><a href="/university/tools">Tools</a></li>
+          <li><a href="/university/services">Services</a></li>
+          <li><a href="/university/about">About</a></li>
+          <li><a href="/university/contact">Contact</a></li>
+          <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a Call</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer__disc"><strong>Aloha AI University</strong> is free generative-AI education for modern businesses. RN Collins is a JD candidate, not a licensed attorney. Nothing here is legal, medical, or financial advice. Every page on this site runs entirely in your browser and sends nothing anywhere.</p>
+    <p class="footer__fine">© <span id="yr">2026</span> Aloha AI. All rights reserved.</p>
+  </div>
+</footer>
+<script id="uni-js">
+/* Aloha AI University — shared behavior (progressive enhancement) */
+(function () {
+  "use strict";
+  document.documentElement.classList.add("js");
+
+  /* ---- Mobile menu ---- */
+  var burger = document.querySelector(".nav__burger");
+  var links = document.getElementById("nav-links");
+  if (burger && links) {
+    var close = function () {
+      links.classList.remove("open");
+      burger.setAttribute("aria-expanded", "false");
+    };
+    var toggle = function () {
+      var open = links.classList.toggle("open");
+      burger.setAttribute("aria-expanded", open ? "true" : "false");
+    };
+    burger.addEventListener("click", toggle);
+    links.addEventListener("click", function (e) {
+      if (e.target.closest("a")) close();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && links.classList.contains("open")) {
+        close();
+        burger.focus();
+      }
+    });
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 1000) close();
+    });
+  }
+
+  /* ---- Nav elevation on scroll ---- */
+  var nav = document.querySelector(".nav");
+  if (nav) {
+    var onScroll = function () {
+      if (window.scrollY > 8) nav.classList.add("is-stuck");
+      else nav.classList.remove("is-stuck");
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
+
+  /* ---- Reveal on scroll ---- */
+  var reveals = document.querySelectorAll(".reveal");
+  if (reveals.length && "IntersectionObserver" in window) {
+    var io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) {
+            en.target.classList.add("in");
+            io.unobserve(en.target);
+          }
+        });
+      },
+      { rootMargin: "0px 0px -8% 0px", threshold: 0.08 }
+    );
+    reveals.forEach(function (el) { io.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add("in"); });
+  }
+
+  /* ---- Current year ---- */
+  var yr = document.getElementById("yr");
+  if (yr) yr.textContent = new Date().getFullYear();
+
+  /* ---- Email reveal (footer + contact) ---- */
+  document.querySelectorAll("[data-email-reveal]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var a = ["collins", "ra"].join(".") + "@" + ["northeastern", "edu"].join(".");
+      var out = document.getElementById(btn.getAttribute("aria-controls"));
+      if (out) out.innerHTML = '<a id="email-reveal" href="mailto:' + a + '">' + a + "</a>";
+      btn.setAttribute("disabled", "disabled");
+      btn.textContent = "Email revealed";
+    });
+  });
+})();
+
+</script>
+</body>
+</html>

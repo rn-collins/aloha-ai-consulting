@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free interactive tools — assess your AI readiness &amp; risk — Aloha AI</title>
+<meta name="description" content="A hub of free, interactive tools from RN Collins: citation verification, ABA-512 governance readiness, AI readiness scoring, build budgeting, and exposure audits. Each one demonstrates the kind of build Aloha AI ships for clients, and helps you assess your own readiness and risk in the browser.">
+<link rel="canonical" href="https://aloha-ai-consulting.vercel.app/tools">
+<meta name="theme-color" content="#14201C">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free interactive tools — assess your AI readiness &amp; risk — Aloha AI">
+<meta property="og:description" content="Free, interactive tools that demonstrate RN Collins's method and help you assess your own AI readiness and risk. Legal AI, governance, readiness, and planning.">
+<meta property="og:image" content="https://aloha-ai-consulting.vercel.app/og-image.png">
+<meta property="og:url" content="https://aloha-ai-consulting.vercel.app/tools">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free interactive tools — Aloha AI">
+<meta name="twitter:description" content="Free, interactive tools that demonstrate RN Collins's method and help you assess your own AI readiness and risk.">
+<meta name="twitter:image" content="https://aloha-ai-consulting.vercel.app/og-image.png">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<script>document.documentElement.className+=' js';</script>
+<link rel="stylesheet" href="./aloha-ds.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CollectionPage","name":"Aloha AI — Free Interactive Tools",
+"url":"https://aloha-ai-consulting.vercel.app/tools",
+"description":"Free, interactive tools from RN Collins that demonstrate a governed AI build and help you assess your own AI readiness and risk.",
+"creator":{"@type":"Person","name":"RN Collins","jobTitle":"Founder, Aloha AI",
+"description":"Neuroscientist (MS), JD candidate, and AI systems builder for regulated industries"}}
+</script>
+<style>
+  .hero{position:relative;overflow:hidden;background:var(--grad-hero);
+    color:var(--cream);padding-block:clamp(56px,8vw,104px) clamp(44px,6vw,76px);border-bottom:3px solid var(--teal)}
+  .hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(127,224,196,.05) 1px,transparent 1px);
+    background-size:26px 26px;-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 70%);mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 70%);pointer-events:none}
+  .hero>.wrap{position:relative}
+  .hero .display{color:var(--cream);max-width:20ch;margin-bottom:var(--s4)}
+  .hero .kicker{color:var(--teal-mint)}
+  .hero .lead{color:#CFDAD5;max-width:62ch}
+  .hero em{color:var(--teal-mint);font-style:normal}
+  .grad{color:var(--teal-mint)}
+  @supports((-webkit-background-clip:text) or (background-clip:text)){
+    .grad{background:linear-gradient(92deg,#7FE0C4,#CFE9DF);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  }
+  .hero__cta{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:var(--s5)}
+  .hero__answers{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:var(--s5)}
+  .hero__answers .a{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.04em;color:#CDE7DF;
+    border:1px solid #2F4A42;border-radius:var(--r-pill);padding:.4rem .8rem;background:rgba(255,255,255,.03)}
+  .hero__answers .a b{color:var(--teal-mint);font-weight:500}
+  .hero__meta{margin-top:var(--s5);font-family:var(--mono);font-size:var(--fs-xs);color:#9FB6AE;letter-spacing:.04em;line-height:1.8}
+  .hero__meta b{color:var(--cream)}
+  .livebadge{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:var(--fs-xs);
+    letter-spacing:.08em;text-transform:uppercase;color:#CDE7DF;border:1px solid #2F4A42;border-radius:var(--r-pill);padding:.34rem .72rem;margin-bottom:var(--s4)}
+  .livebadge .dot{width:7px;height:7px;border-radius:50%;background:var(--teal-mint);animation:pulse 2.2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(127,224,196,.5)}70%{box-shadow:0 0 0 7px rgba(127,224,196,0)}100%{box-shadow:0 0 0 0 rgba(127,224,196,0)}}
+  .sec-head{margin-bottom:var(--s6);max-width:72ch}
+  .sec-head .h2{margin-bottom:var(--s3)}
+  .cat-head{display:flex;align-items:baseline;gap:.7rem;margin:var(--s7) 0 var(--s4)}
+  .cat-head:first-of-type{margin-top:var(--s5)}
+  .cat-head h3{font-size:var(--fs-h3)}
+  .cat-head .n{font-family:var(--mono);font-size:var(--fs-xs);color:var(--muted);letter-spacing:.06em}
+  .tool-card{display:flex;flex-direction:column;height:100%;text-decoration:none;color:inherit}
+  .tool-card .toprow{display:flex;justify-content:space-between;gap:.5rem;align-items:center;margin-bottom:.6rem}
+  .tool-card h4{font-family:var(--serif);font-weight:600;font-size:1.08rem;margin:.1rem 0 .35rem;line-height:1.2}
+  .tool-card p{font-size:.86rem;color:var(--muted);margin:0 0 .8rem}
+  .tool-card .go{margin-top:auto;font-family:var(--mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;color:var(--teal-d);display:inline-flex;align-items:center;gap:.35rem}
+  .ext-cue{font-family:var(--mono);font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);
+    border:1px solid var(--line);border-radius:var(--r-pill);padding:.18rem .5rem;display:inline-flex;align-items:center;gap:.3rem;white-space:nowrap}
+  .ext-cue svg{flex:none}
+  .xlink{font-family:var(--mono);font-size:.8rem}
+</style>
+</head>
+<body>
+<a class="skip" href="#tools">Skip to the tools</a>
+
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="../index.html" aria-label="Aloha AI home">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#1B7A68"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#1B7A68" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      Aloha&nbsp;AI
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav__links" id="navlinks">
+        <li><a href="../index.html#services">Services</a></li>
+        <li><a href="../index.html#moat">The moat</a></li>
+        <li><a href="../index.html#tools">Tools</a></li>
+        <li><a href="../index.html#products">Products</a></li>
+        <li><a href="/university">University</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../legal-ai.html">Legal AI</a></li>
+        <li class="nav__cta"><a class="btn btn--primary btn--sm" href="#start">Get started →</a></li>
+      </ul>
+    </nav>
+    <button class="nav__burger" id="burger" aria-label="Open menu" aria-controls="navlinks" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+<span id="top"></span>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-h">
+  <div class="wrap">
+    <span class="livebadge"><span class="dot" aria-hidden="true"></span> Free · interactive · runs in your browser</span>
+    <p class="eyebrow kicker">Aloha AI · tools by RN Collins</p>
+    <h1 class="display" id="hero-h">Free tools that <span class="grad">score your AI readiness</span> and show you how I build.</h1>
+    <p class="lead">Every tool here is a working, interactive demonstration of the method Aloha AI ships for clients. Each one does two things at once: it lets you <em>assess your own AI readiness or risk</em> in a few minutes, and it reflects the kind of governed, auditable build I deliver on an engagement. Use them to find your weakest point, then decide what is worth building properly.</p>
+    <div class="hero__cta">
+      <a class="btn btn--primary" href="#tools">Browse the tools →</a>
+      <a class="btn btn--ghost" href="#start">Book a scoping call</a>
+    </div>
+    <div class="hero__answers">
+      <span class="a"><b>For</b> law firms, founders, GCs &amp; regulated or reputation-sensitive teams</span>
+      <span class="a"><b>Why</b> assess your own exposure before a confident wrong answer costs you</span>
+      <span class="a"><b>Trust</b> the assessments run in your browser; nothing leaves it unless you say so</span>
+    </div>
+    <p class="hero__meta">Built by <b>RN&nbsp;Collins</b>. Neuroscience (MS) · Administrative&nbsp;&amp; regulatory law (JD&nbsp;candidate) · 35+ builds shipped</p>
+  </div>
+</section>
+
+<!-- INTRO / WHO THESE ARE FOR -->
+<section class="section" aria-labelledby="intro-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">What this is</p>
+      <h2 class="h2" id="intro-h">A working demonstration you can run yourself</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">Most consultants show slideware. These tools are the proof. Each one is free, interactive, and self-contained, and each maps to a real client build: a citation gate for a filing, a governance scorecard for a firm, a budget model for a project. Run whichever one matches your question. When a result points to work worth doing properly, a short scoping call is where that starts.</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card reveal"><h3>Assess your readiness</h3><p class="small muted">Score your governance, your legal AI workflow, or your practice against published guidance, and get a prioritized list of what to fix first.</p></div>
+      <div class="card reveal"><h3>See the method</h3><p class="small muted">Each tool reflects how I build for clients: sourced, gated where risk lives, and auditable. What you run here is the public version of a private deployment.</p></div>
+      <div class="card reveal"><h3>Decide what to build</h3><p class="small muted">A weak result is a map. It shows the workflow worth gating, the policy worth writing, or the budget worth scoping before you commit.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- THE TOOLS -->
+<section class="section section--paper section--texture" id="tools" aria-labelledby="tools-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The tools</p>
+      <h2 class="h2" id="tools-h">Pick the one that matches your question</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">Grouped by what they help with. Same-site tools open here; external tools open in a new tab, marked with a cue.</p>
+    </div>
+
+    <!-- LEGAL AI -->
+    <div class="cat-head reveal">
+      <h3 id="cat-legal">Legal AI</h3>
+      <span class="n">verification &amp; workflow risk for legal teams</span>
+    </div>
+    <div class="grid grid-3">
+      <a class="card card--hover tool-card reveal" href="./citation-verifier/index.html" aria-describedby="cat-legal">
+        <div class="toprow"><span class="chip chip--src">Legal AI</span></div>
+        <h4>Citation Verifier</h4>
+        <p>Flags fake, impossible, or malformed case cites before you file an AI-drafted brief. Structural checks run in your browser.</p>
+        <span class="go">Open the tool →</span>
+      </a>
+      <a class="card card--hover tool-card reveal" href="https://rn-collins.github.io/aloha-ai-consulting/sl3-legal-diagnostic.html" target="_blank" rel="noopener" aria-describedby="cat-legal">
+        <div class="toprow"><span class="chip chip--src">Legal AI</span>
+          <span class="ext-cue"><svg width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> New tab</span>
+        </div>
+        <h4>Legal AI Workflow Diagnostic</h4>
+        <p>A five-question readiness diagnostic that scores where your legal AI workflow leaks and maps you to an engagement path.</p>
+        <span class="go">Open in new tab →</span>
+      </a>
+    </div>
+
+    <!-- GOVERNANCE -->
+    <div class="cat-head reveal">
+      <h3 id="cat-gov">Governance</h3>
+      <span class="n">documented-practice maturity &amp; exposure</span>
+    </div>
+    <div class="grid grid-3">
+      <a class="card card--hover tool-card reveal" href="./governance-readiness/index.html" aria-describedby="cat-gov">
+        <div class="toprow"><span class="chip chip--med">Governance</span></div>
+        <h4>Governance Readiness Scorecard</h4>
+        <p>An ABA Formal Opinion 512 readiness score for firms: rate your documented practice across Competence, Confidentiality, Candor, and Supervision.</p>
+        <span class="go">Open the tool →</span>
+      </a>
+      <a class="card card--hover tool-card reveal" href="./policy-generator/index.html" aria-describedby="cat-gov">
+        <div class="toprow"><span class="chip chip--med">Governance</span></div>
+        <h4>AI Governance Policy Generator (lite)</h4>
+        <p>Generate a firm-specific AI governance policy template mapped to ABA-512 and the Model Rules. Download as Markdown or printable HTML, all in your browser.</p>
+        <span class="go">Open the tool →</span>
+      </a>
+      <a class="card card--hover tool-card reveal" href="https://aloha-governance-audit.vercel.app" target="_blank" rel="noopener" aria-describedby="cat-gov">
+        <div class="toprow"><span class="chip chip--med">Governance</span>
+          <span class="ext-cue"><svg width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> New tab</span>
+        </div>
+        <h4>Culture Governance Audit</h4>
+        <p>An AI and synthetic-media exposure risk assessment, checked against live FTC and EU AI Act signals.</p>
+        <span class="go">Open in new tab →</span>
+      </a>
+    </div>
+
+    <!-- READINESS -->
+    <div class="cat-head reveal">
+      <h3 id="cat-ready">Readiness</h3>
+      <span class="n">where your organization stands with AI</span>
+    </div>
+    <div class="grid grid-3">
+      <a class="card card--hover tool-card reveal" href="../tools/ai-readiness-scorecard/index.html" aria-describedby="cat-ready">
+        <div class="toprow"><span class="chip">Readiness</span></div>
+        <h4>AI Readiness Scorecard</h4>
+        <p>Score your AI governance across six dimensions and see whether you need a Fractional Chief AI Officer.</p>
+        <span class="go">Open the tool →</span>
+      </a>
+      <a class="card card--hover tool-card reveal" href="../tools/practice-readiness/index.html" aria-describedby="cat-ready">
+        <div class="toprow"><span class="chip">Readiness</span></div>
+        <h4>Practice Readiness</h4>
+        <p>Build the AI practice in-house or have it built and handed over? Score six dimensions to see which path fits.</p>
+        <span class="go">Open the tool →</span>
+      </a>
+    </div>
+
+    <!-- PLANNING -->
+    <div class="cat-head reveal">
+      <h3 id="cat-plan">Planning</h3>
+      <span class="n">scope the build before you commit</span>
+    </div>
+    <div class="grid grid-3">
+      <a class="card card--hover tool-card reveal" href="https://ai-budget-calc.vercel.app" target="_blank" rel="noopener" aria-describedby="cat-plan">
+        <div class="toprow"><span class="chip">Planning</span>
+          <span class="ext-cue"><svg width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> New tab</span>
+        </div>
+        <h4>AI Build Budget Calculator</h4>
+        <p>Scope an AI build end to end: phases, hours, a cost range, and tax. Turn a vague idea into a defensible number.</p>
+        <span class="go">Open in new tab →</span>
+      </a>
+    </div>
+
+    <p class="small muted reveal" style="margin-top:var(--s7);max-width:74ch">Looking for the wider intelligence tools, monitors, and product hubs? Two related self-assessments sit alongside these: the <a href="https://aloha-ai-consulting.vercel.app/trust-stack/leak-check" target="_blank" rel="noopener">Trust Stack leak-check</a> returns your weakest trust layer in five minutes, and the <a href="https://aloha-ai-consulting.vercel.app/twins/exposure-check" target="_blank" rel="noopener">AI Twin exposure-check</a> screens synthetic-media and AI-UGC exposure. The full set of live monitors lives on the <a href="../index.html#tools">homepage tools index</a>.</p>
+  </div>
+</section>
+
+<!-- LEAD-GEN / THE SERVICE -->
+<section class="section" id="start" aria-labelledby="offer-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">These are demonstrations of what I build</p>
+      <h2 class="h2" id="offer-h">The version I build for your organization</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">What you run here is the public, in-browser version. A firm-deployed build routes checks through a private backend, keeps credentials off the client, writes a signed audit record, and integrates with the tools your team already runs. Each tool on this page maps to a real engagement: a citation gate, a documented governance policy, a scoped budget. Pick the result that worried you, and that is where we start.</p>
+    </div>
+    <div class="grid grid-3 reveal">
+      <div class="card"><div class="card__ic" aria-hidden="true">1</div><h3>Run a tool</h3><p class="small muted">Score your readiness or risk in a few minutes. The weak result is the map: it shows the workflow, policy, or budget worth addressing first.</p></div>
+      <div class="card"><div class="card__ic" aria-hidden="true">2</div><h3>Book a scoping call</h3><p class="small muted">A short call to talk through what the result means for your organization and what a governed build would cover.</p></div>
+      <div class="card"><div class="card__ic" aria-hidden="true">3</div><h3>Get it built</h3><p class="small muted">Most engagements start with a Systems Audit: the fastest proof, and it points to the workflow worth building properly first.</p></div>
+    </div>
+    <div class="hero__cta reveal" style="margin-top:var(--s5)">
+      <a class="btn btn--primary" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a build / scoping call →</a>
+      <a class="btn btn--outline" href="../legal-ai.html">See the Legal AI Workflow pillar</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section--ink" id="contact" aria-labelledby="cta-h">
+  <div class="wrap" style="text-align:center">
+    <p class="eyebrow">Aloha AI · Honolulu</p>
+    <h2 class="h2" id="cta-h" style="max-width:26ch;margin-inline:auto">Ready when you are.</h2>
+    <p class="lead" style="margin:var(--s4) auto var(--s5);text-align:center">Convinced, curious, or comparing, there's a path for each.</p>
+    <div style="display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn--primary" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Start with a Systems Audit →</a>
+      <a class="btn btn--ghost" href="../legal-ai.html">See the Legal AI pillar</a>
+    </div>
+    <p class="small" style="margin-top:var(--s5);color:var(--muted-on-ink)">Prefer email? <a href="#" data-email style="color:var(--teal-mint)">Email RN</a> &nbsp;·&nbsp; or connect on <a href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noopener" style="color:var(--teal-mint)">LinkedIn</a></p>
+    <p id="emailReveal" hidden style="margin-top:.5rem;font-family:var(--mono);font-size:.8rem;color:#CFDAD5"></p>
+  </div>
+</section>
+</main>
+
+<footer class="footer" aria-labelledby="foot-h">
+  <div class="wrap">
+    <h2 id="foot-h" class="small" style="position:absolute;left:-999px">Site footer</h2>
+    <div class="footer__grid">
+      <div>
+        <a class="nav__brand" href="../index.html" style="color:var(--cream)" aria-label="Aloha AI home"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#7FE0C4"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#7FE0C4" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg> Aloha&nbsp;AI</a>
+        <p class="small" style="margin-top:var(--s3);max-width:38ch;color:#9FB6AE">AI implementation built around how humans actually trust and use it, for regulated or reputation-sensitive professions.</p>
+      </div>
+      <div>
+        <h4>Tools</h4>
+        <ul>
+          <li><a href="./citation-verifier/index.html">Citation Verifier</a></li>
+          <li><a href="./governance-readiness/index.html">Governance Readiness</a></li>
+          <li><a href="./policy-generator/index.html">Policy Generator</a></li>
+          <li><a href="./ai-readiness-scorecard/index.html">AI Readiness Scorecard</a></li>
+          <li><a href="./practice-readiness/index.html">Practice Readiness</a></li>
+          <li><a href="https://ai-budget-calc.vercel.app" target="_blank" rel="noopener">Build Budget Calculator</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Aloha AI</h4>
+        <ul>
+          <li><a href="../index.html">The practice</a></li>
+          <li><a href="../legal-ai.html">Legal AI Workflow</a></li>
+          <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a call</a></li>
+          <li><a href="https://rn-portfolio-khaki.vercel.app" target="_blank" rel="noopener">Portfolio → RN Builds</a></li>
+          <li><a href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="../privacy.html">Privacy</a></li>
+          <li><a href="../terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="disc small">Free demonstration tools. Not legal advice. Aloha AI provides AI workflow design, orchestration, and governance advisory, not legal advice. RN Collins is a JD candidate, not a licensed attorney; nothing here is legal or tax advice or an attorney–client relationship. Each assessment measures documented-practice maturity, not legal compliance.</p>
+    <p class="fine">Aloha AI · a DBA of Rayven-Nikkita Collins LLC · Honolulu, HI · No tracking, no cookies · © 2026</p>
+  </div>
+</footer>
+
+<script>
+  /* nav burger + is-stuck */
+  (function(){var b=document.getElementById('burger'),l=document.getElementById('navlinks');
+  function set(o){b.setAttribute('aria-expanded',o);l.classList.toggle('open',o);b.setAttribute('aria-label',o?'Close menu':'Open menu');}
+  b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true');});
+  l.addEventListener('click',function(e){if(e.target.tagName==='A')set(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});})();
+  (function(){var u='collins.ra',dm='northeastern.edu',a=u+'@'+dm,su=encodeURIComponent('Aloha AI — tools inquiry');
+  document.querySelectorAll('[data-email]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();
+  try{navigator.clipboard&&navigator.clipboard.writeText(a);}catch(_){}
+  var o=document.getElementById('emailReveal');if(o){o.hidden=false;o.innerHTML='Copied ✓ &nbsp;<a href="mailto:'+a+'?subject='+su+'" style="color:#7FE0C4">'+a+'</a> &nbsp;·&nbsp; <a href="https://mail.google.com/mail/?view=cm&fs=1&to='+a+'&su='+su+'" target="_blank" rel="noopener" style="color:#7FE0C4">Open in Gmail</a>';}
+  window.location.href='mailto:'+a+'?subject='+su;});});})();
+  (function(){var nav=document.querySelector('.nav');if(!nav)return;var on=function(){nav.classList.toggle('is-stuck',window.scrollY>8);};on();window.addEventListener('scroll',on,{passive:true});})();
+  (function(){if(matchMedia('(prefers-reduced-motion:reduce)').matches){document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in');});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(e){io.observe(e);});})();
+</script>
+</body>
+</html>
