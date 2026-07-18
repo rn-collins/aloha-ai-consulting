@@ -294,6 +294,15 @@ a.card:hover .card__more{color:var(--teal)}
   html{scroll-behavior:auto}
 }
 
+/* ---- 14. NEWSLETTER SIGNUP -------------------------------- */
+.nl-form{margin-top:var(--s3)}
+.nl-label{display:block;font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem;text-align:left}
+.nl-row{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center}
+.nl-input{flex:1 1 240px;min-height:46px;padding:.7rem .85rem;border-radius:var(--r-sm);border:1px solid var(--line-2);background:var(--white);color:var(--ink);font:inherit;font-size:.95rem}
+.nl-input:focus-visible{box-shadow:var(--sh-focus);border-color:var(--teal)}
+.nl-note{margin-top:.6rem;font-size:var(--fs-sm);color:var(--teal-d);font-weight:600}
+.nl-fine{margin-top:.6rem;font-family:var(--mono);font-size:.7rem;color:var(--muted)}
+
 </style>
 </head>
 <body>
@@ -312,7 +321,7 @@ a.card:hover .card__more{color:var(--teal)}
       <li><a href="/university/learn">Learn</a></li>
       <li><a href="/university/playbooks">Playbooks</a></li>
       <li><a href="/university/templates">Templates</a></li>
-      <li><a href="/university/use-cases">Use Cases</a></li>
+      <li><a href="/university/use-cases">Use Cases</a></li><li><a href="/university/courses">Courses</a></li>
       <li><a href="/university/tools">Tools</a></li>
       <li><a href="/university/services">Services</a></li>
       <li><a href="/university/about">About</a></li>
@@ -470,14 +479,33 @@ a.card:hover .card__more{color:var(--teal)}
   </div>
 </section>
 
+<section class="section section--paper">
+  <div class="wrap" style="max-width:640px;text-align:center">
+    <p class="eyebrow" style="justify-content:center">Newsletter</p>
+    <h2>Aloha AI Dispatch</h2>
+    <p class="lead" style="margin:var(--s4) auto var(--s5)">New lessons and playbooks, build breakdowns, and what is moving in AI for regulated work.</p>
+    <!-- BEEHIIV-EMBED-START (replace this whole block with your Beehiiv embed code) -->
+    <form class="nl-form" id="nlForm" action="#" novalidate>
+      <label for="nlEmail" class="nl-label">Email address</label>
+      <div class="nl-row">
+        <input type="email" id="nlEmail" name="email" class="nl-input" placeholder="you@company.com" required autocomplete="email">
+        <button type="submit" class="btn btn--primary">Subscribe →</button>
+      </div>
+      <p class="nl-note" id="nlNote" role="status" hidden>Connect Beehiiv to enable signups.</p>
+      <p class="nl-fine">Placeholder form; not yet wired to a mailing provider. No data is sent or stored.</p>
+    </form>
+    <!-- BEEHIIV-EMBED-END -->
+  </div>
+</section>
+
 <section class="section section--ink">
   <div class="wrap" style="text-align:center">
     <div class="reveal" style="max-width:56ch;margin-inline:auto">
-      <h2>Start free, or bring us in</h2>
-      <p class="lead" style="margin-inline:auto">Learn at your own pace, or get a partner to build the system with you. Either way, the first step is easy.</p>
+      <h2>Start here. We route you the rest of the way.</h2>
+      <p class="lead" style="margin-inline:auto">The on-ramp asks where you are today and points you at the right first lessons. No paywall, no signup, no email gate. Pick your path and begin.</p>
       <div class="cta-row" style="justify-content:center">
-        <a class="btn btn--on-ink" href="/university/start-here">Start Learning Free</a>
-        <a class="btn btn--outline-ink" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a Strategy Session</a>
+        <a class="btn btn--on-ink" href="/university/start-here">Start learning free</a>
+        <a class="btn btn--outline-ink" href="/university/learn">Browse all lessons</a>
       </div>
     </div>
   </div>
@@ -499,7 +527,7 @@ a.card:hover .card__more{color:var(--teal)}
           <li><a href="/university/learn">Learn</a></li>
           <li><a href="/university/playbooks">Playbooks</a></li>
           <li><a href="/university/templates">Templates</a></li>
-          <li><a href="/university/use-cases">Use Cases</a></li>
+          <li><a href="/university/use-cases">Use Cases</a></li><li><a href="/university/courses">Courses</a></li>
         </ul>
       </div>
       <div>
@@ -584,6 +612,16 @@ a.card:hover .card__more{color:var(--teal)}
   /* ---- Current year ---- */
   var yr = document.getElementById("yr");
   if (yr) yr.textContent = new Date().getFullYear();
+
+  /* ---- Newsletter placeholder (until Beehiiv is connected) ---- */
+  var nlForm = document.getElementById("nlForm");
+  if (nlForm) {
+    nlForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var note = document.getElementById("nlNote");
+      if (note) note.hidden = false;
+    });
+  }
 
   /* ---- Email reveal (footer + contact) ---- */
   document.querySelectorAll("[data-email-reveal]").forEach(function (btn) {

@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Builds — the deployed work of RN Collins — Aloha AI</title>
+<meta name="description" content="The proof wall for Aloha AI: 40+ live builds by RN Collins, every one made for regulated or high-complexity work. Interactive tools, intelligence monitors, knowledge platforms, client builds, and products. From Honolulu, deployed anywhere.">
+<link rel="canonical" href="https://aloha-ai-consulting.vercel.app/builds">
+<meta name="theme-color" content="#14201C">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Builds — the deployed work of RN Collins — Aloha AI">
+<meta property="og:description" content="40+ live builds, every one made for regulated or high-complexity work. The Aloha AI proof wall: deployed tools, monitors, knowledge platforms, and client builds.">
+<meta property="og:image" content="https://aloha-ai-consulting.vercel.app/og-image.png">
+<meta property="og:url" content="https://aloha-ai-consulting.vercel.app/builds">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Builds — the deployed work of RN Collins — Aloha AI">
+<meta name="twitter:description" content="40+ live builds, every one made for regulated or high-complexity work. The Aloha AI proof wall.">
+<meta name="twitter:image" content="https://aloha-ai-consulting.vercel.app/og-image.png">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<script>document.documentElement.className+=' js';</script>
+<link rel="stylesheet" href="aloha-ds.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CollectionPage","name":"Aloha AI — Builds",
+"url":"https://aloha-ai-consulting.vercel.app/builds",
+"description":"The deployed body of work of RN Collins: 40+ live builds, each made for regulated or high-complexity work.",
+"creator":{"@type":"Person","name":"RN Collins","jobTitle":"Founder, Aloha AI",
+"description":"Neuroscientist (MS), JD candidate, and AI systems builder for regulated industries"}}
+</script>
+<style>
+  .hero{position:relative;overflow:hidden;background:var(--grad-hero);
+    color:var(--cream);padding-block:clamp(56px,8vw,108px) clamp(44px,6vw,80px);border-bottom:3px solid var(--teal)}
+  .hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(127,224,196,.05) 1px,transparent 1px);
+    background-size:26px 26px;-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 70%);mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 70%);pointer-events:none}
+  .hero>.wrap{position:relative}
+  .hero .display{color:var(--cream);max-width:19ch;margin-bottom:var(--s4)}
+  .hero .kicker{color:var(--teal-mint)}
+  .hero .lead{color:#CFDAD5;max-width:62ch}
+  .hero em{color:var(--teal-mint);font-style:normal}
+  .grad{color:var(--teal-mint)}
+  @supports((-webkit-background-clip:text) or (background-clip:text)){
+    .grad{background:linear-gradient(92deg,#7FE0C4,#CFE9DF);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  }
+  .hero__cta{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:var(--s5)}
+  .hero__answers{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:var(--s5)}
+  .hero__answers .a{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.04em;color:#CDE7DF;
+    border:1px solid #2F4A42;border-radius:var(--r-pill);padding:.4rem .8rem;background:rgba(255,255,255,.03)}
+  .hero__answers .a b{color:var(--teal-mint);font-weight:500}
+  .hero__meta{margin-top:var(--s5);font-family:var(--mono);font-size:var(--fs-xs);color:#9FB6AE;letter-spacing:.04em;line-height:1.8}
+  .hero__meta b{color:var(--cream)}
+  .livebadge{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:var(--fs-xs);
+    letter-spacing:.08em;text-transform:uppercase;color:#CDE7DF;border:1px solid #2F4A42;border-radius:var(--r-pill);padding:.34rem .72rem;margin-bottom:var(--s4)}
+  .livebadge .dot{width:7px;height:7px;border-radius:50%;background:var(--teal-mint);animation:pulse 2.2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(127,224,196,.5)}70%{box-shadow:0 0 0 7px rgba(127,224,196,0)}100%{box-shadow:0 0 0 0 rgba(127,224,196,0)}}
+  .sec-head{margin-bottom:var(--s6);max-width:74ch}
+  .sec-head .h2{margin-bottom:var(--s3)}
+  /* metric strip */
+  .stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;margin-top:var(--s5)}
+  @media(max-width:820px){.stat-row{grid-template-columns:1fr 1fr}}
+  .stat-row .s{border:1px solid #2F4A42;border-radius:var(--r-sm);padding:.9rem;background:rgba(255,255,255,.03)}
+  .stat-row .s .n{font-family:var(--serif);font-size:1.4rem;color:var(--teal-mint);line-height:1}
+  .stat-row .s .l{font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;color:#9FB6AE;margin-top:.35rem}
+  /* flagship / selected-work band */
+  .flag-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s5)}
+  @media(max-width:820px){.flag-grid{grid-template-columns:1fr}}
+  .flag-card{display:flex;flex-direction:column;height:100%}
+  .flag-card .toprow{display:flex;justify-content:space-between;gap:.6rem;align-items:center;margin-bottom:var(--s3)}
+  .flag-card h3{font-size:var(--fs-h3);margin:0 0 .4rem}
+  .flag-card dl{margin:0}
+  .flag-card dt{font-family:var(--mono);font-size:.6rem;letter-spacing:.09em;text-transform:uppercase;color:var(--teal-d);margin-top:.7rem}
+  .flag-card dd{margin:.2rem 0 0;font-size:.9rem;color:var(--muted);line-height:1.5}
+  .flag-card .go{margin-top:var(--s4);font-family:var(--mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;color:var(--teal-d);display:inline-flex;align-items:center;gap:.35rem}
+  /* category grid */
+  .cat-head{display:flex;align-items:baseline;gap:.7rem;margin:var(--s7) 0 var(--s4);flex-wrap:wrap}
+  .cat-head:first-of-type{margin-top:var(--s5)}
+  .cat-head h3{font-size:var(--fs-h3)}
+  .cat-head .n{font-family:var(--mono);font-size:var(--fs-xs);color:var(--muted);letter-spacing:.06em}
+  .tool-card{display:flex;flex-direction:column;height:100%;text-decoration:none;color:inherit}
+  .tool-card .toprow{display:flex;justify-content:space-between;gap:.5rem;align-items:center;margin-bottom:.6rem}
+  .tool-card h4{font-family:var(--serif);font-weight:600;font-size:1.06rem;margin:.1rem 0 .35rem;line-height:1.2}
+  .tool-card p{font-size:.85rem;color:var(--muted);margin:0 0 .55rem}
+  .tool-card .who{font-family:var(--mono);font-size:.66rem;letter-spacing:.03em;color:var(--teal-d);margin:0 0 .8rem;line-height:1.5}
+  .tool-card .go{margin-top:auto;font-family:var(--mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;color:var(--teal-d);display:inline-flex;align-items:center;gap:.35rem}
+  .live-dot{width:7px;height:7px;border-radius:50%;background:var(--green);display:inline-block;flex:none}
+  .ext-cue{font-family:var(--mono);font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);
+    border:1px solid var(--line);border-radius:var(--r-pill);padding:.18rem .5rem;display:inline-flex;align-items:center;gap:.3rem;white-space:nowrap}
+  .ext-cue svg{flex:none}
+  .live-tag{display:inline-flex;align-items:center;gap:.35rem;font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--green)}
+  /* NEWSLETTER SIGNUP */
+  .nl-form{margin-top:var(--s2)}
+  .nl-label{display:block;font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem;text-align:left}
+  .nl-row{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center}
+  .nl-input{flex:1 1 240px;min-height:44px;padding:.66rem .8rem;border-radius:var(--r-sm);border:1px solid var(--line-2);background:#fff;color:var(--ink);font:inherit;font-size:.95rem}
+  .nl-input:focus-visible{box-shadow:var(--sh-focus);border-color:var(--teal)}
+  .nl-note{margin-top:.6rem;font-size:var(--fs-sm);color:var(--teal-d);font-weight:600}
+  .nl-fine{margin-top:.6rem;font-family:var(--mono);font-size:.7rem;color:var(--muted)}
+  /* domain chip + count badge */
+  .chip--dom{color:var(--muted);border-color:var(--line);background:var(--cream);text-transform:none;letter-spacing:.02em}
+  .cbadge{font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-d);
+    border:1px solid #BADFD6;background:var(--teal-l);border-radius:var(--r-pill);padding:.2rem .55rem;white-space:nowrap}
+  .card-sub{font-size:.8rem;color:var(--muted);margin:.2rem 0 .7rem;line-height:1.55}
+  .card-sub b{color:var(--ink-2);font-weight:600}
+  .chip-row{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;margin-bottom:.5rem}
+  .dev-tag{display:inline-flex;align-items:center;gap:.35rem;font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--amber)}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="index.html" aria-label="Aloha AI home">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#1B7A68"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#1B7A68" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      Aloha&nbsp;AI
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav__links" id="navlinks">
+        <li><a href="index.html#services">Services</a></li><li><a href="/build-your-team.html">Build a team</a></li>
+        <li><a href="index.html#moat">The moat</a></li>
+        <li><a href="builds.html" aria-current="page">Builds</a></li>
+        <li><a href="/tools">Tools</a></li>
+        <li><a href="/university">University</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li class="nav__cta"><a class="btn btn--primary btn--sm" href="#start">Get started →</a></li>
+      </ul>
+    </nav>
+    <button class="nav__burger" id="burger" aria-label="Open menu" aria-controls="navlinks" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+<span id="top"></span>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-h">
+  <div class="wrap">
+    <span class="livebadge"><span class="dot" aria-hidden="true"></span> 33 projects · 40+ live deployments · from Honolulu, deployed anywhere</span>
+    <p class="eyebrow kicker">Aloha AI · the proof wall</p>
+    <h1 class="display" id="hero-h">Builds, not slideware. <span class="grad">Every one is real, deployed work.</span></h1>
+    <p class="lead">This is the body of work behind the practice, sorted into six kinds of build: interactive tools, intelligence dashboards, knowledge platforms, client builds, product-platforms, and brand ventures. Forty-plus live deployments reconcile into <em>33 projects across nine regulated and advisory domains</em>, from psychedelics and cannabis to AI governance, legal AI, law careers, neuroscience, and education. Each one runs in production, or is a fully built site marked Launching, where the citation, the quota, or the statutory trigger has to be right and a confident wrong answer is expensive.</p>
+    <div class="hero__cta">
+      <a class="btn btn--primary" href="#selected">See the selected work →</a>
+      <a class="btn btn--ghost" href="#catalog">Browse all builds</a>
+    </div>
+    <div class="stat-row">
+      <div class="s"><div class="n">33</div><div class="l">Projects, clustered</div></div>
+      <div class="s"><div class="n">40+</div><div class="l">Live deployments</div></div>
+      <div class="s"><div class="n">9</div><div class="l">Regulated &amp; advisory domains</div></div>
+      <div class="s"><div class="n">Honolulu</div><div class="l">Deployed anywhere</div></div>
+    </div>
+    <p class="hero__meta">Built by <b>RN&nbsp;Collins</b>. Neuroscience (MS) · Administrative&nbsp;&amp; regulatory law (JD&nbsp;candidate) · builder for regulated industries</p>
+  </div>
+</section>
+
+<!-- WHAT THIS IS -->
+<section class="section" aria-labelledby="intro-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">What this page is</p>
+      <h2 class="h2" id="intro-h">Operator receipts, sorted by what they do</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">Most portfolios list mockups. This one lists deployments. Each build below is running now, and each was made under a real constraint: a filing that cannot cite a fake case, a regulatory posture that shifts weekly, a knowledge base a clinician or a lawyer has to trust. They are grouped by type so you can find the pattern that matches your problem, then see the version I would build for you.</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card reveal"><h3>Regulated by design</h3><p class="small muted">Psychedelics, cannabis, biopharma, digital health, and legal. The builds live where the rules are strict and the facts have to hold up.</p></div>
+      <div class="card reveal"><h3>Sourced and dated</h3><p class="small muted">Monitors read primary sources on a schedule. Tools show their checks. The point is work you can put in front of a regulator or a partner.</p></div>
+      <div class="card reveal"><h3>Shipped, then handed over</h3><p class="small muted">These are not demos waiting for funding. They run in production, and the same method ships inside a client engagement.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SELECTED WORK -->
+<section class="section section--paper section--texture" id="selected" aria-labelledby="sel-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Selected work</p>
+      <h2 class="h2" id="sel-h">Twelve builds, in a little more depth</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">A legal-AI operating layer, a directory, a client intelligence dashboard, a governance framework, a knowledge atlas, a planning tool, a regulatory monitor suite, an AI education platform, a citation verifier, a student-run law-careers resource hub, a governed AI-twin product line, and a reform-market observatory. Context, what got built, and what changed for each.</p>
+    </div>
+    <div class="flag-grid">
+
+      <div class="card flag-card reveal">
+        <div class="toprow"><span class="chip chip--dom">legal AI</span><span class="live-tag"><span class="live-dot" aria-hidden="true"></span> Live</span></div>
+        <h3>Trust-Safe AI Operating Layer</h3>
+        <dl>
+          <dt>Context</dt><dd>Legal teams run AI across research, drafting, and retrieval with no shared layer to govern it, and a fabricated or impossible citation can reach a filing.</dd>
+          <dt>What was built</dt><dd>A five-tab console for orchestration, citation verification, governance, evaluation, and adoption, backed by a working verifier engine that flags fake and impossible cites and generates an ABA-512 policy. Built firm-agnostic, so it drops into any practice.</dd>
+          <dt>What changed</dt><dd>Verification sits inside the workflow as a gate, so a wrong citation gets caught before it becomes a court's problem, with an audit trail behind each check.</dd>
+        </dl>
+        <a class="flag-card go" href="/tools/trust-safe-console">Open the console <svg width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+
+      <div class="card flag-card reveal">
+        <div class="toprow"><span class="chip chip--dom">psychedelics</span><span class="live-tag"><span class="live-dot" aria-hidden="true"></span> Live</span></div>
+        <h3>Psych Ops Directory</h3>
+        <dl>
+          <dt>Context</dt><dd>The psychedelic ecosystem had no single operational map, so operators, funders, and clients had no structured way to find and vet listings.</dd>
+          <dt>What was built</dt><dd>A searchable directory of 177+ listings across 23 categories, with tiered verification, filtering, and an admin panel.</dd>
+          <dt>What changed</dt><dd>A scattered field became one navigable reference, with a verification schema that signals which listings have been checked.</dd>
+        </dl>
+        <a class="flag-card go" href="https://psych-ops-directory.vercel.app" target="_blank" rel="noopener">Open the directory <svg width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+
+      <div class="card flag-card reveal">
+        <div class="toprow"><span class="chip chip--dom">legal AI</span><span class="live-tag"><span class="live-dot" aria-hidden="true"></span> Live</span></div>
+        <h3>Burgermeister Intel</h3>
+        <dl>
+          <dt>Context</dt><dd>A hospitality brand was expanding into four legal regimes at once, with market and regulatory signal scattered across sources.</dd>
+          <dt>What was built</dt><dd>A custom 27-signal expansion-risk dashboard spanning the US, UK, Germany, and Poland, heat-scored with outside-counsel flags.</dd>
+          <dt>What changed</dt><dd>A paying client gained one tailored intelligence product, the same shape of build that starts a client engagement.</dd>
+        </dl>
+        <a class="flag-card go" href="https://bm-intel-ivory.vercel.app" target="_blank" rel="noopener">Open the dashboard <svg width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+
+      <div class="card flag-card reveal">
+        <div class="toprow"><span class="chip chip--dom">cross-cutting</span><span class="live-tag"><span class="live-dot" aria-hidden="true"></span> Live</span></div>
+        <h3>NSAG framework</h3>
+        <dl>
+          <dt>Context</dt><dd>Nervous-system-aware governance had no public home, and the method it describes had no entry point a practitioner could use.</dd>
+          <dt>What was built</dt><dd>A public framework site plus fifteen standalone module assessment tools, covering trauma-informed legal space, AI legal navigation, psychedelic harm reduction, and more.</dd>
+          <dt>What changed</dt><dd>A productized advisory platform with a per-module entry point, so a reader can assess one dimension without adopting the whole system.</dd>
+        </dl>
+        <a class="flag-card go" href="https://nsag-site.vercel.app" target="_blank" rel="noopener">Open the framework <svg width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+
+      <div class="card flag-card reveal">
+        <div class="toprow"><span class="chip chip--dom">psychedelics</span><span class="live-tag"><span class="live-dot" aria-hidden="true"></span> Live</span></div>
+        <h3>Fadiman Knowledge Atlas</h3>
+        <dl>
+          <dt>Context</dt><dd>Thirty-four years of a field figure's output was scattered and link-rotting, with no catalogue and no schema over it.</dd>
+          <dt>What was built</dt><dd>132 catalogued entries on a structured schema, with 17 dead URLs documented rather than quietly dropped.</dd>
+          <dt>What changed</dt><dd>Reference material that used to live in fragments became living infrastructure researchers and clinicians can cite.</dd>
+        </dl>
+        <a class="flag-card go" href="https://fadiman-atlas.vercel.app" target="_blank" rel="noopener">Open the atlas <svg width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+
+      <div class="card flag-card reveal">
+        <div class="toprow"><span class="chip chip--dom">cross-cutting</span><span class="live-tag"><span class="live-dot" aria-hidden="true"></span> Live</span></div>
+        <h3>AI Build Budget Calculator</h3>
+        <dl>
+          <dt>Context</dt><dd>Teams scoping an AI build had no honest cost anchor, so estimates swung wide and stalled decisions.</dd>
+          <dt>What was built</dt><dd>A phased calculator that returns hours, a cost range, and tax math across ten phases, with a paid practitioner tier.</dd>
+          <dt>What changed</dt><dd>A vague idea turns into a defensible number, and the tool captures a lead with email confirmation on the way through.</dd>
+        </dl>
+        <a class="flag-card go" href="https://ai-budget-calc.vercel.app" target="_blank" rel="noopener">Open the calculator <svg width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+
+      <div class="card flag-card reveal">
+        <div class="toprow"><span class="chip chip--dom">cross-cutting</span><span class="live-tag"><span class="live-dot" aria-hidden="true"></span> Live</span></div>
+        <h3>Regulatory Intelligence monitor suite</h3>
+        <dl>
+          <dt>Context</dt><dd>Regulated operators watch surfaces that move on their own schedules: drug scheduling, AI governance, psilocybin licensing, platform suppression, legal-AI professional responsibility, drug-policy reform, and startup legal risk. Read by hand, a shift lands before anyone catches it.</dd>
+          <dt>What was built</dt><dd>One weekly-sweep engine pointed at seven regulatory surfaces, each running as its own live dashboard: DEA Tracker, AI Governance Tracker, Psych Ops Intel, Suppression Sweep, Legal AI Monitor, Transform Observatory, and a Startup Legal Risk Monitor built for a stealth legal-AI startup. Same engine, seven beats, each reading primary sources.</dd>
+          <dt>What changed</dt><dd>Seven regulatory beats now resolve on a set cadence, each sweep landing as a dated dashboard a compliance, legal, or policy team can act on instead of a folder of open tabs.</dd>
+        </dl>
+        <a class="flag-card go" href="https://aloha-dea-tracker.vercel.app" target="_blank" rel="noopener">Open the anchor tracker <svg width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+
+      <div class="card flag-card reveal">
+        <div class="toprow"><span class="chip chip--dom">education</span><span class="live-tag"><span class="live-dot" aria-hidden="true"></span> Live</span></div>
+        <h3>AI is a Piece of Cake</h3>
+        <dl>
+          <dt>Context</dt><dd>Non-technical professionals who want to learn AI mostly find material written for engineers, with no plain entry point and no reason to come back next week.</dd>
+          <dt>What was built</dt><dd>An AI education newsletter and platform aimed at non-technical readers, organized into four fixed sections so each issue lands in the same shape.</dd>
+          <dt>What changed</dt><dd>A recurring, structured place for people without a technical background to build AI literacy at a steady pace, rather than one-off explainers that assume the reader already knows the jargon.</dd>
+        </dl>
+        <a class="flag-card go" href="https://aiapc-site.vercel.app" target="_blank" rel="noopener">Open the platform <svg width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+
+      <div class="card flag-card reveal">
+        <div class="toprow"><span class="chip chip--dom">legal AI</span><span class="live-tag"><span class="live-dot" aria-hidden="true"></span> Live</span></div>
+        <h3>Citation Verifier</h3>
+        <dl>
+          <dt>Context</dt><dd>AI-assisted legal drafting can surface a citation that reads clean but points at a case that does not exist or a reporter volume that could not hold it, and a fabricated cite in a filing is an expensive mistake.</dd>
+          <dt>What was built</dt><dd>A free on-site diagnostic that checks a citation, flags fake and structurally impossible cites, shows each check it ran, and states plainly what it can and cannot conclude. It is the same verifier logic that sits inside the Trust-Safe console, offered on its own.</dd>
+          <dt>What changed</dt><dd>A drafter can screen a citation before it reaches a filing, with the reasoning visible rather than a single pass-or-fail verdict.</dd>
+        </dl>
+        <a class="flag-card go" href="/tools">Open the free tools <svg width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+
+      <div class="card flag-card reveal">
+        <div class="toprow"><span class="chip chip--dom">law careers</span><span class="live-tag"><span class="live-dot" aria-hidden="true"></span> Live</span></div>
+        <h3>FlexJD SBA Resource Hub</h3>
+        <dl>
+          <dt>Context</dt><dd>Northeastern Law's remote FlexJD cohort learns at a distance, so the informal signals a full-time student picks up on campus, which fellowships are open, which observance the school is marking this month, what a first-year needs to know, reach the remote students last or not at all.</dd>
+          <dt>What was built</dt><dd>A student-maintained resource hub for the cohort, carrying a newsletter, an opportunity tracker, a student guide, and monthly awareness campaigns, each tied to the law behind the observance it marks. Built by RN as a student for her own cohort, not a client engagement.</dd>
+          <dt>What changed</dt><dd>Remote FlexJD students get one standing place for the opportunities and orientation that used to move by word of mouth, kept current on a schedule instead of surfacing by luck.</dd>
+        </dl>
+        <a class="flag-card go" href="https://flexjd-site.vercel.app" target="_blank" rel="noopener">Open the hub <svg width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+
+      <div class="card flag-card reveal">
+        <div class="toprow"><span class="chip chip--dom">AI governance</span><span class="live-tag"><span class="live-dot" aria-hidden="true"></span> Live</span></div>
+        <h3>Trust-Safe Twins</h3>
+        <dl>
+          <dt>Context</dt><dd>Teams want an AI twin that can speak for a person or a brand, but a twin with no controls can answer where it was never authorized and pass for human, which is the exact failure a regulated operator cannot carry.</dd>
+          <dt>What was built</dt><dd>A governed AI-twin product line with a working sales-twin prototype, wired with consent, provenance, and disclosure controls, so a twin speaks only where it is authorized and marks plainly what it is.</dd>
+          <dt>What changed</dt><dd>The governance sits inside the product rather than in a policy document beside it, so a twin ships with its consent scope and its disclosure already enforced instead of promised.</dd>
+        </dl>
+        <a class="flag-card go" href="/twins">Open the twins hub <svg width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+
+      <div class="card flag-card reveal">
+        <div class="toprow"><span class="chip chip--dom">psychedelics</span><span class="live-tag"><span class="live-dot" aria-hidden="true"></span> Live</span></div>
+        <h3>Transform Observatory</h3>
+        <dl>
+          <dt>Context</dt><dd>Drug-policy reform moves across many jurisdictions at once, and the people tracking it have no scored way to tell a real shift from noise or to compare one reform against another on the same terms.</dd>
+          <dt>What was built</dt><dd>A market-intelligence dashboard in the Regulatory Intelligence suite, running the same weekly-sweep engine and scoring reform signals against the Steve Rolles reform frameworks so each move lands on a shared scale.</dd>
+          <dt>What changed</dt><dd>Reform activity becomes a dated, scored read a policy or operator team can act on, rather than a scatter of headlines with no common measure.</dd>
+        </dl>
+        <a class="flag-card go" href="https://transform-observatory.vercel.app" target="_blank" rel="noopener">Open the observatory <svg width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CATALOG -->
+<section class="section" id="catalog" aria-labelledby="cat-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The full catalog</p>
+      <h2 class="h2" id="cat-h">Every build, grouped by type</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">On-site builds open here; builds on their own deployments open in a new tab, marked with a cue. Each card lists what the build does and who or what it serves.</p>
+    </div>
+
+    <!-- 1. INTERACTIVE TOOLS -->
+    <div class="cat-head reveal">
+      <h3 id="cat-tools">1 · Interactive tools &amp; assessments</h3>
+      <span class="n">assess your own readiness or risk in the browser</span>
+    </div>
+    <div class="grid grid-3">
+      <a class="card card--hover tool-card reveal" href="/tools/trust-safe-console" aria-describedby="cat-tools">
+        <div class="chip-row"><span class="live-tag"><span class="live-dot" aria-hidden="true"></span> Live</span><span class="chip chip--dom">legal AI</span><span class="cbadge">5 tabs</span></div>
+        <h4>Trust-Safe AI Operating Layer</h4>
+        <p>A legal-AI console for orchestration, citation verification, governance, evaluation, and adoption, backed by a real verifier engine that catches fake and impossible cites and generates an ABA-512 policy.</p>
+        <p class="who">Firms and legal teams · built firm-agnostic</p>
+        <span class="go">Open the console →</span>
+      </a>
+      <a class="card card--hover tool-card reveal" href="/tools" aria-describedby="cat-tools">
+        <div class="chip-row"><span class="live-tag"><span class="live-dot" aria-hidden="true"></span> Live</span><span class="chip chip--dom">cross-cutting</span><span class="cbadge">9 tools</span></div>
+        <h4>Aloha AI interactive tools</h4>
+        <p>Nine on-site diagnostics that run in the browser: Citation Verifier, Governance Readiness, Policy Generator, Regulated Claims Checker, Workflow Audit, Bill Analyzer, Knowledge Base Readiness, AI-Readiness Scorecard, and Practice Readiness.</p>
+        <p class="who">Firms, founders, and compliance teams</p>
+        <span class="go">See all free tools →</span>
+      </a>
+      <a class="card card--hover tool-card reveal" href="https://ai-budget-calc.vercel.app" target="_blank" rel="noopener" aria-describedby="cat-tools">
+        <div class="chip-row"><span class="live-tag"><span class="live-dot" aria-hidden="true"></span> Live</span><span class="chip chip--dom">cross-cutting</span>
+          <span class="ext-cue"><svg width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> New tab</span></div>
+        <h4>AI Build Budget Calculator</h4>
+        <p>Scopes an AI build across ten phases: hours, a cost range, and tax math, with a paid practitioner tier. Turns a vague idea into a defensible number.</p>
+        <p class="who">Founders and teams scoping a build</p>
+        <span class="go">Open in new tab →</span>
+      </a>
+      <a class="card card--hover tool-card reveal" href="https://rn-collins.github.io/aloha-ai-consulting/sl3-legal-diagnostic.html" target="_blank" rel="noopener" aria-describedby="cat-tools">
+        <div class="chip-row"><span class="live-tag"><span class="live-dot" aria-hidden="true"></span> Live</span><span class="chip chip--dom">legal AI</span>
+          <span class="ext-cue"><svg width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> New tab</span></div>
+        <h4>Legal AI Workflow Diagnostic</h4>
+        <p>A five-question readiness diagnostic that scores where a legal AI workflow leaks and maps you to an engagement path.</p>
+        <p class="who">Firms and legal teams</p>
+        <span class="go">Open in new tab →</span>
+      </a>
+      <a class="card card--hover tool-card reveal" href="https://aloha-governance-audit.vercel.app" target="_blank" rel="noopener" aria-describedby="cat-tools">
+        <div class="chip-row"><span class="live-tag"><span class="live-dot" aria-hidden="true"></span> Live</span><span class="chip chip--dom">culture-brand</span>
+          <span class="ext-cue"><svg width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> New tab</span></div>
+        <h4>Culture Governance Audit</h4>
+        <p>Industry and activation inputs return an AI and synthetic-media risk assessment, checked against live FTC and EU AI Act signals. Built in the OK COOL engagement.</p>
+        <p class="who">Brands, agencies, and creative teams</p>
+        <span class="go">Open in new tab →</span>
+      </a>
+      <a class="card card--hover tool-card reveal" href="https://psych-ops-directory.vercel.app" target="_blank" rel="noopener" aria-describedby="cat-tools">
+        <div class="chip-row"><span class="live-tag"><span class="live-dot" aria-hidden="true"></span> Live</span><span class="chip chip--dom">psychedelics</span>
+          <span class="ext-cue"><svg width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> New tab</span></div>
+        <h4>Psych Ops Directory</h4>
+        <p>177+ listings across 23 categories with tiered verification, search, compare, and an admin panel behind it.</p>
+        <p class="who">Operators, funders, and clients</p>
+        <span class="go">Open in new tab →</span>
+      </a>
+      <a class="card card--hover tool-card reveal" href="https://dru-assessment.vercel.app" target="_blank" rel="noopener" aria-describedby="cat-tools">
+        <div class="chip-row"><span class="live-tag"><span class="live-dot" aria-hidden="true"></span> Live</span><span class="chip chip--dom">cannabis</span>
+          <span class="ext-cue"><svg width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> New tab</span></div>
+        <h4>Cannabis Education Impact Assessment</h4>
+        <p>An anonymous pre and post assessment for Project Destigmatized Healthcare, measuring how a cannabis-in-healthcare session shifts understanding.</p>
+        <p class="who">Event audiences · research use only</p>
+        <span class="go">Open in new tab →</span>
+      </a>
+    </div>
+    <p class="small muted reveal" style="margin-top:var(--s4)">The nine on-site diagnostics above share one method: each shows its checks and states what it can and cannot conclude. <a href="/tools">See all free tools, grouped by category →</a></p>
+
+    <!-- 2. INTELLIGENCE DASHBOARDS -->
+    <div class="cat-head reveal">
+      <h3 id="cat-mon">2 · Intelligence dashboards</h3>
+      <span class="n">primary-source sweeps, resolved into a decision</span>
+    </div>
+    <div class="grid grid-3">
+      <a class="card card--hover tool-card reveal" href="https://aloha-dea-tracker.vercel.app" target="_blank" rel="noopener" aria-describedby="cat-mon">
+        <div class="chip-row"><span class="live-tag"><span class="live-dot" aria-hidden="true"></span> Live</span><span class="chip chip--dom">cross-cutting</span><span class="cbadge">7 monitors</span>
+          <span class="ext-cue"><svg width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> New tab</span></div>
+        <h4>Regulatory Intelligence monitor suite</h4>
+        <p>One weekly-sweep engine pointed at seven regulatory surfaces, each a live dashboard on its own beat.</p>
+        <p class="card-sub"><b>The seven:</b> <a href="https://aloha-dea-tracker.vercel.app" target="_blank" rel="noopener">DEA Tracker</a>, <a href="https://aloha-ai-governance.vercel.app" target="_blank" rel="noopener">AI Governance Tracker</a>, <a href="https://psychops-intel.vercel.app" target="_blank" rel="noopener">Psych Ops Intel</a>, <a href="https://aloha-suppression-sweep.vercel.app" target="_blank" rel="noopener">Suppression Sweep</a>, <a href="https://aloha-legal-ai-monitor.vercel.app" target="_blank" rel="noopener">Legal AI Monitor</a>, <a href="https://transform-observatory.vercel.app" target="_blank" rel="noopener">Transform Observatory</a>, <a href="https://legal-risk-monitor.vercel.app" target="_blank" rel="noopener">Startup Legal Risk Monitor</a>.</p>
+        <p class="who">Compliance, legal, policy, and operator teams</p>
+        <span class="go">Open the anchor tracker →</span>
+      </a>
+      <a class="card card--hover tool-card reveal" href="https://bm-intel-ivory.vercel.app" target="_blank" rel="noopener" aria-describedby="cat-mon">
+        <div class="chip-row"><span class="live-tag"><span class="live-dot" aria-hidden="true"></span> Live</span><span class="chip chip--dom">legal AI</span>
+          <span class="ext-cue"><svg width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> New tab</span></div>
+        <h4>Burgermeister Intel</h4>
+        <p>A custom 27-signal expansion-risk dashboard across the US, UK, Germany, and Poland, heat-scored with outside-counsel flags.</p>
+        <p class="who">Burgermeister · paying client build</p>
+        <span class="go">Open in new tab →</span>
+      </a>
+      <a class="card card--hover tool-card reveal" href="https://aloha-culture-monitor.vercel.app" target="_blank" rel="noopener" aria-describedby="cat-mon">
+        <div class="chip-row"><span class="live-tag"><span class="live-dot" aria-hidden="true"></span> Live</span><span class="chip chip--dom">culture-brand</span>
+          <span class="ext-cue"><svg width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> New tab</span></div>
+        <h4>Culture Intelligence Monitor</h4>
+        <p>Reads screen-culture signals into consumer-behavior intelligence. One of the standalone tools from the OK COOL engagement.</p>
+        <p class="who">Brand and cultural strategy teams</p>
+        <span class="go">Open in new tab →</span>
+      </a>
+      <a class="card card--hover tool-card reveal" href="https://aloha-behavioral-intelligence.vercel.app" target="_blank" rel="noopener" aria-describedby="cat-mon">
+        <div class="chip-row"><span class="live-tag"><span class="live-dot" aria-hidden="true"></span> Live</span><span class="chip chip--dom">culture-brand</span>
+          <span class="ext-cue"><svg width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> New tab</span></div>
+        <h4>Behavioral Intelligence Layer</h4>
+        <p>Explains the neuroscience of why culture moments drive behavior, built to be white-labeled. Also from the OK COOL engagement.</p>
+        <p class="who">Agencies and brand teams</p>
+        <span class="go">Open in new tab →</span>
+      </a>
+    </div>
+
+    <!-- 3. KNOWLEDGE PLATFORMS -->
+    <div class="cat-head reveal">
+      <h3 id="cat-know">3 · Knowledge platforms &amp; atlases</h3>
+      <span class="n">structured references clinicians, lawyers, and policy teams can trust</span>
+    </div>
+    <div class="grid grid-3">
+      <a class="card card--hover tool-card reveal" href="https://fadiman-atlas.vercel.app" target="_blank" rel="noopener" aria-describedby="cat-know">
+        <div class="chip-row"><span class="live-tag"><span class="live-dot" aria-hidden="true"></span> Live</span><span class="chip chip--dom">psychedelics / cannabis / legal AI</span><span class="cbadge">5 builds</span>
+          <span class="ext-cue"><svg width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> New tab</span></div>
+        <h4>Content atlases &amp; libraries</h4>
+        <p>Five long-lived reference builds, anchored by the Fadiman Knowledge Atlas: 132 entries across 34 years, on a structured schema.</p>
+        <p class="card-sub"><b>The five:</b> <a href="https://fadiman-atlas.vercel.app" target="_blank" rel="noopener">Fadiman Atlas</a>, <a href="https://entheogen-atlas.vercel.app" target="_blank" rel="noopener">Entheogen Atlas v5</a>, <a href="https://psychonaut-bookworm.vercel.app" target="_blank" rel="noopener">Psychonaut Bookworm</a> (Fat Nugs Magazine), <a href="https://destig-toolkit.vercel.app" target="_blank" rel="noopener">Destigmatization Toolkit</a> (Antithesis Law), <a href="https://law-communication-library.vercel.app" target="_blank" rel="noopener">Law Communication Library</a> (143 articles, Antithesis Law).</p>
+        <p class="who">Researchers, clinicians, and partner orgs</p>
+        <span class="go">Open the anchor atlas →</span>
+      </a>
+      <a class="card card--hover tool-card reveal" href="https://eol-care-demo.vercel.app" target="_blank" rel="noopener" aria-describedby="cat-know">
+        <div class="chip-row"><span class="live-tag"><span class="live-dot" aria-hidden="true"></span> Live</span><span class="chip chip--dom">psychedelics</span>
+          <span class="ext-cue"><svg width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> New tab</span></div>
+        <h4>EOL Care AI Knowledge System</h4>
+        <p>A five-layer psychedelic end-of-life care research system, built as an $8K sprint proof of concept.</p>
+        <p class="who">Clinical research and care teams</p>
+        <span class="go">Open in new tab →</span>
+      </a>
+      <a class="card card--hover tool-card reveal" href="https://aiapc-site.vercel.app" target="_blank" rel="noopener" aria-describedby="cat-know">
+        <div class="chip-row"><span class="live-tag"><span class="live-dot" aria-hidden="true"></span> Live</span><span class="chip chip--dom">cross-cutting</span>
+          <span class="ext-cue"><svg width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> New tab</span></div>
+        <h4>AI is a Piece of Cake</h4>
+        <p>An AI education newsletter and platform for non-technical professionals, organized into four fixed sections.</p>
+        <p class="who">Non-technical professionals learning AI</p>
+        <span class="go">Open in new tab →</span>
+      </a>
+    </div>
+
+    <!-- 4. CLIENT & PARTNER BUILDS -->
+    <div class="cat-head reveal">
+      <h3 id="cat-client">4 · Client &amp; partner builds</h3>
+      <span class="n">made for a named audience, not a template</span>
+    </div>
+    <div class="grid grid-3">
+      <a class="card card--hover tool-card reveal" href="https://aloha-third-asset.vercel.app" target="_blank" rel="noopener" aria-describedby="cat-client">
+        <div class="chip-row"><span class="live-tag"><span class="live-dot" aria-hidden="true"></span> Live</span><span class="chip chip--dom">culture-brand</span><span class="cbadge">6 builds</span>
+          <span class="ext-cue"><svg width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> New tab</span></div>
+        <h4>OK COOL engagement</h4>
+        <p>A six-build package for the OK COOL agency, one adapted for The Set Set.</p>
+        <p class="card-sub"><b>Three ship as standalone tools shown above:</b> the Culture Governance Audit, the Culture Intelligence Monitor, and the Behavioral Intelligence Layer. <b>This card links the other three:</b> a creator-partnership governance decision tree, <a href="https://aloha-encoding-effect.vercel.app" target="_blank" rel="noopener">the Encoding Effect</a> research note, and <a href="https://aloha-third-asset.vercel.app" target="_blank" rel="noopener">the Third Asset</a> long-form pitch. The creator-rights decision tree is in development.</p>
+        <p class="who">OK COOL · The Set Set</p>
+        <span class="go">Open the Third Asset →</span>
+      </a>
+      <a class="card card--hover tool-card reveal" href="https://rn-collins.github.io/aloha-ai-consulting/" target="_blank" rel="noopener" aria-describedby="cat-client">
+        <div class="chip-row"><span class="live-tag"><span class="live-dot" aria-hidden="true"></span> Live</span><span class="chip chip--dom">cross-cutting</span><span class="cbadge">4 pages</span>
+          <span class="ext-cue"><svg width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> New tab</span></div>
+        <h4>Service one-pagers</h4>
+        <p>Four static outreach one-pagers on GitHub Pages, each footer-linked to a matching live monitor as proof of work.</p>
+        <p class="card-sub"><b>The four:</b> <a href="https://rn-collins.github.io/aloha-ai-consulting/sl1-ai-content-overview.html" target="_blank" rel="noopener">AI Content System</a>, <a href="https://rn-collins.github.io/aloha-ai-consulting/sl2-pharma-sample.html" target="_blank" rel="noopener">Regulatory Intelligence for Pharma</a>, <a href="https://rn-collins.github.io/aloha-ai-consulting/sl2-legaltech-overview.html" target="_blank" rel="noopener">AI Governance for LegalTech</a>, and the interactive <a href="https://rn-collins.github.io/aloha-ai-consulting/sl3-legal-diagnostic.html" target="_blank" rel="noopener">Legal AI Workflow Diagnostic</a>.</p>
+        <p class="who">Outreach collateral · prospective clients</p>
+        <span class="go">Open the one-pager hub →</span>
+      </a>
+    </div>
+
+    <!-- 5. PRODUCT-PLATFORMS -->
+    <div class="cat-head reveal">
+      <h3 id="cat-prod">5 · Product-platforms</h3>
+      <span class="n">standing sites and product lines, each its own property</span>
+    </div>
+    <div class="grid grid-3">
+      <a class="card card--hover tool-card reveal" href="https://nsag-site.vercel.app" target="_blank" rel="noopener" aria-describedby="cat-prod">
+        <div class="chip-row"><span class="live-tag"><span class="live-dot" aria-hidden="true"></span> Live</span><span class="chip chip--dom">cross-cutting</span><span class="cbadge">15 modules</span>
+          <span class="ext-cue"><svg width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> New tab</span></div>
+        <h4>NSAG framework</h4>
+        <p>The Nervous-System-Aware Governance framework site, plus fifteen standalone module assessment tools covering trauma-informed legal space, AI legal navigation, psychedelic harm reduction, cannabis public-health infrastructure, biophilic civic design, and more.</p>
+        <p class="who">Advisory clients and practitioners</p>
+        <span class="go">Open in new tab →</span>
+      </a>
+      <a class="card card--hover tool-card reveal" href="https://clerking-site.vercel.app" target="_blank" rel="noopener" aria-describedby="cat-prod">
+        <div class="chip-row"><span class="live-tag"><span class="live-dot" aria-hidden="true"></span> Live</span><span class="chip chip--dom">law careers</span>
+          <span class="ext-cue"><svg width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> New tab</span></div>
+        <h4>Clerking</h4>
+        <p>A law-clerk job-placement platform: attorney network, candidate profiles, a 216-document template library, and analytics.</p>
+        <p class="who">Law students, clerks, and firms</p>
+        <span class="go">Open in new tab →</span>
+      </a>
+      <a class="card card--hover tool-card reveal" href="https://set-for-life.vercel.app" target="_blank" rel="noopener" aria-describedby="cat-prod">
+        <div class="chip-row"><span class="live-tag"><span class="live-dot" aria-hidden="true"></span> Live</span><span class="chip chip--dom">law careers</span>
+          <span class="ext-cue"><svg width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> New tab</span></div>
+        <h4>Set for Life</h4>
+        <p>A law-school prep course and resource hub with email-gated content, enrollment and cohort capture, and full analytics.</p>
+        <p class="who">Pre-law and law students</p>
+        <span class="go">Open in new tab →</span>
+      </a>
+      <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app" target="_blank" rel="noopener" aria-describedby="cat-prod">
+        <div class="chip-row"><span class="live-tag"><span class="live-dot" aria-hidden="true"></span> Live</span><span class="chip chip--dom">cross-cutting</span>
+          <span class="ext-cue"><svg width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> New tab</span></div>
+        <h4>Aloha AI Consulting site</h4>
+        <p>The main consulting site: four service lines, eleven products, sample deliverables, a waitlist, and buyer orientation.</p>
+        <p class="who">Prospective clients and partners</p>
+        <span class="go">Open in new tab →</span>
+      </a>
+      <a class="card card--hover tool-card reveal" href="https://rn-portfolio-khaki.vercel.app" target="_blank" rel="noopener" aria-describedby="cat-prod">
+        <div class="chip-row"><span class="live-tag"><span class="live-dot" aria-hidden="true"></span> Live</span><span class="chip chip--dom">cross-cutting</span>
+          <span class="ext-cue"><svg width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> New tab</span></div>
+        <h4>RN Builds portfolio</h4>
+        <p>The storefront itself: a curated index of the live work, with a description and a live URL on every card.</p>
+        <p class="who">Anyone browsing the full body of work</p>
+        <span class="go">Open in new tab →</span>
+      </a>
+      <a class="card card--hover tool-card reveal" href="https://flexjd-site.vercel.app" target="_blank" rel="noopener" aria-describedby="cat-prod">
+        <div class="chip-row"><span class="live-tag"><span class="live-dot" aria-hidden="true"></span> Live</span><span class="chip chip--dom">law careers</span>
+          <span class="ext-cue"><svg width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> New tab</span></div>
+        <h4>FlexJD SBA Resource Hub</h4>
+        <p>A student-maintained resource hub for Northeastern Law's remote FlexJD cohort: newsletter, opportunity tracker, student guide, and monthly awareness campaigns tied to the law behind each observance.</p>
+        <p class="who">Northeastern Law FlexJD students</p>
+        <span class="go">Open in new tab →</span>
+      </a>
+      <a class="card card--hover tool-card reveal" href="/twins" aria-describedby="cat-prod">
+        <div class="chip-row"><span class="live-tag"><span class="live-dot" aria-hidden="true"></span> Live</span><span class="chip chip--dom">AI governance</span></div>
+        <h4>Trust-Safe Twins</h4>
+        <p>A governed AI-twin product line with a working sales-twin prototype, built with consent, provenance, and disclosure controls so a twin speaks only where it is authorized and marks what it is.</p>
+        <p class="who">Regulated operators and brands</p>
+        <span class="go">Open the twins hub →</span>
+      </a>
+      <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/trust-stack" target="_blank" rel="noopener" aria-describedby="cat-prod">
+        <div class="chip-row"><span class="dev-tag">In development</span><span class="chip chip--dom">AI governance</span>
+          <span class="ext-cue"><svg width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> New tab</span></div>
+        <h4>Trust Stack</h4>
+        <p>A productized AI-governance and trust tooling line of six product layers, sibling to the Trust-Safe Twins line shown above. Carried as a named product line while individual products firm up their own live URLs.</p>
+        <p class="who">Regulated operators and brands</p>
+        <span class="go">Open the overview →</span>
+      </a>
+    </div>
+
+    <!-- 6. BRAND VENTURES & ADVISORY SITES -->
+    <div class="cat-head reveal">
+      <h3 id="cat-brand">6 · Brand ventures &amp; advisory sites</h3>
+      <span class="n">fully built, marked Launching while a deploy refresh brings them live</span>
+    </div>
+    <p class="small muted reveal" style="max-width:74ch;margin-bottom:var(--s4)">These nine are real, hand-built sites, each in the same 400–1,700 line range as the rest of the catalog. An account-wide deploy issue on the hosting side is being worked through, so links are held back rather than pointed at a page that would not load. Status pills read Launching until that clears.</p>
+    <div class="grid grid-3">
+      <div class="card tool-card reveal" aria-describedby="cat-brand">
+        <div class="chip-row"><span class="dev-tag">Launching</span><span class="chip chip--dom">Neuroscience</span></div>
+        <h4>NARCH — Neuroarchitecture Advisory</h4>
+        <p>Evidence-based built-environment advisory, anchored by a Biophilic Evidence Audit.</p>
+        <p class="who">Architects, developers, and civic design teams</p>
+      </div>
+      <div class="card tool-card reveal" aria-describedby="cat-brand">
+        <div class="chip-row"><span class="dev-tag">Launching</span><span class="chip chip--dom">Neuroscience</span></div>
+        <h4>WNH — Women's Neuro-Health</h4>
+        <p>Sex-disaggregated neuroscience on cannabis and psychedelics, written for women and for the clinicians treating them.</p>
+        <p class="who">Patients, clinicians, and researchers</p>
+      </div>
+      <div class="card tool-card reveal" aria-describedby="cat-brand">
+        <div class="chip-row"><span class="dev-tag">Launching</span><span class="chip chip--dom">AI governance</span></div>
+        <h4>GAPI — AI Agent Governance Infrastructure</h4>
+        <p>A 14-dimension NSAG governance assessment for AI agents, with a certification mark on the other end.</p>
+        <p class="who">AI vendors and the teams that vet them</p>
+      </div>
+      <div class="card tool-card reveal" aria-describedby="cat-brand">
+        <div class="chip-row"><span class="dev-tag">Launching</span><span class="chip chip--dom">AI governance</span></div>
+        <h4>SPORT — Nervous-System-Aware Athletic Governance</h4>
+        <p>The NSAG framework applied to athletic institutions, covering how governance and nervous-system awareness intersect in sport.</p>
+        <p class="who">Athletic departments and governing bodies</p>
+      </div>
+      <div class="card tool-card reveal" aria-describedby="cat-brand">
+        <div class="chip-row"><span class="dev-tag">Launching</span><span class="chip chip--dom">Regulatory / education</span></div>
+        <h4>REGAC — Regulatory Compliance Intensive</h4>
+        <p>A regulatory compliance training program built around how the rules actually get applied, not just cited.</p>
+        <p class="who">Compliance teams and operators</p>
+      </div>
+      <div class="card tool-card reveal" aria-describedby="cat-brand">
+        <div class="chip-row"><span class="dev-tag">Launching</span><span class="chip chip--dom">Business / ops</span></div>
+        <h4>OPFOS — One-Person-Firm OS</h4>
+        <p>An operating system for solo practices: the structure a one-person firm needs to run like a real operation.</p>
+        <p class="who">Solo practitioners and small firm owners</p>
+      </div>
+      <div class="card tool-card reveal" aria-describedby="cat-brand">
+        <div class="chip-row"><span class="dev-tag">Launching</span><span class="chip chip--dom">Neuroscience / education</span></div>
+        <h4>AI &amp; Your Child's Brain</h4>
+        <p>A 90-minute parent workshop on AI and child brain development, taught by a neuroscientist.</p>
+        <p class="who">Parents and school communities</p>
+      </div>
+      <div class="card tool-card reveal" aria-describedby="cat-brand">
+        <div class="chip-row"><span class="dev-tag">Launching</span><span class="chip chip--dom">Education</span></div>
+        <h4>Myelin CE</h4>
+        <p>Accredited continuing education on AI, neuroscience, ethics, and psychedelic care, built for counselors, psychologists, and attorneys.</p>
+        <p class="who">Counselors, psychologists, and attorneys</p>
+      </div>
+      <div class="card tool-card reveal" aria-describedby="cat-brand">
+        <div class="chip-row"><span class="dev-tag">Launching</span><span class="chip chip--dom">AI trust &amp; safety</span></div>
+        <h4>Provenance Verify — Source Integrity Audit</h4>
+        <p>A citation and source provenance verification tool, checking where a claim actually comes from before it gets cited.</p>
+        <p class="who">Researchers, publishers, and legal teams</p>
+      </div>
+    </div>
+
+    <p class="small muted reveal" style="margin-top:var(--s7);max-width:74ch">This catalog is the curated project layer over 40+ live deployments. Nine brand shells that never got a real production build stay off the page until they hold real work. The <a href="https://rn-portfolio-khaki.vercel.app" target="_blank" rel="noopener">full RN Builds portfolio</a> carries the complete deployment-by-deployment list with live URLs.</p>
+  </div>
+</section>
+
+<!-- BUILDS → SERVICES -->
+<section class="section section--ink" id="start" aria-labelledby="offer-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Builds → services</p>
+      <h2 class="h2" id="offer-h">This is the kind of build Aloha AI ships</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">Everything on this page started the same way: a regulated or high-complexity problem, a primary source that had to be right, and a system built around how people actually trust and use it. A client build routes the same method through a private backend, keeps credentials off the client, writes a signed audit record, and integrates with the tools your team already runs. Pick the build that looks like your problem, and that is where we start.</p>
+    </div>
+    <div class="grid grid-3 reveal">
+      <div class="card"><div class="card__ic" aria-hidden="true">1</div><h3>Find your pattern</h3><p class="small muted">A monitor, a tool, a knowledge platform, or a client dashboard. One of these shapes matches the job in front of you.</p></div>
+      <div class="card"><div class="card__ic" aria-hidden="true">2</div><h3>Book a scoping call</h3><p class="small muted">A short call to talk through what a governed, sourced version would cover for your organization.</p></div>
+      <div class="card"><div class="card__ic" aria-hidden="true">3</div><h3>Get it built</h3><p class="small muted">Most engagements start with a Systems Audit, the fastest proof, and it points to the build worth doing first.</p></div>
+    </div>
+    <div class="hero__cta reveal" style="margin-top:var(--s5)">
+      <a class="btn btn--primary" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a build / scoping call →</a>
+      <a class="btn btn--ghost" href="index.html#services">See the four service lines</a>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="section section--paper" id="newsletter" aria-labelledby="newsletter-h">
+  <div class="wrap" style="max-width:640px;text-align:center">
+    <p class="eyebrow" style="justify-content:center">Newsletter</p>
+    <h2 class="h2" id="newsletter-h">Aloha AI Dispatch</h2>
+    <p class="lead" style="margin:var(--s3) auto var(--s5)">Build breakdowns like the ones above, new tools, and what is moving in AI for regulated work.</p>
+    <!-- BEEHIIV-EMBED-START (replace this whole block with your Beehiiv embed code) -->
+    <form class="nl-form" id="nlForm" action="#" novalidate>
+      <label for="nlEmail" class="nl-label">Email address</label>
+      <div class="nl-row">
+        <input type="email" id="nlEmail" name="email" class="nl-input" placeholder="you@company.com" required autocomplete="email">
+        <button type="submit" class="btn btn--primary">Subscribe →</button>
+      </div>
+      <p class="nl-note" id="nlNote" role="status" hidden>Connect Beehiiv to enable signups.</p>
+      <p class="nl-fine">Placeholder form; not yet wired to a mailing provider. No data is sent or stored.</p>
+    </form>
+    <!-- BEEHIIV-EMBED-END -->
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section--ink" id="contact" aria-labelledby="cta-h">
+  <div class="wrap" style="text-align:center">
+    <p class="eyebrow">Aloha AI · Honolulu</p>
+    <h2 class="h2" id="cta-h" style="max-width:28ch;margin-inline:auto">You have seen the wall. Let's build yours.</h2>
+    <p class="lead" style="margin:var(--s4) auto var(--s5);text-align:center">If one of these builds looks like the problem in front of you, that is the whole point. Book a scoping call and we work out what a governed, sourced version would cover for your team.</p>
+    <div style="display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn--primary" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Work with me on a build →</a>
+      <a class="btn btn--ghost" href="/tools">Try a free tool first</a>
+    </div>
+    <p class="small" style="margin-top:var(--s5);color:var(--muted-on-ink)">Prefer email? <a href="#" data-email style="color:var(--teal-mint)">Email RN</a> &nbsp;·&nbsp; or connect on <a href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noopener" style="color:var(--teal-mint)">LinkedIn</a></p>
+    <p id="emailReveal" hidden style="margin-top:.5rem;font-family:var(--mono);font-size:.8rem;color:#CFDAD5"></p>
+  </div>
+</section>
+</main>
+
+<footer class="footer" aria-labelledby="foot-h">
+  <div class="wrap">
+    <h2 id="foot-h" class="small" style="position:absolute;left:-999px">Site footer</h2>
+    <div class="footer__grid">
+      <div>
+        <a class="nav__brand" href="index.html" style="color:var(--cream)" aria-label="Aloha AI home"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#7FE0C4"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#7FE0C4" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg> Aloha&nbsp;AI</a>
+        <p class="small" style="margin-top:var(--s3);max-width:38ch;color:#9FB6AE">AI implementation built around how humans actually trust and use it, for regulated or reputation-sensitive professions.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="builds.html">Builds</a></li>
+          <li><a href="/tools">All free tools</a></li>
+          <li><a href="index.html#tools">Live monitors</a></li>
+          <li><a href="/university">University</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="legal-ai.html">Legal AI Workflow</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Practice</h4>
+        <ul>
+          <li><a href="about.html">About RN Collins</a></li>
+          <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a call</a></li>
+          <li><a href="https://rn-portfolio-khaki.vercel.app" target="_blank" rel="noopener">Portfolio → RN Builds</a></li>
+          <li><a href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="disc small">The builds shown here are live deployments; some were built with or for named partner organizations, as noted. Aloha AI provides regulatory intelligence and AI systems, not legal advice. RN Collins is a JD candidate, not a licensed attorney; nothing here is legal or tax advice or an attorney–client relationship.</p>
+    <p class="fine">Aloha AI · a DBA of Rayven-Nikkita Collins LLC · Honolulu, HI · No tracking, no cookies · © 2026</p>
+  </div>
+</footer>
+
+<script>
+  /* nav burger + is-stuck */
+  (function(){var b=document.getElementById('burger'),l=document.getElementById('navlinks');
+  function set(o){b.setAttribute('aria-expanded',o);l.classList.toggle('open',o);b.setAttribute('aria-label',o?'Close menu':'Open menu');}
+  b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true');});
+  l.addEventListener('click',function(e){if(e.target.tagName==='A')set(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});})();
+  (function(){var u='collins.ra',dm='northeastern.edu',a=u+'@'+dm,su=encodeURIComponent('Aloha AI — builds inquiry');
+  document.querySelectorAll('[data-email]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();
+  try{navigator.clipboard&&navigator.clipboard.writeText(a);}catch(_){}
+  var o=document.getElementById('emailReveal');if(o){o.hidden=false;o.innerHTML='Copied ✓ &nbsp;<a href="mailto:'+a+'?subject='+su+'" style="color:#7FE0C4">'+a+'</a> &nbsp;·&nbsp; <a href="https://mail.google.com/mail/?view=cm&fs=1&to='+a+'&su='+su+'" target="_blank" rel="noopener" style="color:#7FE0C4">Open in Gmail</a>';}
+  window.location.href='mailto:'+a+'?subject='+su;});});})();
+  (function(){var nav=document.querySelector('.nav');if(!nav)return;var on=function(){nav.classList.toggle('is-stuck',window.scrollY>8);};on();window.addEventListener('scroll',on,{passive:true});})();
+  (function(){if(matchMedia('(prefers-reduced-motion:reduce)').matches){document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in');});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(e){io.observe(e);});})();
+  (function(){var f=document.getElementById('nlForm');if(!f)return;f.addEventListener('submit',function(e){e.preventDefault();var n=document.getElementById('nlNote');if(n)n.hidden=false;});})();
+</script>
+</body>
+</html>

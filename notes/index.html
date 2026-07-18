@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notes — essays and build notes on AI for regulated work — Aloha AI</title>
+<meta name="description" content="Notes by RN Collins: essays and build notes on designing AI systems for regulated and high-complexity work. Hallucination risk, AI workflow audits, regulatory intelligence, and governed operating layers.">
+<link rel="canonical" href="https://aloha-ai-consulting.vercel.app/notes">
+<meta name="theme-color" content="#14201C">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Notes — essays and build notes on AI for regulated work — Aloha AI">
+<meta property="og:description" content="Essays and build notes on designing AI systems for regulated and high-complexity work, by RN Collins.">
+<meta property="og:image" content="https://aloha-ai-consulting.vercel.app/og-image.png">
+<meta property="og:url" content="https://aloha-ai-consulting.vercel.app/notes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Notes — Aloha AI">
+<meta name="twitter:description" content="Essays and build notes on designing AI systems for regulated and high-complexity work.">
+<meta name="twitter:image" content="https://aloha-ai-consulting.vercel.app/og-image.png">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<script>document.documentElement.className+=' js';</script>
+<link rel="stylesheet" href="../aloha-ds.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Blog","name":"Aloha AI — Notes",
+"url":"https://aloha-ai-consulting.vercel.app/notes",
+"description":"Essays and build notes on designing AI systems for regulated and high-complexity work.",
+"author":{"@type":"Person","name":"RN Collins","jobTitle":"Founder, Aloha AI",
+"description":"Neuroscientist (MS), JD candidate, and AI systems builder for regulated industries"}}
+</script>
+<style>
+  .hero{position:relative;overflow:hidden;background:var(--grad-hero);
+    color:var(--cream);padding-block:clamp(56px,8vw,104px) clamp(44px,6vw,76px);border-bottom:3px solid var(--teal)}
+  .hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(127,224,196,.05) 1px,transparent 1px);
+    background-size:26px 26px;-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 70%);mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 70%);pointer-events:none}
+  .hero>.wrap{position:relative}
+  .hero .display{color:var(--cream);max-width:20ch;margin-bottom:var(--s4)}
+  .hero .kicker{color:var(--teal-mint)}
+  .hero .lead{color:#CFDAD5;max-width:62ch}
+  .hero em{color:var(--teal-mint);font-style:normal}
+  .livebadge{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:var(--fs-xs);
+    letter-spacing:.08em;text-transform:uppercase;color:#CDE7DF;border:1px solid #2F4A42;border-radius:var(--r-pill);padding:.34rem .72rem;margin-bottom:var(--s4)}
+  .livebadge .dot{width:7px;height:7px;border-radius:50%;background:var(--teal-mint);animation:pulse 2.2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(127,224,196,.5)}70%{box-shadow:0 0 0 7px rgba(127,224,196,0)}100%{box-shadow:0 0 0 0 rgba(127,224,196,0)}}
+  .sec-head{margin-bottom:var(--s6);max-width:72ch}
+  .sec-head .h2{margin-bottom:var(--s3)}
+  .chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:var(--s5)}
+  .chips .a{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.04em;color:#CDE7DF;
+    border:1px solid #2F4A42;border-radius:var(--r-pill);padding:.4rem .8rem;background:rgba(255,255,255,.03)}
+  .note-card{display:flex;flex-direction:column;height:100%;text-decoration:none;color:inherit}
+  .note-card .tag{font-family:var(--mono);font-size:.6rem;letter-spacing:.09em;text-transform:uppercase;color:var(--teal-d)}
+  .note-card h3{font-size:var(--fs-h3);margin:.35rem 0 .4rem;line-height:1.18}
+  .note-card p{font-size:.86rem;color:var(--muted);margin:0 0 .8rem}
+  .note-card .go{margin-top:auto;font-family:var(--mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;color:var(--teal-d)}
+  /* NEWSLETTER SIGNUP */
+  .nl-form{margin-top:var(--s2)}
+  .nl-label{display:block;font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem;text-align:left}
+  .nl-row{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center}
+  .nl-input{flex:1 1 240px;min-height:44px;padding:.66rem .8rem;border-radius:var(--r-sm);border:1px solid var(--line-2);background:#fff;color:var(--ink);font:inherit;font-size:.95rem}
+  .nl-input:focus-visible{box-shadow:var(--sh-focus);border-color:var(--teal)}
+  .nl-note{margin-top:.6rem;font-size:var(--fs-sm);color:var(--teal-d);font-weight:600}
+  .nl-fine{margin-top:.6rem;font-family:var(--mono);font-size:.7rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<a class="skip" href="#notes">Skip to the notes</a>
+
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="../index.html" aria-label="Aloha AI home">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#1B7A68"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#1B7A68" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      Aloha&nbsp;AI
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav__links" id="navlinks">
+        <li><a href="../index.html#services">Services</a></li><li><a href="/build-your-team.html">Build a team</a></li>
+        <li><a href="../index.html#moat">The moat</a></li>
+        <li><a href="../index.html#tools">Tools</a></li>
+        <li><a href="./index.html" aria-current="page">Notes</a></li>
+        <li><a href="/university">University</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../legal-ai.html">Legal AI</a></li>
+        <li class="nav__cta"><a class="btn btn--primary btn--sm" href="../index.html#start">Get started →</a></li>
+      </ul>
+    </nav>
+    <button class="nav__burger" id="burger" aria-label="Open menu" aria-controls="navlinks" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+<span id="top"></span>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-h">
+  <div class="wrap">
+    <span class="livebadge"><span class="dot" aria-hidden="true"></span> Notes · thinking behind the builds</span>
+    <p class="eyebrow kicker">Aloha AI · notes by RN Collins</p>
+    <h1 class="display" id="hero-h">Notes on building AI you can actually trust.</h1>
+    <p class="lead">Essays and build notes on designing AI systems for regulated and high-complexity work. Each note sits on top of something I have built, so the argument is anchored to a working tool rather than a slide. If you want the reasoning behind the practice, this is where it lives.</p>
+    <div class="chips">
+      <span class="a">Essays</span>
+      <span class="a">Build notes</span>
+      <span class="a">Regulatory notes</span>
+      <span class="a">Field notes</span>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="section" aria-labelledby="intro-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">What this is</p>
+      <h2 class="h2" id="intro-h">Reasoning you can check against a build</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">Most writing about AI stays at the level of the prediction. These notes stay at the level of the mechanism: why a system fails on the exact thing that matters, and what design choice closes the gap. Each essay links to the tool it is anchored to, so you can read the argument and then run the thing it describes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- THE NOTES -->
+<section class="section section--paper section--texture" id="notes" aria-labelledby="notes-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The notes</p>
+      <h2 class="h2" id="notes-h">Start with the one that matches your question</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">Four essays to begin. Each names the build it is anchored to, so the claim is testable rather than rhetorical.</p>
+    </div>
+    <div class="grid grid-2">
+      <a class="card card--hover note-card reveal" href="./hallucination-risk-legal-work/index.html">
+        <span class="tag">Essay · Legal AI</span>
+        <h3>How I think about hallucination risk in legal and regulatory work</h3>
+        <p>Why fabricated citations happen, the structural tells that give them away, and why existence-verification plus a human gate matter more than a better model.</p>
+        <span class="go">Read the essay →</span>
+      </a>
+      <a class="card card--hover note-card reveal" href="./what-i-audit-first/index.html">
+        <span class="tag">Essay · Governance</span>
+        <h3>What I audit first when a team says it is already using AI</h3>
+        <p>The six dimensions I check before anything else, and why ad-hoc use, not the absence of a tool, is usually the real risk.</p>
+        <span class="go">Read the essay →</span>
+      </a>
+      <a class="card card--hover note-card reveal" href="./tracking-isnt-intelligence/index.html">
+        <span class="tag">Essay · Intelligence</span>
+        <h3>Tracking is not intelligence: designing a regulatory-analysis system</h3>
+        <p>The difference between collecting updates and producing something a decision-maker can act on, and the structure that gets you from one to the other.</p>
+        <span class="go">Read the essay →</span>
+      </a>
+      <a class="card card--hover note-card reveal" href="./tool-workflow-operating-system/index.html">
+        <span class="tag">Essay · Systems</span>
+        <h3>The difference between an AI tool, a workflow, and an operating system</h3>
+        <p>How one clever prompt becomes a repeatable workflow, and how a repeatable workflow becomes a governed system your organization can stand behind.</p>
+        <span class="go">Read the essay →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="section section--paper" id="newsletter" aria-labelledby="newsletter-h">
+  <div class="wrap" style="max-width:640px;text-align:center">
+    <p class="eyebrow" style="justify-content:center">Newsletter</p>
+    <h2 class="h2" id="newsletter-h">Aloha AI Dispatch</h2>
+    <p class="lead" style="margin:var(--s3) auto var(--s5)">More notes are coming. Subscribe if you would rather they found you than the other way around.</p>
+    <!-- BEEHIIV-EMBED-START (replace this whole block with your Beehiiv embed code) -->
+    <form class="nl-form" id="nlForm" action="#" novalidate>
+      <label for="nlEmail" class="nl-label">Email address</label>
+      <div class="nl-row">
+        <input type="email" id="nlEmail" name="email" class="nl-input" placeholder="you@company.com" required autocomplete="email">
+        <button type="submit" class="btn btn--primary">Subscribe →</button>
+      </div>
+      <p class="nl-note" id="nlNote" role="status" hidden>Connect Beehiiv to enable signups.</p>
+      <p class="nl-fine">Placeholder form; not yet wired to a mailing provider. No data is sent or stored.</p>
+    </form>
+    <!-- BEEHIIV-EMBED-END -->
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section--ink" id="contact" aria-labelledby="cta-h">
+  <div class="wrap" style="text-align:center">
+    <p class="eyebrow">Aloha AI · Honolulu</p>
+    <h2 class="h2" id="cta-h" style="max-width:26ch;margin-inline:auto">Ready when you are.</h2>
+    <p class="lead" style="margin:var(--s4) auto var(--s5);text-align:center">Convinced, curious, or comparing, there's a path for each.</p>
+    <div style="display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn--primary" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Start with a Systems Audit →</a>
+      <a class="btn btn--ghost" href="/tools">Browse the free tools</a>
+    </div>
+    <p class="small" style="margin-top:var(--s5);color:var(--muted-on-ink)">Prefer email? <a href="#" data-email style="color:var(--teal-mint)">Email RN</a> &nbsp;·&nbsp; or connect on <a href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noopener" style="color:var(--teal-mint)">LinkedIn</a></p>
+    <p id="emailReveal" hidden style="margin-top:.5rem;font-family:var(--mono);font-size:.8rem;color:#CFDAD5"></p>
+  </div>
+</section>
+</main>
+
+<footer class="footer" aria-labelledby="foot-h">
+  <div class="wrap">
+    <h2 id="foot-h" class="small" style="position:absolute;left:-999px">Site footer</h2>
+    <div class="footer__grid">
+      <div>
+        <a class="nav__brand" href="../index.html" style="color:var(--cream)" aria-label="Aloha AI home"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#7FE0C4"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#7FE0C4" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg> Aloha&nbsp;AI</a>
+        <p class="small" style="margin-top:var(--s3);max-width:38ch;color:#9FB6AE">AI implementation built around how humans actually trust and use it, for regulated or reputation-sensitive professions.</p>
+      </div>
+      <div>
+        <h4>Notes</h4>
+        <ul>
+          <li><a href="./hallucination-risk-legal-work/index.html">Hallucination risk in legal work</a></li>
+          <li><a href="./what-i-audit-first/index.html">What I audit first</a></li>
+          <li><a href="./tracking-isnt-intelligence/index.html">Tracking is not intelligence</a></li>
+          <li><a href="./tool-workflow-operating-system/index.html">Tool, workflow, operating system</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Aloha AI</h4>
+        <ul>
+          <li><a href="../index.html">The practice</a></li>
+          <li><a href="/tools">Free tools</a></li>
+          <li><a href="../legal-ai.html">Legal AI Workflow</a></li>
+          <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a call</a></li>
+          <li><a href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="../privacy.html">Privacy</a></li>
+          <li><a href="../terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="disc small">Notes are commentary on systems and evaluation, not legal advice. RN Collins is a JD candidate, not a licensed attorney; nothing here is legal or tax advice or an attorney–client relationship.</p>
+    <p class="fine">Aloha AI · a DBA of Rayven-Nikkita Collins LLC · Honolulu, HI · No tracking, no cookies · © 2026</p>
+  </div>
+</footer>
+
+<script>
+  (function(){var b=document.getElementById('burger'),l=document.getElementById('navlinks');
+  function set(o){b.setAttribute('aria-expanded',o);l.classList.toggle('open',o);b.setAttribute('aria-label',o?'Close menu':'Open menu');}
+  b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true');});
+  l.addEventListener('click',function(e){if(e.target.tagName==='A')set(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});})();
+  (function(){var u='collins.ra',dm='northeastern.edu',a=u+'@'+dm,su=encodeURIComponent('Aloha AI — notes inquiry');
+  document.querySelectorAll('[data-email]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();
+  try{navigator.clipboard&&navigator.clipboard.writeText(a);}catch(_){}
+  var o=document.getElementById('emailReveal');if(o){o.hidden=false;o.innerHTML='Copied ✓ &nbsp;<a href="mailto:'+a+'?subject='+su+'" style="color:#7FE0C4">'+a+'</a> &nbsp;·&nbsp; <a href="https://mail.google.com/mail/?view=cm&fs=1&to='+a+'&su='+su+'" target="_blank" rel="noopener" style="color:#7FE0C4">Open in Gmail</a>';}
+  window.location.href='mailto:'+a+'?subject='+su;});});})();
+  (function(){var nav=document.querySelector('.nav');if(!nav)return;var on=function(){nav.classList.toggle('is-stuck',window.scrollY>8);};on();window.addEventListener('scroll',on,{passive:true});})();
+  (function(){if(matchMedia('(prefers-reduced-motion:reduce)').matches){document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in');});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(e){io.observe(e);});})();
+  (function(){var f=document.getElementById('nlForm');if(!f)return;f.addEventListener('submit',function(e){e.preventDefault();var n=document.getElementById('nlNote');if(n)n.hidden=false;});})();
+</script>
+</body>
+</html>

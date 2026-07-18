@@ -97,6 +97,8 @@
   .policy-doc .tmpl-note{border:1px solid var(--amber-bd);background:var(--amber-l);color:var(--amber);
     border-radius:var(--r-sm);padding:.7rem .9rem;font-size:.82rem;margin:.6rem 0 var(--s4);line-height:1.5}
   .policy-doc code{font-family:var(--mono);font-size:.82em;background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:.05rem .3rem}
+
+  #beehiivEmail-policy-generator:focus-visible, #beehiivFallbackForm-policy-generator button:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
 </style>
 </head>
 <body>
@@ -110,7 +112,7 @@
     </a>
     <nav aria-label="Primary">
       <ul class="nav__links" id="navlinks">
-        <li><a href="../../index.html#services">Services</a></li>
+        <li><a href="../../index.html#services">Services</a></li><li><a href="/build-your-team.html">Build a team</a></li>
         <li><a href="../../index.html#moat">The moat</a></li>
         <li><a href="../index.html">Tools</a></li>
         <li><a href="../../index.html#products">Products</a></li>
@@ -265,7 +267,24 @@
         <button id="dlTxt" type="button" class="btn btn--ghost">Download as plain text</button>
       </div>
       <div class="policy-doc" id="policyDoc" aria-live="polite" aria-label="Generated AI governance policy"></div>
-      <p class="small muted" style="margin-top:var(--s4)">The document is generated in your browser and downloaded to your device. No data is transmitted.</p>
+      <p class="small muted" style="margin-top:var(--s4)">This tool runs entirely in your browser. The only information that ever leaves your device is the email address you optionally submit below once Beehiiv is connected.</p>
+
+      <!-- BEEHIIV-EMBED-START (replace this whole block with your Beehiiv embed code) -->
+      <div class="sc" style="margin-top:var(--s4)">
+        <h4>Get this report by email</h4>
+        <p>Send it to your inbox and get occasional build notes from Aloha AI.</p>
+        <form id="beehiivFallbackForm-policy-generator" action="#" novalidate>
+          <div class="fld">
+            <label for="beehiivEmail-policy-generator">Email address</label>
+            <input type="email" id="beehiivEmail-policy-generator" name="email" required placeholder="you@example.com">
+          </div>
+          <div class="btnrow">
+            <button type="submit" class="btn btn--outline">Subscribe</button>
+          </div>
+        </form>
+        <p id="beehiivFallbackMsg-policy-generator" role="status" style="display:none;">Connect Beehiiv to enable signups.</p>
+      </div>
+      <!-- BEEHIIV-EMBED-END -->
     </div>
 
     <p class="small muted reveal" style="margin-top:var(--s4);max-width:74ch"><strong>Template for attorney review. Not legal advice.</strong> RN Collins is a JD candidate, not a licensed attorney. This generates a starting draft mapped to published ABA Formal Opinion 512 and Model Rules 1.1, 1.6, 3.3, 5.1, and 5.3. It is not legal advice, not a compliance determination, and creates no attorney–client relationship. A licensed attorney admitted in your jurisdiction must review and adapt it.</p>
@@ -647,6 +666,16 @@ prohibitNonApprovedLine + "\n" +
     var html = buildStandaloneHtml(lastPolicy.cfg, lastPolicy.bodyHtml);
     downloadBlob(html, "text/html", "AI-Governance-Policy-" + slug(lastPolicy.cfg.firm) + ".html");
   });
+
+  var beehiivForm = $("beehiivFallbackForm-policy-generator");
+  if(beehiivForm){
+    beehiivForm.addEventListener("submit", function(e){
+      e.preventDefault();
+      var msg = $("beehiivFallbackMsg-policy-generator");
+      msg.style.display = "block";
+      msg.textContent = "Connect Beehiiv to enable signups.";
+    });
+  }
 
   $("dlTxt").addEventListener("click", function(){
     if(!lastPolicy) return;

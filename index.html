@@ -72,6 +72,14 @@
   .cred .c .t{font-family:var(--serif);font-size:.98rem;color:var(--ink);margin-bottom:.15rem}
   .cred .c .d{font-size:.76rem;color:var(--muted)}
   .cred__foot{margin-top:var(--s4);font-size:.85rem}
+  /* NEWSLETTER SIGNUP */
+  .nl-form{margin-top:var(--s2)}
+  .nl-label{display:block;font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem;text-align:left}
+  .nl-row{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center}
+  .nl-input{flex:1 1 240px;min-height:44px;padding:.66rem .8rem;border-radius:var(--r-sm);border:1px solid var(--line-2);background:#fff;color:var(--ink);font:inherit;font-size:.95rem}
+  .nl-input:focus-visible{box-shadow:var(--sh-focus);border-color:var(--teal)}
+  .nl-note{margin-top:.6rem;font-size:var(--fs-sm);color:var(--teal-d);font-weight:600}
+  .nl-fine{margin-top:.6rem;font-family:var(--mono);font-size:.7rem;color:var(--muted)}
 </style>
 </head>
 <body>
@@ -85,11 +93,13 @@
     </a>
     <nav aria-label="Primary">
       <ul class="nav__links" id="navlinks">
-        <li><a href="#services">Services</a></li>
+        <li><a href="#services">Services</a></li><li><a href="/build-your-team.html">Build a team</a></li>
         <li><a href="#moat">The moat</a></li>
+        <li><a href="builds.html">Builds</a></li>
         <li><a href="#tools">Tools</a></li>
         <li><a href="#products">Products</a></li>
         <li><a href="/university">University</a></li>
+        <li><a href="/notes">Notes</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li class="nav__cta"><a class="btn btn--primary btn--sm" href="#start">Get started →</a></li>
@@ -112,7 +122,8 @@
     <h1 class="display" id="hero-h">AI built around how humans actually trust and use it.</h1>
     <p class="lead">A neuroscience-informed AI strategy and regulatory-trust practice. Most consultants install a tool and leave. I build the human system around it, so your people <em>adopt</em> it and the facts it gives you are <em>right</em>. For regulated or reputation-sensitive work, where a confident wrong answer is expensive.</p>
     <div class="hero__cta">
-      <a class="btn btn--primary" href="#start">Start with a Systems Audit →</a>
+      <a class="btn btn--primary" href="/build-your-team.html">See your AI team in 30 seconds →</a>
+      <a class="btn btn--ghost" href="#start">Start with a Systems Audit</a>
       <a class="btn btn--ghost" href="#tools">See the live tools</a>
     </div>
     <div class="hero__answers">
@@ -198,8 +209,8 @@
     <div class="sec-head reveal">
       <p class="eyebrow">Proof, not promises</p>
       <h2 class="h2" id="tools-h">Live intelligence tools</h2>
-      <p class="lead">Fifteen working instruments, each sourced and interactive: the practice, demonstrated.</p>
-      <p class="reveal" style="margin-top:var(--s3)"><a class="go" style="font-family:var(--mono);font-size:var(--fs-xs);text-transform:uppercase;letter-spacing:.06em;color:var(--teal-d)" href="/tools">See all free tools, grouped by category →</a></p>
+      <p class="lead">Fifteen working instruments, each sourced and interactive: the practice, demonstrated. These are a slice of a wider body of deployed work.</p>
+      <p class="reveal" style="margin-top:var(--s3)"><a class="go" style="font-family:var(--mono);font-size:var(--fs-xs);text-transform:uppercase;letter-spacing:.06em;color:var(--teal-d)" href="builds.html">See all 40+ builds on the proof wall →</a> &nbsp;·&nbsp; <a class="go" style="font-family:var(--mono);font-size:var(--fs-xs);text-transform:uppercase;letter-spacing:.06em;color:var(--teal-d)" href="/tools">All free tools, grouped by category →</a> &nbsp;·&nbsp; <a class="go" style="font-family:var(--mono);font-size:var(--fs-xs);text-transform:uppercase;letter-spacing:.06em;color:var(--teal-d)" href="/stacks">See the applied stacks →</a></p>
     </div>
     <div class="grid grid-3">
       <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/monitors/cannabis-rescheduling"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Intelligence</span><h3>Cannabis Rescheduling Monitor</h3><p>Model your Schedule III exposure; every figure sourced and dated.</p><span class="go">Open →</span></a>
@@ -207,6 +218,7 @@
       <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/teardowns/legal-ai-workflow"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Legal AI</span><h3>Legal AI Workflow Teardown</h3><p>Score hallucination risk; design verification into the workflow.</p><span class="go">Open →</span></a>
       <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/tools/citation-verifier"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Legal AI</span><h3>Citation Verifier</h3><p>Flag fake, impossible, or malformed case cites before you file an AI-drafted brief.</p><span class="go">Open →</span></a>
       <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/intelligence/brand-perception"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Brand</span><h3>Brand-Perception Intelligence</h3><p>Diagnose brand trust by mechanism, not vibes.</p><span class="go">Open →</span></a>
+      <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/monitors/agentic-brand-management"><span class="tag">New · Service line</span><h3>Agentic Brand Management</h3><p>Brand &amp; creator management run by agents, signed off by a human. Score your readiness across six layers.</p><span class="go">Open →</span></a>
       <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/monitors/ai-creative-production"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Creative</span><h3>AI Creative Production Intelligence</h3><p>Turn ad-hoc AI generation into a repeatable, on-brand pipeline.</p><span class="go">Open →</span></a>
       <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/monitors/biophilic-neuroarch"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Design</span><h3>Biophilic Design Intelligence</h3><p>Score a space on salutogenic, neuroscience-grounded principles.</p><span class="go">Open →</span></a>
       <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/monitors/suppression-audit"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Content</span><h3>Content Suppression Audit</h3><p>Diagnose platform throttling; recover reach with EDSA.</p><span class="go">Open →</span></a>
@@ -328,15 +340,37 @@
   </div>
 </section>
 
+<!-- NEWSLETTER -->
+<section class="section section--paper" id="newsletter" aria-labelledby="newsletter-h">
+  <div class="wrap" style="max-width:640px;text-align:center">
+    <p class="eyebrow" style="justify-content:center">Newsletter</p>
+    <h2 class="h2" id="newsletter-h">Aloha AI Dispatch</h2>
+    <p class="lead" style="margin:var(--s3) auto var(--s5)">One short email when there is a new tool, a build breakdown, or a shift worth knowing in AI for regulated work.</p>
+    <!-- BEEHIIV-EMBED-START (replace this whole block with your Beehiiv embed code) -->
+    <form class="nl-form" id="nlForm" action="#" novalidate>
+      <label for="nlEmail" class="nl-label">Email address</label>
+      <div class="nl-row">
+        <input type="email" id="nlEmail" name="email" class="nl-input" placeholder="you@company.com" required autocomplete="email">
+        <button type="submit" class="btn btn--primary">Subscribe →</button>
+      </div>
+      <p class="nl-note" id="nlNote" role="status" hidden>Connect Beehiiv to enable signups.</p>
+      <p class="nl-fine">Placeholder form; not yet wired to a mailing provider. No data is sent or stored.</p>
+    </form>
+    <!-- BEEHIIV-EMBED-END -->
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="section section--ink" id="contact" aria-labelledby="cta-h">
   <div class="wrap" style="text-align:center">
     <p class="eyebrow">Aloha AI · Honolulu</p>
-    <h2 class="h2" id="cta-h" style="max-width:24ch;margin-inline:auto">Ready when you are.</h2>
-    <p class="lead" style="margin:var(--s4) auto var(--s5);text-align:center">Convinced, curious, or comparing, there's a path for each.</p>
+    <h2 class="h2" id="cta-h" style="max-width:24ch;margin-inline:auto">Let's find your starting point.</h2>
+    <p class="lead" style="margin:var(--s4) auto var(--s5);text-align:center">Done-for-you work, a tool you run yourself, or the free university: pick the door that fits where you are, or just book a call and we'll figure it out together.</p>
     <div style="display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap">
-      <a class="btn btn--primary" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Start with a Systems Audit →</a>
-      <a class="btn btn--ghost" href="https://aloha-ai-consulting.vercel.app/tools/ai-readiness-scorecard" target="_blank" rel="noopener">Take the 2-minute assessment</a>
+      <a class="btn btn--primary" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Let's talk →</a>
+      <a class="btn btn--ghost" href="#services">See the services</a>
+      <a class="btn btn--ghost" href="/tools">Browse the tools</a>
+      <a class="btn btn--ghost" href="/university">Learn free at the University</a>
     </div>
     <p class="small" style="margin-top:var(--s5);color:var(--muted-on-ink)">Prefer email? <a href="#" data-email style="color:var(--teal-mint)">Email RN</a> &nbsp;·&nbsp; or connect on <a href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noopener" style="color:var(--teal-mint)">LinkedIn</a></p>
     <p id="emailReveal" hidden style="margin-top:.5rem;font-family:var(--mono);font-size:.8rem;color:#CFDAD5"></p>
@@ -359,6 +393,8 @@
           <li><a href="intelligence.html">Regulatory &amp; Market Intelligence</a></li>
           <li><a href="content.html">Content &amp; Adoption Systems</a></li>
           <li><a href="legal-ai.html">Legal AI Workflow</a></li>
+          <li><a href="builds.html">Builds → the proof wall</a></li>
+          <li><a href="/stacks">Applied stacks</a></li>
           <li><a href="#tools">Live tools</a></li>
           <li><a href="/tools">All free tools</a></li>
         </ul>
@@ -367,6 +403,7 @@
         <h4>Practice</h4>
         <ul>
           <li><a href="about.html">About RN Collins</a></li>
+          <li><a href="/notes">Notes</a></li>
           <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a call</a></li>
           <li><a href="https://aloha-ai-consulting.vercel.app/tools/ai-readiness-scorecard" target="_blank" rel="noopener">Assessment</a></li>
           <li><a href="https://rn-portfolio-khaki.vercel.app" target="_blank" rel="noopener">Portfolio → RN Builds</a></li>
@@ -398,6 +435,7 @@
   (function(){if(matchMedia('(prefers-reduced-motion:reduce)').matches){document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in');});return;}
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
   document.querySelectorAll('.reveal').forEach(function(e){io.observe(e);});})();
+  (function(){var f=document.getElementById('nlForm');if(!f)return;f.addEventListener('submit',function(e){e.preventDefault();var n=document.getElementById('nlNote');if(n)n.hidden=false;});})();
 </script>
 </body>
 </html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tracking is not intelligence: designing a regulatory-analysis system — Aloha AI Notes</title>
+<meta name="description" content="An essay on the difference between collecting regulatory updates and producing decision-ready intelligence: issue taxonomy, comparison, and audience-specific output. By RN Collins.">
+<link rel="canonical" href="https://aloha-ai-consulting.vercel.app/notes/tracking-isnt-intelligence">
+<meta name="theme-color" content="#14201C">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tracking is not intelligence: designing a regulatory-analysis system">
+<meta property="og:description" content="The difference between collecting updates and producing intelligence a decision-maker can act on.">
+<meta property="og:image" content="https://aloha-ai-consulting.vercel.app/og-image.png">
+<meta property="og:url" content="https://aloha-ai-consulting.vercel.app/notes/tracking-isnt-intelligence">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tracking is not intelligence: designing a regulatory-analysis system">
+<meta name="twitter:description" content="The difference between collecting updates and producing intelligence a decision-maker can act on.">
+<meta name="twitter:image" content="https://aloha-ai-consulting.vercel.app/og-image.png">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<script>document.documentElement.className+=' js';</script>
+<link rel="stylesheet" href="../../aloha-ds.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Tracking is not intelligence: designing a regulatory-analysis system",
+"url":"https://aloha-ai-consulting.vercel.app/notes/tracking-isnt-intelligence",
+"author":{"@type":"Person","name":"RN Collins","jobTitle":"Founder, Aloha AI"},
+"publisher":{"@type":"Organization","name":"Aloha AI"}}
+</script>
+<style>
+  .hero{position:relative;overflow:hidden;background:var(--grad-hero);
+    color:var(--cream);padding-block:clamp(52px,7vw,92px) clamp(40px,5vw,68px);border-bottom:3px solid var(--teal)}
+  .hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(127,224,196,.05) 1px,transparent 1px);
+    background-size:26px 26px;-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 70%);mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 70%);pointer-events:none}
+  .hero>.wrap{position:relative;max-width:760px}
+  .hero h1{color:var(--cream);max-width:24ch;margin-bottom:var(--s4)}
+  .hero .kicker{color:var(--teal-mint)}
+  .hero .deck{color:#CFDAD5;max-width:58ch;font-size:clamp(1.06rem,1.6vw,1.2rem);line-height:1.5}
+  .hero__meta{margin-top:var(--s5);font-family:var(--mono);font-size:var(--fs-xs);color:#9FB6AE;letter-spacing:.04em}
+  .crumb{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.08em;text-transform:uppercase;margin-bottom:var(--s4)}
+  .crumb a{color:#CDE7DF}
+  .article{max-width:720px;margin-inline:auto}
+  .article p{font-size:1.06rem;line-height:1.72;color:var(--ink-2);margin:0 0 1.15rem}
+  .article h2{font-size:var(--fs-h2);margin:var(--s7) 0 var(--s3)}
+  .article h3{font-size:var(--fs-h3);margin:var(--s6) 0 var(--s2)}
+  .article strong{color:var(--ink)}
+  .anchor{max-width:720px;margin-inline:auto}
+  .anchor .card h3{margin-bottom:var(--s2)}
+  .anchor .links{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:var(--s4)}
+  .disclaim{max-width:720px;margin:var(--s6) auto 0;font-size:var(--fs-sm);color:var(--muted);border-left:2px solid var(--line-2);padding-left:.9rem}
+  .nl-form{margin-top:var(--s2)}
+  .nl-label{display:block;font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem;text-align:left}
+  .nl-row{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center}
+  .nl-input{flex:1 1 240px;min-height:44px;padding:.66rem .8rem;border-radius:var(--r-sm);border:1px solid var(--line-2);background:#fff;color:var(--ink);font:inherit;font-size:.95rem}
+  .nl-input:focus-visible{box-shadow:var(--sh-focus);border-color:var(--teal)}
+  .nl-note{margin-top:.6rem;font-size:var(--fs-sm);color:var(--teal-d);font-weight:600}
+  .nl-fine{margin-top:.6rem;font-family:var(--mono);font-size:.7rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<a class="skip" href="#article">Skip to the essay</a>
+
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="../../index.html" aria-label="Aloha AI home">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#1B7A68"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#1B7A68" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      Aloha&nbsp;AI
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav__links" id="navlinks">
+        <li><a href="../../index.html#services">Services</a></li><li><a href="/build-your-team.html">Build a team</a></li>
+        <li><a href="../../index.html#moat">The moat</a></li>
+        <li><a href="../../index.html#tools">Tools</a></li>
+        <li><a href="../index.html" aria-current="page">Notes</a></li>
+        <li><a href="/university">University</a></li>
+        <li><a href="../../index.html#about">About</a></li>
+        <li><a href="../../legal-ai.html">Legal AI</a></li>
+        <li class="nav__cta"><a class="btn btn--primary btn--sm" href="../../index.html#start">Get started →</a></li>
+      </ul>
+    </nav>
+    <button class="nav__burger" id="burger" aria-label="Open menu" aria-controls="navlinks" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+<span id="top"></span>
+
+<section class="hero" aria-labelledby="hero-h">
+  <div class="wrap">
+    <p class="crumb"><a href="../index.html">← Notes</a></p>
+    <p class="eyebrow kicker">Essay · Intelligence</p>
+    <h1 id="hero-h">Tracking is not intelligence: designing a regulatory-analysis system</h1>
+    <p class="deck">A feed of every rule change is easy to build and exhausting to use. The hard part is the transformation from a stream of updates into a small number of things someone can act on.</p>
+    <p class="hero__meta">RN Collins · Aloha AI · Notes</p>
+  </div>
+</section>
+
+<article class="section" id="article">
+  <div class="article reveal">
+    <p>A regulatory tracker is a smoke detector wired to every room at once, screaming at the toast and the house fire in the same flat tone. That is the failure I want to take apart here: why coverage feels like safety, why it is not, and what three design choices turn a stream of alerts into something a decision-maker can actually use. The reasonable version of tracking goes like this. The risk in a regulated market is that a rule changes and you miss it, so the solution is to miss nothing: watch every docket, subscribe to every register, set an alert on every agency, and the downside is covered. Coverage feels like safety, and to a point it is. A team that watches nothing will certainly be surprised.</p>
+
+    <p>Then the feed arrives, and the trouble starts. A comprehensive tracker produces a torrent: notices, comment periods, guidance documents, enforcement actions, state variations, each one technically relevant and none of it prioritized. The person who has to act now faces a second job, reading the tracker, nearly as large as the first job it was meant to relieve. Coverage solved the problem of missing things and created the problem of drowning in them. The tracker is busy. The decision-maker is no better informed. That gap between collection and comprehension is where most regulatory tooling quietly fails.</p>
+
+    <p>So I draw a hard line between tracking and intelligence. Tracking answers "what happened?" Intelligence answers "what does it mean for us, and what should we do?" Are these the same question asked at different volumes, or are they different problems entirely? They are different problems: the first is a data task and largely solved, the second is a design task and mostly ignored. Three design choices carry the weight of turning one into the other.</p>
+
+    <h2>Issue taxonomy: naming before counting</h2>
+
+    <p>The first choice is a taxonomy of issues that matters to this audience, defined before a single update is collected. Without one, every item is a loose fact competing for attention on its own. With one, each update lands in a category the reader already cares about: licensing, advertising restrictions, product testing, banking access, interstate movement. The taxonomy is the difference between a hundred headlines and five buckets, and five buckets is something a human mind can actually hold. It also makes absence legible; when a category has gone quiet for months, that silence is itself a signal you can only read against a structure.</p>
+
+    <p>A good taxonomy is opinionated. It reflects a judgment about which distinctions change decisions and which are noise dressed as detail. Building it is the part that looks like law and reads like editing, and it is where domain depth earns its keep. A generic tracker cannot do this for you, because the right categories for a psychedelics operator are not the right categories for a biopharma program, even where the underlying agencies overlap.</p>
+
+    <h2>Comparison: a number means little alone</h2>
+
+    <p>The second choice is comparison. A single data point is nearly inert. "This state now requires seed-to-sale tracking" tells you something; "this is the fourteenth state to do so, the fourth this year, using the stricter of the two common models" tells you where the trend is heading and how exposed you are. Intelligence lives in the relationships between facts: across jurisdictions, across time, against the posture you already hold. A system that shows each update in isolation has left the most valuable work undone. A system that sets every update against its peers does the comparison so the reader need not reconstruct it from memory.</p>
+
+    <p>This is also where sourcing has to be uncompromising. If a system asserts that fourteen states have moved, every one of those fourteen has to be sourced and dated, because the comparison is only as trustworthy as its weakest citation. A confident trend built on one unverified claim is worse than no trend at all, since it invites a decision the evidence cannot support.</p>
+
+    <h2>Audience-specific output: the same facts, shaped differently</h2>
+
+    <p>The third choice is that the output has to be shaped for who is reading it. The same underlying set of changes should reach a general counsel, an operator, and a board in three different forms. The general counsel needs the citations and the open questions; the operator needs the deadlines and the operational consequences; the board needs the two sentences that change a decision. One artifact cannot serve all three, and pretending it can is how good analysis dies in an inbox. Decision-ready means ready for a specific decision-maker, not merely finished.</p>
+
+    <p>These three choices are what separate the intelligence monitors I build myself from a feed. A monitor here does more than collect signals across a regulated surface; it sorts them into an issue taxonomy, sets each one against the wider pattern, sources and dates every figure, and produces a read a decision-maker can use without redoing the analysis. Could you defend pure tracking? To a point, yes: you cannot analyze what you never saw, and coverage is the raw material intelligence is made from. That defense, however, mistakes the beginning of the work for the end of it. Collection is table stakes. The judgment about what it means is the product.</p>
+
+    <p>A note on scope. This is systems and evaluation thinking about how to structure regulatory information, not legal advice, and I am a JD candidate rather than a licensed attorney. The monitors are built to support the licensed professionals who make the calls, by putting the relevant changes in front of them already sorted, compared, and sourced.</p>
+  </div>
+</article>
+
+<section class="section section--paper" aria-labelledby="anchor-h">
+  <div class="anchor">
+    <div class="card reveal">
+      <p class="eyebrow">The build this is anchored to</p>
+      <h3 id="anchor-h">The intelligence monitors</h3>
+      <p class="small muted">The taxonomy above is not hypothetical; a live monitor runs it daily. The comparison and audience-specific output described here are how the intelligence monitors work: signals sorted, set against the pattern, and sourced. Every figure is dated.</p>
+      <div class="links">
+        <a class="btn btn--primary" href="/monitors/market-intel">Open a live monitor →</a>
+        <a class="btn btn--outline" href="../../index.html#tools">See all the monitors →</a>
+      </div>
+    </div>
+    <p class="disclaim">RN Collins is a JD candidate, not a licensed attorney. This essay is systems and evaluation commentary, not legal advice, and nothing here creates an attorney–client relationship. The monitors surface sourced information; the decisions belong to qualified professionals.</p>
+    <p class="small muted" style="margin-top:var(--s4)">Read next: <a href="../tool-workflow-operating-system/index.html">The difference between an AI tool, a workflow, and an operating system →</a></p>
+  </div>
+</section>
+
+<section class="section section--paper" id="newsletter" aria-labelledby="newsletter-h">
+  <div class="wrap" style="max-width:640px;text-align:center">
+    <p class="eyebrow" style="justify-content:center">Newsletter</p>
+    <h2 class="h2" id="newsletter-h">Aloha AI Dispatch</h2>
+    <p class="lead" style="margin:var(--s3) auto var(--s5)">The next note goes up here before anywhere else. Subscribe if you would rather not check back.</p>
+    <!-- BEEHIIV-EMBED-START (replace this whole block with your Beehiiv embed code) -->
+    <form class="nl-form" id="nlForm" action="#" novalidate>
+      <label for="nlEmail" class="nl-label">Email address</label>
+      <div class="nl-row">
+        <input type="email" id="nlEmail" name="email" class="nl-input" placeholder="you@company.com" required autocomplete="email">
+        <button type="submit" class="btn btn--primary">Subscribe →</button>
+      </div>
+      <p class="nl-note" id="nlNote" role="status" hidden>Connect Beehiiv to enable signups.</p>
+      <p class="nl-fine">Placeholder form; not yet wired to a mailing provider. No data is sent or stored.</p>
+    </form>
+    <!-- BEEHIIV-EMBED-END -->
+  </div>
+</section>
+</main>
+
+<footer class="footer" aria-labelledby="foot-h">
+  <div class="wrap">
+    <h2 id="foot-h" class="small" style="position:absolute;left:-999px">Site footer</h2>
+    <div class="footer__grid">
+      <div>
+        <a class="nav__brand" href="../../index.html" style="color:var(--cream)" aria-label="Aloha AI home"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#7FE0C4"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#7FE0C4" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg> Aloha&nbsp;AI</a>
+        <p class="small" style="margin-top:var(--s3);max-width:38ch;color:#9FB6AE">AI implementation built around how humans actually trust and use it, for regulated or reputation-sensitive professions.</p>
+      </div>
+      <div>
+        <h4>Notes</h4>
+        <ul>
+          <li><a href="../index.html">All notes</a></li>
+          <li><a href="../hallucination-risk-legal-work/index.html">Hallucination risk in legal work</a></li>
+          <li><a href="../what-i-audit-first/index.html">What I audit first</a></li>
+          <li><a href="../tool-workflow-operating-system/index.html">Tool, workflow, operating system</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Aloha AI</h4>
+        <ul>
+          <li><a href="../../index.html">The practice</a></li>
+          <li><a href="/tools">Free tools</a></li>
+          <li><a href="../../legal-ai.html">Legal AI Workflow</a></li>
+          <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a call</a></li>
+          <li><a href="../../privacy.html">Privacy</a></li>
+          <li><a href="../../terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="disc small">Notes are commentary on systems and evaluation, not legal advice. RN Collins is a JD candidate, not a licensed attorney; nothing here is legal or tax advice or an attorney–client relationship.</p>
+    <p class="fine">Aloha AI · a DBA of Rayven-Nikkita Collins LLC · Honolulu, HI · No tracking, no cookies · © 2026</p>
+  </div>
+</footer>
+
+<script>
+  (function(){var b=document.getElementById('burger'),l=document.getElementById('navlinks');
+  function set(o){b.setAttribute('aria-expanded',o);l.classList.toggle('open',o);b.setAttribute('aria-label',o?'Close menu':'Open menu');}
+  b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true');});
+  l.addEventListener('click',function(e){if(e.target.tagName==='A')set(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});})();
+  (function(){var nav=document.querySelector('.nav');if(!nav)return;var on=function(){nav.classList.toggle('is-stuck',window.scrollY>8);};on();window.addEventListener('scroll',on,{passive:true});})();
+  (function(){if(matchMedia('(prefers-reduced-motion:reduce)').matches){document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in');});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(e){io.observe(e);});})();
+  (function(){var f=document.getElementById('nlForm');if(!f)return;f.addEventListener('submit',function(e){e.preventDefault();var n=document.getElementById('nlNote');if(n)n.hidden=false;});})();
+</script>
+</body>
+</html>

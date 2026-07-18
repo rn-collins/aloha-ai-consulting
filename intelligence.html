@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Regulatory &amp; Market Intelligence — Aloha AI</title>
-<meta name="description" content="Primary-source regulatory, scientific, policy, and competitive intelligence resolved into decisions you can put in a filing — for regulated or reputation-sensitive professions. By RN Collins, Aloha AI.">
+<title>Intelligence Hub — six live regulatory monitors · Aloha AI</title>
+<meta name="description" content="One hub for six live regulatory monitors: DEA scheduling, AI governance, psilocybin policy, platform suppression, legal AI, and psychedelic reform. Primary-source, updated on a cadence, with a weekly what-changed digest. By RN Collins, Aloha AI.">
 <link rel="canonical" href="https://aloha-ai-consulting.vercel.app/intelligence">
 <meta name="theme-color" content="#14201C">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Regulatory & Market Intelligence — Aloha AI">
-<meta property="og:description" content="Primary-source monitoring resolved into decisions — regulatory, scientific, policy, and competitive intelligence you can put in a filing.">
+<meta property="og:title" content="Intelligence Hub — six live regulatory monitors · Aloha AI">
+<meta property="og:description" content="One hub for six live regulatory monitors, updated on a cadence, with a weekly what-changed digest. DEA scheduling, AI governance, psilocybin policy, platform suppression, legal AI, and psychedelic reform.">
 <meta property="og:image" content="./og-image.png">
 <meta property="og:url" content="https://aloha-ai-consulting.vercel.app/intelligence">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Regulatory & Market Intelligence — Aloha AI">
-<meta name="twitter:description" content="Sourced regulatory and market intelligence you can act on — and cite. By RN Collins.">
+<meta name="twitter:title" content="Intelligence Hub — six live regulatory monitors · Aloha AI">
+<meta name="twitter:description" content="Six live regulatory monitors in one hub, with a weekly what-changed digest. By RN Collins.">
 <meta name="twitter:image" content="./og-image.png">
 <link rel="icon" href="./favicon.svg" type="image/svg+xml">
 <script>document.documentElement.className+=' js';</script>
@@ -65,7 +65,22 @@
   .tool-card .go{margin-top:auto;font-family:var(--mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;color:var(--teal-d)}
   .tool-card:hover .go{text-decoration:underline}
   .live-dot{width:7px;height:7px;border-radius:50%;background:var(--green);display:inline-block;margin-right:.35rem}
+  .live-dot--pulse{animation:pulse 2.2s infinite}
+  @media(prefers-reduced-motion:reduce){.live-dot--pulse,.livebadge .dot{animation:none}}
   .soon{color:var(--muted);border-color:var(--line)}
+  /* MONITOR HUB CARDS */
+  .mon-card{display:flex;flex-direction:column;height:100%;gap:.5rem}
+  .mon-card__top{display:flex;align-items:center;justify-content:space-between;gap:.5rem;flex-wrap:wrap}
+  .mon-card .live{display:inline-flex;align-items:center;font-family:var(--mono);font-size:.6rem;letter-spacing:.09em;text-transform:uppercase;color:var(--green)}
+  .dchip{font-family:var(--mono);font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;color:var(--teal-d);
+    border:1px solid #BADFD6;background:var(--teal-l);border-radius:var(--r-pill);padding:.2rem .55rem;white-space:nowrap}
+  .mon-card h3{font-size:1.05rem;margin:.1rem 0 0}
+  .mon-card p{font-size:.82rem;color:var(--muted);margin:0}
+  .mon-card .cadence{font-family:var(--mono);font-size:.68rem;letter-spacing:.03em;color:var(--muted)}
+  .mon-card .cadence b{color:var(--ink);font-weight:600}
+  .mon-card .go{margin-top:auto;font-family:var(--mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;color:var(--teal-d)}
+  .mon-card:hover .go{text-decoration:underline}
+  .mon-card .go .ext{font-size:.6rem}
   .steps{counter-reset:step;display:grid;gap:var(--s5)}
   .step{display:grid;grid-template-columns:auto 1fr;gap:var(--s4);align-items:start}
   .step__n{counter-increment:step;width:44px;height:44px;border-radius:12px;background:var(--teal);color:#fff;
@@ -77,6 +92,14 @@
   .prov .p{border:1px solid #2F4A42;border-radius:var(--r-sm);padding:.9rem;background:rgba(255,255,255,.03)}
   .prov .p .t{font-family:var(--serif);font-size:1rem;color:var(--cream);margin-bottom:.2rem}
   .prov .p .d{font-size:.78rem;color:var(--muted-on-ink)}
+  /* NEWSLETTER SIGNUP */
+  .nl-form{margin-top:var(--s2)}
+  .nl-label{display:block;font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem;text-align:left}
+  .nl-row{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center}
+  .nl-input{flex:1 1 240px;min-height:44px;padding:.66rem .8rem;border-radius:var(--r-sm);border:1px solid var(--line-2);background:#fff;color:var(--ink);font:inherit;font-size:.95rem}
+  .nl-input:focus-visible{box-shadow:var(--sh-focus);border-color:var(--teal)}
+  .nl-note{margin-top:.6rem;font-size:var(--fs-sm);color:var(--teal-d);font-weight:600}
+  .nl-fine{margin-top:.6rem;font-family:var(--mono);font-size:.7rem;color:var(--muted)}
 </style>
 </head>
 <body>
@@ -90,7 +113,7 @@
     </a>
     <nav aria-label="Primary">
       <ul class="nav__links" id="navlinks">
-        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#services">Services</a></li><li><a href="/build-your-team.html">Build a team</a></li>
         <li><a href="index.html#moat">The moat</a></li>
         <li><a href="index.html#tools">Tools</a></li>
         <li><a href="index.html#products">Products</a></li>
@@ -112,13 +135,13 @@
 <!-- HERO -->
 <section class="hero" aria-labelledby="hero-h">
   <div class="wrap">
-    <span class="livebadge"><span class="dot" aria-hidden="true"></span> Live monitors · sourced &amp; dated · re-checked on a schedule</span>
-    <p class="eyebrow kicker">Regulatory &amp; Market Intelligence</p>
-    <h1 class="display" id="hero-h">Intelligence you can put in a filing, not a headline scraper.</h1>
-    <p class="lead">Generic AI is wrong most often on the exact things that carry weight: the citation, the quota, the statutory trigger. I build primary-source monitors that track the regulatory, scientific, policy, and competitive record and <em>resolve it into decisions</em>. Every figure is sourced, dated, and confidence-scored, so it holds up in a funder update <em>and</em> in a filing. For regulated or reputation-sensitive professions.</p>
+    <span class="livebadge"><span class="dot" aria-hidden="true"></span> Six live monitors · sourced &amp; dated · re-checked on a cadence</span>
+    <p class="eyebrow kicker">The Intelligence Hub</p>
+    <h1 class="display" id="hero-h">Six live regulatory monitors, one intelligence hub.</h1>
+    <p class="lead">Intelligence here means one thing: the operative record itself, pulled from primary sources, dated, and re-checked on a cadence so it stays current. Six live monitors watch the areas where a confident wrong answer is expensive, from DEA scheduling to AI governance to platform suppression. Each surfaces what changed, and the weekly digest pulls the deltas into one read. Built for counsel, regulatory affairs, founders, and funders in regulated or reputation-sensitive work.</p>
     <div class="hero__cta">
-      <a class="btn btn--primary" href="#start">Start with a Systems Audit →</a>
-      <a class="btn btn--ghost" href="#tools">See the live monitors</a>
+      <a class="btn btn--primary" href="#monitors">See the six live monitors</a>
+      <a class="btn btn--ghost" href="#digest">Get the weekly digest</a>
     </div>
     <div class="hero__answers">
       <span class="a"><b>For</b> counsel, regulatory affairs, founders, funders &amp; boards</span>
@@ -133,40 +156,96 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <p class="eyebrow">What this means here</p>
-      <h2 class="h2" id="cov-h">Two kinds of intelligence, one standard of proof</h2>
+      <h2 class="h2" id="cov-h">What "intelligence" means on this page</h2>
       <hr class="rule" aria-hidden="true">
-      <p class="lead">Regulatory intelligence here is a discipline, not a feed. It tracks both the rules and the field, and whether the question is a regulatory shift or a competitor's move, the answer traces to a primary source and resolves into something you can act on.</p>
+      <p class="lead">Intelligence here is a discipline, not a feed. Every entry in every monitor traces to a primary source, carries the date it was read, and gets re-checked on a cadence, so what you act on holds up next month and not only today.</p>
     </div>
-    <div class="grid grid-2">
-      <div class="card reveal"><h3>Regulatory, scientific &amp; policy intelligence</h3><p class="small muted">Primary-source monitoring of the record that governs you: the Federal Register, CFR, dockets, agency orders, and scientific and policy developments, each captured with its source and retrieval date, then resolved into what changes, for whom, and with what confidence.</p></div>
-      <div class="card reveal"><h3>Market &amp; competitive intelligence</h3><p class="small muted">The same rigor turned on your field: who's moving, what's shifting, where the openings are, and, where it matters, IP and brand-protection exposure mapped to the statutes. Decisions, not a dashboard you rent.</p></div>
+    <div class="grid grid-3">
+      <div class="card reveal"><h3>Primary-source</h3><p class="small muted">The operative record itself: the Federal Register, CFR, agency dockets and orders, bar and court guidance, not a summary of it. Every entry names where it came from.</p></div>
+      <div class="card reveal"><h3>Dated and re-checked</h3><p class="small muted">Each figure carries a retrieval date, and each monitor re-runs its sweep on a set cadence, so the record stays current and a change reads as a change.</p></div>
+      <div class="card reveal"><h3>Built for a decision</h3><p class="small muted">The point is the read, not the dashboard. What changed, for whom, and with what confidence, in a form you can put in a funder update or a filing.</p></div>
     </div>
-    <p class="small muted reveal" style="margin-top:var(--s5);max-width:70ch"><strong>The through-line.</strong> Every monitor runs the same pipeline: capture primary sources, resolve them into an operator-ready decision layer, then re-check on a schedule so the facts stay right next month, not only today.</p>
   </div>
 </section>
 
-<!-- MONITORS / INSTRUMENTS -->
-<section class="section section--paper section--texture" id="tools" aria-labelledby="tools-h">
+<!-- THE LIVE MONITORS HUB -->
+<section class="section section--paper section--texture" id="monitors" aria-labelledby="monitors-h">
   <div class="wrap">
     <div class="sec-head reveal">
-      <p class="eyebrow">The instruments that prove it</p>
-      <h2 class="h2" id="tools-h">Live monitors, each sourced and interactive</h2>
+      <p class="eyebrow">The live monitors</p>
+      <h2 class="h2" id="monitors-h">Six regulatory sweeps, each running on its own cadence</h2>
       <hr class="rule" aria-hidden="true">
-      <p class="lead">Working instruments from this pillar: the practice, demonstrated. Every figure traces to a primary source with a retrieval date, and each monitor reflects a point in time you can check.</p>
+      <p class="lead">Each monitor is a standing sweep of one regulated area. It tracks the primary sources that govern the field, dates every entry, and opens in its own live view. What changed across all six is what the weekly digest pulls together.</p>
     </div>
     <div class="grid grid-3">
-      <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/monitors/cannabis-rescheduling"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Regulatory</span><h3>Cannabis Rescheduling Monitor</h3><p>Model your Schedule III exposure; every figure sourced and dated.</p><span class="go">Open →</span></a>
-      <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/monitors/psychedelic-radar"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Regulatory</span><h3>Psychedelic Regulatory Radar</h3><p>Psilocybin, MDMA &amp; ketamine status by state and federal posture.</p><span class="go">Open →</span></a>
-      <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/monitors/biopharma-regulatory-intelligence"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Regulatory</span><h3>Biopharma Regulatory Intelligence Layer</h3><p>Model your program's regulatory surface; every signal sourced and dated.</p><span class="go">Open →</span></a>
-      <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/monitors/suppression-audit"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Content</span><h3>Content Suppression Audit</h3><p>Diagnose platform throttling; recover reach with a defensible method.</p><span class="go">Open →</span></a>
-      <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/monitors/market-intel"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Market</span><h3>Market &amp; Competitive Intelligence Monitor</h3><p>Track the field: who's moving, what's shifting, where the openings are.</p><span class="go">Open →</span></a>
-      <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/intelligence/brand-perception"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Market</span><h3>Brand-Perception AI Intelligence</h3><p>Diagnose brand trust by mechanism, not vibes.</p><span class="go">Open →</span></a>
-      <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/monitors/luxury-ip"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · IP</span><h3>Luxury Brand Protection Intelligence</h3><p>Score IP &amp; counterfeit exposure, mapped to the statutes.</p><span class="go">Open →</span></a>
-      <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/monitors/arts-culture"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Culture</span><h3>Arts &amp; Cultural Intelligence</h3><p>Read collections and audiences with cultural precision.</p><span class="go">Open →</span></a>
-      <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/monitors/private-ai-risk"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Risk</span><h3>Private-AI &amp; Data-Retention Risk</h3><p>Score your data-exposure risk across deployment modes.</p><span class="go">Open →</span></a>
-      <a class="card card--hover tool-card reveal" href="https://aloha-ai-consulting.vercel.app/tools/citation-verifier"><span class="tag"><span class="live-dot" aria-hidden="true"></span>Live · Legal AI</span><h3>Citation Verifier</h3><p>Flag fabricated or impossible case cites in an AI-drafted brief before it's filed.</p><span class="go">Open →</span></a>
+
+      <a class="card card--hover mon-card reveal" href="https://aloha-dea-tracker.vercel.app" target="_blank" rel="noopener">
+        <div class="mon-card__top"><span class="live"><span class="live-dot live-dot--pulse" aria-hidden="true"></span>Live</span><span class="dchip">Cannabis · Psychedelics</span></div>
+        <h3>Aloha DEA Tracker</h3>
+        <p>DEA and Federal Register scheduling actions on controlled substances, cannabinoids, and psychedelics.</p>
+        <span class="cadence"><b>Cadence:</b> tracks Federal Register postings as they publish</span>
+        <span class="go">Open the tracker <span class="ext" aria-hidden="true">↗</span></span>
+      </a>
+
+      <a class="card card--hover mon-card reveal" href="https://aloha-ai-governance.vercel.app" target="_blank" rel="noopener">
+        <div class="mon-card__top"><span class="live"><span class="live-dot live-dot--pulse" aria-hidden="true"></span>Live</span><span class="dchip">AI Governance</span></div>
+        <h3>Aloha AI Governance Tracker</h3>
+        <p>AI governance and regulation across 13 jurisdictions, from the EU AI Act to US federal and state action.</p>
+        <span class="cadence"><b>Cadence:</b> 13 jurisdictions, refreshed weekly</span>
+        <span class="go">Open the tracker <span class="ext" aria-hidden="true">↗</span></span>
+      </a>
+
+      <a class="card card--hover mon-card reveal" href="https://psychops-intel.vercel.app" target="_blank" rel="noopener">
+        <div class="mon-card__top"><span class="live"><span class="live-dot live-dot--pulse" aria-hidden="true"></span>Live</span><span class="dchip">Psychedelics</span></div>
+        <h3>Psych Ops Intel</h3>
+        <p>Psilocybin regulatory sweep across OHA, DORA, NMDOH, and the other agencies writing the rules.</p>
+        <span class="cadence"><b>Cadence:</b> weekly sweep</span>
+        <span class="go">Open the monitor <span class="ext" aria-hidden="true">↗</span></span>
+      </a>
+
+      <a class="card card--hover mon-card reveal" href="https://aloha-suppression-sweep.vercel.app" target="_blank" rel="noopener">
+        <div class="mon-card__top"><span class="live"><span class="live-dot live-dot--pulse" aria-hidden="true"></span>Live</span><span class="dchip">Platform Risk</span></div>
+        <h3>Aloha Suppression Sweep</h3>
+        <p>Platform suppression of psychoactive and harm-reduction content, with 50+ documented incidents.</p>
+        <span class="cadence"><b>Cadence:</b> rolling incident log</span>
+        <span class="go">Open the sweep <span class="ext" aria-hidden="true">↗</span></span>
+      </a>
+
+      <a class="card card--hover mon-card reveal" href="https://aloha-legal-ai-monitor.vercel.app" target="_blank" rel="noopener">
+        <div class="mon-card__top"><span class="live"><span class="live-dot live-dot--pulse" aria-hidden="true"></span>Live</span><span class="dchip">Legal AI</span></div>
+        <h3>Aloha Legal AI Monitor</h3>
+        <p>Legal-AI guidance as it lands: bar opinions, court standing orders, and ABA formal opinions.</p>
+        <span class="cadence"><b>Cadence:</b> updated as guidance issues</span>
+        <span class="go">Open the monitor <span class="ext" aria-hidden="true">↗</span></span>
+      </a>
+
+      <a class="card card--hover mon-card reveal" href="https://transform-observatory.vercel.app" target="_blank" rel="noopener">
+        <div class="mon-card__top"><span class="live"><span class="live-dot live-dot--pulse" aria-hidden="true"></span>Live</span><span class="dchip">Psychedelics</span></div>
+        <h3>Transform Observatory</h3>
+        <p>The psychedelic market read against the reform frameworks moving alongside it.</p>
+        <span class="cadence"><b>Cadence:</b> weekly digest</span>
+        <span class="go">Open the observatory <span class="ext" aria-hidden="true">↗</span></span>
+      </a>
+
     </div>
-    <p class="small muted reveal" style="margin-top:var(--s5)">Looking for the full set across every pillar? <a href="index.html#tools">See all live tools on the practice page →</a></p>
+    <p class="small muted reveal" style="margin-top:var(--s5)">A seventh monitor, the <a href="https://legal-risk-monitor.vercel.app" target="_blank" rel="noopener">Startup Legal Risk Monitor <span aria-hidden="true">↗</span></a>, tracks the legal-exposure signals founders tend to miss early. Each monitor reflects a point in time; confirm any entry against the operative source before relying on it.</p>
+  </div>
+</section>
+
+<!-- HOW THIS WORKS -->
+<section class="section" id="how-hub" aria-labelledby="howhub-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">How this works</p>
+      <h2 class="h2" id="howhub-h">Each monitor sweeps; the digest reports the deltas</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">No magic, and nothing hidden. Three plain steps keep the hub honest and current.</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card reveal"><h3 class="h3">A scheduled sweep</h3><p class="small muted">Each monitor re-checks its primary sources on a set cadence: some track the Federal Register as it publishes, others run a weekly pass across agency pages, dockets, and bar guidance.</p></div>
+      <div class="card reveal"><h3 class="h3">What changed surfaces</h3><p class="small muted">The sweep compares the record against the last pull and flags what moved: a new posting, a shifted status, a fresh opinion. Every entry keeps its source and the date it was read.</p></div>
+      <div class="card reveal"><h3 class="h3">The digest pulls the deltas</h3><p class="small muted">Once a week the changes across all six monitors collect into one read. That is the "what changed this week" section of the Aloha AI Dispatch, so you catch a shift without watching six pages yourself.</p></div>
+    </div>
   </div>
 </section>
 
@@ -295,15 +374,34 @@
   </div>
 </section>
 
+<!-- NEWSLETTER -->
+<section class="section section--paper" id="digest" aria-labelledby="newsletter-h">
+  <div class="wrap" style="max-width:640px;text-align:center">
+    <p class="eyebrow" style="justify-content:center">The weekly digest</p>
+    <h2 class="h2" id="newsletter-h">Get the weekly what-changed digest</h2>
+    <p class="lead" style="margin:var(--s3) auto var(--s5)">One email a week. The Aloha AI Dispatch pulls the deltas from all six monitors into a single "what changed this week" read, alongside new tools and build breakdowns for regulated work.</p>
+    <!-- BEEHIIV-EMBED-START (replace this whole block with your Beehiiv embed code) -->
+    <form class="nl-form" id="nlForm" action="#" novalidate>
+      <label for="nlEmail" class="nl-label">Email address</label>
+      <div class="nl-row">
+        <input type="email" id="nlEmail" name="email" class="nl-input" placeholder="you@company.com" required autocomplete="email">
+        <button type="submit" class="btn btn--primary">Subscribe →</button>
+      </div>
+      <p class="nl-note" id="nlNote" role="status" hidden>Connect Beehiiv to enable signups.</p>
+      <p class="nl-fine">Placeholder form; not yet wired to a mailing provider. No data is sent or stored.</p>
+    </form>
+    <!-- BEEHIIV-EMBED-END -->
+  </div>
+</section>
+
 <!-- CTA HIERARCHY -->
 <section class="section section--ink" id="contact" aria-labelledby="cta-h">
   <div class="wrap" style="text-align:center">
     <p class="eyebrow">Aloha AI · Honolulu</p>
-    <h2 class="h2" id="cta-h" style="max-width:24ch;margin-inline:auto">Stop flying blind on the record.</h2>
-    <p class="lead" style="margin:var(--s4) auto var(--s5);text-align:center">Convinced, curious, or comparing, there's a path for each.</p>
+    <h2 class="h2" id="cta-h" style="max-width:26ch;margin-inline:auto">The record moves. The digest keeps you current.</h2>
+    <p class="lead" style="margin:var(--s4) auto var(--s5);text-align:center">One email a week pulls the deltas from all six monitors into a single what-changed read. Subscribe and you never have to check the record cold again.</p>
     <div style="display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap">
-      <a class="btn btn--primary" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Start with a Systems Audit →</a>
-      <a class="btn btn--ghost" href="https://aloha-ai-consulting.vercel.app/tools/ai-readiness-scorecard" target="_blank" rel="noopener">Take the 2-minute assessment</a>
+      <a class="btn btn--primary" href="#digest">Get the weekly digest →</a>
     </div>
     <p class="small" style="margin-top:var(--s5);color:var(--muted-on-ink)">Prefer email? <a href="#" data-email style="color:var(--teal-mint)">Email RN</a> &nbsp;·&nbsp; or connect on <a href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noopener" style="color:var(--teal-mint)">LinkedIn</a></p>
     <p id="emailReveal" hidden style="margin-top:.5rem;font-family:var(--mono);font-size:.8rem;color:#CFDAD5"></p>
@@ -322,10 +420,10 @@
       <div>
         <h4>This service</h4>
         <ul>
-          <li><a href="#cov-h">What it means here</a></li>
-          <li><a href="#tools">The monitors</a></li>
+          <li><a href="#monitors">The six monitors</a></li>
+          <li><a href="#how-hub">How this works</a></li>
           <li><a href="#method">Method &amp; provenance</a></li>
-          <li><a href="#buy">How you buy it</a></li>
+          <li><a href="#digest">Weekly digest</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
       </div>
@@ -364,6 +462,7 @@
   (function(){if(matchMedia('(prefers-reduced-motion:reduce)').matches){document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in');});return;}
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
   document.querySelectorAll('.reveal').forEach(function(e){io.observe(e);});})();
+  (function(){var f=document.getElementById('nlForm');if(!f)return;f.addEventListener('submit',function(e){e.preventDefault();var n=document.getElementById('nlNote');if(n)n.hidden=false;});})();
 </script>
 </body>
 </html>
