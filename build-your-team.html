@@ -132,7 +132,7 @@
       <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#7FE0C4"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#7FE0C4" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg> Aloha&nbsp;AI
     </a>
     <p style="margin:.6rem 0 0;max-width:60ch">Governed AI teams built around how your business actually works — built, or taught. By RN Collins.</p>
-    <p class="mono" style="font-size:.66rem;color:#6C837B;margin-top:var(--s5);line-height:1.7">© 2026 RN Collins LLC · Aloha AI Consulting (DBA). This mockup is illustrative and not a commitment. Not legal, financial, or medical advice. RN Collins is a JD candidate, not a licensed attorney.</p>
+    <p class="mono" style="font-size:.66rem;color:#6C837B;margin-top:var(--s5);line-height:1.7">© 2026 Rayven-Nikkita Collins LLC · Aloha AI Consulting (DBA). This mockup is illustrative and not a commitment. Not legal, financial, or medical advice. RN Collins is a JD candidate, not a licensed attorney.</p>
   </div>
 </footer>
 
@@ -208,7 +208,7 @@ $("#leadForm").addEventListener("submit", e=>{
   const email=$("#email").value.trim();
   const does=$("#does").value.trim(), show=$("#show").value.trim();
   const payload={question:`Team mockup request — ${does} themed to ${show}`, email, note:"build-your-team mockup"};
-  const endpoint = window.ALOHA_LEAD_ENDPOINT || "/team-mockup/lead";
+  const endpoint = (window.ALOHA_TUTOR_BASE||"") + "/team-mockup/lead";
   fetch(endpoint,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)})
     .then(r=>r.json())
     .then(j=>{ $("#leadForm").outerHTML=`<p style="color:var(--teal-mint);margin:0">${esc(j.message||"Thanks — RN will follow up with your mockup and next steps.")}</p>`; })

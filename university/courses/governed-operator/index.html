@@ -495,7 +495,7 @@ a.card:hover .card__more{color:var(--teal)}
         var wrap=document.currentScript.previousElementSibling;
         var form=wrap.querySelector('#tutorForm'), q=wrap.querySelector('#tutorQ'), log=wrap.querySelector('#tutorLog');
         var slug=wrap.getAttribute('data-course');
-        var endpoint=(window.ALOHA_TUTOR_ENDPOINT||('/tutor/'+slug+'/chat'));
+        var endpoint=(window.ALOHA_TUTOR_BASE||'')+'/tutor/'+slug+'/chat';
         function esc(s){return (s||'').replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
         function add(cls,html){var d=document.createElement('div');d.className='bubble '+cls;d.innerHTML=html;log.appendChild(d);return d;}
         function leadForm(qtext){
