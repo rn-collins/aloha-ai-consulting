@@ -30,11 +30,15 @@
   @media(max-width:560px){.team{grid-template-columns:1fr}}
   .agent{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:var(--s5);box-shadow:var(--sh-1);opacity:0;transform:translateY(8px);animation:rise .45s var(--ease-out) forwards}
   @keyframes rise{to{opacity:1;transform:none}}
-  .agent .nm{font-family:var(--serif);font-size:1.35rem;color:var(--ink);line-height:1.1}
-  .agent .rl{font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-d);margin:.35rem 0 .6rem}
-  .agent .du{color:var(--ink-3);font-size:.96rem}
-  .agent .gov{margin-top:.8rem;padding-top:.7rem;border-top:1px dashed var(--line-2);font-size:.86rem;color:var(--muted)}
-  .agent .gov b{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--amber);display:block;margin-bottom:.2rem}
+  .agent .nm{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);line-height:1.2}
+  .agent .nm .nm-role{font-family:var(--serif);text-transform:none;letter-spacing:0;font-size:1.2rem;color:var(--ink);display:block;margin-top:.15rem}
+  .agent .du{color:var(--ink-3);font-size:.9rem;margin:.5rem 0 .2rem}
+  .agent .gov{margin-top:.8rem;padding:.85rem;border:1px solid var(--teal-mint);border-radius:var(--r-sm);background:var(--teal-l);font-size:.84rem;color:var(--ink)}
+  .agent .gov b{font-family:var(--mono);font-size:.62rem;letter-spacing:.09em;text-transform:uppercase;color:var(--teal-d);display:block;margin-bottom:.45rem}
+  .agent .gov .gl{display:block;margin:.28rem 0;line-height:1.4}
+  .agent .gov .gl i{font-family:var(--mono);font-style:normal;font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-d);display:block}
+  .agent .gov .gl--no i{color:var(--amber)}
+  .agent .gov .gl--ok i{color:var(--teal)}
   .flow{margin-top:var(--s6);padding:var(--s4) var(--s5);background:var(--teal-l);border:1px solid var(--teal-mint);border-radius:var(--r);font-family:var(--mono);font-size:.8rem;color:var(--teal-d);line-height:2}
   .flow .stop{background:var(--amber-l);border:1px solid var(--amber-bd);color:var(--amber);border-radius:6px;padding:1px 7px}
   .note{font-family:var(--mono);font-size:.72rem;color:var(--muted-on-ink);margin-top:var(--s4)}
@@ -120,7 +124,8 @@
     <p class="lead" style="margin-top:var(--s4);max-width:64ch">Anyone can give agents fun names. The reason a law firm, a clinic, or a regulated business can actually use this is the contract under each name: what it may touch, what it may never do, and what it must route to you for approval. That is what Aloha AI builds. The mockup shows it from the first click.</p>
     <div class="cta-row" style="display:flex;gap:var(--s3);flex-wrap:wrap;margin-top:var(--s6)">
       <a class="btn btn--primary" href="/services.html">See the full service ladder</a>
-      <a class="btn btn--ghost" href="/university/courses">Or learn to build it yourself</a>
+      <a class="btn btn--ghost" href="/agent-role-contract.html">Get the free role-contract template</a>
+      <a class="btn btn--ghost" href="/university/courses/first-ai-team">Or learn to build it yourself</a>
     </div>
   </div>
 </section>
@@ -153,12 +158,18 @@ const THEMES = {
   "harry potter":["Hermione","Harry","Ron","Luna","Neville","McGonagall"]
 };
 const ROLES = [
-  {title:"Chief of Staff",  duty:d=>`Coordinates the ${d} team and sends you a morning brief on what everyone did.`, gov:"Coordinates and routes work; needs your approval before contacting anyone."},
-  {title:"Researcher",      duty:d=>`Finds and verifies the inputs your ${d} work depends on, with sources.`,        gov:"Pulls and cites sources; makes no external sends."},
-  {title:"Drafter",         duty:d=>`Produces the first draft of your ${d} deliverables in your voice.`,             gov:"Drafts only; never publishes on its own."},
-  {title:"Brand-Voice Reviewer", duty:d=>`Keeps every ${d} output on-brand, clear, and consistent.`,               gov:"Can flag or block; cannot send."},
-  {title:"Compliance & QA", duty:d=>`Checks claims, accuracy, and risk before anything leaves the building.`,        gov:"Flags risk and escalates to you."},
-  {title:"Ops & Deploy",    duty:d=>`Prepares and ships the finished ${d} work across your tools.`,                  gov:"Prepares deploys; every publish is approval-gated."}
+  {title:"Chief of Staff",  duty:d=>`Coordinates the ${d} team and sends you a morning brief on what everyone did.`,
+    may:"Coordinate the team, route tasks, and brief you", never:"Contact anyone or act outside the workflow", approve:"Any external contact"},
+  {title:"Researcher",      duty:d=>`Finds and verifies the inputs your ${d} work depends on, with sources.`,
+    may:"Pull and cite sources for the work", never:"Send anything externally", approve:"n/a — read-only"},
+  {title:"Drafter",         duty:d=>`Produces the first draft of your ${d} deliverables in your voice.`,
+    may:"Draft in your voice from the inputs", never:"Publish or send on its own", approve:"Anything leaving as a draft"},
+  {title:"Brand-Voice Reviewer", duty:d=>`Keeps every ${d} output on-brand, clear, and consistent.`,
+    may:"Flag or block off-brand output", never:"Send or publish", approve:"Publish decisions"},
+  {title:"Compliance & QA", duty:d=>`Checks claims, accuracy, and risk before anything leaves the building.`,
+    may:"Check claims, accuracy, and risk", never:"Approve its own work", approve:"Any flagged risk"},
+  {title:"Ops & Deploy",    duty:d=>`Prepares and ships the finished ${d} work across your tools.`,
+    may:"Prepare the finished work to go out", never:"Publish or spend alone", approve:"Every send, post, or spend"}
 ];
 const ARCHETYPES = ["Navigator","Scout","Scribe","Warden","Sentinel","Runner"];
 
@@ -174,7 +185,7 @@ function generate(does, show){
   let names, themed;
   if(key){ names = shuffle(THEMES[key], rnd).slice(0,6); themed = true; }
   else   { names = ARCHETYPES.slice(); themed = false; }
-  return { agents: ROLES.map((r,i)=>({name:names[i]||ARCHETYPES[i], role:r.title, duty:r.duty(does), gov:r.gov})), themed, key };
+  return { agents: ROLES.map((r,i)=>({name:names[i]||ARCHETYPES[i], role:r.title, duty:r.duty(does), may:r.may, never:r.never, approve:r.approve})), themed, key };
 }
 
 const $ = s=>document.querySelector(s);
@@ -189,9 +200,13 @@ $("#genForm").addEventListener("submit", e=>{
   const team=$("#team"); team.innerHTML="";
   agents.forEach((a,i)=>{
     const el=document.createElement("div"); el.className="agent"; el.style.animationDelay=(i*70)+"ms";
-    el.innerHTML=`<div class="nm">${esc(a.name)}</div><div class="rl">${esc(a.role)}</div>`+
+    el.innerHTML=`<div class="nm">${esc(a.name)} <span class="nm-role">${esc(a.role)}</span></div>`+
       `<div class="du">${esc(a.duty)}</div>`+
-      `<div class="gov"><b>Role contract</b>${esc(a.gov)}</div>`;
+      `<div class="gov"><b>Role contract</b>`+
+      `<span class="gl"><i>May</i>${esc(a.may)}</span>`+
+      `<span class="gl gl--no"><i>Never</i>${esc(a.never)}</span>`+
+      `<span class="gl gl--ok"><i>Routes to you</i>${esc(a.approve)}</span>`+
+      `</div>`;
     team.appendChild(el);
   });
   const n=agents.map(a=>a.name);

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Agent Role Contract — free template | Aloha AI</title>
+<meta name="description" content="The one-page template that turns a named AI agent into a governed one. Sixteen fields — mission, scope, prohibited actions, approvals, escalation, logging, owner. Free. Fill it in your browser and download it.">
+<link rel="canonical" href="https://aloha-ai-consulting.vercel.app/agent-role-contract.html">
+<meta name="theme-color" content="#14201C">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Agent Role Contract — free template | Aloha AI">
+<meta property="og:description" content="Turn a named AI agent into a governed one. A one-page, sixteen-field contract. Fill it in your browser and download it. Free.">
+<meta property="og:image" content="https://aloha-ai-consulting.vercel.app/og-image.png">
+<meta property="og:url" content="https://aloha-ai-consulting.vercel.app/agent-role-contract.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Agent Role Contract — free template | Aloha AI">
+<meta name="twitter:description" content="Turn a named AI agent into a governed one. A one-page, sixteen-field contract. Free.">
+<meta name="twitter:image" content="https://aloha-ai-consulting.vercel.app/og-image.png">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<script>document.documentElement.className+=' js';</script>
+<link rel="stylesheet" href="./aloha-ds.css">
+<style>
+  .rcgrid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s4);margin-top:var(--s6)}
+  @media(max-width:760px){.rcgrid{grid-template-columns:1fr}}
+  .rcf{background:var(--white);border:1px solid var(--line);border-radius:var(--r-sm);padding:var(--s4)}
+  .rcf label{display:block;font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-d);margin-bottom:.15rem}
+  .rcf .hint{font-size:.78rem;color:var(--muted);margin-bottom:.4rem}
+  .rcf input,.rcf textarea{width:100%;padding:.6rem .7rem;border:1px solid var(--line-2);border-radius:var(--r-sm);background:var(--paper);color:var(--ink);font:inherit;font-size:.9rem}
+  .rcf textarea{min-height:56px;resize:vertical}
+  .rcf input:focus,.rcf textarea:focus{outline:none;border-color:var(--teal);box-shadow:var(--sh-focus)}
+  .rcf.wide{grid-column:1/-1}
+  .toolbar{display:flex;gap:var(--s3);flex-wrap:wrap;margin-top:var(--s6)}
+  @media print{.toolbar,.skip,[data-noprint]{display:none!important}.section{padding-block:12px}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" data-noprint>
+  <div class="nav__in">
+    <a class="nav__brand" href="/" aria-label="Aloha AI home">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#1B7A68"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#1B7A68" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      Aloha&nbsp;AI
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav__links" id="navlinks">
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/build-your-team.html">Build a team</a></li>
+        <li><a href="/services.html">AI teams</a></li>
+        <li><a href="/university">University</a></li>
+        <li class="nav__cta"><a class="btn btn--primary btn--sm" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a call →</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<section class="section section--ink">
+  <div class="wrap">
+    <p class="eyebrow">Free template</p>
+    <h1 class="display" style="max-width:20ch">The Agent Role Contract</h1>
+    <p class="lead" style="margin-top:var(--s4);max-width:62ch">A named AI agent is cute. A <em>governed</em> one is trustworthy — and the difference is one page. This is the contract that sits under every agent Aloha AI builds: what it may do, what it may never do, and what it must route to a human. Fill it in below and download your copy. Free, runs in your browser, sends nothing anywhere.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <p class="eyebrow">Fill it in</p>
+    <h2>One agent, sixteen fields</h2>
+    <p class="lead" style="max-width:64ch">Write it for any agent you will actually rely on. A quick tip: if you can't fill in <b>Prohibited actions</b> and <b>Human approval</b>, the agent isn't ready to be trusted with anything consequential.</p>
+
+    <div class="rcgrid" id="rcform">
+      <div class="rcf"><label for="f_agent">Agent name</label><div class="hint">The recognizable name (optional — the contract, not the name, is the point).</div><input id="f_agent" placeholder="e.g. Sharpay"></div>
+      <div class="rcf"><label for="f_role">Role</label><div class="hint">The one job this agent holds.</div><input id="f_role" placeholder="e.g. Brand-Voice Reviewer"></div>
+      <div class="rcf wide"><label for="f_mission">Mission</label><div class="hint">The business outcome it serves.</div><input id="f_mission" placeholder="e.g. Keep every published output on-brand and consistent."></div>
+      <div class="rcf"><label for="f_scope">Scope</label><div class="hint">The tasks it may perform.</div><textarea id="f_scope" placeholder="e.g. Review drafts for voice, clarity, and consistency; suggest edits."></textarea></div>
+      <div class="rcf"><label for="f_inputs">Inputs</label><div class="hint">The information it may receive.</div><textarea id="f_inputs" placeholder="e.g. Draft text and the brand voice guide."></textarea></div>
+      <div class="rcf"><label for="f_data">Data classification</label><div class="hint">How sensitive that information is.</div><input id="f_data" placeholder="e.g. Internal — no personal or regulated data."></div>
+      <div class="rcf"><label for="f_tools">Tools</label><div class="hint">The systems it may access.</div><input id="f_tools" placeholder="e.g. The draft document only. No email, no publishing."></div>
+      <div class="rcf wide"><label for="f_prohibited">Prohibited actions</label><div class="hint">What it may never do. Be specific.</div><textarea id="f_prohibited" placeholder="e.g. Never send, publish, post, spend, or contact anyone."></textarea></div>
+      <div class="rcf"><label for="f_output">Output format</label><div class="hint">The shape of what it returns.</div><input id="f_output" placeholder="e.g. Marked-up draft plus a short list of flags."></div>
+      <div class="rcf"><label for="f_evidence">Evidence rule</label><div class="hint">What sources or support it must show.</div><input id="f_evidence" placeholder="e.g. Cite the guideline behind each flag."></div>
+      <div class="rcf"><label for="f_confidence">Confidence rule</label><div class="hint">When it must say it is unsure.</div><input id="f_confidence" placeholder="e.g. Flag, don't guess, when a call is subjective."></div>
+      <div class="rcf"><label for="f_approval">Human approval</label><div class="hint">Which actions require your sign-off.</div><input id="f_approval" placeholder="e.g. Any publish decision routes to the owner."></div>
+      <div class="rcf"><label for="f_escalation">Escalation</label><div class="hint">Conditions that force a human review.</div><input id="f_escalation" placeholder="e.g. Any legal, medical, or financial claim escalates."></div>
+      <div class="rcf"><label for="f_logging">Logging</label><div class="hint">What gets recorded.</div><input id="f_logging" placeholder="e.g. Every review and flag, with timestamp."></div>
+      <div class="rcf"><label for="f_retention">Retention</label><div class="hint">How long records are kept.</div><input id="f_retention" placeholder="e.g. 90 days, then purge."></div>
+      <div class="rcf"><label for="f_evaluation">Evaluation</label><div class="hint">How you will judge its quality.</div><input id="f_evaluation" placeholder="e.g. Sampled monthly against the voice guide."></div>
+      <div class="rcf"><label for="f_failure">Failure response</label><div class="hint">What happens when it breaks.</div><input id="f_failure" placeholder="e.g. Stop the workflow and notify the owner."></div>
+      <div class="rcf"><label for="f_owner">Owner</label><div class="hint">The human accountable — always a person.</div><input id="f_owner" placeholder="e.g. You."></div>
+    </div>
+
+    <div class="toolbar" data-noprint>
+      <button class="btn btn--primary" id="dl">Download my contract (.md)</button>
+      <button class="btn btn--ghost" id="blank">Download blank template (.md)</button>
+      <button class="btn btn--ghost" id="printbtn">Print / save as PDF</button>
+    </div>
+    <p class="small muted" style="margin-top:var(--s3)">Nothing you type is sent anywhere — the download is generated in your browser.</p>
+  </div>
+</section>
+
+<section class="section section--paper">
+  <div class="wrap" style="max-width:60ch">
+    <p class="eyebrow">When you outgrow the template</p>
+    <h2>A contract is the design. Aloha AI builds the system.</h2>
+    <p class="lead">Filling this in for one agent is the whole idea behind <a href="/build-your-team.html">the team mockup</a> and the <a href="/university/courses/first-ai-team">Build Your First AI Team</a> course. When the workflow gets real — live tools, sensitive data, money on the line — that's the service ladder.</p>
+    <div class="cta-row" style="display:flex;gap:var(--s3);flex-wrap:wrap;margin-top:var(--s5)">
+      <a class="btn btn--primary" href="/build-your-team.html">See your AI team in 30 seconds →</a>
+      <a class="btn btn--ghost" href="/services.html">See the service ladder</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer" style="background:var(--ink);color:var(--muted-on-ink)" data-noprint>
+  <div class="wrap" style="padding:var(--s7) 0">
+    <a class="nav__brand" href="/" style="color:var(--cream)" aria-label="Aloha AI home">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#7FE0C4"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#7FE0C4" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg> Aloha&nbsp;AI
+    </a>
+    <p style="margin:.6rem 0 0;max-width:60ch">Governed AI teams built around how your business actually works — built, or taught. By RN Collins.</p>
+    <p class="mono" style="font-size:.66rem;color:#6C837B;margin-top:var(--s5);line-height:1.7">© 2026 Rayven-Nikkita Collins LLC · Aloha AI Consulting (DBA). This template is provided as-is for your own use; it is not legal advice. RN Collins is a JD candidate, not a licensed attorney.</p>
+  </div>
+</footer>
+
+<script>
+const FIELDS = [
+  ["Agent name","f_agent"],["Role","f_role"],["Mission","f_mission"],["Scope","f_scope"],
+  ["Inputs","f_inputs"],["Data classification","f_data"],["Tools","f_tools"],["Prohibited actions","f_prohibited"],
+  ["Output format","f_output"],["Evidence rule","f_evidence"],["Confidence rule","f_confidence"],["Human approval","f_approval"],
+  ["Escalation","f_escalation"],["Logging","f_logging"],["Retention","f_retention"],["Evaluation","f_evaluation"],
+  ["Failure response","f_failure"],["Owner","f_owner"]
+];
+function val(id){var el=document.getElementById(id);return el?el.value.trim():"";}
+function buildMD(blank){
+  var name=val("f_agent")||"[agent]", role=val("f_role")||"[role]";
+  var out="# Agent Role Contract\n\n";
+  out+= blank ? "Agent: __________________    Role: __________________\n\n"
+              : "**Agent:** "+name+"    **Role:** "+role+"\n\n";
+  FIELDS.slice(2).forEach(function(f){
+    var v = blank ? "" : val(f[1]);
+    out+= "## "+f[0]+"\n"+(v||"_______________________________________________")+"\n\n";
+  });
+  out+="---\n*Template by Aloha AI · aloha-ai-consulting.vercel.app · Not legal advice.*\n";
+  return out;
+}
+function download(text,fname){
+  var blob=new Blob([text],{type:"text/markdown"});
+  var a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=fname;
+  document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(a.href);
+}
+document.getElementById("dl").addEventListener("click",function(){
+  var n=(val("f_agent")||"agent").toLowerCase().replace(/[^a-z0-9]+/g,"-");
+  download(buildMD(false),"role-contract-"+n+".md");
+});
+document.getElementById("blank").addEventListener("click",function(){download(buildMD(true),"role-contract-blank.md");});
+document.getElementById("printbtn").addEventListener("click",function(){window.print();});
+</script>
+</body>
+</html>
