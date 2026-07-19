@@ -26,6 +26,8 @@ def resolve(source, raw):
     html=base.with_suffix('.html')
     return html if html.exists() else base
 
+RUNTIME_PREFIXES = ('/_vercel/',)
+
 def main():
     files=[p for p in Path('.').rglob('*.html') if '.git' not in p.parts]
     parsed={p:read(p) for p in files}; failures=[]
@@ -33,6 +35,7 @@ def main():
         for raw in doc.links:
             split=urlsplit(raw)
             if split.scheme.lower() in SKIP or raw.startswith('//'): continue
+            if any(raw.startswith(p) for p in RUNTIME_PREFIXES): continue
             if not split.path and split.fragment:
                 if split.fragment not in doc.ids: failures.append(f'{source}: missing fragment #{split.fragment}')
                 continue
