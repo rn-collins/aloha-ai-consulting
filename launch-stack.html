@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Launch Stack — a site you own, wired to a real business backend | Aloha AI</title>
+<meta name="description" content="A custom-designed site you own outright on GitHub + Vercel, wired to a real business backend — registration, payments, bookings, contacts, email — without you maintaining any of it. A clean web-and-operations build service by RN Collins.">
+<link rel="canonical" href="https://aloha-ai-consulting.vercel.app/launch-stack">
+<meta name="theme-color" content="#14201C">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Launch Stack — a site you own, wired to a real business backend | Aloha AI">
+<meta property="og:description" content="A custom site you own on GitHub + Vercel, wired to registration, payments, bookings, and email — without maintaining any of it. Use the right tool for the ordinary parts; own the parts that are the invention.">
+<meta property="og:image" content="https://aloha-ai-consulting.vercel.app/og-image.png">
+<meta property="og:url" content="https://aloha-ai-consulting.vercel.app/launch-stack">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Launch Stack | Aloha AI">
+<meta name="twitter:description" content="A custom site you own outright, wired to a real business backend — without maintaining any of it.">
+<meta name="twitter:image" content="https://aloha-ai-consulting.vercel.app/og-image.png">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<script>document.documentElement.className+=' js';</script>
+<link rel="stylesheet" href="./aloha-ds.css">
+<style>
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:var(--s5)}
+  @media(max-width:760px){.split{grid-template-columns:1fr}}
+  .col h3{font-family:var(--serif);font-size:1.25rem;color:var(--ink);margin:0 0 var(--s3)}
+  .col.invent{border:1px solid var(--teal-mint);background:var(--teal-l);border-radius:var(--r);padding:var(--s5)}
+  .col.ordinary{border:1px solid var(--line);background:var(--white);border-radius:var(--r);padding:var(--s5)}
+  ul.plain{list-style:none;padding:0;margin:0;display:grid;gap:.45rem}
+  ul.plain li{padding-left:20px;position:relative;color:var(--muted);font-size:var(--fs-sm)}
+  ul.plain li::before{content:"";position:absolute;left:0;top:.55em;width:10px;height:6px;border-left:2px solid var(--teal);border-bottom:2px solid var(--teal);transform:rotate(-45deg)}
+  .stackrow{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s3);margin-top:var(--s6)}
+  @media(max-width:760px){.stackrow{grid-template-columns:1fr}}
+  .stk{background:var(--white);border:1px solid var(--line);border-radius:var(--r-sm);padding:var(--s5)}
+  .stk .tool{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-d);margin-bottom:.3rem}
+  .stk h4{font-family:var(--serif);font-size:1.15rem;color:var(--ink);margin:0 0 .3rem}
+  .stk p{font-size:.85rem;color:var(--muted);margin:0}
+  .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s4);margin-top:var(--s6)}
+  @media(max-width:900px){.tiers{grid-template-columns:1fr}}
+  .tier{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:var(--s6);display:flex;flex-direction:column;box-shadow:var(--sh-1)}
+  .tier.featured{border:2px solid var(--teal);box-shadow:var(--sh-2)}
+  .tier .kick{font-family:var(--mono);font-size:.68rem;letter-spacing:.09em;text-transform:uppercase;color:var(--teal-d);margin-bottom:.3rem}
+  .tier h3{font-family:var(--serif);font-size:1.3rem;color:var(--ink);margin:0 0 .3rem}
+  .tier .money{font-family:var(--mono);font-size:1.05rem;color:var(--ink);margin:.2rem 0 var(--s3)}
+  .tier .btn{margin-top:auto}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="/" aria-label="Aloha AI home">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#1B7A68"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#1B7A68" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      Aloha&nbsp;AI
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav__links" id="navlinks">
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/build-your-team.html">Build a team</a></li>
+        <li><a href="/#moat">The moat</a></li>
+        <li><a href="builds.html">Builds</a></li>
+        <li><a href="/#tools">Tools</a></li>
+        <li><a href="/#products">Products</a></li>
+        <li><a href="/university">University</a></li>
+        <li><a href="/notes">Notes</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#faq">FAQ</a></li>
+        <li class="nav__cta"><a class="btn btn--primary btn--sm" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a call →</a></li>
+      </ul>
+    </nav>
+    <button class="nav__burger" id="burger" aria-label="Open menu" aria-controls="navlinks" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+<span id="top"></span>
+
+<section class="section section--ink">
+  <div class="wrap">
+    <p class="eyebrow">A separate, simpler service</p>
+    <h1 class="display" style="max-width:22ch">A site you own, wired to a real business backend</h1>
+    <p class="lead" style="margin-top:var(--s4);max-width:62ch">A custom-designed site you own outright — registration, payments, bookings, contacts, and email working underneath it — without you building or maintaining any of that plumbing. It's a clean web-and-operations build. Not an AI product; a fast, honest way to get a real site live and running.</p>
+    <div class="cta-row" style="display:flex;gap:var(--s3);flex-wrap:wrap;margin-top:var(--s6)">
+      <a class="btn btn--primary" href="#tiers">See the three tiers</a>
+      <a class="btn btn--ghost" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a call</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="measure reveal">
+      <p class="eyebrow">The rule</p>
+      <h2 class="h2">Use the right tool for the ordinary parts. Own the part that's the invention.</h2>
+      <p class="lead" style="margin-top:var(--s4)">Most projects are a mix. Some of what you need is completely ordinary — registration, checkout, a contact list, confirmation emails. Some of it is the actual thing that makes your business yours. The mistake is treating both the same: either hand-building the boring parts from scratch, or renting a template that owns your custom work forever. This service sorts the two and wires each to the right place.</p>
+    </div>
+    <div class="split reveal" style="margin-top:var(--s6)">
+      <div class="col ordinary">
+        <h3>Ordinary — let a proven backend handle it</h3>
+        <ul class="plain">
+          <li>Event and workshop registration</li>
+          <li>Payments, coupons, and checkout</li>
+          <li>Bookings and scheduling</li>
+          <li>Contacts and customer records</li>
+          <li>Confirmation and marketing email</li>
+          <li>Product catalogs and memberships</li>
+        </ul>
+      </div>
+      <div class="col invent">
+        <h3>The invention — you own it outright</h3>
+        <ul class="plain">
+          <li>Your custom-designed frontend</li>
+          <li>Your source code, in your own GitHub</li>
+          <li>Your brand, layout, and content</li>
+          <li>Portability — move hosts anytime</li>
+          <li>Room to add custom features later</li>
+          <li>No lock-in to anyone's template</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--paper">
+  <div class="wrap">
+    <div class="measure reveal">
+      <p class="eyebrow">The stack</p>
+      <h2 class="h2">Three pieces, each doing what it's best at</h2>
+      <p class="lead" style="margin-top:var(--s4)">The point isn't the tools — it's putting each job where it belongs, so you get a custom site you own without maintaining infrastructure you shouldn't have to.</p>
+    </div>
+    <div class="stackrow reveal">
+      <div class="stk"><div class="tool">GitHub</div><h4>Your code, your IP</h4><p>The site's source lives in your own repository with full version history. It's yours, inspectable, and portable.</p></div>
+      <div class="stk"><div class="tool">Vercel</div><h4>Hosting &amp; deploys</h4><p>Builds and publishes the site automatically, with preview versions to check changes before they go live. Fast CDN, SSL included.</p></div>
+      <div class="stk"><div class="tool">Headless backend</div><h4>The business functions</h4><p>Registration, payments, bookings, contacts, and email handled by a proven system, connected to your custom frontend — not rebuilt from scratch.</p></div>
+    </div>
+    <p class="small muted" style="margin-top:var(--s5)">You walk away owning the repo and the design. That's the difference from renting a template site you can never take with you.</p>
+  </div>
+</section>
+
+<section class="section" id="tiers">
+  <div class="wrap">
+    <div class="measure reveal">
+      <p class="eyebrow">Three ways to buy it</p>
+      <h2 class="h2">From a fast launch to a fully operated build</h2>
+    </div>
+    <div class="tiers">
+      <div class="tier reveal">
+        <span class="kick">Launch</span>
+        <h3>Get it live</h3>
+        <div class="money">Fixed price · ~1–2 weeks</div>
+        <p class="small muted" style="margin-bottom:var(--s4)">One custom frontend on GitHub + Vercel, with the one or two business functions you need wired in — say, event registration plus payments. Live, yours, and ready to run.</p>
+        <a class="btn btn--ghost" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a call</a>
+      </div>
+      <div class="tier featured reveal">
+        <span class="kick">Launch + Operate</span>
+        <h3>Live and set up to run</h3>
+        <div class="money">Project price</div>
+        <p class="small muted" style="margin-bottom:var(--s4)">Everything in Launch, plus the backend configured properly — products, memberships, email flows, analytics — and a plain-English guide so you can run it yourself with confidence.</p>
+        <a class="btn btn--primary" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a call</a>
+      </div>
+      <div class="tier reveal">
+        <span class="kick">Custom build</span>
+        <h3>When the workflow is the invention</h3>
+        <div class="money">Scoped per project</div>
+        <p class="small muted" style="margin-bottom:var(--s4)">When your real product outgrows off-the-shelf business functions — custom logic, integrations, governed systems — that's a different kind of build, on your own stack. This is the door into the Aloha AI practice.</p>
+        <a class="btn btn--ghost" href="/services.html">See the Aloha AI ladder</a>
+      </div>
+    </div>
+    <p class="small muted" style="margin-top:var(--s5)">Exact pricing is set on a discovery call once the scope is clear.</p>
+  </div>
+</section>
+
+<section class="section section--paper">
+  <div class="wrap">
+    <div class="measure reveal">
+      <p class="eyebrow">Who it's for</p>
+      <h2 class="h2">Ordinary business, done right and owned</h2>
+      <p class="lead" style="margin-top:var(--s4)">A conference or event page. A consultation-booking site. A paid workshop. A membership portal. A simple product catalog. A newsletter and contact list. If the workflow is familiar, this is the fast, clean way to launch it — and keep it.</p>
+      <p class="lead">If instead the software itself is the point — a research engine, a scoring system, an agent workflow, anything regulated or proprietary — that's the <a href="/services.html">Aloha AI practice</a>, not this. Knowing which one you need is half the value.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--ink">
+  <div class="wrap" style="text-align:center">
+    <div class="reveal" style="max-width:54ch;margin-inline:auto">
+      <h2 class="h2">Not sure which side of the line you're on?</h2>
+      <p class="lead" style="margin-inline:auto">Book a call and we'll sort the ordinary parts from the invention, and scope the fastest honest way to launch.</p>
+      <div class="cta-row" style="display:flex;gap:var(--s3);flex-wrap:wrap;justify-content:center;margin-top:var(--s6)">
+        <a class="btn btn--primary" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a call</a>
+        <a class="btn btn--ghost" href="/services.html">See the Aloha AI ladder</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer" aria-labelledby="foot-h">
+  <div class="wrap">
+    <h2 id="foot-h" class="small" style="position:absolute;left:-999px">Site footer</h2>
+    <div class="footer__grid">
+      <div>
+        <a class="nav__brand" href="/" style="color:var(--cream)" aria-label="Aloha AI home"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#7FE0C4"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#7FE0C4" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg> Aloha&nbsp;AI</a>
+        <p class="small" style="margin-top:var(--s3);max-width:38ch;color:#9FB6AE">AI implementation built around how humans actually trust and use it, for regulated or reputation-sensitive professions.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">AI Teams for Business</a></li>
+          <li><a href="launch-stack.html">Launch Stack</a></li>
+          <li><a href="strategy.html">Strategy &amp; Fractional Leadership</a></li>
+          <li><a href="intelligence.html">Regulatory &amp; Market Intelligence</a></li>
+          <li><a href="content.html">Content &amp; Adoption Systems</a></li>
+          <li><a href="legal-ai.html">Legal AI Workflow</a></li>
+          <li><a href="builds.html">Builds → the proof wall</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Practice</h4>
+        <ul>
+          <li><a href="about.html">About RN Collins</a></li>
+          <li><a href="/notes">Notes</a></li>
+          <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a call</a></li>
+          <li><a href="https://rn-portfolio-khaki.vercel.app" target="_blank" rel="noopener">Portfolio → RN Builds</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="disc small">Launch Stack is a web-and-operations build service. Aloha AI provides regulatory intelligence and AI systems, not legal advice. RN Collins is a JD candidate, not a licensed attorney; nothing here is legal or tax advice or an attorney–client relationship.</p>
+    <p class="fine">Aloha AI · a DBA of Rayven-Nikkita Collins LLC · Honolulu, HI · No tracking, no cookies · © 2026</p>
+  </div>
+</footer>
+
+<script>
+const b=document.getElementById("burger");
+if(b){b.addEventListener("click",()=>{const n=document.getElementById("navlinks");const o=b.getAttribute("aria-expanded")==="true";b.setAttribute("aria-expanded",!o);n.classList.toggle("open");});}
+</script>
+</body>
+</html>
