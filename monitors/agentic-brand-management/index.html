@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agentic Brand Management — Aloha AI</title>
+<meta name="description" content="Continuous, evidence-graded brand and creator management run by a coordinated system of AI agents — monitoring, disclosure and claims-risk analysis, brand-fit scoring, measurement, and governance — with a human accountable for every recommendation. For regulated and reputation-sensitive brands. By RN Collins, Aloha AI.">
+<link rel="canonical" href="https://aloha-ai-consulting.vercel.app/monitors/agentic-brand-management">
+<meta name="theme-color" content="#14201C">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Agentic Brand Management — Aloha AI">
+<meta property="og:description" content="A system of AI agents that manages brand and creator activity on graded evidence — disclosure, claims, fit, measurement, governance — with a human sign-off gate. Not vibes, not a chatbot.">
+<meta property="og:image" content="https://aloha-ai-consulting.vercel.app/monitors/agentic-brand-management/og-image.png">
+<meta property="og:url" content="https://aloha-ai-consulting.vercel.app/monitors/agentic-brand-management">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Agentic Brand Management — Aloha AI">
+<meta name="twitter:description" content="Continuous brand & creator management run by agents, signed off by a human. Every finding graded, cited, and confidence-scored.">
+<meta name="twitter:image" content="https://aloha-ai-consulting.vercel.app/monitors/agentic-brand-management/og-image.png">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<script>document.documentElement.className+=' js';</script>
+<link rel="stylesheet" href="./aloha-ds.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Agentic Brand Management",
+"applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://aloha-ai-consulting.vercel.app/monitors/agentic-brand-management",
+"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+"creator":{"@type":"Person","name":"RN Collins","jobTitle":"Founder, Aloha AI",
+"description":"Neuroscientist (MS), JD candidate, and AI systems builder for reputation-sensitive professions","knowsAbout":["Agentic AI systems","Brand trust","FTC endorsement compliance","Creator economy","AI governance"]},
+"about":"A system of AI agents for continuous, evidence-graded brand and creator management, with human sign-off."}
+</script>
+<style>
+  .hero{position:relative;overflow:hidden;
+    background:radial-gradient(130% 120% at 78% -12%,#243f37 0%,#18271F 42%,var(--ink) 78%);
+    color:var(--cream);padding-block:clamp(52px,8.5vw,104px) clamp(44px,6vw,80px);border-bottom:3px solid var(--teal)}
+  .hero::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+    background:radial-gradient(closest-side at 14% 84%,rgba(127,224,196,.14),transparent 70%),radial-gradient(closest-side at 90% 22%,rgba(27,122,104,.28),transparent 72%)}
+  .hero>.wrap{position:relative;z-index:1}
+  .hero .display{color:var(--cream);max-width:18ch;margin-bottom:var(--s4)}
+  .hero .kicker{color:var(--teal-mint)}
+  .hero .lead{color:#CFDAD5;max-width:60ch}
+  .hero em{color:var(--teal-mint);font-style:normal}
+  .hero__cta{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:var(--s5)}
+  .hero__meta{margin-top:var(--s5);font-family:var(--mono);font-size:var(--fs-xs);color:#9FB6AE;letter-spacing:.04em;line-height:1.8}
+  .hero__meta b{color:var(--cream)}
+  .livebadge{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:var(--fs-xs);
+    letter-spacing:.08em;text-transform:uppercase;color:#CDE7DF;border:1px solid #2F4A42;border-radius:var(--r-pill);padding:.34rem .72rem;margin-bottom:var(--s4)}
+  .livebadge .dot{width:7px;height:7px;border-radius:50%;background:var(--teal-mint);animation:pulse 2.2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(127,224,196,.5)}70%{box-shadow:0 0 0 7px rgba(127,224,196,0)}100%{box-shadow:0 0 0 0 rgba(127,224,196,0)}}
+  .statbar{background:var(--paper);border-bottom:1px solid var(--line)}
+  .statbar__in{display:flex;flex-wrap:wrap;gap:var(--s6);padding-block:var(--s4)}
+  .statbar .stat{flex:1;min-width:150px}
+  .statbar .k{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .statbar .v{font-family:var(--serif);font-size:1.15rem;color:var(--ink);margin-top:.15rem}
+  .sec-head{margin-bottom:var(--s6);max-width:72ch}
+  .sec-head .h2{margin-bottom:var(--s3)}
+  /* Operator Execution Gap */
+  .oeg{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh-2)}
+  @media(max-width:760px){.oeg{grid-template-columns:1fr}}
+  .oeg__col{background:#fff;padding:var(--s5)}
+  .oeg__col.bad{background:var(--red-l)}
+  .oeg__tag{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.09em;text-transform:uppercase;margin-bottom:var(--s3);display:flex;align-items:center;gap:.45rem;flex-wrap:wrap}
+  .oeg__col.bad .oeg__tag{color:var(--red)}
+  .oeg__col.good .oeg__tag{color:var(--green)}
+  .oeg__q{font-family:var(--serif);font-size:1.05rem;font-style:italic;margin-bottom:.7rem}
+  .oeg__why{margin-top:var(--s4);padding-top:var(--s3);border-top:1px dashed var(--line);font-size:var(--fs-sm);color:var(--muted)}
+  /* agents */
+  .agent{border:1px solid var(--line);border-radius:var(--r-sm);padding:var(--s4);background:var(--paper);height:100%}
+  .agent .a-k{font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-d)}
+  .agent h3{font-size:1.02rem;margin:.2rem 0 .35rem}
+  .agent p{font-size:.82rem;color:var(--muted);margin:0}
+  .agent .tools{margin-top:.5rem;font-family:var(--mono);font-size:.66rem;color:var(--muted)}
+  /* diagnostic */
+  .diag{background:var(--ink);border-radius:var(--r);padding:clamp(20px,4vw,36px);color:var(--cream)}
+  .diag h3{color:var(--cream)}
+  .layer{padding:var(--s4) 0;border-top:1px solid #24352F}
+  .layer:first-of-type{border-top:0}
+  .layer .l-h{display:flex;justify-content:space-between;gap:1rem;align-items:baseline;flex-wrap:wrap}
+  .layer .l-h .name{font-family:var(--serif);font-size:1.05rem;color:var(--cream)}
+  .layer .l-h .ev{font-family:var(--mono);font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;color:var(--teal-mint);border:1px solid #2F4A42;border-radius:var(--r-pill);padding:.12rem .5rem}
+  .toggles{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.6rem}
+  .toggle{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.02em;
+    padding:.5rem .8rem;border-radius:var(--r-pill);border:1px solid #33504f;background:#0E1815;color:#CFDAD5;
+    cursor:pointer;min-height:38px;transition:all var(--dur) var(--ease)}
+  .toggle[aria-pressed="true"]{background:var(--teal);border-color:var(--teal-mint);color:#fff}
+  .toggle:focus-visible{box-shadow:var(--sh-focus)}
+  .meter{margin-top:.5rem;height:9px;border-radius:var(--r-pill);background:#20302B;overflow:hidden}
+  .meter>span{display:block;height:100%;width:0;border-radius:var(--r-pill);background:linear-gradient(90deg,var(--teal),var(--teal-mint));transition:width .5s var(--ease)}
+  .out{display:grid;grid-template-columns:auto 1fr;gap:var(--s4);align-items:center;margin-top:var(--s5);padding-top:var(--s4);border-top:1px solid #24352F}
+  .out__score{font-family:var(--serif);font-size:2.6rem;color:var(--teal-mint);line-height:1}
+  .out__lab{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.08em;text-transform:uppercase;color:#9FB6AE}
+  .out__msg{font-size:.92rem;color:#CFDAD5}
+  .out__msg b{color:var(--teal-mint)}
+  .tierpill{display:inline-block;font-family:var(--mono);font-size:.66rem;letter-spacing:.05em;text-transform:uppercase;border-radius:var(--r-pill);padding:.2rem .6rem;margin-top:.4rem}
+  .t-high{background:#3a1d17;color:#ffb59c;border:1px solid #6b2f22}
+  .t-med{background:#3a3320;color:#e8cf8a;border:1px solid #6b5c2f}
+  .t-low{background:#183028;color:#9be7c8;border:1px solid #2f6b57}
+  .ev-item{border-left:2px solid var(--teal);padding-left:var(--s3);margin-bottom:var(--s4)}
+  .ev-item .m{font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;color:var(--teal-d)}
+  .pull{font-family:var(--serif);font-size:clamp(1.3rem,2.6vw,1.75rem);line-height:1.32;max-width:28ch;color:var(--ink)}
+  .section--ink .pull{color:var(--cream)}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="/" aria-label="Aloha AI home">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#1B7A68"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#1B7A68" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      Aloha&nbsp;AI
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav__links" id="navlinks">
+        <li><a href="#gap">The Gap</a></li>
+        <li><a href="#agents">The Agents</a></li>
+        <li><a href="#diagnostic">Diagnostic</a></li>
+        <li><a href="#loop">Human sign-off</a></li>
+        <li><a href="#evidence">Evidence base</a></li>
+        <li><a href="#start">Engage</a></li>
+        <li><a href="/build-your-team.html">Build a team</a></li>
+        <li class="nav__cta"><a class="btn btn--primary btn--sm" href="#start">Get started →</a></li>
+      </ul>
+    </nav>
+    <button class="nav__burger" id="burger" aria-label="Open menu" aria-controls="navlinks" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main"><span id="top"></span>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-h">
+  <div class="wrap">
+    <span class="livebadge"><span class="dot" aria-hidden="true"></span> New · Agentic service line</span>
+    <p class="eyebrow kicker">Aloha AI · Agentic Brand Management</p>
+    <h1 class="display" id="hero-h">Brand management run by agents. Signed off by a human.</h1>
+    <p class="lead">A coordinated system of AI agents manages your brand and creator activity on <em>graded evidence</em> — monitoring public and permissioned content, checking disclosure and claims risk, scoring brand-fit, tracking real measurement, and enforcing governance. A human is accountable for every recommendation that reaches you. Built for regulated and reputation-sensitive brands, where a confident wrong answer is expensive.</p>
+    <div class="hero__cta">
+      <a class="btn btn--primary" href="#diagnostic">Run the readiness diagnostic →</a>
+      <a class="btn btn--ghost" href="#agents">Meet the agents</a>
+    </div>
+    <p class="hero__meta">Grounded in <b>FTC endorsement guidance</b>, consumer-neuroscience literature, and platform policy · Local-LLM analysis · Every finding <b>cited, graded, and confidence-scored</b></p>
+  </div>
+</section>
+
+<!-- STAT BAR -->
+<section class="statbar"><div class="wrap statbar__in">
+  <div class="stat"><div class="k">Agents</div><div class="v">6 specialists + 1 orchestrator</div></div>
+  <div class="stat"><div class="k">Evidence model</div><div class="v">Graded &amp; cited, never vibes</div></div>
+  <div class="stat"><div class="k">Human role</div><div class="v">Risk-tiered sign-off gate</div></div>
+  <div class="stat"><div class="k">Companion tool</div><div class="v"><a href="/intelligence/brand-perception">Brand-Perception Intelligence →</a></div></div>
+</div></section>
+
+<!-- THE GAP -->
+<section class="section" id="gap" aria-labelledby="gap-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Why "agentic," and why it's different</p>
+      <h2 class="h2" id="gap-h">Most "AI brand tools" widen the Operator Execution Gap. This closes it.</h2>
+      <p class="lead">The gap is the distance between what an AI says about your brand and what you can actually act on, publish, or defend. Generic tools generate confident output with no provenance, no disclosure check, and no one accountable. Agentic brand management is built the other way around.</p>
+    </div>
+    <div class="oeg reveal">
+      <div class="oeg__col bad">
+        <div class="oeg__tag"><span aria-hidden="true">✕</span> Generic AI brand tooling</div>
+        <p class="oeg__q">"Here are 20 on-trend posts and 5 creators to work with."</p>
+        <p class="small muted">Ungraded output. No source. No disclosure or claims check. No fit rationale. Nobody signs off. In a regulated category, that is how you get an undisclosed endorsement or an unsubstantiated health claim into market.</p>
+        <p class="oeg__why">Speed with no trust. The risk lands on you.</p>
+      </div>
+      <div class="oeg__col good">
+        <div class="oeg__tag"><span aria-hidden="true">✓</span> Agentic Brand Management</div>
+        <p class="oeg__q">"This creator scores 82/100 on fit; two claims are medium-risk (implied efficacy); disclosure is vague — flagged for your review."</p>
+        <p class="small muted">Every finding carries provenance, an evidence grade, and a confidence level. High-risk items route to a human before anything ships.</p>
+        <p class="oeg__why">Speed <em>and</em> trust. The system knows what it isn't allowed to decide alone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE AGENTS -->
+<section class="section section--paper" id="agents" aria-labelledby="agents-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The system</p>
+      <h2 class="h2" id="agents-h">One orchestrator, six specialist agents</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">Each agent has a narrow job, its own tools, and must return graded, cited output. They map to the six layers of a Creator + Brand Evidence Audit and to the EVIDENCE framework.</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="agent reveal"><div class="a-k">Orchestrator</div><h3>Studio</h3><p>Plans the run, routes to specialists, sequences, assembles findings, applies confidence levels and the priority matrix.</p><div class="tools">plan · route · grade · assemble</div></div>
+      <div class="agent reveal"><div class="a-k">Layer 1 · Collection</div><h3>Collection agent</h3><p>Gathers public and permissioned content for the watchlist and normalizes it into the evidence store.</p><div class="tools">Apify · Bright Data · Playwright · Phyllo · Brandwatch · Whisper</div></div>
+      <div class="agent reveal"><div class="a-k">Layer 2 · Disclosure</div><h3>Disclosure agent</h3><p>Detects sponsorship, affiliate, and material connections; checks whether disclosure is present and clear.</p><div class="tools">local LLM + FTC rule pack</div></div>
+      <div class="agent reveal"><div class="a-k">Layer 3 · Claims-Risk</div><h3>Claims-Risk agent</h3><p>Extracts express and implied claims; assigns category and risk; flags substantiation gaps.</p><div class="tools">local LLM + claim libraries</div></div>
+      <div class="agent reveal"><div class="a-k">Layer 4 · Brand-Fit</div><h3>Brand-Fit agent</h3><p>Scores creators and content against the brief; reads trust, parasocial, and audience-vulnerability signals.</p><div class="tools">local LLM + embeddings</div></div>
+      <div class="agent reveal"><div class="a-k">Layer 5 · Measurement</div><h3>Measurement agent</h3><p>Assembles metrics beyond vanity: awareness, engagement quality, trust, conversion, compliance, learning.</p><div class="tools">SQL over the evidence store</div></div>
+      <div class="agent reveal"><div class="a-k">Layer 6 · Governance</div><h3>Governance agent</h3><p>Checks activity against SOPs, approval workflow, and AI-content policy; raises escalations.</p><div class="tools">policy pack</div></div>
+      <div class="agent reveal"><div class="a-k">Cross-cutting</div><h3>Evidence-grading layer</h3><p>Grades every input — strong/weak, direct/indirect, current/stale — and attaches a recommendation confidence.</p><div class="tools">rules + LLM</div></div>
+      <div class="agent reveal"><div class="a-k">Cross-cutting</div><h3>Human sign-off gate</h3><p>Routes findings by risk tier so nothing high-risk reaches a client without a person behind it.</p><div class="tools">you</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- DIAGNOSTIC -->
+<section class="section" id="diagnostic" aria-labelledby="diag-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Free · runs in your browser</p>
+      <h2 class="h2" id="diag-h">Agentic Brand-Management Readiness</h2>
+      <p class="lead">Toggle what your brand already has in place across the six layers. You'll get a readiness score, your weakest layer (the agent to deploy first), and the human-in-the-loop tier your risk profile calls for. Nothing is sent or stored.</p>
+    </div>
+    <div class="diag reveal" id="diagBox">
+      <!-- layers injected -->
+      <div id="layers"></div>
+      <div class="out">
+        <div><div class="out__score" id="score">0</div><div class="out__lab">/ 100 ready</div></div>
+        <div>
+          <div class="out__msg" id="msg">Toggle the statements that are true for your brand.</div>
+          <span class="tierpill t-med" id="tier" hidden></span>
+        </div>
+      </div>
+    </div>
+    <p class="small muted reveal" style="margin-top:var(--s3)">This diagnostic is an educational estimate, not legal advice or a compliance determination.</p>
+  </div>
+</section>
+
+<!-- HUMAN LOOP -->
+<section class="section section--ink" id="loop" aria-labelledby="loop-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The sign-off gate</p>
+      <h2 class="h2" id="loop-h">Human-in-the-loop is a policy, not a setting</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">Which mode applies is decided per task by risk. That's itself the point for regulated brands: the system knows what it isn't allowed to decide alone.</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card reveal"><span class="chip chip--src">High risk</span><h3 style="margin-top:.5rem">Human-approved</h3><p class="small muted">Health/efficacy/disease claims, undisclosed paid promotion, testimonial risk, anything client-facing and regulated. You sign off before it leaves.</p></div>
+      <div class="card reveal"><h3>Medium risk</h3><p class="small muted">Vague disclosure, ambiguous affiliate language, borderline fit. Surfaced in a review queue / dashboard for a decision.</p></div>
+      <div class="card reveal"><h3>Low risk</h3><p class="small muted">Clean disclosure, on-brand neutral content, internal logging. Agents proceed autonomously, logged for audit.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- EVIDENCE BASE -->
+<section class="section section--paper" id="evidence" aria-labelledby="ev-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">What it stands on</p>
+      <h2 class="h2" id="ev-h">The evidence base and the EVIDENCE framework</h2>
+      <p class="lead">Eight lenses the agents must reason through — and the primary sources they're grounded in.</p>
+    </div>
+    <div class="grid grid-2">
+      <div class="reveal">
+        <div class="ev-item"><div class="m">E · Ecosystem</div>Creator, audience, brand, platform, regulator, affiliate.</div>
+        <div class="ev-item"><div class="m">V · Value</div>What's exchanged: attention, trust, credibility, money, identity.</div>
+        <div class="ev-item"><div class="m">I · Influence</div>Why the audience listens: expertise, parasocial bond, utility.</div>
+        <div class="ev-item"><div class="m">D · Disclosure</div>Sponsorship, affiliate, gift, AI generation, material connection.</div>
+      </div>
+      <div class="reveal">
+        <div class="ev-item"><div class="m">E · Evidence</div>What supports the claim: data, research, creator history, substantiation.</div>
+        <div class="ev-item"><div class="m">N · Narrative</div>The story being told, and whether it strengthens the brand.</div>
+        <div class="ev-item"><div class="m">C · Compliance</div>FTC, platform policy, category regulation, professional rules, IP.</div>
+        <div class="ev-item"><div class="m">E · Evaluation</div>Reach, trust, conversion, sentiment, compliance, brand lift.</div>
+      </div>
+    </div>
+    <p class="small muted reveal" style="margin-top:var(--s4)">Grounded in FTC Endorsement Guides &amp; the material-connection standard; consumer-neuroscience literature on trust, processing fluency, and parasociality; and platform disclosure policies. Empirical work shows real-world disclosure compliance is weak — which is exactly the gap this system watches.</p>
+  </div>
+</section>
+
+<!-- START / OFFER -->
+<section class="section" id="start" aria-labelledby="offer-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">How to engage</p>
+      <h2 class="h2" id="offer-h">Start with a diagnosis. Grow into a running system.</h2>
+      <p class="lead">Phased, matching how Aloha AI works: audit first, then build, then an ongoing agent team, then self-serve.</p>
+    </div>
+    <div class="grid grid-4 keep-2 reveal">
+      <div class="card"><span class="chip chip--src">Start here</span><h3 style="margin-top:.5rem">1 · Agent-run Evidence Audit</h3><p class="small muted">Agents execute a full Creator + Brand Evidence Audit across the six layers; delivered as a report, evidence &amp; risk maps, and a 30/60/90 roadmap. You review and sign off.</p><p class="mono small" style="color:var(--teal-d);margin:.3rem 0 0">Audit · from $2,500</p></div>
+      <div class="card"><h3>2 · Build</h3><p class="small muted">Your agent stack stood up in your environment — collection, disclosure, claims, fit, measurement, governance — on a local LLM, handed over.</p><p class="mono small" style="color:var(--teal-d);margin:.3rem 0 0">Build · $5,000–$10,000</p></div>
+      <div class="card"><h3>3 · Continuous Agent Team</h3><p class="small muted">Always-on monitoring and governance with a risk register, dashboard, and monthly review. The recurring layer.</p><p class="mono small" style="color:var(--teal-d);margin:.3rem 0 0">Retainer · from $4,000/mo</p></div>
+      <div class="card"><h3>4 · Self-serve</h3><p class="small muted">Run the diagnostic and the companion Brand-Perception tool yourself; the productized floor beneath the done-for-you work.</p><p class="mono small" style="color:var(--teal-d);margin:.3rem 0 0">From $127</p></div>
+    </div>
+    <div class="hero__cta reveal" style="margin-top:var(--s5)">
+      <a class="btn btn--primary" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a scoping call →</a>
+      <a class="btn btn--ghost" href="/intelligence/brand-perception">See the companion tool</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section--paper" id="faq" aria-labelledby="faq-h">
+  <div class="wrap">
+    <div class="sec-head reveal"><p class="eyebrow">Questions</p><h2 class="h2" id="faq-h">What people ask first</h2></div>
+    <div class="reveal">
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="f1"><span>Is this legal advice or a compliance guarantee?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="f1"><div class="acc__panel-inner">No. The agents surface disclosure and claims risk for human and counsel review. Aloha AI provides intelligence and AI systems, not legal advice; RN Collins is a JD candidate, not a licensed attorney. Nothing here creates an attorney–client relationship.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="f2"><span>Does it scrape private accounts?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="f2"><div class="acc__panel-inner">No. It is a public / permissioned intelligence system. It collects public content or data a creator/client has authorized (via Phyllo), respects platform terms, and does not bypass authentication or bot-detection. That boundary is what keeps it usable for a real brand practice.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="f3"><span>Why a local LLM?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="f3"><div class="acc__panel-inner">So creator content and client context never leave your environment. It also supports the compliance and data-retention posture regulated clients need. Where stronger reasoning is required, a controlled hybrid can be scoped.</div></div></div>
+      <div class="acc"><h3><button class="acc__btn" aria-expanded="false" aria-controls="f4"><span>How is this different from the Brand-Perception tool?</span><span class="acc__ic" aria-hidden="true">+</span></button></h3><div class="acc__panel" id="f4"><div class="acc__panel-inner">Brand-Perception Intelligence is a point-in-time diagnostic of how an audience trusts you. Agentic Brand Management is the ongoing, running system that acts on that: continuous monitoring, disclosure/claims/fit/measurement/governance, with human sign-off.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section--ink" id="contact" aria-labelledby="cta-h">
+  <div class="wrap" style="text-align:center">
+    <p class="eyebrow">Aloha AI · Agentic Brand Management</p>
+    <h2 class="h2" id="cta-h" style="max-width:26ch;margin-inline:auto">Speed and trust, in the same system.</h2>
+    <p class="lead" style="margin:var(--s4) auto var(--s5);text-align:center">Run the diagnostic, or book a scoping call and we'll size the first agent to your highest-risk layer.</p>
+    <div style="display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn--primary" href="#diagnostic">Run the diagnostic</a>
+      <a class="btn btn--ghost" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a call →</a>
+      <a class="btn btn--ghost" href="/">Back to Aloha AI</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <a class="nav__brand" href="/" style="color:var(--cream)" aria-label="Aloha AI home"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#7FE0C4"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#7FE0C4" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg> Aloha&nbsp;AI</a>
+        <p class="small" style="margin-top:var(--s3);max-width:38ch;color:#9FB6AE">Continuous, evidence-graded brand management run by agents — for regulated and reputation-sensitive brands.</p>
+      </div>
+      <div>
+        <h4>Related</h4>
+        <ul>
+          <li><a href="/intelligence/brand-perception">Brand-Perception Intelligence</a></li>
+          <li><a href="/monitors/suppression-audit">Content Suppression Audit</a></li>
+          <li><a href="/systems/creator-content">Creator Content System</a></li>
+          <li><a href="/tools/claims-checker">Claims Checker</a></li>
+          <li><a href="/tools/citation-verifier">Citation Verifier</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Practice</h4>
+        <ul>
+          <li><a href="/about.html">About RN Collins</a></li>
+          <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a call</a></li>
+          <li><a href="/privacy.html">Privacy</a></li>
+          <li><a href="/terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="disc small">Aloha AI provides regulatory intelligence and AI systems, not legal advice. RN Collins is a JD candidate, not a licensed attorney; nothing here is legal or tax advice or an attorney–client relationship. The readiness diagnostic is an educational estimate, not a compliance determination.</p>
+    <p class="fine">Aloha AI · a DBA of Rayven-Nikkita Collins LLC · Honolulu, HI · No tracking, no cookies · © 2026</p>
+  </div>
+</footer>
+
+<script>
+  (function(){var b=document.getElementById('burger'),l=document.getElementById('navlinks');
+  function set(o){b.setAttribute('aria-expanded',o);l.classList.toggle('open',o);b.setAttribute('aria-label',o?'Close menu':'Open menu');}
+  b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true');});
+  l.addEventListener('click',function(e){if(e.target.tagName==='A')set(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});})();
+  document.querySelectorAll('.acc__btn').forEach(function(btn){var p=document.getElementById(btn.getAttribute('aria-controls'));
+    btn.addEventListener('click',function(){var o=btn.getAttribute('aria-expanded')==='true';btn.setAttribute('aria-expanded',!o);p.style.maxHeight=o?null:p.scrollHeight+'px';});});
+  (function(){var nav=document.querySelector('.nav');if(!nav)return;var on=function(){nav.classList.toggle('is-stuck',window.scrollY>8);};on();window.addEventListener('scroll',on,{passive:true});})();
+  (function(){if(matchMedia('(prefers-reduced-motion:reduce)').matches){document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in');});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(e){io.observe(e);});})();
+
+  /* ---- readiness diagnostic ---- */
+  var LAYERS=[
+    {name:"Collection", ev:"E · Ecosystem", agent:"Collection agent", items:[
+      "We track a defined watchlist of creators/brands","We capture posts, not just follower counts","We keep provenance (source + date) on what we collect"]},
+    {name:"Disclosure", ev:"D · Disclosure", agent:"Disclosure agent", items:[
+      "We check sponsorship/affiliate disclosure on creator content","We know what a 'material connection' requires","Disclosures are reviewed for clarity, not just presence"]},
+    {name:"Claims-Risk", ev:"C · Compliance", agent:"Claims-Risk agent", items:[
+      "We screen claims (express AND implied)","We keep a substantiation file for risky claims","We have safer-language alternatives ready"]},
+    {name:"Brand-Fit", ev:"I · Influence", agent:"Brand-Fit agent", items:[
+      "We select creators on fit, not reach","We assess audience trust / vulnerability","We have a written brief agents can score against"]},
+    {name:"Measurement", ev:"E · Evaluation", agent:"Measurement agent", items:[
+      "We measure trust/sentiment, not just engagement","We track conversion and compliance metrics","We separate vanity metrics from brand lift"]},
+    {name:"Governance", ev:"N · Narrative", agent:"Governance agent", items:[
+      "We have creator briefs + an approval workflow","We have an AI-content usage policy","We have a risk-escalation path"]}
+  ];
+  var state={};
+  function build(){
+    var host=document.getElementById('layers');
+    LAYERS.forEach(function(L,li){
+      state[li]=[];
+      var d=document.createElement('div'); d.className="layer";
+      var h='<div class="l-h"><span class="name">'+(li+1)+' · '+L.name+'</span><span class="ev">'+L.ev+'</span></div>';
+      h+='<div class="toggles">';
+      L.items.forEach(function(it,ii){ h+='<button type="button" class="toggle" aria-pressed="false" data-l="'+li+'" data-i="'+ii+'">'+it+'</button>'; });
+      h+='</div><div class="meter"><span id="m'+li+'"></span></div>';
+      d.innerHTML=h; host.appendChild(d);
+    });
+    host.querySelectorAll('.toggle').forEach(function(t){
+      t.addEventListener('click',function(){
+        var on=t.getAttribute('aria-pressed')==='true'; t.setAttribute('aria-pressed',!on);
+        var li=+t.dataset.l, ii=+t.dataset.i, arr=state[li];
+        if(!on){ if(arr.indexOf(ii)<0) arr.push(ii); } else { state[li]=arr.filter(function(x){return x!==ii;}); }
+        score();
+      });
+    });
+  }
+  function score(){
+    var total=0, layerPct=[], weakest=0, weakVal=2;
+    LAYERS.forEach(function(L,li){
+      var n=state[li].length, pct=n/L.items.length; layerPct[li]=pct; total+=n;
+      var bar=document.getElementById('m'+li); if(bar) bar.style.width=Math.round(pct*100)+'%';
+      if(pct<weakVal){weakVal=pct;weakest=li;}
+    });
+    var max=LAYERS.reduce(function(a,L){return a+L.items.length;},0);
+    var pct=Math.round(total/max*100);
+    document.getElementById('score').textContent=pct;
+    var msg=document.getElementById('msg'), tier=document.getElementById('tier');
+    var W=LAYERS[weakest];
+    if(total===0){ msg.textContent="Toggle the statements that are true for your brand."; tier.hidden=true; return; }
+    tier.hidden=false;
+    var label, cls;
+    if(pct<40){label="High-risk — human-approved mode";cls="tierpill t-high";}
+    else if(pct<75){label="Medium — client-in-the-loop review";cls="tierpill t-med";}
+    else{label="Low-risk — mostly autonomous, logged";cls="tierpill t-low";}
+    tier.className=cls; tier.textContent=label;
+    msg.innerHTML="Weakest layer: <b>"+W.name+"</b> — deploy the <b>"+W.agent+"</b> first. "+
+      (pct<40? "You're exposed across most layers; start with an agent-run Evidence Audit."
+       : pct<75? "Solid foundation with real gaps; a targeted build closes them."
+       : "Strong — a continuous agent team keeps it that way as you scale.");
+  }
+  build(); score();
+</script>
+</body>
+</html>

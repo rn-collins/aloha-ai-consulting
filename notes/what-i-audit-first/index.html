@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What I audit first when a team says it is already using AI — Aloha AI Notes</title>
+<meta name="description" content="An essay on the six dimensions I check before anything else when a team says it already uses AI, and why ad-hoc use, not the absence of a tool, is usually the real risk. By RN Collins.">
+<link rel="canonical" href="https://aloha-ai-consulting.vercel.app/notes/what-i-audit-first">
+<meta name="theme-color" content="#14201C">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What I audit first when a team says it is already using AI">
+<meta property="og:description" content="The six dimensions I check first, and why ad-hoc use is usually the real risk.">
+<meta property="og:image" content="https://aloha-ai-consulting.vercel.app/og-image.png">
+<meta property="og:url" content="https://aloha-ai-consulting.vercel.app/notes/what-i-audit-first">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What I audit first when a team says it is already using AI">
+<meta name="twitter:description" content="The six dimensions I check first, and why ad-hoc use is usually the real risk.">
+<meta name="twitter:image" content="https://aloha-ai-consulting.vercel.app/og-image.png">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<script>document.documentElement.className+=' js';</script>
+<link rel="stylesheet" href="../../aloha-ds.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"What I audit first when a team says it is already using AI",
+"url":"https://aloha-ai-consulting.vercel.app/notes/what-i-audit-first",
+"author":{"@type":"Person","name":"RN Collins","jobTitle":"Founder, Aloha AI"},
+"publisher":{"@type":"Organization","name":"Aloha AI"}}
+</script>
+<style>
+  .hero{position:relative;overflow:hidden;background:var(--grad-hero);
+    color:var(--cream);padding-block:clamp(52px,7vw,92px) clamp(40px,5vw,68px);border-bottom:3px solid var(--teal)}
+  .hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(127,224,196,.05) 1px,transparent 1px);
+    background-size:26px 26px;-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 70%);mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 70%);pointer-events:none}
+  .hero>.wrap{position:relative;max-width:760px}
+  .hero h1{color:var(--cream);max-width:22ch;margin-bottom:var(--s4)}
+  .hero .kicker{color:var(--teal-mint)}
+  .hero .deck{color:#CFDAD5;max-width:58ch;font-size:clamp(1.06rem,1.6vw,1.2rem);line-height:1.5}
+  .hero__meta{margin-top:var(--s5);font-family:var(--mono);font-size:var(--fs-xs);color:#9FB6AE;letter-spacing:.04em}
+  .crumb{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.08em;text-transform:uppercase;margin-bottom:var(--s4)}
+  .crumb a{color:#CDE7DF}
+  .article{max-width:720px;margin-inline:auto}
+  .article p{font-size:1.06rem;line-height:1.72;color:var(--ink-2);margin:0 0 1.15rem}
+  .article h2{font-size:var(--fs-h2);margin:var(--s7) 0 var(--s3)}
+  .article h3{font-size:var(--fs-h3);margin:var(--s6) 0 var(--s2)}
+  .article strong{color:var(--ink)}
+  .anchor{max-width:720px;margin-inline:auto}
+  .anchor .card h3{margin-bottom:var(--s2)}
+  .anchor .links{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:var(--s4)}
+  .disclaim{max-width:720px;margin:var(--s6) auto 0;font-size:var(--fs-sm);color:var(--muted);border-left:2px solid var(--line-2);padding-left:.9rem}
+  .nl-form{margin-top:var(--s2)}
+  .nl-label{display:block;font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem;text-align:left}
+  .nl-row{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center}
+  .nl-input{flex:1 1 240px;min-height:44px;padding:.66rem .8rem;border-radius:var(--r-sm);border:1px solid var(--line-2);background:#fff;color:var(--ink);font:inherit;font-size:.95rem}
+  .nl-input:focus-visible{box-shadow:var(--sh-focus);border-color:var(--teal)}
+  .nl-note{margin-top:.6rem;font-size:var(--fs-sm);color:var(--teal-d);font-weight:600}
+  .nl-fine{margin-top:.6rem;font-family:var(--mono);font-size:.7rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<a class="skip" href="#article">Skip to the essay</a>
+
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="../../index.html" aria-label="Aloha AI home">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#1B7A68"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#1B7A68" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      Aloha&nbsp;AI
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav__links" id="navlinks">
+        <li><a href="../../index.html#services">Services</a></li><li><a href="/build-your-team.html">Build a team</a></li>
+        <li><a href="../../index.html#moat">The moat</a></li>
+        <li><a href="../../index.html#tools">Tools</a></li>
+        <li><a href="../index.html" aria-current="page">Notes</a></li>
+        <li><a href="/university">University</a></li>
+        <li><a href="../../index.html#about">About</a></li>
+        <li><a href="../../legal-ai.html">Legal AI</a></li>
+        <li class="nav__cta"><a class="btn btn--primary btn--sm" href="../../index.html#start">Get started →</a></li>
+      </ul>
+    </nav>
+    <button class="nav__burger" id="burger" aria-label="Open menu" aria-controls="navlinks" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+<span id="top"></span>
+
+<section class="hero" aria-labelledby="hero-h">
+  <div class="wrap">
+    <p class="crumb"><a href="../index.html">← Notes</a></p>
+    <p class="eyebrow kicker">Essay · Governance</p>
+    <h1 id="hero-h">What I audit first when a team says it is already using AI</h1>
+    <p class="deck">The sentence I hear most is reassuring and misleading in equal measure: we are already using AI. The question is never whether; it is how, and who would know if it went wrong.</p>
+    <p class="hero__meta">RN Collins · Aloha AI · Notes</p>
+  </div>
+</section>
+
+<article class="section" id="article">
+  <div class="article reveal">
+    <p>Four words arrive in nearly every first conversation, offered as reassurance: we already use AI. I have learned to hear them as the beginning of a question rather than the end of one. On their face they suggest the hard part is finished: the tools are in the building, people are productive, the transformation is underway. That belief is fair on its own terms, and I try to honor it, because the enthusiasm is real and the productivity often is too. Adoption is hard, and a team that has cleared it has cleared something.</p>
+
+    <p>The sentence tells me almost nothing about risk, though, and the reason is that "using AI" usually names a set of private habits rather than a system: a paralegal pasting a memo into a chatbot, an analyst asking a model to summarize a filing, a marketer generating first drafts on a personal account. Each of those can be useful. Collectively, with no one watching the seams, they are how a confident wrong answer walks into a deliverable unchallenged. So the first thing I audit is never the tools. It is the shape of the practice around them, and I examine it along six dimensions, in a deliberate order.</p>
+
+    <h2>The six dimensions</h2>
+
+    <h3>1. Sources</h3>
+    <p>Where does the model's input come from, and does anyone know? A summary of a document the team uploaded carries a different risk than an answer the model produced from its own training. The first can be checked against a source; the second is a guess wearing the costume of an answer. If a team cannot tell me which of its AI outputs are grounded in a real document and which are not, that is the first gap, and it is usually the widest.</p>
+
+    <h3>2. Verification</h3>
+    <p>What gets checked before it leaves the building, and by what standard? "We read it over" is not verification; it is proofreading. I want to know whether anyone confirms the facts, the figures, and the citations against the source, and whether that check is required or merely encouraged. A check that depends on someone remembering to perform it is a check that will be skipped on the day it matters most.</p>
+
+    <h3>3. Privacy</h3>
+    <p>What is being sent where? Regulated teams often discover, mid-audit, that confidential material has been flowing through consumer accounts with retention settings no one reviewed. The question is plain and the answers are frequently uncomfortable: what data leaves your control, which vendor holds it, and for how long?</p>
+
+    <h3>4. Handoff</h3>
+    <p>Where does the machine's work end and a person's judgment begin, and is that boundary written down or improvised? A workflow with no defined handoff is one where responsibility quietly evaporates: everyone assumes someone else caught the error. The handoff is where accountability either lives or goes to die.</p>
+
+    <h3>5. Governance</h3>
+    <p>Is there a policy, does it match what people actually do, and would a new hire know the rules by the end of the first week? A governance document that describes an imaginary version of the practice is worse than none, because it creates a paper record the real behavior contradicts. I would rather read one honest page than twenty aspirational ones.</p>
+
+    <h3>6. Measurement</h3>
+    <p>Does anyone know whether the AI use is helping, and how they know? Without measurement, a team cannot distinguish a workflow that saves ten hours from one that quietly seeds errors it will pay for later. Measurement sits last not because it matters least, but because it is the dimension that lets you improve the other five over time.</p>
+
+    <h2>Why ad-hoc use is the risk, not the win</h2>
+
+    <p>The generous reading of scattered, informal AI use treats it as a healthy sign: people are experimenting, the organization is adapting from the bottom up. I understand the appeal, and grassroots adoption really can seed something good. It, however, falls short of safety, because ad-hoc use is unobservable by design. No one logged it, no one can audit it, no one can reproduce how a given output was made. When the failure comes, and in regulated work it eventually does, there is no trail to follow and no gate that should have caught it. The very informality that made adoption feel easy is what makes the risk invisible.</p>
+
+    <p>The real work, then, is rarely installing a tool. It is turning a pile of private habits into a practice you can see: sourced, verified, bounded by a handoff, governed by a policy people actually follow, and measured well enough to improve. That is what the <strong>AI Workflow Audit</strong> I built is designed to surface. It scores those six dimensions and returns a maturity read plus a prioritized list of what to fix first, so a team can move from "we already use AI" to "we can show you exactly how, and where the checks are." The score is not the point; the ordered list of fixes is. A team that already uses AI is not behind. It simply has not yet been asked the six questions that turn use into something it can stand behind.</p>
+  </div>
+</article>
+
+<section class="section section--paper" aria-labelledby="anchor-h">
+  <div class="anchor">
+    <div class="card reveal">
+      <p class="eyebrow">The build this is anchored to</p>
+      <h3 id="anchor-h">The AI Workflow Audit</h3>
+      <p class="small muted">Score your own team against these six dimensions before taking my word for any of it. The AI Workflow Audit returns a maturity read and a prioritized list of what to fix first, in your browser.</p>
+      <div class="links">
+        <a class="btn btn--primary" href="/tools/workflow-audit">Run the AI Workflow Audit →</a>
+        <a class="btn btn--outline" href="/tools">See all the free tools →</a>
+      </div>
+    </div>
+    <p class="disclaim">RN Collins is a JD candidate, not a licensed attorney. This essay is systems and evaluation commentary, not legal advice, and nothing here creates an attorney–client relationship. The audit measures documented-practice maturity, not legal compliance.</p>
+    <p class="small muted" style="margin-top:var(--s4)">Read next: <a href="../tracking-isnt-intelligence/index.html">Tracking is not intelligence: designing a regulatory-analysis system →</a></p>
+  </div>
+</section>
+
+<section class="section section--paper" id="newsletter" aria-labelledby="newsletter-h">
+  <div class="wrap" style="max-width:640px;text-align:center">
+    <p class="eyebrow" style="justify-content:center">Newsletter</p>
+    <h2 class="h2" id="newsletter-h">Aloha AI Dispatch</h2>
+    <p class="lead" style="margin:var(--s3) auto var(--s5)">New notes and build breakdowns arrive here first. The dispatch is the quieter way to get them.</p>
+    <!-- BEEHIIV-EMBED-START (replace this whole block with your Beehiiv embed code) -->
+    <form class="nl-form" id="nlForm" action="#" novalidate>
+      <label for="nlEmail" class="nl-label">Email address</label>
+      <div class="nl-row">
+        <input type="email" id="nlEmail" name="email" class="nl-input" placeholder="you@company.com" required autocomplete="email">
+        <button type="submit" class="btn btn--primary">Subscribe →</button>
+      </div>
+      <p class="nl-note" id="nlNote" role="status" hidden>Connect Beehiiv to enable signups.</p>
+      <p class="nl-fine">Placeholder form; not yet wired to a mailing provider. No data is sent or stored.</p>
+    </form>
+    <!-- BEEHIIV-EMBED-END -->
+  </div>
+</section>
+</main>
+
+<footer class="footer" aria-labelledby="foot-h">
+  <div class="wrap">
+    <h2 id="foot-h" class="small" style="position:absolute;left:-999px">Site footer</h2>
+    <div class="footer__grid">
+      <div>
+        <a class="nav__brand" href="../../index.html" style="color:var(--cream)" aria-label="Aloha AI home"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#7FE0C4"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#7FE0C4" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg> Aloha&nbsp;AI</a>
+        <p class="small" style="margin-top:var(--s3);max-width:38ch;color:#9FB6AE">AI implementation built around how humans actually trust and use it, for regulated or reputation-sensitive professions.</p>
+      </div>
+      <div>
+        <h4>Notes</h4>
+        <ul>
+          <li><a href="../index.html">All notes</a></li>
+          <li><a href="../hallucination-risk-legal-work/index.html">Hallucination risk in legal work</a></li>
+          <li><a href="../tracking-isnt-intelligence/index.html">Tracking is not intelligence</a></li>
+          <li><a href="../tool-workflow-operating-system/index.html">Tool, workflow, operating system</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Aloha AI</h4>
+        <ul>
+          <li><a href="../../index.html">The practice</a></li>
+          <li><a href="/tools">Free tools</a></li>
+          <li><a href="../../legal-ai.html">Legal AI Workflow</a></li>
+          <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a call</a></li>
+          <li><a href="../../privacy.html">Privacy</a></li>
+          <li><a href="../../terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="disc small">Notes are commentary on systems and evaluation, not legal advice. RN Collins is a JD candidate, not a licensed attorney; nothing here is legal or tax advice or an attorney–client relationship.</p>
+    <p class="fine">Aloha AI · a DBA of Rayven-Nikkita Collins LLC · Honolulu, HI · No tracking, no cookies · © 2026</p>
+  </div>
+</footer>
+
+<script>
+  (function(){var b=document.getElementById('burger'),l=document.getElementById('navlinks');
+  function set(o){b.setAttribute('aria-expanded',o);l.classList.toggle('open',o);b.setAttribute('aria-label',o?'Close menu':'Open menu');}
+  b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true');});
+  l.addEventListener('click',function(e){if(e.target.tagName==='A')set(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});})();
+  (function(){var nav=document.querySelector('.nav');if(!nav)return;var on=function(){nav.classList.toggle('is-stuck',window.scrollY>8);};on();window.addEventListener('scroll',on,{passive:true});})();
+  (function(){if(matchMedia('(prefers-reduced-motion:reduce)').matches){document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in');});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(e){io.observe(e);});})();
+  (function(){var f=document.getElementById('nlForm');if(!f)return;f.addEventListener('submit',function(e){e.preventDefault();var n=document.getElementById('nlNote');if(n)n.hidden=false;});})();
+</script>
+</body>
+</html>

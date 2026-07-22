@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Founder / Startup AI Stack — Aloha AI</title>
+<meta name="description" content="What a full AI stack looks like for a founder or small startup team: policy monitoring, product-claim review, internal knowledge management, customer education, and diligence prep, built so a small team never puts a confident wrong claim on the record.">
+<link rel="canonical" href="https://aloha-ai-consulting.vercel.app/stacks/founder-startup">
+<meta name="theme-color" content="#14201C">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Founder / Startup AI Stack — Aloha AI">
+<meta property="og:description" content="What a full AI stack looks like for a founder or small startup team: policy monitoring, product-claim review, internal knowledge management, customer education, and diligence prep, built so a small team never puts a confident wrong claim on the record.">
+<meta property="og:image" content="https://aloha-ai-consulting.vercel.app/og-image.png">
+<meta property="og:url" content="https://aloha-ai-consulting.vercel.app/stacks/founder-startup">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Founder / Startup AI Stack — Aloha AI">
+<meta name="twitter:description" content="What a full AI stack looks like for a founder or small startup team: policy monitoring, product-claim review, internal knowledge management, customer education, and diligence prep, built so a small team never puts a confident wrong claim on the record.">
+<meta name="twitter:image" content="https://aloha-ai-consulting.vercel.app/og-image.png">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<script>document.documentElement.className+=' js';</script>
+<link rel="stylesheet" href="../../aloha-ds.css">
+<style>
+  .hero{position:relative;overflow:hidden;background:var(--grad-hero);
+    color:var(--cream);padding-block:clamp(56px,8vw,104px) clamp(44px,6vw,76px);border-bottom:3px solid var(--teal)}
+  .hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(127,224,196,.05) 1px,transparent 1px);
+    background-size:26px 26px;-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 70%);mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 70%);pointer-events:none}
+  .hero>.wrap{position:relative}
+  .hero .display{color:var(--cream);max-width:20ch;margin-bottom:var(--s4)}
+  .hero .kicker{color:var(--teal-mint)}
+  .hero .lead{color:#CFDAD5;max-width:64ch}
+  .hero em{color:var(--teal-mint);font-style:normal}
+  .grad{color:var(--teal-mint)}
+  @supports((-webkit-background-clip:text) or (background-clip:text)){
+    .grad{background:linear-gradient(92deg,#7FE0C4,#CFE9DF);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  }
+  .hero__cta{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:var(--s5)}
+  .hero__answers{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:var(--s5)}
+  .hero__answers .a{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.04em;color:#CDE7DF;
+    border:1px solid #2F4A42;border-radius:var(--r-pill);padding:.4rem .8rem;background:rgba(255,255,255,.03)}
+  .hero__answers .a b{color:var(--teal-mint);font-weight:500}
+  .hero__meta{margin-top:var(--s5);font-family:var(--mono);font-size:var(--fs-xs);color:#9FB6AE;letter-spacing:.04em;line-height:1.8}
+  .hero__meta b{color:var(--cream)}
+  .livebadge{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:var(--fs-xs);
+    letter-spacing:.08em;text-transform:uppercase;color:#CDE7DF;border:1px solid #2F4A42;border-radius:var(--r-pill);padding:.34rem .72rem;margin-bottom:var(--s4)}
+  .livebadge .dot{width:7px;height:7px;border-radius:50%;background:var(--teal-mint);animation:pulse 2.2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(127,224,196,.5)}70%{box-shadow:0 0 0 7px rgba(127,224,196,0)}100%{box-shadow:0 0 0 0 rgba(127,224,196,0)}}
+  .crumb{font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:#9FB6AE;margin-bottom:var(--s4)}
+  .crumb a{color:#CDE7DF}
+  .sec-head{margin-bottom:var(--s6);max-width:74ch}
+  .sec-head .h2{margin-bottom:var(--s3)}
+  .stackviz{display:flex;flex-direction:column;gap:.45rem;margin-top:var(--s5);max-width:680px}
+  .stackviz .layer{border:1px solid #2F4A42;border-left:3px solid var(--teal-mint);border-radius:var(--r-sm);
+    background:rgba(255,255,255,.03);padding:.7rem .95rem}
+  .stackviz .layer .ln{font-family:var(--mono);font-size:.6rem;letter-spacing:.09em;text-transform:uppercase;color:var(--teal-mint)}
+  .stackviz .layer .lt{font-family:var(--serif);font-size:1rem;margin:.05rem 0 0;color:var(--cream)}
+  .laynum{font-family:var(--mono);font-size:.62rem;letter-spacing:.09em;text-transform:uppercase;color:var(--teal-d)}
+  .laydetail h3{font-size:var(--fs-h3);margin:.15rem 0 .6rem}
+  .laydetail p{font-size:.86rem;color:var(--muted);margin:0 0 .55rem}
+  .laydetail p strong{color:var(--ink)}
+  .laydetail .maps{font-size:.82rem;color:var(--ink);border-top:1px solid var(--line);padding-top:.7rem;margin-top:.7rem}
+  .laydetail .maps strong{font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-d);display:block;margin-bottom:.3rem}
+  .laydetail .maps a{font-weight:600}
+  .nl-form{margin-top:var(--s2)}
+  .nl-label{display:block;font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem;text-align:left}
+  .nl-row{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center}
+  .nl-input{flex:1 1 240px;min-height:44px;padding:.66rem .8rem;border-radius:var(--r-sm);border:1px solid var(--line-2);background:#fff;color:var(--ink);font:inherit;font-size:.95rem}
+  .nl-input:focus-visible{box-shadow:var(--sh-focus);border-color:var(--teal)}
+  .nl-note{margin-top:.6rem;font-size:var(--fs-sm);color:var(--teal-d);font-weight:600}
+  .nl-fine{margin-top:.6rem;font-family:var(--mono);font-size:.7rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<a class="skip" href="#layers">Skip to the stack layers</a>
+
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="/" aria-label="Aloha AI home">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#1B7A68"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#1B7A68" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      Aloha&nbsp;AI
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav__links" id="navlinks">
+        <li><a href="/#services">Services</a></li><li><a href="/build-your-team.html">Build a team</a></li>
+        <li><a href="/#moat">The moat</a></li>
+        <li><a href="/stacks/">Stacks</a></li>
+        <li><a href="/tools">Tools</a></li>
+        <li><a href="/intelligence.html">Intelligence</a></li>
+        <li><a href="/university">University</a></li>
+        <li><a href="/legal-ai.html">Legal AI</a></li>
+        <li class="nav__cta"><a class="btn btn--primary btn--sm" href="#start">Get started &rarr;</a></li>
+      </ul>
+    </nav>
+    <button class="nav__burger" id="burger" aria-label="Open menu" aria-controls="navlinks" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+<span id="top"></span>
+
+<section class="hero" aria-labelledby="hero-h">
+  <div class="wrap">
+    <p class="crumb"><a href="/stacks/">Applied stacks</a> / Founder / Startup</p>
+    <span class="livebadge"><span class="dot" aria-hidden="true"></span> Applied stack &middot; founder &amp; startup</span>
+    <p class="eyebrow kicker">Aloha AI &middot; applied stacks by RN Collins</p>
+    <h1 class="display" id="hero-h">The Founder Stack, for a small team that <span class="grad">cannot afford a wrong claim</span>.</h1>
+    <p class="lead">A founder wears every hat, so the AI stack has to cover a lot with few people: a watch layer for the rules that affect the product, a review layer that catches a risky marketing claim before it ships, a knowledge layer so the team stops re-answering the same questions, an education layer for customers, and a diligence layer for when investors or partners start asking. Here is that stack, where AI is a real force multiplier, and where it will confidently get you in trouble.</p>
+    <div class="hero__cta">
+      <a class="btn btn--primary" href="#start">Audit your founder stack &rarr;</a>
+      <a class="btn btn--ghost" href="#layers">See the layers</a>
+    </div>
+    <div class="hero__answers">
+      <span class="a"><b>For</b> founders, operators &amp; small teams in regulated or claims-sensitive markets</span>
+      <span class="a"><b>Why</b> one wrong product claim can draw a regulator or sink a deal</span>
+    </div>
+    <p class="hero__meta">Built by <b>RN&nbsp;Collins</b>. Regulatory&nbsp;&amp; compliance background &middot; Administrative law (JD&nbsp;candidate) &middot; 35+ builds shipped</p>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="glance-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The stack at a glance</p>
+      <h2 class="h2" id="glance-h">Five layers one small team can run</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">The watch layer feeds the claim-review layer; the knowledge layer speeds everything; the education and diligence layers face outward. With few people, the value is a stack that catches the expensive mistakes without adding headcount.</p>
+    </div>
+    <div class="stackviz reveal" role="list" aria-label="Stack layers">
+      <div class="layer" role="listitem"><span class="ln">Layer 01</span><p class="lt">Policy monitoring — watch the rules</p></div>
+      <div class="layer" role="listitem"><span class="ln">Layer 02</span><p class="lt">Product-claim review</p></div>
+      <div class="layer" role="listitem"><span class="ln">Layer 03</span><p class="lt">Internal knowledge management</p></div>
+      <div class="layer" role="listitem"><span class="ln">Layer 04</span><p class="lt">Customer education</p></div>
+      <div class="layer" role="listitem"><span class="ln">Layer 05</span><p class="lt">Diligence prep</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--paper section--texture" id="layers" aria-labelledby="layers-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Layer by layer</p>
+      <h2 class="h2" id="layers-h">What each layer does, and where AI breaks</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">For every layer: the job, where AI earns real time for a small team, where it fails in ways that cost money, and the tools and services that cover it.</p>
+    </div>
+    <div class="grid grid-2">
+
+      <article class="card laydetail reveal">
+        <span class="laynum">Layer 01</span>
+        <h3>Policy monitoring</h3>
+        <p><strong>The job.</strong> Know which rules, agencies, and pending changes actually touch your product, without a full-time compliance hire watching them.</p>
+        <p><strong>Where AI helps.</strong> Summarizing a rule, flagging what changed, and clustering which changes matter to your specific product and market.</p>
+        <p><strong>Where it fails.</strong> General models miss recent changes, misread effective dates, and reassure you that something is fine when it is not. Monitoring has to run off primary sources, not model memory.</p>
+        <p class="maps"><strong>Maps to</strong>the <a href="/intelligence.html">Regulatory &amp; Market Intelligence</a> service for standing primary-source monitors, plus <a href="/tools/bill-analyzer/">Regulatory Bill Analyzer</a> to read a specific bill or rule into triggers that affect you.</p>
+      </article>
+
+      <article class="card laydetail reveal">
+        <span class="laynum">Layer 02</span>
+        <h3>Product-claim review</h3>
+        <p><strong>The job.</strong> Catch a medical, therapeutic, or unsubstantiated marketing claim before it ships on the site, the label, or an ad.</p>
+        <p><strong>Where AI helps.</strong> Scanning copy for high-risk language, flagging claims by regulator zone, and drafting safer alternatives your team and counsel review.</p>
+        <p><strong>Where it fails.</strong> A model will wave through a claim that a regulator would not, or invent a substantiation standard that does not exist. This layer flags risk; it does not replace a lawyer signing off.</p>
+        <p class="maps"><strong>Maps to</strong><a href="/tools/claims-checker/">Regulated Claims Checker</a>, which flags medical, therapeutic, substantiation, and consumer-protection claims by risk level and regulator zone, backed by the <a href="/intelligence.html">Regulatory &amp; Market Intelligence</a> service.</p>
+      </article>
+
+      <article class="card laydetail reveal">
+        <span class="laynum">Layer 03</span>
+        <h3>Internal knowledge management</h3>
+        <p><strong>The job.</strong> Stop re-answering the same questions and losing decisions in chat threads, so a new hire can find how things work.</p>
+        <p><strong>Where AI helps.</strong> Retrieval over your own docs, drafting SOPs from how the team actually works, and answering internal questions with a source pointer.</p>
+        <p><strong>Where it fails.</strong> Overbuilding a heavy system a five-person team cannot maintain, or letting the model answer from general training instead of your real playbook.</p>
+        <p class="maps"><strong>Maps to</strong><a href="/tools/kb-readiness/">Knowledge Base Readiness Checker</a> to get a straight answer on folders vs. Notion vs. a base vs. a custom app, plus <a href="/tools/workflow-audit/">AI Workflow Audit</a> to find where handoffs leak.</p>
+      </article>
+
+      <article class="card laydetail reveal">
+        <span class="laynum">Layer 04</span>
+        <h3>Customer education</h3>
+        <p><strong>The job.</strong> Turn how the product works into onboarding, help content, and explainers that reduce support load and build trust.</p>
+        <p><strong>Where AI helps.</strong> Drafting help articles from source docs, reformatting one explainer into many, and adjusting reading level for different users.</p>
+        <p><strong>Where it fails.</strong> Confident wrong instructions and claims that drift past what the product actually does. Customer-facing content has to trace back to something true.</p>
+        <p class="maps"><strong>Maps to</strong>the <a href="/intelligence.html">Regulatory &amp; Market Intelligence</a> and <a href="/tools/claims-checker/">Regulated Claims Checker</a> pairing to keep outward claims accurate, and <a href="/content.html">Content &amp; Adoption Systems</a> to build a repeatable production process.</p>
+      </article>
+
+      <article class="card laydetail reveal">
+        <span class="laynum">Layer 05</span>
+        <h3>Diligence prep</h3>
+        <p><strong>The job.</strong> Have the documentation, policies, and answers ready when an investor, partner, or acquirer starts asking hard questions.</p>
+        <p><strong>Where AI helps.</strong> Drafting policy documents, assembling a data-room checklist, and turning scattered decisions into a coherent written record.</p>
+        <p><strong>Where it fails.</strong> Fabricated specifics in a document that a diligence process will test, and governance claims the company cannot actually back up. This is where a real audit trail matters.</p>
+        <p class="maps"><strong>Maps to</strong><a href="/tools/workflow-audit/">AI Workflow Audit</a> to score and document your AI workflow across six dimensions, with the <a href="/intelligence.html">Regulatory &amp; Market Intelligence</a> service where the diligence turns on regulatory posture.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="section section--ink" id="start" aria-labelledby="start-h">
+  <div class="wrap" style="text-align:center">
+    <p class="eyebrow" style="justify-content:center">Founder engagement</p>
+    <h2 class="h2" id="start-h" style="max-width:28ch;margin-inline:auto">Cover the expensive mistakes, not the headcount.</h2>
+    <p class="lead" style="margin:var(--s4) auto var(--s5);text-align:center">I build lean AI stacks for small teams: the watch layer, the claim-review gate, and the knowledge layer that let a few people move fast without a costly wrong claim on the record. Most founders start with a Systems Audit that names the weakest layer, then we build that first. Bring the product and we scope it around your market.</p>
+    <div style="display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn--primary" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a scoping call &rarr;</a>
+      <a class="btn btn--ghost" href="/tools/claims-checker/">Run the Claims Checker</a>
+      <a class="btn btn--ghost" href="/stacks/">Back to all stacks</a>
+    </div>
+    <p class="small" style="margin-top:var(--s5);color:var(--muted-on-ink)">Prefer email? <a href="#" data-email style="color:var(--teal-mint)">Email RN</a> &nbsp;&middot;&nbsp; or connect on <a href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noopener" style="color:var(--teal-mint)">LinkedIn</a></p>
+    <p id="emailReveal" hidden style="margin-top:.5rem;font-family:var(--mono);font-size:.8rem;color:#CFDAD5"></p>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="section section--paper" id="newsletter" aria-labelledby="newsletter-h">
+  <div class="wrap" style="max-width:640px;text-align:center">
+    <p class="eyebrow" style="justify-content:center">Newsletter</p>
+    <h2 class="h2" id="newsletter-h">Aloha AI Dispatch</h2>
+    <p class="lead" style="margin:var(--s3) auto var(--s5)">One short email when there is a new tool, a build breakdown, or a shift worth knowing in AI for regulated work.</p>
+    <!-- BEEHIIV-EMBED-START (replace this whole block with your Beehiiv embed code) -->
+    <form class="nl-form" id="nlForm" action="#" novalidate>
+      <label for="nlEmail" class="nl-label">Email address</label>
+      <div class="nl-row">
+        <input type="email" id="nlEmail" name="email" class="nl-input" placeholder="you@company.com" required autocomplete="email">
+        <button type="submit" class="btn btn--primary">Subscribe &rarr;</button>
+      </div>
+      <p class="nl-note" id="nlNote" role="status" hidden>Connect Beehiiv to enable signups.</p>
+      <p class="nl-fine">Placeholder form; not yet wired to a mailing provider. No data is sent or stored.</p>
+    </form>
+    <!-- BEEHIIV-EMBED-END -->
+  </div>
+</section>
+</main>
+
+<footer class="footer" aria-labelledby="foot-h">
+  <div class="wrap">
+    <h2 id="foot-h" class="small" style="position:absolute;left:-999px">Site footer</h2>
+    <div class="footer__grid">
+      <div>
+        <a class="nav__brand" href="/" style="color:var(--cream)" aria-label="Aloha AI home"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#7FE0C4"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#7FE0C4" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg> Aloha&nbsp;AI</a>
+        <p class="small" style="margin-top:var(--s3);max-width:38ch;color:#9FB6AE">AI implementation built around how humans actually trust and use it, for regulated or reputation-sensitive professions.</p>
+      </div>
+      <div>
+        <h4>This stack</h4>
+        <ul>
+          <li><a href="/tools/claims-checker/">Regulated Claims Checker</a></li>
+          <li><a href="/tools/workflow-audit/">AI Workflow Audit</a></li>
+          <li><a href="/intelligence.html">Regulatory &amp; Market Intelligence</a></li>
+          <li><a href="/tools/kb-readiness/">Knowledge Base Readiness</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Aloha AI</h4>
+        <ul>
+          <li><a href="/">The practice</a></li>
+          <li><a href="/stacks/">All applied stacks</a></li>
+          <li><a href="/tools">Free tools</a></li>
+          <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a call</a></li>
+          <li><a href="/privacy.html">Privacy</a></li>
+          <li><a href="/terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="disc small">Aloha AI provides regulatory intelligence and AI systems, not legal advice. RN Collins is a JD candidate, not a licensed attorney; nothing here is legal, medical, or tax advice or an attorney&ndash;client relationship. Each assessment measures documented-practice maturity, not legal compliance.</p>
+    <p class="fine">Aloha AI &middot; a DBA of Rayven-Nikkita Collins LLC &middot; Honolulu, HI &middot; No tracking, no cookies &middot; &copy; 2026</p>
+  </div>
+</footer>
+
+<script>
+  (function(){var b=document.getElementById('burger'),l=document.getElementById('navlinks');
+  function set(o){b.setAttribute('aria-expanded',o);l.classList.toggle('open',o);b.setAttribute('aria-label',o?'Close menu':'Open menu');}
+  b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true');});
+  l.addEventListener('click',function(e){if(e.target.tagName==='A')set(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});})();
+  (function(){var u='collins.ra',dm='northeastern.edu',a=u+'@'+dm,su=encodeURIComponent('Aloha AI — founder stack inquiry');
+  document.querySelectorAll('[data-email]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();
+  try{navigator.clipboard&&navigator.clipboard.writeText(a);}catch(_){}
+  var o=document.getElementById('emailReveal');if(o){o.hidden=false;o.innerHTML='Copied \u2713 &nbsp;<a href="mailto:'+a+'?subject='+su+'" style="color:#7FE0C4">'+a+'</a> &nbsp;&middot;&nbsp; <a href="https://mail.google.com/mail/?view=cm&fs=1&to='+a+'&su='+su+'" target="_blank" rel="noopener" style="color:#7FE0C4">Open in Gmail</a>';}
+  window.location.href='mailto:'+a+'?subject='+su;});});})();
+  (function(){var nav=document.querySelector('.nav');if(!nav)return;var on=function(){nav.classList.toggle('is-stuck',window.scrollY>8);};on();window.addEventListener('scroll',on,{passive:true});})();
+  (function(){if(matchMedia('(prefers-reduced-motion:reduce)').matches){document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in');});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(e){io.observe(e);});})();
+  (function(){var f=document.getElementById('nlForm');if(!f)return;f.addEventListener('submit',function(e){e.preventDefault();var n=document.getElementById('nlNote');if(n)n.hidden=false;});})();
+</script>
+</body>
+</html>

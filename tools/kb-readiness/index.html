@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Knowledge Base Readiness Checker — find the right system before you build — Aloha AI</title>
+<meta name="description" content="A short questionnaire that maps your documents and needs to the simplest system that will actually work: organized folders, a doc hub, a structured database, AI retrieval over your files, or a custom app. Runs in your browser; nothing leaves it. Built to stop teams from overbuilding.">
+<link rel="canonical" href="https://aloha-ai-consulting.vercel.app/tools/kb-readiness">
+<meta name="theme-color" content="#14201C">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Knowledge Base Readiness Checker — Aloha AI">
+<meta property="og:description" content="Answer a few questions about your documents and get the simplest system that fits. Runs in your browser; nothing leaves it. Built to stop overbuilding.">
+<meta property="og:image" content="https://aloha-ai-consulting.vercel.app/og-image.png">
+<meta property="og:url" content="https://aloha-ai-consulting.vercel.app/tools/kb-readiness">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Knowledge Base Readiness Checker — Aloha AI">
+<meta name="twitter:description" content="Map your documents and needs to the simplest system that works. Runs in your browser.">
+<meta name="twitter:image" content="https://aloha-ai-consulting.vercel.app/og-image.png">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<script>document.documentElement.className+=' js';</script>
+<link rel="stylesheet" href="./aloha-ds.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Knowledge Base Readiness Checker",
+"applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://aloha-ai-consulting.vercel.app/tools/kb-readiness",
+"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+"creator":{"@type":"Person","name":"RN Collins","jobTitle":"Founder, Aloha AI",
+"description":"Neuroscientist (MS), JD candidate, and AI systems builder for regulated industries","knowsAbout":["Knowledge management","Retrieval-augmented generation","Document systems","AI workflow design"]},
+"about":"An informational questionnaire that maps a team's documents and needs to the simplest knowledge system that will work"}
+</script>
+<style>
+  .hero{position:relative;overflow:hidden;background:var(--grad-hero);
+    color:var(--cream);padding-block:clamp(56px,8vw,104px) clamp(44px,6vw,76px);border-bottom:3px solid var(--teal)}
+  .hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(127,224,196,.05) 1px,transparent 1px);
+    background-size:26px 26px;-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 70%);mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 70%);pointer-events:none}
+  .hero>.wrap{position:relative}
+  .hero .display{color:var(--cream);max-width:20ch;margin-bottom:var(--s4)}
+  .hero .kicker{color:var(--teal-mint)}
+  .hero .lead{color:#CFDAD5;max-width:62ch}
+  .hero em{color:var(--teal-mint);font-style:normal}
+  .grad{color:var(--teal-mint)}
+  @supports((-webkit-background-clip:text) or (background-clip:text)){
+    .grad{background:linear-gradient(92deg,#7FE0C4,#CFE9DF);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  }
+  .hero__cta{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:var(--s5)}
+  .hero__answers{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:var(--s5)}
+  .hero__answers .a{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.04em;color:#CDE7DF;
+    border:1px solid #2F4A42;border-radius:var(--r-pill);padding:.4rem .8rem;background:rgba(255,255,255,.03)}
+  .hero__answers .a b{color:var(--teal-mint);font-weight:500}
+  .hero__meta{margin-top:var(--s5);font-family:var(--mono);font-size:var(--fs-xs);color:#9FB6AE;letter-spacing:.04em;line-height:1.8}
+  .hero__meta b{color:var(--cream)}
+  .livebadge{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:var(--fs-xs);
+    letter-spacing:.08em;text-transform:uppercase;color:#CDE7DF;border:1px solid #2F4A42;border-radius:var(--r-pill);padding:.34rem .72rem;margin-bottom:var(--s4)}
+  .livebadge .dot{width:7px;height:7px;border-radius:50%;background:var(--teal-mint);animation:pulse 2.2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(127,224,196,.5)}70%{box-shadow:0 0 0 7px rgba(127,224,196,0)}100%{box-shadow:0 0 0 0 rgba(127,224,196,0)}}
+  .sec-head{margin-bottom:var(--s6);max-width:74ch}
+  .sec-head .h2{margin-bottom:var(--s3)}
+
+  /* disclaimer banner */
+  .guard{border:1px solid var(--amber-bd);background:var(--amber-l);border-radius:var(--r);padding:var(--s4) var(--s5);color:var(--amber);font-size:.86rem;line-height:1.6}
+  .guard strong{color:var(--amber)}
+
+  /* quiz instrument */
+  .sc{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:var(--s5);box-shadow:var(--sh-2)}
+  .sc + .sc{margin-top:var(--s4)}
+  .q{padding:var(--s4) 0;border-top:1px solid var(--line)}
+  .q:first-of-type{border-top:0;padding-top:0}
+  .q .qtext{font-weight:600;font-size:.96rem;margin:0 0 .5rem;display:block}
+  .q .qhint{font-size:.8rem;color:var(--muted);margin:-.3rem 0 .55rem}
+  .opts{display:flex;flex-wrap:wrap;gap:.45rem}
+  .opt{position:relative}
+  .opt input{position:absolute;opacity:0;width:1px;height:1px}
+  .opt label{display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:64px;padding:.5rem .95rem;
+    border:1px solid var(--line-2);border-radius:var(--r-pill);background:#fff;cursor:pointer;font-family:var(--mono);
+    font-size:.7rem;letter-spacing:.03em;text-transform:uppercase;color:var(--ink-2);transition:all var(--dur) var(--ease)}
+  .opt label:hover{border-color:var(--teal);color:var(--teal-d)}
+  .opt input:checked + label{background:var(--teal);border-color:var(--teal);color:#fff}
+  .opt input:focus-visible + label{box-shadow:var(--sh-focus)}
+  .sc .btnrow{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:var(--s5)}
+  .sc .btnrow .btn{min-height:44px}
+  .progressmsg{font-family:var(--mono);font-size:.72rem;color:var(--muted);margin-top:var(--s3)}
+
+  /* results */
+  .rec-head{display:flex;gap:var(--s5);align-items:flex-start;flex-wrap:wrap}
+  .rec-badge{flex:0 0 auto;width:120px;height:120px;border-radius:var(--r-lg);background:var(--grad-mint-rule);
+    display:grid;place-items:center;color:#08201B;box-shadow:var(--sh-2);padding:var(--s3);text-align:center}
+  .rec-badge .rk{font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;opacity:.75}
+  .rec-badge .rn{font-family:var(--serif);font-size:1.7rem;font-weight:800;line-height:1}
+  .verdict{flex:1 1 260px}
+  .tier-tag{display:inline-block;font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;
+    padding:.28rem .7rem;border-radius:var(--r-pill);margin-bottom:.5rem;background:var(--teal-l);color:var(--teal-d);border:1px solid #BADFD6}
+  .verdict h3{margin:0 0 .35rem;font-size:1.35rem}
+  .verdict p{margin:0;color:var(--muted);font-size:.92rem;max-width:56ch}
+
+  .resblock{margin-top:var(--s6)}
+  .resblock h4{font-family:var(--serif);font-size:1.08rem;margin:0 0 var(--s3)}
+  .whygrid{display:grid;gap:var(--s3)}
+  .why{border:1px solid var(--line);border-radius:var(--r-sm);padding:var(--s3) var(--s4);background:var(--paper)}
+  .why .wl{font-weight:700;font-size:.86rem;margin:0 0 .25rem}
+  .why p{margin:0;font-size:.85rem;color:var(--muted)}
+
+  .whynot{display:grid;gap:.5rem;margin-top:var(--s3)}
+  .wn{border:1px solid var(--line);border-left:4px solid var(--line-2);border-radius:var(--r-sm);padding:.6rem .85rem;background:#fff}
+  .wn .wnn{font-weight:700;font-size:.84rem}
+  .wn .wnr{font-size:.83rem;color:var(--muted);margin:.2rem 0 0}
+  .wn.runner{border-left-color:var(--teal)}
+  .wn .rmark{font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-d);
+    border:1px solid #BADFD6;background:var(--teal-l);border-radius:var(--r-pill);padding:.14rem .5rem;margin-left:.4rem}
+
+  .checklist{list-style:none;margin:0;padding:0}
+  .checklist li{position:relative;padding:.4rem 0 .4rem 1.9rem;font-size:.9rem;border-top:1px solid var(--line)}
+  .checklist li:first-child{border-top:0}
+  .checklist li::before{content:"";position:absolute;left:0;top:.55rem;width:18px;height:18px;border-radius:5px;
+    border:2px solid var(--teal);background:var(--teal-l)}
+  .checklist li::after{content:"";position:absolute;left:6px;top:.7rem;width:5px;height:9px;border:solid var(--teal-d);
+    border-width:0 2px 2px 0;transform:rotate(45deg)}
+
+  .flags{display:grid;gap:.5rem;margin-top:var(--s3)}
+  .flag-item{border:1px solid var(--amber-bd);background:var(--amber-l);border-radius:var(--r-sm);
+    padding:.6rem .85rem;font-size:.85rem;color:var(--amber);line-height:1.5}
+  .flag-item strong{color:var(--amber)}
+  .flag-item.none{border-color:var(--green-bd);background:var(--green-l);color:var(--green)}
+  .flag-item.none strong{color:var(--green)}
+
+  #beehiivEmail-kb-readiness:focus-visible, #beehiivFallbackForm-kb-readiness button:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+</style>
+</head>
+<body>
+<a class="skip" href="#tool">Skip to the checker</a>
+
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="../../index.html" aria-label="Aloha AI home">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#1B7A68"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#1B7A68" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      Aloha&nbsp;AI
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav__links" id="navlinks">
+        <li><a href="../../index.html#services">Services</a></li><li><a href="/build-your-team.html">Build a team</a></li>
+        <li><a href="../../index.html#moat">The moat</a></li>
+        <li><a href="../index.html">Tools</a></li>
+        <li><a href="../../index.html#products">Products</a></li>
+        <li><a href="/university">University</a></li>
+        <li><a href="../../index.html#about">About</a></li>
+        <li><a href="../../legal-ai.html">Legal AI</a></li>
+        <li class="nav__cta"><a class="btn btn--primary btn--sm" href="#start">Get started →</a></li>
+      </ul>
+    </nav>
+    <button class="nav__burger" id="burger" aria-label="Open menu" aria-controls="navlinks" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+<span id="top"></span>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-h">
+  <div class="wrap">
+    <span class="livebadge"><span class="dot" aria-hidden="true"></span> Free · Knowledge systems · Anti-overbuilding checker</span>
+    <p class="eyebrow kicker">Aloha AI · a practice of RN Collins</p>
+    <h1 class="display" id="hero-h">What knowledge system do you <span class="grad">actually need</span>?</h1>
+    <p class="lead">Most teams reach for the fanciest option when a folder rename would have fixed it. Answer a short set of questions about your documents and how people use them. This checker maps your answers to the <em>simplest system that will work</em>, from organized folders up to AI retrieval, tells you plainly <em>why it fits and why the others do not</em>, and gives you a first-week checklist. It runs <em>in your browser</em>. Nothing you enter leaves this page.</p>
+    <div class="hero__cta">
+      <a class="btn btn--primary" href="#tool">Take the checker →</a>
+      <a class="btn btn--ghost" href="#how">See the six options</a>
+    </div>
+    <div class="hero__answers">
+      <span class="a"><b>For</b> small teams, ops leads, and founders drowning in documents</span>
+      <span class="a"><b>Why</b> the point is to stop you overbuilding before you spend</span>
+      <span class="a"><b>Trust</b> the result computes in your browser; nothing is transmitted</span>
+    </div>
+    <p class="hero__meta">Built by <b>RN&nbsp;Collins</b>. Neuroscience (MS) · Administrative&nbsp;&amp; regulatory law (JD&nbsp;candidate) · AI systems builder for regulated industries</p>
+  </div>
+</section>
+
+<!-- GUARDRAIL -->
+<section class="section" aria-labelledby="guard-h">
+  <div class="wrap">
+    <h2 id="guard-h" class="small" style="position:absolute;left:-999px">Important limits on this tool</h2>
+    <div class="guard reveal" role="note">
+      <strong>Read this first.</strong> RN Collins is a JD candidate, not a licensed attorney. This is an informational guidance tool that suggests a starting point based on your answers. It is <strong>not legal, technical, financial, or security advice</strong>, and it is not a substitute for a professional assessment of your specific situation. Using it creates no reliance and no professional relationship. Confirm any decision that touches confidential data, compliance, or budget with the right qualified advisor before you act.
+    </div>
+  </div>
+</section>
+
+<!-- WHY IT MATTERS -->
+<section class="section section--paper" aria-labelledby="why-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Why this exists</p>
+      <h2 class="h2" id="why-h">The most common mistake is building too much</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">Teams hear "AI" and picture a chatbot trained on their files. Often the real problem is that nobody can find last quarter's contract, and a naming convention plus a shared drive would fix it for a weekend of effort. The wrong system costs money, stalls, and gets abandoned. This checker walks down a ladder from the cheapest fix to the most involved one and stops at the first rung that meets your actual need.</p>
+    </div>
+    <div class="grid grid-2">
+      <div class="card reveal"><h3>What it does</h3><p class="small muted">Takes your answers about volume, formats, change rate, access, sensitivity, and what you need to do with the documents, then points to one primary recommendation with runner-ups, a plain-English rationale, and a first-week checklist.</p></div>
+      <div class="card reveal"><h3>What it will not do</h3><p class="small muted">It will not sell you the expensive option by default, and it does not give legal, security, or financial advice. It maps your inputs to a sensible starting point. A short conversation confirms whether that starting point is right for your specifics.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- THE TOOL -->
+<section class="section section--texture" id="tool" aria-labelledby="tool-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The checker</p>
+      <h2 class="h2" id="tool-h">Answer eleven questions about your documents</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">Pick the option closest to your reality for each question. There are no wrong answers; an honest picture gives you a better recommendation. The result computes on your device with no network call.</p>
+    </div>
+
+    <form class="sc reveal" id="quiz" aria-describedby="quizNote">
+      <p class="small muted" id="quizNote" style="margin-top:0">Eleven quick questions. Each one has a short list of choices.</p>
+      <div id="questions"></div>
+      <div class="btnrow">
+        <button id="scoreBtn" type="submit" class="btn btn--primary">Show my recommendation</button>
+        <button id="resetBtn" type="button" class="btn btn--ghost">Reset</button>
+      </div>
+      <p class="progressmsg" id="progress" aria-hidden="true"></p>
+    </form>
+
+    <div class="sc reveal" id="results" hidden aria-live="polite" tabindex="-1" style="margin-top:var(--s4)">
+      <h3 style="margin-top:0">Your recommendation</h3>
+      <div class="rec-head">
+        <div class="rec-badge" id="recBadge" role="img" aria-label="Recommended system">
+          <span class="rk">Start here</span>
+          <span class="rn" id="recRung">A</span>
+        </div>
+        <div class="verdict">
+          <span class="tier-tag" id="recTag"></span>
+          <h3 id="recHead"></h3>
+          <p id="recBody"></p>
+        </div>
+      </div>
+
+      <div class="resblock">
+        <h4>Why this fits you</h4>
+        <div class="whygrid" id="whyFits"></div>
+      </div>
+
+      <div class="resblock">
+        <h4>Why not the other options</h4>
+        <div class="whynot" id="whyNot"></div>
+      </div>
+
+      <div class="resblock">
+        <h4>What to do next</h4>
+        <ul class="checklist" id="nextSteps"></ul>
+      </div>
+
+      <div class="resblock">
+        <h4>Flags to keep in mind</h4>
+        <div class="flags" id="flagList"></div>
+      </div>
+
+      <div class="btnrow" style="margin-top:var(--s5)">
+        <button id="downloadBtn" type="button" class="btn btn--outline">Download your recommendation</button>
+      </div>
+
+      <!-- BEEHIIV-EMBED-START (replace this whole block with your Beehiiv embed code) -->
+      <div class="card" style="margin-top:var(--s4)">
+        <h4>Get this report by email</h4>
+        <p>Send it to your inbox and get occasional build notes from Aloha AI.</p>
+        <form id="beehiivFallbackForm-kb-readiness" action="#" novalidate>
+          <label for="beehiivEmail-kb-readiness">Email address</label>
+          <input type="email" id="beehiivEmail-kb-readiness" name="email" required placeholder="you@example.com" style="display:block;width:100%;min-height:44px;margin:.4rem 0 .8rem;padding:.6rem .85rem;border:1px solid var(--line);border-radius:var(--r-sm);background:#fff;color:var(--ink);font:inherit">
+          <button type="submit" class="btn btn--outline" style="min-height:44px">Subscribe</button>
+        </form>
+        <p id="beehiivFallbackMsg-kb-readiness" role="status" style="display:none;">Connect Beehiiv to enable signups.</p>
+      </div>
+      <!-- BEEHIIV-EMBED-END -->
+
+      <p class="small muted" style="margin-top:var(--s4)">This tool runs entirely in your browser. The only information that ever leaves your device is the email address you optionally submit below once Beehiiv is connected.</p>
+    </div>
+
+    <p class="small muted reveal" style="margin-top:var(--s4);max-width:74ch"><strong>Informational guidance tool. Not professional advice.</strong> RN Collins is a JD candidate, not a licensed attorney. This maps your answers to a starting recommendation and does not account for every detail of your situation. It is not legal, technical, financial, or security advice, and creates no reliance. Confirm decisions involving confidential data, compliance, or spend with a qualified advisor.</p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS / THE OPTIONS -->
+<section class="section section--paper" id="how" aria-labelledby="how-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The six options</p>
+      <h2 class="h2" id="how-h">A ladder from cheapest fix to most involved</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">The checker weighs your answers and stops at the first rung that meets your real need. Higher rungs are more capable and more costly to build and maintain. The goal is the lowest rung that solves your problem, not the highest one you could imagine.</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card reveal"><span class="chip chip--src">Rung A</span><h3 style="margin-top:.5rem">Organize folders + naming</h3><p class="small muted">A clean folder structure and a naming convention on the drive you already pay for. Cheapest, fastest, and enough for most small, stable document sets.</p></div>
+      <div class="card reveal"><span class="chip chip--src">Rung B</span><h3 style="margin-top:.5rem">Write SOPs first</h3><p class="small muted">When the pain is a repeatable process rather than the files, a few written procedures beat any tool. Often the right first move before you build anything.</p></div>
+      <div class="card reveal"><span class="chip chip--src">Rung C</span><h3 style="margin-top:.5rem">Notion or a doc hub</h3><p class="small muted">A shared workspace with pages, light structure, and search. Good when a handful of people need one place for living documents and notes.</p></div>
+      <div class="card reveal"><span class="chip chip--src">Rung D</span><h3 style="margin-top:.5rem">Airtable or a database</h3><p class="small muted">When your records are consistent fields (clients, cases, inventory), a structured database beats documents. Filter, sort, and relate instead of hunting.</p></div>
+      <div class="card reveal"><span class="chip chip--src">Rung E</span><h3 style="margin-top:.5rem">RAG / AI retrieval</h3><p class="small muted">When you need to ask questions across a large, changing pile of documents, AI retrieval reads them and answers with citations. Powerful, and the most setup.</p></div>
+      <div class="card reveal"><span class="chip chip--src">Rung F</span><h3 style="margin-top:.5rem">Custom application</h3><p class="small muted">A purpose-built app when off-the-shelf tools truly cannot fit the workflow. The most capable and the most expensive; earn your way here.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD-GEN / THE SERVICE -->
+<section class="section" id="start" aria-labelledby="offer-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">This is a demonstration of what I build</p>
+      <h2 class="h2" id="offer-h">RN designs and builds the system this checker points you toward</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">This checker names the right rung. The paid path is building it: a knowledge system sized to your real need, set up inside the tools your team already uses, with the naming, structure, retrieval, or app that fits, plus the guardrails that keep confidential material out of the wrong places. The whole point is to spend on the rung you need and not a dollar past it.</p>
+    </div>
+    <div class="grid grid-3 reveal">
+      <div class="card"><div class="card__ic" aria-hidden="true">1</div><h3>What I build</h3><p class="small muted">Whatever rung fits: a clean drive and naming standard, a Notion or database workspace, a retrieval system over your documents with source citations, or a custom app when nothing simpler works. Sized to your team, not to a sales quota.</p></div>
+      <div class="card"><div class="card__ic" aria-hidden="true">2</div><h3>What you get</h3><ul class="small muted" style="padding-left:1.1rem;margin:.35rem 0 0"><li>A system people actually use, not one that gets abandoned</li><li>Confidentiality handled so sensitive files stay contained</li><li>A migration plan from wherever your documents live now</li><li>Plain documentation so the team can run it without me</li></ul></div>
+      <div class="card"><div class="card__ic" aria-hidden="true">3</div><h3>How to start</h3><p class="small muted">A short scoping call. We confirm the rung this checker suggested, look at where your documents live today, and map the smallest build that solves it.</p></div>
+    </div>
+    <div class="hero__cta reveal" style="margin-top:var(--s5)">
+      <a class="btn btn--primary" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a build / scoping call →</a>
+      <a class="btn btn--outline" href="../index.html">Browse all free tools</a>
+    </div>
+    <p class="small muted reveal" style="margin-top:var(--s4);max-width:74ch">Related tools: the <a href="../governance-readiness/index.html">AI Governance Readiness Scorecard</a> checks whether your documented AI practice holds up, and the <a href="../citation-verifier/index.html">Citation Verifier</a> catches fabricated case cites before a filing. The <a href="../../legal-ai.html">Legal AI Workflow &amp; Governance</a> pillar covers trust-safe systems end to end.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section--ink" id="contact" aria-labelledby="cta-h">
+  <div class="wrap" style="text-align:center">
+    <p class="eyebrow">Aloha AI · Honolulu</p>
+    <h2 class="h2" id="cta-h" style="max-width:26ch;margin-inline:auto">Ready when you are.</h2>
+    <p class="lead" style="margin:var(--s4) auto var(--s5);text-align:center">Convinced, curious, or comparing, there's a path for each.</p>
+    <div style="display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn--primary" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Start with a scoping call →</a>
+      <a class="btn btn--ghost" href="../index.html">Browse all free tools</a>
+    </div>
+    <p class="small" style="margin-top:var(--s5);color:var(--muted-on-ink)">Prefer email? <a href="#" data-email style="color:var(--teal-mint)">Email RN</a> &nbsp;·&nbsp; or connect on <a href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noopener" style="color:var(--teal-mint)">LinkedIn</a></p>
+    <p id="emailReveal" hidden style="margin-top:.5rem;font-family:var(--mono);font-size:.8rem;color:#CFDAD5"></p>
+  </div>
+</section>
+</main>
+
+<footer class="footer" aria-labelledby="foot-h">
+  <div class="wrap">
+    <h2 id="foot-h" class="small" style="position:absolute;left:-999px">Site footer</h2>
+    <div class="footer__grid">
+      <div>
+        <a class="nav__brand" href="../../index.html" style="color:var(--cream)" aria-label="Aloha AI home"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#7FE0C4"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#7FE0C4" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg> Aloha&nbsp;AI</a>
+        <p class="small" style="margin-top:var(--s3);max-width:38ch;color:#9FB6AE">AI implementation built around how humans actually trust and use it, for regulated or reputation-sensitive professions.</p>
+      </div>
+      <div>
+        <h4>This tool</h4>
+        <ul>
+          <li><a href="#why-h">Why it matters</a></li>
+          <li><a href="#tool">The checker</a></li>
+          <li><a href="#how">The six options</a></li>
+          <li><a href="#start">The build</a></li>
+          <li><a href="../governance-readiness/index.html">Governance Scorecard</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Aloha AI</h4>
+        <ul>
+          <li><a href="../index.html">All tools</a></li>
+          <li><a href="../../legal-ai.html">Legal AI Workflow</a></li>
+          <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a call</a></li>
+          <li><a href="https://rn-portfolio-khaki.vercel.app" target="_blank" rel="noopener">Portfolio → RN Builds</a></li>
+          <li><a href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="../../privacy.html">Privacy</a></li>
+          <li><a href="../../terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="disc small">Informational guidance tool. Not professional advice. Aloha AI provides AI workflow design, orchestration, and knowledge-system builds, not legal, financial, or security advice. RN Collins is a JD candidate, not a licensed attorney; nothing here is legal advice or a professional assessment of your situation, and nothing here creates reliance or a professional relationship. This tool maps your answers to a suggested starting point only. Confirm any decision involving confidential data, compliance, or spend with a qualified advisor.</p>
+    <p class="fine">Aloha AI · a DBA of Rayven-Nikkita Collins LLC · Honolulu, HI · No tracking, no cookies · © 2026</p>
+  </div>
+</footer>
+
+<script>
+/* =====================================================================
+   Knowledge Base Readiness Checker
+   Self-contained. No network, no libraries. Runs on file:// open.
+   Deterministic engine maps answers to one of six rungs on a ladder,
+   from organized folders up to a custom application.
+   ===================================================================== */
+(function(){
+  "use strict";
+  function $(id){ return document.getElementById(id); }
+
+  /* ---- the ladder of recommendations ---- */
+  var RECS = {
+    folders: {
+      rung:"A", name:"Organize folders + naming",
+      tag:"Simplest fix",
+      head:"Start with organized folders and a naming convention.",
+      body:"Your documents are few enough and stable enough that a clean folder structure plus a consistent naming pattern on the drive you already use will solve finding things. Do this before you buy or build anything.",
+      fits:[
+        {l:"Your set is small and calm",p:"A modest number of documents that do not change much rarely needs software. Structure beats tooling here."},
+        {l:"Finding files is the real job",p:"You mostly need to locate the right file, and a predictable folder tree plus naming makes that fast for everyone."},
+        {l:"It costs almost nothing",p:"No new subscription, no migration, no training curve. You can do it this week on tools you already pay for."}
+      ],
+      next:[
+        "Agree on a top-level folder structure that matches how people think about the work, not the org chart.",
+        "Write a one-line naming convention, for example YYYY-MM-ClientName-DocType, and put it where everyone can see it.",
+        "Do one cleanup pass to rename and file what already exists, then hold the line on new files.",
+        "Set who owns the structure so it does not drift back into chaos in a month."
+      ],
+      avoid:"Overkill when a folder tree and naming rule would already let people find what they need."
+    },
+    sops: {
+      rung:"B", name:"Write SOPs first",
+      tag:"Process before tools",
+      head:"Write the procedures down before you build anything.",
+      body:"Your pain is a repeatable process more than a pile of files. A few written standard operating procedures will remove more friction than any tool, and they tell you what a tool would even need to do later.",
+      fits:[
+        {l:"The work is repeatable",p:"You answer the same questions and run the same steps often. Writing the steps down beats searching for how it was done last time."},
+        {l:"Knowledge lives in heads",p:"When only one or two people know how things run, a written procedure protects you and speeds everyone else up."},
+        {l:"It clarifies what to build",p:"Documented steps show whether you even need software, and if you do, exactly what it has to support."}
+      ],
+      next:[
+        "List the five processes people ask about most, then write each as short numbered steps.",
+        "Store the SOPs in one obvious place and link them from wherever the work starts.",
+        "Have one other person follow each SOP cold and fix whatever they trip on.",
+        "Revisit in ninety days and only then decide whether a tool is worth adding."
+      ],
+      avoid:"A distraction if your problem is really finding documents rather than remembering how to do the work."
+    },
+    notion: {
+      rung:"C", name:"Notion or a doc hub",
+      tag:"Shared workspace",
+      head:"Set up a shared doc hub like Notion.",
+      body:"A handful of people need one living place for documents, notes, and light structure. A shared workspace with pages and search fits without the cost or setup of anything heavier.",
+      fits:[
+        {l:"A few people share the work",p:"Several people need the same documents and a common place to write and find them. A workspace beats scattered files and email attachments."},
+        {l:"Documents are alive",p:"Your material changes often enough that a static folder feels stale. Pages that anyone can update keep it current."},
+        {l:"You want structure without a build",p:"Light databases, tags, and links give you organization now, with almost no setup and a small monthly cost."}
+      ],
+      next:[
+        "Pick one workspace tool and resist adding a second; one home is the whole point.",
+        "Sketch a simple page tree: a home page, a few sections, and a place for living docs.",
+        "Move your most-used documents in first so people have a reason to open it daily.",
+        "Set light conventions for page titles and tags so search stays useful as it grows."
+      ],
+      avoid:"Underpowered when records are consistent fields you need to filter, or when you must ask questions across thousands of documents."
+    },
+    airtable: {
+      rung:"D", name:"Airtable or a database",
+      tag:"Structured records",
+      head:"Use a structured database like Airtable.",
+      body:"Your information is really records with consistent fields, clients, matters, inventory, or requests, more than freeform documents. A database lets you filter, sort, and relate records instead of hunting through files.",
+      fits:[
+        {l:"Your data has repeating fields",p:"Every record has the same handful of attributes. That is a table, and a database will run circles around folders or pages for this."},
+        {l:"You slice and filter often",p:"You need to see all the open items, everything for one client, or this month's records. Views and filters make that instant."},
+        {l:"Relationships matter",p:"Records link to each other, a client to their matters, an item to its orders. A database keeps those links clean."}
+      ],
+      next:[
+        "List the record types you track and the fields each one actually needs; resist adding fields you will not use.",
+        "Build one table first, import a sample of real records, and confirm the fields hold up.",
+        "Create the two or three views people will live in, such as open items and this-week.",
+        "Add links between tables only once the single-table version proves it earns its keep."
+      ],
+      avoid:"The wrong shape when your material is freeform prose, or when you need natural-language answers across many documents."
+    },
+    rag: {
+      rung:"E", name:"RAG / AI retrieval",
+      tag:"AI over your documents",
+      head:"Build AI retrieval over your documents.",
+      body:"You have a large, changing body of documents and you need to ask questions across all of them, not just locate one file. Retrieval-augmented AI reads your documents and answers with citations back to the source. This is the most setup of the sensible options, so it should clear a real bar first.",
+      fits:[
+        {l:"You ask across the whole pile",p:"The job is answering questions that span many documents, which folders and search cannot do. Retrieval is built for exactly this."},
+        {l:"The corpus is large and moving",p:"Enough documents, changing often enough, that manual reading does not scale. A retrieval system keeps up as material changes."},
+        {l:"Citations keep it honest",p:"A well-built retrieval system shows the source passage for every answer, so people can trust and verify what it tells them."}
+      ],
+      next:[
+        "Write down the ten questions you most want to ask your documents; those define what good looks like.",
+        "Confirm where the documents live and how they will stay in sync as they change.",
+        "Sort out confidentiality first: which documents can be included and where the system may run.",
+        "Pilot on one document set and one team before you expand across the whole corpus."
+      ],
+      avoid:"Overbuilt if you only need to find files, if the set is small, or if you have not first tried search and structure."
+    },
+    custom: {
+      rung:"F", name:"Custom application",
+      tag:"Purpose-built",
+      head:"Consider a custom application, carefully.",
+      body:"Your workflow is specific enough, and at enough scale, that off-the-shelf tools may not fit. A purpose-built app can, but it is the most expensive and most involved option, so make sure the simpler rungs truly fail before you commit.",
+      fits:[
+        {l:"Off-the-shelf tools do not fit",p:"Your workflow has demands that databases and doc hubs cannot meet, and you have felt those limits, not just imagined them."},
+        {l:"The scale justifies it",p:"Enough people, records, and change that a bespoke system pays back the cost of building and maintaining it."},
+        {l:"You have real budget",p:"You can fund a build and the ongoing upkeep it requires. A custom app is a commitment, not a one-time purchase."}
+      ],
+      next:[
+        "Prove a simpler rung fails first; write down exactly which requirement it cannot meet.",
+        "Spec the two or three workflows the app must nail, and cut everything else from version one.",
+        "Budget for maintenance, not just the build; someone has to run it after launch.",
+        "Start with a scoping call before any code, so the smallest viable version is clear."
+      ],
+      avoid:"Almost always premature; the most common and most expensive overbuild. Exhaust every simpler option first."
+    }
+  };
+  var ORDER = ["folders","sops","notion","airtable","rag","custom"];
+
+  /* ---- questions and per-option scoring weights ---- */
+  var QUESTIONS = [
+    {id:"volume", q:"Roughly how many documents are we talking about?",
+      opts:[
+        {v:"tiny", l:"Under 50", w:{folders:3, sops:1}},
+        {v:"small", l:"50–500", w:{folders:2, notion:2}},
+        {v:"mid", l:"500–5,000", w:{notion:1, airtable:1, rag:2}},
+        {v:"large", l:"5,000+", w:{rag:3, custom:1}}
+      ]},
+    {id:"formats", q:"What formats are most of them in?",
+      opts:[
+        {v:"scans", l:"PDFs / scans", w:{rag:1}},
+        {v:"sheets", l:"Spreadsheets", w:{airtable:2}},
+        {v:"notes", l:"Notes / Word docs", w:{notion:1}},
+        {v:"mixed", l:"A mix", w:{notion:1}}
+      ]},
+    {id:"change", q:"How often do the documents change?",
+      opts:[
+        {v:"rarely", l:"Rarely", w:{folders:2}},
+        {v:"monthly", l:"Monthly", w:{folders:1, notion:1}},
+        {v:"weekly", l:"Weekly", w:{notion:1, rag:1}},
+        {v:"daily", l:"Daily", w:{rag:2, custom:1}}
+      ]},
+    {id:"people", q:"How many people need access?",
+      opts:[
+        {v:"one", l:"Just me", w:{folders:2, sops:1}},
+        {v:"few", l:"2–5", w:{folders:1, notion:1}},
+        {v:"team", l:"6–20", w:{notion:2, airtable:1}},
+        {v:"many", l:"20+", w:{notion:1, rag:1, custom:1}}
+      ]},
+    {id:"need", q:"What do you most need to do with them?",
+      hint:"This is the biggest driver of the recommendation.",
+      opts:[
+        {v:"find", l:"Find the right file", w:{folders:4, notion:2}},
+        {v:"ask", l:"Ask questions across docs", w:{rag:5}},
+        {v:"track", l:"Track structured records", w:{airtable:5}},
+        {v:"process", l:"Follow a repeatable process", w:{sops:5}}
+      ]},
+    {id:"structure", q:"Are your records mostly consistent fields, or freeform?",
+      hint:"Consistent fields look like a table; freeform looks like prose.",
+      opts:[
+        {v:"fields", l:"Consistent fields", w:{airtable:3}},
+        {v:"free", l:"Freeform documents", w:{notion:1, rag:1}}
+      ]},
+    {id:"reask", q:"How often do people re-answer the same questions from these docs?",
+      opts:[
+        {v:"never", l:"Almost never", w:{folders:1}},
+        {v:"sometimes", l:"Sometimes", w:{notion:1}},
+        {v:"constantly", l:"Constantly", w:{rag:3}}
+      ]},
+    {id:"sensitivity", q:"How sensitive is the material?",
+      opts:[
+        {v:"public", l:"Public / low", w:{rag:1}},
+        {v:"internal", l:"Internal only", w:{notion:1}},
+        {v:"confidential", l:"Client-confidential", w:{folders:1}},
+        {v:"regulated", l:"Regulated", w:{custom:1}}
+      ]},
+    {id:"tools", q:"What are you using now?",
+      opts:[
+        {v:"desktop", l:"Desktop folders / nothing", w:{folders:2, sops:1}},
+        {v:"cloud", l:"A cloud drive", w:{folders:1, notion:1}},
+        {v:"hub", l:"Notion or similar", w:{notion:1, airtable:1, rag:1}},
+        {v:"db", l:"A database or app", w:{airtable:1, rag:1, custom:1}}
+      ]},
+    {id:"comfort", q:"How technical is your team?",
+      opts:[
+        {v:"low", l:"Not very", w:{folders:2, sops:1}},
+        {v:"med", l:"Somewhat", w:{notion:1}},
+        {v:"high", l:"Very", w:{rag:1, custom:1}}
+      ]},
+    {id:"budget", q:"What is your appetite to spend?",
+      opts:[
+        {v:"zero", l:"Do it myself, $0", w:{folders:2, sops:2}},
+        {v:"small", l:"A small monthly fee", w:{notion:2, airtable:1}},
+        {v:"project", l:"A project budget", w:{rag:2}},
+        {v:"open", l:"Whatever it takes", w:{custom:2, rag:1}}
+      ]}
+  ];
+
+  /* ---- render ---- */
+  function buildForm(){
+    var host = $("questions");
+    var frag = document.createDocumentFragment();
+    QUESTIONS.forEach(function(q, i){
+      var wrap = document.createElement("div"); wrap.className = "q";
+      var lab = document.createElement("span"); lab.className = "qtext";
+      lab.id = "ql" + i; lab.textContent = (i+1) + ". " + q.q;
+      wrap.appendChild(lab);
+      if(q.hint){
+        var h = document.createElement("p"); h.className = "qhint"; h.textContent = q.hint;
+        wrap.appendChild(h);
+      }
+      var opts = document.createElement("div"); opts.className = "opts";
+      opts.setAttribute("role","radiogroup");
+      opts.setAttribute("aria-labelledby","ql" + i);
+      q.opts.forEach(function(o){
+        var sp = document.createElement("span"); sp.className = "opt";
+        var inp = document.createElement("input");
+        inp.type = "radio"; inp.name = "q" + i; inp.id = "q" + i + "_" + o.v; inp.value = o.v;
+        var l = document.createElement("label"); l.setAttribute("for","q" + i + "_" + o.v);
+        l.textContent = o.l;
+        sp.appendChild(inp); sp.appendChild(l); opts.appendChild(sp);
+      });
+      wrap.appendChild(opts);
+      frag.appendChild(wrap);
+    });
+    host.appendChild(frag);
+  }
+
+  function readAnswers(){
+    var a = {};
+    QUESTIONS.forEach(function(q, i){
+      var sel = document.querySelector('input[name="q' + i + '"]:checked');
+      a[q.id] = sel ? sel.value : null;
+    });
+    return a;
+  }
+  function answeredCount(a){
+    return QUESTIONS.filter(function(q){ return a[q.id] !== null; }).length;
+  }
+
+  /* ---- deterministic engine ---- */
+  function compute(a){
+    var score = {}; ORDER.forEach(function(k){ score[k] = 0; });
+    QUESTIONS.forEach(function(q){
+      var v = a[q.id]; if(v === null) return;
+      var opt = null;
+      q.opts.forEach(function(o){ if(o.v === v) opt = o; });
+      if(!opt || !opt.w) return;
+      Object.keys(opt.w).forEach(function(k){ score[k] += opt.w[k]; });
+    });
+    // rank; ties broken by ladder order (prefer the simpler/earlier rung)
+    var ranked = ORDER.slice().sort(function(x, y){
+      if(score[y] !== score[x]) return score[y] - score[x];
+      return ORDER.indexOf(x) - ORDER.indexOf(y);
+    });
+    return {score:score, ranked:ranked, primary:ranked[0], runners:[ranked[1], ranked[2]]};
+  }
+
+  /* ---- flags (deterministic, from answers + chosen rec) ---- */
+  function buildFlags(a, r){
+    var flags = [];
+    if(a.sensitivity === "confidential" || a.sensitivity === "regulated"){
+      flags.push({t:"Confidentiality", d:"Your material is sensitive. Do not paste it into consumer AI chat tools; anything you build must keep this data contained and out of third-party training. Confirm the handling with the right advisor before you load real documents."});
+    }
+    if(a.formats === "scans"){
+      flags.push({t:"Scanned documents", d:"Scans and image PDFs are not readable text until they are run through OCR. Any search or AI retrieval will need that step first, and it adds setup you should plan for."});
+    }
+    if(r.primary === "rag" && (a.budget === "zero" || a.comfort === "low")){
+      flags.push({t:"Retrieval is a real project", d:"AI retrieval landed on top, but your budget or comfort is modest. Treat this as a scoped build rather than a weekend task, or start one rung lower and grow into it."});
+    }
+    if(r.primary === "custom"){
+      flags.push({t:"Custom is the expensive rung", d:"A custom app is the priciest option and the easiest to over-commit to. Make sure a simpler rung truly fails a written requirement before you fund a build."});
+    }
+    if((r.primary === "rag" || r.primary === "custom") && a.volume === "tiny"){
+      flags.push({t:"Small set, big tool", d:"Your document count is small, which usually does not justify retrieval or a custom app. Re-check whether folders, a doc hub, or a database would do the job for far less."});
+    }
+    if(a.need === "process" && r.primary !== "sops"){
+      flags.push({t:"Process pain noted", d:"You said the core need is a repeatable process. Even with the recommendation above, writing a few SOPs first will remove friction that no tool addresses."});
+    }
+    if(!flags.length){
+      flags.push({t:"none", d:"Nothing pressing flagged from your answers. Still confirm confidentiality and budget before you commit to a build."});
+    }
+    return flags;
+  }
+
+  /* ---- render results ---- */
+  var lastResult = null;
+
+  function render(a){
+    var r = compute(a);
+    lastResult = {a:a, r:r};
+    var rec = RECS[r.primary];
+
+    $("recRung").textContent = rec.rung;
+    $("recBadge").setAttribute("aria-label", "Recommended system: " + rec.name);
+    $("recTag").textContent = rec.tag;
+    $("recHead").textContent = rec.head;
+    $("recBody").textContent = rec.body;
+
+    // why fits
+    var wf = $("whyFits"); wf.innerHTML = "";
+    rec.fits.forEach(function(f){
+      var el = document.createElement("div"); el.className = "why";
+      var l = document.createElement("p"); l.className = "wl"; l.textContent = f.l;
+      var p = document.createElement("p"); p.textContent = f.p;
+      el.appendChild(l); el.appendChild(p); wf.appendChild(el);
+    });
+
+    // why not the others (all non-primary, runners marked)
+    var wn = $("whyNot"); wn.innerHTML = "";
+    ORDER.forEach(function(k){
+      if(k === r.primary) return;
+      var other = RECS[k];
+      var isRunner = r.runners.indexOf(k) !== -1;
+      var el = document.createElement("div"); el.className = "wn" + (isRunner ? " runner" : "");
+      var top = document.createElement("div");
+      var nm = document.createElement("span"); nm.className = "wnn"; nm.textContent = other.name;
+      top.appendChild(nm);
+      if(isRunner){
+        var mk = document.createElement("span"); mk.className = "rmark";
+        mk.textContent = r.runners.indexOf(k) === 0 ? "Runner-up" : "Also close";
+        top.appendChild(mk);
+      }
+      var rs = document.createElement("p"); rs.className = "wnr"; rs.textContent = other.avoid;
+      el.appendChild(top); el.appendChild(rs); wn.appendChild(el);
+    });
+
+    // next steps
+    var ns = $("nextSteps"); ns.innerHTML = "";
+    rec.next.forEach(function(s){
+      var li = document.createElement("li"); li.textContent = s; ns.appendChild(li);
+    });
+
+    // flags
+    var flags = buildFlags(a, r);
+    var fl = $("flagList"); fl.innerHTML = "";
+    flags.forEach(function(f){
+      var el = document.createElement("div");
+      el.className = "flag-item" + (f.t === "none" ? " none" : "");
+      if(f.t === "none"){
+        el.textContent = f.d;
+      } else {
+        var s = document.createElement("strong"); s.textContent = f.t + ": ";
+        el.appendChild(s); el.appendChild(document.createTextNode(f.d));
+      }
+      fl.appendChild(el);
+    });
+
+    lastResult.flags = flags;
+    var res = $("results");
+    res.hidden = false;
+    res.focus();
+  }
+
+  /* ---- download ---- */
+  function labelFor(qid, v){
+    var q = null; QUESTIONS.forEach(function(x){ if(x.id === qid) q = x; });
+    if(!q || v === null) return "unanswered";
+    var out = v; q.opts.forEach(function(o){ if(o.v === v) out = o.l; });
+    return out;
+  }
+
+  function download(){
+    if(!lastResult) return;
+    var a = lastResult.a, r = lastResult.r, flags = lastResult.flags;
+    var rec = RECS[r.primary];
+    var lines = [];
+    lines.push("KNOWLEDGE BASE READINESS — YOUR RECOMMENDATION");
+    lines.push("Generated: " + new Date().toISOString());
+    lines.push("Tool: Aloha AI — Knowledge Base Readiness Checker");
+    lines.push("");
+    lines.push("PRIMARY RECOMMENDATION: Rung " + rec.rung + " — " + rec.name);
+    lines.push(rec.head);
+    lines.push("");
+    lines.push(rec.body);
+    lines.push("");
+    lines.push("WHY THIS FITS YOU");
+    rec.fits.forEach(function(f){ lines.push("  - " + f.l + ": " + f.p); });
+    lines.push("");
+    lines.push("RUNNER-UP OPTIONS");
+    r.runners.forEach(function(k, i){
+      lines.push("  " + (i+1) + ". " + RECS[k].name + " (Rung " + RECS[k].rung + ")");
+    });
+    lines.push("");
+    lines.push("WHY NOT THE OTHER OPTIONS");
+    ORDER.forEach(function(k){
+      if(k === r.primary) return;
+      lines.push("  - " + RECS[k].name + ": " + RECS[k].avoid);
+    });
+    lines.push("");
+    lines.push("WHAT TO DO NEXT");
+    rec.next.forEach(function(s, i){ lines.push("  " + (i+1) + ". " + s); });
+    lines.push("");
+    lines.push("FLAGS TO KEEP IN MIND");
+    flags.forEach(function(f){
+      lines.push("  - " + (f.t === "none" ? f.d : (f.t + ": " + f.d)));
+    });
+    lines.push("");
+    lines.push("YOUR ANSWERS");
+    QUESTIONS.forEach(function(q){
+      lines.push("  " + q.q + "  =>  " + labelFor(q.id, a[q.id]));
+    });
+    lines.push("");
+    lines.push("DISCLAIMER");
+    lines.push("RN Collins is a JD candidate, not a licensed attorney. This is an informational");
+    lines.push("guidance tool that suggests a starting point from your answers. It is not legal,");
+    lines.push("technical, financial, or security advice, and it creates no reliance. Confirm any");
+    lines.push("decision involving confidential data, compliance, or spend with a qualified advisor.");
+    lines.push("");
+    lines.push("Aloha AI - a DBA of Rayven-Nikkita Collins LLC - Honolulu, HI");
+
+    var jsonRecord = {
+      record_version: "1.0",
+      generated_at: new Date().toISOString(),
+      tool: "kb-readiness-checker",
+      primary_recommendation: {rung: rec.rung, key: r.primary, name: rec.name, headline: rec.head},
+      runner_ups: r.runners.map(function(k){ return {rung: RECS[k].rung, key: k, name: RECS[k].name}; }),
+      why_it_fits: rec.fits.map(function(f){ return f.l + ": " + f.p; }),
+      why_not_others: ORDER.filter(function(k){ return k !== r.primary; }).map(function(k){
+        return {name: RECS[k].name, reason: RECS[k].avoid};
+      }),
+      next_steps: rec.next,
+      flags: flags.map(function(f){ return f.t === "none" ? f.d : (f.t + ": " + f.d); }),
+      answers: QUESTIONS.map(function(q){ return {question: q.q, answer: labelFor(q.id, a[q.id])}; }),
+      scores: r.score,
+      disclaimer: "RN Collins is a JD candidate, not a licensed attorney. Informational guidance tool that suggests a starting point. Not legal, technical, financial, or security advice. No reliance. Confirm decisions involving confidential data, compliance, or spend with a qualified advisor."
+    };
+
+    var text = lines.join("\n") +
+      "\n\n----- MACHINE-READABLE RECORD (JSON) -----\n" +
+      JSON.stringify(jsonRecord, null, 2) + "\n";
+    var blob = new Blob([text], {type:"text/plain"});
+    var url = URL.createObjectURL(blob);
+    var el = document.createElement("a");
+    el.href = url; el.download = "aloha-kb-readiness-" + Date.now() + ".txt";
+    document.body.appendChild(el); el.click(); document.body.removeChild(el);
+    URL.revokeObjectURL(url);
+  }
+
+  /* ---- events ---- */
+  buildForm();
+
+  function updateProgress(){
+    var a = readAnswers();
+    var n = answeredCount(a);
+    var p = $("progress");
+    p.setAttribute("aria-hidden", "false");
+    p.textContent = n + " of " + QUESTIONS.length + " answered";
+  }
+  $("questions").addEventListener("change", updateProgress);
+
+  $("quiz").addEventListener("submit", function(e){
+    e.preventDefault();
+    render(readAnswers());
+  });
+
+  $("resetBtn").addEventListener("click", function(){
+    $("quiz").reset();
+    $("results").hidden = true;
+    lastResult = null;
+    var p = $("progress"); p.textContent = ""; p.setAttribute("aria-hidden","true");
+    $("questions").scrollIntoView({behavior: matchMedia('(prefers-reduced-motion:reduce)').matches ? 'auto' : 'smooth', block:"start"});
+  });
+
+  $("downloadBtn").addEventListener("click", download);
+
+  var beehiivForm = $("beehiivFallbackForm-kb-readiness");
+  if(beehiivForm){
+    beehiivForm.addEventListener("submit", function(e){
+      e.preventDefault();
+      var msg = $("beehiivFallbackMsg-kb-readiness");
+      msg.style.display = "block";
+      msg.textContent = "Connect Beehiiv to enable signups.";
+    });
+  }
+})();
+</script>
+<script>
+  /* nav burger + is-stuck + email + reveals */
+  (function(){var b=document.getElementById('burger'),l=document.getElementById('navlinks');
+  function set(o){b.setAttribute('aria-expanded',o);l.classList.toggle('open',o);b.setAttribute('aria-label',o?'Close menu':'Open menu');}
+  b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true');});
+  l.addEventListener('click',function(e){if(e.target.tagName==='A')set(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});})();
+  (function(){var u='collins.ra',dm='northeastern.edu',a=u+'@'+dm,su=encodeURIComponent('Aloha AI — knowledge base inquiry');
+  document.querySelectorAll('[data-email]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();
+  try{navigator.clipboard&&navigator.clipboard.writeText(a);}catch(_){}
+  var o=document.getElementById('emailReveal');if(o){o.hidden=false;o.innerHTML='Copied ✓ &nbsp;<a href="mailto:'+a+'?subject='+su+'" style="color:#7FE0C4">'+a+'</a> &nbsp;·&nbsp; <a href="https://mail.google.com/mail/?view=cm&fs=1&to='+a+'&su='+su+'" target="_blank" rel="noopener" style="color:#7FE0C4">Open in Gmail</a>';}
+  window.location.href='mailto:'+a+'?subject='+su;});});})();
+  (function(){var nav=document.querySelector('.nav');if(!nav)return;var on=function(){nav.classList.toggle('is-stuck',window.scrollY>8);};on();window.addEventListener('scroll',on,{passive:true});})();
+  (function(){if(matchMedia('(prefers-reduced-motion:reduce)').matches){document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in');});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(e){io.observe(e);});})();
+</script>
+</body>
+</html>

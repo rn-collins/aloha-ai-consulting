@@ -113,6 +113,7 @@
   .tokrow label{font-weight:600;display:block;margin-bottom:6px;font-size:.85rem}
   .vf input[type=password]{min-height:44px;padding:10px 12px;border:1px solid var(--line);border-radius:var(--r-sm);min-width:260px;font-size:.85rem;background:#fff;color:var(--ink)}
   .livemsg{margin-top:10px;font-size:.85rem;padding:10px 12px;border-radius:var(--r-sm);background:var(--green-l,#eef4f1)}
+  #beehiivEmail-citation-verifier:focus-visible, #beehiivFallbackForm-citation-verifier button:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
 </style>
 </head>
 <body>
@@ -126,7 +127,7 @@
     </a>
     <nav aria-label="Primary">
       <ul class="nav__links" id="navlinks">
-        <li><a href="../../index.html#services">Services</a></li>
+        <li><a href="../../index.html#services">Services</a></li><li><a href="/build-your-team.html">Build a team</a></li>
         <li><a href="../../index.html#moat">The moat</a></li>
         <li><a href="../../index.html#tools">Tools</a></li>
         <li><a href="../../index.html#products">Products</a></li>
@@ -196,7 +197,7 @@
       <p class="small muted" style="margin-top:0">The verifier reads United States reporter citations, checks each one for structural defects that mark a fabrication, and returns a risk score with a per-citation verdict. This engine runs on your device with no network calls.</p>
       <label class="fld" for="draft">Draft text</label>
       <textarea id="draft" aria-describedby="draftHint" placeholder="Paste your brief here, or load the sample."></textarea>
-      <p class="hint" id="draftHint">Nothing you paste leaves your browser unless you deliberately trigger the optional live check below.</p>
+      <p class="hint" id="draftHint">This tool runs entirely in your browser. The only information that ever leaves your device is the email address you optionally submit below once Beehiiv is connected, or the draft text you deliberately submit through the optional live check below.</p>
       <div class="btnrow">
         <button id="runBtn" type="button" class="btn btn--primary">Verify citations</button>
         <button id="sampleBtn" type="button" class="btn btn--outline">Load sample brief</button>
@@ -250,6 +251,20 @@
       <p class="small muted" style="margin-top:0">Download the machine-readable audit record this tool emits: a timestamp, a SHA-256 hash of the draft, every per-citation verdict, and the gate status. It mirrors the record the Python backend writes for the file.</p>
       <div class="btnrow">
         <button id="auditBtn" type="button" class="btn btn--outline" disabled>Download audit record</button>
+      </div>
+      <div id="emailCapture-citation-verifier" hidden style="margin-top:var(--s4)">
+        <!-- BEEHIIV-EMBED-START (replace this whole block with your Beehiiv embed code) -->
+        <div class="vf">
+          <h4>Get this report by email</h4>
+          <p class="small muted">Send it to your inbox and get occasional build notes from Aloha AI.</p>
+          <form id="beehiivFallbackForm-citation-verifier" action="#" novalidate>
+            <label class="fld" for="beehiivEmail-citation-verifier">Email address</label>
+            <input type="email" id="beehiivEmail-citation-verifier" name="email" required placeholder="you@example.com" style="min-height:44px;padding:10px 12px;border:1px solid var(--line);border-radius:var(--r-sm);min-width:260px;font-size:.85rem;background:#fff;color:var(--ink)">
+            <button type="submit" class="btn btn--outline" style="margin-left:.6rem">Subscribe</button>
+          </form>
+          <p id="beehiivFallbackMsg-citation-verifier" role="status" style="display:none;">Connect Beehiiv to enable signups.</p>
+        </div>
+        <!-- BEEHIIV-EMBED-END -->
       </div>
     </div>
 
@@ -642,6 +657,7 @@
     $("results").hidden = false;
     $("gateBlock").hidden = false;
     $("auditBtn").disabled = false;
+    $("emailCapture-citation-verifier").hidden = false;
     resetGate();
   }
 
@@ -762,11 +778,20 @@
   $("sampleBtn").addEventListener("click", function(){ $("draft").value = SAMPLE; $("draft").focus(); });
   $("clearBtn").addEventListener("click", function(){
     $("draft").value = ""; $("results").hidden = true; $("gateBlock").hidden = true;
-    $("auditBtn").disabled = true; lastReport = null; $("draft").focus();
+    $("auditBtn").disabled = true; $("emailCapture-citation-verifier").hidden = true; lastReport = null; $("draft").focus();
   });
   $("checklist").addEventListener("change", updateGate);
   $("auditBtn").addEventListener("click", buildAudit);
   $("liveBtn").addEventListener("click", runLive);
+  var bhForm = $("beehiivFallbackForm-citation-verifier");
+  if(bhForm){
+    bhForm.addEventListener("submit", function(e){
+      e.preventDefault();
+      var msg = $("beehiivFallbackMsg-citation-verifier");
+      msg.style.display = "block";
+      msg.textContent = "Connect Beehiiv to enable signups.";
+    });
+  }
 })();
 </script>
 <script>

@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Regulatory Bill Analyzer — structure a bill in your browser — Aloha AI</title>
+<meta name="description" content="Paste bill or regulation text and get a deterministic triage: issue tags, affected stakeholders, compliance triggers, a risk read, a plain-English summary, and a questions-for-counsel checklist. Runs entirely in your browser. By RN Collins, Aloha AI.">
+<link rel="canonical" href="https://aloha-ai-consulting.vercel.app/tools/bill-analyzer">
+<meta name="theme-color" content="#14201C">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Regulatory Bill Analyzer — structure a bill in your browser — Aloha AI">
+<meta property="og:description" content="A deterministic triage tool for bill and regulation text: issue tags, stakeholders, compliance triggers, risk read, plain-English summary, and a questions-for-counsel checklist. Runs in your browser.">
+<meta property="og:image" content="https://aloha-ai-consulting.vercel.app/og-image.png">
+<meta property="og:url" content="https://aloha-ai-consulting.vercel.app/tools/bill-analyzer">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Regulatory Bill Analyzer — structure a bill in your browser — Aloha AI">
+<meta name="twitter:description" content="A deterministic triage tool for bill and regulation text. Issue tags, stakeholders, compliance triggers, risk read, and a questions-for-counsel checklist. By RN Collins.">
+<meta name="twitter:image" content="https://aloha-ai-consulting.vercel.app/og-image.png">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<script>document.documentElement.className+=' js';</script>
+<link rel="stylesheet" href="./aloha-ds.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Regulatory Bill Analyzer",
+"applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://aloha-ai-consulting.vercel.app/tools/bill-analyzer",
+"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+"creator":{"@type":"Person","name":"RN Collins","jobTitle":"Founder, Aloha AI",
+"description":"Neuroscientist (MS), JD candidate, and AI systems builder for regulated industries","knowsAbout":["Legislative monitoring","Regulatory intelligence","Compliance triage","AI governance","Administrative law"]},
+"about":"Structuring bill and regulation text into issue tags, stakeholders, compliance triggers, a risk read, and a questions-for-counsel checklist"}
+</script>
+<style>
+  .hero{position:relative;overflow:hidden;background:var(--grad-hero);
+    color:var(--cream);padding-block:clamp(56px,8vw,104px) clamp(44px,6vw,76px);border-bottom:3px solid var(--teal)}
+  .hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(127,224,196,.05) 1px,transparent 1px);
+    background-size:26px 26px;-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 70%);mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 70%);pointer-events:none}
+  .hero>.wrap{position:relative}
+  .hero .display{color:var(--cream);max-width:20ch;margin-bottom:var(--s4)}
+  .hero .kicker{color:var(--teal-mint)}
+  .hero .lead{color:#CFDAD5;max-width:62ch}
+  .hero em{color:var(--teal-mint);font-style:normal}
+  .grad{color:var(--teal-mint)}
+  @supports((-webkit-background-clip:text) or (background-clip:text)){
+    .grad{background:linear-gradient(92deg,#7FE0C4,#CFE9DF);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  }
+  .hero__cta{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:var(--s5)}
+  .hero__answers{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:var(--s5)}
+  .hero__answers .a{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.04em;color:#CDE7DF;
+    border:1px solid #2F4A42;border-radius:var(--r-pill);padding:.4rem .8rem;background:rgba(255,255,255,.03)}
+  .hero__answers .a b{color:var(--teal-mint);font-weight:500}
+  .hero__meta{margin-top:var(--s5);font-family:var(--mono);font-size:var(--fs-xs);color:#9FB6AE;letter-spacing:.04em;line-height:1.8}
+  .hero__meta b{color:var(--cream)}
+  .livebadge{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:var(--fs-xs);
+    letter-spacing:.08em;text-transform:uppercase;color:#CDE7DF;border:1px solid #2F4A42;border-radius:var(--r-pill);padding:.34rem .72rem;margin-bottom:var(--s4)}
+  .livebadge .dot{width:7px;height:7px;border-radius:50%;background:var(--teal-mint);animation:pulse 2.2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(127,224,196,.5)}70%{box-shadow:0 0 0 7px rgba(127,224,196,0)}100%{box-shadow:0 0 0 0 rgba(127,224,196,0)}}
+  .sec-head{margin-bottom:var(--s6);max-width:72ch}
+  .sec-head .h2{margin-bottom:var(--s3)}
+  .steps{counter-reset:step;display:grid;gap:var(--s5)}
+  .step{display:grid;grid-template-columns:auto 1fr;gap:var(--s4);align-items:start}
+  .step__n{counter-increment:step;width:44px;height:44px;border-radius:12px;background:var(--teal);color:#fff;
+    font-family:var(--serif);font-size:1.3rem;display:grid;place-items:center;flex:none}
+  .step__n::before{content:counter(step)}
+
+  /* ---- analyzer instrument ---- */
+  .vf{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:var(--s5);box-shadow:var(--sh-2)}
+  .vf h3{margin:0 0 .4rem}
+  .vf label.fld{display:block;font-weight:600;margin-bottom:.4rem}
+  .vf textarea{width:100%;min-height:230px;padding:12px 14px;border:1px solid var(--line);border-radius:var(--r-sm);
+    font-family:var(--mono);font-size:.86rem;line-height:1.5;resize:vertical;background:var(--paper);color:var(--ink)}
+  .vf .hint{font-size:.78rem;color:var(--muted);margin-top:.5rem}
+  .vf .btnrow{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:var(--s4)}
+  .vf .btnrow .btn{min-height:44px}
+  .note-flag{border:1px solid var(--amber-bd);background:var(--amber-l);color:var(--amber);border-radius:var(--r-sm);
+    padding:12px 14px;margin-top:var(--s4);font-size:.85rem}
+  .note-flag b{color:var(--ink)}
+
+  /* risk gauge */
+  .gauge-wrap{display:flex;gap:var(--s5);align-items:center;flex-wrap:wrap}
+  .rgauge{position:relative;width:132px;height:132px;border-radius:50%;
+    background:conic-gradient(var(--g,var(--green)) calc(var(--pct,0)*1%), #e7e1d3 0);
+    display:grid;place-items:center;flex:0 0 auto}
+  .rgauge::after{content:"";position:absolute;inset:14px;background:#fff;border-radius:50%}
+  .rgauge .num{position:relative;z-index:1;font-family:var(--serif);font-size:1.5rem;font-weight:800;color:var(--ink);text-align:center;line-height:1}
+  .verdict h4{margin:0 0 .25rem;font-size:1.05rem}
+  .verdict p{margin:0;color:var(--muted);font-size:.85rem}
+
+  /* result blocks */
+  .rblock{border:1px solid var(--line);border-radius:var(--r-sm);padding:14px 16px;margin-top:var(--s4);background:var(--paper)}
+  .rblock h4{margin:0 0 .5rem;font-size:1rem}
+  .rblock p.blab{font-size:.8rem;color:var(--muted);margin:0 0 .6rem}
+  .taglist{display:flex;flex-wrap:wrap;gap:.5rem;margin:0}
+  .tag{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.03em;
+    padding:.32rem .7rem;border-radius:var(--r-pill);border:1px solid #BADFD6;background:var(--teal-l);color:var(--teal-d)}
+  .tag .n{background:var(--teal);color:#fff;border-radius:var(--r-pill);padding:0 .4rem;font-size:.66rem}
+  .stake{display:inline-flex;align-items:center;font-family:var(--mono);font-size:.72rem;padding:.32rem .7rem;
+    border-radius:var(--r-pill);border:1px solid var(--line-2);background:#fff;color:var(--ink-2)}
+  ul.trig{list-style:none;margin:.3rem 0 0;padding:0}
+  ul.trig li{border:1px solid var(--line);border-left-width:5px;border-radius:var(--r-sm);padding:10px 12px;margin:8px 0;background:#fff}
+  ul.trig li.sev-high{border-left-color:var(--red)}
+  ul.trig li.sev-med{border-left-color:var(--amber)}
+  ul.trig li.sev-low{border-left-color:var(--green)}
+  .trig .cat{font-family:var(--mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+  .trig .q{display:block;margin-top:3px;font-size:.85rem;color:var(--ink)}
+  .trig .q .hit{background:#eef4f1;border-radius:4px;padding:0 4px;font-family:var(--mono);font-size:.8rem;color:var(--teal-d)}
+  ol.counsel{margin:.3rem 0 0;padding-left:1.2rem}
+  ol.counsel li{margin:.45rem 0;font-size:.9rem}
+  .summary-txt{font-size:.92rem;line-height:1.6;color:var(--ink-2)}
+  .empty{font-size:.85rem;color:var(--muted);font-style:italic}
+  #beehiivEmail-bill-analyzer:focus-visible, #beehiivFallbackForm-bill-analyzer button:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+</style>
+</head>
+<body>
+<a class="skip" href="#tool">Skip to the analyzer</a>
+
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="../../index.html" aria-label="Aloha AI home">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#1B7A68"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#1B7A68" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      Aloha&nbsp;AI
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav__links" id="navlinks">
+        <li><a href="../../index.html#services">Services</a></li><li><a href="/build-your-team.html">Build a team</a></li>
+        <li><a href="../../index.html#moat">The moat</a></li>
+        <li><a href="../../index.html#tools">Tools</a></li>
+        <li><a href="../../index.html#products">Products</a></li>
+        <li><a href="/university">University</a></li>
+        <li><a href="../../index.html#about">About</a></li>
+        <li><a href="../../legal-ai.html">Legal AI</a></li>
+        <li class="nav__cta"><a class="btn btn--primary btn--sm" href="#start">Get started →</a></li>
+      </ul>
+    </nav>
+    <button class="nav__burger" id="burger" aria-label="Open menu" aria-controls="navlinks" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+<span id="top"></span>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-h">
+  <div class="wrap">
+    <span class="livebadge"><span class="dot" aria-hidden="true"></span> Live · Regulatory intelligence · bill triage</span>
+    <p class="eyebrow kicker">Aloha AI · a practice of RN Collins</p>
+    <h1 class="display" id="hero-h">Read a bill for its <span class="grad">obligations</span> before you read it line by line.</h1>
+    <p class="lead">Paste bill or regulation text and this tool structures it for a first pass: the issues it touches, the parties it reaches, the obligations it imposes, a risk read from the density of penalties and deadlines, a plain-English summary, and a checklist of questions to put to counsel. The analysis runs <em>in your browser</em> with no network call. It sorts and surfaces; a licensed attorney interprets.</p>
+    <div class="hero__cta">
+      <a class="btn btn--primary" href="#tool">Analyze a bill →</a>
+      <a class="btn btn--ghost" href="#how">See how it works</a>
+    </div>
+    <div class="hero__answers">
+      <span class="a"><b>For</b> compliance teams, policy staff &amp; counsel triaging a stack of bills</span>
+      <span class="a"><b>Why</b> the obligations hide in the "shall" clauses, deadlines, and dollar thresholds</span>
+      <span class="a"><b>Trust</b> deterministic pattern matching in your browser; nothing leaves it</span>
+    </div>
+    <p class="hero__meta">Built by <b>RN&nbsp;Collins</b>. Neuroscience (MS) · Administrative&nbsp;&amp; regulatory law (JD&nbsp;candidate) · AI Workflow Developer, Am Law firm</p>
+  </div>
+</section>
+
+<!-- WHY IT MATTERS -->
+<section class="section" aria-labelledby="why-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Why this exists</p>
+      <h2 class="h2" id="why-h">Triage is the slow, repetitive part of tracking legislation</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">A compliance or policy team watching a legislature reads dozens of bills to find the handful that create real obligations. The signal sits in predictable places: mandatory "shall" and "must" clauses, prohibitions, filing deadlines, dollar thresholds, and rulemaking hooks. This tool does the mechanical first pass so a human starts from a structured map instead of a wall of text. It marks where the obligations are; it does not decide what they mean.</p>
+    </div>
+    <div class="grid grid-2">
+      <div class="card reveal"><h3>What it surfaces</h3><p class="small muted">Issue tags from keyword lexicons, the stakeholders a text implicates, obligation language quoted in context, deadlines and dollar thresholds, and a risk read that reflects how much of that language is present.</p></div>
+      <div class="card reveal"><h3>What it will not do</h3><p class="small muted">It does not read for meaning, weigh legislative intent, resolve ambiguity, or tell you whether an obligation applies to your client. Pattern matching finds candidate language. A licensed attorney reads the source and decides. The questions-for-counsel list is built for exactly that handoff.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- THE TOOL -->
+<section class="section section--paper" id="tool" aria-labelledby="tool-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The instrument</p>
+      <h2 class="h2" id="tool-h">Structure a bill or regulation</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">Paste the text and run the analysis. The engine runs on your device with no network calls. Load the illustrative sample to see it tag issues, quote compliance triggers in context, and generate a questions-for-counsel checklist.</p>
+    </div>
+
+    <div class="vf reveal">
+      <h3>Paste bill or regulation text</h3>
+      <p class="small muted" style="margin-top:0">The analyzer scans for issue themes, stakeholder terms, obligation language, deadlines, and dollar thresholds, then assembles a plain-English summary and a checklist for counsel. It runs on your device with no network calls.</p>
+      <label class="fld" for="billText">Bill or regulation text</label>
+      <textarea id="billText" aria-describedby="billHint" placeholder="Paste the bill or regulation text here, or load the illustrative sample."></textarea>
+      <p class="hint" id="billHint">This tool runs entirely in your browser. The only information that ever leaves your device is the email address you optionally submit below once Beehiiv is connected.</p>
+      <div class="note-flag"><b>This is a triage tool, not legal advice.</b> RN Collins is a JD candidate, not a licensed attorney. The output structures text to speed a first pass. It is not a legal interpretation and creates no attorney-client relationship. A licensed attorney must review the bill before you rely on anything here.</div>
+      <div class="btnrow">
+        <button id="runBtn" type="button" class="btn btn--primary">Analyze text</button>
+        <button id="sampleBtn" type="button" class="btn btn--outline">Load sample</button>
+        <button id="clearBtn" type="button" class="btn btn--ghost">Clear</button>
+      </div>
+    </div>
+
+    <div class="vf reveal" id="results" hidden aria-live="polite" style="margin-top:var(--s4)">
+      <h3>Analysis</h3>
+      <div class="gauge-wrap">
+        <div class="rgauge" id="gauge" role="img" aria-label="Risk read gauge">
+          <div class="num" id="riskLabel">—</div>
+        </div>
+        <div class="verdict" id="verdict"></div>
+      </div>
+
+      <div class="rblock">
+        <h4>1 · Issue tags</h4>
+        <p class="blab">Themes detected from keyword lexicons. The count shows how many matching terms fired.</p>
+        <div class="taglist" id="tagList"></div>
+      </div>
+
+      <div class="rblock">
+        <h4>2 · Affected stakeholders</h4>
+        <p class="blab">Parties inferred from the terms present in the text.</p>
+        <div class="taglist" id="stakeList"></div>
+      </div>
+
+      <div class="rblock">
+        <h4>3 · Compliance triggers</h4>
+        <p class="blab">Obligation language, deadlines, and dollar thresholds, quoted in context. The highlighted span is the matched phrase.</p>
+        <ul class="trig" id="trigList"></ul>
+      </div>
+
+      <div class="rblock">
+        <h4>4 · Risk read</h4>
+        <p class="blab">A relative read of obligation density, not a legal assessment.</p>
+        <p class="summary-txt" id="riskText"></p>
+      </div>
+
+      <div class="rblock">
+        <h4>5 · Plain-English summary</h4>
+        <p class="blab">Assembled from the structural elements the engine detected.</p>
+        <p class="summary-txt" id="summaryText"></p>
+      </div>
+
+      <div class="rblock">
+        <h4>6 · Questions for counsel</h4>
+        <p class="blab">A checklist a licensed attorney should work through. The tool assists; counsel decides.</p>
+        <ol class="counsel" id="counselList"></ol>
+      </div>
+    </div>
+
+    <div class="vf reveal" id="dlBlock" hidden style="margin-top:var(--s4)">
+      <h3>Download analysis</h3>
+      <p class="small muted" style="margin-top:0">Take the structured output with you. The JSON is machine-readable for a monitoring pipeline; the text version is a readable memo you can drop into a review file. Both carry the same not-legal-advice notice.</p>
+      <div class="btnrow">
+        <button id="dlJson" type="button" class="btn btn--outline">Download JSON</button>
+        <button id="dlTxt" type="button" class="btn btn--outline">Download readable text</button>
+      </div>
+
+      <!-- BEEHIIV-EMBED-START (replace this whole block with your Beehiiv embed code) -->
+      <div class="rblock" style="margin-top:var(--s4)">
+        <h4>Get this report by email</h4>
+        <p class="small muted" style="margin-top:0">Send it to your inbox and get occasional build notes from Aloha AI.</p>
+        <form id="beehiivFallbackForm-bill-analyzer" action="#" novalidate>
+          <label class="fld" for="beehiivEmail-bill-analyzer">Email address</label>
+          <input type="email" id="beehiivEmail-bill-analyzer" name="email" required placeholder="you@example.com"
+            style="width:100%;min-height:44px;padding:12px 14px;border:1px solid var(--line);border-radius:var(--r-sm);font-family:var(--mono);font-size:.86rem;background:var(--paper);color:var(--ink);margin-bottom:.6rem">
+          <button type="submit" class="btn btn--outline">Subscribe</button>
+        </form>
+        <p id="beehiivFallbackMsg-bill-analyzer" role="status" style="display:none;margin-top:.6rem" class="small muted">Connect Beehiiv to enable signups.</p>
+      </div>
+      <!-- BEEHIIV-EMBED-END -->
+    </div>
+
+    <p class="small muted reveal" style="margin-top:var(--s4);max-width:72ch"><strong>Informational triage tool. Not legal advice.</strong> RN Collins is a JD candidate, not a licensed attorney. This tool structures text to speed review; it does not interpret law, and its output is not a legal opinion and creates no attorney-client relationship. Do not rely on it. A licensed attorney must review the bill. The sample is illustrative and drafted for demonstration; it is not a real enacted bill.</p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="how" aria-labelledby="how-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">How it works</p>
+      <h2 class="h2" id="how-h">Pattern matching, in a fixed order</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">Every run applies the same deterministic passes to the same text, so the same input always returns the same map. No model, no randomness, no network.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Tag the issues</h3><p class="muted">The text is scanned against keyword lexicons for privacy and data, AI and automated decisions, licensing, penalties and enforcement, fees and taxes, reporting and disclosure, definitions, effective dates, rulemaking delegation, and preemption.</p></div></div>
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Infer the stakeholders</h3><p class="muted">Terms like operator, licensee, consumer, agency, employer, and provider map to the parties a text reaches, so you see at a glance who carries the obligations.</p></div></div>
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Pull the triggers</h3><p class="muted">Mandatory language ("shall", "must", "required to", "no person shall", "prohibited"), calendar deadlines, and dollar thresholds are quoted with the surrounding sentence, so nothing is paraphrased.</p></div></div>
+      <div class="step reveal"><div class="step__n" aria-hidden="true"></div><div><h3 class="h3">Read risk, summarize, and hand off</h3><p class="muted">Obligation density rolls into a High, Medium, or Low read. A plain-English summary is assembled from section counts, defined terms, and any effective date. A questions-for-counsel checklist frames the handoff to a licensed attorney.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD-GEN / THE SERVICE -->
+<section class="section section--paper" id="start" aria-labelledby="offer-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">This is a demonstration of what I build</p>
+      <h2 class="h2" id="offer-h">The system I build for your team</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">What you're using is the public, in-browser demo. RN builds legislative-monitoring and regulatory-intelligence systems: pipelines that pull bills as they move, run this kind of structured triage at scale, route the ones that matter to the right reviewer, and keep an audit trail of what was flagged and why. This is one component of the governed AI workflows I design for regulated and reputation-sensitive teams.</p>
+    </div>
+    <div class="grid grid-3 reveal">
+      <div class="card"><div class="card__ic" aria-hidden="true">1</div><h3>What I build</h3><p class="small muted">A legislative-monitoring pipeline: bill ingestion across the jurisdictions you track, structured triage on every new text, routing to the right reviewer, and a record of every flag and decision.</p></div>
+      <div class="card"><div class="card__ic" aria-hidden="true">2</div><h3>What you get</h3><ul class="small muted" style="padding-left:1.1rem;margin:.35rem 0 0"><li>Triage that runs inside your stack, not a browser tab</li><li>An audit trail your compliance function can defend</li><li>Governance mapped to your professional and regulatory duties</li><li>Advisory to keep the system safe as the rules shift</li></ul></div>
+      <div class="card"><div class="card__ic" aria-hidden="true">3</div><h3>How to start</h3><p class="small muted">A short scoping call. Most teams begin with a Systems Audit: the fastest proof, and it points to the workflow worth automating first.</p></div>
+    </div>
+    <div class="hero__cta reveal" style="margin-top:var(--s5)">
+      <a class="btn btn--primary" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a build / scoping call →</a>
+      <a class="btn btn--ghost" href="../../legal-ai.html">See the Legal AI Workflow pillar</a>
+    </div>
+    <p class="small muted reveal" style="margin-top:var(--s4);max-width:72ch">Related tools: the <a href="../citation-verifier/index.html">Citation Verifier</a> catches fabricated case cites before an AI-drafted filing reaches a court. For the wider picture, the <a href="../../legal-ai.html">Legal AI Workflow &amp; Governance</a> pillar covers verification-gated workflows end to end, and the <a href="https://aloha-ai-consulting.vercel.app/trust-stack" target="_blank" rel="noopener">Regulated Trust Stack</a> covers governance across the ecosystem.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section--ink" id="contact" aria-labelledby="cta-h">
+  <div class="wrap" style="text-align:center">
+    <p class="eyebrow">Aloha AI · Honolulu</p>
+    <h2 class="h2" id="cta-h" style="max-width:26ch;margin-inline:auto">Ready when you are.</h2>
+    <p class="lead" style="margin:var(--s4) auto var(--s5);text-align:center">Convinced, curious, or comparing, there's a path for each.</p>
+    <div style="display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn--primary" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Start with a Systems Audit →</a>
+      <a class="btn btn--ghost" href="https://aloha-ai-consulting.vercel.app/teardowns/legal-ai-workflow" target="_blank" rel="noopener">Score your workflow risk</a>
+    </div>
+    <p class="small" style="margin-top:var(--s5);color:var(--muted-on-ink)">Prefer email? <a href="#" data-email style="color:var(--teal-mint)">Email RN</a> &nbsp;·&nbsp; or connect on <a href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noopener" style="color:var(--teal-mint)">LinkedIn</a></p>
+    <p id="emailReveal" hidden style="margin-top:.5rem;font-family:var(--mono);font-size:.8rem;color:#CFDAD5"></p>
+  </div>
+</section>
+</main>
+
+<footer class="footer" aria-labelledby="foot-h">
+  <div class="wrap">
+    <h2 id="foot-h" class="small" style="position:absolute;left:-999px">Site footer</h2>
+    <div class="footer__grid">
+      <div>
+        <a class="nav__brand" href="../../index.html" style="color:var(--cream)" aria-label="Aloha AI home"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#7FE0C4"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#7FE0C4" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg> Aloha&nbsp;AI</a>
+        <p class="small" style="margin-top:var(--s3);max-width:38ch;color:#9FB6AE">AI implementation built around how humans actually trust and use it, for regulated or reputation-sensitive professions.</p>
+      </div>
+      <div>
+        <h4>This tool</h4>
+        <ul>
+          <li><a href="#why-h">Why it matters</a></li>
+          <li><a href="#tool">The analyzer</a></li>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#start">The build</a></li>
+          <li><a href="../citation-verifier/index.html">Citation Verifier</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Aloha AI</h4>
+        <ul>
+          <li><a href="../../index.html">The practice</a></li>
+          <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a call</a></li>
+          <li><a href="https://aloha-ai-consulting.vercel.app/tools/ai-readiness-scorecard" target="_blank" rel="noopener">Assessment</a></li>
+          <li><a href="https://rn-portfolio-khaki.vercel.app" target="_blank" rel="noopener">Portfolio → RN Builds</a></li>
+          <li><a href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="../../privacy.html">Privacy</a></li>
+          <li><a href="../../terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="disc small">Informational triage tool. Not legal advice. Aloha AI provides AI workflow design, orchestration, and governance advisory, not legal advice. RN Collins is a JD candidate, not a licensed attorney; nothing here is legal or tax advice, a legal interpretation, or an attorney-client relationship, and nothing here should be relied on. This tool structures text to assist a first pass; a licensed attorney must review the bill. The sample is illustrative and does not reproduce a real enacted bill.</p>
+    <p class="fine">Aloha AI · a DBA of Rayven-Nikkita Collins LLC · Honolulu, HI · No tracking, no cookies · © 2026</p>
+  </div>
+</footer>
+
+<script>
+/* =====================================================================
+   Regulatory Bill Analyzer — deterministic, client-side.
+   No network, no libraries, no randomness. Same text in, same map out.
+   ===================================================================== */
+(function(){
+  "use strict";
+  function $(id){ return document.getElementById(id); }
+
+  /* ---- 1. Issue lexicons ---- */
+  var ISSUES = [
+    {key:"privacy_data", label:"Privacy / data", terms:["personal data","personal information","personally identifiable","data breach","biometric","consumer data","data subject","de-identified","data protection","privacy","opt out","opt-out","consent to collect"]},
+    {key:"ai_automated", label:"AI / automated decision", terms:["artificial intelligence","automated decision","algorithmic","machine learning","automated system","generative","foundation model","automated employment decision","training data","model output"]},
+    {key:"licensing", label:"Licensing", terms:["license","licensee","licensure","permit","registration","certificate of","credential","renewal of license","suspend the license","revoke"]},
+    {key:"penalties", label:"Penalties / enforcement", terms:["civil penalty","fine","enforcement","cease and desist","injunction","liable","violation","penalty","misdemeanor","felony","attorney general","sanction","damages"]},
+    {key:"fees_taxes", label:"Fees / taxes", terms:["fee","tax","surcharge","assessment","levy","excise","remit","filing fee","annual fee"]},
+    {key:"reporting", label:"Reporting / disclosure", terms:["report","reporting","disclose","disclosure","notify","notice to","annual report","file with","submit to","recordkeeping","records shall","transparency report"]},
+    {key:"definitions", label:"Definitions", terms:["as used in this","means","the term","is defined as","definitions","for purposes of this"]},
+    {key:"effective_dates", label:"Effective dates", terms:["effective date","takes effect","shall take effect","this act takes effect","becomes operative","effective on"]},
+    {key:"rulemaking", label:"Rulemaking delegation", terms:["shall adopt rules","promulgate","adopt regulations","rulemaking","the department shall establish","may adopt rules","administrative rules","shall prescribe"]},
+    {key:"preemption", label:"Preemption", terms:["preempt","supersede","notwithstanding any other","this act preempts","no local government shall","field of regulation","occupies the field"]}
+  ];
+
+  /* ---- 2. Stakeholder lexicons ---- */
+  var STAKEHOLDERS = [
+    {label:"Operators / businesses", terms:["operator","business","company","entity","firm","enterprise","controller","processor"]},
+    {label:"Licensees / regulated professionals", terms:["licensee","permittee","registrant","practitioner","professional"]},
+    {label:"Consumers / individuals", terms:["consumer","individual","resident","member of the public","data subject","user"]},
+    {label:"State agencies / regulators", terms:["department","agency","commission","board","director","attorney general","secretary","office of"]},
+    {label:"Employers", terms:["employer","workforce","employee","applicant for employment"]},
+    {label:"Healthcare providers", terms:["health care provider","healthcare provider","hospital","physician","patient","clinical"]},
+    {label:"Local governments", terms:["local government","municipality","county","city","political subdivision"]},
+    {label:"Financial institutions", terms:["financial institution","bank","insurer","lender","creditor"]}
+  ];
+
+  /* ---- 3. Compliance trigger patterns ---- */
+  var TRIGGERS = [
+    {cat:"Mandatory obligation", sev:"high", re:/\bno person shall\b/gi},
+    {cat:"Prohibition", sev:"high", re:/\bshall not\b/gi},
+    {cat:"Prohibition", sev:"high", re:/\bprohibited\b/gi},
+    {cat:"Prohibition", sev:"high", re:/\bunlawful\b/gi},
+    {cat:"Mandatory obligation", sev:"med", re:/\bshall\b/gi},
+    {cat:"Mandatory obligation", sev:"med", re:/\bmust\b/gi},
+    {cat:"Mandatory obligation", sev:"med", re:/\brequired to\b/gi},
+    {cat:"Mandatory obligation", sev:"med", re:/\bis required\b/gi},
+    {cat:"Penalty", sev:"high", re:/\bcivil penalty\b/gi},
+    {cat:"Penalty", sev:"high", re:/\bsubject to a (?:fine|penalty)\b/gi},
+    {cat:"Deadline", sev:"med", re:/\bwithin\s+\d{1,3}\s+(?:days|business days|calendar days|months|years)\b/gi},
+    {cat:"Deadline", sev:"med", re:/\bno later than\b[^.;\n]{0,60}/gi},
+    {cat:"Deadline", sev:"med", re:/\b(?:by\s+)?(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2},?\s+\d{4}\b/gi},
+    {cat:"Dollar threshold", sev:"med", re:/\$\s?\d{1,3}(?:,\d{3})*(?:\.\d{2})?(?:\s?(?:million|billion))?/gi}
+  ];
+
+  function esc(s){ return s.replace(/[&<>]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;"}[c];}); }
+
+  function sentenceAround(text, idx, len){
+    var start = idx, end = idx + len;
+    while(start > 0 && !/[.;\n]/.test(text[start-1])) start--;
+    while(end < text.length && !/[.;\n]/.test(text[end])) end++;
+    return {pre: text.slice(start, idx), hit: text.slice(idx, idx+len), post: text.slice(idx+len, end)};
+  }
+
+  function countTerms(text, terms){
+    var lower = text.toLowerCase(), total = 0, matched = [];
+    terms.forEach(function(t){
+      var n = 0, from = 0, needle = t.toLowerCase(), i;
+      while((i = lower.indexOf(needle, from)) !== -1){ n++; from = i + needle.length; if(n>50) break; }
+      if(n){ total += n; matched.push({term:t, count:n}); }
+    });
+    return {total:total, matched:matched};
+  }
+
+  function analyze(text){
+    var lower = text.toLowerCase();
+
+    // Issue tags
+    var tags = [];
+    ISSUES.forEach(function(iss){
+      var c = countTerms(text, iss.terms);
+      if(c.total > 0) tags.push({key:iss.key, label:iss.label, count:c.total, matched:c.matched.slice(0,6)});
+    });
+    tags.sort(function(a,b){ return b.count - a.count; });
+
+    // Stakeholders
+    var stakes = [];
+    STAKEHOLDERS.forEach(function(s){
+      var c = countTerms(text, s.terms);
+      if(c.total > 0) stakes.push({label:s.label, count:c.total});
+    });
+    stakes.sort(function(a,b){ return b.count - a.count; });
+
+    // Triggers — dedupe by matched span+category
+    var trigs = [], seen = {};
+    TRIGGERS.forEach(function(pat){
+      pat.re.lastIndex = 0; var m;
+      while((m = pat.re.exec(text)) !== null){
+        if(m[0].length === 0){ pat.re.lastIndex++; continue; }
+        var ctx = sentenceAround(text, m.index, m[0].length);
+        var full = (ctx.pre + ctx.hit + ctx.post).replace(/\s+/g," ").trim();
+        var kk = pat.cat + "::" + full.toLowerCase();
+        if(seen[kk]) continue; seen[kk] = 1;
+        trigs.push({cat:pat.cat, sev:pat.sev, hit:m[0].trim(),
+          pre:ctx.pre.replace(/\s+/g," ").trimStart(),
+          post:ctx.post.replace(/\s+/g," ").trimEnd()});
+        if(trigs.length > 120) break;
+      }
+    });
+    // order: high, med, low
+    var sevRank = {high:0, med:1, low:2};
+    trigs.sort(function(a,b){ return sevRank[a.sev] - sevRank[b.sev]; });
+
+    // Counts for risk
+    var prohibitions = trigs.filter(function(t){ return t.cat === "Prohibition"; }).length;
+    var penalties = trigs.filter(function(t){ return t.cat === "Penalty"; }).length +
+                    countTerms(text, ISSUES.find(function(i){return i.key==="penalties";}).terms).total;
+    var deadlines = trigs.filter(function(t){ return t.cat === "Deadline"; }).length;
+    var mandates = trigs.filter(function(t){ return t.cat === "Mandatory obligation"; }).length;
+    var dollars = trigs.filter(function(t){ return t.cat === "Dollar threshold"; }).length;
+
+    // Risk read
+    var riskScore = prohibitions*3 + penalties*2 + deadlines*2 + mandates*1 + dollars*1;
+    var risk, riskPct, riskWhy;
+    if(riskScore >= 22 || prohibitions >= 2){ risk = "High"; riskPct = 88; }
+    else if(riskScore >= 9){ risk = "Medium"; riskPct = 55; }
+    else { risk = "Low"; riskPct = 22; }
+    riskWhy = "This read reflects obligation density: " + prohibitions + " prohibition(s), " +
+      penalties + " penalty/enforcement signal(s), " + deadlines + " deadline(s), " +
+      mandates + " mandatory-obligation phrase(s), and " + dollars + " dollar threshold(s). " +
+      "A higher read means more binding language is present, not that any obligation applies to a given party. A licensed attorney weighs what these clauses actually require.";
+
+    // Structural elements for summary
+    var sectionMatches = text.match(/\b(?:section|sec\.|§)\s*\d+/gi) || [];
+    var sectionCount = sectionMatches.length;
+    var defined = [];
+    var defRe = /"([A-Z][^"]{1,60})"\s+means\b/g, dm;
+    while((dm = defRe.exec(text)) !== null){ if(defined.indexOf(dm[1]) === -1) defined.push(dm[1]); if(defined.length>12) break; }
+    var effRe = /(?:effective|takes? effect|becomes operative)[^.;\n]*?((?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2},?\s+\d{4}|\d{1,2}\/\d{1,2}\/\d{2,4})/i;
+    var effM = text.match(effRe);
+    var effectiveDate = effM ? effM[1] : null;
+
+    // Plain-English summary
+    var topTags = tags.slice(0,4).map(function(t){ return t.label; });
+    var topStakes = stakes.slice(0,3).map(function(s){ return s.label; });
+    var sum = [];
+    sum.push("This text runs to roughly " + text.trim().split(/\s+/).length + " words" +
+      (sectionCount ? " across about " + sectionCount + " numbered section reference(s)" : "") + ".");
+    if(topTags.length) sum.push("It touches on " + joinList(topTags) + ".");
+    if(topStakes.length) sum.push("The parties it appears to reach include " + joinList(topStakes) + ".");
+    sum.push("It carries " + mandates + " mandatory-obligation phrase(s), " + prohibitions +
+      " prohibition(s), " + deadlines + " deadline(s), and " + penalties + " penalty or enforcement signal(s).");
+    if(defined.length) sum.push("It defines " + defined.length + " term(s), including " + joinList(defined.slice(0,3)) + ".");
+    if(effectiveDate) sum.push("An effective date appears as " + effectiveDate + ".");
+    else sum.push("No explicit effective date was detected in the text.");
+    sum.push("This is a structural read, not an interpretation; a licensed attorney should confirm what the text requires.");
+
+    // Questions for counsel
+    var q = [];
+    q.push("Confirm which of the detected obligations actually bind our client, and which apply only to other parties named in the text.");
+    if(effectiveDate) q.push("Verify the effective date (" + effectiveDate + ") and identify what must be in place before it, including any phase-in or grandfather provisions.");
+    else q.push("Determine the effective date and any phase-in schedule, since none was clearly stated in the text.");
+    if(deadlines) q.push("Map every deadline to a concrete calendar date and owner, and confirm whether the clock runs from enactment, publication, or another trigger.");
+    if(prohibitions) q.push("Assess each prohibition against current practice to flag any conduct that would need to stop or change.");
+    if(penalties) q.push("Quantify the enforcement exposure: who enforces, what penalties attach, and whether there is a private right of action.");
+    if(tags.some(function(t){return t.key==="rulemaking";})) q.push("Identify the rulemaking delegations and track the implementing agency, since the operative detail will land in regulations not yet written.");
+    if(tags.some(function(t){return t.key==="preemption";})) q.push("Analyze the preemption language against existing state or local requirements to resolve any conflict.");
+    if(tags.some(function(t){return t.key==="definitions";}) || defined.length) q.push("Read the definitions carefully; confirm whether our client, product, or activity falls inside each defined term.");
+    if(tags.some(function(t){return t.key==="reporting";})) q.push("Scope the reporting and recordkeeping obligations, including format, recipient, frequency, and retention period.");
+    if(dollars) q.push("Confirm the dollar thresholds and how they are measured, since they may set jurisdiction, fees, or penalty tiers.");
+    q.push("Read the full text against this triage before relying on it; pattern matching can miss obligations phrased in unusual language and can over-flag boilerplate.");
+
+    return {
+      tags:tags, stakes:stakes, triggers:trigs,
+      risk:risk, riskPct:riskPct, riskWhy:riskWhy,
+      counts:{prohibitions:prohibitions, penalties:penalties, deadlines:deadlines, mandates:mandates, dollars:dollars, sections:sectionCount, definedTerms:defined.length},
+      effectiveDate:effectiveDate, definedTerms:defined,
+      summary:sum.join(" "), questions:q,
+      wordCount:text.trim().split(/\s+/).length
+    };
+  }
+
+  function joinList(arr){
+    if(arr.length === 1) return arr[0];
+    if(arr.length === 2) return arr[0] + " and " + arr[1];
+    return arr.slice(0,-1).join(", ") + ", and " + arr[arr.length-1];
+  }
+
+  /* ---- Rendering ---- */
+  var lastReport = null, lastText = "";
+
+  function render(rep){
+    var g = $("gauge");
+    var col = rep.risk === "High" ? "var(--red)" : (rep.risk === "Medium" ? "var(--amber)" : "var(--green)");
+    g.style.setProperty("--pct", rep.riskPct);
+    g.style.setProperty("--g", col);
+    g.setAttribute("aria-label", rep.risk + " risk read");
+    $("riskLabel").innerHTML = rep.risk + "<br><span style='font-size:.6rem;font-family:var(--mono);color:var(--muted);letter-spacing:.05em'>RISK READ</span>";
+
+    $("verdict").innerHTML = "<h4>" + rep.risk + " obligation density</h4><p>" +
+      rep.tags.length + " issue tag(s) &middot; " + rep.stakes.length + " stakeholder group(s) &middot; " +
+      rep.triggers.length + " compliance trigger(s) &middot; " + rep.wordCount + " words scanned.</p>";
+
+    // tags
+    var tl = $("tagList"); tl.innerHTML = "";
+    if(!rep.tags.length){ tl.innerHTML = '<span class="empty">No issue themes matched the lexicons.</span>'; }
+    rep.tags.forEach(function(t){
+      var el = document.createElement("span"); el.className = "tag";
+      el.innerHTML = esc(t.label) + ' <span class="n">' + t.count + '</span>';
+      el.title = t.matched.map(function(m){ return m.term + " (" + m.count + ")"; }).join(", ");
+      tl.appendChild(el);
+    });
+
+    // stakeholders
+    var sl = $("stakeList"); sl.innerHTML = "";
+    if(!rep.stakes.length){ sl.innerHTML = '<span class="empty">No stakeholder terms detected.</span>'; }
+    rep.stakes.forEach(function(s){
+      var el = document.createElement("span"); el.className = "stake";
+      el.textContent = s.label + " (" + s.count + ")";
+      sl.appendChild(el);
+    });
+
+    // triggers
+    var trl = $("trigList"); trl.innerHTML = "";
+    if(!rep.triggers.length){ trl.innerHTML = '<li class="sev-low"><span class="empty">No obligation language, deadlines, or dollar thresholds matched.</span></li>'; }
+    rep.triggers.slice(0,60).forEach(function(t){
+      var li = document.createElement("li"); li.className = "sev-" + t.sev;
+      var q = document.createElement("span"); q.className = "q";
+      q.innerHTML = "&hellip;" + esc(t.pre) + '<span class="hit">' + esc(t.hit) + '</span>' + esc(t.post) + "&hellip;";
+      var c = document.createElement("span"); c.className = "cat"; c.textContent = t.cat + " · " + t.sev.toUpperCase();
+      li.appendChild(c); li.appendChild(q); trl.appendChild(li);
+    });
+    if(rep.triggers.length > 60){
+      var more = document.createElement("li"); more.className = "sev-low";
+      more.innerHTML = '<span class="empty">' + (rep.triggers.length - 60) + ' additional trigger(s) not shown here are included in the download.</span>';
+      trl.appendChild(more);
+    }
+
+    $("riskText").textContent = rep.riskWhy;
+    $("summaryText").textContent = rep.summary;
+
+    var cl = $("counselList"); cl.innerHTML = "";
+    rep.questions.forEach(function(q){ var li = document.createElement("li"); li.textContent = q; cl.appendChild(li); });
+
+    $("results").hidden = false;
+    $("dlBlock").hidden = false;
+  }
+
+  function run(){
+    var text = $("billText").value;
+    if(!text.trim()){ $("billText").focus(); return; }
+    lastText = text;
+    lastReport = analyze(text);
+    render(lastReport);
+    $("results").scrollIntoView({behavior: matchMedia('(prefers-reduced-motion:reduce)').matches ? 'auto':'smooth', block:'start'});
+  }
+
+  /* ---- Downloads ---- */
+  var DISCLAIMER = "Informational triage tool. Not legal advice. RN Collins is a JD candidate, not a licensed attorney. This output structures text to assist a first pass; it is not a legal interpretation, creates no attorney-client relationship, and must not be relied on. A licensed attorney must review the bill.";
+
+  function download(name, mime, content){
+    var blob = new Blob([content], {type:mime});
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url; a.download = name;
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+  function jsonRecord(){
+    return {
+      record_version:"1.0",
+      tool:"regulatory-bill-analyzer",
+      generated_at:new Date().toISOString(),
+      disclaimer:DISCLAIMER,
+      word_count:lastReport.wordCount,
+      risk_read:lastReport.risk,
+      counts:lastReport.counts,
+      effective_date:lastReport.effectiveDate,
+      defined_terms:lastReport.definedTerms,
+      issue_tags:lastReport.tags.map(function(t){ return {label:t.label, matched_terms:t.count}; }),
+      stakeholders:lastReport.stakes,
+      compliance_triggers:lastReport.triggers.map(function(t){ return {category:t.cat, severity:t.sev, matched_phrase:t.hit, context:(t.pre + t.hit + t.post).trim()}; }),
+      plain_english_summary:lastReport.summary,
+      questions_for_counsel:lastReport.questions
+    };
+  }
+
+  function txtRecord(){
+    var r = lastReport, L = [];
+    L.push("REGULATORY BILL ANALYZER — STRUCTURED TRIAGE");
+    L.push("Generated: " + new Date().toISOString());
+    L.push("");
+    L.push(DISCLAIMER);
+    L.push("");
+    L.push("RISK READ: " + r.risk);
+    L.push(r.riskWhy);
+    L.push("");
+    L.push("1. ISSUE TAGS");
+    r.tags.forEach(function(t){ L.push("  - " + t.label + " (" + t.count + " matching term(s))"); });
+    if(!r.tags.length) L.push("  (none matched)");
+    L.push("");
+    L.push("2. AFFECTED STAKEHOLDERS");
+    r.stakes.forEach(function(s){ L.push("  - " + s.label + " (" + s.count + ")"); });
+    if(!r.stakes.length) L.push("  (none detected)");
+    L.push("");
+    L.push("3. COMPLIANCE TRIGGERS");
+    r.triggers.forEach(function(t){ L.push("  [" + t.cat + " / " + t.sev.toUpperCase() + "] \"" + t.hit + "\"  in: ..." + (t.pre + t.hit + t.post).trim() + "..."); });
+    if(!r.triggers.length) L.push("  (none matched)");
+    L.push("");
+    L.push("4. PLAIN-ENGLISH SUMMARY");
+    L.push("  " + r.summary);
+    L.push("");
+    L.push("5. QUESTIONS FOR COUNSEL");
+    r.questions.forEach(function(q, i){ L.push("  " + (i+1) + ". " + q); });
+    L.push("");
+    L.push("--");
+    L.push(DISCLAIMER);
+    return L.join("\n");
+  }
+
+  /* ---- Sample (illustrative, not a real enacted bill) ---- */
+  var SAMPLE =
+"[ILLUSTRATIVE SAMPLE — NOT A REAL ENACTED BILL — FOR DEMONSTRATION ONLY]\n\n" +
+"AN ACT relating to automated decision systems and consumer data protection.\n\n" +
+"Section 1. Short title. This Act may be cited as the Automated Decision Accountability Act.\n\n" +
+"Section 2. Definitions. As used in this Act:\n" +
+"\"Automated decision system\" means any computational process, including one derived from machine learning or artificial intelligence, that makes or materially supports a decision affecting a consumer.\n" +
+"\"Covered operator\" means a business that deploys an automated decision system and processes the personal data of more than 25,000 consumers in a calendar year.\n" +
+"\"Personal data\" means information that is linked to an identified or identifiable individual.\n\n" +
+"Section 3. Duties of covered operators. A covered operator shall conduct an impact assessment of each automated decision system before deployment. No person shall deploy an automated decision system that produces a discriminatory outcome prohibited by law. A covered operator must disclose to each consumer, in a clear and conspicuous notice, that an automated decision system was used.\n\n" +
+"Section 4. Reporting. Each covered operator shall file with the Department of Consumer Affairs an annual transparency report no later than March 1, 2027, and shall retain records supporting the report for five years.\n\n" +
+"Section 5. Fees. A covered operator shall remit an annual registration fee of $1,500 to the Department.\n\n" +
+"Section 6. Enforcement. A violation of this Act is subject to a civil penalty of not more than $7,500 per violation. The Attorney General may bring an action to enjoin a violation and to recover damages. It is unlawful to retaliate against an employee who reports a violation.\n\n" +
+"Section 7. Rulemaking. The Department shall adopt rules to implement this Act, including standards for impact assessments.\n\n" +
+"Section 8. Preemption. This Act preempts any local ordinance regulating automated decision systems, and no local government shall impose additional requirements.\n\n" +
+"Section 9. Effective date. This Act takes effect January 1, 2027.";
+
+  /* ---- Wiring ---- */
+  $("runBtn").addEventListener("click", run);
+  $("sampleBtn").addEventListener("click", function(){ $("billText").value = SAMPLE; $("billText").focus(); });
+  $("clearBtn").addEventListener("click", function(){
+    $("billText").value = ""; $("results").hidden = true; $("dlBlock").hidden = true;
+    lastReport = null; lastText = ""; $("billText").focus();
+  });
+  $("dlJson").addEventListener("click", function(){
+    if(!lastReport) return;
+    download("bill-analysis-" + Date.now() + ".json", "application/json", JSON.stringify(jsonRecord(), null, 2));
+  });
+  $("dlTxt").addEventListener("click", function(){
+    if(!lastReport) return;
+    download("bill-analysis-" + Date.now() + ".txt", "text/plain", txtRecord());
+  });
+
+  var beehiivForm = $("beehiivFallbackForm-bill-analyzer");
+  if(beehiivForm){
+    beehiivForm.addEventListener("submit", function(e){
+      e.preventDefault();
+      var msg = $("beehiivFallbackMsg-bill-analyzer");
+      msg.style.display = "block";
+      msg.textContent = "Connect Beehiiv to enable signups.";
+    });
+  }
+})();
+</script>
+<script>
+  /* nav burger + is-stuck */
+  (function(){var b=document.getElementById('burger'),l=document.getElementById('navlinks');
+  function set(o){b.setAttribute('aria-expanded',o);l.classList.toggle('open',o);b.setAttribute('aria-label',o?'Close menu':'Open menu');}
+  b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true');});
+  l.addEventListener('click',function(e){if(e.target.tagName==='A')set(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});})();
+  (function(){var u='collins.ra',dm='northeastern.edu',a=u+'@'+dm,su=encodeURIComponent('Aloha AI — bill analyzer inquiry');
+  document.querySelectorAll('[data-email]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();
+  try{navigator.clipboard&&navigator.clipboard.writeText(a);}catch(_){}
+  var o=document.getElementById('emailReveal');if(o){o.hidden=false;o.innerHTML='Copied ✓ &nbsp;<a href="mailto:'+a+'?subject='+su+'" style="color:#7FE0C4">'+a+'</a> &nbsp;·&nbsp; <a href="https://mail.google.com/mail/?view=cm&fs=1&to='+a+'&su='+su+'" target="_blank" rel="noopener" style="color:#7FE0C4">Open in Gmail</a>';}
+  window.location.href='mailto:'+a+'?subject='+su;});});})();
+  (function(){var nav=document.querySelector('.nav');if(!nav)return;var on=function(){nav.classList.toggle('is-stuck',window.scrollY>8);};on();window.addEventListener('scroll',on,{passive:true});})();
+  (function(){if(matchMedia('(prefers-reduced-motion:reduce)').matches){document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in');});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(e){io.observe(e);});})();
+</script>
+</body>
+</html>

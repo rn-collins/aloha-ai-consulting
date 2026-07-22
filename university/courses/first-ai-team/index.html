@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Build Your First AI Team (in a Weekend) | Aloha AI University</title>
+<meta name="description" content="The on-ramp course. In one weekend, build a small, supervised AI team around one real workflow — named agents, a one-line role contract for each, and a human-approval step so nothing sends or spends without you. No coding background needed.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://aloha-ai-consulting.vercel.app/university/courses/first-ai-team/">
+<meta name="theme-color" content="#0F5343">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Build Your First AI Team (in a Weekend) | Aloha AI University">
+<meta property="og:description" content="The cheap, fast on-ramp: build a supervised, governed AI team around one real workflow in a weekend. Named agents, role contracts, and an approval step. No coding needed.">
+<meta property="og:site_name" content="Aloha AI University">
+<meta property="og:image" content="https://aloha-ai-consulting.vercel.app/university/og-image.png">
+<meta property="og:url" content="https://aloha-ai-consulting.vercel.app/university/courses/first-ai-team/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Build Your First AI Team (in a Weekend) | Aloha AI University">
+<meta name="twitter:description" content="Build a supervised, governed AI team around one real workflow in a weekend. Named agents, role contracts, an approval step. No coding needed.">
+<meta name="twitter:image" content="https://aloha-ai-consulting.vercel.app/university/og-image.png">
+<link rel="icon" href="/university/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/university/university.css">
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="/university/" aria-label="Aloha AI University home">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1B7A68"/><path d="M7 15.5c2-5 3-5 5-5s3 0 5 5" stroke="#7FE0C4" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="8.5" r="1.6" fill="#7FE0C4"/></svg>
+      <span>Aloha AI <span class="mk">University</span></span>
+    </a>
+    <button class="nav__burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav__links" id="nav-links">
+      <li><a href="/university/start-here">Start Here</a></li>
+      <li><a href="/university/learn">Learn</a></li>
+      <li><a href="/university/playbooks">Playbooks</a></li>
+      <li><a href="/university/templates">Templates</a></li>
+      <li><a href="/university/use-cases">Use Cases</a></li>
+      <li><a href="/university/courses">Courses</a></li>
+      <li><a href="/university/tools">Tools</a></li>
+      <li><a href="/university/services">Services</a></li>
+      <li><a href="/university/about">About</a></li>
+      <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a Call</a></li>
+      <li class="nav__cta"><a class="btn btn--primary btn--sm" href="#pricing">Start building</a></li>
+    </ul>
+  </div>
+</header>
+<main id="main">
+<style id="course-extra">
+  ol.mods{list-style:none;counter-reset:m;padding:0;margin:var(--s6) 0 0;display:grid;gap:var(--s3)}
+  ol.mods li{counter-increment:m;background:var(--white);border:1px solid var(--line);border-radius:var(--r);
+    padding:var(--s5) var(--s5) var(--s5) 64px;position:relative;box-shadow:var(--sh-1)}
+  ol.mods li::before{content:counter(m);position:absolute;left:18px;top:var(--s5);
+    width:32px;height:32px;border-radius:50%;background:var(--teal);color:#fff;display:flex;align-items:center;
+    justify-content:center;font-family:var(--mono);font-weight:500;font-size:.9rem}
+  ol.mods li b{font-family:var(--serif);font-size:1.2rem;font-weight:600;color:var(--ink);display:block;margin-bottom:.2rem}
+  ul.check{list-style:none;padding:0;margin:0;display:grid;gap:var(--s3)}
+  ul.check li{padding-left:30px;position:relative;color:var(--ink)}
+  ul.check li::before{content:"";position:absolute;left:0;top:.5em;width:14px;height:8px;
+    border-left:2px solid var(--teal);border-bottom:2px solid var(--teal);transform:rotate(-45deg)}
+  .section--ink ul.check li{color:var(--cream)}
+  .section--ink ul.check li::before{border-color:var(--mint)}
+  .chat{background:rgba(127,224,196,.06);border:1px solid rgba(127,224,196,.22);border-radius:var(--r);padding:var(--s5);margin-top:var(--s4)}
+  .bubble{padding:.7rem .95rem;border-radius:12px;margin:.6rem 0;max-width:88%;font-size:var(--fs-sm);line-height:1.55}
+  .bubble.q{background:rgba(127,224,196,.16);color:#EFFCF7;margin-left:auto}
+  .bubble.a{background:rgba(255,255,255,.05);border:1px solid rgba(127,224,196,.2);color:var(--cream)}
+  .bubble.a .src{display:block;margin-top:.4rem;font-family:var(--mono);font-size:.68rem;letter-spacing:.04em;color:var(--mint)}
+  .riskbox{background:var(--amber-l);border:1px solid var(--amber-bd);border-radius:var(--r);padding:var(--s6);margin-top:var(--s5)}
+  .riskbox strong{color:var(--amber)}
+  .tier{display:flex;flex-direction:column}
+  .tier .price-lg{font-family:var(--mono);font-weight:500;font-size:1.5rem;color:var(--ink);margin:.3rem 0}
+  .tier.featured{border:2px solid var(--teal);box-shadow:var(--sh-2)}
+  .tier .btn{margin-top:auto}
+  .chips-row{display:flex;flex-wrap:wrap;gap:var(--s2);margin-top:var(--s5)}
+  /* role-contract card: contract dominant, name subordinate */
+  .rc{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:var(--s5);box-shadow:var(--sh-1)}
+  .rc .rc-name{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .rc .rc-role{font-family:var(--serif);font-size:1.25rem;font-weight:600;color:var(--ink);margin:.1rem 0 .5rem}
+  .rc .rc-line{font-size:var(--fs-sm);color:var(--ink);line-height:1.5}
+  .rc .rc-line b{color:var(--teal-d)}
+</style>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Build-it Course 00 · The on-ramp</p>
+    <h1 class="display">Build Your First AI Team, in a Weekend</h1>
+    <p class="lead">Do not want to hire anyone yet? Start here. In one weekend you build a small, supervised AI team around one real workflow from your work — named agents, a one-line contract for each, and an approval step so nothing sends, posts, or spends without you.</p>
+    <div class="cta-row">
+      <a class="btn btn--on-ink" href="#pricing">Start for $79</a>
+      <a class="btn btn--outline-ink" href="#curriculum">See the curriculum</a>
+    </div>
+    <p class="small" style="color:#CDE7DF;margin-top:var(--s5)">No coding background needed · Async, lifetime access · Built-in AI tutor · The entry point to the full course line</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Why start here</p>
+      <hr class="rule">
+      <h2>The gap is not knowledge. It is permission to begin.</h2>
+    </div>
+    <div class="measure reveal">
+      <p>You have watched people build with AI and felt behind. The block is rarely the concepts — it is not knowing where to start, and fear of doing it wrong. This course removes both. You pick one workflow, build a small team around it, and finish the weekend with a working system and your own hands on the controls.</p>
+      <p>It is deliberately small. That is the point. A tiny team you actually understand beats a sprawling one you cannot govern. When you outgrow it, the deeper courses are waiting.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--paper">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">What you'll build</p>
+      <hr class="rule">
+      <h2>A small team with a job and a boundary each</h2>
+      <p class="lead">By the end you have a supervised team of five or six named agents running one real workflow — and stopping at you before anything goes out.</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card reveal"><span class="card__eyebrow">Map</span><h3>One real workflow</h3><p>Trigger, inputs, steps, decisions, output — written as a chain a coworker could follow.</p></div>
+      <div class="card reveal"><span class="card__eyebrow">Decide</span><h3>What AI should and shouldn't do</h3><p>Sort each step into off-limits, augmentation, or automation. The safe default is augmentation.</p></div>
+      <div class="card reveal"><span class="card__eyebrow">Design</span><h3>A named team</h3><p>Chief of Staff, Researcher, Drafter, Reviewer, Compliance, Ops — the ones your workflow needs.</p></div>
+      <div class="card reveal"><span class="card__eyebrow">Contract</span><h3>A role contract per agent</h3><p>May do X, may never do Y, must route Z to you. The line that makes it real.</p></div>
+      <div class="card reveal"><span class="card__eyebrow">Gate</span><h3>A human-approval step</h3><p>The team works up to "ready to send" — then stops for your sign-off. Every time.</p></div>
+      <div class="card reveal"><span class="card__eyebrow">Run</span><h3>One clean end-to-end pass</h3><p>Run the team on a real task, watch what breaks, tighten, and run it again.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">The artifact you keep</p>
+      <hr class="rule">
+      <h2>A named team is cute. The contract under the name is the product.</h2>
+      <p class="lead">Anyone can give agents fun names. What makes a team usable — for a founder, a clinic, a law practice — is the contract under each name: what it may touch, what it may never do, and what it must route to you.</p>
+    </div>
+    <div class="grid grid-3 reveal">
+      <div class="rc"><div class="rc-name">e.g. "Sharpay"</div><div class="rc-role">Brand-Voice Reviewer</div><p class="rc-line">May <b>flag or block</b> off-brand output · may <b>never send</b> · must route <b>publish decisions</b> to you.</p></div>
+      <div class="rc"><div class="rc-name">e.g. "Gabriella"</div><div class="rc-role">Compliance &amp; QA</div><p class="rc-line">May <b>check claims and risk</b> · may <b>never approve its own work</b> · must <b>escalate any risk</b> to you.</p></div>
+      <div class="rc"><div class="rc-name">e.g. "Chad"</div><div class="rc-role">Ops &amp; Deploy</div><p class="rc-line">May <b>prepare the finished work</b> · may <b>never publish alone</b> · every send is <b>approval-gated</b>.</p></div>
+    </div>
+    <div class="cta-row">
+      <a class="btn btn--primary" href="/agent-role-contract.html">Get the free Agent Role Contract template →</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--paper" id="curriculum">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Curriculum</p>
+      <hr class="rule">
+      <h2>A weekend, in four build-blocks</h2>
+      <p class="lead">You do not watch and forget. You leave each block with a working piece of your team.</p>
+    </div>
+    <ol class="mods reveal">
+      <li><b>See your work as a system.</b> Pick one workflow and map it — trigger, inputs, steps, decisions, output, accountability. Clarity before agents.</li>
+      <li><b>Decide what AI should and shouldn't do.</b> Sort every step into off-limits, augmentation, or automation, and set the rule that nothing consequential happens without your approval.</li>
+      <li><b>Design the team and write role contracts.</b> Choose your agents, give each one a job and a boundary, and write the one-line contract that governs it. Name them last.</li>
+      <li><b>Build it, run it once, and know when to level up.</b> Build one agent at a time, wire the approval step, run the whole team on a real task, and learn the signals that mean it is time for a deeper build.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="section section--ink">
+  <div class="wrap">
+    <div class="grid grid-2" style="align-items:center">
+      <div class="reveal">
+        <p class="eyebrow">Not a static video course</p>
+        <hr class="rule">
+        <h2>Meet your AI tutor</h2>
+        <p class="lead">Every Aloha AI course ships with a governed AI tutor, grounded only in the course materials. It cites the lesson it is answering from, tells you when a question is out of scope, and never fabricates. It is built the same way the team you are building is. The product proves itself.</p>
+        <ul class="check" style="margin-top:var(--s5)">
+          <li>Answers in scope, with the lesson it came from</li>
+          <li>Helps you sort steps and write role contracts</li>
+          <li>Points you to the deeper course when a question outgrows this one</li>
+          <li>Speaks in the instructor's voice</li>
+        </ul>
+      </div>
+      <div class="card reveal">
+        <p class="card__eyebrow" style="color:var(--mint)">Tutor · demo</p>
+        <div class="chat">
+          <div class="bubble q">Should I let an agent send the emails automatically?</div>
+          <div class="bubble a">Not yet. At this stage, sending is a consequential action, so it stays behind your approval. Let the team draft up to "ready to send," then you sign off. You can revisit automation later, once the workflow is low-stakes and well-tested.<span class="src">Source: Decide what AI should and shouldn't do</span></div>
+          <div class="bubble q">Can one agent just do my whole job?</div>
+          <div class="bubble a">No — and I would not build it to. An agent does bounded tasks; a job is tasks plus judgment, relationships, and accountability. Give each agent one job and a boundary, and keep yourself as the owner who approves what matters.<span class="src">Source: Design the team and role contracts</span></div>
+        </div>
+        <p class="small" style="color:var(--muted-ink);margin:var(--s3) 0 0">Illustrative. The live tutor runs on your course materials.</p>
+      <!-- LIVE TUTOR (activates when the engine backend is connected) -->
+      <div class="tutor-live" data-course="first-ai-team" style="margin-top:var(--s4)">
+        <form id="tutorForm" style="display:flex;gap:.5rem">
+          <input id="tutorQ" placeholder="Try it — ask the tutor about this course…" autocomplete="off"
+            style="flex:1;padding:.7rem .9rem;border:1px solid rgba(127,224,196,.35);border-radius:10px;background:rgba(255,255,255,.06);color:var(--cream);font:inherit">
+          <button class="btn btn--ghost" type="submit">Ask</button>
+        </form>
+        <div class="chat" id="tutorLog" style="margin-top:var(--s3)"></div>
+        <p class="small" style="color:var(--muted-ink);margin:var(--s3) 0 0">Live governed tutor — answers only from this course's materials, cites the lesson, refuses out of scope. Connect the engine (serve.py) to enable.</p>
+      </div>
+      <script>
+      (function(){
+        var wrap=document.currentScript.previousElementSibling;
+        var form=wrap.querySelector('#tutorForm'), q=wrap.querySelector('#tutorQ'), log=wrap.querySelector('#tutorLog');
+        var slug=wrap.getAttribute('data-course');
+        var endpoint=(window.ALOHA_TUTOR_BASE||'')+'/tutor/'+slug+'/chat';
+        function esc(s){return (s||'').replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
+        function add(cls,html){var d=document.createElement('div');d.className='bubble '+cls;d.innerHTML=html;log.appendChild(d);return d;}
+        function leadForm(qtext){
+          var d=add('a','<strong>Want RN to help with this directly?</strong><br>This is where the done-with-you and done-for-you tiers come in. Leave your email and RN will follow up.'+
+            '<form class="lead" style="display:flex;gap:6px;margin-top:8px"><input type="email" placeholder="you@email.com" required style="flex:1;padding:8px 10px;border:1px solid var(--line);border-radius:8px;font:inherit"><button class="btn btn--primary" type="submit" style="padding:.4rem .9rem">Send</button></form>');
+          d.querySelector('form').addEventListener('submit',function(ev){ev.preventDefault();var email=d.querySelector('input').value.trim();
+            fetch(endpoint.replace('/chat','/lead'),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:qtext,email:email})})
+            .then(function(r){return r.json();}).then(function(j){d.querySelector('form').outerHTML='<p style="margin:8px 0 0;color:var(--mint)">'+esc(j.message||'Thanks — RN will follow up.')+'</p>';})
+            .catch(function(){d.querySelector('form').outerHTML='<p style="margin:8px 0 0">Could not send. Try again later.</p>';});
+          });
+        }
+        form.addEventListener('submit',function(e){e.preventDefault();var text=q.value.trim();if(!text)return;q.value='';add('q',esc(text));var pending=add('a','…');
+          fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:text})})
+          .then(function(r){return r.json();})
+          .then(function(j){var body=esc(j.answer||j.error||'(no answer)').replace(/\nSource: (.*)$/m,'<span class="src">Source: $1</span>');pending.innerHTML=body;if(j.offer_help){leadForm(text);}})
+          .catch(function(){pending.innerHTML='The live tutor is not connected yet. Run the tutor engine (serve.py) to enable, or see the illustrative demo above.';});
+        });
+      })();
+      </script>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">What you walk away with</p>
+      <hr class="rule">
+      <h2>A working team, not a watch-time certificate</h2>
+    </div>
+    <div class="grid grid-2">
+      <ul class="check reveal">
+        <li>One workflow mapped as a system</li>
+        <li>A supervised team of five or six named agents</li>
+        <li>A role contract for each agent</li>
+      </ul>
+      <ul class="check reveal">
+        <li>A defined human-approval step</li>
+        <li>One real task run end-to-end with your sign-off</li>
+        <li>A clear read on whether to level up — and where</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section section--paper" id="pricing">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Three ways to get it</p>
+      <hr class="rule">
+      <h2>Learn it, build it with me, or have it built</h2>
+      <p class="lead">This is the on-ramp. Take the course and build your first team yourself. When the workflow gets real — sensitive data, live tools, money on the line — move up the ladder.</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card tier featured reveal"><span class="card__eyebrow">Do it yourself</span><h3>The Course</h3><div class="price-lg">$79</div><p>Async, lifetime access · 4 weekend build-blocks · role-contract template · the AI tutor. You build your first team.</p><a class="btn btn--primary" href="/university/assessment">Get the course</a></div>
+      <div class="card tier reveal"><span class="card__eyebrow">Done with you</span><h3>Cohort / Lab</h3><div class="price-lg">$1,500</div><p>Build your first team alongside Aloha AI with live guidance and review. For teams and people who want speed and support.</p><a class="btn btn--ghost" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Join the waitlist</a></div>
+      <div class="card tier reveal"><span class="card__eyebrow">Done for you</span><h3>Built &amp; Governed</h3><div class="price-lg">from $2,500</div><p>Aloha AI builds, integrates, and governs the team for you, with monitoring, evaluation, and an audit trail.</p><a class="btn btn--ghost" href="/services.html">See the service ladder</a></div>
+    </div>
+    <p class="small muted" style="margin-top:var(--s5)">Ready for a deeper build? The <a href="/university/courses/governed-operator">Governed AI Operator</a> is the next step up.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Your instructor</p>
+      <hr class="rule">
+      <h2>Governance-first, by background</h2>
+    </div>
+    <div class="measure reveal">
+      <p>RN Collins builds AI systems for regulated and reputation-sensitive work, where being right and being accountable matter. This course teaches the real method — small, supervised, governed — not shortcuts that fall apart the moment the work gets serious.</p>
+      <p class="small muted">RN Collins is a JD candidate, not a licensed attorney. This course is educational and is not legal, financial, or medical advice.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--paper" id="faq">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">FAQ</p>
+      <hr class="rule">
+      <h2>Questions</h2>
+    </div>
+    <div class="reveal measure">
+      <details class="acc"><summary>Do I need to know how to code?</summary><div class="acc__body"><p>No. This is the beginner on-ramp, built for non-technical professionals. You direct AI tools; every step is walked through.</p></div></details>
+      <details class="acc"><summary>How is this different from the other courses?</summary><div class="acc__body"><p>This one gets you started fast on a low-stakes workflow. The Governed Operator and the specialist courses go deep on integrations, security, evaluation, and governance for real production use. Start here, level up when you outgrow it.</p></div></details>
+      <details class="acc"><summary>Will an agent do my whole job?</summary><div class="acc__body"><p>No, and the course is honest about that. An agent does bounded tasks; you stay the owner who approves what matters. That framing is what makes it safe to use.</p></div></details>
+      <details class="acc"><summary>What do I actually end up with?</summary><div class="acc__body"><p>One workflow mapped, a supervised team of named agents with a role contract each, an approval step, and one real task run end-to-end with your sign-off.</p></div></details>
+      <details class="acc"><summary>Refunds?</summary><div class="acc__body"><p>Course terms and refund policy to be finalized before launch.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="section section--ink">
+  <div class="wrap" style="text-align:center">
+    <div class="reveal" style="max-width:52ch;margin-inline:auto">
+      <h2>Stop feeling behind. Build one real thing this weekend.</h2>
+      <p class="lead" style="margin-inline:auto">Your first governed AI team, start to finish.</p>
+      <div class="cta-row" style="justify-content:center">
+        <a class="btn btn--on-ink" href="#pricing">Start for $79</a>
+        <a class="btn btn--outline-ink" href="/university/courses">All the courses</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div>
+        <div class="footer__brand">Aloha AI <span style="color:var(--mint)">University</span></div>
+        <p style="max-width:38ch;color:#9FB6AE">Free, practical, honest generative-AI education for modern businesses. Built by Aloha AI and RN Collins.</p>
+        <p style="margin-top:var(--s4)"><a class="btn btn--on-ink btn--sm" href="/university/assessment">Get Your AI Roadmap</a></p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/university/start-here">Start Here</a></li>
+          <li><a href="/university/learn">Learn</a></li>
+          <li><a href="/university/playbooks">Playbooks</a></li>
+          <li><a href="/university/templates">Templates</a></li>
+          <li><a href="/university/use-cases">Use Cases</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Work with us</h4>
+        <ul>
+          <li><a href="/">← Aloha AI (main site)</a></li>
+          <li><a href="/university/tools">Tools</a></li>
+          <li><a href="/university/services">Services</a></li>
+          <li><a href="/university/about">About</a></li>
+          <li><a href="/university/contact">Contact</a></li>
+          <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a Call</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer__disc"><strong>Aloha AI University</strong> is free generative-AI education for modern businesses. RN Collins is a JD candidate, not a licensed attorney. Nothing here is legal, medical, or financial advice. Every page on this site runs entirely in your browser and sends nothing anywhere.</p>
+    <p class="footer__fine">© <span id="yr">2026</span> Aloha AI. All rights reserved.</p>
+  </div>
+</footer>
+<script id="uni-js">
+(function () {
+  "use strict";
+  document.documentElement.classList.add("js");
+  var burger = document.querySelector(".nav__burger");
+  var links = document.getElementById("nav-links");
+  if (burger && links) {
+    var close = function () { links.classList.remove("open"); burger.setAttribute("aria-expanded", "false"); };
+    var toggle = function () { var open = links.classList.toggle("open"); burger.setAttribute("aria-expanded", open ? "true" : "false"); };
+    burger.addEventListener("click", toggle);
+    links.addEventListener("click", function (e) { if (e.target.closest("a")) close(); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && links.classList.contains("open")) { close(); burger.focus(); } });
+    window.addEventListener("resize", function () { if (window.innerWidth > 1000) close(); });
+  }
+  var nav = document.querySelector(".nav");
+  if (nav) {
+    var onScroll = function () { if (window.scrollY > 8) nav.classList.add("is-stuck"); else nav.classList.remove("is-stuck"); };
+    onScroll(); window.addEventListener("scroll", onScroll, { passive: true });
+  }
+  var reveals = document.querySelectorAll(".reveal");
+  if (reveals.length && "IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+    reveals.forEach(function (el) { io.observe(el); });
+  } else { reveals.forEach(function (el) { el.classList.add("in"); }); }
+  var yr = document.getElementById("yr"); if (yr) yr.textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

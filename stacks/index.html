@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Applied AI stacks — what a real AI stack looks like for your work — Aloha AI</title>
+<meta name="description" content="See it in action: what a full stack of AI systems looks like for law firms, policy and advocacy teams, research labs, founders, and regulated-market operators — and which of RN Collins's live tools and services map to each layer.">
+<link rel="canonical" href="https://aloha-ai-consulting.vercel.app/stacks">
+<meta name="theme-color" content="#14201C">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Applied AI stacks — what a real AI stack looks like for your work">
+<meta property="og:description" content="What a full stack of AI systems looks like for a specific kind of work, and which of RN Collins's live tools and services map to each layer.">
+<meta property="og:image" content="https://aloha-ai-consulting.vercel.app/og-image.png">
+<meta property="og:url" content="https://aloha-ai-consulting.vercel.app/stacks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Applied AI stacks — Aloha AI">
+<meta name="twitter:description" content="What a real AI stack looks like for your kind of work, layer by layer, mapped to live tools and services.">
+<meta name="twitter:image" content="https://aloha-ai-consulting.vercel.app/og-image.png">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<script>document.documentElement.className+=' js';</script>
+<link rel="stylesheet" href="../aloha-ds.css">
+<style>
+  .hero{position:relative;overflow:hidden;background:var(--grad-hero);
+    color:var(--cream);padding-block:clamp(56px,8vw,104px) clamp(44px,6vw,76px);border-bottom:3px solid var(--teal)}
+  .hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(127,224,196,.05) 1px,transparent 1px);
+    background-size:26px 26px;-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 70%);mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 70%);pointer-events:none}
+  .hero>.wrap{position:relative}
+  .hero .display{color:var(--cream);max-width:20ch;margin-bottom:var(--s4)}
+  .hero .kicker{color:var(--teal-mint)}
+  .hero .lead{color:#CFDAD5;max-width:64ch}
+  .hero em{color:var(--teal-mint);font-style:normal}
+  .grad{color:var(--teal-mint)}
+  @supports((-webkit-background-clip:text) or (background-clip:text)){
+    .grad{background:linear-gradient(92deg,#7FE0C4,#CFE9DF);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  }
+  .hero__cta{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:var(--s5)}
+  .hero__answers{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:var(--s5)}
+  .hero__answers .a{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.04em;color:#CDE7DF;
+    border:1px solid #2F4A42;border-radius:var(--r-pill);padding:.4rem .8rem;background:rgba(255,255,255,.03)}
+  .hero__answers .a b{color:var(--teal-mint);font-weight:500}
+  .hero__meta{margin-top:var(--s5);font-family:var(--mono);font-size:var(--fs-xs);color:#9FB6AE;letter-spacing:.04em;line-height:1.8}
+  .hero__meta b{color:var(--cream)}
+  .livebadge{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:var(--fs-xs);
+    letter-spacing:.08em;text-transform:uppercase;color:#CDE7DF;border:1px solid #2F4A42;border-radius:var(--r-pill);padding:.34rem .72rem;margin-bottom:var(--s4)}
+  .livebadge .dot{width:7px;height:7px;border-radius:50%;background:var(--teal-mint);animation:pulse 2.2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(127,224,196,.5)}70%{box-shadow:0 0 0 7px rgba(127,224,196,0)}100%{box-shadow:0 0 0 0 rgba(127,224,196,0)}}
+  .sec-head{margin-bottom:var(--s6);max-width:72ch}
+  .sec-head .h2{margin-bottom:var(--s3)}
+  .stack-card{display:flex;flex-direction:column;height:100%;text-decoration:none;color:inherit}
+  .stack-card .tag{font-family:var(--mono);font-size:.6rem;letter-spacing:.09em;text-transform:uppercase;color:var(--teal-d)}
+  .stack-card h3{font-family:var(--serif);font-weight:600;font-size:1.12rem;margin:.3rem 0 .4rem;line-height:1.18}
+  .stack-card p{font-size:.86rem;color:var(--muted);margin:0 0 .7rem}
+  .stack-card .layers{list-style:none;margin:0 0 .9rem;padding:0;display:flex;flex-wrap:wrap;gap:.3rem}
+  .stack-card .layers li{font-family:var(--mono);font-size:.6rem;letter-spacing:.03em;color:var(--muted);border:1px solid var(--line);border-radius:var(--r-pill);padding:.2rem .5rem}
+  .stack-card .go{margin-top:auto;font-family:var(--mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;color:var(--teal-d)}
+  .stack-card.flag{border-color:var(--line-2)}
+  .stack-card.flag .tag{color:var(--teal)}
+  /* layered explainer */
+  .stackviz{display:flex;flex-direction:column;gap:.45rem;margin-top:var(--s5);max-width:640px}
+  .stackviz .layer{border:1px solid var(--line);border-left:3px solid var(--teal);border-radius:var(--r-sm);
+    background:#fff;padding:.7rem .95rem;box-shadow:var(--sh-1)}
+  .stackviz .layer .ln{font-family:var(--mono);font-size:.6rem;letter-spacing:.09em;text-transform:uppercase;color:var(--teal-d)}
+  .stackviz .layer .lt{font-family:var(--serif);font-size:.98rem;margin:.05rem 0 0;color:var(--ink)}
+  /* NEWSLETTER SIGNUP */
+  .nl-form{margin-top:var(--s2)}
+  .nl-label{display:block;font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem;text-align:left}
+  .nl-row{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center}
+  .nl-input{flex:1 1 240px;min-height:44px;padding:.66rem .8rem;border-radius:var(--r-sm);border:1px solid var(--line-2);background:#fff;color:var(--ink);font:inherit;font-size:.95rem}
+  .nl-input:focus-visible{box-shadow:var(--sh-focus);border-color:var(--teal)}
+  .nl-note{margin-top:.6rem;font-size:var(--fs-sm);color:var(--teal-d);font-weight:600}
+  .nl-fine{margin-top:.6rem;font-family:var(--mono);font-size:.7rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<a class="skip" href="#stacks">Skip to the stacks</a>
+
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="/" aria-label="Aloha AI home">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#1B7A68"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#1B7A68" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      Aloha&nbsp;AI
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav__links" id="navlinks">
+        <li><a href="/#services">Services</a></li><li><a href="/build-your-team.html">Build a team</a></li>
+        <li><a href="/#moat">The moat</a></li>
+        <li><a href="/stacks/">Stacks</a></li>
+        <li><a href="/tools">Tools</a></li>
+        <li><a href="/intelligence.html">Intelligence</a></li>
+        <li><a href="/university">University</a></li>
+        <li><a href="/legal-ai.html">Legal AI</a></li>
+        <li class="nav__cta"><a class="btn btn--primary btn--sm" href="#start">Get started →</a></li>
+      </ul>
+    </nav>
+    <button class="nav__burger" id="burger" aria-label="Open menu" aria-controls="navlinks" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+<span id="top"></span>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-h">
+  <div class="wrap">
+    <span class="livebadge"><span class="dot" aria-hidden="true"></span> See it in action · applied stacks</span>
+    <p class="eyebrow kicker">Aloha AI · applied stacks by RN Collins</p>
+    <h1 class="display" id="hero-h">What a real AI stack looks like for <span class="grad">your kind of work</span>.</h1>
+    <p class="lead">A single tool is one instrument. A stack is the whole set: research, knowledge, drafting, verification, governance, operations, working together as one system. These pages show what a full AI stack looks like for a specific audience, layer by layer, and which of my live tools and services map to each layer. Use them as a blueprint, then decide what is worth building properly first.</p>
+    <div class="hero__cta">
+      <a class="btn btn--primary" href="#stacks">See the stacks →</a>
+      <a class="btn btn--ghost" href="#start">Book a scoping call</a>
+    </div>
+    <div class="hero__answers">
+      <span class="a"><b>For</b> law firms, policy teams, research labs, founders &amp; regulated-market operators</span>
+      <span class="a"><b>Why</b> the citation, the quota, the statutory trigger have to be right</span>
+    </div>
+    <p class="hero__meta">Built by <b>RN&nbsp;Collins</b>. Neuroscience (MS) · Administrative&nbsp;&amp; regulatory law (JD&nbsp;candidate) · 35+ builds shipped</p>
+  </div>
+</section>
+
+<!-- WHAT A STACK IS -->
+<section class="section" aria-labelledby="what-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">What a stack is</p>
+      <h2 class="h2" id="what-h">A stack is layers that do different jobs</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">Most AI rollouts stall because someone bought one tool and expected a system. A working stack separates the jobs: the layer that finds facts is different from the layer that verifies them, which is different from the layer that governs the whole thing. Each layer below shows the job, where AI helps, where it still fails, and which real asset covers it.</p>
+    </div>
+    <div class="stackviz reveal" role="list" aria-label="Example stack layers">
+      <div class="layer" role="listitem"><span class="ln">Layer 01</span><p class="lt">Find the facts (research)</p></div>
+      <div class="layer" role="listitem"><span class="ln">Layer 02</span><p class="lt">Hold the facts (knowledge base)</p></div>
+      <div class="layer" role="listitem"><span class="ln">Layer 03</span><p class="lt">Do the work (drafting &amp; production)</p></div>
+      <div class="layer" role="listitem"><span class="ln">Layer 04</span><p class="lt">Check the work (verification)</p></div>
+      <div class="layer" role="listitem"><span class="ln">Layer 05</span><p class="lt">Govern the whole thing (policy &amp; audit)</p></div>
+      <div class="layer" role="listitem"><span class="ln">Layer 06</span><p class="lt">Run it every day (intake &amp; ops)</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- THE STACKS -->
+<section class="section section--paper section--texture" id="stacks" aria-labelledby="stacks-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The stacks</p>
+      <h2 class="h2" id="stacks-h">Pick the stack that matches your work</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">Five applied stacks, each written for a specific kind of team. Every layer maps to a real, live tool or a service I deliver, so you can see the blueprint and the pieces at once.</p>
+    </div>
+    <div class="grid grid-2">
+      <a class="card card--hover stack-card flag reveal" href="/stacks/law-firm/">
+        <span class="tag">Flagship</span>
+        <h3>Law Firm AI Stack</h3>
+        <p>Six layers a firm actually runs: legal research, an internal knowledge base, client-alert workflow, document review and drafting support, citation verification with governance, and intake and ops. Where AI earns its keep, and where a confident wrong answer becomes a sanctions risk.</p>
+        <ul class="layers"><li>Research</li><li>Knowledge base</li><li>Client alerts</li><li>Drafting</li><li>Verification</li><li>Governance</li></ul>
+        <span class="go">See the Law Firm stack →</span>
+      </a>
+      <a class="card card--hover stack-card reveal" href="/stacks/policy-advocacy/">
+        <span class="tag">Policy · Advocacy</span>
+        <h3>Policy &amp; Advocacy Stack</h3>
+        <p>Legislative monitoring, testimony and briefing support, coalition research, and public-education outputs, built on primary-source monitors so what you put in front of a committee holds up.</p>
+        <ul class="layers"><li>Monitoring</li><li>Testimony</li><li>Coalition research</li><li>Public education</li></ul>
+        <span class="go">See the Policy stack →</span>
+      </a>
+      <a class="card card--hover stack-card reveal" href="/stacks/research-lab/">
+        <span class="tag">Research · Academic</span>
+        <h3>Research Lab / Academic Stack</h3>
+        <p>Literature review, evidence matrices, note systems, publication support, and policy translation, with a knowledge base sized to the work rather than overbuilt.</p>
+        <ul class="layers"><li>Lit review</li><li>Evidence matrices</li><li>Notes</li><li>Publication</li><li>Translation</li></ul>
+        <span class="go">See the Research stack →</span>
+      </a>
+      <a class="card card--hover stack-card reveal" href="/stacks/founder-startup/">
+        <span class="tag">Founder · Startup</span>
+        <h3>Founder / Startup Stack</h3>
+        <p>Policy monitoring, product-claim review, internal knowledge management, customer education, and diligence prep, for a small team that cannot afford a confident wrong claim on the record.</p>
+        <ul class="layers"><li>Policy watch</li><li>Claim review</li><li>Knowledge</li><li>Education</li><li>Diligence</li></ul>
+        <span class="go">See the Founder stack →</span>
+      </a>
+      <a class="card card--hover stack-card reveal" href="/stacks/regulated-intelligence/">
+        <span class="tag">Psychedelics · Cannabis</span>
+        <h3>Psychedelic / Cannabis Intelligence Stack</h3>
+        <p>Scheduling and policy tracking, state-by-state status, claim substantiation, and platform-suppression defense, built on the subject-matter monitors I run in these exact markets.</p>
+        <ul class="layers"><li>Scheduling</li><li>State status</li><li>Claims</li><li>Suppression</li></ul>
+        <span class="go">See the Intelligence stack →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO USE -->
+<section class="section" id="start" aria-labelledby="use-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">How to use these</p>
+      <h2 class="h2" id="use-h">A blueprint you can act on</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">Each stack page names the layers, shows where AI helps and where it fails, and points to the live tool or service that covers each one. Read the stack for your work, run the free tools it links, and bring the layer that worries you to a scoping call.</p>
+    </div>
+    <div class="grid grid-3 reveal">
+      <div class="card"><div class="card__ic" aria-hidden="true">1</div><h3>Read your stack</h3><p class="small muted">Find the audience that matches your work and read the layers top to bottom. The gaps you feel are usually the layers no one has built yet.</p></div>
+      <div class="card"><div class="card__ic" aria-hidden="true">2</div><h3>Run the tools</h3><p class="small muted">Each layer links a live, in-browser tool. Run the ones that match your weak spots to see the method and score your own exposure.</p></div>
+      <div class="card"><div class="card__ic" aria-hidden="true">3</div><h3>Scope the build</h3><p class="small muted">Bring the weakest layer to a short call. Most engagements start with a Systems Audit that points to the layer worth building first.</p></div>
+    </div>
+    <div class="hero__cta reveal" style="margin-top:var(--s5)">
+      <a class="btn btn--primary" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a scoping call →</a>
+      <a class="btn btn--outline" href="/tools">Browse the free tools</a>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="section section--paper" id="newsletter" aria-labelledby="newsletter-h">
+  <div class="wrap" style="max-width:640px;text-align:center">
+    <p class="eyebrow" style="justify-content:center">Newsletter</p>
+    <h2 class="h2" id="newsletter-h">Aloha AI Dispatch</h2>
+    <p class="lead" style="margin:var(--s3) auto var(--s5)">One short email when there is a new tool, a build breakdown, or a shift worth knowing in AI for regulated work.</p>
+    <!-- BEEHIIV-EMBED-START (replace this whole block with your Beehiiv embed code) -->
+    <form class="nl-form" id="nlForm" action="#" novalidate>
+      <label for="nlEmail" class="nl-label">Email address</label>
+      <div class="nl-row">
+        <input type="email" id="nlEmail" name="email" class="nl-input" placeholder="you@company.com" required autocomplete="email">
+        <button type="submit" class="btn btn--primary">Subscribe →</button>
+      </div>
+      <p class="nl-note" id="nlNote" role="status" hidden>Connect Beehiiv to enable signups.</p>
+      <p class="nl-fine">Placeholder form; not yet wired to a mailing provider. No data is sent or stored.</p>
+    </form>
+    <!-- BEEHIIV-EMBED-END -->
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section--ink" id="contact" aria-labelledby="cta-h">
+  <div class="wrap" style="text-align:center">
+    <p class="eyebrow">Aloha AI · Honolulu</p>
+    <h2 class="h2" id="cta-h" style="max-width:26ch;margin-inline:auto">Find the layer worth building first.</h2>
+    <p class="lead" style="margin:var(--s4) auto var(--s5);text-align:center">The stacks are the map. When one layer is clearly the weak point, that is where a governed build starts. Bring it to a short call and we scope it around your work.</p>
+    <div style="display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn--primary" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Let's talk →</a>
+      <a class="btn btn--ghost" href="/tools">Browse the tools</a>
+      <a class="btn btn--ghost" href="/#services">See the services</a>
+    </div>
+    <p class="small" style="margin-top:var(--s5);color:var(--muted-on-ink)">Prefer email? <a href="#" data-email style="color:var(--teal-mint)">Email RN</a> &nbsp;·&nbsp; or connect on <a href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noopener" style="color:var(--teal-mint)">LinkedIn</a></p>
+    <p id="emailReveal" hidden style="margin-top:.5rem;font-family:var(--mono);font-size:.8rem;color:#CFDAD5"></p>
+  </div>
+</section>
+</main>
+
+<footer class="footer" aria-labelledby="foot-h">
+  <div class="wrap">
+    <h2 id="foot-h" class="small" style="position:absolute;left:-999px">Site footer</h2>
+    <div class="footer__grid">
+      <div>
+        <a class="nav__brand" href="/" style="color:var(--cream)" aria-label="Aloha AI home"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#7FE0C4"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#7FE0C4" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg> Aloha&nbsp;AI</a>
+        <p class="small" style="margin-top:var(--s3);max-width:38ch;color:#9FB6AE">AI implementation built around how humans actually trust and use it, for regulated or reputation-sensitive professions.</p>
+      </div>
+      <div>
+        <h4>Applied stacks</h4>
+        <ul>
+          <li><a href="/stacks/law-firm/">Law Firm stack</a></li>
+          <li><a href="/stacks/policy-advocacy/">Policy &amp; Advocacy stack</a></li>
+          <li><a href="/stacks/research-lab/">Research Lab stack</a></li>
+          <li><a href="/stacks/founder-startup/">Founder / Startup stack</a></li>
+          <li><a href="/stacks/regulated-intelligence/">Psychedelic / Cannabis stack</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Aloha AI</h4>
+        <ul>
+          <li><a href="/">The practice</a></li>
+          <li><a href="/tools">Free tools</a></li>
+          <li><a href="/legal-ai.html">Legal AI Workflow</a></li>
+          <li><a href="/intelligence.html">Intelligence</a></li>
+          <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a call</a></li>
+          <li><a href="/privacy.html">Privacy</a></li>
+          <li><a href="/terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="disc small">Aloha AI provides regulatory intelligence and AI systems, not legal advice. RN Collins is a JD candidate, not a licensed attorney; nothing here is legal, medical, or tax advice or an attorney–client relationship.</p>
+    <p class="fine">Aloha AI · a DBA of Rayven-Nikkita Collins LLC · Honolulu, HI · No tracking, no cookies · © 2026</p>
+  </div>
+</footer>
+
+<script>
+  (function(){var b=document.getElementById('burger'),l=document.getElementById('navlinks');
+  function set(o){b.setAttribute('aria-expanded',o);l.classList.toggle('open',o);b.setAttribute('aria-label',o?'Close menu':'Open menu');}
+  b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true');});
+  l.addEventListener('click',function(e){if(e.target.tagName==='A')set(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});})();
+  (function(){var u='collins.ra',dm='northeastern.edu',a=u+'@'+dm,su=encodeURIComponent('Aloha AI — stacks inquiry');
+  document.querySelectorAll('[data-email]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();
+  try{navigator.clipboard&&navigator.clipboard.writeText(a);}catch(_){}
+  var o=document.getElementById('emailReveal');if(o){o.hidden=false;o.innerHTML='Copied ✓ &nbsp;<a href="mailto:'+a+'?subject='+su+'" style="color:#7FE0C4">'+a+'</a> &nbsp;·&nbsp; <a href="https://mail.google.com/mail/?view=cm&fs=1&to='+a+'&su='+su+'" target="_blank" rel="noopener" style="color:#7FE0C4">Open in Gmail</a>';}
+  window.location.href='mailto:'+a+'?subject='+su;});});})();
+  (function(){var nav=document.querySelector('.nav');if(!nav)return;var on=function(){nav.classList.toggle('is-stuck',window.scrollY>8);};on();window.addEventListener('scroll',on,{passive:true});})();
+  (function(){if(matchMedia('(prefers-reduced-motion:reduce)').matches){document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in');});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(e){io.observe(e);});})();
+  (function(){var f=document.getElementById('nlForm');if(!f)return;f.addEventListener('submit',function(e){e.preventDefault();var n=document.getElementById('nlNote');if(n)n.hidden=false;});})();
+</script>
+</body>
+</html>

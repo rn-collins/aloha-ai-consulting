@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How I think about hallucination risk in legal and regulatory work — Aloha AI Notes</title>
+<meta name="description" content="An essay on why AI fabricates citations, the structural tells that give a fake cite away, and why existence-verification plus a human gate matter more than a better model. By RN Collins.">
+<link rel="canonical" href="https://aloha-ai-consulting.vercel.app/notes/hallucination-risk-legal-work">
+<meta name="theme-color" content="#14201C">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How I think about hallucination risk in legal and regulatory work">
+<meta property="og:description" content="Why AI fabricates citations, the structural tells, and why existence-verification plus a human gate matter more than a better model.">
+<meta property="og:image" content="https://aloha-ai-consulting.vercel.app/og-image.png">
+<meta property="og:url" content="https://aloha-ai-consulting.vercel.app/notes/hallucination-risk-legal-work">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How I think about hallucination risk in legal and regulatory work">
+<meta name="twitter:description" content="Why AI fabricates citations, and why existence-verification plus a human gate matter more than a better model.">
+<meta name="twitter:image" content="https://aloha-ai-consulting.vercel.app/og-image.png">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<script>document.documentElement.className+=' js';</script>
+<link rel="stylesheet" href="../../aloha-ds.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"How I think about hallucination risk in legal and regulatory work",
+"url":"https://aloha-ai-consulting.vercel.app/notes/hallucination-risk-legal-work",
+"author":{"@type":"Person","name":"RN Collins","jobTitle":"Founder, Aloha AI"},
+"publisher":{"@type":"Organization","name":"Aloha AI"}}
+</script>
+<style>
+  .hero{position:relative;overflow:hidden;background:var(--grad-hero);
+    color:var(--cream);padding-block:clamp(52px,7vw,92px) clamp(40px,5vw,68px);border-bottom:3px solid var(--teal)}
+  .hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(127,224,196,.05) 1px,transparent 1px);
+    background-size:26px 26px;-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 70%);mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 70%);pointer-events:none}
+  .hero>.wrap{position:relative;max-width:760px}
+  .hero h1{color:var(--cream);max-width:22ch;margin-bottom:var(--s4)}
+  .hero .kicker{color:var(--teal-mint)}
+  .hero .deck{color:#CFDAD5;max-width:58ch;font-size:clamp(1.06rem,1.6vw,1.2rem);line-height:1.5}
+  .hero__meta{margin-top:var(--s5);font-family:var(--mono);font-size:var(--fs-xs);color:#9FB6AE;letter-spacing:.04em}
+  .crumb{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.08em;text-transform:uppercase;margin-bottom:var(--s4)}
+  .crumb a{color:#CDE7DF}
+  .article{max-width:720px;margin-inline:auto}
+  .article p{font-size:1.06rem;line-height:1.72;color:var(--ink-2);margin:0 0 1.15rem}
+  .article h2{font-size:var(--fs-h2);margin:var(--s7) 0 var(--s3)}
+  .article h3{font-size:var(--fs-h3);margin:var(--s6) 0 var(--s2)}
+  .article strong{color:var(--ink)}
+  .anchor{max-width:720px;margin-inline:auto}
+  .anchor .card h3{margin-bottom:var(--s2)}
+  .anchor .links{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:var(--s4)}
+  .disclaim{max-width:720px;margin:var(--s6) auto 0;font-size:var(--fs-sm);color:var(--muted);border-left:2px solid var(--line-2);padding-left:.9rem}
+  .nl-form{margin-top:var(--s2)}
+  .nl-label{display:block;font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem;text-align:left}
+  .nl-row{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center}
+  .nl-input{flex:1 1 240px;min-height:44px;padding:.66rem .8rem;border-radius:var(--r-sm);border:1px solid var(--line-2);background:#fff;color:var(--ink);font:inherit;font-size:.95rem}
+  .nl-input:focus-visible{box-shadow:var(--sh-focus);border-color:var(--teal)}
+  .nl-note{margin-top:.6rem;font-size:var(--fs-sm);color:var(--teal-d);font-weight:600}
+  .nl-fine{margin-top:.6rem;font-family:var(--mono);font-size:.7rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<a class="skip" href="#article">Skip to the essay</a>
+
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="../../index.html" aria-label="Aloha AI home">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#1B7A68"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#1B7A68" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      Aloha&nbsp;AI
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav__links" id="navlinks">
+        <li><a href="../../index.html#services">Services</a></li><li><a href="/build-your-team.html">Build a team</a></li>
+        <li><a href="../../index.html#moat">The moat</a></li>
+        <li><a href="../../index.html#tools">Tools</a></li>
+        <li><a href="../index.html" aria-current="page">Notes</a></li>
+        <li><a href="/university">University</a></li>
+        <li><a href="../../index.html#about">About</a></li>
+        <li><a href="../../legal-ai.html">Legal AI</a></li>
+        <li class="nav__cta"><a class="btn btn--primary btn--sm" href="../../index.html#start">Get started →</a></li>
+      </ul>
+    </nav>
+    <button class="nav__burger" id="burger" aria-label="Open menu" aria-controls="navlinks" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+<span id="top"></span>
+
+<section class="hero" aria-labelledby="hero-h">
+  <div class="wrap">
+    <p class="crumb"><a href="../index.html">← Notes</a></p>
+    <p class="eyebrow kicker">Essay · Legal AI</p>
+    <h1 id="hero-h">How I think about hallucination risk in legal and regulatory work</h1>
+    <p class="deck">A fabricated citation is not a strange failure of a language model; it is the ordinary behavior of one, showing up in the one place a court will notice.</p>
+    <p class="hero__meta">RN Collins · Aloha AI · Notes</p>
+  </div>
+</section>
+
+<article class="section" id="article">
+  <div class="article reveal">
+    <p>Ask a language model for a case on point and it will hand you one: crisp, confident, dressed in the exact grammar a court expects. That fluency is the trap. The comfortable account treats hallucination as a bug the field will outgrow, and I want to explain here why that account misreads the machine, where the failure is actually catchable, and how to arrange the checks so a fabricated cite never reaches a filing.</p>
+
+    <p>Consider the comfortable account on its strongest terms. Hallucination is a defect: the model slipped, a better model will slip less, and within a version or two the problem retires itself. That is reasonable, and it is not entirely wrong. Models have improved; retrieval and grounding lower the raw rate at which a system invents things; the trend line points down. If you trusted the trend line alone, you would conclude that a fabricated citation in legal work is a passing embarrassment that engineering will soon sweep away. The trend line, however, describes frequency, not cause, and cause is the whole question.</p>
+
+    <p>So why do I refuse to hold the problem that way, and why should anyone placing AI near a filing refuse with me? A language model does not store cases; it stores the statistical shape of language about cases. My first training was in neuroscience, not law, and the distinction is one a nervous system makes vivid: a model, like a pattern-completing brain, is built to produce what fits, not what is verified. When you ask for authority on a proposition, it generates text that looks exactly like a citation, because it has absorbed thousands of them and knows the form cold. The reporter abbreviation, the volume, the page, the year in parentheses: every piece is manufactured to be plausible. Plausibility is the objective. Truth is, at best, a frequent side effect of it. The fabricated citation is therefore the system working as designed.</p>
+
+    <p>Why does this land so hard in legal and regulatory work? Because the output is checkable and the cost of error is formal. A marketing draft with an invented statistic is sloppy; a brief with an invented case is sanctionable. The same generative habit that charms in a first draft becomes a professional liability the instant it enters a document that a judge, a regulator, or an adversary will read line by line. The domain does not make the model worse. It makes the model's ordinary behavior expensive.</p>
+
+    <h2>The tells are structural, and that is good news</h2>
+
+    <p>Here is where my optimism begins. Fabricated citations are not random noise; they carry structural signatures, because the model is imitating a form governed by real rules. A cite that points to a reporter that never existed, or that pairs a volume with a court that never published in it, is detectable without knowing whether the case is real. A decision dated before its reporter series began, or after it ended, is impossible on its face. A pincite longer than any volume in the series is malformed in a way arithmetic will catch. None of these checks require a legal database. They require knowing what a valid citation can and cannot be.</p>
+
+    <p>That is the reasoning behind the <strong>Citation Verifier</strong> I built myself. It runs structural checks in the browser: it flags impossible dates, malformed reporters, and cites that violate the internal grammar of the citation system, before anyone spends a dollar confirming existence in a paid database. Think of it as the cheap first pass that catches the obvious fabrications, so the expensive second pass need only confirm what survived. Does it tell you a case says what you claim it says? No. It tells you whether the citation could be real at all, a smaller question you can answer fast and for free.</p>
+
+    <h2>Existence is necessary, not sufficient</h2>
+
+    <p>Structural validity is only the floor. A citation can be flawless in form and still point to a case that does not exist, or to a real case that stands for the opposite of what the brief asserts. That is, the next gate is existence-verification: does this authority actually appear in the record, and does the pinpoint support the proposition it is cited for? That step reaches into real sources; it is slower and it costs something, which is exactly why the structural pass belongs in front of it, filtering out the fabrications that never merited a lookup.</p>
+
+    <p>Even existence is not the end of it. A system can confirm that a case exists and still miss that it was overruled, distinguished, or wrenched out of context. This is where I stop trusting automation and insist on a human gate. Verification narrows the field a person must check; it does not replace the person. The <strong>Trust-Safe console</strong> is built around that division of labor: the machine does the tireless, structural, high-volume work, and a qualified human makes the judgment that carries professional weight. The gate is not decoration. It is the point.</p>
+
+    <h2>Why the duty cannot be delegated</h2>
+
+    <p>There is a temptation, when a tool is good, to promote it to decision-maker. ABA Formal Opinion 512 closes that door. The lawyer's duties of competence, candor, and supervision do not transfer to a vendor or a model; a lawyer who signs a filing owns what is in it, whatever produced the draft. I read that as a design constraint rather than a warning. If the duty cannot be delegated, then the system must be built so the human can actually discharge it, surfacing what was checked, what was not, and what still needs trained eyes. A tool that hides its uncertainty makes the duty harder to meet; a tool that surfaces it makes the human faster at the part only the human can do.</p>
+
+    <p>One caution about my own standing. I am a JD candidate, not a licensed attorney, and none of this is legal advice. What I offer is systems and evaluation thinking: how a generative model fails, where the failure is catchable, and how to arrange the checks so it never reaches a court. The legal judgment belongs to the licensed professionals I build for. My job is narrower, and I prefer it that way: to ensure that when they exercise that judgment, the obvious fabrications are already gone and only the real questions remain on the table.</p>
+  </div>
+</article>
+
+<section class="section section--paper" aria-labelledby="anchor-h">
+  <div class="anchor">
+    <div class="card reveal">
+      <p class="eyebrow">The build this is anchored to</p>
+      <h3 id="anchor-h">Citation Verifier and the Trust-Safe console</h3>
+      <p class="small muted">The verifier in this piece is real; run it. The structural checks described here run in the Citation Verifier; the human-gated verification workflow is the Trust-Safe operating layer. Both are live and interactive.</p>
+      <div class="links">
+        <a class="btn btn--primary" href="/tools/citation-verifier">Open the Citation Verifier →</a>
+        <a class="btn btn--outline" href="/tools/trust-safe-console">See the Trust-Safe console →</a>
+      </div>
+    </div>
+    <p class="disclaim">RN Collins is a JD candidate, not a licensed attorney. This essay is systems and evaluation commentary, not legal advice, and nothing here creates an attorney–client relationship. The tools measure documented-practice maturity and structural validity, not legal compliance.</p>
+    <p class="small muted" style="margin-top:var(--s4)">Read next: <a href="../what-i-audit-first/index.html">What I audit first when a team says it is already using AI →</a></p>
+  </div>
+</section>
+
+<section class="section section--paper" id="newsletter" aria-labelledby="newsletter-h">
+  <div class="wrap" style="max-width:640px;text-align:center">
+    <p class="eyebrow" style="justify-content:center">Newsletter</p>
+    <h2 class="h2" id="newsletter-h">Aloha AI Dispatch</h2>
+    <p class="lead" style="margin:var(--s3) auto var(--s5)">More notes like this one are on the way. The dispatch is a quiet way to see them first.</p>
+    <!-- BEEHIIV-EMBED-START (replace this whole block with your Beehiiv embed code) -->
+    <form class="nl-form" id="nlForm" action="#" novalidate>
+      <label for="nlEmail" class="nl-label">Email address</label>
+      <div class="nl-row">
+        <input type="email" id="nlEmail" name="email" class="nl-input" placeholder="you@company.com" required autocomplete="email">
+        <button type="submit" class="btn btn--primary">Subscribe →</button>
+      </div>
+      <p class="nl-note" id="nlNote" role="status" hidden>Connect Beehiiv to enable signups.</p>
+      <p class="nl-fine">Placeholder form; not yet wired to a mailing provider. No data is sent or stored.</p>
+    </form>
+    <!-- BEEHIIV-EMBED-END -->
+  </div>
+</section>
+</main>
+
+<footer class="footer" aria-labelledby="foot-h">
+  <div class="wrap">
+    <h2 id="foot-h" class="small" style="position:absolute;left:-999px">Site footer</h2>
+    <div class="footer__grid">
+      <div>
+        <a class="nav__brand" href="../../index.html" style="color:var(--cream)" aria-label="Aloha AI home"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#7FE0C4"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#7FE0C4" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg> Aloha&nbsp;AI</a>
+        <p class="small" style="margin-top:var(--s3);max-width:38ch;color:#9FB6AE">AI implementation built around how humans actually trust and use it, for regulated or reputation-sensitive professions.</p>
+      </div>
+      <div>
+        <h4>Notes</h4>
+        <ul>
+          <li><a href="../index.html">All notes</a></li>
+          <li><a href="../what-i-audit-first/index.html">What I audit first</a></li>
+          <li><a href="../tracking-isnt-intelligence/index.html">Tracking is not intelligence</a></li>
+          <li><a href="../tool-workflow-operating-system/index.html">Tool, workflow, operating system</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Aloha AI</h4>
+        <ul>
+          <li><a href="../../index.html">The practice</a></li>
+          <li><a href="/tools">Free tools</a></li>
+          <li><a href="../../legal-ai.html">Legal AI Workflow</a></li>
+          <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a call</a></li>
+          <li><a href="../../privacy.html">Privacy</a></li>
+          <li><a href="../../terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="disc small">Notes are commentary on systems and evaluation, not legal advice. RN Collins is a JD candidate, not a licensed attorney; nothing here is legal or tax advice or an attorney–client relationship.</p>
+    <p class="fine">Aloha AI · a DBA of Rayven-Nikkita Collins LLC · Honolulu, HI · No tracking, no cookies · © 2026</p>
+  </div>
+</footer>
+
+<script>
+  (function(){var b=document.getElementById('burger'),l=document.getElementById('navlinks');
+  function set(o){b.setAttribute('aria-expanded',o);l.classList.toggle('open',o);b.setAttribute('aria-label',o?'Close menu':'Open menu');}
+  b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true');});
+  l.addEventListener('click',function(e){if(e.target.tagName==='A')set(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});})();
+  (function(){var nav=document.querySelector('.nav');if(!nav)return;var on=function(){nav.classList.toggle('is-stuck',window.scrollY>8);};on();window.addEventListener('scroll',on,{passive:true});})();
+  (function(){if(matchMedia('(prefers-reduced-motion:reduce)').matches){document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in');});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(e){io.observe(e);});})();
+  (function(){var f=document.getElementById('nlForm');if(!f)return;f.addEventListener('submit',function(e){e.preventDefault();var n=document.getElementById('nlNote');if(n)n.hidden=false;});})();
+</script>
+</body>
+</html>

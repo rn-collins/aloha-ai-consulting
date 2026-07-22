@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Regulated Claims Checker — flag risky marketing language before it ships — Aloha AI</title>
+<meta name="description" content="Paste marketing, website, or label copy for a regulated product (cannabis, psychedelics, wellness, supplements, coaching, health/neurotech). A deterministic analyzer flags risky claims by category, risk level, and which regulator's attention zone they implicate. Runs in your browser; nothing leaves it. Informational screening, not legal advice.">
+<link rel="canonical" href="https://aloha-ai-consulting.vercel.app/tools/claims-checker">
+<meta name="theme-color" content="#14201C">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Regulated Claims Checker — Aloha AI">
+<meta property="og:description" content="Flag risky marketing language for regulated products against FDA, FTC, and state consumer-protection attention zones. Runs in your browser; nothing leaves it.">
+<meta property="og:image" content="https://aloha-ai-consulting.vercel.app/og-image.png">
+<meta property="og:url" content="https://aloha-ai-consulting.vercel.app/tools/claims-checker">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Regulated Claims Checker — Aloha AI">
+<meta name="twitter:description" content="A deterministic screening tool that flags risky claims in regulated-product copy. Runs in your browser.">
+<meta name="twitter:image" content="https://aloha-ai-consulting.vercel.app/og-image.png">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<script>document.documentElement.className+=' js';</script>
+<link rel="stylesheet" href="./aloha-ds.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Regulated Claims Checker",
+"applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://aloha-ai-consulting.vercel.app/tools/claims-checker",
+"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+"creator":{"@type":"Person","name":"RN Collins","jobTitle":"Founder, Aloha AI",
+"description":"Neuroscientist (MS), JD candidate, and AI systems builder for regulated industries","knowsAbout":["FDA claims","FTC substantiation","Regulated marketing","Structure-function claims","Consumer protection"]},
+"about":"An informational screening tool that flags risky claim-language patterns in regulated-product marketing copy"}
+</script>
+<style>
+  .hero{position:relative;overflow:hidden;background:var(--grad-hero);
+    color:var(--cream);padding-block:clamp(56px,8vw,104px) clamp(44px,6vw,76px);border-bottom:3px solid var(--teal)}
+  .hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(127,224,196,.05) 1px,transparent 1px);
+    background-size:26px 26px;-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 70%);mask-image:linear-gradient(180deg,rgba(0,0,0,.6),transparent 70%);pointer-events:none}
+  .hero>.wrap{position:relative}
+  .hero .display{color:var(--cream);max-width:20ch;margin-bottom:var(--s4)}
+  .hero .kicker{color:var(--teal-mint)}
+  .hero .lead{color:#CFDAD5;max-width:62ch}
+  .hero em{color:var(--teal-mint);font-style:normal}
+  .grad{color:var(--teal-mint)}
+  @supports((-webkit-background-clip:text) or (background-clip:text)){
+    .grad{background:linear-gradient(92deg,#7FE0C4,#CFE9DF);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  }
+  .hero__cta{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:var(--s5)}
+  .hero__answers{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:var(--s5)}
+  .hero__answers .a{font-family:var(--mono);font-size:var(--fs-xs);letter-spacing:.04em;color:#CDE7DF;
+    border:1px solid #2F4A42;border-radius:var(--r-pill);padding:.4rem .8rem;background:rgba(255,255,255,.03)}
+  .hero__answers .a b{color:var(--teal-mint);font-weight:500}
+  .hero__meta{margin-top:var(--s5);font-family:var(--mono);font-size:var(--fs-xs);color:#9FB6AE;letter-spacing:.04em;line-height:1.8}
+  .hero__meta b{color:var(--cream)}
+  .livebadge{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:var(--fs-xs);
+    letter-spacing:.08em;text-transform:uppercase;color:#CDE7DF;border:1px solid #2F4A42;border-radius:var(--r-pill);padding:.34rem .72rem;margin-bottom:var(--s4)}
+  .livebadge .dot{width:7px;height:7px;border-radius:50%;background:var(--teal-mint);animation:pulse 2.2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(127,224,196,.5)}70%{box-shadow:0 0 0 7px rgba(127,224,196,0)}100%{box-shadow:0 0 0 0 rgba(127,224,196,0)}}
+  .sec-head{margin-bottom:var(--s6);max-width:74ch}
+  .sec-head .h2{margin-bottom:var(--s3)}
+
+  /* disclaimer banner */
+  .guard{border:1px solid var(--amber-bd);background:var(--amber-l);border-radius:var(--r);padding:var(--s4) var(--s5);color:var(--amber);font-size:.86rem;line-height:1.6}
+  .guard strong{color:var(--amber)}
+
+  /* tool instrument */
+  .sc{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:var(--s5);box-shadow:var(--sh-2)}
+  .sc + .sc{margin-top:var(--s4)}
+  .ta-label{display:block;font-weight:600;font-size:.94rem;margin:0 0 .5rem}
+  .ta{width:100%;min-height:200px;resize:vertical;padding:var(--s4);border:1px solid var(--line-2);border-radius:var(--r-sm);
+    font:inherit;font-size:.95rem;line-height:1.55;background:var(--paper);color:var(--ink)}
+  .ta:focus-visible{box-shadow:var(--sh-focus);border-color:var(--teal)}
+  .sc .btnrow{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:var(--s5)}
+  .sc .btnrow .btn{min-height:44px}
+  .progressmsg{font-family:var(--mono);font-size:.72rem;color:var(--muted);margin-top:var(--s3)}
+
+  /* results */
+  .gauge-wrap{display:flex;gap:var(--s5);align-items:center;flex-wrap:wrap}
+  .rgauge{position:relative;width:140px;height:140px;border-radius:50%;
+    background:conic-gradient(var(--g,var(--teal)) calc(var(--pct,0)*1%), #e7e1d3 0);
+    display:grid;place-items:center;flex:0 0 auto}
+  .rgauge::after{content:"";position:absolute;inset:15px;background:#fff;border-radius:50%}
+  .rgauge .num{position:relative;z-index:1;font-family:var(--serif);font-size:2.3rem;font-weight:800;color:var(--ink)}
+  .rgauge .of{position:relative;z-index:1;font-size:.66rem;color:var(--muted);margin-top:-4px}
+  .verdict h3{margin:0 0 .3rem;font-size:1.15rem}
+  .verdict p{margin:0;color:var(--muted);font-size:.9rem;max-width:52ch}
+  .tier-tag{display:inline-block;font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;
+    padding:.28rem .7rem;border-radius:var(--r-pill);margin-bottom:.5rem}
+  .tier-tag.low{background:var(--green-l);color:var(--green)}
+  .tier-tag.mid{background:var(--amber-l);color:var(--amber)}
+  .tier-tag.high{background:var(--red-l);color:var(--red)}
+
+  .count-row{display:flex;gap:var(--s3);flex-wrap:wrap;margin-top:var(--s5)}
+  .ct{border:1px solid var(--line);border-radius:var(--r-sm);padding:var(--s3) var(--s4);background:var(--paper);flex:1 1 130px}
+  .ct .ctn{font-family:var(--serif);font-size:1.6rem;font-weight:800;line-height:1}
+  .ct .ctl{font-family:var(--mono);font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:.3rem}
+  .ct.high .ctn{color:var(--red)} .ct.med .ctn{color:var(--amber)} .ct.low .ctn{color:var(--teal-d)}
+
+  .flags{margin-top:var(--s5)}
+  .flag-card{border:1px solid var(--line);border-left-width:5px;border-radius:var(--r-sm);
+    padding:var(--s4);margin:.6rem 0;background:#fff}
+  .flag-card.High{border-left-color:var(--red)}
+  .flag-card.Medium{border-left-color:var(--amber)}
+  .flag-card.Low{border-left-color:var(--teal)}
+  .flag-top{display:flex;justify-content:space-between;gap:.6rem;align-items:flex-start;flex-wrap:wrap}
+  .flag-quote{font-weight:700;font-size:.95rem;font-family:var(--mono);background:var(--cream-2);
+    padding:.15rem .45rem;border-radius:6px;color:var(--ink)}
+  .flag-badges{display:flex;gap:.4rem;flex-wrap:wrap;align-items:center}
+  .rlevel{font-family:var(--mono);font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;
+    padding:.18rem .5rem;border-radius:var(--r-pill);white-space:nowrap}
+  .rlevel.High{background:var(--red-l);color:var(--red);border:1px solid var(--red-bd)}
+  .rlevel.Medium{background:var(--amber-l);color:var(--amber);border:1px solid var(--amber-bd)}
+  .rlevel.Low{background:var(--teal-l);color:var(--teal-d);border:1px solid #BADFD6}
+  .zone{font-family:var(--mono);font-size:.62rem;letter-spacing:.04em;color:var(--teal-d);
+    border:1px solid #BADFD6;background:var(--teal-l);border-radius:var(--r-pill);padding:.18rem .5rem;white-space:nowrap}
+  .flag-cat{font-family:var(--mono);font-size:.66rem;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin:.55rem 0 .2rem}
+  .flag-why{font-size:.86rem;color:var(--ink-2);margin:.2rem 0 0}
+  .flag-fix{font-size:.84rem;color:var(--muted);margin:.5rem 0 0;background:var(--teal-l);
+    border-radius:var(--r-sm);padding:.5rem .7rem}
+  .flag-fix strong{color:var(--teal-d)}
+  .flags .none{color:var(--green);font-weight:600}
+  #beehiivEmail-claims-checker:focus-visible, #beehiivFallbackForm-claims-checker button:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+</style>
+</head>
+<body>
+<a class="skip" href="#tool">Skip to the checker</a>
+
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="../../index.html" aria-label="Aloha AI home">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#1B7A68"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#1B7A68" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      Aloha&nbsp;AI
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav__links" id="navlinks">
+        <li><a href="../../index.html#services">Services</a></li><li><a href="/build-your-team.html">Build a team</a></li>
+        <li><a href="../../index.html#moat">The moat</a></li>
+        <li><a href="../index.html">Tools</a></li>
+        <li><a href="../../index.html#products">Products</a></li>
+        <li><a href="/university">University</a></li>
+        <li><a href="../../index.html#about">About</a></li>
+        <li><a href="../../legal-ai.html">Legal AI</a></li>
+        <li class="nav__cta"><a class="btn btn--primary btn--sm" href="#start">Get started →</a></li>
+      </ul>
+    </nav>
+    <button class="nav__burger" id="burger" aria-label="Open menu" aria-controls="navlinks" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+<span id="top"></span>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-h">
+  <div class="wrap">
+    <span class="livebadge"><span class="dot" aria-hidden="true"></span> Free · Compliance · Regulated-claims screening</span>
+    <p class="eyebrow kicker">Aloha AI · a practice of RN Collins</p>
+    <h1 class="display" id="hero-h">Which of your claims will a <span class="grad">regulator</span> read twice?</h1>
+    <p class="lead">Paste the marketing, website, or label copy for a regulated product. A deterministic analyzer scans it against curated keyword and pattern lexicons, then flags risky claims by category, assigns a risk level, and names the regulator whose attention zone each one implicates: FDA, FTC, or state consumer protection. It runs <em>in your browser</em>. Nothing you paste leaves this page.</p>
+    <div class="hero__cta">
+      <a class="btn btn--primary" href="#tool">Check your copy →</a>
+      <a class="btn btn--ghost" href="#how">See what it flags</a>
+    </div>
+    <div class="hero__answers">
+      <span class="a"><b>For</b> cannabis, psychedelics, wellness, supplements, coaching, and neurotech copy</span>
+      <span class="a"><b>Why</b> disease and substantiation claims draw FDA and FTC scrutiny fast</span>
+      <span class="a"><b>Trust</b> the scan runs in your browser; nothing is transmitted</span>
+    </div>
+    <p class="hero__meta">Built by <b>RN&nbsp;Collins</b>. Neuroscience (MS) · Administrative&nbsp;&amp; regulatory law (JD&nbsp;candidate) · AI Workflow Developer, Am Law firm</p>
+  </div>
+</section>
+
+<!-- GUARDRAIL -->
+<section class="section" aria-labelledby="guard-h">
+  <div class="wrap">
+    <h2 id="guard-h" class="small" style="position:absolute;left:-999px">Important limits on this tool</h2>
+    <div class="guard reveal" role="note">
+      <strong>Read this first.</strong> RN Collins is a JD candidate, not a licensed attorney. This is an informational screening tool that flags language patterns for human review. It is <strong>not legal advice</strong>, <strong>not a regulatory determination</strong>, and it does <strong>not certify compliance</strong>. A clean result does not mean copy is compliant, and a flag does not mean it violates any law. Using this tool creates no reliance and no attorney–client relationship. The sample copy is illustrative and invented for demonstration. Confirm every claim with your own licensed counsel and qualified regulatory advisor.
+    </div>
+  </div>
+</section>
+
+<!-- WHY IT MATTERS -->
+<section class="section section--paper" aria-labelledby="why-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Why this exists</p>
+      <h2 class="h2" id="why-h">In regulated categories, the words carry the risk</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">A supplement that says it "supports focus" sits in one world. The same product that says it "treats ADHD" sits in another, where the FDA reads it as an unapproved drug claim and the FTC asks for the substantiation behind it. The line between the two is language, and it moves fast. This checker gives your copy a first pass, surfacing the phrases that tend to attract a second look so a person can decide what to do about them.</p>
+    </div>
+    <div class="grid grid-2">
+      <div class="card reveal"><h3>What it checks</h3><p class="small muted">Disease and medical claims, structure-function overreach, substantiation gaps, deceptive consumer-protection patterns, and the superlatives and absolutes that draw scrutiny. Each match is tied to a category, a risk level, and the regulator whose zone it touches.</p></div>
+      <div class="card reveal"><h3>What it can't do</h3><p class="small muted">It cannot tell you whether copy is lawful, and it gives no legal advice. It matches language to curated patterns and explains why each pattern tends to draw attention. It misses claims phrased in ways the lexicon does not cover, and it flags some phrases that context makes fine. A qualified human decides.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- THE TOOL -->
+<section class="section section--texture" id="tool" aria-labelledby="tool-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The instrument</p>
+      <h2 class="h2" id="tool-h">Screen your regulated-product copy</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">Paste your copy below and select the product category so the analyzer can weight the right risks. Then run the check. Everything computes on your device with no network call.</p>
+    </div>
+
+    <form class="sc reveal" id="checker" aria-describedby="checkerNote">
+      <p class="small muted" id="checkerNote" style="margin-top:0">Paste any length of copy. The analyzer is deterministic: the same text always returns the same flags.</p>
+
+      <div style="margin-bottom:var(--s4)">
+        <label class="ta-label" for="category">Product category (weights the risk)</label>
+        <select id="category" style="width:100%;max-width:420px;padding:.66rem .75rem;border-radius:var(--r-sm);border:1px solid var(--line-2);background:#fff;font:inherit;min-height:44px">
+          <option value="general">General / not sure</option>
+          <option value="cannabis">Cannabis / hemp / CBD</option>
+          <option value="psychedelics">Psychedelics</option>
+          <option value="supplements">Supplements / nutraceuticals</option>
+          <option value="wellness">Wellness / functional products</option>
+          <option value="coaching">Creator / coaching</option>
+          <option value="neurotech">Health / neurotech / devices</option>
+        </select>
+      </div>
+
+      <label class="ta-label" for="copyInput">Marketing, website, or label copy</label>
+      <textarea class="ta" id="copyInput" placeholder="Paste your product copy here. For example: &quot;Our tincture cures anxiety and is clinically proven to heal chronic pain with no side effects...&quot;" aria-describedby="checkerNote"></textarea>
+
+      <div class="btnrow">
+        <button id="checkBtn" type="submit" class="btn btn--primary">Check claims</button>
+        <button id="sampleBtn" type="button" class="btn btn--outline">Load sample</button>
+        <button id="clearBtn" type="button" class="btn btn--ghost" style="border-color:var(--line-2);color:var(--ink)">Clear</button>
+      </div>
+      <p class="progressmsg" id="progress" aria-hidden="true"></p>
+    </form>
+
+    <div class="sc reveal" id="results" hidden aria-live="polite" tabindex="-1" style="margin-top:var(--s4)">
+      <h3 style="margin-top:0">Your screening result</h3>
+      <div class="gauge-wrap">
+        <div class="rgauge" id="gauge" role="img" aria-label="Overall risk gauge">
+          <div class="num" id="scoreNum">0</div>
+          <div class="of">risk / 100</div>
+        </div>
+        <div class="verdict">
+          <span class="tier-tag" id="tierTag"></span>
+          <h3 id="verdictHead"></h3>
+          <p id="verdictBody"></p>
+        </div>
+      </div>
+
+      <div class="count-row" id="countRow"></div>
+
+      <h4 style="margin:var(--s6) 0 0;font-family:var(--serif);font-size:1.05rem">Flagged claims</h4>
+      <div class="flags" id="flagList"></div>
+
+      <div class="btnrow" style="margin-top:var(--s5)">
+        <button id="downloadBtn" type="button" class="btn btn--outline">Download report</button>
+      </div>
+      <p class="small muted" style="margin-top:var(--s4)">This tool runs entirely in your browser. The only information that ever leaves your device is the email address you optionally submit below once Beehiiv is connected.</p>
+
+      <!-- BEEHIIV-EMBED-START (replace this whole block with your Beehiiv embed code) -->
+      <div class="card" style="margin-top:var(--s4)">
+        <h4>Get this report by email</h4>
+        <p class="small muted">Send it to your inbox and get occasional build notes from Aloha AI.</p>
+        <form id="beehiivFallbackForm-claims-checker" action="#" novalidate>
+          <label class="ta-label" for="beehiivEmail-claims-checker">Email address</label>
+          <input type="email" id="beehiivEmail-claims-checker" name="email" required placeholder="you@example.com" style="width:100%;max-width:420px;min-height:44px;padding:.66rem .75rem;border-radius:var(--r-sm);border:1px solid var(--line-2);background:var(--paper);color:var(--ink);font:inherit">
+          <div class="btnrow">
+            <button type="submit" class="btn btn--outline" style="min-height:44px">Subscribe</button>
+          </div>
+        </form>
+        <p id="beehiivFallbackMsg-claims-checker" role="status" style="display:none;">Connect Beehiiv to enable signups.</p>
+      </div>
+      <!-- BEEHIIV-EMBED-END -->
+    </div>
+
+    <p class="small muted reveal" style="margin-top:var(--s4);max-width:74ch"><strong>Informational screening. Not legal advice.</strong> RN Collins is a JD candidate, not a licensed attorney. This tool flags language patterns for human review against general FDA, FTC, and state consumer-protection concepts. It is not a regulatory determination and does not certify compliance. Confirm every claim with your own counsel and regulatory advisor.</p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS / WHAT IT FLAGS -->
+<section class="section section--paper" id="how" aria-labelledby="how-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">What it flags</p>
+      <h2 class="h2" id="how-h">Five categories, mapped to the regulators who care</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">Each flag names the category the phrase falls into, a risk level, and the regulator whose attention zone it tends to touch. The overall risk score weights High findings heaviest, then Medium, then Low.</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card reveal"><span class="chip chip--src">FDA</span><h3 style="margin-top:.5rem">Disease / medical claims</h3><p class="small muted">Language that says a product treats, cures, prevents, or diagnoses a named condition. This is the fast path to being read as an unapproved drug.</p></div>
+      <div class="card reveal"><span class="chip chip--src">FDA</span><h3 style="margin-top:.5rem">Structure-function overreach</h3><p class="small muted">Therapeutic framing beyond a permitted structure-function statement: "heals," "clinically proven," "doctor recommended," and similar.</p></div>
+      <div class="card reveal"><span class="chip chip--src">FTC</span><h3 style="margin-top:.5rem">Substantiation gaps</h3><p class="small muted">Proof claims with no qualifier behind them: "studies show," "proven," "guaranteed," "100%," "#1." The FTC asks what backs them.</p></div>
+      <div class="card reveal"><span class="chip chip--src">FTC / State AG</span><h3 style="margin-top:.5rem">Deceptive patterns</h3><p class="small muted">Consumer-protection triggers: "miracle," "risk-free," "no side effects," and "FDA approved" used where it does not apply.</p></div>
+      <div class="card reveal"><span class="chip chip--src">FTC / State AG</span><h3 style="margin-top:.5rem">Superlatives &amp; absolutes</h3><p class="small muted">Unqualified absolutes like "always," "never fails," "completely safe," and "the best." They raise the bar on what you must be able to prove.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD-GEN / THE SERVICE -->
+<section class="section" id="start" aria-labelledby="offer-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">This is a demonstration of what I build</p>
+      <h2 class="h2" id="offer-h">RN builds compliant content systems and claim-review workflows</h2>
+      <hr class="rule" aria-hidden="true">
+      <p class="lead">This checker screens one page at a time. The paid path is the system behind it: a compliant content workflow with a claim-review gate wired into how your team writes, so risky language gets caught and rephrased before it ships. It pairs a curated claim lexicon for your category with a documented review step and an approval trail your counsel can stand behind.</p>
+    </div>
+    <div class="grid grid-3 reveal">
+      <div class="card"><div class="card__ic" aria-hidden="true">1</div><h3>What I build</h3><p class="small muted">A category-specific claim lexicon, a review gate placed in your drafting workflow, safer-phrasing playbooks your writers can reach for, and a record of what was reviewed and approved.</p></div>
+      <div class="card"><div class="card__ic" aria-hidden="true">2</div><h3>What you get</h3><ul class="small muted" style="padding-left:1.1rem;margin:.35rem 0 0"><li>Risky claims caught before publication, not after a letter</li><li>A shared vocabulary your marketing and legal teams both trust</li><li>Documentation that shows the review happened</li><li>Advisory to keep the lexicon current as guidance moves</li></ul></div>
+      <div class="card"><div class="card__ic" aria-hidden="true">3</div><h3>How to start</h3><p class="small muted">A short scoping call. Most teams begin with a Systems Audit that maps where risky copy enters your funnel and which claims to gate first.</p></div>
+    </div>
+    <div class="hero__cta reveal" style="margin-top:var(--s5)">
+      <a class="btn btn--primary" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a build / scoping call →</a>
+      <a class="btn btn--outline" href="../../legal-ai.html">See the Legal AI Workflow pillar</a>
+    </div>
+    <p class="small muted reveal" style="margin-top:var(--s4);max-width:74ch">Related tools: the <a href="../governance-readiness/index.html">AI Governance Readiness Scorecard</a> rates your firm's documented AI practice, and the <a href="../citation-verifier/index.html">Citation Verifier</a> catches fabricated case cites before a filing. Together they show verification-gated workflows end to end.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section--ink" id="contact" aria-labelledby="cta-h">
+  <div class="wrap" style="text-align:center">
+    <p class="eyebrow">Aloha AI · Honolulu</p>
+    <h2 class="h2" id="cta-h" style="max-width:26ch;margin-inline:auto">Ready when you are.</h2>
+    <p class="lead" style="margin:var(--s4) auto var(--s5);text-align:center">Convinced, curious, or comparing, there's a path for each.</p>
+    <div style="display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn--primary" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Start with a Systems Audit →</a>
+      <a class="btn btn--ghost" href="../index.html">Browse all free tools</a>
+    </div>
+    <p class="small" style="margin-top:var(--s5);color:var(--muted-on-ink)">Prefer email? <a href="#" data-email style="color:var(--teal-mint)">Email RN</a> &nbsp;·&nbsp; or connect on <a href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noopener" style="color:var(--teal-mint)">LinkedIn</a></p>
+    <p id="emailReveal" hidden style="margin-top:.5rem;font-family:var(--mono);font-size:.8rem;color:#CFDAD5"></p>
+  </div>
+</section>
+</main>
+
+<footer class="footer" aria-labelledby="foot-h">
+  <div class="wrap">
+    <h2 id="foot-h" class="small" style="position:absolute;left:-999px">Site footer</h2>
+    <div class="footer__grid">
+      <div>
+        <a class="nav__brand" href="../../index.html" style="color:var(--cream)" aria-label="Aloha AI home"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#7FE0C4"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#7FE0C4" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg> Aloha&nbsp;AI</a>
+        <p class="small" style="margin-top:var(--s3);max-width:38ch;color:#9FB6AE">AI implementation built around how humans actually trust and use it, for regulated or reputation-sensitive professions.</p>
+      </div>
+      <div>
+        <h4>This tool</h4>
+        <ul>
+          <li><a href="#why-h">Why it matters</a></li>
+          <li><a href="#tool">The checker</a></li>
+          <li><a href="#how">What it flags</a></li>
+          <li><a href="#start">The build</a></li>
+          <li><a href="../governance-readiness/index.html">Governance Scorecard</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Aloha AI</h4>
+        <ul>
+          <li><a href="../index.html">All tools</a></li>
+          <li><a href="../../legal-ai.html">Legal AI Workflow</a></li>
+          <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a call</a></li>
+          <li><a href="https://rn-portfolio-khaki.vercel.app" target="_blank" rel="noopener">Portfolio → RN Builds</a></li>
+          <li><a href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="../../privacy.html">Privacy</a></li>
+          <li><a href="../../terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="disc small">Informational screening tool. Not legal advice. Aloha AI provides AI workflow design, orchestration, and governance advisory, not legal advice. RN Collins is a JD candidate, not a licensed attorney; nothing here is legal advice, a regulatory determination, a compliance certification, or an attorney–client relationship. This tool flags language patterns against general FDA, FTC, and state consumer-protection concepts for human review. Sample copy is illustrative.</p>
+    <p class="fine">Aloha AI · a DBA of Rayven-Nikkita Collins LLC · Honolulu, HI · No tracking, no cookies · © 2026</p>
+  </div>
+</footer>
+
+<script>
+/* =====================================================================
+   Regulated Claims Checker
+   Self-contained. No network, no libraries. Runs on file:// open.
+   Deterministic lexicon + regex analyzer. Flags risky claim language
+   by category, risk level, and regulator attention zone.
+   Informational screening only. Not legal advice.
+   ===================================================================== */
+(function(){
+  "use strict";
+  function $(id){ return document.getElementById(id); }
+
+  /* ---- risk weighting ---- */
+  var LEVEL_WEIGHT = { High:12, Medium:6, Low:2 };
+
+  /* ---- lexicon ----
+     Each rule: a category, a compiled regex (with a capture of the phrase),
+     the risk level, the regulator zone, a plain-English why, and a
+     safer-rephrase suggestion. Regexes are case-insensitive and global. */
+  var CONDITIONS = "cancer|tumou?rs?|anxiety|depression|ptsd|post[- ]?traumatic stress|insomnia|chronic pain|arthritis|diabetes|alzheimer'?s|dementia|adhd|epilepsy|seizures?|migraines?|hypertension|high blood pressure|heart disease|inflammation|ibs|crohn'?s|addiction|opioid|autism|bipolar|schizophrenia|glaucoma|psoriasis|eczema|acne|erectile dysfunction|menopause";
+
+  var RULES = [
+    /* ---- Disease / medical claims (FDA, High) ---- */
+    { cat:"Disease / medical claim",
+      re:new RegExp("\\b(cures?|cured|curing|treats?|treated|treating|prevents?|prevented|preventing|heals?|healed|healing|reverses?|eliminates?|diagnoses?|diagnosing|remedy for|remedies)\\b(?:\\s+\\w+){0,3}\\s+(?:"+CONDITIONS+")","gi"),
+      level:"High", zone:"FDA",
+      why:"Saying a product treats, cures, or prevents a named disease frames it as a drug. Only an approved drug may make disease claims, so this is the classic trigger for an FDA warning letter.",
+      fix:"Drop the disease reference. Describe a general wellness benefit instead, or say nothing about the condition." },
+
+    { cat:"Disease / medical claim",
+      re:new RegExp("\\bfor\\s+(?:your\\s+|chronic\\s+|severe\\s+|acute\\s+)?(?:"+CONDITIONS+")","gi"),
+      level:"High", zone:"FDA",
+      why:"Positioning a product 'for' a named medical condition implies it treats that condition, which reads as an unapproved drug claim.",
+      fix:"Remove the condition. Speak to a general goal like 'for everyday calm' rather than a diagnosis." },
+
+    { cat:"Disease / medical claim",
+      re:/\b(cures?|treats?|prevents?|heals?|reverses?|cure|treatment)\b\s+(?:for\s+)?(?:any\s+)?(?:disease|illness|condition|ailment|symptoms?|disorder)\b/gi,
+      level:"High", zone:"FDA",
+      why:"A general claim to treat, cure, or prevent disease is itself a drug claim, even without naming a specific condition.",
+      fix:"Avoid treatment framing entirely. Focus on lifestyle or wellness language a dietary product may use." },
+
+    /* ---- Structure-function overreach (FDA, Medium/High) ---- */
+    { cat:"Therapeutic / structure-function overreach",
+      re:/\b(clinically proven|clinically[- ]tested|clinically shown|medically proven|pharmaceutical[- ]grade|therapeutic|therapeutic[- ]grade|doctor[- ]recommended|physician[- ]recommended|doctor[- ]formulated|prescription[- ]strength)\b/gi,
+      level:"Medium", zone:"FDA",
+      why:"Therapeutic and clinical-authority framing implies a level of medical proof and endorsement that draws FDA and FTC attention, and it usually needs strong substantiation to stand.",
+      fix:"Swap for softer, honest phrasing such as 'formulated with' and drop clinical-proof language unless you hold the studies." },
+
+    { cat:"Therapeutic / structure-function overreach",
+      re:/\b(heals?|healing|restores? (?:your )?health|repairs? (?:your )?body|detoxif(?:y|ies|ication)|boosts? immunity|strengthens? (?:your )?immune system|anti[- ]?inflammatory)\b/gi,
+      level:"Medium", zone:"FDA",
+      why:"Words like heal, detox, and immune claims often cross from a permitted structure-function statement into an implied disease or therapeutic claim.",
+      fix:"Reframe as 'supports' a normal function, and add the standard dietary-supplement disclaimer where one applies." },
+
+    /* ---- Substantiation gaps (FTC, Medium) ---- */
+    { cat:"Substantiation gap",
+      re:/\b(studies show|research shows|science proves|proven to|clinically proven|guaranteed(?: results)?|scientifically proven|backed by science)\b/gi,
+      level:"Medium", zone:"FTC",
+      why:"Proof and guarantee claims put the burden on you to hold competent, reliable evidence. The FTC treats unqualified proof language as a substantiation question.",
+      fix:"Only claim what your evidence supports, cite it plainly, and use measured phrasing like 'in a small study' where accurate." },
+
+    { cat:"Substantiation gap",
+      re:/(?:^|[^\w.])(100%\s*(?:effective|guaranteed|natural|safe|proven)?|#\s?1\b|number one\b|the\s+only\b)/gi,
+      level:"Medium", zone:"FTC",
+      why:"Absolute proof and ranking claims like '100%' and '#1' imply measurable superiority that must be substantiated, or they read as deceptive.",
+      fix:"Drop the absolute, or qualify it with the specific, provable basis for the ranking or percentage." },
+
+    /* ---- Deceptive / consumer-protection patterns (FTC / State AG, High) ---- */
+    { cat:"Deceptive / consumer-protection pattern",
+      re:/\b(miracle|miraculous|magic|magical|breakthrough cure|revolutionary cure|secret cure|instant cure|guaranteed cure)\b/gi,
+      level:"High", zone:"FTC / State AG",
+      why:"'Miracle' and 'magic' language is a well-known red flag for deceptive health marketing and is a common target for FTC and state consumer-protection action.",
+      fix:"Remove the hype word. Describe what the product actually does in plain, verifiable terms." },
+
+    { cat:"Deceptive / consumer-protection pattern",
+      re:/\b(risk[- ]?free|no side effects|zero side effects|completely safe|totally safe|100% safe|non[- ]?addictive|no risk|entirely safe|perfectly safe)\b/gi,
+      level:"High", zone:"FTC / State AG",
+      why:"Absolute safety claims like 'no side effects' or 'completely safe' are rarely provable and are treated as deceptive, especially for ingestible or health products.",
+      fix:"Avoid absolute safety language. State known considerations honestly and point users to a professional where relevant." },
+
+    { cat:"Deceptive / consumer-protection pattern",
+      re:/\b(fda[- ]approved|fda[- ]certified|fda[- ]endorsed|approved by the fda|government[- ]approved)\b/gi,
+      level:"High", zone:"FDA / FTC",
+      why:"Claiming FDA approval where it does not apply is a serious misrepresentation. The FDA does not approve dietary supplements, most cosmetics, or cannabis products.",
+      fix:"Remove the approval claim. If accurate, you may note a facility is 'FDA-registered', which is different from approval." },
+
+    /* ---- Superlatives / absolutes (FTC / State AG, Low) ---- */
+    { cat:"Superlative / absolute",
+      re:/\b(always works|never fails|works every time|instant results|overnight results|permanent(?:ly)? (?:cure|fix|results)|life[- ]?changing|the best|world'?s best|most powerful|most effective)\b/gi,
+      level:"Low", zone:"FTC / State AG",
+      why:"Unqualified absolutes and superlatives raise the standard of proof you must meet and can tip ordinary puffery into a claim a regulator expects you to back.",
+      fix:"Soften to a realistic, individualized statement such as 'many users report' and drop the guarantee of a universal outcome." }
+  ];
+
+  var lastResult = null;
+
+  /* ---- analyze ---- */
+  function analyze(text, category){
+    var flags = [];
+    var seen = {};
+    RULES.forEach(function(rule){
+      rule.re.lastIndex = 0;
+      var m;
+      while((m = rule.re.exec(text)) !== null){
+        var phrase = m[0].replace(/^[^\w#]+/, "").trim();
+        if(!phrase){ if(m.index === rule.re.lastIndex) rule.re.lastIndex++; continue; }
+        var key = rule.cat + "::" + phrase.toLowerCase();
+        if(!seen[key]){
+          seen[key] = true;
+          flags.push({
+            phrase: phrase,
+            cat: rule.cat,
+            level: rule.level,
+            zone: rule.zone,
+            why: rule.why,
+            fix: rule.fix,
+            index: m.index
+          });
+        }
+        if(m.index === rule.re.lastIndex) rule.re.lastIndex++;
+      }
+    });
+
+    // category weighting: some categories raise cannabis/psychedelic/supplement risk
+    var catBump = 1;
+    if(category === "cannabis" || category === "psychedelics" || category === "supplements") catBump = 1.15;
+
+    flags.sort(function(a,b){
+      var order = { High:0, Medium:1, Low:2 };
+      if(order[a.level] !== order[b.level]) return order[a.level] - order[b.level];
+      return a.index - b.index;
+    });
+
+    var counts = { High:0, Medium:0, Low:0 };
+    var raw = 0;
+    flags.forEach(function(f){ counts[f.level]++; raw += LEVEL_WEIGHT[f.level]; });
+    raw = raw * catBump;
+
+    // score: saturating curve so many flags approach but don't blow past 100
+    var score = flags.length === 0 ? 0 : Math.min(100, Math.round(100 * (1 - Math.exp(-raw / 40))));
+    // ensure any High finding registers as clearly elevated
+    if(counts.High > 0) score = Math.max(score, 62);
+    else if(counts.Medium > 0) score = Math.max(score, 34);
+
+    return { flags:flags, counts:counts, score:score, total:flags.length, category:category };
+  }
+
+  function tierFor(score, counts){
+    if(counts.High > 0 || score >= 60) return { cls:"high", label:"High risk",
+      head:"High-risk language found.",
+      body:"One or more phrases fall into the categories that draw the fastest regulatory attention. Review each High flag with counsel before this copy ships." };
+    if(score >= 30 || counts.Medium > 0) return { cls:"mid", label:"Moderate risk",
+      head:"Some language to review.",
+      body:"Nothing here is the worst kind of claim, and a few phrases carry substantiation or overreach risk worth a human look before publishing." };
+    return { cls:"low", label:"Low risk",
+      head:"Low risk on the patterns checked.",
+      body:"The scan did not match the high-risk patterns in its lexicon. That is not a compliance sign-off; a qualified person should still review claims the lexicon does not cover." };
+  }
+
+  /* ---- render ---- */
+  function render(r){
+    var res = $("results");
+    var g = $("gauge");
+    var t = tierFor(r.score, r.counts);
+    var col = t.cls === "high" ? "var(--red)" : (t.cls === "mid" ? "#B8852B" : "var(--green)");
+    g.style.setProperty("--pct", r.score);
+    g.style.setProperty("--g", col);
+    g.setAttribute("aria-label", "Overall risk " + r.score + " of 100");
+    $("scoreNum").textContent = r.score;
+
+    var tag = $("tierTag"); tag.className = "tier-tag " + t.cls; tag.textContent = t.label;
+    $("verdictHead").textContent = t.head;
+    $("verdictBody").textContent = t.body;
+
+    // counts
+    var cr = $("countRow"); cr.innerHTML = "";
+    [["High","high"],["Medium","med"],["Low","low"]].forEach(function(pair){
+      var el = document.createElement("div"); el.className = "ct " + pair[1];
+      el.innerHTML = '<div class="ctn">' + r.counts[pair[0]] + '</div><div class="ctl">' + pair[0] + ' risk flags</div>';
+      cr.appendChild(el);
+    });
+    var tot = document.createElement("div"); tot.className = "ct";
+    tot.innerHTML = '<div class="ctn">' + r.total + '</div><div class="ctl">total flags</div>';
+    cr.appendChild(tot);
+
+    // flags
+    var fl = $("flagList"); fl.innerHTML = "";
+    if(!r.flags.length){
+      var none = document.createElement("p"); none.className = "none";
+      none.textContent = "No matches against the high-risk patterns in the lexicon. Have a qualified person review anything the lexicon may not cover.";
+      fl.appendChild(none);
+    } else {
+      r.flags.forEach(function(f){
+        var el = document.createElement("div"); el.className = "flag-card " + f.level;
+        var top = document.createElement("div"); top.className = "flag-top";
+        var q = document.createElement("span"); q.className = "flag-quote"; q.textContent = '"' + f.phrase + '"';
+        var badges = document.createElement("span"); badges.className = "flag-badges";
+        var rl = document.createElement("span"); rl.className = "rlevel " + f.level; rl.textContent = f.level;
+        var zn = document.createElement("span"); zn.className = "zone"; zn.textContent = f.zone;
+        badges.appendChild(rl); badges.appendChild(zn);
+        top.appendChild(q); top.appendChild(badges);
+
+        var cat = document.createElement("div"); cat.className = "flag-cat"; cat.textContent = f.cat;
+        var why = document.createElement("p"); why.className = "flag-why"; why.textContent = f.why;
+        var fix = document.createElement("p"); fix.className = "flag-fix";
+        fix.innerHTML = "<strong>Safer rephrase:</strong> ";
+        fix.appendChild(document.createTextNode(f.fix));
+
+        el.appendChild(top); el.appendChild(cat); el.appendChild(why); el.appendChild(fix);
+        fl.appendChild(el);
+      });
+    }
+
+    res.hidden = false;
+    lastResult = r;
+    res.focus();
+  }
+
+  /* ---- download report ---- */
+  function download(){
+    if(!lastResult) return;
+    var r = lastResult;
+    var t = tierFor(r.score, r.counts);
+    var now = new Date().toISOString();
+    var lines = [];
+    lines.push("REGULATED CLAIMS CHECKER — SCREENING REPORT");
+    lines.push("Generated: " + now);
+    lines.push("Tool: Aloha AI — Regulated Claims Checker");
+    lines.push("Product category: " + r.category);
+    lines.push("");
+    lines.push("OVERALL RISK SCORE: " + r.score + " / 100 (" + t.label + ")");
+    lines.push("Flags: " + r.counts.High + " High, " + r.counts.Medium + " Medium, " + r.counts.Low + " Low (" + r.total + " total)");
+    lines.push("This is an informational screening. Not legal advice, not a regulatory determination, not a compliance certification.");
+    lines.push("");
+    lines.push("FLAGGED CLAIMS");
+    if(!r.flags.length){
+      lines.push("  None matched the lexicon. Human review still advised.");
+    } else {
+      r.flags.forEach(function(f, i){
+        lines.push("  " + (i+1) + ". [" + f.level.toUpperCase() + "] " + f.cat + " — zone: " + f.zone);
+        lines.push("     Phrase: \"" + f.phrase + "\"");
+        lines.push("     Why: " + f.why);
+        lines.push("     Safer rephrase: " + f.fix);
+      });
+    }
+    lines.push("");
+    lines.push("DISCLAIMER");
+    lines.push("RN Collins is a JD candidate, not a licensed attorney. This tool flags language");
+    lines.push("patterns for human review against general FDA, FTC, and state consumer-protection");
+    lines.push("concepts. It is not legal advice, not a regulatory determination, and does not");
+    lines.push("certify compliance. It creates no reliance and no attorney-client relationship.");
+    lines.push("Confirm every claim with your own licensed counsel and regulatory advisor.");
+    lines.push("");
+    lines.push("Aloha AI - a DBA of Rayven-Nikkita Collins LLC - Honolulu, HI");
+
+    var jsonRecord = {
+      record_version: "1.0",
+      generated_at: now,
+      tool: "regulated-claims-checker",
+      product_category: r.category,
+      overall_risk_score: r.score,
+      risk_tier: t.label,
+      counts: { high: r.counts.High, medium: r.counts.Medium, low: r.counts.Low, total: r.total },
+      flags: r.flags.map(function(f){
+        return { phrase:f.phrase, category:f.cat, risk_level:f.level, regulator_zone:f.zone, why:f.why, safer_rephrase:f.fix };
+      }),
+      disclaimer: "RN Collins is a JD candidate, not a licensed attorney. Informational screening only. Flags language patterns against general FDA, FTC, and state consumer-protection concepts. Not legal advice, not a regulatory determination, does not certify compliance. No reliance, no attorney-client relationship."
+    };
+
+    var text = lines.join("\n") +
+      "\n\n----- MACHINE-READABLE RECORD (JSON) -----\n" +
+      JSON.stringify(jsonRecord, null, 2) + "\n";
+    var blob = new Blob([text], {type:"text/plain"});
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url; a.download = "aloha-claims-report-" + Date.now() + ".txt";
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+  /* ---- sample copy (illustrative, invented) ---- */
+  var SAMPLE = "Introducing CalmLeaf Gold, the miracle wellness tincture that finally works. " +
+    "Our clinically proven formula cures anxiety and treats chronic pain at the source, and studies show it prevents insomnia in 100% of users. " +
+    "It is completely safe with no side effects, non-addictive, and doctor recommended. " +
+    "This FDA-approved breakthrough heals your body, boosts immunity, and detoxifies overnight. " +
+    "Guaranteed results, risk-free. CalmLeaf is the best and most powerful remedy for depression on the market, and it never fails. " +
+    "Order the #1 rated formula today and feel life-changing relief.";
+
+  /* ---- events ---- */
+  $("checker").addEventListener("submit", function(e){
+    e.preventDefault();
+    var text = $("copyInput").value || "";
+    var cat = $("category").value;
+    if(!text.trim()){
+      var p = $("progress"); p.setAttribute("aria-hidden","false");
+      p.textContent = "Paste some copy first, or load the sample.";
+      return;
+    }
+    render(analyze(text, cat));
+  });
+
+  $("sampleBtn").addEventListener("click", function(){
+    $("copyInput").value = SAMPLE;
+    $("category").value = "cannabis";
+    var p = $("progress"); p.setAttribute("aria-hidden","false");
+    p.textContent = "Sample copy loaded. It is illustrative and invented for demonstration. Select Check claims.";
+  });
+
+  $("clearBtn").addEventListener("click", function(){
+    $("copyInput").value = "";
+    $("category").value = "general";
+    $("results").hidden = true;
+    lastResult = null;
+    var p = $("progress"); p.textContent = ""; p.setAttribute("aria-hidden","true");
+    $("copyInput").focus();
+  });
+
+  $("downloadBtn").addEventListener("click", download);
+
+  var beehiivForm = $("beehiivFallbackForm-claims-checker");
+  if(beehiivForm){
+    beehiivForm.addEventListener("submit", function(e){
+      e.preventDefault();
+      var msg = $("beehiivFallbackMsg-claims-checker");
+      msg.style.display = "block";
+      msg.textContent = "Connect Beehiiv to enable signups.";
+    });
+  }
+})();
+</script>
+<script>
+  /* nav burger + is-stuck + email + reveals */
+  (function(){var b=document.getElementById('burger'),l=document.getElementById('navlinks');
+  function set(o){b.setAttribute('aria-expanded',o);l.classList.toggle('open',o);b.setAttribute('aria-label',o?'Close menu':'Open menu');}
+  b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true');});
+  l.addEventListener('click',function(e){if(e.target.tagName==='A')set(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});})();
+  (function(){var u='collins.ra',dm='northeastern.edu',a=u+'@'+dm,su=encodeURIComponent('Aloha AI — claims checker inquiry');
+  document.querySelectorAll('[data-email]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();
+  try{navigator.clipboard&&navigator.clipboard.writeText(a);}catch(_){}
+  var o=document.getElementById('emailReveal');if(o){o.hidden=false;o.innerHTML='Copied ✓ &nbsp;<a href="mailto:'+a+'?subject='+su+'" style="color:#7FE0C4">'+a+'</a> &nbsp;·&nbsp; <a href="https://mail.google.com/mail/?view=cm&fs=1&to='+a+'&su='+su+'" target="_blank" rel="noopener" style="color:#7FE0C4">Open in Gmail</a>';}
+  window.location.href='mailto:'+a+'?subject='+su;});});})();
+  (function(){var nav=document.querySelector('.nav');if(!nav)return;var on=function(){nav.classList.toggle('is-stuck',window.scrollY>8);};on();window.addEventListener('scroll',on,{passive:true});})();
+  (function(){if(matchMedia('(prefers-reduced-motion:reduce)').matches){document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in');});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(e){io.observe(e);});})();
+</script>
+</body>
+</html>

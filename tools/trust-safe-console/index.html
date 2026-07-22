@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trust-Safe AI Operating Layer — Console</title>
+<style>
+  :root{
+    --teal:#1B7A68; --teal-dark:#0F5343; --cream:#F7F4EC; --ink:#14201C; --mint:#7FE0C4;
+    --flag:#9A2A2A; --flag-bg:#F7E6E6; --warn:#8A5A00; --warn-bg:#FBF1DC;
+    --ok:#0F5343; --ok-bg:#E4F3EE; --line:#D9D2C4; --white:#FFFFFF;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--cream); color:var(--ink);
+    font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  .skip{position:absolute;left:-999px;top:0;background:var(--ink);color:var(--cream);padding:.6rem 1rem;z-index:20}
+  .skip:focus{left:8px;top:8px}
+  a{color:var(--teal-dark)}
+  :focus-visible{outline:3px solid var(--teal);outline-offset:2px;border-radius:4px}
+  header.top{background:var(--teal-dark);color:var(--cream);padding:1.4rem 1rem}
+  .wrap{max-width:960px;margin:0 auto;padding:0 1rem}
+  header.top .wrap{padding:0}
+  h1{font-size:1.5rem;line-height:1.25;margin:0 0 .3rem}
+  .tag{font-size:.85rem;color:var(--mint);margin:0}
+  main{padding:1.25rem 0 3rem}
+  .disclaimer{
+    background:var(--warn-bg);border:1px solid #E4CFA0;border-left:5px solid var(--warn);
+    color:#5c3d00;padding:.9rem 1rem;border-radius:8px;margin:1.25rem 0;font-size:.92rem;
+  }
+  .disclaimer strong{color:var(--warn)}
+  .privacy{font-size:.85rem;color:var(--teal-dark);background:var(--ok-bg);
+    border:1px solid #BFE3D8;border-radius:8px;padding:.6rem .9rem;margin:0 0 1.25rem;display:flex;gap:.5rem;align-items:flex-start}
+  section{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:1.2rem;margin:0 0 1.25rem}
+  h2{font-size:1.15rem;margin:.1rem 0 .8rem;color:var(--teal-dark)}
+  h3{font-size:1rem;margin:0 0 .4rem}
+  label{display:block;font-weight:600;margin:0 0 .4rem}
+  textarea{
+    width:100%;min-height:150px;padding:.75rem;border:1px solid var(--line);border-radius:8px;
+    font:14px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;resize:vertical;background:#FCFBF7;color:var(--ink);
+  }
+  .btnrow{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.8rem}
+  button{
+    font:inherit;font-weight:600;cursor:pointer;border-radius:999px;padding:.7rem 1.2rem;
+    min-height:44px;border:2px solid var(--teal-dark);
+  }
+  .btn-primary{background:var(--teal);color:var(--white)}
+  .btn-primary:hover{background:var(--teal-dark)}
+  .btn-secondary{background:transparent;color:var(--teal-dark)}
+  .btn-secondary:hover{background:var(--ok-bg)}
+  .score{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;margin-bottom:1rem}
+  .gauge{
+    min-width:120px;min-height:120px;border-radius:50%;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;color:var(--white);font-weight:700;padding:1rem;text-align:center;
+  }
+  .gauge .num{font-size:2rem;line-height:1}
+  .gauge .lab{font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;font-weight:600}
+  .score-txt{flex:1;min-width:220px}
+  ul.cites{list-style:none;margin:0;padding:0}
+  li.cite{border:1px solid var(--line);border-radius:10px;padding:.9rem;margin-bottom:.8rem;border-left:6px solid var(--line)}
+  li.cite.ok{border-left-color:var(--ok);background:var(--ok-bg)}
+  li.cite.warn{border-left-color:var(--warn);background:var(--warn-bg)}
+  li.cite.flag{border-left-color:var(--flag);background:var(--flag-bg)}
+  .cite-top{display:flex;flex-wrap:wrap;gap:.5rem;align-items:baseline;justify-content:space-between}
+  .cite-text{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.9rem;font-weight:600}
+  .badge{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:.25rem .6rem;border-radius:999px;white-space:nowrap}
+  .badge.ok{background:var(--ok);color:var(--white)}
+  .badge.warn{background:var(--warn);color:var(--white)}
+  .badge.flag{background:var(--flag);color:var(--white)}
+  .reason{font-size:.9rem;margin:.5rem 0 0}
+  .reason .k{font-weight:700}
+  .checklist{list-style:none;margin:0;padding:0}
+  .checklist li{display:flex;gap:.6rem;align-items:flex-start;padding:.5rem 0;border-bottom:1px solid var(--line)}
+  .checklist li:last-child{border-bottom:none}
+  .checklist input[type=checkbox]{width:22px;height:22px;margin-top:.15rem;accent-color:var(--teal)}
+  .gate{margin-top:1rem;padding:.9rem 1rem;border-radius:8px;font-weight:600}
+  .gate.blocked{background:var(--flag-bg);color:var(--flag);border:1px solid #E0B4B4}
+  .gate.clear{background:var(--ok-bg);color:var(--ok);border:1px solid #BFE3D8}
+  details{border:1px solid var(--line);border-radius:10px;padding:.4rem .9rem;background:#FCFBF7}
+  summary{cursor:pointer;font-weight:600;color:var(--teal-dark);padding:.5rem 0}
+  code{background:#EDEFEA;padding:.1rem .35rem;border-radius:4px;font-size:.85em}
+  pre{background:var(--ink);color:var(--mint);padding:.9rem;border-radius:8px;overflow:auto;white-space:pre;font-size:.8rem}
+  /* BUGFIX: reset code styling inside <pre> so wrapped lines don't render pale per-line boxes / clip */
+  pre code{background:none;padding:0;color:inherit;font-size:inherit;white-space:pre;border-radius:0}
+  .mcp-step{margin:.4rem 0;padding-left:1.4rem;position:relative}
+  .mcp-step::before{content:"→";position:absolute;left:0;color:var(--teal);font-weight:700}
+  footer{color:#5b6660;font-size:.82rem;text-align:center;padding:1rem;border-top:1px solid var(--line)}
+  .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+  @media (min-width:640px){h1{font-size:1.8rem}}
+
+  /* Tabs */
+  .tabs{display:flex;flex-wrap:wrap;gap:.4rem;background:var(--teal-dark);padding:.6rem 1rem 0}
+  .tabs .wrap{display:flex;flex-wrap:wrap;gap:.4rem;width:100%;max-width:960px}
+  [role=tab]{
+    background:transparent;color:var(--cream);border:2px solid transparent;border-bottom:none;
+    border-radius:10px 10px 0 0;padding:.6rem 1rem;min-height:44px;font-weight:600;cursor:pointer;
+    font-size:.9rem;
+  }
+  [role=tab]:hover{background:rgba(255,255,255,.12)}
+  [role=tab][aria-selected=true]{background:var(--cream);color:var(--teal-dark);border-color:var(--line)}
+  [role=tabpanel]:focus{outline:none}
+  [role=tabpanel][hidden]{display:none}
+
+  /* Orchestration diagram */
+  .orch{display:grid;gap:1rem}
+  .orch-note{font-size:.82rem;color:var(--ink);opacity:.75;margin:0 0 .2rem;max-width:70ch}
+  .orch-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.7rem}
+  .node{border:2px solid var(--teal);background:var(--ok-bg);border-radius:10px;padding:.7rem;text-align:center;font-weight:600;font-size:.85rem;color:var(--teal-dark)}
+  .node small{display:block;font-weight:400;color:#4a5852;font-size:.72rem;margin-top:.2rem}
+  .layer{border:2px solid var(--teal-dark);background:var(--teal-dark);color:var(--cream);border-radius:12px;padding:1rem;text-align:center;font-weight:700}
+  .layer small{display:block;font-weight:400;color:var(--mint);font-size:.78rem;margin-top:.3rem}
+  .arrows{text-align:center;color:var(--teal);font-size:1.4rem;line-height:1}
+  .output{border:2px dashed var(--teal);border-radius:10px;padding:.8rem;text-align:center;font-weight:600;color:var(--teal-dark)}
+
+  /* Governance */
+  .gov-list{list-style:none;margin:0;padding:0}
+  .gov-list li{display:flex;gap:.6rem;align-items:flex-start;padding:.6rem 0;border-bottom:1px solid var(--line)}
+  .gov-list li:last-child{border-bottom:none}
+  .gov-list input{width:22px;height:22px;margin-top:.15rem;accent-color:var(--teal)}
+  .gov-list .rule{display:block;font-size:.75rem;color:var(--teal);font-weight:700;text-transform:uppercase;letter-spacing:.03em}
+  .readybar{height:26px;border-radius:999px;background:var(--line);overflow:hidden;margin:.4rem 0}
+  .readybar span{display:block;height:100%;background:var(--teal);color:var(--white);font-weight:700;font-size:.8rem;text-align:right;padding-right:.5rem;line-height:26px;white-space:nowrap;min-width:2.5rem}
+
+  /* Eval table */
+  table{width:100%;border-collapse:collapse;font-size:.85rem}
+  th,td{text-align:left;padding:.5rem .5rem;border-bottom:1px solid var(--line);vertical-align:middle}
+  th{color:var(--teal-dark);font-size:.72rem;text-transform:uppercase;letter-spacing:.03em}
+  tr.baseline{background:var(--ok-bg);font-weight:600}
+  .meter{height:14px;background:var(--line);border-radius:999px;overflow:hidden;min-width:70px}
+  .meter span{display:block;height:100%;border-radius:999px}
+  .meter.good span{background:var(--teal)}
+  .meter.bad span{background:var(--flag)}
+  .mval{font-size:.72rem;font-weight:700}
+
+  /* Adoption funnel */
+  .funnel{display:grid;gap:.5rem}
+  .stage{border:1px solid var(--line);border-radius:10px;padding:.7rem .9rem}
+  .stage-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
+  .stage-name{font-weight:700;color:var(--teal-dark)}
+  .stage input[type=range]{width:100%;accent-color:var(--teal);min-height:44px}
+  .stbar{height:20px;background:var(--line);border-radius:999px;overflow:hidden;margin-top:.3rem}
+  .stbar span{display:block;height:100%;background:var(--teal);border-radius:999px}
+  .drop{font-size:.8rem;color:var(--flag);font-weight:600}
+  .levers{list-style:none;margin:.6rem 0 0;padding:0;display:grid;gap:.6rem}
+  .levers li{border-left:4px solid var(--teal);background:var(--ok-bg);padding:.6rem .8rem;border-radius:6px;font-size:.9rem}
+  .cap{font-size:.85rem;color:#4a5852;font-style:italic;margin:.6rem 0 0}
+
+  /* Hero + CTA */
+  .lead{font-size:1rem;color:var(--cream);opacity:.92;margin:.5rem 0 0;max-width:62ch}
+  .cta-row{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;margin-top:1rem}
+  a.cta{display:inline-flex;align-items:center;min-height:44px;padding:.7rem 1.2rem;border-radius:999px;
+    font-weight:700;text-decoration:none;background:var(--mint);color:var(--teal-dark);border:2px solid var(--mint)}
+  a.cta:hover{background:#69d3b3}
+  a.cta.ghost{background:transparent;color:var(--cream);border-color:var(--mint)}
+  a.cta.ghost:hover{background:rgba(127,224,196,.15)}
+  .panel-note{font-size:.78rem;color:#5b6660;border-top:1px solid var(--line);margin-top:1.1rem;padding-top:.7rem}
+  .panel-note strong{color:var(--warn)}
+  .flow{display:grid;gap:.4rem;margin:.2rem 0 .4rem;padding:.7rem .9rem;background:var(--ok-bg);border:1px solid #BFE3D8;border-radius:8px;font-size:.85rem}
+  .flow b{color:var(--teal-dark)}
+  .method{margin-top:1rem}
+  .method summary{font-weight:600;color:var(--teal-dark)}
+  .method ul{margin:.5rem 0 0;padding-left:1.1rem;font-size:.85rem}
+  .method li{margin:.25rem 0}
+  .delta{font-size:.68rem;font-weight:700;padding:.05rem .35rem;border-radius:999px;margin-left:.3rem;white-space:nowrap}
+  .delta.up{background:var(--ok-bg);color:var(--ok)}
+  .delta.down{background:var(--flag-bg);color:var(--flag)}
+  .delta.base{background:var(--line);color:var(--ink)}
+  .cta-panel{background:var(--teal-dark);color:var(--cream);border-radius:12px;padding:1.2rem;margin:0 0 1.25rem}
+  .cta-panel h2{color:var(--mint);margin-top:0}
+  .cta-panel p{margin:.3rem 0 0;font-size:.95rem}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="top">
+  <div class="wrap">
+    <h1>Trust-Safe AI Operating Layer &mdash; Console</h1>
+    <p class="tag">Governed multi-agent legal AI &middot; RN Collins &middot; demonstration artifact</p>
+    <p class="lead">A working demonstration of the kind of governed legal-AI system I build: a firm-agnostic layer that
+    verifies citations, gates filings against ABA-512 duties, scores agents against a human baseline, and tracks where
+    adoption actually stalls. Five live panels. Nothing you type leaves your browser.</p>
+    <div class="cta-row">
+      <a class="cta" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a working session &rarr;</a>
+      <a class="cta ghost" href="#panel-cite">Try the citation verifier &darr;</a>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Console panels">
+  <div class="wrap" role="tablist" aria-label="Console panels" id="tablist">
+    <button role="tab" id="tab-orch" aria-controls="panel-orch" aria-selected="true">Orchestration</button>
+    <button role="tab" id="tab-cite" aria-controls="panel-cite" aria-selected="false" tabindex="-1">Citation verifier</button>
+    <button role="tab" id="tab-gov" aria-controls="panel-gov" aria-selected="false" tabindex="-1">Governance</button>
+    <button role="tab" id="tab-eval" aria-controls="panel-eval" aria-selected="false" tabindex="-1">Eval dashboard</button>
+    <button role="tab" id="tab-adopt" aria-controls="panel-adopt" aria-selected="false" tabindex="-1">Adoption</button>
+  </div>
+</nav>
+
+<main id="main" class="wrap" tabindex="-1">
+
+  <div class="disclaimer" role="note">
+    <strong>Trust-Safe AI Operating Layer &mdash; demonstration artifact. Not legal advice.</strong>
+    RN Collins, JD candidate (not a licensed attorney). Client-side only; no data leaves this device.
+    Any sample citations shown are <strong>illustrative fabrications built for this demo</strong> and must
+    not be treated as real precedent. A licensed attorney remains solely responsible for verifying every
+    authority before filing.
+  </div>
+
+  <p class="privacy" role="note">
+    <span aria-hidden="true">&#128274;</span>
+    <span><strong>Runs entirely in your browser.</strong> Nothing you enter is sent anywhere &mdash;
+    no server, no network calls, no logging, no local storage. Close the tab and it is gone.</span>
+  </p>
+
+  <!-- 1. ORCHESTRATION -->
+  <section role="tabpanel" id="panel-orch" aria-labelledby="tab-orch" tabindex="0">
+    <h2>1. Orchestration &mdash; Harvey is one node, not the system</h2>
+    <p>Firms are not buying a single model. They are wiring several drafting and research tools into their
+    workflow. Without a governing layer, each one can put an unverified authority in front of a court. The
+    Trust-Safe Operating Layer sits <strong>between</strong> those tools and the filing/review system.</p>
+    <div class="orch" aria-label="Orchestration diagram">
+      <p class="orch-note"><em>Example stack shown for illustration. The two AI research assistants are CoCounsel Legal (grounded in Westlaw / Thomson Reuters) and Lexis+ with Protégé (grounded in LexisNexis); Harvey's own research alliance is with LexisNexis. The layer is tool-agnostic and maps to whatever the firm actually runs.</em></p>
+      <div class="orch-row">
+        <div class="node">Harvey<small>drafting</small></div>
+        <div class="node">CoCounsel Legal / Lexis+ Protégé<small>AI research</small></div>
+        <div class="node">Claude for Legal<small>reasoning</small></div>
+        <div class="node">DMS (iManage, etc.)<small>documents</small></div>
+        <div class="node">Westlaw / Lexis<small>authority DB</small></div>
+      </div>
+      <div class="arrows" aria-hidden="true">&#8595;&nbsp;&#8595;&nbsp;&#8595;&nbsp;&#8595;&nbsp;&#8595;</div>
+      <div class="layer">TRUST-SAFE OPERATING LAYER
+        <small>citation verification &middot; ABA-512 policy gates &middot; eval harness &middot; audit log &middot; confidentiality controls</small>
+      </div>
+      <div class="arrows" aria-hidden="true">&#8595; via MCP</div>
+      <div class="output">Filing &amp; review system<small style="display:block;font-weight:400">every draft carries a machine-readable verification status</small></div>
+    </div>
+    <div class="flow" aria-label="What flows where">
+      <div><b>Down:</b> drafting and research tools send draft text, target jurisdiction, and an approved-sources list into the layer.</div>
+      <div><b>Inside:</b> the layer parses every citation, runs structural and existence checks, applies ABA-512 policy gates, and writes an audit record.</div>
+      <div><b>Up:</b> only a draft carrying a verification status and a signed-off gate reaches the filing and review system.</div>
+    </div>
+    <p class="cap">Harvey is one node, not the system. The governance and evaluation layer is the product.</p>
+
+    <h3 style="margin-top:1.2rem">Example MCP tool contract</h3>
+    <p>In production the layer runs as a Model Context Protocol server between the drafting assistant and
+    the filing system:</p>
+<pre><code>tool: verify_citations
+input:  { draft_text, jurisdiction, approved_sources[] }
+output: {
+  risk_score,                 // 0-100
+  citations: [ {
+    text, status,             // verified_primary | unverified | flagged_fabrication
+    reason, source_checked
+  } ],
+  gate: "blocked_until_attorney_signoff"
+}</code></pre>
+    <p class="panel-note"><strong>Demonstration artifact. Not legal advice.</strong> RN Collins, JD candidate (not a licensed attorney). Example stack shown for illustration only.</p>
+  </section>
+
+  <!-- 2. CITATION VERIFIER -->
+  <section role="tabpanel" id="panel-cite" aria-labelledby="tab-cite" tabindex="0" hidden>
+    <h2>2. Citation verifier &mdash; one eval among many</h2>
+    <p>Under <strong>ABA Formal Opinion 512</strong>, the duty to verify AI output is non-delegable. This
+    tool parses citations, flags structural impossibilities, and locks a pre-filing gate until a named
+    attorney certifies. Sample citations are <strong>illustrative fabrications</strong>.</p>
+
+    <label for="draft">AI-drafted legal text with citations</label>
+    <textarea id="draft" aria-describedby="draft-help"></textarea>
+    <p id="draft-help" class="visually-hidden">Paste text containing legal citations, then run the check. Or load the built-in sample.</p>
+    <div class="btnrow">
+      <button type="button" class="btn-secondary" id="loadSample">Load sample draft</button>
+      <button type="button" class="btn-primary" id="runCheck">Run verification check</button>
+      <button type="button" class="btn-secondary" id="clearBtn">Clear</button>
+    </div>
+
+    <div id="resultsBlock" hidden style="margin-top:1.2rem">
+      <h3>Verification results</h3>
+      <div aria-live="polite" id="live">
+        <div class="score">
+          <div class="gauge" id="gauge"><span class="num" id="scoreNum">&mdash;</span><span class="lab">Risk score</span></div>
+          <div class="score-txt" id="scoreText"></div>
+        </div>
+        <ul class="cites" id="citeList"></ul>
+      </div>
+    </div>
+
+    <div id="gateBlock" hidden style="margin-top:1.2rem">
+      <h3>Pre-filing verification checklist</h3>
+      <p>Every box must be cleared by the responsible attorney before this draft is cleared for filing.
+      The tool assists; the lawyer certifies.</p>
+      <ul class="checklist" id="checklist">
+        <li><input type="checkbox" id="c1" class="gatebox"><label for="c1">I personally opened and read each cited authority from a primary source.</label></li>
+        <li><input type="checkbox" id="c2" class="gatebox"><label for="c2">I confirmed every citation exists and the quoted holding matches the actual text.</label></li>
+        <li><input type="checkbox" id="c3" class="gatebox"><label for="c3">I resolved or removed every item flagged as a possible fabrication.</label></li>
+        <li><input type="checkbox" id="c4" class="gatebox"><label for="c4">No client-confidential information was entered into a non-approved AI tool (Rule 1.6).</label></li>
+        <li><input type="checkbox" id="c5" class="gatebox"><label for="c5">I take responsibility for this filing under Rules 1.1, 3.3, and 5.1/5.3.</label></li>
+      </ul>
+      <div class="gate blocked" id="gate" role="status" aria-live="polite">Filing blocked &mdash; verification incomplete.</div>
+    </div>
+    <p class="panel-note"><strong>Demonstration artifact. Not legal advice.</strong> The engine runs client-side; sample citations are illustrative fabrications. A licensed attorney remains responsible for verifying every authority.</p>
+  </section>
+
+  <!-- 3. GOVERNANCE -->
+  <section role="tabpanel" id="panel-gov" aria-labelledby="tab-gov" tabindex="0" hidden>
+    <h2>3. Governance &mdash; the auditable policy layer 93% of firms lack</h2>
+    <p>ABA Formal Opinion 512 maps AI use onto existing duties. Check the controls your firm has actually
+    implemented as written policy to compute a live governance readiness score.</p>
+    <div class="readybar" aria-hidden="true"><span id="govBar" style="width:0%">0%</span></div>
+    <p aria-live="polite" id="govLive"><strong>Governance readiness: 0%.</strong> No controls confirmed.</p>
+    <ul class="gov-list" id="govList">
+      <li><input type="checkbox" class="govbox" data-label="AI-competence training standard"><div><span class="rule">Rule 1.1 &middot; Competence</span>Written AI-competence standard: staff trained on capabilities and failure modes.</div></li>
+      <li><input type="checkbox" class="govbox" data-label="Mandatory output verification"><div><span class="rule">Rule 1.1 &middot; Competence</span>Mandatory citation/output verification before any external use.</div></li>
+      <li><input type="checkbox" class="govbox" data-label="Approved-tools list"><div><span class="rule">Rule 1.6 &middot; Confidentiality</span>Approved-tools list; client data barred from non-approved models.</div></li>
+      <li><input type="checkbox" class="govbox" data-label="No-training vendor agreements"><div><span class="rule">Rule 1.6 &middot; Confidentiality</span>Data-handling / no-training agreements with AI vendors on file.</div></li>
+      <li><input type="checkbox" class="govbox" data-label="Pre-filing audit-record gate"><div><span class="rule">Rule 3.3 &middot; Candor</span>Pre-filing verification gate producing an audit record per filing.</div></li>
+      <li><input type="checkbox" class="govbox" data-label="Client-disclosure policy"><div><span class="rule">Rule 3.3 &middot; Candor</span>Client-disclosure/consent policy for material AI use where required.</div></li>
+      <li><input type="checkbox" class="govbox" data-label="Named accountable partner"><div><span class="rule">Rule 5.1/5.3 &middot; Supervision</span>Named partner accountable for AI oversight and policy enforcement.</div></li>
+      <li><input type="checkbox" class="govbox" data-label="Logging and periodic audit"><div><span class="rule">Rule 5.1/5.3 &middot; Supervision</span>Logging &amp; periodic audit of AI-assisted work product.</div></li>
+    </ul>
+    <p aria-live="polite" id="govUnmet" style="font-size:.9rem;color:var(--warn)"></p>
+    <ul id="govUnmetList" style="margin:.3rem 0 0;padding-left:1.1rem;font-size:.85rem;color:var(--warn)"></ul>
+    <p class="cap">This is the layer most firms cannot show an auditor. The policy, not the model, is the differentiator.</p>
+    <p class="panel-note"><strong>Demonstration artifact. Not legal advice.</strong> A readiness score is a planning aid, not a compliance certification.</p>
+  </section>
+
+  <!-- 4. EVAL DASHBOARD -->
+  <section role="tabpanel" id="panel-eval" aria-labelledby="tab-eval" tabindex="0" hidden>
+    <h2>4. Eval dashboard &mdash; the citation verifier is one eval among many</h2>
+    <p>Illustrative eval-harness runs (in-memory sample data). Green bars = higher is better; red bars =
+    higher is worse. The human baseline is the bar every agent is measured against.</p>
+    <div style="overflow:auto">
+      <table id="evalTable" aria-label="Eval harness runs">
+        <thead>
+          <tr>
+            <th scope="col">Run</th>
+            <th scope="col">Hallucination rate<br>(lower better)</th>
+            <th scope="col">Jurisdiction accuracy<br>(higher better)</th>
+            <th scope="col">Citation pass rate<br>(higher better)</th>
+          </tr>
+        </thead>
+        <tbody id="evalBody"></tbody>
+      </table>
+    </div>
+    <p class="cap">Illustrative sample data. A real harness runs hundreds of gold-standard tasks per release;
+    the citation check is a single test within it.</p>
+    <details class="method">
+      <summary>Methodology note (illustrative)</summary>
+      <ul>
+        <li>Sample set: 240 gold-standard tasks per run, graded against attorney-authored answer keys across 6 jurisdictions.</li>
+        <li><b>Hallucination rate:</b> share of outputs containing at least one citation or holding with no matching authority.</li>
+        <li><b>Jurisdiction accuracy:</b> share of tasks that apply the controlling jurisdiction's rule correctly.</li>
+        <li><b>Citation pass rate:</b> share of cited authorities that clear structural and existence checks.</li>
+        <li>The human baseline is a licensed attorney working the same task set. The delta pill shows each run's gap to that baseline.</li>
+        <li>Numbers here are fabricated for demonstration and do not describe any real product or firm.</li>
+      </ul>
+    </details>
+    <p class="panel-note"><strong>Demonstration artifact. Not legal advice.</strong> Eval figures are illustrative sample data, not benchmarked results.</p>
+  </section>
+
+  <!-- 5. ADOPTION -->
+  <section role="tabpanel" id="panel-adopt" aria-labelledby="tab-adopt" tabindex="0" hidden>
+    <h2>5. Adoption &mdash; where 2026 pilots actually fail</h2>
+    <p>The technology rarely fails; adoption does. Trust is a neurological state: repeated safe exposure
+    lowers threat response and builds the habit loop. Set an estimated adoption rate per stage to see where
+    your funnel leaks.</p>
+    <div class="funnel" id="funnel"></div>
+    <p aria-live="polite" id="funnelLive" style="font-weight:600;margin-top:.6rem"></p>
+    <h3 style="margin-top:1rem">Three change-management levers</h3>
+    <ul class="levers">
+      <li><strong>Safe exposure:</strong> low-stakes, reversible first tasks so the threat response never fires. Trust is built by repetition, not by a training deck.</li>
+      <li><strong>Visible governance:</strong> when lawyers can see the verification gate and audit trail, the tool feels like a safeguard rather than a liability &mdash; converting exposure into trust.</li>
+      <li><strong>Peer advocacy:</strong> a respected internal champion who demonstrates wins moves habitual users to advocates faster than any top-down mandate.</li>
+    </ul>
+    <p class="cap">Where 2026 pilots actually fail: the drop-off between trust and habitual use, not the model quality.</p>
+    <p class="panel-note"><strong>Demonstration artifact. Not legal advice.</strong> Funnel figures are your own estimates, computed in your browser.</p>
+  </section>
+
+  <div class="cta-panel">
+    <h2>This is the kind of system I build.</h2>
+    <p>A governed legal-AI layer, scoped to the tools your firm already runs, with the citation gate, audit trail, and eval
+    harness an auditor can actually see. Book a working session and we'll map it to your stack.</p>
+    <div class="cta-row">
+      <a class="cta" href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a working session &rarr;</a>
+    </div>
+  </div>
+
+  <footer>
+    Trust-Safe AI Operating Layer &mdash; demonstration artifact. Not legal advice. RN Collins, JD candidate
+    (not a licensed attorney). Client-side only; no data leaves this device.
+  </footer>
+</main>
+
+<script>
+(function(){
+  "use strict";
+  var $ = function(id){ return document.getElementById(id); };
+
+  /* ---------- TABS ---------- */
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('[role=tab]'));
+  function selectTab(tab, focus){
+    tabs.forEach(function(t){
+      var sel = t === tab;
+      t.setAttribute('aria-selected', sel ? 'true' : 'false');
+      t.tabIndex = sel ? 0 : -1;
+      $(t.getAttribute('aria-controls')).hidden = !sel;
+    });
+    if(focus) tab.focus();
+  }
+  tabs.forEach(function(tab, i){
+    tab.addEventListener('click', function(){ selectTab(tab, false); });
+    tab.addEventListener('keydown', function(e){
+      var idx = null;
+      if(e.key==='ArrowRight'||e.key==='ArrowDown') idx = (i+1)%tabs.length;
+      else if(e.key==='ArrowLeft'||e.key==='ArrowUp') idx = (i-1+tabs.length)%tabs.length;
+      else if(e.key==='Home') idx = 0;
+      else if(e.key==='End') idx = tabs.length-1;
+      if(idx!==null){ e.preventDefault(); selectTab(tabs[idx], true); }
+    });
+  });
+
+  /* ---------- CITATION VERIFIER ---------- */
+  var SAMPLE =
+"Plaintiff's motion should be denied. A defendant's mere presence at the scene is insufficient to\n" +
+"establish liability. See Halloran v. Vantage Freight Sys., 847 F.3d 512, 519 (6th Cir. 2017)\n" +
+"(mere presence does not create a duty). Moreover, the notice requirement is strictly construed.\n" +
+"Delgado v. Riverside Mun. Utility Dist., 612 F.4d 88 (9th Cir. 2021) (dismissing for lack of\n" +
+"timely notice). Courts in this circuit have repeatedly held that constructive notice cannot be\n" +
+"inferred from a single prior incident. Templeton Holdings LLC v. Ashford Cnty., 1042 F.3d 771\n" +
+"(6th Cir. 2029). The doctrine of equitable estoppel likewise does not apply where the movant had\n" +
+"actual knowledge. Brennan v. First Coastal Bank, 559 U.S. 214 (2010). Finally, punitive damages\n" +
+"are unavailable absent a showing of malice. Cf. Marisol P. v. Department of Children & Families,\n" +
+"88 Cal. App. 5th 1120 (2023); Whitmore-Kettering v. Nexa Robotics Inc., 991 F. Supp. 5th 44\n" +
+"(S.D.N.Y. 2024).";
+
+  /* ============================================================
+     Real deterministic engine, ported from the Python verifier
+     (parser.py + structural.py + scorer.py): same KNOWN_REPORTERS
+     allow-list, same series ceilings, same year logic, same 0-100
+     scoring. Every pasted brief runs through this; the built-in
+     sample's verdicts are produced by the engine, not hardcoded.
+     ============================================================ */
+  var KNOWN_REPORTERS = new Set([
+    "U.S.","S. Ct.","L. Ed.","L. Ed. 2d",
+    "F.","F.2d","F.3d","F.4th",
+    "F. Supp.","F. Supp. 2d","F. Supp. 3d",
+    "F.R.D.","B.R.","Fed. Cl.","Ct. Cl.",
+    "A.","A.2d","A.3d","N.E.","N.E.2d","N.E.3d","N.W.","N.W.2d","N.W.3d",
+    "P.","P.2d","P.3d","S.E.","S.E.2d","S.E.3d","S.W.","S.W.2d","S.W.3d",
+    "So.","So. 2d","So. 3d",
+    "Cal.","Cal. 2d","Cal. 3d","Cal. 4th","Cal. 5th",
+    "Cal. App.","Cal. App. 2d","Cal. App. 3d","Cal. App. 4th","Cal. App. 5th",
+    "Cal. Rptr.","Cal. Rptr. 2d","Cal. Rptr. 3d",
+    "N.Y.","N.Y.2d","N.Y.3d","N.Y.S.","N.Y.S.2d","N.Y.S.3d",
+    "A.D.","A.D.2d","A.D.3d","Mass.","Mass. App. Ct."
+  ]);
+  var SERIES_CEILING = {
+    "F.":"F.4th","F. Supp.":"F. Supp. 3d","A.":"A.3d","P.":"P.3d","N.E.":"N.E.3d",
+    "N.W.":"N.W.3d","S.E.":"S.E.3d","S.W.":"S.W.3d","So.":"So. 3d",
+    "Cal. App.":"Cal. App. 5th","Cal.":"Cal. 5th","N.Y.":"N.Y.3d"
+  };
+  var ORDINALS = new Set(["2d","3d","4th","5th","6th","4d","5d","3rd","2nd"]);
+  var MOCK_KNOWN = {
+    "384 u.s. 436":"Miranda v. Arizona","347 u.s. 483":"Brown v. Board of Education",
+    "410 u.s. 113":"Roe v. Wade","556 u.s. 662":"Ashcroft v. Iqbal",
+    "550 u.s. 544":"Bell Atlantic Corp. v. Twombly","372 u.s. 335":"Gideon v. Wainwright",
+    "5 u.s. 137":"Marbury v. Madison","163 u.s. 537":"Plessy v. Ferguson",
+    "576 u.s. 644":"Obergefell v. Hodges","531 u.s. 98":"Bush v. Gore",
+    "505 u.s. 833":"Planned Parenthood v. Casey","491 u.s. 397":"Texas v. Johnson",
+    "418 u.s. 683":"United States v. Nixon","339 u.s. 763":"Johnson v. Eisentrager",
+    "135 s. ct. 2584":"Obergefell v. Hodges"
+  };
+  var VERIFIED_PRIMARY="verified_primary", UNVERIFIED="unverified", FLAGGED="flagged_fabrication";
+  function normSpace(s){ return s.replace(/\s+/g," ").trim(); }
+  function normCite(s){ return normSpace(s).toLowerCase(); }
+
+  var RTOK = "(?:[A-Za-z][A-Za-z.]*(?:\\d(?:d|th))?|\\d(?:d|th))";
+  var CITE_SRC = "(\\d{1,4})\\s+([A-Z][A-Za-z.]*(?:\\d(?:d|th))?(?:\\s+"+RTOK+")*)\\s+(\\d{1,5})(?:\\s*\\((?:[A-Za-z0-9.\\s]*?)(\\d{4})\\))?";
+  var CITE_RE = new RegExp(CITE_SRC, "g");
+  var CASE_NAME_RE = new RegExp("([A-Z][A-Za-z.'\\-]+(?:\\s+[A-Za-z.'\\-]+){0,4}\\s+v\\.\\s+[A-Z][A-Za-z.'\\-]+(?:\\s+[A-Za-z.'\\-]+){0,4}),?\\s*$");
+  var REPORTER_TAIL = new Set(["Supp.","App.","Ct.","Ed.","2d","3d","4th","5th","6th"]);
+
+  function parseCitations(text){
+    var out=[], m; CITE_RE.lastIndex=0;
+    while((m=CITE_RE.exec(text))!==null){
+      if(m[0].length===0){ CITE_RE.lastIndex++; continue; }
+      var reporter=normSpace(m[2]);
+      if(!/[A-Za-z]/.test(reporter)) continue;
+      if(reporter.indexOf(".")===-1 && !REPORTER_TAIL.has(reporter)){ if(!/^[A-Z][a-z]/.test(reporter)) continue; }
+      var year=m[4]?parseInt(m[4],10):null;
+      var tail=normSpace(text.slice(0,m.index)).slice(-120);
+      var cn=CASE_NAME_RE.exec(tail);
+      out.push({raw:m[0].trim(), volume:parseInt(m[1],10), reporter:reporter, page:parseInt(m[3],10),
+        year:year, caseName:cn?cn[1].trim().replace(/,+$/,""):null});
+    }
+    return out;
+  }
+  function citeString(c){ return c.volume+" "+normSpace(c.reporter)+" "+c.page; }
+  function reporterRoot(reporter){
+    var parts=reporter.split(/\s+/);
+    if(parts.length && ORDINALS.has(parts[parts.length-1])) return parts.slice(0,-1).join(" ");
+    var m=reporter.match(/^(.*?[A-Za-z.])(\d(?:d|th|rd|nd))$/);
+    return m?m[1]:reporter;
+  }
+  function analyzeStructure(cite, currentYear){
+    var issues=[]; var reporter=normSpace(cite.reporter);
+    if(!KNOWN_REPORTERS.has(reporter)){
+      var root=reporterRoot(reporter), ceiling=SERIES_CEILING[root];
+      if(ceiling) issues.push({code:"nonexistent_reporter", severity:"high",
+        message:"Reporter '"+reporter+"' does not exist. The "+root+" series stops at "+ceiling+"."});
+      else issues.push({code:"unknown_reporter", severity:"medium",
+        message:"Reporter '"+reporter+"' is not in the known-reporter list. Confirm the reporter abbreviation and jurisdiction."});
+    }
+    if(cite.year!==null && cite.year!==undefined){
+      if(cite.year>currentYear) issues.push({code:"future_year", severity:"high",
+        message:"Year "+cite.year+" is in the future (current year is "+currentYear+"). A published opinion cannot carry a future date."});
+      else if(cite.year<1754) issues.push({code:"impossible_year", severity:"high",
+        message:"Year "+cite.year+" predates American case reporting; check the citation."});
+    }
+    if(cite.volume<=0) issues.push({code:"malformed_volume", severity:"high", message:"Volume "+cite.volume+" is not valid."});
+    if(cite.page<=0) issues.push({code:"malformed_page", severity:"high", message:"Page "+cite.page+" is not valid."});
+    return issues;
+  }
+  function scoreOne(verdict){ if(verdict===FLAGGED) return 100; if(verdict===UNVERIFIED) return 55; return 0; }
+  function verdictFor(cite, issues, existence){
+    var high=issues.filter(function(i){return i.severity==="high";});
+    var source=existence?existence.source:"structural-only";
+    if(high.length) return {cite:cite, verdict:FLAGGED, reason:high[0].message, source:source, issues:issues};
+    if(existence && !existence.error){
+      if(existence.found){
+        var reason="Matched a real published opinion";
+        if(existence.matched) reason+=": "+existence.matched;
+        reason+=" (source: "+existence.source+").";
+        if(issues.length) reason+=" Note: "+issues[0].message;
+        return {cite:cite, verdict:VERIFIED_PRIMARY, reason:reason, source:source, issues:issues};
+      }
+      return {cite:cite, verdict:FLAGGED, source:source, issues:issues,
+        reason:"No matching opinion found in "+existence.source+". Structure is plausible but existence could not be confirmed; possible fabrication."};
+    }
+    var r = issues.length
+      ? "Structural caveat: "+issues[0].message+" Existence not checked online."
+      : "Structure is well formed. Existence not confirmed against a case-law source; a licensed attorney must confirm the opinion exists.";
+    return {cite:cite, verdict:UNVERIFIED, reason:r, source:source, issues:issues};
+  }
+  /* Console runs with the offline mock existence provider so the built-in
+     sample yields the same verified/flagged verdicts as the Python CLI. */
+  function verifyText(text){
+    var currentYear=new Date().getFullYear();
+    var cites=parseCitations(text);
+    var verdicts=cites.map(function(c){
+      var issues=analyzeStructure(c, currentYear);
+      var high=issues.some(function(i){return i.severity==="high";});
+      var existence=null;
+      if(!high){
+        var name=MOCK_KNOWN[normCite(citeString(c))];
+        existence = name ? {found:true, matched:name, source:"mock", error:null}
+                         : {found:false, matched:null, source:"mock", error:null};
+      }
+      return verdictFor(c, issues, existence);
+    });
+    var risk = verdicts.length ? Math.round(verdicts.reduce(function(s,v){return s+scoreOne(v.verdict);},0)/verdicts.length) : 0;
+    return {risk:risk, verdicts:verdicts};
+  }
+
+  var draft = $("draft"), citeList = $("citeList"),
+      resultsBlock = $("resultsBlock"), gateBlock = $("gateBlock");
+
+  function statusBadge(s){
+    if(s==="ok") return {cls:"ok", label:"Verified — primary source"};
+    if(s==="warn") return {cls:"warn", label:"Unverified"};
+    return {cls:"flag", label:"Flagged — possible fabrication"};
+  }
+  /* Map an engine verdict to the console's finding shape (status/text/reason). */
+  function analyze(text){
+    var rep = verifyText(text);
+    return rep.verdicts.map(function(v){
+      var status = v.verdict===VERIFIED_PRIMARY ? "ok" : (v.verdict===UNVERIFIED ? "warn" : "flag");
+      var name = v.cite.caseName ? (v.cite.caseName + ", ") : "";
+      var yr = v.cite.year ? (" (" + v.cite.year + ")") : "";
+      return { text: name + citeString(v.cite) + yr, status: status, reason: v.reason };
+    });
+  }
+  function scoreFor(findings, text){
+    var src = (text !== undefined && text !== null) ? text : draft.value;
+    return verifyText(src).risk;
+  }
+  function render(findings, sourceText){
+    citeList.innerHTML = "";
+    findings.forEach(function(f){
+      var b = statusBadge(f.status);
+      var li = document.createElement("li"); li.className = "cite " + b.cls;
+      var top = document.createElement("div"); top.className = "cite-top";
+      var t = document.createElement("span"); t.className = "cite-text"; t.textContent = f.text;
+      var badge = document.createElement("span"); badge.className = "badge " + b.cls; badge.textContent = b.label;
+      top.appendChild(t); top.appendChild(badge);
+      var r = document.createElement("p"); r.className = "reason";
+      r.innerHTML = '<span class="k">Reason: </span>' + f.reason.replace(/</g,"&lt;");
+      li.appendChild(top); li.appendChild(r); citeList.appendChild(li);
+    });
+    var score = scoreFor(findings, sourceText);
+    var g = $("gauge"), col, verdict;
+    if(score >= 50){ col="var(--flag)"; verdict="High risk — do not file. One or more citations look fabricated."; }
+    else if(score >= 20){ col="var(--warn)"; verdict="Moderate risk — unverified citations remain. Read each source before filing."; }
+    else if(findings.length){ col="var(--teal)"; verdict="Lower risk — but every citation still requires personal verification."; }
+    else { col="var(--warn)"; verdict="No citations detected. If the draft should contain authority, review the text."; }
+    g.style.background = col;
+    $("scoreNum").textContent = score;
+    var flags = findings.filter(function(f){return f.status==="flag";}).length;
+    var warns = findings.filter(function(f){return f.status==="warn";}).length;
+    $("scoreText").innerHTML = "<h3>" + verdict + "</h3><p>" + findings.length +
+      " citation(s) parsed &middot; " + flags + " flagged as possible fabrication &middot; " +
+      warns + " unverified. Higher score = higher risk.</p>";
+    resultsBlock.hidden = false; gateBlock.hidden = false; resetGate();
+  }
+  function resetGate(){
+    var boxes = document.querySelectorAll(".gatebox");
+    for(var i=0;i<boxes.length;i++) boxes[i].checked = false;
+    updateGate();
+  }
+  function updateGate(){
+    var boxes = document.querySelectorAll(".gatebox");
+    var all = true;
+    for(var i=0;i<boxes.length;i++){ if(!boxes[i].checked){ all=false; break; } }
+    var gate = $("gate");
+    if(all){ gate.className = "gate clear"; gate.textContent = "Verification complete — attorney has certified this draft for filing."; }
+    else { gate.className = "gate blocked"; gate.textContent = "Filing blocked — verification incomplete."; }
+  }
+  $("loadSample").addEventListener("click", function(){ draft.value = SAMPLE; draft.focus(); });
+  $("clearBtn").addEventListener("click", function(){
+    draft.value=""; resultsBlock.hidden=true; gateBlock.hidden=true; draft.focus();
+  });
+  $("runCheck").addEventListener("click", function(){
+    var text = draft.value.trim();
+    if(!text){ draft.focus(); return; }
+    var findings = analyze(text);
+    render(findings, text);
+  });
+  $("checklist").addEventListener("change", updateGate);
+
+  /* ---------- GOVERNANCE ---------- */
+  var govBoxes = Array.prototype.slice.call(document.querySelectorAll(".govbox"));
+  function updateGov(){
+    var checked = govBoxes.filter(function(b){return b.checked;}).length;
+    var total = govBoxes.length;
+    var pct = Math.round((checked/total)*100);
+    var bar = $("govBar");
+    bar.style.width = pct + "%"; bar.textContent = pct + "%";
+    $("govLive").innerHTML = "<strong>Governance readiness: " + pct + "%.</strong> " +
+      checked + " of " + total + " controls confirmed.";
+    var unmetBoxes = govBoxes.filter(function(b){return !b.checked;});
+    var unmet = unmetBoxes.length;
+    $("govUnmet").textContent = unmet ? (unmet + " of " + total + " controls unmet. Each open control is an audit and malpractice exposure gap.") : "All controls confirmed. Fully auditable policy layer in place.";
+    var list = $("govUnmetList");
+    list.innerHTML = "";
+    unmetBoxes.forEach(function(b){
+      var li = document.createElement("li");
+      li.textContent = b.getAttribute("data-label");
+      list.appendChild(li);
+    });
+  }
+  govBoxes.forEach(function(b){ b.addEventListener("change", updateGov); });
+  updateGov();
+
+  /* ---------- EVAL DASHBOARD ---------- */
+  var EVALS = [
+    { run:"Human baseline (attorney)", hall:1, jur:99, pass:99, base:true },
+    { run:"Trust-Safe layer (governed)", hall:3, jur:96, pass:97 },
+    { run:"Frontier model + verifier", hall:6, jur:92, pass:90 },
+    { run:"Frontier model, ungoverned", hall:18, jur:81, pass:64 },
+    { run:"Legacy assistant, ungoverned", hall:27, jur:73, pass:52 }
+  ];
+  var BASE = EVALS.filter(function(r){return r.base;})[0];
+  function deltaPill(val, baseVal, higherBetter){
+    if(!BASE) return "";
+    var d = val - baseVal;
+    if(d === 0) return '<span class="delta base">baseline</span>';
+    var good = higherBetter ? (d > 0) : (d < 0);
+    var sign = d > 0 ? "+" : "";
+    return '<span class="delta '+(good?"up":"down")+'">'+sign+d+' pts</span>';
+  }
+  function meter(cls, val, baseVal, higherBetter){
+    return '<div class="meter '+cls+'"><span style="width:'+val+'%"></span></div>' +
+           '<div class="mval">'+val+'%'+deltaPill(val, baseVal, higherBetter)+'</div>';
+  }
+  var eb = $("evalBody");
+  EVALS.forEach(function(r){
+    var tr = document.createElement("tr");
+    if(r.base) tr.className = "baseline";
+    tr.innerHTML =
+      "<td>"+r.run+"</td>" +
+      "<td>"+meter("bad", r.hall, BASE.hall, false)+"</td>" +
+      "<td>"+meter("good", r.jur, BASE.jur, true)+"</td>" +
+      "<td>"+meter("good", r.pass, BASE.pass, true)+"</td>";
+    eb.appendChild(tr);
+  });
+
+  /* ---------- ADOPTION FUNNEL ---------- */
+  var STAGES = [
+    { name:"Exposure", val:100 },
+    { name:"Trust", val:70 },
+    { name:"Habitual use", val:40 },
+    { name:"Advocacy", val:15 }
+  ];
+  var funnel = $("funnel");
+  STAGES.forEach(function(s, i){
+    var div = document.createElement("div"); div.className = "stage";
+    div.innerHTML =
+      '<div class="stage-head"><span class="stage-name">'+(i+1)+'. '+s.name+'</span>' +
+      '<span class="mval" id="stval'+i+'">'+s.val+'%</span></div>' +
+      '<label class="visually-hidden" for="strange'+i+'">'+s.name+' adoption percentage</label>' +
+      '<input type="range" id="strange'+i+'" min="0" max="100" value="'+s.val+'">' +
+      '<div class="stbar"><span id="stbar'+i+'" style="width:'+s.val+'%"></span></div>' +
+      '<div class="drop" id="stdrop'+i+'"></div>';
+    funnel.appendChild(div);
+  });
+  function updateFunnel(){
+    var vals = STAGES.map(function(s,i){ return parseInt($("strange"+i).value,10); });
+    var worst = {drop:-1, i:0};
+    vals.forEach(function(v,i){
+      $("stval"+i).textContent = v + "%";
+      $("stbar"+i).style.width = v + "%";
+      var drop = i>0 ? (vals[i-1]-v) : 0;
+      $("stdrop"+i).textContent = i>0 ? ("drop-off from " + STAGES[i-1].name + ": " + drop + " pts") : "top of funnel";
+      if(i>0 && drop > worst.drop){ worst = {drop:drop, i:i}; }
+    });
+    $("funnelLive").textContent = "Biggest leak: " + STAGES[worst.i-1].name + " → " +
+      STAGES[worst.i].name + " (" + worst.drop + " pts lost). That gap is where pilots stall.";
+  }
+  STAGES.forEach(function(s,i){ $("strange"+i).addEventListener("input", updateFunnel); });
+  updateFunnel();
+})();
+</script>
+</body>
+</html>
