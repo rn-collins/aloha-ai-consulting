@@ -50,17 +50,17 @@ Then open `http://localhost:8000`.
 
 The public repository is designed not to require production secrets. Browser-only tools should not transmit user-entered values unless a page explicitly discloses a server-side or third-party data flow. See:
 
-- `docs/privacy-data-flow.md`
+- `docs/public-claims-and-data-governance.md`
 - `.env.example`
 - `SECURITY.md`
 
 ## Evidence and claims
 
-Public claims about credentials, services, tool behavior, privacy, regulatory coverage, and source verification must be supported in `docs/claims-register.md`. Material changes should update the register in the same pull request.
+Public claims about credentials, services, tool behavior, privacy, regulatory coverage, and source verification must be supported in `docs/public-claims-and-data-governance.md`. Material changes should update the register in the same pull request.
 
 ## Third-party assets and services
 
-See `docs/third-party-assets.md` for the current inventory and review requirements. External services may include Vercel, Microsoft Outlook Bookings, Google Fonts, LinkedIn, and separately deployed Aloha AI tools.
+See `docs/public-claims-and-data-governance.md` for the current inventory and review requirements. External services may include Vercel, Microsoft Outlook Bookings, Google Fonts, LinkedIn, and separately deployed Aloha AI tools.
 
 ## Release controls
 

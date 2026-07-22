@@ -193,7 +193,7 @@
       <!-- LIVE TUTOR (activates when the engine backend is connected) -->
       <div class="tutor-live" data-course="first-ai-team" style="margin-top:var(--s4)">
         <form id="tutorForm" style="display:flex;gap:.5rem">
-          <input id="tutorQ" placeholder="Try it — ask the tutor about this course…" autocomplete="off"
+          <input id="tutorQ" aria-label="Ask the tutor a question about this course" placeholder="Try it — ask the tutor about this course…" autocomplete="off"
             style="flex:1;padding:.7rem .9rem;border:1px solid rgba(127,224,196,.35);border-radius:10px;background:rgba(255,255,255,.06);color:var(--cream);font:inherit">
           <button class="btn btn--ghost" type="submit">Ask</button>
         </form>
@@ -210,7 +210,7 @@
         function add(cls,html){var d=document.createElement('div');d.className='bubble '+cls;d.innerHTML=html;log.appendChild(d);return d;}
         function leadForm(qtext){
           var d=add('a','<strong>Want RN to help with this directly?</strong><br>This is where the done-with-you and done-for-you tiers come in. Leave your email and RN will follow up.'+
-            '<form class="lead" style="display:flex;gap:6px;margin-top:8px"><input type="email" placeholder="you@email.com" required style="flex:1;padding:8px 10px;border:1px solid var(--line);border-radius:8px;font:inherit"><button class="btn btn--primary" type="submit" style="padding:.4rem .9rem">Send</button></form>');
+            '<form class="lead" style="display:flex;gap:6px;margin-top:8px"><input type="email" aria-label="Your email address" placeholder="you@email.com" required style="flex:1;padding:8px 10px;border:1px solid var(--line);border-radius:8px;font:inherit"><button class="btn btn--primary" type="submit" style="padding:.4rem .9rem">Send</button></form>');
           d.querySelector('form').addEventListener('submit',function(ev){ev.preventDefault();var email=d.querySelector('input').value.trim();
             fetch(endpoint.replace('/chat','/lead'),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:qtext,email:email})})
             .then(function(r){return r.json();}).then(function(j){d.querySelector('form').outerHTML='<p style="margin:8px 0 0;color:var(--mint)">'+esc(j.message||'Thanks — RN will follow up.')+'</p>';})
