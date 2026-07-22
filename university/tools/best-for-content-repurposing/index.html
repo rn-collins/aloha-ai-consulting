@@ -295,6 +295,57 @@ a.card:hover .card__more{color:var(--teal)}
 }
 
 </style>
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<script defer src="/_vercel/insights/script.js"></script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
+<script>
+(function(){
+  var p=new URLSearchParams(location.search),u={};
+  ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(k){if(p.get(k))u[k]=p.get(k);});
+  if(Object.keys(u).length)sessionStorage.setItem('rn_utm',JSON.stringify(u));
+  window._getUTM=function(){try{return JSON.parse(sessionStorage.getItem('rn_utm')||'{}')}catch(e){return{}}};
+  window.addEventListener('load',function(){
+    var utm=window._getUTM();
+    fetch('/api/track',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({event:'page_view',source:'aloha-university-tools-content-repurposing',referrer:document.referrer||'direct',utm:utm})
+    }).catch(function(){});
+  });
+  var ms=[25,50,75,90],fired={};
+  window.addEventListener('scroll',function(){
+    var h=document.body.scrollHeight-window.innerHeight;
+    if(h<=0)return;
+    var pct=Math.round((window.scrollY/h)*100);
+    ms.forEach(function(m){if(pct>=m&&!fired[m]){fired[m]=1;fetch('/api/track',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({event:'scroll_depth',source:'aloha-university-tools-content-repurposing',depth:m+'%'})}).catch(function(){});}});
+  },{passive:true});
+})();
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://aloha-ai-consulting.vercel.app/#rn-collins",
+      "name": "RN Collins",
+      "jobTitle": "AI Educator & Consultant",
+      "url": "https://aloha-ai-consulting.vercel.app",
+      "sameAs": ["https://linkedin.com/in/rn-collins"]
+    },
+    {
+      "@type": "WebPage",
+      "name": "Best AI Tools for Content Repurposing (2026)",
+      "description": "A decision guide to AI content-repurposing tools with honest strengths, limits, and privacy guidance.",
+      "url": "https://aloha-ai-consulting.vercel.app/university/tools/best-for-content-repurposing",
+      "author": {"@id": "https://aloha-ai-consulting.vercel.app/#rn-collins"},
+      "publisher": {
+        "@type": "Organization",
+        "name": "Aloha AI University",
+        "url": "https://aloha-ai-consulting.vercel.app/university"
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to main content</a>
@@ -535,6 +586,7 @@ a.card:hover .card__more{color:var(--teal)}
       </div>
     </div>
     <p class="footer__disc"><strong>Aloha AI University</strong> is free generative-AI education for modern businesses. RN Collins is a JD candidate, not a licensed attorney. Nothing here is legal, medical, or financial advice. Every page on this site runs entirely in your browser and sends nothing anywhere.</p>
+    <p style="font-family:'DM Mono',monospace;font-size:.65rem;color:#6C837B;margin-top:.75rem">Built by <a href="https://rn-portfolio-khaki.vercel.app" target="_blank" rel="noopener" style="color:#7FE0C4;text-decoration:none">RN Builds</a> — explore all AI tools and projects.</p>
     <p class="footer__fine">© <span id="yr">2026</span> Aloha AI. All rights reserved.</p>
   </div>
 </footer>
@@ -618,5 +670,20 @@ a.card:hover .card__more{color:var(--teal)}
 })();
 
 </script>
+<div style="position:fixed;bottom:1.5rem;right:1.5rem;z-index:9999">
+  <button onclick="document.getElementById('ca-modal').style.display='flex'" style="font-family:'DM Mono',monospace;font-size:.65rem;text-transform:uppercase;letter-spacing:.08em;background:#B8842A;color:#fff;border:none;padding:.55rem 1.1rem;border-radius:2rem;cursor:pointer;box-shadow:0 2px 12px rgba(0,0,0,.35)">Contact the Architect</button>
+</div>
+<div id="ca-modal" role="dialog" aria-modal="true" aria-labelledby="ca-modal-h" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(14,26,20,.85);align-items:center;justify-content:center">
+  <div style="background:#FCFAF5;max-width:420px;width:90%;padding:2rem;border-radius:4px">
+    <h2 id="ca-modal-h" style="font-family:'Cormorant Garamond',Georgia,serif;margin:0 0 1rem">Contact the Architect</h2>
+    <input id="ca-name" placeholder="Name (optional)" aria-label="Name" style="width:100%;padding:.6rem;margin-bottom:.75rem;border:1px solid #C7BFAE;box-sizing:border-box;font-size:.95rem">
+    <input id="ca-email" type="email" placeholder="Email (required)" aria-label="Email" style="width:100%;padding:.6rem;margin-bottom:.75rem;border:1px solid #C7BFAE;box-sizing:border-box;font-size:.95rem">
+    <textarea id="ca-msg" rows="3" placeholder="Message" aria-label="Message" style="width:100%;padding:.6rem;margin-bottom:.75rem;border:1px solid #C7BFAE;box-sizing:border-box;resize:vertical;font-size:.95rem"></textarea>
+    <div style="display:flex;gap:.75rem;justify-content:flex-end">
+      <button onclick="document.getElementById('ca-modal').style.display='none'" style="background:none;border:1px solid #C7BFAE;padding:.5rem 1rem;cursor:pointer;font-size:.9rem">Cancel</button>
+      <button onclick="(function(){var e=document.getElementById('ca-email').value;if(!e){alert('Email is required');return;}fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:document.getElementById('ca-name').value,email:e,message:document.getElementById('ca-msg').value,source:'contact-architect-aloha-university'})}).then(function(){document.getElementById('ca-modal').style.display='none';alert('Sent! We\'ll be in touch.');}).catch(function(){alert('Error sending. Please try again.');});})()" style="background:#1B7A68;color:#fff;border:none;padding:.5rem 1rem;cursor:pointer;font-size:.9rem">Send</button>
+    </div>
+  </div>
+</div>
 </body>
 </html>
