@@ -268,12 +268,6 @@ div[style*="background:#0D1A14"] {--teal:#1EC8B0;}
 .hero-bridge{font-size:.84rem;color:#9BB8B2;max-width:720px;line-height:1.85;margin-bottom:1rem;border-left:2px solid rgba(30,200,176,.3);padding-left:1rem;}
 </style>
 
-<!-- Vercel Analytics -->
-<script defer src="/_vercel/insights/script.js"></script>
-<script defer src="/_vercel/speed-insights/script.js"></script>
-<!-- GA4 placeholder — add your Measurement ID to activate -->
-<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -2009,24 +2003,13 @@ async function scoreAssessment(){
 
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeScopeModal();closeDownloadModal();closeSubscribeModal();closeAssessment();closeMemoReader();}});
 
-// ── ANALYTICS EVENT TRACKING ──────────────────────────────────────────────
-var ANALYTICS_ENDPOINT = 'https://aloha-dea-tracker.vercel.app/api/lead';
-var SITE_ID = 'aloha-ai';
-
+// ── ANALYTICS DISABLED ────────────────────────────────────────────────────
 function trackEvent(event, detail='') {
-  // Fire to existing lead capture infrastructure — shows in Slack + Upstash
-  const payload = {
-    name: 'Analytics: ' + event,
-    email: 'event@analytics.local',
-    source: 'analytics_' + SITE_ID,
-    message: event + (detail ? ' | ' + detail : '') + ' | ref:' + (document.referrer||'direct') + ' | ua:' + navigator.userAgent.substring(0,60)
-  };
-  fetch(ANALYTICS_ENDPOINT, {
-    method:'POST', headers:{'Content-Type':'application/json'},
-    body: JSON.stringify(payload)
-  }).catch(()=>{});
-  // Also fire to Vercel Analytics custom events if available
-  if(typeof window.va === 'function') { window.va('event', { name: event, data: { detail, site: SITE_ID } }); }
+  // Analytics disabled. This site collects no behavioral analytics, per the
+  // privacy policy ("no tracking, no cookies, no analytics"). This function is
+  // intentionally a no-op so existing call sites stay harmless. Voluntary form
+  // submissions (assessment, contact, enroll) are sent separately and disclosed.
+  return;
 }
 
 // CTA button tracking — wire to all major CTAs

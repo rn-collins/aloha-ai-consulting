@@ -54,14 +54,15 @@ Where externally hosted Google Fonts are used, the visitor's browser may contact
 
 Linked tools on other Vercel deployments or repositories require separate inspection. This repository cannot certify their data behavior merely by linking to them.
 
-## Current privacy discrepancy requiring correction
+## Privacy behavior — resolved (2026-07-22)
 
-`privacy.html` states that there is no analytics and that no third-party trackers load. The current `vercel.json` Content Security Policy permits Google Analytics, Google Tag Manager, Vercel Analytics, and Speed Insights endpoints. Permission in a CSP is not proof that those scripts execute, but the mismatch must be resolved by either:
+`privacy.html` states no analytics, no cookies, and no third-party trackers. That claim is now accurate across every route:
 
-- removing unused analytics permissions from the CSP; or
-- updating the privacy notice and implementation to accurately disclose active services.
+- The Vercel Insights and Speed Insights beacons were removed from all pages that carried them (`/practice` and six `/university/tools/*` pages).
+- The behavioral-analytics apparatus on `/practice` (page views, scroll depth, section-visibility, and CTA-click events sent to an external endpoint with user-agent and referrer) was disabled; `trackEvent` is now a no-op.
+- No Google Analytics or Google Tag Manager scripts are present, and the `vercel.json` CSP does not permit them. The only `connect-src`/`form-action` endpoints are `'self'`, `aloha-dea-tracker.vercel.app` (voluntary form submissions only), and `courtlistener.com` (the citation verifier).
 
-No release should claim verified privacy behavior until the deployed network activity and every public route have been checked.
+Voluntary form submissions (booking a call, emailing, or submitting an assessment/enroll form) remain and are disclosed in the policy ("the only data collected is what you send"). Re-verify deployed network activity after any future change touching scripts or forms before re-certifying.
 
 ## Third-party assets and rights register
 
