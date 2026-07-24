@@ -108,7 +108,7 @@
 <!-- HERO -->
 <section class="hero" aria-labelledby="hero-h">
   <div class="wrap">
-    <span class="livebadge"><span class="dot" aria-hidden="true"></span> Reference snapshot · as of 2026-07-04</span>
+    <span class="livebadge"><span class="dot" aria-hidden="true"></span> Live · Federal Register feed + dated brief</span>
     <p class="eyebrow kicker">Regulatory Intelligence · Biopharma</p>
     <h1 class="display" id="hero-h">Your drug program's regulatory path, told straight. With the receipts.</h1>
     <p class="lead">A sourced instrument, not a headline scraper. Model <em>your</em> program's regulatory exposure by development stage, see exactly what generic AI gets confidently wrong about FDA pathways and exclusivity, and trace every figure to its primary source. It holds up in a board update <em>and</em> in a regulatory strategy memo.</p>
@@ -131,6 +131,48 @@
 </div>
 
 <!-- WHO IT'S FOR -->
+<style>
+.livefeed{margin-top:var(--s5)}
+.livefeed .live-list{list-style:none;padding:0;margin:var(--s4) 0 0;display:grid;gap:.55rem}
+.livefeed .live-item{padding:.7rem .9rem;background:var(--white);border:1px solid var(--line);border-radius:var(--r-sm)}
+.livefeed .live-item a{font-weight:600}
+.livefeed .live-meta{display:block;font-family:var(--mono);font-size:.68rem;color:var(--muted);margin-top:.25rem;text-transform:uppercase;letter-spacing:.06em}
+.livefeed .live-stamp{font-family:var(--mono);font-size:.72rem;color:var(--teal-d)}
+</style>
+<!-- LIVE FEDERAL REGISTER FEED -->
+<section class="section section--paper livefeed" id="live" aria-labelledby="live-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Live · Federal Register</p>
+      <h2 class="h2" id="live-h">The latest psychedelic drug rulemaking, pulled live</h2>
+      <p class="lead">This panel queries the Federal Register API from your browser every time the page loads, so it shows the primary source itself, not a stored summary. <span class="live-stamp" id="live-stamp"></span></p>
+    </div>
+    <ul class="live-list" id="live-list" aria-live="polite"><li class="small muted">Loading the latest from the Federal Register…</li></ul>
+    <p class="small muted" id="live-fallback" hidden>The live Federal Register feed is unavailable right now; the dated analysis below still applies (as of 2026-07-04).</p>
+  </div>
+</section>
+<script>
+(function(){
+  var url="https://www.federalregister.gov/api/v1/documents.json?order=newest&per_page=6&conditions%5Bterm%5D=psychedelic&fields%5B%5D=title&fields%5B%5D=publication_date&fields%5B%5D=html_url&fields%5B%5D=type";
+  var list=document.getElementById("live-list");
+  if(!list)return;
+  fetch(url).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(d){
+    if(!d.results||!d.results.length)throw 0;
+    list.innerHTML="";
+    d.results.forEach(function(x){
+      var li=document.createElement("li"); li.className="live-item";
+      var dt=x.publication_date||"";
+      var a=document.createElement("a"); a.href=x.html_url; a.target="_blank"; a.rel="noopener"; a.textContent=x.title;
+      var m=document.createElement("span"); m.className="live-meta"; m.textContent=(x.type||"")+(dt?(" · "+dt):"");
+      li.appendChild(a); li.appendChild(m); list.appendChild(li);
+    });
+    var s=document.getElementById("live-stamp"); if(s){s.textContent="Updated "+new Date().toLocaleString();}
+  }).catch(function(){
+    list.innerHTML=""; var fb=document.getElementById("live-fallback"); if(fb)fb.hidden=false;
+  });
+})();
+</script>
+
 <section class="section" aria-labelledby="aud-h">
   <div class="wrap">
     <div class="sec-head reveal">
