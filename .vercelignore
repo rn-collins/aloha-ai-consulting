@@ -1,0 +1,9 @@
+# Keep internal docs, governance notes, security policy, and scripts OUT of the public deploy.
+# The site's real pages are *.html (notes/, tools/, university/, monitors/, trust-stack/, etc.) — those stay.
+*.md
+*.py
+*.sh
+.DS_Store
+.gitignore
+docs/
+scripts/
