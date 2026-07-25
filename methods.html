@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Methods &amp; evidence — Aloha AI</title>
+<meta name="description" content="How Aloha AI sources its figures, what its tools can and cannot tell you, where the data is live versus dated, and the boundary between regulatory intelligence and legal advice. The claims made here, and the ones deliberately not made.">
+<link rel="canonical" href="https://aloha-ai-consulting.vercel.app/methods">
+<meta name="theme-color" content="#14201C">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Methods & evidence — Aloha AI">
+<meta property="og:description" content="Where every figure comes from, what the tools can and can't tell you, and what this practice claims and deliberately does not claim.">
+<meta property="og:image" content="./og-image.png">
+<meta property="og:url" content="https://aloha-ai-consulting.vercel.app/methods">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Methods & evidence — Aloha AI">
+<meta name="twitter:description" content="Sources, limits, live-versus-dated data, and the claims this practice makes and doesn't.">
+<meta name="twitter:image" content="./og-image.png">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<script>document.documentElement.className+=' js';</script>
+<link rel="stylesheet" href="./aloha-ds.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Methods & evidence — Aloha AI",
+"url":"https://aloha-ai-consulting.vercel.app/methods",
+"description":"Sourcing method, tool limits, live-versus-dated data, legal boundary, corrections policy, and the evidentiary basis for Aloha AI.",
+"publisher":{"@type":"Organization","name":"Aloha AI","parentOrganization":{"@type":"Organization","name":"Rayven-Nikkita Collins LLC"}}}
+</script>
+<style>
+  .hero{position:relative;overflow:hidden;background:radial-gradient(130% 120% at 82% -12%,#20362d 0%,#18271F 44%,var(--ink) 80%);
+    color:var(--cream);padding-block:clamp(44px,7vw,84px) clamp(36px,5vw,64px);border-bottom:3px solid var(--teal)}
+  .hero .display{color:var(--cream);max-width:22ch;margin-bottom:var(--s4)}
+  .hero .kicker{color:var(--teal-mint)}
+  .hero .lead{color:#CFDAD5;max-width:64ch}
+  .hero em{color:var(--teal-mint);font-style:normal}
+  .doc{max-width:76ch}
+  .doc h2{margin:var(--s7) 0 var(--s3)}
+  .doc h3{margin:var(--s5) 0 var(--s2)}
+  .doc p,.doc li{color:var(--muted);max-width:72ch}
+  .doc ul{padding-left:1.15rem;line-height:1.9}
+  .doc .meta{font-family:var(--mono);font-size:var(--fs-xs);color:var(--teal-d);letter-spacing:.04em}
+  .claims{display:grid;grid-template-columns:1fr 1fr;gap:var(--s4);margin:var(--s5) 0}
+  @media(max-width:720px){.claims{grid-template-columns:1fr}}
+  .claims .col{border:1px solid var(--line);border-radius:var(--r-sm);padding:var(--s5);background:var(--white)}
+  .claims .col.do{border-left:3px solid var(--teal)}
+  .claims .col.dont{border-left:3px solid var(--line-2)}
+  .claims h3{margin:0 0 var(--s3);color:var(--ink)}
+  .claims ul{margin:0;padding-left:1.1rem}
+  .claims li{margin-bottom:.5rem}
+  .ledger{border:1px solid var(--line);border-radius:var(--r-sm);background:var(--paper);padding:var(--s4) var(--s5);margin:var(--s4) 0;font-family:var(--mono);font-size:.78rem;color:var(--ink);line-height:1.9;overflow-x:auto}
+  .ledger .k{color:var(--teal-d);text-transform:uppercase;letter-spacing:.06em;font-size:.62rem}
+  .callout{border:1px solid var(--line);border-left:3px solid var(--teal);border-radius:var(--r-sm);background:var(--paper);padding:var(--s4) var(--s4);margin:var(--s5) 0}
+  .callout p{margin:0}
+  .status-tbl{width:100%;border-collapse:collapse;margin:var(--s4) 0;font-size:var(--fs-sm)}
+  .status-tbl th,.status-tbl td{text-align:left;padding:.55rem .6rem;border-bottom:1px solid var(--line);vertical-align:top}
+  .status-tbl th{font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;color:var(--teal-d)}
+  .pill{font-family:var(--mono);font-size:.62rem;letter-spacing:.05em;text-transform:uppercase;padding:.12rem .5rem;border-radius:var(--r-pill);border:1px solid var(--line-2)}
+  .pill.live{color:var(--teal-d);border-color:var(--teal);background:var(--teal-l)}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="index.html" aria-label="Aloha AI home">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#1B7A68"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#1B7A68" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      Aloha&nbsp;AI
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav__links" id="navlinks">
+<li><a href="/#services">Services</a></li>
+<li><a href="/build-your-team.html">Build a team</a></li>
+<li><a href="/services.html">AI teams</a></li>
+<li><a href="/strategy.html">Chief AI Office</a></li>
+<li><a href="/builds.html">Builds</a></li>
+<li><a href="/#tools">Tools</a></li>
+<li><a href="/#products">Products</a></li>
+<li><a href="/university">University</a></li>
+<li><a href="/methods.html" aria-current="page">Methods</a></li>
+<li><a href="/#about">About</a></li>
+<li><a href="/#faq">FAQ</a></li>
+<li class="nav__cta"><a class="btn btn--primary btn--sm" href="index.html#start">Get started →</a></li>
+</ul>
+    </nav>
+    <button class="nav__burger" id="burger" aria-label="Open menu" aria-controls="navlinks" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+<span id="top"></span>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-h">
+  <div class="wrap">
+    <p class="eyebrow kicker">Methods &amp; evidence</p>
+    <h1 class="display" id="hero-h">How to check the work before you rely on it.</h1>
+    <p class="lead">Aloha AI sells one thing above all others: outputs a regulator, a funder, or a court could not poke a hole in. That claim is worth nothing unless you can inspect it. This page is where you do that. It states where every figure comes from, what the tools can and cannot tell you, which data is live and which is a dated snapshot, and the claims this practice makes and the ones it deliberately does not.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="doc reveal">
+
+      <h2 class="h2">What this practice claims, and what it does not</h2>
+      <p>Most of the risk in this field comes from claims that outrun the evidence. The two columns below are the boundary. Everything else on the site is meant to stay inside it. If you find a page that steps outside, that is a defect. Tell me and I will correct it.</p>
+      <div class="claims">
+        <div class="col do">
+          <h3>Claims I stand behind</h3>
+          <ul>
+            <li>Every figure I publish traces to a dated primary source you can open yourself.</li>
+            <li>A human stays accountable for every consequential output. Nothing here runs unsupervised.</li>
+            <li>The person who scopes your work is the person who builds it. There is no team behind the curtain.</li>
+            <li>The regulatory analysis is grounded in the actual statutes, rules, and agency actions, cited by number.</li>
+            <li>The trust and adoption methods draw on the research literature on how people decide what to believe.</li>
+          </ul>
+        </div>
+        <div class="col dont">
+          <h3>Claims I do not make</h3>
+          <ul>
+            <li>This is not legal advice, and I am not a licensed attorney. I am a JD candidate.</li>
+            <li>The scored tools are not diagnostic or predictive instruments. They are structured self-reflection.</li>
+            <li>I do not claim clinical, actuarial, or scientific validity for any score the site produces.</li>
+            <li>I do not claim the dated monitors are live unless the page actually fetches current data.</li>
+            <li>I do not promise outcomes. I build the system and the evidence; the decision stays yours.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 class="h2">How every figure is sourced</h2>
+      <p>The regulated-intelligence products and monitors are built on one discipline. Every fact that matters is recorded with its source, the date it was verified, and what a reader is entitled to conclude from it. I call the record a verification ledger. It is the same structure whether the fact sits in a product PDF, a monitor, or a client brief.</p>
+      <p class="meta">A single ledger entry looks like this:</p>
+      <div class="ledger" aria-label="Example verification ledger entry">
+        <div><span class="k">Substance</span> &nbsp; Psilocybin</div>
+        <div><span class="k">Fact</span> &nbsp; 2026 DEA aggregate production quota = 50,000 g (up from 30,000 g in 2025)</div>
+        <div><span class="k">Source</span> &nbsp; 91 Fed. Reg. 287 (Jan. 5, 2026); FR Doc 2025-24277</div>
+        <div><span class="k">Date verified</span> &nbsp; Q2 2026</div>
+        <div><span class="k">Next-review trigger</span> &nbsp; annual APQ publication cycle (Q1)</div>
+        <div><span class="k">What this supports</span> &nbsp; the authorized supply figure only; not a demand forecast or a market projection</div>
+      </div>
+      <p>The last line is the one that matters most. A source establishes a fact. It does not license every inference someone might want to draw from it. The ledger keeps those separate on purpose, because conflating them is how confident, well-sourced analysis still ends up wrong.</p>
+
+      <h2 class="h2">Which data is live, and which is a dated snapshot</h2>
+      <p>Some pages fetch current primary-source data in your browser as they load. Others are analytical snapshots, accurate as of a stated date and labeled that way. The difference is not a matter of polish. It is whether a public, machine-readable source exists for that subject. Where one exists, the page is genuinely live. Where none exists, the page says "as of" and gives the date, rather than implying a freshness it cannot deliver.</p>
+      <table class="status-tbl">
+        <thead><tr><th>Surface</th><th>Status</th><th>Source</th></tr></thead>
+        <tbody>
+          <tr><td>Cannabis rescheduling, biopharma regulatory, psychedelic radar, private AI risk</td><td><span class="pill live">Live</span></td><td>Federal Register API, queried in-browser on load</td></tr>
+          <tr><td>Deployed dashboards (DEA tracker, AI governance, suppression register, and others)</td><td><span class="pill live">Live</span></td><td>Dedicated data feeds, updated on a cadence</td></tr>
+          <tr><td>Remaining monitors (brand, creative, culture, IP, market, suppression audit)</td><td><span class="pill">Dated snapshot</span></td><td>Analyst-built, labeled with a verification date; no public live feed exists for these subjects yet</td></tr>
+        </tbody>
+      </table>
+      <p>If a monitor you need is a dated snapshot and you want it live, that is a build I can quote. It requires a real data source, so I will tell you honestly whether one exists before taking the work.</p>
+
+      <h2 class="h2">The interactive tools are self-reflection, not diagnosis</h2>
+      <p>The readiness scorecards, governance checkers, and assessments return a score and a tier. Read that number for what it is. It reflects the answers you gave, mapped against a structured rubric, to surface where attention is likely warranted. It is a conversation starter, not a measurement of a hidden trait.</p>
+      <p>None of these tools has been validated as a diagnostic or predictive instrument, and I do not present them as one. They do not diagnose your organization, predict an outcome, or substitute for review by a qualified professional in the relevant domain. Each tool states its own construct and limits at the point of use. If a score would carry real consequences for a decision, treat it as a prompt to look closer, not as the finding itself.</p>
+
+      <h2 class="h2">The legal boundary</h2>
+      <p>Much of this work sits next to law: controlled-substances scheduling, platform policy, IP enforcement, professional-responsibility duties around AI. I read primary law carefully and cite it precisely. I am a JD candidate in administrative and regulatory law, not a licensed attorney. Nothing on this site is legal advice, creates an attorney–client relationship, or should be relied on in place of counsel admitted in your jurisdiction. What I provide is regulatory intelligence: the sourced, dated record you and your lawyer can both work from.</p>
+
+      <h2 class="h2">Corrections, dating, and versioning</h2>
+      <p>Regulated facts change. A quota is revised, a rule is finalized, a case is decided. Two commitments follow from that. First, dated material carries its date, so you always know how fresh it is. Second, when something here is wrong, I fix it and, where it affected a published figure, I say what changed. This page itself is maintained. If you find an error, the fastest way to get it corrected is to send it to me directly.</p>
+      <div class="callout"><p>This page was last reviewed in 2026. The claims and boundaries above govern every other page on the site. Where a specific figure appears elsewhere, its own source and date travel with it.</p></div>
+
+      <h2 class="h2">Why trust is treated as a research problem here</h2>
+      <p>The through-line of this practice is that adoption of a tool has less to do with whether the tool is correct than with how a person receives it. That is not a slogan. It comes out of the research on source credibility, elaboration, and belief formation, and out of my own work in the psychology of how people process information under stakes. The design of the assessments, the way evidence is disclosed in layers, and the insistence on human accountability all follow from it. Selected background: Hovland &amp; Weiss on source credibility (1951); Petty &amp; Cacioppo's elaboration-likelihood work on how argument strength and processing route interact; and Elisha &amp; Collins (2022), <em>Policy Insights from the Behavioral and Brain Sciences</em>, 9(1), 11–17, on within-group variation in how people absorb consequential information.</p>
+
+      <h2 class="h2">Privacy and data use</h2>
+      <p>The interactive tools run in your browser and send nothing anywhere unless you choose to submit a form. The only information I ever hold is what you deliberately send by booking a call, emailing, or submitting an assessment. The full detail is on the <a href="privacy.html">privacy page</a>.</p>
+
+      <h2 class="h2">For the record</h2>
+      <p>If you are evaluating this work as a funder, partner, journalist, or scholar and you want to inspect a source, question a method, or flag an error, reach me directly. Prefer email? <a href="#" data-email>Email RN</a>. Or <a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">book a call</a>. <span id="emailReveal" hidden></span></p>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer" aria-labelledby="foot-h">
+  <div class="wrap">
+    <h2 id="foot-h" class="small" style="position:absolute;left:-999px">Site footer</h2>
+    <div class="footer__grid">
+      <div>
+        <a class="nav__brand" href="index.html" style="color:var(--cream)" aria-label="Aloha AI home"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#7FE0C4"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#7FE0C4" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg> Aloha&nbsp;AI</a>
+        <p class="small" style="margin-top:var(--s3);max-width:38ch;color:#9FB6AE">AI implementation built around how humans actually trust and use it, for regulated or reputation-sensitive professions.</p>
+      </div>
+      <div>
+        <h3>Services</h3>
+        <ul>
+          <li><a href="strategy.html">Strategy &amp; Fractional Leadership</a></li>
+          <li><a href="intelligence.html">Regulatory &amp; Market Intelligence</a></li>
+          <li><a href="content.html">Content &amp; Adoption Systems</a></li>
+          <li><a href="legal-ai.html">Legal AI Workflow</a></li>
+          <li><a href="services.html">AI Teams for Business</a></li>
+          <li><a href="ai-native-coo.html">AI-Native COO</a></li>
+          <li><a href="launch-stack.html">Launch Stack</a></li>
+          <li><a href="builds.html">Builds → the proof wall</a></li>
+          <li><a href="/stacks">Applied stacks</a></li>
+          <li><a href="index.html#tools">Live tools</a></li>
+          <li><a href="/tools">All free tools</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Practice</h3>
+        <ul>
+          <li><a href="about.html">About RN Collins</a></li>
+          <li><a href="methods.html">Methods &amp; evidence</a></li>
+          <li><a href="/notes">Notes</a></li>
+          <li><a href="https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous" target="_blank" rel="noopener">Book a call</a></li>
+          <li><a href="https://rn-portfolio-khaki.vercel.app" target="_blank" rel="noopener">Portfolio → RN Builds</a></li>
+          <li><a href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="disc small">Aloha AI provides regulatory intelligence and AI systems, not legal advice. RN Collins is a JD candidate, not a licensed attorney; nothing here is legal or tax advice or an attorney–client relationship.</p>
+    <p class="fine">Aloha AI · a DBA of Rayven-Nikkita Collins LLC · Honolulu, HI · No tracking, no cookies · © 2026</p>
+  </div>
+</footer>
+
+<script>
+  (function(){var b=document.getElementById('burger'),l=document.getElementById('navlinks');
+  function set(o){b.setAttribute('aria-expanded',o);l.classList.toggle('open',o);b.setAttribute('aria-label',o?'Close menu':'Open menu');}
+  b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true');});
+  l.addEventListener('click',function(e){if(e.target.tagName==='A')set(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});})();
+  (function(){var nav=document.querySelector('.nav');if(!nav)return;var on=function(){nav.classList.toggle('is-stuck',window.scrollY>8);};on();window.addEventListener('scroll',on,{passive:true});})();
+  (function(){var u='collins.ra',dm='northeastern.edu',a=u+'@'+dm,su=encodeURIComponent('Aloha AI — methods inquiry');
+  document.querySelectorAll('[data-email]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();
+  try{navigator.clipboard&&navigator.clipboard.writeText(a);}catch(_){}
+  var o=document.getElementById('emailReveal');if(o){o.hidden=false;o.innerHTML='Copied ✓ &nbsp;<a href="mailto:'+a+'?subject='+su+'" style="color:#7FE0C4">'+a+'</a> &nbsp;·&nbsp; <a href="https://mail.google.com/mail/?view=cm&fs=1&to='+a+'&su='+su+'" target="_blank" rel="noopener" style="color:#7FE0C4">Open in Gmail</a>';}
+  window.location.href='mailto:'+a+'?subject='+su;});});})();
+  (function(){if(matchMedia('(prefers-reduced-motion:reduce)').matches){document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in');});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(e){io.observe(e);});})();
+</script>
+</body>
+</html>
