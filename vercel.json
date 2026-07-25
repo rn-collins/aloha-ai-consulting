@@ -4,7 +4,7 @@
   "rewrites": [
     {
       "source": "/",
-      "destination": "/homepage-v2.html"
+      "destination": "/homepage-v2"
     }
   ],
   "headers": [
