@@ -249,3 +249,43 @@ test('renders a declarative browser-local operational tool', () => {
   assert.match(html, /processed in this browser/);
   assert.match(html, /Obligation/);
 });
+
+test('renders declarative structured forms for documents and scored diagnostics', () => {
+  const documentTool = {
+    ...resource('role-contract', [{ type: 'supports', target: 'diagnostic' }]),
+    kind: 'tool',
+    implementationStatus: 'Public',
+    documentation: ['Form contract'],
+    demo: {
+      type: 'structured-form',
+      mode: 'document',
+      outputTitle: 'Agent Role Contract',
+      downloadName: 'agent-role-contract.md',
+      fields: [{ id: 'owner', label: 'Owner', type: 'text', hint: 'A human owner' }]
+    }
+  };
+  const diagnostic = {
+    ...resource('diagnostic', [{ type: 'supports', target: 'role-contract' }]),
+    kind: 'service',
+    deliverables: ['Diagnostic'],
+    timeline: 'Two weeks',
+    fit: ['A bounded question'],
+    demo: {
+      type: 'structured-form',
+      mode: 'score',
+      maxScore: 3,
+      fields: [{ id: 'signal', label: 'Signal', type: 'radio', options: [{ value: 'clear', label: 'Clear', dimension: 'fluency', score: 3 }] }],
+      bands: [{ min: 0, title: 'Review', summary: 'Inspect the signal.' }],
+      recommendations: [{ dimension: 'fluency', text: 'Reduce friction.' }]
+    }
+  };
+  const registry = new Map([[documentTool.id, documentTool], [diagnostic.id, diagnostic]]);
+  const documentHtml = renderStructuredPage({ resource: documentTool, registry });
+  const diagnosticHtml = renderStructuredPage({ resource: diagnostic, registry });
+  assert.match(documentHtml, /id="structured-form-tool"/);
+  assert.match(documentHtml, /Download Markdown/);
+  assert.match(documentHtml, /new Blob/);
+  assert.match(diagnosticHtml, /Generate diagnostic/);
+  assert.match(diagnosticHtml, /Mechanisms surfaced/);
+  assert.match(diagnosticHtml, /nothing you enter is sent or stored/i);
+});
