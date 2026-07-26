@@ -57,6 +57,8 @@
       "learningHub",
       "course",
       "lesson",
+      "playbook",
+      "template",
       "assessment"
     ],
     "recommendations": [
