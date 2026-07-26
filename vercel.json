@@ -20,7 +20,8 @@
     { "source": "/assessment", "destination": "/university/assessment", "permanent": true }
   ],
   "rewrites": [
-    { "source": "/", "destination": "/homepage-v3" }
+    { "source": "/", "destination": "/homepage-v3" },
+    { "source": "/services", "destination": "/services-v2" }
   ],
   "headers": [
     {
