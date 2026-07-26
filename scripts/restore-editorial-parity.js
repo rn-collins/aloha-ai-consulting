@@ -165,19 +165,29 @@ function extractEditorialContent(html) {
 }
 
 function normalize(value) {
-  return String(value || '').replace(/\s+/g, ' ').replace(/\s+([.,;:!?])/g, '$1').trim();
+  return String(value || '')
+    .replace(/\s+/g, ' ')
+    .replace(/\s+([.,;:!?])/g, '$1')
+    .replace(/([.!?])([A-Z])/g, '$1 $2')
+    .trim();
 }
 
 function decode(value) {
-  return String(value)
-    .replace(/&nbsp;/gi, ' ')
-    .replace(/&amp;/gi, '&')
-    .replace(/&lt;/gi, '<')
-    .replace(/&gt;/gi, '>')
-    .replace(/&quot;/gi, '"')
-    .replace(/&#0?39;|&apos;/gi, "'")
-    .replace(/&#(\d+);/g, (_, code) => String.fromCodePoint(Number(code)))
-    .replace(/&#x([0-9a-f]+);/gi, (_, code) => String.fromCodePoint(Number.parseInt(code, 16)));
+  const named = {
+    amp: '&', apos: "'", bull: '•', copy: '©', gt: '>', hellip: '…', laquo: '«',
+    ldquo: '“', le: '≤', lsquo: '‘', lt: '<', mdash: '—', middot: '·', nbsp: ' ',
+    ndash: '–', quot: '"', raquo: '»', rdquo: '”', reg: '®', rarr: '→', rsquo: '’',
+    sect: '§', times: '×', trade: '™'
+  };
+  let decoded = String(value);
+  for (let pass = 0; pass < 2; pass += 1) {
+    decoded = decoded.replace(/&(#x[0-9a-f]+|#\d+|[a-z][a-z0-9]+);/gi, (entity, code) => {
+      if (code.startsWith('#x')) return String.fromCodePoint(Number.parseInt(code.slice(2), 16));
+      if (code.startsWith('#')) return String.fromCodePoint(Number(code.slice(1)));
+      return named[code.toLowerCase()] ?? entity;
+    });
+  }
+  return decoded;
 }
 
 function jsonFiles(directory) {

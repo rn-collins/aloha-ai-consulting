@@ -781,7 +781,7 @@
         "blocks": [
           {
             "type": "paragraph",
-            "text": "The clearest cautionary tale is Mata v. Avianca. In 2023, in the U.S. District Court for the Southern District of New York, lawyers filed a brief citing several court decisions to support their client's case. The problem: the cases did not exist. The attorneys had used ChatGPT for legal research, and the tool had hallucinated six judicial opinions, complete with case names, citations, quotations, and reasoning that read like the real thing. When opposing counsel and the court could not find the cases, the lawyers asked ChatGPT to confirm them, and the tool insisted they were real and could be found on Westlaw and LexisNexis. They were not."
+            "text": "The clearest cautionary tale is Mata v. Avianca. In 2023, in the U. S. District Court for the Southern District of New York, lawyers filed a brief citing several court decisions to support their client's case. The problem: the cases did not exist. The attorneys had used ChatGPT for legal research, and the tool had hallucinated six judicial opinions, complete with case names, citations, quotations, and reasoning that read like the real thing. When opposing counsel and the court could not find the cases, the lawyers asked ChatGPT to confirm them, and the tool insisted they were real and could be found on Westlaw and LexisNexis. They were not."
           },
           {
             "type": "paragraph",
