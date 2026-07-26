@@ -7,21 +7,87 @@
   "summary": "The authenticated environment where assessments, evidence, recommendations, approvals, projects, generated reports, and governed AI workflows become operational work.",
   "audience": "Clients, partners, researchers, reviewers, learners, and operators using Aloha AI systems.",
   "maturity": "Beta",
-  "topics": ["workspace", "workflow", "evidence", "governance"],
-  "architecture": ["Identity and access", "Resource context", "Evidence and drafts", "Review and approvals", "Projects and delivery", "Evaluation and audit"],
+  "topics": [
+    "workspace",
+    "workflow",
+    "evidence",
+    "governance"
+  ],
+  "architecture": [
+    "Identity and access",
+    "Resource context",
+    "Evidence and drafts",
+    "Review and approvals",
+    "Projects and delivery",
+    "Evaluation and audit"
+  ],
   "implementationStatus": "Authenticated platform foundations and review-oriented workflows are under active implementation.",
-  "documentation": ["Access and role model", "Resource and workflow contracts", "Review and approval behavior", "Data and evidence handling"],
-  "roadmap": ["Connect public resource IDs to authenticated actions", "Add saved learning and assessment progress", "Expand project and delivery views"],
-  "changelog": ["2026-07: workspace platform foundations defined", "2026-07: shared knowledge model integration initiated"],
+  "documentation": [
+    "Access and role model",
+    "Resource and workflow contracts",
+    "Review and approval behavior",
+    "Data and evidence handling"
+  ],
+  "roadmap": [
+    "Connect public resource IDs to authenticated actions",
+    "Add saved learning and assessment progress",
+    "Expand project and delivery views"
+  ],
+  "changelog": [
+    "2026-07: workspace platform foundations defined",
+    "2026-07: shared knowledge model integration initiated"
+  ],
   "licensing": "Workspace access is provided through defined engagements, pilots, programs, or licensed implementations.",
-  "evidence": ["Authenticated workflow records", "Versioned evidence and approvals", "Evaluation and delivery logs"],
-  "methodology": ["Carry public resource context into the workspace", "Collect bounded inputs", "Generate inspectable intermediate work", "Require review and approval", "Preserve delivery and evaluation records"],
-  "assumptions": ["Users have appropriate authorization", "Sensitive work is configured for the relevant access and retention requirements"],
-  "limitations": ["Feature availability varies by engagement and maturity", "Workspace output does not replace accountable professional judgment"],
+  "evidence": [
+    "Authenticated workflow records",
+    "Versioned evidence and approvals",
+    "Evaluation and delivery logs"
+  ],
+  "methodology": [
+    "Carry public resource context into the workspace",
+    "Collect bounded inputs",
+    "Generate inspectable intermediate work",
+    "Require review and approval",
+    "Preserve delivery and evaluation records"
+  ],
+  "assumptions": [
+    "Users have appropriate authorization",
+    "Sensitive work is configured for the relevant access and retention requirements"
+  ],
+  "limitations": [
+    "Feature availability varies by engagement and maturity",
+    "Workspace output does not replace accountable professional judgment"
+  ],
   "relationships": [
-    {"type": "implements", "target": "trust-stack"},
-    {"type": "supports", "target": "build-your-team"},
-    {"type": "supports", "target": "ai-native-coo"},
-    {"type": "teaches", "target": "university"}
-  ]
+    {
+      "type": "implements",
+      "target": "trust-stack"
+    },
+    {
+      "type": "supports",
+      "target": "build-your-team"
+    },
+    {
+      "type": "supports",
+      "target": "ai-native-coo"
+    },
+    {
+      "type": "teaches",
+      "target": "university"
+    }
+  ],
+  "workspace": {
+    "acceptsResourceKinds": [
+      "service",
+      "product",
+      "tool",
+      "monitor",
+      "research",
+      "build",
+      "learningHub",
+      "course",
+      "lesson",
+      "assessment"
+    ]
+  }
 }
