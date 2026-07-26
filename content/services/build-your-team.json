@@ -1,0 +1,24 @@
+{
+  "id": "build-your-team",
+  "kind": "service",
+  "pathname": "/build-your-team",
+  "eyebrow": "AI-native work systems",
+  "title": "Build an AI-enabled team with explicit roles, permissions, review gates, and accountable owners.",
+  "summary": "Aloha AI helps organizations design human and agent workflows that allocate work without obscuring responsibility, authority, confidentiality, or quality control.",
+  "audience": "Leaders introducing agents, automation, or AI-assisted operations across functions.",
+  "maturity": "Beta",
+  "topics": ["agents", "teams", "workflow-design", "governance"],
+  "deliverables": ["Work and decision inventory", "Human-agent role map", "Permission and escalation matrix", "Evaluation cases", "Implementation and maintenance plan"],
+  "timeline": "A bounded team and workflow design engagement generally begins with a 2–4 week diagnostic and architecture phase.",
+  "fit": ["Teams are using multiple AI tools without coordination", "Work is duplicated or dropped between people and systems", "Agent access and authority are unclear"],
+  "evidence": ["Current workflows and role descriptions", "System access and security requirements", "Representative tasks, errors, and approval histories"],
+  "methodology": ["Decompose work into decisions and tasks", "Assign human and machine roles", "Define permissions and prohibited actions", "Create review and recovery paths", "Pilot and evaluate before expansion"],
+  "assumptions": ["Accountable human owners remain assigned", "Access controls can be configured and audited"],
+  "limitations": ["Agents do not become accountable professionals", "Automation quality depends on system access, evaluation coverage, and maintained instructions"],
+  "relationships": [
+    {"type": "implements", "target": "strategy"},
+    {"type": "available_in_workspace", "target": "workspace"},
+    {"type": "depends_on", "target": "trust-stack"},
+    {"type": "extends", "target": "services"}
+  ]
+}
