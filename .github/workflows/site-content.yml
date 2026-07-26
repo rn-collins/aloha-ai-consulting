@@ -2,18 +2,24 @@ name: Structured site validation
 
 on:
   push:
+    branches: [main]
     paths:
-      - 'content/site/**'
+      - 'content/**'
       - 'lib/site/**'
       - 'scripts/build-site.js'
+      - 'scripts/validate-generated-html.js'
       - 'package.json'
+      - '.nvmrc'
       - '.github/workflows/site-content.yml'
   pull_request:
     paths:
-      - 'content/site/**'
+      - 'content/**'
       - 'lib/site/**'
       - 'scripts/build-site.js'
+      - 'scripts/validate-generated-html.js'
       - 'package.json'
+      - '.nvmrc'
+      - '.github/workflows/site-content.yml'
 
 permissions:
   contents: read
@@ -25,10 +31,9 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
-      - name: Validate structured content
-        run: npm run site:validate
-      - name: Build generated pages
-        run: npm run site:build
-      - name: Confirm deterministic output
-        run: npm run site:check
+          node-version-file: '.nvmrc'
+          cache: npm
+      - name: Install dependencies
+        run: npm install --ignore-scripts
+      - name: Validate, build, and inspect generated pages
+        run: npm run site:ci
