@@ -121,7 +121,7 @@ test('rejects invalid Workspace and recommendation mappings', () => {
   assert.ok(errors.includes('scorecard: recommendation broken has unresolved resource missing'));
 });
 
-test('inventories handwritten routes without classifying compiler outputs as legacy', () => {
+test('inventories handwritten routes and alternate-file shadows without classifying compiler outputs as legacy', () => {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'aloha-migration-'));
   fs.mkdirSync(path.join(root, 'university', 'learn', 'alpha'), { recursive: true });
   fs.writeFileSync(path.join(root, 'university', 'learn', 'lesson.html'), '<html></html>');
@@ -131,9 +131,10 @@ test('inventories handwritten routes without classifying compiler outputs as leg
   const outputs = new Map([['/topics', '<html></html>']]);
   fs.writeFileSync(path.join(root, 'topics.html'), '<html></html>');
   const inventory = legacyMigrationInventory(root, [alpha], outputs);
-  assert.equal(inventory.count, 2);
-  assert.deepEqual(inventory.byFamily, { governance: 1, university: 1 });
-  assert.deepEqual(inventory.routes.map((route) => route.pathname), ['/about', '/university/learn/lesson']);
+  assert.equal(inventory.count, 3);
+  assert.deepEqual(inventory.byFamily, { governance: 1, university: 2 });
+  assert.deepEqual(inventory.routes.map((route) => route.pathname), ['/about', '/university/learn/alpha', '/university/learn/lesson']);
+  assert.equal(inventory.routes.find((route) => route.pathname === '/university/learn/alpha').status, 'shadowing');
   fs.rmSync(root, { recursive: true, force: true });
 });
 
