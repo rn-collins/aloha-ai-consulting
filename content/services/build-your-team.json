@@ -18,7 +18,7 @@
   "relationships": [
     {"type": "implements", "target": "strategy"},
     {"type": "available_in_workspace", "target": "workspace"},
-    {"type": "depends_on", "target": "trust-stack"},
+    {"type": "uses", "target": "trust-stack"},
     {"type": "extends", "target": "services"}
   ]
 }
