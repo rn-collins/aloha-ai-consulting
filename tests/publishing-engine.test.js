@@ -1,6 +1,9 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { derivePlatform, generatedOutputs, validatePlatform } from '../lib/site/publishing-engine.js';
+import { derivePlatform, generatedOutputs, legacyMigrationInventory, validatePlatform } from '../lib/site/publishing-engine.js';
+import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
 
 function resource(id, relationships) {
   return {
@@ -115,4 +118,20 @@ test('rejects invalid Workspace and recommendation mappings', () => {
   assert.ok(errors.includes('scorecard: unsupported assessment resource kind unknown'));
   assert.ok(errors.includes('scorecard: recommendation broken must define condition'));
   assert.ok(errors.includes('scorecard: recommendation broken has unresolved resource missing'));
+});
+
+test('inventories handwritten routes without classifying compiler outputs as legacy', () => {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'aloha-migration-'));
+  fs.mkdirSync(path.join(root, 'university', 'learn'), { recursive: true });
+  fs.writeFileSync(path.join(root, 'alpha.html'), '<html></html>');
+  fs.writeFileSync(path.join(root, 'university', 'learn', 'lesson.html'), '<html></html>');
+  fs.writeFileSync(path.join(root, 'about.html'), '<html></html>');
+  const alpha = resource('alpha', []);
+  const outputs = new Map([['/topics', '<html></html>']]);
+  fs.writeFileSync(path.join(root, 'topics.html'), '<html></html>');
+  const inventory = legacyMigrationInventory(root, [alpha], outputs);
+  assert.equal(inventory.count, 2);
+  assert.deepEqual(inventory.byFamily, { governance: 1, university: 1 });
+  assert.deepEqual(inventory.routes.map((route) => route.pathname), ['/about', '/university/learn/lesson']);
+  fs.rmSync(root, { recursive: true, force: true });
 });

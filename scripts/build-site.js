@@ -3,7 +3,7 @@ import path from 'node:path';
 import process from 'node:process';
 import { renderStructuredPage } from '../lib/site/structured-renderer.js';
 import { supportedKinds, validateTemplateContract } from '../lib/site/template-registry.js';
-import { derivePlatform, generatedOutputs, validateGeneratedSite, validatePlatform, writeOutputs } from '../lib/site/publishing-engine.js';
+import { derivePlatform, generatedOutputs, legacyMigrationInventory, validateGeneratedSite, validatePlatform, writeOutputs } from '../lib/site/publishing-engine.js';
 
 const root = process.cwd();
 const contentRoot = path.join(root, 'content');
@@ -22,6 +22,7 @@ if (errors.length) {
 }
 
 const derived = generatedOutputs(resources, platform);
+derived.set('/api/migration-inventory.json', JSON.stringify(legacyMigrationInventory(root, resources, derived), null, 2));
 if (mode === 'validate') {
   console.log(`Validated ${resources.length} canonical resources across ${platform.collections.size} generated collections.`);
   console.log(`Derived ${platform.topics.size} topics, ${platform.audiences.size} audiences, ${platform.industries.size} industries, and ${platform.graph.edges.length} graph edges.`);
