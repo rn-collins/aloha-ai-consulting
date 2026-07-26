@@ -1,0 +1,156 @@
+[
+  {
+    "id": "home",
+    "kind": "institutional",
+    "pathname": "/",
+    "eyebrow": "Aloha AI · knowledge, decision, and operating systems",
+    "title": "Build the system beneath the answer.",
+    "summary": "Aloha AI turns fragmented expertise, primary evidence, complex rules, professional judgment, and recurring work into research systems, decision tools, governed AI workflows, educational products, and operating infrastructure people can actually use.",
+    "audience": "Founders, institutions, legal and compliance teams, educators, researchers, regulated operators, and expert-led organizations working on consequential or unusually complex problems.",
+    "maturity": "Production",
+    "topics": ["systems-architecture", "ai-strategy", "research-intelligence", "decision-systems", "governed-workflows", "education-products"],
+    "industries": ["professional-services", "legal", "health", "education", "regulated-markets", "emerging-industries"],
+    "keywords": ["Aloha AI", "knowledge systems", "decision systems", "operating systems", "AI governance", "regulatory intelligence", "AI adoption"],
+    "actions": [
+      {"label": "Explore services", "href": "/services"},
+      {"label": "See working systems", "href": "/builds"},
+      {"label": "Use the tools", "href": "/tools"}
+    ],
+    "institutionalSections": [
+      {
+        "eyebrow": "What this practice is",
+        "title": "A systems practice for questions too consequential or too complicated for a generic template.",
+        "intro": "The interface may be a website, dashboard, agent, assessment, portal, curriculum, report, or monitor. The actual work is defining what the system should know, which sources it should trust, how decisions should be made, where humans remain responsible, and how the system stays current.",
+        "items": [
+          {"title": "For", "text": "Founders, institutions, legal and compliance teams, educators, researchers, regulated operators, and expert-led organizations."},
+          {"title": "Produces", "text": "Research engines, decision systems, governed workflows, products, curricula, licensing assets, and operational plans."},
+          {"title": "Operating principle", "text": "Visible evidence, explicit logic, bounded automation, and accountable human judgment."}
+        ]
+      },
+      {
+        "eyebrow": "The system beneath the interface",
+        "title": "A credible answer needs more than a polished surface.",
+        "items": [
+          {"title": "Evidence", "text": "Defined source hierarchies, primary records, versioned research, and visible uncertainty make the factual basis inspectable."},
+          {"title": "Decision logic", "text": "Rules, exceptions, permissions, escalation paths, and review gates turn output into accountable action."},
+          {"title": "Human adoption", "text": "Trust, learning, motivation, context, and habit determine whether a technically capable system becomes usable infrastructure."},
+          {"title": "Operation", "text": "Ownership, evaluation, governance, and maintenance keep a working system from becoming an abandoned demonstration."}
+        ]
+      },
+      {
+        "eyebrow": "What Aloha AI builds",
+        "title": "Four system families, designed around the work rather than the software.",
+        "items": [
+          {"title": "Research and intelligence systems", "text": "Discover, verify, compare, classify, monitor, and maintain legal, scientific, regulatory, market, opportunity, or institutional information.", "href": "/intelligence"},
+          {"title": "Decision and assessment systems", "text": "Adaptive intake, matching, eligibility, scoring, classification, readiness, compliance review, and guided decisions.", "href": "/tools"},
+          {"title": "Knowledge and workflow systems", "text": "Internal agents, procedural copilots, evidence pipelines, approval systems, dashboards, and operational knowledge infrastructure.", "href": "/build-your-team"},
+          {"title": "Products, programs, and licensed assets", "text": "Client portals, curricula, specialized search, advisory products, datasets, templates, playbooks, and institutional licensing packages.", "href": "/partners"}
+        ]
+      },
+      {
+        "eyebrow": "Ways to enter the practice",
+        "title": "Start with the problem you already have.",
+        "items": [
+          {"title": "AI strategy and fractional leadership", "text": "Operating strategy, governance, implementation ownership, executive support, and fractional AI leadership.", "href": "/strategy"},
+          {"title": "Regulatory and market intelligence", "text": "Primary-source research, monitoring, comparison, verification, decision packets, and maintained intelligence layers.", "href": "/intelligence"},
+          {"title": "Content and adoption systems", "text": "Research-to-publication systems, voice architecture, training, content operations, and institutional adoption.", "href": "/content"},
+          {"title": "Legal AI workflow", "text": "Verification-gated legal workflows designed around confidentiality, professional responsibility, review, and evidence.", "href": "/legal-ai"},
+          {"title": "AI work systems and supervised teams", "text": "Role contracts, permissions, source rules, review gates, evaluations, escalation, and accountable ownership.", "href": "/build-your-team"},
+          {"title": "Products, programs, and licensing", "text": "Adapt an existing framework, curriculum, dataset, system, assessment, or digital product.", "href": "/partners"}
+        ]
+      },
+      {
+        "eyebrow": "The transformation",
+        "title": "From valuable knowledge to infrastructure others can operate.",
+        "items": [
+          {"title": "Scattered documents", "text": "Become structured, maintained knowledge."},
+          {"title": "Expertise held by a few people", "text": "Becomes guided workflows others can use."},
+          {"title": "Repeated manual research", "text": "Becomes maintained intelligence from defined sources."},
+          {"title": "Unwritten judgment", "text": "Becomes explicit logic, exceptions, and review paths."},
+          {"title": "AI experiments", "text": "Become operational systems with accountable ownership."},
+          {"title": "One-time services", "text": "Become reusable products, methods, programs, and licensed assets."}
+        ]
+      },
+      {
+        "eyebrow": "Products, tools, and learning",
+        "title": "Use the ecosystem before commissioning a custom build.",
+        "items": [
+          {"title": "Tools", "text": "Readiness, citation, exposure, workflow, and risk tools.", "href": "/tools"},
+          {"title": "Regulated Trust Stack", "text": "Evidence, compliance, production, persuasion, distribution, and defense systems.", "href": "/trust-stack"},
+          {"title": "Aloha AI University", "text": "Lessons, playbooks, templates, use cases, assessments, and courses.", "href": "/university"},
+          {"title": "Aloha AI Workspace", "text": "Projects, workflows, evidence, reviews, evaluations, and delivery controls.", "href": "/platform"}
+        ]
+      },
+      {
+        "eyebrow": "Commercial paths",
+        "title": "Start contained. Expand when the system earns it.",
+        "items": [
+          {"title": "Systems Audit", "subtitle": "$1,500–$2,500 · about 2 weeks", "text": "Map the workflow, knowledge, tools, risks, decision rights, and highest-value intervention.", "href": "/engagements"},
+          {"title": "Working System", "subtitle": "From $5,000 · commonly 4–6 weeks", "text": "Build a research engine, monitor, agent workflow, assessment, dashboard, portal, or knowledge product.", "href": "/engagements"},
+          {"title": "Fractional Leadership", "subtitle": "From $4,000/month", "text": "Ongoing strategy, implementation, governance, maintenance, evaluation, and operating ownership.", "href": "/strategy"},
+          {"title": "Licensing or Partnership", "subtitle": "Scoped to the asset, rights, and implementation", "text": "Adapt an existing framework, dataset, curriculum, assessment, system, or product.", "href": "/partners"}
+        ]
+      },
+      {
+        "id": "start",
+        "eyebrow": "About RN Collins",
+        "title": "The practice was built across disciplines where evidence, judgment, and implementation cannot be separated.",
+        "intro": "RN Collins works across law, neuroscience, psychology, education, research, emerging industries, product development, and AI systems. The recurring task is to understand how knowledge and decisions move through a complex environment, expose the hidden structure, and build something others can use.",
+        "items": [
+          {"title": "Interdisciplinary formation", "text": "Psychology, developmental science, neuroscience, medical education, legal education, research operations, and AI systems each contribute a different part of the method.", "href": "/about"},
+          {"title": "Regulated and consequential work", "text": "The practice is designed for settings where evidence, rules, judgment, trust, and accountability cannot be separated.", "href": "/methods"},
+          {"title": "Proof through working systems", "text": "Public tools, maintained resources, documented methods, and structured engagements make the underlying capability inspectable.", "href": "/builds"}
+        ]
+      }
+    ],
+    "evidence": ["Primary sources and versioned research appropriate to each system", "Representative workflows, policies, decisions, and failure cases", "Documented methods, evaluation records, and explicit status language", "Professional and institutional authority where consequential judgment is required"],
+    "methodology": ["Define the recurring work, consequential decision, or valuable body of knowledge", "Map the evidence, rules, roles, tools, and failure conditions", "Separate deterministic logic, generative assistance, and accountable human judgment", "Build the smallest useful system and test it against realistic cases", "Assign ownership, governance, evaluation, and maintenance before expansion"],
+    "assumptions": ["Clients and partners provide access to representative workflows and relevant source materials", "An accountable owner and qualified professional reviewers participate where required", "Scope, authority, privacy, security, and maintenance expectations are defined before production use"],
+    "limitations": ["Aloha AI does not replace licensed legal, medical, financial, tax, clinical, privacy, or security advice", "No AI system eliminates uncertainty or remains trustworthy without evaluation and maintenance", "Public demonstrations and directional tools must be verified before consequential reliance"],
+    "relationships": [
+      {"type": "supports", "target": "services-v2"},
+      {"type": "supports", "target": "builds"},
+      {"type": "documents", "target": "methods"},
+      {"type": "supports", "target": "university"},
+      {"type": "supports", "target": "workspace"},
+      {"type": "related_to", "target": "about"}
+    ]
+  },
+  {
+    "id": "builds",
+    "kind": "build",
+    "pathname": "/builds",
+    "eyebrow": "Work and systems",
+    "title": "Proof should explain what the system does, not merely show that a page exists.",
+    "summary": "A graph-backed portfolio of representative Aloha AI public tools, monitored intelligence, research infrastructure, educational products, governed workflows, and operating systems, with explicit maturity, evidence, methods, and limitations.",
+    "audience": "Prospective clients, partners, institutions, funders, and collaborators evaluating the range, rigor, and current status of Aloha AI systems.",
+    "maturity": "Production",
+    "topics": ["portfolio", "systems-architecture", "research-intelligence", "decision-systems", "governed-workflows", "education-products"],
+    "industries": ["professional-services", "legal", "health", "education", "regulated-markets", "emerging-industries"],
+    "keywords": ["Aloha AI builds", "working systems", "public tools", "reference demonstrations", "research infrastructure", "educational products"],
+    "implementationStatus": "This page is generated from canonical resources. Each selected resource carries its own maturity, implementation status, evidence, methods, assumptions, and limitations; inclusion is not a claim that every component is continuously monitored or production-ready.",
+    "collection": {
+      "heading": "Representative systems across distinct capabilities",
+      "resourceIds": ["citation-verifier", "trust-stack", "trust-safe-twins", "university", "build-your-team", "aloha-ai-ce", "cannabis-rescheduling", "psychedelic-radar", "legal-ai-workflow-teardown", "ai-readiness-scorecard", "workspace"]
+    },
+    "evidence": ["Canonical resource records and typed graph relationships", "Publicly inspectable tools, assessments, monitors, research notes, and learning resources", "Documented implementation status, source contracts, methods, assumptions, and limitations", "Private and institutional work described only at a level that protects confidential or proprietary information"],
+    "methodology": ["Separate working public systems, maintained systems, dated demonstrations, private engagements, and concepts", "Select representative resources that demonstrate distinct system capabilities", "Generate portfolio entries from the canonical registry instead of duplicating descriptions", "Preserve resource-level evidence, methods, maturity, and limitations", "Review the collection as the underlying resources change"],
+    "assumptions": ["Canonical resource records remain the source of truth", "Visitors inspect the linked resource before relying on a status or capability claim", "Private work can be described without exposing confidential, participant, source, or proprietary information"],
+    "limitations": ["A deployment count is not a quality, maintenance, or production claim", "Public examples do not reveal the full scope of confidential client or institutional work", "Resource maturity and data freshness vary and must be inspected individually"],
+    "relationships": [
+      {"type": "documents", "target": "citation-verifier"},
+      {"type": "documents", "target": "trust-stack"},
+      {"type": "documents", "target": "trust-safe-twins"},
+      {"type": "documents", "target": "university"},
+      {"type": "documents", "target": "build-your-team"},
+      {"type": "documents", "target": "aloha-ai-ce"},
+      {"type": "documents", "target": "cannabis-rescheduling"},
+      {"type": "documents", "target": "psychedelic-radar"},
+      {"type": "documents", "target": "legal-ai-workflow-teardown"},
+      {"type": "documents", "target": "ai-readiness-scorecard"},
+      {"type": "documents", "target": "workspace"},
+      {"type": "related_to", "target": "engagements"},
+      {"type": "uses", "target": "methods"}
+    ]
+  }
+]

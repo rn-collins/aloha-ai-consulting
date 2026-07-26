@@ -15,6 +15,8 @@
     { "source": "/about.html", "destination": "/about", "permanent": true },
     { "source": "/privacy.html", "destination": "/privacy", "permanent": true },
     { "source": "/terms.html", "destination": "/terms", "permanent": true },
+    { "source": "/homepage-v2", "destination": "/", "permanent": true },
+    { "source": "/homepage-v3", "destination": "/", "permanent": true },
     { "source": "/engagements.html", "destination": "/engagements", "permanent": true },
     { "source": "/build-your-team.html", "destination": "/build-your-team", "permanent": true },
     { "source": "/ai-native-coo.html", "destination": "/ai-native-coo", "permanent": true },
@@ -28,7 +30,6 @@
     { "source": "/university/services/ai-workflow-design", "destination": "/services", "permanent": true }
   ],
   "rewrites": [
-    { "source": "/", "destination": "/homepage-v3" },
     { "source": "/services", "destination": "/services-v2" }
   ],
   "headers": [

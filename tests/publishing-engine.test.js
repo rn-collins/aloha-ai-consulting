@@ -151,6 +151,41 @@ test('renders collection membership from canonical registry metadata', () => {
   assert.match(html, /href="\/university\/learn\/lesson-one"/);
 });
 
+test('renders explicitly selected portfolio resources and rejects unresolved selections', () => {
+  const alpha = { ...resource('alpha', [{ type: 'supports', target: 'portfolio' }]), kind: 'tool' };
+  const beta = { ...resource('beta', [{ type: 'supports', target: 'portfolio' }]), kind: 'research' };
+  const portfolio = {
+    ...resource('portfolio', [{ type: 'documents', target: 'alpha' }, { type: 'documents', target: 'beta' }]),
+    kind: 'build',
+    pathname: '/builds',
+    implementationStatus: 'Public',
+    collection: { resourceIds: ['beta'], heading: 'Representative systems' }
+  };
+  const registry = new Map([[alpha.id, alpha], [beta.id, beta], [portfolio.id, portfolio]]);
+  const html = renderStructuredPage({ resource: portfolio, registry });
+  const portfolioSection = html.match(/Representative systems[\s\S]*?<\/section>/)[0];
+  assert.match(portfolioSection, /href="\/beta"/);
+  assert.doesNotMatch(portfolioSection, /href="\/alpha"/);
+  portfolio.collection.resourceIds.push('missing');
+  assert.ok(errorsFor([alpha, beta, portfolio]).includes('portfolio: unresolved collection resource missing'));
+});
+
+test('renders canonical homepage actions and linked institutional cards', () => {
+  const home = {
+    ...resource('home', [{ type: 'supports', target: 'alpha' }]),
+    kind: 'institutional',
+    pathname: '/',
+    actions: [{ label: 'Explore services', href: '/alpha' }],
+    institutionalSections: [{ title: 'Start here', items: [{ title: 'Services', text: 'Choose a path.', href: '/alpha' }] }]
+  };
+  const alpha = resource('alpha', [{ type: 'supports', target: 'home' }]);
+  const registry = new Map([[home.id, home], [alpha.id, alpha]]);
+  const html = renderStructuredPage({ resource: home, registry });
+  assert.match(html, /Explore services/);
+  assert.match(html, /class="card card--hover" href="\/alpha"/);
+  assert.match(html, /_vercel\/insights\/script\.js/);
+});
+
 test('renders a browser-only structured assessment from question metadata', () => {
   const assessment = {
     ...resource('roadmap', [{ type: 'supports', target: 'alpha' }]),
