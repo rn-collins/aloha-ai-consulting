@@ -1,0 +1,24 @@
+{
+  "id": "launch-stack",
+  "kind": "service",
+  "pathname": "/launch-stack",
+  "eyebrow": "Launch and commercialization system",
+  "title": "A launch stack that connects evidence, positioning, operations, distribution, and post-launch learning.",
+  "summary": "Aloha AI builds launch systems for new products, programs, research initiatives, and regulated offerings where the work must remain coherent across claims, audiences, channels, partners, and internal execution.",
+  "audience": "Teams launching complex offerings that cannot be reduced to a campaign calendar.",
+  "maturity": "Beta",
+  "topics": ["launch", "commercialization", "positioning", "distribution"],
+  "deliverables": ["Launch thesis and audience map", "Claims and evidence register", "Offer and channel architecture", "Operating calendar and owner map", "Measurement and learning system"],
+  "timeline": "Launch architecture commonly spans 3–6 weeks, followed by implementation and an agreed launch-support window.",
+  "fit": ["The offering crosses technical and commercial audiences", "Claims require careful substantiation", "Multiple teams or partners must coordinate", "The launch should create reusable organizational knowledge"],
+  "evidence": ["Product, program, or research documentation", "Audience and market evidence", "Applicable claims, regulatory, and partner constraints", "Prior launch and channel performance where available"],
+  "methodology": ["Define the launch decision and success conditions", "Map audiences, claims, and proof", "Design offer and channel roles", "Assign owners and dependencies", "Launch, measure, and preserve learning"],
+  "assumptions": ["The offering and decision authority are sufficiently defined", "Responsible owners approve public claims and commitments"],
+  "limitations": ["Launch systems cannot guarantee adoption or revenue", "Market outcomes remain affected by product quality, timing, competition, and execution"],
+  "relationships": [
+    {"type": "uses", "target": "content"},
+    {"type": "uses", "target": "intelligence"},
+    {"type": "depends_on", "target": "trust-stack"},
+    {"type": "extends", "target": "services"}
+  ]
+}
