@@ -1,1 +1,267 @@
-{"id":"citation-verifier","kind":"tool","pathname":"/tools/citation-verifier","title":"Citation Verifier","summary":"A review tool for checking whether a source supports the claim attached to it.","maturity":"Beta","topics":["citations","verification"],"implementationStatus":"Working beta with bounded review workflows.","documentation":["Claim-source comparison","Support classification","Reviewer notes"],"evidence":["Submitted claims","Retrieved source passages","Human verification decisions"],"methodology":["Capture the claim","Inspect the cited source","Classify support and conflict","Record reviewer judgment"],"assumptions":["The cited source can be accessed"],"limitations":["The tool does not determine legal truth or replace expert review"],"relationships":[{"type":"supports","target":"intelligence"},{"type":"supports","target":"legal-ai"},{"type":"implements","target":"trust-stack"}]}
+{
+  "id": "citation-verifier",
+  "kind": "tool",
+  "pathname": "/tools/citation-verifier",
+  "title": "Catch the fake citation before it reaches the court.",
+  "summary": "A review tool for checking whether a source supports the claim attached to it.",
+  "maturity": "Beta",
+  "topics": [
+    "citations",
+    "verification"
+  ],
+  "implementationStatus": "Working beta with bounded review workflows.",
+  "documentation": [
+    "Claim-source comparison",
+    "Support classification",
+    "Reviewer notes"
+  ],
+  "evidence": [
+    "Submitted claims",
+    "Retrieved source passages",
+    "Human verification decisions"
+  ],
+  "methodology": [
+    "Capture the claim",
+    "Inspect the cited source",
+    "Classify support and conflict",
+    "Record reviewer judgment"
+  ],
+  "assumptions": [
+    "The cited source can be accessed"
+  ],
+  "limitations": [
+    "The tool does not determine legal truth or replace expert review"
+  ],
+  "relationships": [
+    {
+      "type": "supports",
+      "target": "intelligence"
+    },
+    {
+      "type": "supports",
+      "target": "legal-ai"
+    },
+    {
+      "type": "implements",
+      "target": "trust-stack"
+    }
+  ],
+  "seoTitle": "Citation Verifier",
+  "editorialIntro": [
+    "Paste an AI-drafted brief and this tool reads every US reporter citation, flags the ones that mark a fabrication (an invented reporter series, an impossible year, a malformed volume or page), and returns a risk score with a per-citation verdict. The structural checks run in your browser with no network call. A live existence check against real case law is one click away.",
+    "Built by RN Collins. Neuroscientist (MS) · Administrative & regulatory law (JD candidate) · AI Workflow Developer, Am Law firm"
+  ],
+  "editorialSections": [
+    {
+      "title": "A hallucinated case name is a filing you can't take back",
+      "eyebrow": "Why this exists",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Since 2023, courts have sanctioned lawyers for filing AI-fabricated citations. Generic AI hallucinates worst on exactly what a legal team can't get wrong: the citation, the reporter, the year. Under ABA Formal Opinion 512, the duty to verify AI-assisted output before it reaches a court sits with a licensed attorney and cannot be handed off to a tool. This instrument is the first gate: it catches the cites that are structurally impossible before a human even reads them, so the review that follows starts from a shorter, sharper list."
+        },
+        {
+          "type": "heading",
+          "text": "What it flags"
+        },
+        {
+          "type": "paragraph",
+          "text": "Invented reporter series (there is no F.4d or F. Supp. 5th), years that can't exist (a published opinion dated in the future), and malformed volumes or pages. These are the fingerprints a fabricated cite usually leaves."
+        },
+        {
+          "type": "heading",
+          "text": "What it can't do alone"
+        },
+        {
+          "type": "paragraph",
+          "text": "A well-formed citation can still point to no real opinion. The offline engine confirms structure only. Confirming that a plausible cite matches a real case takes the live existence check, and, in every case, a licensed attorney who opens the source."
+        }
+      ]
+    },
+    {
+      "title": "Verify the citations in a draft",
+      "eyebrow": "The instrument",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Paste a brief or passage and run the check. The structural engine runs on your device with no network calls. Load the sample to see it flag a set of illustrative fabrications alongside a real Supreme Court cite."
+        },
+        {
+          "type": "heading",
+          "text": "Paste a brief or passage"
+        },
+        {
+          "type": "paragraph",
+          "text": "The verifier reads United States reporter citations, checks each one for structural defects that mark a fabrication, and returns a risk score with a per-citation verdict. This engine runs on your device with no network calls."
+        },
+        {
+          "type": "paragraph",
+          "text": "This tool runs entirely in your browser. The only information that ever leaves your device is the email address you optionally submit below once Beehiiv is connected, or the draft text you deliberately submit through the optional live check below."
+        },
+        {
+          "type": "heading",
+          "text": "Result"
+        },
+        {
+          "type": "heading",
+          "text": "Pre-filing attorney checklist"
+        },
+        {
+          "type": "paragraph",
+          "text": "Under ABA Formal Opinion 512, the duty to verify AI-assisted output before it reaches a court is non-delegable. This draft stays blocked until a licensed attorney confirms each item and certifies."
+        },
+        {
+          "type": "heading",
+          "text": "Optional: live case-law verification"
+        },
+        {
+          "type": "heading",
+          "text": "Connect live case-law verification (CourtListener)"
+        },
+        {
+          "type": "paragraph",
+          "text": "The offline engine confirms structure. It cannot confirm that a well-formed citation points to a real opinion. A live existence check against CourtListener adds that signal. Pasting a token in a browser is meant for personal demo use only; a firm deployment routes this call through the bundled Python backend proxy so the token never sits in a browser."
+        },
+        {
+          "type": "heading",
+          "text": "Audit record"
+        },
+        {
+          "type": "paragraph",
+          "text": "Download the machine-readable audit record this tool emits: a timestamp, a SHA-256 hash of the draft, every per-citation verdict, and the gate status. It mirrors the record the Python backend writes for the file."
+        },
+        {
+          "type": "paragraph",
+          "text": "Send it to your inbox and get occasional build notes from Aloha AI."
+        },
+        {
+          "type": "paragraph",
+          "text": "Connect Beehiiv to enable signups."
+        },
+        {
+          "type": "paragraph",
+          "text": "Demonstration tool. Not legal advice. RN Collins is a JD candidate, not a licensed attorney. This tool assists review; a licensed attorney certifies the filing, per ABA Formal Opinion 512 and Model Rules 1.1, 3.3, 5.1, and 5.3. The sample brief mixes real citations with illustrative fabrications; the fabricated citations are invented for demonstration and do not refer to real cases."
+        }
+      ]
+    },
+    {
+      "title": "Deterministic checks now, live existence check next",
+      "eyebrow": "How it works",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Two layers, in order. The fast structural layer runs on your device and needs no network. The live layer adds the one signal structure can't give: whether a plausible-looking cite matches a real published opinion."
+        },
+        {
+          "type": "heading",
+          "text": "Parse every citation"
+        },
+        {
+          "type": "paragraph",
+          "text": "The engine reads US reporter citations out of the draft: volume, reporter, page, and year, plus the case name where it can find one. This runs entirely in your browser."
+        },
+        {
+          "type": "heading",
+          "text": "Check the structure"
+        },
+        {
+          "type": "paragraph",
+          "text": "Each cite is tested against a known-reporter allow-list and series ceilings, so an invented series like F.4d or F. Supp. 5th is caught, along with impossible years and malformed volumes or pages. A defect this clear marks a likely fabrication."
+        },
+        {
+          "type": "heading",
+          "text": "Score and gate"
+        },
+        {
+          "type": "paragraph",
+          "text": "Verdicts roll into a 0–100 risk score. A pre-filing checklist stays blocked until a licensed attorney certifies each item, because the ABA-512 duty to verify is non-delegable."
+        },
+        {
+          "type": "heading",
+          "text": "Confirm existence, live"
+        },
+        {
+          "type": "paragraph",
+          "text": "The optional live check queries CourtListener for whether each well-formed cite matches a real opinion. In a browser this is a personal demo; a firm deployment routes it through a private backend so the token never sits client-side and CORS never blocks it."
+        }
+      ]
+    },
+    {
+      "title": "The version I build for your firm",
+      "eyebrow": "This is a demonstration of what I build",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "What you're using is the public, in-browser demo. A governed, firm-deployed version routes the existence check through a private backend, keeps API tokens off the client, writes a signed audit record for each filing, and integrates with the tools your team already runs. This is one gate in the verification-gated legal AI workflows I design, on any platform, Harvey included."
+        },
+        {
+          "type": "heading",
+          "text": "What I build"
+        },
+        {
+          "type": "paragraph",
+          "text": "A verification-gated citation check wired into your drafting workflow: private backend for the existence check, tokens off the client, an audit record per filing, and gates placed where sanctions risk actually lives."
+        },
+        {
+          "type": "heading",
+          "text": "What you get"
+        },
+        {
+          "type": "list",
+          "items": [
+            "A citation gate that runs inside your stack, not a browser tab"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "An audit trail leadership can defend"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "Governance mapped to ABA 512 and your conduct duties"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "Firm/GC or founder advisory to keep it safe over time"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "How to start"
+        },
+        {
+          "type": "paragraph",
+          "text": "A short scoping call. Most firms begin with a Systems Audit: the fastest proof, and it points to the workflow worth gating first."
+        },
+        {
+          "type": "paragraph",
+          "text": "Related work: the Legal AI Workflow & Governance pillar covers verification-gated workflows and trust-safe governance end to end. For governed AI twins and the wider trust operating system, see Trust-Safe Twins and the Regulated Trust Stack."
+        }
+      ]
+    },
+    {
+      "title": "Ready when you are.",
+      "eyebrow": "Aloha AI · Honolulu",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Convinced, curious, or comparing, there's a path for each."
+        },
+        {
+          "type": "paragraph",
+          "text": "Prefer email? Email RN · or connect on LinkedIn"
+        }
+      ]
+    }
+  ],
+  "editorialSource": {
+    "baseline": "b0a1b3c",
+    "sourceFile": "tools/citation-verifier/index.html",
+    "restoredAt": "2026-07-26"
+  }
+}

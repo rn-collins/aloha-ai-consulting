@@ -114,6 +114,7 @@ function visibleText(html) {
     .replace(/<[^>]+>/g, ' ')
     .replace(/&[a-z#0-9]+;/gi, ' ')
     .replace(/\s+/g, ' ')
+    .replace(/\s+([.,;:!?])/g, '$1')
     .trim();
 }
 

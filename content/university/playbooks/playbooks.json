@@ -8,15 +8,68 @@
     "summary": "A complete, buildable AI system for client intake and onboarding: turn intake forms into structured profiles, prepare kickoffs, collect documents, and generate a personalized onboarding plan.",
     "audience": "Consultants, agencies, professional-services firms, coaches, and small teams responsible for client onboarding.",
     "maturity": "Production",
-    "topics": ["client-onboarding", "workflow-design", "human-review", "service-delivery"],
-    "industries": ["professional-services", "small-business", "legal", "financial-services"],
-    "keywords": ["AI client intake", "client onboarding workflow", "kickoff preparation", "document collection"],
-    "learningPaths": ["Design one structured intake", "Create a canonical client profile", "Prepare the kickoff from approved facts", "Draft a human-reviewed welcome sequence", "Track document collection", "Build and approve the onboarding plan"],
-    "evidence": ["Signed scope and intake responses", "Approved client communications", "Document and access requirements", "Human-reviewed onboarding plan"],
-    "methodology": ["Capture facts once", "Normalize the intake", "Expose missing information", "Draft from approved evidence", "Require review before client-facing delivery", "Preserve ownership and status"],
-    "assumptions": ["A responsible human owns the client relationship", "Sensitive records use approved access-controlled systems"],
-    "limitations": ["AI drafts can misstate scope or expectations", "Legal, financial, privacy, and regulated onboarding requires qualified review"],
-    "relationships": [{"type": "depends_on", "target": "university"}, {"type": "implements", "target": "trust-stack"}, {"type": "supports", "target": "ai-for-email-lesson"}]
+    "topics": [
+      "client-onboarding",
+      "workflow-design",
+      "human-review",
+      "service-delivery"
+    ],
+    "industries": [
+      "professional-services",
+      "small-business",
+      "legal",
+      "financial-services"
+    ],
+    "keywords": [
+      "AI client intake",
+      "client onboarding workflow",
+      "kickoff preparation",
+      "document collection"
+    ],
+    "learningPaths": [
+      "Design one structured intake",
+      "Create a canonical client profile",
+      "Prepare the kickoff from approved facts",
+      "Draft a human-reviewed welcome sequence",
+      "Track document collection",
+      "Build and approve the onboarding plan"
+    ],
+    "evidence": [
+      "Signed scope and intake responses",
+      "Approved client communications",
+      "Document and access requirements",
+      "Human-reviewed onboarding plan"
+    ],
+    "methodology": [
+      "Capture facts once",
+      "Normalize the intake",
+      "Expose missing information",
+      "Draft from approved evidence",
+      "Require review before client-facing delivery",
+      "Preserve ownership and status"
+    ],
+    "assumptions": [
+      "A responsible human owns the client relationship",
+      "Sensitive records use approved access-controlled systems"
+    ],
+    "limitations": [
+      "AI drafts can misstate scope or expectations",
+      "Legal, financial, privacy, and regulated onboarding requires qualified review"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "university"
+      },
+      {
+        "type": "implements",
+        "target": "trust-stack"
+      },
+      {
+        "type": "supports",
+        "target": "ai-for-email-lesson"
+      }
+    ]
   },
   {
     "id": "content-repurposing-playbook",
@@ -27,15 +80,546 @@
     "summary": "Turn one webinar, podcast, talk, or long article into a week of derivative content without losing the creator's voice or fabricating claims.",
     "audience": "Founders, experts, creators, consultants, and lean marketing teams repurposing long-form source material.",
     "maturity": "Production",
-    "topics": ["content-repurposing", "marketing", "voice", "verification"],
-    "industries": ["creator-economy", "professional-services", "publishing", "small-business"],
-    "keywords": ["AI content repurposing", "voice guide", "fact preservation", "content workflow"],
-    "learningPaths": ["Prepare a clean source transcript", "Extract a reusable voice guide", "Identify atomic ideas", "Draft for each channel", "Enforce fact preservation", "Complete a human voice and accuracy review"],
-    "evidence": ["The canonical source asset", "Approved voice examples", "Source-linked claims and quotations", "Final human edits"],
-    "methodology": ["Ground every derivative in the source", "Separate extraction from channel drafting", "Prohibit invented claims", "Compare drafts with the voice guide", "Approve every asset before publication"],
-    "assumptions": ["A substantive source asset exists", "The creator or editor performs final review"],
-    "limitations": ["Repurposing does not create original authority", "Transcripts and model drafts can omit nuance or misattribute language"],
-    "relationships": [{"type": "depends_on", "target": "university"}, {"type": "supports", "target": "content"}, {"type": "implements", "target": "how-to-verify-ai-outputs-lesson"}]
+    "topics": [
+      "content-repurposing",
+      "marketing",
+      "voice",
+      "verification"
+    ],
+    "industries": [
+      "creator-economy",
+      "professional-services",
+      "publishing",
+      "small-business"
+    ],
+    "keywords": [
+      "AI content repurposing",
+      "voice guide",
+      "fact preservation",
+      "content workflow"
+    ],
+    "learningPaths": [
+      "Prepare a clean source transcript",
+      "Extract a reusable voice guide",
+      "Identify atomic ideas",
+      "Draft for each channel",
+      "Enforce fact preservation",
+      "Complete a human voice and accuracy review"
+    ],
+    "evidence": [
+      "The canonical source asset",
+      "Approved voice examples",
+      "Source-linked claims and quotations",
+      "Final human edits"
+    ],
+    "methodology": [
+      "Ground every derivative in the source",
+      "Separate extraction from channel drafting",
+      "Prohibit invented claims",
+      "Compare drafts with the voice guide",
+      "Approve every asset before publication"
+    ],
+    "assumptions": [
+      "A substantive source asset exists",
+      "The creator or editor performs final review"
+    ],
+    "limitations": [
+      "Repurposing does not create original authority",
+      "Transcripts and model drafts can omit nuance or misattribute language"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "university"
+      },
+      {
+        "type": "supports",
+        "target": "content"
+      },
+      {
+        "type": "implements",
+        "target": "how-to-verify-ai-outputs-lesson"
+      }
+    ],
+    "editorialIntro": [
+      "You already made the hard thing: the webinar, the podcast episode, the long essay, the recorded talk. This turns that one asset into a week of LinkedIn posts, a newsletter, short-form video scripts, and threads that still sound like you and never claim something you did not actually say. AI does the drafting; a voice guide and a fact-preservation rule keep it honest; you do the final edit."
+    ],
+    "editorialSections": [
+      {
+        "title": "You make one good thing, then it disappears",
+        "eyebrow": "01 · The business problem",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "You spent weeks on a webinar. Two hundred people saw it live, a few dozen watched the replay, and then it went quiet. The insight is still good — but it is trapped in a sixty-minute recording nobody has time to rewatch. The same fate meets your best podcast episodes, your longest and most careful blog posts, and the talk you gave at that conference. You built assets with a long shelf life and then let them expire in a week."
+          },
+          {
+            "type": "paragraph",
+            "text": "The obvious fix is to chop each asset into many smaller pieces for the channels where your audience actually is. The problem is that doing this by hand is grinding work. Pulling the quotable moments, rewriting them for LinkedIn versus a newsletter versus a thirty-second video, and matching each to the platform's format takes hours per source — hours that never make the calendar, because the next webinar is already being planned."
+          },
+          {
+            "type": "paragraph",
+            "text": "AI closes that gap. But it introduces two new dangers that most people ignore: the drafts come out sounding like generic AI content, and they quietly invent statistics, quotes, and claims you never made. This playbook exists to get the speed without either of those failures."
+          }
+        ]
+      },
+      {
+        "title": "Repetition builds a reputation; one-shot content builds nothing",
+        "eyebrow": "02 · Why it matters",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Nobody remembers a single post. People remember a person who shows up saying consistent, useful things over and over, in the places they already scroll. Repurposing is how one hour of real thinking becomes ten touchpoints — and ten touchpoints is how a stranger starts to recognize your name."
+          },
+          {
+            "type": "paragraph",
+            "text": "The arithmetic is what makes it worth systematizing. If turning a webinar into a full week of channel content takes you six hours by hand, you will do it maybe once and then quietly stop. Compress the drafting to twenty minutes of review over AI output, keep an hour for real human editing, and the same asset now yields eight to twelve finished pieces at a quality you would sign. That is the difference between a content habit and a content wish."
+          },
+          {
+            "type": "paragraph",
+            "text": "There is a quieter benefit too. When you repurpose from a real source you actually created, every derivative piece is grounded in something you genuinely believe and said out loud. That is the opposite of the empty, everywhere-at-once content that makes audiences tune out — and it is why the fact-preservation rule below is not a nicety but the whole engine."
+          }
+        ]
+      },
+      {
+        "title": "People who create long things and want them to travel",
+        "eyebrow": "03 · Who this is for",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "The founder or expert who publishes. You write essays, host a podcast, or give talks, and you know each one should become a dozen posts — but the repurposing never happens because you are busy making the next big thing."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "The solo marketer or small team. You are responsible for a content calendar with no staff to feed it. One strong source per week, well repurposed, can fill most of it."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "The consultant or coach with recorded calls and talks. Your best material is already spoken and captured. You want it working for you on LinkedIn and in a newsletter, in your voice, without hiring a ghostwriter."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Not a fit: anyone who wants a bot to autopost AI slop with no human review, or who has no genuine source asset to repurpose from. This playbook amplifies real thinking, not the appearance of it."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "From one source to a channel-ready set, in your voice",
+        "eyebrow": "04 · What this workflow accomplishes",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "By the end of a build, you have a repeatable loop that runs each time you publish something long:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Capture a clean transcript of the source asset, so the AI works from your actual words, not a summary of them."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Extract a voice guide once, from writing you have already published, so every draft is measured against how you actually sound."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Mine the transcript for atomic ideas — the standalone points, stories, and quotable lines worth their own piece."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Repurpose each idea per channel — LinkedIn post, newsletter section, short-form video script, X thread, quote-graphic caption, SEO snippet — under a rule that forbids inventing facts."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Generate hook and headline variants so you can pick the strongest opening rather than settling for the first."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Edit every piece by hand before it publishes, because the human pass is where voice and truth are protected."
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "The AI does the ninety percent that is transcribing, mining, and drafting. You keep the ten percent that is judgment: does this sound like me, and is every claim in it true?"
+          }
+        ]
+      },
+      {
+        "title": "Pick a tier and start; you can grow into more",
+        "eyebrow": "05 · Tools you will need",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The manual version needs one AI chat tool, a transcript, and somewhere to keep your drafts. Prices below are current as of mid-2026 and change often — confirm before you buy."
+          },
+          {
+            "type": "heading",
+            "text": "AI assistant required"
+          },
+          {
+            "type": "paragraph",
+            "text": "ChatGPT Plus or Claude Pro, both about $20/month, for mining transcripts, drafting per channel, and generating hook variants. The paid tiers give you the stronger models and the longer context you will want when feeding in a full hour-long transcript."
+          },
+          {
+            "type": "heading",
+            "text": "Transcription"
+          },
+          {
+            "type": "paragraph",
+            "text": "A transcription tool to turn the audio or video into text. Otter and Descript are common; many podcast hosts and video platforms now include built-in transcripts, and Descript doubles as an editor if you also want to cut short-form clips. Accuracy on names and jargon varies, so always proofread."
+          },
+          {
+            "type": "heading",
+            "text": "A place to keep drafts"
+          },
+          {
+            "type": "paragraph",
+            "text": "Notion is a natural home — one page per source, with the transcript, voice guide, and each channel's drafts together. Notion's AI features are bundled into the Business plan (about $20/user/month); the older standalone $10 AI add-on has been removed. A plain Google Doc works fine to start."
+          },
+          {
+            "type": "heading",
+            "text": "Scheduling / publishing"
+          },
+          {
+            "type": "paragraph",
+            "text": "Buffer or Hypefury to queue and space out posts across channels, or each platform's native scheduler if you prefer to stay in-app. Scheduling is optional for the manual version — you can just post by hand — but it is what makes a weekly cadence stick."
+          },
+          {
+            "type": "heading",
+            "text": "Automation glue optional"
+          },
+          {
+            "type": "paragraph",
+            "text": "Zapier to move a finished transcript into your drafting workspace and route approved pieces to your scheduler. Zapier's Professional plan starts around $19.99/month annual for 750 tasks; a multi-step Zap burns one task per step per run, so budget by steps, not runs."
+          },
+          {
+            "type": "heading",
+            "text": "Honest limits"
+          },
+          {
+            "type": "paragraph",
+            "text": "None of this removes the editing. AI repurposing is a strong first-draft engine, not a publish button. Budget real human time on every piece — that is where the voice stays yours and the facts stay true. See the risks section before you automate anything."
+          }
+        ]
+      },
+      {
+        "title": "Manual, semi-automated, fully implemented",
+        "eyebrow": "06 · Three ways to run it",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Same loop, three levels of build. Start at the left even if you plan to end at the right — doing it by hand teaches you what \"sounds like me\" and \"provably true\" actually look like, and that judgment is what you encode later."
+          },
+          {
+            "type": "heading",
+            "text": "One transcript, one AI chat, one focused afternoon"
+          },
+          {
+            "type": "paragraph",
+            "text": "Build your voice guide once from published work. Get a clean transcript. Mine it for atomic ideas, run the per-channel prompt that forbids inventing facts, then edit every draft against your voice guide and verify every claim before you post."
+          },
+          {
+            "type": "paragraph",
+            "text": "Honest expectation: the first pass is slow, maybe an afternoon for one source. That is the tuition you pay to build the automated version well."
+          },
+          {
+            "type": "heading",
+            "text": "The tools transcribe and draft; you review at two gates"
+          },
+          {
+            "type": "paragraph",
+            "text": "Store your voice guide once. Auto-transcribe each source and proofread names and jargon. The AI batch-mines and batch-drafts. Then a fact-check pass (gate one) and a voice-and-send pass (gate two) before anything queues."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where most creators should live for a while: fast enough to be consistent, slow enough to stay unmistakably yours."
+          },
+          {
+            "type": "heading",
+            "text": "A scheduled loop with a mandatory editing gate"
+          },
+          {
+            "type": "paragraph",
+            "text": "A new transcript or episode triggers the loop in Zapier or Make. It cleans the transcript, attaches your voice guide and fact-preservation rule, drafts per channel plus hooks into a \"Needs review\" view, and pings you. Nothing publishes until you edit and approve."
+          },
+          {
+            "type": "paragraph",
+            "text": "\"Fully implemented\" does not mean \"posts by itself.\" It means everything except the judgment is automated."
+          },
+          {
+            "type": "quote",
+            "text": "Reality check: this is a real build with real maintenance — transcription mishears names, models drift toward generic phrasing, and a broken Zap fails silently. Budget a few hours a month, and never remove the editing gate to \"save time.\" The gate is where your voice and credibility are protected. An unedited AI post that invents a statistic will cost you more trust than the whole system saves you in hours."
+          }
+        ]
+      },
+      {
+        "title": "From zero to the semi-automated loop",
+        "eyebrow": "07 · Step-by-step build",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Extract your voice guide. Run the voice-guide prompt over three or four published pieces. Save the result in a doc titled \"Voice Guide\" and treat it as living: revise it when your writing shifts or when a draft sounds off despite following it.",
+              "Set up your source workspace. Create a template — a Notion page or doc — with sections for Transcript, Atomic ideas, LinkedIn, Newsletter, Video scripts, Thread, Captions, SEO snippets, and Status (Draft / Fact-checked / Edited / Scheduled / Published).",
+              "Transcribe and clean. Transcribe your source asset and read the whole thing once, fixing wrong names, terms, and mishears. This is the single most important quality step — every downstream piece inherits these words.",
+              "Mine atomic ideas. Run the idea-extractor prompt over the cleaned transcript. Review the list, keep the ideas that stand on their own, and star the two or three strongest to lead with.",
+              "Draft per channel. For each starred idea, run the per-channel prompt with your voice guide attached and the fact-preservation rule in force. Generate one piece per channel you actually use — do not spread yourself across platforms you will not maintain.",
+              "Generate hook variants. Run the hook-and-headline prompt on your lead pieces to produce several openings each. Pick the strongest by hand; a good hook is the difference between a read and a scroll.",
+              "Fact-check and edit. With the transcript open, verify every quote, number, and claim in every draft, then edit each piece into your voice. Cut generic phrasing on sight. Only then mark it Edited.",
+              "Add automation last. Once the manual loop is smooth, wire the repetitive moves (transcript in → mine → draft → review view → scheduler) in Zapier or Make, keeping the editing gate as a hard stop. Automate what you have validated, never the judgment."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Copy these, then make them yours",
+        "eyebrow": "08 · Prompts and templates",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Voice guide from your own writing"
+          },
+          {
+            "type": "code",
+            "text": "Below are 3-4 pieces I have actually written and published: [paste your writing samples] Study them and produce a reusable \"voice guide\" I can attach to future drafting tasks. Include: 1. Tone in 3-5 adjectives, with a one-line reason for each. 2. Sentence rhythm and length patterns you notice. 3. Words and phrases I clearly favor. 4. Words, cliches, and patterns I clearly avoid. 5. How I open and how I close. 6. A short \"do NOT sound like this\" list of generic phrasings that would break the voice. Base every point ONLY on the samples. Do not invent traits I did not demonstrate. Output as a labeled list I can paste later."
+          },
+          {
+            "type": "heading",
+            "text": "Transcript to atomic ideas"
+          },
+          {
+            "type": "code",
+            "text": "Below is a transcript of something I created: [paste transcript] Extract the standalone ideas worth their own piece of content. For each, output: - A one-line summary of the idea. - The type: insight / story / framework / quotable line / data point. - The exact wording from the transcript it came from (verbatim), with a rough location marker. Rules: - Only use what is actually in the transcript. Do not add ideas, examples, or claims that are not present. - For quotable lines and data points, quote them EXACTLY. If a number or claim is ambiguous in the transcript, flag it rather than cleaning it up. Return a numbered list, strongest ideas first."
+          },
+          {
+            "type": "heading",
+            "text": "Per-channel repurposing (fact-preservation rule)"
+          },
+          {
+            "type": "code",
+            "text": "Repurpose ONE idea into content for the channel I name. My voice guide: [paste voice guide] The source idea and its exact transcript wording: [paste one idea + verbatim source] Channel: [LinkedIn post | newsletter section | 30-sec video script | X thread | quote-graphic caption | SEO snippet] Hard rules: - Use ONLY facts, numbers, quotes, and examples present in the source above. Do NOT invent statistics, studies, quotes, names, or outcomes. If a claim would strengthen the piece but is not in the source, leave it out and tell me what I would need to add. - Match my voice guide. Avoid generic AI phrasing. - Format natively for the channel (length, line breaks, hook). Output the piece, then a one-line \"claims used\" note listing every factual claim and where in the source it came from."
+          },
+          {
+            "type": "heading",
+            "text": "Hook and headline variants"
+          },
+          {
+            "type": "code",
+            "text": "Here is a finished piece: [paste the draft] My voice guide: [paste voice guide] Write 6 alternative opening hooks (or headlines) for it. Vary the angle: curiosity, a concrete number from the piece, a contrarian take, a direct question, a short story open, a plain-value open. Rules: - Every hook must be true to the piece — no bait the content does not deliver, no invented stats. - Keep my voice. No \"unlock\", \"game-changer\", or hollow hype. Number them and mark the one you think is strongest, with a reason."
+          }
+        ]
+      },
+      {
+        "title": "Where this goes wrong, and how to catch it",
+        "eyebrow": "09 · Risks and review points",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Fabricated stats and quotes"
+          },
+          {
+            "type": "paragraph",
+            "text": "The single biggest failure mode: the model invents a statistic, a study, or a quote you never said to make a piece punchier. The prompts forbid invention and require a \"claims used\" trace, and your editing gate is where you verify every claim against the transcript before publishing."
+          },
+          {
+            "type": "heading",
+            "text": "AI-tell and sameness"
+          },
+          {
+            "type": "paragraph",
+            "text": "Even truthful drafts can come out sounding like everyone else's AI content — the same rhythms, the same empty transitions. The fixes are the voice guide, a ruthless human edit, and cutting any line that could have been written about anything."
+          },
+          {
+            "type": "heading",
+            "text": "Copyright and attribution"
+          },
+          {
+            "type": "paragraph",
+            "text": "Repurposing your own work is simple. Repurposing someone else's talk, article, or podcast is not — quoting, clipping, and reframing others' material raises copyright and attribution questions. When in doubt, attribute clearly, quote sparingly, and get permission; do not pass another person's ideas off as your own."
+          },
+          {
+            "type": "heading",
+            "text": "Platform authenticity"
+          },
+          {
+            "type": "paragraph",
+            "text": "Audiences and platforms increasingly penalize content that reads as automated or inauthentic. Post as a human who reviewed the work, keep a real cadence rather than a firehose, and do not disguise AI-assisted drafts as spontaneous."
+          },
+          {
+            "type": "heading",
+            "text": "Legal, medical, financial guardrail"
+          },
+          {
+            "type": "paragraph",
+            "text": "This playbook is educational, not legal, medical, or financial advice. RN Collins is a JD candidate, not a licensed attorney. For copyright, contracts, or regulated-industry content, get qualified counsel for your jurisdiction and situation."
+          },
+          {
+            "type": "heading",
+            "text": "Review cadence"
+          },
+          {
+            "type": "paragraph",
+            "text": "Read a sample of published pieces weekly for voice drift, re-check your fact-preservation discipline monthly, and revisit your voice guide quarterly as your writing evolves."
+          }
+        ]
+      },
+      {
+        "title": "Measure reach and fidelity, not just output",
+        "eyebrow": "10 · KPIs that tell the truth",
+        "blocks": [
+          {
+            "type": "table",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Metric",
+                    "header": true
+                  },
+                  {
+                    "text": "What it tells you",
+                    "header": true
+                  },
+                  {
+                    "text": "Healthy signal",
+                    "header": true
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Pieces per source"
+                  },
+                  {
+                    "text": "How much leverage you get from one asset"
+                  },
+                  {
+                    "text": "8–12 usable pieces from a strong long-form source"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Time per finished piece"
+                  },
+                  {
+                    "text": "Whether the workflow is actually saving effort"
+                  },
+                  {
+                    "text": "Falling toward a few edited minutes each, editing included"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Engagement per channel"
+                  },
+                  {
+                    "text": "Whether the repurposed pieces land where you post"
+                  },
+                  {
+                    "text": "Trending up as you tune hooks and formats"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "\"Still sounds like you\" check"
+                  },
+                  {
+                    "text": "Whether voice survived the drafting"
+                  },
+                  {
+                    "text": "You (or a reader who knows you) can't tell it was AI-assisted"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Claim-accuracy rate"
+                  },
+                  {
+                    "text": "Whether the fact-preservation rule is holding"
+                  },
+                  {
+                    "text": "Zero published pieces with an unverifiable claim"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Publishing consistency"
+                  },
+                  {
+                    "text": "Whether the system produces a real cadence"
+                  },
+                  {
+                    "text": "You hit your weekly plan without heroics"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Watch the two qualitative rows hardest. A single fabricated stat or an obviously generic post costs more trust than a dozen quiet weeks — fidelity is the metric that protects every other one."
+          }
+        ]
+      },
+      {
+        "title": "Which tool should you actually use for this?",
+        "eyebrow": "Tool guide",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Best AI for content repurposing"
+          },
+          {
+            "type": "paragraph",
+            "text": "Opus Clip, Descript, Repurpose.io, and general assistants compared — by format, volume, and workflow fit."
+          }
+        ]
+      },
+      {
+        "title": "Want Aloha AI to build this for you?",
+        "eyebrow": "Do it with us",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "We turn your webinars, podcasts, and talks into a working, human-in-the-loop repurposing system — voice guide, fact-preservation rule, per-channel drafting, and an editing gate wired in from day one — and hand it over documented, so one source keeps earning its keep for a week."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "university/playbooks/content-repurposing/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "governance-starter-playbook",
@@ -46,15 +630,536 @@
     "summary": "Stand up a minimum viable internal AI policy with approved and prohibited uses, data-handling rules, human review, an audit trail, disclosure norms, and a review cadence.",
     "audience": "Small organizations formalizing AI use without a dedicated compliance function.",
     "maturity": "Production",
-    "topics": ["governance", "ai-policy", "privacy", "human-review"],
-    "industries": ["professional-services", "legal", "healthcare", "financial-services"],
-    "keywords": ["AI use policy", "shadow AI", "human review gate", "AI audit trail"],
-    "learningPaths": ["Inventory actual AI use", "Classify approved and prohibited uses", "Define data-handling boundaries", "Name human approval gates", "Create a lightweight audit trail", "Set disclosure and review rules"],
-    "evidence": ["Current workflows and tool inventory", "Vendor terms and data controls", "Contracts, policies, and professional duties", "Documented approvals and exceptions"],
-    "methodology": ["Start from observed use", "Apply data and consequence classifications", "Write rules in plain language", "Assign accountable owners", "Review exceptions and update the policy"],
-    "assumptions": ["Leadership will enforce the policy", "Qualified reviewers address jurisdiction-specific obligations"],
-    "limitations": ["This educational playbook is not legal advice", "A starter policy does not replace security, privacy, employment, or regulatory review"],
-    "relationships": [{"type": "depends_on", "target": "university"}, {"type": "implements", "target": "trust-stack"}, {"type": "supports", "target": "privacy-and-confidentiality-lesson"}]
+    "topics": [
+      "governance",
+      "ai-policy",
+      "privacy",
+      "human-review"
+    ],
+    "industries": [
+      "professional-services",
+      "legal",
+      "healthcare",
+      "financial-services"
+    ],
+    "keywords": [
+      "AI use policy",
+      "shadow AI",
+      "human review gate",
+      "AI audit trail"
+    ],
+    "learningPaths": [
+      "Inventory actual AI use",
+      "Classify approved and prohibited uses",
+      "Define data-handling boundaries",
+      "Name human approval gates",
+      "Create a lightweight audit trail",
+      "Set disclosure and review rules"
+    ],
+    "evidence": [
+      "Current workflows and tool inventory",
+      "Vendor terms and data controls",
+      "Contracts, policies, and professional duties",
+      "Documented approvals and exceptions"
+    ],
+    "methodology": [
+      "Start from observed use",
+      "Apply data and consequence classifications",
+      "Write rules in plain language",
+      "Assign accountable owners",
+      "Review exceptions and update the policy"
+    ],
+    "assumptions": [
+      "Leadership will enforce the policy",
+      "Qualified reviewers address jurisdiction-specific obligations"
+    ],
+    "limitations": [
+      "This educational playbook is not legal advice",
+      "A starter policy does not replace security, privacy, employment, or regulatory review"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "university"
+      },
+      {
+        "type": "implements",
+        "target": "trust-stack"
+      },
+      {
+        "type": "supports",
+        "target": "privacy-and-confidentiality-lesson"
+      }
+    ],
+    "editorialIntro": [
+      "Your team is already using AI — you just cannot see how. This is the trust layer underneath every other playbook: the minimum viable internal policy a small team can actually keep. A one-page use policy, a clear line between approved and prohibited uses, data-handling rules, a human-review gate before anything reaches a client or regulator, and an audit trail you can maintain without a compliance department. Enough structure to protect you, light enough that people follow it. Educational, not legal advice."
+    ],
+    "editorialSections": [
+      {
+        "title": "Your team is already using AI; you just cannot see how",
+        "eyebrow": "01 · The business problem",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Here is the uncomfortable truth about most small businesses in 2026: AI adoption already happened, and nobody signed off on it. Someone in accounts pastes a client contract into a free chatbot to summarize the tricky clause. A junior staffer drops a spreadsheet of customer emails into a consumer tool to draft a mailer. A contractor runs a patient intake note or a candidate's résumé through whatever app they had open. None of it is malicious. All of it is invisible to you."
+          },
+          {
+            "type": "paragraph",
+            "text": "This is shadow AI: real work getting done through unsanctioned tools, on unknown terms, with sensitive data you are contractually and sometimes legally responsible for. The moment client PII, a signed NDA, source code, or a trade secret lands in a consumer tool's input box, you may have created a disclosure you cannot take back — and you will not know it happened until a client asks how their data is handled and you have no answer."
+          },
+          {
+            "type": "paragraph",
+            "text": "Governance is not about slowing your team down. It makes the AI use that is already happening visible, safe, and defensible — so you can say yes to more of it with a straight face, instead of pretending it is not going on."
+          }
+        ]
+      },
+      {
+        "title": "Trust is the thing you are actually selling",
+        "eyebrow": "02 · Why it matters",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Every other AI playbook — lead generation, client deliverables, operations — assumes you can put AI output in front of a client without embarrassing yourself or breaching an agreement. Governance is what makes that assumption true. It is the layer underneath everything else, and skipping it does not make you faster; it makes you exposed."
+          },
+          {
+            "type": "paragraph",
+            "text": "Start with your contracts. Many client agreements, especially in professional services, healthcare, and finance, include confidentiality and data-handling terms written before anyone imagined a staffer pasting the deliverable into a public model. A clear internal policy — sanctioned tools only, no client data in consumer tiers, a review gate before anything ships — is often the difference between honoring those terms and quietly breaching them."
+          },
+          {
+            "type": "paragraph",
+            "text": "Then there is risk reduction that pays for itself. A single leaked dataset or a fabricated figure that reaches a regulator can cost more than a year of careful process. Governance lowers the odds and, just as importantly, gives you a record showing you took reasonable care — which matters enormously when something does go wrong."
+          },
+          {
+            "type": "paragraph",
+            "text": "The counterintuitive part: good governance enables adoption, it does not block it. When people know exactly which tools are safe and where the guardrails are, they stop hiding their AI use and start doing more of it openly. A policy that says \"here is how to use AI well\" gets far more real work done than a nervous, unwritten \"please be careful.\""
+          }
+        ]
+      },
+      {
+        "title": "Small teams handling other people's trust",
+        "eyebrow": "03 · Who this is for",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "The owner-operator (1–20 people). You have no legal or compliance staff, but you have clients who assume you are handling their information responsibly. You want the smallest policy that actually protects you, not a fifty-page document nobody opens."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "The professional-services firm. Agencies, consultancies, bookkeepers, clinics, boutique law-adjacent and advisory shops — anyone whose contracts include confidentiality terms and whose reputation rests on discretion."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "The team already deep into AI. You leaned into AI for real output and now realize you never wrote down the rules. This is the retrofit: getting the guardrails in place before an incident forces the issue."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Not a fit: large enterprises with existing compliance functions and legal teams — you need something heavier and jurisdiction-specific. And this is not a substitute for qualified counsel in regulated industries; it is a starting point that helps you have a smarter conversation with the professionals you do hire."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "From invisible risk to a written, followable standard",
+        "eyebrow": "04 · What this workflow accomplishes",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "By the end of a build, you have a lightweight governance system that a small team can actually maintain:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "A one-page AI use policy in plain language, so every person on the team applies the same standard instead of their own judgment call."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "An approved-and-prohibited list: named uses that are fine, named uses that are banned, and a simple path for classifying anything in between."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Data-handling rules everyone can recite: never paste client PII, secrets, or confidential material into consumer tools, and a short list of sanctioned tools cleared for real work."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A mandatory human-review gate for anything that goes to a client, a regulator, or the public — nothing AI-assisted ships without a named person checking it."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "An audit trail that records what AI produced, who reviewed it, and when, so you can reconstruct any decision later."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Disclosure norms and a review cadence so the policy stays honest with clients and keeps up with a fast-moving field."
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Crucially, none of this is a tool you buy. It is people and process, lightly supported by a shared document and a simple log. The AI can help you draft and triage; the judgment, the enforcement, and the ownership stay human."
+          }
+        ]
+      },
+      {
+        "title": "Mostly a document and a log, not a purchase",
+        "eyebrow": "05 · Tools you will need",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Governance is people plus process, not software. The core of this playbook is a shared doc and a simple log. Prices below are current as of mid-2026 and change often — and tool terms change even faster, so verify current terms before you rely on them."
+          },
+          {
+            "type": "heading",
+            "text": "Shared policy document required"
+          },
+          {
+            "type": "paragraph",
+            "text": "Notion, Google Docs, or any shared doc your whole team can reach. This holds the one-page policy, the approved/prohibited list, and the data-handling rules. Free tiers are fine. The requirement is not the tool — it is that the policy is written down, findable, and versioned."
+          },
+          {
+            "type": "heading",
+            "text": "Audit log required"
+          },
+          {
+            "type": "paragraph",
+            "text": "A Google Sheet or a Notion database with one row per client-facing AI-assisted output: what was produced, which tool, who reviewed it, when, and the outcome. That is the entire audit trail. Do not over-engineer it; a log people actually fill in beats a perfect one they abandon."
+          },
+          {
+            "type": "heading",
+            "text": "Sanctioned AI tools"
+          },
+          {
+            "type": "paragraph",
+            "text": "Enterprise and team tiers generally keep your inputs out of model training by default — ChatGPT Team/Enterprise and Claude Team, for example — while consumer free tiers may not. Team seats commonly run in the low tens of dollars per user per month, but pricing and, more importantly, the data-handling terms change; confirm the current terms in writing before you treat any tool as sanctioned."
+          },
+          {
+            "type": "heading",
+            "text": "Tool sanctioning process"
+          },
+          {
+            "type": "paragraph",
+            "text": "Sanctioning is a decision, not a download. Before a tool goes on the approved list, someone checks: does it train on our inputs, where is data stored, does it meet our contracts? Keep a short list of cleared tools and a \"not approved\" list, and revisit both when terms change."
+          },
+          {
+            "type": "heading",
+            "text": "Team communication optional"
+          },
+          {
+            "type": "paragraph",
+            "text": "Slack, Teams, or email for the review-gate ping and incident reporting — whatever your team already uses. The point is a clear, fast channel to flag \"this needs review\" and \"I think something leaked.\""
+          },
+          {
+            "type": "heading",
+            "text": "Honest limits"
+          },
+          {
+            "type": "paragraph",
+            "text": "No tool makes you governed. Software can hold the policy and the log, but enforcement, review, and ownership are human work. Anyone selling you a \"governance platform\" as a substitute for that work is selling you theater — and this is not legal advice; see the risks section."
+          }
+        ]
+      },
+      {
+        "title": "Manual, semi-automated, fully implemented",
+        "eyebrow": "06 · Three ways to run it",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Same policy, three levels of build. Start at the left even if you plan to end at the right — writing it by hand forces the decisions that matter, and that judgment is what you encode later. Governance cannot be automated away; the \"fully implemented\" version automates the paperwork, never the judgment."
+          },
+          {
+            "type": "heading",
+            "text": "One page in a doc, written this afternoon"
+          },
+          {
+            "type": "paragraph",
+            "text": "Draft the one-pager with the policy prompt below: approved uses, prohibited uses, data rules, the review gate. Name your sanctioned tools. Put the one data rule in bold at the top. Start the log by hand for the next few client-facing outputs."
+          },
+          {
+            "type": "paragraph",
+            "text": "Honest expectation: the first draft takes an afternoon and feels awkward. That awkwardness is the tuition — a standard you can point to beats good intentions nobody can find."
+          },
+          {
+            "type": "heading",
+            "text": "The policy lives in a system; you hold the gate"
+          },
+          {
+            "type": "paragraph",
+            "text": "Move the policy into a structured doc with version history, an owner, and a \"last reviewed\" date. Turn the log into a database with a form. Add a risk-triage step for new uses (green/yellow/red), then a human confirms. Wire the review gate into your workflow."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where most small teams should settle: fast enough that governance is not a tax, structured enough that you can show your work if anyone asks."
+          },
+          {
+            "type": "heading",
+            "text": "An owned, enforced, regularly revisited standard"
+          },
+          {
+            "type": "paragraph",
+            "text": "A named owner. An onboarding hook so every hire and contractor acknowledges the policy. A structured review gate — drafted, reviewed, approved, sent — that cannot be skipped. A living audit trail. A scheduled quarterly revisit. Disclosure norms baked in."
+          },
+          {
+            "type": "paragraph",
+            "text": "\"Fully implemented\" does not mean \"runs itself.\" Governance is ongoing work — enforced, revisited, actually followed — or it is just a file."
+          },
+          {
+            "type": "quote",
+            "text": "Reality check: a policy nobody reads is theater — worse than nothing, because it creates false comfort. And to be clear, this playbook is educational and is not a substitute for qualified legal or compliance advice. RN Collins is a JD candidate, not a licensed attorney. For your specific jurisdiction, industry, and contracts, get qualified counsel. This gets you to a smarter starting point, not to compliance."
+          }
+        ]
+      },
+      {
+        "title": "From zero to an owned, enforced policy",
+        "eyebrow": "07 · Step-by-step build",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Draft the one-page policy. Run the policy prompt below, then rewrite the output in your own words. Put it in a shared doc titled \"AI Use Policy,\" date it, and lead with the single data rule in bold. Keep it to one page — length kills adoption.",
+              "Define the approved and prohibited list. Name the approved uses (drafting internal notes, summarizing your own documents, brainstorming) and the prohibited ones (pasting client PII or secrets into unsanctioned tools, sending unreviewed AI output to clients or regulators). Anything not listed defaults to \"ask first.\"",
+              "Set your data tiers. Sort information into a few tiers — public, internal, confidential/regulated — and state which tier is allowed in which tool. Confidential and regulated data goes only into sanctioned, terms-verified tools, if at all.",
+              "Define the human-review gate. Write the one-sentence rule: anything AI-assisted going to a client, regulator, or the public gets reviewed and signed off by a named person first. Decide who reviews, what \"reviewed\" means (facts checked, no leaked data, tone right), and where drafts wait.",
+              "Set up the audit-trail log. Create a sheet or database from the template below: date, item, tool, who produced it, who reviewed it, outcome, notes. Make logging faster than skipping it, and log every client-facing item from day one.",
+              "Train the team. Walk everyone through the policy in a short session — not an email they will not read. Cover the one data rule, the sanctioned tools, the review gate, and how to log. Have each person acknowledge they have read it.",
+              "Set the review cadence. Put a recurring hold on the calendar (quarterly works for most small teams) to re-verify tool terms, update the approved list, refresh the \"last reviewed\" date, and review any incidents. A cadence is what keeps the policy alive.",
+              "Appoint an owner. Name one accountable person for the whole thing. Without an owner, every other step slowly rots. The owner does not have to do all the work — they have to make sure it keeps happening."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Copy these, then make them yours",
+        "eyebrow": "08 · Prompts and templates",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Draft a one-page internal AI use policy"
+          },
+          {
+            "type": "code",
+            "text": "You are helping me draft a one-page internal AI use policy for a small business. This is a starting draft for me to edit, not final legal advice. My business: [type of business, e.g. a 6-person bookkeeping firm] The sensitive data we handle: [e.g. client financials, PII, contracts] Tools we want to sanction: [e.g. ChatGPT Team, Claude Team] Produce a one-page policy with four labeled sections: 1. Approved uses — 4-6 specific, allowed AI uses for our work. 2. Prohibited uses — 4-6 specific, banned uses (be explicit about never pasting client PII, secrets, or confidential material into tools not on our approved list). 3. Data rules — plain-language rules for what data may go into which tool, tied to sensitivity tiers. 4. Review gate — the rule that anything AI-assisted going to a client, regulator, or the public must be reviewed and signed off by a named person first. Keep it plain, short, and readable. Flag anywhere I should consult a qualified attorney for my jurisdiction, industry, or contracts."
+          },
+          {
+            "type": "heading",
+            "text": "Audit-log row template"
+          },
+          {
+            "type": "code",
+            "text": "Copy this header row into a spreadsheet or Notion database. One row per client-facing, AI-assisted output. Date | Item / deliverable | Tool used | Produced by | Reviewed by | Review date | Data sensitivity (public / internal / confidential) | Passed review? (Y/N) | Sent to | Notes / issues Example row: 2026-07-05 | Q2 client summary email | Claude Team | R. Okafor | J. Mensah | 2026-07-05 | Internal | Y | Client (Acme) | Reworded one figure; verified against source."
+          },
+          {
+            "type": "heading",
+            "text": "Use-case risk triage (green / yellow / red)"
+          },
+          {
+            "type": "code",
+            "text": "Classify a proposed AI use for my business as GREEN, YELLOW, or RED. This is a starting assessment for a human to confirm, not a final ruling. Our approved uses: [paste] Our prohibited uses: [paste] Our data sensitivity tiers: [paste] Proposed use: [describe: what someone wants to do, which tool, what data is involved, and where the output goes] Output: - Rating: GREEN (clearly approved), YELLOW (needs a human decision and possibly extra safeguards), or RED (prohibited or high-risk). - Reason: 2-3 sentences tied to a specific policy point or data tier. - If YELLOW: the exact questions a human should answer before deciding. - If RED: the specific rule or risk that makes it off-limits. Do not guess about tool terms or the law; flag where I need to verify current terms or consult qualified counsel."
+          },
+          {
+            "type": "heading",
+            "text": "Incident quick-write (optional)"
+          },
+          {
+            "type": "code",
+            "text": "Help me write a short, factual internal record of a possible AI-related data incident. No blame, just facts. What happened: [e.g. a contract was pasted into a consumer tool] When and who: [date, role — not for punishment, for the record] Data involved: [what kind, whose] Produce: a 4-6 sentence factual summary, a list of immediate steps to take, and a note on whether this may need to be escalated to qualified legal/compliance counsel. Do not offer legal conclusions."
+          }
+        ]
+      },
+      {
+        "title": "Where this goes wrong, and how to catch it",
+        "eyebrow": "09 · Risks and review points",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "This is not legal, compliance, medical, or financial advice"
+          },
+          {
+            "type": "paragraph",
+            "text": "Read this twice. This playbook is educational. RN Collins is a JD candidate, not a licensed attorney, and nothing here creates an attorney–client relationship. You must get qualified counsel for your specific jurisdiction, industry, and contracts before relying on any policy you build from this — especially in regulated fields like healthcare, finance, and law."
+          },
+          {
+            "type": "heading",
+            "text": "Over-restriction kills adoption"
+          },
+          {
+            "type": "paragraph",
+            "text": "A policy so strict that people cannot get real work done just pushes AI back into the shadows where you cannot see it. The goal is safe, visible use — not a ban dressed up as governance. If your rules are being ignored, they may be wrong, not your team."
+          },
+          {
+            "type": "heading",
+            "text": "An unenforced policy is theater"
+          },
+          {
+            "type": "paragraph",
+            "text": "Writing the document is the easy part. If nobody reviews outputs, nobody logs, and nobody owns it, the policy creates false comfort and protects you less than an honest \"we have no policy yet.\" Enforcement and ownership are the whole game."
+          },
+          {
+            "type": "heading",
+            "text": "Data leakage is the core danger"
+          },
+          {
+            "type": "paragraph",
+            "text": "The failure you are guarding against is sensitive data landing in a tool that trains on it or stores it insecurely. Verify tool terms in writing, keep the one data rule front and center, and treat every consumer free tier as unsafe for confidential material until proven otherwise."
+          },
+          {
+            "type": "heading",
+            "text": "Regulatory and tool terms change"
+          },
+          {
+            "type": "paragraph",
+            "text": "AI law and tool data-handling terms are moving fast. A policy that was correct last quarter can be stale now. This is exactly why the review cadence exists — a frozen policy quietly goes wrong."
+          },
+          {
+            "type": "heading",
+            "text": "Review cadence"
+          },
+          {
+            "type": "paragraph",
+            "text": "Spot-check the audit log monthly for gaps, re-verify sanctioned-tool terms and refresh the approved list quarterly, and review any incidents and your disclosure norms with qualified counsel at least once a year or whenever your contracts or regulations change."
+          }
+        ]
+      },
+      {
+        "title": "Measure whether the policy is real, not whether it exists",
+        "eyebrow": "10 · KPIs that tell the truth",
+        "blocks": [
+          {
+            "type": "table",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Metric",
+                    "header": true
+                  },
+                  {
+                    "text": "What it tells you",
+                    "header": true
+                  },
+                  {
+                    "text": "Healthy signal",
+                    "header": true
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "% of staff trained and acknowledged"
+                  },
+                  {
+                    "text": "Whether the policy has reached the people who use AI"
+                  },
+                  {
+                    "text": "At or near 100%, including contractors and new hires"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Sanctioned-tool adoption vs. shadow use"
+                  },
+                  {
+                    "text": "Whether people use cleared tools or improvise with unknown ones"
+                  },
+                  {
+                    "text": "Sanctioned use rising; shadow use surfacing and shrinking"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "% of client-facing AI output that passed the review gate"
+                  },
+                  {
+                    "text": "Whether the human-review gate is actually being applied"
+                  },
+                  {
+                    "text": "Trending to 100% of client-facing items reviewed before sending"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Audit-log completeness"
+                  },
+                  {
+                    "text": "Whether you could reconstruct what happened if asked"
+                  },
+                  {
+                    "text": "Every client-facing AI-assisted item logged, with no gaps"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Policy review recency"
+                  },
+                  {
+                    "text": "Whether the policy keeps up with changing terms and law"
+                  },
+                  {
+                    "text": "\"Last reviewed\" date within your cadence; tool terms re-verified"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "AI-related incidents (and time to catch)"
+                  },
+                  {
+                    "text": "Whether leaks or bad outputs are happening — and being caught"
+                  },
+                  {
+                    "text": "Rare, caught quickly, recorded honestly, and learned from"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Watch the honest metrics, not the flattering ones. A team that reports a near-miss is healthier than one with a spotless log and a policy nobody follows — silence usually means shadow use you cannot see, not safety."
+          }
+        ]
+      },
+      {
+        "title": "Want Aloha AI to build this for you?",
+        "eyebrow": "Do it with us",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "We help you stand up a right-sized AI governance starter — a one-page policy, an approved/prohibited list, data rules, a working human-review gate, and an audit log — and hand it over documented, with an owner and a review cadence in place. It is the trust layer that makes every other AI move you make defensible. (Educational and process support, not legal advice — we will tell you plainly when it is time to bring in qualified counsel.)"
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "university/playbooks/governance-starter/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "internal-knowledge-base-playbook",
@@ -65,15 +1170,541 @@
     "summary": "Turn scattered documents, messages, and tacit knowledge into a reliable internal knowledge system with grounded retrieval, citations, freshness controls, and access boundaries.",
     "audience": "Teams whose operational knowledge is fragmented across documents, messages, and individual employees.",
     "maturity": "Production",
-    "topics": ["knowledge-management", "retrieval", "citations", "access-control"],
-    "industries": ["professional-services", "education", "legal", "small-business"],
-    "keywords": ["internal knowledge base", "RAG assistant", "enterprise search", "knowledge freshness"],
-    "learningPaths": ["Inventory authoritative knowledge", "Choose canonical sources", "Normalize structure and metadata", "Apply access controls", "Implement grounded retrieval with citations", "Evaluate answers and maintain freshness"],
-    "evidence": ["Authoritative source documents", "Ownership and review dates", "Access rules", "Representative questions and expected answers"],
-    "methodology": ["Curate before indexing", "Preserve source identity", "Enforce access before retrieval", "Return citations with answers", "Test coverage and abstention", "Review stale or conflicting sources"],
-    "assumptions": ["Document owners can identify authoritative versions", "Users receive access only to information they are allowed to see"],
-    "limitations": ["Retrieval cannot repair incomplete or contradictory source knowledge", "Permissions and freshness require continuing maintenance"],
-    "relationships": [{"type": "depends_on", "target": "university"}, {"type": "supports", "target": "kb-readiness-course"}, {"type": "implements", "target": "intelligence"}]
+    "topics": [
+      "knowledge-management",
+      "retrieval",
+      "citations",
+      "access-control"
+    ],
+    "industries": [
+      "professional-services",
+      "education",
+      "legal",
+      "small-business"
+    ],
+    "keywords": [
+      "internal knowledge base",
+      "RAG assistant",
+      "enterprise search",
+      "knowledge freshness"
+    ],
+    "learningPaths": [
+      "Inventory authoritative knowledge",
+      "Choose canonical sources",
+      "Normalize structure and metadata",
+      "Apply access controls",
+      "Implement grounded retrieval with citations",
+      "Evaluate answers and maintain freshness"
+    ],
+    "evidence": [
+      "Authoritative source documents",
+      "Ownership and review dates",
+      "Access rules",
+      "Representative questions and expected answers"
+    ],
+    "methodology": [
+      "Curate before indexing",
+      "Preserve source identity",
+      "Enforce access before retrieval",
+      "Return citations with answers",
+      "Test coverage and abstention",
+      "Review stale or conflicting sources"
+    ],
+    "assumptions": [
+      "Document owners can identify authoritative versions",
+      "Users receive access only to information they are allowed to see"
+    ],
+    "limitations": [
+      "Retrieval cannot repair incomplete or contradictory source knowledge",
+      "Permissions and freshness require continuing maintenance"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "university"
+      },
+      {
+        "type": "supports",
+        "target": "kb-readiness-course"
+      },
+      {
+        "type": "implements",
+        "target": "intelligence"
+      }
+    ],
+    "editorialIntro": [
+      "Turn scattered docs, buried Slack threads, and the answers that live in one person's head into a knowledge base your team queries in plain language — one that quotes your own documents, cites where each answer came from, and admits when it does not know. No mystery answers. No pretending a search box is the same as knowing something is true."
+    ],
+    "editorialSections": [
+      {
+        "title": "The answer exists somewhere — nobody finds it in time",
+        "eyebrow": "01 · The business problem",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Every growing team runs up the same quiet debt. The onboarding steps live in a Google Doc someone wrote two roles ago. The real reason you switched vendors is in a Slack thread from March. The way you actually handle a refund sits in one person's head, and when they are on vacation the question just waits. The knowledge is not missing — it is scattered, undated, and unfindable at the exact moment someone needs it."
+          },
+          {
+            "type": "paragraph",
+            "text": "So the same questions get asked over and over in chat. New hires spend their first month interrupting senior people. Two teams do the same task two different ways because each found a different half-true doc. And when the one person who knows leaves, part of how the company works leaves with them."
+          },
+          {
+            "type": "paragraph",
+            "text": "AI does not fix this by generating more content. It fixes it by turning what you already have into something you can question in plain language — and, done right, by refusing to make things up when the answer genuinely is not written down. The hard part was never the model. It is deciding what counts as the truth, and keeping that truth current."
+          }
+        ]
+      },
+      {
+        "title": "A findable answer is a decision made faster, the same way twice",
+        "eyebrow": "02 · Why it matters",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "When the right answer is one question away, the whole team moves differently. New hires get productive in weeks instead of quarters because they can ask instead of wait. Support and ops give consistent answers because everyone reads from the same source. And the senior people who used to be a human help desk get their focus back, because the routine questions no longer route through them."
+          },
+          {
+            "type": "paragraph",
+            "text": "The arithmetic is plain. If a recurring question costs someone ten minutes to track down, and it gets asked twenty times a week across the team, that is a few hours a week evaporating into a search you already paid to write down once. A knowledge base that answers in seconds does not just save the time — it stops the wrong answer from spreading when someone gives up and guesses."
+          },
+          {
+            "type": "paragraph",
+            "text": "There is a durability dividend too. Knowledge that lives only in conversation walks out the door with the person. Knowledge that is collected, structured, and queryable becomes an asset the company keeps — one that gets more valuable as it gets more complete, not less valuable as people turn over."
+          }
+        ]
+      },
+      {
+        "title": "Teams whose knowledge outgrew the people holding it",
+        "eyebrow": "03 · Who this is for",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "The scaling small business or startup (5–100 people). You have crossed the size where everyone just knows how things work. Questions now get asked in three channels and answered three ways. You want one place people trust."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "The operations or people lead. You own onboarding, process, and \"how do we do X,\" and you are tired of being the search engine. You want new hires answering their own questions correctly by day two."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "The support or customer-facing team. You need consistent, correct answers fast, and you need to know which policy or doc an answer came from so you can trust it before repeating it to a customer."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Not a fit: anyone hoping to point AI at a pile of contradictory, undated docs and get reliable answers without curating first. Garbage in is confident garbage out — the curation is the work, not the shortcut."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "From scattered sources to a cited, current, plain-language answer",
+        "eyebrow": "04 · What this workflow accomplishes",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "By the end of a build, you have a loop that keeps your internal brain honest and up to date:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Collect the real sources of truth — docs, wikis, key Slack decisions, the process a person carries in their head — into one inventory instead of five scattered homes."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Curate them: pick the one canonical version of each thing, mark the rest archived, and date what is current so the system never quotes a doc you retired."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Structure the content into clear, titled, single-topic pages so both a person and a model can find the right passage fast."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Ground answers strictly on those sources, so the assistant quotes what you wrote rather than inventing plausible-sounding filler."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Cite every answer back to the specific doc it came from, so anyone can verify before they act."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Maintain the source of truth on a cadence — because a knowledge base that stops being updated becomes a confident source of wrong answers."
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "The system's job is to retrieve and quote your knowledge, not to author it. The truth stays something humans own and keep current; the AI just makes it findable and readable."
+          }
+        ]
+      },
+      {
+        "title": "Pick a tier and start; you can grow into more",
+        "eyebrow": "05 · Tools you will need",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "You do not need all of these. The manual version needs one AI chat tool and the docs you already have. Prices below are current as of mid-2026 and change often — confirm before you buy."
+          },
+          {
+            "type": "heading",
+            "text": "AI assistant required"
+          },
+          {
+            "type": "paragraph",
+            "text": "ChatGPT Plus or Claude Pro, both about $20/month. This is what you use to clean up messy docs, draft FAQs, and — in the manual version — answer questions from context you paste in. Free tiers work for testing; paid tiers give you the stronger models and higher limits you will want once this is real."
+          },
+          {
+            "type": "heading",
+            "text": "A doc hub with AI search"
+          },
+          {
+            "type": "paragraph",
+            "text": "Notion is a common home for this. Notion Business runs about $20/user/month, and the AI features (Ask Notion / AI search across your workspace) are bundled into the Business tier now — the old separate ~$10 AI add-on has been removed. Custom Agents, if you build them, draw on metered credits (roughly $10 per 1,000 credits) on top of the seat price, so watch usage."
+          },
+          {
+            "type": "heading",
+            "text": "Alternative doc hubs"
+          },
+          {
+            "type": "paragraph",
+            "text": "Google Drive works if your docs already live there. Purpose-built knowledge tools like Slab or Guru add cleaner structure, verification workflows, and freshness reminders — useful once your library grows past what a folder can manage."
+          },
+          {
+            "type": "heading",
+            "text": "A real RAG assistant advanced"
+          },
+          {
+            "type": "paragraph",
+            "text": "To ground an assistant strictly on your own docs, you need a vector store to index your content plus an assistant or API layer that retrieves the relevant passages and answers only from them. This is developer-level effort — cost varies widely with volume and how much you build versus buy — and it is genuinely more work than turning on AI search. Do not start here."
+          },
+          {
+            "type": "heading",
+            "text": "Sync / automation glue optional"
+          },
+          {
+            "type": "paragraph",
+            "text": "Zapier or Make to keep sources in sync — for example, pushing a resolved Slack decision into your doc hub. Zapier's Professional plan starts around $19.99/month annual for 750 tasks; a multi-step Zap burns one task per step per run, so budget by steps, not runs."
+          },
+          {
+            "type": "heading",
+            "text": "Guardrail note"
+          },
+          {
+            "type": "paragraph",
+            "text": "Whatever you use, keep confidential and personal data inside an environment you control and check what your tools do with your content. Set permissions so the assistant surfaces only what a given person is allowed to see. This is not legal advice — see the risks section."
+          }
+        ]
+      },
+      {
+        "title": "Manual, semi-automated, fully implemented",
+        "eyebrow": "06 · Three ways to run it",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Same loop, three levels of build. Start at the left even if you plan to end at the right — doing it by hand teaches you which docs are actually canonical and how bad the contradictions are, and that judgment is what you encode later."
+          },
+          {
+            "type": "heading",
+            "text": "One AI chat, the docs you have, an afternoon"
+          },
+          {
+            "type": "paragraph",
+            "text": "Inventory your top five to ten sources. Pick one truth per topic. Clean one messy doc into a FAQ, answer a real question grounded in it, and run the gap-finder to see what your docs cannot answer yet."
+          },
+          {
+            "type": "paragraph",
+            "text": "Honest expectation: the first pass is slow, and most of the time goes to deciding what is true. That is the tuition you pay to build the grounded version well."
+          },
+          {
+            "type": "heading",
+            "text": "A doc hub with AI search finds it; you keep it curated"
+          },
+          {
+            "type": "paragraph",
+            "text": "Your cleaned, canonical pages live in a hub with built-in AI search, so anyone asks in plain language and gets an answer with a link back to the source. You keep two jobs: curation and freshness."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where most teams should live for a long time: fast, cheap, and honest enough — without the real engineering of a custom RAG build until you need it."
+          },
+          {
+            "type": "heading",
+            "text": "A grounded RAG assistant, cited, permission-aware"
+          },
+          {
+            "type": "paragraph",
+            "text": "A retrieval-augmented assistant indexes your docs, retrieves the passages relevant to each question, and answers only from them — quoting sources, respecting who is asking, and declining when the answer is not there."
+          },
+          {
+            "type": "paragraph",
+            "text": "\"Fully implemented\" is not a weekend project. It means real engineering plus ongoing curation, with the freshness routine treated as load-bearing."
+          },
+          {
+            "type": "quote",
+            "text": "Reality check: grounding reduces hallucination but does not eliminate it — and it does nothing for a stale source. If a document is out of date, the assistant will cite it and give a confident, wrong answer with a straight face. The maintenance that keeps your source of truth current is not overhead you can cut later; it is the load-bearing part of the whole system."
+          }
+        ]
+      },
+      {
+        "title": "From scattered docs to a curated, AI-searchable hub",
+        "eyebrow": "07 · Step-by-step build",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Inventory and pick the truth. List every source that answers a common question, note its owner and last-trusted date, and choose one canonical version per topic. Archive the losers so nothing can quote a doc you retired.",
+              "Clean each source into single-topic pages. Run the FAQ extractor to turn rambling docs into clear, titled, one-question-per-answer pages. A model retrieves a tight, well-titled passage far better than a wall of text.",
+              "Add owner and freshness fields. Give every page an owner and a \"last reviewed\" date. This is the discipline that keeps the source of truth true, and it is the field the whole system leans on.",
+              "Load into your doc hub. Put the curated pages into Notion or your chosen hub in a clear structure — by team or by topic — so both people and AI search can navigate it.",
+              "Turn on AI search and test it. Enable Ask / AI search across the workspace, then throw your team's real questions at it. Log every wrong answer; the fix is usually a content gap, not a settings tweak.",
+              "Run the gap-finder. Use the gap-finder prompt to list the questions your library cannot answer yet. Prioritize by how often each is asked, and write the missing pages.",
+              "Set permissions and a review cadence. Restrict pages so people see only what they should, and schedule owners to re-confirm or update their pages when review dates pass. Retire stale material on sight.",
+              "Consider a grounded RAG build only if you need it. If AI search over curated docs is not enough — you need strict citations, customer-facing reliability, or permission-aware retrieval at scale — scope a RAG assistant. Automate the parts you have already validated by hand; never automate away the curation."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Copy these, then make them yours",
+        "eyebrow": "08 · Prompts and templates",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Doc-to-clean-FAQ extractor"
+          },
+          {
+            "type": "code",
+            "text": "You are cleaning up an internal document into a clear FAQ so my team and an AI search tool can both find answers fast. Here is the document: [paste the messy doc] Produce a set of Q&A pairs where: - Each question is one a real teammate would actually type. - Each answer is self-contained and uses ONLY facts stated in the document. Do not add best practices or outside knowledge. - If the document is ambiguous or contradicts itself, do not smooth it over — list the ambiguity under \"Needs a human decision\" instead of guessing. - Give each Q&A a short, descriptive title. End with a one-line note on anything that looks out of date."
+          },
+          {
+            "type": "heading",
+            "text": "Grounded-answer system prompt"
+          },
+          {
+            "type": "code",
+            "text": "You answer questions using ONLY the context documents provided below. Follow these rules exactly: 1. Base every answer solely on the provided context. Do not use outside or prior knowledge, even if you think you know it. 2. Cite the source: after each answer, name the specific document (and section, if given) the answer came from. 3. If the answer is not fully contained in the context, say exactly: \"I don't know based on the current documents.\" Then say what document would need to exist to answer it. 4. If two documents disagree, say so and quote both — do not pick a winner on your own. 5. Never invent policies, numbers, names, or dates. Context documents: [retrieved passages go here] Question: [user question]"
+          },
+          {
+            "type": "heading",
+            "text": "Knowledge-gap finder"
+          },
+          {
+            "type": "code",
+            "text": "Here is the full list of topics and pages currently in our internal knowledge base: [paste page titles, or a summary of what's covered] Here are the questions our team actually asks most often: [paste real questions from Slack/support/onboarding] Do two things: 1. List the questions that our current pages CANNOT fully answer, ranked by how often they seem to be asked. 2. For each gap, name the single page we should write to close it and who is the likely owner (a role, not a guess at a person). Do not invent answers to the gaps. Only identify what's missing."
+          },
+          {
+            "type": "heading",
+            "text": "Freshness reviewer (optional)"
+          },
+          {
+            "type": "code",
+            "text": "Review this internal page for signs it may be out of date: [paste page + its \"last reviewed\" date] Flag: references to old tools, people, prices, dates, or policies that may have changed; anything that contradicts a newer page I paste; and any claim that should have an owner re-confirm it. Do not rewrite the page — just list what a human should verify."
+          }
+        ]
+      },
+      {
+        "title": "Where this goes wrong, and how to catch it",
+        "eyebrow": "09 · Risks and review points",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Hallucination when ungrounded"
+          },
+          {
+            "type": "paragraph",
+            "text": "An assistant left to answer from general knowledge will invent plausible policies and numbers. Ground it strictly on your own documents, require citations, and make \"I don't know\" an acceptable, expected answer."
+          },
+          {
+            "type": "heading",
+            "text": "Stale sources, confident wrong answers"
+          },
+          {
+            "type": "paragraph",
+            "text": "Grounding does not help if the grounded doc is out of date. A retired policy that stays in the index gets cited with total confidence. Every page needs an owner, a review date, and a way to fall out of the system when retired."
+          },
+          {
+            "type": "heading",
+            "text": "Confidential or personal data leaving your environment"
+          },
+          {
+            "type": "paragraph",
+            "text": "Feeding sensitive docs or PII into a tool means trusting where that content goes. Check your tools' data handling, keep sensitive material in environments you control, and exclude what should not be indexed at all."
+          },
+          {
+            "type": "heading",
+            "text": "Access control and permissions"
+          },
+          {
+            "type": "paragraph",
+            "text": "If the assistant can surface a document to anyone who asks, it becomes a leak. Retrieval must respect who is asking so people see only what they are allowed to see."
+          },
+          {
+            "type": "heading",
+            "text": "Over-reliance"
+          },
+          {
+            "type": "paragraph",
+            "text": "A confident, cited answer can still be wrong if the source was wrong. Teach the team to click through to the source for anything consequential, rather than treating the assistant as an oracle."
+          },
+          {
+            "type": "heading",
+            "text": "Legal, medical, and financial limits"
+          },
+          {
+            "type": "paragraph",
+            "text": "This playbook is educational, not legal, medical, or financial advice; RN Collins is a JD candidate, not a licensed attorney. Do not let an internal assistant stand in for qualified professional advice, and get counsel for your jurisdiction and industry on data and privacy obligations."
+          },
+          {
+            "type": "heading",
+            "text": "Review cadence"
+          },
+          {
+            "type": "paragraph",
+            "text": "Spot-check answers weekly, have page owners re-confirm freshness on each page's schedule, and audit permissions and the gap list quarterly."
+          }
+        ]
+      },
+      {
+        "title": "Measure trust and freshness, not just usage",
+        "eyebrow": "10 · KPIs that tell the truth",
+        "blocks": [
+          {
+            "type": "table",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Metric",
+                    "header": true
+                  },
+                  {
+                    "text": "What it tells you",
+                    "header": true
+                  },
+                  {
+                    "text": "Healthy signal",
+                    "header": true
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "% of questions answered correctly"
+                  },
+                  {
+                    "text": "Whether the base is actually trustworthy, verified against sources"
+                  },
+                  {
+                    "text": "High and rising as content is curated; spot-checked, not assumed"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Time-to-answer"
+                  },
+                  {
+                    "text": "How fast someone gets a usable, cited answer versus hunting for it"
+                  },
+                  {
+                    "text": "Seconds to a cited answer, down from minutes of searching"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Deflected repeat questions"
+                  },
+                  {
+                    "text": "Whether the same questions stop clogging chat and interrupting people"
+                  },
+                  {
+                    "text": "Falling volume of \"where do I find…\" in team channels"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Coverage (questions with a source)"
+                  },
+                  {
+                    "text": "How much of what people ask your docs can actually answer"
+                  },
+                  {
+                    "text": "Gap list shrinking as missing pages get written"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Freshness (pages past review date)"
+                  },
+                  {
+                    "text": "Whether the source of truth is being kept current"
+                  },
+                  {
+                    "text": "Low and stable; owners clearing reviews on cadence"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "\"I don't know\" rate"
+                  },
+                  {
+                    "text": "Whether the system is honestly declining vs. guessing"
+                  },
+                  {
+                    "text": "Present and healthy — a well-placed \"I don't know\" beats a confident wrong answer"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Watch answer quality, not just query count. A base people trust because it says \"I don't know\" honestly is worth far more than a busy one that guesses."
+          }
+        ]
+      },
+      {
+        "title": "Want Aloha AI to build this for you?",
+        "eyebrow": "Do it with us",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "We help you curate your real sources of truth, structure them into a searchable hub, and — if you need it — stand up a grounded assistant that answers only from your docs, cites its sources, respects permissions, and is handed over with a freshness routine so it stays true after we leave."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "university/playbooks/internal-knowledge-base/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "lead-generation-playbook",
@@ -84,15 +1715,531 @@
     "summary": "Build a fit-first lead-generation system for finding, enriching, and prioritizing prospects and opening real conversations without spam.",
     "audience": "Service businesses, consultants, agencies, and small sales teams building responsible outbound workflows.",
     "maturity": "Production",
-    "topics": ["lead-generation", "research", "personalization", "human-review"],
-    "industries": ["professional-services", "small-business", "creator-economy"],
-    "keywords": ["AI lead generation", "prospect research", "outbound personalization", "sales workflow"],
-    "learningPaths": ["Define the ideal-fit evidence", "Discover prospects from legitimate sources", "Verify and enrich records", "Prioritize by observable fit", "Draft source-grounded outreach", "Approve, send, and record outcomes"],
-    "evidence": ["Public or authorized prospect information", "Documented fit criteria", "Verified contact and company facts", "Outreach and response records"],
-    "methodology": ["Optimize for fit before volume", "Preserve provenance", "Separate research from persuasion", "Avoid invented personalization", "Require human approval and lawful outreach controls"],
-    "assumptions": ["The organization has authority to conduct outreach", "A human reviews recipients, claims, and tone"],
-    "limitations": ["This playbook does not establish compliance with privacy or marketing law", "Automated enrichment may be stale, incorrect, or inappropriate to use"],
-    "relationships": [{"type": "depends_on", "target": "university"}, {"type": "implements", "target": "strategy"}, {"type": "supports", "target": "build-your-team"}]
+    "topics": [
+      "lead-generation",
+      "research",
+      "personalization",
+      "human-review"
+    ],
+    "industries": [
+      "professional-services",
+      "small-business",
+      "creator-economy"
+    ],
+    "keywords": [
+      "AI lead generation",
+      "prospect research",
+      "outbound personalization",
+      "sales workflow"
+    ],
+    "learningPaths": [
+      "Define the ideal-fit evidence",
+      "Discover prospects from legitimate sources",
+      "Verify and enrich records",
+      "Prioritize by observable fit",
+      "Draft source-grounded outreach",
+      "Approve, send, and record outcomes"
+    ],
+    "evidence": [
+      "Public or authorized prospect information",
+      "Documented fit criteria",
+      "Verified contact and company facts",
+      "Outreach and response records"
+    ],
+    "methodology": [
+      "Optimize for fit before volume",
+      "Preserve provenance",
+      "Separate research from persuasion",
+      "Avoid invented personalization",
+      "Require human approval and lawful outreach controls"
+    ],
+    "assumptions": [
+      "The organization has authority to conduct outreach",
+      "A human reviews recipients, claims, and tone"
+    ],
+    "limitations": [
+      "This playbook does not establish compliance with privacy or marketing law",
+      "Automated enrichment may be stale, incorrect, or inappropriate to use"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "university"
+      },
+      {
+        "type": "implements",
+        "target": "strategy"
+      },
+      {
+        "type": "supports",
+        "target": "build-your-team"
+      }
+    ],
+    "editorialIntro": [
+      "A fit-first system that turns your ideal-client definition into a short list of real people worth talking to — enriched with genuine context and reached with a message you would be glad to receive. No scraped-then-blasted lists. No mail-merge pretending to be a relationship."
+    ],
+    "editorialSections": [
+      {
+        "title": "You need the right conversations, not more noise",
+        "eyebrow": "01 · The business problem",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Agencies, consultancies, fractional operators, boutique firms — they live or die by pipeline. But the two usual ways of building it both break. Referrals are wonderful and completely unpredictable; you cannot forecast a quarter on hope. Bought lists blasted through a cold-email tool feel efficient right up until your domain reputation tanks, your reply rate sits at half a percent, and the few replies you get are annoyed."
+          },
+          {
+            "type": "paragraph",
+            "text": "The real problem is not volume. It is that finding people who genuinely fit your offer, learning enough to say something true, and doing that every week is slow manual work — the kind that gets dropped the moment client work heats up. So pipeline arrives in feast-or-famine waves, and the famine always shows up at the worst time."
+          },
+          {
+            "type": "paragraph",
+            "text": "AI does not fix this by letting you send more. It fixes it by collapsing the hours between \"here is my ideal client\" and \"here is a warm, specific first message to a person who matches\" — so the work actually gets done, week after week, at a quality you would put your name on."
+          }
+        ]
+      },
+      {
+        "title": "Consistency compounds; spikes evaporate",
+        "eyebrow": "02 · Why it matters",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "A predictable trickle of qualified conversations changes how you run everything else. You price with confidence instead of discounting out of fear. You turn down bad-fit work because another conversation is already booked. You plan hiring against a number you trust rather than a feeling."
+          },
+          {
+            "type": "paragraph",
+            "text": "The economics are stark. If sourcing and personalization take forty-five minutes per prospect done well, you will realistically touch a handful of people a week and then stop. Compress that to five minutes of review over an AI draft, and the same person reaches thirty or forty fitting prospects a week without lowering the bar. That is the difference between a channel that works and one that stays a good intention."
+          },
+          {
+            "type": "paragraph",
+            "text": "There is a reputational dividend too. Outreach that clearly understands the recipient earns replies even when the answer is \"not now\" — and \"not now, but stay in touch\" is a pipeline asset. Spray-and-pray earns spam complaints, which quietly poison every future email from that domain."
+          }
+        ]
+      },
+      {
+        "title": "Owners and small teams who sell expertise",
+        "eyebrow": "03 · Who this is for",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "The founder-seller. You are the person who closes, and prospecting is what falls off the calendar first. You want a review-ready short list you can act on in a coffee break."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "The small agency or consultancy (2–20 people). You have a clear ideal-client profile but no full-time SDR, and you want outreach that reads like a senior person wrote it, because one effectively did."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "The fractional executive or specialist. Your market is narrow and named — a few hundred companies, not a few million — so precision beats volume every time, and generic lists are useless to you."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Not a fit: high-volume transactional B2C, or anyone hoping to send ten thousand identical emails a day. This is built for quality and defensibility, not blast radius."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "From a definition to a warm first message, repeatably",
+        "eyebrow": "04 · What this workflow accomplishes",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "By the end of a build, you have a loop that runs on a schedule you choose:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Define a precise ideal-client profile (ICP) and disqualifiers, written down so the system and any teammate apply the same standard."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Source companies and named contacts that match, from a real data provider rather than guesswork."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Enrich each one with genuine context — recent news, role, a plausible trigger — so there is something true to say."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Qualify against your disqualifiers so bad-fit names never reach the outreach step."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Draft a personalized first message and one follow-up, in your voice, that a human reviews before anything sends."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Track what happens so you learn which segments and angles actually convert."
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "A human always approves before a message goes out. The AI does the ninety percent that is research and drafting; you keep the ten percent that is judgment."
+          }
+        ]
+      },
+      {
+        "title": "Pick a tier and start; you can grow into more",
+        "eyebrow": "05 · Tools you will need",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "You do not need all of these. The manual version needs one AI chat tool and a spreadsheet. Prices below are current as of mid-2026 and change often — confirm before you buy."
+          },
+          {
+            "type": "heading",
+            "text": "AI assistant required"
+          },
+          {
+            "type": "paragraph",
+            "text": "ChatGPT Plus or Claude Pro, both about $20/month, for research synthesis, qualification, and drafting. Free tiers work for testing; paid tiers give you the stronger models and higher limits you will want once this is real."
+          },
+          {
+            "type": "heading",
+            "text": "A place to keep the list"
+          },
+          {
+            "type": "paragraph",
+            "text": "Google Sheets or Airtable (free tiers are fine to start) as your working pipeline: one row per prospect, columns for fit signals, status, and the drafted message."
+          },
+          {
+            "type": "heading",
+            "text": "Data / enrichment source"
+          },
+          {
+            "type": "paragraph",
+            "text": "Apollo.io is a common choice; paid plans run roughly $49/user/month (Basic) to $79 (Professional) on annual billing, and the credit system — not the sticker price — is the real cost driver, so watch usage. LinkedIn Sales Navigator (about $99/month) is an alternative for people-first sourcing."
+          },
+          {
+            "type": "heading",
+            "text": "Sending + sequencing"
+          },
+          {
+            "type": "paragraph",
+            "text": "Your normal email plus a light sequencing layer. Apollo includes sequencing; a standalone tool works too. Keep daily volume low and human-approved — deliverability is a reputation you are renting, not a dial to crank."
+          },
+          {
+            "type": "heading",
+            "text": "Automation glue optional"
+          },
+          {
+            "type": "paragraph",
+            "text": "Zapier or Make to move rows between steps. Zapier's Professional plan starts around $19.99/month annual for 750 tasks; a multi-step Zap burns one task per step per run, so budget by steps, not runs."
+          },
+          {
+            "type": "heading",
+            "text": "Guardrail note"
+          },
+          {
+            "type": "paragraph",
+            "text": "Whatever you use, respect anti-spam law and platform terms: honor unsubscribes, identify yourself, and do not scrape where terms forbid it. This is not legal advice — see the risks section."
+          }
+        ]
+      },
+      {
+        "title": "Manual, semi-automated, fully implemented",
+        "eyebrow": "06 · Three ways to run it",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Same loop, three levels of build. Start at the left even if you plan to end at the right — doing it by hand teaches you what \"good\" looks like, and that judgment is what you encode later."
+          },
+          {
+            "type": "heading",
+            "text": "One chat, one sheet, forty-five focused minutes"
+          },
+          {
+            "type": "paragraph",
+            "text": "Write your ICP with the prompt below. Pull ten fits by hand. Research each in the assistant, draft in your voice, read every word, and send a few a day from your own inbox."
+          },
+          {
+            "type": "paragraph",
+            "text": "Honest expectation: the first pass is slow. That is the tuition you pay to build the automated version well."
+          },
+          {
+            "type": "heading",
+            "text": "The tools source; you review at two gates"
+          },
+          {
+            "type": "paragraph",
+            "text": "Save your ICP as a search in Apollo or Sales Navigator. Export a batch of 25–50 with enrichment. The AI runs a qualification pass (gate one) and batch-drafts messages. You approve and send (gate two)."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where most service businesses should live for a while: fast enough to be consistent, slow enough to stay excellent."
+          },
+          {
+            "type": "heading",
+            "text": "A scheduled loop with a mandatory approval gate"
+          },
+          {
+            "type": "paragraph",
+            "text": "A weekly schedule pulls new matches, dedupes, qualifies, and drafts into a database. The batch lands in a \"Needs review\" view and pings you. Nothing sends until you flip a status to Approved."
+          },
+          {
+            "type": "paragraph",
+            "text": "\"Fully implemented\" does not mean \"sends by itself.\" It means everything except the judgment is automated."
+          },
+          {
+            "type": "quote",
+            "text": "Reality check: the full build has real maintenance. Enrichment data drifts, prompts need re-tuning, and a broken Zap fails silently. Budget a few hours a month, and never remove the approval gate to \"save time.\" The gate is the whole point."
+          }
+        ]
+      },
+      {
+        "title": "From zero to the semi-automated loop",
+        "eyebrow": "07 · Step-by-step build",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Write and store the ICP. Run the ICP prompt. Paste the result into a doc titled \"ICP + Disqualifiers\" and treat it as version-controlled: date it, update it when a segment converts unusually well or badly.",
+              "Build the pipeline sheet. Columns: Company, Contact, Title, Link, Fit signals, Trigger, Disqualifier check, Draft message, Draft follow-up, Status (New / Reviewed / Approved / Sent / Replied / Meeting), Notes.",
+              "Configure your data source. Translate the ICP into filters in Apollo or Sales Navigator and save the search. Confirm your export/credit allowance before batching, since credits expire per cycle.",
+              "Export a starter batch. Pull 25 matches with available enrichment. Spot-check five rows by hand — is the data actually right? Bad inputs make confident, wrong drafts.",
+              "Run the qualification pass. Review the flags, delete the true fails, and note patterns (a disqualifier you keep hitting may belong in your saved-search filters).",
+              "Draft with your voice guide. Paste two or three emails you have actually sent as a voice sample, then run the personalization prompt per row. Edit until it sounds like you, not a tool.",
+              "Approve and send. Read every draft. Send a small daily batch from a warmed inbox, log outcomes, and only scale volume once replies look healthy.",
+              "Add automation last. Once the manual loop is smooth, wire the repetitive moves (export → dedupe → draft → review view) in Zapier or Make, keeping the approval gate as a hard stop. Automate what you have validated, never the judgment."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Copy these, then make them yours",
+        "eyebrow": "08 · Prompts and templates",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "ICP + disqualifiers"
+          },
+          {
+            "type": "code",
+            "text": "You are helping me define an ideal client profile for my service business. My business: [what you do, in one sentence] My best past clients: [2-3 examples and why they were great] My worst-fit clients: [1-2 examples and what went wrong] Produce: 1. A tight ICP: industry, company size, revenue band, and the buyer role who signs off. 2. A \"why now\" trigger list: 4-6 observable signals that a company is likely ready for what I offer (e.g. new funding, a specific hire, a public initiative). 3. Hard disqualifiers: 4-6 signals that mean I should NOT reach out, even if other things match. Format as three labeled lists. Be specific and observable, not aspirational. Ask me one clarifying question if my inputs are thin."
+          },
+          {
+            "type": "heading",
+            "text": "Qualification pass"
+          },
+          {
+            "type": "code",
+            "text": "Here is my ICP and my hard disqualifiers: [paste ICP + disqualifiers] Below is a batch of prospects with enrichment data: [paste rows: company, title, headcount, notes] For each row, output: KEEP or CUT, and one short reason tied to a specific ICP criterion or disqualifier. If a row lacks the data to judge, mark NEEDS-CHECK rather than guessing. Do not invent facts about any company."
+          },
+          {
+            "type": "heading",
+            "text": "Personalized outreach draft"
+          },
+          {
+            "type": "code",
+            "text": "Write a first-touch email and one follow-up. About me / my offer: [one or two sentences] My voice — match this tone exactly: [paste 2-3 real emails you've sent] The prospect: Company: [name] Contact: [name, title] Genuine context I found: [the real trigger or detail] Rules: - Under 90 words for the first email. One clear, low-friction ask. - Open with the specific context, not \"I hope this finds you well.\" - No flattery, no fake urgency, no \"quick question\" subject lines. - Only reference facts I gave you. If context is weak, say so and suggest what I should find before sending. - Follow-up: 2-3 sentences, adds a new angle, easy to ignore."
+          },
+          {
+            "type": "heading",
+            "text": "Reply triage (optional)"
+          },
+          {
+            "type": "code",
+            "text": "Classify this reply as: Interested / Not now / Not a fit / Referral / Unsubscribe. Then draft a two-sentence response that matches the category. Reply text: [paste]"
+          }
+        ]
+      },
+      {
+        "title": "Where this goes wrong, and how to catch it",
+        "eyebrow": "09 · Risks and review points",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Fabricated context"
+          },
+          {
+            "type": "paragraph",
+            "text": "The biggest failure mode: the model invents a \"recent funding round\" that never happened. The prompts forbid invention, and your approval gate is where you verify claims before they embarrass you."
+          },
+          {
+            "type": "heading",
+            "text": "Deliverability collapse"
+          },
+          {
+            "type": "paragraph",
+            "text": "Volume without warming, honest unsubscribes, and real personalization will burn your domain. Keep daily sends low, authenticate your domain (SPF/DKIM/DMARC), and never send cold at scale from your primary domain."
+          },
+          {
+            "type": "heading",
+            "text": "Legal and platform compliance"
+          },
+          {
+            "type": "paragraph",
+            "text": "Anti-spam rules (such as CAN-SPAM in the US and similar regimes elsewhere), data-protection law, and platform terms all constrain what you may collect and send. This is educational, not legal advice; RN Collins is a JD candidate, not a licensed attorney. Get qualified counsel for your jurisdiction and industry."
+          },
+          {
+            "type": "heading",
+            "text": "Sameness at scale"
+          },
+          {
+            "type": "paragraph",
+            "text": "If every message uses the same skeleton, personalization becomes theater. Review for variety, and rotate openings and angles."
+          },
+          {
+            "type": "heading",
+            "text": "Bad data in, confident junk out"
+          },
+          {
+            "type": "paragraph",
+            "text": "Enrichment providers are often wrong. Spot-check, and treat every field as a claim to verify, not a fact."
+          },
+          {
+            "type": "heading",
+            "text": "Review cadence"
+          },
+          {
+            "type": "paragraph",
+            "text": "Read a sample of sent messages weekly, revisit your ICP monthly against who actually replied, and audit disqualifier hits quarterly."
+          }
+        ]
+      },
+      {
+        "title": "Measure conversations, not activity",
+        "eyebrow": "10 · KPIs that tell the truth",
+        "blocks": [
+          {
+            "type": "table",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Metric",
+                    "header": true
+                  },
+                  {
+                    "text": "What it tells you",
+                    "header": true
+                  },
+                  {
+                    "text": "Healthy signal",
+                    "header": true
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Qualified prospects sourced / week"
+                  },
+                  {
+                    "text": "Whether the top of the loop is running"
+                  },
+                  {
+                    "text": "Hits your weekly target consistently"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Positive reply rate"
+                  },
+                  {
+                    "text": "Whether fit + message are landing"
+                  },
+                  {
+                    "text": "Trending up as you tune; raw numbers vary by market"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Meetings booked / week"
+                  },
+                  {
+                    "text": "The real output that matters"
+                  },
+                  {
+                    "text": "Stable enough to forecast against"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Spam / unsubscribe rate"
+                  },
+                  {
+                    "text": "Whether you are damaging reputation"
+                  },
+                  {
+                    "text": "Very low; investigate any spike immediately"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Time per approved message"
+                  },
+                  {
+                    "text": "Whether automation is paying off"
+                  },
+                  {
+                    "text": "Falling toward a few minutes each"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Meeting → opportunity rate"
+                  },
+                  {
+                    "text": "Whether you are sourcing genuine fit"
+                  },
+                  {
+                    "text": "Rising as your ICP sharpens"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Watch reply quality, not just quantity. Ten thoughtful \"not now, but stay in touch\" replies are worth more than fifty unsubscribe clicks."
+          }
+        ]
+      },
+      {
+        "title": "Want Aloha AI to build this for you?",
+        "eyebrow": "Do it with us",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "We translate your ICP into a working, human-in-the-loop lead system — sourcing, enrichment, qualification, and voice-matched drafting — and hand it over documented, with the approval gate wired in from day one."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "university/playbooks/lead-generation/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "sop-operations-playbook",
@@ -103,14 +2250,66 @@
     "summary": "Use AI to capture, draft, standardize, test, and maintain standard operating procedures with roles, decision points, checklists, and accountable human review.",
     "audience": "Owners, operators, managers, and teams documenting repeatable work and onboarding.",
     "maturity": "Production",
-    "topics": ["standard-operating-procedures", "operations", "knowledge-management", "human-review"],
-    "industries": ["small-business", "professional-services", "education"],
-    "keywords": ["AI SOP workflow", "process documentation", "operations manual", "onboarding checklist"],
-    "learningPaths": ["Interview the process owner", "Map triggers, steps, branches, and exceptions", "Draft without invented detail", "Test with a new user", "Add quality and expert-review gates", "Assign ownership and maintenance"],
-    "evidence": ["Process-owner interviews", "Representative inputs and outputs", "Observed exceptions and failure cases", "Approved policies and system instructions"],
-    "methodology": ["Capture tacit knowledge", "Expose missing information", "Write one action per step", "Test the SOP against real work", "Require qualified review for consequential procedures", "Version and maintain the result"],
-    "assumptions": ["A knowledgeable process owner validates the SOP", "The procedure can be tested before broad use"],
-    "limitations": ["AI cannot recover steps that people never disclose", "Safety-critical, regulated, legal, financial, or employment procedures require qualified review"],
-    "relationships": [{"type": "depends_on", "target": "university"}, {"type": "supports", "target": "ai-for-sop-drafting-lesson"}, {"type": "supports", "target": "workflow-audit-course"}]
+    "topics": [
+      "standard-operating-procedures",
+      "operations",
+      "knowledge-management",
+      "human-review"
+    ],
+    "industries": [
+      "small-business",
+      "professional-services",
+      "education"
+    ],
+    "keywords": [
+      "AI SOP workflow",
+      "process documentation",
+      "operations manual",
+      "onboarding checklist"
+    ],
+    "learningPaths": [
+      "Interview the process owner",
+      "Map triggers, steps, branches, and exceptions",
+      "Draft without invented detail",
+      "Test with a new user",
+      "Add quality and expert-review gates",
+      "Assign ownership and maintenance"
+    ],
+    "evidence": [
+      "Process-owner interviews",
+      "Representative inputs and outputs",
+      "Observed exceptions and failure cases",
+      "Approved policies and system instructions"
+    ],
+    "methodology": [
+      "Capture tacit knowledge",
+      "Expose missing information",
+      "Write one action per step",
+      "Test the SOP against real work",
+      "Require qualified review for consequential procedures",
+      "Version and maintain the result"
+    ],
+    "assumptions": [
+      "A knowledgeable process owner validates the SOP",
+      "The procedure can be tested before broad use"
+    ],
+    "limitations": [
+      "AI cannot recover steps that people never disclose",
+      "Safety-critical, regulated, legal, financial, or employment procedures require qualified review"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "university"
+      },
+      {
+        "type": "supports",
+        "target": "ai-for-sop-drafting-lesson"
+      },
+      {
+        "type": "supports",
+        "target": "workflow-audit-course"
+      }
+    ]
   }
 ]

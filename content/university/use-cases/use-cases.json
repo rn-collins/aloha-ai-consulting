@@ -1,14 +1,1581 @@
 [
-  {"id":"admin-use-case","kind":"useCase","pathname":"/university/use-cases/admin","eyebrow":"Use case · Administration","title":"AI for Admin: Inbox, Scheduling & Meeting Notes","summary":"A human-reviewed workflow for triaging inboxes, drafting replies, converting meeting notes into actions, summarizing documents, and preparing routine forms.","audience":"Administrative professionals, executive assistants, founders, and operations teams.","maturity":"Production","topics":["administration","email","meeting-notes","human-review"],"industries":["small-business","professional-services","education"],"keywords":["AI admin","inbox triage","meeting actions","scheduling workflow"],"learningPaths":["Choose one repetitive administrative flow","Identify approved inputs","Draft or summarize without sending","Verify names, dates, commitments, and permissions","Obtain human approval","Record the final action"],"evidence":["Authoritative calendar, email, and meeting records","Approved templates and policies","Human corrections and final decisions"],"methodology":["Bound the task","Protect access","Draft from source records","Expose uncertainty","Require approval before external action"],"assumptions":["A responsible human retains account control","Sensitive data stays in approved systems"],"limitations":["AI can misread tone, commitments, dates, and recipients","External messages and account changes require human approval"],"relationships":[{"type":"depends_on","target":"university"},{"type":"supports","target":"ai-for-email-lesson"},{"type":"supports","target":"ai-for-meeting-notes-lesson"}]},
-  {"id":"client-service-use-case","kind":"useCase","pathname":"/university/use-cases/client-service","eyebrow":"Use case · Client service","title":"AI for Client Service","summary":"Use AI to draft client updates, meeting recaps, project-status summaries, and onboarding communications while keeping a human accountable for every message.","audience":"Account managers, consultants, agencies, and small service teams.","maturity":"Production","topics":["client-service","communication","onboarding","human-review"],"industries":["professional-services","small-business","legal"],"keywords":["AI client service","client updates","meeting recaps","onboarding communication"],"learningPaths":["Gather approved client and project facts","Select the communication purpose","Draft from the current record","Check scope, tone, dates, and promises","Obtain relationship-owner approval","Send and preserve the final version"],"evidence":["Current scope and project record","Approved client facts","Meeting notes and decisions","Final human-edited communication"],"methodology":["Ground drafts in the client record","Separate drafting from sending","Flag missing facts","Protect confidential information","Keep the relationship owner accountable"],"assumptions":["The sender has authority to communicate","A human reviews every client-facing output"],"limitations":["AI can invent status, commitments, or context","Professional duties and contractual requirements still apply"],"relationships":[{"type":"depends_on","target":"university"},{"type":"implements","target":"client-intake-onboarding-playbook"},{"type":"supports","target":"ai-for-email-lesson"}]},
-  {"id":"governance-use-case","kind":"useCase","pathname":"/university/use-cases/governance","eyebrow":"Use case · Governance","title":"AI for Governance","summary":"Build a clear AI-use policy, data tiers, review gates, disclosure rules, exception handling, and an evidence trail so teams can adopt AI responsibly.","audience":"Leaders, operators, legal teams, and governance owners formalizing organizational AI use.","maturity":"Production","topics":["governance","ai-policy","data-classification","audit"],"industries":["legal","healthcare","financial-services","professional-services"],"keywords":["AI governance","AI policy","data tiers","review gates"],"learningPaths":["Inventory actual use","Classify data and consequences","Define allowed and prohibited activity","Assign approval gates and owners","Document exceptions and evidence","Review policy performance on a cadence"],"evidence":["Tool and workflow inventory","Vendor and data-handling records","Applicable duties and contracts","Approvals, exceptions, and incidents"],"methodology":["Govern observed behavior","Scale controls to consequence","Write enforceable rules","Assign accountability","Test and revise from evidence"],"assumptions":["Leadership supports enforcement","Qualified experts review jurisdiction-specific requirements"],"limitations":["This educational resource is not legal advice","Governance requires continuing oversight, training, and maintenance"],"relationships":[{"type":"depends_on","target":"university"},{"type":"implements","target":"governance-starter-playbook"},{"type":"implements","target":"trust-stack"}]},
-  {"id":"knowledge-management-use-case","kind":"useCase","pathname":"/university/use-cases/knowledge-management","eyebrow":"Use case · Knowledge","title":"AI for Knowledge Management","summary":"Turn scattered documents, wikis, and messages into a source-grounded answer system with ownership, citations, permissions, freshness controls, and review.","audience":"Teams whose operational knowledge is fragmented or difficult to retrieve.","maturity":"Production","topics":["knowledge-management","retrieval","citations","access-control"],"industries":["professional-services","education","legal","small-business"],"keywords":["AI knowledge management","internal answer engine","RAG","enterprise search"],"learningPaths":["Inventory authoritative knowledge","Name canonical sources and owners","Normalize metadata and permissions","Implement citation-grounded retrieval","Test answers and abstention","Maintain freshness and resolve conflicts"],"evidence":["Authoritative documents","Ownership and review dates","Access policies","Evaluation questions and expected answers"],"methodology":["Curate before indexing","Enforce permissions before retrieval","Return sources with answers","Test representative questions","Review stale and conflicting knowledge"],"assumptions":["Owners can identify authoritative versions","Access rules are technically enforceable"],"limitations":["Retrieval cannot repair missing or contradictory knowledge","Permissions and freshness require maintenance"],"relationships":[{"type":"depends_on","target":"university"},{"type":"implements","target":"internal-knowledge-base-playbook"},{"type":"supports","target":"kb-readiness-course"}]},
-  {"id":"law-firms-use-case","kind":"useCase","pathname":"/university/use-cases/law-firms","eyebrow":"Use case · Legal practice","title":"AI for Law Firms","summary":"A safety-first legal workflow for accelerating research, drafting, review, and knowledge work while verifying authority and keeping licensed attorneys accountable.","audience":"Law firms and legal teams evaluating supervised AI-assisted work.","maturity":"Production","topics":["legal-ai","verification","professional-responsibility","human-review"],"industries":["legal"],"keywords":["AI for law firms","legal AI workflow","citation verification","attorney supervision"],"learningPaths":["Classify the task and governing duties","Use approved tools and information","Retrieve authoritative legal sources","Draft with source links and uncertainty","Verify every proposition and citation","Require licensed-attorney review"],"evidence":["Controlling primary authority","Verified record materials","Applicable rules and client requirements","Attorney review and final work product"],"methodology":["Start from professional duties","Protect privilege and confidentiality","Verify authority independently","Preserve supervision","Document material review"],"assumptions":["Licensed attorneys remain responsible","The firm has approved data and tool controls"],"limitations":["This resource is education, not legal advice","AI cannot determine competence, strategy, or the law without accountable lawyers"],"relationships":[{"type":"depends_on","target":"university"},{"type":"implements","target":"legal-ai"},{"type":"uses","target":"citation-verifier-course"}]},
-  {"id":"leadership-use-case","kind":"useCase","pathname":"/university/use-cases/leadership","eyebrow":"Use case · Leadership","title":"AI for Leadership","summary":"Use AI to compress information, surface assumptions, prepare pre-mortems, compare options, and improve communication while reserving accountable decisions for leaders.","audience":"Founders, executives, directors, and team leads managing complex information and decisions.","maturity":"Production","topics":["leadership","decision-support","synthesis","communication"],"industries":["small-business","professional-services","nonprofit"],"keywords":["AI leadership","decision support","executive synthesis","premortem"],"learningPaths":["Frame the decision","Assemble the trusted evidence","Ask for synthesis and alternatives","Stress-test assumptions and failure modes","Make and document the human decision","Communicate rationale and follow-up"],"evidence":["Decision record","Source documents and metrics","Stakeholder constraints","Human rationale and approval"],"methodology":["Use AI to widen and compress","Separate facts from assumptions","Request counterarguments","Preserve accountability","Track outcomes against the decision"],"assumptions":["Leaders can identify authoritative evidence","AI supports rather than makes consequential decisions"],"limitations":["Models can reinforce framing bias or invent certainty","Leadership judgment and stakeholder responsibility cannot be delegated"],"relationships":[{"type":"depends_on","target":"university"},{"type":"supports","target":"strategy"},{"type":"uses","target":"ai-implementation-roadmap-template"}]},
-  {"id":"marketing-use-case","kind":"useCase","pathname":"/university/use-cases/marketing","eyebrow":"Use case · Marketing","title":"AI for Marketing","summary":"A practical workflow for drafting, repurposing, briefing, and channel adaptation while a human editor protects voice, facts, claims, permissions, and strategy.","audience":"Small-business marketers, creators, founders, agencies, and communications teams.","maturity":"Production","topics":["marketing","content-repurposing","claims","voice"],"industries":["small-business","creator-economy","professional-services","publishing"],"keywords":["AI marketing","content drafting","content repurposing","brand voice"],"learningPaths":["Define audience and objective","Gather approved source material","Draft or repurpose by channel","Verify claims, quotations, and permissions","Edit for voice and strategy","Approve and measure publication"],"evidence":["Approved source assets","Brand and claims guidance","Rights and permission records","Final human edits and performance data"],"methodology":["Ground work in approved sources","Separate generation from approval","Preserve provenance","Check claims and voice","Learn from measured outcomes"],"assumptions":["A human owns strategy and publication","Source rights and disclosure requirements are resolved"],"limitations":["AI can homogenize voice and fabricate claims","Generation does not replace strategy, legal review, or editorial judgment"],"relationships":[{"type":"depends_on","target":"university"},{"type":"implements","target":"content-repurposing-playbook"},{"type":"supports","target":"content"}]},
-  {"id":"operations-use-case","kind":"useCase","pathname":"/university/use-cases/operations","eyebrow":"Use case · Operations","title":"AI for Operations: Turn Tribal Knowledge into SOPs","summary":"Use AI to capture and draft SOPs, checklists, runbooks, and status summaries while process owners verify every step before it becomes canonical.","audience":"Owners, operators, managers, and teams documenting repeatable work.","maturity":"Production","topics":["operations","standard-operating-procedures","knowledge-management","verification"],"industries":["small-business","professional-services","education"],"keywords":["AI operations","SOP drafting","runbooks","process documentation"],"learningPaths":["Interview the process owner","Map triggers, steps, branches, and exceptions","Draft without invented details","Stress-test with a new user","Add quality and approval gates","Assign ownership and maintenance"],"evidence":["Observed work and owner interviews","Representative inputs and outputs","Approved policies and systems","Test results and corrections"],"methodology":["Capture tacit knowledge","Expose gaps","Write testable steps","Validate against real work","Version and maintain the approved procedure"],"assumptions":["A knowledgeable owner validates the process","The procedure can be tested safely"],"limitations":["AI cannot recover undisclosed steps","Consequential procedures require qualified review"],"relationships":[{"type":"depends_on","target":"university"},{"type":"implements","target":"sop-operations-playbook"},{"type":"supports","target":"workflow-audit-course"}]},
-  {"id":"research-use-case","kind":"useCase","pathname":"/university/use-cases/research","eyebrow":"Use case · Research","title":"AI for Research","summary":"Use AI for market scans, document synthesis, interview analysis, and knowledge bases while preserving citations, search boundaries, verification, and human ownership of conclusions.","audience":"Researchers, analysts, consultants, students, and evidence-oriented teams.","maturity":"Production","topics":["research","synthesis","citations","verification"],"industries":["research","education","legal","professional-services"],"keywords":["AI research workflow","market scan","document synthesis","citation verification"],"learningPaths":["Define the question and evidence standard","Plan sources and search boundaries","Use AI for discovery or extraction","Retrieve and inspect authoritative sources","Synthesize with contradiction and uncertainty","Document verified conclusions"],"evidence":["Primary and authoritative sources","Search record and inclusion criteria","Source-linked extraction","Human-verified synthesis"],"methodology":["Separate discovery from proof","Prefer primary authority","Verify citations and entailment","Preserve negative and conflicting evidence","State limits and update conditions"],"assumptions":["Researchers can access authoritative sources","Qualified humans own consequential interpretations"],"limitations":["AI search and synthesis can omit or distort evidence","Coverage depends on sources, access, tools, and date"],"relationships":[{"type":"depends_on","target":"university"},{"type":"implements","target":"research-tool-guide"},{"type":"supports","target":"citation-verifier-course"}]},
-  {"id":"sales-use-case","kind":"useCase","pathname":"/university/use-cases/sales","eyebrow":"Use case · Sales","title":"AI for Sales","summary":"A human-approved workflow for call preparation, discovery-note synthesis, follow-up drafts, proposal first drafts, and CRM hygiene—not autonomous outbound spam.","audience":"Consultants, agencies, founders, and small sales teams.","maturity":"Production","topics":["sales","research","follow-up","crm"],"industries":["professional-services","small-business","creator-economy"],"keywords":["AI sales","call prep","sales follow-up","CRM hygiene"],"learningPaths":["Define fit and legitimate source boundaries","Research the account","Prepare questions and hypotheses","Summarize discovery without inventing needs","Draft follow-up and proposal language","Approve communications and update the CRM"],"evidence":["Authorized account and contact data","Public or supplied company sources","Discovery notes","Human-approved messages and CRM records"],"methodology":["Optimize for fit","Preserve provenance","Separate research from persuasion","Avoid invented personalization","Require human approval and lawful outreach"],"assumptions":["The organization has authority to contact prospects","A human owns every external message"],"limitations":["This resource does not establish compliance with outreach law","Enrichment and generated personalization may be stale or inappropriate"],"relationships":[{"type":"depends_on","target":"university"},{"type":"supports","target":"lead-generation-playbook"},{"type":"supports","target":"client-service-use-case"}]},
-  {"id":"small-businesses-use-case","kind":"useCase","pathname":"/university/use-cases/small-businesses","eyebrow":"Use case · Small business","title":"AI for Small Businesses","summary":"Practical, bounded AI workflows for email, marketing, product copy, customer answers, knowledge, and operations without pretending automation replaces business ownership.","audience":"Small-business owners, founders, and lean teams beginning responsible AI adoption.","maturity":"Production","topics":["small-business","ai-readiness","operations","implementation"],"industries":["small-business","professional-services","retail","creator-economy"],"keywords":["AI for small businesses","small business automation","AI workflows","lean AI stack"],"learningPaths":["Choose one expensive or repetitive workflow","Establish the authoritative inputs","Select the smallest sufficient tool","Pilot with human review","Measure time, quality, risk, and cost","Document and expand only from evidence"],"evidence":["Current workflow baseline","Representative inputs and outputs","Vendor terms and costs","Pilot results and human corrections"],"methodology":["Begin with a real bottleneck","Keep systems of record authoritative","Pilot reversibly","Measure failure as well as speed","Assign ownership before scaling"],"assumptions":["The business can name an accountable owner","Consequential work remains human-approved"],"limitations":["AI is not a substitute for staffing, strategy, or professional expertise","Tool benefits depend on process and data quality"],"relationships":[{"type":"depends_on","target":"university"},{"type":"uses","target":"lean-ai-stack-tool-guide"},{"type":"uses","target":"ai-readiness-scorecard"}]},
-  {"id":"training-use-case","kind":"useCase","pathname":"/university/use-cases/training","eyebrow":"Use case · Training","title":"AI for Training","summary":"Turn approved SOPs and expert knowledge into training modules, scenarios, role-plays, quizzes, and coaching aids with mandatory expert review.","audience":"Managers, educators, learning teams, and subject-matter experts building workplace training.","maturity":"Production","topics":["training","education","standard-operating-procedures","human-review"],"industries":["education","professional-services","small-business","healthcare"],"keywords":["AI training","training modules","role play generator","quiz generation"],"learningPaths":["Choose the approved source material","Define learner and performance objective","Draft instruction and practice","Generate scenarios and assessments","Have experts verify accuracy and fairness","Pilot, observe, and revise"],"evidence":["Approved SOPs and source materials","Defined learning objectives","Expert review records","Pilot learner performance and feedback"],"methodology":["Ground instruction in canonical sources","Align practice with objectives","Separate generation from expert approval","Test accessibility and ambiguity","Revise from observed learning"],"assumptions":["Subject-matter experts validate content","Learner data is handled appropriately"],"limitations":["AI can teach errors from incomplete sources","Generated assessments may be biased, ambiguous, or poor measures of competence"],"relationships":[{"type":"depends_on","target":"university"},{"type":"supports","target":"sop-operations-playbook"},{"type":"supports","target":"first-ai-team-course"}]}
+  {
+    "id": "admin-use-case",
+    "kind": "useCase",
+    "pathname": "/university/use-cases/admin",
+    "eyebrow": "Use case · Administration",
+    "title": "AI for Admin: Inbox, Scheduling & Meeting Notes",
+    "summary": "A human-reviewed workflow for triaging inboxes, drafting replies, converting meeting notes into actions, summarizing documents, and preparing routine forms.",
+    "audience": "Administrative professionals, executive assistants, founders, and operations teams.",
+    "maturity": "Production",
+    "topics": [
+      "administration",
+      "email",
+      "meeting-notes",
+      "human-review"
+    ],
+    "industries": [
+      "small-business",
+      "professional-services",
+      "education"
+    ],
+    "keywords": [
+      "AI admin",
+      "inbox triage",
+      "meeting actions",
+      "scheduling workflow"
+    ],
+    "learningPaths": [
+      "Choose one repetitive administrative flow",
+      "Identify approved inputs",
+      "Draft or summarize without sending",
+      "Verify names, dates, commitments, and permissions",
+      "Obtain human approval",
+      "Record the final action"
+    ],
+    "evidence": [
+      "Authoritative calendar, email, and meeting records",
+      "Approved templates and policies",
+      "Human corrections and final decisions"
+    ],
+    "methodology": [
+      "Bound the task",
+      "Protect access",
+      "Draft from source records",
+      "Expose uncertainty",
+      "Require approval before external action"
+    ],
+    "assumptions": [
+      "A responsible human retains account control",
+      "Sensitive data stays in approved systems"
+    ],
+    "limitations": [
+      "AI can misread tone, commitments, dates, and recipients",
+      "External messages and account changes require human approval"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "university"
+      },
+      {
+        "type": "supports",
+        "target": "ai-for-email-lesson"
+      },
+      {
+        "type": "supports",
+        "target": "ai-for-meeting-notes-lesson"
+      }
+    ]
+  },
+  {
+    "id": "client-service-use-case",
+    "kind": "useCase",
+    "pathname": "/university/use-cases/client-service",
+    "eyebrow": "Use case · Client service",
+    "title": "AI for Client Service",
+    "summary": "Use AI to draft client updates, meeting recaps, project-status summaries, and onboarding communications while keeping a human accountable for every message.",
+    "audience": "Account managers, consultants, agencies, and small service teams.",
+    "maturity": "Production",
+    "topics": [
+      "client-service",
+      "communication",
+      "onboarding",
+      "human-review"
+    ],
+    "industries": [
+      "professional-services",
+      "small-business",
+      "legal"
+    ],
+    "keywords": [
+      "AI client service",
+      "client updates",
+      "meeting recaps",
+      "onboarding communication"
+    ],
+    "learningPaths": [
+      "Gather approved client and project facts",
+      "Select the communication purpose",
+      "Draft from the current record",
+      "Check scope, tone, dates, and promises",
+      "Obtain relationship-owner approval",
+      "Send and preserve the final version"
+    ],
+    "evidence": [
+      "Current scope and project record",
+      "Approved client facts",
+      "Meeting notes and decisions",
+      "Final human-edited communication"
+    ],
+    "methodology": [
+      "Ground drafts in the client record",
+      "Separate drafting from sending",
+      "Flag missing facts",
+      "Protect confidential information",
+      "Keep the relationship owner accountable"
+    ],
+    "assumptions": [
+      "The sender has authority to communicate",
+      "A human reviews every client-facing output"
+    ],
+    "limitations": [
+      "AI can invent status, commitments, or context",
+      "Professional duties and contractual requirements still apply"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "university"
+      },
+      {
+        "type": "implements",
+        "target": "client-intake-onboarding-playbook"
+      },
+      {
+        "type": "supports",
+        "target": "ai-for-email-lesson"
+      }
+    ]
+  },
+  {
+    "id": "governance-use-case",
+    "kind": "useCase",
+    "pathname": "/university/use-cases/governance",
+    "eyebrow": "Use case · Governance",
+    "title": "AI for Governance",
+    "summary": "Build a clear AI-use policy, data tiers, review gates, disclosure rules, exception handling, and an evidence trail so teams can adopt AI responsibly.",
+    "audience": "Leaders, operators, legal teams, and governance owners formalizing organizational AI use.",
+    "maturity": "Production",
+    "topics": [
+      "governance",
+      "ai-policy",
+      "data-classification",
+      "audit"
+    ],
+    "industries": [
+      "legal",
+      "healthcare",
+      "financial-services",
+      "professional-services"
+    ],
+    "keywords": [
+      "AI governance",
+      "AI policy",
+      "data tiers",
+      "review gates"
+    ],
+    "learningPaths": [
+      "Inventory actual use",
+      "Classify data and consequences",
+      "Define allowed and prohibited activity",
+      "Assign approval gates and owners",
+      "Document exceptions and evidence",
+      "Review policy performance on a cadence"
+    ],
+    "evidence": [
+      "Tool and workflow inventory",
+      "Vendor and data-handling records",
+      "Applicable duties and contracts",
+      "Approvals, exceptions, and incidents"
+    ],
+    "methodology": [
+      "Govern observed behavior",
+      "Scale controls to consequence",
+      "Write enforceable rules",
+      "Assign accountability",
+      "Test and revise from evidence"
+    ],
+    "assumptions": [
+      "Leadership supports enforcement",
+      "Qualified experts review jurisdiction-specific requirements"
+    ],
+    "limitations": [
+      "This educational resource is not legal advice",
+      "Governance requires continuing oversight, training, and maintenance"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "university"
+      },
+      {
+        "type": "implements",
+        "target": "governance-starter-playbook"
+      },
+      {
+        "type": "implements",
+        "target": "trust-stack"
+      }
+    ]
+  },
+  {
+    "id": "knowledge-management-use-case",
+    "kind": "useCase",
+    "pathname": "/university/use-cases/knowledge-management",
+    "eyebrow": "Use case · Knowledge",
+    "title": "AI for Knowledge Management",
+    "summary": "Turn scattered documents, wikis, and messages into a source-grounded answer system with ownership, citations, permissions, freshness controls, and review.",
+    "audience": "Teams whose operational knowledge is fragmented or difficult to retrieve.",
+    "maturity": "Production",
+    "topics": [
+      "knowledge-management",
+      "retrieval",
+      "citations",
+      "access-control"
+    ],
+    "industries": [
+      "professional-services",
+      "education",
+      "legal",
+      "small-business"
+    ],
+    "keywords": [
+      "AI knowledge management",
+      "internal answer engine",
+      "RAG",
+      "enterprise search"
+    ],
+    "learningPaths": [
+      "Inventory authoritative knowledge",
+      "Name canonical sources and owners",
+      "Normalize metadata and permissions",
+      "Implement citation-grounded retrieval",
+      "Test answers and abstention",
+      "Maintain freshness and resolve conflicts"
+    ],
+    "evidence": [
+      "Authoritative documents",
+      "Ownership and review dates",
+      "Access policies",
+      "Evaluation questions and expected answers"
+    ],
+    "methodology": [
+      "Curate before indexing",
+      "Enforce permissions before retrieval",
+      "Return sources with answers",
+      "Test representative questions",
+      "Review stale and conflicting knowledge"
+    ],
+    "assumptions": [
+      "Owners can identify authoritative versions",
+      "Access rules are technically enforceable"
+    ],
+    "limitations": [
+      "Retrieval cannot repair missing or contradictory knowledge",
+      "Permissions and freshness require maintenance"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "university"
+      },
+      {
+        "type": "implements",
+        "target": "internal-knowledge-base-playbook"
+      },
+      {
+        "type": "supports",
+        "target": "kb-readiness-course"
+      }
+    ]
+  },
+  {
+    "id": "law-firms-use-case",
+    "kind": "useCase",
+    "pathname": "/university/use-cases/law-firms",
+    "eyebrow": "Use case · Legal practice",
+    "title": "AI for Law Firms",
+    "summary": "A safety-first legal workflow for accelerating research, drafting, review, and knowledge work while verifying authority and keeping licensed attorneys accountable.",
+    "audience": "Law firms and legal teams evaluating supervised AI-assisted work.",
+    "maturity": "Production",
+    "topics": [
+      "legal-ai",
+      "verification",
+      "professional-responsibility",
+      "human-review"
+    ],
+    "industries": [
+      "legal"
+    ],
+    "keywords": [
+      "AI for law firms",
+      "legal AI workflow",
+      "citation verification",
+      "attorney supervision"
+    ],
+    "learningPaths": [
+      "Classify the task and governing duties",
+      "Use approved tools and information",
+      "Retrieve authoritative legal sources",
+      "Draft with source links and uncertainty",
+      "Verify every proposition and citation",
+      "Require licensed-attorney review"
+    ],
+    "evidence": [
+      "Controlling primary authority",
+      "Verified record materials",
+      "Applicable rules and client requirements",
+      "Attorney review and final work product"
+    ],
+    "methodology": [
+      "Start from professional duties",
+      "Protect privilege and confidentiality",
+      "Verify authority independently",
+      "Preserve supervision",
+      "Document material review"
+    ],
+    "assumptions": [
+      "Licensed attorneys remain responsible",
+      "The firm has approved data and tool controls"
+    ],
+    "limitations": [
+      "This resource is education, not legal advice",
+      "AI cannot determine competence, strategy, or the law without accountable lawyers"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "university"
+      },
+      {
+        "type": "implements",
+        "target": "legal-ai"
+      },
+      {
+        "type": "uses",
+        "target": "citation-verifier-course"
+      }
+    ]
+  },
+  {
+    "id": "leadership-use-case",
+    "kind": "useCase",
+    "pathname": "/university/use-cases/leadership",
+    "eyebrow": "Use case · Leadership",
+    "title": "AI for Leadership",
+    "summary": "Use AI to compress information, surface assumptions, prepare pre-mortems, compare options, and improve communication while reserving accountable decisions for leaders.",
+    "audience": "Founders, executives, directors, and team leads managing complex information and decisions.",
+    "maturity": "Production",
+    "topics": [
+      "leadership",
+      "decision-support",
+      "synthesis",
+      "communication"
+    ],
+    "industries": [
+      "small-business",
+      "professional-services",
+      "nonprofit"
+    ],
+    "keywords": [
+      "AI leadership",
+      "decision support",
+      "executive synthesis",
+      "premortem"
+    ],
+    "learningPaths": [
+      "Frame the decision",
+      "Assemble the trusted evidence",
+      "Ask for synthesis and alternatives",
+      "Stress-test assumptions and failure modes",
+      "Make and document the human decision",
+      "Communicate rationale and follow-up"
+    ],
+    "evidence": [
+      "Decision record",
+      "Source documents and metrics",
+      "Stakeholder constraints",
+      "Human rationale and approval"
+    ],
+    "methodology": [
+      "Use AI to widen and compress",
+      "Separate facts from assumptions",
+      "Request counterarguments",
+      "Preserve accountability",
+      "Track outcomes against the decision"
+    ],
+    "assumptions": [
+      "Leaders can identify authoritative evidence",
+      "AI supports rather than makes consequential decisions"
+    ],
+    "limitations": [
+      "Models can reinforce framing bias or invent certainty",
+      "Leadership judgment and stakeholder responsibility cannot be delegated"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "university"
+      },
+      {
+        "type": "supports",
+        "target": "strategy"
+      },
+      {
+        "type": "uses",
+        "target": "ai-implementation-roadmap-template"
+      }
+    ]
+  },
+  {
+    "id": "marketing-use-case",
+    "kind": "useCase",
+    "pathname": "/university/use-cases/marketing",
+    "eyebrow": "Use case · Marketing",
+    "title": "AI for Marketing",
+    "summary": "A practical workflow for drafting, repurposing, briefing, and channel adaptation while a human editor protects voice, facts, claims, permissions, and strategy.",
+    "audience": "Small-business marketers, creators, founders, agencies, and communications teams.",
+    "maturity": "Production",
+    "topics": [
+      "marketing",
+      "content-repurposing",
+      "claims",
+      "voice"
+    ],
+    "industries": [
+      "small-business",
+      "creator-economy",
+      "professional-services",
+      "publishing"
+    ],
+    "keywords": [
+      "AI marketing",
+      "content drafting",
+      "content repurposing",
+      "brand voice"
+    ],
+    "learningPaths": [
+      "Define audience and objective",
+      "Gather approved source material",
+      "Draft or repurpose by channel",
+      "Verify claims, quotations, and permissions",
+      "Edit for voice and strategy",
+      "Approve and measure publication"
+    ],
+    "evidence": [
+      "Approved source assets",
+      "Brand and claims guidance",
+      "Rights and permission records",
+      "Final human edits and performance data"
+    ],
+    "methodology": [
+      "Ground work in approved sources",
+      "Separate generation from approval",
+      "Preserve provenance",
+      "Check claims and voice",
+      "Learn from measured outcomes"
+    ],
+    "assumptions": [
+      "A human owns strategy and publication",
+      "Source rights and disclosure requirements are resolved"
+    ],
+    "limitations": [
+      "AI can homogenize voice and fabricate claims",
+      "Generation does not replace strategy, legal review, or editorial judgment"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "university"
+      },
+      {
+        "type": "implements",
+        "target": "content-repurposing-playbook"
+      },
+      {
+        "type": "supports",
+        "target": "content"
+      }
+    ],
+    "editorialIntro": [
+      "For a small service business, AI does not replace your marketing instincts. It shortens the distance between \"I have something worth saying\" and a solid first draft — so the newsletter goes out, one long post becomes a week of channel content, and you stop staring at a blank page at 11pm. You still decide what is true, what sounds like you, and what ships."
+    ],
+    "editorialSections": [
+      {
+        "title": "Marketing help that speeds the mechanical work, not the thinking",
+        "eyebrow": "What it is",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "\"AI for marketing\" gets stretched to mean almost anything, so here is the concrete version for a small service business. It is a set of everyday drafting jobs where a language model does the first ninety percent and you finish the last ten. Nothing runs on its own; a person edits and approves everything before it reaches an audience."
+          },
+          {
+            "type": "paragraph",
+            "text": "In practice, that is a handful of repeatable tasks:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Content drafting. A blog post, a newsletter, a landing-page section, an FAQ — built from a short brief and facts you supply, not conjured from thin air."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Repurposing. Turning one thing you already made — a talk, a client win, a long article — into the shorter pieces each channel wants."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Briefs and outlines. Shaping a rough idea into an angle, a hook, and a section-by-section outline before anyone writes a word."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "SEO support. Grouping keywords by intent, drafting titles and meta descriptions, spotting questions your page should answer. Not gaming search — answering it better."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Ad and social variants. Three versions of a headline, five hooks for a post, two subject lines to test — the variation work that is tedious by hand."
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "What it is not: a \"post for me while I sleep\" button, or a source of facts. The model is a fast, tireless drafter with no knowledge of your business and no way to know what is true. That part is yours, and it is why this stays valuable rather than embarrassing."
+          }
+        ]
+      },
+      {
+        "title": "The people doing marketing on top of everything else",
+        "eyebrow": "Who it helps",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "The founder-marketer. You run the business and you are also the marketing department. Publishing is the thing that slips when a project heats up. You want to keep a rhythm without hiring, and to spend your scarce time editing rather than starting from zero."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "The solo or two-person marketing team. You have the strategy and the taste; you do not have the hours to produce every asset by hand. AI covers the volume of first drafts and variants so your judgment lands where it counts."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Small agencies. You produce for several clients, each with a distinct voice. A per-client voice guide plus a repurposing workflow lets a small team hold consistency across accounts without burning out the writers."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Not a fit: anyone hoping to mass-produce pages to flood search, publish without reading the output, or fabricate testimonials and stats. That path damages trust and, in regulated fields, can cross legal lines. This use case is built for people who care what goes out under their name."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Consistent publishing is a bandwidth problem, and AI moves the bottleneck",
+        "eyebrow": "The problem",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Most small businesses know marketing compounds. The newsletter with two thousand engaged readers, the blog that ranks for a real question, the presence that makes cold calls warm — those get built by showing up week after week. And that is exactly what breaks. The strategy is fine. The publishing schedule dies because there is no time."
+          },
+          {
+            "type": "paragraph",
+            "text": "The costs are familiar. There is the blank-page cost: the twenty minutes of dread before a draft starts, multiplied across every piece, which quietly makes the whole task easy to postpone. There is thin bandwidth: one person cannot write a blog post, cut it into eight social posts, and draft two ad variants in an afternoon and still run the business. And there is inconsistency: content that arrives in bursts when things are slow and vanishes when they are busy — the opposite of what compounding needs."
+          },
+          {
+            "type": "paragraph",
+            "text": "AI attacks one part of this precisely. It collapses time-to-draft. The dread of the blank page mostly disappears when you are reacting to a draft instead of conjuring one, and reacting is faster than creating. What it does not collapse is judgment — the angle, the truth of the claims, the voice, the decision to publish. Keep those with the human and the quality holds. Hand those to the machine and you get fast, forgettable content that costs you trust. The win is a steady rhythm at a bar you would defend, not a firehose of filler."
+          }
+        ]
+      },
+      {
+        "title": "Give the model context, and it stops sounding like nobody",
+        "eyebrow": "Inputs",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The gap between generic AI output and drafts you would actually send is almost entirely the inputs. Gather these once, reuse them, and every draft improves."
+          },
+          {
+            "type": "heading",
+            "text": "A brand voice sample"
+          },
+          {
+            "type": "paragraph",
+            "text": "Two or three pieces you have published and are proud of — a newsletter, a post, a page. The model matches patterns; show it the pattern you want."
+          },
+          {
+            "type": "heading",
+            "text": "Positioning and ICP"
+          },
+          {
+            "type": "paragraph",
+            "text": "Who you serve, what you do for them, and how you are different, in one honest paragraph. Without this, every draft drifts toward bland and universal."
+          },
+          {
+            "type": "heading",
+            "text": "Past top performers"
+          },
+          {
+            "type": "paragraph",
+            "text": "The three posts or emails that landed best, and if you know it, why. This teaches the model your winning angles, not just your tone."
+          },
+          {
+            "type": "heading",
+            "text": "Offer details"
+          },
+          {
+            "type": "paragraph",
+            "text": "What you are actually promoting — the service, the price if public, the real proof points, the specific outcome a client can expect. Fabrication risk lives here, so be precise."
+          },
+          {
+            "type": "heading",
+            "text": "Keywords, when relevant"
+          },
+          {
+            "type": "paragraph",
+            "text": "The terms and questions your audience actually searches, grouped by intent. Useful for blog and page work; skip it for pure brand posts."
+          },
+          {
+            "type": "heading",
+            "text": "Keep it in one place"
+          },
+          {
+            "type": "paragraph",
+            "text": "Save these as a voice guide plus a positioning brief. It becomes the block you paste atop every prompt, and the reason your drafts sound like your business rather than a stranger."
+          }
+        ]
+      },
+      {
+        "title": "A small, honest stack; start with one paid chat tool",
+        "eyebrow": "Suggested tools",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "You can run this whole use case with a single AI assistant and a document. Prices below are current as of mid-2026 and change often — confirm on the vendor's site before you buy. Do not take any number here as gospel."
+          },
+          {
+            "type": "heading",
+            "text": "AI assistant (the core)"
+          },
+          {
+            "type": "paragraph",
+            "text": "ChatGPT Plus or Claude Pro, each around $20/month at the time of writing. Either handles drafting, repurposing, briefs, and variants well. The free tiers are genuinely fine for trying this out; upgrade once you are using it weekly and hitting limits. Confirm current pricing before you subscribe."
+          },
+          {
+            "type": "heading",
+            "text": "A writing & repurposing workflow"
+          },
+          {
+            "type": "paragraph",
+            "text": "More a habit than a purchase: a saved voice guide, a set of reusable prompts, and one document where drafts live before they ship. Build it inside your AI tool's projects or saved-prompts feature. The workflow, not a shiny app, is what makes output consistent."
+          },
+          {
+            "type": "heading",
+            "text": "Visuals (optional)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Canva has a free tier and a Pro plan (roughly $15/month for one person, subject to change) if you need on-brand graphics for social posts. Plenty of small businesses ship text-first content and add visuals later."
+          },
+          {
+            "type": "heading",
+            "text": "A scheduler (optional)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Buffer or your platform's native scheduler to queue approved posts so publishing does not depend on you being at your desk. Free tiers exist and cover a one-person cadence. Verify current limits and pricing before committing."
+          },
+          {
+            "type": "heading",
+            "text": "What you can skip"
+          },
+          {
+            "type": "paragraph",
+            "text": "You do not need an \"AI marketing suite,\" an autoposter, or anything that publishes without you reading it first. Added cost and added risk, little added value at this scale. Start lean; add a tool only when a real bottleneck justifies it."
+          },
+          {
+            "type": "heading",
+            "text": "Guardrail note"
+          },
+          {
+            "type": "paragraph",
+            "text": "Whatever you adopt, keep a human approval step and mind your industry's advertising and disclosure rules. Prices, plans, and features shift constantly; treat any figure here as a starting point to verify, not a quote."
+          }
+        ]
+      },
+      {
+        "title": "From brief to measured result, with a human edit in the middle",
+        "eyebrow": "Workflow",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Write a one-line brief. Decide the single job before opening the AI: the piece, the audience, the one thing a reader should feel or do. \"A post for founder-clients on why our onboarding takes two weeks, ending with a soft invite to book a call.\" A tight brief is half the quality.",
+              "Load your context. Paste your voice sample, positioning, and the real facts for this piece at the top of the prompt. This is the step people skip and then wonder why the draft is generic. Do not skip it.",
+              "Generate one strong draft. Ask with explicit rules: length, the one call to action, no clichés, no invented facts or stats. One good draft beats ten mediocre options.",
+              "Edit like a human. Read every line in your head. Cut the sentence that sounds like a machine, fix any claim you cannot stand behind, and add the specific detail only you know. This is where the piece becomes yours.",
+              "Repurpose into variants. Feed the edited piece back and ask for the channel versions you need — a short post, a caption, a newsletter blurb, three subject lines. Keep the voice; change the shape.",
+              "Take final approval. Fact-check every claim, confirm the voice, confirm nothing was fabricated, and check compliance and disclosure requirements. A person signs off before a single word publishes. No exceptions.",
+              "Schedule. Queue the approved pieces across the week so the rhythm holds even when your week does not.",
+              "Measure and feed it back. Note what landed — opens, saves, replies, real conversations. Add the winners to your \"top performers\" input so next month's drafts start smarter. The loop compounds."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Turn one long piece into a week of channel content",
+        "eyebrow": "Example prompt",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Copy this, fill the brackets, and paste your real voice sample. It is written to fight the two things that make AI content bad: fabrication and cliché."
+          },
+          {
+            "type": "code",
+            "text": "You are helping me repurpose one long-form piece into a week of channel-specific posts. Match my voice exactly. My voice — write like these real samples, not like a marketer: [paste 2-3 things you have actually published] My business / positioning: [one honest paragraph: who I serve, what I do, how I differ] The source piece: [paste the article, talk transcript, or long post] Produce a 5-day plan: - Day 1: a LinkedIn post (under 150 words) built on the single strongest idea in the source. Start with a concrete hook, not a throat-clear. End with one low-friction line, no hard sell. - Day 2: two short variants of that post to test. - Day 3: an Instagram/threads caption (under 80 words). - Day 4: a 60-word newsletter blurb linking to the full piece. - Day 5: three subject lines for that newsletter. Hard rules: - Use ONLY facts and claims present in the source or my brief. Invent nothing — no stats, quotes, results, or client names. If a post would be stronger with a number I did not give you, leave a [NEED:...] placeholder instead of making one up. - Ban these words and any close cousin: unlock, leverage, elevate, seamless, game-changer, dive in, in today's world, robust, delve, revolutionize. - Vary sentence length. No more than one em dash per post. - Sound like a person who knows the topic, not like an ad."
+          }
+        ]
+      },
+      {
+        "title": "What a genuinely good draft looks like",
+        "eyebrow": "Example output",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "A realistic Day 1 result for a small bookkeeping firm, plus two test variants. Note the specifics, the plain language, and the absence of the usual AI tells. A human would still edit it, but it is a real starting point."
+          },
+          {
+            "type": "paragraph",
+            "text": "LinkedIn — main post"
+          },
+          {
+            "type": "paragraph",
+            "text": "Most clients come to us mid-panic, three weeks before a tax deadline, with a shoebox of receipts and a bank feed nobody has touched since spring."
+          },
+          {
+            "type": "paragraph",
+            "text": "We used to say yes to the rush and quietly hate it. Now we do the boring thing instead: a clean-up month first, then monthly books, then the deadline never becomes an event again."
+          },
+          {
+            "type": "paragraph",
+            "text": "Slower to start, far calmer to live with. If your books only get attention when something is on fire, that is the pattern worth breaking — not the fire."
+          },
+          {
+            "type": "paragraph",
+            "text": "Variant A — shorter hook"
+          },
+          {
+            "type": "paragraph",
+            "text": "A shoebox of receipts and a bank feed untouched since spring. That is how most of our clients arrive — three weeks before a deadline, already stressed."
+          },
+          {
+            "type": "paragraph",
+            "text": "The fix is unglamorous: one clean-up month, then monthly books, then no more deadline panic. Slower to start, much calmer to run. Want the checklist we use? It is yours."
+          },
+          {
+            "type": "paragraph",
+            "text": "Variant B — question open"
+          },
+          {
+            "type": "paragraph",
+            "text": "When did your books last get attention that was not driven by a deadline?"
+          },
+          {
+            "type": "paragraph",
+            "text": "If the honest answer is \"not since spring,\" you are in good company — and it is a pattern worth breaking. A clean-up month, then a monthly rhythm, and the deadline stops being a crisis."
+          }
+        ]
+      },
+      {
+        "title": "What a person must check before anything publishes",
+        "eyebrow": "Human review",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The approval step is not a formality. It is the reason this use case builds trust instead of eroding it. Before a piece ships, a human confirms:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Every claim is true. Fact-check numbers, outcomes, and any \"we help clients do X\" statement against reality. Models state falsehoods with total confidence; you are the fact-checker."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Nothing is fabricated. No invented statistics, no made-up quotes, no client names or results that did not happen. If the draft has a number you did not supply, cut it or verify it."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "The voice is yours. Read it aloud. If a line sounds like an ad or like nobody in particular, rewrite it. Consistent voice is what makes content recognizable as you."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "It is on-brand and on-message. The angle matches your positioning, the call to action is the one you meant, and the tone fits the platform."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Legal and compliance are handled. Advertising claims, required disclosures, testimonial and endorsement rules, and any industry-specific regulation are your responsibility. Finance, health, and legal each carry strict rules about what you may claim and how. Confirm what applies to you."
+            ]
+          },
+          {
+            "type": "quote",
+            "text": "Not legal advice. Compliance with advertising law, disclosure requirements, and platform rules is the user's responsibility, and the specifics vary by industry and jurisdiction. This page is educational and is not legal advice. RN Collins is a JD candidate, not a licensed attorney; for anything regulated, get qualified counsel before you publish."
+          }
+        ]
+      },
+      {
+        "title": "Start from a structured brief and voice guide",
+        "eyebrow": "Related template",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Content brief & voice-guide templates"
+          },
+          {
+            "type": "paragraph",
+            "text": "A content brief you can hand to any AI tool and a voice-guide format that captures how your business actually sounds — the two inputs that turn generic drafts into content worth publishing. Copy them, adapt them, reuse them on every piece."
+          }
+        ]
+      },
+      {
+        "title": "Go deeper on turning one piece into many",
+        "eyebrow": "Related playbook",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Content Repurposing Playbook"
+          },
+          {
+            "type": "paragraph",
+            "text": "A complete, buildable system for taking one strong asset and producing a week of channel-specific content from it, with the human review gate wired in. The natural next step once this use case is part of your routine."
+          }
+        ]
+      },
+      {
+        "title": "Repurposing content? Here is the right tool for that layer",
+        "eyebrow": "Tool guide",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Best AI for content repurposing"
+          },
+          {
+            "type": "paragraph",
+            "text": "Opus Clip, Descript, Repurpose.io, and general assistants — which one fits your content volume and format."
+          }
+        ]
+      },
+      {
+        "title": "Want help building this?",
+        "eyebrow": "Do it with us",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "We will set up your voice guide, your reusable prompts, and a repurposing workflow that fits how you actually publish — with the human approval step built in, so nothing generic or unverified ships under your name. You keep the judgment; we make the mechanical part fast."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "university/use-cases/marketing/index.html",
+      "restoredAt": "2026-07-26"
+    }
+  },
+  {
+    "id": "operations-use-case",
+    "kind": "useCase",
+    "pathname": "/university/use-cases/operations",
+    "eyebrow": "Use case · Operations",
+    "title": "AI for Operations: Turn Tribal Knowledge into SOPs",
+    "summary": "Use AI to capture and draft SOPs, checklists, runbooks, and status summaries while process owners verify every step before it becomes canonical.",
+    "audience": "Owners, operators, managers, and teams documenting repeatable work.",
+    "maturity": "Production",
+    "topics": [
+      "operations",
+      "standard-operating-procedures",
+      "knowledge-management",
+      "verification"
+    ],
+    "industries": [
+      "small-business",
+      "professional-services",
+      "education"
+    ],
+    "keywords": [
+      "AI operations",
+      "SOP drafting",
+      "runbooks",
+      "process documentation"
+    ],
+    "learningPaths": [
+      "Interview the process owner",
+      "Map triggers, steps, branches, and exceptions",
+      "Draft without invented details",
+      "Stress-test with a new user",
+      "Add quality and approval gates",
+      "Assign ownership and maintenance"
+    ],
+    "evidence": [
+      "Observed work and owner interviews",
+      "Representative inputs and outputs",
+      "Approved policies and systems",
+      "Test results and corrections"
+    ],
+    "methodology": [
+      "Capture tacit knowledge",
+      "Expose gaps",
+      "Write testable steps",
+      "Validate against real work",
+      "Version and maintain the approved procedure"
+    ],
+    "assumptions": [
+      "A knowledgeable owner validates the process",
+      "The procedure can be tested safely"
+    ],
+    "limitations": [
+      "AI cannot recover undisclosed steps",
+      "Consequential procedures require qualified review"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "university"
+      },
+      {
+        "type": "implements",
+        "target": "sop-operations-playbook"
+      },
+      {
+        "type": "supports",
+        "target": "workflow-audit-course"
+      }
+    ]
+  },
+  {
+    "id": "research-use-case",
+    "kind": "useCase",
+    "pathname": "/university/use-cases/research",
+    "eyebrow": "Use case · Research",
+    "title": "AI for Research",
+    "summary": "Use AI for market scans, document synthesis, interview analysis, and knowledge bases while preserving citations, search boundaries, verification, and human ownership of conclusions.",
+    "audience": "Researchers, analysts, consultants, students, and evidence-oriented teams.",
+    "maturity": "Production",
+    "topics": [
+      "research",
+      "synthesis",
+      "citations",
+      "verification"
+    ],
+    "industries": [
+      "research",
+      "education",
+      "legal",
+      "professional-services"
+    ],
+    "keywords": [
+      "AI research workflow",
+      "market scan",
+      "document synthesis",
+      "citation verification"
+    ],
+    "learningPaths": [
+      "Define the question and evidence standard",
+      "Plan sources and search boundaries",
+      "Use AI for discovery or extraction",
+      "Retrieve and inspect authoritative sources",
+      "Synthesize with contradiction and uncertainty",
+      "Document verified conclusions"
+    ],
+    "evidence": [
+      "Primary and authoritative sources",
+      "Search record and inclusion criteria",
+      "Source-linked extraction",
+      "Human-verified synthesis"
+    ],
+    "methodology": [
+      "Separate discovery from proof",
+      "Prefer primary authority",
+      "Verify citations and entailment",
+      "Preserve negative and conflicting evidence",
+      "State limits and update conditions"
+    ],
+    "assumptions": [
+      "Researchers can access authoritative sources",
+      "Qualified humans own consequential interpretations"
+    ],
+    "limitations": [
+      "AI search and synthesis can omit or distort evidence",
+      "Coverage depends on sources, access, tools, and date"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "university"
+      },
+      {
+        "type": "implements",
+        "target": "research-tool-guide"
+      },
+      {
+        "type": "supports",
+        "target": "citation-verifier-course"
+      }
+    ],
+    "editorialIntro": [
+      "Market scans, competitor teardowns, long documents boiled down to what matters, interviews turned into themes, and scattered files pulled into one searchable knowledge base. AI does the reading and the first-pass synthesis; you verify every claim, keep the citations honest, and own the conclusions. Used this way it saves days. Used carelessly it invents facts with total confidence — so the whole method here is built to catch that."
+    ],
+    "editorialSections": [
+      {
+        "title": "Turning a pile of sources into a defensible brief",
+        "eyebrow": "What it is",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Research is one of the clearest places AI earns its keep, because so much of it is reading and re-reading. The work splits into a few recurring jobs, and AI helps with each a little differently."
+          },
+          {
+            "type": "list",
+            "items": [
+              "Market and competitor scans. Pull together what a set of competitors claim, price, and position around — from their sites, reviews, and public filings — into a side-by-side you can reason about instead of forty open tabs."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Summarizing long documents. A dense report, a contract, a hundred-page transcript: AI produces a faithful summary that points back to the passage it came from, so you can jump to the source and check."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Synthesizing interviews. Feed it a batch of customer or user conversations and have it surface where people agreed, where they diverged, and which quotes actually support each pattern."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Extracting themes. Across many sources, name the handful of ideas that keep recurring — and, just as usefully, the ones that show up once and should not be mistaken for a trend."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Building an internal knowledge base. Take documents scattered across drives, email threads, and old decks and organize them into something searchable, with each answer traceable to the file it came from."
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "The through-line is citations and verification. Every one of these jobs is only trustworthy if each claim ties back to a real source you can open, and if a person checks the ones that matter before they go anywhere."
+          }
+        ]
+      },
+      {
+        "title": "Anyone drowning in documents with a deadline",
+        "eyebrow": "Who it helps",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "Founders doing their own market research. You are sizing a market, scoping competitors, or validating a wedge, and you do not have an analyst. AI gets you a credible first draft in an afternoon instead of a lost week — provided you verify the numbers before they land in a deck."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Strategy and consulting teams. You live in secondary research and client documents. Synthesis across many sources is exactly the slow part, and a review-first workflow lets you move faster without lowering the standard your name depends on."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Anyone with more reading than hours. Product managers digesting user interviews, operators reading vendor documentation, a small team standing up a knowledge base from years of scattered files. If the bottleneck is reading volume, this helps."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Not a fit — and this matters: AI is a drafting and synthesis aid, not a source of truth. If you need a definitive market figure, a legal reading, or a medical or financial fact to be correct, the model's output is a starting point to verify against a primary source, never the answer itself. Do not treat a confident paragraph as a citation."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Research is slow, so it quietly gets skipped",
+        "eyebrow": "The problem",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The honest failure mode is not bad research. It is no research. Doing it properly means reading widely, holding a dozen sources in your head at once, and writing down what they add up to. That takes real hours, and when client work or a launch heats up, it is the first thing to fall off. So decisions get made on a hunch, a competitor move gets missed, and a market assumption goes untested until it is expensive."
+          },
+          {
+            "type": "paragraph",
+            "text": "The second problem is scatter. What a company already knows is spread across drives, inboxes, old proposals, and a few people's memories. The answer to \"have we looked at this before?\" is usually yes, somewhere, in a file nobody can find. Reconstructing it from forty browser tabs does not scale, and it does not survive the person who did it leaving."
+          },
+          {
+            "type": "paragraph",
+            "text": "AI attacks the slow part directly. It reads fast, summarizes faithfully when constrained to the source text, and drafts a synthesis in minutes. That does not make it trustworthy on its own — models fabricate. What it does is shift your time from reading everything to verifying what matters, which is the part only a person can do. The research gets done, and it stays honest, because a human still checks the claims and signs off on the conclusions."
+          }
+        ]
+      },
+      {
+        "title": "Good research out starts with disciplined inputs in",
+        "eyebrow": "Inputs",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The gap between a grounded brief and confident fiction is almost entirely the inputs. Give the model real text, a sharp question, and a way to check every claim."
+          },
+          {
+            "type": "heading",
+            "text": "The source material itself"
+          },
+          {
+            "type": "paragraph",
+            "text": "The actual documents, transcripts, PDFs, or URLs you want synthesized. Give the model the real text wherever you can — pasted or attached — rather than asking it to recall a document from memory, which is where invention creeps in."
+          },
+          {
+            "type": "heading",
+            "text": "A clear research question"
+          },
+          {
+            "type": "paragraph",
+            "text": "One sentence stating what you are actually trying to learn or decide. \"Which three competitors overlap most with our positioning, and where?\" produces a useful brief. \"Tell me about the market\" produces filler."
+          },
+          {
+            "type": "heading",
+            "text": "Criteria for what matters"
+          },
+          {
+            "type": "paragraph",
+            "text": "What counts as relevant, what you can ignore, and what a strong finding versus a weak one looks like. Without this the model weights everything equally and buries the signal."
+          },
+          {
+            "type": "heading",
+            "text": "A way to check sources"
+          },
+          {
+            "type": "paragraph",
+            "text": "Links you can open, page numbers you can turn to, or the original files on hand — so that when the output makes a claim, you can trace it back and confirm it is real. If you cannot verify a source, you cannot use the claim."
+          }
+        ]
+      },
+      {
+        "title": "A synthesis assistant, a knowledge home, and a citation habit",
+        "eyebrow": "Suggested tools",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "You need less than you would think: one strong AI assistant, somewhere to keep what you find, and the discipline to demand a source for every claim. Prices below are current as of mid-2026, change often, and should be confirmed before you buy."
+          },
+          {
+            "type": "heading",
+            "text": "AI assistant for synthesis"
+          },
+          {
+            "type": "paragraph",
+            "text": "ChatGPT Plus or Claude Pro, both around $20/month (verify current pricing), for summarizing, comparing, and drafting across your sources. The paid tiers give you the stronger models and the larger context windows that matter when you paste in long documents. Free tiers are fine for testing the workflow first."
+          },
+          {
+            "type": "heading",
+            "text": "A notes / knowledge home"
+          },
+          {
+            "type": "paragraph",
+            "text": "Notion is a common choice for keeping sources, briefs, and a source log in one searchable place. Its full AI features now sit in the Business tier (around $20 per user/month, verify), so price the AI layer separately from basic Notion. Any tool you will actually keep updated beats the fanciest one you abandon."
+          },
+          {
+            "type": "heading",
+            "text": "A citation discipline"
+          },
+          {
+            "type": "paragraph",
+            "text": "Not a product — a rule. Every claim carries its source next to it, and nothing enters the knowledge base without one. This is the cheapest and most important \"tool\" here, and it is what separates real research from confident-sounding fiction."
+          },
+          {
+            "type": "heading",
+            "text": "The source documents themselves"
+          },
+          {
+            "type": "paragraph",
+            "text": "Your inputs are a tool too. Well-organized, complete source files produce grounded output; a vague prompt with no attached text invites the model to fill gaps with invention. Give it the real material, not a memory test."
+          },
+          {
+            "type": "quote",
+            "text": "The hallucination warning, stated plainly. Language models generate fluent, confident text whether or not it is true. They will invent statistics, misattribute quotes, and — worst for research — fabricate citations that look completely real: plausible author names, journal titles, page numbers, and dates for sources that do not exist. A confident paragraph is not evidence. Treat every factual claim and every citation as unverified until you have opened the actual source and confirmed it. This risk does not go away with a better model; it just gets harder to spot. Build your process so a human always catches it."
+          }
+        ]
+      },
+      {
+        "title": "Frame it, gather it, synthesize it, verify it, store it",
+        "eyebrow": "Workflow",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Frame the question. Write the one thing you are trying to learn or decide, plus your criteria for what counts as a strong finding. This is your spec, and everything downstream is judged against it.",
+              "Gather your sources. Collect the documents, transcripts, and URLs that could answer it. Prefer primary sources. Note where each one came from now — you will need that for the source log later.",
+              "Summarize each source with citations. Feed the model one source at a time and ask for a faithful summary that references the specific passage or section each point came from. One source per pass keeps it honest and traceable.",
+              "Synthesize across sources. With the individual summaries in hand, have the model name the recurring themes, the points of disagreement, and the outliers — each one tagged to the sources that support it.",
+              "Flag the unsupported. Explicitly ask the model to mark anything it cannot ground in the provided text as \"needs checking\" rather than stating it as fact. This surfaces the gaps instead of hiding them.",
+              "Verify every claim against the source. Open the actual documents and confirm each material claim and citation is real and accurately represented. This is the step that cannot be skipped or delegated. Fix or cut anything that does not hold.",
+              "Write the conclusions yourself. The model drafts; you decide what it means and what to do. Ownership of the judgment stays with a person.",
+              "Store it in the knowledge base. File the verified brief and its source log where your team can find it, so the next person does not repeat the work — and can trace every claim back to where it came from."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "A synthesis prompt that refuses to invent",
+        "eyebrow": "Example prompt",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "This turns a set of source documents into a themed brief while forcing inline references and an honest \"needs checking\" flag. Copy it, paste your real sources where marked, and adjust the question."
+          },
+          {
+            "type": "code",
+            "text": "You are helping me synthesize research. Work ONLY from the source texts I paste below. Do not use outside knowledge, and do not invent facts, statistics, quotes, or citations. My research question: [one sentence: what I'm trying to learn or decide] What counts as a strong finding: [your criteria — e.g. supported by 2+ sources, recent, specific] SOURCES (each with an ID): [S1] [paste source 1 text or a clear excerpt] [S2] [paste source 2 text or a clear excerpt] [S3] [paste source 3 text or a clear excerpt] Produce a themed brief: 1. 3-6 themes that answer my question. Under each theme, state the finding in one sentence, then list the source IDs that support it, like [S1][S3]. Every claim must cite at least one source ID. 2. A \"Disagreements & outliers\" section: where sources conflict, or a point appears in only one source. 3. A \"Needs verification\" section: list any statement, number, or quote you are NOT able to ground directly in the pasted text. Do not include it in the themes above — flag it here instead. Rules: - If a claim is not supported by the provided sources, do not make it. Say \"not addressed in provided sources.\" - Never fabricate a statistic, a source, or a citation. - Quote exact wording when you attribute a quote, and cite its source ID."
+          }
+        ]
+      },
+      {
+        "title": "What a grounded brief actually looks like",
+        "eyebrow": "Example output",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "A realistic result from the prompt above, run over three fictional competitor sources for a scheduling-software scan. Note the source tags and the honest verification section — a plausible statistic gets held out until a human checks it."
+          },
+          {
+            "type": "code",
+            "text": "RESEARCH QUESTION: Where do competitors A, B, and C overlap with our positioning, and where is there open space? THEMES 1. All three lead with \"ease of setup,\" leaving depth unclaimed. Each competitor's homepage headline emphasizes fast onboarding over advanced capability. [S1][S2][S3] 2. Pricing is bundled, not transparent. A and C require a demo to see pricing; only B lists a public price. This is a differentiation opening for us. [S1][S2][S3] 3. None target regulated industries explicitly. No source mentions compliance, audit trails, or healthcare or finance use cases. [S1][S2][S3] DISAGREEMENTS & OUTLIERS - Competitor B claims a free tier; A and C do not. [S2] - Only C mentions an API, and only in a footer link. [S3] NEEDS VERIFICATION - A \"40% faster onboarding\" figure appears associated with A, but I could not locate it in the provided S1 text. Confirm against the original source before using. - Competitor headcount and funding were NOT in the provided sources; do not state them without a checked source."
+          }
+        ]
+      },
+      {
+        "title": "Verify everything; a person owns the conclusions",
+        "eyebrow": "Human review",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The approval step is not a formality. It is the reason this method produces research you can defend instead of confident fiction. Before a brief goes anywhere, a human confirms:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Every factual claim is verified against the actual source. This is non-negotiable. Open the document, find the passage, and confirm the claim is real and fairly represented. Models fabricate citations that look flawless — the right author, a real-sounding journal, a specific page — for sources that do not exist. If you cannot open it, you cannot cite it."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Check for cherry-picking. A model asked to find a theme will find one, sometimes by over-weighting a single source or ignoring what cuts against it. Read for what was left out, not just what was included. One quote is not a pattern."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Confirm the \"needs verification\" flags were honest. Do not assume everything outside that section is safe. Spot-check claims inside the themes too, especially any number, date, or direct quote."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A human owns the conclusions. The model drafts the synthesis; a person decides what it means, what to trust, and what to do about it. That judgment — and the accountability for it — never transfers to the tool. If a conclusion turns out wrong, \"the AI said so\" is not a defense you or your client will accept."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Remember what this output is not. A research brief is an input to a decision, not professional advice. It is not legal, medical, or financial guidance. For those, verify against primary sources and consult a qualified professional in the relevant field."
+            ]
+          },
+          {
+            "type": "quote",
+            "text": "Not legal, medical, or financial advice. A research brief is an input to a decision, and the accuracy of every claim and citation is the user's responsibility. This page is educational and is not legal advice. RN Collins is a JD candidate, not a licensed attorney; for anything regulated, verify against primary sources and get qualified counsel before you rely on it."
+          }
+        ]
+      },
+      {
+        "title": "Start from a structure that builds in verification",
+        "eyebrow": "Related template",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Research brief & source-log templates"
+          },
+          {
+            "type": "paragraph",
+            "text": "A research brief layout with a built-in source log, so every claim has a place to record where it came from and whether it has been checked. You do not have to design the format yourself — copy it, adapt it, and reuse it on every scan."
+          }
+        ]
+      },
+      {
+        "title": "Turn one-off research into a lasting asset",
+        "eyebrow": "Related playbook",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Internal Knowledge Base Playbook"
+          },
+          {
+            "type": "paragraph",
+            "text": "Once you are synthesizing well, the next step is keeping what you learn so the whole team can find and trust it. This walks through building that home for scattered documents — searchable, traceable, and maintained. The natural next step once research is part of your routine."
+          }
+        ]
+      },
+      {
+        "title": "Which research tool should you use?",
+        "eyebrow": "Tool guide",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Best AI for research"
+          },
+          {
+            "type": "paragraph",
+            "text": "A decision guide: Perplexity, Elicit, Consensus, and deep-research modes compared by use case."
+          }
+        ]
+      },
+      {
+        "title": "Want a research workflow you can trust?",
+        "eyebrow": "Do it with us",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "We will set up an AI research process for your team — synthesis prompts, a citation discipline, and a verification gate baked in — so you move faster without ever mistaking a confident paragraph for a fact. You keep the judgment; we make the reading fast."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "university/use-cases/research/index.html",
+      "restoredAt": "2026-07-26"
+    }
+  },
+  {
+    "id": "sales-use-case",
+    "kind": "useCase",
+    "pathname": "/university/use-cases/sales",
+    "eyebrow": "Use case · Sales",
+    "title": "AI for Sales",
+    "summary": "A human-approved workflow for call preparation, discovery-note synthesis, follow-up drafts, proposal first drafts, and CRM hygiene—not autonomous outbound spam.",
+    "audience": "Consultants, agencies, founders, and small sales teams.",
+    "maturity": "Production",
+    "topics": [
+      "sales",
+      "research",
+      "follow-up",
+      "crm"
+    ],
+    "industries": [
+      "professional-services",
+      "small-business",
+      "creator-economy"
+    ],
+    "keywords": [
+      "AI sales",
+      "call prep",
+      "sales follow-up",
+      "CRM hygiene"
+    ],
+    "learningPaths": [
+      "Define fit and legitimate source boundaries",
+      "Research the account",
+      "Prepare questions and hypotheses",
+      "Summarize discovery without inventing needs",
+      "Draft follow-up and proposal language",
+      "Approve communications and update the CRM"
+    ],
+    "evidence": [
+      "Authorized account and contact data",
+      "Public or supplied company sources",
+      "Discovery notes",
+      "Human-approved messages and CRM records"
+    ],
+    "methodology": [
+      "Optimize for fit",
+      "Preserve provenance",
+      "Separate research from persuasion",
+      "Avoid invented personalization",
+      "Require human approval and lawful outreach"
+    ],
+    "assumptions": [
+      "The organization has authority to contact prospects",
+      "A human owns every external message"
+    ],
+    "limitations": [
+      "This resource does not establish compliance with outreach law",
+      "Enrichment and generated personalization may be stale or inappropriate"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "university"
+      },
+      {
+        "type": "supports",
+        "target": "lead-generation-playbook"
+      },
+      {
+        "type": "supports",
+        "target": "client-service-use-case"
+      }
+    ]
+  },
+  {
+    "id": "small-businesses-use-case",
+    "kind": "useCase",
+    "pathname": "/university/use-cases/small-businesses",
+    "eyebrow": "Use case · Small business",
+    "title": "AI for Small Businesses",
+    "summary": "Practical, bounded AI workflows for email, marketing, product copy, customer answers, knowledge, and operations without pretending automation replaces business ownership.",
+    "audience": "Small-business owners, founders, and lean teams beginning responsible AI adoption.",
+    "maturity": "Production",
+    "topics": [
+      "small-business",
+      "ai-readiness",
+      "operations",
+      "implementation"
+    ],
+    "industries": [
+      "small-business",
+      "professional-services",
+      "retail",
+      "creator-economy"
+    ],
+    "keywords": [
+      "AI for small businesses",
+      "small business automation",
+      "AI workflows",
+      "lean AI stack"
+    ],
+    "learningPaths": [
+      "Choose one expensive or repetitive workflow",
+      "Establish the authoritative inputs",
+      "Select the smallest sufficient tool",
+      "Pilot with human review",
+      "Measure time, quality, risk, and cost",
+      "Document and expand only from evidence"
+    ],
+    "evidence": [
+      "Current workflow baseline",
+      "Representative inputs and outputs",
+      "Vendor terms and costs",
+      "Pilot results and human corrections"
+    ],
+    "methodology": [
+      "Begin with a real bottleneck",
+      "Keep systems of record authoritative",
+      "Pilot reversibly",
+      "Measure failure as well as speed",
+      "Assign ownership before scaling"
+    ],
+    "assumptions": [
+      "The business can name an accountable owner",
+      "Consequential work remains human-approved"
+    ],
+    "limitations": [
+      "AI is not a substitute for staffing, strategy, or professional expertise",
+      "Tool benefits depend on process and data quality"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "university"
+      },
+      {
+        "type": "uses",
+        "target": "lean-ai-stack-tool-guide"
+      },
+      {
+        "type": "uses",
+        "target": "ai-readiness-scorecard"
+      }
+    ]
+  },
+  {
+    "id": "training-use-case",
+    "kind": "useCase",
+    "pathname": "/university/use-cases/training",
+    "eyebrow": "Use case · Training",
+    "title": "AI for Training",
+    "summary": "Turn approved SOPs and expert knowledge into training modules, scenarios, role-plays, quizzes, and coaching aids with mandatory expert review.",
+    "audience": "Managers, educators, learning teams, and subject-matter experts building workplace training.",
+    "maturity": "Production",
+    "topics": [
+      "training",
+      "education",
+      "standard-operating-procedures",
+      "human-review"
+    ],
+    "industries": [
+      "education",
+      "professional-services",
+      "small-business",
+      "healthcare"
+    ],
+    "keywords": [
+      "AI training",
+      "training modules",
+      "role play generator",
+      "quiz generation"
+    ],
+    "learningPaths": [
+      "Choose the approved source material",
+      "Define learner and performance objective",
+      "Draft instruction and practice",
+      "Generate scenarios and assessments",
+      "Have experts verify accuracy and fairness",
+      "Pilot, observe, and revise"
+    ],
+    "evidence": [
+      "Approved SOPs and source materials",
+      "Defined learning objectives",
+      "Expert review records",
+      "Pilot learner performance and feedback"
+    ],
+    "methodology": [
+      "Ground instruction in canonical sources",
+      "Align practice with objectives",
+      "Separate generation from expert approval",
+      "Test accessibility and ambiguity",
+      "Revise from observed learning"
+    ],
+    "assumptions": [
+      "Subject-matter experts validate content",
+      "Learner data is handled appropriately"
+    ],
+    "limitations": [
+      "AI can teach errors from incomplete sources",
+      "Generated assessments may be biased, ambiguous, or poor measures of competence"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "university"
+      },
+      {
+        "type": "supports",
+        "target": "sop-operations-playbook"
+      },
+      {
+        "type": "supports",
+        "target": "first-ai-team-course"
+      }
+    ]
+  }
 ]

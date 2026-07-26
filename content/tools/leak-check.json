@@ -1,1 +1,68 @@
-{"id":"leak-check","kind":"tool","pathname":"/trust-stack/leak-check","title":"Leak Check","summary":"A Trust Stack diagnostic for finding unsupported claims, missing approvals, exposed assumptions, and weak evidence paths before publication or delivery.","maturity":"Beta","topics":["risk","claims","evidence"],"implementationStatus":"Bounded diagnostic model with component integration in progress.","documentation":["Inspection categories","Evidence requirements","Review outcomes"],"evidence":["Claims and supporting sources","Approval records","Assumptions and limitations"],"methodology":["Inventory consequential claims","Trace evidence and approvals","Classify gaps","Assign remediation owners"],"assumptions":["Relevant materials are available for review"],"limitations":["The diagnostic does not replace legal, compliance, security, or professional review"],"relationships":[{"type":"implements","target":"trust-stack"},{"type":"supports","target":"content"}]}
+{
+  "id": "leak-check",
+  "kind": "tool",
+  "pathname": "/trust-stack/leak-check",
+  "title": "Where Is Your Trust Stack Leaking?",
+  "summary": "A Trust Stack diagnostic for finding unsupported claims, missing approvals, exposed assumptions, and weak evidence paths before publication or delivery.",
+  "maturity": "Beta",
+  "topics": [
+    "risk",
+    "claims",
+    "evidence"
+  ],
+  "implementationStatus": "Bounded diagnostic model with component integration in progress.",
+  "documentation": [
+    "Inspection categories",
+    "Evidence requirements",
+    "Review outcomes"
+  ],
+  "evidence": [
+    "Claims and supporting sources",
+    "Approval records",
+    "Assumptions and limitations"
+  ],
+  "methodology": [
+    "Inventory consequential claims",
+    "Trace evidence and approvals",
+    "Classify gaps",
+    "Assign remediation owners"
+  ],
+  "assumptions": [
+    "Relevant materials are available for review"
+  ],
+  "limitations": [
+    "The diagnostic does not replace legal, compliance, security, or professional review"
+  ],
+  "relationships": [
+    {
+      "type": "implements",
+      "target": "trust-stack"
+    },
+    {
+      "type": "supports",
+      "target": "content"
+    }
+  ],
+  "seoTitle": "Leak Check",
+  "editorialIntro": [
+    "A six-layer self-assessment for regulated operators &middot; Aloha AI &middot; RN Collins",
+    "Trust is a nervous-system event. Platforms, audiences, regulators, and buyers all run the same loop: appraise the source, scan for threat, grant or deny. This tool scores your operation on all six layers of the Regulated Trust Stack, then returns your weakest layer, the layers above it inheriting the damage, and where to start.",
+    "Answer for what is true today, not what you intend. Nothing you enter is sent anywhere; scoring runs entirely in your browser."
+  ],
+  "editorialSections": [
+    {
+      "title": "Your trust stack",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Solid 70&ndash;100% &middot; Cracked 40&ndash;69% &middot; Leaking 0&ndash;39%"
+        }
+      ]
+    }
+  ],
+  "editorialSource": {
+    "baseline": "b0a1b3c",
+    "sourceFile": "trust-stack/leak-check/index.html",
+    "restoredAt": "2026-07-26"
+  }
+}

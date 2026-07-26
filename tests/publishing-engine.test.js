@@ -85,6 +85,49 @@ test('accepts terminal slug reuse across distinct canonical namespaces', () => {
   assert.deepEqual(validatePlatform(resources, derivePlatform(resources)).warnings, []);
 });
 
+test('renders and indexes structured editorial copy', () => {
+  const alpha = {
+    ...resource('alpha', [{ type: 'supports', target: 'beta' }]),
+    seoTitle: 'Concise search title',
+    editorialIntro: ['A retained opening argument.'],
+    editorialSections: [{
+      title: 'Why this matters',
+      blocks: [
+        { type: 'paragraph', text: 'A substantive retained paragraph.' },
+        { type: 'heading', text: 'A closer look' },
+        { type: 'list', items: ['First retained point', 'Second retained point'] },
+        { type: 'quote', text: 'A retained quotation.' },
+        { type: 'code', text: 'VERIFY(source)' },
+        { type: 'table', rows: [{ cells: [{ text: 'Signal', header: true }, { text: 'Owner', header: true }] }, { cells: [{ text: 'Citation' }, { text: 'Human reviewer' }] }] }
+      ]
+    }]
+  };
+  const beta = resource('beta', [{ type: 'supports', target: 'alpha' }]);
+  const resources = [alpha, beta];
+  assert.deepEqual(errorsFor(resources), []);
+  const platform = derivePlatform(resources);
+  const html = renderStructuredPage({ resource: alpha, registry: platform.registry });
+  assert.match(html, /<title>Concise search title \| Aloha AI<\/title>/);
+  assert.match(html, /A substantive retained paragraph/);
+  assert.match(html, /<pre><code>VERIFY\(source\)<\/code><\/pre>/);
+  assert.match(html, /<th>Signal<\/th>/);
+  const search = JSON.parse(generatedOutputs(resources, platform).get('/search-index.json'));
+  assert.match(search.find((item) => item.id === 'alpha').text, /human reviewer/);
+});
+
+test('rejects malformed structured editorial copy', () => {
+  const alpha = {
+    ...resource('alpha', [{ type: 'supports', target: 'beta' }]),
+    editorialIntro: [''],
+    editorialSections: [{ title: '', blocks: [{ type: 'list', items: [] }, { type: 'unknown', text: 'x' }] }]
+  };
+  const errors = errorsFor([alpha, resource('beta', [{ type: 'supports', target: 'alpha' }])]);
+  assert.ok(errors.includes('alpha: editorialIntro must contain non-empty strings'));
+  assert.ok(errors.includes('alpha: editorial section 1 requires a title'));
+  assert.ok(errors.includes('alpha: editorial section 1 block 1 list requires non-empty items'));
+  assert.ok(errors.includes('alpha: editorial section 1 block 2 has an unsupported type'));
+});
+
 test('derives controlled audience groups without fragmenting prose', () => {
   const legal = {
     ...resource('legal-team-tool', [{ type: 'supports', target: 'learning-resource' }]),

@@ -8,14 +8,57 @@
     "summary": "A plain, accurate explanation of what generative AI actually is, how it works, and the common myths that get businesses into trouble.",
     "audience": "Business owners, professionals, and teams beginning to evaluate generative AI.",
     "maturity": "Production",
-    "topics": ["ai-literacy", "generative-ai", "model-capabilities", "risk"],
-    "industries": ["small-business", "professional-services", "education"],
-    "keywords": ["generative AI basics", "large language models", "AI myths", "AI limitations"],
-    "evidence": ["Primary technical documentation from model providers", "Representative model outputs and failure cases", "Current professional guidance where consequential uses are discussed"],
-    "methodology": ["Define generative AI by what the model does", "Separate pattern generation from knowledge and judgment", "Compare suitable and unsuitable tasks", "Test claims against observable outputs", "Require verification before consequential use"],
-    "assumptions": ["Learners have no technical background", "Examples are starting points rather than universal performance guarantees"],
-    "limitations": ["Model capabilities and product features change", "The lesson does not replace technical, legal, privacy, or security review"],
-    "relationships": [{"type": "depends_on", "target": "university"}, {"type": "supports", "target": "what-ai-can-and-cannot-do-lesson"}, {"type": "supports", "target": "prompting-fundamentals-lesson"}]
+    "topics": [
+      "ai-literacy",
+      "generative-ai",
+      "model-capabilities",
+      "risk"
+    ],
+    "industries": [
+      "small-business",
+      "professional-services",
+      "education"
+    ],
+    "keywords": [
+      "generative AI basics",
+      "large language models",
+      "AI myths",
+      "AI limitations"
+    ],
+    "evidence": [
+      "Primary technical documentation from model providers",
+      "Representative model outputs and failure cases",
+      "Current professional guidance where consequential uses are discussed"
+    ],
+    "methodology": [
+      "Define generative AI by what the model does",
+      "Separate pattern generation from knowledge and judgment",
+      "Compare suitable and unsuitable tasks",
+      "Test claims against observable outputs",
+      "Require verification before consequential use"
+    ],
+    "assumptions": [
+      "Learners have no technical background",
+      "Examples are starting points rather than universal performance guarantees"
+    ],
+    "limitations": [
+      "Model capabilities and product features change",
+      "The lesson does not replace technical, legal, privacy, or security review"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "university"
+      },
+      {
+        "type": "supports",
+        "target": "what-ai-can-and-cannot-do-lesson"
+      },
+      {
+        "type": "supports",
+        "target": "prompting-fundamentals-lesson"
+      }
+    ]
   },
   {
     "id": "what-ai-can-and-cannot-do-lesson",
@@ -26,14 +69,386 @@
     "summary": "A concrete, honest map of the business tasks generative AI does well, the ones it does badly, and how to tell them apart before you invest.",
     "audience": "Leaders and operators deciding where AI belongs in real business workflows.",
     "maturity": "Production",
-    "topics": ["ai-literacy", "workflow-design", "ai-readiness", "risk"],
-    "industries": ["small-business", "professional-services", "legal", "healthcare"],
-    "keywords": ["AI use cases", "AI limitations", "business automation", "AI readiness"],
-    "evidence": ["Representative workflow inputs and outputs", "Documented model limitations", "Business requirements and consequence levels"],
-    "methodology": ["Describe the task before selecting a tool", "Separate drafting and classification from authority and judgment", "Score reversibility and consequence", "Run a representative test", "Assign human review before adoption"],
-    "assumptions": ["A workflow owner can define acceptable output", "The organization can identify consequential decisions"],
-    "limitations": ["Performance varies by model, data, and task", "Task suitability does not establish privacy, security, or regulatory acceptability"],
-    "relationships": [{"type": "depends_on", "target": "what-generative-ai-is-lesson"}, {"type": "uses", "target": "ai-readiness-scorecard"}, {"type": "supports", "target": "when-not-to-use-ai-lesson"}]
+    "topics": [
+      "ai-literacy",
+      "workflow-design",
+      "ai-readiness",
+      "risk"
+    ],
+    "industries": [
+      "small-business",
+      "professional-services",
+      "legal",
+      "healthcare"
+    ],
+    "keywords": [
+      "AI use cases",
+      "AI limitations",
+      "business automation",
+      "AI readiness"
+    ],
+    "evidence": [
+      "Representative workflow inputs and outputs",
+      "Documented model limitations",
+      "Business requirements and consequence levels"
+    ],
+    "methodology": [
+      "Describe the task before selecting a tool",
+      "Separate drafting and classification from authority and judgment",
+      "Score reversibility and consequence",
+      "Run a representative test",
+      "Assign human review before adoption"
+    ],
+    "assumptions": [
+      "A workflow owner can define acceptable output",
+      "The organization can identify consequential decisions"
+    ],
+    "limitations": [
+      "Performance varies by model, data, and task",
+      "Task suitability does not establish privacy, security, or regulatory acceptability"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "what-generative-ai-is-lesson"
+      },
+      {
+        "type": "uses",
+        "target": "ai-readiness-scorecard"
+      },
+      {
+        "type": "supports",
+        "target": "when-not-to-use-ai-lesson"
+      }
+    ],
+    "editorialIntro": [
+      "The fastest way to waste money on AI is to aim it at the wrong job. This lesson gives you a working map: the task shapes AI handles well, the ones it botches, and a simple test for telling them apart before you commit."
+    ],
+    "editorialSections": [
+      {
+        "title": "What this is",
+        "eyebrow": "Foundations",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "This is a practical taxonomy of business work, sorted by how well current generative AI performs it. The dividing line is not \"hard versus easy\" the way a person would judge it. It is \"does this task reward fluent pattern completion, or does it require verified truth, live data, precise math, or accountability?\""
+          },
+          {
+            "type": "paragraph",
+            "text": "AI is strong when the task is to produce a draft, reshape existing information, or generate options. It is weak when the task is to be the authoritative source of a fact, to act on real-time private data it has not been given, or to make a judgment that someone must answer for. The rest of this lesson turns that principle into a checklist you can apply to any request that lands on your desk."
+          },
+          {
+            "type": "paragraph",
+            "text": "The one-line test: if a smart, fast intern could draft it from information you hand them, and you would still review it, AI can probably help. If the task needs a guaranteed-correct fact, a live system lookup, or a signature, AI is a starting point at most."
+          }
+        ]
+      },
+      {
+        "title": "Who this is for and when to use it",
+        "eyebrow": "Audience",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "Owners and operators deciding where to pilot AI first."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Team leads triaging a backlog of \"can AI do this?\" requests."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Anyone building a business case and needing a sober view of the payoff."
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "You do not need to know how the models work. You do need to know your own workflows well enough to describe them."
+          },
+          {
+            "type": "paragraph",
+            "text": "Use this map when you are choosing a first project, when a vendor pitches an \"AI solution\" and you want to sanity-check it, and when you are writing the rules for how your team may use these tools. Start where the task is high-volume, low-stakes, and easy to review. That is where AI pays off fastest and where a mistake costs the least while you learn."
+          }
+        ]
+      },
+      {
+        "title": "When not to use it",
+        "eyebrow": "Boundaries",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Avoid AI as the decision-maker or the final word in these situations:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Anything where a wrong answer causes real harm and cannot be caught in review: dosing, safety instructions, structural or financial calculations people act on directly."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Authoritative facts about your own operations that the model has no access to: account balances, order status, inventory, who owes what. Connect a real system for those; do not ask the model to guess."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Legal, medical, and financial advice presented as reliable. AI can help you prepare questions for a professional. It is not the professional."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Situations demanding accountability. When someone must be answerable for a decision, a human makes it. The model cannot be held responsible."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Tools that work well",
+        "eyebrow": "Fit",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "First drafts"
+          },
+          {
+            "type": "paragraph",
+            "text": "Marketing copy, emails, job posts. Reach for ChatGPT, Claude, or Gemini."
+          },
+          {
+            "type": "heading",
+            "text": "Summarizing long documents and meetings"
+          },
+          {
+            "type": "paragraph",
+            "text": "Claude handles long docs well; Gemini works inside Google apps."
+          },
+          {
+            "type": "heading",
+            "text": "Answering with cited web sources"
+          },
+          {
+            "type": "paragraph",
+            "text": "Perplexity, or the search modes in ChatGPT and Gemini."
+          },
+          {
+            "type": "heading",
+            "text": "Reformatting data, drafting spreadsheets and code"
+          },
+          {
+            "type": "paragraph",
+            "text": "ChatGPT, Claude, or Gemini. Always run and check what they produce."
+          },
+          {
+            "type": "heading",
+            "text": "Customer answers from your knowledge base"
+          },
+          {
+            "type": "paragraph",
+            "text": "Use a retrieval-based assistant grounded in your own docs, not raw chat."
+          },
+          {
+            "type": "heading",
+            "text": "Exact math, live account data, legal rulings"
+          },
+          {
+            "type": "paragraph",
+            "text": "Use connected tools, databases, and professionals for these."
+          }
+        ]
+      },
+      {
+        "title": "Step-by-step workflow",
+        "eyebrow": "Method",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "List the task in plain words. Write what a person would actually do, start to finish.",
+              "Sort each step into generate/reshape (AI-friendly) or verify/decide/lookup (human or connected system).",
+              "Score the stakes. If it is wrong, who notices, how fast, and how bad is it? Low-stakes and reviewable goes first.",
+              "Check the data. Does AI need facts it does not have? Either give it those facts in the prompt or connect a real source.",
+              "Design the review step before you launch. Decide who checks output and against what.",
+              "Pilot small, measure, then scale only the steps that saved real time without adding risk."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Example prompts",
+        "eyebrow": "Prompts",
+        "blocks": [
+          {
+            "type": "code",
+            "text": "Here are my last five approved customer replies (pasted below). Draft a reply to this new message in the same tone. Only use facts from the message and my notes. If you need information I didn't give you, list your questions instead of guessing."
+          },
+          {
+            "type": "code",
+            "text": "Summarize this 12-page vendor contract into a one-page brief for a non-lawyer: key dates, payment terms, termination, and anything unusual. Quote the exact clause for each point so I can verify it. Flag anything you're unsure about."
+          },
+          {
+            "type": "code",
+            "text": "I run a landscaping company. Draft three social posts about our spring cleanup service. Do not invent prices, dates, or promotions. Leave a [bracket] anywhere I need to fill in a real detail."
+          }
+        ]
+      },
+      {
+        "title": "Example outputs",
+        "eyebrow": "Results",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The contract prompt returns a brief that is genuinely useful because it quotes the source:"
+          },
+          {
+            "type": "quote",
+            "text": "Payment terms: Net 30 from invoice date. Clause 4.2: \"Payment shall be due within thirty (30) days of receipt of a valid invoice.\" Unusual: an auto-renewal with a 90-day cancellation window. Clause 9.1. This is longer than typical; confirm you can meet it. I am not certain this is enforceable in your state, so treat it as a flag for a lawyer, not advice."
+          },
+          {
+            "type": "paragraph",
+            "text": "The landscaping prompt returns posts with honest gaps left for you:"
+          },
+          {
+            "type": "quote",
+            "text": "\"Spring is here and so is the mess winter left behind. Book your spring cleanup with us and get your yard ready for the season. [Add your offer or start date here.] Call [phone] to reserve a slot.\""
+          }
+        ]
+      },
+      {
+        "title": "Risks and common mistakes",
+        "eyebrow": "Pitfalls",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Aiming AI at a lookup problem"
+          },
+          {
+            "type": "paragraph",
+            "text": "\"What's this customer's balance?\" is a database question, not a chat question. The model will guess."
+          },
+          {
+            "type": "heading",
+            "text": "Skipping the review step to save time"
+          },
+          {
+            "type": "paragraph",
+            "text": "The review is where the value gets protected. Cutting it turns a time-saver into a liability."
+          },
+          {
+            "type": "heading",
+            "text": "Piloting on your highest-stakes work"
+          },
+          {
+            "type": "paragraph",
+            "text": "Learn on the low-risk tasks first, where a caught error is cheap."
+          },
+          {
+            "type": "heading",
+            "text": "Believing vendor claims without a test"
+          },
+          {
+            "type": "paragraph",
+            "text": "Ask to see the tool fail. One that cannot show you its limits is hiding them."
+          },
+          {
+            "type": "heading",
+            "text": "Grounding a customer bot in the open model instead of your own documents"
+          },
+          {
+            "type": "paragraph",
+            "text": "Ungrounded, it will invent policies you do not have."
+          }
+        ]
+      },
+      {
+        "title": "Human review checklist",
+        "eyebrow": "Quality gate",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "✓ Is this a generate/reshape task, or does it secretly need a verified fact or live data?"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "✓ Did I supply the real information, or is the model filling gaps by inventing?"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "✓ Are the stakes low enough that a caught error is cheap, or do I need tighter controls?"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "✓ Is there a named human reviewing anything customer-facing or high-stakes?"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "✓ For legal, medical, or financial content, is a qualified professional in the loop?"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Related lessons",
+        "eyebrow": "Keep going",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "What generative AI is and is not"
+          },
+          {
+            "type": "paragraph",
+            "text": "The mental model that explains why the map in this lesson looks the way it does."
+          },
+          {
+            "type": "heading",
+            "text": "How to verify AI outputs"
+          },
+          {
+            "type": "paragraph",
+            "text": "The review step, done properly."
+          },
+          {
+            "type": "heading",
+            "text": "ChatGPT vs Claude vs Gemini vs Perplexity"
+          },
+          {
+            "type": "paragraph",
+            "text": "Which tool fits which job."
+          }
+        ]
+      },
+      {
+        "title": "Want this map built for your actual business?",
+        "eyebrow": "Next step",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "We audit your real workflows, sort them into AI-ready and AI-risky, and hand you a prioritized plan you can start on Monday."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "university/learn/what-ai-can-and-cannot-do/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "when-not-to-use-ai-lesson",
@@ -44,14 +459,58 @@
     "summary": "The situations where reaching for an AI model is the wrong call: high-stakes decisions, unverifiable facts, confidential data, and moments that require accountable human judgment.",
     "audience": "Anyone responsible for deciding whether an AI-assisted workflow should exist.",
     "maturity": "Production",
-    "topics": ["governance", "risk", "human-review", "professional-responsibility"],
-    "industries": ["legal", "healthcare", "financial-services", "professional-services"],
-    "keywords": ["AI red lines", "high stakes AI", "human judgment", "AI governance"],
-    "evidence": ["Applicable professional and organizational rules", "Data-classification and confidentiality requirements", "Documented failure consequences"],
-    "methodology": ["Identify the decision and affected people", "Classify stakes, reversibility, and evidence requirements", "Check confidentiality and authority", "Choose a safer non-AI alternative when boundaries fail", "Document the human decision owner"],
-    "assumptions": ["Users can identify regulated or professionally supervised work", "A non-AI path remains available"],
-    "limitations": ["Boundaries depend on jurisdiction and context", "This lesson is educational and does not provide legal, medical, or financial advice"],
-    "relationships": [{"type": "depends_on", "target": "what-ai-can-and-cannot-do-lesson"}, {"type": "implements", "target": "trust-stack"}, {"type": "supports", "target": "privacy-and-confidentiality-lesson"}]
+    "topics": [
+      "governance",
+      "risk",
+      "human-review",
+      "professional-responsibility"
+    ],
+    "industries": [
+      "legal",
+      "healthcare",
+      "financial-services",
+      "professional-services"
+    ],
+    "keywords": [
+      "AI red lines",
+      "high stakes AI",
+      "human judgment",
+      "AI governance"
+    ],
+    "evidence": [
+      "Applicable professional and organizational rules",
+      "Data-classification and confidentiality requirements",
+      "Documented failure consequences"
+    ],
+    "methodology": [
+      "Identify the decision and affected people",
+      "Classify stakes, reversibility, and evidence requirements",
+      "Check confidentiality and authority",
+      "Choose a safer non-AI alternative when boundaries fail",
+      "Document the human decision owner"
+    ],
+    "assumptions": [
+      "Users can identify regulated or professionally supervised work",
+      "A non-AI path remains available"
+    ],
+    "limitations": [
+      "Boundaries depend on jurisdiction and context",
+      "This lesson is educational and does not provide legal, medical, or financial advice"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "what-ai-can-and-cannot-do-lesson"
+      },
+      {
+        "type": "implements",
+        "target": "trust-stack"
+      },
+      {
+        "type": "supports",
+        "target": "privacy-and-confidentiality-lesson"
+      }
+    ]
   },
   {
     "id": "prompting-fundamentals-lesson",
@@ -62,14 +521,57 @@
     "summary": "The practical technique behind useful AI prompts: context, examples, constraints, structure, and iteration, grounded in provider guidance.",
     "audience": "People who want more consistent, inspectable output from general-purpose AI assistants.",
     "maturity": "Production",
-    "topics": ["prompting", "workflow-design", "ai-literacy", "evaluation"],
-    "industries": ["small-business", "professional-services", "education"],
-    "keywords": ["prompt engineering", "prompt template", "few-shot examples", "structured output"],
-    "evidence": ["Current provider prompting guidance", "Representative prompts and outputs", "Task-specific acceptance criteria"],
-    "methodology": ["State the task and intended user", "Supply relevant context and examples", "Specify boundaries and output structure", "Ask for uncertainty to be exposed", "Evaluate and revise against the real task"],
-    "assumptions": ["The user can provide enough context to define the task", "Prompting is one layer of a governed workflow"],
-    "limitations": ["A stronger prompt cannot repair missing evidence or unsuitable model use", "Prompting does not guarantee factual accuracy, privacy, or compliance"],
-    "relationships": [{"type": "depends_on", "target": "what-generative-ai-is-lesson"}, {"type": "supports", "target": "ai-for-email-lesson"}, {"type": "supports", "target": "ai-for-sop-drafting-lesson"}]
+    "topics": [
+      "prompting",
+      "workflow-design",
+      "ai-literacy",
+      "evaluation"
+    ],
+    "industries": [
+      "small-business",
+      "professional-services",
+      "education"
+    ],
+    "keywords": [
+      "prompt engineering",
+      "prompt template",
+      "few-shot examples",
+      "structured output"
+    ],
+    "evidence": [
+      "Current provider prompting guidance",
+      "Representative prompts and outputs",
+      "Task-specific acceptance criteria"
+    ],
+    "methodology": [
+      "State the task and intended user",
+      "Supply relevant context and examples",
+      "Specify boundaries and output structure",
+      "Ask for uncertainty to be exposed",
+      "Evaluate and revise against the real task"
+    ],
+    "assumptions": [
+      "The user can provide enough context to define the task",
+      "Prompting is one layer of a governed workflow"
+    ],
+    "limitations": [
+      "A stronger prompt cannot repair missing evidence or unsuitable model use",
+      "Prompting does not guarantee factual accuracy, privacy, or compliance"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "what-generative-ai-is-lesson"
+      },
+      {
+        "type": "supports",
+        "target": "ai-for-email-lesson"
+      },
+      {
+        "type": "supports",
+        "target": "ai-for-sop-drafting-lesson"
+      }
+    ]
   },
   {
     "id": "hallucinations-and-risk-lesson",
@@ -80,14 +582,365 @@
     "summary": "What AI hallucinations are, why they happen, the real consequences of fabricated output, and the controls that reduce or expose them.",
     "audience": "Researchers, writers, professionals, and teams relying on factual or cited AI output.",
     "maturity": "Production",
-    "topics": ["hallucinations", "verification", "risk", "evidence", "legal-ai"],
-    "industries": ["legal", "research", "education", "publishing"],
-    "keywords": ["AI hallucinations", "fake citations", "Mata v Avianca", "factual verification"],
-    "evidence": ["Primary court and professional records for documented failures", "Provider documentation on model limitations", "Known-good and known-bad test cases"],
-    "methodology": ["Identify claims that require authority", "Require source-level evidence", "Separate fluent wording from factual support", "Test citations and quotations directly", "Escalate unresolved claims before publication"],
-    "assumptions": ["Users have access to authoritative sources", "Consequential output receives accountable human review"],
-    "limitations": ["No prompting technique eliminates hallucinations", "Risk varies with task, model, retrieval, and review quality"],
-    "relationships": [{"type": "depends_on", "target": "what-generative-ai-is-lesson"}, {"type": "supports", "target": "how-to-verify-ai-outputs-lesson"}, {"type": "uses", "target": "citation-verifier"}]
+    "topics": [
+      "hallucinations",
+      "verification",
+      "risk",
+      "evidence",
+      "legal-ai"
+    ],
+    "industries": [
+      "legal",
+      "research",
+      "education",
+      "publishing"
+    ],
+    "keywords": [
+      "AI hallucinations",
+      "fake citations",
+      "Mata v Avianca",
+      "factual verification"
+    ],
+    "evidence": [
+      "Primary court and professional records for documented failures",
+      "Provider documentation on model limitations",
+      "Known-good and known-bad test cases"
+    ],
+    "methodology": [
+      "Identify claims that require authority",
+      "Require source-level evidence",
+      "Separate fluent wording from factual support",
+      "Test citations and quotations directly",
+      "Escalate unresolved claims before publication"
+    ],
+    "assumptions": [
+      "Users have access to authoritative sources",
+      "Consequential output receives accountable human review"
+    ],
+    "limitations": [
+      "No prompting technique eliminates hallucinations",
+      "Risk varies with task, model, retrieval, and review quality"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "what-generative-ai-is-lesson"
+      },
+      {
+        "type": "supports",
+        "target": "how-to-verify-ai-outputs-lesson"
+      },
+      {
+        "type": "uses",
+        "target": "citation-verifier"
+      }
+    ],
+    "editorialIntro": [
+      "A hallucination is when AI states something false with complete confidence. It is built into how these systems work, so your job is to manage it, not wish it away."
+    ],
+    "editorialSections": [
+      {
+        "title": "Confident, fluent, and wrong",
+        "eyebrow": "What this is",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "A hallucination is AI output that is fluent, confident, and false: invented facts, fake citations, made-up quotes, nonexistent people, or plausible numbers with no basis. The unsettling part is the confidence. The model shows no doubt when it invents, because it does not know it is inventing. It is doing what it always does, predicting likely text, and sometimes the most likely-sounding text is simply not true."
+          },
+          {
+            "type": "heading",
+            "text": "Why they happen"
+          },
+          {
+            "type": "paragraph",
+            "text": "A language model generates each word by predicting what should come next from patterns, not by looking up a stored fact and confirming it. When it has seen a fact many times in training, its prediction usually matches reality. When it has not, or when your question sits in a gap, it still produces a confident, well-formed answer because that is what it was built to do. It fills the gap with something shaped like a correct answer. A fake legal citation looks exactly like a real one because the model learned the pattern of citations, not the case law. That is the mechanism, and it is why hallucinations can only be managed, never fully removed."
+          }
+        ]
+      },
+      {
+        "title": "Where this matters most",
+        "eyebrow": "Who and when",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Who this is for"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Anyone who relies on AI for facts, citations, or numbers."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Owners and managers writing AI-use policy and setting review requirements."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Professionals in high-stakes fields where a false statement carries liability."
+            ]
+          },
+          {
+            "type": "heading",
+            "text": "When to use it"
+          },
+          {
+            "type": "paragraph",
+            "text": "Keep this front of mind whenever AI output will be treated as fact: research, citations, compliance statements, medical or legal or financial content, and anything a customer, court, or regulator will read. The riskier the setting, the more this lesson applies. Share it with your team before anyone uses AI on client-facing work."
+          },
+          {
+            "type": "heading",
+            "text": "When not to worry"
+          },
+          {
+            "type": "paragraph",
+            "text": "Purely generative tasks with no factual claim need no hallucination guard: rewording your own text, brainstorming names, drafting a tone for an email you will fact-check anyway. If there is no claim about the world, there is nothing to hallucinate. Concentrate your attention where facts live, and let AI do the creative and drafting work it handles well."
+          }
+        ]
+      },
+      {
+        "title": "What reduces or exposes hallucinations",
+        "eyebrow": "Tools",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "No tool eliminates hallucinations, but some lower the rate or bring inventions into the open."
+          },
+          {
+            "type": "heading",
+            "text": "Source-citing tools"
+          },
+          {
+            "type": "paragraph",
+            "text": "Perplexity and search-enabled chat give you links to check and lower the rate of pure invention. Still open and verify each link."
+          },
+          {
+            "type": "heading",
+            "text": "Retrieval-grounded assistants"
+          },
+          {
+            "type": "paragraph",
+            "text": "Answering only from your own documents constrains the model to supplied text, which cuts invention when the system is built well."
+          },
+          {
+            "type": "heading",
+            "text": "Confidence-flagging prompts"
+          },
+          {
+            "type": "paragraph",
+            "text": "Ask the model to rate its own certainty and name exactly what you should check before trusting the answer."
+          },
+          {
+            "type": "heading",
+            "text": "The primary source itself"
+          },
+          {
+            "type": "paragraph",
+            "text": "The only real fix: confirm the fact where it actually lives, in the case record, the report, or the original data."
+          }
+        ]
+      },
+      {
+        "title": "Step by step",
+        "eyebrow": "Workflow",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Assume any specific fact could be invented until confirmed, especially names, citations, statistics, and quotes.",
+              "Prefer grounded modes. Use tools that cite sources or answer from your own documents when facts matter.",
+              "Ask for sources and confidence, then treat low-confidence items as unverified by default.",
+              "Check every citation twice: does it exist, and does it say what was claimed?",
+              "Never submit AI-generated citations or figures to a court, client, or regulator without independent confirmation.",
+              "Build a review gate so no unverified claim reaches anyone outside your team."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Prompts that guard against invention",
+        "eyebrow": "Example prompts",
+        "blocks": [
+          {
+            "type": "code",
+            "text": "Answer only from the document I pasted. If the document does not contain the answer, say \"not in the source\" rather than filling it in from general knowledge."
+          },
+          {
+            "type": "code",
+            "text": "List every citation, statistic, name, and date in your answer. For each, tell me your confidence it is real and correct, and exactly where I should go to verify it. Flag anything you may have invented."
+          }
+        ]
+      },
+      {
+        "title": "What happened in Mata v. Avianca",
+        "eyebrow": "A real consequence",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The clearest cautionary tale is Mata v. Avianca. In 2023, in the U.S. District Court for the Southern District of New York, lawyers filed a brief citing several court decisions to support their client's case. The problem: the cases did not exist. The attorneys had used ChatGPT for legal research, and the tool had hallucinated six judicial opinions, complete with case names, citations, quotations, and reasoning that read like the real thing. When opposing counsel and the court could not find the cases, the lawyers asked ChatGPT to confirm them, and the tool insisted they were real and could be found on Westlaw and LexisNexis. They were not."
+          },
+          {
+            "type": "paragraph",
+            "text": "Judge P. Kevin Castel sanctioned the attorneys under Federal Rule of Civil Procedure 11, imposing a $5,000 penalty and requiring them to notify each judge who had been falsely named as the author of a fabricated opinion. The case became a global warning and is now routinely cited when AI-invented case law appears in court. In 2024 the American Bar Association issued its first formal ethics opinion on lawyers' use of generative AI."
+          },
+          {
+            "type": "paragraph",
+            "text": "The takeaway is not that AI is dangerous and should be avoided. The lawyers skipped the one step that would have caught everything: opening a legal database and confirming the cases existed. The tool did what tools do. The humans did not verify."
+          }
+        ]
+      },
+      {
+        "title": "Risks and common mistakes",
+        "eyebrow": "Pitfalls",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Submitting AI citations without checking"
+          },
+          {
+            "type": "paragraph",
+            "text": "The Mata mistake. Fake citations look identical to real ones, so a quick glance never catches them. Open the source every time."
+          },
+          {
+            "type": "heading",
+            "text": "Asking the model to confirm itself"
+          },
+          {
+            "type": "paragraph",
+            "text": "It will often double down on the invention with more confidence. Confirmation has to come from outside the model."
+          },
+          {
+            "type": "heading",
+            "text": "Assuming newer or bigger models do not hallucinate"
+          },
+          {
+            "type": "paragraph",
+            "text": "They hallucinate less, not never. The verification habit still applies at every model size."
+          },
+          {
+            "type": "heading",
+            "text": "Trusting a cited link without opening it"
+          },
+          {
+            "type": "paragraph",
+            "text": "Models sometimes attach a real URL to a claim the page does not actually make. Read the page, not just the link."
+          },
+          {
+            "type": "heading",
+            "text": "No review gate"
+          },
+          {
+            "type": "paragraph",
+            "text": "Without a required check before publication, one confident invention can reach a customer or a court."
+          }
+        ]
+      },
+      {
+        "title": "Human review before anything ships",
+        "eyebrow": "Checklist",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "Did I confirm every citation both exists and supports the claim?"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Did I verify every name, statistic, quote, and date against a primary source?"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Did I avoid using the same model to confirm its own claims?"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "For grounded tasks, did the answer stay inside the supplied documents?"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Is there a required review gate before anything factual reaches an outside party?"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "For legal, medical, or financial content, did a qualified professional sign off?"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Related lessons",
+        "eyebrow": "Keep going",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "How to verify AI outputs"
+          },
+          {
+            "type": "paragraph",
+            "text": "The step-by-step method that would have prevented the Mata disaster."
+          },
+          {
+            "type": "heading",
+            "text": "What generative AI is and is not"
+          },
+          {
+            "type": "paragraph",
+            "text": "The prediction mechanism that makes hallucination inevitable."
+          },
+          {
+            "type": "heading",
+            "text": "What AI can and cannot do for business"
+          },
+          {
+            "type": "paragraph",
+            "text": "Where to keep AI away from the final word entirely."
+          }
+        ]
+      },
+      {
+        "title": "Some research tools hallucinate less than others",
+        "eyebrow": "Tool guide",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Best AI for research"
+          },
+          {
+            "type": "paragraph",
+            "text": "Citation-first tools vs. general assistants — which to reach for depending on how much you need to trust the output."
+          }
+        ]
+      },
+      {
+        "title": "Build hallucination guardrails into how your business uses AI",
+        "eyebrow": "Work with us",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "We set up the review gates, grounding, and sign-off policies that keep confident-but-wrong output from reaching your customers or a courtroom."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "university/learn/hallucinations-and-risk/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "how-to-verify-ai-outputs-lesson",
@@ -98,14 +951,59 @@
     "summary": "A repeatable method for checking AI answers against primary sources and guarding against the false trust created by fluent output.",
     "audience": "Anyone who must decide whether an AI-generated claim is accurate enough to use.",
     "maturity": "Production",
-    "topics": ["verification", "primary-sources", "evidence", "research"],
-    "industries": ["legal", "research", "education", "professional-services"],
-    "keywords": ["verify AI output", "primary source checking", "claim audit", "citation verification"],
-    "evidence": ["Primary sources for each material claim", "Source metadata and version dates", "A claim-by-claim verification record"],
-    "methodology": ["Extract discrete factual claims", "Rank claims by consequence", "Locate the controlling or primary source", "Compare the exact claim with the source", "Correct, qualify, or remove unsupported language", "Preserve citations and review notes"],
-    "assumptions": ["Authoritative sources can be accessed", "The reviewer understands the relevant domain or can escalate"],
-    "limitations": ["Verification is bounded by source availability and reviewer competence", "A source can exist without supporting the claim made"],
-    "relationships": [{"type": "depends_on", "target": "hallucinations-and-risk-lesson"}, {"type": "uses", "target": "citation-verifier"}, {"type": "implements", "target": "methods"}]
+    "topics": [
+      "verification",
+      "primary-sources",
+      "evidence",
+      "research"
+    ],
+    "industries": [
+      "legal",
+      "research",
+      "education",
+      "professional-services"
+    ],
+    "keywords": [
+      "verify AI output",
+      "primary source checking",
+      "claim audit",
+      "citation verification"
+    ],
+    "evidence": [
+      "Primary sources for each material claim",
+      "Source metadata and version dates",
+      "A claim-by-claim verification record"
+    ],
+    "methodology": [
+      "Extract discrete factual claims",
+      "Rank claims by consequence",
+      "Locate the controlling or primary source",
+      "Compare the exact claim with the source",
+      "Correct, qualify, or remove unsupported language",
+      "Preserve citations and review notes"
+    ],
+    "assumptions": [
+      "Authoritative sources can be accessed",
+      "The reviewer understands the relevant domain or can escalate"
+    ],
+    "limitations": [
+      "Verification is bounded by source availability and reviewer competence",
+      "A source can exist without supporting the claim made"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "hallucinations-and-risk-lesson"
+      },
+      {
+        "type": "uses",
+        "target": "citation-verifier"
+      },
+      {
+        "type": "implements",
+        "target": "methods"
+      }
+    ]
   },
   {
     "id": "privacy-and-confidentiality-lesson",
@@ -116,14 +1014,495 @@
     "summary": "What is safe to enter into an AI tool, what is not, and how consumer, business, and enterprise controls can differ for training, retention, and access.",
     "audience": "Professionals and teams handling client, employee, patient, student, customer, or proprietary information.",
     "maturity": "Production",
-    "topics": ["privacy", "confidentiality", "data-governance", "risk"],
-    "industries": ["legal", "healthcare", "education", "professional-services"],
-    "keywords": ["AI privacy", "confidential data", "AI retention", "enterprise AI"],
-    "evidence": ["Current vendor terms and privacy documentation", "Organizational data classifications and policies", "Applicable professional, contractual, and regulatory duties"],
-    "methodology": ["Classify the information before entry", "Check authority and purpose", "Verify vendor tier, training, retention, and access controls", "Minimize or de-identify data", "Use an approved alternative when requirements are unmet"],
-    "assumptions": ["Organizations can identify data owners and applicable policies", "Vendor settings and terms are checked at the time of use"],
-    "limitations": ["Vendor practices and product controls change", "This lesson does not replace legal, privacy, security, or professional advice"],
-    "relationships": [{"type": "depends_on", "target": "when-not-to-use-ai-lesson"}, {"type": "implements", "target": "trust-stack"}, {"type": "supports", "target": "ai-for-meeting-notes-lesson"}]
+    "topics": [
+      "privacy",
+      "confidentiality",
+      "data-governance",
+      "risk"
+    ],
+    "industries": [
+      "legal",
+      "healthcare",
+      "education",
+      "professional-services"
+    ],
+    "keywords": [
+      "AI privacy",
+      "confidential data",
+      "AI retention",
+      "enterprise AI"
+    ],
+    "evidence": [
+      "Current vendor terms and privacy documentation",
+      "Organizational data classifications and policies",
+      "Applicable professional, contractual, and regulatory duties"
+    ],
+    "methodology": [
+      "Classify the information before entry",
+      "Check authority and purpose",
+      "Verify vendor tier, training, retention, and access controls",
+      "Minimize or de-identify data",
+      "Use an approved alternative when requirements are unmet"
+    ],
+    "assumptions": [
+      "Organizations can identify data owners and applicable policies",
+      "Vendor settings and terms are checked at the time of use"
+    ],
+    "limitations": [
+      "Vendor practices and product controls change",
+      "This lesson does not replace legal, privacy, security, or professional advice"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "when-not-to-use-ai-lesson"
+      },
+      {
+        "type": "implements",
+        "target": "trust-stack"
+      },
+      {
+        "type": "supports",
+        "target": "ai-for-meeting-notes-lesson"
+      }
+    ],
+    "editorialIntro": [
+      "Before you paste one more thing into a chat box: here is what the tool keeps, who can see it, and the real gap between a free login and a business contract."
+    ],
+    "editorialSections": [
+      {
+        "title": "A working rule for what goes in the chat box",
+        "eyebrow": "What this is",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Every time you paste text into ChatGPT, Claude, Gemini, or Copilot, it leaves your computer and lands on a vendor's servers. Three questions decide whether that is fine or a problem."
+          },
+          {
+            "type": "paragraph",
+            "text": "Is it stored? For how long? And can it be used to train a future model that other people will use? The answers depend almost entirely on which tier you are on. A personal free login and a paid business plan from the same company can handle your data in completely different ways."
+          },
+          {
+            "type": "paragraph",
+            "text": "Most people never learn that difference. That is how confidential client details end up in a system nobody at the company controls."
+          },
+          {
+            "type": "paragraph",
+            "text": "Vendor policies described here were checked in mid-2026. Data terms change often, so treat this as a starting map. Confirm each vendor's current policy at the source before you rely on it."
+          }
+        ]
+      },
+      {
+        "title": "People who handle other people's data",
+        "eyebrow": "Who this is for",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "Owners and managers about to let a team use AI tools, who want one clear rule instead of a vague worry."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Anyone in a regulated or contract-bound field: healthcare, law, finance, education, or any business that signed confidentiality terms with clients."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Solo operators who handle client lists, health details, or financials and want to keep using AI without breaking a promise they made."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Run this thinking before anything non-public",
+        "eyebrow": "When to use it",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "Before you draft your team's AI usage rule or hand anyone a login."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Before pasting a customer record, contract, medical note, financial statement, résumé, or anything with a name attached to a fact."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "When choosing between a free tool and a paid business tier, so privacy terms drive the decision instead of price."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "What this lesson does not replace",
+        "eyebrow": "When NOT to rely on it alone",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "This gives you a sensible default. It does not stand in for these."
+          },
+          {
+            "type": "heading",
+            "text": "A signed contract"
+          },
+          {
+            "type": "paragraph",
+            "text": "If your client agreement, HIPAA obligations, or a data processing agreement forbid sending data to third parties, this lesson does not override that. Read the contract."
+          },
+          {
+            "type": "heading",
+            "text": "Legal review of vendor terms"
+          },
+          {
+            "type": "paragraph",
+            "text": "Nothing here is legal advice. RN Collins is a JD candidate, not a licensed attorney. For anything high-stakes, have a qualified lawyer read the vendor's data terms and your own obligations."
+          },
+          {
+            "type": "heading",
+            "text": "The assumption that a paid plan is a vault"
+          },
+          {
+            "type": "paragraph",
+            "text": "Paid tiers reduce risk; they do not make a tool private by default. Human reviewers can still see flagged content, and misconfigured settings are common."
+          }
+        ]
+      },
+      {
+        "title": "How the tiers actually differ",
+        "eyebrow": "Tools",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The pattern is consistent: consumer plans may use your chats to improve models unless you opt out, while business and enterprise plans do not train on your data by default. Retention also drops as you move up."
+          },
+          {
+            "type": "paragraph",
+            "text": "Simplified comparison, verified mid-2026. Always re-check current terms at each vendor's own privacy page."
+          },
+          {
+            "type": "table",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Vendor / tier",
+                    "header": true
+                  },
+                  {
+                    "text": "Trains on your content by default?",
+                    "header": true
+                  },
+                  {
+                    "text": "Retention",
+                    "header": true
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ChatGPT Free / Plus / Pro (consumer)"
+                  },
+                  {
+                    "text": "Yes, unless you opt out in Data Controls"
+                  },
+                  {
+                    "text": "Kept until you delete; deleted chats purged within ~30 days. A copy of temporary chats is held ~30 days for abuse monitoring."
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ChatGPT Business / Enterprise"
+                  },
+                  {
+                    "text": "No, not by default"
+                  },
+                  {
+                    "text": "Admin controls retention; deleted conversations removed within ~30 days."
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Claude (consumer)"
+                  },
+                  {
+                    "text": "Only if you leave \"Improve Claude for everyone\" on; opted-in chats can be retained up to 5 years. Off returns you to 30-day retention with no training."
+                  },
+                  {
+                    "text": "30 days when training is off; up to 5 years when on."
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Claude for Work / API / Enterprise"
+                  },
+                  {
+                    "text": "No. API standard log retention is ~7 days. Zero Data Retention available for qualifying Enterprise customers."
+                  },
+                  {
+                    "text": "~7 days (API) to as low as zero (ZDR)."
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Microsoft 365 Copilot (paid business)"
+                  },
+                  {
+                    "text": "No. Content stays in your tenant and is not used to train the underlying models."
+                  },
+                  {
+                    "text": "Governed by your Microsoft 365 tenant policies."
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Gemini in Google Workspace (paid business)"
+                  },
+                  {
+                    "text": "No. Workspace data is not used to train models outside your organization."
+                  },
+                  {
+                    "text": "Governed by your Workspace admin policies."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "One nuance to know: even when a vendor says it does not train on your data, most reserve the right to have a human review content flagged for safety or abuse. Anthropic's mid-2026 policy is explicit that conversations flagged for safety review can be used in ways that override a stated training preference, and it does not spell out what triggers a flag. Treat \"not used for training\" as strong protection, not an absolute guarantee of secrecy."
+          }
+        ]
+      },
+      {
+        "title": "Sort, set the rule, then paste",
+        "eyebrow": "Step-by-step workflow",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Sort your data into three buckets. Green: already public, no identifiable person or secret. Yellow: internal but not sensitive (draft copy, generic process notes). Red: any real name tied to health, money, legal status, or a promise of confidentiality.",
+              "Set the rule. Green goes anywhere. Yellow goes only into a business or enterprise tier with training off. Red does not go in at all unless a contract and configuration specifically permit it.",
+              "Strip before you paste. For yellow items, remove names and identifiers first. \"Client A, a 54-year-old\" carries far less risk than a real name.",
+              "Check the account settings once, in writing. Confirm the tier, the training toggle, and the retention setting. Screenshot it. Settings get changed and reset.",
+              "Turn off training and history where you can. On consumer tiers, use data controls and temporary or incognito modes for anything you would not want retained.",
+              "Write it down for the team. A one-page rule everyone can follow beats a perfect policy nobody reads."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Copy-pastable starters",
+        "eyebrow": "Example prompts",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Use these to have the tool help build your own policy. None of them contain real confidential data."
+          },
+          {
+            "type": "code",
+            "text": "You are helping a small business write a plain-language AI usage rule. Our team uses [ChatGPT Business / Gemini in Workspace]. Draft a one-page policy covering: what data is never allowed in AI tools, what must be anonymized first, which tier and settings are required, and who to ask when unsure. Keep it under 300 words and write it for non-technical staff."
+          },
+          {
+            "type": "code",
+            "text": "I'm about to paste the text below into an AI tool. Before I do, tell me: does it contain any personal identifiers, health, financial, or legal details that would make it risky to send to a third party? List anything I should remove or mask first. Do not store or repeat the content back. [paste ONLY non-confidential sample text here to test the process]"
+          },
+          {
+            "type": "code",
+            "text": "Rewrite this internal note so it keeps the useful structure but removes every name, account number, and detail that could identify a real person or client. Replace them with generic placeholders like [Client A]."
+          }
+        ]
+      },
+      {
+        "title": "What the policy prompt might return",
+        "eyebrow": "Example output",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "AI Usage Rule — [Company]"
+          },
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Never paste into any AI tool: client names tied to health or financial details, Social Security or account numbers, passwords, signed contracts, or anything covered by a confidentiality agreement.",
+              "Internal drafts and generic notes are allowed only in our approved Business plan, with model training turned off.",
+              "Before pasting anything about a specific person, replace their name with a placeholder.",
+              "When unsure, ask [name] before pasting. A five-minute question beats a data leak."
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Realistic, but the model may invent settings names or overstate a protection. That is exactly why the review step exists."
+          }
+        ]
+      },
+      {
+        "title": "Where this goes wrong",
+        "eyebrow": "Risks & common mistakes",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Assuming free equals private"
+          },
+          {
+            "type": "paragraph",
+            "text": "On most consumer tiers, your chats can train the next model unless you opt out. This is the single most common mistake."
+          },
+          {
+            "type": "heading",
+            "text": "Pasting client data to save five minutes"
+          },
+          {
+            "type": "paragraph",
+            "text": "A confidentiality breach is not undone by deleting the chat afterward."
+          },
+          {
+            "type": "heading",
+            "text": "Trusting a browser extension or unknown app"
+          },
+          {
+            "type": "paragraph",
+            "text": "Third-party wrappers may route your text through servers with no clear policy. Prefer the vendor's own app."
+          },
+          {
+            "type": "heading",
+            "text": "Letting the model describe its own privacy terms"
+          },
+          {
+            "type": "paragraph",
+            "text": "Models frequently get their own vendor's policy wrong. Verify at the source, not by asking the chatbot."
+          },
+          {
+            "type": "heading",
+            "text": "Setting the policy once and forgetting it"
+          },
+          {
+            "type": "paragraph",
+            "text": "Vendors update terms and defaults reset. Re-check quarterly."
+          }
+        ]
+      },
+      {
+        "title": "Confirm before you paste",
+        "eyebrow": "Human review checklist",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "I confirmed which tier we are actually on, not the one we think we bought."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "I verified the training and retention settings at the vendor's own page, today."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "No red-bucket data (names tied to health, money, legal status, or a confidentiality promise) is in this prompt."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Yellow-bucket data has been anonymized before pasting."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "I have written approval where a contract or regulation is involved."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "The team rule is written in plain language and someone owns questions about it."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Keep going",
+        "eyebrow": "Related lessons",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "When Not to Use AI"
+          },
+          {
+            "type": "paragraph",
+            "text": "The cases where the right move is to close the chat box and do it yourself."
+          },
+          {
+            "type": "heading",
+            "text": "How to Verify AI Outputs"
+          },
+          {
+            "type": "paragraph",
+            "text": "A practical routine for catching invented facts before they reach a client."
+          },
+          {
+            "type": "heading",
+            "text": "Choose Your First AI Stack"
+          },
+          {
+            "type": "paragraph",
+            "text": "Pick the tools and tiers that fit your data obligations, not just your budget."
+          }
+        ]
+      },
+      {
+        "title": "Ready to choose a note-taker now that you know the rules?",
+        "eyebrow": "Tool guide",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Best AI for meeting notes"
+          },
+          {
+            "type": "paragraph",
+            "text": "Otter, Fireflies, Fathom, and Granola compared against the consent and confidentiality bar you just set."
+          }
+        ]
+      },
+      {
+        "title": "Not sure which tier your business actually needs?",
+        "eyebrow": "Next step",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The AI Roadmap Assessment maps your data, your obligations, and your goals to a plan you can act on this week."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "university/learn/privacy-and-confidentiality/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "choose-your-first-ai-stack-lesson",
@@ -134,14 +1513,58 @@
     "summary": "A lean starter stack for a small business: choose one assistant, one workspace-native tool, and one specialist according to the work rather than hype.",
     "audience": "Small businesses and lean teams selecting their first practical set of AI tools.",
     "maturity": "Production",
-    "topics": ["ai-stack", "tool-selection", "implementation", "ai-readiness"],
-    "industries": ["small-business", "professional-services", "creator-economy"],
-    "keywords": ["AI stack", "AI tools for business", "tool evaluation", "lean AI stack"],
-    "evidence": ["Representative business tasks", "Current product documentation and terms", "Cost, integration, privacy, and evaluation requirements"],
-    "methodology": ["Inventory the work before the tools", "Choose one general assistant", "Prefer existing workspace integrations where suitable", "Add one specialist only for a proven gap", "Test the stack on representative tasks", "Remove redundant tools"],
-    "assumptions": ["The team can identify its highest-value repeatable tasks", "Tool adoption includes ownership and review"],
-    "limitations": ["Products, prices, and features change", "A recommended category does not establish that a specific vendor meets privacy or compliance requirements"],
-    "relationships": [{"type": "depends_on", "target": "what-ai-can-and-cannot-do-lesson"}, {"type": "uses", "target": "ai-readiness-scorecard"}, {"type": "supports", "target": "first-ai-team-course"}]
+    "topics": [
+      "ai-stack",
+      "tool-selection",
+      "implementation",
+      "ai-readiness"
+    ],
+    "industries": [
+      "small-business",
+      "professional-services",
+      "creator-economy"
+    ],
+    "keywords": [
+      "AI stack",
+      "AI tools for business",
+      "tool evaluation",
+      "lean AI stack"
+    ],
+    "evidence": [
+      "Representative business tasks",
+      "Current product documentation and terms",
+      "Cost, integration, privacy, and evaluation requirements"
+    ],
+    "methodology": [
+      "Inventory the work before the tools",
+      "Choose one general assistant",
+      "Prefer existing workspace integrations where suitable",
+      "Add one specialist only for a proven gap",
+      "Test the stack on representative tasks",
+      "Remove redundant tools"
+    ],
+    "assumptions": [
+      "The team can identify its highest-value repeatable tasks",
+      "Tool adoption includes ownership and review"
+    ],
+    "limitations": [
+      "Products, prices, and features change",
+      "A recommended category does not establish that a specific vendor meets privacy or compliance requirements"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "what-ai-can-and-cannot-do-lesson"
+      },
+      {
+        "type": "uses",
+        "target": "ai-readiness-scorecard"
+      },
+      {
+        "type": "supports",
+        "target": "first-ai-team-course"
+      }
+    ]
   },
   {
     "id": "ai-assistant-comparison-lesson",
@@ -152,14 +1575,57 @@
     "summary": "A fair comparison framework for four widely used AI assistants: their durable strengths, sourcing behavior, and how to test the same real task across tools.",
     "audience": "Individuals and teams comparing general-purpose AI assistants for business use.",
     "maturity": "Production",
-    "topics": ["tool-selection", "evaluation", "research", "ai-stack"],
-    "industries": ["small-business", "professional-services", "research"],
-    "keywords": ["ChatGPT vs Claude", "Gemini vs Perplexity", "AI assistant comparison", "AI pricing"],
-    "evidence": ["Current official product and pricing documentation", "Side-by-side representative task tests", "Source and citation behavior observed during evaluation"],
-    "methodology": ["Define the task and acceptance criteria", "Run the same input across tools", "Compare usefulness, evidence, control, and failure modes", "Verify pricing and policies directly", "Choose for the workflow rather than a universal winner"],
-    "assumptions": ["Tools are evaluated using the versions and tiers actually under consideration", "Learners independently verify time-sensitive product details"],
-    "limitations": ["Features, prices, and model routing change frequently", "Observed strengths are not guarantees for every task or account tier"],
-    "relationships": [{"type": "depends_on", "target": "choose-your-first-ai-stack-lesson"}, {"type": "supports", "target": "how-to-verify-ai-outputs-lesson"}, {"type": "supports", "target": "ai-for-email-lesson"}]
+    "topics": [
+      "tool-selection",
+      "evaluation",
+      "research",
+      "ai-stack"
+    ],
+    "industries": [
+      "small-business",
+      "professional-services",
+      "research"
+    ],
+    "keywords": [
+      "ChatGPT vs Claude",
+      "Gemini vs Perplexity",
+      "AI assistant comparison",
+      "AI pricing"
+    ],
+    "evidence": [
+      "Current official product and pricing documentation",
+      "Side-by-side representative task tests",
+      "Source and citation behavior observed during evaluation"
+    ],
+    "methodology": [
+      "Define the task and acceptance criteria",
+      "Run the same input across tools",
+      "Compare usefulness, evidence, control, and failure modes",
+      "Verify pricing and policies directly",
+      "Choose for the workflow rather than a universal winner"
+    ],
+    "assumptions": [
+      "Tools are evaluated using the versions and tiers actually under consideration",
+      "Learners independently verify time-sensitive product details"
+    ],
+    "limitations": [
+      "Features, prices, and model routing change frequently",
+      "Observed strengths are not guarantees for every task or account tier"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "choose-your-first-ai-stack-lesson"
+      },
+      {
+        "type": "supports",
+        "target": "how-to-verify-ai-outputs-lesson"
+      },
+      {
+        "type": "supports",
+        "target": "ai-for-email-lesson"
+      }
+    ]
   },
   {
     "id": "ai-for-email-lesson",
@@ -170,14 +1636,57 @@
     "summary": "A practical workflow for using AI to triage an inbox and draft replies faster while preserving the sender's voice, with prompts and a human-review checklist.",
     "audience": "Professionals and small teams managing repetitive but consequential email.",
     "maturity": "Production",
-    "topics": ["email", "workflow-design", "prompting", "human-review"],
-    "industries": ["small-business", "professional-services", "creator-economy"],
-    "keywords": ["AI email drafting", "inbox triage", "email prompt", "human review"],
-    "evidence": ["Representative messages and approved response examples", "Communication policies and escalation rules", "Human-reviewed draft outcomes"],
-    "methodology": ["Classify messages by action and consequence", "Remove or protect sensitive information", "Draft from supplied facts and voice examples", "Prohibit autonomous sending", "Review recipients, facts, tone, promises, and attachments"],
-    "assumptions": ["A human reads every draft before sending", "Account and data permissions are appropriate"],
-    "limitations": ["Drafting assistance can misstate facts or commitments", "Sensitive, adversarial, legal, medical, employment, or crisis communications require additional review"],
-    "relationships": [{"type": "depends_on", "target": "prompting-fundamentals-lesson"}, {"type": "depends_on", "target": "privacy-and-confidentiality-lesson"}, {"type": "supports", "target": "first-ai-team-course"}]
+    "topics": [
+      "email",
+      "workflow-design",
+      "prompting",
+      "human-review"
+    ],
+    "industries": [
+      "small-business",
+      "professional-services",
+      "creator-economy"
+    ],
+    "keywords": [
+      "AI email drafting",
+      "inbox triage",
+      "email prompt",
+      "human review"
+    ],
+    "evidence": [
+      "Representative messages and approved response examples",
+      "Communication policies and escalation rules",
+      "Human-reviewed draft outcomes"
+    ],
+    "methodology": [
+      "Classify messages by action and consequence",
+      "Remove or protect sensitive information",
+      "Draft from supplied facts and voice examples",
+      "Prohibit autonomous sending",
+      "Review recipients, facts, tone, promises, and attachments"
+    ],
+    "assumptions": [
+      "A human reads every draft before sending",
+      "Account and data permissions are appropriate"
+    ],
+    "limitations": [
+      "Drafting assistance can misstate facts or commitments",
+      "Sensitive, adversarial, legal, medical, employment, or crisis communications require additional review"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "prompting-fundamentals-lesson"
+      },
+      {
+        "type": "depends_on",
+        "target": "privacy-and-confidentiality-lesson"
+      },
+      {
+        "type": "supports",
+        "target": "first-ai-team-course"
+      }
+    ]
   },
   {
     "id": "ai-for-meeting-notes-lesson",
@@ -188,14 +1697,59 @@
     "summary": "A workflow for turning meetings into decisions and next steps with AI notetakers while addressing notice, consent, confidentiality, and review before recording.",
     "audience": "Teams considering AI-assisted meeting capture, summaries, and action tracking.",
     "maturity": "Production",
-    "topics": ["meeting-notes", "privacy", "consent", "workflow-design"],
-    "industries": ["professional-services", "small-business", "legal", "healthcare"],
-    "keywords": ["AI meeting notes", "AI notetaker", "recording consent", "meeting summary"],
-    "evidence": ["Applicable recording and consent requirements", "Vendor privacy and retention documentation", "Meeting decisions, owners, and source recordings where authorized"],
-    "methodology": ["Determine whether recording is appropriate", "Provide notice and obtain required consent", "Configure access and retention", "Generate a draft summary", "Verify decisions, owners, deadlines, and sensitive content", "Distribute only to authorized recipients"],
-    "assumptions": ["The organization resolves applicable consent and policy requirements", "A participant reviews the summary against the meeting"],
-    "limitations": ["Consent rules and professional duties vary by jurisdiction and context", "Automated notes can omit nuance, misattribute speakers, or create sensitive records"],
-    "relationships": [{"type": "depends_on", "target": "privacy-and-confidentiality-lesson"}, {"type": "depends_on", "target": "prompting-fundamentals-lesson"}, {"type": "implements", "target": "trust-stack"}]
+    "topics": [
+      "meeting-notes",
+      "privacy",
+      "consent",
+      "workflow-design"
+    ],
+    "industries": [
+      "professional-services",
+      "small-business",
+      "legal",
+      "healthcare"
+    ],
+    "keywords": [
+      "AI meeting notes",
+      "AI notetaker",
+      "recording consent",
+      "meeting summary"
+    ],
+    "evidence": [
+      "Applicable recording and consent requirements",
+      "Vendor privacy and retention documentation",
+      "Meeting decisions, owners, and source recordings where authorized"
+    ],
+    "methodology": [
+      "Determine whether recording is appropriate",
+      "Provide notice and obtain required consent",
+      "Configure access and retention",
+      "Generate a draft summary",
+      "Verify decisions, owners, deadlines, and sensitive content",
+      "Distribute only to authorized recipients"
+    ],
+    "assumptions": [
+      "The organization resolves applicable consent and policy requirements",
+      "A participant reviews the summary against the meeting"
+    ],
+    "limitations": [
+      "Consent rules and professional duties vary by jurisdiction and context",
+      "Automated notes can omit nuance, misattribute speakers, or create sensitive records"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "privacy-and-confidentiality-lesson"
+      },
+      {
+        "type": "depends_on",
+        "target": "prompting-fundamentals-lesson"
+      },
+      {
+        "type": "implements",
+        "target": "trust-stack"
+      }
+    ]
   },
   {
     "id": "ai-for-sop-drafting-lesson",
@@ -206,13 +1760,57 @@
     "summary": "A workflow for turning a process that lives in someone's head into a documented standard operating procedure, with human review that keeps it accurate and safe to follow.",
     "audience": "Operators, founders, and teams documenting repeatable internal processes.",
     "maturity": "Production",
-    "topics": ["standard-operating-procedures", "knowledge-management", "workflow-design", "prompting"],
-    "industries": ["small-business", "professional-services", "education"],
-    "keywords": ["AI SOP drafting", "process documentation", "SOP prompt", "knowledge capture"],
-    "evidence": ["Interviews with process owners", "Representative inputs, outputs, exceptions, and failure cases", "Policies and systems governing the process"],
-    "methodology": ["Observe or interview the process owner", "Map triggers, inputs, steps, decisions, and handoffs", "Draft in a standard structure", "Test the procedure with a different user", "Correct omissions and unsafe assumptions", "Assign an owner and review date"],
-    "assumptions": ["A knowledgeable process owner validates the procedure", "The process can be tested before broad adoption"],
-    "limitations": ["AI cannot discover tacit steps that users fail to provide", "Regulated, safety-critical, or high-consequence procedures require qualified review and change control"],
-    "relationships": [{"type": "depends_on", "target": "prompting-fundamentals-lesson"}, {"type": "supports", "target": "kb-readiness-course"}, {"type": "supports", "target": "workflow-audit-course"}]
+    "topics": [
+      "standard-operating-procedures",
+      "knowledge-management",
+      "workflow-design",
+      "prompting"
+    ],
+    "industries": [
+      "small-business",
+      "professional-services",
+      "education"
+    ],
+    "keywords": [
+      "AI SOP drafting",
+      "process documentation",
+      "SOP prompt",
+      "knowledge capture"
+    ],
+    "evidence": [
+      "Interviews with process owners",
+      "Representative inputs, outputs, exceptions, and failure cases",
+      "Policies and systems governing the process"
+    ],
+    "methodology": [
+      "Observe or interview the process owner",
+      "Map triggers, inputs, steps, decisions, and handoffs",
+      "Draft in a standard structure",
+      "Test the procedure with a different user",
+      "Correct omissions and unsafe assumptions",
+      "Assign an owner and review date"
+    ],
+    "assumptions": [
+      "A knowledgeable process owner validates the procedure",
+      "The process can be tested before broad adoption"
+    ],
+    "limitations": [
+      "AI cannot discover tacit steps that users fail to provide",
+      "Regulated, safety-critical, or high-consequence procedures require qualified review and change control"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "prompting-fundamentals-lesson"
+      },
+      {
+        "type": "supports",
+        "target": "kb-readiness-course"
+      },
+      {
+        "type": "supports",
+        "target": "workflow-audit-course"
+      }
+    ]
   }
 ]

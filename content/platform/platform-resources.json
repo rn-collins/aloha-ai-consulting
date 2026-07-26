@@ -8,44 +8,626 @@
     "summary": "A governed platform for organizations, projects, evidence, guardrails, approvals, integrations, and append-only audit events.",
     "audience": "Organizations operating evidence-sensitive or regulated AI workflows.",
     "maturity": "Beta",
-    "topics": ["platform", "governance", "evidence", "human-review"],
-    "industries": ["professional-services", "regulated-markets", "technology"],
-    "keywords": ["AI operating platform", "human review", "AI audit trail"],
-    "architecture": ["Organizations and projects", "Evidence engine", "Human review", "AI gateway", "Integration adapters", "Append-only audit"],
+    "topics": [
+      "platform",
+      "governance",
+      "evidence",
+      "human-review"
+    ],
+    "industries": [
+      "professional-services",
+      "regulated-markets",
+      "technology"
+    ],
+    "keywords": [
+      "AI operating platform",
+      "human review",
+      "AI audit trail"
+    ],
+    "architecture": [
+      "Organizations and projects",
+      "Evidence engine",
+      "Human review",
+      "AI gateway",
+      "Integration adapters",
+      "Append-only audit"
+    ],
     "implementationStatus": "Core workflow, adapter, gateway, and twin SDK foundations are implemented; production integrations remain engagement-specific.",
-    "documentation": ["Platform architecture", "Workflow and review contracts", "Adapter SDK", "Audit-event model"],
-    "roadmap": ["Connect authenticated project surfaces", "Expand evidence and evaluation views", "Add production adapters by engagement"],
-    "changelog": ["2026-07: canonical platform resource created", "2026-07: Workspace bridge and registry connected"],
+    "documentation": [
+      "Platform architecture",
+      "Workflow and review contracts",
+      "Adapter SDK",
+      "Audit-event model"
+    ],
+    "roadmap": [
+      "Connect authenticated project surfaces",
+      "Expand evidence and evaluation views",
+      "Add production adapters by engagement"
+    ],
+    "changelog": [
+      "2026-07: canonical platform resource created",
+      "2026-07: Workspace bridge and registry connected"
+    ],
     "licensing": "Available through scoped implementations, pilots, and licensed platform engagements.",
-    "evidence": ["Canonical resource registry", "Workflow and adapter contracts", "Append-only audit design"],
-    "methodology": ["Bind work to an organization and project", "Resolve evidence and guardrails", "Generate inspectable output", "Require human review", "Record approval and delivery events"],
-    "assumptions": ["Organizations configure appropriate access, evidence, and review authority"],
-    "limitations": ["Public pages demonstrate architecture and do not expose authenticated client data", "Production behavior depends on configured integrations"],
-    "relationships": [{"type": "implements", "target": "trust-stack"}, {"type": "uses", "target": "workspace"}, {"type": "supports", "target": "ai-native-coo"}]
+    "evidence": [
+      "Canonical resource registry",
+      "Workflow and adapter contracts",
+      "Append-only audit design"
+    ],
+    "methodology": [
+      "Bind work to an organization and project",
+      "Resolve evidence and guardrails",
+      "Generate inspectable output",
+      "Require human review",
+      "Record approval and delivery events"
+    ],
+    "assumptions": [
+      "Organizations configure appropriate access, evidence, and review authority"
+    ],
+    "limitations": [
+      "Public pages demonstrate architecture and do not expose authenticated client data",
+      "Production behavior depends on configured integrations"
+    ],
+    "relationships": [
+      {
+        "type": "implements",
+        "target": "trust-stack"
+      },
+      {
+        "type": "uses",
+        "target": "workspace"
+      },
+      {
+        "type": "supports",
+        "target": "ai-native-coo"
+      }
+    ]
   },
   {
     "id": "aloha-ai-practice",
     "kind": "product",
     "pathname": "/practice",
     "eyebrow": "Integrated practice",
-    "title": "AI adoption, content systems, regulatory intelligence, and legal AI workflow",
+    "title": "The organizations doing the most credible work face three compounding problems. Almost everyone treats each one as unrelated.",
     "summary": "The integrated Aloha AI practice for building evidence-grounded systems around how people actually trust, review, and use AI.",
     "audience": "Organizations in regulated innovation sectors that need credible AI implementation and public-facing intelligence.",
     "maturity": "Production",
-    "topics": ["ai-strategy", "implementation", "regulatory-intelligence", "content-systems"],
-    "industries": ["regulated-markets", "professional-services", "health", "legal"],
-    "keywords": ["Aloha AI practice", "fractional AI leadership", "regulated innovation"],
-    "architecture": ["Advisory and strategy", "Research and intelligence", "Workflow implementation", "Governance and evaluation", "Public education and content"],
+    "topics": [
+      "ai-strategy",
+      "implementation",
+      "regulatory-intelligence",
+      "content-systems"
+    ],
+    "industries": [
+      "regulated-markets",
+      "professional-services",
+      "health",
+      "legal"
+    ],
+    "keywords": [
+      "Aloha AI practice",
+      "fractional AI leadership",
+      "regulated innovation"
+    ],
+    "architecture": [
+      "Advisory and strategy",
+      "Research and intelligence",
+      "Workflow implementation",
+      "Governance and evaluation",
+      "Public education and content"
+    ],
     "implementationStatus": "Active consulting and product practice supported by published methods, live builds, and canonical resources.",
-    "documentation": ["Published methods", "Service scopes", "Product resources", "Research and build evidence"],
-    "roadmap": ["Expand proof library", "Connect engagements to Workspace evidence", "Publish additional analytical instruments"],
-    "changelog": ["2026-07: practice consolidated into the canonical resource graph"],
+    "documentation": [
+      "Published methods",
+      "Service scopes",
+      "Product resources",
+      "Research and build evidence"
+    ],
+    "roadmap": [
+      "Expand proof library",
+      "Connect engagements to Workspace evidence",
+      "Publish additional analytical instruments"
+    ],
+    "changelog": [
+      "2026-07: practice consolidated into the canonical resource graph"
+    ],
     "licensing": "Engagement and product terms are defined in individual scopes and agreements.",
-    "evidence": ["Published methods", "Live builds and product demonstrations", "Client-ready service contracts"],
-    "methodology": ["Locate the decision or workflow bottleneck", "Ground the work in primary evidence", "Build the smallest useful system", "Evaluate with accountable human review"],
-    "assumptions": ["The organization can identify a real decision, workflow, or evidence problem"],
-    "limitations": ["The practice is not a substitute for licensed advice outside an agreed scope"],
-    "relationships": [{"type": "supports", "target": "services"}, {"type": "implements", "target": "methods"}, {"type": "uses", "target": "aloha-ai-platform"}]
+    "evidence": [
+      "Published methods",
+      "Live builds and product demonstrations",
+      "Client-ready service contracts"
+    ],
+    "methodology": [
+      "Locate the decision or workflow bottleneck",
+      "Ground the work in primary evidence",
+      "Build the smallest useful system",
+      "Evaluate with accountable human review"
+    ],
+    "assumptions": [
+      "The organization can identify a real decision, workflow, or evidence problem"
+    ],
+    "limitations": [
+      "The practice is not a substitute for licensed advice outside an agreed scope"
+    ],
+    "relationships": [
+      {
+        "type": "supports",
+        "target": "services"
+      },
+      {
+        "type": "implements",
+        "target": "methods"
+      },
+      {
+        "type": "uses",
+        "target": "aloha-ai-platform"
+      }
+    ],
+    "seoTitle": "AI adoption, content systems, regulatory intelligence, and legal AI workflow",
+    "editorialIntro": [
+      "They cannot talk about what they know. Your organization publishes clinically rigorous content that would be front-page coverage in any other era — and Instagram showed it to 60 people. No violation notice. No appeal pathway. Just a systematic reduction in reach that the platform will not acknowledge and you cannot explain to funders. Platform suppression, regulatory exposure, and communication constraints systematically silence the organizations doing the most credible work. This is a regulatory and infrastructure problem, not a content quality problem.",
+      "They cannot trust what AI tells them. Large language models hallucinate on the specific facts that operators need: wrong APQ figures, wrong statutory triggers, wrong CFR citations, wrong case names. The Operator Execution Gap is widest exactly where the stakes are highest.",
+      "They cannot build what the work requires. Most AI consultants advise. Most developers build without knowing the domain. Law firms evaluating Harvey need someone who has done actual legal research under attorney supervision — not someone who learned the platform from a dashboard. Nonprofits with the credibility and peer relationships to run a consulting practice need the AI infrastructure built before they can scale it. Any organization that needs a bespoke intelligence tool — a sector-specific monitoring system, a knowledge directory, a multi-layer AI platform — faces the same gap: technical depth without domain knowledge, or domain knowledge without technical depth. Very few practitioners hold both.",
+      "These three problems compound across regulated innovation sectors — psychedelic health, biopharma, cannabis, legaltech, digital health — for organizations ranging from a harm reduction nonprofit building its first consulting practice to an AmLaw firm deploying Harvey to a clinical-stage company that needs a purpose-built regulatory intelligence platform. For every other organization — the restaurant, the law firm, the agency, the consultant — the same practice builds what the work requires without the regulatory complexity. In every case: the focus is not the tool. It is the human system around the tool.",
+      "All three have the same answer: primary-source intelligence and purpose-built systems, delivered by someone who can read a statute, evaluate a clinical trial, navigate a regulatory docket, build the intelligence layer, and deploy the custom tool — across AI content systems, regulatory intelligence, consulting practice architecture, legal AI workflow, and bespoke intelligence builds."
+    ],
+    "editorialSections": [
+      {
+        "title": "The five-part position",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The value proposition depends on a specific cross-disciplinary position that cannot be faked and cannot be staffed. One of very few practitioners — possibly the only one operating across all five simultaneously — but the claim is not the scarcity. It is the combination itself."
+          },
+          {
+            "type": "paragraph",
+            "text": "The scientific foundation. The ability to read a clinical trial, evaluate a mechanism of action, and distinguish evidence-based claims from wishful thinking in psychedelic health content. MS Anatomy & Neurobiology, Boston University School of Medicine. Medical Education Certification. Graduate Anatomy Instructor and Prosector, BUSM. CDL Writing Fellow, BU. Patent Research Intern, BU Office of Technology Development. Quantitative research methods including R — statistical modeling, volumetric neuroimaging analysis, regression, effect size interpretation. The ability to evaluate a clinical trial's statistical methodology is inseparable from the ability to evaluate its clinical claims."
+          },
+          {
+            "type": "paragraph",
+            "text": "The legal layer. The ability to navigate DEA scheduling procedure under 21 U.S.C. § 811, read a CSA § 811(c) eight-factor analysis, understand what the two-part CAMU test (currently accepted medical use) endorsed by DOJ OLC (Apr. 2024) requires — superseding the D.C. Circuit's prior five-part test — and know why CPT coding procedure through the CPT® Editorial Panel matters to a payer coverage timeline. JD Candidate, Northeastern Law FlexJD '29."
+          },
+          {
+            "type": "paragraph",
+            "text": "Sustained publishing in cannabis law and psychedelics policy since July 2025 — across three active channels before this work paid consulting rates. Cannabis Law Report (four series, 50+ pieces), Fat Nugs Magazine (23 articles), Journal of Biophilic Design (Issues 17, 18, 19, 20). The practitioner relationships, editorial credibility, and substantive knowledge that come from writing seriously about this space before anyone paid to consult on it."
+          },
+          {
+            "type": "paragraph",
+            "text": "Not just using AI tools — building the knowledge bases, prompt libraries, connector stacks, and platform features that make the system work at scale. The research connector stack, the five-domain knowledge base, the EDSA Framework — designed and built, not assembled from tutorials."
+          },
+          {
+            "type": "paragraph",
+            "text": "The intelligence layer. The ability to sit in a room, hear a signal in what someone says, and know within minutes whether there is a specific, addressable gap between what they have and what they need. The discipline to act on signal rather than noise, and to know the difference before the room ends."
+          },
+          {
+            "type": "paragraph",
+            "text": "Any one of the five components can be found elsewhere. The combination cannot."
+          }
+        ]
+      },
+      {
+        "title": "Publications",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The regulatory knowledge that makes this practice possible was built through two years of sustained writing before anyone paid to consult on it. Three active publication channels. Four peer-reviewed journal articles and one master's thesis. The analytical layer on offer is not theoretical — it has a published record."
+          },
+          {
+            "type": "paragraph",
+            "text": "Four series: 10 cannabis legislative briefs, 20-article psychedelics law series, earlier psychedelics series (4), hemp regulatory takings series (4). Plus the 12-part federal drug policy analysis. Published at cannabislaw.report and journal.cannabislawreport.com."
+          },
+          {
+            "type": "paragraph",
+            "text": "Ask A Neuroscientist series (8), Cannabis & Psychedelics Endocannabinoid Link (3), Stretching High (3), Hawaii Cannabis Reporting (7), Cultural Essays (2). Cannabis, neuroscience, and psychedelics for public audiences."
+          },
+          {
+            "type": "paragraph",
+            "text": "Neuroscience, environmental psychology, trauma-informed architecture, and sustainable building materials. Issue 17 (Architecture) · Issue 18 (Interior Design) · Issue 19 (Materials) · Issue 20 (Landscapes)."
+          }
+        ]
+      },
+      {
+        "title": "What gets built here",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Custom standalone intelligence tools — built to spec, deployed live, and doing real work from day one. Not a template. Not a subscription to someone else's platform. A purpose-built system designed around your specific intelligence need, your domain, and your decision context. The builds in the portfolio — a five-layer AI knowledge system for a psychedelic end-of-life care nonprofit, the Burgermeister competitive intelligence dashboard, the OK COOL culture intelligence suite, the Fadiman Knowledge Atlas, the Psych Ops Directory, the Transform Observatory — each of those is SL0. A client had a specific intelligence need. No existing product met it. A custom system was designed, built, and deployed.SL0 builds span: regulatory and policy intelligence dashboards, sector-specific monitoring tools, prospect intelligence systems, knowledge directories with semantic search, multi-layer AI knowledge platforms, and intelligence scoring frameworks. If you need it to run live and do real work, it can be built.What distinguishes SL0 from the other service lines: the output is a deployed application, not a document or a knowledge layer inside an existing platform. You get a URL. It runs. It updates. It does work."
+          },
+          {
+            "type": "paragraph",
+            "text": "For any organization — regulated or not — that needs a custom-built intelligence tool or knowledge system for a specific use case. Honolulu restaurants tracking competitors. Creative agencies monitoring cultural signals. Health organizations mapping funding landscapes. Consultants, coaches, and specialists who need their expertise systematized into a queryable knowledge platform. When no existing product fits, when the domain is too specialized, or when the output needs to be a deployed, live application rather than a document."
+          },
+          {
+            "type": "paragraph",
+            "text": "If you’re a creator, consultant, or specialist who needs a real content system — not better prompts, but an actual knowledge base built to your voice and domain, a prompt library that sounds like you, a platform infrastructure that amplifies rather than suppresses you — this is the build. Also for any organization that needs to produce high-quality content at scale without losing voice, precision, or scientific accuracy. Not just tools — systems. Five-domain knowledge base (Editorial Voice, Scientific Literature, Regulatory and Legal Archive, Competitive Landscape, Platform Policy Intelligence). Twenty-prompt library. Claude Projects deployed across seven feature categories: persistent knowledge workspace (200K context), custom instructions (tone, role, and voice configuration), tool use and research connector integration (MCP-based), document analysis, code execution, web search, and artifact generation. (Feature set current as of mid-2026; Anthropic ships frequently.) Research connector stack spanning semantic web search, biomedical literature, legal research, market intelligence, and platform monitoring. EDSA Framework for YouTube-compliant content on regulated innovation sectors. Platform performance monitoring is a separate service — see SL5 for reach monitoring for any business, and SL7 for regulated-industry suppression intelligence. Voice and style configuration that makes every output sound like you, not a template."
+          },
+          {
+            "type": "paragraph",
+            "text": "Primary-source data architecture built inside AI platforms so they stop hallucinating on the facts that matter. Regulatory layers: DEA scheduling under 21 U.S.C. §§ 811, 812, and 826 — including the § 811(c) eight-factor analysis, § 811(h) emergency scheduling (temporary Schedule I, 2 years — extendable up to 1 additional year during pending permanent proceedings; imminent-hazard predicate required; only Factors 4, 5, 6 considered); § 811(j) mandatory 90-day interim final rule obligation (triggered upon FDA approval + HHS recommendation), 1971 Convention on Psychotropic Substances (psilocybin, psilocin, DMT, MDMA) and 1961 Single Convention treaty constraints, the CAMU (currently accepted medical use) two-part test adopted in HHS's 2023 scientific analysis and endorsed by DOJ OLC (Apr. 11, 2024) — superseding DEA's prior five-part test from Alliance for Cannabis Therapeutics v. DEA (D.C. Cir. 1994), and APQ status. CPT coding through the CPT® Editorial Panel (the AMA-convened independent body with sole authority over CPT code changes; code changes follow a Code Change Application → Panel review → AMA/Specialty Society RUC valuation → CMS payment-rate adoption pathway). Exclusivity stacks: NCE (5-year new chemical entity; reduces to 4 years if a Paragraph IV ANDA is filed), orphan (7-year), patent term extension (Hatch-Waxman, up to 5 years; total effective patent life post-approval capped at 14 years; one patent per product, application within 60 days of approval), pediatric (6-month add-on). Accelerated approval pathway: Breakthrough Therapy, Fast Track, Priority Review, FDORA confirmatory trial requirements (FDA Omnibus Reform Act, 2023). Scientific layers: PubMed literature curation, mechanism of action, clinical trial data, evidence hierarchy mapping, neuroscience framing. Policy layers: statutory and regulatory text, administrative dockets, comparative jurisdiction analysis, platform content policy documentation. Legal research platforms: LexisNexis and Westlaw — premium subscription legal research platforms (primary law, secondary sources, and proprietary citators — Shepard's and KeyCite respectively). Bloomberg Law completes the \"big three\" for coverage depth. Distinct from free resources (CourtListener, Google Scholar, Cornell LII) and from e-discovery platforms (Relativity) or CLM tools (Ironclad). Every record delivered with primary-source citation, date last verified, next-review trigger, and commercial-significance statement. Machine-readable JSON output queryable at generation time. Not aggregated from secondary sources. Not LLM-hallucinated. Every record sourced from named primary authority — Federal Register, Regulations.gov, DEA Diversion Control Division (public aggregate APQ/AAN data from Federal Register; individual quota/ARCOS data is confidential registrant information — not accessible), FDA Drugs@FDA, ClinicalTrials.gov, CPT® Editorial Panel records, UNODC Narcotic Drugs data, and primary court opinions via LexisNexis and Westlaw. Analytical framework: the Operator Execution Gap (OEG) defines what the layer must answer; the Commercial Significance Framework (CSF) determines what belongs in it. Output format: the Regulatory Intelligence Layer (RIL) as a machine-readable JSON file, the Regulatory Opportunity Layer (ROL) as a narrative annex identifying commercial windows the data reveals. Typical standalone deliverables: 10–15 page regulatory landscape memo per portfolio company (mechanism of action, FDA pathway, scheduling status, competitive pipeline, key risk factors); comparative landscape reports (e.g., non-hallucinogenic psychoplastogen programs — TBG, zalsupindole, Delix, CaaMTech, Kasvu); regulatory positioning memos under 21 CFR Part 3 at a flat fee with right to publish anonymized version, which builds the administrative record for scheduling proceedings — contributing to Factors 2 (pharmacological effect), 3 (current scientific knowledge), and 7 (dependence liability) of the eight-factor analysis under 21 U.S.C. § 811(c)."
+          },
+          {
+            "type": "paragraph",
+            "text": "A dedicated senior AI strategist running your organization’s AI operations on an ongoing basis — not a project, not a workshop. A dedicated senior AI strategist running your organization’s AI operations on an ongoing basis without a full-time hire. SL3 is for organizations that have decided to use AI seriously and need someone experienced to manage how that actually happens — not a one-time project, not a course, not a workshop. An operator. Covers: AI infrastructure management, workflow oversight, tool selection and integration, team training, platform monitoring, vendor evaluation, internal AI policy, and strategic advisory across the full Aloha AI methodology. Retainer-based. Scoped to your organization’s actual needs."
+          },
+          {
+            "type": "paragraph",
+            "text": "SL8 is not AI consulting. You are not buying consulting from Aloha AI. You are hiring Aloha AI to build a consulting practice inside your organization that your team will own and run. The buyer is an organization that has domain expertise, peer relationships, and credibility in a specific field &mdash; but has not built the AI consulting infrastructure to monetize it. Examples: a psychedelic harm reduction nonprofit with five years of frameworks and a peer network but no consulting revenue. A subject matter expert who knows their domain deeply but has never packaged it into a scalable AI-assisted consulting practice.What Aloha AI builds for you: the service lines and pricing your practice will offer. The AI workflow systems your team will use to deliver work &mdash; knowledge bases, prompt libraries, research connectors, voice configuration. Your client acquisition pipeline: landing page, intake forms, scoping templates, and proposals. Your delivery infrastructure: how you scope, deliver, document, and invoice client work. Training on how your team uses the tools to do the actual consulting.The commercial structure: Aloha AI charges a retainer for the build, plus a percentage of the consulting revenue the practice generates. You keep the client relationships. You own the practice. Aloha AI keeps a percentage of what it produces until the engagement terms are met."
+          },
+          {
+            "type": "paragraph",
+            "text": "Custom AI workflow design and implementation for law firms and legal teams — on any platform. Harvey, Claude, ChatGPT, Gemini, multi-model stacks, or custom internal LLM products — the methodology is the same. Harvey context: $11B valuation (Mar 2026), 100K+ lawyers across 1,300+ organizations, ARR reached $190M (Jan 2026). Dominant implementation partner is Harbor Global (~900 professionals, 80%+ of Global 200 firms). SL4 is positioned as boutique-and-specialist — deep legal-domain knowledge and active practitioner experience that large implementation partners do not carry. Structured intake systems that feed directly into research memo generation. Document synthesis tools for briefs, depositions, discovery productions, and contract review. Firm-specific knowledge bases: key statutes, regulations, leading cases, house style, standard arguments, jurisdictional nuances — organized so the platform surfaces firm-specific precedent without hallucinating. Primary legal research conducted through LexisNexis and Westlaw; all legal citations verified through KeyCite and Shepard's before entering any knowledge base or deliverable. Platform implementation and attorney training. All deliverables and knowledge base entries formatted and cited to Bluebook standards — the same standard applied across seven active legal positions. Full firm AI workflow audit and prioritized implementation roadmap. Most legal AI workflow builders are either developers without legal knowledge or attorneys without systems design experience. This is both. The work is happening inside real firms right now — active law clerk experience across seven legal positions in 1L year, and active AI workflow development inside a commercial law firm (Harvey platform). Deep legal-domain knowledge, systems design, and current practitioner access — all concurrent."
+          },
+          {
+            "type": "paragraph",
+            "text": "For regulated-industry organizations &mdash; psychedelic health, cannabis, harm reduction, legaltech, biopharma &mdash; being actively suppressed. Platform suppression in regulated sectors operates silently: no violation notice, no appeal pathway, just a systematic reduction in reach tied to clinical terminology, scheduling language, or harm-reduction content. SL7 is dedicated intelligence and advisory practice built on the full monitoring stack, AI-02 (State AI Governance), AI-04 (EU AI Act), and the Platform Suppression Sweep. SL7 tracks DEA scheduling and clinical language enforcement, platform policy enforcement against regulated content, state AI governance changes affecting content reach, EU AI Act extraterritorial applicability, and the regulatory signals that correlate with suppression events in your specific domain. Built for organizations that know their content is being suppressed and need the intelligence layer to respond, document, and advocate from primary-source authority.Monthly deliverable: Platform Intelligence Brief &mdash; your current suppression status, policy changes affecting your domain, documented signal shifts, and a specific response and advocacy plan."
+          },
+          {
+            "type": "paragraph",
+            "text": "Use AI on real, confidential matters — without redacting names or risking privilege — by running the model in a walled environment whose data never trains a public model or reaches a third party. Law is the first vertical; the same architecture serves any confidential-data field."
+          },
+          {
+            "type": "paragraph",
+            "text": "AI transformation strategy for legal practitioners — from someone who is simultaneously a practicing law student, a builder of 40+ deployed AI tools, and a legal journalist. Not a technologist who learned legal. Not a lawyer who learned AI. Both at once, in active practice."
+          },
+          {
+            "type": "paragraph",
+            "text": "Product evaluation and strategic positioning for legal tech founders — from a practitioner who builds and runs AI workflows in real legal practice. Not VC pattern-matching. Actual workflow friction assessment from someone with a desk in seven legal verticals."
+          },
+          {
+            "type": "paragraph",
+            "text": "Your content is reaching fewer people than it used to, and you're not sure why. This service builds the monitoring layer that answers that question — reach baselines, shadowban detection, algorithmic suppression signals, and platform-by-platform performance tracking for any business publishing content online. SL5 is the general-business version of the platform intelligence stack. It tracks reach metrics across your distribution platforms (social, search, YouTube, newsletter, podcast), establishes performance baselines, and surfaces signals when reach changes — so you know whether a dip is seasonal, algorithmic, or systematic before it compounds.Unlike SL7 (which is built specifically for regulated industries being actively suppressed, with a DEA scheduling and clinical language layer), SL5 applies to any business: a restaurant monitoring Yelp and Google traffic, a creator tracking YouTube reach, a B2B company watching LinkedIn distribution, or a media brand monitoring referral traffic from search.Outputs: reach baseline report, suppression signal dashboard, monthly platform performance brief, alert triggers when reach deviates from baseline. System runs continuously; you don&rsquo;t have to remember to check anything."
+          },
+          {
+            "type": "paragraph",
+            "text": "For: Any business whose growth depends on organic content reach — creators, local businesses, media brands, B2B companies, consumer brands. If your content reach matters and you want to know when and why it changes, this is the system."
+          },
+          {
+            "type": "paragraph",
+            "text": "Your competitors are moving. You're not always sure how. Right now you're tracking it manually &mdash; checking their sites, watching their socials, reading the reviews, piecing it together. This builds the system that does it for you: a live competitive and market intelligence layer that updates automatically, surfaces what matters, and tells you what's changing before you feel it in your numbers. Under the hood, the methodology is the same as the regulatory intelligence practice (SL2): primary-source data collection, structured storage, automated signal processing, and a queryable intelligence layer. The difference is the domain. Instead of DEA scheduling and FDA guidance, the inputs are Yelp reviews, competitor pricing, tourism data, social sentiment, foot traffic patterns, and sector-specific sources your competitors aren&rsquo;t watching systematically. The system runs continuously. You don't have to remember to check anything.Built applications include: competitive intelligence dashboards for hospitality groups, cultural signal monitors for creative agencies, and brand reputation layers for consumer businesses. If you need to know what&rsquo;s happening in your market before your competitors do &mdash; and you need that intelligence to be live, structured, and queryable &mdash; this is the build."
+          },
+          {
+            "type": "paragraph",
+            "text": "For: Local businesses tracking competitors. Hospitality groups monitoring tourism and review signals. Creative agencies mapping cultural trends. Any organization that needs real-time market intelligence and wants a live system, not a static report."
+          }
+        ]
+      },
+      {
+        "title": "Advisory rates",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "$200/hour across all five service lines. Fixed-fee project work calculated from hourly estimates. Builder carries the time risk. All build fees pre-paid. Retainers invoiced before the coverage period. Scoping call precedes every engagement."
+          }
+        ]
+      },
+      {
+        "title": "Fractional Chief AI Officer",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "A dedicated embedded AI strategy role without the cost of a full-time hire. The Fractional CAO sits above the five service lines — not a project, a role. Covers AI infrastructure build, consulting practice development, team training, regulatory monitoring, and strategic advisory across the full Aloha AI methodology. Retainer-only. 15–20 hours per week. Minimum three-month commitment."
+          },
+          {
+            "type": "heading",
+            "text": "Named client type: any organization in a regulated innovation sector whose content reach is declining without explanation — regardless of platform, policy compliance, or quality of content."
+          },
+          {
+            "type": "paragraph",
+            "text": "Platform suppression operates silently — no violation notice, no appeal pathway, just a systematic reduction in reach. SL7 is a dedicated intelligence and advisory practice built on AI-02 (State AI Governance), AI-04 (EU AI Act extraterritorial reach), and the full monitoring stack. Monthly deliverable: the Platform Intelligence Brief."
+          },
+          {
+            "type": "paragraph",
+            "text": "These bounded, one-time deliverables surface what you need to know before committing to a full service line. Each one feeds directly into the build above it."
+          },
+          {
+            "type": "paragraph",
+            "text": "Review of 50 posts across active platforms. Identify suppression trigger patterns, flagged hashtags, and high-risk content structures. Deliverable: a written compliance report with findings, risk level per platform, and a prioritized remediation list."
+          },
+          {
+            "type": "paragraph",
+            "text": "For regulated organizations that know AI is relevant but don't know where to start. Covers current tool stack, workflow bottlenecks, highest-ROI automation opportunities, and a sequenced implementation roadmap. Deliverable: assessment memo + roadmap presentation."
+          },
+          {
+            "type": "paragraph",
+            "text": "For law firms, cannabis companies, psychedelic orgs, wellness brands, nonprofits, education programs, and emerging-industry founders. Covers: site positioning and copy audit, brand intelligence gaps, compliance-aware messaging review, LinkedIn strategy, thought-leadership infrastructure assessment, and AI workflow setup opportunities. Deliverable: written audit memo with prioritized fixes and a 30-day implementation plan."
+          },
+          {
+            "type": "paragraph",
+            "text": "For consultants, specialists, educators, nonprofits, and any organization sitting on frameworks, research, memos, curricula, or domain knowledge that isn't yet productized. The free Knowledge Product Inventory Worksheet maps what you have. The paid audit adds: what each asset is worth, what format it should take (template, workbook, guide, KDP book, course module, digital product), and a sequenced 30-day packaging plan. Deliverable: a written audit memo with a complete IP inventory and implementation roadmap."
+          },
+          {
+            "type": "paragraph",
+            "text": "EDSA Framework, RIL Methodology, or Platform Suppression Monitoring Stack — each teachable as a standalone workshop. Designed for regulated industry content teams, legal departments, and compliance officers who need working knowledge without a full engagement. Available in cities with travel planned (Amsterdam October 2026, NYC)."
+          },
+          {
+            "type": "paragraph",
+            "text": "For organizations in regulated innovation sectors — psychedelic health nonprofits, harm reduction organizations, digital health platforms, and any regulated organization with grant-eligible programming. Deliverables: funder landscape (10+ prospects, tiered by fit, with named contacts and approach notes); two-lane analysis that identifies both primary funders and adjacent funders most organizations in this space miss — the primary lane aligned to your stated modality, and a second lane that opens when the first is oversubscribed; live deadline identification for LOI windows and award cycles; faculty PI partner identification for research applications; and submission-ready proposal architecture. Combines AI strategy intelligence with regulatory research and grant writing — a combination rare enough to justify a named service. Deliverable: funder landscape map, prioritized targets, and one complete proposal ready for submission."
+          }
+        ]
+      },
+      {
+        "title": "Original analytical instruments",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "These terms and frameworks are original to this practice. Named, defined, and documented — the intellectual property that distinguishes this from general consulting."
+          },
+          {
+            "type": "paragraph",
+            "text": "The core processing engine underlying all intelligence and content work. Any domain, any signal. Ingest (primary-source collection) &rarr; Digest (synthesis, analysis, pattern recognition) &rarr; Regurgitate (structured deliverable, knowledge base entry, or client output). Domain-agnostic — applied identically across regulatory intelligence, market research, content systems, legal analysis, and brand intelligence work."
+          },
+          {
+            "type": "paragraph",
+            "text": "The primary-source data methodology — statutes, administrative records, docket filings, APQ data, CPT coding records, case law — organized to answer the specific questions operators need answered before commercial or capital decisions. Retained entirely by the builder. Licensed to clients as the ROL."
+          },
+          {
+            "type": "paragraph",
+            "text": "The client-licensed implementation of the RIL inside a specific platform or workflow. Each client's ROL is scoped to their domain and built from the same underlying primary-source layer. The RIL is never exclusively licensed — it grows with each new engagement."
+          },
+          {
+            "type": "paragraph",
+            "text": "Evidence, Discussion, Self-Determination, Action. A four-element script structure for YouTube-compliant content on regulated innovation sectors — psychedelic health, cannabis, biopharma, and digital health. Note: distinct from YouTube's own \"EDSA\" (Educational, Documentary, Scientific, or Artistic) exception, which is a platform content-policy category — this framework is a production methodology for compliance within that exception. Developed independently. IP retained by RN Collins. Licensed to each consulting client for use within their engagement."
+          },
+          {
+            "type": "paragraph",
+            "text": "A proprietary analytical concept: the specific gap between what an operator needs to know and what current AI tools can reliably produce in the regulatory domain. Distinct from hallucination (which concerns fabrication), retrieval-augmented generation (which concerns access), and the academic \"Reasoning-Execution Gap\" (which concerns low-level action translation). The OEG is specifically about the regulatory knowledge layer — where primary-source precision is non-negotiable and hallucination risk is highest. This is the problem this practice was built to close."
+          },
+          {
+            "type": "paragraph",
+            "text": "The evaluative structure applied to each record in the regulatory data set to determine whether a data point has material commercial implications. Determines what goes into the RIL and what stays out. Ensures the intelligence layer contains only what changes decisions."
+          },
+          {
+            "type": "paragraph",
+            "text": "The iterative engagement structure: module build → management retainer → update cadence → expansion vector activation → repeat. Self-reinforcing: more modules produce more retainer revenue, which funds more builds, which produces more modules. Engagements are designed to deepen over time."
+          },
+          {
+            "type": "paragraph",
+            "text": "Original analytical work that did not previously exist in any published form. The quarterly deliverable demonstrating this is not a data aggregation service — it is an intelligence production operation. The Commercial-Launch APQ Gap Model is the first instrument of this type."
+          },
+          {
+            "type": "paragraph",
+            "text": "An original analytical instrument estimating the commercial supply gap between DEA Annual Production Quota authorizations and projected treatment demand — modeled from sponsor trial dose-frequency data and addressable patient population estimates. APQ/AAN (Assessment of Annual Needs) data is publicly available via the Federal Register (DEA publishes proposed and final aggregate quota notices annually; the 2026 final order, FR Doc 2025-24277, raised psilocybin to 50,000g — up 67% from 2025). Individual manufacturer quotas are confidential ARCOS-level data. The value of this instrument is the interpretation gap: translating public aggregate production authorizations into commercial-launch demand projections that sponsors can act on. No published template for this instrument exists in the regulatory literature. Developed in an active biopharma engagement."
+          }
+        ]
+      },
+      {
+        "title": "The infrastructure behind every build",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The Regulatory, Scientific, and Policy Intelligence Layer methodology is not limited to psychedelics. Nine expansion vectors extend the same analytical architecture into adjacent regulated domains — DEA scheduling, FDA pathways, scientific literature, and comparative legal analysis across new sectors. Each vector is a new service line built on the same methodology, tool stack, and primary-source discipline."
+          }
+        ]
+      },
+      {
+        "title": "How the practices connect",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Aloha AI Consulting does not exist in isolation. It is what emerges when the other practices run together long enough. Each one builds something the others need."
+          },
+          {
+            "type": "paragraph",
+            "text": "The AI strategy and regulatory intelligence practice. Multiple service lines. Twenty-three live builds. The operating practice through which the NSAG framework deploys into commercial and institutional contexts."
+          },
+          {
+            "type": "paragraph",
+            "text": "Fractional law clerk — remote legal research, analysis, and writing for attorneys under supervision. Seven documented positions in 1L year. The legal research foundation that makes SL2 and SL4 credible."
+          },
+          {
+            "type": "paragraph",
+            "text": "The documented, replicable LinkedIn outreach system for building a legal career — and any career — through strategic connection and cold outreach. The method that produced seven legal positions in 1L year. The same method Aloha AI uses to source and convert clients. 2,862 connections. 207 cold replies."
+          },
+          {
+            "type": "paragraph",
+            "text": "Psychoactive plant medicine, AI governance, and digital assets — legal analysis in RN Collins's voice. The writing that makes the credibility that makes this practice possible. Every issue will be a demonstration of the analytical layer this practice sells — primary-source legal analysis in RN Collins's voice, in public, before anyone paid to read it. Coming soon."
+          },
+          {
+            "type": "paragraph",
+            "text": "Weekly AI literacy newsletter for lawyers, physicians, executives, and professionals in regulated industries who were never invited to the Silicon Valley conversation. Co-created with Vanda Collins. Every Thursday: one concept explained, one tool reviewed, one legal angle, one week of AI news filtered for your time. Launching November 2026."
+          },
+          {
+            "type": "paragraph",
+            "text": "Set for Life teaches the method. Clerking builds the legal track record. Unregulated will build the editorial authority — launching soon. Aloha AI is what they produce when they run together long enough."
+          },
+          {
+            "type": "paragraph",
+            "text": "The NSAG framework spans 15 modules. The modules below have the most direct Aloha AI consulting relevance and are available as advisory engagements for cities, civic organizations, and regulated institutions. Full framework at nsag-site.vercel.app"
+          }
+        ]
+      },
+      {
+        "title": "NSAG — Nervous-System-Aware Governance",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "NSAG (Nervous-System-Aware Governance) is a standalone practice operating under the same LLC as Aloha AI Consulting — but serving a distinct client base and problem set. Aloha AI sells AI as the solution. NSAG sells institutional design as the solution. The two practices are adjacent, not interchangeable. The 15 modules go beyond theoretical frameworks — each one is a governance service line grounded in nervous-system science and built for application in policy, law, civic infrastructure, healthcare, and space environments. The intellectual foundation: three convergence frameworks developed in 2025 mapping (1) the intersection of digital platforms, AI diagnostics, and psychedelic-assisted modalities under a unified regulatory oversight model; (2) psychedelic ethics as a codified operational discipline — not philosophical, but institutional and regulatory; and (3) the regulatory clarity vs. innovation tension across emerging drug classes, with cross-border learning models from Canada's SAP and Australia's reclassification. These frameworks now underpin NSAG Modules M2, M3, and the core governance architecture."
+          },
+          {
+            "type": "paragraph",
+            "text": "Cities, civic institutions, policy organizations, and foundations engage with NSAG directly — not through Aloha AI. All 15 modules carry their own advisory tier and pricing. Two practices, one intellectual foundation, different sectors and clients."
+          },
+          {
+            "type": "list",
+            "items": [
+              "M1 · Trauma-Informed Legal Space"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "M2 · AI Legal Navigation"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "M3 · Psychedelic Harm Reduction Governance"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "M4 · Cannabis Public Health Infrastructure"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "M5 · Biophilic Civic Infrastructure"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "M6 · Ethical Civic Sponsorship"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "M7 · Conscious Cities"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "M8 · Burnout Recovery Infrastructure"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "M9 · Cannabis Healthcare Visibility"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "M10 · Healthcare Built Environment"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "M11 · Medical Technology & Evidence Standards"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "M12 · Nervous-System-Aware Education Systems"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "M13 · Traditional & Complementary Medicine Governance"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "M14 · Space Governance and Interplanetary Jurisdiction"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "M15 · Isolation, Confinement, and Extreme Environment Governance"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Read a memo",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The analytical layer this practice sells has a published record. A verified internal legal memorandum — eight sections, 29-source Bluebook appendix, all citations confirmed against primary sources. Prepared as law clerk work product March 2026."
+          },
+          {
+            "type": "paragraph",
+            "text": "Legal Framework, State Regulatory Analysis, and Draft Charter Language. Covers: ministerial exception (employment law) &middot; federal RFRA sincerity review (DEA) &middot; IRS &sect; 501(c)(3) illegality doctrine &middot; Oregon and Colorado state regulatory prohibitions. Prepared under attorney supervision at a boutique legal practice."
+          }
+        ]
+      },
+      {
+        "title": "Products",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Each product below is a standalone guide or dataset built from the same methodology as the service lines above. No engagement required."
+          },
+          {
+            "type": "paragraph",
+            "text": "If you work through a product and decide you want the full build, that is what the service lines are for."
+          },
+          {
+            "type": "paragraph",
+            "text": "Product update policy: What you buy is what exists at the time of purchase. Master files are kept current — future buyers get the latest version automatically. If a major new section is added (not a fix, but a real expansion), past buyers receive an email with the updated link. Optional. Not guaranteed. But it happens when the update is substantial enough to matter."
+          },
+          {
+            "type": "paragraph",
+            "text": "AI-02 and AI-04 are the backbone documents for the Platform Suppression Practice (SL7). All templates are primary-source legal analysis, not AI-generated. Built for attorney review and client-facing use."
+          },
+          {
+            "type": "heading",
+            "text": "When a product or snapshot is not enough"
+          },
+          {
+            "type": "paragraph",
+            "text": "The products above are built from the SL2 methodology — samples of output, methodology guides, and point-in-time snapshots. They are designed for organizations that want to understand the approach or verify a specific regulatory question."
+          },
+          {
+            "type": "paragraph",
+            "text": "A full SL2 engagement is different. It is a bespoke regulatory intelligence architecture — built for your platform, scoped to your decisions, and maintained on a retainer cadence. The output is not a document. It is a queryable JSON knowledge layer that your AI platform can draw from at generation time, so it stops hallucinating on the regulatory facts that matter to your users."
+          }
+        ]
+      },
+      {
+        "title": "Get started",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Four ways in. Each one is designed for a different stage of the conversation."
+          },
+          {
+            "type": "paragraph",
+            "text": "A structured 2-minute intake that replaces the first 20 minutes of a discovery call. Which service line, what the use case is, timeline, and context. What the call covers: 30 minutes — what you are building toward, what data you already have, what you need built, what constraints you're working within, and whether this practice is the right fit. You leave with a specific service line recommendation and a clear next step, or an honest referral."
+          },
+          {
+            "type": "paragraph",
+            "text": "A redacted sample of the Deliverable Grid — the full rate structure, deliverable descriptions, and hour estimates for each service line. The document sent to clients before any SOW. Enter your email and it arrives in your inbox."
+          },
+          {
+            "type": "paragraph",
+            "text": "Six questions. Two minutes. Returns a scored suppression risk assessment across your active platforms — Instagram, YouTube, TikTok, Substack — with specific recommendations. Know where you stand before the issue compounds."
+          },
+          {
+            "type": "paragraph",
+            "text": "Psychoactive plant medicine, AI governance, and digital assets — legal analysis in RN Collins's voice. Building the subscriber list ahead of the formal launch. Every issue will be primary-source legal analysis written before it was a consulting service."
+          },
+          {
+            "type": "paragraph",
+            "text": "2 minutes &middot; Replaces the first 20 minutes of a discovery call"
+          },
+          {
+            "type": "paragraph",
+            "text": "What the call covers: 30 minutes. What you are building toward, what data you already have, what you need built, what constraints you're working within, and whether this practice is the right fit. You leave with a specific service line recommendation and a clear next step — or an honest referral."
+          },
+          {
+            "type": "paragraph",
+            "text": "Building the subscriber list ahead of the formal launch. Every issue is primary-source legal analysis in RN Collins's voice — written by a neuroscientist-turned-JD candidate who has been publishing in this space since before it paid."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "practice/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "applied-ai-stacks",
@@ -56,15 +638,56 @@
     "summary": "Role-specific blueprints that map monitoring, evidence, knowledge, generation, review, and operations into one defensible system.",
     "audience": "Teams choosing the AI layers that fit their work rather than buying disconnected tools.",
     "maturity": "Production",
-    "topics": ["ai-stack", "workflow-design", "implementation"],
-    "industries": ["legal", "research", "public-policy", "startups", "cannabis", "psychedelics"],
-    "keywords": ["AI stack blueprint", "applied AI systems"],
-    "collection": {"kinds": ["useCase"], "pathPrefix": "/stacks/", "heading": "Choose the stack that matches your work"},
-    "evidence": ["Canonical services, tools, monitors, and methods", "Sector-specific workflow requirements"],
-    "methodology": ["Separate the work into functional layers", "Map each layer to a bounded resource", "Name failure modes and human gates", "Sequence implementation"],
-    "assumptions": ["Teams want a system blueprint rather than a single model recommendation"],
-    "limitations": ["Each stack requires adaptation to actual authority, data, budget, and risk"],
-    "relationships": [{"type": "depends_on", "target": "aloha-ai-platform"}, {"type": "documents", "target": "methods"}]
+    "topics": [
+      "ai-stack",
+      "workflow-design",
+      "implementation"
+    ],
+    "industries": [
+      "legal",
+      "research",
+      "public-policy",
+      "startups",
+      "cannabis",
+      "psychedelics"
+    ],
+    "keywords": [
+      "AI stack blueprint",
+      "applied AI systems"
+    ],
+    "collection": {
+      "kinds": [
+        "useCase"
+      ],
+      "pathPrefix": "/stacks/",
+      "heading": "Choose the stack that matches your work"
+    },
+    "evidence": [
+      "Canonical services, tools, monitors, and methods",
+      "Sector-specific workflow requirements"
+    ],
+    "methodology": [
+      "Separate the work into functional layers",
+      "Map each layer to a bounded resource",
+      "Name failure modes and human gates",
+      "Sequence implementation"
+    ],
+    "assumptions": [
+      "Teams want a system blueprint rather than a single model recommendation"
+    ],
+    "limitations": [
+      "Each stack requires adaptation to actual authority, data, budget, and risk"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "aloha-ai-platform"
+      },
+      {
+        "type": "documents",
+        "target": "methods"
+      }
+    ]
   },
   {
     "id": "founder-startup-stack",
@@ -75,15 +698,58 @@
     "summary": "A five-layer system for policy monitoring, product-claim review, internal knowledge, customer education, and diligence preparation.",
     "audience": "Founders and small startup teams working without large compliance or operations departments.",
     "maturity": "Production",
-    "topics": ["startups", "claims", "knowledge-management", "diligence"],
-    "industries": ["startups", "technology", "regulated-markets"],
-    "keywords": ["startup AI stack", "founder AI systems"],
-    "learningPaths": ["Monitor policy", "Review product claims", "Organize internal knowledge", "Build customer education", "Prepare diligence evidence"],
-    "evidence": ["Startup operating workflows", "Claim-substantiation and diligence requirements"],
-    "methodology": ["Prioritize expensive mistakes", "Create bounded layers", "Attach evidence and review gates", "Implement in risk order"],
-    "assumptions": ["A small team needs leverage without pretending risk disappears"],
-    "limitations": ["The blueprint must be adapted to sector and financing stage"],
-    "relationships": [{"type": "depends_on", "target": "applied-ai-stacks"}, {"type": "uses", "target": "citation-verifier"}, {"type": "supports", "target": "strategy"}]
+    "topics": [
+      "startups",
+      "claims",
+      "knowledge-management",
+      "diligence"
+    ],
+    "industries": [
+      "startups",
+      "technology",
+      "regulated-markets"
+    ],
+    "keywords": [
+      "startup AI stack",
+      "founder AI systems"
+    ],
+    "learningPaths": [
+      "Monitor policy",
+      "Review product claims",
+      "Organize internal knowledge",
+      "Build customer education",
+      "Prepare diligence evidence"
+    ],
+    "evidence": [
+      "Startup operating workflows",
+      "Claim-substantiation and diligence requirements"
+    ],
+    "methodology": [
+      "Prioritize expensive mistakes",
+      "Create bounded layers",
+      "Attach evidence and review gates",
+      "Implement in risk order"
+    ],
+    "assumptions": [
+      "A small team needs leverage without pretending risk disappears"
+    ],
+    "limitations": [
+      "The blueprint must be adapted to sector and financing stage"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "applied-ai-stacks"
+      },
+      {
+        "type": "uses",
+        "target": "citation-verifier"
+      },
+      {
+        "type": "supports",
+        "target": "strategy"
+      }
+    ]
   },
   {
     "id": "law-firm-stack",
@@ -94,15 +760,59 @@
     "summary": "Six connected layers for legal research, internal knowledge, client alerts, drafting support, citation verification, intake, and operations.",
     "audience": "Law firms and legal teams building reviewable AI workflows.",
     "maturity": "Production",
-    "topics": ["legal-ai", "citations", "knowledge-management", "professional-responsibility"],
-    "industries": ["legal", "professional-services"],
-    "keywords": ["law firm AI stack", "legal AI workflow"],
-    "learningPaths": ["Ground legal research", "Build internal knowledge", "Design client alerts", "Govern drafting", "Verify citations", "Improve intake and operations"],
-    "evidence": ["Primary legal sources", "Professional-responsibility constraints", "Citation-verification workflows"],
-    "methodology": ["Separate research from generation", "Preserve source provenance", "Require attorney review", "Audit before external use"],
-    "assumptions": ["Licensed professionals retain responsibility for legal work"],
-    "limitations": ["The stack does not practice law or replace attorney judgment"],
-    "relationships": [{"type": "depends_on", "target": "applied-ai-stacks"}, {"type": "uses", "target": "citation-verifier"}, {"type": "uses", "target": "legal-ai"}]
+    "topics": [
+      "legal-ai",
+      "citations",
+      "knowledge-management",
+      "professional-responsibility"
+    ],
+    "industries": [
+      "legal",
+      "professional-services"
+    ],
+    "keywords": [
+      "law firm AI stack",
+      "legal AI workflow"
+    ],
+    "learningPaths": [
+      "Ground legal research",
+      "Build internal knowledge",
+      "Design client alerts",
+      "Govern drafting",
+      "Verify citations",
+      "Improve intake and operations"
+    ],
+    "evidence": [
+      "Primary legal sources",
+      "Professional-responsibility constraints",
+      "Citation-verification workflows"
+    ],
+    "methodology": [
+      "Separate research from generation",
+      "Preserve source provenance",
+      "Require attorney review",
+      "Audit before external use"
+    ],
+    "assumptions": [
+      "Licensed professionals retain responsibility for legal work"
+    ],
+    "limitations": [
+      "The stack does not practice law or replace attorney judgment"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "applied-ai-stacks"
+      },
+      {
+        "type": "uses",
+        "target": "citation-verifier"
+      },
+      {
+        "type": "uses",
+        "target": "legal-ai"
+      }
+    ]
   },
   {
     "id": "policy-advocacy-stack",
@@ -113,15 +823,57 @@
     "summary": "A primary-source stack for legislative monitoring, testimony and briefing support, coalition research, and public education.",
     "audience": "Policy, advocacy, coalition, and public-interest teams.",
     "maturity": "Production",
-    "topics": ["policy", "advocacy", "monitoring", "public-education"],
-    "industries": ["public-policy", "nonprofits", "government"],
-    "keywords": ["policy AI stack", "advocacy intelligence"],
-    "learningPaths": ["Monitor legislation", "Build sourced testimony", "Map coalition evidence", "Publish public education"],
-    "evidence": ["Primary legislation and agency records", "Coalition and public-source research"],
-    "methodology": ["Track authoritative changes", "Pin claims to sources", "Separate analysis from advocacy position", "Review before publication"],
-    "assumptions": ["The team can define its jurisdiction and policy objective"],
-    "limitations": ["Monitoring coverage and legal interpretation require jurisdiction-specific review"],
-    "relationships": [{"type": "depends_on", "target": "applied-ai-stacks"}, {"type": "uses", "target": "intelligence"}, {"type": "uses", "target": "citation-verifier"}]
+    "topics": [
+      "policy",
+      "advocacy",
+      "monitoring",
+      "public-education"
+    ],
+    "industries": [
+      "public-policy",
+      "nonprofits",
+      "government"
+    ],
+    "keywords": [
+      "policy AI stack",
+      "advocacy intelligence"
+    ],
+    "learningPaths": [
+      "Monitor legislation",
+      "Build sourced testimony",
+      "Map coalition evidence",
+      "Publish public education"
+    ],
+    "evidence": [
+      "Primary legislation and agency records",
+      "Coalition and public-source research"
+    ],
+    "methodology": [
+      "Track authoritative changes",
+      "Pin claims to sources",
+      "Separate analysis from advocacy position",
+      "Review before publication"
+    ],
+    "assumptions": [
+      "The team can define its jurisdiction and policy objective"
+    ],
+    "limitations": [
+      "Monitoring coverage and legal interpretation require jurisdiction-specific review"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "applied-ai-stacks"
+      },
+      {
+        "type": "uses",
+        "target": "intelligence"
+      },
+      {
+        "type": "uses",
+        "target": "citation-verifier"
+      }
+    ]
   },
   {
     "id": "regulated-intelligence-stack",
@@ -132,34 +884,300 @@
     "summary": "A four-layer stack for scheduling, state status, claim substantiation, and platform-suppression intelligence in fast-moving psychoactive-plant markets.",
     "audience": "Cannabis, psychedelics, and psychoactive-plant operators and researchers.",
     "maturity": "Production",
-    "topics": ["cannabis", "psychedelics", "regulation", "claims", "platform-risk"],
-    "industries": ["cannabis", "psychedelics", "regulated-markets"],
-    "keywords": ["cannabis AI stack", "psychedelic regulatory intelligence"],
-    "learningPaths": ["Track scheduling", "Map state status", "Substantiate claims", "Monitor platform suppression"],
-    "evidence": ["Federal Register and agency records", "State primary law", "Claim evidence", "Platform performance records"],
-    "methodology": ["Monitor primary sources", "Resolve jurisdiction", "Reconcile evidence", "Publish with dated limitations"],
-    "assumptions": ["The market and jurisdictions are explicitly scoped"],
-    "limitations": ["Regulatory status can change rapidly and requires current verification"],
-    "relationships": [{"type": "depends_on", "target": "applied-ai-stacks"}, {"type": "uses", "target": "regulatory-intelligence"}, {"type": "uses", "target": "cannabis-rescheduling"}]
+    "topics": [
+      "cannabis",
+      "psychedelics",
+      "regulation",
+      "claims",
+      "platform-risk"
+    ],
+    "industries": [
+      "cannabis",
+      "psychedelics",
+      "regulated-markets"
+    ],
+    "keywords": [
+      "cannabis AI stack",
+      "psychedelic regulatory intelligence"
+    ],
+    "learningPaths": [
+      "Track scheduling",
+      "Map state status",
+      "Substantiate claims",
+      "Monitor platform suppression"
+    ],
+    "evidence": [
+      "Federal Register and agency records",
+      "State primary law",
+      "Claim evidence",
+      "Platform performance records"
+    ],
+    "methodology": [
+      "Monitor primary sources",
+      "Resolve jurisdiction",
+      "Reconcile evidence",
+      "Publish with dated limitations"
+    ],
+    "assumptions": [
+      "The market and jurisdictions are explicitly scoped"
+    ],
+    "limitations": [
+      "Regulatory status can change rapidly and requires current verification"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "applied-ai-stacks"
+      },
+      {
+        "type": "uses",
+        "target": "regulatory-intelligence"
+      },
+      {
+        "type": "uses",
+        "target": "cannabis-rescheduling"
+      }
+    ]
   },
   {
     "id": "research-lab-stack",
     "kind": "useCase",
     "pathname": "/stacks/research-lab",
     "eyebrow": "Applied stack",
-    "title": "Research Lab / Academic AI Stack",
+    "title": "The Research Lab Stack, sized to the work and honest about sources.",
     "summary": "A five-layer evidence system for literature review, evidence matrices, notes, publication support, and policy translation.",
     "audience": "Research labs, academic teams, and evidence-intensive scholars.",
     "maturity": "Production",
-    "topics": ["research", "evidence", "publication", "knowledge-management"],
-    "industries": ["research", "education", "health"],
-    "keywords": ["research lab AI stack", "academic AI workflow"],
-    "learningPaths": ["Review literature", "Build evidence matrices", "Organize notes", "Support publication", "Translate policy"],
-    "evidence": ["Primary research literature", "Structured evidence matrices", "Publication and citation standards"],
-    "methodology": ["Define the research question", "Retrieve and screen sources", "Code evidence", "Separate synthesis from inference", "Verify citations"],
-    "assumptions": ["The lab defines inclusion, exclusion, and review criteria"],
-    "limitations": ["AI-assisted synthesis cannot substitute for methodological judgment"],
-    "relationships": [{"type": "depends_on", "target": "applied-ai-stacks"}, {"type": "uses", "target": "methods"}, {"type": "uses", "target": "citation-verifier"}]
+    "topics": [
+      "research",
+      "evidence",
+      "publication",
+      "knowledge-management"
+    ],
+    "industries": [
+      "research",
+      "education",
+      "health"
+    ],
+    "keywords": [
+      "research lab AI stack",
+      "academic AI workflow"
+    ],
+    "learningPaths": [
+      "Review literature",
+      "Build evidence matrices",
+      "Organize notes",
+      "Support publication",
+      "Translate policy"
+    ],
+    "evidence": [
+      "Primary research literature",
+      "Structured evidence matrices",
+      "Publication and citation standards"
+    ],
+    "methodology": [
+      "Define the research question",
+      "Retrieve and screen sources",
+      "Code evidence",
+      "Separate synthesis from inference",
+      "Verify citations"
+    ],
+    "assumptions": [
+      "The lab defines inclusion, exclusion, and review criteria"
+    ],
+    "limitations": [
+      "AI-assisted synthesis cannot substitute for methodological judgment"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "applied-ai-stacks"
+      },
+      {
+        "type": "uses",
+        "target": "methods"
+      },
+      {
+        "type": "uses",
+        "target": "citation-verifier"
+      }
+    ],
+    "seoTitle": "Research Lab / Academic AI Stack",
+    "editorialIntro": [
+      "A lab does not need a bigger model. It needs a stack that respects the evidence: a review layer that finds the literature, a structured layer that holds it, a note layer that connects ideas, a publication layer that supports writing, and a translation layer that turns findings into something a policymaker reads. Below is that stack, where AI saves real hours, where it invents citations, and which of my tools and services cover each layer.",
+      "Built by RN Collins. Neuroscience (MS, Anatomy & Neurobiology) &middot; peer-reviewed & published &middot; 35+ builds shipped"
+    ],
+    "editorialSections": [
+      {
+        "title": "Five layers, from literature to policy",
+        "eyebrow": "The stack at a glance",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The review layer feeds the evidence matrix; the matrix feeds writing; writing feeds translation. Each has a different failure mode, and keeping them separate is what stops a hallucinated reference from ending up in a manuscript."
+          },
+          {
+            "type": "paragraph",
+            "text": "Literature review — find the evidence"
+          },
+          {
+            "type": "paragraph",
+            "text": "Evidence matrices — structure it"
+          },
+          {
+            "type": "paragraph",
+            "text": "Note systems — connect ideas"
+          },
+          {
+            "type": "paragraph",
+            "text": "Publication support"
+          },
+          {
+            "type": "paragraph",
+            "text": "Policy translation"
+          }
+        ]
+      },
+      {
+        "title": "What each layer does, and where AI breaks",
+        "eyebrow": "Layer by layer",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "For every layer: the job, where AI earns real hours, where it fails in ways a reviewer will catch, and the tools and services that cover it."
+          },
+          {
+            "type": "heading",
+            "text": "Literature review"
+          },
+          {
+            "type": "paragraph",
+            "text": "The job. Find the relevant work, understand the state of the field, and not miss the one paper that undercuts your hypothesis."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where AI helps. Summarizing papers, surfacing related work, extracting methods and findings, and drafting a review skeleton a researcher checks against the originals."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where it fails. General models invent plausible-looking citations, misstate what a study found, and cite retracted or non-existent papers with full confidence. Every reference has to be verified against the source."
+          },
+          {
+            "type": "paragraph",
+            "text": "Maps tothe Regulatory & Market Intelligence service for sourced, dated evidence streams, and Knowledge Base Readiness Checker to decide how to store what you gather before you overbuild a system."
+          },
+          {
+            "type": "heading",
+            "text": "Evidence matrices"
+          },
+          {
+            "type": "paragraph",
+            "text": "The job. Turn a pile of papers into a structured comparison: study, design, sample, outcome, limitation, so patterns and gaps become visible."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where AI helps. Extracting fields into a consistent table, flagging inconsistencies across studies, and drafting the first version of a synthesis grid."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where it fails. Confident mis-extraction: a model records the wrong effect size or sample and the error propagates through the whole matrix. Extraction needs a verification pass, not blind trust."
+          },
+          {
+            "type": "paragraph",
+            "text": "Maps toKnowledge Base Readiness Checker to size the structure the matrix should live in, from a well-built sheet up to a searchable base, with the Regulatory & Market Intelligence service where live sources feed it."
+          },
+          {
+            "type": "heading",
+            "text": "Note systems"
+          },
+          {
+            "type": "paragraph",
+            "text": "The job. Keep reading notes, ideas, and connections findable over months, so the lab builds knowledge instead of re-reading the same papers."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where AI helps. Retrieval over your own notes, linking related ideas, and answering internal questions with a pointer back to the source note."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where it fails. Overbuilding is the trap: standing up a heavy RAG system when a disciplined note structure would serve, or letting the model answer from general training instead of your actual notes."
+          },
+          {
+            "type": "paragraph",
+            "text": "Maps toKnowledge Base Readiness Checker to get a straight answer on folders vs. a base vs. a custom app, plus Content & Adoption Systems to build note-to-draft habits the team keeps."
+          },
+          {
+            "type": "heading",
+            "text": "Publication support"
+          },
+          {
+            "type": "paragraph",
+            "text": "The job. Move faster from findings to a submittable manuscript: structure, prose, formatting, and response-to-reviewer drafts."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where AI helps. First-draft sections from an outline, tightening dense passages, reformatting for a target journal, and drafting reviewer responses a PI edits."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where it fails. Invented references and subtly wrong restatements of your own results. AI drafts what sounds right, and in a methods or results section that is exactly the wrong place to trust it."
+          },
+          {
+            "type": "paragraph",
+            "text": "Maps toCitation Verifier to screen any references a model produces, and Content & Adoption Systems to build a research-to-publication pipeline the lab reuses."
+          },
+          {
+            "type": "heading",
+            "text": "Policy translation"
+          },
+          {
+            "type": "paragraph",
+            "text": "The job. Turn a finding into a brief, a comment letter, or an explainer that a policymaker or funder actually reads and trusts."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where AI helps. Reformatting a paper into plain language, drafting a policy one-pager, and adjusting register for a non-specialist audience."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where it fails. Claims that drift past what the evidence supports, and citations dropped in translation. The policy version has to carry the same caveats the paper did."
+          },
+          {
+            "type": "paragraph",
+            "text": "Maps tothe Regulatory & Market Intelligence service to keep translated claims sourced and dated, and Regulatory Bill Analyzer where the work touches a specific bill or rule."
+          }
+        ]
+      },
+      {
+        "title": "A stack that respects your evidence.",
+        "eyebrow": "Research build",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "I build research and knowledge layers sized to the work, with verification where citations live and structure that does not collapse under its own weight. Most teams start with a Systems Audit that names the weakest layer, then we build the review or knowledge layer first. Bring the project and we scope it around your evidence base."
+          },
+          {
+            "type": "paragraph",
+            "text": "Prefer email? Email RN &middot; or connect on LinkedIn"
+          }
+        ]
+      },
+      {
+        "title": "Aloha AI Dispatch",
+        "eyebrow": "Newsletter",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "One short email when there is a new tool, a build breakdown, or a shift worth knowing in AI for regulated work."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "stacks/research-lab/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "creator-content-system",
@@ -170,40 +1188,251 @@
     "summary": "A research-to-publication system for authors, researchers, newsletter writers, and expert firms whose reputation depends on grounded, voice-true work.",
     "audience": "Content-heavy experts and boutique firms whose expertise is the product.",
     "maturity": "Production",
-    "topics": ["content-systems", "knowledge-management", "voice", "publication"],
-    "industries": ["creator-economy", "research", "professional-services"],
-    "keywords": ["creator content system", "AI knowledge system", "voice-true AI"],
-    "architecture": ["Source and record layer", "Knowledge and retrieval layer", "Voice and editorial layer", "Production workflow", "Human approval", "Publishing and measurement"],
+    "topics": [
+      "content-systems",
+      "knowledge-management",
+      "voice",
+      "publication"
+    ],
+    "industries": [
+      "creator-economy",
+      "research",
+      "professional-services"
+    ],
+    "keywords": [
+      "creator content system",
+      "AI knowledge system",
+      "voice-true AI"
+    ],
+    "architecture": [
+      "Source and record layer",
+      "Knowledge and retrieval layer",
+      "Voice and editorial layer",
+      "Production workflow",
+      "Human approval",
+      "Publishing and measurement"
+    ],
     "implementationStatus": "Available as a scoped discovery, build, handoff, and keep-current engagement.",
-    "documentation": ["Record and voice map", "Source architecture", "Editorial rules", "Publishing workflow", "Handoff guide"],
-    "roadmap": ["Expand connected publishing adapters", "Add reusable evidence and voice evaluations"],
-    "changelog": ["2026-07: canonical product resource added"],
+    "documentation": [
+      "Record and voice map",
+      "Source architecture",
+      "Editorial rules",
+      "Publishing workflow",
+      "Handoff guide"
+    ],
+    "roadmap": [
+      "Expand connected publishing adapters",
+      "Add reusable evidence and voice evaluations"
+    ],
+    "changelog": [
+      "2026-07: canonical product resource added"
+    ],
     "licensing": "Built and licensed through a defined client scope.",
-    "evidence": ["Client source record", "Approved voice examples", "Editorial and citation rules", "Workflow evaluations"],
-    "methodology": ["Map the record and voice", "Build grounded retrieval", "Encode editorial constraints", "Test representative outputs", "Hand off an inspectable workflow"],
-    "assumptions": ["The expert can provide an authoritative source record and representative writing"],
-    "limitations": ["No system can infer an authentic voice from insufficient source material"],
-    "relationships": [{"type": "implements", "target": "content"}, {"type": "uses", "target": "methods"}, {"type": "uses", "target": "aloha-ai-platform"}]
+    "evidence": [
+      "Client source record",
+      "Approved voice examples",
+      "Editorial and citation rules",
+      "Workflow evaluations"
+    ],
+    "methodology": [
+      "Map the record and voice",
+      "Build grounded retrieval",
+      "Encode editorial constraints",
+      "Test representative outputs",
+      "Hand off an inspectable workflow"
+    ],
+    "assumptions": [
+      "The expert can provide an authoritative source record and representative writing"
+    ],
+    "limitations": [
+      "No system can infer an authentic voice from insufficient source material"
+    ],
+    "relationships": [
+      {
+        "type": "implements",
+        "target": "content"
+      },
+      {
+        "type": "uses",
+        "target": "methods"
+      },
+      {
+        "type": "uses",
+        "target": "aloha-ai-platform"
+      }
+    ]
   },
   {
     "id": "trust-stack-ai-content-system",
     "kind": "tool",
     "pathname": "/trust-stack/ai-content-system",
     "eyebrow": "Regulated Trust Stack · Layer 3",
-    "title": "AI Content System for Regulated Organizations",
+    "title": "Your AI is writing faster than you can check it. That is the problem.",
     "summary": "A production framework that keeps AI-assisted content grounded, on-voice, reviewable, and auditable at scale.",
     "audience": "Regulated and reputation-sensitive organizations producing AI-assisted content.",
     "maturity": "Production",
-    "topics": ["content", "governance", "evidence", "audit"],
-    "industries": ["regulated-markets", "health", "legal"],
-    "keywords": ["regulated AI content system", "auditable content workflow"],
+    "topics": [
+      "content",
+      "governance",
+      "evidence",
+      "audit"
+    ],
+    "industries": [
+      "regulated-markets",
+      "health",
+      "legal"
+    ],
+    "keywords": [
+      "regulated AI content system",
+      "auditable content workflow"
+    ],
     "implementationStatus": "Published implementation framework within the Regulated Trust Stack.",
-    "documentation": ["Knowledge-base contract", "Editorial and review workflow", "Evidence and audit requirements"],
-    "evidence": ["Approved knowledge sources", "Claim-level provenance", "Human approval records"],
-    "methodology": ["Ground drafts", "Apply voice and claim constraints", "Verify evidence", "Require approval", "Preserve audit records"],
-    "assumptions": ["The organization maintains approved source material"],
-    "limitations": ["The framework requires accountable reviewers and current source governance"],
-    "relationships": [{"type": "depends_on", "target": "trust-stack"}, {"type": "implements", "target": "content"}]
+    "documentation": [
+      "Knowledge-base contract",
+      "Editorial and review workflow",
+      "Evidence and audit requirements"
+    ],
+    "evidence": [
+      "Approved knowledge sources",
+      "Claim-level provenance",
+      "Human approval records"
+    ],
+    "methodology": [
+      "Ground drafts",
+      "Apply voice and claim constraints",
+      "Verify evidence",
+      "Require approval",
+      "Preserve audit records"
+    ],
+    "assumptions": [
+      "The organization maintains approved source material"
+    ],
+    "limitations": [
+      "The framework requires accountable reviewers and current source governance"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "trust-stack"
+      },
+      {
+        "type": "implements",
+        "target": "content"
+      }
+    ],
+    "seoTitle": "AI Content System for Regulated Organizations",
+    "editorialIntro": [
+      "The AI Content System for Regulated Organizations, a do-it-yourself production guide built on the Five-Domain Knowledge Base, grounded by the IDR Engine (Ingest, Draft, Reconcile).",
+      "Framework: Five-Domain Knowledge Base"
+    ],
+    "editorialSections": [
+      {
+        "title": "The cost of scaling content you have not grounded",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "You already know AI can write a week of posts in an afternoon. In a regulated shop, every one of those posts is a potential compliance artifact: logged, supervised, and read back to you later by someone whose job is to find the sentence that should not have been published."
+          },
+          {
+            "type": "paragraph",
+            "text": "A single ungrounded claim is a correction, a finding, or a fine. Automate the generation of that claim without grounding it and you have not removed the risk. You have multiplied it by your posting volume. Every channel. Every week. On a schedule."
+          },
+          {
+            "type": "paragraph",
+            "text": "Two costs compound at once. Hallucination risk: models reliably produce statements no source can verify, and it scales with your automation. Brand risk: ungrounded content fails the reader's source-credibility check and off-voice content fails the fluency check, because inconsistent writing is judged as less true. Faster is not the goal. Trusted-and-fast is."
+          }
+        ]
+      },
+      {
+        "title": "What's inside",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "The Five-Domain Knowledge Base. The exact folder structure, file conventions, and provenance rules that turn verified facts into a retrieval surface your model writes from."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "All 20 prompts, written out in full. Each built from a named prompt-engineering technique (role prompting, chain-of-thought, few-shot exemplars, XML structuring, grounding) and annotated so you see the mechanism."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A fill-in Voice Configuration template. Brand voice pinned to the Nielsen Norman Group's four measurable dimensions of tone, so \"make it sound like us\" becomes a target the model can hit."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A verified pricing table for the platform-intelligence stack: real prices checked live, with anything unconfirmed marked Unverified rather than guessed."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A setup checklist, a provenance rule set, and clear when-to-hire criteria, plus the honest caveats most guides skip."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Who it's for",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "Compliance-minded teams in healthcare, financial services, insurance, legal, and government who want to use AI for content and cannot afford a confident, fluent, wrong sentence to reach the public."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Teams with the time and internal ownership to build the system themselves. This is your complete specification."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Teams who do not: it tells you precisely when to commission the full build instead."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Where this sits in the stack",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "This is Layer 3 · Production of The Regulated Trust Stack, one operating system for earning trust in regulated markets, in six dependent layers. Each layer stands on the one beneath it. Own one and the next gap becomes impossible to ignore."
+          },
+          {
+            "type": "paragraph",
+            "text": "See the full six-layer stack → Find your weakest layer →"
+          }
+        ]
+      },
+      {
+        "title": "Get Five-Domain Knowledge Base",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Checkout is handled by Gumroad. The button opens the Aloha AI Gumroad storefront."
+          },
+          {
+            "type": "paragraph",
+            "text": "← Back to The Regulated Trust Stack"
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "trust-stack/ai-content-system/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "edsa-framework",
@@ -214,16 +1443,54 @@
     "summary": "A framework for designing regulated content that serves human comprehension and platform classification without sacrificing evidence.",
     "audience": "Regulated creators, educators, and communications teams.",
     "maturity": "Research",
-    "topics": ["neuroscience", "trust", "content", "platforms"],
-    "industries": ["health", "regulated-markets", "creator-economy"],
-    "keywords": ["EDSA framework", "neuroscience of trust"],
+    "topics": [
+      "neuroscience",
+      "trust",
+      "content",
+      "platforms"
+    ],
+    "industries": [
+      "health",
+      "regulated-markets",
+      "creator-economy"
+    ],
+    "keywords": [
+      "EDSA framework",
+      "neuroscience of trust"
+    ],
     "implementationStatus": "Published analytical framework with ongoing application testing.",
-    "documentation": ["Framework dimensions", "Content architecture", "Application and review guidance"],
-    "evidence": ["Cognitive and communication research", "Platform content constraints", "Applied content observations"],
-    "methodology": ["Identify the human comprehension task", "Identify classifier constraints", "Structure evidence for both audiences", "Test for clarity and distortion"],
-    "assumptions": ["Content must be understandable without becoming misleading"],
-    "limitations": ["Platform behavior is not fully observable and neuroscience does not predict individual response"],
-    "relationships": [{"type": "depends_on", "target": "trust-stack"}, {"type": "supports", "target": "trust-stack-ai-content-system"}]
+    "documentation": [
+      "Framework dimensions",
+      "Content architecture",
+      "Application and review guidance"
+    ],
+    "evidence": [
+      "Cognitive and communication research",
+      "Platform content constraints",
+      "Applied content observations"
+    ],
+    "methodology": [
+      "Identify the human comprehension task",
+      "Identify classifier constraints",
+      "Structure evidence for both audiences",
+      "Test for clarity and distortion"
+    ],
+    "assumptions": [
+      "Content must be understandable without becoming misleading"
+    ],
+    "limitations": [
+      "Platform behavior is not fully observable and neuroscience does not predict individual response"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "trust-stack"
+      },
+      {
+        "type": "supports",
+        "target": "trust-stack-ai-content-system"
+      }
+    ]
   },
   {
     "id": "psilocybin-regulatory-map",
@@ -234,16 +1501,53 @@
     "summary": "A citation-pinned comparison of Oregon, Colorado, and New Mexico for regulatory, commercial, and funding intelligence.",
     "audience": "Psilocybin operators, funders, researchers, and policy teams.",
     "maturity": "Research",
-    "topics": ["psilocybin", "regulation", "funding", "market-intelligence"],
-    "industries": ["psychedelics", "regulated-markets"],
-    "keywords": ["psilocybin regulatory map", "Oregon Colorado New Mexico"],
+    "topics": [
+      "psilocybin",
+      "regulation",
+      "funding",
+      "market-intelligence"
+    ],
+    "industries": [
+      "psychedelics",
+      "regulated-markets"
+    ],
+    "keywords": [
+      "psilocybin regulatory map",
+      "Oregon Colorado New Mexico"
+    ],
     "implementationStatus": "Published research product requiring dated jurisdictional updates.",
-    "documentation": ["Jurisdiction comparison", "Primary-source citations", "Commercial and funder fields"],
-    "evidence": ["State statutes and regulations", "Agency guidance", "Program and funding records"],
-    "methodology": ["Define comparison fields", "Retrieve primary authority", "Pin every material claim", "Date and qualify the comparison"],
-    "assumptions": ["The three-state scope matches the user's decision"],
-    "limitations": ["Not legal advice; rules and program status can change"],
-    "relationships": [{"type": "depends_on", "target": "trust-stack"}, {"type": "uses", "target": "regulatory-intelligence"}]
+    "documentation": [
+      "Jurisdiction comparison",
+      "Primary-source citations",
+      "Commercial and funder fields"
+    ],
+    "evidence": [
+      "State statutes and regulations",
+      "Agency guidance",
+      "Program and funding records"
+    ],
+    "methodology": [
+      "Define comparison fields",
+      "Retrieve primary authority",
+      "Pin every material claim",
+      "Date and qualify the comparison"
+    ],
+    "assumptions": [
+      "The three-state scope matches the user's decision"
+    ],
+    "limitations": [
+      "Not legal advice; rules and program status can change"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "trust-stack"
+      },
+      {
+        "type": "uses",
+        "target": "regulatory-intelligence"
+      }
+    ]
   },
   {
     "id": "sb303-compliance-kit",
@@ -254,16 +1558,54 @@
     "summary": "A cited, templated workflow for turning Oregon SB 303 reporting duties into deadline-safe and audit-ready operations.",
     "audience": "Oregon psilocybin operators and compliance teams.",
     "maturity": "Research",
-    "topics": ["psilocybin", "compliance", "reporting", "operations"],
-    "industries": ["psychedelics", "regulated-markets"],
-    "keywords": ["Oregon SB 303", "psilocybin compliance kit"],
+    "topics": [
+      "psilocybin",
+      "compliance",
+      "reporting",
+      "operations"
+    ],
+    "industries": [
+      "psychedelics",
+      "regulated-markets"
+    ],
+    "keywords": [
+      "Oregon SB 303",
+      "psilocybin compliance kit"
+    ],
     "implementationStatus": "Published compliance-intelligence framework; operational configuration requires current authority and counsel review.",
-    "documentation": ["Reporting-duty map", "Data-capture templates", "Deadline and review controls"],
-    "evidence": ["Oregon primary law", "Agency materials", "Operational reporting requirements"],
-    "methodology": ["Map duties to data fields", "Assign upstream ownership", "Validate deadlines", "Create review evidence", "Preserve audit records"],
-    "assumptions": ["The operator's program and reporting scope are correctly identified"],
-    "limitations": ["Not legal advice and not a substitute for current Oregon counsel"],
-    "relationships": [{"type": "depends_on", "target": "trust-stack"}, {"type": "uses", "target": "regulatory-intelligence"}]
+    "documentation": [
+      "Reporting-duty map",
+      "Data-capture templates",
+      "Deadline and review controls"
+    ],
+    "evidence": [
+      "Oregon primary law",
+      "Agency materials",
+      "Operational reporting requirements"
+    ],
+    "methodology": [
+      "Map duties to data fields",
+      "Assign upstream ownership",
+      "Validate deadlines",
+      "Create review evidence",
+      "Preserve audit records"
+    ],
+    "assumptions": [
+      "The operator's program and reporting scope are correctly identified"
+    ],
+    "limitations": [
+      "Not legal advice and not a substitute for current Oregon counsel"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "trust-stack"
+      },
+      {
+        "type": "uses",
+        "target": "regulatory-intelligence"
+      }
+    ]
   },
   {
     "id": "suppression-monitoring-playbook",
@@ -274,40 +1616,520 @@
     "summary": "A disciplined monitoring framework for detecting, documenting, and responding to quiet distribution and reach suppression.",
     "audience": "Regulated creators, brands, and advocacy organizations exposed to platform-risk.",
     "maturity": "Research",
-    "topics": ["platform-risk", "monitoring", "content-distribution", "evidence"],
-    "industries": ["creator-economy", "cannabis", "psychedelics", "regulated-markets"],
-    "keywords": ["platform suppression", "reach monitoring playbook"],
+    "topics": [
+      "platform-risk",
+      "monitoring",
+      "content-distribution",
+      "evidence"
+    ],
+    "industries": [
+      "creator-economy",
+      "cannabis",
+      "psychedelics",
+      "regulated-markets"
+    ],
+    "keywords": [
+      "platform suppression",
+      "reach monitoring playbook"
+    ],
     "implementationStatus": "Published monitoring method with engagement-specific instrumentation available.",
-    "documentation": ["Baseline and comparison protocol", "Event log", "Escalation and response playbook"],
-    "evidence": ["Distribution metrics", "Content and account events", "Platform policy changes", "Controlled comparisons"],
-    "methodology": ["Establish a baseline", "Track comparable outputs", "Log policy and account events", "Test alternative explanations", "Escalate with evidence"],
-    "assumptions": ["Sufficient historical and comparative data are available"],
-    "limitations": ["Platform systems are opaque; the method identifies evidence and likelihood, not secret causal certainty"],
-    "relationships": [{"type": "depends_on", "target": "trust-stack"}, {"type": "supports", "target": "content"}]
+    "documentation": [
+      "Baseline and comparison protocol",
+      "Event log",
+      "Escalation and response playbook"
+    ],
+    "evidence": [
+      "Distribution metrics",
+      "Content and account events",
+      "Platform policy changes",
+      "Controlled comparisons"
+    ],
+    "methodology": [
+      "Establish a baseline",
+      "Track comparable outputs",
+      "Log policy and account events",
+      "Test alternative explanations",
+      "Escalate with evidence"
+    ],
+    "assumptions": [
+      "Sufficient historical and comparative data are available"
+    ],
+    "limitations": [
+      "Platform systems are opaque; the method identifies evidence and likelihood, not secret causal certainty"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "trust-stack"
+      },
+      {
+        "type": "supports",
+        "target": "content"
+      }
+    ]
   },
   {
     "id": "trust-safe-twins",
     "kind": "product",
     "pathname": "/twins",
     "eyebrow": "Governed AI twins",
-    "title": "Trust-Safe Twins",
+    "title": "A Trust-Safe Twin is an AI twin that ships with its consent, provenance, and disclosure already attached.",
     "summary": "AI sales and content twins wrapped in consent, provenance, disclosure, substantiation, red-team, and human-approval controls.",
     "audience": "Regulated and reputation-sensitive professionals who cannot safely use ungoverned volume tools.",
     "maturity": "Beta",
-    "topics": ["ai-twins", "synthetic-media", "consent", "provenance", "human-review"],
-    "industries": ["legal", "health", "professional-services", "creator-economy"],
-    "keywords": ["governed AI twin", "trust-safe synthetic media"],
-    "architecture": ["Consent and likeness rights", "Provenance", "Disclosure", "Substantiation", "Red-team", "Human gate"],
+    "topics": [
+      "ai-twins",
+      "synthetic-media",
+      "consent",
+      "provenance",
+      "human-review"
+    ],
+    "industries": [
+      "legal",
+      "health",
+      "professional-services",
+      "creator-economy"
+    ],
+    "keywords": [
+      "governed AI twin",
+      "trust-safe synthetic media"
+    ],
+    "architecture": [
+      "Consent and likeness rights",
+      "Provenance",
+      "Disclosure",
+      "Substantiation",
+      "Red-team",
+      "Human gate"
+    ],
     "implementationStatus": "Interactive public lab and exposure self-screen are live; production twins are engagement-specific.",
-    "documentation": ["Consent contract", "Evidence and provenance contract", "Disclosure rules", "Red-team and approval gates"],
-    "roadmap": ["Expand evaluation harness", "Connect production delivery adapters", "Add governed-twin Workspace views"],
-    "changelog": ["2026-07: public lab and exposure assessment connected to canonical graph"],
+    "documentation": [
+      "Consent contract",
+      "Evidence and provenance contract",
+      "Disclosure rules",
+      "Red-team and approval gates"
+    ],
+    "roadmap": [
+      "Expand evaluation harness",
+      "Connect production delivery adapters",
+      "Add governed-twin Workspace views"
+    ],
+    "changelog": [
+      "2026-07: public lab and exposure assessment connected to canonical graph"
+    ],
     "licensing": "Available as an audit, governed build, retainer, or configured platform implementation.",
-    "evidence": ["Consent and authorization records", "Source and claim provenance", "Disclosure and substantiation checks", "Human approval events"],
-    "methodology": ["Verify authority and consent", "Ground generation", "Apply deterministic and model-based checks", "Red-team", "Require human approval", "Record delivery evidence"],
-    "assumptions": ["The operator has authority to use the relevant likeness, voice, data, and claims"],
-    "limitations": ["Public demonstrations do not send messages or constitute legal compliance certification"],
-    "relationships": [{"type": "implements", "target": "trust-stack"}, {"type": "uses", "target": "aloha-ai-platform"}, {"type": "supports", "target": "legal-ai"}]
+    "evidence": [
+      "Consent and authorization records",
+      "Source and claim provenance",
+      "Disclosure and substantiation checks",
+      "Human approval events"
+    ],
+    "methodology": [
+      "Verify authority and consent",
+      "Ground generation",
+      "Apply deterministic and model-based checks",
+      "Red-team",
+      "Require human approval",
+      "Record delivery evidence"
+    ],
+    "assumptions": [
+      "The operator has authority to use the relevant likeness, voice, data, and claims"
+    ],
+    "limitations": [
+      "Public demonstrations do not send messages or constitute legal compliance certification"
+    ],
+    "relationships": [
+      {
+        "type": "implements",
+        "target": "trust-stack"
+      },
+      {
+        "type": "uses",
+        "target": "aloha-ai-platform"
+      },
+      {
+        "type": "supports",
+        "target": "legal-ai"
+      }
+    ],
+    "seoTitle": "Trust-Safe Twins",
+    "editorialIntro": [
+      "Everyone sells AI generation. The harder half is governance. A Trust-Safe Twin wraps best-in-class voice, avatar, and outbound engines in a six-layer control plane, so a regulated or reputation-sensitive team can put a twin to work without putting its license, reputation, or legal position at risk."
+    ],
+    "editorialSections": [
+      {
+        "title": "An ungoverned twin is a liability you carry",
+        "eyebrow": "The exposure",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The market is long on realism and short on trust. The tools that clone your voice, face, and outbound have no answer for the rules that govern them. That gap lands on the person who deployed the twin."
+          },
+          {
+            "type": "heading",
+            "text": "FTC Fake Reviews Rule (16 CFR 465)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Generating fabricated or experience-faking reviews and testimonials carries penalties reported near $53k per violation. A content twin that invents social proof walks straight into it."
+          },
+          {
+            "type": "heading",
+            "text": "Likeness law: ELVIS Act, NO FAKES, right of publicity"
+          },
+          {
+            "type": "paragraph",
+            "text": "Cloning a voice or likeness without written, use-specific consent implicates CA §3344.1 / AB 1836, the TN ELVIS Act, and NY §50-f. The NO FAKES Act has been advancing in Congress."
+          },
+          {
+            "type": "heading",
+            "text": "EU AI Act, Article 50"
+          },
+          {
+            "type": "paragraph",
+            "text": "AI interaction and synthetic media carry disclosure and machine-readable marking duties. An undisclosed twin is a compliance gap the moment it speaks to an EU-touching audience."
+          },
+          {
+            "type": "heading",
+            "text": "Platform terms of service"
+          },
+          {
+            "type": "paragraph",
+            "text": "The LinkedIn User Agreement and CAN-SPAM govern how a twin may reach anyone. An autopilot twin puts your primary account and your sender reputation at risk."
+          },
+          {
+            "type": "paragraph",
+            "text": "Is your AI twin legally exposed? Take the 6-minute screen →"
+          }
+        ]
+      },
+      {
+        "title": "Governed generation versus the volume tools",
+        "eyebrow": "The difference",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Same generation quality on both sides. What changes is whether the output can stand in front of a general counsel, a regulator, or a platform trust team."
+          },
+          {
+            "type": "paragraph",
+            "text": "Ungoverned An off-the-shelf clone tool"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Voice and likeness cloned with no signed, use-scoped consent on file."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "No provenance credential, so the platform label cannot vouch for the asset."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Disclosure left to the operator to remember, or skipped entirely."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Health, efficacy, and capability claims ship unverified."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "No red-team pass, so prompt-injection and impersonation go untested."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "No human gate, so a bad output reaches an audience before anyone reviews it."
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Governed A Trust-Safe Twin"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Signed, use-scoped voice and likeness consent, with rights-expiry tracking."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "C2PA Content Credentials engineered to survive to the platform label."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Automatic AI and automated-interaction disclosure, on by default."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Every claim gated against an evidence file before it can ship."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Red-team suite run on a schedule, with results logged for audit."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A human review gate on outputs that carry legal or reputational weight."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Six governance layers, each answering a specific rule",
+        "eyebrow": "The differentiator",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "We orchestrate proven generation engines behind a control plane the rest of the market leaves open. Governed generation matters because consent, disclosure, and substantiation are legal and ethical obligations, not features. Each layer closes one of them."
+          },
+          {
+            "type": "heading",
+            "text": "Consent & likeness rights"
+          },
+          {
+            "type": "paragraph",
+            "text": "Signed, use-scoped voice and likeness consent with rights-expiry management. No cloning without a documented right to do so."
+          },
+          {
+            "type": "heading",
+            "text": "Provenance"
+          },
+          {
+            "type": "paragraph",
+            "text": "C2PA Content Credentials on every asset, engineered to survive to the platform label so viewers can trace how it was made."
+          },
+          {
+            "type": "heading",
+            "text": "Disclosure"
+          },
+          {
+            "type": "paragraph",
+            "text": "Automatic AI and automated-interaction labeling, tuned against the neuroscience of trust to disclose clearly while keeping the message readable."
+          },
+          {
+            "type": "heading",
+            "text": "Substantiation"
+          },
+          {
+            "type": "paragraph",
+            "text": "Every health, efficacy, or AI-capability claim gated against an evidence file before it ships. A claim without support is a hard stop."
+          },
+          {
+            "type": "heading",
+            "text": "Red-team"
+          },
+          {
+            "type": "paragraph",
+            "text": "Injection firewall and a standing red-team suite covering direct, indirect, payload-splitting, and obfuscated attacks, run and logged on a schedule."
+          },
+          {
+            "type": "heading",
+            "text": "Human gate"
+          },
+          {
+            "type": "paragraph",
+            "text": "A QA veto gate and deterministic hard rules keep a person in the loop. Legal and health twins are scope-limited to intake and scheduling."
+          }
+        ]
+      },
+      {
+        "title": "Two twins, one control plane",
+        "eyebrow": "What a twin is",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Sales twin"
+          },
+          {
+            "type": "paragraph",
+            "text": "Clones how you sell and runs outbound in your voice, up to the call. Deliverability-safe email, LinkedIn as a human-approved assist rather than autopilot, per-contact fit gating, and a human handoff at the moment of truth."
+          },
+          {
+            "type": "paragraph",
+            "text": "Open the console demo →"
+          },
+          {
+            "type": "heading",
+            "text": "Content / UGC twin"
+          },
+          {
+            "type": "paragraph",
+            "text": "Clones how you look and sound to produce video and social content at scale. Consent-gated voice and avatar, provenance credentials that reach the platform label, and disclosure built in from the first frame."
+          }
+        ]
+      },
+      {
+        "title": "Buyers who cannot use the volume tools without exposure",
+        "eyebrow": "Who it is for",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "Psychedelic-health and cannabis organizations operating under shifting state and federal rules."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Biopharma regulatory-affairs and communications teams held to substantiation standards."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Boutique law firms and legal-tech companies with UPL and conflict-check obligations."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Regulated founders whose reputation and license depend on getting consent and disclosure right."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "The offer ladder: audit, build, retainer",
+        "eyebrow": "How to work together",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Start with the audit so you know your exposure before you spend on a build. Most engagements move audit, then build, then a retainer that keeps the twin governed as the rules shift."
+          },
+          {
+            "type": "heading",
+            "text": "Twin Readiness & Compliance Audit"
+          },
+          {
+            "type": "paragraph",
+            "text": "Find out exactly where an AI twin would put you in front of a regulator or a plaintiff, before you build one. A scored readiness report across all six layers, with the rule each gap touches, plus a go / fix-first / do-not-build call."
+          },
+          {
+            "type": "paragraph",
+            "text": "$2,500 fixed · 2 weeks"
+          },
+          {
+            "type": "heading",
+            "text": "Built Twin — Sales or Content/UGC"
+          },
+          {
+            "type": "paragraph",
+            "text": "A working twin that performs at human level and ships with the full control plane wired in, plus an evidence-gate report showing it cleared the acceptance thresholds against your own human baseline."
+          },
+          {
+            "type": "paragraph",
+            "text": "Sales from $9,500 · Content/UGC from $12,500 · ~4–6 weeks"
+          },
+          {
+            "type": "heading",
+            "text": "Governed-Twin Retainer"
+          },
+          {
+            "type": "paragraph",
+            "text": "Keep the twin compliant and on-voice every month. Consent lifecycle, provenance and disclosure upkeep, substantiation refresh, red-team re-runs, and a monthly governance report as the rules move."
+          },
+          {
+            "type": "paragraph",
+            "text": "From $3,500/mo (to $8,000/mo full-service) · ongoing"
+          },
+          {
+            "type": "heading",
+            "text": "Self-serve control-plane SaaS"
+          },
+          {
+            "type": "paragraph",
+            "text": "The six governance layers as a plug-in control plane you point at your own generation engines. On the roadmap, sequenced after the build and retainer offers."
+          },
+          {
+            "type": "paragraph",
+            "text": "From $297/mo (roadmap)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Pricing is scoped and fixed where shown. Retainers carry a three-month minimum with 30 days' notice to stop. Built-twin pricing depends on scope, engines, and evidence-gate targets set during the audit."
+          }
+        ]
+      },
+      {
+        "title": "The evidence gates a twin clears before handoff",
+        "eyebrow": "Proof, not slogan",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Trust-safe is a set of numbers you can put in front of a general counsel. Every Built Twin clears these gates against the client's own human baseline before it goes live."
+          },
+          {
+            "type": "heading",
+            "text": "Voice ABX"
+          },
+          {
+            "type": "paragraph",
+            "text": "Blind ABX discrimination at or below about 55%, with a persona human panel scoring 4/5 or better."
+          },
+          {
+            "type": "heading",
+            "text": "RAGAS faithfulness"
+          },
+          {
+            "type": "paragraph",
+            "text": "Faithfulness at 0.90 or higher. A fabricated price or claim is a hard fail."
+          },
+          {
+            "type": "heading",
+            "text": "Injection-catch"
+          },
+          {
+            "type": "paragraph",
+            "text": "95% or higher on a red-team suite covering direct, indirect, payload-splitting, and obfuscated attacks."
+          },
+          {
+            "type": "heading",
+            "text": "Human baseline"
+          },
+          {
+            "type": "paragraph",
+            "text": "Reply, booking, or conversion that matches or beats your historical human numbers at equal-or-better safety."
+          }
+        ]
+      },
+      {
+        "title": "Start with the Twin Readiness audit.",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Before you build a twin, find out where consent, provenance, or disclosure would put you in front of a regulator. The audit scores all six layers and gives you a go, fix-first, or do-not-build call. Prefer to look first? The free exposure screen is a fast way in."
+          },
+          {
+            "type": "paragraph",
+            "text": "Prefer email? Email RN · or connect on LinkedIn"
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "twins/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "trust-safe-twin-lab",
@@ -318,22 +2140,77 @@
     "summary": "A browser-local demonstration of CRM intake, unsafe-versus-governed generation, deterministic guardrails, sentence-level provenance, and human review.",
     "audience": "Teams evaluating how a governed AI twin differs from unconstrained generation.",
     "maturity": "Beta",
-    "topics": ["ai-twins", "guardrails", "provenance", "human-review"],
-    "industries": ["professional-services", "health", "legal"],
-    "keywords": ["AI guardrail demo", "AI twin lab"],
+    "topics": [
+      "ai-twins",
+      "guardrails",
+      "provenance",
+      "human-review"
+    ],
+    "industries": [
+      "professional-services",
+      "health",
+      "legal"
+    ],
+    "keywords": [
+      "AI guardrail demo",
+      "AI twin lab"
+    ],
     "implementationStatus": "Public browser-local demonstration; external delivery and production network actions are disabled.",
-    "documentation": ["Expected CRM fields", "Decision contract", "Provenance model", "Approval behavior"],
-    "evidence": ["Seeded demonstration records", "Deterministic risk patterns", "Sentence-level source labels"],
-    "methodology": ["Load local context", "Compare unconstrained and governed output", "Run guardrails", "Inspect provenance", "Approve or reject locally"],
-    "assumptions": ["Demonstration inputs contain no sensitive production data"],
-    "limitations": ["The lab is illustrative and does not call a production model, CRM, or delivery adapter"],
-    "relationships": [{"type": "depends_on", "target": "trust-safe-twins"}, {"type": "uses", "target": "aloha-ai-platform"}],
+    "documentation": [
+      "Expected CRM fields",
+      "Decision contract",
+      "Provenance model",
+      "Approval behavior"
+    ],
+    "evidence": [
+      "Seeded demonstration records",
+      "Deterministic risk patterns",
+      "Sentence-level source labels"
+    ],
+    "methodology": [
+      "Load local context",
+      "Compare unconstrained and governed output",
+      "Run guardrails",
+      "Inspect provenance",
+      "Approve or reject locally"
+    ],
+    "assumptions": [
+      "Demonstration inputs contain no sensitive production data"
+    ],
+    "limitations": [
+      "The lab is illustrative and does not call a production model, CRM, or delivery adapter"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "trust-safe-twins"
+      },
+      {
+        "type": "uses",
+        "target": "aloha-ai-platform"
+      }
+    ],
     "demo": {
       "type": "trust-safe-twin",
       "seededRecords": [
-        {"name": "Jordan Lee", "company": "Northstar Health", "vertical": "Health technology", "status": "Ready for research"},
-        {"name": "Maya Chen", "company": "Civic Works Lab", "vertical": "Public interest", "status": "Human review"},
-        {"name": "Andre Brooks", "company": "Lattice Legal", "vertical": "Legal services", "status": "Evidence needed"}
+        {
+          "name": "Jordan Lee",
+          "company": "Northstar Health",
+          "vertical": "Health technology",
+          "status": "Ready for research"
+        },
+        {
+          "name": "Maya Chen",
+          "company": "Civic Works Lab",
+          "vertical": "Public interest",
+          "status": "Human review"
+        },
+        {
+          "name": "Andre Brooks",
+          "company": "Lattice Legal",
+          "vertical": "Legal services",
+          "status": "Evidence needed"
+        }
       ],
       "unsafeDraft": "We guarantee our AI platform will transform your regulatory workflow, eliminate errors, and deliver a 10x return immediately.",
       "safeDraft": "Aloha AI builds reviewable workflows that keep sources, guardrails, and human approval visible. The relevant question is whether a bounded workflow audit would reduce review friction without weakening oversight.",
@@ -349,45 +2226,635 @@
     "summary": "A twenty-question directional self-screen across consent, disclosure, provenance, substantiation, platform conduct, and regulated-sector boundaries.",
     "audience": "Operators using AI twins, avatars, cloned voices, or synthetic-media agents.",
     "maturity": "Research",
-    "topics": ["ai-twins", "legal-risk", "consent", "disclosure", "provenance"],
-    "industries": ["legal", "health", "creator-economy", "professional-services"],
-    "keywords": ["AI twin legal exposure", "synthetic media risk assessment"],
+    "topics": [
+      "ai-twins",
+      "legal-risk",
+      "consent",
+      "disclosure",
+      "provenance"
+    ],
+    "industries": [
+      "legal",
+      "health",
+      "creator-economy",
+      "professional-services"
+    ],
+    "keywords": [
+      "AI twin legal exposure",
+      "synthetic media risk assessment"
+    ],
     "implementationStatus": "Public browser-local educational self-screen; answers are not transmitted.",
-    "evidence": ["User responses", "Published consent, disclosure, provenance, advertising, platform, and professional-boundary rules"],
-    "methodology": ["Collect twenty bounded responses", "Weight exposure signals by dimension", "Surface the highest-risk dimensions", "Route to governed resources and human review"],
-    "assumptions": ["Responses accurately describe the deployed or planned twin"],
-    "limitations": ["Not legal advice, not a compliance certification, and not a validated psychometric instrument", "Current law and platform rules require independent verification"],
-    "relationships": [{"type": "depends_on", "target": "trust-safe-twins"}, {"type": "available_in_workspace", "target": "workspace"}, {"type": "supports", "target": "legal-ai"}],
+    "evidence": [
+      "User responses",
+      "Published consent, disclosure, provenance, advertising, platform, and professional-boundary rules"
+    ],
+    "methodology": [
+      "Collect twenty bounded responses",
+      "Weight exposure signals by dimension",
+      "Surface the highest-risk dimensions",
+      "Route to governed resources and human review"
+    ],
+    "assumptions": [
+      "Responses accurately describe the deployed or planned twin"
+    ],
+    "limitations": [
+      "Not legal advice, not a compliance certification, and not a validated psychometric instrument",
+      "Current law and platform rules require independent verification"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "trust-safe-twins"
+      },
+      {
+        "type": "available_in_workspace",
+        "target": "workspace"
+      },
+      {
+        "type": "supports",
+        "target": "legal-ai"
+      }
+    ],
     "assessment": {
-      "dimensions": ["consent", "disclosure", "provenance", "substantiation", "platform", "sector"],
-      "appliesToKinds": ["product", "tool", "service"],
+      "dimensions": [
+        "consent",
+        "disclosure",
+        "provenance",
+        "substantiation",
+        "platform",
+        "sector"
+      ],
+      "appliesToKinds": [
+        "product",
+        "tool",
+        "service"
+      ],
       "questions": [
-        {"id": "consent-record", "prompt": "Is every cloned voice or likeness backed by written, use-scoped consent?", "options": [{"value": "0", "label": "Yes, signed and use-scoped", "dimension": "consent", "score": 0}, {"value": "1", "label": "General or unwritten permission", "dimension": "consent", "score": 1}, {"value": "2", "label": "No signed consent", "dimension": "consent", "score": 2}]},
-        {"id": "third-party", "prompt": "Does the twin use a third party’s likeness or voice?", "options": [{"value": "0", "label": "No, operator only", "dimension": "consent", "score": 0}, {"value": "0a", "label": "Yes, with a written grant", "dimension": "consent", "score": 0}, {"value": "2", "label": "Yes, without a written grant", "dimension": "consent", "score": 2}]},
-        {"id": "deceased", "prompt": "Does it replicate a deceased person’s likeness or voice?", "options": [{"value": "0", "label": "No", "dimension": "consent", "score": 0}, {"value": "1", "label": "Yes, with estate authorization", "dimension": "consent", "score": 1}, {"value": "2", "label": "Yes, without estate authorization", "dimension": "consent", "score": 2}, {"value": "na", "label": "Not applicable", "dimension": "consent", "score": 0}]},
-        {"id": "consent-scope", "prompt": "Does consent define permitted uses and an expiry?", "options": [{"value": "0", "label": "Yes", "dimension": "consent", "score": 0}, {"value": "1", "label": "Consent is open-ended", "dimension": "consent", "score": 1}, {"value": "2", "label": "No consent record", "dimension": "consent", "score": 2}]},
-        {"id": "first-contact", "prompt": "Does the twin disclose that it is AI at first contact?", "options": [{"value": "0", "label": "Yes, every time", "dimension": "disclosure", "score": 0}, {"value": "1", "label": "Only if asked", "dimension": "disclosure", "score": 1}, {"value": "2", "label": "No", "dimension": "disclosure", "score": 2}]},
-        {"id": "replica-disclosure", "prompt": "Is a realistic replica disclosed as synthetic?", "options": [{"value": "0", "label": "Yes", "dimension": "disclosure", "score": 0}, {"value": "1", "label": "Inconsistently", "dimension": "disclosure", "score": 1}, {"value": "2", "label": "No", "dimension": "disclosure", "score": 2}, {"value": "na", "label": "Not applicable", "dimension": "disclosure", "score": 0}]},
-        {"id": "enforced-disclosure", "prompt": "Is disclosure enforced by the system?", "options": [{"value": "0", "label": "Yes", "dimension": "disclosure", "score": 0}, {"value": "1", "label": "It is only guidance", "dimension": "disclosure", "score": 1}, {"value": "2", "label": "No", "dimension": "disclosure", "score": 2}]},
-        {"id": "machine-marking", "prompt": "Do synthetic outputs carry machine-readable provenance?", "options": [{"value": "0", "label": "Yes", "dimension": "provenance", "score": 0}, {"value": "1", "label": "Inconsistently", "dimension": "provenance", "score": 1}, {"value": "2", "label": "No", "dimension": "provenance", "score": 2}]},
-        {"id": "platform-label", "prompt": "Are platform AI-content labels applied?", "options": [{"value": "0", "label": "Yes, every time", "dimension": "provenance", "score": 0}, {"value": "1", "label": "Occasionally", "dimension": "provenance", "score": 1}, {"value": "2", "label": "No", "dimension": "provenance", "score": 2}, {"value": "na", "label": "Not applicable", "dimension": "provenance", "score": 0}]},
-        {"id": "survival", "prompt": "Has provenance been verified after export and upload?", "options": [{"value": "0", "label": "Yes, end to end", "dimension": "provenance", "score": 0}, {"value": "1", "label": "Assumed, not verified", "dimension": "provenance", "score": 1}, {"value": "2", "label": "No or unknown", "dimension": "provenance", "score": 2}]},
-        {"id": "health-claims", "prompt": "Are health, efficacy, or outcome claims substantiated before use?", "options": [{"value": "0", "label": "No such claims", "dimension": "substantiation", "score": 0}, {"value": "0a", "label": "Yes, evidence is held first", "dimension": "substantiation", "score": 0}, {"value": "2", "label": "Claims ship without evidence", "dimension": "substantiation", "score": 2}]},
-        {"id": "ai-claims", "prompt": "Are claims about the AI system itself accurate and substantiated?", "options": [{"value": "0", "label": "No such claims", "dimension": "substantiation", "score": 0}, {"value": "0a", "label": "Yes", "dimension": "substantiation", "score": 0}, {"value": "2", "label": "They are aspirational or unproven", "dimension": "substantiation", "score": 2}]},
-        {"id": "reviews", "prompt": "Are reviews and endorsements genuine and properly disclosed?", "options": [{"value": "0", "label": "Yes", "dimension": "substantiation", "score": 0}, {"value": "1", "label": "Mixed or unsure", "dimension": "substantiation", "score": 1}, {"value": "2", "label": "Generated or purchased", "dimension": "substantiation", "score": 2}, {"value": "na", "label": "Not applicable", "dimension": "substantiation", "score": 0}]},
-        {"id": "evidence-first", "prompt": "Is claim evidence gathered before a claim ships?", "options": [{"value": "0", "label": "Yes", "dimension": "substantiation", "score": 0}, {"value": "1", "label": "Only if challenged", "dimension": "substantiation", "score": 1}, {"value": "2", "label": "No process", "dimension": "substantiation", "score": 2}]},
-        {"id": "linkedin", "prompt": "Does the twin scrape or automate messaging on LinkedIn?", "options": [{"value": "0", "label": "No", "dimension": "platform", "score": 0}, {"value": "1", "label": "Some automation", "dimension": "platform", "score": 1}, {"value": "2", "label": "Yes", "dimension": "platform", "score": 2}, {"value": "na", "label": "Not applicable", "dimension": "platform", "score": 0}]},
-        {"id": "opt-out", "prompt": "Do marketing emails have a working opt-out that is honored?", "options": [{"value": "0", "label": "Yes", "dimension": "platform", "score": 0}, {"value": "1", "label": "Not reliably", "dimension": "platform", "score": 1}, {"value": "2", "label": "No", "dimension": "platform", "score": 2}, {"value": "na", "label": "Not applicable", "dimension": "platform", "score": 0}]},
-        {"id": "email-identity", "prompt": "Do emails use honest headers and a valid mailing address?", "options": [{"value": "0", "label": "Yes, both", "dimension": "platform", "score": 0}, {"value": "1", "label": "Only one", "dimension": "platform", "score": 1}, {"value": "2", "label": "Neither", "dimension": "platform", "score": 2}, {"value": "na", "label": "Not applicable", "dimension": "platform", "score": 0}]},
-        {"id": "licensed-field", "prompt": "Does the twin operate in a licensed field?", "options": [{"value": "0", "label": "No", "dimension": "sector", "score": 0}, {"value": "1", "label": "Yes", "dimension": "sector", "score": 1}]},
-        {"id": "advice-boundary", "prompt": "Could it give legal or medical advice it is not licensed to give?", "options": [{"value": "0", "label": "No, a hand-off is enforced", "dimension": "sector", "score": 0}, {"value": "1", "label": "Possibly", "dimension": "sector", "score": 1}, {"value": "2", "label": "Yes", "dimension": "sector", "score": 2}, {"value": "na", "label": "Not applicable", "dimension": "sector", "score": 0}]},
-        {"id": "responsible-professional", "prompt": "Do communications state boundaries and name the responsible licensed professional?", "options": [{"value": "0", "label": "Yes, both", "dimension": "sector", "score": 0}, {"value": "1", "label": "Only one", "dimension": "sector", "score": 1}, {"value": "2", "label": "Neither", "dimension": "sector", "score": 2}, {"value": "na", "label": "Not applicable", "dimension": "sector", "score": 0}]}
+        {
+          "id": "consent-record",
+          "prompt": "Is every cloned voice or likeness backed by written, use-scoped consent?",
+          "options": [
+            {
+              "value": "0",
+              "label": "Yes, signed and use-scoped",
+              "dimension": "consent",
+              "score": 0
+            },
+            {
+              "value": "1",
+              "label": "General or unwritten permission",
+              "dimension": "consent",
+              "score": 1
+            },
+            {
+              "value": "2",
+              "label": "No signed consent",
+              "dimension": "consent",
+              "score": 2
+            }
+          ]
+        },
+        {
+          "id": "third-party",
+          "prompt": "Does the twin use a third party’s likeness or voice?",
+          "options": [
+            {
+              "value": "0",
+              "label": "No, operator only",
+              "dimension": "consent",
+              "score": 0
+            },
+            {
+              "value": "0a",
+              "label": "Yes, with a written grant",
+              "dimension": "consent",
+              "score": 0
+            },
+            {
+              "value": "2",
+              "label": "Yes, without a written grant",
+              "dimension": "consent",
+              "score": 2
+            }
+          ]
+        },
+        {
+          "id": "deceased",
+          "prompt": "Does it replicate a deceased person’s likeness or voice?",
+          "options": [
+            {
+              "value": "0",
+              "label": "No",
+              "dimension": "consent",
+              "score": 0
+            },
+            {
+              "value": "1",
+              "label": "Yes, with estate authorization",
+              "dimension": "consent",
+              "score": 1
+            },
+            {
+              "value": "2",
+              "label": "Yes, without estate authorization",
+              "dimension": "consent",
+              "score": 2
+            },
+            {
+              "value": "na",
+              "label": "Not applicable",
+              "dimension": "consent",
+              "score": 0
+            }
+          ]
+        },
+        {
+          "id": "consent-scope",
+          "prompt": "Does consent define permitted uses and an expiry?",
+          "options": [
+            {
+              "value": "0",
+              "label": "Yes",
+              "dimension": "consent",
+              "score": 0
+            },
+            {
+              "value": "1",
+              "label": "Consent is open-ended",
+              "dimension": "consent",
+              "score": 1
+            },
+            {
+              "value": "2",
+              "label": "No consent record",
+              "dimension": "consent",
+              "score": 2
+            }
+          ]
+        },
+        {
+          "id": "first-contact",
+          "prompt": "Does the twin disclose that it is AI at first contact?",
+          "options": [
+            {
+              "value": "0",
+              "label": "Yes, every time",
+              "dimension": "disclosure",
+              "score": 0
+            },
+            {
+              "value": "1",
+              "label": "Only if asked",
+              "dimension": "disclosure",
+              "score": 1
+            },
+            {
+              "value": "2",
+              "label": "No",
+              "dimension": "disclosure",
+              "score": 2
+            }
+          ]
+        },
+        {
+          "id": "replica-disclosure",
+          "prompt": "Is a realistic replica disclosed as synthetic?",
+          "options": [
+            {
+              "value": "0",
+              "label": "Yes",
+              "dimension": "disclosure",
+              "score": 0
+            },
+            {
+              "value": "1",
+              "label": "Inconsistently",
+              "dimension": "disclosure",
+              "score": 1
+            },
+            {
+              "value": "2",
+              "label": "No",
+              "dimension": "disclosure",
+              "score": 2
+            },
+            {
+              "value": "na",
+              "label": "Not applicable",
+              "dimension": "disclosure",
+              "score": 0
+            }
+          ]
+        },
+        {
+          "id": "enforced-disclosure",
+          "prompt": "Is disclosure enforced by the system?",
+          "options": [
+            {
+              "value": "0",
+              "label": "Yes",
+              "dimension": "disclosure",
+              "score": 0
+            },
+            {
+              "value": "1",
+              "label": "It is only guidance",
+              "dimension": "disclosure",
+              "score": 1
+            },
+            {
+              "value": "2",
+              "label": "No",
+              "dimension": "disclosure",
+              "score": 2
+            }
+          ]
+        },
+        {
+          "id": "machine-marking",
+          "prompt": "Do synthetic outputs carry machine-readable provenance?",
+          "options": [
+            {
+              "value": "0",
+              "label": "Yes",
+              "dimension": "provenance",
+              "score": 0
+            },
+            {
+              "value": "1",
+              "label": "Inconsistently",
+              "dimension": "provenance",
+              "score": 1
+            },
+            {
+              "value": "2",
+              "label": "No",
+              "dimension": "provenance",
+              "score": 2
+            }
+          ]
+        },
+        {
+          "id": "platform-label",
+          "prompt": "Are platform AI-content labels applied?",
+          "options": [
+            {
+              "value": "0",
+              "label": "Yes, every time",
+              "dimension": "provenance",
+              "score": 0
+            },
+            {
+              "value": "1",
+              "label": "Occasionally",
+              "dimension": "provenance",
+              "score": 1
+            },
+            {
+              "value": "2",
+              "label": "No",
+              "dimension": "provenance",
+              "score": 2
+            },
+            {
+              "value": "na",
+              "label": "Not applicable",
+              "dimension": "provenance",
+              "score": 0
+            }
+          ]
+        },
+        {
+          "id": "survival",
+          "prompt": "Has provenance been verified after export and upload?",
+          "options": [
+            {
+              "value": "0",
+              "label": "Yes, end to end",
+              "dimension": "provenance",
+              "score": 0
+            },
+            {
+              "value": "1",
+              "label": "Assumed, not verified",
+              "dimension": "provenance",
+              "score": 1
+            },
+            {
+              "value": "2",
+              "label": "No or unknown",
+              "dimension": "provenance",
+              "score": 2
+            }
+          ]
+        },
+        {
+          "id": "health-claims",
+          "prompt": "Are health, efficacy, or outcome claims substantiated before use?",
+          "options": [
+            {
+              "value": "0",
+              "label": "No such claims",
+              "dimension": "substantiation",
+              "score": 0
+            },
+            {
+              "value": "0a",
+              "label": "Yes, evidence is held first",
+              "dimension": "substantiation",
+              "score": 0
+            },
+            {
+              "value": "2",
+              "label": "Claims ship without evidence",
+              "dimension": "substantiation",
+              "score": 2
+            }
+          ]
+        },
+        {
+          "id": "ai-claims",
+          "prompt": "Are claims about the AI system itself accurate and substantiated?",
+          "options": [
+            {
+              "value": "0",
+              "label": "No such claims",
+              "dimension": "substantiation",
+              "score": 0
+            },
+            {
+              "value": "0a",
+              "label": "Yes",
+              "dimension": "substantiation",
+              "score": 0
+            },
+            {
+              "value": "2",
+              "label": "They are aspirational or unproven",
+              "dimension": "substantiation",
+              "score": 2
+            }
+          ]
+        },
+        {
+          "id": "reviews",
+          "prompt": "Are reviews and endorsements genuine and properly disclosed?",
+          "options": [
+            {
+              "value": "0",
+              "label": "Yes",
+              "dimension": "substantiation",
+              "score": 0
+            },
+            {
+              "value": "1",
+              "label": "Mixed or unsure",
+              "dimension": "substantiation",
+              "score": 1
+            },
+            {
+              "value": "2",
+              "label": "Generated or purchased",
+              "dimension": "substantiation",
+              "score": 2
+            },
+            {
+              "value": "na",
+              "label": "Not applicable",
+              "dimension": "substantiation",
+              "score": 0
+            }
+          ]
+        },
+        {
+          "id": "evidence-first",
+          "prompt": "Is claim evidence gathered before a claim ships?",
+          "options": [
+            {
+              "value": "0",
+              "label": "Yes",
+              "dimension": "substantiation",
+              "score": 0
+            },
+            {
+              "value": "1",
+              "label": "Only if challenged",
+              "dimension": "substantiation",
+              "score": 1
+            },
+            {
+              "value": "2",
+              "label": "No process",
+              "dimension": "substantiation",
+              "score": 2
+            }
+          ]
+        },
+        {
+          "id": "linkedin",
+          "prompt": "Does the twin scrape or automate messaging on LinkedIn?",
+          "options": [
+            {
+              "value": "0",
+              "label": "No",
+              "dimension": "platform",
+              "score": 0
+            },
+            {
+              "value": "1",
+              "label": "Some automation",
+              "dimension": "platform",
+              "score": 1
+            },
+            {
+              "value": "2",
+              "label": "Yes",
+              "dimension": "platform",
+              "score": 2
+            },
+            {
+              "value": "na",
+              "label": "Not applicable",
+              "dimension": "platform",
+              "score": 0
+            }
+          ]
+        },
+        {
+          "id": "opt-out",
+          "prompt": "Do marketing emails have a working opt-out that is honored?",
+          "options": [
+            {
+              "value": "0",
+              "label": "Yes",
+              "dimension": "platform",
+              "score": 0
+            },
+            {
+              "value": "1",
+              "label": "Not reliably",
+              "dimension": "platform",
+              "score": 1
+            },
+            {
+              "value": "2",
+              "label": "No",
+              "dimension": "platform",
+              "score": 2
+            },
+            {
+              "value": "na",
+              "label": "Not applicable",
+              "dimension": "platform",
+              "score": 0
+            }
+          ]
+        },
+        {
+          "id": "email-identity",
+          "prompt": "Do emails use honest headers and a valid mailing address?",
+          "options": [
+            {
+              "value": "0",
+              "label": "Yes, both",
+              "dimension": "platform",
+              "score": 0
+            },
+            {
+              "value": "1",
+              "label": "Only one",
+              "dimension": "platform",
+              "score": 1
+            },
+            {
+              "value": "2",
+              "label": "Neither",
+              "dimension": "platform",
+              "score": 2
+            },
+            {
+              "value": "na",
+              "label": "Not applicable",
+              "dimension": "platform",
+              "score": 0
+            }
+          ]
+        },
+        {
+          "id": "licensed-field",
+          "prompt": "Does the twin operate in a licensed field?",
+          "options": [
+            {
+              "value": "0",
+              "label": "No",
+              "dimension": "sector",
+              "score": 0
+            },
+            {
+              "value": "1",
+              "label": "Yes",
+              "dimension": "sector",
+              "score": 1
+            }
+          ]
+        },
+        {
+          "id": "advice-boundary",
+          "prompt": "Could it give legal or medical advice it is not licensed to give?",
+          "options": [
+            {
+              "value": "0",
+              "label": "No, a hand-off is enforced",
+              "dimension": "sector",
+              "score": 0
+            },
+            {
+              "value": "1",
+              "label": "Possibly",
+              "dimension": "sector",
+              "score": 1
+            },
+            {
+              "value": "2",
+              "label": "Yes",
+              "dimension": "sector",
+              "score": 2
+            },
+            {
+              "value": "na",
+              "label": "Not applicable",
+              "dimension": "sector",
+              "score": 0
+            }
+          ]
+        },
+        {
+          "id": "responsible-professional",
+          "prompt": "Do communications state boundaries and name the responsible licensed professional?",
+          "options": [
+            {
+              "value": "0",
+              "label": "Yes, both",
+              "dimension": "sector",
+              "score": 0
+            },
+            {
+              "value": "1",
+              "label": "Only one",
+              "dimension": "sector",
+              "score": 1
+            },
+            {
+              "value": "2",
+              "label": "Neither",
+              "dimension": "sector",
+              "score": 2
+            },
+            {
+              "value": "na",
+              "label": "Not applicable",
+              "dimension": "sector",
+              "score": 0
+            }
+          ]
+        }
       ],
       "recommendations": [
-        {"id": "twin-governance", "condition": "any_exposure", "resourceIds": ["trust-safe-twins", "trust-safe-twin-lab"]},
-        {"id": "legal-review", "condition": "legal_exposure", "dimension": "sector", "resourceIds": ["legal-ai", "citation-verifier"]},
-        {"id": "content-governance", "condition": "content_exposure", "dimension": "substantiation", "resourceIds": ["trust-stack-ai-content-system", "edsa-framework"]},
-        {"id": "platform-governance", "condition": "platform_exposure", "dimension": "platform", "resourceIds": ["suppression-monitoring-playbook", "aloha-ai-platform"]}
+        {
+          "id": "twin-governance",
+          "condition": "any_exposure",
+          "resourceIds": [
+            "trust-safe-twins",
+            "trust-safe-twin-lab"
+          ]
+        },
+        {
+          "id": "legal-review",
+          "condition": "legal_exposure",
+          "dimension": "sector",
+          "resourceIds": [
+            "legal-ai",
+            "citation-verifier"
+          ]
+        },
+        {
+          "id": "content-governance",
+          "condition": "content_exposure",
+          "dimension": "substantiation",
+          "resourceIds": [
+            "trust-stack-ai-content-system",
+            "edsa-framework"
+          ]
+        },
+        {
+          "id": "platform-governance",
+          "condition": "platform_exposure",
+          "dimension": "platform",
+          "resourceIds": [
+            "suppression-monitoring-playbook",
+            "aloha-ai-platform"
+          ]
+        }
       ]
     }
   }

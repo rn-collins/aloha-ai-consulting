@@ -1,1 +1,491 @@
-{"id":"cannabis-rescheduling","kind":"monitor","pathname":"/monitors/cannabis-rescheduling","title":"Cannabis Rescheduling Monitor","summary":"A maintained example of primary-source regulatory monitoring, source comparison, and dated status reporting.","maturity":"Beta","topics":["monitoring","cannabis","regulation"],"implementationStatus":"Maintained public monitor with defined source and update boundaries.","documentation":["Source hierarchy","Update cadence","Status definitions"],"evidence":["Federal Register material","Agency publications","Court and administrative records when applicable"],"methodology":["Monitor defined authorities","Retrieve and preserve source records","Verify material changes","Publish dated status and limitations"],"assumptions":["Relevant primary authorities remain publicly accessible"],"limitations":["The monitor is informational and is not legal advice","Detection may lag a newly published change"],"relationships":[{"type":"evidences","target":"intelligence"},{"type":"implements","target":"trust-stack"}]}
+{
+  "id": "cannabis-rescheduling",
+  "kind": "monitor",
+  "pathname": "/monitors/cannabis-rescheduling",
+  "title": "Cannabis rescheduling, told straight, with the receipts.",
+  "summary": "A maintained example of primary-source regulatory monitoring, source comparison, and dated status reporting.",
+  "maturity": "Beta",
+  "topics": [
+    "monitoring",
+    "cannabis",
+    "regulation"
+  ],
+  "implementationStatus": "Maintained public monitor with defined source and update boundaries.",
+  "documentation": [
+    "Source hierarchy",
+    "Update cadence",
+    "Status definitions"
+  ],
+  "evidence": [
+    "Federal Register material",
+    "Agency publications",
+    "Court and administrative records when applicable"
+  ],
+  "methodology": [
+    "Monitor defined authorities",
+    "Retrieve and preserve source records",
+    "Verify material changes",
+    "Publish dated status and limitations"
+  ],
+  "assumptions": [
+    "Relevant primary authorities remain publicly accessible"
+  ],
+  "limitations": [
+    "The monitor is informational and is not legal advice",
+    "Detection may lag a newly published change"
+  ],
+  "relationships": [
+    {
+      "type": "evidences",
+      "target": "intelligence"
+    },
+    {
+      "type": "implements",
+      "target": "trust-stack"
+    }
+  ],
+  "seoTitle": "Cannabis Rescheduling Monitor",
+  "editorialIntro": [
+    "A sourced instrument, not a headline scraper. Model your Schedule III exposure, see exactly what generic AI gets confidently wrong, and trace every figure to its primary source, so it holds up in a funder update and in a filing.",
+    "Built by RN Collins. Neuroscientist (MS) · Administrative Law (JD candidate) · AI systemsTailored for: operators, counsel & funders in the cannabis market"
+  ],
+  "editorialSections": [
+    {
+      "title": "The latest cannabis rulemaking, pulled live",
+      "eyebrow": "Live · Federal Register",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "This panel queries the Federal Register API from your browser every time the page loads, so it shows the primary source itself, not a stored summary."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Loading the latest from the Federal Register…"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "The live Federal Register feed is unavailable right now; the dated analysis below still applies (as of 2026-07-04)."
+        }
+      ]
+    },
+    {
+      "title": "Built for the people who can't afford a confident wrong answer",
+      "eyebrow": "Who this is for",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "The same monitor reads four ways, because the stakes differ by seat."
+        },
+        {
+          "type": "heading",
+          "text": "Operators"
+        },
+        {
+          "type": "paragraph",
+          "text": "Cultivators, manufacturers, retail. Know your §280E and quota exposure before you commit capital."
+        },
+        {
+          "type": "heading",
+          "text": "Counsel & GCs"
+        },
+        {
+          "type": "paragraph",
+          "text": "A sourced, dated brief you can cite, not a summary you have to re-verify."
+        },
+        {
+          "type": "heading",
+          "text": "Funders & boards"
+        },
+        {
+          "type": "paragraph",
+          "text": "One screenshot that makes the regulatory risk legible to a room in ten seconds."
+        },
+        {
+          "type": "heading",
+          "text": "Regulatory affairs"
+        },
+        {
+          "type": "paragraph",
+          "text": "Evidence-grade provenance that supports a public comment or a filing."
+        }
+      ]
+    },
+    {
+      "title": "Ask a generic AI the one question that matters. Watch it fail.",
+      "eyebrow": "The Operator Execution Gap · live",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Large language models fail most confidently exactly where an operator's stakes are highest. Same question, two answers: the fluent-but-wrong generic reply, and the primary-source-grounded one. The distance between them is what a wrong assumption costs."
+        },
+        {
+          "type": "paragraph",
+          "text": "✕ Generic LLM · unsourced"
+        },
+        {
+          "type": "paragraph",
+          "text": "\"Is marijuana Schedule III now — are state dispensaries federally legal?\""
+        },
+        {
+          "type": "paragraph",
+          "text": "\"Yes — marijuana was rescheduled to Schedule III, so cannabis is now federally recognized as medicine and state-legal dispensaries are in the clear.\""
+        },
+        {
+          "type": "paragraph",
+          "text": "Confident. Fluent. Wrong on three counts — and wrong in the exact way that gets a tax position, a funder memo, or a filing rejected."
+        },
+        {
+          "type": "paragraph",
+          "text": "✓ Aloha AI · primary-source grounded CFR · Fed. Reg."
+        },
+        {
+          "type": "paragraph",
+          "text": "Same question, answered from the record:"
+        },
+        {
+          "type": "paragraph",
+          "text": "Only a partial move has taken effect. As of April 28, 2026, a DEA final order moved two narrow categories to Schedule III: marijuana within an FDA-approved drug product, and marijuana under a state medical-marijuana license. Broad rescheduling is still contested in an ALJ hearing (Jun 29–Jul 15, 2026) where all seven designated participants oppose it."
+        },
+        {
+          "type": "paragraph",
+          "text": "Schedule III does not make state adult-use dispensaries federally legal: those substances still require a prescription and DEA registration, which state markets don't satisfy. What it does change: §280E taxes, research access, and FDA-approved products."
+        },
+        {
+          "type": "paragraph",
+          "text": "Confidence: High Why you can rely on it: it maps to the operative Federal Register order and the live docket, cited below, with retrieval dates."
+        },
+        {
+          "type": "paragraph",
+          "text": "OEG, the Operator Execution Gap, is the distance between what AI says and what a regulated operator can act on. Closing it is the entire job."
+        }
+      ]
+    },
+    {
+      "title": "Schedule I → Schedule III, by operator consequence",
+      "eyebrow": "What actually changes",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "The four shifts that move real money and real risk. The April 28 order already applied the first to FDA-approved products and state-licensed medical marijuana."
+        },
+        {
+          "type": "heading",
+          "text": "§280E federal tax High impact"
+        },
+        {
+          "type": "heading",
+          "text": "Production quotas High impact"
+        },
+        {
+          "type": "heading",
+          "text": "Research access Moderate"
+        },
+        {
+          "type": "heading",
+          "text": "Adult-use market Nuance"
+        }
+      ]
+    },
+    {
+      "title": "Model your Schedule III exposure",
+      "eyebrow": "The instrument",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Answer three questions. The tool returns what changes for your operation if full rescheduling finalizes, grounded in the framework above. Everything runs locally in your browser; nothing is sent anywhere."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Model your operation to see specifics."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "What one wrong assumption costs",
+      "eyebrow": "The cost of getting it wrong",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "The most common error we see: claiming §280E relief before full rescheduling is final. Here's the price of acting on the generic answer instead of the sourced one."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Plus interest and potential §6662 accuracy penalties (up to 20% of the underpayment)."
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "This is the cost of trusting an unsourced \"it's Schedule III now\" answer."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "A repeatable intelligence method, not a one-off scrape",
+      "eyebrow": "How it works",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Every Aloha AI monitor runs the same three-stage pipeline. In a production build, that is what keeps the facts right next month, not just today."
+        },
+        {
+          "type": "heading",
+          "text": "Regulatory Intelligence Layer (RIL)"
+        },
+        {
+          "type": "paragraph",
+          "text": "Primary sources only (Federal Register, CFR, dockets, agency orders), captured with source and retrieval date. No headline aggregation."
+        },
+        {
+          "type": "heading",
+          "text": "Resolve to an Operator Layer (ROL)"
+        },
+        {
+          "type": "paragraph",
+          "text": "Raw law becomes a decision an operator can act on: what changes, for whom, with what confidence, closing the Operator Execution Gap."
+        },
+        {
+          "type": "heading",
+          "text": "Auto-refresh & alert"
+        },
+        {
+          "type": "paragraph",
+          "text": "In a production build, the monitor re-checks its primary sources on a schedule (Upstash · Vercel · Exa) and can ping you when a docket opens or a rule shifts, so it never goes stale."
+        }
+      ]
+    },
+    {
+      "title": "Every figure, traced to its primary source",
+      "eyebrow": "Audit-ready provenance",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "The admin-law rigor is the product. Each fact carries its source, retrieval date, and a confidence rating, so the same artifact that opens a conversation can support a filing."
+        },
+        {
+          "type": "table",
+          "rows": [
+            {
+              "cells": [
+                {
+                  "text": "Fact",
+                  "header": true
+                },
+                {
+                  "text": "Primary source",
+                  "header": true
+                },
+                {
+                  "text": "Retrieved",
+                  "header": true
+                },
+                {
+                  "text": "Confidence",
+                  "header": true
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "Partial rescheduling to Schedule III effective Apr 28, 2026 (FDA-approved products + state medical licensees)"
+                },
+                {
+                  "text": "Fed. Reg. 2026-08177 · DEA.gov Marijuana Rescheduling Regulatory Actions"
+                },
+                {
+                  "text": "2026-07-04"
+                },
+                {
+                  "text": "High"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "Broader Schedule III hearing before DEA Chief ALJ Derek Julius; Jun 29 – Jul 15, 2026; 7 designated participants, all opposing"
+                },
+                {
+                  "text": "DEA press release 2026-06-25 · ALJ scheduling order 2026-06-24"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "§280E denies deductions for trafficking in Schedule I/II controlled substances"
+                },
+                {
+                  "text": "26 U.S.C. §280E"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "Aggregate production quotas apply to Schedule I & II basic classes only"
+                },
+                {
+                  "text": "21 CFR §1303.11"
+                }
+              ]
+            },
+            {
+              "cells": [
+                {
+                  "text": "Schedule III substances require prescription + DEA registration (state adult-use remains non-compliant)"
+                },
+                {
+                  "text": "21 U.S.C. §829 · 21 CFR §1301"
+                },
+                {
+                  "text": "Med · interpretive"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Verification checkpoint: figures are current as of the retrieval date and the operative order. Re-confirm against the live docket before using any figure in a filing."
+        }
+      ]
+    },
+    {
+      "title": "The combination no competitor holds",
+      "eyebrow": "Why this, not a generic monitor",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Most tools are one thing done adequately. This is built on named, defensible frameworks, so you leave speaking the language, not renting a dashboard."
+        },
+        {
+          "type": "paragraph",
+          "text": "RIL → ROL"
+        },
+        {
+          "type": "heading",
+          "text": "Regulatory Intelligence Layer"
+        },
+        {
+          "type": "paragraph",
+          "text": "Primary-source monitoring resolved into an operator-ready decision layer."
+        },
+        {
+          "type": "paragraph",
+          "text": "OEG"
+        },
+        {
+          "type": "heading",
+          "text": "Operator Execution Gap"
+        },
+        {
+          "type": "paragraph",
+          "text": "The gap between what AI says and what an operator can act on."
+        },
+        {
+          "type": "paragraph",
+          "text": "APQ Gap"
+        },
+        {
+          "type": "heading",
+          "text": "APQ Gap Model"
+        },
+        {
+          "type": "paragraph",
+          "text": "Scores production-quota exposure against demand; the sibling model for scheduled supply."
+        },
+        {
+          "type": "paragraph",
+          "text": "EDSA"
+        },
+        {
+          "type": "heading",
+          "text": "EDSA Framework"
+        },
+        {
+          "type": "paragraph",
+          "text": "Keeps regulated health content compliant and un-suppressed across platforms."
+        }
+      ]
+    },
+    {
+      "title": "How this becomes yours",
+      "eyebrow": "The service",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Operators, counsel, and funders fly blind on how each rule change hits their §280E position, quotas, and supply. I build a tailored monitor for your exact program that tracks the primary sources and resolves them into decisions you can act on."
+        },
+        {
+          "type": "heading",
+          "text": "What I build"
+        },
+        {
+          "type": "paragraph",
+          "text": "A private monitor scoped to your molecule, license type, and jurisdictions; sourced, dated, and confidence-scored."
+        },
+        {
+          "type": "heading",
+          "text": "What you get"
+        },
+        {
+          "type": "list",
+          "items": [
+            "A live, cited monitor for your program"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "An audit-ready provenance ledger you can put in a filing"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "Change-alerts when a docket or rule moves"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "How to start"
+        },
+        {
+          "type": "paragraph",
+          "text": "A 20-minute scoping call. If it's a fit, a tailored build turns around in days, not weeks."
+        },
+        {
+          "type": "paragraph",
+          "text": "Pricing. Tailored monitors start from $5,000 to build + $1,500/mo to keep them live, scoped to what your operation actually needs. Three-month minimum on any retainer; 30 days' notice to stop."
+        }
+      ]
+    },
+    {
+      "title": "Ready when you are.",
+      "eyebrow": "Aloha AI · Honolulu",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "This page is a dated snapshot from a Regulatory Intelligence build. Get your own monitor scoped to your program with a Build ($5,000–$10,000, from $5,000 + $1,500/mo to keep it live), or book a 20-minute scoping call to size it first."
+        },
+        {
+          "type": "paragraph",
+          "text": "Prefer email? Email RN · or connect on LinkedIn"
+        }
+      ]
+    }
+  ],
+  "editorialSource": {
+    "baseline": "b0a1b3c",
+    "sourceFile": "monitors/cannabis-rescheduling/index.html",
+    "restoredAt": "2026-07-26"
+  }
+}
