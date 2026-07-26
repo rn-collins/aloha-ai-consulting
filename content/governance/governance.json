@@ -146,7 +146,7 @@
     "methodology": ["Define the durable asset and institutional problem", "Map contributions, dependencies, decision-makers, and reviewers", "Set evidence, independence, conflict, and claim controls", "Allocate IP, data, publication, commercialization, and maintenance rights", "Define success gates and the operating owner beyond the pilot"],
     "assumptions": ["Each party accurately represents its authority and rights", "The governing agreement is tailored to the actual asset, jurisdiction, users, and professional responsibilities"],
     "limitations": ["This partnership orientation is not a binding offer or agreement", "Legal, tax, accounting, privacy, security, accreditation, and other professional terms require qualified review"],
-    "relationships": [{"type": "supports", "target": "engagements"}, {"type": "supports", "target": "services-v2"}, {"type": "supports", "target": "university"}, {"type": "related_to", "target": "about"}, {"type": "uses", "target": "methods"}]
+    "relationships": [{"type": "supports", "target": "engagements"}, {"type": "supports", "target": "services"}, {"type": "supports", "target": "university"}, {"type": "related_to", "target": "about"}, {"type": "uses", "target": "methods"}]
   },
   {
     "id": "privacy",
@@ -209,6 +209,6 @@
     "methodology": ["State the informational and illustrative nature of the site", "Require verification against primary sources", "Preserve legal, tax, and other professional boundaries", "Separate public-site terms from signed engagement agreements", "Publish warranty, liability, IP, governing-law, and change terms"],
     "assumptions": ["Visitors review the current effective version before relying on the site", "Paid engagements use a separately signed agreement defining their governing terms"],
     "limitations": ["These terms govern the public website and do not replace a signed engagement agreement", "The terms are informational publication content and are not legal advice to visitors"],
-    "relationships": [{"type": "documents", "target": "services-v2"}, {"type": "documents", "target": "engagements"}, {"type": "related_to", "target": "privacy"}, {"type": "related_to", "target": "about"}]
+    "relationships": [{"type": "documents", "target": "services"}, {"type": "documents", "target": "engagements"}, {"type": "related_to", "target": "privacy"}, {"type": "related_to", "target": "about"}]
   }
 ]

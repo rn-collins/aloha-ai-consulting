@@ -138,27 +138,5 @@
     "assumptions": ["Institutions will include affected stakeholders and accountable domain professionals", "The framework will be adapted rather than treated as a universal causal model"],
     "limitations": ["NSAG is a governance framework and method, not legal, medical, financial, clinical, or tax advice", "Nervous-system-aware design does not erase structural power, resource, legal, or implementation constraints"],
     "relationships": [{"type": "related_to", "target": "aloha-ai-practice"}, {"type": "uses", "target": "methods"}, {"type": "supports", "target": "strategy"}, {"type": "related_to", "target": "biophilic-neuroarch"}]
-  },
-  {
-    "id": "services-v2",
-    "kind": "collection",
-    "pathname": "/services-v2",
-    "eyebrow": "Services",
-    "title": "Turn complex work into a system people can operate.",
-    "summary": "A systems-practice service map for evidence-heavy, judgment-sensitive work, organized around leadership, research, content, legal workflows, governed agents, implementation, fractional ownership, and licensing.",
-    "audience": "Regulated, reputation-sensitive, or institutionally complex organizations choosing the smallest useful route from ambiguity to an inspectable working system.",
-    "maturity": "Beta",
-    "topics": ["services", "systems-design", "implementation", "commercial-paths"],
-    "industries": ["professional-services", "legal", "health", "regulated-markets"],
-    "keywords": ["Aloha AI services", "systems audit", "architecture sprint", "AI implementation", "fractional AI leadership"],
-    "collection": {"kinds": ["service"], "heading": "Choose the recurring problem, consequential decision, or body of expertise that needs stronger structure."},
-    "deliverables": ["Source hierarchy, taxonomy, definitions, and verification procedure", "User, stakeholder, workflow, decision, escalation, and approval maps", "Working prototype or deployed system", "Test cases, evaluation, governance, documentation, training, and handoff or licensing package"],
-    "timeline": "Commercial paths begin with a contained Systems Audit, move into architecture only when needed, then proceed to a working build, fractional ownership, or licensing when the evidence supports expansion.",
-    "fit": ["Information is fragmented or difficult to verify", "Rules, exceptions, and professional judgment matter", "The team repeats the same research, review, intake, or decision work", "A service or methodology could become a reusable product", "A working pilot is needed before larger software investment"],
-    "evidence": ["Current work as it actually happens", "Source materials, users, recurring decisions, exceptions, bottlenecks, risks, tools, and owners", "Methods, builds, engagement structures, tests, and acceptance records"],
-    "methodology": ["Audit the current system and decision rights", "Define the source model, data structure, rules, review, interface, governance, and implementation plan", "Build and test the smallest working system", "Document human responsibility, unknowns, and dependencies", "Operate, transfer, maintain, or license only after acceptance"],
-    "assumptions": ["A decision maker and accountable internal owner participate", "Required data, source access, review capacity, and technical dependencies are made explicit"],
-    "limitations": ["The practice does not replace licensed professional judgment", "A different partner may be required for commodity web work, standard configuration, or large-scale engineering staff augmentation"],
-    "relationships": [{"type": "documents", "target": "services"}, {"type": "documents", "target": "strategy"}, {"type": "documents", "target": "intelligence"}, {"type": "documents", "target": "content"}, {"type": "documents", "target": "legal-ai"}, {"type": "documents", "target": "build-your-team"}, {"type": "documents", "target": "engagements"}]
   }
 ]

@@ -1,14 +1,14 @@
 #!/usr/bin/env node
-'use strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { getRouteRecord } from '../lib/site/route-registry.js';
 
-const fs = require('fs');
-const path = require('path');
-const { getRouteRecord } = require('../lib/site/route-registry');
-
-const ROOT = path.resolve(__dirname, '..');
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SITEMAP = path.join(ROOT, 'sitemap.xml');
 const OUTPUT_DIR = path.join(ROOT, 'artifacts', 'site-audit');
-const DESIGN_SYSTEM = '/assets/platform-design-system.css';
+const SHARED_STYLES = ['/aloha-ds.css', '/site-shell.css', '/page-system.css', '/universal-sections.css'];
+const BASE_URL = 'https://aloha-ai-consulting.vercel.app';
 
 function read(file) {
   return fs.readFileSync(file, 'utf8');
@@ -42,6 +42,26 @@ function count(content, expression) {
   return [...content.matchAll(expression)].length;
 }
 
+function formControlFindings(html) {
+  const findings = [];
+  const controls = [...html.matchAll(/<(input|textarea|select)\b[^>]*>/gi)];
+  for (const match of controls) {
+    const tag = match[0];
+    if (/<input\b[^>]*type=["']hidden["']/i.test(tag)) continue;
+    const id = tag.match(/\bid=["']([^"']+)["']/i)?.[1];
+    const directlyNamed = /\baria-label=["'][^"']+["']/i.test(tag) || /\baria-labelledby=["'][^"']+["']/i.test(tag);
+    const before = html.slice(0, match.index);
+    const wrapped = before.lastIndexOf('<label') > before.lastIndexOf('</label>');
+    const associated = id && new RegExp(`<label\\b[^>]*for=["']${escapeRegExp(id)}["']`, 'i').test(html);
+    if (!directlyNamed && !wrapped && !associated) findings.push(`${match[1].toLowerCase()} control lacks an accessible label`);
+  }
+  return findings;
+}
+
+function escapeRegExp(value) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
 function inspect(route) {
   const registry = getRouteRecord(route);
   const pageFile = resolvePage(route);
@@ -69,20 +89,22 @@ function inspect(route) {
   const hasViewport = /<meta[^>]+name=["']viewport["']/i.test(html);
   const hasLang = /<html[^>]+lang=["'][^"']+["']/i.test(html);
   const hasSkipLink = /href=["']#(?:main|content|main-content)["']/i.test(html);
-  const designSystem = html.includes(DESIGN_SYSTEM);
+  const sharedStyles = SHARED_STYLES.every((stylesheet) => html.includes(`href="${stylesheet}"`));
   const inlineStyles = count(html, /style=["']/gi);
   const forms = count(html, /<form\b/gi);
-  const unlabeledInputs = count(html, /<input\b(?![^>]*(?:aria-label|aria-labelledby|id=))[^>]*>/gi);
+  const controlFindings = formControlFindings(html);
   const images = count(html, /<img\b/gi);
   const missingAlt = count(html, /<img\b(?![^>]*\balt=)[^>]*>/gi);
   const buttons = count(html, /<button\b/gi);
   const links = count(html, /<a\b/gi);
   const workspaceLinks = count(html, /href=["'][^"']*(?:workspace|platform)[^"']*["']/gi);
+  const pageBytes = Buffer.byteLength(html);
+  const canonicalExpected = `${BASE_URL}${route}`;
 
   const checks = {
     title: Boolean(title && title.length >= 12 && title.length <= 70),
     description: Boolean(description && description.length >= 70 && description.length <= 180),
-    canonical: Boolean(canonical),
+    canonical: canonical === canonicalExpected,
     oneH1: h1Count === 1,
     main: hasMain,
     header: hasHeader,
@@ -90,15 +112,16 @@ function inspect(route) {
     viewport: hasViewport,
     language: hasLang,
     skipLink: hasSkipLink,
-    designSystem,
+    sharedStyles,
     imageAlternatives: images === 0 || missingAlt === 0,
-    inputLabels: forms === 0 || unlabeledInputs === 0
+    inputLabels: forms === 0 || controlFindings.length === 0,
+    pageWeight: pageBytes <= 100_000
   };
 
   const findings = [];
   if (!checks.title) findings.push('Title is missing or outside the 12–70 character audit range.');
   if (!checks.description) findings.push('Meta description is missing or outside the 70–180 character audit range.');
-  if (!checks.canonical) findings.push('Canonical URL is missing.');
+  if (!checks.canonical) findings.push(`Canonical URL must be ${canonicalExpected}.`);
   if (!checks.oneH1) findings.push(`Expected exactly one H1; found ${h1Count}.`);
   if (!checks.main) findings.push('Semantic main region is missing.');
   if (!checks.header) findings.push('Semantic header is missing.');
@@ -106,9 +129,10 @@ function inspect(route) {
   if (!checks.viewport) findings.push('Viewport metadata is missing.');
   if (!checks.language) findings.push('Document language is missing.');
   if (!checks.skipLink) findings.push('Keyboard skip link is missing.');
-  if (!checks.designSystem) findings.push(`Shared design system ${DESIGN_SYSTEM} is not loaded.`);
+  if (!checks.sharedStyles) findings.push('One or more shared stylesheet layers are not loaded.');
   if (!checks.imageAlternatives) findings.push(`${missingAlt} image(s) lack alt attributes.`);
-  if (!checks.inputLabels) findings.push(`${unlabeledInputs} input(s) lack an id or accessible label association.`);
+  if (!checks.inputLabels) findings.push(...controlFindings);
+  if (!checks.pageWeight) findings.push(`HTML payload is ${pageBytes} bytes; the audit ceiling is 100000 bytes.`);
 
   const passed = Object.values(checks).filter(Boolean).length;
   const score = Math.round((passed / Object.keys(checks).length) * 100);
@@ -122,7 +146,7 @@ function inspect(route) {
     canonical,
     score,
     checks,
-    metrics: { h1Count, inlineStyles, forms, images, missingAlt, buttons, links, workspaceLinks },
+    metrics: { h1Count, inlineStyles, forms, images, missingAlt, buttons, links, workspaceLinks, pageBytes },
     findings
   };
 }
@@ -137,7 +161,8 @@ function markdown(report) {
     `Static pages found: ${report.summary.found}`,
     `Missing route files: ${report.summary.missing}`,
     `Average page score: ${report.summary.averageScore}%`,
-    `Pages loading the shared design system: ${report.summary.designSystemCoverage}/${report.summary.found}`,
+    `Pages loading all shared style layers: ${report.summary.sharedStyleCoverage}/${report.summary.found}`,
+    `Critical structural or accessibility failures: ${report.summary.criticalFailures}`,
     '',
     '## Estate summary',
     '',
@@ -188,7 +213,21 @@ function main() {
       found: foundPages.length,
       missing: pages.length - foundPages.length,
       averageScore: foundPages.length ? Math.round(foundPages.reduce((sum, page) => sum + page.score, 0) / foundPages.length) : 0,
-      designSystemCoverage: foundPages.filter(page => page.checks?.designSystem).length
+      sharedStyleCoverage: foundPages.filter(page => page.checks?.sharedStyles).length,
+      criticalFailures: foundPages.filter((page) => [
+        'canonical',
+        'oneH1',
+        'main',
+        'header',
+        'footer',
+        'viewport',
+        'language',
+        'skipLink',
+        'sharedStyles',
+        'imageAlternatives',
+        'inputLabels',
+        'pageWeight'
+      ].some((check) => !page.checks?.[check])).length
     },
     estates,
     pages
@@ -198,7 +237,7 @@ function main() {
   fs.writeFileSync(path.join(OUTPUT_DIR, 'report.json'), `${JSON.stringify(report, null, 2)}\n`);
   fs.writeFileSync(path.join(OUTPUT_DIR, 'report.md'), markdown(report));
   process.stdout.write(`${markdown(report)}\n`);
-  if (report.summary.missing > 0) process.exitCode = 1;
+  if (report.summary.missing > 0 || report.summary.criticalFailures > 0) process.exitCode = 1;
 }
 
 try {

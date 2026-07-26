@@ -108,7 +108,7 @@
     "assumptions": ["Clients and partners provide access to representative workflows and relevant source materials", "An accountable owner and qualified professional reviewers participate where required", "Scope, authority, privacy, security, and maintenance expectations are defined before production use"],
     "limitations": ["Aloha AI does not replace licensed legal, medical, financial, tax, clinical, privacy, or security advice", "No AI system eliminates uncertainty or remains trustworthy without evaluation and maintenance", "Public demonstrations and directional tools must be verified before consequential reliance"],
     "relationships": [
-      {"type": "supports", "target": "services-v2"},
+      {"type": "supports", "target": "services"},
       {"type": "supports", "target": "builds"},
       {"type": "documents", "target": "methods"},
       {"type": "supports", "target": "university"},

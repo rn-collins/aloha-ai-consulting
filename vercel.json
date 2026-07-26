@@ -17,20 +17,12 @@
     { "source": "/terms.html", "destination": "/terms", "permanent": true },
     { "source": "/homepage-v2", "destination": "/", "permanent": true },
     { "source": "/homepage-v3", "destination": "/", "permanent": true },
+    { "source": "/services-v2", "destination": "/services", "permanent": true },
     { "source": "/engagements.html", "destination": "/engagements", "permanent": true },
     { "source": "/build-your-team.html", "destination": "/build-your-team", "permanent": true },
     { "source": "/ai-native-coo.html", "destination": "/ai-native-coo", "permanent": true },
     { "source": "/launch-stack.html", "destination": "/launch-stack", "permanent": true },
-    { "source": "/assessment", "destination": "/university/assessment", "permanent": true },
-    { "source": "/university/services", "destination": "/services", "permanent": true },
-    { "source": "/university/services/ai-strategy-sprint", "destination": "/strategy", "permanent": true },
-    { "source": "/university/services/ongoing-advisory", "destination": "/strategy", "permanent": true },
-    { "source": "/university/services/ai-governance-setup", "destination": "/strategy", "permanent": true },
-    { "source": "/university/services/ai-implementation", "destination": "/services", "permanent": true },
-    { "source": "/university/services/ai-workflow-design", "destination": "/services", "permanent": true }
-  ],
-  "rewrites": [
-    { "source": "/services", "destination": "/services-v2" }
+    { "source": "/assessment", "destination": "/university/assessment", "permanent": true }
   ],
   "headers": [
     {

@@ -3,7 +3,7 @@ import path from 'node:path';
 import process from 'node:process';
 import { renderStructuredPage } from '../lib/site/structured-renderer.js';
 import { supportedKinds, validateTemplateContract } from '../lib/site/template-registry.js';
-import { derivePlatform, generatedOutputs, legacyMigrationInventory, validateGeneratedSite, validatePlatform, writeOutputs } from '../lib/site/publishing-engine.js';
+import { derivePlatform, generatedOutputs, legacyMigrationInventory, validateGeneratedSite, validatePlatform, validateRoutingConfig, writeOutputs } from '../lib/site/publishing-engine.js';
 
 const root = process.cwd();
 const contentRoot = path.join(root, 'content');
@@ -12,7 +12,9 @@ const resources = loadResources(contentRoot);
 const platform = derivePlatform(resources);
 const templateErrors = resources.flatMap((resource) => validateTemplateContract(resource));
 const { errors: platformErrors, warnings: platformWarnings } = validatePlatform(resources, platform);
-const errors = [...templateErrors, ...platformErrors];
+const routingConfig = JSON.parse(fs.readFileSync(path.join(root, 'vercel.json'), 'utf8'));
+const routingErrors = validateRoutingConfig(resources, routingConfig);
+const errors = [...templateErrors, ...platformErrors, ...routingErrors];
 
 for (const warning of platformWarnings) console.warn(`Warning: ${warning}`);
 if (errors.length) {

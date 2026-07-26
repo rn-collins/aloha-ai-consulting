@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { derivePlatform, generatedOutputs, legacyMigrationInventory, validatePlatform } from '../lib/site/publishing-engine.js';
+import { derivePlatform, generatedOutputs, legacyMigrationInventory, validatePlatform, validateRoutingConfig } from '../lib/site/publishing-engine.js';
 import { renderStructuredPage } from '../lib/site/structured-renderer.js';
 import fs from 'node:fs';
 import os from 'node:os';
@@ -77,6 +77,48 @@ test('does not overwrite canonical resources with generated collection routes', 
   assert.equal(generatedOutputs(resources, platform).has('/services'), false);
 });
 
+test('accepts terminal slug reuse across distinct canonical namespaces', () => {
+  const resources = [
+    { ...resource('tool-about', [{ type: 'supports', target: 'university-about' }]), pathname: '/about' },
+    { ...resource('university-about', [{ type: 'supports', target: 'tool-about' }]), pathname: '/university/about' }
+  ];
+  assert.deepEqual(validatePlatform(resources, derivePlatform(resources)).warnings, []);
+});
+
+test('derives controlled audience groups without fragmenting prose', () => {
+  const legal = {
+    ...resource('legal-team-tool', [{ type: 'supports', target: 'learning-resource' }]),
+    audience: 'Attorneys, counsel, and legal teams who need reviewable evidence.'
+  };
+  const learning = {
+    ...resource('learning-resource', [{ type: 'supports', target: 'legal-team-tool' }]),
+    kind: 'lesson',
+    audience: 'People beginning a practical learning path.'
+  };
+  const platform = derivePlatform([legal, learning]);
+  assert.deepEqual([...platform.audiences.keys()].sort(), ['educators-and-learners', 'legal-professionals', 'operators-and-teams']);
+  assert.equal(platform.audiences.has('counsel'), false);
+  assert.equal(platform.audiences.has('and-legal-teams-who-need-reviewable-evidence'), false);
+});
+
+test('rejects redirects and rewrites that shadow canonical resource paths', () => {
+  const resources = [
+    { ...resource('services', [{ type: 'supports', target: 'university-services' }]), pathname: '/services' },
+    { ...resource('university-services', [{ type: 'supports', target: 'services' }]), pathname: '/university/services' }
+  ];
+  const errors = validateRoutingConfig(resources, {
+    redirects: [
+      { source: '/services.html', destination: '/services' },
+      { source: '/university/services', destination: '/services' }
+    ],
+    rewrites: [{ source: '/services', destination: '/services-v2' }]
+  });
+  assert.deepEqual(errors, [
+    'routing: redirect source /university/services shadows a canonical resource',
+    'routing: rewrite source /services shadows a canonical resource'
+  ]);
+});
+
 
 test('derives Workspace eligibility, assessment URLs, and recommendation mappings', () => {
   const workspace = { ...resource('workspace', [{ type: 'supports', target: 'scorecard' }]), kind: 'product', workspace: { acceptsResourceKinds: ['research', 'assessment', 'product'] } };
@@ -150,6 +192,22 @@ test('renders collection membership from canonical registry metadata', () => {
   const html = renderStructuredPage({ resource: collection, registry });
   assert.match(html, /Choose a lesson/);
   assert.match(html, /href="\/university\/learn\/lesson-one"/);
+});
+
+test('renders a service collection without dropping service deliverables', () => {
+  const alpha = { ...resource('alpha', [{ type: 'supports', target: 'services' }]), kind: 'service' };
+  const services = {
+    ...resource('services', [{ type: 'supports', target: 'alpha' }]),
+    kind: 'service',
+    deliverables: ['Decision map'],
+    timeline: 'Two weeks',
+    fit: ['A bounded problem'],
+    collection: { kinds: ['service'], heading: 'Choose a service' }
+  };
+  const registry = new Map([[alpha.id, alpha], [services.id, services]]);
+  const html = renderStructuredPage({ resource: services, registry });
+  assert.match(html, /Choose a service/);
+  assert.match(html, /Decision map/);
 });
 
 test('renders explicitly selected portfolio resources and rejects unresolved selections', () => {
