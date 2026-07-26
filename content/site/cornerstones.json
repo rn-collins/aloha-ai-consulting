@@ -129,7 +129,19 @@
       {"type": "teaches", "target": "governed-operator-course"},
       {"type": "teaches", "target": "kb-readiness-course"},
       {"type": "teaches", "target": "reg-tracker-course"},
-      {"type": "teaches", "target": "workflow-audit-course"}
+      {"type": "teaches", "target": "workflow-audit-course"},
+      {"type": "teaches", "target": "what-generative-ai-is-lesson"},
+      {"type": "teaches", "target": "what-ai-can-and-cannot-do-lesson"},
+      {"type": "teaches", "target": "when-not-to-use-ai-lesson"},
+      {"type": "teaches", "target": "prompting-fundamentals-lesson"},
+      {"type": "teaches", "target": "hallucinations-and-risk-lesson"},
+      {"type": "teaches", "target": "how-to-verify-ai-outputs-lesson"},
+      {"type": "teaches", "target": "privacy-and-confidentiality-lesson"},
+      {"type": "teaches", "target": "choose-your-first-ai-stack-lesson"},
+      {"type": "teaches", "target": "ai-assistant-comparison-lesson"},
+      {"type": "teaches", "target": "ai-for-email-lesson"},
+      {"type": "teaches", "target": "ai-for-meeting-notes-lesson"},
+      {"type": "teaches", "target": "ai-for-sop-drafting-lesson"}
     ]
   }
 ]
