@@ -1,0 +1,25 @@
+{
+  "id": "services",
+  "kind": "service",
+  "pathname": "/services",
+  "eyebrow": "Commercial operating layer",
+  "title": "Services for turning difficult AI, research, legal, and organizational work into governed systems.",
+  "summary": "Aloha AI scopes advisory, intelligence, workflow, implementation, and education engagements around the decisions, evidence, ownership, and maintenance a durable system requires.",
+  "audience": "Organizations that need a clear path from a complex problem to an accountable operating system.",
+  "maturity": "Production",
+  "topics": ["consulting", "strategy", "implementation", "research"],
+  "deliverables": ["Problem and decision map", "Evidence and authority model", "System architecture", "Implementation plan", "Governance and maintenance contract"],
+  "timeline": "Most engagements begin with a bounded diagnostic or systems audit before moving into architecture, implementation, or retained support.",
+  "fit": ["The problem crosses functions or disciplines", "The work depends on changing evidence", "AI is being added without clear ownership or review", "A reusable system is more valuable than another one-off deliverable"],
+  "evidence": ["Representative workflows and source materials", "Applicable technical, legal, scientific, and institutional authorities", "Current policies, roles, and failure cases"],
+  "methodology": ["Define the decision and consequence", "Map evidence and authority", "Design the bounded workflow", "Assign review and ownership", "Implement, evaluate, and maintain"],
+  "assumptions": ["A responsible internal owner participates", "The organization provides access to representative work and constraints"],
+  "limitations": ["Engagements do not replace licensed professional advice", "Scope and results depend on access, evidence quality, and organizational participation"],
+  "relationships": [
+    {"type": "supports", "target": "strategy"},
+    {"type": "supports", "target": "intelligence"},
+    {"type": "supports", "target": "legal-ai"},
+    {"type": "implements", "target": "trust-stack"},
+    {"type": "teaches", "target": "university"}
+  ]
+}
