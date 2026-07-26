@@ -1,0 +1,25 @@
+{
+  "id": "ai-native-coo",
+  "kind": "service",
+  "pathname": "/ai-native-coo",
+  "eyebrow": "Fractional operating architecture",
+  "title": "An AI-native operating partner for turning priorities into governed systems of work.",
+  "summary": "The AI-Native COO engagement combines operating design, research, automation, documentation, governance, and implementation support for organizations that need senior systems capacity without prematurely building a large internal function.",
+  "audience": "Founders, small executive teams, research organizations, and growing institutions with complex cross-functional execution needs.",
+  "maturity": "Beta",
+  "topics": ["operations", "fractional-leadership", "ai-native", "implementation"],
+  "deliverables": ["Operating-system map", "Priority and dependency register", "Decision and meeting architecture", "AI and automation roadmap", "Executive reporting and maintenance cadence"],
+  "timeline": "Engagements begin with a diagnostic and 30–90 day operating plan, followed by an agreed retained cadence.",
+  "fit": ["The organization has more priorities than operating capacity", "Work spans research, legal, content, product, and partnerships", "Leadership needs systems and execution rather than advice alone"],
+  "evidence": ["Current plans, projects, meetings, and operating records", "Decision histories and unresolved dependencies", "Financial, legal, technical, and staffing constraints supplied by responsible owners"],
+  "methodology": ["Clarify outcomes and decision rights", "Map active work and bottlenecks", "Build the operating cadence and source of truth", "Automate bounded work", "Review performance and revise the system"],
+  "assumptions": ["Leadership grants access to the information needed to coordinate work", "Internal owners retain final authority for consequential decisions"],
+  "limitations": ["The engagement does not replace licensed professional functions", "Execution authority and capacity must be explicitly agreed"],
+  "relationships": [
+    {"type": "uses", "target": "strategy"},
+    {"type": "uses", "target": "intelligence"},
+    {"type": "implements", "target": "build-your-team"},
+    {"type": "available_in_workspace", "target": "workspace"},
+    {"type": "extends", "target": "services"}
+  ]
+}
