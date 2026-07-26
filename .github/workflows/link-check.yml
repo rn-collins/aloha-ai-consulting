@@ -20,7 +20,20 @@ jobs:
         with:
           python-version: '3.12'
       - name: Check internal repository links
-        run: python scripts/check_internal_links.py
+        id: internal
+        continue-on-error: true
+        run: python scripts/check_internal_links.py > internal-link-report.txt 2>&1
+      - name: Upload internal link report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: internal-link-report
+          path: internal-link-report.txt
+      - name: Fail if internal links are broken
+        if: steps.internal.outcome == 'failure'
+        run: |
+          cat internal-link-report.txt
+          exit 1
       - name: Audit external links
         continue-on-error: true
         uses: lycheeverse/lychee-action@v2
