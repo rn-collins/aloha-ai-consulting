@@ -1,0 +1,44 @@
+[
+  {
+    "id": "university-courses-collection", "kind": "collection", "pathname": "/university/courses", "eyebrow": "Build-it courses", "title": "Build the governed AI tool, then own it.", "summary": "Seven weekend-length courses where learners build a working, governed AI system they control, with no coding background required.", "audience": "Learners and teams ready to build a bounded AI system.", "maturity": "Production",
+    "topics": ["courses", "implementation", "governance"], "industries": ["education", "small-business", "professional-services"], "keywords": ["AI courses", "build AI tools", "governed AI"],
+    "collection": {"kinds": ["course"], "pathPrefix": "/university/courses/", "heading": "Choose a governed system to build and own."},
+    "evidence": ["Canonical course resources", "Course methods and limitations"], "methodology": ["Derive membership from resource kind and path", "Sort canonical resources consistently", "Link directly to the current course route"], "assumptions": ["Canonical course metadata is current"], "limitations": ["Collection membership reflects published canonical resources"], "relationships": [{"type": "depends_on", "target": "university"}, {"type": "teaches", "target": "first-ai-team-course"}]
+  },
+  {
+    "id": "university-learn-collection", "kind": "collection", "pathname": "/university/learn", "eyebrow": "Free lessons", "title": "The twelve lessons that make you dangerous with AI.", "summary": "Twelve practical lessons covering foundations, prompting, trust, safety, getting started, and everyday work skills.", "audience": "Individuals and teams developing practical generative-AI fluency.", "maturity": "Production",
+    "topics": ["lessons", "ai-literacy", "verification"], "industries": ["education", "small-business", "professional-services"], "keywords": ["free AI lessons", "AI literacy", "generative AI education"],
+    "collection": {"kinds": ["lesson"], "pathPrefix": "/university/learn/", "heading": "Choose the lesson that matches the work in front of you."},
+    "evidence": ["Canonical lesson resources", "Primary product and standards sources"], "methodology": ["Derive membership from the graph", "Preserve lesson-level evidence and limitations"], "assumptions": ["Learners complete human review exercises"], "limitations": ["Lessons cannot cover every tool, jurisdiction, or organizational policy"], "relationships": [{"type": "depends_on", "target": "university"}, {"type": "teaches", "target": "what-generative-ai-is-lesson"}]
+  },
+  {
+    "id": "university-playbooks-collection", "kind": "collection", "pathname": "/university/playbooks", "eyebrow": "Playbooks", "title": "Step-by-step builds you can finish this week.", "summary": "Six self-contained playbooks for lead generation, client intake, content repurposing, knowledge bases, SOPs, and governance.", "audience": "Operators who need a practical workflow rather than a conceptual overview.", "maturity": "Production",
+    "topics": ["playbooks", "workflow", "implementation"], "industries": ["small-business", "professional-services", "creator-economy"], "keywords": ["AI playbooks", "AI workflows", "step-by-step AI"],
+    "collection": {"kinds": ["playbook"], "pathPrefix": "/university/playbooks/", "heading": "Choose a workflow and leave with a working first version."},
+    "evidence": ["Canonical playbook resources", "Representative workflow tests"], "methodology": ["Derive membership from structured resources", "Keep guardrails beside implementation steps"], "assumptions": ["Users test playbooks with representative work"], "limitations": ["Workflows require adaptation and accountable owners"], "relationships": [{"type": "depends_on", "target": "university"}, {"type": "teaches", "target": "governance-starter-playbook"}]
+  },
+  {
+    "id": "university-templates-collection", "kind": "collection", "pathname": "/university/templates", "eyebrow": "Templates", "title": "Copy-and-use prompts, policies, and docs.", "summary": "Free editable prompt packs, policies, roadmaps, and worksheets for strategy, operations, marketing, and governance.", "audience": "Learners and teams who need a reusable starting document.", "maturity": "Production",
+    "topics": ["templates", "prompts", "governance"], "industries": ["small-business", "professional-services", "education"], "keywords": ["AI templates", "AI policy template", "prompt templates"],
+    "collection": {"kinds": ["template"], "pathPrefix": "/university/templates/", "heading": "Choose a reusable starting structure."},
+    "evidence": ["Canonical template resources", "Linked playbooks and lessons"], "methodology": ["Derive membership from canonical resources", "Keep templates editable and tool-agnostic"], "assumptions": ["Users adapt and review templates before use"], "limitations": ["Templates are not organization-specific professional advice"], "relationships": [{"type": "depends_on", "target": "university"}, {"type": "teaches", "target": "ai-tool-evaluation-matrix-template"}]
+  },
+  {
+    "id": "university-tools-collection", "kind": "collection", "pathname": "/university/tools", "eyebrow": "Tool guides", "title": "Clear, honest guides to the tools worth your time.", "summary": "Evidence-first guides to what AI tools are good at, where they fall short, and how to assemble a stack that fits the work.", "audience": "Individuals and teams comparing AI tools without affiliate-driven recommendations.", "maturity": "Production",
+    "topics": ["tool-selection", "ai-stack", "evaluation"], "industries": ["small-business", "professional-services", "creator-economy"], "keywords": ["AI tool guides", "AI stack", "compare AI tools"],
+    "collection": {"kinds": ["toolGuide"], "pathPrefix": "/university/tools/", "heading": "Choose by workflow, evidence, and constraints."},
+    "evidence": ["Current vendor documentation", "Representative product tests", "Canonical tool-guide resources"], "methodology": ["Separate vendor claims from observed behavior", "Recheck time-sensitive details", "Select the smallest sufficient stack"], "assumptions": ["Users verify current pricing, terms, and policies"], "limitations": ["Tool capabilities and commercial terms change"], "relationships": [{"type": "depends_on", "target": "university"}, {"type": "teaches", "target": "lean-ai-stack-tool-guide"}]
+  },
+  {
+    "id": "university-use-cases-collection", "kind": "collection", "pathname": "/university/use-cases", "eyebrow": "Use cases", "title": "See what AI actually does for a business like yours.", "summary": "Use cases organized by job and business context, each connected to the lessons, templates, and playbooks that make the work concrete.", "audience": "Leaders and practitioners translating general AI capability into a specific business function.", "maturity": "Production",
+    "topics": ["use-cases", "business-functions", "implementation"], "industries": ["small-business", "professional-services", "legal", "education"], "keywords": ["AI use cases", "business AI", "AI by function"],
+    "collection": {"kinds": ["useCase"], "pathPrefix": "/university/use-cases/", "heading": "Start with the job that needs to be done."},
+    "evidence": ["Canonical use-case resources", "Linked lessons, templates, and playbooks"], "methodology": ["Derive membership from canonical resources", "Connect use cases to implementation and guardrails"], "assumptions": ["Users validate fit against their actual work"], "limitations": ["Examples do not establish organizational or regulatory suitability"], "relationships": [{"type": "depends_on", "target": "university"}, {"type": "teaches", "target": "governance-use-case"}]
+  },
+  {
+    "id": "university-services-collection", "kind": "collection", "pathname": "/university/services", "eyebrow": "Services", "title": "When you want a partner, here is how we work.", "summary": "Six service pathways for strategy, workflow design, implementation, governance, team training, and ongoing fractional AI leadership.", "audience": "Teams moving from free learning into scoped implementation support.", "maturity": "Production",
+    "topics": ["services", "implementation", "advisory"], "industries": ["small-business", "professional-services", "education"], "keywords": ["AI consulting services", "AI implementation", "AI training"],
+    "collection": {"kinds": ["service"], "pathPrefix": "/university/services/", "heading": "Choose the smallest engagement that resolves the current constraint."},
+    "evidence": ["Canonical University service resources", "Published deliverables, fit, and limitations"], "methodology": ["Derive membership from canonical paths", "Make scope and fit inspectable before contact"], "assumptions": ["An engagement is scoped before work begins"], "limitations": ["Pricing, timing, and availability depend on scope"], "relationships": [{"type": "depends_on", "target": "university"}, {"type": "supports", "target": "university-contact"}]
+  }
+]

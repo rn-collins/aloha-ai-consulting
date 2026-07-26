@@ -1,0 +1,74 @@
+[
+  {
+    "id": "university-ai-strategy-sprint", "kind": "service", "pathname": "/university/services/ai-strategy-sprint", "eyebrow": "Service · Strategy sprint", "title": "Two weeks to a roadmap you can actually run.", "summary": "A focused audit that inventories workflows, scores opportunities by impact, effort, and risk, and produces a sequenced AI roadmap.", "audience": "Owners and operators who need to decide where AI is worth adopting and what to leave alone.", "maturity": "Production",
+    "topics": ["strategy", "roadmap", "opportunity-prioritization"], "industries": ["small-business", "professional-services", "healthcare"], "keywords": ["AI strategy sprint", "AI roadmap", "workflow audit"],
+    "deliverables": ["Prioritized one-to-three-quarter AI roadmap", "Scored opportunity matrix", "Tooling shortlist with fit and cost notes", "Risk and guardrail summary", "Recorded team readout"],
+    "timeline": "One to three weeks depending on the number of workflows, stakeholders, and whether a proof of concept is included.",
+    "fit": ["Organizations with repeatable workflows and a decision-maker available", "Teams seeking a ranked plan rather than another demonstration", "Not necessary when the build scope is already validated"],
+    "evidence": ["Workflow-owner interviews", "Current process inventory", "Tool and data constraints", "Transparent impact, effort, and risk scoring"],
+    "methodology": ["Map current workflows", "Score candidate opportunities", "Identify data and review constraints", "Sequence the smallest credible wins", "Read out the roadmap and decisions"],
+    "assumptions": ["Workflow owners can provide representative examples", "A budget owner participates in prioritization"],
+    "limitations": ["The sprint is not legal or regulatory advice", "Final cost and timing require a scoped agreement"],
+    "relationships": [{"type": "depends_on", "target": "university-services-collection"}, {"type": "uses", "target": "ai-tool-evaluation-matrix-template"}, {"type": "supports", "target": "university-ai-workflow-design"}]
+  },
+  {
+    "id": "university-ai-workflow-design", "kind": "service", "pathname": "/university/services/ai-workflow-design", "eyebrow": "Service · Workflow design", "title": "Design the workflow before anyone builds it.", "summary": "A build-ready blueprint defining every AI step, prompt, decision rule, checkpoint, human review, and failure path before implementation.", "audience": "Teams with one identified process that must be specified rigorously before money goes into a build.", "maturity": "Production",
+    "topics": ["workflow-design", "human-review", "failure-handling"], "industries": ["small-business", "professional-services", "legal"], "keywords": ["AI workflow design", "AI blueprint", "human in the loop"],
+    "deliverables": ["Current- and future-state workflow maps", "Tested prompt and rules library", "Review and approval plan", "Failure and escalation map", "Build-ready developer handoff"],
+    "timeline": "Scoped to one or several connected workflows and their complexity.",
+    "fit": ["A specific repeatable process is already selected", "The team wants edge cases and review designed before implementation", "Use strategy first when the priority workflow is still unclear"],
+    "evidence": ["Current workflow records", "Representative inputs and edge cases", "Owner decisions and approval requirements"],
+    "methodology": ["Map the actual current state", "Allocate AI and human responsibilities", "Test prompts and rules", "Design stop and escalation conditions", "Produce an implementation-ready specification"],
+    "assumptions": ["Workflow owners can test the proposed design", "Consequential outputs retain accountable human approval"],
+    "limitations": ["A blueprint does not by itself implement or operate the system"],
+    "relationships": [{"type": "depends_on", "target": "university-ai-strategy-sprint"}, {"type": "uses", "target": "ai-workflow-mapping-worksheet-template"}, {"type": "supports", "target": "university-ai-implementation"}]
+  },
+  {
+    "id": "university-ai-implementation", "kind": "service", "pathname": "/university/services/ai-implementation", "eyebrow": "Service · Implementation", "title": "We build the thing, and hand you the keys.", "summary": "Implementation of a scoped assistant, workflow, or knowledge system, tested on real work and transferred with documentation and operator enablement.", "audience": "Teams with a validated scope or blueprint that are ready to move from plan to production.", "maturity": "Production",
+    "topics": ["implementation", "testing", "handover"], "industries": ["small-business", "professional-services", "education"], "keywords": ["AI implementation", "AI buildout", "AI assistant build"],
+    "deliverables": ["Working system in client-controlled accounts", "Documented prompts, configuration, and settings", "Representative and edge-case test log", "Operator and maintenance runbooks", "Recorded handover and post-launch support window"],
+    "timeline": "Typically staged by scope, beginning with a single assistant or workflow and expanding only after validation.",
+    "fit": ["A design is validated or can be locked quickly", "Representative work is available for testing", "The team values maintainability and ownership"],
+    "evidence": ["Approved design specification", "Representative inputs and expected outputs", "Test and exception records", "Handover acceptance"],
+    "methodology": ["Configure to the approved design", "Ground the system in authorized material", "Test normal and edge cases", "Implement human checkpoints", "Document and transfer operation"],
+    "assumptions": ["The client can provide authorized systems and source material", "An accountable owner accepts the handover"],
+    "limitations": ["An off-the-shelf tool may be preferable to a custom build", "Ongoing maintenance remains necessary"],
+    "relationships": [{"type": "depends_on", "target": "university-ai-workflow-design"}, {"type": "implements", "target": "trust-stack"}, {"type": "produced_by", "target": "university-services-collection"}]
+  },
+  {
+    "id": "university-ai-governance-setup", "kind": "service", "pathname": "/university/services/ai-governance-setup", "eyebrow": "Service · Governance and safe use", "title": "Say yes to AI without saying yes to the exposure.", "summary": "A practical governance setup defining acceptable use, data handling, disclosure, review, and rollout for teams already adopting AI.", "audience": "Leaders accountable for confidential, regulated, client-facing, or otherwise consequential work.", "maturity": "Production",
+    "topics": ["governance", "acceptable-use", "data-classification", "disclosure"], "industries": ["legal", "healthcare", "financial-services", "professional-services"], "keywords": ["AI governance setup", "AI acceptable use policy", "safe AI adoption"],
+    "deliverables": ["Tailored AI acceptable-use policy", "Data-classification and tool-permission reference", "Disclosure standard and sample language", "Risk-scaled review and sign-off workflow", "Rollout brief and staff summary"],
+    "timeline": "Scoped by team size, industry, current use, and the depth of policy and enablement required.",
+    "fit": ["AI is already being used ahead of formal policy", "Sensitive or confidential information is handled", "Leadership wants enforceable rules people can follow"],
+    "evidence": ["Current-use interviews and inventory", "Approved tools and data rules", "Applicable contractual and professional duties", "Documented approval decisions"],
+    "methodology": ["Inventory observed use", "Classify data and consequences", "Define allowed and prohibited activity", "Assign disclosure and review gates", "Roll out and maintain the framework"],
+    "assumptions": ["Leadership will support and enforce the adopted framework", "Qualified counsel addresses jurisdiction-specific legal requirements"],
+    "limitations": ["This service supports but does not replace licensed legal, security, privacy, or compliance advice"],
+    "relationships": [{"type": "depends_on", "target": "university-services-collection"}, {"type": "implements", "target": "governance-starter-playbook"}, {"type": "implements", "target": "trust-stack"}]
+  },
+  {
+    "id": "university-team-training", "kind": "service", "pathname": "/university/services/team-training", "eyebrow": "Service · Team training", "title": "Fluency for the whole team, not just the early adopters.", "summary": "Live, hands-on training built around the team’s actual work, teaching useful mechanics and the judgment to know when AI should not be used.", "audience": "Teams with uneven AI adoption that need shared skills and shared safe-use rules.", "maturity": "Production",
+    "topics": ["training", "ai-literacy", "safe-use"], "industries": ["small-business", "professional-services", "education"], "keywords": ["AI team training", "AI workshop", "generative AI fluency"],
+    "deliverables": ["Role-tailored live workshop", "Hands-on exercises from actual workflows", "Take-home prompt pack and checklists", "Safe-use guide", "Follow-up question-and-answer session"],
+    "timeline": "A focused session, a multi-session series, or a deeper internal-lead cohort depending on roles and goals.",
+    "fit": ["Teams of roughly five to fifty seeking a common baseline", "Leadership wants practice on real work", "Tools and an adoption direction are already selected"],
+    "evidence": ["Team-role and workflow intake", "Representative exercises", "Observed learner work", "Post-session questions and corrections"],
+    "methodology": ["Assess roles and tools", "Teach with real tasks", "Practice verification and confidentiality", "Provide reusable supports", "Follow up after real use"],
+    "assumptions": ["Participants can access approved tools and examples", "Leadership reinforces safe-use expectations"],
+    "limitations": ["Training does not substitute for a strategy, governance program, or technical implementation"],
+    "relationships": [{"type": "depends_on", "target": "university-services-collection"}, {"type": "teaches", "target": "prompting-fundamentals-lesson"}, {"type": "teaches", "target": "privacy-and-confidentiality-lesson"}]
+  },
+  {
+    "id": "university-ongoing-advisory", "kind": "service", "pathname": "/university/services/ongoing-advisory", "eyebrow": "Service · Fractional AI lead", "title": "A senior AI partner, without the full-time hire.", "summary": "Ongoing strategy, prioritization, implementation support, governance maintenance, and team enablement for organizations treating AI as a durable capability.", "audience": "Teams with live AI work and no senior internal owner who need continuity across projects.", "maturity": "Production",
+    "topics": ["fractional-leadership", "advisory", "roadmap", "governance"], "industries": ["small-business", "professional-services", "healthcare"], "keywords": ["fractional AI lead", "AI advisory retainer", "AI strategy partner"],
+    "deliverables": ["Living and re-prioritized AI roadmap", "Regular decision sessions and notes", "Hands-on workflow and assistant support", "Maintained governance controls", "Monthly progress and risk summary"],
+    "timeline": "Month-to-month cadence scaled from strategic advisory to deeper hands-on involvement.",
+    "fit": ["AI is an ongoing organizational capability", "The same partner needs to retain context across initiatives", "A single bounded need is better handled as a project"],
+    "evidence": ["Current roadmap and implementation records", "Workflow performance and exceptions", "Governance changes", "Documented monthly decisions"],
+    "methodology": ["Maintain priorities", "Unblock active work", "Update guardrails", "Coach accountable owners", "Report progress, risks, and next decisions"],
+    "assumptions": ["The organization appoints internal owners", "The retainer has access to the context needed for decisions"],
+    "limitations": ["Fractional leadership does not replace every specialist or executive function"],
+    "relationships": [{"type": "depends_on", "target": "university-services-collection"}, {"type": "supports", "target": "university-ai-strategy-sprint"}, {"type": "supports", "target": "ai-native-coo"}]
+  }
+]

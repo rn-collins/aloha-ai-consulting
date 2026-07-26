@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { derivePlatform, generatedOutputs, legacyMigrationInventory, validatePlatform } from '../lib/site/publishing-engine.js';
+import { renderStructuredPage } from '../lib/site/structured-renderer.js';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
@@ -134,4 +135,38 @@ test('inventories handwritten routes without classifying compiler outputs as leg
   assert.deepEqual(inventory.byFamily, { governance: 1, university: 1 });
   assert.deepEqual(inventory.routes.map((route) => route.pathname), ['/about', '/university/learn/lesson']);
   fs.rmSync(root, { recursive: true, force: true });
+});
+
+test('renders collection membership from canonical registry metadata', () => {
+  const lesson = { ...resource('lesson-one', [{ type: 'depends_on', target: 'lesson-index' }]), kind: 'lesson', pathname: '/university/learn/lesson-one' };
+  const collection = {
+    ...resource('lesson-index', [{ type: 'teaches', target: 'lesson-one' }]),
+    kind: 'collection',
+    pathname: '/university/learn',
+    collection: { kinds: ['lesson'], pathPrefix: '/university/learn/', heading: 'Choose a lesson' }
+  };
+  const registry = new Map([[lesson.id, lesson], [collection.id, collection]]);
+  const html = renderStructuredPage({ resource: collection, registry });
+  assert.match(html, /Choose a lesson/);
+  assert.match(html, /href="\/university\/learn\/lesson-one"/);
+});
+
+test('renders a browser-only structured assessment from question metadata', () => {
+  const assessment = {
+    ...resource('roadmap', [{ type: 'supports', target: 'alpha' }]),
+    kind: 'assessment',
+    implementationStatus: 'Public',
+    assessment: {
+      dimensions: ['operations'],
+      appliesToKinds: ['research'],
+      questions: [{ id: 'goal', prompt: 'What is the goal?', options: [{ value: 'save', label: 'Save time', dimension: 'operations' }] }],
+      recommendations: [{ id: 'start', condition: 'operations_gap', resourceIds: ['alpha'] }]
+    }
+  };
+  const alpha = resource('alpha', [{ type: 'supports', target: 'roadmap' }]);
+  const registry = new Map([[assessment.id, assessment], [alpha.id, alpha]]);
+  const html = renderStructuredPage({ resource: assessment, registry });
+  assert.match(html, /id="structured-assessment"/);
+  assert.match(html, /What is the goal\?/);
+  assert.match(html, /processed in this browser/);
 });
