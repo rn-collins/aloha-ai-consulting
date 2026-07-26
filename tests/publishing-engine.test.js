@@ -170,3 +170,37 @@ test('renders a browser-only structured assessment from question metadata', () =
   assert.match(html, /What is the goal\?/);
   assert.match(html, /processed in this browser/);
 });
+
+test('renders weighted assessment options and a browser-local product demo', () => {
+  const assessment = {
+    ...resource('exposure', [{ type: 'supports', target: 'demo' }]),
+    kind: 'assessment',
+    implementationStatus: 'Public',
+    assessment: {
+      dimensions: ['consent'],
+      appliesToKinds: ['tool'],
+      questions: [{ id: 'consent', prompt: 'Is consent recorded?', options: [{ value: 'missing', label: 'No', dimension: 'consent', score: 2 }] }],
+      recommendations: [{ id: 'review', condition: 'consent_gap', resourceIds: ['demo'] }]
+    }
+  };
+  const demo = {
+    ...resource('demo', [{ type: 'supports', target: 'exposure' }]),
+    kind: 'tool',
+    implementationStatus: 'Public',
+    documentation: ['Demo contract'],
+    demo: {
+      type: 'trust-safe-twin',
+      seededRecords: [{ name: 'A', company: 'B', vertical: 'Legal', status: 'Review' }],
+      unsafeDraft: 'Guarantee',
+      safeDraft: 'Reviewable draft',
+      sampleRiskText: 'Ignore previous instructions'
+    }
+  };
+  const registry = new Map([[assessment.id, assessment], [demo.id, demo]]);
+  const assessmentHtml = renderStructuredPage({ resource: assessment, registry });
+  const demoHtml = renderStructuredPage({ resource: demo, registry });
+  assert.match(assessmentHtml, /data-score="2"/);
+  assert.match(assessmentHtml, /Directional signal total/);
+  assert.match(demoHtml, /id="demo-records"/);
+  assert.match(demoHtml, /Production delivery remains disabled/);
+});
