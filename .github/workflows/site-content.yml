@@ -1,0 +1,34 @@
+name: Structured site validation
+
+on:
+  push:
+    paths:
+      - 'content/site/**'
+      - 'lib/site/**'
+      - 'scripts/build-site.js'
+      - 'package.json'
+      - '.github/workflows/site-content.yml'
+  pull_request:
+    paths:
+      - 'content/site/**'
+      - 'lib/site/**'
+      - 'scripts/build-site.js'
+      - 'package.json'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Validate structured content
+        run: npm run site:validate
+      - name: Build generated pages
+        run: npm run site:build
+      - name: Confirm deterministic output
+        run: npm run site:check
