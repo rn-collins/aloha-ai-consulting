@@ -18,7 +18,7 @@
   "relationships": [
     {"type": "uses", "target": "content"},
     {"type": "uses", "target": "intelligence"},
-    {"type": "depends_on", "target": "trust-stack"},
+    {"type": "uses", "target": "trust-stack"},
     {"type": "extends", "target": "services"}
   ]
 }
