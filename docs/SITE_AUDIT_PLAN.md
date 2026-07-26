@@ -1,6 +1,6 @@
 # Aloha AI site-wide audit control plan
 
-Last substantive update: 2026-07-25
+Last substantive update: 2026-07-26
 
 ## Purpose
 
@@ -15,7 +15,7 @@ This directory is the control center for rationalizing the Aloha AI web estate. 
 5. Proof
 6. Company
 
-Every public route must be assigned to one branch. A route that cannot be assigned must be merged, redirected, archived, removed, or documented as a separate experimental product.
+Every public route must be assigned to one branch. A route that cannot be assigned must be reviewed before any keep, merge, redirect, archive, `noindex`, or removal decision is made.
 
 ## Source of truth
 
@@ -53,13 +53,13 @@ A route is not complete merely because it loads. Completion requires:
 - privacy and data-flow review;
 - mobile, keyboard, heading, contrast, and form review;
 - maintenance owner and cadence;
-- keep, revise, merge, redirect, archive, or remove decision.
+- keep, revise, merge, redirect, archive, `noindex`, or remove decision.
 
 ## First implementation tranche
 
 1. Create and maintain the route register.
-2. Rebuild the sitemap around canonical public pages.
-3. Remove private, legacy, unfinished, and duplicate sales routes from the sitemap until reviewed.
+2. Rebuild the sitemap around reviewed canonical public pages.
+3. Preserve existing public routes while they are being reviewed; do not infer that an unfinished, overlapping, or specialized page should be hidden before substantive review.
 4. Audit and rationalize the nine core pages:
    - Services
    - Strategy and Fractional Leadership
@@ -70,7 +70,7 @@ A route is not complete merely because it loads. Completion requires:
    - Methods
    - Partners and Licensing
    - About
-5. Consolidate assessments and University service duplicates.
+5. Review assessments and University service routes individually before any consolidation decision.
 6. Review P0 legal, regulatory, privacy, and diagnostic routes before making strong public claims about accuracy, compliance, exposure, or live status.
 
 ## Canonical language
@@ -91,15 +91,15 @@ These statements organize the site. They do not replace route-specific descripti
 
 ## Sitemap rules
 
-The sitemap must contain only canonical, indexable pages. It must not contain:
+The sitemap must contain canonical, indexable pages that have been substantively reviewed. It must not contain:
 
-- protected or private consoles;
+- protected or genuinely private consoles;
 - preview deployments;
 - result-only URLs;
-- unfinished products;
-- thin duplicate service pages;
-- legacy pages pending a redirect decision;
+- confirmed duplicate URLs;
 - both `.html` and extensionless versions of the same page.
+
+A public demo, specialized service page, lesson, or experimental product is not removed from the sitemap merely because it is unusual or still needs refinement. Its actual content, purpose, audience, evidence, privacy, and strategic role must be reviewed first.
 
 Removing a route from the sitemap does not delete it. Redirects, `noindex`, authentication, or removal must be handled separately after route review.
 
