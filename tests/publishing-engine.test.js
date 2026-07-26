@@ -72,3 +72,47 @@ test('does not overwrite canonical resources with generated collection routes', 
   const platform = derivePlatform(resources);
   assert.equal(generatedOutputs(resources, platform).has('/services'), false);
 });
+
+
+test('derives Workspace eligibility, assessment URLs, and recommendation mappings', () => {
+  const workspace = { ...resource('workspace', [{ type: 'supports', target: 'scorecard' }]), kind: 'product', workspace: { acceptsResourceKinds: ['research', 'assessment', 'product'] } };
+  const scorecard = {
+    ...resource('scorecard', [{ type: 'supports', target: 'alpha' }]),
+    kind: 'assessment',
+    assessment: {
+      dimensions: ['evidence'],
+      appliesToKinds: ['research'],
+      recommendations: [{ id: 'inspect-evidence', condition: 'evidence_gap', resourceIds: ['alpha'] }]
+    }
+  };
+  const alpha = resource('alpha', [{ type: 'available_in_workspace', target: 'workspace' }]);
+  const resources = [workspace, scorecard, alpha];
+  const platform = derivePlatform(resources);
+  assert.deepEqual(validatePlatform(resources, platform).errors, []);
+  const registry = JSON.parse(generatedOutputs(resources, platform).get('/workspace/resource-registry.json'));
+  const mapping = registry.resources.find((entry) => entry.resourceId === 'alpha');
+  assert.equal(mapping.workspace.available, true);
+  assert.match(mapping.workspace.url, /^\/workspace\?resource_id=alpha/);
+  assert.equal(mapping.assessments[0].assessmentId, 'scorecard');
+  assert.deepEqual(mapping.assessments[0].recommendations[0].resourceIds, ['alpha']);
+});
+
+test('rejects invalid Workspace and recommendation mappings', () => {
+  const workspace = { ...resource('workspace', [{ type: 'supports', target: 'scorecard' }]), kind: 'product', workspace: { acceptsResourceKinds: ['unknown'] } };
+  const scorecard = {
+    ...resource('scorecard', [{ type: 'supports', target: 'alpha' }]),
+    kind: 'assessment',
+    assessment: {
+      dimensions: [],
+      appliesToKinds: ['unknown'],
+      recommendations: [{ id: 'broken', condition: '', resourceIds: ['missing'] }]
+    }
+  };
+  const alpha = resource('alpha', [{ type: 'available_in_workspace', target: 'workspace' }]);
+  const errors = errorsFor([workspace, scorecard, alpha]);
+  assert.ok(errors.includes('workspace: unsupported workspace resource kind unknown'));
+  assert.ok(errors.includes('scorecard: assessment.dimensions must be a non-empty array'));
+  assert.ok(errors.includes('scorecard: unsupported assessment resource kind unknown'));
+  assert.ok(errors.includes('scorecard: recommendation broken must define condition'));
+  assert.ok(errors.includes('scorecard: recommendation broken has unresolved resource missing'));
+});
