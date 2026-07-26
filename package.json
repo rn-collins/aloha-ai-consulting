@@ -11,6 +11,6 @@
     "site:ci": "npm run site:validate && npm run site:build && npm run site:check && npm run site:html"
   },
   "engines": {
-    "node": "20.x"
+    "node": "24.x"
   }
 }
