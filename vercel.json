@@ -6,6 +6,17 @@
       "source": "/",
       "destination": "/homepage-v3",
       "permanent": false
+    },
+    {
+      "source": "/services.html",
+      "destination": "/services",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/services",
+      "destination": "/services-v2"
     }
   ],
   "headers": [
