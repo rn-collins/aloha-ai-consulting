@@ -5,9 +5,12 @@
   "scripts": {
     "site:validate": "node scripts/build-site.js --validate",
     "site:build": "node scripts/build-site.js",
-    "site:check": "node scripts/build-site.js --check"
+    "site:check": "node scripts/build-site.js --check",
+    "site:html": "node scripts/validate-generated-html.js",
+    "site:smoke": "node scripts/smoke-test.js",
+    "site:ci": "npm run site:validate && npm run site:build && npm run site:check && npm run site:html"
   },
   "engines": {
-    "node": ">=20"
+    "node": "20.x"
   }
 }
