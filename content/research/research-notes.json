@@ -1,0 +1,146 @@
+[
+  {
+    "id": "notes",
+    "kind": "collection",
+    "pathname": "/notes",
+    "eyebrow": "Aloha AI research notes",
+    "title": "Notes on building AI you can actually trust",
+    "summary": "Essays and build notes on designing AI systems for regulated and high-complexity work, each anchored to a working tool, workflow, monitor, or operating layer.",
+    "audience": "Leaders, practitioners, researchers, and builders evaluating AI for consequential work.",
+    "maturity": "Research",
+    "topics": ["research", "ai-systems", "governance", "verification"],
+    "industries": ["legal", "professional-services", "regulated-markets"],
+    "keywords": ["Aloha AI notes", "AI essays", "build notes", "regulated AI"],
+    "collection": {
+      "kinds": ["research"],
+      "pathPrefix": "/notes/",
+      "heading": "Start with the question that matches your work"
+    },
+    "evidence": ["Canonical research resources in the Aloha AI knowledge graph", "Working tools and systems linked from each note", "Dated primary and professional sources where claims require authority"],
+    "methodology": ["Begin with a concrete system failure or design question", "State the strongest competing account", "Trace the mechanism behind the problem", "Connect the reasoning to a bounded, inspectable build"],
+    "assumptions": ["Readers distinguish systems commentary from professional advice", "Linked tools and sources are inspected within their stated maturity and limits"],
+    "limitations": ["The collection is not legal, tax, medical, or other professional advice", "Research notes are maintained resources and may change as evidence, systems, and governing authority change"],
+    "relationships": [
+      {"type": "documents", "target": "hallucination-risk-legal-work"},
+      {"type": "documents", "target": "what-i-audit-first"},
+      {"type": "documents", "target": "tracking-isnt-intelligence"},
+      {"type": "documents", "target": "tool-workflow-operating-system"},
+      {"type": "supports", "target": "intelligence"}
+    ]
+  },
+  {
+    "id": "hallucination-risk-legal-work",
+    "kind": "research",
+    "pathname": "/notes/hallucination-risk-legal-work",
+    "eyebrow": "Essay · Legal AI",
+    "title": "How I think about hallucination risk in legal and regulatory work",
+    "summary": "Why fabricated citations are a predictable consequence of probabilistic text generation, which structural signals expose them, and why existence verification plus qualified human review matter more than waiting for a better model.",
+    "audience": "Attorneys, legal-operations leaders, legal-technology teams, regulators, and builders of high-stakes research workflows.",
+    "maturity": "Research",
+    "topics": ["legal-ai", "hallucinations", "citation-verification", "professional-responsibility"],
+    "industries": ["legal", "professional-services", "regulated-markets"],
+    "keywords": ["fabricated citations", "legal AI hallucination", "citation verifier", "human review"],
+    "evidence": ["Structural citation rules, reporter ranges, court and date constraints", "Existence, proposition, pinpoint, and subsequent-history verification in authoritative legal sources", "Applicable duties of competence, candor, supervision, and filing responsibility"],
+    "methodology": ["Treat fluent citation output as an unverified candidate rather than authority", "Run deterministic structural checks before paid or human research", "Verify that the authority exists and supports the stated proposition", "Check current treatment and require the responsible professional to approve consequential use"],
+    "assumptions": ["Qualified professionals retain responsibility for legal judgment", "Authoritative legal-research systems are available for existence and treatment checks"],
+    "limitations": ["Structural validity cannot prove that a case exists or supports a proposition", "This systems and evaluation research is not legal advice and creates no attorney-client relationship"],
+    "relationships": [
+      {"type": "uses", "target": "citation-verifier"},
+      {"type": "supports", "target": "legal-ai"},
+      {"type": "implements", "target": "trust-stack"},
+      {"type": "related_to", "target": "notes"}
+    ]
+  },
+  {
+    "id": "what-i-audit-first",
+    "kind": "research",
+    "pathname": "/notes/what-i-audit-first",
+    "eyebrow": "Essay · Governance",
+    "title": "What I audit first when a team says it is already using AI",
+    "summary": "The six dimensions to inspect before selecting another tool: grounding, verification, data handling, human handoffs, policy alignment, and measurement.",
+    "audience": "Organizations already using AI informally and leaders accountable for turning scattered adoption into a visible, governed practice.",
+    "maturity": "Research",
+    "topics": ["ai-audit", "governance", "adoption", "workflow-design"],
+    "industries": ["professional-services", "legal", "regulated-markets"],
+    "keywords": ["AI workflow audit", "AI governance audit", "ad hoc AI", "AI maturity"],
+    "evidence": ["Representative AI-assisted tasks and source materials", "Approved-tool, retention, confidentiality, and data-handling records", "Verification, approval, policy, training, incident, and performance records"],
+    "methodology": ["Identify whether outputs are grounded in named sources", "Inspect factual, numerical, and citation verification requirements", "Map what data leaves organizational control and under which terms", "Locate the human handoff and accountable owner", "Compare written policy with observed practice", "Measure quality, time, failures, overrides, and improvement"],
+    "assumptions": ["The team permits inspection of representative real workflows and records", "Leaders are willing to distinguish actual practice from aspirational policy"],
+    "limitations": ["A maturity score is directional and does not establish legal or regulatory compliance", "This systems and evaluation research is not legal advice"],
+    "relationships": [
+      {"type": "uses", "target": "workflow-audit"},
+      {"type": "supports", "target": "strategy"},
+      {"type": "implements", "target": "methods"},
+      {"type": "related_to", "target": "notes"}
+    ]
+  },
+  {
+    "id": "tracking-isnt-intelligence",
+    "kind": "research",
+    "pathname": "/notes/tracking-isnt-intelligence",
+    "eyebrow": "Essay · Intelligence",
+    "title": "Tracking is not intelligence: designing a regulatory-analysis system",
+    "summary": "Why comprehensive update feeds still leave decision-makers uninformed, and how issue taxonomy, comparison, sourcing, and audience-specific output turn collection into decision-ready intelligence.",
+    "audience": "Regulatory, legal, strategy, and operating teams that must act on changing rules across jurisdictions or institutions.",
+    "maturity": "Research",
+    "topics": ["regulatory-intelligence", "taxonomy", "comparison", "decision-support"],
+    "industries": ["regulated-markets", "biopharma", "cannabis"],
+    "keywords": ["regulatory tracker", "regulatory intelligence", "issue taxonomy", "decision-ready intelligence"],
+    "evidence": ["Complete, dated primary-source records for each monitored change", "Jurisdictional and temporal comparison data", "Documented audience decisions, deadlines, and operational consequences"],
+    "methodology": ["Define an audience-specific issue taxonomy before collection", "Classify every update against decision-relevant categories", "Compare signals across jurisdictions, time, and the organization's current posture", "Trace every comparison to dated sources", "Publish distinct outputs for counsel, operators, and boards"],
+    "assumptions": ["Coverage is broad enough to support the comparisons being made", "The decisions and audiences the system serves are explicitly defined"],
+    "limitations": ["No monitoring system guarantees immediate detection of every change", "Information and comparison support qualified decision-makers but do not replace legal or regulatory judgment"],
+    "relationships": [
+      {"type": "supports", "target": "intelligence"},
+      {"type": "uses", "target": "methods"},
+      {"type": "documents", "target": "regulatory-intelligence"},
+      {"type": "related_to", "target": "notes"}
+    ]
+  },
+  {
+    "id": "tool-workflow-operating-system",
+    "kind": "research",
+    "pathname": "/notes/tool-workflow-operating-system",
+    "eyebrow": "Essay · Systems",
+    "title": "The difference between an AI tool, a workflow, and an operating system",
+    "summary": "A practical distinction between a single capable act, a repeatable governed workflow, and the operating layer that orchestrates, evaluates, audits, and sustains many workflows across an organization.",
+    "audience": "Executives, operators, legal and compliance leaders, and technology buyers deciding what kind of AI capability they actually need.",
+    "maturity": "Research",
+    "topics": ["ai-systems", "workflow-design", "operating-models", "governance"],
+    "industries": ["professional-services", "legal", "regulated-markets"],
+    "keywords": ["AI tool vs workflow", "AI operating system", "governed workflows", "AI orchestration"],
+    "evidence": ["Defined inputs, output standards, verification gates, owners, and storage for each workflow", "Cross-workflow policy, evaluation, audit, orchestration, and adoption records", "Observed differences between individual tool use and reproducible institutional practice"],
+    "methodology": ["Identify the single task a tool performs", "Specify the inputs, standards, verification, human gate, and record that make the task repeatable", "Add orchestration, evaluation, policy, audit, and adoption across workflows", "Test whether the organization can reproduce and defend the resulting work"],
+    "assumptions": ["Organizations can name accountable owners and preserve workflow records", "Tool capability and institutional governance are evaluated as separate dimensions"],
+    "limitations": ["The operating-system framing describes an organizational layer, not a claim that one software product governs every use", "This systems and evaluation research is not professional advice"],
+    "relationships": [
+      {"type": "uses", "target": "citation-verifier"},
+      {"type": "implements", "target": "trust-stack"},
+      {"type": "supports", "target": "ai-native-coo"},
+      {"type": "related_to", "target": "notes"}
+    ]
+  },
+  {
+    "id": "legal-ai-workflow-teardown",
+    "kind": "research",
+    "pathname": "/teardowns/legal-ai-workflow",
+    "eyebrow": "Research teardown · Legal AI workflow",
+    "title": "A legal AI workflow you can defend, not a chatbot you have to babysit",
+    "summary": "A teardown of a legal research and drafting pipeline that locates hallucination risk, requires source and reporter checks, and keeps qualified human verification on the load-bearing decision.",
+    "audience": "Law-firm partners, general counsel, eDiscovery counsel, legal-operations teams, and legal-AI buyers.",
+    "maturity": "Research",
+    "topics": ["legal-ai", "workflow-teardown", "hallucinations", "verification"],
+    "industries": ["legal", "professional-services", "regulated-markets"],
+    "keywords": ["legal AI workflow", "hallucination risk scorer", "source verification", "human gate"],
+    "evidence": ["Authoritative retrieval and citator results", "Reporter, proposition, pinpoint, and subsequent-history checks", "Workflow logs showing inputs, generated work, verification, exceptions, and accountable approval"],
+    "methodology": ["Define the legal task, jurisdiction, approved sources, and prohibited model roles", "Retrieve candidate authority before drafting around it", "Return an explicit null when controlling authority is not verified", "Verify existence, proposition, pinpoint, and current treatment", "Require the responsible professional to approve any filing, advice, or external work product"],
+    "assumptions": ["A licensed attorney controls legal judgment, supervision, and final use", "The workflow has authorized access to current legal-research sources"],
+    "limitations": ["The illustrative fabricated citation is a demonstration rather than a real matter", "Risk scoring and workflow design do not establish compliance or replace attorney research and judgment"],
+    "relationships": [
+      {"type": "supports", "target": "legal-ai"},
+      {"type": "uses", "target": "citation-verifier"},
+      {"type": "implements", "target": "trust-stack"},
+      {"type": "related_to", "target": "hallucination-risk-legal-work"}
+    ]
+  }
+]
