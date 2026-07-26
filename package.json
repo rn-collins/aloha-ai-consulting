@@ -1,0 +1,13 @@
+{
+  "name": "aloha-ai-consulting",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "site:validate": "node scripts/build-site.js --validate",
+    "site:build": "node scripts/build-site.js",
+    "site:check": "node scripts/build-site.js --check"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
