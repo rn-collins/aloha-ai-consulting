@@ -1,0 +1,72 @@
+[
+  {
+    "id": "content-repurposing-tool-guide", "kind": "toolGuide", "pathname": "/university/tools/best-for-content-repurposing",
+    "eyebrow": "Tool guide · Content", "title": "Best AI Tools for Content Repurposing (2026)",
+    "summary": "A decision guide to AI content-repurposing tools, with honest strengths, limits, privacy, pricing, and a workflow for keeping the creator's voice intact.",
+    "audience": "Creators, experts, founders, and lean marketing teams selecting tools for source-grounded content repurposing.", "maturity": "Production",
+    "topics": ["tool-selection","content-repurposing","voice","privacy"], "industries": ["creator-economy","publishing","professional-services","small-business"],
+    "keywords": ["content repurposing tools","Opus Clip","Descript","Repurpose.io","AI content workflow"],
+    "learningPaths": ["Define the source and channel outputs","Compare editing and distribution capabilities","Verify privacy and current pricing","Run one representative source asset","Review factual and voice fidelity","Choose the smallest sufficient stack"],
+    "evidence": ["Current vendor documentation and terms","Representative source-to-output tests","Approved voice examples","Human-reviewed final assets"],
+    "methodology": ["Start from the workflow","Separate vendor claims from observed results","Test the intended plan","Score voice and factual preservation","Recheck time-sensitive product details"],
+    "assumptions": ["The team owns or may lawfully reuse the source material","A human editor approves publication"],
+    "limitations": ["Products, pricing, and policies change","Automated clips and drafts can remove context or distort voice"],
+    "relationships": [{"type":"depends_on","target":"university"},{"type":"supports","target":"content-repurposing-playbook"},{"type":"uses","target":"ai-tool-evaluation-matrix-template"}]
+  },
+  {
+    "id": "meeting-notes-tool-guide", "kind": "toolGuide", "pathname": "/university/tools/best-for-meeting-notes",
+    "eyebrow": "Tool guide · Meetings", "title": "Best AI Tools for Meeting Notes (2026)",
+    "summary": "A decision guide to AI meeting-note tools with a serious examination of recording consent, notice, privacy, accuracy, and human review before use.",
+    "audience": "Teams comparing meeting assistants for internal, client, or research conversations.", "maturity": "Production",
+    "topics": ["tool-selection","meeting-notes","consent","privacy"], "industries": ["professional-services","legal","healthcare","small-business"],
+    "keywords": ["AI meeting notes","Otter","Fireflies","Fathom","Granola"],
+    "learningPaths": ["Define the meeting context","Resolve consent and notice requirements","Compare capture and access models","Test summaries and action extraction","Review retention and sharing controls","Approve a bounded operating policy"],
+    "evidence": ["Current vendor privacy and security materials","Applicable meeting and recording rules","Representative transcript tests","Documented consent and review procedures"],
+    "methodology": ["Classify meeting sensitivity","Verify current vendor behavior","Test intended settings","Compare transcript and summary accuracy","Require notice, approval, and accountable follow-through"],
+    "assumptions": ["Users obtain any required consent or authorization","A human verifies decisions and action items"],
+    "limitations": ["This guide is not legal advice","Recording laws and vendor practices vary and change"],
+    "relationships": [{"type":"depends_on","target":"university"},{"type":"supports","target":"ai-for-meeting-notes-lesson"},{"type":"uses","target":"meeting-summary-prompt-pack-template"}]
+  },
+  {
+    "id": "research-tool-guide", "kind": "toolGuide", "pathname": "/university/tools/best-for-research",
+    "eyebrow": "Tool guide · Research", "title": "Best AI Tools for Research (2026)",
+    "summary": "An evidence-first decision guide to AI research tools and deep-research assistants, covering source coverage, citations, verification, privacy, and current limitations.",
+    "audience": "Researchers, analysts, students, and professional teams selecting AI-assisted research workflows.", "maturity": "Production",
+    "topics": ["tool-selection","research","citations","verification"], "industries": ["research","education","legal","professional-services"],
+    "keywords": ["AI research tools","Perplexity","Elicit","Consensus","deep research"],
+    "learningPaths": ["Define the research question and source standard","Match tools to discovery or synthesis","Test citation fidelity","Retrieve and inspect primary sources","Compare coverage and omissions","Document a verified research workflow"],
+    "evidence": ["Primary sources retrieved independently","Representative search and synthesis tests","Current product documentation","Citation-verification records"],
+    "methodology": ["Separate discovery from authority","Prefer primary sources","Test citation existence and entailment","Record search boundaries","Preserve uncertainty and contradictory evidence"],
+    "assumptions": ["The researcher can access and inspect authoritative sources","Consequential conclusions receive qualified review"],
+    "limitations": ["Search coverage is incomplete and model-dependent","Citations may be wrong, stale, or unsupported"],
+    "relationships": [{"type":"depends_on","target":"university"},{"type":"supports","target":"research-use-case"},{"type":"implements","target":"how-to-verify-ai-outputs-lesson"}]
+  },
+  {
+    "id": "small-business-operations-tool-guide", "kind": "toolGuide", "pathname": "/university/tools/best-for-small-business-operations",
+    "eyebrow": "Tool guide · Operations", "title": "Best AI Tools for Small Business Operations (2026)",
+    "summary": "A decision guide to AI tools for automation, bookkeeping support, internal knowledge, and customer service, with practical limits, privacy, pricing, and review controls.",
+    "audience": "Small-business owners and operators selecting tools for recurring operational work.", "maturity": "Production",
+    "topics": ["tool-selection","operations","automation","knowledge-management"], "industries": ["small-business","professional-services","retail","creator-economy"],
+    "keywords": ["small business AI tools","operations automation","AI bookkeeping support","knowledge tools"],
+    "learningPaths": ["Identify the operational bottleneck","Classify data and consequence","Compare native integrations","Test one bounded workflow","Measure time, quality, and failure handling","Adopt only with ownership and review"],
+    "evidence": ["Current process baseline","Vendor documentation and terms","Representative workflow tests","Human-reviewed outputs and exception logs"],
+    "methodology": ["Select by workflow rather than novelty","Minimize tool count","Test real integrations","Price the complete operating tier","Assign an accountable owner"],
+    "assumptions": ["Core financial and business records remain in authoritative systems","Humans approve consequential actions"],
+    "limitations": ["AI does not replace accounting, legal, security, or operational expertise","Integration and pricing details change"],
+    "relationships": [{"type":"depends_on","target":"university"},{"type":"supports","target":"small-businesses-use-case"},{"type":"uses","target":"ai-tool-evaluation-matrix-template"}]
+  },
+  {
+    "id": "lean-ai-stack-tool-guide", "kind": "toolGuide", "pathname": "/university/tools/build-a-lean-ai-stack",
+    "eyebrow": "Tool guide · Stack design", "title": "How to Build a Lean AI Stack (2026)",
+    "summary": "A five-question framework for assembling the smallest AI stack that clears real bottlenecks while controlling duplication, cost, privacy exposure, and maintenance.",
+    "audience": "Small teams that need a practical first AI stack without accumulating redundant subscriptions.", "maturity": "Production",
+    "topics": ["ai-stack","tool-selection","cost","implementation"], "industries": ["small-business","professional-services","creator-economy"],
+    "keywords": ["lean AI stack","AI software stack","AI tool selection","AI subscription costs"],
+    "learningPaths": ["Name the bottleneck","Identify the system of record","Choose one general assistant","Add specialists only for proven gaps","Test privacy and integration requirements","Review cost and remove redundancy"],
+    "evidence": ["Workflow and software inventory","Representative task tests","Vendor terms and pricing","Usage, quality, and cost data"],
+    "methodology": ["Start with existing systems","Choose the fewest tools","Test before standardizing","Document data boundaries","Review adoption and remove unused software"],
+    "assumptions": ["The organization can inventory current tools and workflows","Owners can measure whether each addition produces value"],
+    "limitations": ["A starter stack must be adapted to industry and risk","Vendor capabilities and commercial terms change"],
+    "relationships": [{"type":"depends_on","target":"university"},{"type":"supports","target":"choose-your-first-ai-stack-lesson"},{"type":"uses","target":"ai-tool-evaluation-matrix-template"}]
+  }
+]

@@ -89,6 +89,8 @@
       "lesson",
       "playbook",
       "template",
+      "toolGuide",
+      "useCase",
       "assessment"
     ]
   }
