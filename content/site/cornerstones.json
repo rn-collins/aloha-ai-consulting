@@ -16,7 +16,13 @@
     "methodology": ["Map decisions and consequences", "Inventory evidence, tools, and roles", "Separate deterministic rules from generative work", "Design approval and escalation paths", "Prioritize bounded pilots"],
     "assumptions": ["An accountable internal owner participates", "Access is provided to representative workflows and source materials"],
     "limitations": ["Strategy does not replace licensed legal, medical, tax, clinical, privacy, or security advice", "Recommendations remain dependent on source quality and organizational participation"],
-    "relatedIds": ["services", "build-your-team", "methods", "ai-readiness-scorecard", "university"]
+    "relationships": [
+      {"type": "extends", "target": "services"},
+      {"type": "supports", "target": "build-your-team"},
+      {"type": "uses", "target": "methods"},
+      {"type": "uses", "target": "ai-readiness-scorecard"},
+      {"type": "teaches", "target": "university"}
+    ]
   },
   {
     "id": "intelligence",
@@ -35,7 +41,13 @@
     "methodology": ["Define the question and source hierarchy", "Collect broad candidate evidence", "Verify and normalize records", "Resolve conflicts and uncertainty", "Publish maintained outputs with review dates"],
     "assumptions": ["Primary sources are available or discoverable", "The organization agrees on the decisions the intelligence must support"],
     "limitations": ["No monitor guarantees immediate detection of every change", "Interpretation remains bounded by the retrieved evidence and defined jurisdiction or domain"],
-    "relatedIds": ["services", "citation-verifier", "methods", "cannabis-rescheduling", "university"]
+    "relationships": [
+      {"type": "extends", "target": "services"},
+      {"type": "uses", "target": "citation-verifier"},
+      {"type": "uses", "target": "methods"},
+      {"type": "documents", "target": "cannabis-rescheduling"},
+      {"type": "teaches", "target": "university"}
+    ]
   },
   {
     "id": "legal-ai",
@@ -54,7 +66,13 @@
     "methodology": ["Define the legal task and prohibited model roles", "Specify approved sources and retrieval", "Create structured intermediate outputs", "Require verification and attorney review", "Evaluate against realistic matters before expansion"],
     "assumptions": ["A licensed attorney controls legal judgment and supervision where required", "Confidentiality and system-access requirements are defined"],
     "limitations": ["Aloha AI does not provide legal advice or create an attorney-client relationship", "No AI output should be filed, sent, or relied upon without the review required by the responsible professional"],
-    "relatedIds": ["services", "citation-verifier", "trust-stack", "methods", "university"]
+    "relationships": [
+      {"type": "extends", "target": "services"},
+      {"type": "uses", "target": "citation-verifier"},
+      {"type": "implements", "target": "trust-stack"},
+      {"type": "uses", "target": "methods"},
+      {"type": "teaches", "target": "university"}
+    ]
   },
   {
     "id": "trust-stack",
@@ -76,7 +94,13 @@
     "methodology": ["Identify the consequential claim or workflow", "Attach evidence and applicable rules", "Govern production and approval", "Measure distribution and suppression risk", "Preserve a defensible record"],
     "assumptions": ["Organizations retain accountable professionals", "Each component is configured for the relevant jurisdiction and use case"],
     "limitations": ["The framework is not a substitute for licensed advice", "Component maturity and coverage differ and must be inspected before use"],
-    "relatedIds": ["services", "legal-ai", "leak-check", "regulatory-intelligence", "university"]
+    "relationships": [
+      {"type": "implements", "target": "services"},
+      {"type": "supports", "target": "legal-ai"},
+      {"type": "supports", "target": "leak-check"},
+      {"type": "supports", "target": "regulatory-intelligence"},
+      {"type": "teaches", "target": "university"}
+    ]
   },
   {
     "id": "university",
@@ -93,6 +117,12 @@
     "methodology": ["Begin with the learner's decision or workflow", "Teach the underlying concept", "Demonstrate a bounded application", "Require verification and reflection", "Connect learning to tools, services, and implementation"],
     "assumptions": ["Learners apply professional guidance appropriate to their context", "Courses and tools identify their own prerequisites and maturity"],
     "limitations": ["Educational content is not professional advice", "Platform features, course availability, and continuing-education approval may vary"],
-    "relatedIds": ["services", "strategy", "intelligence", "legal-ai", "trust-stack"]
+    "relationships": [
+      {"type": "documents", "target": "services"},
+      {"type": "teaches", "target": "strategy"},
+      {"type": "teaches", "target": "intelligence"},
+      {"type": "teaches", "target": "legal-ai"},
+      {"type": "teaches", "target": "trust-stack"}
+    ]
   }
 ]

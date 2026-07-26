@@ -2,9 +2,17 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const root = process.cwd();
-const files = walk(root).filter((file) => file.endsWith('.html') && !file.includes(`${path.sep}node_modules${path.sep}`));
+const sitemapPath = path.join(root, 'sitemap.xml');
+if (!fs.existsSync(sitemapPath)) {
+  console.error('Generated HTML validation requires sitemap.xml; run site:build first.');
+  process.exit(1);
+}
+const routes = [...fs.readFileSync(sitemapPath, 'utf8').matchAll(/<loc>https?:\/\/[^/]+([^<]*)<\/loc>/g)].map((match) => match[1] || '/');
 const errors = [];
+const files = routes.map(outputFile);
+for (const [index, file] of files.entries()) if (!fs.existsSync(file)) errors.push(`${routes[index]}: generated route is missing HTML`);
 for (const file of files) {
+  if (!fs.existsSync(file)) continue;
   const html = fs.readFileSync(file, 'utf8');
   const rel = path.relative(root, file);
   for (const required of ['<title>', 'name="description"', 'rel="canonical"', '<main', 'id="main"']) if (!html.includes(required)) errors.push(`${rel}: missing ${required}`);
@@ -27,9 +35,7 @@ if (errors.length) {
 }
 console.log(`Validated ${files.length} HTML files.`);
 
-function walk(directory) {
-  return fs.readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
-    const full = path.join(directory, entry.name);
-    return entry.isDirectory() ? walk(full) : [full];
-  });
+function outputFile(route) {
+  if (route === '/') return path.join(root, 'index.html');
+  return path.join(root, `${route.replace(/^\//, '')}.html`);
 }
