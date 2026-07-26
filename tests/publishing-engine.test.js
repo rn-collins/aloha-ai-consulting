@@ -289,3 +289,28 @@ test('renders declarative structured forms for documents and scored diagnostics'
   assert.match(diagnosticHtml, /Mechanisms surfaced/);
   assert.match(diagnosticHtml, /nothing you enter is sent or stored/i);
 });
+
+test('renders institutional and legal-policy resources from structured contracts', () => {
+  const institutional = {
+    ...resource('about', [{ type: 'documents', target: 'terms' }]),
+    kind: 'institutional',
+    pathname: '/about',
+    institutionalSections: [{ title: 'Formation', items: [{ title: 'Law', text: 'Authority and accountability remain visible.' }] }]
+  };
+  const policy = {
+    ...resource('terms', [{ type: 'documents', target: 'about' }]),
+    kind: 'policy',
+    pathname: '/terms',
+    effectiveDate: '2026-07-04',
+    policySections: [{ order: 1, title: 'Informational use', paragraphs: ['Nothing creates an attorney–client relationship.'] }]
+  };
+  const registry = new Map([[institutional.id, institutional], [policy.id, policy]]);
+  assert.deepEqual(errorsFor([institutional, policy]), []);
+  const institutionalHtml = renderStructuredPage({ resource: institutional, registry });
+  const policyHtml = renderStructuredPage({ resource: policy, registry });
+  assert.match(institutionalHtml, /Formation/);
+  assert.match(institutionalHtml, /Authority and accountability remain visible/);
+  assert.match(policyHtml, /Effective 2026-07-04/);
+  assert.match(policyHtml, /Nothing creates an attorney–client relationship/);
+  assert.match(policyHtml, /"@type":"WebPage"/);
+});
