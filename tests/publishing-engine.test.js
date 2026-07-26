@@ -122,11 +122,11 @@ test('rejects invalid Workspace and recommendation mappings', () => {
 
 test('inventories handwritten routes without classifying compiler outputs as legacy', () => {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'aloha-migration-'));
-  fs.mkdirSync(path.join(root, 'university', 'learn'), { recursive: true });
-  fs.writeFileSync(path.join(root, 'alpha.html'), '<html></html>');
+  fs.mkdirSync(path.join(root, 'university', 'learn', 'alpha'), { recursive: true });
   fs.writeFileSync(path.join(root, 'university', 'learn', 'lesson.html'), '<html></html>');
+  fs.writeFileSync(path.join(root, 'university', 'learn', 'alpha', 'index.html'), '<html></html>');
   fs.writeFileSync(path.join(root, 'about.html'), '<html></html>');
-  const alpha = resource('alpha', []);
+  const alpha = { ...resource('alpha', []), pathname: '/university/learn/alpha' };
   const outputs = new Map([['/topics', '<html></html>']]);
   fs.writeFileSync(path.join(root, 'topics.html'), '<html></html>');
   const inventory = legacyMigrationInventory(root, [alpha], outputs);
