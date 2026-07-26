@@ -1,0 +1,302 @@
+[
+  {
+    "id": "agentic-brand-management",
+    "kind": "monitor",
+    "pathname": "/monitors/agentic-brand-management",
+    "eyebrow": "Brand intelligence monitor",
+    "title": "Agentic Brand Management",
+    "summary": "An evidence-graded brand and creator-management monitor coordinating collection, disclosure, claims-risk, brand-fit, measurement, governance, and accountable human sign-off.",
+    "audience": "Regulated and reputation-sensitive brands using AI-assisted content and creator systems.",
+    "maturity": "Beta",
+    "topics": ["monitoring", "brands", "claims", "governance"],
+    "industries": ["consumer-products", "creator-economy", "regulated-markets"],
+    "keywords": ["agentic brand management", "brand monitoring", "creator governance"],
+    "implementationStatus": "Public demonstration with browser-local scoring and illustrative, dated signal records.",
+    "documentation": ["Review the seven-agent operating model", "Filter illustrative signals by risk level", "Score governance coverage before production use"],
+    "monitor": {
+      "updated": "2026-07-26",
+      "filters": ["Disclosure", "Claims risk", "Brand fit", "Measurement", "Governance"],
+      "signals": [
+        {"date": "2026-07-26", "category": "Disclosure", "title": "Creator disclosure review", "status": "Human review", "confidence": "High", "source": "Illustrative governance record"},
+        {"date": "2026-07-25", "category": "Claims risk", "title": "Health-claim substantiation gate", "status": "Escalate", "confidence": "High", "source": "Illustrative claims review"},
+        {"date": "2026-07-24", "category": "Brand fit", "title": "Voice and audience alignment", "status": "Monitor", "confidence": "Medium", "source": "Illustrative brand-fit record"}
+      ],
+      "checks": ["Named accountable human", "Disclosure review", "Claims substantiation", "Brand-fit criteria", "Measurement plan", "Escalation path"]
+    },
+    "evidence": ["Dated source records", "Disclosure and substantiation requirements", "Human approval history"],
+    "methodology": ["Collect bounded brand signals", "Grade evidence and risk", "Route findings to specialist agents", "Require accountable human approval"],
+    "assumptions": ["Production monitoring would use authorized brand, platform, and campaign data"],
+    "limitations": ["Demonstration records are illustrative", "No external account is connected and no recommendation is executed"],
+    "relationships": [{"type": "supports", "target": "content"}, {"type": "implements", "target": "trust-stack"}]
+  },
+  {
+    "id": "ai-creative-production",
+    "kind": "monitor",
+    "pathname": "/monitors/ai-creative-production",
+    "eyebrow": "Creative-production intelligence",
+    "title": "AI Creative Production Intelligence",
+    "summary": "A monitor for converting ad-hoc AI generation into a repeatable, on-brand production pipeline with reference controls, revision tracking, quality gates, and visible provenance.",
+    "audience": "AI filmmakers, creative directors, studio founders, and producers accountable for consistency at volume.",
+    "maturity": "Beta",
+    "topics": ["monitoring", "content", "production", "provenance"],
+    "industries": ["creator-economy", "publishing", "consumer-products"],
+    "keywords": ["AI creative production", "creative consistency", "production readiness"],
+    "implementationStatus": "Public demonstration with browser-local production-coverage scoring.",
+    "documentation": ["Inspect pipeline signals", "Score reference and quality-gate coverage", "Treat outputs as a production-design starting point"],
+    "monitor": {
+      "updated": "2026-07-26",
+      "filters": ["Reference layer", "Production layer", "Quality gate", "Versioning"],
+      "signals": [
+        {"date": "2026-07-26", "category": "Reference layer", "title": "Creative reference set versioned", "status": "Ready", "confidence": "High", "source": "Illustrative production ledger"},
+        {"date": "2026-07-25", "category": "Quality gate", "title": "Continuity review requires approval", "status": "Human review", "confidence": "High", "source": "Illustrative quality record"},
+        {"date": "2026-07-24", "category": "Versioning", "title": "Model-change regression check", "status": "Monitor", "confidence": "Medium", "source": "Illustrative version record"}
+      ],
+      "checks": ["Versioned creative references", "Shot and character constraints", "Named quality gate", "Revision ledger", "Model-change test", "Final human approval"]
+    },
+    "evidence": ["Versioned creative references", "Production and revision ledger", "Quality-gate decisions"],
+    "methodology": ["Define a creative reference layer", "Resolve references into production constraints", "Track revisions and drift", "Require a final quality decision"],
+    "assumptions": ["Production teams can preserve references and review outputs at defined gates"],
+    "limitations": ["The monitor does not render media", "Illustrative signals do not measure a real studio pipeline"],
+    "relationships": [{"type": "supports", "target": "content"}, {"type": "implements", "target": "methods"}]
+  },
+  {
+    "id": "arts-culture",
+    "kind": "monitor",
+    "pathname": "/monitors/arts-culture",
+    "eyebrow": "Cultural intelligence monitor",
+    "title": "Collection & Audience AI Intelligence",
+    "summary": "A mission-grounded monitor for museums, galleries, and arts nonprofits evaluating AI applications through provenance, accessibility, collection metadata, and audience stewardship.",
+    "audience": "Museum directors, curators, registrars, gallery leaders, and arts-nonprofit executives.",
+    "maturity": "Research",
+    "topics": ["monitoring", "arts", "culture", "provenance", "accessibility"],
+    "industries": ["nonprofit", "education", "creator-economy"],
+    "keywords": ["museum AI", "cultural intelligence", "collection metadata"],
+    "implementationStatus": "Public concept monitor with browser-local stewardship-coverage scoring.",
+    "documentation": ["Filter collection and audience signals", "Score stewardship controls", "Verify institution-specific standards before adoption"],
+    "monitor": {
+      "updated": "2026-07-26",
+      "filters": ["Provenance", "Metadata", "Accessibility", "Audience"],
+      "signals": [
+        {"date": "2026-07-26", "category": "Provenance", "title": "Object-source record completeness", "status": "Human review", "confidence": "High", "source": "Illustrative collection record"},
+        {"date": "2026-07-25", "category": "Accessibility", "title": "Alternative-description coverage", "status": "Monitor", "confidence": "Medium", "source": "Illustrative accessibility audit"},
+        {"date": "2026-07-24", "category": "Audience", "title": "Interpretive-language review", "status": "Escalate", "confidence": "Medium", "source": "Illustrative audience record"}
+      ],
+      "checks": ["Provenance preserved", "Metadata standard named", "Accessibility review", "Community context", "Rights status", "Human curatorial approval"]
+    },
+    "evidence": ["Institutional collection records", "Applicable metadata and accessibility standards", "Curatorial and community review"],
+    "methodology": ["Define the mission-bound use case", "Preserve provenance and rights context", "Evaluate accessibility and audience effects", "Require curatorial approval"],
+    "assumptions": ["Institution-specific records and standards are available to the accountable team"],
+    "limitations": ["Illustrative records are not an institutional collection audit", "Cultural authority cannot be inferred from metadata alone"],
+    "relationships": [{"type": "supports", "target": "intelligence"}, {"type": "implements", "target": "trust-stack"}]
+  },
+  {
+    "id": "biopharma-regulatory-intelligence",
+    "kind": "monitor",
+    "pathname": "/monitors/biopharma-regulatory-intelligence",
+    "eyebrow": "Biopharma regulatory monitor",
+    "title": "Biopharma Regulatory Intelligence Layer",
+    "summary": "A primary-source-grounded monitor for clinical-stage drug programs covering development gates, review timing, exclusivity, controlled-substance tracks, and dated regulatory changes.",
+    "audience": "Regulatory affairs teams, counsel, founders, boards, and clinical-stage sponsors.",
+    "maturity": "Beta",
+    "topics": ["monitoring", "regulatory-intelligence", "biopharma", "clinical-development"],
+    "industries": ["biopharma", "healthcare", "regulated-markets"],
+    "keywords": ["biopharma regulatory intelligence", "FDA pathways", "clinical-stage monitor"],
+    "implementationStatus": "Public demonstration; no sponsor program or live regulatory feed is connected.",
+    "documentation": ["Filter illustrative program signals", "Score regulatory-source coverage", "Verify every current conclusion against primary authority"],
+    "monitor": {
+      "updated": "2026-07-26",
+      "filters": ["Development", "FDA", "Exclusivity", "Controlled substances"],
+      "signals": [
+        {"date": "2026-07-26", "category": "Development", "title": "IND evidence gate", "status": "Human review", "confidence": "High", "source": "Illustrative program record"},
+        {"date": "2026-07-25", "category": "Exclusivity", "title": "Runway assumption needs dated authority", "status": "Escalate", "confidence": "High", "source": "Illustrative exclusivity record"},
+        {"date": "2026-07-24", "category": "Controlled substances", "title": "Parallel scheduling workstream", "status": "Monitor", "confidence": "Medium", "source": "Illustrative regulatory record"}
+      ],
+      "checks": ["Development stage defined", "Primary authority captured", "Review clock dated", "Exclusivity basis verified", "Controlled-substance track mapped", "Counsel or regulatory approval"]
+    },
+    "evidence": ["FDA and other agency primary sources", "Program-specific development record", "Dated exclusivity and scheduling authority"],
+    "methodology": ["Define program and development stage", "Monitor primary authorities", "Separate regulatory workstreams", "Escalate material changes to accountable experts"],
+    "assumptions": ["A production implementation has authorized program facts and current primary-source access"],
+    "limitations": ["Not regulatory or legal advice", "Illustrative signals do not state the status of a real drug program"],
+    "relationships": [{"type": "supports", "target": "regulatory-intelligence"}, {"type": "implements", "target": "methods"}]
+  },
+  {
+    "id": "biophilic-neuroarch",
+    "kind": "monitor",
+    "pathname": "/monitors/biophilic-neuroarch",
+    "eyebrow": "Design research monitor",
+    "title": "Neuro-Architecture & Biophilic Design Intelligence",
+    "summary": "A neuroscience-grounded monitor for evaluating how space may support human nervous systems through daylight, nature views, fascination, prospect and refuge, materials, acoustics, air, and thermal quality.",
+    "audience": "Architects, design researchers, urban designers, and interior or workplace leaders.",
+    "maturity": "Research",
+    "topics": ["monitoring", "neuroscience", "biophilic-design", "research"],
+    "industries": ["research", "healthcare", "education"],
+    "keywords": ["neuroarchitecture", "biophilic design", "salutogenic design"],
+    "implementationStatus": "Public research demonstration with browser-local mechanism-coverage scoring.",
+    "documentation": ["Filter mechanism records", "Score design-evidence coverage", "Use qualified measurement and design review for real projects"],
+    "monitor": {
+      "updated": "2026-07-26",
+      "filters": ["Daylight", "Nature", "Spatial pattern", "Environmental quality"],
+      "signals": [
+        {"date": "2026-07-26", "category": "Daylight", "title": "Daylight exposure and glare considered together", "status": "Human review", "confidence": "Medium", "source": "Illustrative research synthesis"},
+        {"date": "2026-07-25", "category": "Nature", "title": "Nature-view mechanism distinguished from décor", "status": "Monitor", "confidence": "Medium", "source": "Illustrative evidence record"},
+        {"date": "2026-07-24", "category": "Environmental quality", "title": "Acoustic and air-quality confounds", "status": "Escalate", "confidence": "High", "source": "Illustrative design review"}
+      ],
+      "checks": ["Mechanism specified", "Population and setting defined", "Baseline measured", "Confounds identified", "Outcome measure named", "Post-occupancy review planned"]
+    },
+    "evidence": ["Peer-reviewed environmental neuroscience and design research", "Project measurements", "Post-occupancy evidence"],
+    "methodology": ["Define the proposed mechanism", "Match design attributes to evidence", "Identify confounds and measurement limits", "Reassess after occupancy"],
+    "assumptions": ["A real project can collect relevant environmental and human-outcome measures"],
+    "limitations": ["Research findings do not guarantee individual outcomes", "This demonstration is not a design, medical, or accessibility assessment"],
+    "relationships": [{"type": "supports", "target": "intelligence"}, {"type": "uses", "target": "citation-verifier"}]
+  },
+  {
+    "id": "luxury-ip",
+    "kind": "monitor",
+    "pathname": "/monitors/luxury-ip",
+    "eyebrow": "Brand-protection monitor",
+    "title": "Luxury Brand Protection & Anti-Counterfeiting Intelligence",
+    "summary": "An IP-risk and counterfeit-signal monitor for luxury and consumer brands, linking each recommended review path to identified rights, evidence, platforms, jurisdictions, and accountable counsel.",
+    "audience": "IP counsel, luxury and fashion houses, brand-protection leads, boards, and investors.",
+    "maturity": "Beta",
+    "topics": ["monitoring", "intellectual-property", "brands", "counterfeiting"],
+    "industries": ["consumer-products", "retail", "legal"],
+    "keywords": ["luxury IP", "anti-counterfeiting", "brand protection"],
+    "implementationStatus": "Public demonstration; no marketplace, rights database, or enforcement system is connected.",
+    "documentation": ["Filter illustrative IP signals", "Score enforcement-readiness coverage", "Require counsel review before any notice or action"],
+    "monitor": {
+      "updated": "2026-07-26",
+      "filters": ["Trademark", "Counterfeit", "Platform", "Evidence"],
+      "signals": [
+        {"date": "2026-07-26", "category": "Trademark", "title": "Registration and goods scope verified", "status": "Human review", "confidence": "High", "source": "Illustrative rights record"},
+        {"date": "2026-07-25", "category": "Counterfeit", "title": "Specimen preservation required", "status": "Escalate", "confidence": "High", "source": "Illustrative evidence record"},
+        {"date": "2026-07-24", "category": "Platform", "title": "Marketplace reporting route identified", "status": "Monitor", "confidence": "Medium", "source": "Illustrative platform record"}
+      ],
+      "checks": ["Rights ownership verified", "Jurisdiction defined", "Specimen preserved", "Seller and platform recorded", "Remedy reviewed", "Counsel approval"]
+    },
+    "evidence": ["Current registrations and ownership records", "Preserved listings and transaction evidence", "Applicable platform and legal authority"],
+    "methodology": ["Verify the right", "Preserve the signal and evidence", "Choose a proportionate review pathway", "Require qualified legal approval"],
+    "assumptions": ["A production implementation has authorized access to rights and marketplace records"],
+    "limitations": ["Not legal advice", "No takedown or enforcement action is generated or sent"],
+    "relationships": [{"type": "supports", "target": "legal-ai"}, {"type": "implements", "target": "trust-stack"}]
+  },
+  {
+    "id": "market-intel",
+    "kind": "monitor",
+    "pathname": "/monitors/market-intel",
+    "eyebrow": "Competitive intelligence monitor",
+    "title": "Market & Competitive Intelligence Monitor",
+    "summary": "A primary-source-grounded monitor for competitor moves, pricing, customer sentiment, hiring, funding, filings, IP, and regulation, with every signal dated and confidence-scored.",
+    "audience": "Founders, strategy teams, brand leaders, and regulated or reputation-sensitive organizations.",
+    "maturity": "Beta",
+    "topics": ["monitoring", "market-intelligence", "competition", "evidence"],
+    "industries": ["startups", "professional-services", "consumer-products"],
+    "keywords": ["competitive intelligence", "market monitoring", "signal coverage"],
+    "implementationStatus": "Public demonstration with browser-local coverage scoring and illustrative signal records.",
+    "documentation": ["Filter signal streams", "Score source coverage", "Verify consequential decisions against current evidence"],
+    "monitor": {
+      "updated": "2026-07-26",
+      "filters": ["Competitors", "Pricing", "Customers", "Capital", "Regulatory"],
+      "signals": [
+        {"date": "2026-07-26", "category": "Competitors", "title": "Product-positioning change", "status": "Monitor", "confidence": "Medium", "source": "Illustrative company source"},
+        {"date": "2026-07-25", "category": "Capital", "title": "Funding or filing signal", "status": "Human review", "confidence": "High", "source": "Illustrative public filing"},
+        {"date": "2026-07-24", "category": "Regulatory", "title": "Rule change may alter market timing", "status": "Escalate", "confidence": "High", "source": "Illustrative primary authority"}
+      ],
+      "checks": ["Competitor sources", "Pricing history", "Customer evidence", "Hiring signals", "Capital or filing records", "Regulatory and IP sources"]
+    },
+    "evidence": ["Company and product sources", "Public filings and primary authorities", "Dated customer and market signals"],
+    "methodology": ["Define decision-relevant signals", "Collect and preserve sources", "Grade confidence and materiality", "Escalate decision-changing evidence"],
+    "assumptions": ["The monitored market and competitors are explicitly bounded"],
+    "limitations": ["Illustrative signals are not a current market report", "Absence of a signal is not evidence that no change occurred"],
+    "relationships": [{"type": "supports", "target": "intelligence"}, {"type": "implements", "target": "methods"}]
+  },
+  {
+    "id": "private-ai-risk",
+    "kind": "monitor",
+    "pathname": "/monitors/private-ai-risk",
+    "eyebrow": "Data-exposure monitor",
+    "title": "Private-AI & Data-Retention Risk Monitor",
+    "summary": "A governance monitor for privileged, health, trade-secret, personal, or regulated data entering AI systems, focused on retention, subprocessors, human access, training use, and zero-retention controls.",
+    "audience": "General counsel, privacy and compliance leaders, healthcare teams, and trade-secret owners.",
+    "maturity": "Beta",
+    "topics": ["monitoring", "privacy", "data-governance", "risk"],
+    "industries": ["legal", "healthcare", "biopharma", "regulated-markets"],
+    "keywords": ["private AI", "data retention", "AI privacy risk"],
+    "implementationStatus": "Public demonstration; no vendor account, confidential data, or live configuration is inspected.",
+    "documentation": ["Filter illustrative exposure signals", "Score data-governance coverage", "Verify vendor terms and configurations directly"],
+    "monitor": {
+      "updated": "2026-07-26",
+      "filters": ["Retention", "Subprocessors", "Human access", "Training", "Configuration"],
+      "signals": [
+        {"date": "2026-07-26", "category": "Retention", "title": "Retention period requires direct verification", "status": "Human review", "confidence": "High", "source": "Illustrative vendor review"},
+        {"date": "2026-07-25", "category": "Subprocessors", "title": "Subprocessor inventory changed", "status": "Escalate", "confidence": "Medium", "source": "Illustrative change record"},
+        {"date": "2026-07-24", "category": "Configuration", "title": "Zero-retention control evidence", "status": "Monitor", "confidence": "High", "source": "Illustrative configuration record"}
+      ],
+      "checks": ["Data classes mapped", "Retention verified", "Subprocessors reviewed", "Human access documented", "Training use documented", "Approved configuration evidenced"]
+    },
+    "evidence": ["Current vendor terms and privacy documentation", "Configuration evidence", "Organizational data-classification and approval records"],
+    "methodology": ["Map data flows", "Verify vendor and configuration facts", "Score exposure and control gaps", "Require accountable privacy, security, and legal review"],
+    "assumptions": ["Production review has access to the actual contract, settings, architecture, and data classes"],
+    "limitations": ["Not a security test or legal opinion", "Do not enter confidential or personal information into this demonstration"],
+    "relationships": [{"type": "supports", "target": "leak-check"}, {"type": "implements", "target": "trust-stack"}]
+  },
+  {
+    "id": "psychedelic-radar",
+    "kind": "monitor",
+    "pathname": "/monitors/psychedelic-radar",
+    "eyebrow": "Psychedelic regulatory monitor",
+    "title": "Psychedelic Regulatory Radar",
+    "summary": "A primary-source-grounded status monitor separating psilocybin programs, MDMA-related federal developments, ketamine practice and telehealth, and state–federal legal layers.",
+    "audience": "Psychedelic-health organizations, ketamine platforms, legal operations teams, counsel, funders, and boards.",
+    "maturity": "Beta",
+    "topics": ["monitoring", "psychedelics", "regulation", "controlled-substances"],
+    "industries": ["psychedelics", "healthcare", "legal"],
+    "keywords": ["psychedelic regulatory radar", "psilocybin law", "ketamine telehealth"],
+    "implementationStatus": "Public demonstration; illustrative records are not a statement of current law.",
+    "documentation": ["Filter illustrative substance and jurisdiction signals", "Score primary-source coverage", "Verify the current jurisdiction, activity, and authority"],
+    "monitor": {
+      "updated": "2026-07-26",
+      "filters": ["Psilocybin", "MDMA", "Ketamine", "Federal", "State"],
+      "signals": [
+        {"date": "2026-07-26", "category": "Psilocybin", "title": "State program rule requires jurisdiction-specific review", "status": "Human review", "confidence": "High", "source": "Illustrative state authority"},
+        {"date": "2026-07-25", "category": "MDMA", "title": "Federal therapeutic status must be dated", "status": "Monitor", "confidence": "High", "source": "Illustrative federal source"},
+        {"date": "2026-07-24", "category": "Ketamine", "title": "Practice and telehealth rules require separate analysis", "status": "Escalate", "confidence": "High", "source": "Illustrative regulatory record"}
+      ],
+      "checks": ["Substance defined", "Activity defined", "Jurisdiction defined", "Federal authority verified", "State authority verified", "Clinical and professional rules reviewed"]
+    },
+    "evidence": ["Current federal and state primary authority", "Agency and professional-board records", "Dated program and enforcement materials"],
+    "methodology": ["Define substance, activity, and jurisdiction", "Separate federal and state regimes", "Retrieve current primary authority", "Publish dated status with limitations"],
+    "assumptions": ["The user verifies every consequential conclusion against current authority"],
+    "limitations": ["Informational only and not legal or medical advice", "Illustrative signals must not be treated as current law"],
+    "relationships": [{"type": "supports", "target": "regulatory-intelligence"}, {"type": "teaches", "target": "controlled-substances-explainer"}]
+  },
+  {
+    "id": "suppression-audit",
+    "kind": "monitor",
+    "pathname": "/monitors/suppression-audit",
+    "eyebrow": "Platform-visibility monitor",
+    "title": "Content Suppression & Platform Visibility Audit",
+    "summary": "A platform-policy-grounded monitor for health and wellness content visibility, separating claims risk, advertising eligibility, off-platform links, sensitive audiences, and evidence-backed recovery actions.",
+    "audience": "Health and wellness brands, visibility strategists, regulated-industry creators, and clinicians who publish.",
+    "maturity": "Beta",
+    "topics": ["monitoring", "platform-risk", "content", "health-claims"],
+    "industries": ["healthcare", "creator-economy", "regulated-markets"],
+    "keywords": ["content suppression", "platform visibility", "EDSA audit"],
+    "implementationStatus": "Public demonstration; no social account, reach data, or platform API is connected.",
+    "documentation": ["Filter illustrative policy signals", "Score review coverage", "Verify current platform policies before changing content"],
+    "monitor": {
+      "updated": "2026-07-26",
+      "filters": ["Claims", "Advertising", "Links", "Audience", "Evidence"],
+      "signals": [
+        {"date": "2026-07-26", "category": "Claims", "title": "Health-claim wording requires substantiation review", "status": "Escalate", "confidence": "High", "source": "Illustrative policy mapping"},
+        {"date": "2026-07-25", "category": "Advertising", "title": "Eligibility or certification gate", "status": "Human review", "confidence": "Medium", "source": "Illustrative platform record"},
+        {"date": "2026-07-24", "category": "Audience", "title": "Sensitive-audience targeting constraint", "status": "Monitor", "confidence": "Medium", "source": "Illustrative audience-policy record"}
+      ],
+      "checks": ["Content and claim inventory", "Current policy source", "Advertising eligibility", "Link pattern review", "Audience restrictions", "Controlled test and measurement plan"]
+    },
+    "evidence": ["Current platform policy and advertising rules", "Account and content analytics", "Dated content and distribution records"],
+    "methodology": ["Preserve the content and reach record", "Map observable patterns to current policy categories", "Separate diagnosis from inference", "Test bounded recovery changes"],
+    "assumptions": ["Production analysis has authorized access to account-level content and analytics"],
+    "limitations": ["Platforms rarely disclose complete ranking logic", "Correlation does not prove suppression or its cause"],
+    "relationships": [{"type": "supports", "target": "content"}, {"type": "implements", "target": "methods"}]
+  }
+]

@@ -171,6 +171,28 @@ test('renders a browser-only structured assessment from question metadata', () =
   assert.match(html, /processed in this browser/);
 });
 
+test('renders a declarative monitor dashboard with dated signals and local coverage scoring', () => {
+  const monitor = {
+    ...resource('signal-watch', [{ type: 'supports', target: 'alpha' }]),
+    kind: 'monitor',
+    implementationStatus: 'Public demonstration',
+    documentation: ['Source contract'],
+    monitor: {
+      updated: '2026-07-26',
+      filters: ['Policy'],
+      signals: [{ date: '2026-07-26', category: 'Policy', title: 'Rule changed', status: 'Review', confidence: 'High', source: 'Primary source' }],
+      checks: ['Primary source preserved']
+    }
+  };
+  const alpha = resource('alpha', [{ type: 'supports', target: 'signal-watch' }]);
+  const registry = new Map([[monitor.id, monitor], [alpha.id, alpha]]);
+  const html = renderStructuredPage({ resource: monitor, registry });
+  assert.match(html, /id="monitor-signals"/);
+  assert.match(html, /Rule changed/);
+  assert.match(html, /id="monitor-coverage"/);
+  assert.match(html, /nothing is sent or monitored externally/);
+});
+
 test('renders weighted assessment options and a browser-local product demo', () => {
   const assessment = {
     ...resource('exposure', [{ type: 'supports', target: 'demo' }]),
