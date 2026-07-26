@@ -19,6 +19,11 @@
     {"type": "supports", "target": "strategy"},
     {"type": "supports", "target": "intelligence"},
     {"type": "supports", "target": "legal-ai"},
+    {"type": "supports", "target": "content"},
+    {"type": "supports", "target": "build-your-team"},
+    {"type": "supports", "target": "ai-native-coo"},
+    {"type": "supports", "target": "launch-stack"},
+    {"type": "supports", "target": "engagements"},
     {"type": "implements", "target": "trust-stack"},
     {"type": "teaches", "target": "university"}
   ]
