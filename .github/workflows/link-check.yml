@@ -29,6 +29,7 @@ jobs:
         with:
           name: internal-link-report
           path: internal-link-report.txt
+          retention-days: 1
       - name: Fail if internal links are broken
         if: steps.internal.outcome == 'failure'
         run: |
