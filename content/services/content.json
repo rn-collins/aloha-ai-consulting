@@ -1,0 +1,24 @@
+{
+  "id": "content",
+  "kind": "service",
+  "pathname": "/content",
+  "eyebrow": "Evidence-led content systems",
+  "title": "Content infrastructure for organizations that cannot separate communication from evidence, risk, and operations.",
+  "summary": "Aloha AI designs editorial, research, approval, distribution, and maintenance systems that help teams publish useful work without losing traceability or institutional judgment.",
+  "audience": "Research-led brands, regulated organizations, experts, institutions, and teams publishing consequential material.",
+  "maturity": "Production",
+  "topics": ["content", "editorial-systems", "evidence", "distribution"],
+  "deliverables": ["Editorial architecture", "Source and claim register", "Content taxonomy", "Review and approval workflow", "Distribution and maintenance plan"],
+  "timeline": "A bounded content-system audit usually takes about 2 weeks; implementation and retained editorial operations follow the approved architecture.",
+  "fit": ["Content is repeatedly recreated", "Expert knowledge is difficult to translate", "Claims require verification", "Publishing work is disconnected from business and research systems"],
+  "evidence": ["Existing content and performance records", "Primary sources and internal expertise", "Brand, legal, and approval requirements"],
+  "methodology": ["Map audiences and decisions", "Inventory evidence and reusable knowledge", "Design formats and workflows", "Assign review and publication gates", "Measure use and maintain the system"],
+  "assumptions": ["Subject-matter owners participate", "The organization identifies approved claims and channels"],
+  "limitations": ["Distribution cannot guarantee reach or commercial results", "Public claims remain subject to professional and legal review"],
+  "relationships": [
+    {"type": "uses", "target": "intelligence"},
+    {"type": "implements", "target": "trust-stack"},
+    {"type": "teaches", "target": "university"},
+    {"type": "extends", "target": "services"}
+  ]
+}
