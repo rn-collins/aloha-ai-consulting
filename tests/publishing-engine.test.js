@@ -204,3 +204,26 @@ test('renders weighted assessment options and a browser-local product demo', () 
   assert.match(demoHtml, /id="demo-records"/);
   assert.match(demoHtml, /Production delivery remains disabled/);
 });
+
+test('renders a declarative browser-local operational tool', () => {
+  const tool = {
+    ...resource('analyzer', [{ type: 'supports', target: 'alpha' }]),
+    kind: 'tool',
+    implementationStatus: 'Public',
+    documentation: ['Browser-local contract'],
+    demo: {
+      type: 'browser-tool',
+      mode: 'analyze',
+      inputLabel: 'Paste text',
+      sample: 'The agency shall act.',
+      outputTitle: 'Signals',
+      signals: [{ label: 'Obligation', terms: ['shall'] }]
+    }
+  };
+  const alpha = resource('alpha', [{ type: 'supports', target: 'analyzer' }]);
+  const registry = new Map([[tool.id, tool], [alpha.id, alpha]]);
+  const html = renderStructuredPage({ resource: tool, registry });
+  assert.match(html, /id="browser-tool-input"/);
+  assert.match(html, /processed in this browser/);
+  assert.match(html, /Obligation/);
+});
