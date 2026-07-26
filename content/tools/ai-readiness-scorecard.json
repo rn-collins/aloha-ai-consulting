@@ -1,1 +1,97 @@
-{"id":"ai-readiness-scorecard","kind":"assessment","pathname":"/tools/ai-readiness-scorecard","title":"AI Readiness Scorecard","summary":"A bounded assessment of decision clarity, evidence, governance, workflow, data, and implementation readiness.","maturity":"Beta","topics":["assessment","readiness","governance"],"implementationStatus":"Public assessment model with Workspace integration planned.","evidence":["User responses","Documented organizational conditions","Defined scoring rules"],"methodology":["Collect structured responses","Score defined readiness dimensions","Identify evidence gaps","Route recommendations to relevant resources"],"assumptions":["Responses are materially accurate"],"limitations":["Results are directional and require organizational validation"],"relationships":[{"type":"supports","target":"strategy"},{"type":"available_in_workspace","target":"workspace"}]}
+{
+  "id": "ai-readiness-scorecard",
+  "kind": "assessment",
+  "pathname": "/tools/ai-readiness-scorecard",
+  "title": "AI Readiness Scorecard",
+  "summary": "A bounded assessment of decision clarity, evidence, governance, workflow, data, and implementation readiness.",
+  "maturity": "Beta",
+  "topics": [
+    "assessment",
+    "readiness",
+    "governance"
+  ],
+  "implementationStatus": "Public assessment model with Workspace integration planned.",
+  "evidence": [
+    "User responses",
+    "Documented organizational conditions",
+    "Defined scoring rules"
+  ],
+  "methodology": [
+    "Collect structured responses",
+    "Score defined readiness dimensions",
+    "Identify evidence gaps",
+    "Route recommendations to relevant resources"
+  ],
+  "assumptions": [
+    "Responses are materially accurate"
+  ],
+  "limitations": [
+    "Results are directional and require organizational validation"
+  ],
+  "relationships": [
+    {
+      "type": "supports",
+      "target": "strategy"
+    },
+    {
+      "type": "available_in_workspace",
+      "target": "workspace"
+    }
+  ],
+  "assessment": {
+    "dimensions": [
+      "decision_clarity",
+      "evidence",
+      "governance",
+      "workflow",
+      "data",
+      "implementation"
+    ],
+    "appliesToKinds": [
+      "service",
+      "product",
+      "tool",
+      "monitor",
+      "research",
+      "build",
+      "learningHub",
+      "course",
+      "lesson",
+      "assessment"
+    ],
+    "recommendations": [
+      {
+        "id": "strategy-foundation",
+        "condition": "decision_clarity_gap",
+        "resourceIds": [
+          "strategy",
+          "methods"
+        ]
+      },
+      {
+        "id": "evidence-foundation",
+        "condition": "evidence_gap",
+        "resourceIds": [
+          "intelligence",
+          "citation-verifier"
+        ]
+      },
+      {
+        "id": "governance-foundation",
+        "condition": "governance_gap",
+        "resourceIds": [
+          "trust-stack",
+          "legal-ai"
+        ]
+      },
+      {
+        "id": "implementation-foundation",
+        "condition": "workflow_or_implementation_gap",
+        "resourceIds": [
+          "ai-native-coo",
+          "build-your-team"
+        ]
+      }
+    ]
+  }
+}
