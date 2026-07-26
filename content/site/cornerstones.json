@@ -122,7 +122,14 @@
       {"type": "teaches", "target": "strategy"},
       {"type": "teaches", "target": "intelligence"},
       {"type": "teaches", "target": "legal-ai"},
-      {"type": "teaches", "target": "trust-stack"}
+      {"type": "teaches", "target": "trust-stack"},
+      {"type": "teaches", "target": "citation-verifier-course"},
+      {"type": "teaches", "target": "claims-checker-course"},
+      {"type": "teaches", "target": "first-ai-team-course"},
+      {"type": "teaches", "target": "governed-operator-course"},
+      {"type": "teaches", "target": "kb-readiness-course"},
+      {"type": "teaches", "target": "reg-tracker-course"},
+      {"type": "teaches", "target": "workflow-audit-course"}
     ]
   }
 ]
