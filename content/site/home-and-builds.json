@@ -116,6 +116,7 @@
         ]
       },
       {
+        "priority": true,
         "eyebrow": "Ways to enter the practice",
         "title": "Start with the problem you already have.",
         "items": [

@@ -357,6 +357,26 @@ test('renders canonical homepage actions and linked institutional cards', () => 
   assert.doesNotMatch(html, /href="\/#start">Start a conversation/);
 });
 
+test('prioritizes homepage visitor pathways before editorial depth and hides registry identity', () => {
+  const home = {
+    ...resource('home', [{ type: 'supports', target: 'alpha' }]),
+    kind: 'institutional',
+    pathname: '/',
+    editorialSections: [{ title: 'How the system works', blocks: [{ type: 'paragraph', text: 'Technical depth.' }] }],
+    institutionalSections: [
+      { title: 'Background', items: [{ title: 'Formation', text: 'Practice context.' }] },
+      { priority: true, title: 'Start with your problem', items: [{ title: 'Choose a service', text: 'Find the right path.', href: '/alpha' }] }
+    ]
+  };
+  const alpha = resource('alpha', [{ type: 'supports', target: 'home' }]);
+  const registry = new Map([[home.id, home], [alpha.id, alpha]]);
+  const html = renderStructuredPage({ resource: home, registry });
+  assert.ok(html.indexOf('Start with your problem') < html.indexOf('How the system works'));
+  assert.ok(html.indexOf('How the system works') < html.indexOf('Background'));
+  assert.doesNotMatch(html, /Canonical ID: <code>home<\/code>/);
+  assert.doesNotMatch(html, /<p class="eyebrow">Resource type<\/p>/);
+});
+
 test('routes commercial conversion to a real contact endpoint and renders direct contact actions', () => {
   const service = {
     ...resource('service', [{ type: 'supports', target: 'contact' }]),
