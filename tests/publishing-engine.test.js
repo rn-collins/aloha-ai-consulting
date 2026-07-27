@@ -512,7 +512,7 @@ test('routes commercial conversion to a real contact endpoint and renders direct
 
 test('routes the global navigation conversion action to the canonical contact endpoint', () => {
   const shell = fs.readFileSync(new URL('../site-shell.js', import.meta.url), 'utf8');
-  assert.match(shell, /link\('\/university\/contact','Work with us'/);
+  assert.match(shell, /link\('\/university\/contact','Let’s build'/);
   assert.doesNotMatch(shell, /link\('\/#start','Work with us'/);
 });
 
@@ -694,7 +694,15 @@ test('renders about as a concise credibility record without registry identity or
       {
         priority: true,
         title: 'What the record supports.',
-        items: [{ title: 'Research rigor', subtitle: 'Named role', text: 'Specific evidence.', href: '/methods' }]
+        intro: 'Role statements are based on the professional record; links show application, not independent verification.',
+        items: [{
+          title: 'Research rigor',
+          subtitle: 'Named role',
+          basis: 'Record basis: research experience',
+          text: 'Specific evidence.',
+          href: '/methods',
+          linkLabel: 'Inspect the applied method'
+        }]
       },
       {
         title: 'Formation',
@@ -711,6 +719,11 @@ test('renders about as a concise credibility record without registry identity or
   assert.doesNotMatch(html, /Duplicated long-form formation/);
   assert.equal(html.match(/What the record supports\./g)?.length, 1);
   assert.match(html, /Named role/);
+  assert.match(html, /Record basis: research experience/);
+  assert.match(html, /links show application, not independent verification/);
+  assert.match(html, />Inspect the applied method →<\/a>/);
+  assert.match(html, /<div class="card"><span class="card__index">01<\/span><h3>Research rigor<\/h3>[\s\S]*?<a class="mini" href="\/methods">Inspect the applied method →<\/a><\/div>/);
+  assert.doesNotMatch(html, /<a class="card card--hover" href="\/methods"><h3>Research rigor<\/h3>/);
   assert.ok(html.indexOf('What the record supports.') < html.indexOf('One interdisciplinary through-line.'));
   assert.match(html, /href="\/methods"/);
 });

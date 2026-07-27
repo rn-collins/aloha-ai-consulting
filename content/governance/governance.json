@@ -33,31 +33,39 @@
         "priority": true,
         "eyebrow": "Evidence behind the practice",
         "title": "What the record supports.",
-        "intro": "The practice joins formal study with applied responsibility. Each part of the background supports a specific capability; none substitutes for a professional license.",
+        "intro": "The practice joins formal study with applied responsibility. Role and education statements below are based on RN Collins’s professional record; the links show how each capability is applied in Aloha AI’s work, not independent third-party verification of the underlying credential. None substitutes for a professional license.",
         "items": [
           {
             "title": "Research rigor and qualitative analysis",
             "subtitle": "Harvard Business School research",
+            "basis": "Record basis: research-assistant experience",
             "text": "Research-assistant work strengthened source discipline, qualitative coding, thematic analysis, and the conversion of complex evidence into findings other people can inspect.",
-            "href": "/methods"
+            "href": "/methods",
+            "linkLabel": "Inspect the applied research method"
           },
           {
             "title": "Regulated research operations",
             "subtitle": "Yale Program for Psychedelic Science",
+            "basis": "Record basis: program-management and education experience",
             "text": "Program-management and education responsibility involved FDA, DEA, IRB, protocol, and research-operations questions in an evidence-heavy emerging field.",
-            "href": "/trust-stack/regulatory-intelligence"
+            "href": "/trust-stack/regulatory-intelligence",
+            "linkLabel": "Inspect the applied regulatory system"
           },
           {
             "title": "Scientific translation and education",
             "subtitle": "Boston University training and teaching",
+            "basis": "Record basis: completed graduate training and teaching experience",
             "text": "Graduate neuroscience and anatomy training, a medical-education certificate, teaching, writing support, and curriculum development connect technical accuracy to usable explanation.",
-            "href": "/university"
+            "href": "/university",
+            "linkLabel": "Inspect the applied education platform"
           },
           {
             "title": "Authority, boundaries, and legal workflow",
             "subtitle": "Northeastern FlexJD and fractional law-clerk work",
+            "basis": "Record basis: current legal education and bounded legal-work experience",
             "text": "Current legal education and supervised or bounded legal-work experience sharpen the separation between research, interpretation, judgment, professional review, and legal advice.",
-            "href": "/legal-ai"
+            "href": "/legal-ai",
+            "linkLabel": "Inspect the applied legal-AI workflow"
           }
         ]
       },

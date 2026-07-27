@@ -4,8 +4,8 @@
     "kind": "institutional",
     "pathname": "/",
     "eyebrow": "Aloha AI · knowledge, decision, and operating systems",
-    "title": "AI you can put in front of a regulator, a funder, or a court.",
-    "summary": "Aloha AI turns fragmented expertise, primary evidence, complex rules, professional judgment, and recurring work into research systems, decision tools, governed AI workflows, educational products, and operating infrastructure people can actually use.",
+    "title": "AI you can put in front of a regulator, a funder, or an audience.",
+    "summary": "Aloha AI turns complex knowledge, high-stakes decisions, and recurring work into intelligent systems people can trust—and actually love using.",
     "audience": "Founders, institutions, legal and compliance teams, educators, researchers, regulated operators, and expert-led organizations working on consequential or unusually complex problems.",
     "maturity": "Production",
     "topics": [
@@ -35,15 +35,15 @@
     ],
     "actions": [
       {
-        "label": "Explore services",
+        "label": "Find your starting point",
         "href": "/services"
       },
       {
-        "label": "See working systems",
+        "label": "See what we build",
         "href": "/builds"
       },
       {
-        "label": "Use the tools",
+        "label": "Try a tool",
         "href": "/tools"
       }
     ],
