@@ -339,6 +339,24 @@ test('renders explicitly selected portfolio resources and rejects unresolved sel
   assert.ok(errorsFor([alpha, beta, portfolio]).includes('portfolio: unresolved collection resource missing'));
 });
 
+test('renders selected engagements before generic service mechanics with explicit relationship status', () => {
+  const engagements = JSON.parse(fs.readFileSync(new URL('../content/services/engagements.json', import.meta.url)));
+  const html = renderStructuredPage({ resource: engagements, registry: new Map([[engagements.id, engagements]]) });
+  const commissioned = html.indexOf('data-engagement-status="commissioned"');
+  const independent = html.indexOf('data-engagement-status="independent"');
+  const identity = html.indexOf('Canonical ID:');
+
+  assert.ok(commissioned > 0);
+  assert.ok(independent > commissioned);
+  assert.ok(identity > independent);
+  assert.match(html, /Legal-AI workflow development on the Harvey platform/);
+  assert.match(html, /RN’s role:/);
+  assert.match(html, /Commissioned · active/);
+  assert.match(html, /Independent pre-engagement work · no client engagement claimed/);
+  assert.match(html, /Evidence standard:/);
+  assert.equal((html.match(/Legal-AI workflow development on the Harvey platform/g) || []).length, 1);
+});
+
 test('renders canonical homepage actions and linked institutional cards', () => {
   const home = {
     ...resource('home', [{ type: 'supports', target: 'alpha' }]),

@@ -7,6 +7,72 @@
   "summary": "Aloha AI offers bounded diagnostics, architecture projects, implementation scopes, retained operating support, research systems, licensing, and institutional partnerships.",
   "audience": "Prospective clients and partners deciding what form of engagement matches their problem and readiness.",
   "maturity": "Production",
+  "engagementPortfolio": {
+    "intro": "Names remain private unless publication has been authorized. These examples identify the sector, problem, RN’s role, and delivered work without implying permission to disclose the client.",
+    "evidenceStandard": "Commissioned means a paid, contracted, or otherwise formally authorized relationship exists. Proposal materials, speculative builds, and unsolicited research remain labeled as independent pre-engagement work. Public naming requires separate permission.",
+    "sections": [
+      {
+        "eyebrow": "Commissioned engagements",
+        "title": "Work performed within active or completed client relationships.",
+        "items": [
+          {
+            "sector": "Legal · corporate law firm",
+            "title": "Legal-AI workflow development on the Harvey platform",
+            "problem": "A corporate law practice needed its AI platform translated into reliable workflows attorneys could review, repeat, and improve.",
+            "role": "AI workflow developer",
+            "deliverables": ["Legal-AI workflow design", "Prompt and instruction architecture", "Document-synthesis and review processes", "Human-verification requirements for consequential output"],
+            "status": "Commissioned · active"
+          },
+          {
+            "sector": "Academic · legislative research",
+            "title": "Advanced legislative-scoring instrument",
+            "problem": "A university research project needed a structured and defensible way to evaluate legislation at scale.",
+            "role": "Instrument and workflow architect",
+            "deliverables": ["Instrument architecture aligned to the project methodology", "Question-level scoring logic", "Reasoning and evidence requirements", "Repeatable analysis workflow"],
+            "status": "Commissioned · active"
+          },
+          {
+            "sector": "Education · design studio",
+            "title": "Curriculum and instructional-system architecture",
+            "problem": "A design studio needed its program transformed into a coherent, teachable, and implementation-ready curriculum.",
+            "role": "Curriculum and instructional-system architect",
+            "deliverables": ["Program architecture", "Course sequencing and learning progression", "Instructional-system design", "Teacher- and learner-facing implementation structure"],
+            "status": "Commissioned · active"
+          }
+        ]
+      },
+      {
+        "eyebrow": "Independent pre-engagement work",
+        "title": "Research, prototypes, and strategy packages that demonstrate capability without claiming a client relationship.",
+        "items": [
+          {
+            "sector": "Biopharma · psychedelics",
+            "title": "Regulatory-intelligence and commercial-timeline package",
+            "problem": "A primary-source analysis translated a changing scheduling landscape into decision-relevant commercial timelines.",
+            "role": "Independent researcher and system architect",
+            "deliverables": ["Regulatory memorandum covering operative authorities, administrative constraints, and timing mechanisms", "Comparative commercial-timeline analysis across public developers", "Proposed architecture for an ongoing regulatory-intelligence layer"],
+            "status": "Independent pre-engagement work · no client engagement claimed"
+          },
+          {
+            "sector": "Nonprofit · health media",
+            "title": "AI content-system strategy package",
+            "problem": "A strategy package explored how a founder-led health organization could scale research-grounded content without losing voice, review, or compliance boundaries.",
+            "role": "Independent AI and content-system strategist",
+            "deliverables": ["Platform, distribution, and AI-strategy briefs", "Voice-profile and prompt-library architecture", "Thirteen-week implementation concept", "Proposed research and content operating cadence"],
+            "status": "Independent pre-engagement work · no client engagement claimed"
+          },
+          {
+            "sector": "Nonprofit · end-of-life care",
+            "title": "Evidence architecture and knowledge-platform prototype",
+            "problem": "A rapid research and prototype package explored how a small nonprofit could organize evidence, retrieval, and funder-facing proof.",
+            "role": "Independent research and knowledge-system architect",
+            "deliverables": ["Knowledge-system and data-architecture proposal", "Research and funder-landscape briefs", "State evidence-architecture memorandum", "Working proof-of-concept knowledge platform"],
+            "status": "Independent pre-engagement work · no client engagement claimed"
+          }
+        ]
+      }
+    ]
+  },
   "topics": ["engagements", "scoping", "partnerships", "licensing"],
   "deliverables": ["Written scope and decision owner", "Defined inputs and exclusions", "Milestones and acceptance criteria", "Evidence and review requirements", "Handoff or maintenance plan"],
   "timeline": "Diagnostics are usually the shortest entry point; architecture, implementation, retained support, and licensing are scoped from validated needs.",
