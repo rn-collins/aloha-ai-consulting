@@ -114,7 +114,7 @@
         "blocks": [
           {
             "type": "paragraph",
-            "text": "What you run here is the public, in-browser version. A firm-deployed build routes checks through a private backend, keeps credentials off the client, writes a signed audit record, and integrates with the tools your team already runs. Each tool maps to a real engagement: a citation gate, a documented governance policy, or a scoped budget."
+            "text": "What you run here is the public, in-browser version. A private build can route checks through a protected backend, keep credentials off the client, write an audit record, and connect with the tools a team already uses. Each public tool shows the kind of contained engagement it could become: a citation gate, a documented governance policy, or a scoped implementation plan."
           },
           {
             "type": "list",
