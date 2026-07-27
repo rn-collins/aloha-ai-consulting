@@ -4,7 +4,7 @@
     "kind": "learningHub",
     "pathname": "/university/about",
     "eyebrow": "Teaching philosophy",
-    "title": "Grounded, honest, primary-source. That is the whole method.",
+    "title": "Grounded, honest, primary-source. That is the whole method",
     "summary": "Aloha AI University teaches how generative AI works, where it fails, and how to verify it so confidence is earned rather than borrowed from a tool.",
     "audience": "Learners and organizations evaluating the University’s teaching method and evidence standards.",
     "maturity": "Production",
@@ -55,7 +55,70 @@
         "type": "documents",
         "target": "methods"
       }
-    ]
+    ],
+    "seoTitle": "Grounded, honest, primary-source. That is the whole method.",
+    "editorialIntro": [
+      "Aloha AI University exists because AI adoption stalls on trust, not on tools. We teach the mechanics so your confidence is earned, not borrowed."
+    ],
+    "editorialSections": [
+      {
+        "title": "The teaching philosophy",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Most AI training sells a feeling and skips the mechanics. We do the opposite. We teach how the models work, where they break, and how to verify what they produce, drawn from primary sources rather than secondhand hype. When you understand why a tool behaves the way it does, you stop fearing it and you stop over-trusting it. You use it well."
+          }
+        ]
+      },
+      {
+        "title": "The neuroscience of trust",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Teams do not adopt tools they do not trust, and trust is not a slogan. It is what your brain does when a new tool proves reliable, repeatedly, in ways you can check. So this program is built around verification and honest limits. Every claim you can test, we show you how to test. Every place the tool fails, we name it. That is how adoption actually sticks: by making reliability visible."
+          }
+        ]
+      },
+      {
+        "title": "Who teaches this",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Aloha AI is the consulting practice of RN Collins. The work sits at the intersection of AI capability and the trust, governance, and disclosure needs of regulated and reputation-sensitive businesses."
+          },
+          {
+            "type": "heading",
+            "text": "Important disclosures"
+          },
+          {
+            "type": "paragraph",
+            "text": "RN Collins is a JD candidate and is not a licensed attorney."
+          },
+          {
+            "type": "paragraph",
+            "text": "Nothing on this site is legal, medical, or financial advice. Educational content and templates are starting points, not a substitute for advice from a qualified professional who knows your specific situation."
+          },
+          {
+            "type": "paragraph",
+            "text": "Every page here runs entirely in your browser. We collect nothing unless you choose to contact us."
+          }
+        ]
+      },
+      {
+        "title": "Learn free, or work with us",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Start with the lessons, or book a conversation about your business."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "university/about/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "university-start-here",

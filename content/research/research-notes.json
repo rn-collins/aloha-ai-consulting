@@ -4,7 +4,7 @@
     "kind": "collection",
     "pathname": "/notes",
     "eyebrow": "Aloha AI research notes",
-    "title": "Notes on building AI you can actually trust",
+    "title": "Notes on building AI you can actually trust.",
     "summary": "Essays and build notes on designing AI systems for regulated and high-complexity work, each anchored to a working tool, workflow, monitor, or operating layer.",
     "audience": "Leaders, practitioners, researchers, and builders evaluating AI for consequential work.",
     "maturity": "Research",
@@ -72,7 +72,94 @@
         "type": "supports",
         "target": "intelligence"
       }
-    ]
+    ],
+    "seoTitle": "Notes on building AI you can actually trust",
+    "editorialIntro": [
+      "Essays and build notes on designing AI systems for regulated and high-complexity work. Each note sits on top of something I have built, so the argument is anchored to a working tool rather than a slide. If you want the reasoning behind the practice, this is where it lives."
+    ],
+    "editorialSections": [
+      {
+        "title": "Reasoning you can check against a build",
+        "eyebrow": "What this is",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Most writing about AI stays at the level of the prediction. These notes stay at the level of the mechanism: why a system fails on the exact thing that matters, and what design choice closes the gap. Each essay links to the tool it is anchored to, so you can read the argument and then run the thing it describes."
+          }
+        ]
+      },
+      {
+        "title": "Start with the one that matches your question",
+        "eyebrow": "The notes",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Four essays to begin. Each names the build it is anchored to, so the claim is testable rather than rhetorical."
+          },
+          {
+            "type": "heading",
+            "text": "How I think about hallucination risk in legal and regulatory work"
+          },
+          {
+            "type": "paragraph",
+            "text": "Why fabricated citations happen, the structural tells that give them away, and why existence-verification plus a human gate matter more than a better model."
+          },
+          {
+            "type": "heading",
+            "text": "What I audit first when a team says it is already using AI"
+          },
+          {
+            "type": "paragraph",
+            "text": "The six dimensions I check before anything else, and why ad-hoc use, not the absence of a tool, is usually the real risk."
+          },
+          {
+            "type": "heading",
+            "text": "Tracking is not intelligence: designing a regulatory-analysis system"
+          },
+          {
+            "type": "paragraph",
+            "text": "The difference between collecting updates and producing something a decision-maker can act on, and the structure that gets you from one to the other."
+          },
+          {
+            "type": "heading",
+            "text": "The difference between an AI tool, a workflow, and an operating system"
+          },
+          {
+            "type": "paragraph",
+            "text": "How one clever prompt becomes a repeatable workflow, and how a repeatable workflow becomes a governed system your organization can stand behind."
+          }
+        ]
+      },
+      {
+        "title": "Aloha AI Dispatch",
+        "eyebrow": "Newsletter",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "More notes are coming. Subscribe if you would rather they found you than the other way around."
+          }
+        ]
+      },
+      {
+        "title": "Ready when you are.",
+        "eyebrow": "Aloha AI · Honolulu",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Convinced, curious, or comparing, there's a path for each."
+          },
+          {
+            "type": "paragraph",
+            "text": "Prefer email? Email RN · or connect on LinkedIn"
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "notes/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "hallucination-risk-legal-work",

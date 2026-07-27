@@ -1055,6 +1055,83 @@
         "type": "supports",
         "target": "university-contact"
       }
-    ]
+    ],
+    "editorialIntro": [
+      "Learning is free and always will be. When you want a real system built, Aloha AI works across six pillars, done with you or done for you."
+    ],
+    "editorialSections": [
+      {
+        "title": "Scoped engagements with clear starting prices",
+        "eyebrow": "Six pillars",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Every engagement starts with a conversation and a fixed scope. Prices below are starting points, not ceilings."
+          },
+          {
+            "type": "heading",
+            "text": "AI Strategy Sprint"
+          },
+          {
+            "type": "paragraph",
+            "text": "Decide where AI earns its keep, in what order, and what to leave alone. You leave with a plan, not a pitch."
+          },
+          {
+            "type": "heading",
+            "text": "Workflow Automation"
+          },
+          {
+            "type": "paragraph",
+            "text": "Take the repetitive work off your team's plate with workflows built around how you actually operate."
+          },
+          {
+            "type": "heading",
+            "text": "AI Implementation & Assistants"
+          },
+          {
+            "type": "paragraph",
+            "text": "Assistants and knowledge systems trained on your material and tuned to your voice."
+          },
+          {
+            "type": "heading",
+            "text": "Team Training"
+          },
+          {
+            "type": "paragraph",
+            "text": "Get your whole team fluent and confident, not just a couple of early adopters."
+          },
+          {
+            "type": "heading",
+            "text": "AI Governance & Policy"
+          },
+          {
+            "type": "paragraph",
+            "text": "Guardrails, policies, and disclosures so adoption stays safe, consistent, and defensible."
+          },
+          {
+            "type": "heading",
+            "text": "Ongoing Advisory"
+          },
+          {
+            "type": "paragraph",
+            "text": "A steady hand as your use of AI grows: monthly guidance, reviews, and course corrections."
+          }
+        ]
+      },
+      {
+        "title": "Start with a conversation",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Tell us what you are trying to do. We will tell you honestly whether we can help and how."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "university/services/index.html",
+      "restoredAt": "2026-07-26"
+    }
   }
 ]

@@ -921,6 +921,318 @@
         "type": "uses",
         "target": "methods"
       }
-    ]
+    ],
+    "editorialIntro": [
+      "This collection organizes Aloha AI’s public tools, reference demonstrations, research infrastructure, educational products, and selected engagement work by system type and operational status. Each public item should make its purpose, evidence, limits, maintenance, and current availability clear."
+    ],
+    "editorialSections": [
+      {
+        "title": "Four system families make the range legible.",
+        "eyebrow": "Canonical taxonomy",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "01 · Research"
+          },
+          {
+            "type": "heading",
+            "text": "Research and intelligence systems"
+          },
+          {
+            "type": "paragraph",
+            "text": "Discover, verify, structure, compare, monitor, and maintain legal, regulatory, scientific, market, opportunity, or institutional information."
+          },
+          {
+            "type": "paragraph",
+            "text": "02 · Decisions"
+          },
+          {
+            "type": "heading",
+            "text": "Decision and assessment systems"
+          },
+          {
+            "type": "paragraph",
+            "text": "Adaptive intake, eligibility, scoring, classification, matching, compliance review, and guided decision support with explicit rules and exceptions."
+          },
+          {
+            "type": "paragraph",
+            "text": "03 · Operations"
+          },
+          {
+            "type": "heading",
+            "text": "Knowledge and workflow systems"
+          },
+          {
+            "type": "paragraph",
+            "text": "Agents, procedural copilots, document workflows, approval pipelines, internal knowledge systems, and governed operating structures."
+          },
+          {
+            "type": "paragraph",
+            "text": "04 · Products"
+          },
+          {
+            "type": "heading",
+            "text": "Educational and AI-enabled products"
+          },
+          {
+            "type": "paragraph",
+            "text": "Courses, complete programs, templates, diagnostics, client portals, specialized search, licensing assets, and maintained knowledge products."
+          }
+        ]
+      },
+      {
+        "title": "A deployment count is not a quality or production claim.",
+        "eyebrow": "Status language",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Usable now"
+          },
+          {
+            "type": "paragraph",
+            "text": "The route performs its stated function publicly. Data freshness and limitations are shown on the item itself."
+          },
+          {
+            "type": "heading",
+            "text": "Owned and reviewed"
+          },
+          {
+            "type": "paragraph",
+            "text": "A named owner checks defined sources, logic, or content on a stated cadence and records changes."
+          },
+          {
+            "type": "heading",
+            "text": "Dated proof of method"
+          },
+          {
+            "type": "paragraph",
+            "text": "The system demonstrates architecture or reasoning but is not represented as continuously current or production-ready."
+          },
+          {
+            "type": "heading",
+            "text": "Described without exposure"
+          },
+          {
+            "type": "paragraph",
+            "text": "The problem, system type, role, and deliverable can be explained while protecting client, participant, source, or proprietary information."
+          }
+        ]
+      },
+      {
+        "title": "Selected items that show distinct capabilities.",
+        "eyebrow": "Representative public systems",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Verification"
+          },
+          {
+            "type": "heading",
+            "text": "Citation Verifier"
+          },
+          {
+            "type": "paragraph",
+            "text": "A demonstration of citation-existence and source-checking workflows, with the important distinction that a real citation may still fail to support a proposition."
+          },
+          {
+            "type": "paragraph",
+            "text": "Governance and operation"
+          },
+          {
+            "type": "heading",
+            "text": "Regulated Trust Stack"
+          },
+          {
+            "type": "paragraph",
+            "text": "A layered framework and product estate for evidence, boundaries, production, persuasion, defense, and maintenance in regulated or reputation-sensitive work."
+          },
+          {
+            "type": "paragraph",
+            "text": "Consent and likeness"
+          },
+          {
+            "type": "heading",
+            "text": "Trust-Safe Twins"
+          },
+          {
+            "type": "paragraph",
+            "text": "A consent, rights, provenance, disclosure, review, revocation, and governance approach for digital likeness and voice systems."
+          },
+          {
+            "type": "paragraph",
+            "text": "Learning infrastructure"
+          },
+          {
+            "type": "heading",
+            "text": "Aloha AI University"
+          },
+          {
+            "type": "paragraph",
+            "text": "Free learning, playbooks, templates, assessments, courses, continuing education development, and institutional program licensing."
+          },
+          {
+            "type": "paragraph",
+            "text": "Operating architecture"
+          },
+          {
+            "type": "heading",
+            "text": "Build Your AI Team"
+          },
+          {
+            "type": "paragraph",
+            "text": "A buyer-facing diagnostic that translates recurring work into bounded agent roles, human approvals, and a recommended implementation path."
+          },
+          {
+            "type": "paragraph",
+            "text": "Professional education"
+          },
+          {
+            "type": "heading",
+            "text": "Aloha AI Continuing Education"
+          },
+          {
+            "type": "paragraph",
+            "text": "A developing catalog of evidence-grounded professional education. Accreditation or credit status is stated course by course and is not assumed."
+          }
+        ]
+      },
+      {
+        "title": "The strongest evidence is often architectural rather than publicly interactive.",
+        "eyebrow": "Private and institutional work",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Regulatory and legal intelligence"
+          },
+          {
+            "type": "paragraph",
+            "text": "Source hierarchies, verification systems, bill or rule comparison, entity dossiers, maintained datasets, decision packets, and research operations."
+          },
+          {
+            "type": "heading",
+            "text": "Opportunity and intake infrastructure"
+          },
+          {
+            "type": "paragraph",
+            "text": "Canonical data dictionaries, adaptive branching, eligibility, matching, primary-source verification, application support, and maintenance governance."
+          },
+          {
+            "type": "heading",
+            "text": "Academic and professional programs"
+          },
+          {
+            "type": "paragraph",
+            "text": "Complete curricula, syllabi, labs, assessments, rubrics, instructor guidance, implementation documentation, and licensing-ready program architecture."
+          },
+          {
+            "type": "heading",
+            "text": "Commercial intelligence engines"
+          },
+          {
+            "type": "paragraph",
+            "text": "Prospect discovery, eligibility, source completion, verification, scoring, decision-ready dossiers, revenue operations, and authority gates."
+          },
+          {
+            "type": "heading",
+            "text": "Research instruments and participant systems"
+          },
+          {
+            "type": "paragraph",
+            "text": "Consent-aware intake, eligibility, interview operations, item-level cognitive probes, coding systems, revision ledgers, pilot protocols, and activation controls."
+          },
+          {
+            "type": "heading",
+            "text": "Knowledge and content operations"
+          },
+          {
+            "type": "paragraph",
+            "text": "Research-to-publication systems, editorial standards, voice specifications, agents, source desks, content formats, and distribution workflows."
+          }
+        ]
+      },
+      {
+        "title": "Every future build entry will answer the same questions.",
+        "eyebrow": "Required case-study record",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Problem and user"
+          },
+          {
+            "type": "paragraph",
+            "text": "What recurring work existed, who performed it, what failed, and who needed the output."
+          },
+          {
+            "type": "heading",
+            "text": "System architecture"
+          },
+          {
+            "type": "paragraph",
+            "text": "Sources, data model, rules, AI role, deterministic logic, workflow, human judgment, governance, and maintenance."
+          },
+          {
+            "type": "heading",
+            "text": "Evidence and status"
+          },
+          {
+            "type": "paragraph",
+            "text": "What was tested, what result is known, what remains uncertain, current availability, last review, and commercial status."
+          }
+        ]
+      },
+      {
+        "title": "A build can lead to several commercial paths.",
+        "eyebrow": "Availability",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Custom adaptation"
+          },
+          {
+            "type": "paragraph",
+            "text": "Apply an existing architecture to a new organization, jurisdiction, audience, or workflow."
+          },
+          {
+            "type": "heading",
+            "text": "Licensing"
+          },
+          {
+            "type": "paragraph",
+            "text": "License a framework, curriculum, dataset, tool, template estate, or maintained knowledge product under defined rights."
+          },
+          {
+            "type": "heading",
+            "text": "Partnership"
+          },
+          {
+            "type": "paragraph",
+            "text": "Co-develop, fund, distribute, validate, or commercialize a larger system with agreed governance and ownership."
+          },
+          {
+            "type": "heading",
+            "text": "Independent build"
+          },
+          {
+            "type": "paragraph",
+            "text": "Commission a new system where the problem is sufficiently recurring, consequential, and structured to justify infrastructure."
+          }
+        ]
+      },
+      {
+        "title": "The portfolio is evidence of a repeated capability: turning complicated work into systems.",
+        "eyebrow": "Bring the messy work",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "A Systems Audit can determine whether your problem needs research, decision logic, workflow infrastructure, education, a product, or some combination."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "builds.html",
+      "restoredAt": "2026-07-26"
+    }
   }
 ]

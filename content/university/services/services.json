@@ -379,7 +379,245 @@
         "type": "supports",
         "target": "university-ai-implementation"
       }
-    ]
+    ],
+    "editorialIntro": [
+      "Half of failed AI projects fail at the whiteboard, not in the code. Workflow Design produces the blueprint — every step, prompt, checkpoint, and human review defined — so what gets built is worth building. Your team can run it, or hand it to any developer."
+    ],
+    "editorialSections": [
+      {
+        "title": "Teams with one process worth getting right",
+        "eyebrow": "Who it's for",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "You've identified the work you want AI to help with — intake, content, reporting, support triage — and now you need it specified properly before money goes into a build. Maybe you have a developer waiting for a brief. Maybe you want your own team to run it by hand first. Either way, you need the design nailed down."
+          },
+          {
+            "type": "list",
+            "items": [
+              "You know the workflow you want to improve."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "You want the messy parts — edge cases, review, failure handling — thought through up front."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "You'd rather pay for a good blueprint than pay twice for a bad build."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "\"Just automate it\" skips the hard 20%",
+        "eyebrow": "The problem it solves",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The demo always looks easy. The reality is the exceptions: the client email that doesn't fit the template, the draft that needs a human eye before it goes out, the case where the AI should stop and ask instead of guessing. Skip that thinking and you ship a workflow that works on the happy path and quietly breaks on everything else."
+          },
+          {
+            "type": "paragraph",
+            "text": "Workflow Design front-loads that thinking. We map the full path, define exactly where AI acts and where a person decides, write the prompts and rules, and specify what happens when things go sideways — so the build inherits a design that already survived contact with reality."
+          }
+        ]
+      },
+      {
+        "title": "From current-state map to build-ready spec",
+        "eyebrow": "What's included",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Current-state mapping"
+          },
+          {
+            "type": "paragraph",
+            "text": "We document the workflow as it runs today, including the informal steps people don't write down."
+          },
+          {
+            "type": "heading",
+            "text": "Future-state design"
+          },
+          {
+            "type": "paragraph",
+            "text": "A step-by-step target flow showing exactly where AI assists, where humans stay in control, and why."
+          },
+          {
+            "type": "heading",
+            "text": "Prompt & rule authoring"
+          },
+          {
+            "type": "paragraph",
+            "text": "The actual prompts, instructions, and decision rules the workflow needs — tested against real examples from your work."
+          },
+          {
+            "type": "heading",
+            "text": "Review & checkpoint design"
+          },
+          {
+            "type": "paragraph",
+            "text": "Where a person signs off, what they check, and how errors get caught before they reach a client."
+          },
+          {
+            "type": "heading",
+            "text": "Failure & escalation paths"
+          },
+          {
+            "type": "paragraph",
+            "text": "What the workflow does when it's unsure — stop, flag, or route to a human — so it degrades safely."
+          },
+          {
+            "type": "heading",
+            "text": "Build handoff brief"
+          },
+          {
+            "type": "paragraph",
+            "text": "A spec any competent developer (or our Implementation team) can build from without guessing."
+          }
+        ]
+      },
+      {
+        "title": "What you keep at the end",
+        "eyebrow": "Deliverables",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "A workflow blueprint document: current state, future state, and the diagram of both."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A prompt and rules library, tested against sample inputs from your real work."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A checkpoint and review plan naming who checks what, and when."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A failure-handling and escalation map."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A build-ready handoff brief you can give to any developer, in or out of Aloha AI."
+            ]
+          },
+          {
+            "type": "quote",
+            "text": "Vendor-neutral by design. The blueprint is yours, and it doesn't lock you into us for the build."
+          }
+        ]
+      },
+      {
+        "title": "Scoped to the workflow, not the calendar",
+        "eyebrow": "Timeline options",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Single-workflow design"
+          },
+          {
+            "type": "paragraph",
+            "text": "One well-bounded process, mapped and specified end to end. The most common engagement."
+          },
+          {
+            "type": "heading",
+            "text": "Multi-workflow design"
+          },
+          {
+            "type": "paragraph",
+            "text": "Two or three connected processes designed together so the handoffs between them actually line up."
+          },
+          {
+            "type": "heading",
+            "text": "Design-and-pilot"
+          },
+          {
+            "type": "paragraph",
+            "text": "The blueprint plus a hands-on run of the manual version with your team, so you validate the flow before committing to a build."
+          }
+        ]
+      },
+      {
+        "title": "Where this is the right step",
+        "eyebrow": "Best-fit clients",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Great fit: you have a specific, repeatable process and either a builder waiting or a team ready to run it manually. You want the design done rigorously so the build is predictable."
+          },
+          {
+            "type": "paragraph",
+            "text": "Not the right fit yet: if you haven't decided which workflows matter, start with the Strategy Sprint first. If the design already exists and you just need it built, go straight to Implementation."
+          }
+        ]
+      },
+      {
+        "title": "Sharpen the design yourself first",
+        "eyebrow": "Related free resources",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Prompting Fundamentals"
+          },
+          {
+            "type": "paragraph",
+            "text": "The skill underneath every prompt in a well-designed workflow."
+          },
+          {
+            "type": "heading",
+            "text": "How to Verify AI Outputs"
+          },
+          {
+            "type": "paragraph",
+            "text": "The checkpoint thinking that keeps a workflow honest."
+          },
+          {
+            "type": "heading",
+            "text": "Content Repurposing"
+          },
+          {
+            "type": "paragraph",
+            "text": "A worked example of a multi-step AI workflow you can study."
+          },
+          {
+            "type": "paragraph",
+            "text": "Scoped to the work"
+          },
+          {
+            "type": "paragraph",
+            "text": "Workflow Design · priced by number and complexity of workflows · quoted after we've scoped it together"
+          }
+        ]
+      },
+      {
+        "title": "Bring the process you want to improve",
+        "eyebrow": "Book a Strategy Session",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "We'll tell you whether it's ready to design, and what a blueprint would take."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "university/services/ai-workflow-design/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "university-ai-implementation",
@@ -452,7 +690,245 @@
         "type": "produced_by",
         "target": "university-services-collection"
       }
-    ]
+    ],
+    "editorialIntro": [
+      "A blueprint isn't a system. Implementation turns a design into a working AI assistant, workflow, or knowledge tool — configured, tested against your real work, documented, and transferred to your team so it keeps running after we've gone."
+    ],
+    "editorialSections": [
+      {
+        "title": "Teams ready to move from plan to production",
+        "eyebrow": "Who it's for",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "You have a design you trust — from our Workflow Design, a Strategy Sprint, or your own work — and you want it built by someone who will do it carefully and won't leave you stranded when it breaks. You don't have a spare engineer to burn on this, or you'd rather they stayed on the core product."
+          },
+          {
+            "type": "list",
+            "items": [
+              "You have a clear scope, or a design we can build from."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "You want it tested on your actual data and workflows, not a toy demo."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "You care about being able to run and maintain it without us."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "The gap between \"we should\" and \"it works\"",
+        "eyebrow": "The problem it solves",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Plenty of teams have a good AI idea and no clean way to ship it. The internal build stalls between other priorities. The freelancer delivers something that works once and nobody can maintain. The tool gets configured badly and quietly produces wrong answers that no one catches."
+          },
+          {
+            "type": "paragraph",
+            "text": "Implementation closes that gap with a disciplined build: configured to your design, tested against real inputs and edge cases, wrapped in the review checkpoints that keep it safe, and documented so your team can operate and change it. We build it to be handed over — not to keep you dependent."
+          }
+        ]
+      },
+      {
+        "title": "A build you can actually stand behind",
+        "eyebrow": "What's included",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Configuration & build"
+          },
+          {
+            "type": "paragraph",
+            "text": "The assistant, workflow, or system assembled to spec on tools that fit your budget and data posture."
+          },
+          {
+            "type": "heading",
+            "text": "Grounding in your material"
+          },
+          {
+            "type": "paragraph",
+            "text": "Where relevant, we connect the system to your documents and examples so it answers from your reality, not the open internet."
+          },
+          {
+            "type": "heading",
+            "text": "Testing on real work"
+          },
+          {
+            "type": "paragraph",
+            "text": "We run it against genuine inputs — including the awkward ones — and tune until it holds up."
+          },
+          {
+            "type": "heading",
+            "text": "Guardrails & review points"
+          },
+          {
+            "type": "paragraph",
+            "text": "The human checkpoints and stop conditions from the design, wired in so the system fails safely."
+          },
+          {
+            "type": "heading",
+            "text": "Documentation"
+          },
+          {
+            "type": "paragraph",
+            "text": "Plain-language runbooks: how it works, how to change it, and what to watch for."
+          },
+          {
+            "type": "heading",
+            "text": "Handover & enablement"
+          },
+          {
+            "type": "paragraph",
+            "text": "A working session so your team can operate, adjust, and troubleshoot it confidently."
+          }
+        ]
+      },
+      {
+        "title": "What you keep at the end",
+        "eyebrow": "Deliverables",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "The working system, live in your environment and under your accounts."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Configuration files, prompts, and settings — documented and yours."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A test log showing how it performed on real inputs, including edge cases."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Operator and maintenance runbooks in plain language."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A recorded handover session and a short post-launch support window."
+            ]
+          },
+          {
+            "type": "quote",
+            "text": "Built on your accounts, owned by you. No lock-in, no hostage data. If we part ways, the system keeps working."
+          }
+        ]
+      },
+      {
+        "title": "Sized to the system",
+        "eyebrow": "Timeline options",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Focused build"
+          },
+          {
+            "type": "paragraph",
+            "text": "A single assistant or one-workflow automation. The quickest path to something live."
+          },
+          {
+            "type": "heading",
+            "text": "Standard buildout"
+          },
+          {
+            "type": "paragraph",
+            "text": "A multi-step workflow or a grounded assistant connected to your material, with full testing and handover."
+          },
+          {
+            "type": "heading",
+            "text": "Phased program"
+          },
+          {
+            "type": "paragraph",
+            "text": "A larger system built in stages, each shipped and validated before the next — so value lands early and risk stays contained."
+          }
+        ]
+      },
+      {
+        "title": "Where a build is the right move",
+        "eyebrow": "Best-fit clients",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Great fit: you have a validated design or a scope we can lock quickly, real work for the system to prove itself on, and a team that will actually use it. You value maintainability over a flashy prototype."
+          },
+          {
+            "type": "paragraph",
+            "text": "Not the right fit yet: if the design is still fuzzy, do Workflow Design first — building on a shaky design is how projects overrun. If you're not sure it's worth building at all, the Strategy Sprint answers that cheaply."
+          }
+        ]
+      },
+      {
+        "title": "Understand what you're buying",
+        "eyebrow": "Related free resources",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "What AI Can and Cannot Do"
+          },
+          {
+            "type": "paragraph",
+            "text": "Set realistic expectations before the build starts."
+          },
+          {
+            "type": "heading",
+            "text": "Hallucinations & Risk"
+          },
+          {
+            "type": "paragraph",
+            "text": "Why grounding and testing matter more than they look."
+          },
+          {
+            "type": "heading",
+            "text": "Internal Knowledge Base"
+          },
+          {
+            "type": "paragraph",
+            "text": "A common buildout, walked through step by step."
+          },
+          {
+            "type": "paragraph",
+            "text": "From $5,000"
+          },
+          {
+            "type": "paragraph",
+            "text": "Implementation / Buildout · typically $5,000–$10,000 depending on scope · never a hard quote until we've scoped it"
+          }
+        ]
+      },
+      {
+        "title": "Bring your design or your goal",
+        "eyebrow": "Book a Strategy Session",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "We'll scope the build honestly, including whether an off-the-shelf tool would serve you better."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "university/services/ai-implementation/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "university-ai-governance-setup",
@@ -526,7 +1002,249 @@
         "type": "implements",
         "target": "trust-stack"
       }
-    ]
+    ],
+    "editorialIntro": [
+      "Your team is already using AI, whether you've approved it or not. Governance turns that quiet risk into a stated policy: what's allowed, what data can go where, when to disclose, and who reviews what — clear enough to follow and defensible enough to stand behind."
+    ],
+    "editorialSections": [
+      {
+        "title": "Leaders accountable for what the team ships",
+        "eyebrow": "Who it's for",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "You're responsible for client confidentiality, quality, or a regulated obligation — and AI now touches work that carries those duties. You want your people to use it, but on rails: no client data pasted into random tools, no AI-generated claims going out unchecked, no disclosure gap you can't explain later."
+          },
+          {
+            "type": "list",
+            "items": [
+              "You handle sensitive information — client, patient, financial, or proprietary."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Your team is using AI ahead of any policy, and you know it."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "You need something practical people will actually follow, not a binder that gathers dust."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "\"Shadow AI\" is the real exposure",
+        "eyebrow": "The problem it solves",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Ban it and people use it anyway, out of sight. Ignore it and confidential material ends up in tools that train on it, hallucinated facts reach clients, and no one can say who checked what. The exposure isn't the technology — it's the absence of rules and the absence of a paper trail."
+          },
+          {
+            "type": "paragraph",
+            "text": "This engagement replaces that vacuum with a clear, usable framework: an acceptable-use policy, concrete data-handling rules, disclosure standards, and a lightweight review process. Adoption becomes deliberate and consistent instead of hidden and risky."
+          },
+          {
+            "type": "quote",
+            "text": "This is practical operational governance, not legal advice. RN Collins is a JD candidate, not a licensed attorney. Where your obligations are legally binding — regulated industries, specific compliance regimes — we'll say so plainly and recommend you run the policy past qualified counsel before you rely on it."
+          }
+        ]
+      },
+      {
+        "title": "The framework, written for your reality",
+        "eyebrow": "What's included",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Current-use assessment"
+          },
+          {
+            "type": "paragraph",
+            "text": "An honest look at how AI is already being used across your team, including the parts nobody mentions in a meeting."
+          },
+          {
+            "type": "heading",
+            "text": "Acceptable-use policy"
+          },
+          {
+            "type": "paragraph",
+            "text": "A plain-language policy stating what's allowed, what's off-limits, and why — short enough that people read it."
+          },
+          {
+            "type": "heading",
+            "text": "Data-handling rules"
+          },
+          {
+            "type": "paragraph",
+            "text": "Clear guidance on what information can go into which tools, and what must never leave your walls."
+          },
+          {
+            "type": "heading",
+            "text": "Disclosure standards"
+          },
+          {
+            "type": "paragraph",
+            "text": "When and how to tell clients, and how to label AI-assisted work, so you're never caught hiding it."
+          },
+          {
+            "type": "heading",
+            "text": "Review & sign-off process"
+          },
+          {
+            "type": "paragraph",
+            "text": "A right-sized checkpoint for who reviews AI-assisted output before it goes out, matched to the stakes."
+          },
+          {
+            "type": "heading",
+            "text": "Rollout & training brief"
+          },
+          {
+            "type": "paragraph",
+            "text": "How to introduce the policy so the team adopts it instead of resenting it."
+          }
+        ]
+      },
+      {
+        "title": "What you keep at the end",
+        "eyebrow": "Deliverables",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "A written AI acceptable-use policy, tailored to your industry and data."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A data-classification and tool-permission reference your team can consult quickly."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A disclosure standard and sample client-facing language."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A review-and-sign-off workflow scaled to your risk."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A rollout brief and a one-page summary staff can keep at their desk."
+            ]
+          },
+          {
+            "type": "quote",
+            "text": "Documents you own and can adapt. Where the stakes are legal, we flag exactly where professional review belongs — legally binding matters go to qualified counsel."
+          }
+        ]
+      },
+      {
+        "title": "Sized to your risk",
+        "eyebrow": "Timeline options",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Starter safe-use setup"
+          },
+          {
+            "type": "paragraph",
+            "text": "A core acceptable-use policy and data-handling rules for a small team getting on the same page fast."
+          },
+          {
+            "type": "heading",
+            "text": "Standard governance package"
+          },
+          {
+            "type": "paragraph",
+            "text": "The full framework — policy, disclosure, review process, and rollout — for a team with real client or compliance obligations."
+          },
+          {
+            "type": "heading",
+            "text": "Governance plus enablement"
+          },
+          {
+            "type": "paragraph",
+            "text": "The framework paired with a training session so the rules land as practice, not paperwork."
+          }
+        ]
+      },
+      {
+        "title": "Where this matters most",
+        "eyebrow": "Best-fit clients",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Great fit: professional services, healthcare-adjacent, financial, legal-adjacent, or any team handling confidential material where a misstep has consequences. You want adoption and accountability at the same time."
+          },
+          {
+            "type": "paragraph",
+            "text": "Not the right fit yet: if no one on your team touches AI yet and there's no sensitive data in play, this can wait. If you have a hard legal or regulatory requirement, this framework supports your counsel's work — it doesn't replace them."
+          }
+        ]
+      },
+      {
+        "title": "Start the guardrails yourself",
+        "eyebrow": "Related free resources",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Governance Starter"
+          },
+          {
+            "type": "paragraph",
+            "text": "A free first pass at the policy this service formalizes."
+          },
+          {
+            "type": "heading",
+            "text": "Privacy & Confidentiality"
+          },
+          {
+            "type": "paragraph",
+            "text": "The data-handling reasoning behind the rules."
+          },
+          {
+            "type": "heading",
+            "text": "When Not to Use AI"
+          },
+          {
+            "type": "paragraph",
+            "text": "The judgment every safe-use policy encodes."
+          },
+          {
+            "type": "paragraph",
+            "text": "Scoped to your risk"
+          },
+          {
+            "type": "paragraph",
+            "text": "Governance / Safe-Use Setup · priced by team size, industry, and depth · quoted after we've scoped it together"
+          }
+        ]
+      },
+      {
+        "title": "Tell us how your team uses AI today",
+        "eyebrow": "Book a Strategy Session",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "We'll scope a framework that fits — and be clear about where a licensed professional needs to weigh in."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "university/services/ai-governance-setup/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "university-team-training",
@@ -909,6 +1627,244 @@
         "type": "supports",
         "target": "ai-native-coo"
       }
-    ]
+    ],
+    "editorialIntro": [
+      "AI moves too fast to set and forget, and a full-time AI lead is out of reach for most teams. A monthly retainer gives you a senior partner in the loop: setting priorities, unblocking builds, keeping the guardrails current, and helping your team level up — month after month."
+    ],
+    "editorialSections": [
+      {
+        "title": "Teams treating AI as an ongoing capability",
+        "eyebrow": "Who it's for",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "You've moved past the one-off project. AI is now part of how you operate, and you need someone senior thinking about it continuously — not a full-time hire you can't justify, and not starting from scratch with a new vendor every quarter. You want continuity, judgment, and a hand on the wheel."
+          },
+          {
+            "type": "list",
+            "items": [
+              "You have live AI work and more coming, and no internal senior owner."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "You want the same partner who knows your context, not a rotating bench."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "You'd rather have steady guidance than lurch from project to project."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Momentum dies between projects",
+        "eyebrow": "The problem it solves",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "A great Sprint or build lands, then attention drifts. Nobody owns what's next. Tools change, a new use case appears, the guardrails go stale, the team hits a wall and there's no one to ask. Hiring a full-time AI lead is expensive and hard to fill; hiring a fresh consultant each time means re-explaining your business every round."
+          },
+          {
+            "type": "paragraph",
+            "text": "A retainer keeps a senior partner engaged with your context, so priorities stay sharp, builds keep shipping, guardrails stay current, and your team always has someone to turn to. You get the leadership without the headcount."
+          }
+        ]
+      },
+      {
+        "title": "What a fractional lead actually does",
+        "eyebrow": "What's included",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Prioritization & roadmap upkeep"
+          },
+          {
+            "type": "paragraph",
+            "text": "We keep your AI roadmap alive — re-ranking as the business and the tools change, so effort stays pointed at what matters."
+          },
+          {
+            "type": "heading",
+            "text": "Standing strategy time"
+          },
+          {
+            "type": "paragraph",
+            "text": "Regular working sessions with you and your leads to make decisions and clear blockers."
+          },
+          {
+            "type": "heading",
+            "text": "Hands-on help"
+          },
+          {
+            "type": "paragraph",
+            "text": "Direct support building, tuning, and troubleshooting workflows and assistants when your team gets stuck."
+          },
+          {
+            "type": "heading",
+            "text": "Guardrail maintenance"
+          },
+          {
+            "type": "paragraph",
+            "text": "Keeping your safe-use policy and review process current as usage grows and rules shift."
+          },
+          {
+            "type": "heading",
+            "text": "Team enablement"
+          },
+          {
+            "type": "paragraph",
+            "text": "Ongoing coaching so your people get better over time, not just once at a workshop."
+          },
+          {
+            "type": "heading",
+            "text": "On-call judgment"
+          },
+          {
+            "type": "paragraph",
+            "text": "A senior voice to sanity-check a tool, a vendor, or a risky idea before you commit."
+          }
+        ]
+      },
+      {
+        "title": "What each month gives you",
+        "eyebrow": "Deliverables",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "A living, re-prioritized AI roadmap you can trust to be current."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Regular strategy sessions with notes and clear decisions."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Hands-on progress on active workflows, assistants, or fixes."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Up-to-date guardrails and policies as your usage evolves."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A short monthly summary of what moved, what's next, and where to watch."
+            ]
+          },
+          {
+            "type": "quote",
+            "text": "Retainers run month to month with a clear scope. The goal is to make your team more capable over time — including capable enough that one day you may not need us as often."
+          }
+        ]
+      },
+      {
+        "title": "Match the cadence to your pace",
+        "eyebrow": "Timeline options",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Light advisory"
+          },
+          {
+            "type": "paragraph",
+            "text": "A standing strategy session and on-call access — right when you mostly need judgment, not hands."
+          },
+          {
+            "type": "heading",
+            "text": "Standard fractional lead"
+          },
+          {
+            "type": "paragraph",
+            "text": "Strategy plus regular hands-on time each month — the default for teams with active AI work."
+          },
+          {
+            "type": "heading",
+            "text": "Embedded partner"
+          },
+          {
+            "type": "paragraph",
+            "text": "Deeper monthly involvement across strategy, building, and enablement, for teams scaling AI across multiple functions."
+          }
+        ]
+      },
+      {
+        "title": "Where a retainer earns its keep",
+        "eyebrow": "Best-fit clients",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Great fit: a growing team with ongoing AI ambitions, no senior internal owner, and a preference for a partner who already knows the business. You value continuity and want steady forward motion."
+          },
+          {
+            "type": "paragraph",
+            "text": "Not the right fit yet: if you have a single, bounded need, a Strategy Sprint or Implementation project is more honest use of your money than a retainer. Advisory is for the long game, not a one-time job."
+          }
+        ]
+      },
+      {
+        "title": "See how we think, free",
+        "eyebrow": "Related free resources",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Choose Your First AI Stack"
+          },
+          {
+            "type": "paragraph",
+            "text": "The tool judgment an advisor applies continuously."
+          },
+          {
+            "type": "heading",
+            "text": "Lead Generation"
+          },
+          {
+            "type": "paragraph",
+            "text": "An example of the ongoing work a fractional lead helps run and refine."
+          },
+          {
+            "type": "heading",
+            "text": "How to Verify AI Outputs"
+          },
+          {
+            "type": "paragraph",
+            "text": "The discipline we keep alive across every engagement."
+          },
+          {
+            "type": "paragraph",
+            "text": "From $4,000/mo"
+          },
+          {
+            "type": "paragraph",
+            "text": "Ongoing Advisory / Fractional AI Lead · monthly retainer scoped to cadence and depth · month to month"
+          }
+        ]
+      },
+      {
+        "title": "Tell us where your AI work stands",
+        "eyebrow": "Book a Strategy Session",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "We'll be honest about whether a retainer fits — or whether a single project serves you better right now."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "university/services/ongoing-advisory/index.html",
+      "restoredAt": "2026-07-26"
+    }
   }
 ]
