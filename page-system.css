@@ -134,6 +134,49 @@
 @media(prefers-reduced-motion:reduce){
   .tool-card,.tool-filter,.tools-depth__item summary i{transition:none}
 }
+
+/* University · cultural magazine × learning playground */
+.is-university .resource-status{display:none}
+.page-hero--university{min-height:min(850px,92vh);display:grid;align-items:center;overflow:hidden;background:#141414}
+.page-hero--university .page-hero__inner{grid-template-columns:minmax(0,1fr) minmax(420px,1fr);align-items:center}
+.page-hero--university .display{max-width:10ch;font-size:clamp(3.3rem,6.4vw,7rem);line-height:.84;letter-spacing:-.07em}
+.page-hero--university .lead{max-width:54ch}
+.university-cover{position:relative;min-height:560px;overflow:hidden;border:2px solid #111;background:#c7ff3b;color:#111;box-shadow:18px 22px 0 #ff5c40;transform:rotate(1.5deg)}
+.university-cover__issue{position:absolute;top:22px;left:24px;margin:0;font:900 .68rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.university-cover__headline{position:absolute;inset:88px 22px auto;display:grid;font:900 clamp(3.5rem,7vw,6.8rem)/.73 var(--sans);letter-spacing:-.09em}
+.university-cover__headline span:nth-child(2){margin-left:11%}.university-cover__headline span:nth-child(3){margin-left:22%}.university-cover__headline span:nth-child(4){margin-left:33%}
+.university-cover__free{position:absolute;right:20px;bottom:18px;width:126px;height:126px;border-radius:50%;display:grid;place-items:center;align-content:center;background:#5536ff;color:#fff;font:900 3.8rem/.75 var(--serif);transform:rotate(8deg)}
+.university-cover__free small{margin-top:.65rem;font:900 .55rem/1 var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.university-cover__note{position:absolute;left:28px;bottom:28px;padding:1rem 1.2rem;background:#fff;box-shadow:8px 8px 0 #111;transform:rotate(-4deg);font-size:.85rem}
+.university-goals{padding:clamp(5rem,10vw,9rem) 0;background:#fff7e9;color:#111}
+.university-goals__head,.university-first__head,.university-library__head,.university-depth__head{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(18rem,.65fr);gap:clamp(2rem,8vw,8rem);align-items:end;margin-bottom:clamp(2.5rem,6vw,5rem)}
+.university-goals__head h2,.university-first__head h2,.university-library__head h2,.university-depth__head h2{margin:.35rem 0 0;font-size:clamp(3rem,6vw,6.4rem);line-height:.84;letter-spacing:-.065em}
+.university-goals__head>p,.university-first__head>p,.university-library__head>p,.university-depth__head>p{margin:0;font-size:clamp(1rem,1.4vw,1.18rem)}
+.university-goals__grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(.85rem,1.5vw,1.35rem)}
+.university-goal{--goal:#c7ff3b;grid-column:span 4;min-height:390px;padding:clamp(1.3rem,2.5vw,2rem);display:flex;flex-direction:column;border:2px solid #111;background:var(--goal);color:#111;text-decoration:none;box-shadow:8px 8px 0 #111;transition:transform .2s ease,box-shadow .2s ease}
+.university-goal--2,.university-goal--5{--goal:#ff5c40}.university-goal--3{--goal:#f3f0ff}.university-goal--4{--goal:#fff}.university-goal--6{--goal:#ffd95a}
+.university-goal:nth-child(1),.university-goal:nth-child(6){grid-column:span 8}
+.university-goal:hover{color:#111;transform:translate(-4px,-6px) rotate(-.5deg);box-shadow:14px 15px 0 #111}
+.university-goal__top{display:flex;justify-content:space-between;gap:1rem;font:900 .62rem/1 var(--mono);letter-spacing:.07em;text-transform:uppercase}
+.university-goal>strong{max-width:19ch;margin:auto 0 1rem;font-family:var(--serif);font-size:clamp(1.8rem,2.8vw,3rem);line-height:.94;letter-spacing:-.04em}
+.university-goal__plain{max-width:44ch;line-height:1.45}
+.university-goal__action{display:flex;justify-content:space-between;align-items:center;margin-top:1.5rem;padding-top:1rem;border-top:1px solid rgba(17,17,17,.35);font:900 .65rem/1 var(--mono);letter-spacing:.07em;text-transform:uppercase}
+.university-goal__action i{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#111;color:#fff;font-style:normal;transition:transform .2s ease}.university-goal:hover i{transform:rotate(45deg)}
+.university-first{padding:clamp(5rem,9vw,8rem) 0;background:#5536ff;color:#fff}
+.university-first__steps{border-top:1px solid rgba(255,255,255,.45)}
+.university-step{display:grid;grid-template-columns:68px minmax(0,1fr) 52px;gap:1.2rem;align-items:center;padding:clamp(1.5rem,3vw,2.5rem) 0;border-bottom:1px solid rgba(255,255,255,.45);color:#fff;text-decoration:none}
+.university-step:hover{color:#c7ff3b}.university-step__number{font:900 1rem/1 var(--mono);color:#c7ff3b}
+.university-step>span:nth-child(2){display:grid;gap:.4rem}.university-step small{font:900 .62rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase}.university-step strong{font-size:clamp(1.5rem,3vw,2.8rem);line-height:1}.university-step i{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#c7ff3b;color:#111;font-style:normal}
+.university-first__promise{display:flex;justify-content:space-between;gap:1rem;margin:2rem 0 0;padding:1.2rem 1.4rem;background:#c7ff3b;color:#111;transform:rotate(-.5deg)}.university-first__promise b{font-family:var(--mono);text-transform:uppercase}
+.university-library{padding:clamp(5rem,10vw,9rem) 0;background:#ffd95a;color:#111}
+.university-library__grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:1rem}
+.university-shelf{grid-column:span 4;min-height:300px;padding:1.6rem;display:flex;flex-direction:column;border:2px solid #111;background:#fff;color:#111;text-decoration:none;transition:transform .2s ease}.university-shelf:nth-child(1),.university-shelf:nth-child(5){grid-column:span 6}.university-shelf:hover{color:#111;transform:rotate(-1deg) translateY(-6px)}
+.university-shelf>span,.university-shelf>b{font:900 .62rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase}.university-shelf>strong{margin:auto 0 .8rem;font-family:var(--serif);font-size:clamp(2rem,3vw,3.2rem);line-height:.9}.university-shelf p{margin:0 0 1.5rem}.university-shelf b{padding-top:1rem;border-top:1px solid #111}
+.university-shelf--2{background:#c7ff3b}.university-shelf--3{background:#f3f0ff}.university-shelf--4{background:#ff5c40}.university-shelf--5{background:#111;color:#fff}.university-shelf--5:hover{color:#fff}.university-shelf--5 b{border-color:#fff}
+.university-depth{padding:clamp(5rem,9vw,8rem) 0;background:#ffecdc;color:#111}.university-depth__sections{border-top:2px solid #111}.university-depth__item{border-bottom:2px solid #111}.university-depth__item summary{display:grid;grid-template-columns:3rem 1fr auto;gap:1rem;align-items:center;min-height:5.5rem;cursor:pointer;list-style:none}.university-depth__item summary::-webkit-details-marker{display:none}.university-depth__item summary span{font:900 .8rem/1 var(--mono)}.university-depth__item summary strong{font-size:clamp(1.25rem,2.4vw,2rem)}.university-depth__item summary i{font-size:2rem;font-style:normal;transition:transform .2s ease}.university-depth__item[open] summary i{transform:rotate(45deg)}.university-depth__body{max-width:56rem;padding:0 0 2.5rem 4rem}
+@media(max-width:900px){.page-hero--university .page-hero__inner,.university-goals__head,.university-first__head,.university-library__head,.university-depth__head{grid-template-columns:1fr}.university-cover{max-width:620px;width:100%;margin-inline:auto}.university-goal,.university-goal:nth-child(1),.university-goal:nth-child(6){grid-column:span 6}.university-shelf,.university-shelf:nth-child(1),.university-shelf:nth-child(5){grid-column:span 6}}
+@media(max-width:600px){.page-hero--university{min-height:auto;padding-top:6.5rem}.page-hero--university .display{font-size:clamp(3.2rem,15vw,5.2rem)}.university-cover{min-height:410px;box-shadow:10px 12px 0 #ff5c40}.university-cover__headline{font-size:clamp(3rem,17vw,5rem)}.university-cover__free{width:92px;height:92px;font-size:2.7rem}.university-goal,.university-goal:nth-child(1),.university-goal:nth-child(6),.university-shelf,.university-shelf:nth-child(1),.university-shelf:nth-child(5){grid-column:1/-1}.university-goal{min-height:340px}.university-step{grid-template-columns:36px minmax(0,1fr) 38px}.university-step i{width:36px;height:36px}.university-first__promise{display:grid}.university-depth__body{padding-left:0}}
+@media(prefers-reduced-motion:reduce){.university-goal,.university-goal__action i,.university-shelf,.university-depth__item summary i{transition:none}}
 @media(max-width:920px){
   .page-hero--home{min-height:auto}
   .page-hero--home .page-hero__inner{grid-template-columns:1fr}

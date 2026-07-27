@@ -398,6 +398,24 @@ test('renders builds as a plain-language filterable proof wall before deeper rec
   assert.ok(html.indexOf('id="build-wall"') < html.indexOf('Behind the wall'));
 });
 
+test('renders University as a goal-led free learning journey before institutional detail', () => {
+  const university = JSON.parse(fs.readFileSync(new URL('../content/site/cornerstones.json', import.meta.url))).find((item) => item.id === 'university');
+  const html = renderStructuredPage({ resource: university, registry: new Map([[university.id, university]]) });
+
+  assert.match(html, /class="is-university"/);
+  assert.match(html, /class="university-cover"/);
+  assert.match(html, /id="choose-a-path"/);
+  assert.match(html, /Start with a goal\.<br>Not a syllabus\./);
+  assert.match(html, /Your first 30 minutes\./);
+  assert.match(html, /\$0 · no signup · no email gate/);
+  assert.match(html, /href="\/university\/learn\/how-to-verify-ai-outputs"/);
+  assert.match(html, /href="\/university\/playbooks"/);
+  assert.match(html, /href="\/university\/templates"/);
+  assert.match(html, /Browse your way\./);
+  assert.doesNotMatch(html, /Canonical ID: <code>university/);
+  assert.ok(html.indexOf('id="choose-a-path"') < html.indexOf('How the school works'));
+});
+
 test('renders selected engagements before generic service mechanics with explicit relationship status', () => {
   const engagements = JSON.parse(fs.readFileSync(new URL('../content/services/engagements.json', import.meta.url)));
   const html = renderStructuredPage({ resource: engagements, registry: new Map([[engagements.id, engagements]]) });

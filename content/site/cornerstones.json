@@ -651,6 +651,124 @@
       }
     ],
     "seoTitle": "Aloha AI University",
+    "actions": [
+      {
+        "label": "Choose your path",
+        "href": "#choose-a-path"
+      },
+      {
+        "label": "Start from zero",
+        "href": "/university/start-here"
+      }
+    ],
+    "universityExperience": {
+      "intro": "You do not need to know the right AI term or choose a formal course. Pick the thing you want to understand, fix, or make. We will show you the clearest first step.",
+      "goals": [
+        {
+          "title": "I want to understand AI without the hype.",
+          "plain": "Learn what these systems do, why they make things up, and what they cannot safely decide for you.",
+          "time": "Start in 10 min",
+          "action": "Begin at zero",
+          "href": "/university/start-here"
+        },
+        {
+          "title": "I want to check whether an AI answer is true.",
+          "plain": "Learn a repeatable way to compare a claim with the source that is supposed to support it.",
+          "time": "15 min lesson",
+          "action": "Learn to verify",
+          "href": "/university/learn/how-to-verify-ai-outputs"
+        },
+        {
+          "title": "I want AI to save me time at work.",
+          "plain": "See practical examples for email, meetings, research, content, and everyday operations.",
+          "time": "Browse by task",
+          "action": "Find a use case",
+          "href": "/university/use-cases"
+        },
+        {
+          "title": "I want to build a workflow that holds up.",
+          "plain": "Follow a step-by-step playbook and leave with a process you can actually run again.",
+          "time": "Build this week",
+          "action": "Open the playbooks",
+          "href": "/university/playbooks"
+        },
+        {
+          "title": "I need safer rules for my team.",
+          "plain": "Start with privacy, acceptable-use, review, and accountability guidance people can follow.",
+          "time": "Copy + adapt",
+          "action": "Get a template",
+          "href": "/university/templates"
+        },
+        {
+          "title": "I want to build a complete AI system.",
+          "plain": "Take a longer course that joins the idea, method, safeguards, and working build.",
+          "time": "Course path",
+          "action": "See the courses",
+          "href": "/university/courses"
+        }
+      ],
+      "firstPathIntro": "Three short lessons give you the mental model, the limits, and the safety instinct you need before you chase tools or prompts.",
+      "firstPath": [
+        {
+          "title": "What generative AI actually is",
+          "plain": "See the basic mechanism in ordinary language.",
+          "time": "10 min",
+          "level": "No experience needed",
+          "href": "/university/learn/what-generative-ai-is"
+        },
+        {
+          "title": "What AI can and cannot do",
+          "plain": "Aim it at work it can help with—and keep it away from decisions it should not own.",
+          "time": "10 min",
+          "level": "Foundation",
+          "href": "/university/learn/what-ai-can-and-cannot-do"
+        },
+        {
+          "title": "When not to use AI",
+          "plain": "Recognize the privacy, accuracy, and judgment lines before something goes wrong.",
+          "time": "10 min",
+          "level": "Safety",
+          "href": "/university/learn/when-not-to-use-ai"
+        }
+      ],
+      "shelves": [
+        {
+          "label": "Learn one idea",
+          "title": "Lessons",
+          "plain": "Short, plain-language explanations you can finish in one sitting.",
+          "action": "Browse lessons",
+          "href": "/university/learn"
+        },
+        {
+          "label": "Make one thing",
+          "title": "Playbooks",
+          "plain": "Step-by-step guides that end with a workflow, not a lecture.",
+          "action": "Browse playbooks",
+          "href": "/university/playbooks"
+        },
+        {
+          "label": "Skip the blank page",
+          "title": "Templates",
+          "plain": "Prompts, policies, and working documents you can copy and change.",
+          "action": "Browse templates",
+          "href": "/university/templates"
+        },
+        {
+          "label": "Choose your stack",
+          "title": "Tool guides",
+          "plain": "Compare tools by the job you need done, with limits made visible.",
+          "action": "Browse tool guides",
+          "href": "/university/tools"
+        },
+        {
+          "label": "Build the full skill",
+          "title": "Courses",
+          "plain": "Longer paths for creating a complete, checked, usable AI system.",
+          "action": "Browse courses",
+          "href": "/university/courses"
+        }
+      ]
+    },
     "editorialIntro": [
       "Practical, honest, primary-source training that takes you from curious to capable. Learn what these tools really do, where they fail, and how to put them to work in your business without the hype."
     ],
