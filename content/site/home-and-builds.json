@@ -3,10 +3,10 @@
     "id": "home",
     "kind": "institutional",
     "pathname": "/",
-    "eyebrow": "Aloha AI · knowledge, decision, and operating systems",
+    "eyebrow": "Aloha AI · complex work, made usable",
     "title": "AI you can put in front of a regulator, a funder, or an audience.",
-    "summary": "Aloha AI turns complex knowledge, high-stakes decisions, and recurring work into intelligent systems people can trust—and actually love using.",
-    "audience": "Founders, institutions, legal and compliance teams, educators, researchers, regulated operators, and expert-led organizations working on consequential or unusually complex problems.",
+    "summary": "I turn scattered research, repeated work, and hard decisions into clear AI systems your people can check, use, and keep current.",
+    "audience": "Teams doing work where a confident wrong answer could cost money, trust, or time.",
     "maturity": "Production",
     "topics": [
       "systems-architecture",
@@ -35,15 +35,15 @@
     ],
     "actions": [
       {
-        "label": "Find your starting point",
+        "label": "What do you need?",
         "href": "/services"
       },
       {
-        "label": "See what we build",
+        "label": "See real builds",
         "href": "/builds"
       },
       {
-        "label": "Try a tool",
+        "label": "Try something now",
         "href": "/tools"
       }
     ],
@@ -118,36 +118,36 @@
       {
         "priority": true,
         "eyebrow": "Ways to enter the practice",
-        "title": "Start with the problem you already have.",
+        "title": "What is making your work harder than it should be?",
         "items": [
           {
-            "title": "AI strategy and fractional leadership",
-            "text": "Operating strategy, governance, implementation ownership, executive support, and fractional AI leadership.",
+            "title": "We need a real AI plan",
+            "text": "Decide what to build, what to buy, what to stop, who owns each decision, and how to move from experiments to everyday work.",
             "href": "/strategy"
           },
           {
-            "title": "Regulatory and market intelligence",
-            "text": "Primary-source research, monitoring, comparison, verification, decision packets, and maintained intelligence layers.",
+            "title": "We cannot keep up with what is changing",
+            "text": "Turn changing laws, science, markets, and competitors into a source-backed system that tells your team what changed and what to do next.",
             "href": "/intelligence"
           },
           {
-            "title": "Content and adoption systems",
-            "text": "Research-to-publication systems, voice architecture, training, content operations, and institutional adoption.",
+            "title": "Our knowledge is not reaching people",
+            "text": "Build a repeatable path from research to useful content, staff training, and communication that still sounds like you.",
             "href": "/content"
           },
           {
-            "title": "Legal AI workflow",
-            "text": "Verification-gated legal workflows designed around confidentiality, professional responsibility, review, and evidence.",
+            "title": "We want legal AI without reckless shortcuts",
+            "text": "Design legal workflows with source checks, confidentiality rules, human review, and clear responsibility built into every step.",
             "href": "/legal-ai"
           },
           {
-            "title": "AI work systems and supervised teams",
-            "text": "Role contracts, permissions, source rules, review gates, evaluations, escalation, and accountable ownership.",
+            "title": "Our AI tools do not work together",
+            "text": "Give each tool or agent a clear job, trusted sources, permissions, review points, and a human owner.",
             "href": "/build-your-team"
           },
           {
-            "title": "Products, programs, and licensing",
-            "text": "Adapt an existing framework, curriculum, dataset, system, assessment, or digital product.",
+            "title": "We have expertise that should become a product",
+            "text": "Turn a framework, curriculum, dataset, service, or method into something other people can use, buy, or license.",
             "href": "/partners"
           }
         ]
@@ -155,8 +155,8 @@
       {
         "priority": true,
         "eyebrow": "Proof you can inspect",
-        "title": "See the work before deciding whether to trust it.",
-        "intro": "The methods, working systems, engagement record, and interdisciplinary formation are public. Start with the kind of evidence that matters to you.",
+        "title": "Do not take the website’s word for it.",
+        "intro": "Open the systems, inspect the method, review the work, and see the experience behind it.",
         "items": [
           {
             "title": "Working systems",

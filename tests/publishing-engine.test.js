@@ -416,6 +416,29 @@ test('places linked proof directly after homepage problem pathways', () => {
   assert.match(html, /href="\/builds"[\s\S]*Working systems/);
 });
 
+test('composes homepage priority sections as the Direction 2 visitor journey', () => {
+  const home = {
+    ...resource('home', [{ type: 'supports', target: 'alpha' }]),
+    kind: 'institutional',
+    pathname: '/',
+    summary: 'Clear AI systems people can check and use.',
+    institutionalSections: [
+      { priority: true, title: 'What is making work harder?', items: [{ title: 'We need a plan', text: 'Choose what to build.', href: '/alpha' }] },
+      { priority: true, title: 'Do not take our word for it', items: [{ title: 'Inspect the work', text: 'Open the evidence.', href: '/builds' }] }
+    ]
+  };
+  const alpha = resource('alpha', [{ type: 'supports', target: 'home' }]);
+  const builds = resource('builds', [{ type: 'supports', target: 'home' }]);
+  builds.pathname = '/builds';
+  const html = renderStructuredPage({ resource: home, registry: new Map([[home.id, home], [alpha.id, alpha], [builds.id, builds]]) });
+
+  assert.match(html, /class="home-cover"/);
+  assert.match(html, /institutional-section home-gateway/);
+  assert.match(html, /institutional-section home-proof/);
+  assert.ok(html.indexOf('home-gateway') < html.indexOf('home-proof'));
+  assert.match(html, /Clear AI systems people can check and use/);
+});
+
 test('renders methods as inspectable proof before internal or promotional detail', () => {
   const methods = {
     ...resource('methods', [{ type: 'supports', target: 'alpha' }]),
