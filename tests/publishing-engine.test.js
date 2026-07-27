@@ -551,6 +551,9 @@ test('renders services as a guided decision experience before registry and edito
   assert.match(html, /Our research is scattered\./);
   assert.match(html, /id="engagement-paths"/);
   assert.match(html, /Systems Audit/);
+  assert.match(html, /Want to see exactly how the work is designed\?/);
+  assert.match(html, /<details class="service-depth__item">/);
+  assert.equal(html.match(/In-depth service detail/g)?.length, 1);
   assert.doesNotMatch(html, /Canonical ID: <code>services/);
   assert.ok(html.indexOf('Which sentence sounds like your organization?') < html.indexOf('In-depth service detail'));
   assert.match(html, /href="\/university\/contact"/);

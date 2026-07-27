@@ -3,9 +3,9 @@
   "kind": "service",
   "pathname": "/services",
   "eyebrow": "Services",
-  "title": "Turn complex work into a system people can operate.",
-  "summary": "A systems-practice service map for evidence-heavy, judgment-sensitive work, organized around leadership, research, content, legal workflows, governed agents, implementation, fractional ownership, and licensing.",
-  "audience": "Regulated, reputation-sensitive, or institutionally complex organizations choosing the smallest useful route from ambiguity to an inspectable working system.",
+  "title": "Turn complex work into a system your team can actually use.",
+  "summary": "Aloha AI finds the work that keeps getting stuck, maps what people and AI should each do, and builds a clear system your team can use, check, and keep current.",
+  "audience": "Teams working with complex information, strict rules, or high-stakes decisions—and founders turning expertise into something other people can use.",
   "actions": [
     {
       "label": "Show me where to start",
@@ -117,7 +117,7 @@
     "kinds": [
       "service"
     ],
-    "heading": "Choose the recurring problem, consequential decision, or body of expertise that needs stronger structure."
+    "heading": "Browse every service and starting point."
   },
   "deliverables": [
     "Source hierarchy, taxonomy, definitions, and verification procedure",
