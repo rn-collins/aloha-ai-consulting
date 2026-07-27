@@ -398,6 +398,44 @@ test('places linked proof directly after homepage problem pathways', () => {
   assert.match(html, /href="\/builds"[\s\S]*Working systems/);
 });
 
+test('renders priority proof collections before registry detail in explicit order', () => {
+  const proof = {
+    ...resource('proof', []),
+    kind: 'build',
+    pathname: '/proof',
+    collection: {
+      priority: true,
+      heading: 'Proof set',
+      resourceIds: ['beta-item', 'production-item']
+    }
+  };
+  const production = {
+    ...resource('production-item', []),
+    kind: 'tool',
+    title: 'A production item',
+    maturity: 'Production'
+  };
+  const beta = {
+    ...resource('beta-item', []),
+    kind: 'tool',
+    title: 'Z beta item',
+    maturity: 'Beta'
+  };
+  const registry = new Map([
+    [proof.id, proof],
+    [production.id, production],
+    [beta.id, beta]
+  ]);
+
+  const html = renderStructuredPage({ resource: proof, registry });
+
+  assert.ok(html.indexOf('data-priority-collection="true"') < html.indexOf('Canonical ID:'));
+  assert.ok(html.indexOf('Z beta item') < html.indexOf('A production item'));
+  assert.match(html, /Tool · Public beta/);
+  assert.match(html, /Tool · Production/);
+  assert.equal(html.match(/data-priority-collection="true"/g)?.length, 1);
+});
+
 test('routes commercial conversion to a real contact endpoint and renders direct contact actions', () => {
   const service = {
     ...resource('service', [{ type: 'supports', target: 'contact' }]),

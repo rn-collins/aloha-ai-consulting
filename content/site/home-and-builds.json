@@ -849,6 +849,7 @@
     ],
     "implementationStatus": "This page is generated from canonical resources. Each selected resource carries its own maturity, implementation status, evidence, methods, assumptions, and limitations; inclusion is not a claim that every component is continuously monitored or production-ready.",
     "collection": {
+      "priority": true,
       "heading": "Representative systems across distinct capabilities",
       "resourceIds": [
         "citation-verifier",
