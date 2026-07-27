@@ -571,8 +571,11 @@ test('renders services as a guided decision experience before registry and edito
   const html = renderStructuredPage({ resource: services, registry: new Map([[services.id, services], [intelligence.id, intelligence]]) });
   assert.match(html, /id="choose-problem"/);
   assert.match(html, /class="service-hero-map"/);
-  assert.match(html, /People<br><i>\+<\/i> AI/);
-  assert.match(html, /Which sentence sounds like your organization\?/);
+  assert.match(html, /Find the/);
+  assert.match(html, /People<br><b>\+<\/b> AI/);
+  assert.match(html, /What keeps getting stuck\?/);
+  assert.match(html, /Does this sound familiar\?/);
+  assert.match(html, /What changes/);
   assert.match(html, /Our research is scattered\./);
   assert.match(html, /id="engagement-paths"/);
   assert.match(html, /Systems Audit/);
@@ -580,7 +583,7 @@ test('renders services as a guided decision experience before registry and edito
   assert.match(html, /<details class="service-depth__item">/);
   assert.equal(html.match(/In-depth service detail/g)?.length, 1);
   assert.doesNotMatch(html, /Canonical ID: <code>services/);
-  assert.ok(html.indexOf('Which sentence sounds like your organization?') < html.indexOf('In-depth service detail'));
+  assert.ok(html.indexOf('What keeps getting stuck?') < html.indexOf('In-depth service detail'));
   assert.match(html, /href="\/university\/contact"/);
 });
 
