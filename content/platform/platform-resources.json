@@ -694,7 +694,7 @@
     "kind": "useCase",
     "pathname": "/stacks/founder-startup",
     "eyebrow": "Applied stack",
-    "title": "Founder / Startup AI Stack",
+    "title": "The Founder Stack, for a small team that cannot afford a wrong claim.",
     "summary": "A five-layer system for policy monitoring, product-claim review, internal knowledge, customer education, and diligence preparation.",
     "audience": "Founders and small startup teams working without large compliance or operations departments.",
     "maturity": "Production",
@@ -749,7 +749,183 @@
         "type": "supports",
         "target": "strategy"
       }
-    ]
+    ],
+    "seoTitle": "Founder / Startup AI Stack",
+    "editorialIntro": [
+      "A founder wears every hat, so the AI stack has to cover a lot with few people: a watch layer for the rules that affect the product, a review layer that catches a risky marketing claim before it ships, a knowledge layer so the team stops re-answering the same questions, an education layer for customers, and a diligence layer for when investors or partners start asking. Here is that stack, where AI is a real force multiplier, and where it will confidently get you in trouble.",
+      "Built by RN Collins. Regulatory & compliance background · Administrative law (JD candidate) · 35+ builds shipped"
+    ],
+    "editorialSections": [
+      {
+        "title": "Five layers one small team can run",
+        "eyebrow": "The stack at a glance",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The watch layer feeds the claim-review layer; the knowledge layer speeds everything; the education and diligence layers face outward. With few people, the value is a stack that catches the expensive mistakes without adding headcount."
+          },
+          {
+            "type": "paragraph",
+            "text": "Policy monitoring — watch the rules"
+          },
+          {
+            "type": "paragraph",
+            "text": "Product-claim review"
+          },
+          {
+            "type": "paragraph",
+            "text": "Internal knowledge management"
+          },
+          {
+            "type": "paragraph",
+            "text": "Customer education"
+          },
+          {
+            "type": "paragraph",
+            "text": "Diligence prep"
+          }
+        ]
+      },
+      {
+        "title": "What each layer does, and where AI breaks",
+        "eyebrow": "Layer by layer",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "For every layer: the job, where AI earns real time for a small team, where it fails in ways that cost money, and the tools and services that cover it."
+          },
+          {
+            "type": "heading",
+            "text": "Policy monitoring"
+          },
+          {
+            "type": "paragraph",
+            "text": "The job. Know which rules, agencies, and pending changes actually touch your product, without a full-time compliance hire watching them."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where AI helps. Summarizing a rule, flagging what changed, and clustering which changes matter to your specific product and market."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where it fails. General models miss recent changes, misread effective dates, and reassure you that something is fine when it is not. Monitoring has to run off primary sources, not model memory."
+          },
+          {
+            "type": "paragraph",
+            "text": "Maps tothe Regulatory & Market Intelligence service for standing primary-source monitors, plus Regulatory Bill Analyzer to read a specific bill or rule into triggers that affect you."
+          },
+          {
+            "type": "heading",
+            "text": "Product-claim review"
+          },
+          {
+            "type": "paragraph",
+            "text": "The job. Catch a medical, therapeutic, or unsubstantiated marketing claim before it ships on the site, the label, or an ad."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where AI helps. Scanning copy for high-risk language, flagging claims by regulator zone, and drafting safer alternatives your team and counsel review."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where it fails. A model will wave through a claim that a regulator would not, or invent a substantiation standard that does not exist. This layer flags risk; it does not replace a lawyer signing off."
+          },
+          {
+            "type": "paragraph",
+            "text": "Maps toRegulated Claims Checker, which flags medical, therapeutic, substantiation, and consumer-protection claims by risk level and regulator zone, backed by the Regulatory & Market Intelligence service."
+          },
+          {
+            "type": "heading",
+            "text": "Internal knowledge management"
+          },
+          {
+            "type": "paragraph",
+            "text": "The job. Stop re-answering the same questions and losing decisions in chat threads, so a new hire can find how things work."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where AI helps. Retrieval over your own docs, drafting SOPs from how the team actually works, and answering internal questions with a source pointer."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where it fails. Overbuilding a heavy system a five-person team cannot maintain, or letting the model answer from general training instead of your real playbook."
+          },
+          {
+            "type": "paragraph",
+            "text": "Maps toKnowledge Base Readiness Checker to get a straight answer on folders vs. Notion vs. a base vs. a custom app, plus AI Workflow Audit to find where handoffs leak."
+          },
+          {
+            "type": "heading",
+            "text": "Customer education"
+          },
+          {
+            "type": "paragraph",
+            "text": "The job. Turn how the product works into onboarding, help content, and explainers that reduce support load and build trust."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where AI helps. Drafting help articles from source docs, reformatting one explainer into many, and adjusting reading level for different users."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where it fails. Confident wrong instructions and claims that drift past what the product actually does. Customer-facing content has to trace back to something true."
+          },
+          {
+            "type": "paragraph",
+            "text": "Maps tothe Regulatory & Market Intelligence and Regulated Claims Checker pairing to keep outward claims accurate, and Content & Adoption Systems to build a repeatable production process."
+          },
+          {
+            "type": "heading",
+            "text": "Diligence prep"
+          },
+          {
+            "type": "paragraph",
+            "text": "The job. Have the documentation, policies, and answers ready when an investor, partner, or acquirer starts asking hard questions."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where AI helps. Drafting policy documents, assembling a data-room checklist, and turning scattered decisions into a coherent written record."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where it fails. Fabricated specifics in a document that a diligence process will test, and governance claims the company cannot actually back up. This is where a real audit trail matters."
+          },
+          {
+            "type": "paragraph",
+            "text": "Maps toAI Workflow Audit to score and document your AI workflow across six dimensions, with the Regulatory & Market Intelligence service where the diligence turns on regulatory posture."
+          }
+        ]
+      },
+      {
+        "title": "Cover the expensive mistakes, not the headcount.",
+        "eyebrow": "Founder engagement",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "I build lean AI stacks for small teams: the watch layer, the claim-review gate, and the knowledge layer that let a few people move fast without a costly wrong claim on the record. Most founders start with a Systems Audit that names the weakest layer, then we build that first. Bring the product and we scope it around your market."
+          },
+          {
+            "type": "paragraph",
+            "text": "Prefer email? Email RN · or connect on LinkedIn"
+          }
+        ]
+      },
+      {
+        "title": "Aloha AI Dispatch",
+        "eyebrow": "Newsletter",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "One short email when there is a new tool, a build breakdown, or a shift worth knowing in AI for regulated work."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "stacks/founder-startup/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "law-firm-stack",
@@ -1053,7 +1229,7 @@
     "kind": "useCase",
     "pathname": "/stacks/policy-advocacy",
     "eyebrow": "Applied stack",
-    "title": "Policy & Advocacy AI Stack",
+    "title": "The Policy Advocacy Stack, built on sources a committee can check.",
     "summary": "A primary-source stack for legislative monitoring, testimony and briefing support, coalition research, and public education.",
     "audience": "Policy, advocacy, coalition, and public-interest teams.",
     "maturity": "Production",
@@ -1107,7 +1283,159 @@
         "type": "uses",
         "target": "citation-verifier"
       }
-    ]
+    ],
+    "seoTitle": "Policy & Advocacy AI Stack",
+    "editorialIntro": [
+      "Advocacy runs on credibility. One wrong statutory citation in written testimony and the whole brief is suspect. A working AI stack for a policy shop separates the layers: a monitoring layer that watches the bills, a drafting layer for testimony and briefings, a research layer for coalition work, and a public-education layer that turns all of it into something a supporter can act on. Here is that stack, and the real tools behind each layer.",
+      "Built by RN Collins. Administrative & regulatory law (JD candidate) · primary-source monitors across 30+ jurisdictions · 35+ builds shipped"
+    ],
+    "editorialSections": [
+      {
+        "title": "Four layers, from the bill to the public",
+        "eyebrow": "The stack at a glance",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Each layer does a distinct job. The monitoring layer feeds the testimony layer; the research layer arms the coalition; the education layer carries the message out. Keeping them separate is what keeps a fabricated fact from riding all the way to a public hearing."
+          },
+          {
+            "type": "paragraph",
+            "text": "Legislative monitoring — watch the bills"
+          },
+          {
+            "type": "paragraph",
+            "text": "Testimony & briefing support"
+          },
+          {
+            "type": "paragraph",
+            "text": "Coalition research"
+          },
+          {
+            "type": "paragraph",
+            "text": "Public-education outputs"
+          }
+        ]
+      },
+      {
+        "title": "What each layer does, and where AI breaks",
+        "eyebrow": "Layer by layer",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "For every layer: the job, where AI earns real time, where it fails in ways that damage credibility, and the live monitors and tools that cover it."
+          },
+          {
+            "type": "heading",
+            "text": "Legislative monitoring"
+          },
+          {
+            "type": "paragraph",
+            "text": "The job. Track bills, rulemakings, and agency actions across the jurisdictions you work in, and know what moved this week before an opponent does."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where AI helps. Summarizing a long bill, clustering which measures touch your issue, and drafting a plain-language what-changed digest an analyst verifies."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where it fails. General models miss newly filed bills, misread effective dates, and confidently describe a version of a bill that was already amended. Coverage has to run off primary sources, not model memory."
+          },
+          {
+            "type": "paragraph",
+            "text": "Maps tothe Regulatory & Market Intelligence service, which runs standing primary-source monitors, plus Regulatory Bill Analyzer to read a single bill into issue tags, affected stakeholders, and compliance triggers."
+          },
+          {
+            "type": "heading",
+            "text": "Testimony & briefing support"
+          },
+          {
+            "type": "paragraph",
+            "text": "The job. Turn a position into written testimony, a one-page briefing, or talking points that hold up under questioning from staff and members."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where AI helps. First drafts from an outline, tightening for length, adapting one argument for several audiences, and building a questions-you-will-be-asked list."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where it fails. Invented citations and misquoted statutes are the fastest way to lose a hearing. A model will also soften or overstate a legal claim in ways a careful reader catches."
+          },
+          {
+            "type": "paragraph",
+            "text": "Maps toRegulatory Bill Analyzer to ground the analysis in the actual text, and the Regulatory & Market Intelligence service to keep the underlying facts sourced and dated."
+          },
+          {
+            "type": "heading",
+            "text": "Coalition research"
+          },
+          {
+            "type": "paragraph",
+            "text": "The job. Map who else is working the issue, what the opposition is arguing, and where the evidence base actually stands, so the coalition speaks with one accurate voice."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where AI helps. Synthesizing across many sources, drafting shared research memos, and spotting gaps and contradictions in a stack of positions."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where it fails. Fabricated studies and misattributed statistics spread fast inside a coalition and are hard to walk back once a partner has repeated them publicly."
+          },
+          {
+            "type": "paragraph",
+            "text": "Maps tothe Regulatory & Market Intelligence service for sourced, dated research streams the coalition can share, with Regulatory Bill Analyzer for shared reads of specific measures."
+          },
+          {
+            "type": "heading",
+            "text": "Public-education outputs"
+          },
+          {
+            "type": "paragraph",
+            "text": "The job. Translate the policy work into explainers, social content, and supporter materials that are accurate and still land with a non-expert audience."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where AI helps. Reformatting one brief into many outputs, adjusting reading level, and drafting supporter-facing copy from an approved source document."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where it fails. Oversimplification that crosses into inaccuracy, and claims that drift from the sourced position as content is reshaped for reach. The public version has to trace back to the same facts."
+          },
+          {
+            "type": "paragraph",
+            "text": "Maps tothe Regulatory & Market Intelligence service as the sourced spine for every output, and Content & Adoption Systems to build a repeatable, on-message production process."
+          }
+        ]
+      },
+      {
+        "title": "Give your advocacy a sourced spine.",
+        "eyebrow": "Intelligence engagement",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "I build primary-source monitoring and briefing layers that keep an advocacy shop fast and accurate at the same time. Most teams start with a Systems Audit that names the weakest layer, then we build the monitoring or testimony layer first. Bring the fight you are working and we scope it around your bills."
+          },
+          {
+            "type": "paragraph",
+            "text": "Prefer email? Email RN · or connect on LinkedIn"
+          }
+        ]
+      },
+      {
+        "title": "Aloha AI Dispatch",
+        "eyebrow": "Newsletter",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "One short email when there is a new tool, a build breakdown, or a shift worth knowing in AI for regulated work."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "stacks/policy-advocacy/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "regulated-intelligence-stack",
@@ -2265,7 +2593,7 @@
     "kind": "tool",
     "pathname": "/trust-stack/psilocybin-map",
     "eyebrow": "Regulated Trust Stack · Layer 1",
-    "title": "Multi-State Psilocybin Regulatory & Funder Map",
+    "title": "The three-state psilocybin map that a regulator can't poke a hole in.",
     "summary": "A citation-pinned comparison of Oregon, Colorado, and New Mexico for regulatory, commercial, and funding intelligence.",
     "audience": "Psilocybin operators, funders, researchers, and policy teams.",
     "maturity": "Research",
@@ -2315,14 +2643,121 @@
         "type": "uses",
         "target": "regulatory-intelligence"
       }
-    ]
+    ],
+    "seoTitle": "Multi-State Psilocybin Regulatory & Funder Map",
+    "editorialIntro": [
+      "Oregon, Colorado, New Mexico. Every statute pinned. Every funder verified. Every claim carrying a retrieval date and a place in the ledger.",
+      "Framework: Commercial-Launch APQ Gap Model"
+    ],
+    "editorialSections": [
+      {
+        "title": "What being wrong in front of a funder costs",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "You are across the table from a program officer, a state licensing analyst, or an investor's counsel. You make a claim about what New Mexico's law requires. They already know the answer. If your number matches theirs, the rest of your pitch gets heard. If it does not, the conversation is over."
+          },
+          {
+            "type": "paragraph",
+            "text": "The meeting you spent months getting, gone the instant your fact is checkable and wrong. The grant you were positioned for, reassigned to the applicant whose numbers held up. The client engagement, because an operator siting a service center cannot act on \"roughly.\""
+          },
+          {
+            "type": "paragraph",
+            "text": "The errors are not cosmetic. New Mexico's binding statutory deadline is 31 December 2027, while its Department of Health is targeting an operational start a year early, and stating one as the other loses the room. Colorado's facilitator fees have since been published in tiers, so the figure you carry must match the current rule, not a stale guess. An intelligence product that does not carry those distinctions has become the error."
+          }
+        ]
+      },
+      {
+        "title": "What's inside",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "The Commercial-Launch APQ Gap Model. A lens that separates what each state's law promises from what an operator can actually do at launch, scored across Authority, Posture-to-practice, and Quantification."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Per-state deep dives. Oregon (ORS ch. 475A; OAR 333-333), Colorado (Prop 122; C. R. S. tit. 12 art. 170 & tit. 44 art. 50; 1 CCR 213-1), and New Mexico (SB 219), with every published fee and the unpublished ones marked as such."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "The funder-map method. How to verify every grantmaker against its own site and 990, report grant ranges only where a source states them, and reclassify developers-masquerading-as-funders as clients, with candidate names to check."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A Verification Ledger. Fact by fact, source by source, marked verified / partial / dropped, with retrieval dates. The part your counterparty will respect most."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Who it's for",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "Regulatory and legal advisers who need to be right in a room where the other side already knows the answer."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Operators and investors siting or funding psilocybin programs, who cannot afford to plan against a wrong date or an unpublished fee."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Grant-seekers and development staff who need the funder landscape as it truly is before they burn a warm introduction on a cold guess."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Where this sits in the stack",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "This is Layer 1 · Applied Intelligence of The Regulated Trust Stack, one operating system for earning trust in regulated markets, in six dependent layers. Each layer stands on the one beneath it. Own one and the next gap becomes impossible to ignore."
+          },
+          {
+            "type": "paragraph",
+            "text": "See the full six-layer stack → Find your weakest layer →"
+          }
+        ]
+      },
+      {
+        "title": "Get Commercial-Launch APQ Gap Model",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Checkout is handled by Gumroad. The button opens the Aloha AI Gumroad storefront."
+          },
+          {
+            "type": "paragraph",
+            "text": "← Back to The Regulated Trust Stack"
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "trust-stack/psilocybin-map/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "sb303-compliance-kit",
     "kind": "tool",
     "pathname": "/trust-stack/sb303-compliance-kit",
     "eyebrow": "Regulated Trust Stack · Layer 2",
-    "title": "Oregon SB 303 Psilocybin Compliance Kit",
+    "title": "The reporting miss that costs a license is a data-entry error made upstream. This is the system that catches it before the deadline.",
     "summary": "A cited, templated workflow for turning Oregon SB 303 reporting duties into deadline-safe and audit-ready operations.",
     "audience": "Oregon psilocybin operators and compliance teams.",
     "maturity": "Research",
@@ -2373,7 +2808,126 @@
         "type": "uses",
         "target": "regulatory-intelligence"
       }
-    ]
+    ],
+    "seoTitle": "Oregon SB 303 Psilocybin Compliance Kit",
+    "editorialIntro": [
+      "Oregon SB 303 Psilocybin Compliance Kit. Built on Audit-Ready Operations: compliance you engineer with the regulator, not a burden you survive.",
+      "Framework: Audit-Ready Operations"
+    ],
+    "editorialSections": [
+      {
+        "title": "What a missed window costs",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Your license does not come off the wall because a session went wrong. It comes off the wall because a number was late. Every quarter, Oregon Psilocybin Services opens a fixed reporting window, and when it closes it does not reopen. Confirm the current window and its close time against OPS before you build your calendar."
+          },
+          {
+            "type": "paragraph",
+            "text": "Miss it and you have created a compliance event, on the record, that OPS may treat as grounds for an administrative penalty. Submit numbers that do not hold up and you put false-statement and misrepresentation exposure on the table under the division-333 rules."
+          },
+          {
+            "type": "paragraph",
+            "text": "The failure is almost never the reporting itself. It is upstream: a client counted in the wrong quarter, an opt-out client included in totals, an average dose computed without the secondary doses, a copy stored off-premises. None feels like a violation in the moment. All of them are, and they surface when a regulator is already looking."
+          }
+        ]
+      },
+      {
+        "title": "What's inside",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "The Audit-Ready Operations framework. Compliance reframed as engineered trust with the regulator, with the three rules every section is built to satisfy."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A cited requirements map. Every SB 303 data duty, split into collecting, storing, reporting, and sharing, each pinned to its exact ORS/OAR/OPS source in plain language."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A live-pull method for the reportable fields. How to pull the exact current service-center data OPS collects each quarter, and any computed averages, straight from the current OPS form, so it never goes stale."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "The reporting cadence and an internal calendar. The quarterly rhythm, plus an internal five-day-buffer target and a named quarter owner, so the official deadline is never your working deadline."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Usable templates. Intake-and-companion record, a session/reaction log built to the current division-333 definitions, an adverse-event SOP, and a full written confidentiality plan."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "An equity-data strategy and a compliance checklist, plus a Verification Ledger marking every requirement verified or flagged for you to confirm."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Who it's for",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "Oregon psilocybin service-center licensees and facilitators who are already open, already reporting, and cannot afford a quarter that goes wrong."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Consultants and counsel who advise them and want a primary-source-pinned operating document to hand a client rather than a memo they write from scratch."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Anyone who has watched a reporting window close and felt it."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Where this sits in the stack",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "This is Layer 2 · Compliance of The Regulated Trust Stack, one operating system for earning trust in regulated markets, in six dependent layers. Each layer stands on the one beneath it. Own one and the next gap becomes impossible to ignore."
+          },
+          {
+            "type": "paragraph",
+            "text": "See the full six-layer stack → Find your weakest layer →"
+          }
+        ]
+      },
+      {
+        "title": "Get Audit-Ready Operations",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Checkout is handled by Gumroad. The button opens the Aloha AI Gumroad storefront."
+          },
+          {
+            "type": "paragraph",
+            "text": "← Back to The Regulated Trust Stack"
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "trust-stack/sb303-compliance-kit/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "suppression-monitoring-playbook",

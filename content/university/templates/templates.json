@@ -2403,6 +2403,243 @@
         "type": "supports",
         "target": "workflow-audit-course"
       }
-    ]
+    ],
+    "editorialIntro": [
+      "Your best process usually lives in one person's head, and it walks out the door with them. These ten prompts draw it out one question at a time and shape it into a procedure a new hire could actually follow — with a human checking the work at every step that matters."
+    ],
+    "editorialSections": [
+      {
+        "title": "What this is",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Ten prompts, run in order, that walk an AI tool through building a real SOP with you. The first interviews you to get the process out of your head. The rest draft it, test it against a first-day hire, add the \"if this, then that\" branches, insert quality checks, plain out the language, and set a plan that keeps it from going stale. You bring the knowledge; the prompts bring the structure and the patience to ask again when your answer is fuzzy."
+          },
+          {
+            "type": "paragraph",
+            "text": "None of this replaces your judgment. The pack keeps a person in the loop at every turn — you approve each step, and the prompts are written to flag what they don't know rather than paper over it with a confident guess."
+          }
+        ]
+      },
+      {
+        "title": "Who it's for",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "Owners and managers tired of answering the same \"how do I do this again?\" and ready to write it down once."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Anyone onboarding a new hire into a job only one person currently knows how to do."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Operations and support leads who need repeatable, auditable procedures instead of tribal knowledge."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Small teams with no technical writer who still need documentation people will actually open."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "What's inside",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "Ten copy-paste prompts, each with a short title and a one-line note on when to use it."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A full workflow: interview, draft, stress-test, add logic, add checks, simplify, checklist, flag risk, onboarding version, maintenance plan."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Bracketed placeholders you fill with your own process, tools, and role names."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Built-in [NEEDS INPUT] markers so the AI names what it doesn't know instead of inventing it."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "How to use it",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Run the prompts in order, in the same chat, so the AI carries the context from each step into the next. Fill in every [bracketed placeholder] before you send — the more specific you are, the sharper the SOP. Start with prompt 1 and let the interview finish; resist jumping to the draft before the tool actually understands your process."
+          },
+          {
+            "type": "paragraph",
+            "text": "One rule never bends: never publish a high-stakes SOP without a qualified human approving it. Anything touching money, safety, health, legal exposure, or someone's employment gets a real expert's sign-off before it goes live. The AI is your fast first draft, not your final authority."
+          }
+        ]
+      },
+      {
+        "title": "The prompts",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Ten prompts, in the order you'd run them. Copy one, fill in the brackets, send it, then move to the next."
+          },
+          {
+            "type": "heading",
+            "text": "1. Interview me to extract the process"
+          },
+          {
+            "type": "paragraph",
+            "text": "When to use it: first, before anything is written — to get the process out of your head."
+          },
+          {
+            "type": "code",
+            "text": "You are helping me write a standard operating procedure (SOP) for a task I know how to do but have never documented. The task is: [DESCRIBE THE TASK IN ONE SENTENCE]. Interview me to pull out everything a new person would need. Ask ONE question at a time and wait for my answer before asking the next — do not batch questions or move on until my answer is clear. Cover, in roughly this order: - What triggers this task? (an event, a schedule, a request from someone) - What tools, systems, logins, or access does someone need before they can start? - The exact ordered steps, from the very first action to the last. - Decision points: places where the right next step depends on something (\"if the order is over $500, then…\"). - Exceptions and edge cases: what goes wrong, and what someone does when it does. - Definition of done: how does a person know the task is finished and correct? If one of my answers is vague, ask a follow-up before moving on. When you believe you have enough to write a complete SOP, say so and give me a short bulleted summary of what you captured so I can confirm or correct it before we draft anything."
+          },
+          {
+            "type": "heading",
+            "text": "2. Draft the SOP from my answers"
+          },
+          {
+            "type": "paragraph",
+            "text": "When to use it: once the interview is done and you've confirmed the summary."
+          },
+          {
+            "type": "code",
+            "text": "Using only what I told you in the interview, draft a complete SOP for [TASK NAME]. Do not invent steps, tools, or details I didn't give you. Structure it exactly like this: - Purpose — one or two sentences on why this task matters. - When to run — the trigger(s) that start it. - Owner — the role responsible (use [NEEDS INPUT] if I didn't say). - Prerequisites — access, tools, and information needed before starting. - Steps — numbered, in order, one clear action per step. - Decision points — any \"if X, then Y\" branches, called out clearly. - Common mistakes — errors people make and how to avoid them. Wherever you're missing information or would have to guess, write [NEEDS INPUT] in that spot instead of filling it with a plausible guess. At the end, list every [NEEDS INPUT] marker as a short checklist of questions for me to answer."
+          },
+          {
+            "type": "heading",
+            "text": "3. Beginner stress-test"
+          },
+          {
+            "type": "paragraph",
+            "text": "When to use it: after you have a draft, to find what a brand-new person couldn't follow."
+          },
+          {
+            "type": "code",
+            "text": "Read the SOP below as if you are a brand-new hire on your first day. You know nothing about our company, our tools, or our shorthand — only what's written on the page. Go through it and flag: - Every step that assumes knowledge a beginner wouldn't have (\"log into the portal\" — which portal? where?). - Every undefined term, acronym, internal name, or piece of jargon. - Every instruction that could reasonably be done more than one way (ambiguous wording). - Any point where you'd have to stop and ask a coworker to keep going. For each item, quote the exact line, say what's unclear, and suggest what it should say instead. Don't rewrite the whole SOP — just give me the list of gaps so I can fix them. SOP: [PASTE THE CURRENT SOP HERE]"
+          },
+          {
+            "type": "heading",
+            "text": "4. Add decision branches and \"if X then Y\" logic"
+          },
+          {
+            "type": "paragraph",
+            "text": "When to use it: when the real task isn't a straight line — it forks based on conditions."
+          },
+          {
+            "type": "code",
+            "text": "The SOP below is written as a single straight-line sequence, but the real task branches depending on conditions. Help me add that logic. Based on what I've told you (and asking me where you're unsure), identify every point where the next step depends on something — the amount, the customer type, the answer to a question, whether something passed or failed. For each one, write it as an explicit branch: IF [condition], THEN [do this] → go to step [X] ELSE [do this instead] → go to step [Y] Keep the branches easy to scan. Where you think a branch probably exists but I haven't told you the exact rule, mark it [NEEDS INPUT: what's the threshold / rule here?] rather than guessing a number or policy. SOP: [PASTE THE CURRENT SOP HERE]"
+          },
+          {
+            "type": "heading",
+            "text": "5. Insert quality checkpoints and verification steps"
+          },
+          {
+            "type": "paragraph",
+            "text": "When to use it: before publishing, to catch errors at the risky points."
+          },
+          {
+            "type": "code",
+            "text": "Go through the SOP below and find every step where a mistake would be costly, hard to undo, or invisible until later — sending money, deleting data, publishing something public, changing a customer's account, anything irreversible. For each of those risky steps, add: - A quality checkpoint: a specific thing to confirm BEFORE doing the action (\"Confirm the account number matches the invoice before submitting\"). - A verification step: a specific way to confirm AFTER the action that it worked correctly (\"Refresh the record and confirm the status now reads 'Paid'\"). Write these so they're concrete and checkable, not vague (\"double-check everything\" is not acceptable — say exactly what to check and how). Insert them inline at the right spot and show me the updated SOP with the new checks marked so I can see what you added. SOP: [PASTE THE CURRENT SOP HERE]"
+          },
+          {
+            "type": "heading",
+            "text": "6. Rewrite in plain language"
+          },
+          {
+            "type": "paragraph",
+            "text": "When to use it: when the SOP is accurate but reads stiff, dense, or over-worded."
+          },
+          {
+            "type": "code",
+            "text": "Rewrite the SOP below in plain, direct language aimed at about an 8th-grade reading level — the kind of writing anyone on the team could follow on a busy day. Rules: - Keep every step, decision branch, and check exactly as-is in meaning. Do not drop, merge, or reorder anything, and do not change any number, name, threshold, or rule. - Use short sentences and everyday words. Cut filler. Prefer \"click Save\" over \"proceed to initiate the save operation.\" - Start each step with a clear verb. - Keep any required technical terms, but add a plain-language explanation the first time each one appears. If simplifying a step would risk changing what it actually means, leave that step's wording alone and flag it with [KEPT AS-IS: simplifying might change the meaning]. SOP: [PASTE THE CURRENT SOP HERE]"
+          },
+          {
+            "type": "heading",
+            "text": "7. Generate a one-page quick-reference checklist"
+          },
+          {
+            "type": "paragraph",
+            "text": "When to use it: for the person who already knows the SOP and just needs a reminder."
+          },
+          {
+            "type": "code",
+            "text": "Turn the SOP below into a one-page quick-reference checklist for someone who has already been trained and just needs a reminder while they work. Make it: - Short enough to fit on a single page. - A scannable checklist with a checkbox for each key action. - Written as brief action lines, not full paragraphs. - Inclusive of the critical decision points (as short \"if… then…\" lines) and the must-do verification checks, so nothing important gets skipped. Do not add anything that isn't in the full SOP. At the top, note the SOP name and \"Full version required for training.\" Keep it tight — this is a reminder card, not the manual. SOP: [PASTE THE CURRENT SOP HERE]"
+          },
+          {
+            "type": "heading",
+            "text": "8. Flag steps that need expert sign-off"
+          },
+          {
+            "type": "paragraph",
+            "text": "When to use it: before publishing anything that could carry legal, safety, or compliance weight."
+          },
+          {
+            "type": "code",
+            "text": "Review the SOP below and flag any step that carries legal, safety, financial, privacy, or regulatory/compliance weight — anything where getting it wrong could harm someone, break a law or regulation, void a contract, or expose the company. For each flagged step: - Quote the exact step. - Name why it needs expert review (e.g., \"handles customer payment data,\" \"makes a hiring/termination decision,\" \"involves a safety procedure\"). - Say what KIND of expert should sign off (lawyer, accountant, safety officer, HR, compliance). Do NOT tell me what the correct legal, safety, or compliance answer is, and do not rewrite these steps to \"make them compliant.\" You are only flagging where a qualified human must review before this SOP goes live. If nothing needs expert sign-off, say so plainly. SOP: [PASTE THE CURRENT SOP HERE]"
+          },
+          {
+            "type": "heading",
+            "text": "9. Create an onboarding version"
+          },
+          {
+            "type": "paragraph",
+            "text": "When to use it: when you're training someone new and want a teachable, walk-through version."
+          },
+          {
+            "type": "code",
+            "text": "Turn the SOP below into an onboarding version for someone doing this task for the very first time. Assume they need more context and hand-holding than the standard SOP gives. For each step: - Add a short \"why this matters\" note where the reason isn't obvious, so the trainee understands, not just memorizes. - Where a screenshot would help someone find a button, menu, or screen, insert a marker: [SCREENSHOT NEEDED: what it should show]. - The first time each tool or system is mentioned, add a \"Where to find it\" note: how to open it, the URL or app name, and who to ask for access. Use [NEEDS INPUT: where is this / who grants access?] if I haven't told you. Keep all the original steps, checks, and decision branches intact. The goal is a version a new hire could learn from with a trainer beside them. SOP: [PASTE THE CURRENT SOP HERE]"
+          },
+          {
+            "type": "heading",
+            "text": "10. Set a maintenance plan"
+          },
+          {
+            "type": "paragraph",
+            "text": "When to use it: last — so the SOP stays true after the process changes."
+          },
+          {
+            "type": "code",
+            "text": "Write a short maintenance plan to keep the SOP below accurate over time. Base the owner and details on what I've told you, and use [NEEDS INPUT] where you don't have the information. Include: - Owner — the role (not a person's name) responsible for keeping this SOP current. - Review date — a recommended review cadence (e.g., every 6 months) and the next review date to put on the calendar. - Change log format — a simple table format for recording edits: date, what changed, who changed it, why. - Staleness signals — a short checklist of signs the SOP is out of date: a tool changed its interface, a step now points to a system we no longer use, people are quietly doing it differently than written, a decision threshold changed, or the last review date has passed. Format this as a \"Maintenance\" section I can paste at the end of the SOP. SOP: [PASTE THE CURRENT SOP HERE]"
+          },
+          {
+            "type": "quote",
+            "text": "Read this before you publish anything: AI writes confidently even when it's wrong — it will happily invent a plausible-but-incorrect step, threshold, or tool name to fill a gap. That's exactly why these prompts use [NEEDS INPUT] markers: keep them in, and answer every one against reality instead of letting the model guess. Verify each step by actually doing the task or watching someone who knows it. Any SOP touching compliance, safety, money, health, or employment needs a qualified human's sign-off before it goes live (that's what prompt 8 is for). This is general education, not legal, medical, or financial advice."
+          }
+        ]
+      },
+      {
+        "title": "Want your whole SOP library built with you?",
+        "eyebrow": "Work with us",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "We'll sit down with your team, run these prompts on your real processes, and leave you with a core set of SOPs your people will actually follow — reviewed, plain-spoken, and ready to hand a new hire. Bring the process; we'll bring the questions."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "university/templates/sop-prompt-pack/index.html",
+      "restoredAt": "2026-07-26"
+    }
   }
 ]

@@ -540,7 +540,7 @@
     "kind": "assessment",
     "pathname": "/tools/practice-readiness",
     "eyebrow": "Practice-building assessment",
-    "title": "AI Practice-Readiness Scorecard",
+    "title": "You have the domain. The question is whether you can stand up the practice.",
     "summary": "A browser-local assessment across domain strength, delivery infrastructure, pipeline, capacity, AI operations, and monetizable intellectual property.",
     "audience": "Expert firms and organizations considering a new AI consulting or intelligence practice.",
     "maturity": "Beta",
@@ -728,7 +728,393 @@
         "type": "uses",
         "target": "build-your-team"
       }
-    ]
+    ],
+    "seoTitle": "AI Practice-Readiness Scorecard",
+    "editorialIntro": [
+      "Your organization already holds what most AI consultancies rent: real domain expertise, trust, and relationships. The open question is whether you can turn that into a durable AI-service practice in-house, or whether you should have one built and handed over. Score six readiness dimensions, see your specific gaps, and get a grounded call.",
+      "Built by RN Collins. Neuroscientist (MS) · Administrative Law (JD candidate) · AI systemsTailored for: nonprofits, agencies & regulated-industry orgs with domain depth"
+    ],
+    "editorialSections": [
+      {
+        "title": "Organizations sitting on a practice they haven't built yet",
+        "eyebrow": "Who this is for",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "You have the expertise and the relationships. What you're deciding is whether to build the delivery machine yourself, for regulated or reputation-sensitive professions, where a wrong build is expensive."
+          },
+          {
+            "type": "heading",
+            "text": "Nonprofits & advocacy"
+          },
+          {
+            "type": "paragraph",
+            "text": "Deep issue expertise and funder trust. Want to offer AI-enabled services without diluting the mission."
+          },
+          {
+            "type": "heading",
+            "text": "Agencies"
+          },
+          {
+            "type": "paragraph",
+            "text": "Existing client relationships. Deciding whether to add an AI service line or build a spin-out practice."
+          },
+          {
+            "type": "heading",
+            "text": "Hospitality groups"
+          },
+          {
+            "type": "paragraph",
+            "text": "Operational depth and a brand. Want a repeatable, monetizable AI offer, not a one-off tool."
+          },
+          {
+            "type": "heading",
+            "text": "Regulated-industry orgs"
+          },
+          {
+            "type": "paragraph",
+            "text": "Domain authority in a compliance-sensitive field. Need a practice that holds up under scrutiny."
+          }
+        ]
+      },
+      {
+        "title": "\"Just hire an AI consultant\" is the confident wrong answer.",
+        "eyebrow": "The Operator Execution Gap · practice build",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The generic advice for standing up a practice is fluent and reassuring, and it skips the parts that actually determine whether the build survives its first year. Same question, two answers. The distance between them is the cost of a stalled build."
+          },
+          {
+            "type": "paragraph",
+            "text": "✕ Generic advice · ungrounded"
+          },
+          {
+            "type": "paragraph",
+            "text": "\"How do we build our own AI-consulting practice?\""
+          },
+          {
+            "type": "paragraph",
+            "text": "\"Hire an AI consultant or take a course, pick a few tools, and start offering services. Your domain expertise is the hard part — the rest is easy once you have someone who knows AI.\""
+          },
+          {
+            "type": "paragraph",
+            "text": "Confident. Fluent. Wrong about where practices actually fail. Tooling and a hire don't produce a practice; delivery infrastructure, a real pipeline, priced offers, and utilized capacity do. This advice sends you into a stalled build."
+          },
+          {
+            "type": "paragraph",
+            "text": "✓ Aloha AI · operations-grounded PS operating fundamentals"
+          },
+          {
+            "type": "paragraph",
+            "text": "Same question, answered from how practices actually run:"
+          },
+          {
+            "type": "paragraph",
+            "text": "A practice is an operating system, not a skill. The binding constraints are rarely AI knowledge. They are: a productized, priced offer you can sell repeatably; delivery infrastructure (scoping, QA, handoff) so quality doesn't depend on one person; a client pipeline matched to your delivery capacity; and utilization in the healthy band (roughly 70–90% billable, by firm type) that leaves room to sell and improve."
+          },
+          {
+            "type": "paragraph",
+            "text": "Miss the match between pipeline and capacity and you get one of two failure modes: bench risk (capacity idle, no demand) or delivery risk (sold more than you can deliver). Both stall the build. A hire fixes neither on its own."
+          },
+          {
+            "type": "paragraph",
+            "text": "Confidence: High Why you can rely on it: it maps to documented professional-services operating fundamentals (utilization/capacity, pipeline-to-headcount matching, and productization) cited in the method ledger below."
+          },
+          {
+            "type": "paragraph",
+            "text": "OEG (the Operator Execution Gap) is the distance between what generic advice says and what an organization can actually build and run. Closing it is the entire job."
+          }
+        ]
+      },
+      {
+        "title": "Score your practice-readiness across six dimensions",
+        "eyebrow": "The instrument",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Rate your organization honestly on each dimension, 0–100. The scorecard returns a weighted readiness score, your specific gaps, and a grounded build-it-yourself vs. have-it-built recommendation. Everything runs locally in your browser; nothing is sent anywhere."
+          },
+          {
+            "type": "list",
+            "items": [
+              "Rate the six dimensions to see where the build breaks."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "What a half-built practice costs while it isn't earning",
+        "eyebrow": "The cost of a stalled build",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "A practice you start but can't operationalize doesn't stall for free. It burns leadership hours, idles hires you brought on early, and defers revenue you could have been booking. Estimate the drag of a build that stretches past its intended launch."
+          },
+          {
+            "type": "list",
+            "items": [
+              "Enter your figures to model the drag."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Assess → design the practice → build & hand over",
+        "eyebrow": "How it works",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "When the scorecard says have-it-built, this is the engagement. A repeatable method (the Build-Manage Loop), not a one-off consulting sprint."
+          },
+          {
+            "type": "heading",
+            "text": "Assess (RIL → ROL)"
+          },
+          {
+            "type": "paragraph",
+            "text": "We take a Readiness Intelligence read of your six dimensions and resolve it into an Operator-ready plan: what to build, in what order, and where you already have an edge to bank on."
+          },
+          {
+            "type": "heading",
+            "text": "Design the practice"
+          },
+          {
+            "type": "paragraph",
+            "text": "Service lines, productized offers, pricing, delivery infrastructure (scoping, QA, handoff), and a pipeline plan matched to your realistic capacity band."
+          },
+          {
+            "type": "heading",
+            "text": "Build & hand over"
+          },
+          {
+            "type": "paragraph",
+            "text": "We stand up the delivery machine, train your team, seed the pipeline, and run the Build-Manage Loop until it holds, then hand you the keys. You own the practice; we're the on-ramp, not a permanent dependency."
+          }
+        ]
+      },
+      {
+        "title": "Where the readiness dimensions come from",
+        "eyebrow": "Evidence & method ledger",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The scorecard isn't vibes. Each dimension maps to a documented professional-services operating fundamental, or is marked as an honest judgment call where no single external benchmark applies."
+          },
+          {
+            "type": "table",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Dimension / claim",
+                    "header": true
+                  },
+                  {
+                    "text": "Grounding",
+                    "header": true
+                  },
+                  {
+                    "text": "Confidence",
+                    "header": true
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Healthy billable-utilization sits roughly 70–90% by firm type (consulting ~70–75%, agencies ~75–85%, law ~80–90%), with unbillable slack needed for BD and capability-building"
+                  },
+                  {
+                    "text": "Professional-services capacity & utilization literature (Rocketlane; Birdview PSA)"
+                  },
+                  {
+                    "text": "High"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Pipeline must be matched to delivery capacity; mismatch creates bench risk (idle capacity) or delivery risk (oversold)"
+                  },
+                  {
+                    "text": "Headcount-vs-pipeline / capacity-utilization framing (Rocketlane; Birdview PSA)"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "A productized, priced, repeatable offer (Monetizable IP) is what lets a service scale and forecast predictably vs. bespoke reinvention"
+                  },
+                  {
+                    "text": "Productized-services operating guidance (Parallax; Consulting Success; ManyRequests)"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Sustainable practices connect positioning, pipeline, conversion, delivery, and expansion as one operating system, not a single hire or tool"
+                  },
+                  {
+                    "text": "Professional-services growth-model framing (Rework resources)"
+                  },
+                  {
+                    "text": "Med · synthesized"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Weighting the six dimensions (delivery infrastructure, pipeline, and monetizable IP weighted highest) as the binding constraints on a build"
+                  },
+                  {
+                    "text": "Aloha AI judgment, informed by the operating fundamentals above"
+                  },
+                  {
+                    "text": "Judgment-based"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "The specific 0–100 thresholds for the build-vs-have-it-built recommendation"
+                  },
+                  {
+                    "text": "Aloha AI judgment; calibrate to your organization in a scoping call"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Honesty note: the operating fundamentals (utilization bands, pipeline-to-capacity matching, productization) are drawn from published professional-services sources. The dimension weights and score thresholds are Aloha AI's judgment, marked as such. No external benchmark sets them, and no citation is fabricated to imply otherwise."
+          }
+        ]
+      },
+      {
+        "title": "Built on named, defensible frameworks",
+        "eyebrow": "Why this, not a course or a single hire",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "You leave speaking the language of how a practice actually runs, not renting a dashboard or a workshop."
+          },
+          {
+            "type": "paragraph",
+            "text": "RIL → ROL"
+          },
+          {
+            "type": "heading",
+            "text": "Readiness Intelligence → Operator Layer"
+          },
+          {
+            "type": "paragraph",
+            "text": "A structured read of your readiness, resolved into a plan you can act on: what to build, in what order."
+          },
+          {
+            "type": "paragraph",
+            "text": "OEG"
+          },
+          {
+            "type": "heading",
+            "text": "Operator Execution Gap"
+          },
+          {
+            "type": "paragraph",
+            "text": "The distance between generic advice and a practice an organization can actually build and run."
+          },
+          {
+            "type": "paragraph",
+            "text": "Build-Manage Loop"
+          },
+          {
+            "type": "heading",
+            "text": "Build-Manage Loop"
+          },
+          {
+            "type": "paragraph",
+            "text": "The delivery method that stands up the practice, runs it until it holds, then hands you the keys."
+          }
+        ]
+      },
+      {
+        "title": "How this becomes yours",
+        "eyebrow": "The service",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "You have domain depth and relationships but no delivery machine, so the AI practice stays a someday project while the window is open now. Aloha AI builds the practice for you and hands it over: service lines, pricing, delivery infrastructure, a seeded client pipeline, and a trained team."
+          },
+          {
+            "type": "heading",
+            "text": "What I build"
+          },
+          {
+            "type": "paragraph",
+            "text": "A working AI-consulting practice inside your organization: productized offers, pricing, delivery infra, pipeline, and team training, scoped to your field."
+          },
+          {
+            "type": "heading",
+            "text": "What you get"
+          },
+          {
+            "type": "list",
+            "items": [
+              "A live practice you own and operate"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Delivery infrastructure that isn't person-dependent"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A seeded pipeline and a trained team, with change-support as it scales"
+            ]
+          },
+          {
+            "type": "heading",
+            "text": "How to start"
+          },
+          {
+            "type": "paragraph",
+            "text": "A Systems Audit: a scoping conversation that turns your scorecard into a concrete build plan. If it's a fit, the build begins in weeks, not quarters."
+          },
+          {
+            "type": "paragraph",
+            "text": "Pricing. Practice builds run as a retainer for the build + a share of the practice's revenue, scoped to your organization. Structured so we win when the practice earns, not before."
+          }
+        ]
+      },
+      {
+        "title": "Ready when you are.",
+        "eyebrow": "Aloha AI · Honolulu",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Your score shows what your practice is ready for. Have it built and handed off with a Practice Build ($5,000–$10,000, done-for-you), or book a call to scope the rollout."
+          },
+          {
+            "type": "paragraph",
+            "text": "Prefer email? Email RN · or connect on LinkedIn"
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "tools/practice-readiness/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "workflow-audit",

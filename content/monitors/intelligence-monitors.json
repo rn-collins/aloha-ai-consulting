@@ -4,7 +4,7 @@
     "kind": "monitor",
     "pathname": "/monitors/agentic-brand-management",
     "eyebrow": "Brand intelligence monitor",
-    "title": "Agentic Brand Management",
+    "title": "Brand management run by agents. Signed off by a human.",
     "summary": "An evidence-graded brand and creator-management monitor coordinating collection, disclosure, claims-risk, brand-fit, measurement, governance, and accountable human sign-off.",
     "audience": "Regulated and reputation-sensitive brands using AI-assisted content and creator systems.",
     "maturity": "Beta",
@@ -101,7 +101,264 @@
         "type": "implements",
         "target": "trust-stack"
       }
-    ]
+    ],
+    "seoTitle": "Agentic Brand Management",
+    "editorialIntro": [
+      "A coordinated system of AI agents manages your brand and creator activity on graded evidence — monitoring public and permissioned content, checking disclosure and claims risk, scoring brand-fit, tracking real measurement, and enforcing governance. A human is accountable for every recommendation that reaches you. Built for regulated and reputation-sensitive brands, where a confident wrong answer is expensive.",
+      "Grounded in FTC endorsement guidance, consumer-neuroscience literature, and platform policy · Local-LLM analysis · Every finding cited, graded, and confidence-scored"
+    ],
+    "editorialSections": [
+      {
+        "title": "Most \"AI brand tools\" widen the Operator Execution Gap. This closes it.",
+        "eyebrow": "Why \"agentic,\" and why it's different",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The gap is the distance between what an AI says about your brand and what you can actually act on, publish, or defend. Generic tools generate confident output with no provenance, no disclosure check, and no one accountable. Agentic brand management is built the other way around."
+          },
+          {
+            "type": "paragraph",
+            "text": "\"Here are 20 on-trend posts and 5 creators to work with.\""
+          },
+          {
+            "type": "paragraph",
+            "text": "Ungraded output. No source. No disclosure or claims check. No fit rationale. Nobody signs off. In a regulated category, that is how you get an undisclosed endorsement or an unsubstantiated health claim into market."
+          },
+          {
+            "type": "paragraph",
+            "text": "Speed with no trust. The risk lands on you."
+          },
+          {
+            "type": "paragraph",
+            "text": "\"This creator scores 82/100 on fit; two claims are medium-risk (implied efficacy); disclosure is vague — flagged for your review.\""
+          },
+          {
+            "type": "paragraph",
+            "text": "Every finding carries provenance, an evidence grade, and a confidence level. High-risk items route to a human before anything ships."
+          },
+          {
+            "type": "paragraph",
+            "text": "Speed and trust. The system knows what it isn't allowed to decide alone."
+          }
+        ]
+      },
+      {
+        "title": "One orchestrator, six specialist agents",
+        "eyebrow": "The system",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Each agent has a narrow job, its own tools, and must return graded, cited output. They map to the six layers of a Creator + Brand Evidence Audit and to the EVIDENCE framework."
+          },
+          {
+            "type": "heading",
+            "text": "Studio"
+          },
+          {
+            "type": "paragraph",
+            "text": "Plans the run, routes to specialists, sequences, assembles findings, applies confidence levels and the priority matrix."
+          },
+          {
+            "type": "heading",
+            "text": "Collection agent"
+          },
+          {
+            "type": "paragraph",
+            "text": "Gathers public and permissioned content for the watchlist and normalizes it into the evidence store."
+          },
+          {
+            "type": "heading",
+            "text": "Disclosure agent"
+          },
+          {
+            "type": "paragraph",
+            "text": "Detects sponsorship, affiliate, and material connections; checks whether disclosure is present and clear."
+          },
+          {
+            "type": "heading",
+            "text": "Claims-Risk agent"
+          },
+          {
+            "type": "paragraph",
+            "text": "Extracts express and implied claims; assigns category and risk; flags substantiation gaps."
+          },
+          {
+            "type": "heading",
+            "text": "Brand-Fit agent"
+          },
+          {
+            "type": "paragraph",
+            "text": "Scores creators and content against the brief; reads trust, parasocial, and audience-vulnerability signals."
+          },
+          {
+            "type": "heading",
+            "text": "Measurement agent"
+          },
+          {
+            "type": "paragraph",
+            "text": "Assembles metrics beyond vanity: awareness, engagement quality, trust, conversion, compliance, learning."
+          },
+          {
+            "type": "heading",
+            "text": "Governance agent"
+          },
+          {
+            "type": "paragraph",
+            "text": "Checks activity against SOPs, approval workflow, and AI-content policy; raises escalations."
+          },
+          {
+            "type": "heading",
+            "text": "Evidence-grading layer"
+          },
+          {
+            "type": "paragraph",
+            "text": "Grades every input — strong/weak, direct/indirect, current/stale — and attaches a recommendation confidence."
+          },
+          {
+            "type": "heading",
+            "text": "Human sign-off gate"
+          },
+          {
+            "type": "paragraph",
+            "text": "Routes findings by risk tier so nothing high-risk reaches a client without a person behind it."
+          }
+        ]
+      },
+      {
+        "title": "Agentic Brand-Management Readiness",
+        "eyebrow": "Free · runs in your browser",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Toggle what your brand already has in place across the six layers. You'll get a readiness score, your weakest layer (the agent to deploy first), and the human-in-the-loop tier your risk profile calls for. Nothing is sent or stored."
+          },
+          {
+            "type": "paragraph",
+            "text": "This diagnostic is an educational estimate, not legal advice or a compliance determination."
+          }
+        ]
+      },
+      {
+        "title": "Human-in-the-loop is a policy, not a setting",
+        "eyebrow": "The sign-off gate",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Which mode applies is decided per task by risk. That's itself the point for regulated brands: the system knows what it isn't allowed to decide alone."
+          },
+          {
+            "type": "heading",
+            "text": "Human-approved"
+          },
+          {
+            "type": "paragraph",
+            "text": "Health/efficacy/disease claims, undisclosed paid promotion, testimonial risk, anything client-facing and regulated. You sign off before it leaves."
+          },
+          {
+            "type": "heading",
+            "text": "Medium risk"
+          },
+          {
+            "type": "paragraph",
+            "text": "Vague disclosure, ambiguous affiliate language, borderline fit. Surfaced in a review queue / dashboard for a decision."
+          },
+          {
+            "type": "heading",
+            "text": "Low risk"
+          },
+          {
+            "type": "paragraph",
+            "text": "Clean disclosure, on-brand neutral content, internal logging. Agents proceed autonomously, logged for audit."
+          }
+        ]
+      },
+      {
+        "title": "The evidence base and the EVIDENCE framework",
+        "eyebrow": "What it stands on",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Eight lenses the agents must reason through — and the primary sources they're grounded in."
+          },
+          {
+            "type": "paragraph",
+            "text": "Grounded in FTC Endorsement Guides & the material-connection standard; consumer-neuroscience literature on trust, processing fluency, and parasociality; and platform disclosure policies. Empirical work shows real-world disclosure compliance is weak — which is exactly the gap this system watches."
+          }
+        ]
+      },
+      {
+        "title": "Start with a diagnosis. Grow into a running system.",
+        "eyebrow": "How to engage",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Phased, matching how Aloha AI works: audit first, then build, then an ongoing agent team, then self-serve."
+          },
+          {
+            "type": "heading",
+            "text": "1 · Agent-run Evidence Audit"
+          },
+          {
+            "type": "paragraph",
+            "text": "Agents execute a full Creator + Brand Evidence Audit across the six layers; delivered as a report, evidence & risk maps, and a 30/60/90 roadmap. You review and sign off."
+          },
+          {
+            "type": "paragraph",
+            "text": "Audit · from $2,500"
+          },
+          {
+            "type": "heading",
+            "text": "2 · Build"
+          },
+          {
+            "type": "paragraph",
+            "text": "Your agent stack stood up in your environment — collection, disclosure, claims, fit, measurement, governance — on a local LLM, handed over."
+          },
+          {
+            "type": "paragraph",
+            "text": "Build · $5,000–$10,000"
+          },
+          {
+            "type": "heading",
+            "text": "3 · Continuous Agent Team"
+          },
+          {
+            "type": "paragraph",
+            "text": "Always-on monitoring and governance with a risk register, dashboard, and monthly review. The recurring layer."
+          },
+          {
+            "type": "paragraph",
+            "text": "Retainer · from $4,000/mo"
+          },
+          {
+            "type": "heading",
+            "text": "4 · Self-serve"
+          },
+          {
+            "type": "paragraph",
+            "text": "Run the diagnostic and the companion Brand-Perception tool yourself; the productized floor beneath the done-for-you work."
+          },
+          {
+            "type": "paragraph",
+            "text": "From $127"
+          }
+        ]
+      },
+      {
+        "title": "Speed and trust, in the same system.",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Run the diagnostic, or book a scoping call and we'll size the first agent to your highest-risk layer."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "monitors/agentic-brand-management/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "ai-creative-production",
@@ -635,7 +892,7 @@
     "kind": "monitor",
     "pathname": "/monitors/arts-culture",
     "eyebrow": "Cultural intelligence monitor",
-    "title": "Collection & Audience AI Intelligence",
+    "title": "AI for your collection and your audience, built on the standards you already answer to.",
     "summary": "A mission-grounded monitor for museums, galleries, and arts nonprofits evaluating AI applications through provenance, accessibility, collection metadata, and audience stewardship.",
     "audience": "Museum directors, curators, registrars, gallery leaders, and arts-nonprofit executives.",
     "maturity": "Research",
@@ -732,7 +989,430 @@
         "type": "implements",
         "target": "trust-stack"
       }
-    ]
+    ],
+    "seoTitle": "Collection & Audience AI Intelligence",
+    "editorialIntro": [
+      "This goes past \"add a chatbot to the website.\" A bespoke AI build scoped to your institution (collection cataloguing, provenance research, audience engagement, accessibility, exhibition planning), grounded in the metadata, provenance, and accessibility standards the sector runs on. Every concept cited, dated, and confidence-scored.",
+      "Built by RN Collins. Neuroscientist (MS) · Administrative Law (JD candidate) · AI systemsTailored for: curators, museum directors & arts-nonprofit leaders"
+    ],
+    "editorialSections": [
+      {
+        "title": "Built for the people who steward the record and the room",
+        "eyebrow": "Who this is for",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The same concept engine reads four ways, because the mission looks different from each seat."
+          },
+          {
+            "type": "heading",
+            "text": "Museum directors"
+          },
+          {
+            "type": "paragraph",
+            "text": "See where AI actually earns its keep (accessibility compliance, audience reach, collection throughput) before you fund a vendor."
+          },
+          {
+            "type": "heading",
+            "text": "Curators & registrars"
+          },
+          {
+            "type": "paragraph",
+            "text": "Faster cataloguing and provenance triage that respects CIDOC-CRM and Getty vocabularies, not a black box that invents attributions."
+          },
+          {
+            "type": "heading",
+            "text": "Arts-nonprofit EDs"
+          },
+          {
+            "type": "paragraph",
+            "text": "Audience engagement and accessibility that a grant panel and a board can both defend: mission-aligned, not gimmick."
+          },
+          {
+            "type": "heading",
+            "text": "Deans of arts & galleries"
+          },
+          {
+            "type": "paragraph",
+            "text": "One artifact that makes the case, and the risk, legible to a room in ten seconds."
+          }
+        ]
+      },
+      {
+        "title": "Ask a generic AI what to do. Watch it miss the mission.",
+        "eyebrow": "The Operator Execution Gap · live",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The default pitch to a cultural institution is \"add an AI chatbot to your site.\" It sounds efficient and gets the sector exactly wrong, because it ignores standards, provenance risk, and access obligations. Same brief, two reads. The distance between them is what a wrong build costs a collection and an audience."
+          },
+          {
+            "type": "paragraph",
+            "text": "✕ Generic vendor · \"add a chatbot\""
+          },
+          {
+            "type": "paragraph",
+            "text": "\"We want AI for our museum — where do we start?\""
+          },
+          {
+            "type": "paragraph",
+            "text": "\"Add an AI chatbot to your website so visitors can ask questions, and use AI to auto-write labels and auto-tag your whole collection. Quick win, launch in a week.\""
+          },
+          {
+            "type": "paragraph",
+            "text": "Fluent, cheap, demo-ready. Wrong for a cultural institution on three counts — it fabricates attributions, breaks your metadata standards, and can fail the accessibility rule you're now legally bound to."
+          },
+          {
+            "type": "paragraph",
+            "text": "✓ Aloha AI · mission-grounded read CIDOC-CRM · WCAG · AAM"
+          },
+          {
+            "type": "paragraph",
+            "text": "Same brief, answered from the sector's standards:"
+          },
+          {
+            "type": "paragraph",
+            "text": "Start where the risk and the payoff are highest, not where the demo is easiest. An AI cataloguing assist should map to CIDOC-CRM / Dublin Core fields and resolve terms against the Getty AAT / ULAN, with a human registrar approving every attribution. Nothing is auto-published."
+          },
+          {
+            "type": "paragraph",
+            "text": "A public \"chatbot\" only helps if it is grounded in your own catalogue (no invented provenance) and meets WCAG 2.1 AA, the standard DOJ requires of large public entities' web content and kiosks as of April 24, 2026. Provenance triage must follow AAM/AAMD due-diligence, not an LLM's guess."
+          },
+          {
+            "type": "paragraph",
+            "text": "Confidence: High Why you can rely on it: it maps to published, verifiable sector standards, cited in the evidence table below with retrieval dates."
+          },
+          {
+            "type": "paragraph",
+            "text": "OEG (the Operator Execution Gap) is the distance between what generic AI says and what a cultural institution can responsibly act on. Closing it is the entire job."
+          }
+        ]
+      },
+      {
+        "title": "Get your tailored AI-application concept",
+        "eyebrow": "The instrument",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Choose your institution type and your priority goal. The tool returns a mission-aligned AI-application concept and what a real build would include, grounded in the sector standards below. Everything runs locally in your browser; nothing is sent anywhere."
+          },
+          {
+            "type": "paragraph",
+            "text": "Select an institution and goal to generate a concept."
+          },
+          {
+            "type": "list",
+            "items": [
+              "—"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "—"
+          }
+        ]
+      },
+      {
+        "title": "A mis-served audience and a mis-catalogued collection both cost more than the build",
+        "eyebrow": "The cost of getting it wrong",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Two failure modes dominate careless cultural-AI projects. Estimate the exposure for your institution: order-of-magnitude, to make the stakes legible, not to replace a real assessment."
+          },
+          {
+            "type": "list",
+            "items": [
+              "Enter your figures to see the estimate."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "A repeatable method, not a one-off model drop",
+        "eyebrow": "How it works",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Every Aloha AI build runs the same three-stage pipeline. It's why the concept holds up to a registrar, a grant panel, and an accessibility auditor, not just a demo."
+          },
+          {
+            "type": "heading",
+            "text": "Reference Intelligence Layer (RIL)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Ground the build in real, published sector standards (CIDOC-CRM, Dublin Core, Getty vocabularies, WCAG, AAM/AAMD provenance guidelines) captured with source and retrieval date. No hallucinated attributions, no invented provenance."
+          },
+          {
+            "type": "heading",
+            "text": "Resolve to an Operator Layer (ROL)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Standards become a build a curator or ED can act on: what the AI does, what stays under human approval, what changes for your audience, closing the Operator Execution Gap. Informed by neuro-aesthetics: how attention, trust, and memory actually form in a gallery."
+          },
+          {
+            "type": "heading",
+            "text": "Ground, refresh & re-verify"
+          },
+          {
+            "type": "paragraph",
+            "text": "The build re-checks its grounding sources on a schedule (Upstash · Vercel · Exa) and flags when a standard revises (e.g. a WCAG update or a provenance-portal change) so it never quietly goes stale."
+          }
+        ]
+      },
+      {
+        "title": "Every concept traced to a real sector standard",
+        "eyebrow": "Evidence & method · grounded provenance",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The rigor is the product. Each claim carries its source, retrieval date, and a confidence rating, so the same artifact that opens a conversation can support a grant narrative or a board memo. No fabricated citations."
+          },
+          {
+            "type": "table",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Concept / claim",
+                    "header": true
+                  },
+                  {
+                    "text": "Primary source",
+                    "header": true
+                  },
+                  {
+                    "text": "Retrieved",
+                    "header": true
+                  },
+                  {
+                    "text": "Confidence",
+                    "header": true
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "CIDOC-CRM is the ISO standard reference ontology for interchange of cultural-heritage information; current version 7.1.3 (2024)"
+                  },
+                  {
+                    "text": "ISO 21127:2023 · cidoc-crm.org"
+                  },
+                  {
+                    "text": "2026-07-04"
+                  },
+                  {
+                    "text": "High"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Dublin Core provides a minimal cross-domain metadata element set, widely mapped to CIDOC-CRM for collections"
+                  },
+                  {
+                    "text": "DCMI / Dublin Core Element Set · rdamsc.bath.ac.uk"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Getty AAT, ULAN, TGN & CONA are the controlled vocabularies for cataloguing art, artists, places & objects; published as Linked Open Data"
+                  },
+                  {
+                    "text": "Getty Research Institute — Getty Vocabularies · getty.edu"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "DOJ rule requires public entities serving 50,000+ to meet WCAG 2.1 AA for web content & kiosks by Apr 24, 2026"
+                  },
+                  {
+                    "text": "28 CFR Part 35 (DOJ ADA Title II web rule)"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Smithsonian Guidelines for Accessible Exhibition Design set label, alt-format & circulation standards for galleries"
+                  },
+                  {
+                    "text": "Smithsonian Office of Visitor Accessibility · access.si.edu"
+                  },
+                  {
+                    "text": "Med · guideline"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "AAM/AAMD Nazi-era provenance guidelines (1998–99) define due-diligence for \"covered objects\" (pre-1946, acquired post-1932, EU 1932–46)"
+                  },
+                  {
+                    "text": "AAM Standards — Unlawful Appropriation (Nazi Era) · aam-us.org"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "LIDO schema uses controlled vocabularies (ULAN, AAT) to harvest & publish object metadata; LIDO Primer 2024"
+                  },
+                  {
+                    "text": "LIDO Schema — Primer (2024-09-11) · lido-schema.org"
+                  },
+                  {
+                    "text": "Med · community standard"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Verification checkpoint: standards are current as of the retrieval date. Some effective dates and version numbers evolve, so re-confirm against the issuing body before relying on any figure in a grant, filing, or board decision."
+          }
+        ]
+      },
+      {
+        "title": "The combination no chatbot vendor holds",
+        "eyebrow": "Why this, not a generic vendor",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Most cultural-AI pitches are one trick done fast. This is built on named, defensible frameworks, so you leave speaking the language, not renting a widget."
+          },
+          {
+            "type": "paragraph",
+            "text": "RIL → ROL"
+          },
+          {
+            "type": "heading",
+            "text": "Reference Intelligence Layer"
+          },
+          {
+            "type": "paragraph",
+            "text": "Standard-grounded intelligence resolved into an operator-ready build a curator can act on."
+          },
+          {
+            "type": "paragraph",
+            "text": "OEG"
+          },
+          {
+            "type": "heading",
+            "text": "Operator Execution Gap"
+          },
+          {
+            "type": "paragraph",
+            "text": "The gap between what generic AI says and what a cultural institution can responsibly act on."
+          },
+          {
+            "type": "paragraph",
+            "text": "Neuro-aesthetics"
+          },
+          {
+            "type": "heading",
+            "text": "Neuro-aesthetics"
+          },
+          {
+            "type": "paragraph",
+            "text": "Engagement designed to how attention, trust, and memory actually form in front of an object, not vibes."
+          },
+          {
+            "type": "paragraph",
+            "text": "EDSA"
+          },
+          {
+            "type": "heading",
+            "text": "EDSA Framework"
+          },
+          {
+            "type": "paragraph",
+            "text": "Keeps reputation-sensitive content compliant and un-suppressed across platforms."
+          }
+        ]
+      },
+      {
+        "title": "How this becomes yours",
+        "eyebrow": "The service",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Museums, galleries, and arts nonprofits are pitched \"add a chatbot\" and left with something that breaks their metadata, risks their provenance, and fails their access obligations. I build a tailored AI system for your exact collection and audience, grounded in the standards you already answer to and resolved into decisions your team can act on."
+          },
+          {
+            "type": "heading",
+            "text": "What I build"
+          },
+          {
+            "type": "paragraph",
+            "text": "A bespoke AI system scoped to your collection, metadata schema, and audience (cataloguing, provenance triage, engagement, or accessibility), sourced, standards-mapped, and human-in-the-loop."
+          },
+          {
+            "type": "heading",
+            "text": "What you get"
+          },
+          {
+            "type": "list",
+            "items": [
+              "An AI build grounded in CIDOC-CRM, Getty vocabularies & WCAG"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "An evidence & method ledger you can put in a grant or board memo"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Re-verification when a standard revises"
+            ]
+          },
+          {
+            "type": "heading",
+            "text": "How to start"
+          },
+          {
+            "type": "paragraph",
+            "text": "A 20-minute scoping call. If it's a fit, a tailored build turns around in days, not weeks."
+          },
+          {
+            "type": "paragraph",
+            "text": "Pricing: bespoke builds start from $4,000 + $1,500/mo, scoped to your institution. Three-month minimum on any retainer; 30 days' notice to stop."
+          }
+        ]
+      },
+      {
+        "title": "Ready when you are.",
+        "eyebrow": "Aloha AI · Honolulu",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "This page runs a bespoke Arts & Cultural Intelligence build. Get one built for your institution as a scoped bespoke Build (typically $5,000–$10,000), or book a scoping call to define the work."
+          },
+          {
+            "type": "paragraph",
+            "text": "Prefer email? Email RN · or connect on LinkedIn"
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "monitors/arts-culture/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "biopharma-regulatory-intelligence",
@@ -1289,7 +1969,7 @@
     "kind": "monitor",
     "pathname": "/monitors/biophilic-neuroarch",
     "eyebrow": "Design research monitor",
-    "title": "Neuro-Architecture & Biophilic Design Intelligence",
+    "title": "Space shapes the nervous system. Design it on purpose.",
     "summary": "A neuroscience-grounded monitor for evaluating how space may support human nervous systems through daylight, nature views, fascination, prospect and refuge, materials, acoustics, air, and thermal quality.",
     "audience": "Architects, design researchers, urban designers, and interior or workplace leaders.",
     "maturity": "Research",
@@ -1385,14 +2065,473 @@
         "type": "uses",
         "target": "citation-verifier"
       }
-    ]
+    ],
+    "seoTitle": "Neuro-Architecture & Biophilic Design Intelligence",
+    "editorialIntro": [
+      "Not \"add a few plants for wellness.\" A neuroscience-grounded read of how a room regulates attention, stress, and safety: scored against published mechanisms, traced to real research, and turned into a prioritized design decision you can defend to a client, a review board, or an editor.",
+      "Built by RN Collins — Neuroscientist (MS) · 4 articles in the Journal of Biophilic Design · AI systemsTailored for: architects, design researchers, urban designers & interior content leaders"
+    ],
+    "editorialSections": [
+      {
+        "title": "Built for people who have to justify a design, not just feel it",
+        "eyebrow": "Who this is for",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The same instrument reads four ways, because the burden of proof differs by seat."
+          },
+          {
+            "type": "heading",
+            "text": "Architects"
+          },
+          {
+            "type": "paragraph",
+            "text": "Move from \"it feels calm\" to a mechanism a client or planning board will accept."
+          },
+          {
+            "type": "heading",
+            "text": "Design researchers"
+          },
+          {
+            "type": "paragraph",
+            "text": "A structured, cited read of a space against named restorative theories. No vibes required."
+          },
+          {
+            "type": "heading",
+            "text": "Urban designers"
+          },
+          {
+            "type": "paragraph",
+            "text": "Score public realm and streetscape against prospect-refuge and restoration at scale."
+          },
+          {
+            "type": "heading",
+            "text": "Interior / content leaders"
+          },
+          {
+            "type": "paragraph",
+            "text": "Publish home & wellness content that holds up because the mechanism is real."
+          }
+        ]
+      },
+      {
+        "title": "Ask a generic AI to make a space \"calming.\" Watch it reach for a plant.",
+        "eyebrow": "The Operator Execution Gap · applied to design",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Generic models pattern-match \"biophilic\" to décor. They can't tell you which nervous-system pathway a change recruits, whether it's supported, or what to prioritize when budget is tight. Same brief, two answers: the fluent-but-decorative one, and the mechanism-grounded one. The distance between them is what an un-defensible design costs."
+          },
+          {
+            "type": "paragraph",
+            "text": "✕ Generic LLM · unsourced"
+          },
+          {
+            "type": "paragraph",
+            "text": "\"How do I make this open-plan office feel calmer and healthier?\""
+          },
+          {
+            "type": "paragraph",
+            "text": "\"Add plants and natural wood tones for a biophilic wellness vibe, use soft lighting, and hang some nature art — it'll instantly feel more relaxing and boost productivity.\""
+          },
+          {
+            "type": "paragraph",
+            "text": "Fluent. Pleasant. Mechanism-blind — it names décor, not the pathways that actually regulate stress and attention, and it can't tell you what to fund first."
+          },
+          {
+            "type": "paragraph",
+            "text": "✓ Aloha AI · mechanism-grounded Salutogenic read"
+          },
+          {
+            "type": "paragraph",
+            "text": "Same brief, answered from the research:"
+          },
+          {
+            "type": "paragraph",
+            "text": "Start with the autonomic recovery levers, not the décor. A genuine view of nature and daylight are the highest-leverage moves: they engage the pathway behind Ulrich's Stress Recovery Theory and support attention via soft fascination (Kaplan). Then treat the open plan's real deficit: refuge. Open-plan is nearly all prospect and no refuge, which reads as low-grade vigilance (Appleton's prospect-refuge)."
+          },
+          {
+            "type": "paragraph",
+            "text": "Prioritize: (1) daylight + real views, (2) acoustic and visual refuge nooks, (3) natural materials and air quality. Nature art is a weak proxy, worth doing only where a real view is impossible."
+          },
+          {
+            "type": "paragraph",
+            "text": "Confidence: High on mechanism Why you can rely on it: each lever maps to a named, published theory in the ledger below, with retrieval dates. Effect sizes vary by context; this ranks levers, it doesn't promise a number."
+          },
+          {
+            "type": "paragraph",
+            "text": "OEG — the Operator Execution Gap — is the distance between what AI says and what a designer can defend and build. Closing it is the entire job."
+          }
+        ]
+      },
+      {
+        "title": "Six pathways a space acts on — décor vs. mechanism",
+        "eyebrow": "The substance",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Biophilic design isn't a style; it's a set of levers on specific nervous-system systems. The left box is how it's usually sold. The right box is what's actually being recruited."
+          },
+          {
+            "type": "heading",
+            "text": "View of nature & daylight High leverage"
+          },
+          {
+            "type": "paragraph",
+            "text": "Décor read: \"a nice window.\" Mechanism: visual access to nature and circadian daylight support parasympathetic recovery and reduce sustained stress (Ulrich, Stress Recovery Theory)."
+          },
+          {
+            "type": "heading",
+            "text": "Soft fascination / greenery High leverage"
+          },
+          {
+            "type": "paragraph",
+            "text": "Décor read: \"plants look good.\" Mechanism: gently engaging natural stimuli let directed attention replenish (Kaplan & Kaplan, Attention Restoration Theory)."
+          },
+          {
+            "type": "heading",
+            "text": "Prospect & refuge High leverage"
+          },
+          {
+            "type": "paragraph",
+            "text": "Décor read: \"open and airy.\" Mechanism: humans want to see out (prospect) while feeling sheltered (refuge); imbalance reads as vigilance (Appleton, prospect-refuge theory)."
+          },
+          {
+            "type": "heading",
+            "text": "Natural materials & complexity Moderate"
+          },
+          {
+            "type": "paragraph",
+            "text": "Décor read: \"wood is trendy.\" Mechanism: natural materials and ordered complexity are non-rhythmic sensory stimuli associated with preference and comfort (14 Patterns of Biophilic Design)."
+          },
+          {
+            "type": "heading",
+            "text": "Acoustics Moderate"
+          },
+          {
+            "type": "paragraph",
+            "text": "Décor read: \"it's a bit loud.\" Mechanism: uncontrollable noise is a chronic stressor; acoustic refuge supports a sense of coherence (Antonovsky, salutogenesis)."
+          },
+          {
+            "type": "heading",
+            "text": "Air & thermal quality Moderate"
+          },
+          {
+            "type": "paragraph",
+            "text": "Décor read: \"open a window.\" Mechanism: fresh air, ventilation and thermal variability are direct salutogenic resources, not aesthetics (salutogenic design)."
+          }
+        ]
+      },
+      {
+        "title": "Biophilic Design Scorer",
+        "eyebrow": "The instrument",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Toggle the attributes a space actually has. The tool returns a salutogenic / neuro score and a prioritized set of recommendations, highest-leverage mechanism first. Everything runs locally in your browser; nothing you enter leaves your device."
+          },
+          {
+            "type": "list",
+            "items": [
+              "Toggle attributes and score to see your priorities."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "What a decorative \"wellness\" spend buys you",
+        "eyebrow": "The cost of getting it wrong",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The common error: pouring budget into nature imagery and plants while the real levers — daylight, views, refuge — go unaddressed. Here's how much of a project's biophilic budget lands on weak-proxy moves."
+          },
+          {
+            "type": "list",
+            "items": [
+              "This is budget spent on décor that pattern-matches \"biophilic\" but recruits the weakest mechanisms."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Re-sequenced behind daylight, views and refuge, the same dollars do more work."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "A repeatable design-intelligence method — not a mood board",
+        "eyebrow": "How it works",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Every Aloha AI instrument runs the same three-stage pipeline. It's why the read stays grounded next month, not just today."
+          },
+          {
+            "type": "heading",
+            "text": "Research Intelligence Layer (RIL)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Peer-reviewed mechanisms only: Ulrich, Kaplan, Appleton, Antonovsky, the 14 Patterns framework, captured with source and retrieval date. No Pinterest-grade \"wellness\" claims."
+          },
+          {
+            "type": "heading",
+            "text": "Resolve to a Design Layer (ROL)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Raw theory becomes a decision a designer can act on: which lever, for which nervous-system pathway, with what confidence and what priority. That closes the Operator Execution Gap."
+          },
+          {
+            "type": "heading",
+            "text": "Auto-refresh & alert"
+          },
+          {
+            "type": "paragraph",
+            "text": "The evidence base re-checks its primary sources on a schedule (Upstash · Vercel · Exa) and can flag you when new biophilic or neuro-architecture research lands, so the read never goes stale."
+          }
+        ]
+      },
+      {
+        "title": "Every mechanism, traced to real research",
+        "eyebrow": "Audit-ready evidence base",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The rigor is the product. Each claim carries its mechanism, the real concept name, a retrieval date, and a confidence rating, so a design memo can survive a review board. We cite established theories and their mechanisms; we do not invent specific effect-size statistics."
+          },
+          {
+            "type": "table",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Mechanism (what the space acts on)",
+                    "header": true
+                  },
+                  {
+                    "text": "Real concept & source",
+                    "header": true
+                  },
+                  {
+                    "text": "Retrieved",
+                    "header": true
+                  },
+                  {
+                    "text": "Confidence",
+                    "header": true
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "View of nature supports stress recovery / parasympathetic restoration"
+                  },
+                  {
+                    "text": "Stress Recovery Theory · Ulrich, \"View Through a Window May Influence Recovery From Surgery,\" Science (1984)"
+                  },
+                  {
+                    "text": "2026-07-04"
+                  },
+                  {
+                    "text": "High"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Natural stimuli replenish depleted directed attention via soft fascination"
+                  },
+                  {
+                    "text": "Attention Restoration Theory · Kaplan & Kaplan, The Experience of Nature (1989)"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "People prefer seeing out (prospect) while sheltered (refuge); imbalance reads as vigilance"
+                  },
+                  {
+                    "text": "Prospect-Refuge Theory · Appleton, The Experience of Landscape (1975)"
+                  },
+                  {
+                    "text": "Med · contested magnitude"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Environments can act as health-generating resources (sense of coherence)"
+                  },
+                  {
+                    "text": "Salutogenesis · Antonovsky (1979/1987), applied to salutogenic design"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Nature-in-space, natural analogues and space conditions as design patterns"
+                  },
+                  {
+                    "text": "14 Patterns of Biophilic Design · Browning et al., Terrapin Bright Green (2014)"
+                  },
+                  {
+                    "text": "Med · framework"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Verification checkpoint: concept names and sources are current as of the retrieval date. Effect sizes are context-dependent and not asserted here; re-confirm the primary literature before quoting any figure in a report or filing."
+          }
+        ]
+      },
+      {
+        "title": "The combination no décor tool holds",
+        "eyebrow": "Why this, not a generic AI",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Most \"biophilic AI\" is a style filter. This is built on named, defensible frameworks, so you leave speaking the mechanism, not renting a mood board."
+          },
+          {
+            "type": "paragraph",
+            "text": "RIL → ROL"
+          },
+          {
+            "type": "heading",
+            "text": "Research Intelligence Layer"
+          },
+          {
+            "type": "paragraph",
+            "text": "Peer-reviewed mechanisms resolved into a designer-ready decision layer."
+          },
+          {
+            "type": "paragraph",
+            "text": "OEG"
+          },
+          {
+            "type": "heading",
+            "text": "Operator Execution Gap"
+          },
+          {
+            "type": "paragraph",
+            "text": "The gap between what AI says and what a designer can defend and build."
+          },
+          {
+            "type": "paragraph",
+            "text": "SNS"
+          },
+          {
+            "type": "heading",
+            "text": "Salutogenic-Neuro Score"
+          },
+          {
+            "type": "paragraph",
+            "text": "Ranks a space's levers by nervous-system pathway, not by aesthetic."
+          },
+          {
+            "type": "paragraph",
+            "text": "EDSA"
+          },
+          {
+            "type": "heading",
+            "text": "EDSA Framework"
+          },
+          {
+            "type": "paragraph",
+            "text": "Keeps regulated wellness & design content compliant and un-suppressed across platforms."
+          }
+        ]
+      },
+      {
+        "title": "How this becomes yours",
+        "eyebrow": "The service",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Designers, researchers and content leaders make biophilic claims they can't fully defend, because the mechanism lives in scattered literature, not in the tool they're using. I build a tailored instrument for your typology that scores against published mechanisms and resolves them into design decisions you can stand behind."
+          },
+          {
+            "type": "heading",
+            "text": "What I build"
+          },
+          {
+            "type": "paragraph",
+            "text": "A private scorer and evidence base scoped to your building type, research program, or editorial brand: mechanism-grounded, dated, and confidence-scored."
+          },
+          {
+            "type": "heading",
+            "text": "What you get"
+          },
+          {
+            "type": "list",
+            "items": [
+              "A live, cited scoring instrument for your spaces"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "An audit-ready evidence ledger you can put in a design memo"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Change-alerts when new relevant research lands"
+            ]
+          },
+          {
+            "type": "heading",
+            "text": "How to start"
+          },
+          {
+            "type": "paragraph",
+            "text": "A 20-minute scoping call. If it's a fit, a tailored build turns around in days, not weeks."
+          },
+          {
+            "type": "paragraph",
+            "text": "Pricing — engagements start from $5,000 build + $1,500/mo, scoped to your project. Three-month minimum on any retainer; 30 days' notice to stop."
+          }
+        ]
+      },
+      {
+        "title": "Ready when you are.",
+        "eyebrow": "Aloha AI · Honolulu",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "This page runs a bespoke Design Intelligence build. Get one built for your practice with a Build ($5,000–$10,000), or book a scoping call to define what it should measure."
+          },
+          {
+            "type": "paragraph",
+            "text": "Prefer email? Email RN · or connect on LinkedIn"
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "monitors/biophilic-neuroarch/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "luxury-ip",
     "kind": "monitor",
     "pathname": "/monitors/luxury-ip",
     "eyebrow": "Brand-protection monitor",
-    "title": "Luxury Brand Protection & Anti-Counterfeiting Intelligence",
+    "title": "Brand protection, grounded in the statute. No takedown bots.",
     "summary": "An IP-risk and counterfeit-signal monitor for luxury and consumer brands, linking each recommended review path to identified rights, evidence, platforms, jurisdictions, and accountable counsel.",
     "audience": "IP counsel, luxury and fashion houses, brand-protection leads, boards, and investors.",
     "maturity": "Beta",
@@ -1488,7 +2627,451 @@
         "type": "implements",
         "target": "trust-stack"
       }
-    ]
+    ],
+    "seoTitle": "Luxury Brand Protection & Anti-Counterfeiting Intelligence",
+    "editorialIntro": [
+      "A law-grounded instrument for luxury and consumer brands. Score your counterfeit and IP exposure, see exactly what generic AI gets confidently wrong about takedowns, and trace every recommended action to the Lanham Act, the USPTO register, and the DMCA. It holds up in a board update and in a cease-and-desist.",
+      "Built by RN Collins — Neuroscience of trust (MS) · Trademark & IP Law (JD candidate) · AI systemsTailored for: IP counsel, luxury houses & brand-protection leads"
+    ],
+    "editorialSections": [
+      {
+        "title": "Built for the people who can't afford a confident wrong answer on IP",
+        "eyebrow": "Who this is for",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The same monitor reads four ways, because the stakes differ by seat."
+          },
+          {
+            "type": "heading",
+            "text": "IP counsel & GCs"
+          },
+          {
+            "type": "paragraph",
+            "text": "A sourced, statute-mapped read of exposure you can cite directly, without re-verifying before you file."
+          },
+          {
+            "type": "heading",
+            "text": "Luxury & fashion houses"
+          },
+          {
+            "type": "paragraph",
+            "text": "Where the counterfeit signal is loudest and brand trust is the whole asset. Prioritize what actually erodes it."
+          },
+          {
+            "type": "heading",
+            "text": "Brand-protection leads"
+          },
+          {
+            "type": "paragraph",
+            "text": "Turn a flood of marketplace listings into a ranked, defensible enforcement queue."
+          },
+          {
+            "type": "heading",
+            "text": "Boards & investors"
+          },
+          {
+            "type": "paragraph",
+            "text": "One screenshot that makes IP and dilution risk legible to a room in ten seconds."
+          }
+        ]
+      },
+      {
+        "title": "Ask a generic AI how to stop a counterfeiter. Watch it fail.",
+        "eyebrow": "The Operator Execution Gap · live",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Large language models fail most confidently exactly where a brand's stakes are highest. Same question, two answers: the fluent-but-wrong generic reply, and the law-grounded one. The distance between them is what a wrong enforcement move costs."
+          },
+          {
+            "type": "paragraph",
+            "text": "✕ Generic LLM · unsourced"
+          },
+          {
+            "type": "paragraph",
+            "text": "\"Counterfeit listings are killing us. What do we do?\""
+          },
+          {
+            "type": "paragraph",
+            "text": "\"Just file a trademark and send DMCA takedowns to every marketplace — that removes the fakes and you're protected.\""
+          },
+          {
+            "type": "paragraph",
+            "text": "Confident. Fluent. Wrong on the mechanism — and wrong in the way that gets a notice bounced, a mark refused, or an enforcement dollar spent on the lowest-value target."
+          },
+          {
+            "type": "paragraph",
+            "text": "✓ Aloha AI · law-grounded Lanham Act · USPTO · DMCA"
+          },
+          {
+            "type": "paragraph",
+            "text": "Same question, answered from the statutes:"
+          },
+          {
+            "type": "paragraph",
+            "text": "A DMCA notice is the wrong instrument for most counterfeits. The DMCA (17 U. S. C. §512) is a copyright notice-and-takedown regime: it reaches copied images or designs, not the fake use of your name or logo. Trademark counterfeiting runs through the Lanham Act: infringement of a registered mark under §32 (15 U. S. C. §1114) and false designation of origin under §43(a) (§1125(a))."
+          },
+          {
+            "type": "paragraph",
+            "text": "And you can only assert §32 with a federal registration, so the first move is confirming your marks are on the USPTO Principal Register for the right classes, not blasting takedowns. Where counterfeiting is proven, §1116–1117 unlock injunctions, seizure, and statutory damages of $1,000–$2,000,000 per mark: remedies a form notice never provides."
+          },
+          {
+            "type": "paragraph",
+            "text": "Confidence: High Why you can rely on it: each mechanism maps to a specific statute section, cited below with retrieval dates. Application to your marks is interpretive (Med)."
+          },
+          {
+            "type": "paragraph",
+            "text": "OEG — the Operator Execution Gap — is the distance between what AI says and what a brand-protection lead can act on. Closing it is the entire job."
+          }
+        ]
+      },
+      {
+        "title": "Four instruments, by what they actually reach",
+        "eyebrow": "The enforcement toolkit",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Picking the wrong instrument is the most expensive mistake in brand protection. Match the harm to the statute that covers it."
+          },
+          {
+            "type": "heading",
+            "text": "§32 registered-mark infringement Strongest"
+          },
+          {
+            "type": "heading",
+            "text": "§43(a) false designation Broad"
+          },
+          {
+            "type": "heading",
+            "text": "Counterfeiting remedies High leverage"
+          },
+          {
+            "type": "heading",
+            "text": "DMCA notice-and-takedown Copyright only"
+          }
+        ]
+      },
+      {
+        "title": "Score your brand-protection exposure",
+        "eyebrow": "The instrument",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Answer five questions about your brand. The tool returns an exposure score and a prioritized protection queue grounded in the statute framework above. Everything runs locally in your browser; nothing is sent anywhere."
+          },
+          {
+            "type": "list",
+            "items": [
+              "Answer the five questions to generate a ranked protection queue."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "What one wrong enforcement move costs",
+        "eyebrow": "The cost of getting it wrong",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The most common error we see: relying on DMCA takedowns for trademark counterfeits while marks go unregistered, leaving the §1117 statutory-damages remedy on the table. Here's what you forfeit."
+          },
+          {
+            "type": "list",
+            "items": [
+              "This is the elective statutory-damages ceiling you can pursue for registered-mark counterfeiting. A DMCA form notice never provides this remedy."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Forfeited if marks aren't registered or the wrong instrument is used."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "A repeatable intelligence method, not a one-off scrape",
+        "eyebrow": "How it works",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Every Aloha AI monitor runs the same three-stage pipeline. In a production build, that is what keeps the facts right next month, not just today."
+          },
+          {
+            "type": "heading",
+            "text": "Regulatory Intelligence Layer (RIL)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Primary sources only: the Lanham Act, U. S. Code, USPTO register records, and platform takedown policies, captured with source and retrieval date. No headline aggregation, no scraped forum lore."
+          },
+          {
+            "type": "heading",
+            "text": "Resolve to an Operator Layer (ROL)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Raw statute becomes a decision a brand-protection lead can act on: which instrument reaches this harm, for which mark, with what confidence. This closes the Operator Execution Gap and grounds the neuroscience of brand trust in enforceable action."
+          },
+          {
+            "type": "heading",
+            "text": "Auto-refresh & alert"
+          },
+          {
+            "type": "paragraph",
+            "text": "In a production build, the monitor re-checks its primary sources on a schedule (Upstash · Vercel · Exa) and can ping you when a mark registers, a class opens, or a marketplace changes its takedown policy, so it never goes stale."
+          }
+        ]
+      },
+      {
+        "title": "Every action, traced to its statute",
+        "eyebrow": "Audit-ready provenance",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The IP-law rigor is the product. Each mechanism carries its statute, retrieval date, and a confidence rating, so the same artifact that opens a conversation can support a cease-and-desist or a filing. No case citations are asserted; interpretive application is marked Med."
+          },
+          {
+            "type": "table",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Fact / mechanism",
+                    "header": true
+                  },
+                  {
+                    "text": "Primary source",
+                    "header": true
+                  },
+                  {
+                    "text": "Retrieved",
+                    "header": true
+                  },
+                  {
+                    "text": "Confidence",
+                    "header": true
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Infringement of a federally registered mark (likelihood of confusion) is actionable under Lanham Act §32"
+                  },
+                  {
+                    "text": "15 U. S. C. §1114"
+                  },
+                  {
+                    "text": "2026-07-04"
+                  },
+                  {
+                    "text": "High"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "False designation of origin / unregistered-mark protection under Lanham Act §43(a); dilution under §43(c)"
+                  },
+                  {
+                    "text": "15 U. S. C. §1125(a) · §1125(c)"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Injunctive relief and remedies for trademark violations, including seizure of counterfeit goods"
+                  },
+                  {
+                    "text": "15 U. S. C. §1116"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Elective statutory damages for use of a counterfeit mark: $1,000–$200,000 per mark; up to $2,000,000 if willful"
+                  },
+                  {
+                    "text": "15 U. S. C. §1117(c)"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Federal trademark registration on the Principal Register (basis for §32 claims and enhanced remedies)"
+                  },
+                  {
+                    "text": "15 U. S. C. §1051 · USPTO.gov"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "DMCA notice-and-takedown reaches copyright (copied images/designs), a distinct regime from trademark; §512(f) penalizes knowing misrepresentation"
+                  },
+                  {
+                    "text": "17 U. S. C. §512"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Which instrument applies to a given counterfeit signal, and its enforcement priority for your marks"
+                  },
+                  {
+                    "text": "Interpretive — statutes above applied to facts"
+                  },
+                  {
+                    "text": "Med · interpretive"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Verification checkpoint: statute text is current as of the retrieval date; application to your specific marks, classes, and jurisdictions is interpretive. Confirm registration status on the USPTO register and consult licensed counsel before sending any notice or filing."
+          }
+        ]
+      },
+      {
+        "title": "The combination no competitor holds",
+        "eyebrow": "Why this, not a generic monitor",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Most tools are one thing done adequately. This sits at the intersection of IP law, the neuroscience of brand trust, and AI systems, built on named, defensible frameworks, so you leave speaking the language rather than renting a dashboard."
+          },
+          {
+            "type": "paragraph",
+            "text": "RIL → ROL"
+          },
+          {
+            "type": "heading",
+            "text": "Regulatory Intelligence Layer"
+          },
+          {
+            "type": "paragraph",
+            "text": "Primary-source IP-law monitoring resolved into an enforcement-ready decision layer."
+          },
+          {
+            "type": "paragraph",
+            "text": "OEG"
+          },
+          {
+            "type": "heading",
+            "text": "Operator Execution Gap"
+          },
+          {
+            "type": "paragraph",
+            "text": "The gap between what AI says and what a brand-protection lead can act on."
+          },
+          {
+            "type": "paragraph",
+            "text": "BTS"
+          },
+          {
+            "type": "heading",
+            "text": "Brand-Trust Signal model"
+          },
+          {
+            "type": "paragraph",
+            "text": "Prioritizes enforcement by what erodes trust fastest, grounded in the neuroscience of how buyers authenticate a brand."
+          },
+          {
+            "type": "paragraph",
+            "text": "EDSA"
+          },
+          {
+            "type": "heading",
+            "text": "EDSA Framework"
+          },
+          {
+            "type": "paragraph",
+            "text": "Keeps reputation-sensitive brand content compliant and un-suppressed across platforms."
+          }
+        ]
+      },
+      {
+        "title": "How this becomes yours",
+        "eyebrow": "The service",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Luxury houses, IP counsel, and brand-protection leads fly blind on which counterfeit signals actually matter and which enforcement instrument reaches them. I build a tailored monitor for your exact portfolio that tracks the primary sources and resolves them into a prioritized, statute-grounded enforcement queue."
+          },
+          {
+            "type": "heading",
+            "text": "What I build"
+          },
+          {
+            "type": "paragraph",
+            "text": "A private monitor scoped to your marks, classes, channels, and priority markets: sourced, dated, and confidence-scored."
+          },
+          {
+            "type": "heading",
+            "text": "What you get"
+          },
+          {
+            "type": "list",
+            "items": [
+              "A live, statute-mapped exposure read for your portfolio"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A prioritized enforcement queue you can hand to counsel"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Change-alerts when a mark registers or a policy shifts"
+            ]
+          },
+          {
+            "type": "heading",
+            "text": "How to start"
+          },
+          {
+            "type": "paragraph",
+            "text": "A 20-minute scoping call. If it's a fit, a tailored build turns around in days, not weeks."
+          },
+          {
+            "type": "paragraph",
+            "text": "Pricing: engagements start from $5,000 build + $1,500/mo, scoped to your brand. Three-month minimum on any retainer; 30 days' notice to stop."
+          }
+        ]
+      },
+      {
+        "title": "Ready when you are.",
+        "eyebrow": "Aloha AI · Honolulu",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "This page is a dated snapshot from an IP & Brand-Protection Intelligence build. Get your own monitor with a Build ($5,000–$10,000, from $5,000 + $1,500/mo to keep it live), or book a scoping call to size your watch list."
+          },
+          {
+            "type": "paragraph",
+            "text": "Prefer email? Email RN · or connect on LinkedIn"
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "monitors/luxury-ip/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "market-intel",
@@ -2148,7 +3731,7 @@
     "kind": "monitor",
     "pathname": "/monitors/psychedelic-radar",
     "eyebrow": "Psychedelic regulatory monitor",
-    "title": "Psychedelic Regulatory Radar",
+    "title": "Psychedelic regulation, told straight, with the receipts.",
     "summary": "A primary-source-grounded status monitor separating psilocybin programs, MDMA-related federal developments, ketamine practice and telehealth, and state–federal legal layers.",
     "audience": "Psychedelic-health organizations, ketamine platforms, legal operations teams, counsel, funders, and boards.",
     "maturity": "Beta",
@@ -2245,7 +3828,474 @@
         "type": "teaches",
         "target": "controlled-substances-explainer"
       }
-    ]
+    ],
+    "seoTitle": "Psychedelic Regulatory Radar",
+    "editorialIntro": [
+      "A sourced instrument, not a headline scraper. Track psilocybin, MDMA-assisted therapy, and ketamine telehealth across every state and the federal line. See exactly what generic AI gets confidently wrong, and trace every status to its primary source. So it holds up in a board deck and in a compliance memo.",
+      "Built by RN Collins. Neuroscientist (MS) · Administrative Law (JD candidate) · AI systemsTailored for: psychedelic-health orgs, ketamine-telehealth platforms & legal-ops teams"
+    ],
+    "editorialSections": [
+      {
+        "title": "The latest psilocybin & psychedelic actions, pulled live",
+        "eyebrow": "Live · Federal Register",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "This panel queries the Federal Register API from your browser every time the page loads, so it shows the primary source itself, not a stored summary."
+          },
+          {
+            "type": "list",
+            "items": [
+              "Loading the latest from the Federal Register…"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "The live Federal Register feed is unavailable right now; the dated analysis below still applies (as of 2026-07-04)."
+          }
+        ]
+      },
+      {
+        "title": "Built for the people who can't afford a confident wrong answer",
+        "eyebrow": "Who this is for",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The same radar reads four ways, because the stakes differ by seat."
+          },
+          {
+            "type": "heading",
+            "text": "Psychedelic-health orgs"
+          },
+          {
+            "type": "paragraph",
+            "text": "Clinics, retreats, facilitators. Know exactly what's licensable where before you build a program."
+          },
+          {
+            "type": "heading",
+            "text": "Ketamine-telehealth platforms"
+          },
+          {
+            "type": "paragraph",
+            "text": "Track the tele-prescribing extension cliff and the pending permanent rule. This is the risk that ends a business line overnight."
+          },
+          {
+            "type": "heading",
+            "text": "Legal-ops & counsel"
+          },
+          {
+            "type": "paragraph",
+            "text": "A sourced, dated status you can cite, instead of a summary you have to re-verify against the Federal Register."
+          },
+          {
+            "type": "heading",
+            "text": "Funders & boards"
+          },
+          {
+            "type": "paragraph",
+            "text": "One screenshot that makes the federal-vs-state gap legible to a room in ten seconds."
+          }
+        ]
+      },
+      {
+        "title": "Ask a generic AI the one question that matters. Watch it fail.",
+        "eyebrow": "The Operator Execution Gap · live",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Large language models fail most confidently exactly where an operator's stakes are highest. Same question, two answers: the fluent-but-wrong generic reply, and the primary-source-grounded one. The distance between them is what a wrong assumption costs."
+          },
+          {
+            "type": "paragraph",
+            "text": "✕ Generic LLM · unsourced"
+          },
+          {
+            "type": "paragraph",
+            "text": "\"Is MDMA-assisted therapy FDA-approved and legal nationwide now?\""
+          },
+          {
+            "type": "paragraph",
+            "text": "\"Yes — MDMA-assisted therapy was approved by the FDA for PTSD, so licensed providers can offer it across the country.\""
+          },
+          {
+            "type": "paragraph",
+            "text": "Confident. Fluent. Flatly wrong, and wrong in the exact way that gets a clinical program, an investor deck, or a marketing claim into regulatory trouble."
+          },
+          {
+            "type": "paragraph",
+            "text": "✓ Aloha AI · primary-source grounded FDA · CSA"
+          },
+          {
+            "type": "paragraph",
+            "text": "Same question, answered from the record:"
+          },
+          {
+            "type": "paragraph",
+            "text": "No. MDMA-assisted therapy is not FDA-approved. In August 2024 the FDA issued a Complete Response Letter to Lykos Therapeutics declining approval for PTSD; the FDA published the CRL on Sep 4, 2025. As of July 2026, Lykos is running an additional Phase 3 trial and preparing a resubmission. No approval exists."
+          },
+          {
+            "type": "paragraph",
+            "text": "MDMA remains a Schedule I controlled substance federally, meaning no accepted medical use and no legal prescribing pathway. There is no state where MDMA-assisted therapy is a licensed, above-ground service. Legal, above-ground psychedelic therapy today means regulated psilocybin (Oregon, Colorado), not MDMA."
+          },
+          {
+            "type": "paragraph",
+            "text": "Confidence: High Why you can rely on it: it maps to the FDA CRL, the published record, and the CSA schedules, cited below with retrieval dates."
+          },
+          {
+            "type": "paragraph",
+            "text": "OEG, the Operator Execution Gap, is the distance between what AI says and what a regulated operator can act on. Closing it is the entire job."
+          }
+        ]
+      },
+      {
+        "title": "Check any substance × state",
+        "eyebrow": "The instrument",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Pick a substance and a jurisdiction. The tool returns the current legal status, the operative program (if any), and the FDA / DEA posture, grounded in the framework below. Everything runs locally in your browser; nothing is sent anywhere."
+          }
+        ]
+      },
+      {
+        "title": "What one wrong assumption costs",
+        "eyebrow": "The cost of getting it wrong",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The most common error we see: a ketamine-telehealth platform building on the assumption that tele-prescribing flexibility is permanent. It isn't. It runs on a temporary extension through Dec 31, 2026. Model the revenue exposed to that cliff."
+          },
+          {
+            "type": "list",
+            "items": [
+              "This is revenue that assumes remote prescribing without a prior in-person exam stays lawful past the current extension."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "The flexibility is temporary through Dec 31, 2026; a permanent DEA/HHS rule and a possible \"special registration\" regime are still pending."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Three substances, three completely different regimes",
+        "eyebrow": "What actually governs",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The single biggest source of confusion in this space is treating \"psychedelics\" as one legal category. They are not. Each moves on its own track."
+          },
+          {
+            "type": "heading",
+            "text": "Psilocybin State-regulated, Sch I federally"
+          },
+          {
+            "type": "paragraph",
+            "text": "Schedule I under the federal CSA. But Oregon (Measure 109 / ORS 475A, services live since 2023) and Colorado (Prop 122 / SB23-290, first session Jun 2025) run state-licensed supervised-use programs. Not a prescription model; facilitated administration at licensed centers."
+          },
+          {
+            "type": "heading",
+            "text": "MDMA-assisted therapy Not approved"
+          },
+          {
+            "type": "paragraph",
+            "text": "Schedule I. The FDA declined approval (CRL, Aug 2024; published Sep 2025). No above-ground legal service anywhere in the U. S. Resubmission pending; watch the additional Phase 3 trial and any FDA advisory-committee action."
+          },
+          {
+            "type": "heading",
+            "text": "Ketamine Sch III · legal, prescribable"
+          },
+          {
+            "type": "paragraph",
+            "text": "Schedule III and FDA-approved (as an anesthetic; esketamine/Spravato for depression). Legally prescribable today. The live risk is how it's prescribed: telehealth without a prior in-person exam runs on a temporary DEA flexibility."
+          },
+          {
+            "type": "heading",
+            "text": "The federal / state gap Nuance"
+          },
+          {
+            "type": "paragraph",
+            "text": "\"Legal in my state\" never means \"legal federally.\" Oregon and Colorado programs operate despite federal Schedule I status: an enforcement-discretion posture, not federal legalization. Map each activity to both layers."
+          }
+        ]
+      },
+      {
+        "title": "A repeatable intelligence method, not a one-off scrape",
+        "eyebrow": "How it works",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Every Aloha AI monitor runs the same three-stage pipeline. In a production build, that is what keeps the facts right next month, not just today."
+          },
+          {
+            "type": "heading",
+            "text": "Regulatory Intelligence Layer (RIL)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Primary sources only: Federal Register, CSA schedules, FDA actions, state statutes and agency dashboards, each captured with source and retrieval date. No headline aggregation."
+          },
+          {
+            "type": "heading",
+            "text": "Resolve to an Operator Layer (ROL)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Raw law becomes a decision an operator can act on: what's licensable where, what changes for whom, with what confidence, closing the Operator Execution Gap."
+          },
+          {
+            "type": "heading",
+            "text": "Auto-refresh & alert"
+          },
+          {
+            "type": "paragraph",
+            "text": "In a production build, the monitor re-checks its primary sources on a schedule (Upstash · Vercel · Exa) and can ping you when an FDA action posts, a state rule changes, or the telehealth extension moves, so it never goes stale."
+          }
+        ]
+      },
+      {
+        "title": "Every status, traced to its primary source",
+        "eyebrow": "Audit-ready provenance",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The admin-law rigor is the product. Each fact carries its source, retrieval date, and a confidence rating, so the same artifact that opens a conversation can support a compliance memo."
+          },
+          {
+            "type": "table",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Fact",
+                    "header": true
+                  },
+                  {
+                    "text": "Primary source",
+                    "header": true
+                  },
+                  {
+                    "text": "Retrieved",
+                    "header": true
+                  },
+                  {
+                    "text": "Confidence",
+                    "header": true
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "MDMA-assisted therapy not FDA-approved; Complete Response Letter issued Aug 2024, published Sep 4, 2025; resubmission pending"
+                  },
+                  {
+                    "text": "FDA CRL (Lykos Therapeutics) · MAPS statement 2025-09-04"
+                  },
+                  {
+                    "text": "2026-07-04"
+                  },
+                  {
+                    "text": "High"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "MDMA and psilocybin remain Schedule I under the federal Controlled Substances Act (no accepted medical use)"
+                  },
+                  {
+                    "text": "21 CFR §1308.11 · DEA Drug Scheduling"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Ketamine is Schedule III and FDA-approved; legally prescribable"
+                  },
+                  {
+                    "text": "21 CFR §1308.13 · FDA labeling"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Oregon psilocybin services live since 2023 under Measure 109 / ORS 475A; program operating but contracting (center count declined 2024–2026)"
+                  },
+                  {
+                    "text": "ORS 475A · Oregon Health Authority — Oregon Psilocybin Services"
+                  },
+                  {
+                    "text": "Med · verify center count vs OHA"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Colorado natural-medicine program: first regulated psilocybin session Jun 6, 2025; ~34 licensed healing centers by Feb 2026; ibogaine/DMT/mescaline expansion in rulemaking"
+                  },
+                  {
+                    "text": "Prop 122 / SB23-290 · CO DORA — Natural Medicine"
+                  },
+                  {
+                    "text": "Med · verify counts vs DORA"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "DEA/HHS telemedicine flexibilities for controlled-substance prescribing extended through Dec 31, 2026 (fourth temporary extension); permanent rule pending"
+                  },
+                  {
+                    "text": "Fed. Reg. 2025-24123 · DEA press release 2025-12-31"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Verification checkpoint: figures are current as of the retrieval date. State program counts move month-to-month, so re-confirm against the live OHA / DORA dashboards and the operative Federal Register documents before relying on any figure in a filing or a filing-adjacent decision."
+          }
+        ]
+      },
+      {
+        "title": "The combination no competitor holds",
+        "eyebrow": "Why this, not a generic monitor",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Most tools are one thing done adequately. This is built on named, defensible frameworks, so you leave speaking the language, not renting a dashboard."
+          },
+          {
+            "type": "paragraph",
+            "text": "RIL → ROL"
+          },
+          {
+            "type": "heading",
+            "text": "Regulatory Intelligence Layer"
+          },
+          {
+            "type": "paragraph",
+            "text": "Primary-source monitoring resolved into an operator-ready decision layer."
+          },
+          {
+            "type": "paragraph",
+            "text": "OEG"
+          },
+          {
+            "type": "heading",
+            "text": "Operator Execution Gap"
+          },
+          {
+            "type": "paragraph",
+            "text": "The gap between what AI says and what an operator can act on."
+          },
+          {
+            "type": "paragraph",
+            "text": "APQ Gap"
+          },
+          {
+            "type": "heading",
+            "text": "APQ Gap Model"
+          },
+          {
+            "type": "paragraph",
+            "text": "Scores approval-pathway and quota exposure for scheduled substances against real demand."
+          },
+          {
+            "type": "paragraph",
+            "text": "EDSA"
+          },
+          {
+            "type": "heading",
+            "text": "EDSA Framework"
+          },
+          {
+            "type": "paragraph",
+            "text": "Keeps regulated health content compliant and un-suppressed across platforms."
+          }
+        ]
+      },
+      {
+        "title": "How this becomes yours",
+        "eyebrow": "The service",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Psychedelic-health and ketamine-telehealth operators can't tell settled law from wishful headlines, and the gap is expensive. I build a tailored radar for your substances, states, and model that tracks the primary sources and resolves them into decisions."
+          },
+          {
+            "type": "heading",
+            "text": "What I build"
+          },
+          {
+            "type": "paragraph",
+            "text": "A private radar scoped to your substances (psilocybin / MDMA / ketamine), states, and delivery model, sourced and dated."
+          },
+          {
+            "type": "heading",
+            "text": "What you get"
+          },
+          {
+            "type": "list",
+            "items": [
+              "A live, cited status radar for your program"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "An audit-ready provenance ledger you can cite"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Change-alerts when a state program or federal rule moves"
+            ]
+          },
+          {
+            "type": "heading",
+            "text": "How to start"
+          },
+          {
+            "type": "paragraph",
+            "text": "A 20-minute scoping call. If it's a fit, a tailored build turns around in days, not weeks."
+          },
+          {
+            "type": "paragraph",
+            "text": "Pricing. Tailored radars start from $5,000 to build + $1,500/mo to keep them live, scoped to what your operation actually needs. Three-month minimum on any retainer; 30 days' notice to stop."
+          }
+        ]
+      },
+      {
+        "title": "Ready when you are.",
+        "eyebrow": "Aloha AI · Honolulu",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "This page is a dated snapshot from a Regulatory Intelligence build. Get your own psychedelics monitor with a Build ($5,000–$10,000, from $5,000 + $1,500/mo to keep it live), or book a 20-minute scoping call to size it first."
+          },
+          {
+            "type": "paragraph",
+            "text": "Prefer email? Email RN · or connect on LinkedIn"
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "monitors/psychedelic-radar/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "suppression-audit",

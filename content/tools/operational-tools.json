@@ -327,7 +327,7 @@
     "kind": "tool",
     "pathname": "/tools/claims-checker",
     "eyebrow": "Regulated content tool",
-    "title": "Regulated Claims Checker",
+    "title": "Which of your claims will a regulator read twice?",
     "summary": "A browser-local screen for marketing language that may require substantiation or heightened legal and regulatory review.",
     "audience": "Health, cannabis, psychedelics, wellness, and other regulated-product content teams.",
     "maturity": "Beta",
@@ -423,14 +423,204 @@
         "type": "uses",
         "target": "citation-verifier"
       }
-    ]
+    ],
+    "seoTitle": "Regulated Claims Checker",
+    "editorialIntro": [
+      "Paste the marketing, website, or label copy for a regulated product. A deterministic analyzer scans it against curated keyword and pattern lexicons, then flags risky claims by category, assigns a risk level, and names the regulator whose attention zone each one implicates: FDA, FTC, or state consumer protection. It runs in your browser. Nothing you paste leaves this page.",
+      "Built by RN Collins. Neuroscientist (MS) · Administrative & regulatory law (JD candidate) · AI Workflow Developer, Am Law firm"
+    ],
+    "editorialSections": [
+      {
+        "title": "In regulated categories, the words carry the risk",
+        "eyebrow": "Why this exists",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "A supplement that says it \"supports focus\" sits in one world. The same product that says it \"treats ADHD\" sits in another, where the FDA reads it as an unapproved drug claim and the FTC asks for the substantiation behind it. The line between the two is language, and it moves fast. This checker gives your copy a first pass, surfacing the phrases that tend to attract a second look so a person can decide what to do about them."
+          },
+          {
+            "type": "heading",
+            "text": "What it checks"
+          },
+          {
+            "type": "paragraph",
+            "text": "Disease and medical claims, structure-function overreach, substantiation gaps, deceptive consumer-protection patterns, and the superlatives and absolutes that draw scrutiny. Each match is tied to a category, a risk level, and the regulator whose zone it touches."
+          },
+          {
+            "type": "heading",
+            "text": "What it can't do"
+          },
+          {
+            "type": "paragraph",
+            "text": "It cannot tell you whether copy is lawful, and it gives no legal advice. It matches language to curated patterns and explains why each pattern tends to draw attention. It misses claims phrased in ways the lexicon does not cover, and it flags some phrases that context makes fine. A qualified human decides."
+          }
+        ]
+      },
+      {
+        "title": "Screen your regulated-product copy",
+        "eyebrow": "The instrument",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Paste your copy below and select the product category so the analyzer can weight the right risks. Then run the check. Everything computes on your device with no network call."
+          },
+          {
+            "type": "heading",
+            "text": "Your screening result"
+          },
+          {
+            "type": "paragraph",
+            "text": "This tool runs entirely in your browser. The only information that ever leaves your device is the email address you optionally submit below once Beehiiv is connected."
+          },
+          {
+            "type": "paragraph",
+            "text": "Send it to your inbox and get occasional build notes from Aloha AI."
+          },
+          {
+            "type": "paragraph",
+            "text": "Connect Beehiiv to enable signups."
+          },
+          {
+            "type": "paragraph",
+            "text": "Informational screening. Not legal advice. RN Collins is a JD candidate, not a licensed attorney. This tool flags language patterns for human review against general FDA, FTC, and state consumer-protection concepts. It is not a regulatory determination and does not certify compliance. Confirm every claim with your own counsel and regulatory advisor."
+          }
+        ]
+      },
+      {
+        "title": "Five categories, mapped to the regulators who care",
+        "eyebrow": "What it flags",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Each flag names the category the phrase falls into, a risk level, and the regulator whose attention zone it tends to touch. The overall risk score weights High findings heaviest, then Medium, then Low."
+          },
+          {
+            "type": "heading",
+            "text": "Disease / medical claims"
+          },
+          {
+            "type": "paragraph",
+            "text": "Language that says a product treats, cures, prevents, or diagnoses a named condition. This is the fast path to being read as an unapproved drug."
+          },
+          {
+            "type": "heading",
+            "text": "Structure-function overreach"
+          },
+          {
+            "type": "paragraph",
+            "text": "Therapeutic framing beyond a permitted structure-function statement: \"heals,\" \"clinically proven,\" \"doctor recommended,\" and similar."
+          },
+          {
+            "type": "heading",
+            "text": "Substantiation gaps"
+          },
+          {
+            "type": "paragraph",
+            "text": "Proof claims with no qualifier behind them: \"studies show,\" \"proven,\" \"guaranteed,\" \"100%,\" \"#1.\" The FTC asks what backs them."
+          },
+          {
+            "type": "heading",
+            "text": "Deceptive patterns"
+          },
+          {
+            "type": "paragraph",
+            "text": "Consumer-protection triggers: \"miracle,\" \"risk-free,\" \"no side effects,\" and \"FDA approved\" used where it does not apply."
+          },
+          {
+            "type": "heading",
+            "text": "Superlatives & absolutes"
+          },
+          {
+            "type": "paragraph",
+            "text": "Unqualified absolutes like \"always,\" \"never fails,\" \"completely safe,\" and \"the best.\" They raise the bar on what you must be able to prove."
+          }
+        ]
+      },
+      {
+        "title": "RN builds compliant content systems and claim-review workflows",
+        "eyebrow": "This is a demonstration of what I build",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "This checker screens one page at a time. The paid path is the system behind it: a compliant content workflow with a claim-review gate wired into how your team writes, so risky language gets caught and rephrased before it ships. It pairs a curated claim lexicon for your category with a documented review step and an approval trail your counsel can stand behind."
+          },
+          {
+            "type": "heading",
+            "text": "What I build"
+          },
+          {
+            "type": "paragraph",
+            "text": "A category-specific claim lexicon, a review gate placed in your drafting workflow, safer-phrasing playbooks your writers can reach for, and a record of what was reviewed and approved."
+          },
+          {
+            "type": "heading",
+            "text": "What you get"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Risky claims caught before publication, not after a letter"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A shared vocabulary your marketing and legal teams both trust"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Documentation that shows the review happened"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Advisory to keep the lexicon current as guidance moves"
+            ]
+          },
+          {
+            "type": "heading",
+            "text": "How to start"
+          },
+          {
+            "type": "paragraph",
+            "text": "A short scoping call. Most teams begin with a Systems Audit that maps where risky copy enters your funnel and which claims to gate first."
+          },
+          {
+            "type": "paragraph",
+            "text": "Related tools: the AI Governance Readiness Scorecard rates your firm's documented AI practice, and the Citation Verifier catches fabricated case cites before a filing. Together they show verification-gated workflows end to end."
+          }
+        ]
+      },
+      {
+        "title": "Ready when you are.",
+        "eyebrow": "Aloha AI · Honolulu",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Convinced, curious, or comparing, there's a path for each."
+          },
+          {
+            "type": "paragraph",
+            "text": "Prefer email? Email RN · or connect on LinkedIn"
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "tools/claims-checker/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "controlled-substances-explainer",
     "kind": "tool",
     "pathname": "/tools/controlled-substances-explainer",
     "eyebrow": "Regulatory education tool",
-    "title": "Controlled Substances Regulatory Explainer",
+    "title": "How does the U. S. controlled-substances system actually work?",
     "summary": "A browser-local framework for distinguishing federal scheduling, state law, research controls, medical programs, and changing administrative status.",
     "audience": "Researchers, operators, writers, students, and policy teams needing a structured starting point.",
     "maturity": "Beta",
@@ -497,7 +687,201 @@
         "type": "teaches",
         "target": "regulated-intelligence-stack"
       }
-    ]
+    ],
+    "seoTitle": "Controlled Substances Regulatory Explainer",
+    "editorialIntro": [
+      "Pick a substance or category and a lens, and this tool explains the structure of the regulation around it: the Controlled Substances Act schedules and what each one means, which agencies do what, how a substance moves between schedules, and the federal-versus-state divergence pattern. It is built to help a non-expert understand how status is determined and where to verify it. It runs in your browser, and it does not tell you whether anything is legal for you, in your state, right now.",
+      "Built by RN Collins. Neuroscientist (MS) · Administrative & regulatory law (JD candidate) · AI Workflow Developer, Am Law firm"
+    ],
+    "editorialSections": [
+      {
+        "title": "The confusion is usually about structure, not facts",
+        "eyebrow": "Why this exists",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Most people who ask \"is this legal?\" are actually missing the map: two governments regulate in parallel, several agencies each own a different piece, and status can move through a rulemaking process that most explainers skip. This tool teaches the map. Once you understand how a substance is classified and who controls that classification, you know exactly where to look for the current answer, and you know why a headline about one state does not settle the question."
+          },
+          {
+            "type": "heading",
+            "text": "What it explains"
+          },
+          {
+            "type": "paragraph",
+            "text": "The five-schedule system and the criteria behind each schedule, the split roles of the DEA and FDA, the FDA-to-DEA scheduling recommendation process, the federal-state divergence pattern, and how a substance is moved between schedules through petition, review, and rulemaking."
+          },
+          {
+            "type": "heading",
+            "text": "What it will not do"
+          },
+          {
+            "type": "paragraph",
+            "text": "It will not assert any substance's current legal status in any jurisdiction as authoritative, and it will not give legal advice. Status changes, and a stale claim relied on is a real risk. Every explanation ends by routing you to primary sources and to a licensed attorney for the current, specific answer."
+          }
+        ]
+      },
+      {
+        "title": "Choose a substance and a lens",
+        "eyebrow": "The explainer",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Select a substance or category, then pick the lens you want the explanation framed through. The tool assembles an educational walkthrough from stable structural facts about the regulatory system. It computes on your device with no network call. It describes the framework and the pattern; it does not state current legality."
+          },
+          {
+            "type": "paragraph",
+            "text": "This tool runs entirely in your browser. The explainer is generated on your device from stable structural facts. The only information that ever leaves your device is the email address you optionally submit below once Beehiiv is connected."
+          },
+          {
+            "type": "paragraph",
+            "text": "Send it to your inbox and get occasional regulatory-intelligence build notes from Aloha AI."
+          },
+          {
+            "type": "paragraph",
+            "text": "Connect Beehiiv to enable signups."
+          },
+          {
+            "type": "paragraph",
+            "text": "Educational explainer. Not legal advice, and not a current-legality determination. RN Collins is a JD candidate, not a licensed attorney. This tool describes the structure of U. S. controlled-substances regulation. It does not assert the current legal status of any substance in any jurisdiction. Drug law is point-in-time and changes through rulemaking and legislation. Verify current federal and state law with primary sources and your own licensed counsel."
+          }
+        ]
+      },
+      {
+        "title": "Four things everyone gets wrong, made clear",
+        "eyebrow": "What it explains",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Each explanation is built from these stable structural pieces. None of them depend on a specific state's current status, which is exactly why they stay useful while the headlines change."
+          },
+          {
+            "type": "heading",
+            "text": "Five tiers, defined by criteria"
+          },
+          {
+            "type": "paragraph",
+            "text": "Schedules I through V rank substances by accepted medical use and potential for abuse. The schedule sets the federal controls; it is not the same thing as \"banned\" or \"allowed.\""
+          },
+          {
+            "type": "heading",
+            "text": "DEA, FDA, and the states"
+          },
+          {
+            "type": "paragraph",
+            "text": "The DEA schedules and enforces, the FDA approves drugs and makes scheduling recommendations, and each state runs its own parallel program. Different agencies, different questions."
+          },
+          {
+            "type": "heading",
+            "text": "How status actually moves"
+          },
+          {
+            "type": "paragraph",
+            "text": "A substance changes schedule through petition, FDA scientific review, a DEA recommendation request, proposed rulemaking, a public comment period, and a final rule. It is a process, not a switch."
+          },
+          {
+            "type": "heading",
+            "text": "Why federal and state disagree"
+          },
+          {
+            "type": "paragraph",
+            "text": "Federal and state law operate in parallel. A substance can be federally controlled while states run their own separate programs, which is why one headline never settles the question."
+          },
+          {
+            "type": "heading",
+            "text": "Where the current answer lives"
+          },
+          {
+            "type": "paragraph",
+            "text": "Every explanation ends by pointing you to the Federal Register, the DEA, the FDA, the relevant state agencies, and a licensed attorney for the point-in-time, jurisdiction-specific answer."
+          },
+          {
+            "type": "heading",
+            "text": "No claims that go stale"
+          },
+          {
+            "type": "paragraph",
+            "text": "The tool avoids stating any state's current specific status as authoritative. It teaches the pattern so you can read the current sources yourself, correctly."
+          }
+        ]
+      },
+      {
+        "title": "RN builds the systems that track these changes as they happen",
+        "eyebrow": "This is a demonstration of what I build",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "This explainer teaches the framework once. The paid path is keeping you current inside it: regulatory-intelligence systems and monitors that watch the Federal Register, agency dockets, and legislative activity, then surface what moved and what it means for a specific operation. It is the difference between understanding the rescheduling process and knowing the moment a comment period opens."
+          },
+          {
+            "type": "heading",
+            "text": "What I build"
+          },
+          {
+            "type": "paragraph",
+            "text": "Monitors that track scheduling actions, rulemaking, comment periods, and state legislation across the sources this tool points you to, filtered to the substances and jurisdictions that matter to you."
+          },
+          {
+            "type": "heading",
+            "text": "What you get"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Change alerts tied to primary sources, not headlines"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Plain-language summaries of what a filing actually does"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A defensible trail of what changed and when"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Human-verified output, built for regulated contexts"
+            ]
+          },
+          {
+            "type": "heading",
+            "text": "How to start"
+          },
+          {
+            "type": "paragraph",
+            "text": "A short scoping call. Most engagements start by naming the substances, agencies, and jurisdictions to watch, then wiring the monitor around them."
+          },
+          {
+            "type": "paragraph",
+            "text": "Related work: the Cannabis Rescheduling Monitor tracks the federal rescheduling process this tool describes, as it moves. The Regulated Claims Checker screens marketing and product language for claims that regulators treat as high-risk. Both are demonstrations of the same regulatory-intelligence practice."
+          }
+        ]
+      },
+      {
+        "title": "Ready when you are.",
+        "eyebrow": "Aloha AI · Honolulu",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Convinced, curious, or comparing, there's a path for each."
+          },
+          {
+            "type": "paragraph",
+            "text": "Prefer email? Email RN · or connect on LinkedIn"
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "tools/controlled-substances-explainer/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "evidence-explainer",
@@ -947,7 +1331,7 @@
     "kind": "tool",
     "pathname": "/tools/prompt-to-workflow",
     "eyebrow": "Workflow design tool",
-    "title": "Prompt-to-Workflow Converter",
+    "title": "You don't need a better prompt. You need a repeatable workflow.",
     "summary": "A browser-local converter that turns a reusable prompt into a repeatable workflow with inputs, sources, steps, checks, outputs, ownership, and failure handling.",
     "audience": "Teams moving from personal prompting habits to inspectable, repeatable AI operations.",
     "maturity": "Beta",
@@ -1014,7 +1398,213 @@
         "type": "supports",
         "target": "ai-native-coo"
       }
-    ]
+    ],
+    "seoTitle": "Prompt-to-Workflow Converter",
+    "editorialIntro": [
+      "Paste a prompt you keep reusing. This converter reads it, detects the task, and returns a workflow scaffold with the parts a prompt leaves out: inputs, grounding, steps, a named human-review QA checkpoint, output storage, reuse notes, and risk flags. It runs in your browser. Nothing you paste leaves this page.",
+      "Built by RN Collins. Neuroscientist (MS) · Administrative & regulatory law (JD candidate) · AI Workflow Developer, Am Law firm"
+    ],
+    "editorialSections": [
+      {
+        "title": "People chase a better prompt when they need a repeatable workflow",
+        "eyebrow": "Why this exists",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "A prompt tells a model what to do once. A workflow says what goes in, where the facts come from, who checks the output, and where the result gets stored. When the same prompt gives uneven results, wording is rarely the problem. The missing parts are inputs, grounding, a verification step, a human-review checkpoint, and a home for the output. This converter turns a prompt into that scaffold so the work runs the same way every time."
+          },
+          {
+            "type": "heading",
+            "text": "What it produces"
+          },
+          {
+            "type": "paragraph",
+            "text": "Seven sections filled with task-aware defaults: inputs required, source and grounding requirements, a step sequence, a QA step with a named human-review checkpoint, output format and storage, reuse notes for templatizing, and risk flags."
+          },
+          {
+            "type": "heading",
+            "text": "What it can't do"
+          },
+          {
+            "type": "paragraph",
+            "text": "It cannot run the workflow, judge your output, or replace review by a qualified person. It reads keywords and drafts a scaffold you edit. Treat it as a starting structure, not a finished operating procedure."
+          }
+        ]
+      },
+      {
+        "title": "Convert your prompt into a workflow",
+        "eyebrow": "The instrument",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Paste a prompt you reuse. The converter detects the task type from its wording and generates a seven-section workflow scaffold. Everything computes on your device with no network call. Load the sample if you want to see a filled example first."
+          },
+          {
+            "type": "heading",
+            "text": "Your workflow scaffold"
+          },
+          {
+            "type": "paragraph",
+            "text": "This tool runs entirely in your browser. The workflow file is generated on your device. The only information that ever leaves your device is the email address you optionally submit below once Beehiiv is connected."
+          },
+          {
+            "type": "paragraph",
+            "text": "Send it to your inbox and get occasional build notes from Aloha AI."
+          },
+          {
+            "type": "paragraph",
+            "text": "Connect Beehiiv to enable signups."
+          },
+          {
+            "type": "paragraph",
+            "text": "Informational productivity tool. Not legal or compliance advice. RN Collins is a JD candidate, not a licensed attorney. This converter drafts a workflow scaffold from prompt keywords. It makes no determination about compliance, adequacy, or fitness for any purpose. Review every step with a qualified person before you rely on it."
+          }
+        ]
+      },
+      {
+        "title": "Seven sections, every time",
+        "eyebrow": "What it produces",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "A prompt gives you words. A workflow gives you a repeatable structure. The converter fills each of these seven sections with defaults tuned to the task it detects, so nothing important gets skipped."
+          },
+          {
+            "type": "heading",
+            "text": "Inputs required"
+          },
+          {
+            "type": "paragraph",
+            "text": "The facts and materials the task needs before it starts, so the same run does not depend on memory."
+          },
+          {
+            "type": "heading",
+            "text": "Source / grounding"
+          },
+          {
+            "type": "paragraph",
+            "text": "Where the content must come from, so the output rests on real sources rather than invention."
+          },
+          {
+            "type": "heading",
+            "text": "Step sequence"
+          },
+          {
+            "type": "paragraph",
+            "text": "The ordered steps that turn inputs into a draft, written so anyone can follow them."
+          },
+          {
+            "type": "heading",
+            "text": "Verification / QA"
+          },
+          {
+            "type": "paragraph",
+            "text": "The checks the output must pass, including a named human-review checkpoint before it is used."
+          },
+          {
+            "type": "heading",
+            "text": "Output & storage"
+          },
+          {
+            "type": "paragraph",
+            "text": "The format of the result and where it gets stored, so the work is findable and reusable."
+          },
+          {
+            "type": "heading",
+            "text": "Reuse notes"
+          },
+          {
+            "type": "paragraph",
+            "text": "How to templatize the run: which parts change each time and which stay fixed."
+          },
+          {
+            "type": "heading",
+            "text": "Risk flags"
+          },
+          {
+            "type": "paragraph",
+            "text": "The traps to watch: confidential data in unapproved tools, and output that needs source verification before use."
+          }
+        ]
+      },
+      {
+        "title": "RN designs and builds the workflows this converter sketches",
+        "eyebrow": "This is a demonstration of what I build",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "This converter drafts a scaffold. The paid path is building the real thing: the workflows and operating systems that turn a scattered pile of prompts into a repeatable practice, with inputs defined, grounding wired in, human-review checkpoints placed where risk lives, storage decided, and reuse templatized. It is designed to sit inside the way your team already works."
+          },
+          {
+            "type": "heading",
+            "text": "What I build"
+          },
+          {
+            "type": "paragraph",
+            "text": "Documented workflows for the tasks your team repeats, with defined inputs, grounding rules, ordered steps, named review checkpoints, storage conventions, and templates that make the next run faster than the last."
+          },
+          {
+            "type": "heading",
+            "text": "What you get"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Repeatable workflows for your highest-volume tasks"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Human-review checkpoints placed where they matter"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Storage and reuse conventions your team follows"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "An operating system, not a folder of loose prompts"
+            ]
+          },
+          {
+            "type": "heading",
+            "text": "How to start"
+          },
+          {
+            "type": "paragraph",
+            "text": "A short scoping call. Most teams begin with a Systems Audit: the fastest proof, and it points to the workflow worth building first."
+          },
+          {
+            "type": "paragraph",
+            "text": "Related tools: the Workflow Audit finds where your process leaks time and risk, and the Trust-Safe Console demonstrates governance controls for AI use. The Legal AI Workflow & Governance pillar covers verification-gated workflows end to end."
+          }
+        ]
+      },
+      {
+        "title": "Ready when you are.",
+        "eyebrow": "Aloha AI · Honolulu",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Convinced, curious, or comparing, there's a path for each."
+          },
+          {
+            "type": "paragraph",
+            "text": "Prefer email? Email RN · or connect on LinkedIn"
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "tools/prompt-to-workflow/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "trust-safe-console",
@@ -1100,6 +1690,306 @@
       "baseline": "b0a1b3c",
       "sourceFile": "tools/trust-safe-console/index.html",
       "restoredAt": "2026-07-26"
-    }
+    },
+    "editorialIntro": [
+      "🔒 Runs entirely in your browser. Nothing you enter is sent anywhere — no server, no network calls, no logging, no local storage. Close the tab and it is gone."
+    ],
+    "editorialSections": [
+      {
+        "title": "1. Orchestration — Harvey is one node, not the system",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Firms are not buying a single model. They are wiring several drafting and research tools into their workflow. Without a governing layer, each one can put an unverified authority in front of a court. The Trust-Safe Operating Layer sits between those tools and the filing/review system."
+          },
+          {
+            "type": "paragraph",
+            "text": "Example stack shown for illustration. The two AI research assistants are CoCounsel Legal (grounded in Westlaw / Thomson Reuters) and Lexis+ with Protégé (grounded in LexisNexis); Harvey's own research alliance is with LexisNexis. The layer is tool-agnostic and maps to whatever the firm actually runs."
+          },
+          {
+            "type": "paragraph",
+            "text": "Harvey is one node, not the system. The governance and evaluation layer is the product."
+          },
+          {
+            "type": "heading",
+            "text": "Example MCP tool contract"
+          },
+          {
+            "type": "paragraph",
+            "text": "In production the layer runs as a Model Context Protocol server between the drafting assistant and the filing system:"
+          },
+          {
+            "type": "code",
+            "text": "tool: verify_citations input: { draft_text, jurisdiction, approved_sources[] } output: { risk_score, // 0-100 citations: [ { text, status, // verified_primary | unverified | flagged_fabrication reason, source_checked } ], gate: \"blocked_until_attorney_signoff\" }"
+          },
+          {
+            "type": "paragraph",
+            "text": "Demonstration artifact. Not legal advice. RN Collins, JD candidate (not a licensed attorney). Example stack shown for illustration only."
+          }
+        ]
+      },
+      {
+        "title": "2. Citation verifier — one eval among many",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Under ABA Formal Opinion 512, the duty to verify AI output is non-delegable. This tool parses citations, flags structural impossibilities, and locks a pre-filing gate until a named attorney certifies. Sample citations are illustrative fabrications."
+          },
+          {
+            "type": "paragraph",
+            "text": "Paste text containing legal citations, then run the check. Or load the built-in sample."
+          },
+          {
+            "type": "heading",
+            "text": "Verification results"
+          },
+          {
+            "type": "heading",
+            "text": "Pre-filing verification checklist"
+          },
+          {
+            "type": "paragraph",
+            "text": "Every box must be cleared by the responsible attorney before this draft is cleared for filing. The tool assists; the lawyer certifies."
+          },
+          {
+            "type": "list",
+            "items": [
+              "I personally opened and read each cited authority from a primary source."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "I confirmed every citation exists and the quoted holding matches the actual text."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "I resolved or removed every item flagged as a possible fabrication."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "No client-confidential information was entered into a non-approved AI tool (Rule 1.6)."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "I take responsibility for this filing under Rules 1.1, 3.3, and 5.1/5.3."
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Demonstration artifact. Not legal advice. The engine runs client-side; sample citations are illustrative fabrications. A licensed attorney remains responsible for verifying every authority."
+          }
+        ]
+      },
+      {
+        "title": "3. Governance — the auditable policy layer 93% of firms lack",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "ABA Formal Opinion 512 maps AI use onto existing duties. Check the controls your firm has actually implemented as written policy to compute a live governance readiness score."
+          },
+          {
+            "type": "paragraph",
+            "text": "Governance readiness: 0%. No controls confirmed."
+          },
+          {
+            "type": "list",
+            "items": [
+              "Rule 1.1 · CompetenceWritten AI-competence standard: staff trained on capabilities and failure modes."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Rule 1.1 · CompetenceMandatory citation/output verification before any external use."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Rule 1.6 · ConfidentialityApproved-tools list; client data barred from non-approved models."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Rule 1.6 · ConfidentialityData-handling / no-training agreements with AI vendors on file."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Rule 3.3 · CandorPre-filing verification gate producing an audit record per filing."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Rule 3.3 · CandorClient-disclosure/consent policy for material AI use where required."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Rule 5.1/5.3 · SupervisionNamed partner accountable for AI oversight and policy enforcement."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Rule 5.1/5.3 · SupervisionLogging & periodic audit of AI-assisted work product."
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "This is the layer most firms cannot show an auditor. The policy, not the model, is the differentiator."
+          },
+          {
+            "type": "paragraph",
+            "text": "Demonstration artifact. Not legal advice. A readiness score is a planning aid, not a compliance certification."
+          }
+        ]
+      },
+      {
+        "title": "4. Eval dashboard — the citation verifier is one eval among many",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Illustrative eval-harness runs (in-memory sample data). Green bars = higher is better; red bars = higher is worse. The human baseline is the bar every agent is measured against."
+          },
+          {
+            "type": "table",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Run",
+                    "header": true
+                  },
+                  {
+                    "text": "Hallucination rate(lower better)",
+                    "header": true
+                  },
+                  {
+                    "text": "Jurisdiction accuracy(higher better)",
+                    "header": true
+                  },
+                  {
+                    "text": "Citation pass rate(higher better)",
+                    "header": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Illustrative sample data. A real harness runs hundreds of gold-standard tasks per release; the citation check is a single test within it."
+          },
+          {
+            "type": "heading",
+            "text": "Methodology note (illustrative)"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Sample set: 240 gold-standard tasks per run, graded against attorney-authored answer keys across 6 jurisdictions."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Hallucination rate: share of outputs containing at least one citation or holding with no matching authority."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Jurisdiction accuracy: share of tasks that apply the controlling jurisdiction's rule correctly."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Citation pass rate: share of cited authorities that clear structural and existence checks."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "The human baseline is a licensed attorney working the same task set. The delta pill shows each run's gap to that baseline."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Numbers here are fabricated for demonstration and do not describe any real product or firm."
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Demonstration artifact. Not legal advice. Eval figures are illustrative sample data, not benchmarked results."
+          }
+        ]
+      },
+      {
+        "title": "5. Adoption — where 2026 pilots actually fail",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The technology rarely fails; adoption does. Trust is a neurological state: repeated safe exposure lowers threat response and builds the habit loop. Set an estimated adoption rate per stage to see where your funnel leaks."
+          },
+          {
+            "type": "heading",
+            "text": "Three change-management levers"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Safe exposure: low-stakes, reversible first tasks so the threat response never fires. Trust is built by repetition, not by a training deck."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Visible governance: when lawyers can see the verification gate and audit trail, the tool feels like a safeguard rather than a liability — converting exposure into trust."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Peer advocacy: a respected internal champion who demonstrates wins moves habitual users to advocates faster than any top-down mandate."
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Where 2026 pilots actually fail: the drop-off between trust and habitual use, not the model quality."
+          },
+          {
+            "type": "paragraph",
+            "text": "Demonstration artifact. Not legal advice. Funnel figures are your own estimates, computed in your browser."
+          }
+        ]
+      },
+      {
+        "title": "This is the kind of system I build.",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "A governed legal-AI layer, scoped to the tools your firm already runs, with the citation gate, audit trail, and eval harness an auditor can actually see. Book a working session and we'll map it to your stack."
+          },
+          {
+            "type": "paragraph",
+            "text": "About this score. This is a structured self-reflection tool, not a validated diagnostic or predictive instrument. Your result reflects the answers you gave, mapped to a rubric, to show where attention is likely warranted. It does not diagnose your organization, predict an outcome, or replace review by a qualified professional in the relevant field. How this site sources and bounds every claim is set out in Methods & evidence."
+          }
+        ]
+      }
+    ]
   }
 ]

@@ -1,1 +1,195 @@
-{"id":"regulatory-intelligence","kind":"product","pathname":"/trust-stack/regulatory-intelligence","title":"Regulatory Intelligence","summary":"A Trust Stack component for maintaining source-grounded regulatory status, change detection, decision briefs, and reviewable evidence.","maturity":"Research","topics":["regulation","monitoring","evidence"],"architecture":["Authority registry","Source ingestion","Verification and conflict handling","Change detection","Decision outputs","Maintenance record"],"implementationStatus":"Architecture and working monitor patterns exist; generalized product packaging remains in research and beta development.","documentation":["Authority hierarchy","Data and status model","Verification rules","Maintenance contract"],"roadmap":["Unify monitor schemas","Add Workspace review queues","Publish licensing and implementation packages"],"changelog":["2026-07: structured product contract added"],"licensing":"Planned for defined institutional and regulated-industry implementations.","evidence":["Primary legal and regulatory authorities","Versioned source records","Human verification decisions"],"methodology":["Define jurisdiction and authority","Collect candidate changes","Verify against primary sources","Classify operational significance","Publish and maintain"],"assumptions":["Relevant authorities can be monitored and legally accessed"],"limitations":["Coverage is bounded by jurisdiction, source availability, and cadence","Outputs are informational and require responsible professional interpretation"],"relationships":[{"type":"implements","target":"trust-stack"},{"type":"uses","target":"intelligence"},{"type":"evidences","target":"cannabis-rescheduling"}]}
+{
+  "id": "regulatory-intelligence",
+  "kind": "product",
+  "pathname": "/trust-stack/regulatory-intelligence",
+  "title": "One fabricated citation can end a case, a filing, or a reputation.",
+  "summary": "A Trust Stack component for maintaining source-grounded regulatory status, change detection, decision briefs, and reviewable evidence.",
+  "maturity": "Research",
+  "topics": [
+    "regulation",
+    "monitoring",
+    "evidence"
+  ],
+  "architecture": [
+    "Authority registry",
+    "Source ingestion",
+    "Verification and conflict handling",
+    "Change detection",
+    "Decision outputs",
+    "Maintenance record"
+  ],
+  "implementationStatus": "Architecture and working monitor patterns exist; generalized product packaging remains in research and beta development.",
+  "documentation": [
+    "Authority hierarchy",
+    "Data and status model",
+    "Verification rules",
+    "Maintenance contract"
+  ],
+  "roadmap": [
+    "Unify monitor schemas",
+    "Add Workspace review queues",
+    "Publish licensing and implementation packages"
+  ],
+  "changelog": [
+    "2026-07: structured product contract added"
+  ],
+  "licensing": "Planned for defined institutional and regulated-industry implementations.",
+  "evidence": [
+    "Primary legal and regulatory authorities",
+    "Versioned source records",
+    "Human verification decisions"
+  ],
+  "methodology": [
+    "Define jurisdiction and authority",
+    "Collect candidate changes",
+    "Verify against primary sources",
+    "Classify operational significance",
+    "Publish and maintain"
+  ],
+  "assumptions": [
+    "Relevant authorities can be monitored and legally accessed"
+  ],
+  "limitations": [
+    "Coverage is bounded by jurisdiction, source availability, and cadence",
+    "Outputs are informational and require responsible professional interpretation"
+  ],
+  "relationships": [
+    {
+      "type": "implements",
+      "target": "trust-stack"
+    },
+    {
+      "type": "uses",
+      "target": "intelligence"
+    },
+    {
+      "type": "evidences",
+      "target": "cannabis-rescheduling"
+    }
+  ],
+  "seoTitle": "Regulatory Intelligence",
+  "editorialIntro": [
+    "Primary-Source Regulatory Intelligence: the IDR Methodology. The ground truth everything else stands on.",
+    "Framework: The IDR Engine (Ingest → Digest → Regurgitate)"
+  ],
+  "editorialSections": [
+    {
+      "title": "The expensive failure this prevents",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "A lawyer asked a general-purpose model what the law required. It answered fluently, with case names and internal quotations. The lawyer filed it. The cases did not exist."
+        },
+        {
+          "type": "paragraph",
+          "text": "In Mata v. Avianca (S. D. N. Y. 2023) a federal judge imposed a $5,000 Rule 11 sanction after a brief cited judicial decisions the model had invented. In Wadsworth v. Walmart (D. Wyo. 2025), eight of nine cited cases were invented and the court revoked one attorney's pro hac vice admission. As of mid-2026, one public database (maintained by researcher Damien Charlotin) catalogued more than 1,590 cases worldwide in which AI-fabricated authorities were identified in filings, a count rising by roughly ten a day; re-verify the live figure before citing it."
+        },
+        {
+          "type": "paragraph",
+          "text": "Every one was the same failure: a fact about what the law requires traveled forward without being checked against a primary source. The polish of the output was mistaken for its truth. A fabricated citation is a trust rupture. The moment a reader pulls one cite and it does not resolve, the credibility of your entire record collapses."
+        }
+      ]
+    },
+    {
+      "title": "What's inside",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "The IDR Engine — Ingest, Digest, Regurgitate. Ingest ranks every source by legal weight before it enters. Digest verifies, structures, and scores it. Regurgitate emits only claims that survive a decision-maker's credibility check."
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "The neuroscience of why sourced facts get acted on. Appraisal theory, predictive processing, and source-credibility research, cited to their venues."
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "The authority hierarchy. Primary versus secondary, mandatory versus persuasive, mapped onto the APA rulemaking chain (5 U. S. C. § 553)."
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "Two worked failures. Mata and Wadsworth, dissected with verified sanction figures and the exact point each broke."
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "A production-ready JSON record schema with a filled example, so every claim carries its pinpoint citation, retrieval date, confidence, and change-watch trigger."
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "A live maintenance protocol tied to the Federal Register, eCFR, and GovInfo APIs, plus the IDR verification checklist: every gate a claim must clear before it leaves Layer 0."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Who it's for",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "Compliance and regulatory teams standing up a defensible obligation register from scratch."
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "Legal and RegTech builders who need AI-assisted research that will not get them sanctioned."
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "Founders in regulated markets (health, cannabis, psychedelics, finance, food) who make claims about what the law allows."
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "Anyone building the layers above who needs a ground-truth foundation they can trust."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Where this sits in the stack",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "This is Layer 0 · Ground Truth of The Regulated Trust Stack, one operating system for earning trust in regulated markets, in six dependent layers. Each layer stands on the one beneath it. Own one and the next gap becomes impossible to ignore."
+        },
+        {
+          "type": "paragraph",
+          "text": "See the full six-layer stack → Find your weakest layer →"
+        }
+      ]
+    },
+    {
+      "title": "Get The IDR Engine",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Checkout is handled by Gumroad. The button opens the Aloha AI Gumroad storefront."
+        },
+        {
+          "type": "paragraph",
+          "text": "← Back to The Regulated Trust Stack"
+        }
+      ]
+    }
+  ],
+  "editorialSource": {
+    "baseline": "b0a1b3c",
+    "sourceFile": "trust-stack/regulatory-intelligence/index.html",
+    "restoredAt": "2026-07-26"
+  }
+}

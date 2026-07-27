@@ -7,10 +7,11 @@ import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const baseline = process.argv[2] || 'b0a1b3c';
 const selection = process.argv[3] || '25';
-const count = selection === 'existing' ? null : Number.parseInt(selection, 10);
+const exactRoute = selection.startsWith('/') ? selection : null;
+const count = selection === 'existing' || exactRoute ? null : Number.parseInt(selection, 10);
 const reportPath = path.join(root, 'artifacts', 'migration-parity', 'report.json');
 if (!fs.existsSync(reportPath)) throw new Error('Run npm run site:build and npm run site:parity before restoring editorial copy.');
-if (count != null && (!Number.isFinite(count) || count < 1)) throw new Error('Count must be a positive integer or "existing".');
+if (count != null && (!Number.isFinite(count) || count < 1)) throw new Error('Selection must be a positive count, "existing", or an exact route beginning with "/".');
 
 const report = JSON.parse(fs.readFileSync(reportPath, 'utf8'));
 const files = jsonFiles(path.join(root, 'content'));
@@ -20,7 +21,11 @@ const records = files.flatMap((file) => {
 });
 const existingPaths = new Set(records.filter((entry) => entry.resource.editorialSource?.baseline === baseline).map((entry) => entry.resource.pathname));
 const targets = [...report.pages]
-  .filter((page) => selection === 'existing' ? existingPaths.has(page.currentRoute) : !existingPaths.has(page.currentRoute))
+  .filter((page) => exactRoute
+    ? page.currentRoute === exactRoute
+    : selection === 'existing'
+      ? existingPaths.has(page.currentRoute)
+      : !existingPaths.has(page.currentRoute))
   .sort((a, b) => a.distinctiveWordOverlap - b.distinctiveWordOverlap || a.originalRoute.localeCompare(b.originalRoute))
   .slice(0, count ?? undefined);
 
@@ -58,7 +63,9 @@ function extractEditorialContent(html) {
   const sections = [];
   const seen = new Set();
   const skipped = [];
-  let sawH1 = false;
+  // Some interactive tools place their only H1 in a site header outside <main>.
+  // Once extraction is scoped to <main>, its content is already past that H1.
+  let sawH1 = !/<h1\b/i.test(main);
   let section = null;
   let capture = null;
   let orderedDepth = 0;
