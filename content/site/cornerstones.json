@@ -513,7 +513,7 @@
     "kind": "learningHub",
     "pathname": "/university",
     "eyebrow": "Educational layer",
-    "title": "Aloha AI University",
+    "title": "Free Generative AI University for Modern Businesses",
     "summary": "Free foundations, practical lessons, assessments, playbooks, templates, courses, and continuing education that explain the same methods used across Aloha AI consulting, products, research, and tools.",
     "audience": "People and institutions that want to understand, evaluate, govern, and operate AI systems before or alongside implementation.",
     "maturity": "Beta",
@@ -649,6 +649,300 @@
         "type": "teaches",
         "target": "ai-for-sop-drafting-lesson"
       }
-    ]
+    ],
+    "seoTitle": "Aloha AI University",
+    "editorialIntro": [
+      "Practical, honest, primary-source training that takes you from curious to capable. Learn what these tools really do, where they fail, and how to put them to work in your business without the hype."
+    ],
+    "editorialSections": [
+      {
+        "title": "A free program that teaches AI you can actually trust",
+        "eyebrow": "What this is",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Aloha AI University is open education for owners, operators, and teams who want to use generative AI well. It answers three questions: what these tools do, where they fall short, and how to build a workflow around them that holds up. Learning stays free, with no paywall and no email gate. When you want a partner to build the system, that path is here too."
+          }
+        ]
+      },
+      {
+        "title": "Where are you today?",
+        "eyebrow": "Find your path",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Three ways in. Pick the one that sounds like you and we will route you to the right first step."
+          },
+          {
+            "type": "heading",
+            "text": "Start from zero"
+          },
+          {
+            "type": "paragraph",
+            "text": "You have heard the noise and want a clear, trustworthy on-ramp. We route you to the right first lessons."
+          },
+          {
+            "type": "heading",
+            "text": "Put AI to work"
+          },
+          {
+            "type": "paragraph",
+            "text": "You want fewer hours on repetitive work and more room to grow. See use cases by function and business type."
+          },
+          {
+            "type": "heading",
+            "text": "Build it with a partner"
+          },
+          {
+            "type": "paragraph",
+            "text": "You want a real system in place, done with you or for you. See how Aloha AI can help."
+          }
+        ]
+      },
+      {
+        "title": "Featured learning tracks",
+        "eyebrow": "Learn",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Seven tracks take you from foundations to real work skills. Here are four lessons to start with."
+          },
+          {
+            "type": "heading",
+            "text": "What Generative AI Actually Is"
+          },
+          {
+            "type": "paragraph",
+            "text": "A plain-language mental model for how these systems predict text, and why that shapes everything they do."
+          },
+          {
+            "type": "heading",
+            "text": "What AI Can and Cannot Do"
+          },
+          {
+            "type": "paragraph",
+            "text": "A grounded list of real strengths and hard limits, so you aim it at the right work."
+          },
+          {
+            "type": "heading",
+            "text": "ChatGPT vs Claude vs Gemini vs Perplexity"
+          },
+          {
+            "type": "paragraph",
+            "text": "How the major assistants differ in practice, and which one fits which job."
+          },
+          {
+            "type": "heading",
+            "text": "Prompting Fundamentals"
+          },
+          {
+            "type": "paragraph",
+            "text": "The handful of habits that move you from mediocre outputs to reliable ones."
+          }
+        ]
+      },
+      {
+        "title": "Featured playbooks",
+        "eyebrow": "Playbooks",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Step-by-step builds you can run this week. Each one ends with a working workflow, not a lecture."
+          },
+          {
+            "type": "heading",
+            "text": "Lead Generation"
+          },
+          {
+            "type": "paragraph",
+            "text": "Turn attention into a steady stream of qualified conversations, without spamming anyone."
+          },
+          {
+            "type": "heading",
+            "text": "Client Intake & Onboarding"
+          },
+          {
+            "type": "paragraph",
+            "text": "Make the first two weeks with a new client feel effortless and consistent every time."
+          },
+          {
+            "type": "heading",
+            "text": "Content Repurposing"
+          },
+          {
+            "type": "paragraph",
+            "text": "Get ten pieces of content from one source while keeping your own voice."
+          }
+        ]
+      },
+      {
+        "title": "Free templates",
+        "eyebrow": "Templates",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Copy-and-use prompts, policies, and docs. Bring your own tools, take what you need, no signup wall."
+          },
+          {
+            "type": "heading",
+            "text": "AI Adoption Roadmap"
+          },
+          {
+            "type": "paragraph",
+            "text": "A one-page plan for where to start and what to sequence first."
+          },
+          {
+            "type": "heading",
+            "text": "AI Acceptable Use Policy"
+          },
+          {
+            "type": "paragraph",
+            "text": "A starter policy your team can actually read and follow."
+          },
+          {
+            "type": "heading",
+            "text": "Content Repurposing Prompt Pack"
+          },
+          {
+            "type": "paragraph",
+            "text": "Prompts that keep your voice while multiplying your output."
+          }
+        ]
+      },
+      {
+        "title": "What Aloha AI can build with you",
+        "eyebrow": "Services",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Learning is free and always will be. When you want a partner, these are the six pillars we work in."
+          },
+          {
+            "type": "heading",
+            "text": "AI Strategy & Roadmap"
+          },
+          {
+            "type": "paragraph",
+            "text": "Decide where AI earns its keep, and in what order."
+          },
+          {
+            "type": "heading",
+            "text": "Workflow Automation"
+          },
+          {
+            "type": "paragraph",
+            "text": "Take the repetitive work off your team's plate."
+          },
+          {
+            "type": "heading",
+            "text": "Custom AI Assistants"
+          },
+          {
+            "type": "paragraph",
+            "text": "Assistants trained on your material and tuned to your voice."
+          },
+          {
+            "type": "heading",
+            "text": "AI Governance & Policy"
+          },
+          {
+            "type": "paragraph",
+            "text": "Guardrails so adoption stays safe and defensible."
+          },
+          {
+            "type": "heading",
+            "text": "Team Training & Enablement"
+          },
+          {
+            "type": "paragraph",
+            "text": "Get your whole team fluent, not just curious."
+          },
+          {
+            "type": "heading",
+            "text": "Ongoing Advisory"
+          },
+          {
+            "type": "paragraph",
+            "text": "A steady hand as your use of AI grows and changes."
+          }
+        ]
+      },
+      {
+        "title": "Grounded, honest, and on your side",
+        "eyebrow": "Why this exists",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Adoption is a trust problem before it is a tools problem."
+          },
+          {
+            "type": "paragraph",
+            "text": "Most AI training sells a feeling. This program teaches the mechanics: how the models work, where they break, and how to verify what they give you. We teach from primary sources and stay candid about limits, because a team that trusts its tools for the right reasons is a team that actually uses them. That is the whole point."
+          }
+        ]
+      },
+      {
+        "title": "Built to be checked, not just believed",
+        "eyebrow": "Proof",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "12"
+          },
+          {
+            "type": "paragraph",
+            "text": "Free lessons across seven tracks, from foundations to real work skills."
+          },
+          {
+            "type": "heading",
+            "text": "6"
+          },
+          {
+            "type": "paragraph",
+            "text": "Step-by-step playbooks you can run this week."
+          },
+          {
+            "type": "heading",
+            "text": "100%"
+          },
+          {
+            "type": "paragraph",
+            "text": "Runs in your browser. We collect nothing unless you contact us."
+          },
+          {
+            "type": "heading",
+            "text": "$0"
+          },
+          {
+            "type": "paragraph",
+            "text": "To learn everything here. No paywall, no signup, no email gate."
+          }
+        ]
+      },
+      {
+        "title": "Aloha AI Dispatch",
+        "eyebrow": "Newsletter",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "New lessons and playbooks, build breakdowns, and what is moving in AI for regulated work."
+          }
+        ]
+      },
+      {
+        "title": "Start here. We route you the rest of the way.",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The on-ramp asks where you are today and points you at the right first lessons. No paywall, no signup, no email gate. Pick your path and begin."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "university/index.html",
+      "restoredAt": "2026-07-26"
+    }
   }
 ]

@@ -3,18 +3,20 @@ import path from 'node:path';
 import process from 'node:process';
 import { renderStructuredPage } from '../lib/site/structured-renderer.js';
 import { supportedKinds, validateTemplateContract } from '../lib/site/template-registry.js';
-import { derivePlatform, generatedOutputs, legacyMigrationInventory, validateGeneratedSite, validatePlatform, validateRoutingConfig, writeOutputs } from '../lib/site/publishing-engine.js';
+import { derivePlatform, generatedOutputs, legacyMigrationInventory, validateCollectionPages, validateGeneratedSite, validatePlatform, validateRoutingConfig, writeOutputs } from '../lib/site/publishing-engine.js';
 
 const root = process.cwd();
 const contentRoot = path.join(root, 'content');
 const mode = process.argv.includes('--validate') ? 'validate' : process.argv.includes('--check') ? 'check' : 'build';
 const resources = loadResources(contentRoot);
+const collectionPages = loadCollectionPages(path.join(contentRoot, 'collections', 'derived-pages.json'));
 const platform = derivePlatform(resources);
 const templateErrors = resources.flatMap((resource) => validateTemplateContract(resource));
 const { errors: platformErrors, warnings: platformWarnings } = validatePlatform(resources, platform);
+const collectionErrors = validateCollectionPages(collectionPages, resources, platform);
 const routingConfig = JSON.parse(fs.readFileSync(path.join(root, 'vercel.json'), 'utf8'));
 const routingErrors = validateRoutingConfig(resources, routingConfig);
-const errors = [...templateErrors, ...platformErrors, ...routingErrors];
+const errors = [...templateErrors, ...platformErrors, ...collectionErrors, ...routingErrors];
 
 for (const warning of platformWarnings) console.warn(`Warning: ${warning}`);
 if (errors.length) {
@@ -23,7 +25,7 @@ if (errors.length) {
   process.exit(1);
 }
 
-const derived = generatedOutputs(resources, platform);
+const derived = generatedOutputs(resources, platform, collectionPages);
 derived.set('/api/migration-inventory.json', JSON.stringify(legacyMigrationInventory(root, resources, derived), null, 2));
 if (mode === 'validate') {
   console.log(`Validated ${resources.length} canonical resources across ${platform.collections.size} generated collections.`);
@@ -76,6 +78,12 @@ function loadResources(directory) {
     }
   }
   return loaded.filter((item) => supportedKinds.includes(item.kind));
+}
+
+function loadCollectionPages(file) {
+  if (!fs.existsSync(file)) return {};
+  try { return JSON.parse(fs.readFileSync(file, 'utf8')); }
+  catch (error) { console.error(`Invalid JSON in ${path.relative(root, file)}: ${error.message}`); process.exit(1); }
 }
 
 function walk(directory) {

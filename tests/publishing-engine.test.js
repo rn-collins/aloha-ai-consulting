@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { derivePlatform, generatedOutputs, legacyMigrationInventory, validatePlatform, validateRoutingConfig } from '../lib/site/publishing-engine.js';
+import { derivePlatform, generatedOutputs, legacyMigrationInventory, validateCollectionPages, validatePlatform, validateRoutingConfig } from '../lib/site/publishing-engine.js';
 import { renderStructuredPage } from '../lib/site/structured-renderer.js';
 import fs from 'node:fs';
 import os from 'node:os';
@@ -235,6 +235,34 @@ test('renders collection membership from canonical registry metadata', () => {
   const html = renderStructuredPage({ resource: collection, registry });
   assert.match(html, /Choose a lesson/);
   assert.match(html, /href="\/university\/learn\/lesson-one"/);
+});
+
+test('renders and indexes editorial metadata for a derived collection', () => {
+  const tool = { ...resource('alpha-tool', []), kind: 'tool', pathname: '/tools/alpha' };
+  const platform = derivePlatform([tool]);
+  const metadata = {
+    '/tools': {
+      id: 'tools-collection',
+      pathname: '/tools',
+      title: 'Free tools',
+      summary: 'A source-grounded collection.',
+      editorialIntro: ['Retained collection introduction.'],
+      editorialSections: [{ title: 'How to choose', blocks: [{ type: 'paragraph', text: 'Choose by risk.' }] }]
+    }
+  };
+  assert.deepEqual(validateCollectionPages(metadata, [tool], platform), []);
+  const outputs = generatedOutputs([tool], platform, metadata);
+  assert.match(outputs.get('/tools'), /Retained collection introduction/);
+  assert.match(outputs.get('/tools'), /Choose by risk/);
+  assert.match(outputs.get('/search-index.json'), /retained collection introduction/);
+  assert.match(outputs.get('/api/collections.json'), /tools-collection/);
+});
+
+test('rejects derived collection metadata for a canonical resource route', () => {
+  const collection = { ...resource('tools-collection', []), kind: 'collection', pathname: '/tools', collection: { kinds: ['tool'] } };
+  const platform = derivePlatform([collection]);
+  const metadata = { '/tools': { id: 'duplicate', pathname: '/tools', title: 'Tools', summary: 'Duplicate route.' } };
+  assert.ok(validateCollectionPages(metadata, [collection], platform).includes('collection pages: /tools is not a derived collection route'));
 });
 
 test('renders a service collection without dropping service deliverables', () => {

@@ -1,0 +1,118 @@
+{
+  "/tools": {
+    "id": "tools-collection",
+    "pathname": "/tools",
+    "eyebrow": "Aloha AI · tools by RN Collins",
+    "title": "Free tools that score your AI readiness and show you how I build.",
+    "summary": "Every tool here is a working, interactive demonstration of the method Aloha AI ships for clients. Assess your own AI readiness or risk in a few minutes, see the governed and auditable method in action, and identify what is worth building properly.",
+    "audience": "Law firms, founders, general counsel, and regulated or reputation-sensitive teams.",
+    "topics": ["tools", "assessment", "readiness", "governance"],
+    "industries": ["legal", "regulated-markets", "professional-services"],
+    "keywords": ["free interactive AI tools", "AI readiness", "AI risk assessment", "governed AI tools"],
+    "editorialIntro": [
+      "The assessments run in your browser; nothing leaves it unless you say so. Each tool does two things at once: it lets you assess your own AI readiness or risk, and it reflects the kind of governed, auditable build delivered in a client engagement."
+    ],
+    "editorialSections": [
+      {
+        "eyebrow": "What this is",
+        "title": "A working demonstration you can run yourself",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Most consultants show slideware. These tools are the proof. Each one is free, interactive, and self-contained, and each maps to a real client build: a citation gate for a filing, a governance scorecard for a firm, or a budget model for a project. Run whichever one matches your question. When a result points to work worth doing properly, a short scoping call is where that starts."
+          },
+          {
+            "type": "heading",
+            "text": "Assess your readiness"
+          },
+          {
+            "type": "paragraph",
+            "text": "Score your governance, legal AI workflow, or practice against published guidance, and get a prioritized list of what to fix first."
+          },
+          {
+            "type": "heading",
+            "text": "See the method"
+          },
+          {
+            "type": "paragraph",
+            "text": "Each tool reflects how Aloha AI builds for clients: sourced, gated where risk lives, and auditable. What you run here is the public version of a private deployment."
+          },
+          {
+            "type": "heading",
+            "text": "Decide what to build"
+          },
+          {
+            "type": "paragraph",
+            "text": "A weak result is a map. It shows the workflow worth gating, the policy worth writing, or the budget worth scoping before you commit."
+          }
+        ]
+      },
+      {
+        "eyebrow": "The tools",
+        "title": "Pick the one that matches your question",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The live tools below are grouped from the canonical registry by what they help with. Every card resolves to the current resource record, so descriptions, maturity, evidence, and limitations stay synchronized as the platform changes."
+          },
+          {
+            "type": "heading",
+            "text": "Legal AI"
+          },
+          {
+            "type": "paragraph",
+            "text": "Verification and workflow risk for legal teams: citation checking, legal AI workflow diagnostics, regulatory bill analysis, regulated claims review, controlled-substances explanation, and health-claims evidence literacy."
+          },
+          {
+            "type": "heading",
+            "text": "Governance"
+          },
+          {
+            "type": "paragraph",
+            "text": "Documented-practice maturity and exposure: governance readiness, policy generation, and culture-governance auditing mapped to the authority the organization actually answers to."
+          },
+          {
+            "type": "heading",
+            "text": "Readiness"
+          },
+          {
+            "type": "paragraph",
+            "text": "Where your organization stands with AI: assess organizational readiness, practice readiness, workflow maturity, and whether a repeated prompt should become a governed workflow."
+          },
+          {
+            "type": "heading",
+            "text": "Planning"
+          },
+          {
+            "type": "paragraph",
+            "text": "Scope the build before you commit: estimate a defensible budget and determine whether your documents need folders, Notion, Airtable, retrieval-augmented generation, a custom application, or simply better standard operating procedures."
+          }
+        ]
+      },
+      {
+        "eyebrow": "These are demonstrations of what I build",
+        "title": "The version I build for your organization",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "What you run here is the public, in-browser version. A firm-deployed build routes checks through a private backend, keeps credentials off the client, writes a signed audit record, and integrates with the tools your team already runs. Each tool maps to a real engagement: a citation gate, a documented governance policy, or a scoped budget."
+          },
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Run a tool. Score your readiness or risk in a few minutes; the weak result identifies the workflow, policy, or budget worth addressing first.",
+              "Book a scoping call. Talk through what the result means for your organization and what a governed build would cover.",
+              "Get it built. Most engagements start with a Systems Audit, the fastest proof of which workflow is worth building properly first."
+            ]
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "tools/index.html",
+      "restoredAt": "2026-07-26"
+    }
+  }
+}
