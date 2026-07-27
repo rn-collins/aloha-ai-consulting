@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { getRouteRecord } from '../lib/site/route-registry.js';
+import { decodeHtmlText } from '../lib/site/metadata.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SITEMAP = path.join(ROOT, 'sitemap.xml');
@@ -35,7 +36,7 @@ function resolvePage(route) {
 
 function firstMatch(content, expression) {
   const value = content.match(expression)?.[1];
-  return value ? value.replace(/\s+/g, ' ').trim() : null;
+  return value ? decodeHtmlText(value).replace(/\s+/g, ' ').trim() : null;
 }
 
 function count(content, expression) {

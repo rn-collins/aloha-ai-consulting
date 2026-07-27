@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { derivePlatform, generatedOutputs, legacyMigrationInventory, validateCollectionPages, validatePlatform, validateRoutingConfig } from '../lib/site/publishing-engine.js';
 import { renderStructuredPage } from '../lib/site/structured-renderer.js';
-import { buildMetadata, metadataDescription, metadataTitle } from '../lib/site/metadata.js';
+import { buildMetadata, decodeHtmlText, metadataDescription, metadataTitle } from '../lib/site/metadata.js';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
@@ -127,6 +127,8 @@ test('bounds search metadata without changing visible editorial titles or summar
   assert.ok(metadata.description.length >= 70 && metadata.description.length <= 180);
   assert.equal(metadata.openGraph.title, metadata.title);
   assert.equal(metadata.twitter.description, metadata.description);
+  assert.equal(decodeHtmlText('Luxury Brand Protection &amp; Anti-Counterfeiting'), 'Luxury Brand Protection & Anti-Counterfeiting');
+  assert.equal(decodeHtmlText('RN&#039;s evidence'), "RN's evidence");
 });
 
 test('private AI risk copy does not claim an unrelated live Federal Register feed', () => {
@@ -336,6 +338,31 @@ test('renders canonical homepage actions and linked institutional cards', () => 
   assert.match(html, /Explore services/);
   assert.match(html, /class="card card--hover" href="\/alpha"/);
   assert.match(html, /_vercel\/insights\/script\.js/);
+  assert.match(html, /href="\/university\/contact">Start a conversation/);
+  assert.doesNotMatch(html, /href="\/#start">Start a conversation/);
+});
+
+test('routes commercial conversion to a real contact endpoint and renders direct contact actions', () => {
+  const service = {
+    ...resource('service', [{ type: 'supports', target: 'contact' }]),
+    kind: 'service'
+  };
+  const contact = {
+    ...resource('contact', [{ type: 'supports', target: 'service' }]),
+    kind: 'learningHub',
+    pathname: '/university/contact',
+    actions: [
+      { label: 'Book a call', href: 'https://example.com/book' },
+      { label: 'Email RN', href: 'mailto:rn@example.com' }
+    ]
+  };
+  const registry = new Map([[service.id, service], [contact.id, contact]]);
+  const serviceHtml = renderStructuredPage({ resource: service, registry });
+  const contactHtml = renderStructuredPage({ resource: contact, registry });
+  assert.match(serviceHtml, /href="\/university\/contact">Start a conversation/);
+  assert.doesNotMatch(serviceHtml, /href="\/#start">Start a conversation/);
+  assert.match(contactHtml, /href="https:\/\/example\.com\/book">Book a call/);
+  assert.match(contactHtml, /href="mailto:rn@example\.com">Email RN/);
 });
 
 test('renders a browser-only structured assessment from question metadata', () => {

@@ -383,6 +383,16 @@
       "book AI strategy session",
       "AI consulting"
     ],
+    "actions": [
+      {
+        "label": "Book a call",
+        "href": "https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous"
+      },
+      {
+        "label": "Email RN",
+        "href": "mailto:collins.ra@northeastern.edu?subject=Aloha%20AI%20inquiry"
+      }
+    ],
     "learningPaths": [
       "Describe the business and goal",
       "Identify the current bottleneck",
