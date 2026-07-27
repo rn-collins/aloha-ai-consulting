@@ -153,6 +153,34 @@
         ]
       },
       {
+        "priority": true,
+        "eyebrow": "Proof you can inspect",
+        "title": "See the work before deciding whether to trust it.",
+        "intro": "The methods, working systems, engagement record, and interdisciplinary formation are public. Start with the kind of evidence that matters to you.",
+        "items": [
+          {
+            "title": "Working systems",
+            "text": "Inspect public tools, maintained resources, and deployed demonstrations across the practice.",
+            "href": "/builds"
+          },
+          {
+            "title": "Selected engagements",
+            "text": "Review commissioned work, independent prototypes, scope, and status without inflated client claims.",
+            "href": "/engagements"
+          },
+          {
+            "title": "Methods and evidence",
+            "text": "See the source, claim, decision, revision, incident, and maintenance records behind the work.",
+            "href": "/methods"
+          },
+          {
+            "title": "RN Collins",
+            "text": "Read the interdisciplinary formation behind the practice and the limits stated around it.",
+            "href": "/about"
+          }
+        ]
+      },
+      {
         "eyebrow": "The transformation",
         "title": "From valuable knowledge to infrastructure others can operate.",
         "items": [
@@ -317,16 +345,6 @@
       "Aloha AI builds governed AI teams for regulated work — and teaches you to build your own. The background that makes that credible is right below."
     ],
     "editorialSections": [
-      {
-        "title": "Credibility you can check",
-        "eyebrow": "Why trust the work",
-        "blocks": [
-          {
-            "type": "paragraph",
-            "text": "Inspect the methods & evidence → · See selected engagements → · See the builds on About → · The full portfolio → RN Builds · Read the full story →"
-          }
-        ]
-      },
       {
         "title": "Serious organizations hit the same two walls with AI",
         "eyebrow": "The problem",

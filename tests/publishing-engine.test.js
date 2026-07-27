@@ -377,6 +377,27 @@ test('prioritizes homepage visitor pathways before editorial depth and hides reg
   assert.doesNotMatch(html, /<p class="eyebrow">Resource type<\/p>/);
 });
 
+test('places linked proof directly after homepage problem pathways', () => {
+  const home = {
+    ...resource('home', [{ type: 'supports', target: 'alpha' }]),
+    kind: 'institutional',
+    pathname: '/',
+    editorialSections: [{ title: 'Practice narrative', blocks: [{ type: 'paragraph', text: 'Long-form context.' }] }],
+    institutionalSections: [
+      { priority: true, title: 'Start with your problem', items: [{ title: 'Choose a service', text: 'Find the right path.', href: '/alpha' }] },
+      { priority: true, title: 'See the work', items: [{ title: 'Working systems', text: 'Inspect the evidence.', href: '/builds' }] }
+    ]
+  };
+  const alpha = resource('alpha', [{ type: 'supports', target: 'home' }]);
+  const builds = resource('builds', [{ type: 'supports', target: 'home' }]);
+  builds.pathname = '/builds';
+  const registry = new Map([[home.id, home], [alpha.id, alpha], [builds.id, builds]]);
+  const html = renderStructuredPage({ resource: home, registry });
+  assert.ok(html.indexOf('Start with your problem') < html.indexOf('See the work'));
+  assert.ok(html.indexOf('See the work') < html.indexOf('Practice narrative'));
+  assert.match(html, /href="\/builds"[\s\S]*Working systems/);
+});
+
 test('routes commercial conversion to a real contact endpoint and renders direct contact actions', () => {
   const service = {
     ...resource('service', [{ type: 'supports', target: 'contact' }]),
