@@ -65,7 +65,7 @@
       +'<svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3.5 4.5 6.5 4.5 9.2 0 3.4-2 5.8-4.5 5.8s-4.5-2.4-4.5-5.8C7.5 8.5 9 5.5 12 2z" fill="#1B7A68"/><path d="M4 20c3-1.2 5.4-1.8 8-1.8s5 .6 8 1.8" stroke="#1B7A68" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>'
       +'Aloha&nbsp;AI</a>'
       +'<nav class="site-nav" aria-label="Primary"><ul class="site-nav__list" id="site-nav-list">'+groups+'</ul></nav>'
-      +'<div class="site-nav__actions">'+link('/platform','Workspace','btn btn--outline btn--sm')+link('/#start','Work with us','btn btn--primary btn--sm')+'</div>'
+      +'<div class="site-nav__actions">'+link('/platform','Workspace','btn btn--outline btn--sm')+link('/university/contact','Work with us','btn btn--primary btn--sm')+'</div>'
       +'<button class="nav__burger site-nav__burger" type="button" aria-label="Open menu" aria-controls="site-nav-list" aria-expanded="false">'
       +'<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>'
       +'</div>';

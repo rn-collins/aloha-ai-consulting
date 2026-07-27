@@ -365,6 +365,12 @@ test('routes commercial conversion to a real contact endpoint and renders direct
   assert.match(contactHtml, /href="mailto:rn@example\.com">Email RN/);
 });
 
+test('routes the global navigation conversion action to the canonical contact endpoint', () => {
+  const shell = fs.readFileSync(new URL('../site-shell.js', import.meta.url), 'utf8');
+  assert.match(shell, /link\('\/university\/contact','Work with us'/);
+  assert.doesNotMatch(shell, /link\('\/#start','Work with us'/);
+});
+
 test('renders a browser-only structured assessment from question metadata', () => {
   const assessment = {
     ...resource('roadmap', [{ type: 'supports', target: 'alpha' }]),
