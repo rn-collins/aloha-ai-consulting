@@ -66,6 +66,7 @@
       +'Aloha&nbsp;AI</a>'
       +'<nav class="site-nav" aria-label="Primary"><ul class="site-nav__list" id="site-nav-list">'+groups+'</ul></nav>'
       +'<div class="site-nav__actions">'+link('/platform','Workspace','btn btn--outline btn--sm')+link('/university/contact','Work with us','btn btn--primary btn--sm')+'</div>'
+      +link('/search','Search','site-nav__search')
       +'<button class="nav__burger site-nav__burger" type="button" aria-label="Open menu" aria-controls="site-nav-list" aria-expanded="false">'
       +'<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>'
       +'</div>';

@@ -116,6 +116,21 @@ test('renders and indexes structured editorial copy', () => {
   assert.match(search.find((item) => item.id === 'alpha').text, /human reviewer/);
 });
 
+test('publishes an accessible plain-language search journey', () => {
+  const resources = [
+    resource('alpha', [{ type: 'supports', target: 'beta' }]),
+    resource('beta', [{ type: 'supports', target: 'alpha' }])
+  ];
+  const outputs = generatedOutputs(resources, derivePlatform(resources));
+  const search = outputs.get('/search');
+  assert.match(search, /<form class="search-form" role="search"/);
+  assert.match(search, /What do you need help with\?/);
+  assert.ok(search.includes("fetch('/search-index.json')"));
+  assert.match(search, /Start a conversation/);
+  assert.ok(outputs.has('/search-index.json'));
+  assert.match(outputs.get('/sitemap.xml'), /<loc>https:\/\/aloha-ai-consulting\.vercel\.app\/search<\/loc>/);
+});
+
 test('bounds search metadata without changing visible editorial titles or summaries', () => {
   const longTitle = 'A deliberately long editorial heading that should remain visible while search metadata receives a separate bounded representation';
   const shortDescription = 'Browse Aloha AI by topic.';
