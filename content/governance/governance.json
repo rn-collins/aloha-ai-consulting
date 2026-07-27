@@ -30,6 +30,38 @@
     ],
     "institutionalSections": [
       {
+        "priority": true,
+        "eyebrow": "Evidence behind the practice",
+        "title": "What the record supports.",
+        "intro": "The practice joins formal study with applied responsibility. Each part of the background supports a specific capability; none substitutes for a professional license.",
+        "items": [
+          {
+            "title": "Research rigor and qualitative analysis",
+            "subtitle": "Harvard Business School research",
+            "text": "Research-assistant work strengthened source discipline, qualitative coding, thematic analysis, and the conversion of complex evidence into findings other people can inspect.",
+            "href": "/methods"
+          },
+          {
+            "title": "Regulated research operations",
+            "subtitle": "Yale Program for Psychedelic Science",
+            "text": "Program-management and education responsibility involved FDA, DEA, IRB, protocol, and research-operations questions in an evidence-heavy emerging field.",
+            "href": "/trust-stack/regulatory-intelligence"
+          },
+          {
+            "title": "Scientific translation and education",
+            "subtitle": "Boston University training and teaching",
+            "text": "Graduate neuroscience and anatomy training, a medical-education certificate, teaching, writing support, and curriculum development connect technical accuracy to usable explanation.",
+            "href": "/university"
+          },
+          {
+            "title": "Authority, boundaries, and legal workflow",
+            "subtitle": "Northeastern FlexJD and fractional law-clerk work",
+            "text": "Current legal education and supervised or bounded legal-work experience sharpen the separation between research, interpretation, judgment, professional review, and legal advice.",
+            "href": "/legal-ai"
+          }
+        ]
+      },
+      {
         "eyebrow": "The through-line",
         "title": "From how people understand the world to how institutions operationalize it.",
         "intro": "Psychology, neuroscience, research operations, law, and AI each contribute a different part of the method. Aloha AI is the commercial and product expression of that body of work.",

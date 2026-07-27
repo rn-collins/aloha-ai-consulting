@@ -679,3 +679,38 @@ test('renders institutional and legal-policy resources from structured contracts
   assert.match(policyHtml, /Nothing creates an attorney–client relationship/);
   assert.match(policyHtml, /"@type":"WebPage"/);
 });
+
+test('renders about as a concise credibility record without registry identity or duplicated editorial biography', () => {
+  const about = {
+    ...resource('about', [{ type: 'uses', target: 'methods' }]),
+    kind: 'institutional',
+    pathname: '/about',
+    editorialIntro: ['One interdisciplinary through-line.'],
+    editorialSections: [{
+      title: 'Formation',
+      blocks: [{ type: 'paragraph', text: 'Duplicated long-form formation.' }]
+    }],
+    institutionalSections: [
+      {
+        priority: true,
+        title: 'What the record supports.',
+        items: [{ title: 'Research rigor', subtitle: 'Named role', text: 'Specific evidence.', href: '/methods' }]
+      },
+      {
+        title: 'Formation',
+        items: [{ title: 'Law', text: 'Authority and accountability remain visible.' }]
+      }
+    ]
+  };
+  const methods = resource('methods', [{ type: 'supports', target: 'about' }]);
+  methods.pathname = '/methods';
+  const registry = new Map([[about.id, about], [methods.id, methods]]);
+  const html = renderStructuredPage({ resource: about, registry });
+
+  assert.doesNotMatch(html, /Canonical ID: <code>about<\/code>/);
+  assert.doesNotMatch(html, /Duplicated long-form formation/);
+  assert.equal(html.match(/What the record supports\./g)?.length, 1);
+  assert.match(html, /Named role/);
+  assert.ok(html.indexOf('What the record supports.') < html.indexOf('One interdisciplinary through-line.'));
+  assert.match(html, /href="\/methods"/);
+});
