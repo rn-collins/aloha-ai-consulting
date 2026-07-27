@@ -297,6 +297,28 @@ test('renders and indexes editorial metadata for a derived collection', () => {
   assert.match(outputs.get('/api/collections.json'), /tools-collection/);
 });
 
+test('renders generated collection front doors as plain-language editorial indexes', () => {
+  const alpha = { ...resource('alpha', [{ type: 'supports', target: 'beta' }]), kind: 'monitor', maturity: 'Beta' };
+  const beta = { ...resource('beta', [{ type: 'supports', target: 'alpha' }]), kind: 'monitor', maturity: 'Research' };
+  const html = generatedOutputs([alpha, beta], derivePlatform([alpha, beta])).get('/monitors');
+  assert.match(html, /class="is-editorial-collection is-collection-monitors"/);
+  assert.match(html, /Watch what changes\. Understand why it matters\./);
+  assert.match(html, /Every entry tells you what it is and how far along it is/);
+  assert.match(html, /Public beta/);
+  assert.match(html, /Open the monitor/);
+  assert.doesNotMatch(html, />Discovery</);
+});
+
+test('renders taxonomy directories as navigable indexes with a search escape hatch', () => {
+  const legal = { ...resource('legal', [{ type: 'supports', target: 'health' }]), industries: ['legal'] };
+  const health = { ...resource('health', [{ type: 'supports', target: 'legal' }]), industries: ['health'] };
+  const html = generatedOutputs([legal, health], derivePlatform([legal, health])).get('/industries');
+  assert.match(html, /class="is-directory"/);
+  assert.match(html, /Another way into Aloha AI/);
+  assert.match(html, /describe your question instead/);
+  assert.match(html, /2 paths/);
+});
+
 test('tools collection is a question-led shelf with visible privacy and status boundaries', () => {
   const tools = [
     { ...resource('citation-verifier', []), kind: 'tool', pathname: '/tools/citation-verifier', maturity: 'Beta' },
