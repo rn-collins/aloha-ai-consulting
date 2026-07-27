@@ -606,8 +606,47 @@ test('routes commercial conversion to a real contact endpoint and renders direct
   const contactHtml = renderStructuredPage({ resource: contact, registry });
   assert.match(serviceHtml, /href="\/university\/contact">Start a conversation/);
   assert.doesNotMatch(serviceHtml, /href="\/#start">Start a conversation/);
-  assert.match(contactHtml, /href="https:\/\/example\.com\/book">Book a call/);
-  assert.match(contactHtml, /href="mailto:rn@example\.com">Email RN/);
+  assert.match(contactHtml, /href="https:\/\/example\.com\/book"><span>Book a call/);
+  assert.match(contactHtml, /href="mailto:rn@example\.com"><span>Email RN/);
+});
+
+test('renders contact as a clear three-path human conversion journey', () => {
+  const contact = {
+    ...resource('contact'),
+    pathname: '/university/contact',
+    actions: [
+      { label: 'Book a call', href: 'https://example.com/book' },
+      { label: 'Email RN', href: 'mailto:rn@example.com' }
+    ],
+    contactExperience: {
+      intro: 'Start with the situation.',
+      paths: [
+        { label: 'Talk it through', title: 'Book a conversation', plain: 'Speak with RN.', action: 'Choose a time', href: 'https://example.com/book', note: 'Opens booking' },
+        { label: 'Write first', title: 'Send RN an email', plain: 'Write to RN.', action: 'Open an email', href: 'mailto:rn@example.com', note: 'A human replies' },
+        { label: 'Not ready yet', title: 'Keep exploring for free', plain: 'Learn first.', action: 'Visit the University', href: '/university', note: '$0' }
+      ],
+      prompts: [
+        { title: 'What are you trying to do?', plain: 'Name the goal.' },
+        { title: 'Where does it get stuck?', plain: 'Name the problem.' },
+        { title: 'What have you tried?', plain: 'Name prior work.' }
+      ],
+      nextSteps: [
+        { title: 'RN reads the context', plain: 'A person reads it.' },
+        { title: 'You test the fit', plain: 'Decide together.' },
+        { title: 'The next step becomes clear', plain: 'Choose what follows.' }
+      ]
+    }
+  };
+  const html = renderStructuredPage({ resource: contact, registry: new Map([[contact.id, contact]]) });
+  assert.match(html, /class="page-hero section--ink page-hero--contact"/);
+  assert.match(html, /Talk\. Write\.<br>Or look around first\./);
+  assert.equal((html.match(/class="contact-path /g) || []).length, 3);
+  assert.equal((html.match(/class="contact-prompt"/g) || []).length, 3);
+  assert.equal((html.match(/class="contact-next__step"/g) || []).length, 3);
+  assert.match(html, /No mystery\.<br>No sales maze\./);
+  assert.match(html, /Contact details are used to reply to you/);
+  assert.doesNotMatch(html, /How the work moves from inputs to accountable output/);
+  assert.doesNotMatch(html, /Choose the easiest way to reach RN/);
 });
 
 test('routes the global navigation conversion action to the canonical contact endpoint', () => {
