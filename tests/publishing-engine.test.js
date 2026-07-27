@@ -297,6 +297,41 @@ test('renders and indexes editorial metadata for a derived collection', () => {
   assert.match(outputs.get('/api/collections.json'), /tools-collection/);
 });
 
+test('tools collection is a question-led shelf with visible privacy and status boundaries', () => {
+  const tools = [
+    { ...resource('citation-verifier', []), kind: 'tool', pathname: '/tools/citation-verifier', maturity: 'Beta' },
+    { ...resource('workflow-audit', []), kind: 'assessment', pathname: '/tools/workflow-audit', maturity: 'Beta' }
+  ];
+  const platform = derivePlatform(tools);
+  const metadata = {
+    '/tools': {
+      id: 'tools-collection',
+      pathname: '/tools',
+      title: 'Pick a question',
+      summary: 'Leave with a next move.',
+      eyebrow: 'Tools',
+      editorialIntro: ['Useful demonstration.'],
+      editorialSections: [{ eyebrow: 'Boundary', title: 'Read this', blocks: [{ type: 'paragraph', text: 'Not a deployment.' }] }],
+      toolsExperience: {
+        intro: 'Start with the question.',
+        privacy: 'Nothing leaves the browser.',
+        items: [
+          { resourceId: 'citation-verifier', family: 'check', familyLabel: 'Check a claim', title: 'Does it support the claim?', plain: 'Compare claim and source.', action: 'Check it' },
+          { resourceId: 'workflow-audit', family: 'workflow', familyLabel: 'Fix a workflow', title: 'Is it dependable?', plain: 'Check the workflow.', action: 'Audit it' }
+        ]
+      }
+    }
+  };
+  const html = generatedOutputs(tools, platform, metadata).get('/tools');
+  assert.match(html, /class="is-tools"/);
+  assert.match(html, /id="tool-shelf"/);
+  assert.match(html, /data-tool-filter="check"/);
+  assert.match(html, /data-tool-family="workflow"/);
+  assert.match(html, /Nothing leaves the browser/);
+  assert.equal((html.match(/Public beta/g) || []).length, 2);
+  assert.doesNotMatch(html, /Canonical ID/);
+});
+
 test('rejects derived collection metadata for a canonical resource route', () => {
   const collection = { ...resource('tools-collection', []), kind: 'collection', pathname: '/tools', collection: { kinds: ['tool'] } };
   const platform = derivePlatform([collection]);

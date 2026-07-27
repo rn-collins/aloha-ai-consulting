@@ -3,15 +3,34 @@
     "id": "tools-collection",
     "pathname": "/tools",
     "eyebrow": "Aloha AI · tools by RN Collins",
-    "title": "Free tools that score your AI readiness and show you how I build.",
-    "summary": "Every tool here is a working, interactive demonstration of the method Aloha AI ships for clients. Assess your own AI readiness or risk in a few minutes, see the governed and auditable method in action, and identify what is worth building properly.",
-    "audience": "Law firms, founders, general counsel, and regulated or reputation-sensitive teams.",
+    "title": "Pick a question. Leave with a clearer next move.",
+    "summary": "Use a free tool to check a claim, set safer AI rules, untangle a workflow, or decide what kind of system your team actually needs.",
+    "audience": "Anyone trying to use AI, evidence, or changing rules without guessing.",
     "topics": ["tools", "assessment", "readiness", "governance"],
     "industries": ["legal", "regulated-markets", "professional-services"],
     "keywords": ["free interactive AI tools", "AI readiness", "AI risk assessment", "governed AI tools"],
     "editorialIntro": [
-      "The assessments run in your browser; nothing leaves it unless you say so. Each tool does two things at once: it lets you assess your own AI readiness or risk, and it reflects the kind of governed, auditable build delivered in a client engagement."
+      "These public tools are useful on their own. They also let you inspect how Aloha AI turns a hard question into visible steps, checks, limits, and a next action."
     ],
+    "toolsExperience": {
+      "intro": "You do not need to know which service you need. Start with the question that sounds most like yours.",
+      "privacy": "The work happens in your browser. Nothing you enter is sent to Aloha AI unless a tool clearly asks you to submit it.",
+      "items": [
+        {"resourceId":"citation-verifier","family":"check","familyLabel":"Check a claim","title":"Does this source really support the sentence?","plain":"Compare a claim with its source and find gaps before somebody else does.","action":"Check a citation"},
+        {"resourceId":"claims-checker","family":"check","familyLabel":"Check a claim","title":"Could this marketing claim need proof or legal review?","plain":"Screen health, wellness, cannabis, psychedelic, and other regulated-product language.","action":"Screen the claim"},
+        {"resourceId":"evidence-explainer","family":"check","familyLabel":"Check a claim","title":"How strong is the evidence behind this health claim?","plain":"Identify the kind of evidence a claim needs and where uncertainty still matters.","action":"Read the evidence"},
+        {"resourceId":"bill-analyzer","family":"check","familyLabel":"Check a claim","title":"What would this bill actually require?","plain":"Turn pasted legal text into a map of duties, people, dates, enforcement, and open questions.","action":"Map the bill"},
+        {"resourceId":"controlled-substances-explainer","family":"check","familyLabel":"Check a claim","title":"How does the U.S. controlled-substances system fit together?","plain":"Separate federal scheduling, state law, research rules, medical programs, and changing status.","action":"Explore the system"},
+        {"resourceId":"governance-readiness","family":"rules","familyLabel":"Set safer rules","title":"How ready is your team to govern AI?","plain":"Check your written rules, approved tools, privacy controls, verification, supervision, and accountability.","action":"Score readiness"},
+        {"resourceId":"policy-generator","family":"rules","familyLabel":"Set safer rules","title":"What belongs in your first AI policy?","plain":"Create a reviewable starting template for tools, privacy, checking, supervision, retention, and ownership.","action":"Draft a policy"},
+        {"resourceId":"trust-safe-console","family":"rules","familyLabel":"Set safer rules","title":"What does governed AI look like while work is happening?","plain":"Explore a demonstration of sources, checks, permissions, evaluation, and human approval working together.","action":"Open the console"},
+        {"resourceId":"workflow-audit","family":"workflow","familyLabel":"Fix a workflow","title":"Is your AI workflow dependable—or just a habit?","plain":"Check sources, verification, data handling, repeatability, ownership, and measurement.","action":"Audit the workflow"},
+        {"resourceId":"prompt-to-workflow","family":"workflow","familyLabel":"Fix a workflow","title":"Should this repeated prompt become a real workflow?","plain":"Turn a useful prompt into steps, sources, checks, outputs, ownership, and failure handling.","action":"Build the workflow"},
+        {"resourceId":"ai-readiness-scorecard","family":"choose","familyLabel":"Choose what comes next","title":"Your team uses AI. What should happen next?","plain":"Score decision clarity, evidence, governance, workflow, data, and implementation readiness.","action":"Find the next move"},
+        {"resourceId":"kb-readiness","family":"choose","familyLabel":"Choose what comes next","title":"What kind of knowledge system do you actually need?","plain":"Choose the smallest useful setup based on documents, updates, permissions, evidence, and workflow.","action":"Choose a system"},
+        {"resourceId":"practice-readiness","family":"choose","familyLabel":"Choose what comes next","title":"Could your expertise become a real AI practice?","plain":"Check domain strength, delivery systems, demand, capacity, AI operations, and intellectual property.","action":"Test the practice"}
+      ]
+    },
     "editorialSections": [
       {
         "eyebrow": "What this is",
@@ -19,7 +38,7 @@
         "blocks": [
           {
             "type": "paragraph",
-            "text": "Most consultants show slideware. These tools are the proof. Each one is free, interactive, and self-contained, and each maps to a real client build: a citation gate for a filing, a governance scorecard for a firm, or a budget model for a project. Run whichever one matches your question. When a result points to work worth doing properly, a short scoping call is where that starts."
+            "text": "Each public beta turns one difficult question into a small experience you can use now. A custom version may add private data, organization-specific rules, integrations, review gates, and audit records. The public tool demonstrates the approach; it is not evidence that every possible private version has already been commissioned or deployed."
           },
           {
             "type": "heading",
@@ -35,7 +54,7 @@
           },
           {
             "type": "paragraph",
-            "text": "Each tool reflects how Aloha AI builds for clients: sourced, gated where risk lives, and auditable. What you run here is the public version of a private deployment."
+            "text": "Each tool makes its question, steps, output, and limits visible. A commissioned version is scoped to the organization and may use different sources, controls, and infrastructure."
           },
           {
             "type": "heading",
@@ -53,7 +72,7 @@
         "blocks": [
           {
             "type": "paragraph",
-            "text": "The live tools below are grouped from the canonical registry by what they help with. Every card resolves to the current resource record, so descriptions, maturity, evidence, and limitations stay synchronized as the platform changes."
+            "text": "The shelf above is grouped by the question a visitor is trying to answer. Every card still resolves to its canonical record, so status, evidence, methods, and limitations stay synchronized as the platform changes."
           },
           {
             "type": "heading",
