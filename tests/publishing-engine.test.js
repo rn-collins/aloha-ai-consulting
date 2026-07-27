@@ -339,6 +339,30 @@ test('renders explicitly selected portfolio resources and rejects unresolved sel
   assert.ok(errorsFor([alpha, beta, portfolio]).includes('portfolio: unresolved collection resource missing'));
 });
 
+test('renders builds as a plain-language filterable proof wall before deeper records', () => {
+  const builds = JSON.parse(fs.readFileSync(new URL('../content/site/home-and-builds.json', import.meta.url))).find((item) => item.id === 'builds');
+  const selected = builds.buildsExperience.items.map((entry) => ({
+    ...resource(entry.resourceId, []),
+    id: entry.resourceId,
+    pathname: `/${entry.resourceId}`,
+    maturity: entry.resourceId === 'aloha-ai-ce' ? 'Research' : 'Beta'
+  }));
+  const registry = new Map([[builds.id, builds], ...selected.map((item) => [item.id, item])]);
+  const html = renderStructuredPage({ resource: builds, registry });
+
+  assert.match(html, /class="builds-cover"/);
+  assert.match(html, /id="build-wall"/);
+  assert.match(html, /data-build-filter="track"/);
+  assert.match(html, /data-build-family="learn"/);
+  assert.match(html, /Built does not always mean finished\./);
+  assert.match(html, /Citation Verifier/);
+  assert.match(html, /Try the verifier/);
+  assert.doesNotMatch(html, /before it reaches the court/);
+  assert.doesNotMatch(html, /Canonical ID: <code>builds/);
+  assert.equal((html.match(/data-priority-collection=/g) || []).length, 0);
+  assert.ok(html.indexOf('id="build-wall"') < html.indexOf('Behind the wall'));
+});
+
 test('renders selected engagements before generic service mechanics with explicit relationship status', () => {
   const engagements = JSON.parse(fs.readFileSync(new URL('../content/services/engagements.json', import.meta.url)));
   const html = renderStructuredPage({ resource: engagements, registry: new Map([[engagements.id, engagements]]) });

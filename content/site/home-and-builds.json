@@ -818,10 +818,20 @@
     "id": "builds",
     "kind": "build",
     "pathname": "/builds",
-    "eyebrow": "Work and systems",
-    "title": "Proof should explain what the system does, not merely show that a page exists.",
-    "summary": "A graph-backed portfolio of representative Aloha AI public tools, monitored intelligence, research infrastructure, educational products, governed workflows, and operating systems, with explicit maturity, evidence, methods, and limitations.",
-    "audience": "Prospective clients, partners, institutions, funders, and collaborators evaluating the range, rigor, and current status of Aloha AI systems.",
+    "eyebrow": "Things RN has built",
+    "title": "Do not take our word for it. Open the work.",
+    "summary": "Try the tools, monitors, learning spaces, and working systems. Every item tells you what it does, how far along it is, and where human judgment still matters.",
+    "audience": "Anyone who wants to see how Aloha AI turns messy research, decisions, and repeated work into something people can actually use.",
+    "actions": [
+      {
+        "label": "Explore the proof wall",
+        "href": "#build-wall"
+      },
+      {
+        "label": "Bring RN a problem",
+        "href": "/university/contact"
+      }
+    ],
     "maturity": "Production",
     "topics": [
       "portfolio",
@@ -863,6 +873,110 @@
         "legal-ai-workflow-teardown",
         "ai-readiness-scorecard",
         "workspace"
+      ]
+    },
+    "buildsExperience": {
+      "intro": "You do not need to understand AI infrastructure to browse this page. Start with what you want to do, then open a build to inspect the real method, evidence, and limits behind it.",
+      "items": [
+        {
+          "resourceId": "citation-verifier",
+          "family": "check",
+          "familyLabel": "Check a claim",
+          "title": "Citation Verifier",
+          "plain": "See whether a source exists and whether it actually supports the sentence attached to it.",
+          "result": "Run a citation check and inspect the reasoning.",
+          "action": "Try the verifier"
+        },
+        {
+          "resourceId": "trust-stack",
+          "family": "run",
+          "familyLabel": "Govern risky work",
+          "title": "Regulated Trust Stack",
+          "plain": "See the six layers that keep evidence, claims, production, and review connected.",
+          "result": "Explore the full operating framework.",
+          "action": "Open the stack"
+        },
+        {
+          "resourceId": "trust-safe-twins",
+          "family": "run",
+          "familyLabel": "Protect identity",
+          "title": "Trust-Safe Twins",
+          "plain": "Design an AI likeness or voice system with consent, provenance, disclosure, and revocation built in.",
+          "result": "Inspect the safeguards around a digital twin.",
+          "action": "Meet the twins"
+        },
+        {
+          "resourceId": "university",
+          "family": "learn",
+          "familyLabel": "Learn for free",
+          "title": "Aloha AI University",
+          "plain": "Learn how modern businesses can use AI through lessons, playbooks, templates, and assessments.",
+          "result": "Choose a lesson or practical starting point.",
+          "action": "Enter University"
+        },
+        {
+          "resourceId": "build-your-team",
+          "family": "run",
+          "familyLabel": "Design the team",
+          "title": "Build Your AI Team",
+          "plain": "Turn repeated work into clear human and AI roles without hiding who remains responsible.",
+          "result": "See how roles, permissions, and review gates fit together.",
+          "action": "Design the team"
+        },
+        {
+          "resourceId": "aloha-ai-ce",
+          "family": "learn",
+          "familyLabel": "Train professionals",
+          "title": "Continuing Education",
+          "plain": "Explore evidence-grounded professional learning in AI, neuroscience, ethics, and emerging practice.",
+          "result": "Inspect the developing course catalog and status.",
+          "action": "See the catalog"
+        },
+        {
+          "resourceId": "cannabis-rescheduling",
+          "family": "track",
+          "familyLabel": "Track regulation",
+          "title": "Cannabis Rescheduling Monitor",
+          "plain": "Follow federal cannabis scheduling developments through dated primary sources instead of headlines.",
+          "result": "Check the current record and its sources.",
+          "action": "Open the monitor"
+        },
+        {
+          "resourceId": "psychedelic-radar",
+          "family": "track",
+          "familyLabel": "Track regulation",
+          "title": "Psychedelic Regulatory Radar",
+          "plain": "Separate federal, state, clinical, and program developments without blending unlike legal pathways.",
+          "result": "Explore the regulatory layers and receipts.",
+          "action": "Open the radar"
+        },
+        {
+          "resourceId": "legal-ai-workflow-teardown",
+          "family": "check",
+          "familyLabel": "Inspect a workflow",
+          "title": "Legal AI Workflow Teardown",
+          "plain": "See where hallucination risk enters legal research and where qualified human review must stay.",
+          "result": "Walk through the workflow one decision at a time.",
+          "action": "Read the teardown"
+        },
+        {
+          "resourceId": "ai-readiness-scorecard",
+          "family": "check",
+          "familyLabel": "Find the gap",
+          "title": "AI Readiness Scorecard",
+          "plain": "Check whether your team has the decisions, evidence, ownership, data, and workflow needed to use AI well.",
+          "result": "Get a private, in-browser starting point.",
+          "action": "Take the scorecard"
+        },
+        {
+          "resourceId": "workspace",
+          "family": "run",
+          "familyLabel": "Run the work",
+          "title": "Aloha AI Workspace",
+          "plain": "Bring assessments, evidence, approvals, projects, and governed AI workflows into one operating space.",
+          "result": "Inspect what the working environment is designed to hold.",
+          "action": "See the workspace"
+        }
       ]
     },
     "evidence": [
