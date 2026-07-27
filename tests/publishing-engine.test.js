@@ -516,6 +516,46 @@ test('routes the global navigation conversion action to the canonical contact en
   assert.doesNotMatch(shell, /link\('\/#start','Work with us'/);
 });
 
+test('renders services as a guided decision experience before registry and editorial depth', () => {
+  const services = {
+    ...resource('services'),
+    pathname: '/services',
+    actions: [{ label: 'Show me where to start', href: '#choose-problem' }],
+    servicesExperience: {
+      intro: 'Start with the sentence that sounds like your situation.',
+      problems: [{
+        signal: 'Evidence',
+        title: 'Our research is scattered.',
+        outcome: 'Build a maintained intelligence system.',
+        href: '/intelligence',
+        linkLabel: 'Explore intelligence'
+      }],
+      engagements: [{
+        step: '01',
+        title: 'Systems Audit',
+        fit: 'The intervention is not yet clear.',
+        detail: 'Map the current system.',
+        investment: '$1,500–$2,500'
+      }]
+    },
+    editorialSections: [{
+      title: 'In-depth service detail',
+      blocks: [{ type: 'paragraph', text: 'Long-form service explanation.' }]
+    }],
+    collection: { kinds: ['service'], heading: 'Explore every service' }
+  };
+  const intelligence = { ...resource('intelligence'), pathname: '/intelligence', kind: 'service' };
+  const html = renderStructuredPage({ resource: services, registry: new Map([[services.id, services], [intelligence.id, intelligence]]) });
+  assert.match(html, /id="choose-problem"/);
+  assert.match(html, /Which sentence sounds like your organization\?/);
+  assert.match(html, /Our research is scattered\./);
+  assert.match(html, /id="engagement-paths"/);
+  assert.match(html, /Systems Audit/);
+  assert.doesNotMatch(html, /Canonical ID: <code>services/);
+  assert.ok(html.indexOf('Which sentence sounds like your organization?') < html.indexOf('In-depth service detail'));
+  assert.match(html, /href="\/university\/contact"/);
+});
+
 test('renders a browser-only structured assessment from question metadata', () => {
   const assessment = {
     ...resource('roadmap', [{ type: 'supports', target: 'alpha' }]),

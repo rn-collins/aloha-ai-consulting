@@ -6,6 +6,93 @@
   "title": "Turn complex work into a system people can operate.",
   "summary": "A systems-practice service map for evidence-heavy, judgment-sensitive work, organized around leadership, research, content, legal workflows, governed agents, implementation, fractional ownership, and licensing.",
   "audience": "Regulated, reputation-sensitive, or institutionally complex organizations choosing the smallest useful route from ambiguity to an inspectable working system.",
+  "actions": [
+    {
+      "label": "Show me where to start",
+      "href": "#choose-problem"
+    },
+    {
+      "label": "Compare ways to begin",
+      "href": "#engagement-paths"
+    }
+  ],
+  "servicesExperience": {
+    "intro": "You do not need a technical plan or the right AI vocabulary. Start with the sentence that sounds most like your situation.",
+    "problems": [
+      {
+        "signal": "Direction",
+        "title": "We are using AI in different places, but no one owns the plan.",
+        "outcome": "Choose what matters, decide who is responsible, set clear rules, and turn experiments into everyday work.",
+        "href": "/strategy",
+        "linkLabel": "Explore AI strategy and fractional leadership"
+      },
+      {
+        "signal": "Evidence",
+        "title": "Research takes too long, lives in too many places, or goes out of date.",
+        "outcome": "Build one reliable system for finding, checking, comparing, and updating the information your team needs.",
+        "href": "/intelligence",
+        "linkLabel": "Explore regulatory and market intelligence"
+      },
+      {
+        "signal": "Adoption",
+        "title": "We know a lot, but that knowledge does not reliably become content, training, or action.",
+        "outcome": "Create a repeatable way to turn what your team knows into clear, accurate material people can use.",
+        "href": "/content",
+        "linkLabel": "Explore content and adoption systems"
+      },
+      {
+        "signal": "Legal work",
+        "title": "We want AI to help with legal work without risking privacy, accuracy, or human review.",
+        "outcome": "Design a careful workflow that shows its sources, stops for review, protects sensitive work, and keeps a person responsible.",
+        "href": "/legal-ai",
+        "linkLabel": "Explore legal AI workflow"
+      },
+      {
+        "signal": "Operations",
+        "title": "We want AI agents or an AI work team, but people still need to understand and control it.",
+        "outcome": "Give every agent a clear job, tools, limits, handoffs, tests, and a human owner.",
+        "href": "/build-your-team",
+        "linkLabel": "Explore AI work systems and teams"
+      },
+      {
+        "signal": "Scale",
+        "title": "We have valuable knowledge that should become a product, program, or service.",
+        "outcome": "Turn your method, data, curriculum, or expertise into something other people can understand, use, and pay for.",
+        "href": "/partners",
+        "linkLabel": "Explore products, programs, and licensing"
+      }
+    ],
+    "engagements": [
+      {
+        "step": "01",
+        "title": "Systems Audit",
+        "fit": "The problem is real, but you are not yet sure what to build or change.",
+        "detail": "See how the work happens now, where it breaks, who makes each decision, and which change would help most.",
+        "investment": "$1,500–$2,500 · about 2 weeks"
+      },
+      {
+        "step": "02",
+        "title": "Architecture Sprint",
+        "fit": "You know what you want to improve, but the system still needs a clear design.",
+        "detail": "Define what it should know, how it should work, what people review, what the interface shows, and how it will be introduced.",
+        "investment": "Scoped to complexity"
+      },
+      {
+        "step": "03",
+        "title": "Working System",
+        "fit": "You need something people can test and use—not another recommendation deck.",
+        "detail": "Build and test a research system, monitor, workflow, assessment, dashboard, portal, or knowledge product.",
+        "investment": "From $5,000 · commonly 4–6 weeks"
+      },
+      {
+        "step": "04",
+        "title": "Operate or Scale",
+        "fit": "The system works and now needs an owner, regular care, a team handoff, or a way to scale.",
+        "detail": "Lead the work, keep it accurate, teach the team, adapt it for new uses, or license it to others.",
+        "investment": "Leadership from $4,000/month"
+      }
+    ]
+  },
   "maturity": "Production",
   "topics": [
     "services",
