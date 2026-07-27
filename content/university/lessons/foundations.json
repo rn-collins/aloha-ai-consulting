@@ -3404,7 +3404,412 @@
         "type": "supports",
         "target": "ai-for-email-lesson"
       }
-    ]
+    ],
+    "editorialIntro": [
+      "Four assistants, four personalities. Here is what each does best, what the plans roughly cost, and how to pick, with every price flagged as verify-before-you-buy."
+    ],
+    "editorialSections": [
+      {
+        "title": "Prices move; strengths hold",
+        "eyebrow": "Read this first",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "AI vendors ship new models and change prices constantly. The figures below reflect the general shape of the plans in mid-2026. Model names and exact prices shift month to month, so confirm the current details on each vendor's own pricing page before you commit. The comparison of strengths is far more stable than the comparison of versions."
+          }
+        ]
+      },
+      {
+        "title": "What this covers",
+        "eyebrow": "Overview",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "A side-by-side look at the four assistants most businesses evaluate: ChatGPT from OpenAI, Claude from Anthropic, Gemini from Google, and Perplexity. All four are capable general tools. They differ in temperament, in where they live (a standalone app versus inside software you already use), and in how they handle sources. The goal is to help you pick a default and know when to switch."
+          },
+          {
+            "type": "heading",
+            "text": "Who it's for"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Anyone choosing a paid AI subscription and wanting to spend the twenty dollars well."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Teams standardizing on one or two tools instead of a chaotic mix."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "People who already use one and wonder what they are missing in the others."
+            ]
+          },
+          {
+            "type": "heading",
+            "text": "When to reach for it"
+          },
+          {
+            "type": "paragraph",
+            "text": "Use this when you are picking a first paid plan, when a task keeps frustrating your current tool and you suspect another one fits better, or when you are setting a team standard. A common, reasonable pattern for a small business is one general assistant (ChatGPT or Claude) plus Perplexity for research-heavy work where you need to see the sources."
+          },
+          {
+            "type": "heading",
+            "text": "When to skip it"
+          },
+          {
+            "type": "paragraph",
+            "text": "Do not treat this comparison as a substitute for checking each vendor's live pricing and terms, especially the data-use and privacy settings that matter for business. Do not choose a tool on benchmarks alone; on everyday business writing the top models differ little, and workflow fit usually matters more than a benchmark point. And do not assume you need the paid tier to start. Every one of these has a free tier good enough to evaluate on."
+          }
+        ]
+      },
+      {
+        "title": "Strengths, honestly",
+        "eyebrow": "The four tools",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "ChatGPT"
+          },
+          {
+            "type": "paragraph",
+            "text": "Reach for it when you want the broadest all-rounder: writing, coding, images, voice, data analysis, and a large feature set. A strong default for most people."
+          },
+          {
+            "type": "paragraph",
+            "text": "Watch out for feature sprawl and a model picker that can confuse beginners. Verify facts like any tool."
+          },
+          {
+            "type": "heading",
+            "text": "Claude"
+          },
+          {
+            "type": "paragraph",
+            "text": "Reach for it when you want careful, instruction-following writing and analysis over long documents. Many find its tone measured and its long-form work reliable."
+          },
+          {
+            "type": "paragraph",
+            "text": "Watch out for a smaller feature set than ChatGPT; image generation is not its focus."
+          },
+          {
+            "type": "heading",
+            "text": "Gemini"
+          },
+          {
+            "type": "paragraph",
+            "text": "Reach for it when you live in Google Workspace. It works inside Docs, Gmail, and Sheets, and handles very large inputs well."
+          },
+          {
+            "type": "paragraph",
+            "text": "Watch out for outputs that still need checking; much of its value depends on being in the Google ecosystem."
+          },
+          {
+            "type": "heading",
+            "text": "Perplexity"
+          },
+          {
+            "type": "paragraph",
+            "text": "Reach for it when you want answers with clickable citations for research and current-events questions. Built around search and sourcing."
+          },
+          {
+            "type": "paragraph",
+            "text": "Watch out for citations that need checking; a link is not proof the tool read the page correctly."
+          },
+          {
+            "type": "heading",
+            "text": "The plans, in general shape (verify current prices)"
+          },
+          {
+            "type": "table",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Tool",
+                    "header": true
+                  },
+                  {
+                    "text": "Free tier",
+                    "header": true
+                  },
+                  {
+                    "text": "Individual paid",
+                    "header": true
+                  },
+                  {
+                    "text": "Top individual tier",
+                    "header": true
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "ChatGPT (OpenAI)"
+                  },
+                  {
+                    "text": "Yes"
+                  },
+                  {
+                    "text": "Plus, around $20/mo"
+                  },
+                  {
+                    "text": "Pro, around $200/mo"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Claude (Anthropic)"
+                  },
+                  {
+                    "text": "Pro, around $20/mo"
+                  },
+                  {
+                    "text": "Max, around $100–$200/mo"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Gemini (Google)"
+                  },
+                  {
+                    "text": "Google AI Pro, around $20/mo"
+                  },
+                  {
+                    "text": "Google AI Ultra, higher tier"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Perplexity"
+                  },
+                  {
+                    "text": "Max, around $200/mo"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "The pattern is consistent: a free tier, a roughly $20 prosumer tier that most individuals and small teams should start on, and a premium tier (often around $200) for heavy users who need higher limits and the most capable models. Business and enterprise plans add admin controls and, importantly, agreements that your data will not be used to train models."
+          }
+        ]
+      },
+      {
+        "title": "A workflow for choosing",
+        "eyebrow": "Try it",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Write one real prompt from your work. Something you actually need done this week, not a toy question.",
+              "Run it in all four free tiers. Same prompt, same day.",
+              "Judge on your criteria: Did it follow instructions? Was the tone right? Did it invent anything? How much editing did the output need?",
+              "Check the data terms for your likely plan. Confirm whether inputs train the model and how to turn that off.",
+              "Pick a default and a specialist. One general tool for daily work, plus Perplexity if research and citations are frequent.",
+              "Reevaluate quarterly. The rankings shift. A ten-minute re-test each quarter keeps you honest."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Test the same task everywhere",
+        "eyebrow": "Example prompts",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Run the same test prompt across all four to compare fairly:"
+          },
+          {
+            "type": "code",
+            "text": "Summarize the three most important points a first-time buyer should know about our product from the notes below. Keep it under 120 words, plain language, no marketing fluff. Do not add any claim not in the notes. [paste your product notes]"
+          },
+          {
+            "type": "paragraph",
+            "text": "And a research prompt that shows off sourcing differences:"
+          },
+          {
+            "type": "code",
+            "text": "What are the current federal recordkeeping requirements for small employers regarding payroll? Give me the answer with links to the primary government source for each point, and tell me the date each source was last updated if you can see it."
+          }
+        ]
+      },
+      {
+        "title": "Where sourcing shows its hand",
+        "eyebrow": "Example outputs",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "On the research prompt, the tools behave differently in a telling way. Perplexity tends to return a tidy answer with numbered citations you can click. A general chat tool in search mode returns something similar; the same tool with search off may write a fluent answer with no real sources, which is exactly the failure mode to catch."
+          },
+          {
+            "type": "paragraph",
+            "text": "Perplexity-style: \"Employers must keep payroll records for at least three years [1]. Records must include hours worked and wages paid [1][2]. [1] dol.gov/... [2] dol.gov/...\""
+          },
+          {
+            "type": "paragraph",
+            "text": "Chat tool, search off: a confident, well-organized answer that sounds authoritative but cites nothing verifiable. Treat it as a draft of questions to confirm, never as the legal answer."
+          },
+          {
+            "type": "paragraph",
+            "text": "Either way, you still open the government page yourself. The tool that shows sources just makes that faster."
+          }
+        ]
+      },
+      {
+        "title": "Risks and common mistakes",
+        "eyebrow": "Watch outs",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Choosing on hype or benchmarks instead of your own test"
+          },
+          {
+            "type": "paragraph",
+            "text": "The only benchmark that matters is your real task. Run it before you decide."
+          },
+          {
+            "type": "heading",
+            "text": "Ignoring data-use settings"
+          },
+          {
+            "type": "paragraph",
+            "text": "Consumer tiers may train on your inputs unless you opt out. For anything sensitive, use a business plan with a no-training agreement."
+          },
+          {
+            "type": "heading",
+            "text": "Assuming a citation means the claim is right"
+          },
+          {
+            "type": "paragraph",
+            "text": "Models sometimes cite a real page that does not actually support the statement. Open it."
+          },
+          {
+            "type": "heading",
+            "text": "Paying for the top tier before you need it"
+          },
+          {
+            "type": "paragraph",
+            "text": "Start at the free or $20 tier; upgrade when limits actually bite."
+          },
+          {
+            "type": "heading",
+            "text": "Trusting these prices to be current"
+          },
+          {
+            "type": "paragraph",
+            "text": "They change often. Confirm on each vendor page before you buy."
+          }
+        ]
+      },
+      {
+        "title": "Human review checklist",
+        "eyebrow": "Before you commit",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "Did I test my real work in each tool rather than trusting a review?"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Did I confirm current pricing and model names on each vendor's own page?"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Do I know whether my plan uses my inputs for training, and have I set it the way I want?"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "For research answers, did I open the cited sources and confirm they say what the tool claims?"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Have I picked a sensible default plus one specialist rather than paying for everything?"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Related lessons",
+        "eyebrow": "Keep learning",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "What AI can and cannot do"
+          },
+          {
+            "type": "paragraph",
+            "text": "Match the tool to the job it can actually handle."
+          },
+          {
+            "type": "heading",
+            "text": "Prompting fundamentals"
+          },
+          {
+            "type": "paragraph",
+            "text": "Better prompts narrow the quality gap between any of these tools."
+          },
+          {
+            "type": "heading",
+            "text": "How to verify AI outputs"
+          },
+          {
+            "type": "paragraph",
+            "text": "Even the best of these needs checking. Here is how."
+          }
+        ]
+      },
+      {
+        "title": "Using one of these for research specifically?",
+        "eyebrow": "Tool guide",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Best AI for research"
+          },
+          {
+            "type": "paragraph",
+            "text": "A deeper look at which tool to reach for depending on your research type — with Perplexity, Elicit, and Consensus in the mix."
+          }
+        ]
+      },
+      {
+        "title": "Not sure which stack fits your team?",
+        "eyebrow": "Next step",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Take the free AI Roadmap Assessment. It recommends a starting toolset based on your workflows, budget, and privacy needs, with no vendor bias."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "university/learn/chatgpt-vs-claude-vs-gemini-vs-perplexity/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "ai-for-email-lesson",

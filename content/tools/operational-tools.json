@@ -1258,7 +1258,7 @@
     "kind": "tool",
     "pathname": "/tools/policy-generator",
     "eyebrow": "Legal AI governance tool",
-    "title": "AI Governance Policy Generator",
+    "title": "Generate a firm-specific AI governance policy template.",
     "summary": "A browser-local generator for a reviewable first-draft AI governance policy covering approved tools, confidentiality, verification, supervision, retention, and accountability.",
     "audience": "Law firms and professional-service teams beginning a documented AI-governance process.",
     "maturity": "Beta",
@@ -1324,7 +1324,209 @@
         "type": "implements",
         "target": "trust-stack"
       }
-    ]
+    ],
+    "seoTitle": "AI Governance Policy Generator",
+    "editorialIntro": [
+      "Answer a short form about your firm, your approved tools, and who holds sign-off. This generator drafts a policy mapped to ABA Formal Opinion 512 and Model Rules 1.1, 1.6, 3.3, 5.1, and 5.3, with your inputs written into the right clauses. Download it as Markdown or printable HTML. It runs in your browser. Nothing you enter leaves this page.",
+      "Built by RN Collins. Neuroscientist (MS) · Administrative & regulatory law (JD candidate) · AI Workflow Developer, Am Law firm"
+    ],
+    "editorialSections": [
+      {
+        "title": "ABA 512 made \"govern your AI\" a written obligation",
+        "eyebrow": "Why this exists",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "ABA Formal Opinion 512 reads the existing Model Rules onto generative AI: competent, confidential, candid, supervised use already applies. A firm that uses AI well but writes none of it down cannot show the practice when it counts. This generator gives you a first draft of that written record, with your firm's own tools, roles, and retention preferences interpolated into the clauses each duty implies. The Governance Readiness Scorecard tells you where your documented practice is thin; this tool gives you a document to start closing that gap."
+          },
+          {
+            "type": "heading",
+            "text": "What it produces"
+          },
+          {
+            "type": "paragraph",
+            "text": "A structured policy: purpose and scope, approved tools, roles and sign-off, a duty-by-duty mapping to the Model Rules, a mandatory verification workflow, audit and retention terms, prohibited uses, and acknowledgment. Your inputs land in the correct clauses."
+          },
+          {
+            "type": "heading",
+            "text": "What it can't do"
+          },
+          {
+            "type": "paragraph",
+            "text": "It cannot adapt to your jurisdiction's specific rules, and it does not give legal advice. It maps to published ABA and Model-Rule guidance and hands you a draft. A licensed attorney reviews and adapts it before adoption."
+          }
+        ]
+      },
+      {
+        "title": "Enter your firm's inputs",
+        "eyebrow": "The generator",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Fill in what applies. Anything left blank falls back to a sensible placeholder your reviewing attorney can replace. The policy generates on your device with no network call."
+          },
+          {
+            "type": "heading",
+            "text": "Your generated policy"
+          },
+          {
+            "type": "paragraph",
+            "text": "This is a starting template. Review with your licensed counsel before adoption."
+          },
+          {
+            "type": "paragraph",
+            "text": "This tool runs entirely in your browser. The only information that ever leaves your device is the email address you optionally submit below once Beehiiv is connected."
+          },
+          {
+            "type": "paragraph",
+            "text": "Send it to your inbox and get occasional build notes from Aloha AI."
+          },
+          {
+            "type": "paragraph",
+            "text": "Connect Beehiiv to enable signups."
+          },
+          {
+            "type": "paragraph",
+            "text": "Template for attorney review. Not legal advice. RN Collins is a JD candidate, not a licensed attorney. This generates a starting draft mapped to published ABA Formal Opinion 512 and Model Rules 1.1, 1.6, 3.3, 5.1, and 5.3. It is not legal advice, not a compliance determination, and creates no attorney–client relationship. A licensed attorney admitted in your jurisdiction must review and adapt it."
+          }
+        ]
+      },
+      {
+        "title": "Eight sections, mapped to the duties",
+        "eyebrow": "What it covers",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The draft mirrors a working firm policy: your inputs write into scope, tools, roles, retention, and the duty-by-duty controls. Each rule maps to a concrete step, not an abstract principle."
+          },
+          {
+            "type": "heading",
+            "text": "Competence"
+          },
+          {
+            "type": "paragraph",
+            "text": "The lawyer must understand what the tool can and cannot do, including that it can fabricate authority. The draft ties this to a verification control."
+          },
+          {
+            "type": "heading",
+            "text": "Confidentiality"
+          },
+          {
+            "type": "paragraph",
+            "text": "Client information only enters approved, vetted tools. Your confidentiality preference shapes this clause."
+          },
+          {
+            "type": "heading",
+            "text": "Candor to the tribunal"
+          },
+          {
+            "type": "paragraph",
+            "text": "A non-delegable pre-filing gate: no AI-assisted filing until a responsible attorney certifies every authority."
+          },
+          {
+            "type": "heading",
+            "text": "Supervision"
+          },
+          {
+            "type": "paragraph",
+            "text": "Your sign-off role reviews the audit record and enforces the policy over lawyers and non-lawyer assistance alike."
+          },
+          {
+            "type": "heading",
+            "text": "Verification & audit"
+          },
+          {
+            "type": "paragraph",
+            "text": "A mandatory verification workflow and an audit trail retained for the period you set, so the practice can be shown."
+          },
+          {
+            "type": "heading",
+            "text": "Prohibited uses & acknowledgment"
+          },
+          {
+            "type": "paragraph",
+            "text": "Clear prohibitions and an annual acknowledgment requirement for everyone who touches AI on client work."
+          }
+        ]
+      },
+      {
+        "title": "RN builds the documented, auditable, firm-specific policy around it",
+        "eyebrow": "This is a starting template",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "This generator hands you a first draft. The paid path is the real thing: a documented, auditable AI-governance policy adapted to your jurisdiction and your matters, with the enforcement hooks built in. That means verification gates wired into your drafting and filing workflow, a tool-vetting standard for Rule 1.6, named supervisory accountability, and an audit trail leadership can defend. It sits inside the systems your team already runs."
+          },
+          {
+            "type": "heading",
+            "text": "What I build"
+          },
+          {
+            "type": "paragraph",
+            "text": "A policy adapted to your jurisdiction and acknowledged by every timekeeper, verification gates placed where risk lives, a tool-vetting standard, named supervisory accountability, and a defensible audit trail."
+          },
+          {
+            "type": "heading",
+            "text": "What you get"
+          },
+          {
+            "type": "list",
+            "items": [
+              "A counsel-reviewed policy mapped to ABA 512 and your conduct duties"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Enforcement hooks in your drafting and filing workflow"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Documentation that shows the practice, not just claims it"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Firm/GC advisory to keep it current as guidance moves"
+            ]
+          },
+          {
+            "type": "heading",
+            "text": "How to start"
+          },
+          {
+            "type": "paragraph",
+            "text": "A short scoping call. Most firms begin with a Systems Audit: the fastest proof, and it points to the duty worth documenting first."
+          },
+          {
+            "type": "paragraph",
+            "text": "Related tools: the Governance Readiness Scorecard scores where your documented practice is thin, and the Citation Verifier demonstrates one verification gate, catching fabricated case cites before a filing. The Legal AI Workflow & Governance pillar covers verification-gated workflows and trust-safe governance end to end."
+          }
+        ]
+      },
+      {
+        "title": "Ready when you are.",
+        "eyebrow": "Aloha AI · Honolulu",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Convinced, curious, or comparing, there's a path for each."
+          },
+          {
+            "type": "paragraph",
+            "text": "Prefer email? Email RN · or connect on LinkedIn"
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "tools/policy-generator/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "prompt-to-workflow",

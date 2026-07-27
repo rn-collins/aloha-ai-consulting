@@ -8,20 +8,67 @@
     "summary": "Aloha AI helps leaders determine where AI belongs, what evidence and governance the work requires, who remains accountable, and which initiatives should be designed, piloted, stopped, or scaled.",
     "audience": "Founders, executives, legal and compliance leaders, program owners, and institutions managing consequential AI adoption.",
     "maturity": "Production",
-    "topics": ["ai-strategy", "governance", "operating-models", "implementation"],
-    "deliverables": ["AI opportunity and risk map", "Decision-rights matrix", "Governance and review model", "Prioritized implementation roadmap", "Executive operating cadence"],
+    "topics": [
+      "ai-strategy",
+      "governance",
+      "operating-models",
+      "implementation"
+    ],
+    "deliverables": [
+      "AI opportunity and risk map",
+      "Decision-rights matrix",
+      "Governance and review model",
+      "Prioritized implementation roadmap",
+      "Executive operating cadence"
+    ],
     "timeline": "Systems Audit in about 2 weeks; architecture and implementation scopes follow the validated priorities.",
-    "fit": ["AI activity is scattered across teams", "Leadership cannot distinguish experiments from durable operating systems", "Consequential workflows require explicit review and ownership"],
-    "evidence": ["Current workflow materials", "Policies and authority structures", "Representative decisions and failure cases", "Primary technical and regulatory sources"],
-    "methodology": ["Map decisions and consequences", "Inventory evidence, tools, and roles", "Separate deterministic rules from generative work", "Design approval and escalation paths", "Prioritize bounded pilots"],
-    "assumptions": ["An accountable internal owner participates", "Access is provided to representative workflows and source materials"],
-    "limitations": ["Strategy does not replace licensed legal, medical, tax, clinical, privacy, or security advice", "Recommendations remain dependent on source quality and organizational participation"],
+    "fit": [
+      "AI activity is scattered across teams",
+      "Leadership cannot distinguish experiments from durable operating systems",
+      "Consequential workflows require explicit review and ownership"
+    ],
+    "evidence": [
+      "Current workflow materials",
+      "Policies and authority structures",
+      "Representative decisions and failure cases",
+      "Primary technical and regulatory sources"
+    ],
+    "methodology": [
+      "Map decisions and consequences",
+      "Inventory evidence, tools, and roles",
+      "Separate deterministic rules from generative work",
+      "Design approval and escalation paths",
+      "Prioritize bounded pilots"
+    ],
+    "assumptions": [
+      "An accountable internal owner participates",
+      "Access is provided to representative workflows and source materials"
+    ],
+    "limitations": [
+      "Strategy does not replace licensed legal, medical, tax, clinical, privacy, or security advice",
+      "Recommendations remain dependent on source quality and organizational participation"
+    ],
     "relationships": [
-      {"type": "extends", "target": "services"},
-      {"type": "supports", "target": "build-your-team"},
-      {"type": "uses", "target": "methods"},
-      {"type": "uses", "target": "ai-readiness-scorecard"},
-      {"type": "teaches", "target": "university"}
+      {
+        "type": "extends",
+        "target": "services"
+      },
+      {
+        "type": "supports",
+        "target": "build-your-team"
+      },
+      {
+        "type": "uses",
+        "target": "methods"
+      },
+      {
+        "type": "uses",
+        "target": "ai-readiness-scorecard"
+      },
+      {
+        "type": "teaches",
+        "target": "university"
+      }
     ]
   },
   {
@@ -33,20 +80,67 @@
     "summary": "Aloha AI designs research engines that discover, verify, compare, classify, monitor, and maintain legal, regulatory, scientific, market, opportunity, and institutional information.",
     "audience": "Teams whose decisions depend on changing, fragmented, or difficult-to-verify information.",
     "maturity": "Production",
-    "topics": ["research", "primary-sources", "monitoring", "verification"],
-    "deliverables": ["Source hierarchy and register", "Canonical taxonomy and data model", "Verification and conflict rules", "Monitoring cadence", "Decision briefs, dashboards, or maintained datasets"],
+    "topics": [
+      "research",
+      "primary-sources",
+      "monitoring",
+      "verification"
+    ],
+    "deliverables": [
+      "Source hierarchy and register",
+      "Canonical taxonomy and data model",
+      "Verification and conflict rules",
+      "Monitoring cadence",
+      "Decision briefs, dashboards, or maintained datasets"
+    ],
     "timeline": "Initial architecture commonly takes 2–4 weeks; monitored systems require an agreed review and maintenance cadence.",
-    "fit": ["Research is repeatedly recreated", "Sources disagree or change", "Decision makers need traceable evidence rather than summaries alone"],
-    "evidence": ["Primary legal authorities", "Official regulatory and institutional publications", "Peer-reviewed research when relevant", "Versioned internal records"],
-    "methodology": ["Define the question and source hierarchy", "Collect broad candidate evidence", "Verify and normalize records", "Resolve conflicts and uncertainty", "Publish maintained outputs with review dates"],
-    "assumptions": ["Primary sources are available or discoverable", "The organization agrees on the decisions the intelligence must support"],
-    "limitations": ["No monitor guarantees immediate detection of every change", "Interpretation remains bounded by the retrieved evidence and defined jurisdiction or domain"],
+    "fit": [
+      "Research is repeatedly recreated",
+      "Sources disagree or change",
+      "Decision makers need traceable evidence rather than summaries alone"
+    ],
+    "evidence": [
+      "Primary legal authorities",
+      "Official regulatory and institutional publications",
+      "Peer-reviewed research when relevant",
+      "Versioned internal records"
+    ],
+    "methodology": [
+      "Define the question and source hierarchy",
+      "Collect broad candidate evidence",
+      "Verify and normalize records",
+      "Resolve conflicts and uncertainty",
+      "Publish maintained outputs with review dates"
+    ],
+    "assumptions": [
+      "Primary sources are available or discoverable",
+      "The organization agrees on the decisions the intelligence must support"
+    ],
+    "limitations": [
+      "No monitor guarantees immediate detection of every change",
+      "Interpretation remains bounded by the retrieved evidence and defined jurisdiction or domain"
+    ],
     "relationships": [
-      {"type": "extends", "target": "services"},
-      {"type": "uses", "target": "citation-verifier"},
-      {"type": "uses", "target": "methods"},
-      {"type": "documents", "target": "cannabis-rescheduling"},
-      {"type": "teaches", "target": "university"}
+      {
+        "type": "extends",
+        "target": "services"
+      },
+      {
+        "type": "uses",
+        "target": "citation-verifier"
+      },
+      {
+        "type": "uses",
+        "target": "methods"
+      },
+      {
+        "type": "documents",
+        "target": "cannabis-rescheduling"
+      },
+      {
+        "type": "teaches",
+        "target": "university"
+      }
     ]
   },
   {
@@ -58,20 +152,67 @@
     "summary": "Aloha AI designs bounded research, drafting, review, intake, and knowledge workflows with source controls, permissions, approval gates, evaluation, and accountable attorney supervision where required.",
     "audience": "Law firms, legal departments, legal-technology teams, and regulated organizations improving legal work without treating model output as authority.",
     "maturity": "Beta",
-    "topics": ["legal-ai", "verification", "professional-responsibility", "workflow-design"],
-    "deliverables": ["Workflow and risk map", "Source and citation rules", "Role and permission contracts", "Human-review gates", "Evaluation cases and implementation documentation"],
+    "topics": [
+      "legal-ai",
+      "verification",
+      "professional-responsibility",
+      "workflow-design"
+    ],
+    "deliverables": [
+      "Workflow and risk map",
+      "Source and citation rules",
+      "Role and permission contracts",
+      "Human-review gates",
+      "Evaluation cases and implementation documentation"
+    ],
     "timeline": "A bounded workflow can be diagnosed and architected in 2–4 weeks; implementation depends on systems, permissions, and supervision requirements.",
-    "fit": ["The team repeats research or drafting work", "Citation and confidentiality failures carry material consequences", "Attorneys need reviewable assistance rather than autonomous legal judgment"],
-    "evidence": ["Controlling authority and approved research systems", "Firm or department policies", "Representative matters and failure cases", "Documented evaluation results"],
-    "methodology": ["Define the legal task and prohibited model roles", "Specify approved sources and retrieval", "Create structured intermediate outputs", "Require verification and attorney review", "Evaluate against realistic matters before expansion"],
-    "assumptions": ["A licensed attorney controls legal judgment and supervision where required", "Confidentiality and system-access requirements are defined"],
-    "limitations": ["Aloha AI does not provide legal advice or create an attorney-client relationship", "No AI output should be filed, sent, or relied upon without the review required by the responsible professional"],
+    "fit": [
+      "The team repeats research or drafting work",
+      "Citation and confidentiality failures carry material consequences",
+      "Attorneys need reviewable assistance rather than autonomous legal judgment"
+    ],
+    "evidence": [
+      "Controlling authority and approved research systems",
+      "Firm or department policies",
+      "Representative matters and failure cases",
+      "Documented evaluation results"
+    ],
+    "methodology": [
+      "Define the legal task and prohibited model roles",
+      "Specify approved sources and retrieval",
+      "Create structured intermediate outputs",
+      "Require verification and attorney review",
+      "Evaluate against realistic matters before expansion"
+    ],
+    "assumptions": [
+      "A licensed attorney controls legal judgment and supervision where required",
+      "Confidentiality and system-access requirements are defined"
+    ],
+    "limitations": [
+      "Aloha AI does not provide legal advice or create an attorney-client relationship",
+      "No AI output should be filed, sent, or relied upon without the review required by the responsible professional"
+    ],
     "relationships": [
-      {"type": "extends", "target": "services"},
-      {"type": "uses", "target": "citation-verifier"},
-      {"type": "implements", "target": "trust-stack"},
-      {"type": "uses", "target": "methods"},
-      {"type": "teaches", "target": "university"}
+      {
+        "type": "extends",
+        "target": "services"
+      },
+      {
+        "type": "uses",
+        "target": "citation-verifier"
+      },
+      {
+        "type": "implements",
+        "target": "trust-stack"
+      },
+      {
+        "type": "uses",
+        "target": "methods"
+      },
+      {
+        "type": "teaches",
+        "target": "university"
+      }
     ]
   },
   {
@@ -83,24 +224,289 @@
     "summary": "A six-layer operating framework for evidence, compliance, production, persuasion, distribution, and defense in regulated and institutionally sensitive markets.",
     "audience": "Organizations whose public claims, internal workflows, and AI-assisted production must remain inspectable and defensible.",
     "maturity": "Beta",
-    "topics": ["trust", "compliance", "evidence", "regulated-markets"],
-    "architecture": ["Evidence layer", "Regulatory layer", "Production layer", "Persuasion layer", "Distribution layer", "Defense layer"],
+    "topics": [
+      "trust",
+      "compliance",
+      "evidence",
+      "regulated-markets"
+    ],
+    "architecture": [
+      "Evidence layer",
+      "Regulatory layer",
+      "Production layer",
+      "Persuasion layer",
+      "Distribution layer",
+      "Defense layer"
+    ],
     "implementationStatus": "Framework and component pages are public; individual tools vary from research concept to working beta.",
-    "roadmap": ["Unify component documentation", "Publish versioned evidence and method registries", "Connect assessments to Workspace recommendations", "Add licensing and institutional implementation packages"],
-    "changelog": ["2026-07: unified product architecture defined", "2026-07: component routes and public documentation consolidated"],
-    "documentation": ["Architecture overview", "Component documentation", "Evidence and method disclosures", "Implementation and governance guidance"],
+    "roadmap": [
+      "Unify component documentation",
+      "Publish versioned evidence and method registries",
+      "Connect assessments to Workspace recommendations",
+      "Add licensing and institutional implementation packages"
+    ],
+    "changelog": [
+      "2026-07: unified product architecture defined",
+      "2026-07: component routes and public documentation consolidated"
+    ],
+    "documentation": [
+      "Architecture overview",
+      "Component documentation",
+      "Evidence and method disclosures",
+      "Implementation and governance guidance"
+    ],
     "licensing": "Available for institutional adaptation, implementation partnerships, and defined licensing scopes.",
-    "evidence": ["Primary authorities and source registers for each component", "Documented methods", "Versioned product status and limitations"],
-    "methodology": ["Identify the consequential claim or workflow", "Attach evidence and applicable rules", "Govern production and approval", "Measure distribution and suppression risk", "Preserve a defensible record"],
-    "assumptions": ["Organizations retain accountable professionals", "Each component is configured for the relevant jurisdiction and use case"],
-    "limitations": ["The framework is not a substitute for licensed advice", "Component maturity and coverage differ and must be inspected before use"],
+    "evidence": [
+      "Primary authorities and source registers for each component",
+      "Documented methods",
+      "Versioned product status and limitations"
+    ],
+    "methodology": [
+      "Identify the consequential claim or workflow",
+      "Attach evidence and applicable rules",
+      "Govern production and approval",
+      "Measure distribution and suppression risk",
+      "Preserve a defensible record"
+    ],
+    "assumptions": [
+      "Organizations retain accountable professionals",
+      "Each component is configured for the relevant jurisdiction and use case"
+    ],
+    "limitations": [
+      "The framework is not a substitute for licensed advice",
+      "Component maturity and coverage differ and must be inspected before use"
+    ],
     "relationships": [
-      {"type": "implements", "target": "services"},
-      {"type": "supports", "target": "legal-ai"},
-      {"type": "supports", "target": "leak-check"},
-      {"type": "supports", "target": "regulatory-intelligence"},
-      {"type": "teaches", "target": "university"}
-    ]
+      {
+        "type": "implements",
+        "target": "services"
+      },
+      {
+        "type": "supports",
+        "target": "legal-ai"
+      },
+      {
+        "type": "supports",
+        "target": "leak-check"
+      },
+      {
+        "type": "supports",
+        "target": "regulatory-intelligence"
+      },
+      {
+        "type": "teaches",
+        "target": "university"
+      }
+    ],
+    "editorialIntro": [
+      "Six layers, one operating system for earning trust in regulated markets. In regulated and reputation-sensitive work the scarce resource is trust, and trust is a nervous-system event. A platform's classifier, a human audience, a regulator, and a buyer all run the same appraisal loop. Every expensive failure is a trust-appraisal failure somewhere in that loop.",
+      "Ground truth · Applied intelligence · Compliance · Production · Persuasion · Defense"
+    ],
+    "editorialSections": [
+      {
+        "title": "One problem wearing six masks",
+        "eyebrow": "The problem",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "A fabricated citation. A funder who catches you wrong on a live rule. A reporting miss that turns into a license event. Content the brain reads as noise and the classifier reads as threat. Distribution that quietly evaporates before anyone runs the numbers."
+          },
+          {
+            "type": "heading",
+            "text": "Most operators shop for six unrelated fixes"
+          },
+          {
+            "type": "paragraph",
+            "text": "They treat each of these as its own emergency and buy a separate guide for each. The fixes never compound, because they were never one library to begin with."
+          },
+          {
+            "type": "heading",
+            "text": "Underneath, it is one loop"
+          },
+          {
+            "type": "paragraph",
+            "text": "Appraise the source, scan for threat, then decide whether to grant reach, belief, a license, or a purchase. The classifier, the audience, the regulator, and the buyer all run it. Fix the loop once and every symptom moves."
+          }
+        ]
+      },
+      {
+        "title": "Why this is one system, not six guides",
+        "eyebrow": "The sequence logic",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Verify the truth → prove it in a live market → operate it cleanly → produce it at scale → make people believe it → defend its reach."
+          },
+          {
+            "type": "paragraph",
+            "text": "You cannot run persuasion on facts you never verified. You cannot produce content at scale without a knowledge base that holds up. You cannot defend distribution you never engineered. The layers depend on each other in a fixed order, and the order is the point. Each layer stands on the one beneath it. Pull out a lower layer and everything above it inherits the crack."
+          }
+        ]
+      },
+      {
+        "title": "Each product stands on its own",
+        "eyebrow": "The six layers",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The stack is the dependency chain that connects them. Buy a single layer where the pain is, or take the whole system as a bundle."
+          },
+          {
+            "type": "heading",
+            "text": "Primary-Source Regulatory Intelligence · the IDR Engine"
+          },
+          {
+            "type": "paragraph",
+            "text": "A professional methodology for pinning regulatory claims to primary sources. The ground truth everything else stands on."
+          },
+          {
+            "type": "paragraph",
+            "text": "Regulated operators, in-house teams, and researchers who replace billable research hours with a repeatable, citeable method."
+          },
+          {
+            "type": "paragraph",
+            "text": "The Ingest–Digest–Regurgitate (IDR) method, a source ledger with retrieval dates, and templates you can run across any jurisdiction."
+          },
+          {
+            "type": "heading",
+            "text": "Multi-State Psilocybin Regulatory + Funder Map"
+          },
+          {
+            "type": "paragraph",
+            "text": "Oregon, Colorado, New Mexico. Every statute pinned, every funder verified, every claim carrying a retrieval date and a place in the ledger."
+          },
+          {
+            "type": "paragraph",
+            "text": "Founders, funders, and operators moving inside state psilocybin programs who need current, sourced status at a glance."
+          },
+          {
+            "type": "paragraph",
+            "text": "State-by-state statutory map, a verified funder list, and the IDR ledger behind every entry. Reflects a point in time; re-verify before reliance."
+          },
+          {
+            "type": "heading",
+            "text": "Oregon SB 303 Compliance Kit"
+          },
+          {
+            "type": "paragraph",
+            "text": "Compliance you engineer with the regulator, not a burden you survive. Built on Audit-Ready Operations for licensed operators."
+          },
+          {
+            "type": "paragraph",
+            "text": "Licensed Oregon psilocybin operators facing license-level stakes, and the teams who keep them audit-ready."
+          },
+          {
+            "type": "paragraph",
+            "text": "SB 303 requirement breakdown, reporting workflows, and audit-preparation checklists. Reflects a point in time; confirm against the current rule."
+          },
+          {
+            "type": "heading",
+            "text": "AI Content System (DIY)"
+          },
+          {
+            "type": "paragraph",
+            "text": "A do-it-yourself production guide built on the Five-Domain Knowledge Base and grounded by the IDR Engine. Replaces a consulting build."
+          },
+          {
+            "type": "paragraph",
+            "text": "Regulated organizations that want to produce trustworthy content at scale without hiring the build out."
+          },
+          {
+            "type": "paragraph",
+            "text": "Knowledge-base architecture, voice profiles, production workflows, and guardrails that keep the facts sourced."
+          },
+          {
+            "type": "heading",
+            "text": "EDSA · Neuroscience-of-Trust Content Architecture"
+          },
+          {
+            "type": "paragraph",
+            "text": "Engineering credibility for the audience's nervous system and the platform's classifier at the same time."
+          },
+          {
+            "type": "paragraph",
+            "text": "Creators, nonprofits, and regulated brands who need content people believe and platforms will carry."
+          },
+          {
+            "type": "paragraph",
+            "text": "The EDSA content architecture, trust-signal patterns, and a structure that reads as safe to both a human and a classifier."
+          },
+          {
+            "type": "heading",
+            "text": "Platform Suppression Playbook"
+          },
+          {
+            "type": "paragraph",
+            "text": "Nervous-system-aware monitoring for reduced content distribution. Defend the reach you engineered."
+          },
+          {
+            "type": "paragraph",
+            "text": "Anyone whose distribution quietly erodes on a platform they do not control and who wants to catch it early."
+          },
+          {
+            "type": "paragraph",
+            "text": "Suppression-detection methods, a monitoring cadence, and recovery moves to rebuild throttled reach."
+          }
+        ]
+      },
+      {
+        "title": "Run the system instead of assembling it",
+        "eyebrow": "The hero offer",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "All six layers in one place, priced below the sum of the parts. This is the price of the full dependency chain in one voice and one shared vocabulary, so the layers actually compound instead of contradicting each other."
+          },
+          {
+            "type": "paragraph",
+            "text": "Individually the six layers total $932. The bundle is $697, about 25% off. The saving is not the point; the system is."
+          },
+          {
+            "type": "paragraph",
+            "text": "Checkout is handled by Gumroad. Not sure yet? Run the free diagnostic first."
+          }
+        ]
+      },
+      {
+        "title": "One mind behind all six layers",
+        "eyebrow": "The differentiator",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Four specialists could each write one of these. None could write all six from a single mind, because the through-line is a combination that does not otherwise sit in one operator."
+          },
+          {
+            "type": "paragraph",
+            "text": "That is what lets one person say, and mean, that trust is a nervous-system event, then engineer every layer for how the nervous system grants it. Copy a single product and you copy a symptom. The system is the moat."
+          }
+        ]
+      },
+      {
+        "title": "Where is your trust stack leaking?",
+        "eyebrow": "Not sure where to start",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The diagnostic is the front door. It scores you on all six layers and returns your weakest one, plus the layer above it that is inheriting the damage, in about five minutes, with nothing sent anywhere. Most operators score low on three or more."
+          }
+        ]
+      },
+      {
+        "title": "Get the stack, or find the leak first.",
+        "eyebrow": "Aloha AI · The Regulated Trust Stack",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Take all six layers in one bundle, or run the leak-check and start at the single layer it names as your weakest. Five minutes either way."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "trust-stack/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "university",
@@ -111,37 +517,138 @@
     "summary": "Free foundations, practical lessons, assessments, playbooks, templates, courses, and continuing education that explain the same methods used across Aloha AI consulting, products, research, and tools.",
     "audience": "People and institutions that want to understand, evaluate, govern, and operate AI systems before or alongside implementation.",
     "maturity": "Beta",
-    "topics": ["education", "ai-literacy", "governance", "workflows"],
-    "learningPaths": ["AI foundations", "Research and verification", "Workflow design", "Governance and risk", "Legal AI", "Knowledge systems", "Courses and continuing education"],
-    "evidence": ["Primary technical documentation", "Applicable professional and regulatory guidance", "Demonstrated Aloha AI methods and builds"],
-    "methodology": ["Begin with the learner's decision or workflow", "Teach the underlying concept", "Demonstrate a bounded application", "Require verification and reflection", "Connect learning to tools, services, and implementation"],
-    "assumptions": ["Learners apply professional guidance appropriate to their context", "Courses and tools identify their own prerequisites and maturity"],
-    "limitations": ["Educational content is not professional advice", "Platform features, course availability, and continuing-education approval may vary"],
+    "topics": [
+      "education",
+      "ai-literacy",
+      "governance",
+      "workflows"
+    ],
+    "learningPaths": [
+      "AI foundations",
+      "Research and verification",
+      "Workflow design",
+      "Governance and risk",
+      "Legal AI",
+      "Knowledge systems",
+      "Courses and continuing education"
+    ],
+    "evidence": [
+      "Primary technical documentation",
+      "Applicable professional and regulatory guidance",
+      "Demonstrated Aloha AI methods and builds"
+    ],
+    "methodology": [
+      "Begin with the learner's decision or workflow",
+      "Teach the underlying concept",
+      "Demonstrate a bounded application",
+      "Require verification and reflection",
+      "Connect learning to tools, services, and implementation"
+    ],
+    "assumptions": [
+      "Learners apply professional guidance appropriate to their context",
+      "Courses and tools identify their own prerequisites and maturity"
+    ],
+    "limitations": [
+      "Educational content is not professional advice",
+      "Platform features, course availability, and continuing-education approval may vary"
+    ],
     "relationships": [
-      {"type": "documents", "target": "services"},
-      {"type": "teaches", "target": "strategy"},
-      {"type": "teaches", "target": "intelligence"},
-      {"type": "teaches", "target": "legal-ai"},
-      {"type": "teaches", "target": "trust-stack"},
-      {"type": "teaches", "target": "citation-verifier-course"},
-      {"type": "teaches", "target": "claims-checker-course"},
-      {"type": "teaches", "target": "first-ai-team-course"},
-      {"type": "teaches", "target": "governed-operator-course"},
-      {"type": "teaches", "target": "kb-readiness-course"},
-      {"type": "teaches", "target": "reg-tracker-course"},
-      {"type": "teaches", "target": "workflow-audit-course"},
-      {"type": "teaches", "target": "what-generative-ai-is-lesson"},
-      {"type": "teaches", "target": "what-ai-can-and-cannot-do-lesson"},
-      {"type": "teaches", "target": "when-not-to-use-ai-lesson"},
-      {"type": "teaches", "target": "prompting-fundamentals-lesson"},
-      {"type": "teaches", "target": "hallucinations-and-risk-lesson"},
-      {"type": "teaches", "target": "how-to-verify-ai-outputs-lesson"},
-      {"type": "teaches", "target": "privacy-and-confidentiality-lesson"},
-      {"type": "teaches", "target": "choose-your-first-ai-stack-lesson"},
-      {"type": "teaches", "target": "ai-assistant-comparison-lesson"},
-      {"type": "teaches", "target": "ai-for-email-lesson"},
-      {"type": "teaches", "target": "ai-for-meeting-notes-lesson"},
-      {"type": "teaches", "target": "ai-for-sop-drafting-lesson"}
+      {
+        "type": "documents",
+        "target": "services"
+      },
+      {
+        "type": "teaches",
+        "target": "strategy"
+      },
+      {
+        "type": "teaches",
+        "target": "intelligence"
+      },
+      {
+        "type": "teaches",
+        "target": "legal-ai"
+      },
+      {
+        "type": "teaches",
+        "target": "trust-stack"
+      },
+      {
+        "type": "teaches",
+        "target": "citation-verifier-course"
+      },
+      {
+        "type": "teaches",
+        "target": "claims-checker-course"
+      },
+      {
+        "type": "teaches",
+        "target": "first-ai-team-course"
+      },
+      {
+        "type": "teaches",
+        "target": "governed-operator-course"
+      },
+      {
+        "type": "teaches",
+        "target": "kb-readiness-course"
+      },
+      {
+        "type": "teaches",
+        "target": "reg-tracker-course"
+      },
+      {
+        "type": "teaches",
+        "target": "workflow-audit-course"
+      },
+      {
+        "type": "teaches",
+        "target": "what-generative-ai-is-lesson"
+      },
+      {
+        "type": "teaches",
+        "target": "what-ai-can-and-cannot-do-lesson"
+      },
+      {
+        "type": "teaches",
+        "target": "when-not-to-use-ai-lesson"
+      },
+      {
+        "type": "teaches",
+        "target": "prompting-fundamentals-lesson"
+      },
+      {
+        "type": "teaches",
+        "target": "hallucinations-and-risk-lesson"
+      },
+      {
+        "type": "teaches",
+        "target": "how-to-verify-ai-outputs-lesson"
+      },
+      {
+        "type": "teaches",
+        "target": "privacy-and-confidentiality-lesson"
+      },
+      {
+        "type": "teaches",
+        "target": "choose-your-first-ai-stack-lesson"
+      },
+      {
+        "type": "teaches",
+        "target": "ai-assistant-comparison-lesson"
+      },
+      {
+        "type": "teaches",
+        "target": "ai-for-email-lesson"
+      },
+      {
+        "type": "teaches",
+        "target": "ai-for-meeting-notes-lesson"
+      },
+      {
+        "type": "teaches",
+        "target": "ai-for-sop-drafting-lesson"
+      }
     ]
   }
 ]

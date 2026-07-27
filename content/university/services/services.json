@@ -1,74 +1,914 @@
 [
   {
-    "id": "university-ai-strategy-sprint", "kind": "service", "pathname": "/university/services/ai-strategy-sprint", "eyebrow": "Service · Strategy sprint", "title": "Two weeks to a roadmap you can actually run.", "summary": "A focused audit that inventories workflows, scores opportunities by impact, effort, and risk, and produces a sequenced AI roadmap.", "audience": "Owners and operators who need to decide where AI is worth adopting and what to leave alone.", "maturity": "Production",
-    "topics": ["strategy", "roadmap", "opportunity-prioritization"], "industries": ["small-business", "professional-services", "healthcare"], "keywords": ["AI strategy sprint", "AI roadmap", "workflow audit"],
-    "deliverables": ["Prioritized one-to-three-quarter AI roadmap", "Scored opportunity matrix", "Tooling shortlist with fit and cost notes", "Risk and guardrail summary", "Recorded team readout"],
+    "id": "university-ai-strategy-sprint",
+    "kind": "service",
+    "pathname": "/university/services/ai-strategy-sprint",
+    "eyebrow": "Service · Strategy sprint",
+    "title": "Two weeks to a roadmap you can actually run.",
+    "summary": "A focused audit that inventories workflows, scores opportunities by impact, effort, and risk, and produces a sequenced AI roadmap.",
+    "audience": "Owners and operators who need to decide where AI is worth adopting and what to leave alone.",
+    "maturity": "Production",
+    "topics": [
+      "strategy",
+      "roadmap",
+      "opportunity-prioritization"
+    ],
+    "industries": [
+      "small-business",
+      "professional-services",
+      "healthcare"
+    ],
+    "keywords": [
+      "AI strategy sprint",
+      "AI roadmap",
+      "workflow audit"
+    ],
+    "deliverables": [
+      "Prioritized one-to-three-quarter AI roadmap",
+      "Scored opportunity matrix",
+      "Tooling shortlist with fit and cost notes",
+      "Risk and guardrail summary",
+      "Recorded team readout"
+    ],
     "timeline": "One to three weeks depending on the number of workflows, stakeholders, and whether a proof of concept is included.",
-    "fit": ["Organizations with repeatable workflows and a decision-maker available", "Teams seeking a ranked plan rather than another demonstration", "Not necessary when the build scope is already validated"],
-    "evidence": ["Workflow-owner interviews", "Current process inventory", "Tool and data constraints", "Transparent impact, effort, and risk scoring"],
-    "methodology": ["Map current workflows", "Score candidate opportunities", "Identify data and review constraints", "Sequence the smallest credible wins", "Read out the roadmap and decisions"],
-    "assumptions": ["Workflow owners can provide representative examples", "A budget owner participates in prioritization"],
-    "limitations": ["The sprint is not legal or regulatory advice", "Final cost and timing require a scoped agreement"],
-    "relationships": [{"type": "depends_on", "target": "university-services-collection"}, {"type": "uses", "target": "ai-tool-evaluation-matrix-template"}, {"type": "supports", "target": "university-ai-workflow-design"}]
+    "fit": [
+      "Organizations with repeatable workflows and a decision-maker available",
+      "Teams seeking a ranked plan rather than another demonstration",
+      "Not necessary when the build scope is already validated"
+    ],
+    "evidence": [
+      "Workflow-owner interviews",
+      "Current process inventory",
+      "Tool and data constraints",
+      "Transparent impact, effort, and risk scoring"
+    ],
+    "methodology": [
+      "Map current workflows",
+      "Score candidate opportunities",
+      "Identify data and review constraints",
+      "Sequence the smallest credible wins",
+      "Read out the roadmap and decisions"
+    ],
+    "assumptions": [
+      "Workflow owners can provide representative examples",
+      "A budget owner participates in prioritization"
+    ],
+    "limitations": [
+      "The sprint is not legal or regulatory advice",
+      "Final cost and timing require a scoped agreement"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "university-services-collection"
+      },
+      {
+        "type": "uses",
+        "target": "ai-tool-evaluation-matrix-template"
+      },
+      {
+        "type": "supports",
+        "target": "university-ai-workflow-design"
+      }
+    ],
+    "editorialIntro": [
+      "Most teams don't have an AI problem. They have twelve half-ideas and no way to rank them. The Strategy Sprint replaces that noise with a scored, sequenced plan: where AI earns its keep, in what order, and what to leave alone."
+    ],
+    "editorialSections": [
+      {
+        "title": "Owners and operators who are done guessing",
+        "eyebrow": "Who it's for",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "You run a small or mid-size business, a professional practice, or a team inside a larger org. You keep hearing that you should \"use AI,\" you've tried a few things, and none of it has stuck. You don't need another demo. You need someone to look at how you actually operate and tell you the truth about where this technology pays off and where it will waste your money."
+          },
+          {
+            "type": "list",
+            "items": [
+              "You have 5–200 people and real workflows worth mapping."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "You want a decision, not a science project."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "You'd rather spend two weeks getting it right than two quarters drifting."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Adoption stalls when nobody has ranked the work",
+        "eyebrow": "The problem it solves",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Without a roadmap, AI spending scatters. One person builds a clever prompt, another buys a tool nobody adopts, a third pilot quietly dies. There's no shared view of which processes are high-volume, low-risk, and genuinely improvable — the only combination worth automating first."
+          },
+          {
+            "type": "paragraph",
+            "text": "The Sprint fixes the sequencing problem. We inventory your workflows, score each candidate on impact, effort, and risk, and hand you an ordered plan. You stop spreading effort thin and start compounding wins in the right order."
+          }
+        ]
+      },
+      {
+        "title": "A structured audit, run with you",
+        "eyebrow": "What's included",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Discovery interviews"
+          },
+          {
+            "type": "paragraph",
+            "text": "Two to four working sessions with you and the people who own the workflows, so the plan reflects how the business really runs — not an org chart."
+          },
+          {
+            "type": "heading",
+            "text": "Workflow inventory"
+          },
+          {
+            "type": "paragraph",
+            "text": "A mapped list of repeatable processes across your team, with volume, time cost, and sensitivity noted for each."
+          },
+          {
+            "type": "heading",
+            "text": "Opportunity scoring"
+          },
+          {
+            "type": "paragraph",
+            "text": "Every candidate scored on impact, effort, and risk using a transparent rubric you keep. No black boxes."
+          },
+          {
+            "type": "heading",
+            "text": "Risk and guardrail review"
+          },
+          {
+            "type": "paragraph",
+            "text": "A first pass on where confidentiality, accuracy, or disclosure obligations mean AI needs limits — or shouldn't be used at all."
+          },
+          {
+            "type": "heading",
+            "text": "Tooling recommendation"
+          },
+          {
+            "type": "paragraph",
+            "text": "A grounded view of which tools fit your budget, data posture, and team, with honest trade-offs."
+          },
+          {
+            "type": "heading",
+            "text": "Roadmap readout"
+          },
+          {
+            "type": "paragraph",
+            "text": "A live walkthrough of the sequenced plan so your team leaves aligned, not just emailed a PDF."
+          }
+        ]
+      },
+      {
+        "title": "What you keep at the end",
+        "eyebrow": "Deliverables",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "A written AI roadmap: prioritized initiatives, sequenced across the next one to three quarters."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "The scored opportunity matrix, so you can re-rank as things change."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A tooling shortlist with fit notes and rough cost ranges."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A one-page risk summary flagging where to slow down or bring in a professional."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A recorded readout and your slides, yours to keep and share internally."
+            ]
+          },
+          {
+            "type": "quote",
+            "text": "You own everything. If you never work with us again, the roadmap still stands on its own. That's the point."
+          }
+        ]
+      },
+      {
+        "title": "Pick the depth that fits",
+        "eyebrow": "Timeline options",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "One-week focused audit"
+          },
+          {
+            "type": "paragraph",
+            "text": "A single workflow area or department. Fastest path to a decision when the scope is already narrow."
+          },
+          {
+            "type": "heading",
+            "text": "Two-week standard Sprint"
+          },
+          {
+            "type": "paragraph",
+            "text": "The default. Full workflow inventory, scoring, risk pass, and readout across the business."
+          },
+          {
+            "type": "heading",
+            "text": "Three-week extended Sprint"
+          },
+          {
+            "type": "paragraph",
+            "text": "Adds deeper stakeholder interviews and a light proof-of-concept on the top-ranked workflow, so you see it work before you commit to a build."
+          }
+        ]
+      },
+      {
+        "title": "Where the Sprint pays off — and where it doesn't",
+        "eyebrow": "Best-fit clients",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Great fit: a services firm, agency, clinic, or operations team with recurring manual work and a genuine intent to change how it runs. You have a budget owner in the room and can commit a few hours of your team's time over two weeks."
+          },
+          {
+            "type": "paragraph",
+            "text": "Not the right fit yet: if you already know exactly what to build and just need it built, skip the Sprint and go straight to Workflow Design or Implementation. If you're just curious, the free University will take you a long way first."
+          }
+        ]
+      },
+      {
+        "title": "Start here before you spend a dollar",
+        "eyebrow": "Related free resources",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Choose Your First AI Stack"
+          },
+          {
+            "type": "paragraph",
+            "text": "How to pick tools without buying the wrong thing twice."
+          },
+          {
+            "type": "heading",
+            "text": "When Not to Use AI"
+          },
+          {
+            "type": "paragraph",
+            "text": "The workflows to keep human — the other half of a good roadmap."
+          },
+          {
+            "type": "heading",
+            "text": "SOP & Operations"
+          },
+          {
+            "type": "paragraph",
+            "text": "Map the repeatable work the Sprint will help you rank."
+          },
+          {
+            "type": "paragraph",
+            "text": "From $1,500"
+          },
+          {
+            "type": "paragraph",
+            "text": "Strategy Sprint · scoped to one or two weeks · never a hard quote until we've talked"
+          }
+        ]
+      },
+      {
+        "title": "Tell us what you're trying to do",
+        "eyebrow": "Book a Strategy Session",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "We'll tell you honestly whether a Sprint is the right first step — or whether the free resources get you there for now."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "university/services/ai-strategy-sprint/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
-    "id": "university-ai-workflow-design", "kind": "service", "pathname": "/university/services/ai-workflow-design", "eyebrow": "Service · Workflow design", "title": "Design the workflow before anyone builds it.", "summary": "A build-ready blueprint defining every AI step, prompt, decision rule, checkpoint, human review, and failure path before implementation.", "audience": "Teams with one identified process that must be specified rigorously before money goes into a build.", "maturity": "Production",
-    "topics": ["workflow-design", "human-review", "failure-handling"], "industries": ["small-business", "professional-services", "legal"], "keywords": ["AI workflow design", "AI blueprint", "human in the loop"],
-    "deliverables": ["Current- and future-state workflow maps", "Tested prompt and rules library", "Review and approval plan", "Failure and escalation map", "Build-ready developer handoff"],
+    "id": "university-ai-workflow-design",
+    "kind": "service",
+    "pathname": "/university/services/ai-workflow-design",
+    "eyebrow": "Service · Workflow design",
+    "title": "Design the workflow before anyone builds it.",
+    "summary": "A build-ready blueprint defining every AI step, prompt, decision rule, checkpoint, human review, and failure path before implementation.",
+    "audience": "Teams with one identified process that must be specified rigorously before money goes into a build.",
+    "maturity": "Production",
+    "topics": [
+      "workflow-design",
+      "human-review",
+      "failure-handling"
+    ],
+    "industries": [
+      "small-business",
+      "professional-services",
+      "legal"
+    ],
+    "keywords": [
+      "AI workflow design",
+      "AI blueprint",
+      "human in the loop"
+    ],
+    "deliverables": [
+      "Current- and future-state workflow maps",
+      "Tested prompt and rules library",
+      "Review and approval plan",
+      "Failure and escalation map",
+      "Build-ready developer handoff"
+    ],
     "timeline": "Scoped to one or several connected workflows and their complexity.",
-    "fit": ["A specific repeatable process is already selected", "The team wants edge cases and review designed before implementation", "Use strategy first when the priority workflow is still unclear"],
-    "evidence": ["Current workflow records", "Representative inputs and edge cases", "Owner decisions and approval requirements"],
-    "methodology": ["Map the actual current state", "Allocate AI and human responsibilities", "Test prompts and rules", "Design stop and escalation conditions", "Produce an implementation-ready specification"],
-    "assumptions": ["Workflow owners can test the proposed design", "Consequential outputs retain accountable human approval"],
-    "limitations": ["A blueprint does not by itself implement or operate the system"],
-    "relationships": [{"type": "depends_on", "target": "university-ai-strategy-sprint"}, {"type": "uses", "target": "ai-workflow-mapping-worksheet-template"}, {"type": "supports", "target": "university-ai-implementation"}]
+    "fit": [
+      "A specific repeatable process is already selected",
+      "The team wants edge cases and review designed before implementation",
+      "Use strategy first when the priority workflow is still unclear"
+    ],
+    "evidence": [
+      "Current workflow records",
+      "Representative inputs and edge cases",
+      "Owner decisions and approval requirements"
+    ],
+    "methodology": [
+      "Map the actual current state",
+      "Allocate AI and human responsibilities",
+      "Test prompts and rules",
+      "Design stop and escalation conditions",
+      "Produce an implementation-ready specification"
+    ],
+    "assumptions": [
+      "Workflow owners can test the proposed design",
+      "Consequential outputs retain accountable human approval"
+    ],
+    "limitations": [
+      "A blueprint does not by itself implement or operate the system"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "university-ai-strategy-sprint"
+      },
+      {
+        "type": "uses",
+        "target": "ai-workflow-mapping-worksheet-template"
+      },
+      {
+        "type": "supports",
+        "target": "university-ai-implementation"
+      }
+    ]
   },
   {
-    "id": "university-ai-implementation", "kind": "service", "pathname": "/university/services/ai-implementation", "eyebrow": "Service · Implementation", "title": "We build the thing, and hand you the keys.", "summary": "Implementation of a scoped assistant, workflow, or knowledge system, tested on real work and transferred with documentation and operator enablement.", "audience": "Teams with a validated scope or blueprint that are ready to move from plan to production.", "maturity": "Production",
-    "topics": ["implementation", "testing", "handover"], "industries": ["small-business", "professional-services", "education"], "keywords": ["AI implementation", "AI buildout", "AI assistant build"],
-    "deliverables": ["Working system in client-controlled accounts", "Documented prompts, configuration, and settings", "Representative and edge-case test log", "Operator and maintenance runbooks", "Recorded handover and post-launch support window"],
+    "id": "university-ai-implementation",
+    "kind": "service",
+    "pathname": "/university/services/ai-implementation",
+    "eyebrow": "Service · Implementation",
+    "title": "We build the thing, and hand you the keys.",
+    "summary": "Implementation of a scoped assistant, workflow, or knowledge system, tested on real work and transferred with documentation and operator enablement.",
+    "audience": "Teams with a validated scope or blueprint that are ready to move from plan to production.",
+    "maturity": "Production",
+    "topics": [
+      "implementation",
+      "testing",
+      "handover"
+    ],
+    "industries": [
+      "small-business",
+      "professional-services",
+      "education"
+    ],
+    "keywords": [
+      "AI implementation",
+      "AI buildout",
+      "AI assistant build"
+    ],
+    "deliverables": [
+      "Working system in client-controlled accounts",
+      "Documented prompts, configuration, and settings",
+      "Representative and edge-case test log",
+      "Operator and maintenance runbooks",
+      "Recorded handover and post-launch support window"
+    ],
     "timeline": "Typically staged by scope, beginning with a single assistant or workflow and expanding only after validation.",
-    "fit": ["A design is validated or can be locked quickly", "Representative work is available for testing", "The team values maintainability and ownership"],
-    "evidence": ["Approved design specification", "Representative inputs and expected outputs", "Test and exception records", "Handover acceptance"],
-    "methodology": ["Configure to the approved design", "Ground the system in authorized material", "Test normal and edge cases", "Implement human checkpoints", "Document and transfer operation"],
-    "assumptions": ["The client can provide authorized systems and source material", "An accountable owner accepts the handover"],
-    "limitations": ["An off-the-shelf tool may be preferable to a custom build", "Ongoing maintenance remains necessary"],
-    "relationships": [{"type": "depends_on", "target": "university-ai-workflow-design"}, {"type": "implements", "target": "trust-stack"}, {"type": "produced_by", "target": "university-services-collection"}]
+    "fit": [
+      "A design is validated or can be locked quickly",
+      "Representative work is available for testing",
+      "The team values maintainability and ownership"
+    ],
+    "evidence": [
+      "Approved design specification",
+      "Representative inputs and expected outputs",
+      "Test and exception records",
+      "Handover acceptance"
+    ],
+    "methodology": [
+      "Configure to the approved design",
+      "Ground the system in authorized material",
+      "Test normal and edge cases",
+      "Implement human checkpoints",
+      "Document and transfer operation"
+    ],
+    "assumptions": [
+      "The client can provide authorized systems and source material",
+      "An accountable owner accepts the handover"
+    ],
+    "limitations": [
+      "An off-the-shelf tool may be preferable to a custom build",
+      "Ongoing maintenance remains necessary"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "university-ai-workflow-design"
+      },
+      {
+        "type": "implements",
+        "target": "trust-stack"
+      },
+      {
+        "type": "produced_by",
+        "target": "university-services-collection"
+      }
+    ]
   },
   {
-    "id": "university-ai-governance-setup", "kind": "service", "pathname": "/university/services/ai-governance-setup", "eyebrow": "Service · Governance and safe use", "title": "Say yes to AI without saying yes to the exposure.", "summary": "A practical governance setup defining acceptable use, data handling, disclosure, review, and rollout for teams already adopting AI.", "audience": "Leaders accountable for confidential, regulated, client-facing, or otherwise consequential work.", "maturity": "Production",
-    "topics": ["governance", "acceptable-use", "data-classification", "disclosure"], "industries": ["legal", "healthcare", "financial-services", "professional-services"], "keywords": ["AI governance setup", "AI acceptable use policy", "safe AI adoption"],
-    "deliverables": ["Tailored AI acceptable-use policy", "Data-classification and tool-permission reference", "Disclosure standard and sample language", "Risk-scaled review and sign-off workflow", "Rollout brief and staff summary"],
+    "id": "university-ai-governance-setup",
+    "kind": "service",
+    "pathname": "/university/services/ai-governance-setup",
+    "eyebrow": "Service · Governance and safe use",
+    "title": "Say yes to AI without saying yes to the exposure.",
+    "summary": "A practical governance setup defining acceptable use, data handling, disclosure, review, and rollout for teams already adopting AI.",
+    "audience": "Leaders accountable for confidential, regulated, client-facing, or otherwise consequential work.",
+    "maturity": "Production",
+    "topics": [
+      "governance",
+      "acceptable-use",
+      "data-classification",
+      "disclosure"
+    ],
+    "industries": [
+      "legal",
+      "healthcare",
+      "financial-services",
+      "professional-services"
+    ],
+    "keywords": [
+      "AI governance setup",
+      "AI acceptable use policy",
+      "safe AI adoption"
+    ],
+    "deliverables": [
+      "Tailored AI acceptable-use policy",
+      "Data-classification and tool-permission reference",
+      "Disclosure standard and sample language",
+      "Risk-scaled review and sign-off workflow",
+      "Rollout brief and staff summary"
+    ],
     "timeline": "Scoped by team size, industry, current use, and the depth of policy and enablement required.",
-    "fit": ["AI is already being used ahead of formal policy", "Sensitive or confidential information is handled", "Leadership wants enforceable rules people can follow"],
-    "evidence": ["Current-use interviews and inventory", "Approved tools and data rules", "Applicable contractual and professional duties", "Documented approval decisions"],
-    "methodology": ["Inventory observed use", "Classify data and consequences", "Define allowed and prohibited activity", "Assign disclosure and review gates", "Roll out and maintain the framework"],
-    "assumptions": ["Leadership will support and enforce the adopted framework", "Qualified counsel addresses jurisdiction-specific legal requirements"],
-    "limitations": ["This service supports but does not replace licensed legal, security, privacy, or compliance advice"],
-    "relationships": [{"type": "depends_on", "target": "university-services-collection"}, {"type": "implements", "target": "governance-starter-playbook"}, {"type": "implements", "target": "trust-stack"}]
+    "fit": [
+      "AI is already being used ahead of formal policy",
+      "Sensitive or confidential information is handled",
+      "Leadership wants enforceable rules people can follow"
+    ],
+    "evidence": [
+      "Current-use interviews and inventory",
+      "Approved tools and data rules",
+      "Applicable contractual and professional duties",
+      "Documented approval decisions"
+    ],
+    "methodology": [
+      "Inventory observed use",
+      "Classify data and consequences",
+      "Define allowed and prohibited activity",
+      "Assign disclosure and review gates",
+      "Roll out and maintain the framework"
+    ],
+    "assumptions": [
+      "Leadership will support and enforce the adopted framework",
+      "Qualified counsel addresses jurisdiction-specific legal requirements"
+    ],
+    "limitations": [
+      "This service supports but does not replace licensed legal, security, privacy, or compliance advice"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "university-services-collection"
+      },
+      {
+        "type": "implements",
+        "target": "governance-starter-playbook"
+      },
+      {
+        "type": "implements",
+        "target": "trust-stack"
+      }
+    ]
   },
   {
-    "id": "university-team-training", "kind": "service", "pathname": "/university/services/team-training", "eyebrow": "Service · Team training", "title": "Fluency for the whole team, not just the early adopters.", "summary": "Live, hands-on training built around the team’s actual work, teaching useful mechanics and the judgment to know when AI should not be used.", "audience": "Teams with uneven AI adoption that need shared skills and shared safe-use rules.", "maturity": "Production",
-    "topics": ["training", "ai-literacy", "safe-use"], "industries": ["small-business", "professional-services", "education"], "keywords": ["AI team training", "AI workshop", "generative AI fluency"],
-    "deliverables": ["Role-tailored live workshop", "Hands-on exercises from actual workflows", "Take-home prompt pack and checklists", "Safe-use guide", "Follow-up question-and-answer session"],
+    "id": "university-team-training",
+    "kind": "service",
+    "pathname": "/university/services/team-training",
+    "eyebrow": "Service · Team training",
+    "title": "Fluency for the whole team, not just the early adopters.",
+    "summary": "Live, hands-on training built around the team’s actual work, teaching useful mechanics and the judgment to know when AI should not be used.",
+    "audience": "Teams with uneven AI adoption that need shared skills and shared safe-use rules.",
+    "maturity": "Production",
+    "topics": [
+      "training",
+      "ai-literacy",
+      "safe-use"
+    ],
+    "industries": [
+      "small-business",
+      "professional-services",
+      "education"
+    ],
+    "keywords": [
+      "AI team training",
+      "AI workshop",
+      "generative AI fluency"
+    ],
+    "deliverables": [
+      "Role-tailored live workshop",
+      "Hands-on exercises from actual workflows",
+      "Take-home prompt pack and checklists",
+      "Safe-use guide",
+      "Follow-up question-and-answer session"
+    ],
     "timeline": "A focused session, a multi-session series, or a deeper internal-lead cohort depending on roles and goals.",
-    "fit": ["Teams of roughly five to fifty seeking a common baseline", "Leadership wants practice on real work", "Tools and an adoption direction are already selected"],
-    "evidence": ["Team-role and workflow intake", "Representative exercises", "Observed learner work", "Post-session questions and corrections"],
-    "methodology": ["Assess roles and tools", "Teach with real tasks", "Practice verification and confidentiality", "Provide reusable supports", "Follow up after real use"],
-    "assumptions": ["Participants can access approved tools and examples", "Leadership reinforces safe-use expectations"],
-    "limitations": ["Training does not substitute for a strategy, governance program, or technical implementation"],
-    "relationships": [{"type": "depends_on", "target": "university-services-collection"}, {"type": "teaches", "target": "prompting-fundamentals-lesson"}, {"type": "teaches", "target": "privacy-and-confidentiality-lesson"}]
+    "fit": [
+      "Teams of roughly five to fifty seeking a common baseline",
+      "Leadership wants practice on real work",
+      "Tools and an adoption direction are already selected"
+    ],
+    "evidence": [
+      "Team-role and workflow intake",
+      "Representative exercises",
+      "Observed learner work",
+      "Post-session questions and corrections"
+    ],
+    "methodology": [
+      "Assess roles and tools",
+      "Teach with real tasks",
+      "Practice verification and confidentiality",
+      "Provide reusable supports",
+      "Follow up after real use"
+    ],
+    "assumptions": [
+      "Participants can access approved tools and examples",
+      "Leadership reinforces safe-use expectations"
+    ],
+    "limitations": [
+      "Training does not substitute for a strategy, governance program, or technical implementation"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "university-services-collection"
+      },
+      {
+        "type": "teaches",
+        "target": "prompting-fundamentals-lesson"
+      },
+      {
+        "type": "teaches",
+        "target": "privacy-and-confidentiality-lesson"
+      }
+    ],
+    "editorialIntro": [
+      "Two people quietly using AI well doesn't move a business. Everyone using it competently — and knowing when to stop — does. These are live, hands-on workshops built around your team's real work, so people leave with skills they'll use on Monday."
+    ],
+    "editorialSections": [
+      {
+        "title": "Teams where adoption is uneven",
+        "eyebrow": "Who it's for",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Some of your people are already using AI. Most aren't, or are using it timidly and inconsistently. You want a common baseline: everyone confident with the tools you actually use, working from the same rules, producing work you'd be comfortable putting your name on."
+          },
+          {
+            "type": "list",
+            "items": [
+              "You have a team of roughly 5 to 50 who'd benefit from shared skills."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "You want practice on your work, not slides about someone else's."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "You care as much about judgment — when not to use AI — as about mechanics."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Generic training doesn't transfer",
+        "eyebrow": "The problem it solves",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The webinar everyone half-watches teaches AI in the abstract, so nobody knows how it applies to their inbox, their reports, their client work. People nod along, close the tab, and change nothing. Worse, untrained enthusiasm creates real risk: confidential data pasted into the wrong tool, hallucinated facts shipped to clients, no one checking anything."
+          },
+          {
+            "type": "paragraph",
+            "text": "These workshops fix both problems. We train on your workflows with your examples, so the skills stick — and we teach the guardrails alongside the techniques, so confidence doesn't outrun judgment."
+          }
+        ]
+      },
+      {
+        "title": "Built around your work, delivered live",
+        "eyebrow": "What's included",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Pre-session scoping"
+          },
+          {
+            "type": "paragraph",
+            "text": "A short intake to learn your team's roles, tools, and the tasks worth practicing, so the session isn't generic."
+          },
+          {
+            "type": "heading",
+            "text": "Live, hands-on delivery"
+          },
+          {
+            "type": "paragraph",
+            "text": "Remote or in person. People work through real tasks in the room, not watch a lecture."
+          },
+          {
+            "type": "heading",
+            "text": "Role-relevant exercises"
+          },
+          {
+            "type": "paragraph",
+            "text": "Prompts and workflows drawn from your actual work — sales follow-ups, drafting, research, whatever your team does."
+          },
+          {
+            "type": "heading",
+            "text": "Safe-use fundamentals"
+          },
+          {
+            "type": "paragraph",
+            "text": "Confidentiality, verification, and disclosure taught as part of the craft, not an afterthought."
+          },
+          {
+            "type": "heading",
+            "text": "Take-home prompt pack"
+          },
+          {
+            "type": "paragraph",
+            "text": "A tailored set of prompts and checklists your team keeps and reuses."
+          },
+          {
+            "type": "heading",
+            "text": "Follow-up Q&A"
+          },
+          {
+            "type": "paragraph",
+            "text": "A short session a couple of weeks later to answer the questions that only surface once people start using it."
+          }
+        ]
+      },
+      {
+        "title": "What the team keeps",
+        "eyebrow": "Deliverables",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "A live workshop tailored to your team's roles and tools."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A take-home prompt pack and quick-reference checklists."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A short safe-use guide covering confidentiality and verification."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "The session recording, where the format allows, for anyone who missed it or wants a refresher."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A follow-up Q&A session to lock in the habits."
+            ]
+          },
+          {
+            "type": "quote",
+            "text": "Training teaches good practice; it isn't legal, medical, or financial advice, and it doesn't replace professional review where your work requires it."
+          }
+        ]
+      },
+      {
+        "title": "Pick the format that fits",
+        "eyebrow": "Timeline options",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Single workshop"
+          },
+          {
+            "type": "paragraph",
+            "text": "A focused half-day or shorter session on one theme — fundamentals, or one department's workflows."
+          },
+          {
+            "type": "heading",
+            "text": "Multi-session series"
+          },
+          {
+            "type": "paragraph",
+            "text": "Two to four sessions spaced out, building from fundamentals to role-specific practice, so skills compound."
+          },
+          {
+            "type": "heading",
+            "text": "Train-the-champions"
+          },
+          {
+            "type": "paragraph",
+            "text": "A deeper cohort for a handful of internal leads who then carry the practice across the rest of the organization."
+          }
+        ]
+      },
+      {
+        "title": "Where training lands hardest",
+        "eyebrow": "Best-fit clients",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Great fit: a team that has the tools (or will) and needs the shared skill and shared rules to use them well. Leadership wants adoption to be consistent and safe, not a free-for-all."
+          },
+          {
+            "type": "paragraph",
+            "text": "Not the right fit yet: if your team has no tools and no plan, a Strategy Sprint should come first. And if you're an individual rather than a team, the free University lessons cover the fundamentals in full."
+          }
+        ]
+      },
+      {
+        "title": "Preview the curriculum, free",
+        "eyebrow": "Related free resources",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Prompting Fundamentals"
+          },
+          {
+            "type": "paragraph",
+            "text": "The core skill every workshop builds on."
+          },
+          {
+            "type": "heading",
+            "text": "Privacy & Confidentiality"
+          },
+          {
+            "type": "paragraph",
+            "text": "The safe-use rules we teach alongside the techniques."
+          },
+          {
+            "type": "heading",
+            "text": "ChatGPT vs Claude vs Gemini vs Perplexity"
+          },
+          {
+            "type": "paragraph",
+            "text": "Help your team pick the right tool for each job."
+          },
+          {
+            "type": "paragraph",
+            "text": "From $2,500"
+          },
+          {
+            "type": "paragraph",
+            "text": "Team Training / Workshops · typically $2,500–$5,000 per session by size and depth · quoted after scoping"
+          }
+        ]
+      },
+      {
+        "title": "Tell us your team's size, roles, and tools",
+        "eyebrow": "Book a Strategy Session",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "We'll design a session that trains on your work — and be honest if a single workshop is all you need."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "university/services/team-training/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
-    "id": "university-ongoing-advisory", "kind": "service", "pathname": "/university/services/ongoing-advisory", "eyebrow": "Service · Fractional AI lead", "title": "A senior AI partner, without the full-time hire.", "summary": "Ongoing strategy, prioritization, implementation support, governance maintenance, and team enablement for organizations treating AI as a durable capability.", "audience": "Teams with live AI work and no senior internal owner who need continuity across projects.", "maturity": "Production",
-    "topics": ["fractional-leadership", "advisory", "roadmap", "governance"], "industries": ["small-business", "professional-services", "healthcare"], "keywords": ["fractional AI lead", "AI advisory retainer", "AI strategy partner"],
-    "deliverables": ["Living and re-prioritized AI roadmap", "Regular decision sessions and notes", "Hands-on workflow and assistant support", "Maintained governance controls", "Monthly progress and risk summary"],
+    "id": "university-ongoing-advisory",
+    "kind": "service",
+    "pathname": "/university/services/ongoing-advisory",
+    "eyebrow": "Service · Fractional AI lead",
+    "title": "A senior AI partner, without the full-time hire.",
+    "summary": "Ongoing strategy, prioritization, implementation support, governance maintenance, and team enablement for organizations treating AI as a durable capability.",
+    "audience": "Teams with live AI work and no senior internal owner who need continuity across projects.",
+    "maturity": "Production",
+    "topics": [
+      "fractional-leadership",
+      "advisory",
+      "roadmap",
+      "governance"
+    ],
+    "industries": [
+      "small-business",
+      "professional-services",
+      "healthcare"
+    ],
+    "keywords": [
+      "fractional AI lead",
+      "AI advisory retainer",
+      "AI strategy partner"
+    ],
+    "deliverables": [
+      "Living and re-prioritized AI roadmap",
+      "Regular decision sessions and notes",
+      "Hands-on workflow and assistant support",
+      "Maintained governance controls",
+      "Monthly progress and risk summary"
+    ],
     "timeline": "Month-to-month cadence scaled from strategic advisory to deeper hands-on involvement.",
-    "fit": ["AI is an ongoing organizational capability", "The same partner needs to retain context across initiatives", "A single bounded need is better handled as a project"],
-    "evidence": ["Current roadmap and implementation records", "Workflow performance and exceptions", "Governance changes", "Documented monthly decisions"],
-    "methodology": ["Maintain priorities", "Unblock active work", "Update guardrails", "Coach accountable owners", "Report progress, risks, and next decisions"],
-    "assumptions": ["The organization appoints internal owners", "The retainer has access to the context needed for decisions"],
-    "limitations": ["Fractional leadership does not replace every specialist or executive function"],
-    "relationships": [{"type": "depends_on", "target": "university-services-collection"}, {"type": "supports", "target": "university-ai-strategy-sprint"}, {"type": "supports", "target": "ai-native-coo"}]
+    "fit": [
+      "AI is an ongoing organizational capability",
+      "The same partner needs to retain context across initiatives",
+      "A single bounded need is better handled as a project"
+    ],
+    "evidence": [
+      "Current roadmap and implementation records",
+      "Workflow performance and exceptions",
+      "Governance changes",
+      "Documented monthly decisions"
+    ],
+    "methodology": [
+      "Maintain priorities",
+      "Unblock active work",
+      "Update guardrails",
+      "Coach accountable owners",
+      "Report progress, risks, and next decisions"
+    ],
+    "assumptions": [
+      "The organization appoints internal owners",
+      "The retainer has access to the context needed for decisions"
+    ],
+    "limitations": [
+      "Fractional leadership does not replace every specialist or executive function"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "university-services-collection"
+      },
+      {
+        "type": "supports",
+        "target": "university-ai-strategy-sprint"
+      },
+      {
+        "type": "supports",
+        "target": "ai-native-coo"
+      }
+    ]
   }
 ]

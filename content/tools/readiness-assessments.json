@@ -4,7 +4,7 @@
     "kind": "assessment",
     "pathname": "/tools/governance-readiness",
     "eyebrow": "Legal AI self-assessment",
-    "title": "Firm AI Governance Readiness Scorecard",
+    "title": "How ready is your firm's AI governance?",
     "summary": "A browser-local assessment of written AI competence, approved tools, confidentiality controls, verification, supervision, audit, and accountability.",
     "audience": "Law firms and legal teams documenting responsible generative-AI use.",
     "maturity": "Beta",
@@ -175,7 +175,197 @@
         "type": "uses",
         "target": "policy-generator"
       }
-    ]
+    ],
+    "seoTitle": "Firm AI Governance Readiness Scorecard",
+    "editorialIntro": [
+      "Answer a short set of questions about how your firm actually uses AI today. This scorecard rates your documented practice against the duties in ABA Formal Opinion 512 and the Model Rules, returns a readiness score with a per-duty breakdown, and gives you a prioritized list of the gaps to close first. It runs in your browser. Nothing you enter leaves this page.",
+      "Built by RN Collins. Neuroscientist (MS) · Administrative & regulatory law (JD candidate) · AI Workflow Developer, Am Law firm"
+    ],
+    "editorialSections": [
+      {
+        "title": "ABA 512 turned \"govern your AI\" into a conduct duty",
+        "eyebrow": "Why this exists",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "ABA Formal Opinion 512 reads the existing Model Rules onto generative AI: the duty of competent, confidential, candid, and supervised use already applies. The hard part is showing it. A firm that uses AI well but writes none of it down cannot demonstrate the practice when it counts. This scorecard checks for the documented controls that turn good intentions into a defensible record."
+          },
+          {
+            "type": "heading",
+            "text": "What it checks"
+          },
+          {
+            "type": "paragraph",
+            "text": "Whether the controls each duty implies actually exist in writing: a policy every timekeeper acknowledged, a required human verification step, tool vetting for client confidentiality, named supervisory accountability, and a documentation trail."
+          },
+          {
+            "type": "heading",
+            "text": "What it can't do"
+          },
+          {
+            "type": "paragraph",
+            "text": "It cannot tell you whether your firm is compliant, and it does not give legal advice. It maps your answers to published guidance and shows where your documented practice is thin. A licensed attorney interprets what that means for your obligations."
+          }
+        ]
+      },
+      {
+        "title": "Score your firm's documented AI-governance practice",
+        "eyebrow": "The instrument",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Answer each question with Yes (documented and in force), Partial (informal or incomplete), or No (not in place). Answer honestly; the value is in an accurate map. The score computes on your device with no network call."
+          },
+          {
+            "type": "heading",
+            "text": "Your readiness result"
+          },
+          {
+            "type": "paragraph",
+            "text": "This tool runs entirely in your browser. The summary is generated on your device. The only information that ever leaves your device is the email address you optionally submit below once Beehiiv is connected."
+          },
+          {
+            "type": "paragraph",
+            "text": "Send it to your inbox and get occasional build notes from Aloha AI."
+          },
+          {
+            "type": "paragraph",
+            "text": "Connect Beehiiv to enable signups."
+          },
+          {
+            "type": "paragraph",
+            "text": "Informational self-assessment. Not legal advice. RN Collins is a JD candidate, not a licensed attorney. This maps your answers to published ABA Formal Opinion 512 and Model Rules 1.1, 1.6, 3.3, 5.1, and 5.3. It measures documented-practice maturity, not legal compliance, and it is not a compliance determination. Confirm your obligations with your own counsel."
+          }
+        ]
+      },
+      {
+        "title": "Five groups, mapped to the duties",
+        "eyebrow": "What it measures",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Each question belongs to a duty group. Yes scores full credit, Partial scores half, No scores nothing. The groups roll into per-duty sub-scores and one overall 0–100 readiness score, weighted evenly across the duties."
+          },
+          {
+            "type": "heading",
+            "text": "Competence"
+          },
+          {
+            "type": "paragraph",
+            "text": "Whether the people using AI understand its limits, and whether verification is required before AI-assisted work goes out."
+          },
+          {
+            "type": "heading",
+            "text": "Confidentiality"
+          },
+          {
+            "type": "paragraph",
+            "text": "Whether approved tools are vetted so client information is not exposed to third parties or training."
+          },
+          {
+            "type": "heading",
+            "text": "Candor to the tribunal"
+          },
+          {
+            "type": "paragraph",
+            "text": "Whether a human verification gate stands between AI output and anything filed with a court."
+          },
+          {
+            "type": "heading",
+            "text": "Supervision"
+          },
+          {
+            "type": "paragraph",
+            "text": "Whether AI use is supervised with named accountability over both lawyers and non-lawyer assistance."
+          },
+          {
+            "type": "heading",
+            "text": "Policy & documentation"
+          },
+          {
+            "type": "paragraph",
+            "text": "Whether a written, acknowledged policy and an audit trail exist, so the practice can be shown, not just asserted."
+          }
+        ]
+      },
+      {
+        "title": "RN builds the documented policy this scorecard measures",
+        "eyebrow": "This is a demonstration of what I build",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "This scorecard measures whether the controls exist. The paid path is building them: a documented, auditable AI-governance policy mapped to ABA 512 and the Model Rules, with the verification gates, tool-vetting standard, supervisory accountability, and audit trail that turn a thin score into a defensible practice. It is designed to sit inside the workflows your team already runs."
+          },
+          {
+            "type": "heading",
+            "text": "What I build"
+          },
+          {
+            "type": "paragraph",
+            "text": "A written AI-use policy every timekeeper acknowledges, verification gates placed where risk lives, a tool-vetting standard for Rule 1.6, named supervisory accountability, and an audit trail leadership can defend."
+          },
+          {
+            "type": "heading",
+            "text": "What you get"
+          },
+          {
+            "type": "list",
+            "items": [
+              "A policy mapped to ABA 512 and your conduct duties"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Gates wired into your drafting and filing workflow"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Documentation that shows the practice, not just claims it"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Firm/GC advisory to keep it current as guidance moves"
+            ]
+          },
+          {
+            "type": "heading",
+            "text": "How to start"
+          },
+          {
+            "type": "paragraph",
+            "text": "A short scoping call. Most firms begin with a Systems Audit: the fastest proof, and it points to the duty worth documenting first."
+          },
+          {
+            "type": "paragraph",
+            "text": "Related work: the Citation Verifier demonstrates one verification gate, catching fabricated case cites before a filing. The Legal AI Workflow & Governance pillar covers verification-gated workflows and trust-safe governance end to end."
+          }
+        ]
+      },
+      {
+        "title": "Ready when you are.",
+        "eyebrow": "Aloha AI · Honolulu",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Convinced, curious, or comparing, there's a path for each."
+          },
+          {
+            "type": "paragraph",
+            "text": "Prefer email? Email RN · or connect on LinkedIn"
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "tools/governance-readiness/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "kb-readiness",

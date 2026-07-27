@@ -8,11 +8,31 @@
     "summary": "A browser-local, downloadable eighteen-field contract for defining an AI agent’s mission, scope, permissions, evidence rules, approvals, escalation, logging, evaluation, failure response, and accountable human owner.",
     "audience": "Leaders, operators, and builders turning a named AI agent into a bounded and governable organizational role.",
     "maturity": "Production",
-    "topics": ["agent-governance", "role-design", "human-review", "accountability"],
-    "industries": ["professional-services", "legal", "health", "technology"],
-    "keywords": ["agent role contract", "AI agent governance", "agent permissions", "human approval"],
+    "topics": [
+      "agent-governance",
+      "role-design",
+      "human-review",
+      "accountability"
+    ],
+    "industries": [
+      "professional-services",
+      "legal",
+      "health",
+      "technology"
+    ],
+    "keywords": [
+      "agent role contract",
+      "AI agent governance",
+      "agent permissions",
+      "human approval"
+    ],
     "implementationStatus": "Public browser-local form with Markdown preview and download; no entered information is transmitted or stored.",
-    "documentation": ["Complete the eighteen governance fields", "Preview the resulting role contract", "Download the completed or blank contract as Markdown", "Have the accountable owner approve and maintain it"],
+    "documentation": [
+      "Complete the eighteen governance fields",
+      "Preview the resulting role contract",
+      "Download the completed or blank contract as Markdown",
+      "Have the accountable owner approve and maintain it"
+    ],
     "demo": {
       "type": "structured-form",
       "mode": "document",
@@ -20,31 +40,168 @@
       "outputTitle": "Agent Role Contract",
       "downloadName": "agent-role-contract.md",
       "fields": [
-        {"id": "agent", "label": "Agent name", "hint": "The recognizable name; optional because the contract, not the name, is the point.", "type": "text", "placeholder": "e.g. Sharpay"},
-        {"id": "role", "label": "Role", "hint": "The one job this agent holds.", "type": "text", "placeholder": "e.g. Brand-Voice Reviewer"},
-        {"id": "mission", "label": "Mission", "hint": "The business outcome it serves.", "type": "text", "placeholder": "e.g. Keep every published output on-brand and consistent."},
-        {"id": "scope", "label": "Scope", "hint": "The tasks it may perform.", "type": "textarea", "placeholder": "e.g. Review drafts for voice, clarity, and consistency; suggest edits."},
-        {"id": "inputs", "label": "Inputs", "hint": "The information it may receive.", "type": "textarea", "placeholder": "e.g. Draft text and the brand voice guide."},
-        {"id": "data", "label": "Data classification", "hint": "How sensitive that information is.", "type": "text", "placeholder": "e.g. Internal — no personal or regulated data."},
-        {"id": "tools", "label": "Tools", "hint": "The systems it may access.", "type": "text", "placeholder": "e.g. The draft document only. No email, no publishing."},
-        {"id": "prohibited", "label": "Prohibited actions", "hint": "What it may never do. Be specific.", "type": "textarea", "placeholder": "e.g. Never send, publish, post, spend, or contact anyone."},
-        {"id": "output", "label": "Output format", "hint": "The shape of what it returns.", "type": "text", "placeholder": "e.g. Marked-up draft plus a short list of flags."},
-        {"id": "evidence_rule", "label": "Evidence rule", "hint": "What sources or support it must show.", "type": "text", "placeholder": "e.g. Cite the guideline behind each flag."},
-        {"id": "confidence_rule", "label": "Confidence rule", "hint": "When it must say it is unsure.", "type": "text", "placeholder": "e.g. Flag, do not guess, when a call is subjective."},
-        {"id": "approval", "label": "Human approval", "hint": "Which actions require sign-off.", "type": "text", "placeholder": "e.g. Any publish decision routes to the owner."},
-        {"id": "escalation", "label": "Escalation", "hint": "Conditions that force human review.", "type": "text", "placeholder": "e.g. Any legal, medical, or financial claim escalates."},
-        {"id": "logging", "label": "Logging", "hint": "What gets recorded.", "type": "text", "placeholder": "e.g. Every review and flag, with timestamp."},
-        {"id": "retention", "label": "Retention", "hint": "How long records are kept.", "type": "text", "placeholder": "e.g. 90 days, then purge."},
-        {"id": "evaluation", "label": "Evaluation", "hint": "How quality will be judged.", "type": "text", "placeholder": "e.g. Sampled monthly against the voice guide."},
-        {"id": "failure", "label": "Failure response", "hint": "What happens when the agent breaks.", "type": "text", "placeholder": "e.g. Stop the workflow and notify the owner."},
-        {"id": "owner", "label": "Owner", "hint": "The accountable human; always a person.", "type": "text", "placeholder": "e.g. You."}
+        {
+          "id": "agent",
+          "label": "Agent name",
+          "hint": "The recognizable name; optional because the contract, not the name, is the point.",
+          "type": "text",
+          "placeholder": "e.g. Sharpay"
+        },
+        {
+          "id": "role",
+          "label": "Role",
+          "hint": "The one job this agent holds.",
+          "type": "text",
+          "placeholder": "e.g. Brand-Voice Reviewer"
+        },
+        {
+          "id": "mission",
+          "label": "Mission",
+          "hint": "The business outcome it serves.",
+          "type": "text",
+          "placeholder": "e.g. Keep every published output on-brand and consistent."
+        },
+        {
+          "id": "scope",
+          "label": "Scope",
+          "hint": "The tasks it may perform.",
+          "type": "textarea",
+          "placeholder": "e.g. Review drafts for voice, clarity, and consistency; suggest edits."
+        },
+        {
+          "id": "inputs",
+          "label": "Inputs",
+          "hint": "The information it may receive.",
+          "type": "textarea",
+          "placeholder": "e.g. Draft text and the brand voice guide."
+        },
+        {
+          "id": "data",
+          "label": "Data classification",
+          "hint": "How sensitive that information is.",
+          "type": "text",
+          "placeholder": "e.g. Internal — no personal or regulated data."
+        },
+        {
+          "id": "tools",
+          "label": "Tools",
+          "hint": "The systems it may access.",
+          "type": "text",
+          "placeholder": "e.g. The draft document only. No email, no publishing."
+        },
+        {
+          "id": "prohibited",
+          "label": "Prohibited actions",
+          "hint": "What it may never do. Be specific.",
+          "type": "textarea",
+          "placeholder": "e.g. Never send, publish, post, spend, or contact anyone."
+        },
+        {
+          "id": "output",
+          "label": "Output format",
+          "hint": "The shape of what it returns.",
+          "type": "text",
+          "placeholder": "e.g. Marked-up draft plus a short list of flags."
+        },
+        {
+          "id": "evidence_rule",
+          "label": "Evidence rule",
+          "hint": "What sources or support it must show.",
+          "type": "text",
+          "placeholder": "e.g. Cite the guideline behind each flag."
+        },
+        {
+          "id": "confidence_rule",
+          "label": "Confidence rule",
+          "hint": "When it must say it is unsure.",
+          "type": "text",
+          "placeholder": "e.g. Flag, do not guess, when a call is subjective."
+        },
+        {
+          "id": "approval",
+          "label": "Human approval",
+          "hint": "Which actions require sign-off.",
+          "type": "text",
+          "placeholder": "e.g. Any publish decision routes to the owner."
+        },
+        {
+          "id": "escalation",
+          "label": "Escalation",
+          "hint": "Conditions that force human review.",
+          "type": "text",
+          "placeholder": "e.g. Any legal, medical, or financial claim escalates."
+        },
+        {
+          "id": "logging",
+          "label": "Logging",
+          "hint": "What gets recorded.",
+          "type": "text",
+          "placeholder": "e.g. Every review and flag, with timestamp."
+        },
+        {
+          "id": "retention",
+          "label": "Retention",
+          "hint": "How long records are kept.",
+          "type": "text",
+          "placeholder": "e.g. 90 days, then purge."
+        },
+        {
+          "id": "evaluation",
+          "label": "Evaluation",
+          "hint": "How quality will be judged.",
+          "type": "text",
+          "placeholder": "e.g. Sampled monthly against the voice guide."
+        },
+        {
+          "id": "failure",
+          "label": "Failure response",
+          "hint": "What happens when the agent breaks.",
+          "type": "text",
+          "placeholder": "e.g. Stop the workflow and notify the owner."
+        },
+        {
+          "id": "owner",
+          "label": "Owner",
+          "hint": "The accountable human; always a person.",
+          "type": "text",
+          "placeholder": "e.g. You."
+        }
       ]
     },
-    "evidence": ["The intended business role and representative tasks", "Applicable data, tool, approval, retention, and escalation requirements", "Named human ownership and evaluation records"],
-    "methodology": ["Define one bounded role", "Specify permitted inputs, tools, and outputs", "Prohibit consequential autonomous actions", "Attach evidence, confidence, approval, and escalation rules", "Assign logging, retention, evaluation, failure response, and a human owner"],
-    "assumptions": ["The organization will test the contract against representative work", "Permissions and technical controls will enforce the written boundaries"],
-    "limitations": ["A written role contract does not itself enforce permissions or establish compliance", "Qualified legal, privacy, security, and domain review may still be required"],
-    "relationships": [{"type": "implements", "target": "build-your-team"}, {"type": "implements", "target": "trust-stack"}, {"type": "uses", "target": "methods"}]
+    "evidence": [
+      "The intended business role and representative tasks",
+      "Applicable data, tool, approval, retention, and escalation requirements",
+      "Named human ownership and evaluation records"
+    ],
+    "methodology": [
+      "Define one bounded role",
+      "Specify permitted inputs, tools, and outputs",
+      "Prohibit consequential autonomous actions",
+      "Attach evidence, confidence, approval, and escalation rules",
+      "Assign logging, retention, evaluation, failure response, and a human owner"
+    ],
+    "assumptions": [
+      "The organization will test the contract against representative work",
+      "Permissions and technical controls will enforce the written boundaries"
+    ],
+    "limitations": [
+      "A written role contract does not itself enforce permissions or establish compliance",
+      "Qualified legal, privacy, security, and domain review may still be required"
+    ],
+    "relationships": [
+      {
+        "type": "implements",
+        "target": "build-your-team"
+      },
+      {
+        "type": "implements",
+        "target": "trust-stack"
+      },
+      {
+        "type": "uses",
+        "target": "methods"
+      }
+    ]
   },
   {
     "id": "aloha-ai-ce",
@@ -55,20 +212,87 @@
     "summary": "Evidence-based, primary-source continuing education in artificial intelligence, neuroscience, ethics, psychedelic care, and emerging professional practice for counselors, social workers, psychologists, healthcare providers, attorneys, and other practitioners.",
     "audience": "Practitioners and institutions seeking rigorous cross-disciplinary education with explicit evidence, learning, ethics, and quality-assurance standards.",
     "maturity": "Research",
-    "topics": ["continuing-education", "ai-literacy", "neuroscience", "ethics", "psychedelics"],
-    "industries": ["education", "health", "legal", "psychedelics"],
-    "keywords": ["Aloha AI CE", "AI continuing education", "psychedelic continuing education", "professional education"],
-    "architecture": ["Eight-course AI CE launch series totaling fourteen planned hours", "Three-course psychedelic and neuroscience launch series totaling nine planned hours", "Twelve additional series developed as accreditation and demand justify", "Timed agendas, measurable learning outcomes, evaluation forms, and profession-specific credit pathways"],
+    "topics": [
+      "continuing-education",
+      "ai-literacy",
+      "neuroscience",
+      "ethics",
+      "psychedelics"
+    ],
+    "industries": [
+      "education",
+      "health",
+      "legal",
+      "psychedelics"
+    ],
+    "keywords": [
+      "Aloha AI CE",
+      "AI continuing education",
+      "psychedelic continuing education",
+      "professional education"
+    ],
+    "architecture": [
+      "Eight-course AI CE launch series totaling fourteen planned hours",
+      "Three-course psychedelic and neuroscience launch series totaling nine planned hours",
+      "Twelve additional series developed as accreditation and demand justify",
+      "Timed agendas, measurable learning outcomes, evaluation forms, and profession-specific credit pathways"
+    ],
     "implementationStatus": "Course content is being developed for submission; provider accreditation and co-sponsorship are in progress. Credit is not represented as available until the applicable approval is confirmed.",
-    "documentation": ["Primary-source citations verified against original authority", "Four-cycle correction and quality-assurance pass", "Timed agenda and measurable learning outcomes per course", "Evaluation instrument and profession-specific ethics alignment"],
-    "roadmap": ["Prioritize NBCC, NASW, and NAADAC pathways", "Confirm licensed co-presenters where professional-credit rules require them", "Publish credit status separately for each course and board", "Expand into healthcare, law, governance, research literacy, pedagogy, and emerging-therapy series"],
-    "changelog": ["2026 launch catalog: eight AI courses and three psychedelic/neuroscience courses identified", "Accreditation targets disclosed as targets rather than awarded credit"],
+    "documentation": [
+      "Primary-source citations verified against original authority",
+      "Four-cycle correction and quality-assurance pass",
+      "Timed agenda and measurable learning outcomes per course",
+      "Evaluation instrument and profession-specific ethics alignment"
+    ],
+    "roadmap": [
+      "Prioritize NBCC, NASW, and NAADAC pathways",
+      "Confirm licensed co-presenters where professional-credit rules require them",
+      "Publish credit status separately for each course and board",
+      "Expand into healthcare, law, governance, research literacy, pedagogy, and emerging-therapy series"
+    ],
+    "changelog": [
+      "2026 launch catalog: eight AI courses and three psychedelic/neuroscience courses identified",
+      "Accreditation targets disclosed as targets rather than awarded credit"
+    ],
     "licensing": "Institutional delivery, accredited-provider partnerships, co-sponsorship, and curriculum licensing are scoped only after the applicable approval, presenter, attribution, and quality-control terms are confirmed.",
-    "evidence": ["Primary scientific, legal, regulatory, ethical, and professional sources", "Applicable board and accreditor requirements", "Learning objectives, timed agendas, assessments, and evaluation records"],
-    "methodology": ["Define the practitioner and measurable learning outcome", "Build from primary and authoritative sources", "Audit claims and citations across four correction cycles", "Align ethics content to the applicable professional standards", "Confirm accreditation before representing credit as available"],
-    "assumptions": ["Accreditation and co-sponsorship requirements will be verified for each audience and jurisdiction", "Qualified presenters and reviewers will be engaged where required"],
-    "limitations": ["Accreditation is in progress and no unconfirmed credit is promised", "Educational content is not legal, medical, clinical, tax, or other professional advice"],
-    "relationships": [{"type": "supports", "target": "university"}, {"type": "uses", "target": "methods"}, {"type": "supports", "target": "university-team-training"}, {"type": "related_to", "target": "legal-ai"}]
+    "evidence": [
+      "Primary scientific, legal, regulatory, ethical, and professional sources",
+      "Applicable board and accreditor requirements",
+      "Learning objectives, timed agendas, assessments, and evaluation records"
+    ],
+    "methodology": [
+      "Define the practitioner and measurable learning outcome",
+      "Build from primary and authoritative sources",
+      "Audit claims and citations across four correction cycles",
+      "Align ethics content to the applicable professional standards",
+      "Confirm accreditation before representing credit as available"
+    ],
+    "assumptions": [
+      "Accreditation and co-sponsorship requirements will be verified for each audience and jurisdiction",
+      "Qualified presenters and reviewers will be engaged where required"
+    ],
+    "limitations": [
+      "Accreditation is in progress and no unconfirmed credit is promised",
+      "Educational content is not legal, medical, clinical, tax, or other professional advice"
+    ],
+    "relationships": [
+      {
+        "type": "supports",
+        "target": "university"
+      },
+      {
+        "type": "uses",
+        "target": "methods"
+      },
+      {
+        "type": "supports",
+        "target": "university-team-training"
+      },
+      {
+        "type": "related_to",
+        "target": "legal-ai"
+      }
+    ]
   },
   {
     "id": "brand-perception-intelligence",
@@ -79,12 +303,38 @@
     "summary": "A neuroscience-informed audience-perception audit that maps processing fluency, mere exposure, source credibility, and affect to a prioritized trust architecture and governed AI content-operations plan.",
     "audience": "Agency leaders, CMOs, founders, and creative directors who own brand perception and must defend the decisions used to shape it.",
     "maturity": "Beta",
-    "topics": ["brand-intelligence", "consumer-neuroscience", "trust", "content-operations"],
-    "industries": ["creator-economy", "consumer-products", "professional-services", "technology"],
-    "keywords": ["brand perception intelligence", "brand trust diagnostic", "processing fluency", "mere exposure", "AI content operations"],
-    "deliverables": ["Neuroscience-grounded brand-trust read", "Mechanism-mapped order of operations", "Prioritized AI content-operations plan", "Refresh, monitoring, and human-review design"],
+    "topics": [
+      "brand-intelligence",
+      "consumer-neuroscience",
+      "trust",
+      "content-operations"
+    ],
+    "industries": [
+      "creator-economy",
+      "consumer-products",
+      "professional-services",
+      "technology"
+    ],
+    "keywords": [
+      "brand perception intelligence",
+      "brand trust diagnostic",
+      "processing fluency",
+      "mere exposure",
+      "AI content operations"
+    ],
+    "deliverables": [
+      "Neuroscience-grounded brand-trust read",
+      "Mechanism-mapped order of operations",
+      "Prioritized AI content-operations plan",
+      "Refresh, monitoring, and human-review design"
+    ],
     "timeline": "A scoped engagement begins with representative brand assets, audience and category context, then moves through perception audit, trust architecture, and content-system design.",
-    "fit": ["The brand is unfamiliar or inconsistently expressed", "Creative direction needs a defensible mechanism rather than generic adjectives", "Claims and proof are not sequenced to the audience’s familiarity", "Content operations must compound recognition without losing voice or review"],
+    "fit": [
+      "The brand is unfamiliar or inconsistently expressed",
+      "Creative direction needs a defensible mechanism rather than generic adjectives",
+      "Claims and proof are not sequenced to the audience’s familiarity",
+      "Content operations must compound recognition without losing voice or review"
+    ],
     "demo": {
       "type": "structured-form",
       "mode": "score",
@@ -92,28 +342,636 @@
       "outputTitle": "Your mechanism-mapped starting point",
       "maxScore": 6,
       "fields": [
-        {"id": "category", "label": "Brand category", "type": "select", "options": [{"value": "professional", "label": "Professional service", "dimension": "credibility", "score": 1}, {"value": "consumer", "label": "Consumer product", "dimension": "exposure", "score": 1}, {"value": "health", "label": "Health or wellness", "dimension": "credibility", "score": 1}, {"value": "technology", "label": "Technology", "dimension": "fluency", "score": 1}, {"value": "culture", "label": "Culture or media", "dimension": "affect", "score": 1}]},
-        {"id": "emotion", "label": "Primary intended feeling", "type": "radio", "options": [{"value": "calm", "label": "Calm or trust", "dimension": "affect", "score": 2}, {"value": "excitement", "label": "Excitement", "dimension": "affect", "score": 2}, {"value": "status", "label": "Status", "dimension": "credibility", "score": 2}, {"value": "none", "label": "No clear feeling", "dimension": "affect", "score": 0}]},
-        {"id": "familiarity", "label": "Audience familiarity", "type": "select", "options": [{"value": "high", "label": "High", "dimension": "exposure", "score": 3}, {"value": "mid", "label": "Some recognition", "dimension": "exposure", "score": 2}, {"value": "low", "label": "Low or new", "dimension": "exposure", "score": 0}]},
-        {"id": "traits", "label": "Current friction signals", "hint": "Select every signal that is true.", "type": "checkbox", "options": [{"value": "claimheavy", "label": "Claim-heavy", "dimension": "credibility", "score": 0}, {"value": "complex", "label": "Visually complex", "dimension": "fluency", "score": 0}, {"value": "inconsistent", "label": "Inconsistent", "dimension": "exposure", "score": 0}, {"value": "proofthin", "label": "Thin on proof", "dimension": "credibility", "score": 0}]}
+        {
+          "id": "category",
+          "label": "Brand category",
+          "type": "select",
+          "options": [
+            {
+              "value": "professional",
+              "label": "Professional service",
+              "dimension": "credibility",
+              "score": 1
+            },
+            {
+              "value": "consumer",
+              "label": "Consumer product",
+              "dimension": "exposure",
+              "score": 1
+            },
+            {
+              "value": "health",
+              "label": "Health or wellness",
+              "dimension": "credibility",
+              "score": 1
+            },
+            {
+              "value": "technology",
+              "label": "Technology",
+              "dimension": "fluency",
+              "score": 1
+            },
+            {
+              "value": "culture",
+              "label": "Culture or media",
+              "dimension": "affect",
+              "score": 1
+            }
+          ]
+        },
+        {
+          "id": "emotion",
+          "label": "Primary intended feeling",
+          "type": "radio",
+          "options": [
+            {
+              "value": "calm",
+              "label": "Calm or trust",
+              "dimension": "affect",
+              "score": 2
+            },
+            {
+              "value": "excitement",
+              "label": "Excitement",
+              "dimension": "affect",
+              "score": 2
+            },
+            {
+              "value": "status",
+              "label": "Status",
+              "dimension": "credibility",
+              "score": 2
+            },
+            {
+              "value": "none",
+              "label": "No clear feeling",
+              "dimension": "affect",
+              "score": 0
+            }
+          ]
+        },
+        {
+          "id": "familiarity",
+          "label": "Audience familiarity",
+          "type": "select",
+          "options": [
+            {
+              "value": "high",
+              "label": "High",
+              "dimension": "exposure",
+              "score": 3
+            },
+            {
+              "value": "mid",
+              "label": "Some recognition",
+              "dimension": "exposure",
+              "score": 2
+            },
+            {
+              "value": "low",
+              "label": "Low or new",
+              "dimension": "exposure",
+              "score": 0
+            }
+          ]
+        },
+        {
+          "id": "traits",
+          "label": "Current friction signals",
+          "hint": "Select every signal that is true.",
+          "type": "checkbox",
+          "options": [
+            {
+              "value": "claimheavy",
+              "label": "Claim-heavy",
+              "dimension": "credibility",
+              "score": 0
+            },
+            {
+              "value": "complex",
+              "label": "Visually complex",
+              "dimension": "fluency",
+              "score": 0
+            },
+            {
+              "value": "inconsistent",
+              "label": "Inconsistent",
+              "dimension": "exposure",
+              "score": 0
+            },
+            {
+              "value": "proofthin",
+              "label": "Thin on proof",
+              "dimension": "credibility",
+              "score": 0
+            }
+          ]
+        }
       ],
       "bands": [
-        {"min": 5, "title": "Strong footing", "summary": "The foundations are visible; concentrate on evidence, disciplined repetition, and category-specific testing."},
-        {"min": 2, "title": "Mixed footing", "summary": "The brand has usable signals but material fluency, familiarity, affect, or credibility gaps remain."},
-        {"min": 0, "title": "Foundational work first", "summary": "Reduce processing friction and establish a consistent signal before asking the audience to absorb larger claims."}
+        {
+          "min": 5,
+          "title": "Strong footing",
+          "summary": "The foundations are visible; concentrate on evidence, disciplined repetition, and category-specific testing."
+        },
+        {
+          "min": 2,
+          "title": "Mixed footing",
+          "summary": "The brand has usable signals but material fluency, familiarity, affect, or credibility gaps remain."
+        },
+        {
+          "min": 0,
+          "title": "Foundational work first",
+          "summary": "Reduce processing friction and establish a consistent signal before asking the audience to absorb larger claims."
+        }
       ],
       "recommendations": [
-        {"dimension": "fluency", "text": "Reduce visual and verbal processing effort: one clear claim, stronger hierarchy, and higher figure-ground contrast."},
-        {"dimension": "exposure", "text": "Repeat a stable set of recognizable cues before introducing more concepts or changing the system."},
-        {"dimension": "credibility", "text": "Use specific, verifiable proof and named expertise; do not substitute louder claims for evidence."},
-        {"dimension": "affect", "text": "Make the intended feeling explicit and test whether aesthetic and language choices consistently produce it."}
+        {
+          "dimension": "fluency",
+          "text": "Reduce visual and verbal processing effort: one clear claim, stronger hierarchy, and higher figure-ground contrast."
+        },
+        {
+          "dimension": "exposure",
+          "text": "Repeat a stable set of recognizable cues before introducing more concepts or changing the system."
+        },
+        {
+          "dimension": "credibility",
+          "text": "Use specific, verifiable proof and named expertise; do not substitute louder claims for evidence."
+        },
+        {
+          "dimension": "affect",
+          "text": "Make the intended feeling explicit and test whether aesthetic and language choices consistently produce it."
+        }
       ]
     },
-    "evidence": ["Representative brand assets, audience context, category conventions, and performance signals", "Published cognitive mechanisms including processing fluency, mere exposure, source credibility, and affect", "Dated and confidence-rated source record for material claims"],
-    "methodology": ["Build a research and intelligence layer from the brand, category, and audience", "Map observed friction to named cognitive mechanisms", "Resolve the findings into a prioritized operator decision layer", "Design a governed editorial distribution and signal architecture", "Refresh inputs and review outcomes without claiming guaranteed lift"],
-    "assumptions": ["The engagement receives representative assets and audience context", "Mechanism-level findings are tested against the actual category and population"],
-    "limitations": ["The public diagnostic is illustrative and not a validated psychometric instrument", "Cognitive mechanisms do not guarantee a fixed commercial outcome and effect sizes vary by context"],
-    "relationships": [{"type": "supports", "target": "intelligence"}, {"type": "implements", "target": "trust-stack-ai-content-system"}, {"type": "uses", "target": "market-intel"}, {"type": "supports", "target": "content"}]
+    "evidence": [
+      "Representative brand assets, audience context, category conventions, and performance signals",
+      "Published cognitive mechanisms including processing fluency, mere exposure, source credibility, and affect",
+      "Dated and confidence-rated source record for material claims"
+    ],
+    "methodology": [
+      "Build a research and intelligence layer from the brand, category, and audience",
+      "Map observed friction to named cognitive mechanisms",
+      "Resolve the findings into a prioritized operator decision layer",
+      "Design a governed editorial distribution and signal architecture",
+      "Refresh inputs and review outcomes without claiming guaranteed lift"
+    ],
+    "assumptions": [
+      "The engagement receives representative assets and audience context",
+      "Mechanism-level findings are tested against the actual category and population"
+    ],
+    "limitations": [
+      "The public diagnostic is illustrative and not a validated psychometric instrument",
+      "Cognitive mechanisms do not guarantee a fixed commercial outcome and effect sizes vary by context"
+    ],
+    "relationships": [
+      {
+        "type": "supports",
+        "target": "intelligence"
+      },
+      {
+        "type": "implements",
+        "target": "trust-stack-ai-content-system"
+      },
+      {
+        "type": "uses",
+        "target": "market-intel"
+      },
+      {
+        "type": "supports",
+        "target": "content"
+      }
+    ],
+    "editorialIntro": [
+      "Most brand advice is fluent and interchangeable. This is a neuroscience-informed read of why your audience trusts, recognizes, and discounts you, traced to real mechanisms like processing fluency, mere exposure, and source credibility, plus an AI content system built to move the number, not just the vibe.",
+      "Built by RN Collins · Neuroscientist (MS) · AI systems · Brand & content operationsTailored for: agency leaders, CMOs & consumer-brand founders"
+    ],
+    "editorialSections": [
+      {
+        "title": "For the people who own the perception and answer for it",
+        "eyebrow": "Who this is for",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The same diagnostic reads four ways, because \"does the audience trust us\" means something different in each seat."
+          },
+          {
+            "type": "heading",
+            "text": "Agency leaders"
+          },
+          {
+            "type": "paragraph",
+            "text": "Cannes Lions, TBWA, BETC. A defensible reason a creative direction will land, beyond \"it feels premium.\""
+          },
+          {
+            "type": "heading",
+            "text": "CMOs"
+          },
+          {
+            "type": "paragraph",
+            "text": "A trust read you can put in front of a board. Mechanism-level, not a sentiment dashboard."
+          },
+          {
+            "type": "heading",
+            "text": "Founders"
+          },
+          {
+            "type": "paragraph",
+            "text": "Know why an unfamiliar brand is discounted, and the specific moves that compound recognition into trust."
+          },
+          {
+            "type": "heading",
+            "text": "Creative directors"
+          },
+          {
+            "type": "paragraph",
+            "text": "Language for why consistency, simplicity and prototypicality earn belief, to defend the work in the room."
+          }
+        ]
+      },
+      {
+        "title": "Ask a generic AI to read your brand. Watch it say nothing, confidently.",
+        "eyebrow": "The Perception Execution Gap",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Generic models return brand advice that is fluent, polished, and interchangeable: the same \"authentic, bold, consistent\" answer for a bank and a beverage. Same brief, two answers: the confident-but-empty generic reply, and the neuro-grounded, specific read. The distance between them is the whole product."
+          },
+          {
+            "type": "paragraph",
+            "text": "✕ Generic LLM · ungrounded"
+          },
+          {
+            "type": "paragraph",
+            "text": "\"How do we make people trust our new challenger brand faster?\""
+          },
+          {
+            "type": "paragraph",
+            "text": "\"Be authentic and tell your story. Stay consistent, lead with your values, and build an emotional connection — people trust brands that are bold, human, and relatable.\""
+          },
+          {
+            "type": "paragraph",
+            "text": "Fluent. Confident. Empty — it names no mechanism, so it can't tell you which lever to pull, in what order, or why it would work."
+          },
+          {
+            "type": "paragraph",
+            "text": "✓ Aloha AI · neuro-grounded Fluency · Exposure"
+          },
+          {
+            "type": "paragraph",
+            "text": "Same brief, answered from mechanism:"
+          },
+          {
+            "type": "paragraph",
+            "text": "A challenger is discounted mostly because it is unfamiliar and effortful to process. Trust here is built in a specific order: first raise processing fluency (simpler mark, one claim, high figure-ground contrast) so the brain reads you as \"easy,\" then use structured repetition to convert that ease into liking via the mere-exposure effect."
+          },
+          {
+            "type": "paragraph",
+            "text": "Only once you are fluent and familiar does a source-credibility play (specific proof, a named expert, verifiable numbers) pay off. Asserted too early, credibility claims read as effortful and are discounted."
+          },
+          {
+            "type": "paragraph",
+            "text": "Confidence: High Why you can rely on it: each move maps to a documented mechanism in the evidence base below, with concept names and confidence ratings, not adjectives."
+          },
+          {
+            "type": "paragraph",
+            "text": "PEG, the Perception Execution Gap, is the distance between what AI says about a brand and what a marketer can actually act on. Closing it with mechanism is the entire job."
+          }
+        ]
+      },
+      {
+        "title": "Four levers that move perception, and the order they fire in",
+        "eyebrow": "What actually shapes trust",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Brand trust is not one thing. It is a stack of cognitive mechanisms, each with its own lever and its own failure mode when you skip it."
+          },
+          {
+            "type": "heading",
+            "text": "Processing fluency Foundational"
+          },
+          {
+            "type": "paragraph",
+            "text": "The brain treats easy-to-process as safe and true. Simpler marks, higher contrast, one clear claim: read faster, judged more favorably. This is the floor; nothing above works until it's in place."
+          },
+          {
+            "type": "heading",
+            "text": "Mere exposure Compounding"
+          },
+          {
+            "type": "paragraph",
+            "text": "Repetition converts fluency into liking, largely below awareness. Consistency is not a style preference. Each identical encounter is processed a fraction faster, and that ease is felt as preference."
+          },
+          {
+            "type": "heading",
+            "text": "Source credibility Conditional"
+          },
+          {
+            "type": "paragraph",
+            "text": "Specific, verifiable proof and named expertise raise trust, but only once you are already fluent and familiar. Loud claims from an unfamiliar source are effortful, and effort is discounted."
+          },
+          {
+            "type": "heading",
+            "text": "Affect heuristic Fast & first"
+          },
+          {
+            "type": "paragraph",
+            "text": "A quick \"good/bad\" feeling forms before deliberation and biases everything after it. Aesthetic ease pre-loads that feeling, which is why craft is a trust input, not decoration."
+          }
+        ]
+      },
+      {
+        "title": "Brand Trust Diagnostic",
+        "eyebrow": "The instrument",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Describe your brand's current state. The tool returns a neuro-informed trust/perception read and concrete AI content-ops moves, mapped to the mechanisms above. Everything runs locally in your browser; nothing you select leaves your device."
+          },
+          {
+            "type": "list",
+            "items": [
+              "Your prioritized, mechanism-mapped actions appear here."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "A repeatable perception method, not a one-off audit",
+        "eyebrow": "How it works",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Every Aloha AI brand engagement runs the same three-stage pipeline, so the read stays grounded and the content system keeps compounding."
+          },
+          {
+            "type": "heading",
+            "text": "Audience-perception audit (RIL, adapted)"
+          },
+          {
+            "type": "paragraph",
+            "text": "A Research & Intelligence Layer built from your assets, category and audience, read against documented mechanisms (fluency, exposure, credibility, affect), each captured with concept name and retrieval date. No vibes, no sentiment-scraping."
+          },
+          {
+            "type": "heading",
+            "text": "Trust architecture (ROL)"
+          },
+          {
+            "type": "paragraph",
+            "text": "The audit resolves into an Operator-ready decision layer: which lever to pull, in what order, with what confidence, closing the Perception Execution Gap so a creative call is defensible, not just felt."
+          },
+          {
+            "type": "heading",
+            "text": "AI content system (EDSA) + refresh"
+          },
+          {
+            "type": "paragraph",
+            "text": "An Editorial Distribution & Signal Architecture turns the trust plan into a governed AI content engine, consistent by design to compound exposure. It re-checks its inputs on a schedule (Upstash · Vercel · Exa) and can alert you when perception or platform signals shift, so it never goes stale."
+          }
+        ]
+      },
+      {
+        "title": "Every trust claim, traced to a real mechanism",
+        "eyebrow": "Evidence base",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The rigor is the product. Each claim carries the named cognitive mechanism, a real concept from the consumer-neuroscience and cognitive-psychology literature, and a confidence rating, so a creative decision can be defended, not just asserted."
+          },
+          {
+            "type": "table",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Claim used on this page",
+                    "header": true
+                  },
+                  {
+                    "text": "Mechanism / concept",
+                    "header": true
+                  },
+                  {
+                    "text": "Retrieved",
+                    "header": true
+                  },
+                  {
+                    "text": "Confidence",
+                    "header": true
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Easier-to-process brands are judged more favorably and feel more true"
+                  },
+                  {
+                    "text": "Processing fluency: ease of processing raises evaluative + truth judgments (Reber, Schwarz & Winkielman)"
+                  },
+                  {
+                    "text": "2026-07-04"
+                  },
+                  {
+                    "text": "High"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Aesthetic ease (simplicity, contrast, prototypicality) drives liking"
+                  },
+                  {
+                    "text": "Fluency & aesthetic pleasure: \"beauty in the perceiver's processing experience\" (Reber et al., 2004)"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Repetition/consistency compounds recognition into preference"
+                  },
+                  {
+                    "text": "Mere-exposure effect: repeated exposure raises liking, via fluency (Zajonc, 1968)"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Perceptual + conceptual fluency lift brand evaluation specifically"
+                  },
+                  {
+                    "text": "Fluency in brand evaluation: conceptual/perceptual fluency effect (Lee & Labroo, 2004, J. Marketing Research)"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Credible, specific sources earn trust, but effort is discounted"
+                  },
+                  {
+                    "text": "Source credibility: expertise/trustworthiness of source shapes persuasion (Hovland/Yale tradition)"
+                  },
+                  {
+                    "text": "Med · well-established, applied"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "A fast good/bad feeling forms first and biases later judgment"
+                  },
+                  {
+                    "text": "Affect heuristic: affect as a cue in judgment/decision (Slovic, Finucane, Peters & MacGregor)"
+                  },
+                  {
+                    "text": "Med · robust, contextual"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Verification checkpoint: concept names above are real, established mechanisms in the literature (retrieved 2026-07-04). Effect sizes vary by context and population; confidence ratings reflect that. Treat this as a mechanism map to structure and defend decisions, not a claim that any single tactic guarantees a fixed lift for your brand."
+          }
+        ]
+      },
+      {
+        "title": "The combination no competitor holds",
+        "eyebrow": "Why this, not a generic brand consultant",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Most brand work is taste asserted with confidence. This is built on named, defensible frameworks, so you leave speaking the mechanism, not renting an opinion."
+          },
+          {
+            "type": "paragraph",
+            "text": "Neuro-of-trust"
+          },
+          {
+            "type": "heading",
+            "text": "Neuroscience of Trust"
+          },
+          {
+            "type": "paragraph",
+            "text": "Fluency, exposure, credibility and affect mapped to concrete brand levers, in firing order."
+          },
+          {
+            "type": "paragraph",
+            "text": "EDSA"
+          },
+          {
+            "type": "heading",
+            "text": "EDSA for content"
+          },
+          {
+            "type": "paragraph",
+            "text": "An Editorial Distribution & Signal Architecture: a governed AI content engine, consistent by design to compound exposure."
+          },
+          {
+            "type": "paragraph",
+            "text": "RIL → ROL"
+          },
+          {
+            "type": "heading",
+            "text": "Intelligence → Operator layer"
+          },
+          {
+            "type": "paragraph",
+            "text": "Perception research resolved into an operator-ready decision, the same rigor as our regulatory monitors, aimed at market intelligence."
+          },
+          {
+            "type": "paragraph",
+            "text": "PEG"
+          },
+          {
+            "type": "heading",
+            "text": "Perception Execution Gap"
+          },
+          {
+            "type": "paragraph",
+            "text": "The gap between what AI says about a brand and what a marketer can act on, named so you can close it."
+          }
+        ]
+      },
+      {
+        "title": "How this becomes yours",
+        "eyebrow": "The service",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Most brand advice is fluent and interchangeable. Nobody reads the neuroscience of why your audience actually trusts you. I build a neuroscience-grounded read of your audience's trust, plus an AI content system built to move it."
+          },
+          {
+            "type": "heading",
+            "text": "What I build"
+          },
+          {
+            "type": "paragraph",
+            "text": "A neuro-grounded brand-trust diagnostic for your brand, plus a prioritized AI content-ops system tuned to how your audience processes you."
+          },
+          {
+            "type": "heading",
+            "text": "What you get"
+          },
+          {
+            "type": "list",
+            "items": [
+              "A neuroscience-grounded brand-trust read"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A prioritized AI content-ops plan"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A system that keeps producing on-brand, un-suppressed content"
+            ]
+          },
+          {
+            "type": "heading",
+            "text": "How to start"
+          },
+          {
+            "type": "paragraph",
+            "text": "A 20-minute scoping call. If it's a fit, a tailored build turns around in days, not weeks."
+          },
+          {
+            "type": "paragraph",
+            "text": "Pricing. Engagements start from $5,000 to build + $1,500/mo, scoped to your brand, scoped to what your operation actually needs. Three-month minimum on any retainer; 30 days' notice to stop."
+          }
+        ]
+      },
+      {
+        "title": "Ready when you are.",
+        "eyebrow": "Aloha AI · Honolulu",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "This page runs a live Brand Perception Intelligence build. Get your own monitor with a Build ($5,000–$10,000, from $5,000 + $1,500/mo to keep it live), or book a scoping call to define what to track."
+          },
+          {
+            "type": "paragraph",
+            "text": "Prefer email? Email RN · or connect on LinkedIn"
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "intelligence/brand-perception/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "nsag",
@@ -124,19 +982,84 @@
     "summary": "A research-and-advisory practice for nervous-system-aware institutional design and governance, using a fourteen-dimension framework across legal, healthcare, technology, civic, built-environment, and extreme-environment systems.",
     "audience": "Institutions and leaders designing rules, spaces, technologies, communications, and procedures where stress, uncertainty, trust, adoption, and legitimacy matter.",
     "maturity": "Research",
-    "topics": ["governance", "nervous-system", "institutional-design", "trust", "human-adoption"],
-    "industries": ["government", "legal", "health", "education"],
-    "keywords": ["NSAG", "nervous-system-aware governance", "institutional design", "behavioral governance"],
-    "architecture": ["One fourteen-dimension measurement framework", "Fifteen domain modules spanning legal and justice, healthcare and clinical, civic and built environment, education, work, spaceflight, and confined settings", "A shared human-adoption lens with Aloha AI but a distinct advisory storefront and buyer"],
+    "topics": [
+      "governance",
+      "nervous-system",
+      "institutional-design",
+      "trust",
+      "human-adoption"
+    ],
+    "industries": [
+      "government",
+      "legal",
+      "health",
+      "education"
+    ],
+    "keywords": [
+      "NSAG",
+      "nervous-system-aware governance",
+      "institutional design",
+      "behavioral governance"
+    ],
+    "architecture": [
+      "One fourteen-dimension measurement framework",
+      "Fifteen domain modules spanning legal and justice, healthcare and clinical, civic and built environment, education, work, spaceflight, and confined settings",
+      "A shared human-adoption lens with Aloha AI but a distinct advisory storefront and buyer"
+    ],
     "implementationStatus": "Public research framework and advisory orientation. Domain application requires additional evidence, stakeholders, and qualified professional review.",
-    "documentation": ["Framework dimensions and definitions", "Domain-specific module maps", "Evidence, uncertainty, and professional-boundary record", "Advisory adaptation and evaluation plan"],
-    "roadmap": ["Publish the full framework and module documentation", "Operationalize measures and evidence standards by domain", "Develop advisory pilots with accountable institutional partners", "Evaluate whether changes improve comprehension, trust, participation, and safe adoption"],
-    "changelog": ["2026 public orientation defines the fourteen-dimension, fifteen-module architecture and the boundary between NSAG and Aloha AI"],
+    "documentation": [
+      "Framework dimensions and definitions",
+      "Domain-specific module maps",
+      "Evidence, uncertainty, and professional-boundary record",
+      "Advisory adaptation and evaluation plan"
+    ],
+    "roadmap": [
+      "Publish the full framework and module documentation",
+      "Operationalize measures and evidence standards by domain",
+      "Develop advisory pilots with accountable institutional partners",
+      "Evaluate whether changes improve comprehension, trust, participation, and safe adoption"
+    ],
+    "changelog": [
+      "2026 public orientation defines the fourteen-dimension, fifteen-module architecture and the boundary between NSAG and Aloha AI"
+    ],
     "licensing": "Advisory, institutional research, framework adaptation, and licensing require an explicit scope, professional responsibilities, evidence standards, ownership, and evaluation terms.",
-    "evidence": ["Neuroscience, psychology, human-factors, design, governance, and domain-specific evidence", "Observed institutional workflows, spaces, communications, and behavior", "Stakeholder experience and accountable professional judgment"],
-    "methodology": ["Identify where the institution asks stressed or uncertain people to understand, trust, or act", "Map threat, ambiguity, agency, predictability, belonging, and cognitive-load conditions", "Redesign the space, rule, process, communication, or tool", "Keep licensed and accountable judgment attached", "Evaluate comprehension, participation, trust, harm, and unintended effects"],
-    "assumptions": ["Institutions will include affected stakeholders and accountable domain professionals", "The framework will be adapted rather than treated as a universal causal model"],
-    "limitations": ["NSAG is a governance framework and method, not legal, medical, financial, clinical, or tax advice", "Nervous-system-aware design does not erase structural power, resource, legal, or implementation constraints"],
-    "relationships": [{"type": "related_to", "target": "aloha-ai-practice"}, {"type": "uses", "target": "methods"}, {"type": "supports", "target": "strategy"}, {"type": "related_to", "target": "biophilic-neuroarch"}]
+    "evidence": [
+      "Neuroscience, psychology, human-factors, design, governance, and domain-specific evidence",
+      "Observed institutional workflows, spaces, communications, and behavior",
+      "Stakeholder experience and accountable professional judgment"
+    ],
+    "methodology": [
+      "Identify where the institution asks stressed or uncertain people to understand, trust, or act",
+      "Map threat, ambiguity, agency, predictability, belonging, and cognitive-load conditions",
+      "Redesign the space, rule, process, communication, or tool",
+      "Keep licensed and accountable judgment attached",
+      "Evaluate comprehension, participation, trust, harm, and unintended effects"
+    ],
+    "assumptions": [
+      "Institutions will include affected stakeholders and accountable domain professionals",
+      "The framework will be adapted rather than treated as a universal causal model"
+    ],
+    "limitations": [
+      "NSAG is a governance framework and method, not legal, medical, financial, clinical, or tax advice",
+      "Nervous-system-aware design does not erase structural power, resource, legal, or implementation constraints"
+    ],
+    "relationships": [
+      {
+        "type": "related_to",
+        "target": "aloha-ai-practice"
+      },
+      {
+        "type": "uses",
+        "target": "methods"
+      },
+      {
+        "type": "supports",
+        "target": "strategy"
+      },
+      {
+        "type": "related_to",
+        "target": "biophilic-neuroarch"
+      }
+    ]
   }
 ]

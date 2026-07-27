@@ -71,7 +71,324 @@
         "type": "implements",
         "target": "trust-stack"
       }
-    ]
+    ],
+    "editorialIntro": [
+      "In a weekend, build a working system that catches fabricated, mis-stated, and unsupported citations before they ship — a governed AI checker you own and control.",
+      "No coding background needed · Async, lifetime access · Built-in AI tutor that answers in scope"
+    ],
+    "editorialSections": [
+      {
+        "title": "A fake citation is no longer a small mistake",
+        "eyebrow": "Why this, why now",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "In 2026 courts are ruling on AI-generated filings and sanctioning fabricated and mis-stated citations. \"It sounded right\" is not a defense. For anyone who publishes sourced claims — lawyers, clerks, researchers, journalists, policy writers — an unverified citation is a real professional liability."
+          },
+          {
+            "type": "paragraph",
+            "text": "The problem is not just whether a source exists. It is whether the source actually supports the specific proposition it is cited for. That is the gap this course teaches you to close, with a tool you build and control."
+          }
+        ]
+      },
+      {
+        "title": "A verifier that checks the claim, not just the link",
+        "eyebrow": "What you'll build",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "By the end you have a working system that takes a document and its citations and returns a per-citation verdict with evidence, governed so it never asserts a pass it cannot support."
+          },
+          {
+            "type": "heading",
+            "text": "Every citation and its claim"
+          },
+          {
+            "type": "paragraph",
+            "text": "Pulls each citation and the exact proposition it is cited for."
+          },
+          {
+            "type": "heading",
+            "text": "Exists and supports"
+          },
+          {
+            "type": "paragraph",
+            "text": "Confirms the source is real and retrievable, then whether it actually supports the claim."
+          },
+          {
+            "type": "heading",
+            "text": "Fabricated, mis-stated, unsupported"
+          },
+          {
+            "type": "paragraph",
+            "text": "A verdict per citation with the supporting passage or the gap."
+          },
+          {
+            "type": "heading",
+            "text": "A shareable audit"
+          },
+          {
+            "type": "paragraph",
+            "text": "Verdicts, evidence, and confidence, ready to hand to a supervisor."
+          },
+          {
+            "type": "heading",
+            "text": "An audit trail"
+          },
+          {
+            "type": "paragraph",
+            "text": "Every check recorded, so it is provable and not merely asserted."
+          },
+          {
+            "type": "heading",
+            "text": "Human signs off"
+          },
+          {
+            "type": "paragraph",
+            "text": "On doubt it defaults to flag for review. You stay accountable; the tool assists."
+          }
+        ]
+      },
+      {
+        "title": "Nine modules, every one ships part of the real system",
+        "eyebrow": "Curriculum",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "You do not watch and forget. You leave each module with a working piece of your verifier."
+          },
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "The problem and the standard. Why fabricated citations happen, the 2026 consequences, and what verified really means. You write your verification rubric.",
+              "Set up your workspace. Accounts, model access, project structure, with zero assumptions.",
+              "Extract citations and claims. Build the step that pulls each citation and the exact proposition it supports.",
+              "Existence and retrieval check. Verify each source is real and reachable; handle dead links and wrong reporters.",
+              "The support check, the hard part. Does the source support the specific claim? Build the evidence-grounded core.",
+              "Verdicts and report. Supported, unsupported, mis-stated, fabricated, or can't-verify, with evidence and confidence.",
+              "Governance layer. Guardrails, uncertainty, default-to-human, and a full audit log.",
+              "Evaluate your verifier. Build a test set; measure catch rate and false positives; iterate.",
+              "Put it to work and package it. Run it on your real documents, and if you want, how to offer it as a service."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Meet your AI tutor",
+        "eyebrow": "Not a static video course",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Every Aloha AI course ships with a governed AI tutor, grounded only in the course materials. It cites the lesson it is answering from, tells you when a question is out of scope, and never fabricates. It is built the same way the system you are building is. The product proves itself."
+          },
+          {
+            "type": "list",
+            "items": [
+              "Answers in scope, with the lesson it came from"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Reviews your rubric and verifier output against the course standard"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Says confirm with a licensed attorney on anything legal-advice-adjacent"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Speaks in the instructor's voice"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Tutor · demo"
+          },
+          {
+            "type": "paragraph",
+            "text": "Illustrative. The live tutor runs on your course materials."
+          },
+          {
+            "type": "paragraph",
+            "text": "Live governed tutor — answers only from this course's materials, cites the lesson, refuses out of scope. Connect the engine (serve.py) to enable."
+          }
+        ]
+      },
+      {
+        "title": "A portfolio, not a watch-time certificate",
+        "eyebrow": "What you walk away with",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "A deployed, working citation verifier you own"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Your written verification rubric"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "An evaluation report with catch rate on your own test set"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A sample audit-trail log"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "One real document run end-to-end"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A one-page plan to offer it as a service"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Learn it, build it with me, or have it built",
+        "eyebrow": "Three ways to get it",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Do not want to hire me to build it? Take the course and build your own verifier, at your own pace. Want it faster, or done for you? Move up the ladder."
+          },
+          {
+            "type": "heading",
+            "text": "The Course"
+          },
+          {
+            "type": "paragraph",
+            "text": "Async, lifetime access · 9 build-modules · templates and rubric · the AI tutor. You build your own verifier."
+          },
+          {
+            "type": "heading",
+            "text": "Cohort / Lab"
+          },
+          {
+            "type": "paragraph",
+            "text": "Build your verifier alongside Aloha AI with live guidance and review. For teams and people who want speed and support."
+          },
+          {
+            "type": "heading",
+            "text": "Built & Governed"
+          },
+          {
+            "type": "paragraph",
+            "text": "Aloha AI builds, integrates, and governs your verifier, with monitoring, evaluation, and an audit trail. Optional maintenance $500–1,500/mo."
+          },
+          {
+            "type": "paragraph",
+            "text": "Course tier is the entry point; each tier feeds the next."
+          }
+        ]
+      },
+      {
+        "title": "Governance-first, by background",
+        "eyebrow": "Your instructor",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "RN Collins works at the intersection of neuroscience, law, and AI systems, building tools where being right and being accountable matter. This course teaches the verification method and the tool, not shortcuts."
+          },
+          {
+            "type": "paragraph",
+            "text": "RN Collins is a JD candidate, not a licensed attorney. This course is educational and is not legal, financial, or medical advice."
+          }
+        ]
+      },
+      {
+        "title": "Questions",
+        "eyebrow": "FAQ",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Do I need to know how to code?"
+          },
+          {
+            "type": "paragraph",
+            "text": "No. The course is built for non-technical professionals. You direct AI tools to build the system; every step is walked through."
+          },
+          {
+            "type": "heading",
+            "text": "Is this legal advice?"
+          },
+          {
+            "type": "paragraph",
+            "text": "No. It teaches a verification method and a tool. The human, and for legal work a licensed attorney, stays accountable for what ships."
+          },
+          {
+            "type": "heading",
+            "text": "What do I actually end up with?"
+          },
+          {
+            "type": "paragraph",
+            "text": "A working verifier you own, plus your rubric, an evaluation report, an audit-log sample, and a real document run end-to-end."
+          },
+          {
+            "type": "heading",
+            "text": "What is the AI tutor?"
+          },
+          {
+            "type": "paragraph",
+            "text": "A governed assistant grounded in the course materials. It cites the lesson it is answering from, stays in scope, and will not fabricate, the same standard the tool you build holds."
+          },
+          {
+            "type": "heading",
+            "text": "Refunds?"
+          },
+          {
+            "type": "paragraph",
+            "text": "Course terms and refund policy to be finalized before launch."
+          }
+        ]
+      },
+      {
+        "title": "Find the right research tool before you verify",
+        "eyebrow": "Tool guide",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Best AI for research"
+          },
+          {
+            "type": "paragraph",
+            "text": "Perplexity, Elicit, and Consensus compared — start here to pick a tool worth running through the citation verifier."
+          }
+        ]
+      },
+      {
+        "title": "Stop shipping citations you can't stand behind",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Build the checker this weekend."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "university/courses/citation-verifier/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "claims-checker-course",
@@ -145,7 +462,324 @@
         "type": "uses",
         "target": "citation-verifier"
       }
-    ]
+    ],
+    "editorialIntro": [
+      "In a weekend, build a working tool that screens your marketing, product, and label claims against the rules that apply before you publish, flagging what is unsubstantiated, overstated, or prohibited, and telling you the rule and the substantiation it needs.",
+      "No coding background needed · Async, lifetime access · Built-in governed AI tutor"
+    ],
+    "editorialSections": [
+      {
+        "title": "A claim you can't back up is a bill waiting to arrive",
+        "eyebrow": "Why this, why now",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Regulators are active right now. The FTC opens cases over unsubstantiated health, performance, and green claims; the FDA sends warning letters over disease and structure-function language; state AGs and platforms pull listings and ads that overstate. A single line of copy that promises more than your evidence supports can trigger a penalty, a warning letter, or a takedown."
+          },
+          {
+            "type": "paragraph",
+            "text": "The hard part is not knowing rules exist. It is catching the specific claim, mapping it to the specific rule, and knowing what proof it needs, before the copy goes live. That is the gap this course teaches you to close, with a tool you build and own."
+          }
+        ]
+      },
+      {
+        "title": "A checker that reads your copy the way a regulator would",
+        "eyebrow": "What you'll build",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "By the end you have a working system that takes a piece of copy, an ad, a label, a product page, an email, and returns a per-claim verdict with the rule behind it and the substantiation it requires."
+          },
+          {
+            "type": "heading",
+            "text": "Every claim in the copy"
+          },
+          {
+            "type": "paragraph",
+            "text": "Pulls each express and implied claim, not just the obvious headline."
+          },
+          {
+            "type": "heading",
+            "text": "Claim to the rule"
+          },
+          {
+            "type": "paragraph",
+            "text": "Matches each claim to the applicable regime: FTC substantiation, FDA, state, industry code."
+          },
+          {
+            "type": "heading",
+            "text": "Unsubstantiated, overstated, prohibited"
+          },
+          {
+            "type": "paragraph",
+            "text": "A verdict per claim with the reason and the risk level."
+          },
+          {
+            "type": "heading",
+            "text": "The substantiation needed"
+          },
+          {
+            "type": "paragraph",
+            "text": "Tells you what proof each claim needs before it can run, or that it cannot run at all."
+          },
+          {
+            "type": "heading",
+            "text": "A review-ready audit"
+          },
+          {
+            "type": "paragraph",
+            "text": "Verdicts, rules, and required proof, ready to hand to legal or a client."
+          },
+          {
+            "type": "heading",
+            "text": "Human signs off"
+          },
+          {
+            "type": "paragraph",
+            "text": "On doubt it defaults to flag for review. You stay accountable; the tool assists."
+          }
+        ]
+      },
+      {
+        "title": "Nine modules, every one ships part of the real system",
+        "eyebrow": "Curriculum",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "You do not watch and forget. You leave each module with a working piece of your claims checker."
+          },
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "The problem and the standard. How claims get regulated, what substantiation means, and the difference between express and implied claims. You write your claim-risk rubric.",
+              "Set up your workspace. Accounts, model access, project structure, with zero assumptions and nothing technical taken for granted.",
+              "Extract the claims. Build the step that pulls every claim from a piece of copy, including the implied ones a reader would hear.",
+              "Build your rule library. Load the regimes that apply to your industry: FTC substantiation, FDA language limits, state rules, platform and industry codes.",
+              "Map claim to rule, the core. Match each claim to the rule that governs it and classify the required substantiation. This is the evidence-grounded heart of the tool.",
+              "Verdicts and report. Substantiated, needs-proof, overstated, prohibited, or can't-assess, with the rule cited and the proof required.",
+              "Governance layer. Guardrails, uncertainty handling, default-to-human, and a full audit log of every screen.",
+              "Evaluate your checker. Build a test set of real and borderline claims; measure catch rate and false positives; iterate.",
+              "Put it to work and package it. Run it on your real campaigns, and if you want, how to offer pre-publication screening as a service."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Meet your AI tutor",
+        "eyebrow": "Not a static video course",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Every Aloha AI course ships with a governed AI tutor, grounded only in the course materials. It cites the lesson it is answering from, tells you when a question is out of scope, and never fabricates. It is built the same way the system you are building is. The product proves itself."
+          },
+          {
+            "type": "list",
+            "items": [
+              "Answers in scope, with the lesson it came from"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Reviews your rubric and rule library against the course standard"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Says confirm with regulatory counsel on anything advice-adjacent"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Speaks in the instructor's voice"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Tutor · demo"
+          },
+          {
+            "type": "paragraph",
+            "text": "Illustrative. The live tutor runs on your course materials."
+          },
+          {
+            "type": "paragraph",
+            "text": "Live governed tutor — answers only from this course's materials, cites the lesson, refuses out of scope. Connect the engine (serve.py) to enable."
+          }
+        ]
+      },
+      {
+        "title": "A portfolio, not a watch-time certificate",
+        "eyebrow": "What you walk away with",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "A deployed, working claims checker you own"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Your written claim-risk rubric"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A rule library for your industry"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "An evaluation report with catch rate on your own test set"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "One real campaign screened end-to-end"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A one-page plan to offer it as a service"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Learn it, build it with me, or have it built",
+        "eyebrow": "Three ways to get it",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Do not want to hire me to build it? Take the course and build your own checker, at your own pace. Want it faster, or done for you? Move up the ladder."
+          },
+          {
+            "type": "heading",
+            "text": "The Course"
+          },
+          {
+            "type": "paragraph",
+            "text": "Async, lifetime access · 9 build-modules · templates and rubric · the AI tutor. You build your own claims checker."
+          },
+          {
+            "type": "heading",
+            "text": "Cohort / Lab"
+          },
+          {
+            "type": "paragraph",
+            "text": "Build your claims checker alongside Aloha AI with live guidance and review. For teams and people who want speed and support."
+          },
+          {
+            "type": "heading",
+            "text": "Built & Governed"
+          },
+          {
+            "type": "paragraph",
+            "text": "Aloha AI builds, integrates, and governs your claims checker, with monitoring, evaluation, and an audit trail. Optional maintenance $500–1,500/mo."
+          },
+          {
+            "type": "paragraph",
+            "text": "Course tier is the entry point; each tier feeds the next."
+          }
+        ]
+      },
+      {
+        "title": "Governance-first, by background",
+        "eyebrow": "Your instructor",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "RN Collins works at the intersection of neuroscience, law, and AI systems, building tools where being right and being accountable matter. This course teaches the screening method and the tool, not shortcuts."
+          },
+          {
+            "type": "paragraph",
+            "text": "RN Collins is a JD candidate, not a licensed attorney. This course is educational and is not legal, financial, or medical advice."
+          }
+        ]
+      },
+      {
+        "title": "Questions",
+        "eyebrow": "FAQ",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Do I need to know how to code?"
+          },
+          {
+            "type": "paragraph",
+            "text": "No. The course is built for non-technical professionals. You direct AI tools to build the system; every step is walked through."
+          },
+          {
+            "type": "heading",
+            "text": "Is this legal or regulatory advice?"
+          },
+          {
+            "type": "paragraph",
+            "text": "No. It teaches a screening method and a tool. The human, and for regulated claims qualified counsel, stays accountable for what publishes."
+          },
+          {
+            "type": "heading",
+            "text": "Does it cover my industry's rules?"
+          },
+          {
+            "type": "paragraph",
+            "text": "You build a rule library for your own industry. The method works across FTC, FDA, state, and platform regimes; you load the ones that apply to you."
+          },
+          {
+            "type": "heading",
+            "text": "What is the AI tutor?"
+          },
+          {
+            "type": "paragraph",
+            "text": "A governed assistant grounded in the course materials. It cites the lesson it is answering from, stays in scope, and will not fabricate, the same standard the tool you build holds."
+          },
+          {
+            "type": "heading",
+            "text": "Refunds?"
+          },
+          {
+            "type": "paragraph",
+            "text": "Course terms and refund policy to be finalized before launch."
+          }
+        ]
+      },
+      {
+        "title": "Choose a research tool that gives you something worth checking",
+        "eyebrow": "Tool guide",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Best AI for research"
+          },
+          {
+            "type": "paragraph",
+            "text": "Citation-first tools vs. general assistants — matched to the kind of claims you need to be able to back up."
+          }
+        ]
+      },
+      {
+        "title": "Stop publishing claims you can't back up",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Build the checker this weekend."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "university/courses/claims-checker/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "first-ai-team-course",
@@ -218,7 +852,327 @@
         "type": "implements",
         "target": "strategy"
       }
-    ]
+    ],
+    "editorialIntro": [
+      "Do not want to hire anyone yet? Start here. In one weekend you build a small, supervised AI team around one real workflow from your work — named agents, a one-line contract for each, and an approval step so nothing sends, posts, or spends without you.",
+      "No coding background needed · Async, lifetime access · Built-in AI tutor · The entry point to the full course line"
+    ],
+    "editorialSections": [
+      {
+        "title": "The gap is not knowledge. It is permission to begin.",
+        "eyebrow": "Why start here",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "You have watched people build with AI and felt behind. The block is rarely the concepts — it is not knowing where to start, and fear of doing it wrong. This course removes both. You pick one workflow, build a small team around it, and finish the weekend with a working system and your own hands on the controls."
+          },
+          {
+            "type": "paragraph",
+            "text": "It is deliberately small. That is the point. A tiny team you actually understand beats a sprawling one you cannot govern. When you outgrow it, the deeper courses are waiting."
+          }
+        ]
+      },
+      {
+        "title": "A small team with a job and a boundary each",
+        "eyebrow": "What you'll build",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "By the end you have a supervised team of five or six named agents running one real workflow — and stopping at you before anything goes out."
+          },
+          {
+            "type": "heading",
+            "text": "One real workflow"
+          },
+          {
+            "type": "paragraph",
+            "text": "Trigger, inputs, steps, decisions, output — written as a chain a coworker could follow."
+          },
+          {
+            "type": "heading",
+            "text": "What AI should and shouldn't do"
+          },
+          {
+            "type": "paragraph",
+            "text": "Sort each step into off-limits, augmentation, or automation. The safe default is augmentation."
+          },
+          {
+            "type": "heading",
+            "text": "A named team"
+          },
+          {
+            "type": "paragraph",
+            "text": "Chief of Staff, Researcher, Drafter, Reviewer, Compliance, Ops — the ones your workflow needs."
+          },
+          {
+            "type": "heading",
+            "text": "A role contract per agent"
+          },
+          {
+            "type": "paragraph",
+            "text": "May do X, may never do Y, must route Z to you. The line that makes it real."
+          },
+          {
+            "type": "heading",
+            "text": "A human-approval step"
+          },
+          {
+            "type": "paragraph",
+            "text": "The team works up to \"ready to send\" — then stops for your sign-off. Every time."
+          },
+          {
+            "type": "heading",
+            "text": "One clean end-to-end pass"
+          },
+          {
+            "type": "paragraph",
+            "text": "Run the team on a real task, watch what breaks, tighten, and run it again."
+          }
+        ]
+      },
+      {
+        "title": "A named team is cute. The contract under the name is the product.",
+        "eyebrow": "The artifact you keep",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Anyone can give agents fun names. What makes a team usable — for a founder, a clinic, a law practice — is the contract under each name: what it may touch, what it may never do, and what it must route to you."
+          },
+          {
+            "type": "paragraph",
+            "text": "May flag or block off-brand output · may never send · must route publish decisions to you."
+          },
+          {
+            "type": "paragraph",
+            "text": "May check claims and risk · may never approve its own work · must escalate any risk to you."
+          },
+          {
+            "type": "paragraph",
+            "text": "May prepare the finished work · may never publish alone · every send is approval-gated."
+          }
+        ]
+      },
+      {
+        "title": "A weekend, in four build-blocks",
+        "eyebrow": "Curriculum",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "You do not watch and forget. You leave each block with a working piece of your team."
+          },
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "See your work as a system. Pick one workflow and map it — trigger, inputs, steps, decisions, output, accountability. Clarity before agents.",
+              "Decide what AI should and shouldn't do. Sort every step into off-limits, augmentation, or automation, and set the rule that nothing consequential happens without your approval.",
+              "Design the team and write role contracts. Choose your agents, give each one a job and a boundary, and write the one-line contract that governs it. Name them last.",
+              "Build it, run it once, and know when to level up. Build one agent at a time, wire the approval step, run the whole team on a real task, and learn the signals that mean it is time for a deeper build."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Meet your AI tutor",
+        "eyebrow": "Not a static video course",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Every Aloha AI course ships with a governed AI tutor, grounded only in the course materials. It cites the lesson it is answering from, tells you when a question is out of scope, and never fabricates. It is built the same way the team you are building is. The product proves itself."
+          },
+          {
+            "type": "list",
+            "items": [
+              "Answers in scope, with the lesson it came from"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Helps you sort steps and write role contracts"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Points you to the deeper course when a question outgrows this one"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Speaks in the instructor's voice"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Tutor · demo"
+          },
+          {
+            "type": "paragraph",
+            "text": "Illustrative. The live tutor runs on your course materials."
+          },
+          {
+            "type": "paragraph",
+            "text": "Live governed tutor — answers only from this course's materials, cites the lesson, refuses out of scope. Connect the engine (serve.py) to enable."
+          }
+        ]
+      },
+      {
+        "title": "A working team, not a watch-time certificate",
+        "eyebrow": "What you walk away with",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "One workflow mapped as a system"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A supervised team of five or six named agents"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A role contract for each agent"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A defined human-approval step"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "One real task run end-to-end with your sign-off"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A clear read on whether to level up — and where"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Learn it, build it with me, or have it built",
+        "eyebrow": "Three ways to get it",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "This is the on-ramp. Take the course and build your first team yourself. When the workflow gets real — sensitive data, live tools, money on the line — move up the ladder."
+          },
+          {
+            "type": "heading",
+            "text": "The Course"
+          },
+          {
+            "type": "paragraph",
+            "text": "Async, lifetime access · 4 weekend build-blocks · role-contract template · the AI tutor. You build your first team."
+          },
+          {
+            "type": "heading",
+            "text": "Cohort / Lab"
+          },
+          {
+            "type": "paragraph",
+            "text": "Build your first team alongside Aloha AI with live guidance and review. For teams and people who want speed and support."
+          },
+          {
+            "type": "heading",
+            "text": "Built & Governed"
+          },
+          {
+            "type": "paragraph",
+            "text": "Aloha AI builds, integrates, and governs the team for you, with monitoring, evaluation, and an audit trail."
+          },
+          {
+            "type": "paragraph",
+            "text": "Ready for a deeper build? The Governed AI Operator is the next step up."
+          }
+        ]
+      },
+      {
+        "title": "Governance-first, by background",
+        "eyebrow": "Your instructor",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "RN Collins builds AI systems for regulated and reputation-sensitive work, where being right and being accountable matter. This course teaches the real method — small, supervised, governed — not shortcuts that fall apart the moment the work gets serious."
+          },
+          {
+            "type": "paragraph",
+            "text": "RN Collins is a JD candidate, not a licensed attorney. This course is educational and is not legal, financial, or medical advice."
+          }
+        ]
+      },
+      {
+        "title": "Questions",
+        "eyebrow": "FAQ",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Do I need to know how to code?"
+          },
+          {
+            "type": "paragraph",
+            "text": "No. This is the beginner on-ramp, built for non-technical professionals. You direct AI tools; every step is walked through."
+          },
+          {
+            "type": "heading",
+            "text": "How is this different from the other courses?"
+          },
+          {
+            "type": "paragraph",
+            "text": "This one gets you started fast on a low-stakes workflow. The Governed Operator and the specialist courses go deep on integrations, security, evaluation, and governance for real production use. Start here, level up when you outgrow it."
+          },
+          {
+            "type": "heading",
+            "text": "Will an agent do my whole job?"
+          },
+          {
+            "type": "paragraph",
+            "text": "No, and the course is honest about that. An agent does bounded tasks; you stay the owner who approves what matters. That framing is what makes it safe to use."
+          },
+          {
+            "type": "heading",
+            "text": "What do I actually end up with?"
+          },
+          {
+            "type": "paragraph",
+            "text": "One workflow mapped, a supervised team of named agents with a role contract each, an approval step, and one real task run end-to-end with your sign-off."
+          },
+          {
+            "type": "heading",
+            "text": "Refunds?"
+          },
+          {
+            "type": "paragraph",
+            "text": "Course terms and refund policy to be finalized before launch."
+          }
+        ]
+      },
+      {
+        "title": "Stop feeling behind. Build one real thing this weekend.",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Your first governed AI team, start to finish."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "university/courses/first-ai-team/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "governed-operator-course",
@@ -293,7 +1247,329 @@
         "type": "uses",
         "target": "workspace"
       }
-    ]
+    ],
+    "editorialIntro": [
+      "Build a supervised AI that researches, drafts, and organizes across your tools in your voice, and never sends, posts, or spends without your approval.",
+      "Leverage without losing control · Async, lifetime access · Built-in governed AI tutor"
+    ],
+    "editorialSections": [
+      {
+        "title": "The Approval Gate is the product",
+        "eyebrow": "The one idea",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "You will build the wall that makes an agent trustworthy: it plans and prepares freely, but any send, post, DM, spend, or change-settings action is default-denied until you approve the exact payload."
+          },
+          {
+            "type": "paragraph",
+            "text": "perceive → plan → select tool → ⏺ approval gate → execute → verify → log"
+          },
+          {
+            "type": "paragraph",
+            "text": "Edit the action and the prior approval is void. No unauthorized action, provable and not promised."
+          }
+        ]
+      },
+      {
+        "title": "An agent that acts on its own is a liability, not an asset",
+        "eyebrow": "The problem with \"autonomous\"",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Everyone is selling AI that runs while you sleep. For real work, client emails, posts, payments, settings, an agent that acts unsupervised is one bad call away from sending the wrong thing to the wrong person. In law, healthcare-adjacent, and client work, that is not a bug. It is a breach."
+          },
+          {
+            "type": "paragraph",
+            "text": "The fix is not less capability. It is a hard wall: the agent does everything reversible on its own, and stops for your approval before anything consequential."
+          }
+        ]
+      },
+      {
+        "title": "An operator you own that can't go rogue",
+        "eyebrow": "What you'll build",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "By the end you have a supervised operator that acts across your tools, sounds like you, and structurally cannot take a consequential action without your sign-off."
+          },
+          {
+            "type": "heading",
+            "text": "Across your tools"
+          },
+          {
+            "type": "paragraph",
+            "text": "Research, drafting, file and inbox prep across the apps you connect."
+          },
+          {
+            "type": "heading",
+            "text": "Your voice"
+          },
+          {
+            "type": "paragraph",
+            "text": "Drafts in your writing style via your own corpus, retrieval not fine-tuning, so it stays deletable."
+          },
+          {
+            "type": "heading",
+            "text": "At the gate"
+          },
+          {
+            "type": "paragraph",
+            "text": "Consequential actions wait for your explicit approval. Enforced structurally, not as a setting."
+          },
+          {
+            "type": "heading",
+            "text": "With permission"
+          },
+          {
+            "type": "paragraph",
+            "text": "Context in retrieval you can inspect and delete, not baked into a model."
+          },
+          {
+            "type": "heading",
+            "text": "Against injection"
+          },
+          {
+            "type": "paragraph",
+            "text": "Treats everything it reads from web and email as data, not instructions."
+          },
+          {
+            "type": "heading",
+            "text": "Everything"
+          },
+          {
+            "type": "paragraph",
+            "text": "An append-only audit trail. No unauthorized action is provable."
+          }
+        ]
+      },
+      {
+        "title": "Ten modules, every one ships part of a working operator",
+        "eyebrow": "Curriculum",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "You do not watch and forget. You leave each module with a working piece of your supervised operator."
+          },
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Why supervised, not autonomous. The failure modes, the five consequential action types, and the draft-plus-approve doctrine. Write your permission policy.",
+              "Set up the workspace and model. Provider-agnostic setup, project structure, secrets by name not value, and a sandbox.",
+              "The agent loop. Build perceive, plan, select-tool, execute, verify, log on a safe, reversible task.",
+              "The Approval Gate, the core. Default-deny classifier, immutable pending-action with a payload hash, and execution only via a hash-matched approval.",
+              "Tools and adapters. Give it bounded tools, email draft-only, docs, browser, files, with a role contract each.",
+              "Voice and context, persona plus RAG. Feed it your writing so it drafts in your voice, retrieval kept deletable.",
+              "Governance stack. Injection defense, a faithfulness gate, hard rules, a kill switch, and an audit log.",
+              "Evaluation and red-team. Attack the gate with forgery, edit, and injection; prove unauthorized executions equal zero; check drafts sound like you.",
+              "A first real job. Wire one approval-gated beachhead end-to-end, recommended: content repurposing.",
+              "Extend and optionally sell. Add jobs safely; the done-with-you and done-for-you ladder; pricing a governed build."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Meet your AI tutor",
+        "eyebrow": "Not a static video course",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "A governed tutor grounded only in the course materials. It cites the lesson it is answering from, stays in scope, and will not fabricate. Here it demonstrates the exact safety property you are building: it stops a consequential action for approval."
+          },
+          {
+            "type": "list",
+            "items": [
+              "Walks you through your own approval-gate test"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Explains why a blocked action was blocked"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Speaks in the instructor's voice"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Takes no autonomous actions itself"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Tutor · demo"
+          },
+          {
+            "type": "paragraph",
+            "text": "Illustrative. The live tutor runs on your course materials."
+          },
+          {
+            "type": "paragraph",
+            "text": "Live governed tutor — answers only from this course's materials, cites the lesson, refuses out of scope. Connect the engine (serve.py) to enable."
+          }
+        ]
+      },
+      {
+        "title": "A working operator and the method to extend it safely",
+        "eyebrow": "What you walk away with",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "A supervised operator with a proven approval gate, unauthorized executions equal zero"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Your permission policy"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Tool role-contracts"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "An audit-log sample and a red-team result"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "One real approval-gated job running"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A plan to sell and govern it"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Learn it, build it with me, or have it built",
+        "eyebrow": "Three ways to get it",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Do not want to hire me to build it? Take the flagship course and build your own operator. Want it faster or done for you? Move up the ladder."
+          },
+          {
+            "type": "heading",
+            "text": "The Course"
+          },
+          {
+            "type": "paragraph",
+            "text": "Async, lifetime access · 10 build-modules · templates and the governed AI tutor. You build your own supervised operator."
+          },
+          {
+            "type": "heading",
+            "text": "Cohort / Lab"
+          },
+          {
+            "type": "paragraph",
+            "text": "Build your operator alongside Aloha AI with live guidance, review, and a governance check. 1:1 lab $5,000."
+          },
+          {
+            "type": "heading",
+            "text": "Built & Governed"
+          },
+          {
+            "type": "paragraph",
+            "text": "Aloha AI builds and governs your operator or agent team, plus the Aloha AI Assurance retainer $3,500/mo for monitoring, evaluation, and audit."
+          },
+          {
+            "type": "paragraph",
+            "text": "The flagship. Entry point is Course 01, the Citation Verifier, at $149."
+          }
+        ]
+      },
+      {
+        "title": "Governance-first, by background",
+        "eyebrow": "Your instructor",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "RN Collins builds AI systems where being accountable matters as much as being capable, across neuroscience, law, and regulated work. This flagship teaches the architecture that makes agents safe to trust with real work."
+          },
+          {
+            "type": "paragraph",
+            "text": "RN Collins is a JD candidate, not a licensed attorney. This course is educational and is not legal, financial, or medical advice."
+          }
+        ]
+      },
+      {
+        "title": "Questions",
+        "eyebrow": "FAQ",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Do I need to code?"
+          },
+          {
+            "type": "paragraph",
+            "text": "No. You direct AI tools to build the operator; every step is walked through for non-technical builders."
+          },
+          {
+            "type": "heading",
+            "text": "Is this the runs-while-you-sleep thing?"
+          },
+          {
+            "type": "paragraph",
+            "text": "The opposite. Your operator prepares and routes work continuously, but stops for your approval before anything consequential."
+          },
+          {
+            "type": "heading",
+            "text": "Will it sound like me?"
+          },
+          {
+            "type": "paragraph",
+            "text": "Yes. It drafts from your own writing via retrieval, not fine-tuning, so your data stays inspectable and deletable."
+          },
+          {
+            "type": "heading",
+            "text": "Why is this the flagship?"
+          },
+          {
+            "type": "paragraph",
+            "text": "It is the deepest build and the one your other Aloha AI systems, and course tutors, run on."
+          },
+          {
+            "type": "heading",
+            "text": "Refunds?"
+          },
+          {
+            "type": "paragraph",
+            "text": "Course terms and refund policy to be finalized before launch."
+          }
+        ]
+      },
+      {
+        "title": "Leverage you can actually defend",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Build your governed operator."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "university/courses/governed-operator/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "kb-readiness-course",
@@ -367,7 +1643,310 @@
         "type": "available_in_workspace",
         "target": "workspace"
       }
-    ]
+    ],
+    "editorialIntro": [
+      "In a weekend, build a readiness checker and method that assesses your knowledge base for coverage, freshness, structure, contradictions, and sensitive data, and prepares it so an AI assistant or RAG system uses it safely and accurately.",
+      "No coding background needed · Async, lifetime access · Built-in governed AI tutor"
+    ],
+    "editorialSections": [
+      {
+        "title": "A confidently wrong assistant is worse than no assistant",
+        "eyebrow": "Why this, why now",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Everyone is rushing to point an AI assistant at their existing docs. But if the knowledge base is stale, contradictory, full of gaps, or salted with sensitive data, the assistant will answer wrong with total confidence, and cite your own documents while doing it. It will also happily surface the salary sheet or the unredacted contract to whoever asks."
+          },
+          {
+            "type": "paragraph",
+            "text": "You cannot govern an assistant into being right if the source is broken. The fix is to assess and prepare the knowledge base first, for coverage, freshness, structure, contradictions, and sensitive data, before anything reads from it. That is what this course teaches you to build."
+          }
+        ]
+      },
+      {
+        "title": "A checker that grades the source before the assistant reads it",
+        "eyebrow": "What you'll build",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "By the end you have a working tool that takes a knowledge base and returns a readiness report of what is missing, stale, contradictory, and sensitive, plus a prepared version ready for retrieval."
+          },
+          {
+            "type": "heading",
+            "text": "Coverage and gaps"
+          },
+          {
+            "type": "paragraph",
+            "text": "Finds the questions your knowledge base cannot answer before your users do."
+          },
+          {
+            "type": "heading",
+            "text": "Freshness"
+          },
+          {
+            "type": "paragraph",
+            "text": "Flags documents too old to trust and the ones overdue for review."
+          },
+          {
+            "type": "heading",
+            "text": "Structure"
+          },
+          {
+            "type": "paragraph",
+            "text": "Rates how retrievable the content is: chunkable, labeled, findable."
+          },
+          {
+            "type": "heading",
+            "text": "Contradictions"
+          },
+          {
+            "type": "paragraph",
+            "text": "Surfaces documents that disagree, so the assistant does not pick one at random."
+          },
+          {
+            "type": "heading",
+            "text": "Sensitive data"
+          },
+          {
+            "type": "paragraph",
+            "text": "Flags PII, secrets, and confidential material that should not be retrievable."
+          },
+          {
+            "type": "heading",
+            "text": "Human signs off"
+          },
+          {
+            "type": "paragraph",
+            "text": "On doubt it defaults to flag for review. You stay accountable; the tool assists."
+          }
+        ]
+      },
+      {
+        "title": "Nine modules, every one ships part of the real system",
+        "eyebrow": "Curriculum",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "You do not watch and forget. You leave each module with a working piece of your readiness checker."
+          },
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "The problem and the standard. Why garbage in breaks an AI assistant, and what a retrieval-ready knowledge base actually looks like. You write your readiness rubric.",
+              "Set up your workspace. Accounts, model access, project structure, with zero assumptions and nothing technical taken for granted.",
+              "Ingest and inventory the knowledge base. Build the step that loads your documents and catalogs what you actually have.",
+              "Coverage and freshness checks. Map the questions the knowledge base should answer, find the gaps, and flag stale content.",
+              "Structure and retrievability. Score how well content chunks and retrieves; fix the pieces that will not.",
+              "Contradictions and sensitive data, the core. Detect documents that disagree and surface PII, secrets, and confidential material to exclude.",
+              "Governance layer. Guardrails, uncertainty handling, default-to-human, and an audit log of every assessment.",
+              "Evaluate readiness. Score the knowledge base, prepare a cleaned retrieval set, and test that an assistant answers accurately from it.",
+              "Put it to work and package it. Run it on your real knowledge base, and if you want, how to offer readiness assessment as a service."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Meet your AI tutor",
+        "eyebrow": "Not a static video course",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Every Aloha AI course ships with a governed AI tutor, grounded only in the course materials. It cites the lesson it is answering from, tells you when a question is out of scope, and never fabricates. It is built the same way the system you are building is. The product proves itself."
+          },
+          {
+            "type": "list",
+            "items": [
+              "Answers in scope, with the lesson it came from"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Reviews your rubric and readiness report against the course standard"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Says check with your security or compliance owner on sensitive-data calls"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Speaks in the instructor's voice"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Tutor · demo"
+          },
+          {
+            "type": "paragraph",
+            "text": "Illustrative. The live tutor runs on your course materials."
+          },
+          {
+            "type": "paragraph",
+            "text": "Live governed tutor — answers only from this course's materials, cites the lesson, refuses out of scope. Connect the engine (serve.py) to enable."
+          }
+        ]
+      },
+      {
+        "title": "A portfolio, not a watch-time certificate",
+        "eyebrow": "What you walk away with",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "A deployed, working readiness checker you own"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Your written readiness rubric"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A readiness report on your real knowledge base"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A prepared, retrieval-ready document set"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "An accuracy test of an assistant answering from it"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A one-page plan to offer it as a service"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Learn it, build it with me, or have it built",
+        "eyebrow": "Three ways to get it",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Do not want to hire me to build it? Take the course and build your own checker, at your own pace. Want it faster, or done for you? Move up the ladder."
+          },
+          {
+            "type": "heading",
+            "text": "The Course"
+          },
+          {
+            "type": "paragraph",
+            "text": "Async, lifetime access · 9 build-modules · templates and rubric · the AI tutor. You build your own readiness checker."
+          },
+          {
+            "type": "heading",
+            "text": "Cohort / Lab"
+          },
+          {
+            "type": "paragraph",
+            "text": "Build your readiness checker alongside Aloha AI with live guidance and review. For teams and people who want speed and support."
+          },
+          {
+            "type": "heading",
+            "text": "Built & Governed"
+          },
+          {
+            "type": "paragraph",
+            "text": "Aloha AI builds, integrates, and governs your readiness checker, with monitoring, evaluation, and an audit trail. Optional maintenance $500–1,500/mo."
+          },
+          {
+            "type": "paragraph",
+            "text": "Course tier is the entry point; each tier feeds the next."
+          }
+        ]
+      },
+      {
+        "title": "Governance-first, by background",
+        "eyebrow": "Your instructor",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "RN Collins works at the intersection of neuroscience, law, and AI systems, building tools where being right and being accountable matter. This course teaches the readiness method and the tool, not shortcuts."
+          },
+          {
+            "type": "paragraph",
+            "text": "RN Collins is a JD candidate, not a licensed attorney. This course is educational and is not legal, financial, or medical advice."
+          }
+        ]
+      },
+      {
+        "title": "Questions",
+        "eyebrow": "FAQ",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Do I need to know how to code?"
+          },
+          {
+            "type": "paragraph",
+            "text": "No. The course is built for non-technical professionals. You direct AI tools to build the system; every step is walked through."
+          },
+          {
+            "type": "heading",
+            "text": "Do I need a RAG system already?"
+          },
+          {
+            "type": "paragraph",
+            "text": "No. This course prepares the knowledge before retrieval. It pairs well with an assistant build, but you can run the readiness check on any knowledge base."
+          },
+          {
+            "type": "heading",
+            "text": "What about sensitive data?"
+          },
+          {
+            "type": "paragraph",
+            "text": "Detecting PII, secrets, and confidential material is a core step. Your security or compliance owner stays accountable for the final call on what is retrievable."
+          },
+          {
+            "type": "heading",
+            "text": "What is the AI tutor?"
+          },
+          {
+            "type": "paragraph",
+            "text": "A governed assistant grounded in the course materials. It cites the lesson it is answering from, stays in scope, and will not fabricate, the same standard the tool you build holds."
+          },
+          {
+            "type": "heading",
+            "text": "Refunds?"
+          },
+          {
+            "type": "paragraph",
+            "text": "Course terms and refund policy to be finalized before launch."
+          }
+        ]
+      },
+      {
+        "title": "Fix the source before the assistant reads it",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Build the readiness checker this weekend."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "university/courses/kb-readiness/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "reg-tracker-course",
@@ -818,6 +2397,309 @@
         "type": "implements",
         "target": "strategy"
       }
-    ]
+    ],
+    "editorialIntro": [
+      "Build an audit method and tool that maps a business's workflows, scores where AI actually fits, classifies the risk, and outputs a prioritized, defensible roadmap, a service clients will pay you to run.",
+      "No coding background needed · Async, lifetime access · Built-in governed AI tutor"
+    ],
+    "editorialSections": [
+      {
+        "title": "Most AI adoption fails quietly, and no one can say why",
+        "eyebrow": "Why this, why now",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Businesses are spending on AI tools with unclear ROI and no plan. Pilots stall, teams pick the flashy use case over the valuable one, and the risky workflow gets automated first. When leadership asks whether it worked, nobody has an answer they can defend."
+          },
+          {
+            "type": "paragraph",
+            "text": "What is missing is a rigorous audit: a repeatable way to map the real workflows, score which ones are ready, flag which ones are risky, and rank what to do first. Build that audit once and you own a method you can sell to every business that is guessing."
+          }
+        ]
+      },
+      {
+        "title": "An audit that turns \"we should use AI\" into a plan",
+        "eyebrow": "What you'll build",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "By the end you have a working method and tool that takes a business, maps its workflows, and returns a scored, risk-classified, prioritized roadmap you can put your name on."
+          },
+          {
+            "type": "heading",
+            "text": "The real workflows"
+          },
+          {
+            "type": "paragraph",
+            "text": "Captures how work actually flows, not the org chart version."
+          },
+          {
+            "type": "heading",
+            "text": "AI-readiness"
+          },
+          {
+            "type": "paragraph",
+            "text": "Rates each workflow on data, repeatability, and fit against a consistent rubric."
+          },
+          {
+            "type": "heading",
+            "text": "Risk per workflow"
+          },
+          {
+            "type": "paragraph",
+            "text": "Flags where an error is costly, regulated, or hard to reverse."
+          },
+          {
+            "type": "heading",
+            "text": "Quick wins vs strategic"
+          },
+          {
+            "type": "paragraph",
+            "text": "Separates the fast, safe wins from the bigger bets worth planning for."
+          },
+          {
+            "type": "heading",
+            "text": "A defensible roadmap"
+          },
+          {
+            "type": "paragraph",
+            "text": "A ranked plan with the reasoning, ready to present to leadership or a client."
+          },
+          {
+            "type": "heading",
+            "text": "Evidence, not opinion"
+          },
+          {
+            "type": "paragraph",
+            "text": "Every score traces to the inputs behind it. On doubt it flags for human review."
+          }
+        ]
+      },
+      {
+        "title": "Nine modules, every one ships part of the real system",
+        "eyebrow": "Curriculum",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "You do not watch and forget. You leave each module with a working piece of your audit method and tool."
+          },
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "The problem and the standard. Why AI adoption fails, what AI-readiness actually means, and what a defensible audit has to prove. You write your audit rubric.",
+              "Set up your workspace. Accounts, model access, project structure, with zero assumptions and nothing technical taken for granted.",
+              "Map the workflows. Build the intake step that captures how a business really operates, from a short interview or existing docs.",
+              "Score AI-readiness. Build the scoring engine: data quality, repeatability, volume, and fit, applied consistently across workflows.",
+              "Classify the risk, the core. Flag where an AI error is costly, regulated, or irreversible. This is what makes your roadmap defensible.",
+              "Prioritize and roadmap. Combine readiness and risk into a ranked plan: quick wins now, strategic bets sequenced.",
+              "Governance layer. Traceable scores, uncertainty handling, default-to-human, and an audit log of every assessment.",
+              "Evaluate your audit. Run it on two real businesses; check the roadmap holds up; tune the rubric where it does not.",
+              "Sell the audit. Package it as a paid engagement: scoping, pricing, deliverables, and the done-with-you and done-for-you ladder."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Meet your AI tutor",
+        "eyebrow": "Not a static video course",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Every Aloha AI course ships with a governed AI tutor, grounded only in the course materials. It cites the lesson it is answering from, tells you when a question is out of scope, and never fabricates. It is built the same way the system you are building is. The product proves itself."
+          },
+          {
+            "type": "list",
+            "items": [
+              "Answers in scope, with the lesson it came from"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Reviews your rubric and roadmap against the course standard"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Says that is a judgment call for you and the client on out-of-scope asks"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Speaks in the instructor's voice"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Tutor · demo"
+          },
+          {
+            "type": "paragraph",
+            "text": "Illustrative. The live tutor runs on your course materials."
+          },
+          {
+            "type": "paragraph",
+            "text": "Live governed tutor — answers only from this course's materials, cites the lesson, refuses out of scope. Connect the engine (serve.py) to enable."
+          }
+        ]
+      },
+      {
+        "title": "A portfolio and a service, not a watch-time certificate",
+        "eyebrow": "What you walk away with",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "A deployed, working audit tool you own"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Your written audit rubric"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Two real businesses audited end-to-end"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Sample readiness and risk scorecards"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A defensible roadmap deliverable"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A one-page plan to sell the audit as a service"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Learn it, build it with me, or have it built",
+        "eyebrow": "Three ways to get it",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Do not want to hire me to build it? Take the course and build your own audit, at your own pace. Want it faster, or done for you? Move up the ladder."
+          },
+          {
+            "type": "heading",
+            "text": "The Course"
+          },
+          {
+            "type": "paragraph",
+            "text": "Async, lifetime access · 9 build-modules · templates and rubric · the AI tutor. You build your own audit method and tool."
+          },
+          {
+            "type": "heading",
+            "text": "Cohort / Lab"
+          },
+          {
+            "type": "paragraph",
+            "text": "Build your audit method and tool alongside Aloha AI with live guidance and review. For teams and people who want speed and support."
+          },
+          {
+            "type": "heading",
+            "text": "Built & Governed"
+          },
+          {
+            "type": "paragraph",
+            "text": "Aloha AI builds, integrates, and governs your audit method and tool, with monitoring, evaluation, and an audit trail. Optional maintenance $500–1,500/mo."
+          },
+          {
+            "type": "paragraph",
+            "text": "Course tier is the entry point; each tier feeds the next."
+          }
+        ]
+      },
+      {
+        "title": "Governance-first, by background",
+        "eyebrow": "Your instructor",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "RN Collins works at the intersection of neuroscience, law, and AI systems, building tools where being right and being accountable matter. This course teaches the audit method and the tool, not shortcuts."
+          },
+          {
+            "type": "paragraph",
+            "text": "RN Collins is a JD candidate, not a licensed attorney. This course is educational and is not legal, financial, or medical advice."
+          }
+        ]
+      },
+      {
+        "title": "Questions",
+        "eyebrow": "FAQ",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Do I need to know how to code?"
+          },
+          {
+            "type": "paragraph",
+            "text": "No. The course is built for non-technical professionals. You direct AI tools to build the system; every step is walked through."
+          },
+          {
+            "type": "heading",
+            "text": "Can I actually sell this audit?"
+          },
+          {
+            "type": "paragraph",
+            "text": "Yes, that is the point. The final module packages it as a paid engagement with scoping, pricing, and deliverables you can run for clients."
+          },
+          {
+            "type": "heading",
+            "text": "Does it work for any industry?"
+          },
+          {
+            "type": "paragraph",
+            "text": "The method is industry-agnostic; you tune the readiness and risk rubric to the businesses you serve."
+          },
+          {
+            "type": "heading",
+            "text": "What is the AI tutor?"
+          },
+          {
+            "type": "paragraph",
+            "text": "A governed assistant grounded in the course materials. It cites the lesson it is answering from, stays in scope, and will not fabricate, the same standard the tool you build holds."
+          },
+          {
+            "type": "heading",
+            "text": "Refunds?"
+          },
+          {
+            "type": "paragraph",
+            "text": "Course terms and refund policy to be finalized before launch."
+          }
+        ]
+      },
+      {
+        "title": "Turn \"we should use AI\" into a plan you can sell",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Build the audit this weekend."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "university/courses/workflow-audit/index.html",
+      "restoredAt": "2026-07-26"
+    }
   }
 ]

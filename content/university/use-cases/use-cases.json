@@ -805,7 +805,266 @@
         "type": "implements",
         "target": "trust-stack"
       }
-    ]
+    ],
+    "editorialIntro": [
+      "The fastest way to lose the AI argument inside your company is to have no rules at all. Governance is what lets you say yes to AI with confidence — because everyone knows what is allowed, what gets checked, and who is accountable when it goes wrong."
+    ],
+    "editorialSections": [
+      {
+        "title": "What this use case is",
+        "eyebrow": "The idea",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "AI governance is the small set of rules and habits that make AI use in your business safe, consistent, and defensible. It answers the questions people are already asking quietly: Which tools can I use? What data am I allowed to paste in? When does a human have to check the output? What do we tell a customer who asks whether AI touched their work?"
+          },
+          {
+            "type": "paragraph",
+            "text": "This is the trust-safe angle. Governance is not a brake on AI — it is the seatbelt that lets you drive faster. It turns \"we are nervous about AI\" into a written standard people can follow without asking permission every time."
+          }
+        ]
+      },
+      {
+        "title": "Who this is for",
+        "eyebrow": "Who it helps",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Owners and leaders"
+          },
+          {
+            "type": "paragraph",
+            "text": "Who want the productivity of AI without a data leak or a reputational hit."
+          },
+          {
+            "type": "heading",
+            "text": "Regulated and professional firms"
+          },
+          {
+            "type": "paragraph",
+            "text": "Law, accounting, healthcare-adjacent, financial services — where a mistake carries real liability."
+          },
+          {
+            "type": "heading",
+            "text": "Teams already using AI unofficially"
+          },
+          {
+            "type": "paragraph",
+            "text": "Where use is happening in the shadows, and someone needs to make it official and safe."
+          },
+          {
+            "type": "heading",
+            "text": "Anyone facing the question"
+          },
+          {
+            "type": "paragraph",
+            "text": "A client, insurer, or auditor now asks, \"What is your AI policy?\" and you need an answer."
+          }
+        ]
+      },
+      {
+        "title": "The business problem it solves",
+        "eyebrow": "The problem",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Without governance, two bad things happen at once. The cautious avoid AI entirely and fall behind. The bold paste confidential data into free consumer tools and create risk nobody can see. Both are failures of the same missing thing: a clear line."
+          },
+          {
+            "type": "paragraph",
+            "text": "Governance replaces fear and recklessness with a policy. It defines approved tools, forbidden data, mandatory review points, and a disclosure stance — so your team moves fast inside safe boundaries, and you can show a client or regulator exactly how you keep their information protected."
+          }
+        ]
+      },
+      {
+        "title": "What you need going in",
+        "eyebrow": "Inputs",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "An honest inventory of current use"
+          },
+          {
+            "type": "paragraph",
+            "text": "Which tools people are actually using, for what — including the unofficial ones nobody logged."
+          },
+          {
+            "type": "heading",
+            "text": "Your data sensitivity tiers"
+          },
+          {
+            "type": "paragraph",
+            "text": "What counts as confidential, regulated, or client-privileged in your business."
+          },
+          {
+            "type": "heading",
+            "text": "Your real obligations"
+          },
+          {
+            "type": "paragraph",
+            "text": "The contracts, regulations, and professional rules that already constrain how you handle information."
+          },
+          {
+            "type": "heading",
+            "text": "A named owner"
+          },
+          {
+            "type": "paragraph",
+            "text": "One person accountable for the policy, approvals, and answering questions. Not a committee."
+          }
+        ]
+      },
+      {
+        "title": "Suggested tools",
+        "eyebrow": "Tools",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Business-tier AI accounts"
+          },
+          {
+            "type": "paragraph",
+            "text": "ChatGPT Enterprise or Team, Claude for Work, or Gemini business tiers keep your inputs out of model training and give you admin controls. The tier is a governance decision, not a nice-to-have."
+          },
+          {
+            "type": "heading",
+            "text": "A written AI policy doc"
+          },
+          {
+            "type": "paragraph",
+            "text": "Kept in your wiki or Notion where everyone can find it. Living rules beat a slide deck nobody reopens."
+          },
+          {
+            "type": "heading",
+            "text": "An AI use log"
+          },
+          {
+            "type": "paragraph",
+            "text": "A lightweight record of high-stakes AI-assisted work — what was checked and by whom. Your evidence if anyone ever asks."
+          },
+          {
+            "type": "quote",
+            "text": "The core rule: data-handling terms differ sharply between consumer and business tiers. Confirm in writing that your provider does not train on your inputs before any confidential data goes near a tool. Read the terms; do not assume."
+          }
+        ]
+      },
+      {
+        "title": "Step by step",
+        "eyebrow": "The workflow",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Inventory reality. Ask the team what AI they already use, without judgment, so the policy fits actual behavior.",
+              "Sort your data into tiers: public, internal, confidential, regulated. Decide what may touch AI at each tier.",
+              "Pick approved tools and the required account tier for each data level.",
+              "Define review gates. Name the outputs a human must verify before use — anything customer-facing, legal, financial, or safety-related.",
+              "Set a disclosure stance. Decide when and how you tell clients that AI assisted the work.",
+              "Write it in one page, in plain language, and put it where people look.",
+              "Review quarterly. Tools and risks change fast; a stale policy is nearly as risky as none."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "An example prompt",
+        "eyebrow": "The prompt",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Use AI to draft the first version of your own policy, then let a human finish it:"
+          },
+          {
+            "type": "code",
+            "text": "Help me draft a one-page AI use policy for a [12-person accounting firm]. Base it on these facts: - Approved tools: [ChatGPT Team, NotebookLM Enterprise]. - Confidential data: client financials, SSNs, anything under our engagement letters. - Hard rule: no client-identifying data in any consumer/free tier. - Human review required for anything sent to a client or filed with an agency. Structure it as: (1) what is allowed, (2) what is forbidden, (3) what always needs human review, (4) how we disclose AI use to clients, (5) who owns this policy. Write it for a non-technical reader. Flag any spot where I should get advice from a qualified professional rather than rely on your draft."
+          },
+          {
+            "type": "paragraph",
+            "text": "What good looks like back: the model returns a workable skeleton — allowed uses tied to approved tools, a hard no on client-identifying data in free accounts, human review on anything that leaves the firm, a disclosure line for the engagement terms — and it marks the exact clause where a real professional has to weigh in on licensing and engagement-letter rules. That flag is governance working as intended."
+          }
+        ]
+      },
+      {
+        "title": "What a human still owns",
+        "eyebrow": "Guardrails",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "A human owns the policy"
+          },
+          {
+            "type": "paragraph",
+            "text": "AI can draft it; a leader decides it and stands behind it."
+          },
+          {
+            "type": "heading",
+            "text": "Verify tool terms yourself"
+          },
+          {
+            "type": "paragraph",
+            "text": "Do not take the model's word for what a provider does with your data. Read the actual terms."
+          },
+          {
+            "type": "heading",
+            "text": "Get qualified advice on obligations"
+          },
+          {
+            "type": "paragraph",
+            "text": "Regulatory, contractual, and professional-conduct rules are for a licensed professional, not a chatbot, to interpret."
+          },
+          {
+            "type": "heading",
+            "text": "Audit occasionally"
+          },
+          {
+            "type": "paragraph",
+            "text": "Spot-check that the policy is being followed, not just written."
+          },
+          {
+            "type": "quote",
+            "text": "This is not legal, medical, or financial advice. RN Collins is a JD candidate, not a licensed attorney. Governance frameworks here are educational starting points — confirm your specific obligations with a qualified professional."
+          }
+        ]
+      },
+      {
+        "title": "Related template and playbook",
+        "eyebrow": "Keep going",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "One-Page AI Use Policy"
+          },
+          {
+            "type": "paragraph",
+            "text": "Approved tools, data tiers, review gates, and disclosure, ready to fill in for your business."
+          },
+          {
+            "type": "heading",
+            "text": "AI Governance Starter"
+          },
+          {
+            "type": "paragraph",
+            "text": "Roll governance out across a team: inventory, policy, review gates, and quarterly cadence, step by step."
+          }
+        ]
+      },
+      {
+        "title": "Say yes to AI, safely",
+        "eyebrow": "Next step",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Get a roadmap that maps your real risks and the guardrails that let your team move fast without exposure."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "university/use-cases/governance/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "knowledge-management-use-case",
@@ -3961,6 +4220,265 @@
         "type": "supports",
         "target": "first-ai-team-course"
       }
-    ]
+    ],
+    "editorialIntro": [
+      "In most companies, the best training lives in one place: the head of the person who has been there longest. This gets it out of that head and into course outlines, role-plays, and quizzes a new hire can actually use."
+    ],
+    "editorialSections": [
+      {
+        "title": "What this use case is",
+        "eyebrow": "The idea",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "AI for training turns raw material you already have — SOPs, recordings, a subject expert's brain dump — into structured learning: a module outline, a script, practice scenarios, knowledge checks, and a quick-reference guide. It will also play the other side of a role-play, so a new rep can rehearse a hard customer call ten times before doing it live."
+          },
+          {
+            "type": "paragraph",
+            "text": "It does not replace a trainer. It replaces the blank page and the weeks of formatting that keep training from ever getting built."
+          }
+        ]
+      },
+      {
+        "title": "Who this is for",
+        "eyebrow": "Who it helps",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Small teams with no L&D function"
+          },
+          {
+            "type": "paragraph",
+            "text": "Where \"training\" means shadowing whoever happens to be free that day."
+          },
+          {
+            "type": "heading",
+            "text": "Managers onboarding new hires"
+          },
+          {
+            "type": "paragraph",
+            "text": "Who want a consistent path instead of a different experience every time."
+          },
+          {
+            "type": "heading",
+            "text": "Subject-matter experts"
+          },
+          {
+            "type": "paragraph",
+            "text": "Who know the work cold but cannot turn it into a teachable module."
+          },
+          {
+            "type": "heading",
+            "text": "Customer-facing teams"
+          },
+          {
+            "type": "paragraph",
+            "text": "Who need safe reps at hard conversations before the real one."
+          }
+        ]
+      },
+      {
+        "title": "The business problem it solves",
+        "eyebrow": "The problem",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Training rarely fails because people cannot teach. It fails because building it is slow, so it never happens — and new hires learn by absorbing whatever is nearby, correct or not. Inconsistent onboarding shows up months later as inconsistent quality and preventable mistakes."
+          },
+          {
+            "type": "paragraph",
+            "text": "This workflow collapses the build time. An expert talks for thirty minutes, and the model turns that into a usable module by the afternoon. Role-play practice moves the awkward first attempts off your real customers and onto a simulator, so people arrive at the live conversation already warmed up."
+          }
+        ]
+      },
+      {
+        "title": "What you need going in",
+        "eyebrow": "Inputs",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Source material"
+          },
+          {
+            "type": "paragraph",
+            "text": "An existing SOP, a recorded walkthrough, or a transcript of an expert explaining the task out loud."
+          },
+          {
+            "type": "heading",
+            "text": "The learner and the goal"
+          },
+          {
+            "type": "paragraph",
+            "text": "Who is being trained, and what they should be able to do at the end."
+          },
+          {
+            "type": "heading",
+            "text": "Real scenarios"
+          },
+          {
+            "type": "paragraph",
+            "text": "Especially the hard and common ones: the objection you always get, the mistake people always make."
+          },
+          {
+            "type": "heading",
+            "text": "Your standard of \"correct\""
+          },
+          {
+            "type": "paragraph",
+            "text": "So the model builds toward how your business actually does the work."
+          }
+        ]
+      },
+      {
+        "title": "Suggested tools",
+        "eyebrow": "Tools",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "ChatGPT or Claude"
+          },
+          {
+            "type": "paragraph",
+            "text": "Turn a transcript into an outline, script, quiz, and role-play partner. Voice modes let learners practice a live conversation out loud."
+          },
+          {
+            "type": "heading",
+            "text": "NotebookLM"
+          },
+          {
+            "type": "paragraph",
+            "text": "Load your SOPs and generate a study guide, FAQ, or audio overview grounded strictly in your own procedures."
+          },
+          {
+            "type": "heading",
+            "text": "Gamma or Canva"
+          },
+          {
+            "type": "paragraph",
+            "text": "Take the AI-written outline and turn it into slides or a one-page job aid without design work."
+          },
+          {
+            "type": "quote",
+            "text": "On accuracy: a model will happily invent a plausible-sounding procedure. Ground it in your real SOP and have the expert review the draft, or you will teach a confident version of the wrong thing."
+          }
+        ]
+      },
+      {
+        "title": "Step by step",
+        "eyebrow": "The workflow",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Record the expert. Have your best person talk through the task for 20 to 30 minutes, then transcribe it.",
+              "Generate the outline. Ask the model to structure the transcript into modules with clear learning objectives.",
+              "Draft the content — the script, examples, and a one-page quick-reference — from that outline.",
+              "Build knowledge checks: a short quiz that tests doing, not just remembering.",
+              "Create role-play scenarios for the hard conversations, with the model playing the customer or the difficult case.",
+              "Run expert review. The subject expert corrects anything the model got wrong or oversimplified.",
+              "Ship and iterate. Run it with a real new hire, then fix the parts that confused them."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "An example prompt",
+        "eyebrow": "The prompt",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Use this to turn an expert's brain dump into a training module:"
+          },
+          {
+            "type": "code",
+            "text": "Below is a transcript of our most experienced technician explaining how to handle a warranty claim. Build a training module for a new hire in their first week. Produce, in order: 1. Three learning objectives, each starting with \"By the end, you will be able to...\" 2. A step-by-step walkthrough in plain language, calling out the two mistakes new people most often make. 3. A five-question knowledge check that tests judgment, not memorization. Include an answer key with brief explanations. 4. One realistic role-play: you play a frustrated customer whose claim is borderline. Stay in character until I resolve it. Use only what is in the transcript. If a step is unclear or missing, list it as an open question for our expert instead of guessing. Transcript: [paste]"
+          },
+          {
+            "type": "paragraph",
+            "text": "A good response comes back usable the same day: three objectives, a walkthrough flagging the two common mistakes, a graded quiz, and an in-character role-play. Its most honest move is the open question — where it tells you the transcript never covered lost-receipt claims, it is pointing straight at a hole in your source material to fill."
+          }
+        ]
+      },
+      {
+        "title": "What a human still owns",
+        "eyebrow": "Guardrails",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Expert sign-off is mandatory"
+          },
+          {
+            "type": "paragraph",
+            "text": "Someone who does the job for real must confirm every procedure before it trains anyone."
+          },
+          {
+            "type": "heading",
+            "text": "Kill invented steps"
+          },
+          {
+            "type": "paragraph",
+            "text": "If a step was not in your source and the expert did not add it, cut it. Do not let the model backfill."
+          },
+          {
+            "type": "heading",
+            "text": "Check the quiz answers"
+          },
+          {
+            "type": "paragraph",
+            "text": "Models write plausible questions with subtly wrong answer keys. Verify each one."
+          },
+          {
+            "type": "heading",
+            "text": "Keep it current"
+          },
+          {
+            "type": "paragraph",
+            "text": "When the real process changes, the module changes the same day. Assign an owner."
+          },
+          {
+            "type": "quote",
+            "text": "This is not legal, medical, or financial advice. For safety-critical, regulated, or compliance training, a qualified human designs and approves the content. AI drafts, people certify."
+          }
+        ]
+      },
+      {
+        "title": "Related template and playbook",
+        "eyebrow": "Keep going",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Training Module Builder Worksheet"
+          },
+          {
+            "type": "paragraph",
+            "text": "Objectives, walkthrough, knowledge check, and role-play in one fill-in structure so nothing gets skipped."
+          },
+          {
+            "type": "heading",
+            "text": "Client Intake & Onboarding"
+          },
+          {
+            "type": "paragraph",
+            "text": "Training and onboarding are two halves of one job. Run this to standardize how new people and new clients get up to speed."
+          }
+        ]
+      },
+      {
+        "title": "Turn your best person into a curriculum",
+        "eyebrow": "Next step",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Get a roadmap that pinpoints which training to build first, and the fastest way to build it."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "university/use-cases/training/index.html",
+      "restoredAt": "2026-07-26"
+    }
   }
 ]

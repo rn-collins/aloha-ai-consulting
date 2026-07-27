@@ -282,7 +282,112 @@
         "type": "related_to",
         "target": "notes"
       }
-    ]
+    ],
+    "editorialIntro": [
+      "The sentence I hear most is reassuring and misleading in equal measure: we are already using AI. The question is never whether; it is how, and who would know if it went wrong.",
+      "RN Collins · Aloha AI · Notes",
+      "Four words arrive in nearly every first conversation, offered as reassurance: we already use AI. I have learned to hear them as the beginning of a question rather than the end of one. On their face they suggest the hard part is finished: the tools are in the building, people are productive, the transformation is underway. That belief is fair on its own terms, and I try to honor it, because the enthusiasm is real and the productivity often is too. Adoption is hard, and a team that has cleared it has cleared something.",
+      "The sentence tells me almost nothing about risk, though, and the reason is that \"using AI\" usually names a set of private habits rather than a system: a paralegal pasting a memo into a chatbot, an analyst asking a model to summarize a filing, a marketer generating first drafts on a personal account. Each of those can be useful. Collectively, with no one watching the seams, they are how a confident wrong answer walks into a deliverable unchallenged. So the first thing I audit is never the tools. It is the shape of the practice around them, and I examine it along six dimensions, in a deliberate order."
+    ],
+    "editorialSections": [
+      {
+        "title": "The six dimensions",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "1. Sources"
+          },
+          {
+            "type": "paragraph",
+            "text": "Where does the model's input come from, and does anyone know? A summary of a document the team uploaded carries a different risk than an answer the model produced from its own training. The first can be checked against a source; the second is a guess wearing the costume of an answer. If a team cannot tell me which of its AI outputs are grounded in a real document and which are not, that is the first gap, and it is usually the widest."
+          },
+          {
+            "type": "heading",
+            "text": "2. Verification"
+          },
+          {
+            "type": "paragraph",
+            "text": "What gets checked before it leaves the building, and by what standard? \"We read it over\" is not verification; it is proofreading. I want to know whether anyone confirms the facts, the figures, and the citations against the source, and whether that check is required or merely encouraged. A check that depends on someone remembering to perform it is a check that will be skipped on the day it matters most."
+          },
+          {
+            "type": "heading",
+            "text": "3. Privacy"
+          },
+          {
+            "type": "paragraph",
+            "text": "What is being sent where? Regulated teams often discover, mid-audit, that confidential material has been flowing through consumer accounts with retention settings no one reviewed. The question is plain and the answers are frequently uncomfortable: what data leaves your control, which vendor holds it, and for how long?"
+          },
+          {
+            "type": "heading",
+            "text": "4. Handoff"
+          },
+          {
+            "type": "paragraph",
+            "text": "Where does the machine's work end and a person's judgment begin, and is that boundary written down or improvised? A workflow with no defined handoff is one where responsibility quietly evaporates: everyone assumes someone else caught the error. The handoff is where accountability either lives or goes to die."
+          },
+          {
+            "type": "heading",
+            "text": "5. Governance"
+          },
+          {
+            "type": "paragraph",
+            "text": "Is there a policy, does it match what people actually do, and would a new hire know the rules by the end of the first week? A governance document that describes an imaginary version of the practice is worse than none, because it creates a paper record the real behavior contradicts. I would rather read one honest page than twenty aspirational ones."
+          },
+          {
+            "type": "heading",
+            "text": "6. Measurement"
+          },
+          {
+            "type": "paragraph",
+            "text": "Does anyone know whether the AI use is helping, and how they know? Without measurement, a team cannot distinguish a workflow that saves ten hours from one that quietly seeds errors it will pay for later. Measurement sits last not because it matters least, but because it is the dimension that lets you improve the other five over time."
+          }
+        ]
+      },
+      {
+        "title": "Why ad-hoc use is the risk, not the win",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The generous reading of scattered, informal AI use treats it as a healthy sign: people are experimenting, the organization is adapting from the bottom up. I understand the appeal, and grassroots adoption really can seed something good. It, however, falls short of safety, because ad-hoc use is unobservable by design. No one logged it, no one can audit it, no one can reproduce how a given output was made. When the failure comes, and in regulated work it eventually does, there is no trail to follow and no gate that should have caught it. The very informality that made adoption feel easy is what makes the risk invisible."
+          },
+          {
+            "type": "paragraph",
+            "text": "The real work, then, is rarely installing a tool. It is turning a pile of private habits into a practice you can see: sourced, verified, bounded by a handoff, governed by a policy people actually follow, and measured well enough to improve. That is what the AI Workflow Audit I built is designed to surface. It scores those six dimensions and returns a maturity read plus a prioritized list of what to fix first, so a team can move from \"we already use AI\" to \"we can show you exactly how, and where the checks are.\" The score is not the point; the ordered list of fixes is. A team that already uses AI is not behind. It simply has not yet been asked the six questions that turn use into something it can stand behind."
+          },
+          {
+            "type": "heading",
+            "text": "The AI Workflow Audit"
+          },
+          {
+            "type": "paragraph",
+            "text": "Score your own team against these six dimensions before taking my word for any of it. The AI Workflow Audit returns a maturity read and a prioritized list of what to fix first, in your browser."
+          },
+          {
+            "type": "paragraph",
+            "text": "RN Collins is a JD candidate, not a licensed attorney. This essay is systems and evaluation commentary, not legal advice, and nothing here creates an attorney–client relationship. The audit measures documented-practice maturity, not legal compliance."
+          },
+          {
+            "type": "paragraph",
+            "text": "Read next: Tracking is not intelligence: designing a regulatory-analysis system →"
+          }
+        ]
+      },
+      {
+        "title": "Aloha AI Dispatch",
+        "eyebrow": "Newsletter",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "New notes and build breakdowns arrive here first. The dispatch is the quieter way to get them."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "notes/what-i-audit-first/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "tracking-isnt-intelligence",
@@ -347,14 +452,97 @@
         "type": "related_to",
         "target": "notes"
       }
-    ]
+    ],
+    "editorialIntro": [
+      "A feed of every rule change is easy to build and exhausting to use. The hard part is the transformation from a stream of updates into a small number of things someone can act on.",
+      "RN Collins · Aloha AI · Notes",
+      "A regulatory tracker is a smoke detector wired to every room at once, screaming at the toast and the house fire in the same flat tone. That is the failure I want to take apart here: why coverage feels like safety, why it is not, and what three design choices turn a stream of alerts into something a decision-maker can actually use. The reasonable version of tracking goes like this. The risk in a regulated market is that a rule changes and you miss it, so the solution is to miss nothing: watch every docket, subscribe to every register, set an alert on every agency, and the downside is covered. Coverage feels like safety, and to a point it is. A team that watches nothing will certainly be surprised.",
+      "Then the feed arrives, and the trouble starts. A comprehensive tracker produces a torrent: notices, comment periods, guidance documents, enforcement actions, state variations, each one technically relevant and none of it prioritized. The person who has to act now faces a second job, reading the tracker, nearly as large as the first job it was meant to relieve. Coverage solved the problem of missing things and created the problem of drowning in them. The tracker is busy. The decision-maker is no better informed. That gap between collection and comprehension is where most regulatory tooling quietly fails.",
+      "So I draw a hard line between tracking and intelligence. Tracking answers \"what happened?\" Intelligence answers \"what does it mean for us, and what should we do?\" Are these the same question asked at different volumes, or are they different problems entirely? They are different problems: the first is a data task and largely solved, the second is a design task and mostly ignored. Three design choices carry the weight of turning one into the other."
+    ],
+    "editorialSections": [
+      {
+        "title": "Issue taxonomy: naming before counting",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The first choice is a taxonomy of issues that matters to this audience, defined before a single update is collected. Without one, every item is a loose fact competing for attention on its own. With one, each update lands in a category the reader already cares about: licensing, advertising restrictions, product testing, banking access, interstate movement. The taxonomy is the difference between a hundred headlines and five buckets, and five buckets is something a human mind can actually hold. It also makes absence legible; when a category has gone quiet for months, that silence is itself a signal you can only read against a structure."
+          },
+          {
+            "type": "paragraph",
+            "text": "A good taxonomy is opinionated. It reflects a judgment about which distinctions change decisions and which are noise dressed as detail. Building it is the part that looks like law and reads like editing, and it is where domain depth earns its keep. A generic tracker cannot do this for you, because the right categories for a psychedelics operator are not the right categories for a biopharma program, even where the underlying agencies overlap."
+          }
+        ]
+      },
+      {
+        "title": "Comparison: a number means little alone",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The second choice is comparison. A single data point is nearly inert. \"This state now requires seed-to-sale tracking\" tells you something; \"this is the fourteenth state to do so, the fourth this year, using the stricter of the two common models\" tells you where the trend is heading and how exposed you are. Intelligence lives in the relationships between facts: across jurisdictions, across time, against the posture you already hold. A system that shows each update in isolation has left the most valuable work undone. A system that sets every update against its peers does the comparison so the reader need not reconstruct it from memory."
+          },
+          {
+            "type": "paragraph",
+            "text": "This is also where sourcing has to be uncompromising. If a system asserts that fourteen states have moved, every one of those fourteen has to be sourced and dated, because the comparison is only as trustworthy as its weakest citation. A confident trend built on one unverified claim is worse than no trend at all, since it invites a decision the evidence cannot support."
+          }
+        ]
+      },
+      {
+        "title": "Audience-specific output: the same facts, shaped differently",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The third choice is that the output has to be shaped for who is reading it. The same underlying set of changes should reach a general counsel, an operator, and a board in three different forms. The general counsel needs the citations and the open questions; the operator needs the deadlines and the operational consequences; the board needs the two sentences that change a decision. One artifact cannot serve all three, and pretending it can is how good analysis dies in an inbox. Decision-ready means ready for a specific decision-maker, not merely finished."
+          },
+          {
+            "type": "paragraph",
+            "text": "These three choices are what separate the intelligence monitors I build myself from a feed. A monitor here does more than collect signals across a regulated surface; it sorts them into an issue taxonomy, sets each one against the wider pattern, sources and dates every figure, and produces a read a decision-maker can use without redoing the analysis. Could you defend pure tracking? To a point, yes: you cannot analyze what you never saw, and coverage is the raw material intelligence is made from. That defense, however, mistakes the beginning of the work for the end of it. Collection is table stakes. The judgment about what it means is the product."
+          },
+          {
+            "type": "paragraph",
+            "text": "A note on scope. This is systems and evaluation thinking about how to structure regulatory information, not legal advice, and I am a JD candidate rather than a licensed attorney. The monitors are built to support the licensed professionals who make the calls, by putting the relevant changes in front of them already sorted, compared, and sourced."
+          },
+          {
+            "type": "heading",
+            "text": "The intelligence monitors"
+          },
+          {
+            "type": "paragraph",
+            "text": "The taxonomy above is not hypothetical; a live monitor runs it daily. The comparison and audience-specific output described here are how the intelligence monitors work: signals sorted, set against the pattern, and sourced. Every figure is dated."
+          },
+          {
+            "type": "paragraph",
+            "text": "RN Collins is a JD candidate, not a licensed attorney. This essay is systems and evaluation commentary, not legal advice, and nothing here creates an attorney–client relationship. The monitors surface sourced information; the decisions belong to qualified professionals."
+          },
+          {
+            "type": "paragraph",
+            "text": "Read next: The difference between an AI tool, a workflow, and an operating system →"
+          }
+        ]
+      },
+      {
+        "title": "Aloha AI Dispatch",
+        "eyebrow": "Newsletter",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The next note goes up here before anywhere else. Subscribe if you would rather not check back."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "notes/tracking-isnt-intelligence/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "tool-workflow-operating-system",
     "kind": "research",
     "pathname": "/notes/tool-workflow-operating-system",
     "eyebrow": "Essay · Systems",
-    "title": "The difference between an AI tool, a workflow, and an operating system",
+    "title": "The difference between an AI tool, a workflow, and an operating system.",
     "summary": "A practical distinction between a single capable act, a repeatable governed workflow, and the operating layer that orchestrates, evaluates, audits, and sustains many workflows across an organization.",
     "audience": "Executives, operators, legal and compliance leaders, and technology buyers deciding what kind of AI capability they actually need.",
     "maturity": "Research",
@@ -411,7 +599,66 @@
         "type": "related_to",
         "target": "notes"
       }
-    ]
+    ],
+    "seoTitle": "The difference between an AI tool, a workflow, and an operating system",
+    "editorialIntro": [
+      "Most teams buy a tool and expect operating-system results. The gap between those two things is where the risk and the value both live.",
+      "RN Collins · Aloha AI · Notes",
+      "A match, a stove, a power grid: all three make heat, and no one would confuse them when the building has to stay warm through winter. Three words in AI get blurred the same careless way: tool, workflow, system. When a partner tells me the firm has \"an AI system,\" what they usually have is a tool, and the distance between those two words is the whole story. Being precise about each one is worth the paragraphs it takes, because the confusion is not merely semantic. It sets an expectation, the expectation sets a budget, and the budget quietly decides how much risk the organization has agreed to carry without noticing.",
+      "Start at the bottom. A tool is a single capable act: a prompt, a model, a clever chain that turns an input into an output. Someone discovers that a chatbot drafts a decent first pass at a client letter, and for that person, on that afternoon, the tool works. This is where almost everyone begins, and there is nothing wrong with beginning there. The trouble is that a tool has no memory of how it was used, no standard for whether the output was any good, and no record that it happened at all. It is a match. Useful, and not the same thing as heat you can rely on.",
+      "A workflow is what you get when you make that act repeatable. Now the same task runs the same way every time, whoever runs it. That means defining the pieces most people skip: what the inputs are and where they come from; what a correct output looks like; a verification step that checks the output against something real; a human gate where a named person signs off; and storage, so the thing you produced and the way you produced it can both be found again next quarter. Is that more work than a prompt? Considerably. Is it worth it in regulated work? Consider what a workflow buys: reproducibility, and reproducibility is the precondition for trust. A result you cannot reproduce is a result you cannot defend.",
+      "An operating system is the layer above that. It is not one workflow; it is the governance of many, running across different tools and teams at once. What does that layer add? Orchestration, so workflows hand off to each other without a person stitching them by hand. Evaluation, so you know which ones are performing and which have quietly degraded. Policy, so the rules are written down and the same everywhere. Audit, so any output can be traced back to its inputs, its checks, and the person who approved it. And adoption, because a system no one uses is a slide deck, not an operating layer. An operating system is what lets an organization say, under pressure, not merely that a task was done but that it was done the way the organization requires, every time, with a trail to prove it."
+    ],
+    "editorialSections": [
+      {
+        "title": "Where the confusion does its damage",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "State the common view at its strongest: buy a capable AI product, roll it out, and the organization becomes an AI-run organization. The vendors encourage this reading, and it is not a foolish one. The products are formidably capable, and capability feels as though it should compound on its own. That view, however, conflates two different axes, because capability and governance are not the same thing, and buying the first does not deliver the second. A team purchases a tool, or at best licenses a handful of workflows, and then expects operating-system results: consistency, auditability, defensibility across the whole practice. The tool cannot provide those, because those properties live in the layer nobody bought."
+          },
+          {
+            "type": "paragraph",
+            "text": "That gap is not empty space. It is the most important part of the whole picture, because it is where both the risk and the value concentrate. The risk lives there because the failures that matter in high-stakes work are rarely failures of capability. They are failures of governance: the unverified citation, the confidential file sent to a consumer account, the output no one can explain three months later when someone asks who approved it. The value lives in the same place, because closing the gap is what turns scattered capability into something a firm can build a reputation on. The work is not buying a better tool. It is building the layer that governs the tools you already have."
+          },
+          {
+            "type": "paragraph",
+            "text": "You can see the two ends of this concretely in what I build. The Citation Verifier is a workflow: a bounded, repeatable act that takes citations, checks each one against a real source, and returns a verdict you can reproduce. Valuable on its own, and still a single step. The Trust-Safe AI Operating Layer console is the layer above it: the place where that verification step, and others like it, are orchestrated, evaluated, governed by policy, and logged for audit across a practice. One is a good answer to a narrow question. The other is the difference between using AI and being able to stand behind it. Most teams are shopping for the first while describing the second. Naming the gap is the first step toward closing it."
+          },
+          {
+            "type": "heading",
+            "text": "The workflow and the layer above it"
+          },
+          {
+            "type": "paragraph",
+            "text": "The workflow and the layer above it are both running, not diagrams. The Citation Verifier is a single governed workflow. The Trust-Safe AI Operating Layer console is where workflows like it are orchestrated, evaluated, governed, and logged across a practice. Both run in your browser."
+          },
+          {
+            "type": "paragraph",
+            "text": "RN Collins is a JD candidate, not a licensed attorney. This essay is systems and evaluation commentary, not legal advice, and nothing here creates an attorney–client relationship. The tools support documented-practice maturity, not legal compliance."
+          },
+          {
+            "type": "paragraph",
+            "text": "Read next: Back to Notes, for the other three essays →"
+          }
+        ]
+      },
+      {
+        "title": "Aloha AI Dispatch",
+        "eyebrow": "Newsletter",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Further notes and build breakdowns land here as they are finished. The dispatch is the low-friction way to keep up."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "notes/tool-workflow-operating-system/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "legal-ai-workflow-teardown",

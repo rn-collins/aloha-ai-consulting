@@ -3078,7 +3078,7 @@
     "kind": "monitor",
     "pathname": "/monitors/market-intel",
     "eyebrow": "Competitive intelligence monitor",
-    "title": "Market & Competitive Intelligence Monitor",
+    "title": "Know what your market is doing, with the receipts.",
     "summary": "A primary-source-grounded monitor for competitor moves, pricing, customer sentiment, hiring, funding, filings, IP, and regulation, with every signal dated and confidence-scored.",
     "audience": "Founders, strategy teams, brand leaders, and regulated or reputation-sensitive organizations.",
     "maturity": "Beta",
@@ -3175,7 +3175,472 @@
         "type": "implements",
         "target": "methods"
       }
-    ]
+    ],
+    "seoTitle": "Market & Competitive Intelligence Monitor",
+    "editorialIntro": [
+      "A sourced instrument, not a headline scraper. Score your signal coverage, see the blind spots a competitor is already exploiting, and see exactly what a generic AI's stale \"market summary\" gets confidently wrong. Every signal traces to a verifiable public source and carries a date.",
+      "Built by RN Collins · Neuroscientist (MS) · Administrative Law (JD candidate) · AI systemsTailored for: founders, brand & market leaders, and strategy teams"
+    ],
+    "editorialSections": [
+      {
+        "title": "Built for the people who can't afford a confident wrong read on the market",
+        "eyebrow": "Who this is for",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The same monitor reads four ways, because the stakes differ by seat."
+          },
+          {
+            "type": "heading",
+            "text": "Founders"
+          },
+          {
+            "type": "paragraph",
+            "text": "Know a competitor's pricing move, funding round, or hiring surge before it shows up in your churn."
+          },
+          {
+            "type": "heading",
+            "text": "Brand & market leaders"
+          },
+          {
+            "type": "paragraph",
+            "text": "A sourced, dated read on category shifts and sentiment, not a summary you have to re-verify."
+          },
+          {
+            "type": "heading",
+            "text": "Strategy teams"
+          },
+          {
+            "type": "paragraph",
+            "text": "One screenshot that makes the competitive picture legible to a board room in ten seconds."
+          },
+          {
+            "type": "heading",
+            "text": "Regulated / reputation-sensitive"
+          },
+          {
+            "type": "paragraph",
+            "text": "Evidence-grade provenance for regulated or reputation-sensitive professions where a wrong claim carries real cost."
+          }
+        ]
+      },
+      {
+        "title": "Ask a generic AI \"what's happening in my market.\" Watch it fail.",
+        "eyebrow": "The Operator Execution Gap · live",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Large language models answer market questions most confidently exactly where their training data is stalest. Same question, two answers: the fluent-but-outdated generic reply, and the primary-source, dated one. The distance between them is what a wrong assumption costs."
+          },
+          {
+            "type": "paragraph",
+            "text": "✕ Generic LLM · unsourced & stale"
+          },
+          {
+            "type": "paragraph",
+            "text": "\"Give me a competitive summary of my category — who's winning and what should I do?\""
+          },
+          {
+            "type": "paragraph",
+            "text": "\"Your category is stable and growing steadily. Your main competitor is the market leader and is focused on enterprise. Pricing is flat across the space, and there's no major new entrant to worry about.\""
+          },
+          {
+            "type": "paragraph",
+            "text": "Confident. Fluent. Frozen on training data of unknown age — and blind to the funding round, the pricing change, and the hiring surge that happened last quarter. The exact way a strategy deck ends up wrong in the room."
+          },
+          {
+            "type": "paragraph",
+            "text": "✓ Aloha AI · primary-source grounded SEC · Postings · Reviews"
+          },
+          {
+            "type": "paragraph",
+            "text": "Same question, answered from live public signals:"
+          },
+          {
+            "type": "paragraph",
+            "text": "Three dated signals change the picture. A competitor posted 14 sales roles in 60 days (job boards, retrieved 2026-07-04): a go-to-market push, not steady state. A second raised a round per a Form D filing (SEC EDGAR, dated) and quietly changed its pricing page (captured, timestamped). Review-platform sentiment on the incumbent dipped on one recurring complaint."
+          },
+          {
+            "type": "paragraph",
+            "text": "The generic \"stable and flat\" read misses all three. What this does tell you: where to defend on pricing, which competitor is staffing to attack, and the sentiment gap you can position into."
+          },
+          {
+            "type": "paragraph",
+            "text": "Confidence: High on filings · Med on sentiment Why you can rely on it: each signal maps to a named public source with a retrieval date, listed below, not asserted from memory."
+          },
+          {
+            "type": "paragraph",
+            "text": "OEG, the Operator Execution Gap, is the distance between what AI says about your market and what a leader can actually act on. Closing it is the entire job."
+          }
+        ]
+      },
+      {
+        "title": "Six signal streams, by decision consequence",
+        "eyebrow": "What actually moves the picture",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The signals that move real money and real positioning, and the public source each is read from. Generic summaries collapse all six into \"the market is fine.\""
+          },
+          {
+            "type": "heading",
+            "text": "Competitor moves High impact"
+          },
+          {
+            "type": "paragraph",
+            "text": "Product launches, feature shifts, positioning changes, press. Read from newsrooms, changelogs, and captured pages: dated, not summarized."
+          },
+          {
+            "type": "heading",
+            "text": "Pricing & packaging High impact"
+          },
+          {
+            "type": "paragraph",
+            "text": "Timestamped captures of public pricing pages surface increases, new tiers, and quiet removals before your win-rate tells you."
+          },
+          {
+            "type": "heading",
+            "text": "Customer sentiment Moderate"
+          },
+          {
+            "type": "paragraph",
+            "text": "Review platforms and public forums, read for recurring complaints and shifts: an interpretive signal, flagged as such."
+          },
+          {
+            "type": "heading",
+            "text": "Hiring signals Moderate"
+          },
+          {
+            "type": "paragraph",
+            "text": "Public job postings reveal where a competitor is investing (a GTM surge, a new market, an R&D bet) weeks before the launch."
+          },
+          {
+            "type": "heading",
+            "text": "Funding & filings High impact"
+          },
+          {
+            "type": "paragraph",
+            "text": "SEC EDGAR (Form D, 10-K, 8-K) and public round announcements: the highest-confidence signal of a competitor's next runway."
+          },
+          {
+            "type": "heading",
+            "text": "IP & regulatory Nuance"
+          },
+          {
+            "type": "paragraph",
+            "text": "Patent & trademark filings (USPTO) and relevant regulatory actions hint at direction: directional, confidence-scored."
+          }
+        ]
+      },
+      {
+        "title": "Score your competitive-intelligence coverage",
+        "eyebrow": "The instrument",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Select what you actually track today and how often. The tool returns a coverage score, your specific blind spots, and what a monitor would watch for you, grounded in the six signal streams above. Everything runs locally in your browser; nothing is sent anywhere."
+          },
+          {
+            "type": "list",
+            "items": [
+              "Select your signals and cadence to see your blind spots."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "What one decision on stale intel costs",
+        "eyebrow": "The cost of getting it wrong",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The most common error we see: making a pricing, positioning, or hiring bet off a generic AI's frozen market summary instead of a dated signal. This is the price of acting on the stale answer."
+          },
+          {
+            "type": "list",
+            "items": [
+              "Plus the opportunity cost of the move you didn't make because a signal was invisible to you."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "This is the cost of trusting an undated \"the market is stable\" summary."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "A repeatable intelligence method, not a one-off scrape",
+        "eyebrow": "How it works",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Every Aloha AI monitor runs the same three-stage pipeline. It's why the read stays right next month, not just today."
+          },
+          {
+            "type": "heading",
+            "text": "Retrieval Intelligence Layer (RIL)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Primary and verifiable public sources only (SEC filings, public job postings, captured pricing pages, review platforms, patent & trademark filings), captured with source and retrieval date. No headline aggregation."
+          },
+          {
+            "type": "heading",
+            "text": "Resolve to an Operator Layer (ROL)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Raw signals become a decision a leader can act on: what changed, for whom, with what confidence, closing the Operator Execution Gap."
+          },
+          {
+            "type": "heading",
+            "text": "Auto-refresh & alert"
+          },
+          {
+            "type": "paragraph",
+            "text": "In a production build, the monitor re-checks its primary sources on a schedule (Upstash · Vercel · Exa) and can ping you when a competitor files, prices, or hires, so it never goes stale."
+          }
+        ]
+      },
+      {
+        "title": "Every signal, traced to a verifiable public source",
+        "eyebrow": "What we monitor & why",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The provenance rigor is the product. Each signal carries its source type, refresh cadence, and a confidence rating, so the same artifact that opens a board conversation can survive a challenge in the room."
+          },
+          {
+            "type": "table",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Signal",
+                    "header": true
+                  },
+                  {
+                    "text": "Source type",
+                    "header": true
+                  },
+                  {
+                    "text": "Cadence",
+                    "header": true
+                  },
+                  {
+                    "text": "Confidence",
+                    "header": true
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Competitor funding & corporate events"
+                  },
+                  {
+                    "text": "SEC EDGAR · Form D / 8-K / 10-K · public round announcements"
+                  },
+                  {
+                    "text": "Daily"
+                  },
+                  {
+                    "text": "High"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Pricing & packaging changes"
+                  },
+                  {
+                    "text": "Public pricing pages · timestamped captures"
+                  },
+                  {
+                    "text": "Weekly"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Hiring & investment direction"
+                  },
+                  {
+                    "text": "Public job postings · careers pages / job boards"
+                  },
+                  {
+                    "text": "Med · directional"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Customer sentiment & recurring complaints"
+                  },
+                  {
+                    "text": "Review platforms · public forums"
+                  },
+                  {
+                    "text": "Med · interpretive"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Product direction & IP"
+                  },
+                  {
+                    "text": "USPTO patent & trademark filings · changelogs"
+                  },
+                  {
+                    "text": "Monthly"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Verification checkpoint: source categories above are illustrative and current as of the retrieval date. In a live monitor each signal links to its specific source; re-confirm against that source before acting on any figure."
+          }
+        ]
+      },
+      {
+        "title": "The combination no competitor holds",
+        "eyebrow": "Why this, not a generic monitor",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Most tools are one thing done adequately. This is built on named, defensible frameworks, so you leave speaking the language, not renting a dashboard."
+          },
+          {
+            "type": "paragraph",
+            "text": "RIL → ROL"
+          },
+          {
+            "type": "heading",
+            "text": "Retrieval Intelligence Layer"
+          },
+          {
+            "type": "paragraph",
+            "text": "Primary-source monitoring resolved into an operator-ready decision layer."
+          },
+          {
+            "type": "paragraph",
+            "text": "OEG"
+          },
+          {
+            "type": "heading",
+            "text": "Operator Execution Gap"
+          },
+          {
+            "type": "paragraph",
+            "text": "The gap between what AI says about your market and what a leader can act on."
+          },
+          {
+            "type": "paragraph",
+            "text": "EDSA"
+          },
+          {
+            "type": "heading",
+            "text": "EDSA Framework"
+          },
+          {
+            "type": "paragraph",
+            "text": "Keeps regulated and reputation-sensitive content compliant and un-suppressed across platforms."
+          },
+          {
+            "type": "paragraph",
+            "text": "Sourced-first"
+          },
+          {
+            "type": "heading",
+            "text": "Provenance ledger"
+          },
+          {
+            "type": "paragraph",
+            "text": "Every signal → source type → cadence → confidence, so it holds up in the room."
+          }
+        ]
+      },
+      {
+        "title": "How this becomes yours",
+        "eyebrow": "The service",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Founders, brand leaders, and strategy teams fly blind on how each competitor move, pricing shift, and category signal hits their position. I build a tailored monitor for your exact market that tracks the public sources and resolves them into decisions you can act on."
+          },
+          {
+            "type": "heading",
+            "text": "What I build"
+          },
+          {
+            "type": "paragraph",
+            "text": "A private monitor scoped to your category, competitor set, and the signals that matter: sourced, dated, and confidence-scored."
+          },
+          {
+            "type": "heading",
+            "text": "What you get"
+          },
+          {
+            "type": "list",
+            "items": [
+              "A live, cited monitor for your market"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A provenance ledger you can put in a board deck"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Change-alerts when a competitor files, prices, or hires"
+            ]
+          },
+          {
+            "type": "heading",
+            "text": "How to start"
+          },
+          {
+            "type": "paragraph",
+            "text": "A 20-minute scoping call. If it's a fit, a tailored build turns around in days, not weeks."
+          },
+          {
+            "type": "paragraph",
+            "text": "Pricing. Tailored monitors start from $5,000 build + $1,500/mo to keep them live, scoped to your market. Three-month minimum on any retainer; 30 days' notice to stop."
+          }
+        ]
+      },
+      {
+        "title": "Ready when you are.",
+        "eyebrow": "Aloha AI · Honolulu",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "This page is a dated snapshot from a Market & Competitive Intelligence build. Get your own monitor with a Build ($5,000–$10,000, from $5,000 + $1,500/mo to keep it live), or book a scoping call to define your watch set."
+          },
+          {
+            "type": "paragraph",
+            "text": "Prefer email? Email RN · or connect on LinkedIn"
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "monitors/market-intel/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "private-ai-risk",

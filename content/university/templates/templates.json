@@ -68,7 +68,151 @@
         "type": "supports",
         "target": "workflow-audit-course"
       }
-    ]
+    ],
+    "editorialIntro": [
+      "A rollout you can trust doesn't start with a tool. It starts with one use case, a data rule, and a person who owns it. This 90-day template moves you from first pilot to trained team in four phases, each with a goal, an owner, guardrails, and a way to tell if it worked."
+    ],
+    "editorialSections": [
+      {
+        "title": "What this is",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "A four-phase, roughly 90-day plan for putting AI to work without the two failure modes we see most: buying a tool nobody adopts, or moving so fast that one sensitive-data mistake ends the whole effort. Each phase carries a single goal, a named owner, the guardrails that keep it safe, and a success measure — so you know whether to keep going or fix something first."
+          },
+          {
+            "type": "paragraph",
+            "text": "It picks up where the AI Use Case Inventory leaves off. Once you've ranked your opportunities, this is how you turn the top one into a real, adopted change — then a second, then a third."
+          }
+        ]
+      },
+      {
+        "title": "Who it's for",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "Owners and operators who've decided to try AI and want a sequence to follow instead of a pile of open tabs."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Department leads asked to \"roll out AI\" who need a plan they can defend to their team and their boss."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Anyone who ran one good AI experiment and now has to spread it without losing the quality or the trust."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "What's inside",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "Four phases — Foundation, Pilot, Expand, Embed — mapped across 13 weeks, each with a goal, key activities, an owner, guardrails, and a success measure."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A copy-pastable fill-in version of the whole roadmap, with target-date fields for every phase."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A short \"before you start\" checklist and a review-cadence note so the plan doesn't stall after week two."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A guardrail reminder about the two corners you should never cut to move faster."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "How to use it",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Pick one use case. Take the top low-effort, low-sensitivity row from your inventory. One. Resist the urge to run three at once.",
+              "Assign an owner per phase. Every phase needs one name accountable for it, not a committee. Owners can differ by phase.",
+              "Set the guardrails before the work. Decide your data-handling rule and your human-review step in Phase 0, before anyone touches a tool.",
+              "Move on measures, not vibes. Each phase has a success measure. Hit it before advancing; if you miss it, fix the phase you're in.",
+              "Fill the dates and review weekly. Put real target dates on each phase and hold a short weekly check-in to keep it honest."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "The template",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Here's the full phased plan with realistic content in each cell. Treat the specifics as a worked example — a small services business rolling out AI-assisted customer replies — and swap in your own use case, names, and dates. Then copy the fill-in version below and work it phase by phase."
+          },
+          {
+            "type": "code",
+            "text": "AI IMPLEMENTATION ROADMAP — 90 DAYS USE CASE (one, from your inventory): ______________________________ OVERALL OWNER: ______________________________ START DATE: ______________________________ BEFORE YOU START — CHECKLIST [ ] We picked ONE use case, not several. [ ] We wrote one plain-language data-handling rule. [ ] We chose a tool tier (consumer / business / private) that fits the data. [ ] Every phase has a named owner (a person, not a committee). [ ] We agreed on one example of a \"good\" AI output. [ ] Leadership knows this is happening and supports it. ------------------------------------------------------------------ PHASE 0 · FOUNDATION (Weeks 1-2) Goal: Pick one use case and set the rules before any real use. Activities: - Pick one use case from the inventory: ____________________ - Write the data rule: ____________________ - Choose the tool tier: ____________________ - Agree what \"good\" looks like: ____________________ - Name the pilot owner + 1-2 users: ____________________ Owner: ____________________ Guardrails: Data rule + tool tier written and shared BEFORE Phase 1. Success measure: One-page scope the team has read and agreed to. Target date: ____________________ ------------------------------------------------------------------ PHASE 1 · PILOT (Weeks 3-5) Goal: Prove the use case works safely with 1-2 people + human review. Activities: - Run the task on real work following Phase 0 rules - Require human review on every output - Build a small prompt / example set - Log wins, misses, near-misses on data - Track time saved vs. baseline Owner: ____________________ Guardrails: 100% human review. No expansion until success measure met. Success measure: 20+ real tasks, clear time saving, zero data-rule breaches. Target date: ____________________ ------------------------------------------------------------------ PHASE 2 · EXPAND (Weeks 6-9) Goal: Roll out to a small group; optionally add a second use case. Activities: - Extend to 4-8 people (NOT the whole company) - Write a short \"how we do this\" guide - Run a 60-minute training session - Optionally start a 2nd use case at Phase 1 discipline - Loosen review only where proven safe; document where Owner: ____________________ Guardrails: Same data rule for all. New users keep full review until they hit the quality bar. Small group only. Success measure: Group uses it independently; quality holds; time saved scales. Target date: ____________________ ------------------------------------------------------------------ PHASE 3 · EMBED (Weeks 10-13) Goal: Make it a normal, owned part of how the team works. Activities: - Fold the guide + data rule into onboarding - Assign a standing process owner - Set a monthly quality + data-handling check - Pick the next use case (back to Phase 0) - Capture total quarterly time saved Owner: ____________________ Guardrails: Written policy, documented review standard, monthly audit. Success measure: Runs without the pilot team; named owner; next use case queued. Target date: ____________________ ------------------------------------------------------------------ REVIEW CADENCE Weekly (15 min): Are we on the target date? Any data near-misses? Blockers? End of each phase: Did we hit the success measure? Yes = advance. No = fix here first. Monthly (from Phase 3 on): Quality, data handling, tool tier still right?"
+          },
+          {
+            "type": "quote",
+            "text": "Don't cut these corners to move faster: skipping the Phase 0 guardrails — the written data rule and the human-review step — is how a rollout turns into a data leak or a customer-facing mistake. And don't jump from a two-person pilot straight to the whole company; expand to a small group, prove quality holds, then widen. This is general education, not legal advice — check your own obligations before you move any sensitive data or set company policy."
+          }
+        ]
+      },
+      {
+        "title": "Choose the tools before you map the rollout",
+        "eyebrow": "Tool guides",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Tool guide"
+          },
+          {
+            "type": "heading",
+            "text": "Best AI for small business operations"
+          },
+          {
+            "type": "paragraph",
+            "text": "The tools most commonly implemented in the first 30 days — compared so you know what you are rolling out."
+          },
+          {
+            "type": "heading",
+            "text": "Build a lean AI stack"
+          },
+          {
+            "type": "paragraph",
+            "text": "The framework for deciding which tools belong in each layer before you assign them to a week on this roadmap."
+          }
+        ]
+      },
+      {
+        "title": "Want us to run the 90 days with you?",
+        "eyebrow": "Work with us",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "We'll help you pick the right first use case, set the guardrails, run the pilot, and coach your team through the rollout — so the plan ships instead of stalling at week two. Book a session and we'll map your first 90 days together."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "university/templates/ai-implementation-roadmap/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "ai-policy-starter-kit-template",

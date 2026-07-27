@@ -1442,7 +1442,7 @@
     "kind": "useCase",
     "pathname": "/stacks/regulated-intelligence",
     "eyebrow": "Applied stack",
-    "title": "Psychedelic / Cannabis Intelligence AI Stack",
+    "title": "The Psychedelic Cannabis Stack, built on monitors already running in your market.",
     "summary": "A four-layer stack for scheduling, state status, claim substantiation, and platform-suppression intelligence in fast-moving psychoactive-plant markets.",
     "audience": "Cannabis, psychedelics, and psychoactive-plant operators and researchers.",
     "maturity": "Production",
@@ -1499,7 +1499,159 @@
         "type": "uses",
         "target": "cannabis-rescheduling"
       }
-    ]
+    ],
+    "seoTitle": "Psychedelic / Cannabis Intelligence AI Stack",
+    "editorialIntro": [
+      "These markets move on scheduling actions, state rulemakings, and platform enforcement, and the facts change weekly. A working intelligence stack watches the federal schedule, tracks state-by-state status, checks product claims against what a regulator will accept, and documents platform suppression when it hits. This is the one stack where the subject-matter edge is the point: I run these monitors in psychedelics and cannabis myself. Here is the stack and the live assets behind each layer.",
+      "Built by RN Collins. Regulatory work inside psychedelic clinical science · cannabis & psychedelic trade press · live monitors in these markets"
+    ],
+    "editorialSections": [
+      {
+        "title": "Four layers that track a moving target",
+        "eyebrow": "The stack at a glance",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Federal scheduling sets the ceiling; state status sets what you can do today; claim substantiation keeps your marketing inside the line; suppression defense keeps you visible. Each runs off a live, dated source, because in these markets last quarter's answer is often wrong."
+          },
+          {
+            "type": "paragraph",
+            "text": "Scheduling tracking — federal posture"
+          },
+          {
+            "type": "paragraph",
+            "text": "State-by-state status"
+          },
+          {
+            "type": "paragraph",
+            "text": "Product-claim substantiation"
+          },
+          {
+            "type": "paragraph",
+            "text": "Platform-suppression defense"
+          }
+        ]
+      },
+      {
+        "title": "What each layer does, and where AI breaks",
+        "eyebrow": "Layer by layer",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "For every layer: the job, where AI earns real time, where it fails in fast-moving markets, and the live monitors and tools that cover it. External monitors open in a new tab."
+          },
+          {
+            "type": "heading",
+            "text": "Scheduling tracking"
+          },
+          {
+            "type": "paragraph",
+            "text": "The job. Watch DEA and Federal Register actions on cannabinoids and psychedelics, and model your exposure to a scheduling change before it lands."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where AI helps. Summarizing a Federal Register notice, flagging what changed, and drafting a plain-language read of a scheduling action an expert verifies."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where it fails. General models work from stale training and will describe an old schedule as current, or miss a notice entirely. This layer has to track postings as they publish, not recall them."
+          },
+          {
+            "type": "paragraph",
+            "text": "Maps toAloha DEA Tracker for scheduling actions as they post, and the Cannabis Rescheduling Monitor to model Schedule III exposure with every figure sourced and dated."
+          },
+          {
+            "type": "heading",
+            "text": "State-by-state status"
+          },
+          {
+            "type": "paragraph",
+            "text": "The job. Know where psilocybin, MDMA, ketamine, and cannabis actually stand in each state and agency, because the map is different in every jurisdiction."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where AI helps. Clustering status across states, drafting a jurisdiction summary, and flagging which agencies are mid-rulemaking."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where it fails. A model will blur state lines, apply one state's rule to another, and state a status that a rule changed last month. Status has to come from a live sweep of the agencies writing the rules."
+          },
+          {
+            "type": "paragraph",
+            "text": "Maps toPsych Ops Intel for a psilocybin sweep across OHA, DORA, NMDOH and the other agencies, and the Psychedelic Reg Radar for status by state and federal posture."
+          },
+          {
+            "type": "heading",
+            "text": "Product-claim substantiation"
+          },
+          {
+            "type": "paragraph",
+            "text": "The job. Keep marketing and label claims inside what a regulator will accept, in a market where a therapeutic claim draws enforcement fast."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where AI helps. Scanning copy for high-risk medical and therapeutic language, flagging claims by regulator zone, and drafting safer alternatives for review."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where it fails. A model will approve a claim that FTC or a state regulator would not, or invent a substantiation standard. This layer flags risk; a lawyer still signs off."
+          },
+          {
+            "type": "paragraph",
+            "text": "Maps toRegulated Claims Checker, tuned for cannabis, psychedelics, and wellness, flagging medical, therapeutic, substantiation, and consumer-protection claims by risk level."
+          },
+          {
+            "type": "heading",
+            "text": "Platform-suppression defense"
+          },
+          {
+            "type": "paragraph",
+            "text": "The job. Document and respond when platforms throttle psychoactive or harm-reduction content, so reach loss is evidence, not a mystery."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where AI helps. Logging incidents in a consistent format, spotting patterns across platforms, and drafting an appeal from a documented record."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where it fails. A model cannot tell you why reach dropped without data, and will guess. This layer needs a real incident log, not a plausible story."
+          },
+          {
+            "type": "paragraph",
+            "text": "Maps tothe Aloha Suppression Sweep with 50+ documented incidents and a rolling log, plus the Regulatory & Market Intelligence service to build suppression defense into your content operation."
+          }
+        ]
+      },
+      {
+        "title": "Intelligence built for a market that moves weekly.",
+        "eyebrow": "Regulated intelligence engagement",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "I run scheduling, state-status, claims, and suppression monitors in psychedelics and cannabis, and I build the version that watches your specific product and jurisdictions. Most operators start with a Systems Audit that names the weakest layer, then we build the monitoring or claims layer first. Bring your product and states and we scope it around them."
+          },
+          {
+            "type": "paragraph",
+            "text": "Prefer email? Email RN · or connect on LinkedIn"
+          }
+        ]
+      },
+      {
+        "title": "Aloha AI Dispatch",
+        "eyebrow": "Newsletter",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "One short email when there is a new tool, a build breakdown, or a shift worth knowing in AI for regulated work."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "stacks/regulated-intelligence/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "research-lab-stack",
@@ -2934,7 +3086,7 @@
     "kind": "tool",
     "pathname": "/trust-stack/suppression-playbook",
     "eyebrow": "Regulated Trust Stack · Layer 5",
-    "title": "Platform Suppression Monitoring Playbook",
+    "title": "They will not tell you when they turn down your reach. This is how you find out anyway.",
     "summary": "A disciplined monitoring framework for detecting, documenting, and responding to quiet distribution and reach suppression.",
     "audience": "Regulated creators, brands, and advocacy organizations exposed to platform-risk.",
     "maturity": "Research",
@@ -2988,7 +3140,120 @@
         "type": "supports",
         "target": "content"
       }
-    ]
+    ],
+    "seoTitle": "Platform Suppression Monitoring Playbook",
+    "editorialIntro": [
+      "The Platform-Risk Intelligence Playbook. Nervous-System-Aware monitoring for reduced content distribution.",
+      "Framework: Nervous-System-Aware Platform-Risk Intelligence"
+    ],
+    "editorialSections": [
+      {
+        "title": "The audience you lost was erased before anyone noticed",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "A removal is loud: a strike, an email, an appeal button. Reduced distribution is silent. The post stays up. The follower count holds. The dashboard looks calm. And the thousands of new people who would have found this month's content in their recommendations simply never arrive."
+          },
+          {
+            "type": "paragraph",
+            "text": "By the time the drop is obvious, you have often bled a full quarter of top-of-funnel growth, and the evidence you would need to appeal has gone cold. This is the most expensive event a regulated brand faces, and it is the one almost nobody is watching for."
+          },
+          {
+            "type": "paragraph",
+            "text": "Health, cannabis, and psychedelic content lives permanently inside the categories platforms commit, in their own policy text, to recommend less. YouTube \"reduces recommendations of borderline content.\" TikTok publishes a named list of what it makes \"ineligible for the For You feed,\" and content discussing drugs or other regulated substances is on it. They admit they do it. They will not confirm when they have done it to you."
+          }
+        ]
+      },
+      {
+        "title": "What's inside",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "The Nervous-System-Aware framework, with each biological property mapped to a working component of the practice."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A taxonomy of every documented reduced-distribution mechanism, with citable policy language (quoted where the platform's wording is exact, otherwise paraphrased) from YouTube, Meta / Instagram, and TikTok."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "The three-layer monitoring stack: native analytics, the platforms' own account-status surfaces, and third-party checkers positioned honestly as signals, not verdicts, with a verified tool-and-price table."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "The statistical baseline method: control limits and decision rules that separate a real drop from noise, and the 45-minute monthly review you can put on a recurring calendar hold."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "The three-tier response protocol, mapped to NIST, with appeal-ready framing, plus copy-and-use worksheets and fully cited references."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Who it's for",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "Content and communications teams in psychedelic health, cannabis, biopharma, and mental health who publish under regulatory constraint and cannot afford to discover a reach collapse a quarter too late."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Anyone whose growth depends on recommendation surfaces they do not control."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Teams that need a monitoring record built to the same evidentiary standard it asks them to apply to their own suppression claims."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Where this sits in the stack",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "This is Layer 5 · Defense of The Regulated Trust Stack, one operating system for earning trust in regulated markets, in six dependent layers. Each layer stands on the one beneath it. Own one and the next gap becomes impossible to ignore."
+          },
+          {
+            "type": "paragraph",
+            "text": "See the full six-layer stack → Find your weakest layer →"
+          }
+        ]
+      },
+      {
+        "title": "Get Nervous-System-Aware Platform-Risk Intelligence",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Checkout is handled by Gumroad. The button opens the Aloha AI Gumroad storefront."
+          },
+          {
+            "type": "paragraph",
+            "text": "← Back to The Regulated Trust Stack"
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "trust-stack/suppression-playbook/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "trust-safe-twins",
