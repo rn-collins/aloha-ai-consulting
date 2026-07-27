@@ -363,10 +363,10 @@
     "id": "university-contact",
     "kind": "learningHub",
     "pathname": "/university/contact",
-    "eyebrow": "Contact",
-    "title": "Tell us what you are trying to do",
-    "summary": "The University contact and consultation entry point for learners and teams seeking help with strategy, workflow design, implementation, governance, training, or ongoing advisory.",
-    "audience": "Learners, teams, partners, and prospective clients who need a human conversation.",
+    "eyebrow": "Talk to RN",
+    "title": "Bring me the thing that keeps getting stuck.",
+    "summary": "Tell RN what you are trying to change. Book a conversation or send a short email—whichever feels easier.",
+    "audience": "Anyone with a real question, messy process, early idea, or existing system that needs a clearer next step.",
     "maturity": "Production",
     "topics": [
       "contact",
@@ -394,9 +394,9 @@
       }
     ],
     "learningPaths": [
-      "Describe the business and goal",
-      "Identify the current bottleneck",
-      "Choose a conversation or continue with free resources"
+      "Say what you are trying to make, change, or understand",
+      "Name the part that feels slow, risky, confusing, or repetitive",
+      "Choose a conversation, an email, or a free place to keep exploring"
     ],
     "evidence": [
       "User-provided context",
@@ -404,9 +404,9 @@
       "Published methods and limitations"
     ],
     "methodology": [
-      "Collect only useful context",
-      "Clarify fit before scoping",
-      "Route to free material when an engagement is unnecessary"
+      "Ask only for context that helps RN understand the question",
+      "Clarify fit, scope, and professional boundaries before proposing work",
+      "Point to a free resource when a paid engagement is unnecessary"
     ],
     "assumptions": [
       "The person initiating contact is authorized to discuss the work"
@@ -425,8 +425,65 @@
       }
     ],
     "seoTitle": "Tell us what you are trying to do.",
+    "contactExperience": {
+      "intro": "You do not need a polished brief, technical vocabulary, or the perfect service name. Start with the situation as you understand it.",
+      "paths": [
+        {
+          "label": "Talk it through",
+          "title": "Book a conversation",
+          "plain": "Choose a time and explain the situation out loud. A few rough notes are enough.",
+          "action": "Choose a time",
+          "href": "https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous",
+          "note": "Opens Microsoft Bookings"
+        },
+        {
+          "label": "Write first",
+          "title": "Send RN an email",
+          "plain": "Useful when you want to share links, documents, context, or think before you speak.",
+          "action": "Open an email",
+          "href": "mailto:collins.ra@northeastern.edu?subject=Aloha%20AI%20inquiry",
+          "note": "No mailing list. Just a reply."
+        },
+        {
+          "label": "Not ready yet",
+          "title": "Keep exploring for free",
+          "plain": "Use the lessons, tools, and builds first. Come back when your question becomes clearer.",
+          "action": "Visit the University",
+          "href": "/university",
+          "note": "$0 · no signup · no email gate"
+        }
+      ],
+      "prompts": [
+        {
+          "title": "What are you trying to do?",
+          "plain": "One sentence is enough. Tell RN what should be different when this works."
+        },
+        {
+          "title": "Where does it get stuck?",
+          "plain": "Name the slow, confusing, repetitive, risky, or frustrating part."
+        },
+        {
+          "title": "What have you tried?",
+          "plain": "Share the tools, people, drafts, or workarounds already in the picture."
+        }
+      ],
+      "nextSteps": [
+        {
+          "title": "RN reads the context",
+          "plain": "Your note is reviewed by a person, not dropped into an automated sales sequence."
+        },
+        {
+          "title": "You test the fit",
+          "plain": "The first conversation is for understanding the problem and deciding whether RN is the right person."
+        },
+        {
+          "title": "The next step becomes clear",
+          "plain": "That may be a scoped engagement, a smaller starting point, a referral, or a free resource."
+        }
+      ]
+    },
     "editorialIntro": [
-      "The fastest way to talk is to book a time. Prefer email? Reveal it below. Either way, a short note about your business helps us come prepared."
+      "The fastest way to talk is to book a time. Prefer email? Write first. Either way, a short note about the situation helps RN come prepared."
     ],
     "editorialSections": [
       {
@@ -454,7 +511,7 @@
           },
           {
             "type": "paragraph",
-            "text": "When you reach out, tell us: what your business does, the one or two things eating the most time, and what you have already tried with AI. That lets us skip the small talk and get useful fast."
+            "text": "When you reach out, say what you are trying to do, where it gets stuck, and what you have already tried. That lets RN understand the situation without making you complete a long intake form."
           },
           {
             "type": "paragraph",
