@@ -3753,26 +3753,6 @@
     ],
     "editorialSections": [
       {
-        "title": "The latest federal AI governance actions, pulled live",
-        "eyebrow": "Live · Federal Register",
-        "blocks": [
-          {
-            "type": "paragraph",
-            "text": "This panel queries the Federal Register API from your browser every time the page loads, so it shows the primary source itself, not a stored summary."
-          },
-          {
-            "type": "list",
-            "items": [
-              "Loading the latest from the Federal Register…"
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "The live Federal Register feed is unavailable right now; the dated analysis below still applies."
-          }
-        ]
-      },
-      {
         "title": "Built for the people who own the breach when it happens",
         "eyebrow": "Who this is for",
         "blocks": [

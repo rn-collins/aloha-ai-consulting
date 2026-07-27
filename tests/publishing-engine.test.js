@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { derivePlatform, generatedOutputs, legacyMigrationInventory, validateCollectionPages, validatePlatform, validateRoutingConfig } from '../lib/site/publishing-engine.js';
 import { renderStructuredPage } from '../lib/site/structured-renderer.js';
+import { buildMetadata, metadataDescription, metadataTitle } from '../lib/site/metadata.js';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
@@ -113,6 +114,27 @@ test('renders and indexes structured editorial copy', () => {
   assert.match(html, /<th>Signal<\/th>/);
   const search = JSON.parse(generatedOutputs(resources, platform).get('/search-index.json'));
   assert.match(search.find((item) => item.id === 'alpha').text, /human reviewer/);
+});
+
+test('bounds search metadata without changing visible editorial titles or summaries', () => {
+  const longTitle = 'A deliberately long editorial heading that should remain visible while search metadata receives a separate bounded representation';
+  const shortDescription = 'Browse Aloha AI by topic.';
+  assert.ok(metadataTitle(longTitle, ' | Aloha AI').length <= 70);
+  assert.ok(metadataDescription(shortDescription).length >= 70);
+  assert.ok(metadataDescription('x '.repeat(120)).length <= 180);
+  const metadata = buildMetadata({ title: longTitle, description: shortDescription, pathname: '/example' });
+  assert.ok(metadata.title.length <= 70);
+  assert.ok(metadata.description.length >= 70 && metadata.description.length <= 180);
+  assert.equal(metadata.openGraph.title, metadata.title);
+  assert.equal(metadata.twitter.description, metadata.description);
+});
+
+test('private AI risk copy does not claim an unrelated live Federal Register feed', () => {
+  const monitorFile = JSON.parse(fs.readFileSync(new URL('../content/monitors/intelligence-monitors.json', import.meta.url), 'utf8'));
+  const privateRisk = monitorFile.find((item) => item.id === 'private-ai-risk');
+  const editorial = JSON.stringify(privateRisk.editorialSections);
+  assert.doesNotMatch(editorial, /queries the Federal Register API|Live · Federal Register/);
+  assert.match(editorial, /retention|sub-processors|BAA/i);
 });
 
 test('rejects malformed structured editorial copy', () => {
