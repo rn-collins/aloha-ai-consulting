@@ -20,7 +20,7 @@ const records = files.flatMap((file) => {
 });
 const existingPaths = new Set(records.filter((entry) => entry.resource.editorialSource?.baseline === baseline).map((entry) => entry.resource.pathname));
 const targets = [...report.pages]
-  .filter((page) => selection !== 'existing' || existingPaths.has(page.currentRoute))
+  .filter((page) => selection === 'existing' ? existingPaths.has(page.currentRoute) : !existingPaths.has(page.currentRoute))
   .sort((a, b) => a.distinctiveWordOverlap - b.distinctiveWordOverlap || a.originalRoute.localeCompare(b.originalRoute))
   .slice(0, count ?? undefined);
 

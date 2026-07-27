@@ -4,7 +4,7 @@
     "kind": "useCase",
     "pathname": "/university/use-cases/admin",
     "eyebrow": "Use case · Administration",
-    "title": "AI for Admin: Inbox, Scheduling & Meeting Notes",
+    "title": "AI for Admin",
     "summary": "A human-reviewed workflow for triaging inboxes, drafting replies, converting meeting notes into actions, summarizing documents, and preparing routine forms.",
     "audience": "Administrative professionals, executive assistants, founders, and operations teams.",
     "maturity": "Production",
@@ -66,7 +66,321 @@
         "type": "supports",
         "target": "ai-for-meeting-notes-lesson"
       }
-    ]
+    ],
+    "seoTitle": "AI for Admin: Inbox, Scheduling & Meeting Notes",
+    "editorialIntro": [
+      "The small stuff — triaging the inbox, drafting the same three replies, turning a messy meeting into a clean action list, filling the form you fill every week — is exactly the work AI drafts well. You stay the editor. Nothing sensitive leaves without your eyes on it, and the routine stops eating your morning."
+    ],
+    "editorialSections": [
+      {
+        "title": "Draft the routine, review the result",
+        "eyebrow": "What it is",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "\"AI for admin\" is not one tool doing one trick. It is a handful of everyday desk tasks a capable assistant model can draft in seconds, so you spend your time deciding rather than typing. Nothing runs on its own; a person reads every output, fixes what is off, and sends or files it."
+          },
+          {
+            "type": "paragraph",
+            "text": "In practice, that is a handful of repeatable jobs:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Inbox triage and replies. Sorting what needs a reply now from what can wait, then drafting the reply itself in your own words."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Scheduling copy. The \"here are three times that work\" note, the reschedule apology, the confirmation — the messages you retype constantly."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Meeting notes to actions. Feeding in a rough transcript or scrawled bullets and getting back who owns what by when."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Summarizing. A five-page expense policy, a long PDF, a dense email thread, boiled down to what you need to act on."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Forms and templates. The intake sheet, the standard onboarding email, the weekly status update — where the structure is fixed and only the details change."
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "The through-line: every one of these produces a draft, not a decision. The AI removes the blank page and the retyping; it does not remove your judgment, and it has no way to know what is true. That part is yours."
+          }
+        ]
+      },
+      {
+        "title": "Anyone drowning in the small tasks",
+        "eyebrow": "Who it helps",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "Solo founders. You are the CEO and the admin department. Every reply, every reschedule, every \"can you send me that document\" comes to you, and it all fits in the cracks between real work. Drafting the routine gives you those cracks back."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Office and operations admins. You keep a business running on correspondence, forms, and follow-ups. A model that drafts the fortieth version of a standard email, or turns a meeting into a task list, lets you cover more ground without cutting corners."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Executive assistants at small firms. You manage a calendar, an inbox, and a stack of documents for someone whose time is expensive. Fast, accurate first drafts — that you still edit for voice and nuance — multiply what one person can hold."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Not a fit: anything sensitive going out on autopilot. Do not let AI auto-send external mail unread, and never use it to prepare financial or legal filings without the relevant professional in the loop. This is a drafting aid, not an authority."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Admin sprawl quietly eats the day",
+        "eyebrow": "The problem",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "No single admin task is hard. That is exactly why it is dangerous. A two-minute reply, a quick calendar shuffle, a \"let me summarize that thread for you\" — each is trivial, and there are forty of them, and by the time you look up the afternoon is gone and the work you meant to do has not started."
+          },
+          {
+            "type": "paragraph",
+            "text": "The pile grows because these tasks arrive unpredictably and each one demands a small context switch. You are mid-thought on something that matters, an email lands, you handle it, and it takes a real chunk of focus to climb back into the thing you dropped. The cost is not the two minutes. It is the twenty minutes of momentum around it. Repeat that a dozen times a day and deep work becomes impossible."
+          },
+          {
+            "type": "paragraph",
+            "text": "AI attacks one part of this precisely: it takes the routine off the critical path. Instead of composing every reply from scratch, you batch them — the model drafts, you review a stack in one focused pass, you send. What it does not take over is judgment: whether the draft is true, whether it committed to anything, whether it sounds like you. Keep those with the human and the small tasks stop interrupting, without a single unread message going out under your name."
+          }
+        ]
+      },
+      {
+        "title": "Give it context, get back something usable",
+        "eyebrow": "Inputs",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "A draft is only as good as what you hand the model. For admin work that usually means four things, and none of them take long to assemble. Gather them once, reuse them, and every draft improves."
+          },
+          {
+            "type": "heading",
+            "text": "The source material"
+          },
+          {
+            "type": "paragraph",
+            "text": "The email or full thread you are replying to, the document you want summarized, or the raw meeting notes. Paste the actual text — the more the model can see, the less it has to guess."
+          },
+          {
+            "type": "heading",
+            "text": "Your preferences and voice"
+          },
+          {
+            "type": "paragraph",
+            "text": "A short note on tone (warm but brief, formal, plain-spoken) and, ideally, two or three real messages you have sent so it can match how you actually write."
+          },
+          {
+            "type": "heading",
+            "text": "Calendar constraints"
+          },
+          {
+            "type": "paragraph",
+            "text": "For anything scheduling-related: the times you can offer, your buffers, time zone, and any hard blocks. The model cannot see your calendar unless you tell it what is on it."
+          },
+          {
+            "type": "heading",
+            "text": "Relevant policy"
+          },
+          {
+            "type": "paragraph",
+            "text": "The expense rule, the response template, the approval threshold — whatever standard the output has to respect. If there is a right answer, give the model its source rather than hoping it knows."
+          }
+        ]
+      },
+      {
+        "title": "Start with one chat tool and a place to keep things",
+        "eyebrow": "Suggested tools",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "You can run this whole use case with a single AI assistant. The rest is optional and only worth adding once the manual version is smooth. Prices below are current as of mid-2026 and change often — confirm on the vendor's site before you subscribe. Do not take any number here as gospel."
+          },
+          {
+            "type": "heading",
+            "text": "AI assistant (the core)"
+          },
+          {
+            "type": "paragraph",
+            "text": "ChatGPT Plus or Claude Pro, each around $20/month at the time of writing, handles the drafting, summarizing, and note-to-action work. The free tiers are fine for trying it out; the paid tiers give you stronger models and higher limits once this is part of your daily routine. Confirm current pricing before you subscribe."
+          },
+          {
+            "type": "heading",
+            "text": "A notes / task home"
+          },
+          {
+            "type": "paragraph",
+            "text": "Somewhere the outputs actually land — Notion, a Google Doc, a task list, or your existing project tool. Extracted actions are only useful if they end up where you will see them, not stranded in a chat window."
+          },
+          {
+            "type": "heading",
+            "text": "Automation glue (optional)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Zapier or Make can move the truly repetitive steps — say, dropping a meeting summary into a task tool — but only once you have validated the process by hand and only for low-risk moves. Add this last. Pricing changes; check before committing."
+          },
+          {
+            "type": "heading",
+            "text": "A note on privacy"
+          },
+          {
+            "type": "paragraph",
+            "text": "Whatever you use, do not paste sensitive personal, financial, or client data into a tool your policy has not cleared for it. Handling data responsibly is your call and your responsibility — see the review section for the guardrails."
+          }
+        ]
+      },
+      {
+        "title": "From a repetitive task to a reviewed, finished result",
+        "eyebrow": "Workflow",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Spot the repetition. Watch your week for the admin you do again and again: the same reply types, the same summary requests, the same forms. Start with one that is high-frequency and low-stakes.",
+              "Gather the inputs. Pull together the source material, a couple of your real messages for voice, any relevant policy, and your scheduling constraints if they apply. Keep these handy so you are not hunting each time.",
+              "Ask the AI to draft. Give the model the task and the inputs. Have it produce the reply, the summary, the meeting-notes-to-actions list, or the filled template — whatever this task calls for.",
+              "Review honestly. Read every word. Check that it invented nothing, committed to nothing you did not intend, and sounds like you. Edit freely; the draft is a starting point, not a verdict.",
+              "Send or file. Once it is right, send the email, book the time, or drop the summary and actions where your team will find them.",
+              "Save what worked. When a prompt reliably gets you a good draft, save it. A small library of tuned prompts is what turns a clever one-off into a repeatable habit.",
+              "Automate only the validated parts. After a process has proven itself by hand, wire the mechanical, low-risk moves in Zapier or Make — never the judgment. Keep a human gate on anything that goes to a person or touches sensitive data. Automate the retyping, not the deciding."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Turn a long thread into a summary and a reply",
+        "eyebrow": "Example prompt",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Copy this, paste your thread and a voice sample where marked, and adjust the details. The rules at the bottom are the important part — they keep the model from agreeing to things or inventing facts."
+          },
+          {
+            "type": "code",
+            "text": "You are helping me handle my inbox. I will paste a long email thread. Do two things. 1. Summarize the whole thread in exactly three lines: what it is about, where it stands now, and what is being asked of me. 2. Draft a suggested reply in my voice, ending with one clear next action or question. My voice — match this tone exactly: [paste 2-3 real emails you have actually sent] The thread: [paste the full thread here] Rules: - Do NOT agree to, commit to, or promise anything on my behalf. If a decision is needed, surface it as a question for me to answer, not a commitment in the draft. - Only use facts that appear in the thread. Invent nothing — no dates, names, numbers, or details that are not there. - If the thread is missing something I would need to reply well, say so instead of guessing. - Keep the reply under 120 words. Plain and warm, no filler openings, no \"I hope this finds you well.\""
+          }
+        ]
+      },
+      {
+        "title": "What a good result actually looks like",
+        "eyebrow": "Example output",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "A realistic response to that prompt, for a thread about rescheduling a vendor onboarding call. Notice it commits to nothing and leaves the real decision to the human."
+          },
+          {
+            "type": "code",
+            "text": "Three-line summary: - Maya at Brightline asked to move Thursday's onboarding call because two of her team are out. - She proposed early next week and asked which of your slots still stand. - She needs a new time from you and confirmation the shared doc is still the right one to prep from. Suggested reply: Hi Maya, No problem at all on moving Thursday. Early next week works — I can do Monday afternoon or Tuesday morning, whichever suits your team better. Let me know which and I will send an invite. The shared doc is still the right one to prep from; I have not changed anything since we last spoke. Anything else you would like me to pull together beforehand? Talk soon, [Your name] Note for you: I did not lock in a specific time, since I could not see your calendar. Confirm Monday and Tuesday are actually open before you send."
+          }
+        ]
+      },
+      {
+        "title": "The human gate is the whole point",
+        "eyebrow": "Human review",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The approval step is not a formality. It is what keeps a small mistake from becoming a public one. Before a draft goes anywhere, a human confirms:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "A person reviews anything external. Every email, message, or document that leaves your desk gets read by a human before it goes. No auto-send on unread drafts. The model writes the first version; you decide whether it is fit to send."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "No accidental commitments. Check that the draft has not agreed to a price, a deadline, a scope, or a meeting you did not authorize. Models are eager to be helpful, and \"helpful\" sometimes means promising things. Catch that before it goes out."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Personal and sensitive data is guarded. Confirm no private, client, or regulated information was mishandled — pasted into a tool it should not have been, or exposed in an output. Keep sensitive data out of AI tools your policy has not cleared, and treat data handling as your responsibility, not the tool's."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Automation stays behind a human gate. When you wire up automation, restrict it to low-stakes, mechanical steps, and keep a person approving anything that reaches an outside party or touches sensitive material. The gate does not slow you down enough to matter, and it is what keeps a helpful habit from becoming a costly one."
+            ]
+          },
+          {
+            "type": "quote",
+            "text": "Not legal or financial advice. How you handle personal, client, and regulated data is your responsibility, and the rules vary by industry and jurisdiction. This page is educational and is not legal, financial, or professional advice. RN Collins is a JD candidate, not a licensed attorney; for anything regulated, get qualified counsel before you rely on an AI draft."
+          }
+        ]
+      },
+      {
+        "title": "Grab the drafting templates",
+        "eyebrow": "Related template",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Email-draft & meeting-notes templates"
+          },
+          {
+            "type": "paragraph",
+            "text": "Reusable prompt structures for inbox replies, scheduling copy, and turning raw meeting notes into a clean owner-and-deadline action list. Drop your own details in and start from a working scaffold instead of a blank page."
+          }
+        ]
+      },
+      {
+        "title": "Do it safely across the whole business",
+        "eyebrow": "Related playbook",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "AI Governance Starter Playbook"
+          },
+          {
+            "type": "paragraph",
+            "text": "A plain-language framework for using AI responsibly everywhere — what data is allowed in which tools, who reviews what, and how you write it down. The natural next step once AI is drafting your admin and you need the same guardrails company-wide."
+          }
+        ]
+      },
+      {
+        "title": "Want your admin drafting set up right?",
+        "eyebrow": "Do it with us",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "We will help you find the repetitive tasks worth handing off, build the prompts and templates in your voice, and wire the human review gate in from the start — so you reclaim the hours without giving up control of what goes out."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "university/use-cases/admin/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "client-service-use-case",
@@ -136,7 +450,291 @@
         "type": "supports",
         "target": "ai-for-email-lesson"
       }
-    ]
+    ],
+    "editorialIntro": [
+      "Let AI draft the routine client communications — update emails, meeting recaps, status summaries, FAQ replies, onboarding notes — so your team spends its hours on the relationship instead of the keyboard. Every draft is reviewed by a human, and a human always presses send."
+    ],
+    "editorialSections": [
+      {
+        "title": "AI drafts the client comms; a person makes them yours",
+        "eyebrow": "What it is",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Client service runs on a steady drip of writing. The recap after a call. The Friday status note. The \"here is where the project stands\" email. The answer to a question you have fielded a dozen times. The welcome sequence when someone new comes aboard. None of it is glamorous, and all of it matters — because silence is how clients start to wonder whether you have forgotten them."
+          },
+          {
+            "type": "paragraph",
+            "text": "This use case puts AI on that drip. You feed it the raw material — notes, transcripts, project status, the last few emails you sent this client — and it produces a first draft: a warm recap, a clear status summary, a helpful reply. Then a person reads it, fixes the tone, checks every fact, and sends it from their own inbox. The model handles the blank page. You handle the judgment. That division of labor is the whole idea, and it is not optional."
+          }
+        ]
+      },
+      {
+        "title": "People who own client relationships and run short on hours",
+        "eyebrow": "Who it helps",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "Account managers. You carry a book of clients, each expecting to feel like the only one. Drafting recaps and updates for all of them is where evenings disappear. A review-ready draft per touchpoint buys those evenings back."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Client-facing founders. You are still the main point of contact, and comms slip whenever delivery gets busy. A system that drafts the update the moment a call ends keeps clients in the loop even on your worst week."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Small service teams. Agencies, studios, and consultancies without a dedicated ops person can standardize how they communicate without hiring for it — same quality bar, less time per message."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Not a fit: high-stakes or regulated communications — a contract change, a legal notice, a dispute, anything with money or compliance on the line — still need a human to think first and draft first. Polish with AI there if you like, but never originate. When in doubt, write it yourself."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Communication debt is quiet until it isn't",
+        "eyebrow": "The problem",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Clients rarely complain that you emailed too much. They churn because they felt out of the loop. The recap that never went out, the status update that slipped a week, the question that sat unanswered for three days — none of it feels urgent in the moment, so it loses every fight against billable work. That is communication debt, and like any debt it accrues silently and comes due at renewal."
+          },
+          {
+            "type": "paragraph",
+            "text": "The root cause is not that anyone stopped caring. It is that the routine writing is time-consuming and easy to defer, so it gets deferred until the relationship has cooled. When a client says \"I never really knew what was happening,\" the problem was almost never the work — it was the account of the work."
+          },
+          {
+            "type": "paragraph",
+            "text": "AI closes the gap by drafting the routine comms fast enough that they actually go out on time. The recap is waiting for you five minutes after the call, not living on a mental to-do list. Your people stop spending their energy generating routine text and start spending it where it counts: reading the client, catching what is unsaid, keeping the relationship warm. What AI does not do is decide what is true, what to promise, or when to hit send — those stay with the person whose name is on the message."
+          }
+        ]
+      },
+      {
+        "title": "Give it real material and it says true things",
+        "eyebrow": "Inputs",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The quality of every draft is set by what you hand the model. Thin inputs produce vague, generic text; specific inputs produce something worth sending. Gather these before you start."
+          },
+          {
+            "type": "heading",
+            "text": "Meeting notes or a transcript"
+          },
+          {
+            "type": "paragraph",
+            "text": "A notetaker's transcript, or even rough bullet points from the call — the raw record of what was actually discussed, decided, and promised."
+          },
+          {
+            "type": "heading",
+            "text": "Project status data"
+          },
+          {
+            "type": "paragraph",
+            "text": "Where things stand: what shipped, what is in progress, what is blocked, and the next milestone and date. Pull it from your project tool or a quick status line."
+          },
+          {
+            "type": "heading",
+            "text": "Prior client emails for voice"
+          },
+          {
+            "type": "paragraph",
+            "text": "Two or three messages your team has genuinely sent this client, so the draft matches how you already talk — not a generic corporate register."
+          },
+          {
+            "type": "heading",
+            "text": "The client's context and preferences"
+          },
+          {
+            "type": "paragraph",
+            "text": "Who they are, what they care about, how formal they like things, any sensitivities, and the names and roles on their side. This is what keeps the draft from reading like a form letter."
+          }
+        ]
+      },
+      {
+        "title": "A chat tool, a notetaker, somewhere to reply from",
+        "eyebrow": "Suggested tools",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "You can run the whole use case with one AI chat tool and copy-paste, then add a notetaker and an inbox tool as it becomes routine. Prices below are rough and change often — verify current pricing and free-tier limits before you commit to anything."
+          },
+          {
+            "type": "heading",
+            "text": "AI assistant (required)"
+          },
+          {
+            "type": "paragraph",
+            "text": "ChatGPT Plus or Claude Pro, each around $20/month at the time of writing — verify. The free tiers are fine for trying this out; the paid tiers give you stronger models and higher limits once client work depends on it."
+          },
+          {
+            "type": "heading",
+            "text": "A notetaker"
+          },
+          {
+            "type": "paragraph",
+            "text": "Something that records and transcribes calls so you are not typing while listening. Fathom's free tier records unlimited meetings but caps AI-generated summaries at around five per month; paid plans run roughly $16–20 per user per month at the time of writing — verify current limits and pricing, since both move."
+          },
+          {
+            "type": "heading",
+            "text": "A help / inbox tool"
+          },
+          {
+            "type": "paragraph",
+            "text": "Wherever client questions land — a shared inbox, a help desk, or your email client. AI drafts the reply; a person edits and sends. Many teams simply use their existing email with an AI draft pasted in, which is a perfectly good place to start."
+          },
+          {
+            "type": "heading",
+            "text": "A note on cost and privacy"
+          },
+          {
+            "type": "paragraph",
+            "text": "Prices and free-tier terms move constantly, so treat every figure here as \"check before you buy.\" Just as important: read each tool's data-handling terms before you paste client information into it, and confirm you are allowed to record a call before you do."
+          }
+        ]
+      },
+      {
+        "title": "Capture, draft, edit, send, log, follow up",
+        "eyebrow": "Workflow",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Capture the meeting or status. Record the call with your notetaker, or jot honest bullet points. For a status update, pull the current state from your project tool. This raw material is the input for everything that follows.",
+              "Draft the recap and next steps. Feed the transcript or status plus your voice sample and client context into the assistant, and ask for a recap email: decisions made, who owns what, dates, and the next check-in.",
+              "Edit for tone and accuracy. Read every line. Fix anything that sounds like a template, soften or firm the tone to suit the relationship, and confirm each commitment and date is real. Cut anything the model added that nobody actually said.",
+              "Send it from your own inbox. A person always presses send. Add the human touch — a personal line, a thank-you, an inside reference the model would not know.",
+              "Log the touchpoint. Note in your CRM or tracker that the recap went out, what was promised, and by when — so nothing falls through and the next person has context.",
+              "Set the follow-up. Ask the assistant to draft a short check-in for the promised date, and schedule a reminder to review and send it. The loop closes when the next touch is already queued."
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Do this by hand a few times before you streamline it. The manual pass teaches you what a sendable draft looks like, and that standard is what you will hold every future draft to."
+          }
+        ]
+      },
+      {
+        "title": "Turn a call transcript into a warm recap email",
+        "eyebrow": "Example prompt",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Copy this, fill in the brackets, and paste your transcript where indicated. The rule against inventing commitments is the most important line in it."
+          },
+          {
+            "type": "code",
+            "text": "You are drafting a recap email after a client call. Write in my firm's voice, matching the tone of the sample emails below. My firm / offer: [one sentence] The client: [company, the contact's name and role, and anything about how they like to be communicated with] My voice — match this tone: [paste 2-3 real emails your team has sent this client] Here is the call transcript (or my notes): [paste transcript / notes] Write a recap email that includes: 1. A warm one-line opener that references something specific from the call. 2. Decisions made on the call. 3. Action items as a short list: each with an owner and a date. 4. The date of the next check-in. 5. A brief, genuine closing line. Hard rules: - Only include commitments, owners, and dates that appear in the transcript. Do NOT invent or infer any promise, deadline, or deliverable. If an owner or date is unclear, flag it in brackets like [confirm owner] instead of guessing. - Keep it under 200 words. Warm and clear, not stiff or gushing. - No filler openers (\"I hope this email finds you well\"). - Return the email only, ready for me to review and edit."
+          }
+        ]
+      },
+      {
+        "title": "What a good draft looks like",
+        "eyebrow": "Example output",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "A realistic recap the prompt above might produce from a project-kickoff call — specific, warm, and clearly written by someone who was in the room. Note the bracketed flag where a date was unclear; that is the model doing exactly what it was told. A human still edits and sends it."
+          },
+          {
+            "type": "code",
+            "text": "Subject: Recap — kickoff and next steps Hi Priya, Great to finally get the whole team on a call today — the walkthrough of your onboarding flow gave us exactly the context we needed to hit the ground running. Here is what we landed on: Decisions - We'll start with the checkout redesign before touching the account pages, since checkout is where you're seeing the most drop-off. - Weekly Thursday check-ins at 10am your time. Who's doing what - Maya (our side): first wireframes for checkout — by Fri, Mar 14. - You: send over the last quarter's funnel analytics — by Mon, Mar 10. - Devan (your side): confirm brand color updates with your design lead — [confirm date; we didn't set one on the call]. Next check-in: Thursday, Mar 13 at 10am. Anything look off, or did I miss something from your notes? Happy to adjust. Looking forward to getting started. Best, Sam"
+          }
+        ]
+      },
+      {
+        "title": "What a person must check before anything sends",
+        "eyebrow": "Human review",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The approval step is not a formality. It is the reason this use case keeps AI a drafting aid rather than a liability. Before a message goes out, a human confirms:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Verify every commitment and date. The model can quietly turn \"we might\" into \"we will,\" or attach a date nobody agreed to. Read each action item against what actually happened and correct or flag anything that drifted."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Match the tone to the relationship. A draft can be technically fine and still land wrong — too casual for a formal client, too stiff for a friendly one. Adjust the register to the specific person on the other end."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Make no promise the team can't keep. If a draft implies a deliverable or timeline you are not certain you can hit, cut it or soften it. A recap becomes a record; do not put anything in writing you would not want held to."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Protect confidentiality. Do not paste one client's data into a draft for another, and be careful what you feed the tool. Confirm you may record a call before recording it, and mind each tool's data-handling terms."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A human always sends. No auto-send, ever. High-stakes or regulated comms should be drafted by a human in the first place. The person who presses send owns every word, and that ownership is what keeps this safe."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Start from a structure that already works",
+        "eyebrow": "Related template",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Client recap & status-update templates"
+          },
+          {
+            "type": "paragraph",
+            "text": "Structured formats for post-call recaps, weekly status notes, and project summaries — with the fields your AI drafts should fill in and the human-review checklist built into each. Adapt them to your firm's voice and reuse them on every touchpoint."
+          }
+        ]
+      },
+      {
+        "title": "Get the whole relationship off to a strong start",
+        "eyebrow": "Related playbook",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Client Intake & Onboarding Playbook"
+          },
+          {
+            "type": "paragraph",
+            "text": "A complete, buildable system for turning a signed client into a confident, well-informed one: intake, kickoff, the welcome sequence, and the early-days communications this use case then keeps running. The natural next step once recaps and updates are part of your routine."
+          }
+        ]
+      },
+      {
+        "title": "Want Aloha AI to set this up for you?",
+        "eyebrow": "Do it with us",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "We will wire this into how your team already works — voice-matched drafting, a notetaker feeding clean transcripts, and a human-review step built in from day one — so your clients hear from you on time without your evenings paying for it. You keep the judgment and the send button; we make the drafting fast."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "university/use-cases/client-service/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "governance-use-case",
@@ -896,7 +1494,7 @@
     "kind": "useCase",
     "pathname": "/university/use-cases/operations",
     "eyebrow": "Use case · Operations",
-    "title": "AI for Operations: Turn Tribal Knowledge into SOPs",
+    "title": "AI for Operations",
     "summary": "Use AI to capture and draft SOPs, checklists, runbooks, and status summaries while process owners verify every step before it becomes canonical.",
     "audience": "Owners, operators, managers, and teams documenting repeatable work.",
     "maturity": "Production",
@@ -959,7 +1557,347 @@
         "type": "supports",
         "target": "workflow-audit-course"
       }
-    ]
+    ],
+    "seoTitle": "AI for Operations: Turn Tribal Knowledge into SOPs",
+    "editorialIntro": [
+      "Turn the process that lives in one person's head into a written SOP. AI drafts the checklists, runbooks, and status summaries nobody has time to write, and the person who owns the work verifies every line before it becomes canonical. The blank page is the bottleneck; correcting a draft is fast. You keep the judgment and the sign-off."
+    ],
+    "editorialSections": [
+      {
+        "title": "Making the undocumented documented",
+        "eyebrow": "What it is",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Every operating business runs on knowledge nobody wrote down. How you close the books. How a new client gets set up. What \"done\" means for a shipped order. That knowledge sits in one person's head, gets passed on by demonstration, and disappears the day they take a long vacation or leave."
+          },
+          {
+            "type": "paragraph",
+            "text": "AI for operations is the practice of using a capable AI assistant to turn that tribal knowledge into usable documentation. You describe or record how a task actually gets done, and the assistant produces a first draft you can correct: a numbered standard operating procedure, a pre-flight checklist, a runbook for a recurring task, or a clean summary of a messy status thread. It standardizes the workflows you keep re-explaining, so the explanation happens once."
+          },
+          {
+            "type": "paragraph",
+            "text": "The point is not to replace judgment. It is to kill the blank-page problem. Drafting is the part that stalls; correcting a draft is fast. AI handles the slow first draft so a busy operator can do the part only they can do: verify it."
+          }
+        ]
+      },
+      {
+        "title": "The person the whole operation quietly depends on",
+        "eyebrow": "Who it helps",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "Operations leads. You know the processes cold, but writing them up keeps losing to the next fire. AI hands you a draft to react to instead of a blank document to dread."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "COOs of small firms. You are trying to make the business run without you in the room for every decision. Documented process is how you get there, and this is the fastest honest path to it."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Founders wearing the ops hat. You do finance, hiring, delivery, and vendor management on the same afternoon. You need repeatable procedures so the next hire can take one of those off your plate cleanly."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Not a fit: anyone hoping AI will document a process it has never observed. If you cannot describe or show how the work is done, the assistant will guess, and a confident, wrong SOP is worse than none. This use case needs a real walkthrough as its raw material."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "When a process lives in one head, the business is fragile",
+        "eyebrow": "The problem",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Undocumented process creates three predictable costs, and they compound. Onboarding is slow, because every new person learns by interrupting a busy expert and absorbing knowledge in fragments. Quality varies, because two people doing the \"same\" task each do it their own remembered way, and the customer feels the difference. And the business carries key-person risk: if the one who knows how invoicing works is out sick during close, the wheels wobble."
+          },
+          {
+            "type": "paragraph",
+            "text": "This stays unsolved not because operators undervalue documentation, but because writing it is genuinely tedious, never urgent until it is a crisis, and always loses to billable or customer-facing work. The documentation nobody has time to write stays unwritten for years."
+          },
+          {
+            "type": "paragraph",
+            "text": "AI changes the math. When the first draft takes minutes instead of an afternoon, the task stops being something you avoid and becomes something you finish. The procedure gets written, onboarding gets faster, and quality gets consistent, because there is finally a written standard to hold work against."
+          }
+        ]
+      },
+      {
+        "title": "Give the assistant something real to work from",
+        "eyebrow": "Inputs",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The quality of the SOP depends entirely on the quality of what you feed in. Gather these before you start, and the draft comes back accurate instead of plausible."
+          },
+          {
+            "type": "heading",
+            "text": "A walkthrough of the real task"
+          },
+          {
+            "type": "paragraph",
+            "text": "The best input is a recording. Screen-record yourself doing the task and talking through it, then transcribe. A spoken transcript captures the real steps, including the \"oh, and then I always check…\" asides that never make it into a tidy write-up."
+          },
+          {
+            "type": "heading",
+            "text": "Existing scattered notes"
+          },
+          {
+            "type": "paragraph",
+            "text": "The half-finished checklist in someone's notes app, the email where you explained the process to a new hire, the sticky note on the monitor. Messy is fine; the assistant consolidates."
+          },
+          {
+            "type": "heading",
+            "text": "The tools involved"
+          },
+          {
+            "type": "paragraph",
+            "text": "Which systems the task touches — the accounting software, the CRM, the shared drive — and roughly where each step happens."
+          },
+          {
+            "type": "heading",
+            "text": "Who owns what"
+          },
+          {
+            "type": "paragraph",
+            "text": "Which role is responsible for the process, who has to approve, and who gets notified. This is what turns a list of steps into an accountable procedure."
+          }
+        ]
+      },
+      {
+        "title": "You need less than you think to start",
+        "eyebrow": "Suggested tools",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "A capable AI chat tool and somewhere to keep the finished docs will carry you a long way. Prices below are approximate as of mid-2026 and change often — verify current pricing before you commit. Treat any figure here as a starting point, not a quote."
+          },
+          {
+            "type": "heading",
+            "text": "AI assistant (required)"
+          },
+          {
+            "type": "paragraph",
+            "text": "ChatGPT Plus or Claude Pro, each around $20/month (verify), for turning walkthroughs into drafts. The free tiers are fine for a first experiment; the paid tiers give you stronger models and higher limits once this becomes a regular habit."
+          },
+          {
+            "type": "heading",
+            "text": "A home for the docs"
+          },
+          {
+            "type": "paragraph",
+            "text": "Somewhere your team already lives — Notion or Google Docs. A note on Notion: its full AI features now sit in the Business tier (roughly $20 per user/month, verify), so if you want AI inside Notion itself, price that in. For simply storing and sharing finished SOPs, the standard plans are plenty."
+          },
+          {
+            "type": "heading",
+            "text": "Automation glue (optional)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Zapier or Make, only once a procedure is stable, to trigger a review reminder or route a new document for sign-off. Skip this at the start. Automate a process after you have documented it, never before."
+          },
+          {
+            "type": "heading",
+            "text": "Honest caveat"
+          },
+          {
+            "type": "paragraph",
+            "text": "Tool prices, plan names, and where AI features live change frequently across every vendor here. Confirm the numbers above before you buy. The cheapest viable setup — one paid AI chat and a doc you already have — is a perfectly good place to begin."
+          }
+        ]
+      },
+      {
+        "title": "From a spoken walkthrough to a living document",
+        "eyebrow": "Workflow",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Capture the process as it really runs. Do the task once and narrate it. Screen-record or voice-record yourself, then transcribe. Do not clean it up first; the messy version holds the exceptions a polished summary would drop.",
+              "Have AI draft the SOP. Paste the transcript and any scattered notes into your assistant with the prompt below. Ask for a numbered procedure with prerequisites, an owner, and common failure points. Expect a solid first draft, not a final one.",
+              "The process owner corrects it. Read every step. Fix anything the model reordered, softened, or misunderstood, and delete anything that was never in your walkthrough. This is where accuracy is won.",
+              "Add exceptions and a RACI. Layer in the edge cases the happy-path draft missed — what to do when the payment fails, when the client is missing a document — and note who is Responsible, Accountable, Consulted, and Informed.",
+              "Publish where the team works. Put the finished SOP in Notion or Google Docs, link it from wherever the task starts, and tell the people who run it that it now exists and is the standard.",
+              "Schedule a review. Set a recurring reminder — quarterly is a reasonable default — to check the procedure against how the work is actually done now. Processes drift; an SOP that is never revisited quietly becomes fiction."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Turn a rough walkthrough into a clean SOP",
+        "eyebrow": "Example prompt",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Copy this, paste your transcript where indicated, and adjust the labels to your business. The two rules at the bottom matter most: they stop the model from smoothing a real process into a plausible-but-wrong one, and they surface the gaps for you to close rather than hiding them."
+          },
+          {
+            "type": "code",
+            "text": "You are helping me turn a rough spoken walkthrough into a clean standard operating procedure. Below is a transcript of me talking through how I actually do this task. It is messy, out of order in places, and full of asides. Task name: [e.g. Client offboarding] Who owns this process: [role/title] Tools involved: [systems this task touches] Transcript: [paste the raw transcript] Produce an SOP with these sections: 1. Purpose — one sentence on what this procedure achieves. 2. Prerequisites — what must be true or ready before starting. 3. Steps — a clear numbered list, in the correct order, each step a single concrete action. 4. Owner — the role responsible, plus who approves if approval is mentioned. 5. Common failure points — the mistakes or edge cases I mentioned, and what to do about each. Hard rules: - Only include steps that appear in my transcript. Do NOT invent steps, tools, or approvals I did not mention. - If a step is unclear or seems to be missing, do not fill the gap yourself — list it under \"Questions for the owner\" instead. - Keep my terminology and tool names exactly as I said them."
+          }
+        ]
+      },
+      {
+        "title": "What a first draft actually looks like",
+        "eyebrow": "Example output",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "A realistic excerpt from a client-offboarding SOP produced from a transcript. Notice it is specific, it names the owner, and it flags a question rather than guessing."
+          },
+          {
+            "type": "heading",
+            "text": "SOP: Client offboarding (draft — pending owner review)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Purpose: Close out a completed client engagement cleanly so nothing is left owed, exposed, or forgotten."
+          },
+          {
+            "type": "paragraph",
+            "text": "Prerequisites: Final invoice sent and paid; engagement marked \"Complete\" in the CRM."
+          },
+          {
+            "type": "paragraph",
+            "text": "Steps:"
+          },
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Confirm the final invoice shows Paid in QuickBooks. If it shows Overdue, stop and route to the finance owner before continuing.",
+              "Export the client's active files from the shared drive into the \"Archived Clients\" folder, then remove their edit access.",
+              "Revoke the client's logins to any shared tools (project board, staging site) and note the date in the CRM.",
+              "Send the offboarding email from the saved template: final deliverables recap, where their assets now live, and the support-window end date.",
+              "Schedule the 30-day check-in and tag the account \"Offboarded — nurture.\""
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Owner: Account manager. Finance owner approves any outstanding-balance exception."
+          },
+          {
+            "type": "paragraph",
+            "text": "Common failure points: Access left active after handoff; offboarding email sent before final payment clears."
+          },
+          {
+            "type": "paragraph",
+            "text": "Questions for the owner: You mentioned a \"handover doc\" in passing but did not say what goes in it or who writes it — please confirm before this is finalized."
+          }
+        ]
+      },
+      {
+        "title": "The owner signs off, or it is not an SOP yet",
+        "eyebrow": "Human review",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "A drafted procedure is a proposal, not a policy. Before it becomes the canonical way the team does something, the person who owns the process verifies it line by line. There is no shortcut, and skipping it is how a wrong instruction becomes an institutionalized mistake."
+          },
+          {
+            "type": "list",
+            "items": [
+              "Verify accuracy. The owner reads every step against how the work is truly done and corrects order, wording, and detail. The transcript may have missed something; the model may have smoothed something."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Check the edge cases. Confirm the failure points and exceptions are complete and correct. A happy-path SOP that ignores what happens when things break is the one that fails you at the worst moment."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Catch anything invented. Read specifically for steps, tools, approvals, or numbers the model added that were never in your input. If it is not something you actually do, cut it."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Sign off explicitly. Record who approved it and when, right in the document. That sign-off is what makes it canonical — the standard the team is now accountable to, not just a draft floating in a folder."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Start from a structure, not a blank page",
+        "eyebrow": "Related template",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "SOP & process-doc templates"
+          },
+          {
+            "type": "paragraph",
+            "text": "Ready-to-use scaffolds for exactly this work — an SOP skeleton, a checklist frame, and a RACI grid you can drop your process into. Begin from a proven format instead of crafting one from scratch."
+          }
+        ]
+      },
+      {
+        "title": "Go deeper on building the whole system",
+        "eyebrow": "Related playbook",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "SOP & Operations Playbook"
+          },
+          {
+            "type": "paragraph",
+            "text": "When you are ready to make documentation a repeatable operating discipline — capturing, drafting, reviewing, and maintaining procedures across the whole business — the full playbook walks the end-to-end build."
+          }
+        ]
+      },
+      {
+        "title": "Build the right operations stack",
+        "eyebrow": "Tool guides",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Tool guide"
+          },
+          {
+            "type": "heading",
+            "text": "Best AI for small business operations"
+          },
+          {
+            "type": "paragraph",
+            "text": "Zapier, QuickBooks AI, Notion AI, and inbox tools compared by the workflow they actually fix."
+          },
+          {
+            "type": "heading",
+            "text": "Build a lean AI stack"
+          },
+          {
+            "type": "paragraph",
+            "text": "How to layer tools — assistant, knowledge, automation, specialist — without adding complexity you will regret."
+          }
+        ]
+      },
+      {
+        "title": "Want Aloha AI to help you document it?",
+        "eyebrow": "Do it with us",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "We will sit with your team, capture how the work really runs, and hand back a clean set of SOPs, checklists, and runbooks — with the human review gate built in and a review cadence set, so the documentation stays true instead of drifting. You keep the sign-off; we make the drafting fast."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "university/use-cases/operations/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "research-use-case",
@@ -1434,7 +2372,392 @@
         "type": "supports",
         "target": "client-service-use-case"
       }
-    ]
+    ],
+    "editorialIntro": [
+      "Selling a service is mostly conversations, and every conversation is surrounded by admin — research before the call, notes during it, follow-ups after, a proposal to draft, a CRM to keep honest. AI is good at that surrounding work. Hand the busywork to a machine and give the actual selling back to a human. This is not autonomous outbound spam: a person approves every message and every record."
+    ],
+    "editorialSections": [
+      {
+        "title": "AI as the assistant around the sale, not the seller",
+        "eyebrow": "What it is",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "For a service business, \"AI for sales\" does not mean a bot that emails a thousand strangers overnight. It means using AI to compress the repetitive work that clusters around every deal, so the person who actually sells has more time and a clearer head for the parts that need judgment."
+          },
+          {
+            "type": "paragraph",
+            "text": "Concretely, that covers a handful of jobs:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Call prep and research. Pulling public facts about a prospect into a tight brief before you dial."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Discovery-note summarization. Turning a messy transcript or scribbled notes into a clean, structured summary."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Follow-up drafting. A first draft of the email you owe someone, written in your voice."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Proposal first-drafts. A starting skeleton built from your own templates and the deal's specifics."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "CRM hygiene. Extracting the fields and next steps that should have been logged but usually are not."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Objection-handling prep. Rehearsing the pushback you are likely to hear so you are not improvising live."
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "What it is not: a system that invents facts, sends without you, or pretends a template is a relationship. Every external message and every CRM update passes through a human before it counts."
+          }
+        ]
+      },
+      {
+        "title": "People who sell and do the work",
+        "eyebrow": "Who it helps",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "The founder-seller. You run the business and close the deals, and the admin around selling is what slips first. Prep gets rushed, follow-ups go out late, and the CRM is a graveyard. AI hands you a prep brief and a follow-up draft in the gap between meetings."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "The small sales team (2–8 reps). You have a real motion but no operations person to keep notes clean and handoffs tidy. AI standardizes summaries and CRM fields so the pipeline reflects reality, not whoever remembered to type."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "The fractional revenue leader. You carry several clients at once and cannot hold every account's context in your head. AI reconstructs where each deal stands from the notes you already have."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Not a fit: anyone hoping to automate cold outbound at volume, or to let AI negotiate, quote prices, or send without review. This use case assists a human seller, it does not replace one — and it assumes you have real conversations to support in the first place."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "The selling gets crowded out by the paperwork",
+        "eyebrow": "The problem",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Watch where a service seller's week actually goes and a pattern shows up fast. Follow-ups slip because writing a good one from scratch takes twenty minutes you do not have, so the email that should have gone out Tuesday goes out Friday, or never. Prep gets rushed because you walk into the call straight off the last one, so you ask questions you could have answered yourself and burn goodwill. And notes never make it into the CRM, because logging a call properly after a long day is the easiest thing in the world to skip — which means the next conversation starts cold and the forecast is fiction."
+          },
+          {
+            "type": "paragraph",
+            "text": "None of these is a motivation problem. They are all the same problem: the admin around selling is real work, it lands at the worst moments, and there is no slack to absorb it. So it gets dropped, and the cost shows up later as slow deals, forgotten commitments, and a pipeline nobody trusts."
+          },
+          {
+            "type": "paragraph",
+            "text": "AI does not close deals for you. It removes most of the minutes between a conversation and its paperwork — the brief, the summary, the follow-up draft, the CRM fields — so the human parts actually happen, on time, at a quality you would sign your name to."
+          }
+        ]
+      },
+      {
+        "title": "What you feed it determines what it gives back",
+        "eyebrow": "Inputs",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "AI can only work from what you provide. For sales tasks, gather a few honest inputs before you ask for anything — and reuse them across every deal."
+          },
+          {
+            "type": "heading",
+            "text": "CRM records and deal notes"
+          },
+          {
+            "type": "paragraph",
+            "text": "The current state of the opportunity — stage, prior touches, who is involved — so summaries and follow-ups build on history instead of starting blank."
+          },
+          {
+            "type": "heading",
+            "text": "Call transcripts or notes"
+          },
+          {
+            "type": "paragraph",
+            "text": "A recording transcript from a notetaker, or the rough notes you typed during the call. Messy is fine; the point is to have the raw material."
+          },
+          {
+            "type": "heading",
+            "text": "Your ICP"
+          },
+          {
+            "type": "paragraph",
+            "text": "A written definition of who you serve well, so prep and qualification apply a consistent standard rather than a vibe."
+          },
+          {
+            "type": "heading",
+            "text": "Product and pricing facts"
+          },
+          {
+            "type": "paragraph",
+            "text": "What you actually sell, how it is packaged, and your real pricing — so the model never has to guess at a commitment. If you would not want it invented, write it down and hand it over."
+          },
+          {
+            "type": "heading",
+            "text": "Prior winning proposals"
+          },
+          {
+            "type": "paragraph",
+            "text": "Two or three proposals that closed, as the pattern for first-drafts and as a sample of your voice."
+          },
+          {
+            "type": "heading",
+            "text": "Keep it in one place"
+          },
+          {
+            "type": "paragraph",
+            "text": "Save these as a short deal brief you can paste atop every prompt. That block is the reason your summaries and drafts sound like your business rather than a stranger."
+          }
+        ]
+      },
+      {
+        "title": "Start with two, add a third if it earns its place",
+        "eyebrow": "Suggested tools",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "You do not need a stack to begin. An AI chat tool plus your existing CRM covers most of this. Prices below are current as of mid-2026 and change often — confirm on the vendor's site before you buy. Do not take any number here as gospel."
+          },
+          {
+            "type": "heading",
+            "text": "AI assistant (required)"
+          },
+          {
+            "type": "paragraph",
+            "text": "ChatGPT Plus or Claude Pro, each around $20/month at the time of writing — verify current pricing before subscribing. This does the research synthesis, summarizing, and drafting. The free tiers are fine for trying the workflow; the paid tiers give you stronger models and higher limits once it is part of your week."
+          },
+          {
+            "type": "heading",
+            "text": "A meeting notetaker"
+          },
+          {
+            "type": "paragraph",
+            "text": "A tool like Fathom records calls and produces transcripts and AI summaries. Its free tier records unlimited meetings but caps AI-generated summaries at around 5 per month; paid plans run roughly $16–20 per user/month. Pricing and caps change — verify the current terms before relying on them. Any comparable notetaker works; the value is a reliable transcript."
+          },
+          {
+            "type": "heading",
+            "text": "Your CRM"
+          },
+          {
+            "type": "paragraph",
+            "text": "Whatever you already use — HubSpot, Pipedrive, or even a well-kept spreadsheet — as the system of record. AI helps you keep it clean; it does not replace it. If you have no CRM, a simple sheet is a fine starting point."
+          },
+          {
+            "type": "heading",
+            "text": "A note on cost and claims"
+          },
+          {
+            "type": "paragraph",
+            "text": "Prices, free-tier limits, and features listed here can shift between when this was written and when you read it. Treat every figure as a prompt to check, not a promise. Start with the required AI tool, prove the workflow saves you time, and only then add paid layers."
+          }
+        ]
+      },
+      {
+        "title": "Research to logged, with a human at the wheel",
+        "eyebrow": "Workflow",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Research the prospect. Before the call, ask your assistant to pull public facts about the company and the person — what they do, recent news, likely priorities — into a short brief. Verify anything you will actually say.",
+              "Prep the agenda. From that brief and your ICP, have it draft a handful of discovery questions and flag the objections you are likely to hear, so you walk in with a plan instead of improvising.",
+              "Capture the call. Run your notetaker, or type rough notes yourself. Do not try to write and listen at the same time — capture the raw material and clean it later.",
+              "Summarize and extract action items. Feed the transcript or notes to your assistant and ask for a structured summary — pains, budget signals, timeline, decision process — plus a clean list of next steps and who owns each.",
+              "Draft the follow-up. Have it write a first-draft follow-up email in your voice, referencing only what was actually said, with one clear next step.",
+              "Human approve. Read the draft. Fix names and figures, check every commitment against your real pricing, cut anything that sounds like a template, and only then send it yourself.",
+              "Log to the CRM. Paste the approved summary and next steps into the deal record, update the stage, and set the follow-up task — the part that usually gets skipped now takes a minute."
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "The AI does the research and the drafting. You keep the reading, the judgment, and the send button."
+          }
+        ]
+      },
+      {
+        "title": "Turn messy discovery notes into a summary plus a follow-up",
+        "eyebrow": "Example prompt",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Paste this into your assistant, fill the brackets, and drop your raw notes in at the end. It is written to fight the two things that make sales AI bad: fabrication and template voice."
+          },
+          {
+            "type": "code",
+            "text": "You are helping me process notes from a discovery call. About me / what I sell: [one or two sentences] My voice — match this tone exactly: [paste 2-3 real emails you've sent] Below are my raw, messy notes from the call: [paste transcript or rough notes] Produce two things. 1. A structured summary with these labeled sections: - Pains: the problems they described, in their words - Budget: any budget or pricing signals mentioned - Timeline: when they want to act, and why - Decision process: who is involved and what happens next - Next steps: a bullet list, each with an owner (me or them) 2. A follow-up email, under 120 words, in my voice. - Reference one specific thing they actually said. - State one clear next step. - No flattery, no fake urgency. Rules: - Use ONLY facts present in my notes. Do not invent budgets, names, dates, or commitments. - If something important is missing (e.g. no timeline was discussed), say so under that heading rather than guessing. - Do not state any price or promise; flag where I need to confirm one before sending."
+          }
+        ]
+      },
+      {
+        "title": "What good looks like",
+        "eyebrow": "Example output",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Given a real set of notes, a well-prompted assistant returns something like this — specific, honest about gaps, and ready for your review. Notice what it did not do: it did not invent a budget, quote a price, or promise a deadline."
+          },
+          {
+            "type": "paragraph",
+            "text": "Discovery summary — Marlowe & Field (bookkeeping firm)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Pains: Onboarding new clients eats two full days per client; owner Priya does it herself and it is the bottleneck on taking more work. Team of four, no documented process."
+          },
+          {
+            "type": "paragraph",
+            "text": "Budget: Not stated directly. Priya said they \"just moved off spreadsheets\" — some appetite for tooling spend, but no figure given."
+          },
+          {
+            "type": "paragraph",
+            "text": "Timeline: Wants something in place before their busy season, which she put \"around February.\" Loose, not committed."
+          },
+          {
+            "type": "paragraph",
+            "text": "Decision process: Priya decides, but wants her ops lead, Devon, in the next conversation."
+          },
+          {
+            "type": "paragraph",
+            "text": "Next steps: Me — send a short recap and a suggested scope. Them — Priya to loop in Devon and confirm a time in the next two weeks. (No budget discussed — confirm before sending any pricing.)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Draft follow-up email"
+          },
+          {
+            "type": "paragraph",
+            "text": "Subject: Recap + a next step on onboarding"
+          },
+          {
+            "type": "paragraph",
+            "text": "Hi Priya,"
+          },
+          {
+            "type": "paragraph",
+            "text": "Thanks for walking me through how onboarding works today — the two-days-per-client bottleneck landing entirely on you is exactly the kind of thing worth fixing before February hits."
+          },
+          {
+            "type": "paragraph",
+            "text": "I'll put together a short scope for documenting and streamlining that process, sized for a team of four. Once you've had a chance to loop in Devon, could we grab thirty minutes in the next couple of weeks with both of you? Happy to work around your calendar."
+          },
+          {
+            "type": "paragraph",
+            "text": "Talk soon,[Your name]"
+          }
+        ]
+      },
+      {
+        "title": "Nothing leaves without a person's eyes on it",
+        "eyebrow": "Human review",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The approval step is not a formality. It is the reason this use case builds trust instead of corrupting your pipeline. Before anything sends or saves, a human confirms:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Every commitment and price is verified before sending. The model must never state a price or a delivery date on its own. Check any number against your real pricing and your actual capacity — you own what the email promises, not the AI."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Nothing is fabricated. If a draft implies a guarantee, a timeline, or a scope you did not agree to, cut it. A confident sentence is not a true one."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Names and figures are correct. AI transposes names, mishears companies, and rounds numbers. Read every proper noun and every figure against your notes before it goes anywhere."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A human approves every external message. No follow-up, proposal, or reply sends automatically. You read it, edit it, and press send yourself."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A human approves every CRM update. Summaries and extracted fields are drafts until you confirm them. A wrong stage or a fabricated next step quietly corrupts your forecast — check before you save."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Grab the discovery and follow-up templates",
+        "eyebrow": "Related template",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Discovery-call & follow-up templates"
+          },
+          {
+            "type": "paragraph",
+            "text": "The prompts on this page work better with a consistent structure behind them. Our library includes discovery-call question sets and follow-up email frames you can drop straight into your assistant, so every call gets summarized and followed up the same way. Copy them, adapt them, reuse them on every deal."
+          }
+        ]
+      },
+      {
+        "title": "Fill the top of the funnel first",
+        "eyebrow": "Related playbook",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "AI Lead Generation Playbook"
+          },
+          {
+            "type": "paragraph",
+            "text": "This use case assumes you already have conversations to support. If you need more of them, our lead-generation playbook shows how to turn your ideal-client definition into real conversations worth having — a fit-first, human-in-the-loop system, without the spam."
+          }
+        ]
+      },
+      {
+        "title": "Want help building this?",
+        "eyebrow": "Do it with us",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "We will wire your sales workflow to the tools you already use — prep briefs, call summaries, voice-matched follow-up drafts, and clean CRM handoffs — with a human approval gate on every message and every record. You keep the judgment; we remove the busywork around it."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "university/use-cases/sales/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "small-businesses-use-case",
@@ -1505,7 +2828,292 @@
         "type": "uses",
         "target": "ai-readiness-scorecard"
       }
-    ]
+    ],
+    "editorialIntro": [
+      "You don't have a marketing team, an ops manager, or an assistant. You have you, maybe a couple of people, and a to-do list that never ends. AI is the leverage that lets a small business run like a bigger one — without hiring one."
+    ],
+    "editorialSections": [
+      {
+        "title": "What this use case is",
+        "eyebrow": "The idea",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "For a small business, AI is a flexible staffer that costs less than a phone plan. It drafts the emails you keep putting off, turns one blog post into a week of social content, writes the product descriptions, answers customer questions from your own docs, and cleans up the spreadsheet you have been avoiding. Not one big system — a set of small, repeatable wins spread across the whole business."
+          },
+          {
+            "type": "paragraph",
+            "text": "The goal is not to automate your business away. It is to stop spending your evenings on the low-value work that keeps you from the customers and the craft that made you start."
+          }
+        ]
+      },
+      {
+        "title": "Who this is for",
+        "eyebrow": "Who it helps",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Solo founders and owner-operators"
+          },
+          {
+            "type": "paragraph",
+            "text": "Doing every job in the business themselves, with no one to hand a task to."
+          },
+          {
+            "type": "heading",
+            "text": "Local service businesses"
+          },
+          {
+            "type": "paragraph",
+            "text": "Trades, salons, clinics, shops — buried in scheduling, follow-up, and admin."
+          },
+          {
+            "type": "heading",
+            "text": "Small e-commerce sellers"
+          },
+          {
+            "type": "paragraph",
+            "text": "Who need product copy, support answers, and content at a volume they cannot hand-write."
+          },
+          {
+            "type": "heading",
+            "text": "Two- or three-person teams"
+          },
+          {
+            "type": "paragraph",
+            "text": "Where everyone already wears ten hats and there is no eleventh person to hire."
+          }
+        ]
+      },
+      {
+        "title": "The business problem it solves",
+        "eyebrow": "The problem",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Small businesses do not fail for lack of ideas. They stall because the owner is the bottleneck for everything. The marketing does not get done because you were fixing an invoice. The follow-up email never went out because you were with a customer. Growth is capped by your personal hours."
+          },
+          {
+            "type": "paragraph",
+            "text": "AI lifts that cap on the repetitive, language-heavy tasks — the drafting, summarizing, and answering that eat your day but do not require your specific expertise. You get hours back and give customers faster, more consistent responses. It will not do the work only you can do; it clears the runway so you can."
+          }
+        ]
+      },
+      {
+        "title": "What you need going in",
+        "eyebrow": "Inputs",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Your voice"
+          },
+          {
+            "type": "paragraph",
+            "text": "A few examples of how you actually write — real emails, real posts — so the output sounds like you, not a robot."
+          },
+          {
+            "type": "heading",
+            "text": "Your recurring tasks"
+          },
+          {
+            "type": "paragraph",
+            "text": "The five things you do every week that drain time. Start there."
+          },
+          {
+            "type": "heading",
+            "text": "Your key facts"
+          },
+          {
+            "type": "paragraph",
+            "text": "Hours, pricing, policies, FAQs — so the AI answers correctly, not creatively."
+          },
+          {
+            "type": "heading",
+            "text": "Fifteen minutes to learn one tool"
+          },
+          {
+            "type": "paragraph",
+            "text": "You do not need a stack. You need one tool used well."
+          }
+        ]
+      },
+      {
+        "title": "Suggested tools",
+        "eyebrow": "Tools",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "ChatGPT or Claude"
+          },
+          {
+            "type": "paragraph",
+            "text": "Your everyday workhorse on the free or roughly $20-a-month tier: emails, social posts, product copy, brainstorming, summarizing. One tool covers most small-business needs."
+          },
+          {
+            "type": "heading",
+            "text": "Canva with AI"
+          },
+          {
+            "type": "paragraph",
+            "text": "Turn AI-written copy into social graphics, flyers, and simple marketing without a designer."
+          },
+          {
+            "type": "heading",
+            "text": "NotebookLM"
+          },
+          {
+            "type": "paragraph",
+            "text": "Load your policies and FAQs so you can generate accurate customer answers grounded in your own information."
+          },
+          {
+            "type": "quote",
+            "text": "Start with one. The mistake is signing up for five tools and using none. Pick the everyday chatbot, get one weekly task off your plate, then add the next tool only when you have outgrown the first."
+          }
+        ]
+      },
+      {
+        "title": "Step by step",
+        "eyebrow": "The workflow",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Pick your worst weekly chore. The recurring task you dread most and that is mostly writing. That is target one.",
+              "Teach the tool your voice. Paste two or three real examples and ask it to match your tone.",
+              "Draft with it, not from scratch. Give it the facts; let it produce the first version.",
+              "Edit and send. Fix anything off, add the personal touch, ship it. This is where your judgment lives.",
+              "Save the winning prompt. When a prompt works, keep it. Next week it is a 30-second job.",
+              "Add one more task once the first is a habit. Grow the system slowly.",
+              "Protect your facts. Keep an accurate reference of hours, prices, and policies so answers stay correct."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "An example prompt",
+        "eyebrow": "The prompt",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Turn one announcement into a week of content, in your voice:"
+          },
+          {
+            "type": "code",
+            "text": "You're my marketing assistant. Match the voice in these two examples of how I write: [paste two real posts]. I run a [neighborhood coffee shop]. This week's news: we're launching a fall menu with three new drinks and extending weekend hours to 6pm. Create: 1. One Instagram caption (warm, short, one emoji max). 2. One Facebook post (a little more detail, friendly). 3. A two-line text/email blast to our regulars. 4. Three reply templates for the questions we'll get: prices, ingredients, and the new hours. Keep it sounding like me, not like an ad. If you need a fact I didn't give you (like exact prices), leave a [blank] instead of making it up."
+          },
+          {
+            "type": "paragraph",
+            "text": "What good looks like back: warm captions in your tone, a text blast to regulars, and reply templates that leave a [blank] wherever the tool lacked a fact — a price it did not have — instead of inventing one. You fill two blanks and you have done a week of marketing in five minutes. That flagged blank is the real payoff: it is the tool admitting a gap rather than shipping a made-up detail to a customer."
+          }
+        ]
+      },
+      {
+        "title": "What a human still owns",
+        "eyebrow": "Guardrails",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Check every fact"
+          },
+          {
+            "type": "paragraph",
+            "text": "Prices, hours, ingredients, promises — a made-up detail in customer-facing copy erodes trust fast."
+          },
+          {
+            "type": "heading",
+            "text": "Keep it sounding like you"
+          },
+          {
+            "type": "paragraph",
+            "text": "Customers chose a small business for the personal feel. Edit until it reads human."
+          },
+          {
+            "type": "heading",
+            "text": "Read before you send"
+          },
+          {
+            "type": "paragraph",
+            "text": "Never post or email a draft you have not read end to end."
+          },
+          {
+            "type": "heading",
+            "text": "Guard customer data"
+          },
+          {
+            "type": "paragraph",
+            "text": "Do not paste customers' personal details into a free AI tool. Keep private information out of it."
+          },
+          {
+            "type": "quote",
+            "text": "This is not legal, medical, or financial advice. AI is a fast assistant, not a professional — for tax, legal, or health questions in your business, talk to a qualified expert."
+          }
+        ]
+      },
+      {
+        "title": "Related template and playbook",
+        "eyebrow": "Keep going",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Small Business Prompt Starter Pack"
+          },
+          {
+            "type": "paragraph",
+            "text": "Ready-to-edit prompts for emails, social posts, product copy, and customer replies, all built to keep your voice."
+          },
+          {
+            "type": "heading",
+            "text": "Content Repurposing"
+          },
+          {
+            "type": "paragraph",
+            "text": "Turn one piece of content into a week of channels without losing your voice, so your marketing effort goes further."
+          }
+        ]
+      },
+      {
+        "title": "Find the right tools for your business",
+        "eyebrow": "Tool guides",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Tool guide"
+          },
+          {
+            "type": "heading",
+            "text": "Best AI for small business operations"
+          },
+          {
+            "type": "paragraph",
+            "text": "Zapier, QuickBooks AI, Notion AI, and more — sorted by the operational bottleneck they clear."
+          },
+          {
+            "type": "heading",
+            "text": "Build a lean AI stack"
+          },
+          {
+            "type": "paragraph",
+            "text": "A five-question framework for building an AI stack that fits a small team — without the subscription sprawl."
+          }
+        ]
+      },
+      {
+        "title": "Get your evenings back",
+        "eyebrow": "Next step",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Get a roadmap that names the three tasks AI should take off your plate first — and exactly how to start."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "university/use-cases/small-businesses/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "training-use-case",

@@ -58,7 +58,320 @@
         "type": "supports",
         "target": "prompting-fundamentals-lesson"
       }
-    ]
+    ],
+    "editorialIntro": [
+      "An honest mental model of generative AI, so you know what the tool actually does before you spend money or trust its output."
+    ],
+    "editorialSections": [
+      {
+        "title": "What this is",
+        "eyebrow": "Foundations",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Generative AI is software that produces new text, images, audio, or code by predicting what comes next from patterns it learned across very large amounts of example data. The systems most businesses touch are large language models (LLMs) like the ones behind ChatGPT, Claude, and Gemini. You give the model a prompt, and it returns a response one token at a time. Each token is chosen because it is a statistically likely continuation of everything that came before."
+          },
+          {
+            "type": "paragraph",
+            "text": "A useful way to hold this in your head: an LLM is a very well-read pattern completer. It has read a wide slice of the public internet, books, and documents, and it has become good at continuing text so it sounds right. That single fact explains both its strengths (fluent drafting, summarizing, reformatting, brainstorming) and its failures (confident wrong answers, invented sources, shaky arithmetic)."
+          },
+          {
+            "type": "paragraph",
+            "text": "It is not a database you query for stored facts, and it does not check its work against the world. It is a prediction machine that is often correct because correct-sounding text and correct text overlap a lot, but not always."
+          }
+        ]
+      },
+      {
+        "title": "Who this is for",
+        "eyebrow": "Audience",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "This lesson is for owners, operators, and team leads who are being asked to \"use AI\" and want a foundation they can trust before they build anything on top of it. You do not need a technical background. If you can describe a task to a new hire in plain language, you have the skill that matters most here."
+          },
+          {
+            "type": "list",
+            "items": [
+              "A small-business owner deciding whether AI belongs in customer service, marketing, or operations."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A manager writing a policy for how the team may and may not use these tools."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Anyone who has heard both \"AI will replace everyone\" and \"AI is useless\" and wants a grounded middle view."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "When to use it, and when not",
+        "eyebrow": "Timing",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "When to use it"
+          },
+          {
+            "type": "paragraph",
+            "text": "Read this before your first serious project, before you sign up for a paid plan, and before you let AI touch anything a customer or regulator will see. This mental model is the thing that keeps you out of trouble later. Come back to it whenever a vendor makes a claim that sounds too good, because most overclaims collapse the moment you remember the model is predicting text rather than knowing facts."
+          },
+          {
+            "type": "heading",
+            "text": "When not to use it"
+          },
+          {
+            "type": "paragraph",
+            "text": "Do not reach for generative AI as your source of truth for anything with a real-world answer you can look up: a specific law, a dosage, a tax figure, a customer's account balance, a quote you plan to attribute to a real person. The model will happily produce all of these, and it will sometimes be wrong in ways that look completely convincing. When the cost of being wrong is high and the fact is checkable, check the source, not the chatbot."
+          }
+        ]
+      },
+      {
+        "title": "Tools that work well",
+        "eyebrow": "Tools",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "To build the mental model, spend time in the four consumer chat tools most businesses start with. Each has a free tier that is enough to learn on."
+          },
+          {
+            "type": "heading",
+            "text": "ChatGPT"
+          },
+          {
+            "type": "paragraph",
+            "text": "Seeing the broadest range of tasks, with strong general drafting. Free tier available."
+          },
+          {
+            "type": "heading",
+            "text": "Claude"
+          },
+          {
+            "type": "paragraph",
+            "text": "Longer documents, careful writing, and following detailed instructions. Free tier available."
+          },
+          {
+            "type": "heading",
+            "text": "Gemini"
+          },
+          {
+            "type": "paragraph",
+            "text": "Working inside Google Docs, Gmail, and Search. Free tier available."
+          },
+          {
+            "type": "heading",
+            "text": "Perplexity"
+          },
+          {
+            "type": "paragraph",
+            "text": "Watching how a tool cites sources, with answers that include links you can click. Free tier available."
+          },
+          {
+            "type": "paragraph",
+            "text": "A good exercise: ask all four the same factual question, then check every answer against a primary source. You will learn more about how these systems behave in twenty minutes of that than in an hour of reading."
+          }
+        ]
+      },
+      {
+        "title": "Step-by-step workflow",
+        "eyebrow": "Practice",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Use this to build an accurate feel for the technology."
+          },
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Give it a drafting task. Ask a model to write a short thank-you email to a customer. Notice how fluent and fast it is. This is the core strength.",
+              "Give it a lookup task. Ask for a specific statistic or a citation, then verify it. Notice whether the source is real.",
+              "Push on a wrong answer. When it gets something wrong, tell it so. Watch how it apologizes and often produces a new answer that also sounds confident. This shows you the model has no independent access to truth.",
+              "Ask it to do arithmetic in its head. Try a multi-step calculation, then try again with a tool or calculator enabled. Compare.",
+              "Write down your own one-sentence definition. After the exercises, describe what the tool is in your own words. That sentence is the asset you keep."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Example prompts",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Copy these into any chat tool to feel the difference between generation and knowledge."
+          },
+          {
+            "type": "code",
+            "text": "Write a warm, three-sentence follow-up email to a customer named Dana who just bought a kayak from our shop. Do not invent any details about the order."
+          },
+          {
+            "type": "code",
+            "text": "I'm testing you. Give me the full citation for a peer-reviewed study showing that four-day work weeks raise productivity. Then, separately, tell me your confidence that this exact study exists and can be found by that citation."
+          },
+          {
+            "type": "code",
+            "text": "Here is a paragraph I wrote. Rewrite it to be clearer and shorter, but do not add any facts I did not include. Flag anything you were tempted to add."
+          }
+        ]
+      },
+      {
+        "title": "Example outputs",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The email prompt returns something usable in seconds:"
+          },
+          {
+            "type": "quote",
+            "text": "\"Hi Dana, thank you so much for picking up your kayak from us today. We hope it brings you a lot of calm mornings on the water. If anything ever needs adjusting, just reach out and we'll take care of it.\""
+          },
+          {
+            "type": "paragraph",
+            "text": "The citation prompt is where the lesson lands. A well-behaved model will often say something like:"
+          },
+          {
+            "type": "quote",
+            "text": "\"I can describe the general finding, but I should be honest: I may not be able to give you an accurate, verifiable citation. Any specific author, journal, and year I produce should be checked against a database like Google Scholar before you rely on it. My confidence that a precise citation I generate is real and correct is low.\""
+          },
+          {
+            "type": "paragraph",
+            "text": "That second output is the whole point. The tool is useful and it is also fallible, and a good one will tell you which is which."
+          }
+        ]
+      },
+      {
+        "title": "Risks and common mistakes",
+        "eyebrow": "Watch outs",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Treating fluency as accuracy"
+          },
+          {
+            "type": "paragraph",
+            "text": "The most common error. Smooth, confident prose feels true. It is not evidence of truth."
+          },
+          {
+            "type": "heading",
+            "text": "Assuming it \"knows\" your business"
+          },
+          {
+            "type": "paragraph",
+            "text": "Out of the box, the model knows nothing about your customers, prices, or policies. It fills gaps with plausible invention unless you supply the facts."
+          },
+          {
+            "type": "heading",
+            "text": "Believing the training data is current"
+          },
+          {
+            "type": "paragraph",
+            "text": "Models have a knowledge cutoff and may not know recent events unless connected to live search. Even then, verify."
+          },
+          {
+            "type": "heading",
+            "text": "Thinking a bigger model means always right"
+          },
+          {
+            "type": "paragraph",
+            "text": "More capable models are wrong less often, not never. The verification habit still applies."
+          },
+          {
+            "type": "heading",
+            "text": "Pasting sensitive data without checking policy"
+          },
+          {
+            "type": "paragraph",
+            "text": "Consumer tiers may use your inputs to improve models unless you opt out or use a business plan. Know your settings before sharing anything private."
+          }
+        ]
+      },
+      {
+        "title": "Human review checklist",
+        "eyebrow": "Quality control",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "✓ Did I ask the model to do something it is good at (generate, reshape, summarize) rather than something it cannot reliably do (recall exact facts, do precise math)?"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "✓ Have I verified every factual claim, name, number, and citation against a primary source?"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "✓ Did I supply the real facts about my business rather than let the model guess?"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "✓ Is anything customer-facing, legal, medical, or financial getting a human sign-off?"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "✓ Do I know whether my inputs are being used to train the model, and am I comfortable with that?"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Related lessons",
+        "eyebrow": "Keep going",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "What AI can and cannot do for business"
+          },
+          {
+            "type": "paragraph",
+            "text": "Turn this mental model into a concrete list of tasks worth automating."
+          },
+          {
+            "type": "heading",
+            "text": "How to verify AI outputs"
+          },
+          {
+            "type": "paragraph",
+            "text": "The verification habit that makes AI safe to rely on."
+          },
+          {
+            "type": "heading",
+            "text": "Hallucinations and risk"
+          },
+          {
+            "type": "paragraph",
+            "text": "Why confident wrong answers happen and how to prevent real harm."
+          }
+        ]
+      },
+      {
+        "title": "See where AI fits in your business",
+        "eyebrow": "Next step",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Take the free AI Roadmap Assessment. It maps your workflows to the tasks AI actually does well, and flags the ones where it will get you into trouble."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "university/learn/what-generative-ai-is/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "what-ai-can-and-cannot-do-lesson",
@@ -510,7 +823,355 @@
         "type": "supports",
         "target": "privacy-and-confidentiality-lesson"
       }
-    ]
+    ],
+    "editorialIntro": [
+      "Knowing where a model does not belong is what separates people who use AI well from people who get burned by it. This lesson draws the honest boundaries."
+    ],
+    "editorialSections": [
+      {
+        "title": "The moments to close the chat window",
+        "eyebrow": "What this is",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "A clear list of the situations where the right move is to stop and hand off to a person."
+          },
+          {
+            "type": "paragraph",
+            "text": "AI is a strong drafting and thinking partner, useful across a wide range of work. But it predicts plausible text. It does not know what is true, it does not carry responsibility, and it does not understand the stakes of your specific situation. This lesson names the categories where those limits turn from harmless into dangerous."
+          },
+          {
+            "type": "paragraph",
+            "text": "The goal is not to make you afraid of the tool. It is to give you a short set of tripwires, so you can use AI aggressively everywhere else, knowing you have marked off the places it should not go."
+          }
+        ]
+      },
+      {
+        "title": "Anyone drawing the line",
+        "eyebrow": "Who this is for",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "Business owners and teams who have started using AI and now need to know where to stop."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Anyone tempted to ask a chatbot a question whose wrong answer could cost real money, health, or legal standing."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Managers writing an AI policy who want the \"do not\" list to be concrete instead of a vague warning."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Four features that should make you slow down",
+        "eyebrow": "When to use this list",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Pull up these boundaries whenever a task has one of these features: a decision you cannot easily reverse, a fact you cannot check, a person who could be harmed by an error, or a rule you are legally bound to follow. If any are present, read the next section carefully."
+          }
+        ]
+      },
+      {
+        "title": "When not to use AI — specific boundaries",
+        "eyebrow": "The boundaries",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The reliable test: could a confident, wrong answer hurt someone or expose you? If yes, AI is a research assistant at most, and a qualified human owns the decision."
+          },
+          {
+            "type": "heading",
+            "text": "High-stakes legal, medical, and financial decisions"
+          },
+          {
+            "type": "paragraph",
+            "text": "Do not treat a model's output as legal, medical, or financial advice. It can explain concepts and help you prepare questions for a professional. It cannot account for your jurisdiction, your full history, current regulation, or the cost of being wrong. A confident paragraph about your tax situation, a medication interaction, or a contract clause is a starting point for a conversation with a qualified human, never the final word. Nothing on this site is legal, medical, or financial advice, and RN Collins is a JD candidate, not a licensed attorney."
+          },
+          {
+            "type": "heading",
+            "text": "Facts you cannot verify"
+          },
+          {
+            "type": "paragraph",
+            "text": "If the model states a statistic, a case citation, a quote, a date, or a source and you have no way to check it, do not use it. Models produce fluent, confident text that is sometimes simply wrong, and the fabricated version looks identical to the real one. Invented legal citations have already gotten lawyers sanctioned. If verification is impossible, the output is not usable."
+          },
+          {
+            "type": "heading",
+            "text": "Confidential or regulated data"
+          },
+          {
+            "type": "paragraph",
+            "text": "Do not paste client records, patient details, trade secrets, unreleased financials, or anything covered by a confidentiality agreement into a tool that is not contractually cleared for it. See the Privacy and Confidentiality lesson for the full breakdown."
+          },
+          {
+            "type": "heading",
+            "text": "Genuine human-judgment calls"
+          },
+          {
+            "type": "paragraph",
+            "text": "Firing someone, resolving a conflict between two people, deciding whether to trust a partner, comforting someone in crisis, making an ethical call where reasonable people disagree: these need a human who carries the weight of the outcome. A model can help you think through options, but the choice, and the accountability, stay with you."
+          },
+          {
+            "type": "heading",
+            "text": "Anything you could not defend"
+          },
+          {
+            "type": "paragraph",
+            "text": "If a regulator, a client, or a court asked \"why did you say this,\" and your only answer is \"the AI wrote it,\" you should not ship it. Ownership of the work has to sit with a person who understands it and can stand behind it."
+          }
+        ]
+      },
+      {
+        "title": "Tools for the safe version of these tasks",
+        "eyebrow": "Tools that fit",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "When a task sits near a boundary, the fix is often to change what you ask for, not to abandon AI entirely."
+          },
+          {
+            "type": "list",
+            "items": [
+              "Perplexity, or a model with browsing and citations: better when you need sources you can click and verify, rather than an unsourced claim."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Claude and ChatGPT: strong for drafting the list of questions to bring to your lawyer, doctor, or accountant, so you arrive prepared rather than relying on the model's answer."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Your professional's own portal, or a human specialist: for the actual decision. No general model replaces this."
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Use AI to prepare for the expert conversation. Do not use it to skip the expert."
+          }
+        ]
+      },
+      {
+        "title": "The boundary check, step by step",
+        "eyebrow": "Workflow",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Name the task in one sentence. Vague tasks hide their stakes.",
+              "Ask: is this reversible? If undoing a mistake is hard or impossible, raise your caution level.",
+              "Ask: can I verify the output? If not, it is not usable as fact.",
+              "Ask: could a wrong answer harm a person or expose me legally? If yes, a qualified human owns the decision.",
+              "Ask: is confidential or regulated data involved? If yes, apply the privacy rule before anything else.",
+              "Decide the role. Full draft, research assistant only, or hands off entirely. Write down which one."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Example prompts you can copy",
+        "eyebrow": "Prompts",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "These keep AI in a safe, boundary-respecting role."
+          },
+          {
+            "type": "code",
+            "text": "I have a meeting with my [accountant / attorney / doctor] about [topic]. Do not give me advice or tell me what to do. Instead, write a list of smart questions I should ask so I understand my options and risks. Flag anything where the answer depends on my specific situation."
+          },
+          {
+            "type": "code",
+            "text": "I'm about to rely on the claim below. List every specific fact, number, citation, or source in it that I would need to independently verify before trusting it. Mark which ones you cannot confirm."
+          },
+          {
+            "type": "code",
+            "text": "Help me think through a difficult people decision. Lay out the possible approaches, the tradeoffs of each, and questions I should sit with. Do not decide for me; I own the outcome."
+          }
+        ]
+      },
+      {
+        "title": "What a good response looks like",
+        "eyebrow": "Outputs",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "From the verification prompt, a strong response reads like this:"
+          },
+          {
+            "type": "paragraph",
+            "text": "Claims to verify before you rely on this:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "\"The deadline is 30 days\" — I cannot confirm the current rule for your jurisdiction. Check the governing agency's site or ask a professional."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "\"Studies show a 40% improvement\" — no source given; treat as unverified until you find the primary study."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "The cited case name — I may have this wrong or invented it. Confirm it exists in an official reporter before citing it anywhere."
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "A weaker model answers with breezy confidence and no caveats. That contrast is the whole point: the useful output is the one that helps you check, not the one that sounds sure."
+          }
+        ]
+      },
+      {
+        "title": "Risks and common mistakes",
+        "eyebrow": "Pitfalls",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Treating fluent as correct"
+          },
+          {
+            "type": "paragraph",
+            "text": "Confidence in the writing tells you nothing about accuracy."
+          },
+          {
+            "type": "heading",
+            "text": "Using AI advice to skip a professional"
+          },
+          {
+            "type": "paragraph",
+            "text": "The model does not carry the liability. You do."
+          },
+          {
+            "type": "heading",
+            "text": "Citing what you did not verify"
+          },
+          {
+            "type": "paragraph",
+            "text": "Fabricated citations have real, documented consequences."
+          },
+          {
+            "type": "heading",
+            "text": "Letting convenience override the boundary"
+          },
+          {
+            "type": "paragraph",
+            "text": "The riskiest moment is when you are busy and the shortcut is tempting."
+          },
+          {
+            "type": "heading",
+            "text": "Assuming a newer, bigger model removed these limits"
+          },
+          {
+            "type": "paragraph",
+            "text": "It reduced some errors. It did not make the model accountable or all-knowing."
+          }
+        ]
+      },
+      {
+        "title": "Human review checklist",
+        "eyebrow": "Before you ship",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "This decision is reversible, or I have accepted the risk of it not being."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Every fact I am relying on has been verified at a real source."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "No high-stakes legal, medical, or financial call is being made on the model's say-so."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A qualified human owns any decision that could harm a person or expose the business."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "No confidential or regulated data went anywhere it should not."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "I can explain and defend this output without saying \"the AI wrote it.\""
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Related lessons",
+        "eyebrow": "Keep learning",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "How to Verify AI Outputs"
+          },
+          {
+            "type": "paragraph",
+            "text": "A practical routine for checking what a model tells you before you rely on it."
+          },
+          {
+            "type": "heading",
+            "text": "Hallucinations and Risk"
+          },
+          {
+            "type": "paragraph",
+            "text": "Why models invent confident, wrong answers, and where that does the most damage."
+          },
+          {
+            "type": "heading",
+            "text": "Privacy and Confidentiality"
+          },
+          {
+            "type": "paragraph",
+            "text": "What you can and cannot paste into an AI tool, and how to keep sensitive data safe."
+          }
+        ]
+      },
+      {
+        "title": "Want a map of where AI fits, and where it doesn't?",
+        "eyebrow": "Work with us",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "An AI Strategy Sprint gives you a prioritized plan with the boundaries drawn for your actual work, not a generic checklist."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "university/learn/when-not-to-use-ai/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "prompting-fundamentals-lesson",
@@ -571,7 +1232,355 @@
         "type": "supports",
         "target": "ai-for-sop-drafting-lesson"
       }
-    ]
+    ],
+    "editorialIntro": [
+      "Most bad AI output comes from thin prompts, not weak models. Learn the five moves that reliably raise quality: role, context, examples, structure, and iteration."
+    ],
+    "editorialSections": [
+      {
+        "title": "What this is",
+        "eyebrow": "Foundations",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "A prompt is the instruction you give an AI model. Good prompting is the skill of describing a task so clearly that a capable but literal assistant, one with no memory of your world, produces what you actually wanted on the first or second try. The published guidance from the major labs converges on a small set of techniques. This lesson covers the ones that pay off for everyday business work."
+          },
+          {
+            "type": "paragraph",
+            "text": "The core idea: the model cannot read your mind, and it will not ask for missing details unless you invite it to. Everything you leave unsaid, it either omits or invents. Good prompting is mostly the discipline of saying the unsaid things."
+          },
+          {
+            "type": "heading",
+            "text": "The five moves"
+          },
+          {
+            "type": "table",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Move",
+                    "header": true
+                  },
+                  {
+                    "text": "What it does",
+                    "header": true
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Role"
+                  },
+                  {
+                    "text": "Tells the model the perspective to write from (\"You are a careful bookkeeper explaining to a first-time owner\")."
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Context"
+                  },
+                  {
+                    "text": "Supplies the facts it needs: your audience, your constraints, the source material."
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Examples"
+                  },
+                  {
+                    "text": "Shows one or two samples of the output you want. Often the single highest-leverage move."
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Structure"
+                  },
+                  {
+                    "text": "Specifies format, length, and sections. Use clear delimiters to separate instructions from data."
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Iteration"
+                  },
+                  {
+                    "text": "Treats the first output as a draft and refines with specific feedback."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Who this is for and when to use it",
+        "eyebrow": "Fit",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Who this is for"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Anyone whose AI results feel generic, off-tone, or wrong, and who suspects the problem is the prompt."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Team members who write prompts other people rely on and want a repeatable method."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Owners building templates so the whole team gets consistent output."
+            ]
+          },
+          {
+            "type": "heading",
+            "text": "When to use it"
+          },
+          {
+            "type": "paragraph",
+            "text": "Use these techniques on any task you will repeat, any output that must match a specific tone or format, and any request where a vague prompt already gave you a disappointing result. The payoff scales with repetition: a well-built prompt you reuse fifty times is worth the ten minutes it takes to write carefully."
+          },
+          {
+            "type": "heading",
+            "text": "When not to use it"
+          },
+          {
+            "type": "paragraph",
+            "text": "For a quick one-off (\"what's a synonym for reliable?\"), an elaborate prompt is wasted effort. Just ask. And no amount of prompting fixes a task the model fundamentally cannot do. If the job requires a guaranteed-correct fact the model does not have, or precise math, better wording will not make an invented answer true. Prompting improves how well the model does what it can do. It does not extend what it can do."
+          }
+        ]
+      },
+      {
+        "title": "Tools that work well",
+        "eyebrow": "Tools",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "These techniques transfer across every major assistant: ChatGPT, Claude, Gemini, and Perplexity. Two practical notes."
+          },
+          {
+            "type": "paragraph",
+            "text": "First, Claude and ChatGPT both respond well to clear structure and delimiters, and both vendors publish prompt guides worth reading (Anthropic's prompt engineering documentation and OpenAI's prompting guidance). Second, \"Projects\" or \"custom instructions\" features let you store role and context once so you do not repeat them every message. Use them for anything recurring."
+          }
+        ]
+      },
+      {
+        "title": "Step-by-step workflow",
+        "eyebrow": "Method",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "State the role and goal in one line. Who is the model being, and what is the single outcome?",
+              "Paste the context and source material, clearly separated. Use a label like SOURCE: or triple quotes so the model knows what is data versus instruction.",
+              "Add one or two examples of the output you want, if you have them. This anchors tone and format better than description alone.",
+              "Specify structure: format, length, sections, and what to leave out.",
+              "Invite honesty: tell it to ask questions or flag uncertainty rather than guess.",
+              "Read the output as a draft. Give specific feedback (\"tighten the second paragraph; the tone is too formal\") and run again.",
+              "Save the winner as a reusable template with [brackets] for the parts that change."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Example prompts",
+        "eyebrow": "Examples",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "A thin prompt versus a built one, same task."
+          },
+          {
+            "type": "paragraph",
+            "text": "Thin: \"Write a cancellation email.\""
+          },
+          {
+            "type": "paragraph",
+            "text": "Built:"
+          },
+          {
+            "type": "code",
+            "text": "ROLE: You are a warm but professional customer-service lead for a small yoga studio. TASK: Write an email to a member who is canceling their membership. Goal: keep the door open without pressure. CONTEXT: Member's name is Priya. She's been with us 14 months. No complaint on record; she mentioned moving. Our policy: cancellation takes effect at the end of the current billing cycle. We offer a \"pause\" option for up to 3 months. FORMAT: Under 130 words. No discount offers. Mention the pause option once, gently. End with a genuine thank-you. If you're missing any fact you need, ask me instead of inventing it."
+          },
+          {
+            "type": "paragraph",
+            "text": "A structure-and-delimiter example for working over source text:"
+          },
+          {
+            "type": "code",
+            "text": "Rewrite the SOURCE below as three bullet points a busy owner can scan. Keep every number exactly as written. Do not add claims. SOURCE: \"\"\" [paste the raw text here] \"\"\""
+          }
+        ]
+      },
+      {
+        "title": "Example outputs",
+        "eyebrow": "Results",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The thin prompt returns a generic template full of blanks and a tone that could belong to any company. The built prompt returns something close to send-ready:"
+          },
+          {
+            "type": "quote",
+            "text": "\"Hi Priya, thank you for letting us know, and for the fourteen months you spent practicing with us. Your cancellation will take effect at the end of your current billing cycle, so nothing changes before then. If your move turns out to be temporary, we can pause your membership for up to three months instead, whenever you like. Either way, you're always welcome back on the mat. Wishing you a smooth move. Warmly, The Studio Team\""
+          },
+          {
+            "type": "paragraph",
+            "text": "The difference is not a smarter model. It is a prompt that supplied the role, the facts, the format, and permission to ask rather than guess."
+          }
+        ]
+      },
+      {
+        "title": "Risks and common mistakes",
+        "eyebrow": "Pitfalls",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Leaving out the facts and hoping"
+          },
+          {
+            "type": "paragraph",
+            "text": "Unstated details get invented. Supply them."
+          },
+          {
+            "type": "heading",
+            "text": "Mixing instructions and data"
+          },
+          {
+            "type": "paragraph",
+            "text": "Without delimiters, the model may treat your source text as a command. Separate them clearly."
+          },
+          {
+            "type": "heading",
+            "text": "Over-stuffing one prompt"
+          },
+          {
+            "type": "paragraph",
+            "text": "Ten competing instructions produce mush. Prioritize, then iterate for the rest."
+          },
+          {
+            "type": "heading",
+            "text": "Prompting a factual claim into existence"
+          },
+          {
+            "type": "paragraph",
+            "text": "Asking confidently does not make an answer true. Verify facts regardless of prompt quality."
+          },
+          {
+            "type": "heading",
+            "text": "Not saving what works"
+          },
+          {
+            "type": "paragraph",
+            "text": "A great prompt you retype from memory each time is a great prompt you will slowly ruin. Template it."
+          }
+        ]
+      },
+      {
+        "title": "Human review checklist",
+        "eyebrow": "Before you send",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "Did I give a role, the real context, and a clear format?"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Are instructions and source data separated so the model can tell them apart?"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Did I include an example when tone or format matters?"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Did I invite the model to ask questions or flag uncertainty instead of guessing?"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Did I still verify every fact in the output, since good prompting does not guarantee truth?"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Did I save the working prompt as a reusable template?"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Related lessons",
+        "eyebrow": "Keep going",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "What generative AI is and is not"
+          },
+          {
+            "type": "paragraph",
+            "text": "Why the model needs your context in the first place."
+          },
+          {
+            "type": "heading",
+            "text": "ChatGPT vs Claude vs Gemini vs Perplexity"
+          },
+          {
+            "type": "paragraph",
+            "text": "These techniques work across all four assistants."
+          },
+          {
+            "type": "heading",
+            "text": "How to verify AI outputs"
+          },
+          {
+            "type": "paragraph",
+            "text": "The step that catches what prompting cannot prevent."
+          }
+        ]
+      },
+      {
+        "title": "Want a prompt library built for your team?",
+        "eyebrow": "Next step",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Get a personalized roadmap for where AI earns its keep in your business, or have us build a tailored prompt set so everyone gets consistent, on-brand output."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "university/learn/prompting-fundamentals/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "hallucinations-and-risk-lesson",
@@ -1003,7 +2012,370 @@
         "type": "implements",
         "target": "methods"
       }
-    ]
+    ],
+    "editorialIntro": [
+      "A fast, repeatable way to check AI answers against primary sources, and why fluent output slips past your judgment so easily."
+    ],
+    "editorialSections": [
+      {
+        "title": "What verification is",
+        "eyebrow": "The basics",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Verification is the deliberate step of confirming an AI claim against a trustworthy source before you act on it or pass it along. It is a discipline, not a feeling. It has to be a discipline because the natural human response to fluent, confident writing is to believe it, and AI produces fluent, confident writing by design."
+          },
+          {
+            "type": "heading",
+            "text": "Why fluent output lowers your guard"
+          },
+          {
+            "type": "paragraph",
+            "text": "Your brain treats things that are easy to process as more likely to be true. Psychologists call this processing fluency, and it is well documented: text that reads smoothly, in a clean font, in a confident voice, feels more credible than the same claim delivered awkwardly. AI output is tuned to be maximally fluent. It is grammatical, organized, and self-assured, so it presses the exact button that lowers your guard. You are not gullible for trusting it. You are human, and the output is tuned to that humanity. The fix is to move the trust decision out of your gut and into a checklist you run every time. That is what the rest of this lesson gives you."
+          }
+        ]
+      },
+      {
+        "title": "Who this is for",
+        "eyebrow": "Fit",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "Anyone publishing, sending, or deciding based on AI output."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Teams setting a standard so verification does not depend on who happens to be careful that day."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Professionals in fields where a wrong fact carries real consequences."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "When to use it",
+        "eyebrow": "Timing",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Verify before anything factual leaves your hands: a claim a customer will read, a number in a proposal, a name or quote attributed to a real person, a citation, a legal or regulatory statement, a statistic. The trigger is simple. If it is a fact and being wrong would cost something, verify it. The higher the stakes, the more independent your source needs to be."
+          }
+        ]
+      },
+      {
+        "title": "When to skip it",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "You do not need to verify subjective or generative work where no external fact exists to check: the tone of a draft email, brainstormed slogan options, a rewrite of your own paragraph. If the output makes no claim about the world, there is nothing to verify, only quality to judge. Spending verification effort on taste questions wastes the effort and dulls the habit for the claims that need it. Reserve verification for facts."
+          }
+        ]
+      },
+      {
+        "title": "Tools that work well",
+        "eyebrow": "Sources",
+        "blocks": [
+          {
+            "type": "table",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "To check…",
+                    "header": true
+                  },
+                  {
+                    "text": "Go to…",
+                    "header": true
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "A law, regulation, or government rule"
+                  },
+                  {
+                    "text": "The official government site (.gov), the actual statute or agency page"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "A research finding or statistic"
+                  },
+                  {
+                    "text": "Google Scholar, the original study, the primary data source"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "A quote or who-said-what"
+                  },
+                  {
+                    "text": "The original speech, article, or a reputable outlet reporting it"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "A product spec, price, or policy"
+                  },
+                  {
+                    "text": "The vendor's own current page"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "A calculation"
+                  },
+                  {
+                    "text": "A spreadsheet or calculator; redo it yourself"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "A recent event"
+                  },
+                  {
+                    "text": "Two independent, reputable news sources"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Tools that cite sources (Perplexity, search-enabled chat) speed the first step by handing you a link. They do not finish the job. You still open the link and confirm it says what the tool claims, because models sometimes cite a real page that does not actually support the statement."
+          }
+        ]
+      },
+      {
+        "title": "Human review checklist",
+        "eyebrow": "Star of the lesson",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Run this every time before a factual output leaves your hands."
+          },
+          {
+            "type": "list",
+            "items": [
+              "✓ Did I list every checkable claim, not just the ones that jumped out?"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "✓ Did I go to a primary source rather than another AI or a secondhand summary?"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "✓ For each citation, did I confirm both that it exists and that it supports the claim?"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "✓ Did I redo any math myself?"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "✓ Did I flag, not bury, anything I could not verify?"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "✓ Did I resist the pull to trust it just because it read well?"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Step by step",
+        "eyebrow": "Workflow",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Separate facts from framing. Underline every checkable claim: names, numbers, dates, citations, quotes, rules.",
+              "Rank by stakes. Which of these, if wrong, actually hurt? Check those hardest.",
+              "Go to the primary source, not another summary. The government page, the study, the original document.",
+              "Confirm the source exists and says it. For citations, this is two checks: does the source exist, and does it support the claim?",
+              "Redo any math yourself. Do not trust arithmetic done in the model's head.",
+              "Note what you could not verify. Flag it clearly rather than letting an unverified claim ride along as if confirmed.",
+              "Only then act, send, or publish."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Example prompts",
+        "eyebrow": "Prompts",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Enlist the model in its own verification. Its answer is a starting point, not proof."
+          },
+          {
+            "type": "code",
+            "text": "For every factual claim, citation, statistic, and proper name in your previous answer, add a bracketed confidence note: [high], [medium], or [low], and say what a human should check to confirm it. Do not soften low-confidence items."
+          },
+          {
+            "type": "code",
+            "text": "You cited a source. Quote the exact sentence from that source that supports the claim. If you cannot quote it, say so plainly and tell me the claim is unverified."
+          },
+          {
+            "type": "paragraph",
+            "text": "This surfaces the shaky parts fast. It does not replace opening the source yourself."
+          }
+        ]
+      },
+      {
+        "title": "What a good self-audit looks like",
+        "eyebrow": "Example",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Asked to self-audit, a well-behaved model flags its own weak points:"
+          },
+          {
+            "type": "quote",
+            "text": "\"The three-year retention rule [high, from federal labor regulations, confirm on dol.gov]. The claim that penalties start at $1,100 per violation [low, I'm not confident in this exact figure, verify on the agency's penalty schedule]. The 2019 date I gave [medium, check the agency's amendment history].\""
+          },
+          {
+            "type": "paragraph",
+            "text": "That output does not end your work. It tells you where to point it. You open dol.gov, confirm the retention rule, and either fix or delete the penalty figure the model flagged as low confidence. The unverified number never reaches your customer."
+          }
+        ]
+      },
+      {
+        "title": "Risks and common mistakes",
+        "eyebrow": "Pitfalls",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Trusting fluency"
+          },
+          {
+            "type": "paragraph",
+            "text": "The core trap. Smooth prose feels true, and that feeling is not evidence."
+          },
+          {
+            "type": "heading",
+            "text": "Verifying with the same tool that made the claim"
+          },
+          {
+            "type": "paragraph",
+            "text": "Asking the model \"are you sure?\" often just yields a new confident answer. Go outside the model."
+          },
+          {
+            "type": "heading",
+            "text": "Accepting a citation without opening it"
+          },
+          {
+            "type": "paragraph",
+            "text": "A link is not a fact-check. The page may not say what the tool claims, or may not exist."
+          },
+          {
+            "type": "heading",
+            "text": "Checking a summary against another summary"
+          },
+          {
+            "type": "paragraph",
+            "text": "Go to the primary source, or you are just comparing two guesses."
+          },
+          {
+            "type": "heading",
+            "text": "Verifying only the obvious claims"
+          },
+          {
+            "type": "paragraph",
+            "text": "The dangerous errors are the plausible ones you did not think to question."
+          }
+        ]
+      },
+      {
+        "title": "Related lessons",
+        "eyebrow": "Keep going",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Hallucinations and risk"
+          },
+          {
+            "type": "paragraph",
+            "text": "Why confident wrong answers happen, and the real cost of skipping verification."
+          },
+          {
+            "type": "heading",
+            "text": "What generative AI is and is not"
+          },
+          {
+            "type": "paragraph",
+            "text": "The mechanism that makes verification necessary in the first place."
+          },
+          {
+            "type": "heading",
+            "text": "Prompting fundamentals"
+          },
+          {
+            "type": "paragraph",
+            "text": "Prompts that reduce errors before they reach the review step."
+          }
+        ]
+      },
+      {
+        "title": "Which research tool is worth verifying in the first place?",
+        "eyebrow": "Tool guide",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Best AI for research"
+          },
+          {
+            "type": "paragraph",
+            "text": "Perplexity, Elicit, Consensus, and deep-research modes — matched to the kind of research you are actually doing."
+          }
+        ]
+      },
+      {
+        "title": "Build verification into your team's workflow",
+        "eyebrow": "Work with us",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "We design the review gates, checklists, and sign-off steps that keep unverified AI output from reaching your customers."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "university/learn/how-to-verify-ai-outputs/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "privacy-and-confidentiality-lesson",
@@ -1564,7 +2936,414 @@
         "type": "supports",
         "target": "first-ai-team-course"
       }
-    ]
+    ],
+    "editorialIntro": [
+      "You don't need ten subscriptions. You need one assistant, one tool that already lives where you work, and maybe one specialist. Here's how to pick, without the hype."
+    ],
+    "editorialSections": [
+      {
+        "title": "What this is",
+        "eyebrow": "The idea",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "A method for assembling a small, deliberate set of AI tools that fits a small business, instead of collecting subscriptions because a newsletter told you to."
+          },
+          {
+            "type": "paragraph",
+            "text": "A good starter stack has three slots at most: a general assistant for thinking and drafting, a tool built into the software you already use, and possibly one specialist for a job the first two do poorly. That's the whole thing. Restraint here saves money and, more importantly, saves the attention it takes to actually get good at a tool."
+          }
+        ]
+      },
+      {
+        "title": "Who this is for",
+        "eyebrow": "Fit",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "Owners of small businesses and solo operators making their first real AI purchase."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Teams already paying for three or four AI tools nobody has learned, who want to cut back to what earns its keep."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Anyone stuck on the number of options who wants a decision rule, not a 40-tool comparison spreadsheet."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "When to use it",
+        "eyebrow": "Timing",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "You're about to spend money on AI and want the decision to be intentional."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "You already run one tool well and are wondering whether to add a second."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Your team's tools have crept upward and you want to prune to a stack you can defend."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "When not to use it",
+        "eyebrow": "Guardrails",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Three moments where building a stack works against you."
+          },
+          {
+            "type": "heading",
+            "text": "Before you have a real task"
+          },
+          {
+            "type": "paragraph",
+            "text": "Don't build a stack in the abstract. Pick one recurring job that eats your time, then choose a tool for it. Tools chosen without a task go unused."
+          },
+          {
+            "type": "heading",
+            "text": "When your data rules aren't settled"
+          },
+          {
+            "type": "paragraph",
+            "text": "If you handle regulated or confidential data, decide your privacy and tier requirements first. A cheap consumer tool that violates a client agreement is not a bargain."
+          },
+          {
+            "type": "heading",
+            "text": "When you're chasing the newest release"
+          },
+          {
+            "type": "paragraph",
+            "text": "Switching stacks every time a model tops a benchmark burns the time you should spend getting fluent. For a first stack, stability beats novelty."
+          }
+        ]
+      },
+      {
+        "title": "Tools that work well",
+        "eyebrow": "The three slots",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Match a tool to each slot. You won't fill all three on day one, and that's fine."
+          },
+          {
+            "type": "paragraph",
+            "text": "Pricing and plan names below were checked mid-2026 and shift often. Confirm current numbers on each vendor's site before you buy."
+          },
+          {
+            "type": "table",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Slot",
+                    "header": true
+                  },
+                  {
+                    "text": "What it does",
+                    "header": true
+                  },
+                  {
+                    "text": "Common picks",
+                    "header": true
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "General assistant"
+                  },
+                  {
+                    "text": "Drafting, brainstorming, summarizing, thinking out loud"
+                  },
+                  {
+                    "text": "ChatGPT (Free, Plus ~$20/mo, or Business), Claude (Free or paid), Gemini"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Workspace-native"
+                  },
+                  {
+                    "text": "AI inside the email, docs, and files you already use"
+                  },
+                  {
+                    "text": "Microsoft 365 Copilot (add-on, ~$30/user/mo) if you're on Microsoft; Gemini in Google Workspace if you're on Google"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Specialist (optional)"
+                  },
+                  {
+                    "text": "One job the generalists do poorly"
+                  },
+                  {
+                    "text": "Perplexity for sourced research; a meeting-notes tool; a design tool like Canva's AI features"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "The biggest lever most people miss: if you already pay for Microsoft 365 or Google Workspace, your workspace-native slot is often the highest-value add. It works on your real documents and, at the paid business tier, doesn't train on your data by default. Start there before buying a fourth standalone tool."
+          }
+        ]
+      },
+      {
+        "title": "Step by step",
+        "eyebrow": "Workflow",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "List your top three time-eaters. The recurring tasks that drain hours: email, proposals, notes, research, scheduling.",
+              "Pick the one worth automating first. Highest frequency times highest annoyance wins.",
+              "Set your data floor. Decide the minimum tier and privacy setting that task requires. Regulated data raises the floor.",
+              "Fill the general-assistant slot. Try two free tiers on the same real task for a week. Keep the one whose output you trust and whose interface you enjoy.",
+              "Check your workspace-native option. If you're already on Microsoft or Google, test their built-in AI on your actual files before buying anything else.",
+              "Add a specialist only if a real gap remains. No gap, no purchase.",
+              "Set a 30-day review. If a tool isn't used weekly, cancel it."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Example prompts to copy",
+        "eyebrow": "Prompts",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Use a general assistant to pressure-test your own choices."
+          },
+          {
+            "type": "code",
+            "text": "I run a [type] business with [N] people. We use [Microsoft 365 / Google Workspace]. Our three biggest time-drains are [A], [B], [C]. Recommend a lean AI stack of no more than three tools, explain what each is FOR, and tell me which ONE to start with this week. Flag anything I'd be paying for twice."
+          },
+          {
+            "type": "code",
+            "text": "Compare [Tool A] and [Tool B] for this exact task: [describe task]. Give me a short table of the tradeoffs that actually matter for a small business, not a feature dump. End with a one-line recommendation and the main risk of that choice."
+          },
+          {
+            "type": "code",
+            "text": "Here's my current list of AI subscriptions and what I use each for: [list]. Which are redundant? What could I cancel without losing a capability I actually rely on?"
+          }
+        ]
+      },
+      {
+        "title": "A realistic example output",
+        "eyebrow": "What good looks like",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "For a 4-person services firm on Google Workspace:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Start here: Gemini in Google Workspace. It already sits in your Gmail and Docs, and at your paid tier it won't train on your data. Use it for email drafts and document cleanup."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "General assistant: One of Claude or ChatGPT, paid tier, for brainstorming and longer drafting where you want a separate scratchpad."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Specialist: Hold off. Add a meeting-notes tool only if you run enough calls to justify it."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Skip for now: A second general assistant. Two do the same job; pick one and get fluent."
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Treat any specific price or plan name a model gives you as a claim to verify. Models routinely state outdated pricing."
+          }
+        ]
+      },
+      {
+        "title": "Risks and common mistakes",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Buying breadth instead of depth"
+          },
+          {
+            "type": "paragraph",
+            "text": "Three well-used tools beat eight half-learned ones. Depth is where the payoff lives."
+          },
+          {
+            "type": "heading",
+            "text": "Paying twice for the same capability"
+          },
+          {
+            "type": "paragraph",
+            "text": "Your workspace suite may already include what you're about to buy separately. Check before you subscribe."
+          },
+          {
+            "type": "heading",
+            "text": "Ignoring the data tier to save $10"
+          },
+          {
+            "type": "paragraph",
+            "text": "The cheap plan may train on your inputs or violate a client agreement. The savings aren't worth the exposure."
+          },
+          {
+            "type": "heading",
+            "text": "Chasing benchmarks"
+          },
+          {
+            "type": "paragraph",
+            "text": "The model that won this month's leaderboard is rarely worth re-training your team on."
+          },
+          {
+            "type": "heading",
+            "text": "No cancel-by date"
+          },
+          {
+            "type": "paragraph",
+            "text": "Unused subscriptions renew silently. Set a review and hold the line."
+          }
+        ]
+      },
+      {
+        "title": "Human review checklist",
+        "eyebrow": "Before you commit",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "Each tool maps to a specific recurring task, not a vague hope."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "I confirmed I'm not paying twice for a capability already in my suite."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "The tier and privacy settings meet my data obligations."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "I verified today's pricing at the vendor's own site."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "I picked one tool to start with this week, not all of them."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A 30-day usage review is on the calendar."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Related lessons",
+        "eyebrow": "Keep going",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "ChatGPT vs Claude vs Gemini vs Perplexity"
+          },
+          {
+            "type": "paragraph",
+            "text": "How the major assistants differ, and which one fits your general-assistant slot."
+          },
+          {
+            "type": "heading",
+            "text": "Privacy and confidentiality"
+          },
+          {
+            "type": "paragraph",
+            "text": "Set your data floor with confidence: tiers, training defaults, and client obligations."
+          },
+          {
+            "type": "heading",
+            "text": "AI for email"
+          },
+          {
+            "type": "paragraph",
+            "text": "Put your first stack to work on the task that usually eats the most hours."
+          }
+        ]
+      },
+      {
+        "title": "Ready to build the stack, not just pick it?",
+        "eyebrow": "Tool guide",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Build a lean AI stack"
+          },
+          {
+            "type": "paragraph",
+            "text": "A five-question framework for sizing and assembling the stack you just chose — with a four-layer starter structure."
+          }
+        ]
+      },
+      {
+        "title": "Want a stack chosen for your business, not a generic list?",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Take the AI Roadmap Assessment. It looks at your tools, your data, and your goals, then tells you exactly what to buy first and what to skip."
+          },
+          {
+            "type": "paragraph",
+            "text": "Take the AI Roadmap Assessment"
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "university/learn/choose-your-first-ai-stack/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "ai-assistant-comparison-lesson",
@@ -1749,7 +3528,370 @@
         "type": "implements",
         "target": "trust-stack"
       }
-    ]
+    ],
+    "editorialIntro": [
+      "Turn a messy call into clean decisions and next steps in minutes. First, get the consent part right, because that is where this goes wrong."
+    ],
+    "editorialSections": [
+      {
+        "title": "What this is",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The consent laws described here are general and were checked mid-2026. They are not legal advice, and recording rules vary by state and country. Confirm your obligations with a qualified attorney."
+          },
+          {
+            "type": "paragraph",
+            "text": "A workflow for using AI to capture meetings and produce a useful record: a short summary, the decisions made, and a clear list of who owes what by when. AI notetakers transcribe a call and draft this automatically. The transcription and summary are the easy, valuable part. The part people skip, and the part that has produced real lawsuits, is telling everyone in the room that a bot is recording and getting their agreement first."
+          }
+        ]
+      },
+      {
+        "title": "Who this is for",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "Anyone who runs client calls, team meetings, or interviews and wants a reliable record without typing through the conversation."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Small teams that lose decisions and action items because notes were an afterthought."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Owners who want the productivity of an AI notetaker without stepping on privacy law."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "When to use it",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "Recurring internal meetings where you keep re-litigating what was decided."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Client or project calls where the follow-up list is the whole point."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Long calls you'd otherwise transcribe by hand."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Any meeting where everyone present knows and agrees to the recording."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "When not to use it",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The core rule: notice is not consent. Give people a genuine way to say no before recording begins, and honor it. When in doubt, ask a qualified attorney about your jurisdiction."
+          },
+          {
+            "type": "heading",
+            "text": "You haven't gotten consent"
+          },
+          {
+            "type": "paragraph",
+            "text": "Eleven US states require all-party consent to record a conversation: California, Connecticut, Florida, Illinois, Maryland, Massachusetts, Michigan, Montana, New Hampshire, Pennsylvania, and Washington. A vague \"this meeting may be recorded\" line in a calendar invite is not affirmative consent and may not satisfy the law. Everyone needs a real chance to decline before recording starts."
+          },
+          {
+            "type": "heading",
+            "text": "Privileged or highly sensitive conversations"
+          },
+          {
+            "type": "paragraph",
+            "text": "Legal strategy, HR investigations, medical discussions, board deliberations: an automatic transcript can waive privilege or create discoverable records. Keep the bot out."
+          },
+          {
+            "type": "heading",
+            "text": "Confidential third-party data going to an unvetted tool"
+          },
+          {
+            "type": "paragraph",
+            "text": "Several popular notetakers send audio to their own servers and have faced biometric-privacy suits over voiceprints. Don't route confidential data through a tool whose data handling you haven't checked."
+          },
+          {
+            "type": "heading",
+            "text": "As a substitute for being present"
+          },
+          {
+            "type": "paragraph",
+            "text": "A transcript is not attention. Don't skip meetings because a bot is there."
+          }
+        ]
+      },
+      {
+        "title": "Tools that work well",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Two broad families, with different privacy profiles. Verify each vendor's current data terms before adopting."
+          },
+          {
+            "type": "list",
+            "items": [
+              "Platform-native capture keeps audio inside the meeting platform you already trust. Zoom's AI Companion, Microsoft Teams (with Copilot), and Google Meet transcribe and summarize without a third-party bot joining. This is usually the lower-risk starting point, especially on paid business tiers that don't train on your content."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Standalone notetakers such as Otter, Fireflies, Fathom, and Read AI join as a participant and record to their own servers. They're capable, but you're adding a vendor, and some have faced consent and biometric-privacy litigation. Vet the data policy and consent mechanism before you use one on client calls."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Manual capture plus a general assistant: take your own rough notes, then paste them (de-identified) into Claude or ChatGPT to structure decisions and action items. No recording, no consent issue, still a big time save."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Step-by-step workflow",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Decide if recording is even needed. Structured notes from your own rough capture are often enough, and skip the consent problem entirely.",
+              "Get consent, out loud, before recording. \"I'd like to use an AI notetaker for this call so we have accurate notes. Any objection?\" Wait for a real answer. Don't start until you have it.",
+              "Prefer platform-native capture where you can, to avoid adding a vendor.",
+              "Let it transcribe and draft. Get the raw transcript or auto-summary.",
+              "Restructure into a usable record. Summary, decisions, and an owner-plus-due-date action list. Use the prompt below.",
+              "Verify against reality. Fix misheard names, wrong numbers, and any action item the model invented or garbled.",
+              "Send the recap promptly so attendees can correct it while memories are fresh."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Example prompts",
+        "blocks": [
+          {
+            "type": "code",
+            "text": "Here is a meeting transcript. Produce: 1. A 4-bullet summary of what the meeting was about. 2. DECISIONS: every decision that was actually made (not just discussed). 3. ACTION ITEMS: a table of task, owner, and due date. If a due date wasn't stated, write \"not set\" rather than guessing. Flag anything ambiguous where you're inferring rather than quoting. [paste transcript — remove sensitive details first]"
+          },
+          {
+            "type": "code",
+            "text": "From these rough notes I typed during a call, write a clean recap email to attendees: a short intro line, the decisions we reached, and a who-owes-what list. Keep it under 200 words and neutral in tone. [paste your notes]"
+          },
+          {
+            "type": "code",
+            "text": "Review this action-item list against the transcript. Did you attribute any task to the wrong person, or invent a deadline that was never said? Correct it and show me what you changed."
+          }
+        ]
+      },
+      {
+        "title": "Example outputs",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Decisions"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Ship the pricing page update this week; hold the blog post until legal reviews the claims."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Move the standing sync from Monday to Wednesday."
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Action items"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Draft revised pricing copy — Owner: Priya — Due: Thu"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Send claims to legal — Owner: Marcus — Due: not set"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Update the calendar invite — Owner: Priya — Due: today"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "What to catch: notetakers mishear names (\"Priya\" vs \"Prea\"), attach the wrong owner to a task, and sometimes list a discussed idea as a decision. The verify step is not optional; it's where the record becomes trustworthy."
+          }
+        ]
+      },
+      {
+        "title": "Risks and common mistakes",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Recording without real consent"
+          },
+          {
+            "type": "paragraph",
+            "text": "The most serious risk, and the source of actual lawsuits."
+          },
+          {
+            "type": "heading",
+            "text": "Letting a bot into privileged meetings"
+          },
+          {
+            "type": "paragraph",
+            "text": "Can waive privilege or create discoverable records."
+          },
+          {
+            "type": "heading",
+            "text": "Trusting the summary as-is"
+          },
+          {
+            "type": "paragraph",
+            "text": "Misheard names and invented action items go out under your name."
+          },
+          {
+            "type": "heading",
+            "text": "Adopting a standalone tool without vetting its data policy"
+          },
+          {
+            "type": "paragraph",
+            "text": "Some store audio and voiceprints on their servers."
+          },
+          {
+            "type": "heading",
+            "text": "Over-recording"
+          },
+          {
+            "type": "paragraph",
+            "text": "Not every meeting needs a permanent transcript; some are better off without one."
+          }
+        ]
+      },
+      {
+        "title": "Human review checklist",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "Everyone present was told about the recording and had a real chance to decline."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "This was not a privileged or highly sensitive conversation that should stay off the record."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "The notetaker's data handling has been vetted for client calls."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Names, numbers, and dates in the notes are corrected against the transcript."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Every action item has the right owner; invented deadlines are removed."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Decisions listed were actually decided, not just discussed."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Related lessons",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Privacy and confidentiality"
+          },
+          {
+            "type": "paragraph",
+            "text": "What is safe to put into an AI tool, and what to keep out."
+          },
+          {
+            "type": "heading",
+            "text": "AI for email"
+          },
+          {
+            "type": "paragraph",
+            "text": "Draft, reply, and triage faster without sounding like a robot."
+          },
+          {
+            "type": "heading",
+            "text": "AI for SOP drafting"
+          },
+          {
+            "type": "paragraph",
+            "text": "Turn how you actually work into clear, repeatable procedures."
+          }
+        ]
+      },
+      {
+        "title": "Which note-taker should you actually use?",
+        "eyebrow": "Tool guide",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Best AI for meeting notes"
+          },
+          {
+            "type": "paragraph",
+            "text": "Otter, Fireflies, Fathom, and Granola compared — by consent requirements, accuracy, and CRM fit."
+          }
+        ]
+      },
+      {
+        "title": "Want this set up right for your team, consent and all?",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Book an AI Strategy Sprint and we'll build a meeting-notes workflow that saves time without tripping over privacy law."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "university/learn/ai-for-meeting-notes/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "ai-for-sop-drafting-lesson",

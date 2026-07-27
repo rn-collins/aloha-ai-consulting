@@ -1095,6 +1095,11 @@
         "type": "supports",
         "target": "legal-ai"
       }
-    ]
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "tools/trust-safe-console/index.html",
+      "restoredAt": "2026-07-26"
+    }
   }
 ]

@@ -756,7 +756,7 @@
     "kind": "useCase",
     "pathname": "/stacks/law-firm",
     "eyebrow": "Applied stack",
-    "title": "Law Firm AI Stack",
+    "title": "The Law Firm AI Stack, built so speed never becomes a sanctions risk.",
     "summary": "Six connected layers for legal research, internal knowledge, client alerts, drafting support, citation verification, intake, and operations.",
     "audience": "Law firms and legal teams building reviewable AI workflows.",
     "maturity": "Production",
@@ -812,7 +812,241 @@
         "type": "uses",
         "target": "legal-ai"
       }
-    ]
+    ],
+    "seoTitle": "Law Firm AI Stack",
+    "editorialIntro": [
+      "A firm does not need one AI tool. It needs a stack: a layer that finds the law, a layer that holds the firm's own knowledge, a layer that drafts, a layer that verifies every cite before it leaves the building, and a governance layer that documents the whole thing. Below is what that stack looks like layer by layer, where AI earns its keep, where it still hallucinates on the exact thing that matters, and which of my live tools and services cover each layer.",
+      "Built by RN Collins. AI Workflow Developer inside an Am Law firm · Administrative & regulatory law (JD candidate) · 35+ builds shipped"
+    ],
+    "editorialSections": [
+      {
+        "title": "Six layers, six different jobs",
+        "eyebrow": "The stack at a glance",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "A generic chatbot collapses all six into one box and hallucinates across the seams. A real stack keeps the jobs separate, so the layer that drafts is never the same layer that decides whether a case is real. Here is the shape of it."
+          },
+          {
+            "type": "paragraph",
+            "text": "Legal research — find the law"
+          },
+          {
+            "type": "paragraph",
+            "text": "Internal knowledge base — hold the firm's own work"
+          },
+          {
+            "type": "paragraph",
+            "text": "Client-alert workflow — turn change into outreach"
+          },
+          {
+            "type": "paragraph",
+            "text": "Document review & drafting support"
+          },
+          {
+            "type": "paragraph",
+            "text": "Citation verification & governance — the gate"
+          },
+          {
+            "type": "paragraph",
+            "text": "Intake & ops — run it every day"
+          }
+        ]
+      },
+      {
+        "title": "What each layer does, and where AI breaks",
+        "eyebrow": "Layer by layer",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "For every layer: the job it does, where AI earns real time, where it fails in ways that matter to a firm, and the real assets that cover it. The tools are live and free to run; the service is the version I build and hand over."
+          },
+          {
+            "type": "heading",
+            "text": "Legal research"
+          },
+          {
+            "type": "paragraph",
+            "text": "The job. Find controlling authority, read the line of cases, and know what the current rule is before an associate spends six hours on it."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where AI helps. Fast first passes: framing an issue, surfacing search terms, summarizing a long opinion, drafting a research memo skeleton an attorney then checks."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where it fails. General models invent citations that look perfect and do not exist, misstate holdings, and cite overruled cases with total confidence. The failure lands exactly where the stakes are highest."
+          },
+          {
+            "type": "paragraph",
+            "text": "Maps toCitation Verifier to screen every cite a model returns, backed by the Legal AI Workflow service that gates research before it reaches a draft."
+          },
+          {
+            "type": "heading",
+            "text": "Internal knowledge base"
+          },
+          {
+            "type": "paragraph",
+            "text": "The job. Make the firm's own briefs, precedents, clause libraries, and matter history findable, so the fourth associate to face an issue does not start from zero."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where AI helps. Retrieval over your own documents, drafting from your own prior work, and answering internal questions with citations back to the source file."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where it fails. Many firms overbuild this, standing up a RAG system when a well-structured shared drive would do, or underbuild it and let the model answer from general training instead of firm knowledge."
+          },
+          {
+            "type": "paragraph",
+            "text": "Maps toKnowledge Base Readiness Checker to size the build before you commit, then the Legal AI Workflow service to wire retrieval to firm sources with a citation trail."
+          },
+          {
+            "type": "heading",
+            "text": "Client-alert workflow"
+          },
+          {
+            "type": "paragraph",
+            "text": "The job. Catch a regulatory or case-law change, decide which clients it touches, and get an accurate alert out before the client reads it somewhere else."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where AI helps. Drafting the alert from a source document, tailoring tone per audience, and clustering which practice groups and clients a change affects."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where it fails. A model will summarize a rule change with a subtle error in the effective date or the trigger, and a client alert with a wrong deadline is worse than no alert. It also invents urgency that is not there."
+          },
+          {
+            "type": "paragraph",
+            "text": "Maps toAI Workflow Audit to score where the alert pipeline leaks, plus Regulatory Bill Analyzer to read a bill into issue tags and compliance triggers before anyone drafts."
+          },
+          {
+            "type": "heading",
+            "text": "Document review & drafting support"
+          },
+          {
+            "type": "paragraph",
+            "text": "The job. Move faster on first drafts, review sets, and markups: contracts, briefs, discovery, and the long tail of documents that eat associate hours."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where AI helps. First-draft clauses, issue-spotting a review set, comparing versions, and turning a bullet outline into prose an attorney refines."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where it fails. Confident wrong summaries of what a document says, invented facts in a draft, and privilege or confidentiality exposure when work product runs through a consumer tool with no data controls."
+          },
+          {
+            "type": "paragraph",
+            "text": "Maps toTrust-Safe console for a governed drafting surface with verification built in, delivered through the Legal AI Workflow service on whatever platform the firm already runs."
+          },
+          {
+            "type": "heading",
+            "text": "Citation verification & governance"
+          },
+          {
+            "type": "paragraph",
+            "text": "The job. Nothing leaves the firm with a cite no one checked, and the firm can show, on paper, that AI use met the duties of competence, confidentiality, candor, and supervision."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where AI helps. Structural checks on citations at speed, flagging malformed or impossible cites, and drafting the governance policy itself from the firm's actual workflow."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where it fails. This is the layer you do not delegate to the model alone. Verification and governance are where a human sign-off and a documented record have to sit, because this is what a court and a bar reviewer look at."
+          },
+          {
+            "type": "paragraph",
+            "text": "Maps toCitation Verifier as the gate, Governance Readiness Scorecard for ABA Formal Opinion 512 posture, and the Trust-Safe console for a signed audit record."
+          },
+          {
+            "type": "heading",
+            "text": "Intake & operations"
+          },
+          {
+            "type": "paragraph",
+            "text": "The job. Run the practice around the AI: intake triage, conflicts, matter setup, time capture, and the handoffs that decide whether the stack above gets used at all."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where AI helps. Drafting intake summaries, routing matters, and cutting the administrative friction that keeps attorneys from adopting the rest of the stack."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where it fails. Adoption is a human problem. A stack no one trusts sits unused, and a rollout that skips training and habit design stalls no matter how good the tools are. That is the neuroscience side of the work."
+          },
+          {
+            "type": "paragraph",
+            "text": "Maps toAI Workflow Audit across sources, verification, privacy, handoff, governance, and measurement, delivered through the Legal AI Workflow service with adoption designed in."
+          }
+        ]
+      },
+      {
+        "title": "The Operator Execution Gap, in a firm",
+        "eyebrow": "Why the stack matters",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The distance between what a model says and what an attorney can put their name on is the whole risk. A stack closes that gap by putting verification and governance between the draft and the door. Run the free tools to see where your own gap sits today."
+          },
+          {
+            "type": "heading",
+            "text": "Citation Verifier"
+          },
+          {
+            "type": "paragraph",
+            "text": "Flag fake, impossible, or malformed case cites before a filing goes out. Runs in your browser."
+          },
+          {
+            "type": "heading",
+            "text": "Governance Readiness"
+          },
+          {
+            "type": "paragraph",
+            "text": "Score your documented practice against ABA Formal Opinion 512 across four duties."
+          },
+          {
+            "type": "heading",
+            "text": "Workflow Audit"
+          },
+          {
+            "type": "paragraph",
+            "text": "Score your AI workflow across six dimensions and get a prioritized fix list."
+          }
+        ]
+      },
+      {
+        "title": "Build the stack your firm can defend.",
+        "eyebrow": "Legal AI engagement",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "I build verification-gated legal AI workflows on any platform, with credentials kept off the client and a signed audit record behind every cite. Most firms start with a Systems Audit that names the weakest layer, then we build that first. Bring the layer that worries you and we scope it around your matters."
+          },
+          {
+            "type": "paragraph",
+            "text": "Prefer email? Email RN · or connect on LinkedIn"
+          }
+        ]
+      },
+      {
+        "title": "Aloha AI Dispatch",
+        "eyebrow": "Newsletter",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "One short email when there is a new tool, a build breakdown, or a shift worth knowing in AI for regulated work."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "stacks/law-firm/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "policy-advocacy-stack",
@@ -1184,7 +1418,7 @@
     "kind": "product",
     "pathname": "/systems/creator-content",
     "eyebrow": "Creator knowledge infrastructure",
-    "title": "Your expertise, turned into a system that never starts from a blank page",
+    "title": "Your expertise, turned into a system that never starts from a blank page.",
     "summary": "A research-to-publication system for authors, researchers, newsletter writers, and expert firms whose reputation depends on grounded, voice-true work.",
     "audience": "Content-heavy experts and boutique firms whose expertise is the product.",
     "maturity": "Production",
@@ -1260,7 +1494,428 @@
         "type": "uses",
         "target": "aloha-ai-platform"
       }
-    ]
+    ],
+    "seoTitle": "Your expertise, turned into a system that never starts from a blank page",
+    "editorialIntro": [
+      "Not another AI writer that sounds like everyone else. A source-grounded, voice-true content and knowledge infrastructure, built on your notes, your research, and your actual voice, so every draft starts from what you already know and comes out sounding like you.",
+      "Built by RN Collins. Neuroscientist (MS) · Administrative Law (JD candidate) · AI systemsTailored for: authors, researchers & public-facing experts"
+    ],
+    "editorialSections": [
+      {
+        "title": "Built for experts whose reputation is the product",
+        "eyebrow": "Who this is for",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "If your name is on the work, generic AI output is a liability, not a shortcut. The same system serves four seats, because the blank page costs each of them differently."
+          },
+          {
+            "type": "heading",
+            "text": "Authors"
+          },
+          {
+            "type": "paragraph",
+            "text": "Books, essays, columns. Draft from your own archive and voice, not a model's average of the internet."
+          },
+          {
+            "type": "heading",
+            "text": "Researchers"
+          },
+          {
+            "type": "paragraph",
+            "text": "Turn a decade of notes and papers into a queryable knowledge base that cites your sources, not hallucinated ones."
+          },
+          {
+            "type": "heading",
+            "text": "Newsletter writers"
+          },
+          {
+            "type": "paragraph",
+            "text": "Hold a publishing cadence without burning out. Repurpose across formats while the voice stays true."
+          },
+          {
+            "type": "heading",
+            "text": "Boutique expert firms"
+          },
+          {
+            "type": "paragraph",
+            "text": "Codify a house voice and knowledge base so output stays consistent as the team grows."
+          }
+        ]
+      },
+      {
+        "title": "Ask a generic AI to write in your voice. Watch it flatten you.",
+        "eyebrow": "The Operator Execution Gap · content edition",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Large language models fail most confidently exactly where an expert's credibility is highest: on the specifics, the sources, and the voice. Same brief, two outputs: the fluent-but-generic reply, and the source-grounded, voice-true one. The distance between them is what publishing the wrong draft costs your reputation."
+          },
+          {
+            "type": "paragraph",
+            "text": "✕ Generic LLM · ungrounded"
+          },
+          {
+            "type": "paragraph",
+            "text": "\"Draft my newsletter section on this topic, in my voice, with sources.\""
+          },
+          {
+            "type": "paragraph",
+            "text": "\"In today's fast-paced world, it's more important than ever to leverage cutting-edge strategies. Studies show that experts agree this approach delivers results. Let's dive in.\""
+          },
+          {
+            "type": "paragraph",
+            "text": "Fluent. Confident. Generic on three counts — vague claims, invented \"studies,\" and a voice that belongs to no one. This is the output that makes a reader think an AI wrote this — and stop trusting the byline."
+          },
+          {
+            "type": "paragraph",
+            "text": "✓ Aloha AI · source-grounded & voice-true Your archive"
+          },
+          {
+            "type": "paragraph",
+            "text": "Same brief, answered from your own record:"
+          },
+          {
+            "type": "paragraph",
+            "text": "Drafts only from your material. The system retrieves the relevant passages from your notes, papers, and past pieces (retrieval-augmented generation), assembles a draft grounded in those exact sources, and renders it through a profile of your actual voice: cadence, vocabulary, the moves you make."
+          },
+          {
+            "type": "paragraph",
+            "text": "Every claim traces to a source you supplied. Nothing is asserted that isn't in your record. Then it hands off to you to edit (human-in-the-loop, always) so the published piece is unmistakably yours."
+          },
+          {
+            "type": "paragraph",
+            "text": "Confidence: High Why you can rely on it: the mechanisms below are established practice (retrieval-grounding, style profiling, and human review), not a promise that the model \"just gets you.\""
+          },
+          {
+            "type": "paragraph",
+            "text": "OEG (the Operator Execution Gap) is the distance between what generic AI produces and what a named expert can actually publish. Closing it is the entire job."
+          }
+        ]
+      },
+      {
+        "title": "From a blank page to a system, by daily consequence",
+        "eyebrow": "What actually changes",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Four shifts that move real time and real credibility. This is the difference between renting a chatbot and owning an infrastructure built on your knowledge."
+          },
+          {
+            "type": "heading",
+            "text": "Where a draft starts High impact"
+          },
+          {
+            "type": "heading",
+            "text": "Whose voice ships High impact"
+          },
+          {
+            "type": "heading",
+            "text": "Where sources live Moderate"
+          },
+          {
+            "type": "heading",
+            "text": "Publishing cadence Nuance"
+          }
+        ]
+      },
+      {
+        "title": "Content System Readiness & Blank-Page Cost",
+        "eyebrow": "The instrument",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Check what you already have and set your volume. The tool returns a system-readiness score, what a content/knowledge build would connect, and an estimate of the time you'd reclaim. Everything runs locally in your browser; nothing is sent anywhere."
+          },
+          {
+            "type": "list",
+            "items": [
+              "Check what you have and set your volume to see specifics."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "What the blank page costs: expertise that never ships",
+        "eyebrow": "The cost of getting it wrong",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The most expensive line isn't the AI subscription. It's the hours lost re-finding sources and re-starting drafts, and the pieces that never get published at all. Here's a rough model of the blank-page tax."
+          },
+          {
+            "type": "list",
+            "items": [
+              "Model your workflow to see the reclaimable time and cost."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "A build in three stages, discovery to handoff",
+        "eyebrow": "How it works",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Every Aloha AI content system runs the same pipeline. It's why the output stays grounded and voice-true after the build ships, not just on day one."
+          },
+          {
+            "type": "heading",
+            "text": "Discovery: map your record & voice"
+          },
+          {
+            "type": "paragraph",
+            "text": "We inventory your notes, research, and past work, and profile your actual voice: cadence, vocabulary, structure. This becomes the Regulatory-grade Intelligence Layer for your expertise (RIL): your sources, captured with provenance."
+          },
+          {
+            "type": "heading",
+            "text": "Build: the grounded, voice-true system"
+          },
+          {
+            "type": "paragraph",
+            "text": "Your material becomes a queryable knowledge base wired to retrieval-augmented generation, with a style profile enforcing your voice, resolving raw knowledge into an Output Layer you can publish from (ROL). Drafts never leave your record."
+          },
+          {
+            "type": "heading",
+            "text": "Handoff & keep-current"
+          },
+          {
+            "type": "paragraph",
+            "text": "You own the system and the workflow. It can re-index new material on a schedule (Upstash · Vercel · Exa) so the knowledge base grows with you, and human-in-the-loop editing stays the last step, always."
+          }
+        ]
+      },
+      {
+        "title": "How the system prevents generic AI output: the evidence",
+        "eyebrow": "Why it doesn't sound like generic AI",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The rigor is the product. Each mechanism below is an established, verifiable practice, not a vibe. We name the mechanism, why it works, and how confident the field is in it, with a verification checkpoint."
+          },
+          {
+            "type": "table",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Mechanism",
+                    "header": true
+                  },
+                  {
+                    "text": "Why it works",
+                    "header": true
+                  },
+                  {
+                    "text": "Reviewed",
+                    "header": true
+                  },
+                  {
+                    "text": "Confidence",
+                    "header": true
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Retrieval-augmented generation (RAG)"
+                  },
+                  {
+                    "text": "The model drafts from passages retrieved from your sources, not from its training average, reducing hallucination and grounding claims in real material."
+                  },
+                  {
+                    "text": "2026-07-04"
+                  },
+                  {
+                    "text": "High"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Source-grounding & provenance"
+                  },
+                  {
+                    "text": "Every claim traces to a supplied source, so output can be verified rather than trusted blindly: the difference between \"sounds right\" and \"is cited.\""
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Voice / style profiling"
+                  },
+                  {
+                    "text": "A structured profile of your cadence, vocabulary, and structural habits steers generation toward your voice, so drafts read as yours, not the model's default register."
+                  },
+                  {
+                    "text": "Med · calibrated per author"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Human-in-the-loop editing"
+                  },
+                  {
+                    "text": "You remain the final editor. Human review is the established control for accuracy, judgment, and voice that no automated step fully replaces."
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Knowledge base that compounds"
+                  },
+                  {
+                    "text": "Your notes and research accumulate in one queryable store, so each new piece draws on everything you've done; expertise compounds instead of scattering."
+                  },
+                  {
+                    "text": "Med · grows with use"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Verification checkpoint: these are widely documented techniques in current AI practice, described in general terms, not claims about any specific vendor's benchmark. Calibrate voice fidelity and grounding against your own material before relying on any output."
+          }
+        ]
+      },
+      {
+        "title": "The combination no chatbot holds",
+        "eyebrow": "Why this, not a generic AI writer",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Most tools are one thing done adequately. This is built on named, defensible frameworks, so you leave owning an infrastructure, not renting a subscription."
+          },
+          {
+            "type": "paragraph",
+            "text": "RIL → ROL"
+          },
+          {
+            "type": "heading",
+            "text": "Record → Output Layer"
+          },
+          {
+            "type": "paragraph",
+            "text": "Your captured sources and voice, resolved into a system you can publish from."
+          },
+          {
+            "type": "paragraph",
+            "text": "OEG"
+          },
+          {
+            "type": "heading",
+            "text": "Operator Execution Gap"
+          },
+          {
+            "type": "paragraph",
+            "text": "The gap between what generic AI produces and what a named expert can actually publish."
+          },
+          {
+            "type": "paragraph",
+            "text": "EDSA"
+          },
+          {
+            "type": "heading",
+            "text": "EDSA Framework"
+          },
+          {
+            "type": "paragraph",
+            "text": "Keeps public-facing content compliant and un-suppressed across platforms, voice intact."
+          },
+          {
+            "type": "paragraph",
+            "text": "HITL"
+          },
+          {
+            "type": "heading",
+            "text": "Human-in-the-loop"
+          },
+          {
+            "type": "paragraph",
+            "text": "You are always the final editor. The system drafts; the expert decides."
+          }
+        ]
+      },
+      {
+        "title": "How this becomes yours",
+        "eyebrow": "The service",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Content-heavy experts lose hours to the blank page and risk their reputation on generic AI. I build a tailored content and knowledge system on your record and your voice, so you draft from what you already know and publish something unmistakably yours."
+          },
+          {
+            "type": "heading",
+            "text": "What I build"
+          },
+          {
+            "type": "paragraph",
+            "text": "A grounded knowledge base and voice-true drafting workflow scoped to your archive, your formats, and your publishing cadence."
+          },
+          {
+            "type": "heading",
+            "text": "What you get"
+          },
+          {
+            "type": "list",
+            "items": [
+              "A queryable knowledge base built on your sources"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Drafts that start from your material and sound like you"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Human-in-the-loop editing as the last step, always"
+            ]
+          },
+          {
+            "type": "heading",
+            "text": "How to start"
+          },
+          {
+            "type": "paragraph",
+            "text": "A 20-minute systems audit. If it's a fit, a tailored build turns around in days, not weeks."
+          },
+          {
+            "type": "paragraph",
+            "text": "Pricing: self-serve kits from $97; done-for-you content/knowledge builds $5,000–$10,000, scoped to your archive and cadence. Optional keep-current retainer to re-index new material as you produce it."
+          }
+        ]
+      },
+      {
+        "title": "Ready when you are.",
+        "eyebrow": "Aloha AI · Honolulu",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "This is the Creator Content System in action. Run it yourself with the self-serve Content System ($197, or the full kit bundle at $697), or have it built for you from $5,000. Book a call if you want it wired to your channels."
+          },
+          {
+            "type": "paragraph",
+            "text": "Prefer email? Email RN · or connect on LinkedIn"
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "systems/creator-content/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "trust-stack-ai-content-system",
@@ -1439,7 +2094,7 @@
     "kind": "tool",
     "pathname": "/trust-stack/edsa-framework",
     "eyebrow": "Regulated Trust Stack · Layer 4",
-    "title": "EDSA — The Neuroscience-of-Trust Content Architecture",
+    "title": "Your content is being judged twice. You're only writing for one of the judges.",
     "summary": "A framework for designing regulated content that serves human comprehension and platform classification without sacrificing evidence.",
     "audience": "Regulated creators, educators, and communications teams.",
     "maturity": "Research",
@@ -1490,7 +2145,120 @@
         "type": "supports",
         "target": "trust-stack-ai-content-system"
       }
-    ]
+    ],
+    "seoTitle": "EDSA — The Neuroscience-of-Trust Content Architecture",
+    "editorialIntro": [
+      "The Neuroscience-of-Trust Content Architecture. Engineering credibility for the audience's nervous system and the platform's classifier at the same time.",
+      "Framework: Neuroscience-of-Trust Content Architecture (EDSA)"
+    ],
+    "editorialSections": [
+      {
+        "title": "The gap most regulated creators never see",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The moment you publish a video about psilocybin, cannabis, or a prescription drug, two things appraise it. The first is a human nervous system, running a fast pre-deliberative check: expert or amateur, honest or selling, safe or a threat. If that appraisal returns \"threat,\" nothing you say afterward lands."
+          },
+          {
+            "type": "paragraph",
+            "text": "The second is a classifier. A recommendation system runs its own threat appraisal: safe to circulate, or near a policy line. If it returns \"threat,\" your video is quietly withheld from the feed. Not removed, just never shown. No audience. No appeal. No notification."
+          },
+          {
+            "type": "paragraph",
+            "text": "Most regulated creators optimize for one judge and lose to the other. Content the brain distrusts does not convert. Content the classifier reads as a threat does not reach anyone. You can be compliant and invisible, or compelling and suppressed. The trap is thinking those are your only two options."
+          }
+        ]
+      },
+      {
+        "title": "What's inside",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "The dual-appraisal crosswalk, the analytical core: every element mapped to its cited brain mechanism and its cited platform threat."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "The four ordered elements. Evidence, Discussion, Self-Determination, Action, each lowering the brain's threat appraisal and defusing a specific platform-policy trigger."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Three worked before/after rewrites (psilocybin, cannabis, prescription antidepressants) showing the architecture defusing both appraisals at once."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "An annotated 0:00–12:00 script template, beat by beat, naming the mechanism and the platform payoff for each."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A one-page quick-reference card, the five hard \"never\"s, dated, paraphrased platform-policy summaries with source URLs, and full references."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Who it's for",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "Producers, agencies, and in-house content teams building long- or short-form video for legal cannabis operators, state-licensed psilocybin services, and psychedelic-adjacent education."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Biopharma and mental-health communication teams that must survive automated review while staying truthful."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Anyone who wants to understand, at the level of mechanism, why the compliant version is also the version that converts."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Where this sits in the stack",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "This is Layer 4 · Persuasion of The Regulated Trust Stack, one operating system for earning trust in regulated markets, in six dependent layers. Each layer stands on the one beneath it. Own one and the next gap becomes impossible to ignore."
+          },
+          {
+            "type": "paragraph",
+            "text": "See the full six-layer stack → Find your weakest layer →"
+          }
+        ]
+      },
+      {
+        "title": "Get Neuroscience-of-Trust Content Architecture",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Checkout is handled by Gumroad. The button opens the Aloha AI Gumroad storefront."
+          },
+          {
+            "type": "paragraph",
+            "text": "← Back to The Regulated Trust Stack"
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "trust-stack/edsa-framework/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "psilocybin-regulatory-map",

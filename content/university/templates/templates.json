@@ -139,7 +139,130 @@
         "type": "supports",
         "target": "privacy-and-confidentiality-lesson"
       }
-    ]
+    ],
+    "editorialIntro": [
+      "A plain-English internal AI-use policy your team will actually read and follow. It's a starting draft — adapt it to how your business really works, then have qualified counsel review it before you adopt it. It isn't legal advice, and it isn't finished until you've made it yours."
+    ],
+    "editorialSections": [
+      {
+        "title": "What this is",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "A short, usable internal policy that tells your team where AI helps, where it doesn't belong, and who owns what comes out of it. It's written to be read: plain language, sensible defaults, no wall of boilerplate. You fill in the bracketed placeholders, cut the parts that don't fit, and end up with something people follow instead of a document that lives in a drawer."
+          },
+          {
+            "type": "paragraph",
+            "text": "The whole thing runs about one to two pages once you've adapted it. That's on purpose. A policy people finish reading beats a perfect one nobody opens."
+          }
+        ]
+      },
+      {
+        "title": "Who it's for",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "Owners and operators who want AI used across the business without a data leak or a decision made on autopilot."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Managers who keep getting asked \"am I allowed to use AI for this?\" and want a clear answer to point to."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Small teams with no legal or compliance department who still need something written down before staff start pasting work into chatbots."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "What's inside",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "A ten-section policy covering purpose, approved and prohibited uses, tools, confidentiality, human review, disclosure, security, audit, and sign-off."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Real starter language — sentences you could adopt after review, not headings you fill in from scratch."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Bracketed placeholders for your company name, roles, tools, contacts, and review dates."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A standing rule baked throughout: a named human owns and verifies every AI-assisted output."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "How to use it",
+        "blocks": [
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Copy it out. Use the Copy button on the template below and drop it into a doc.",
+              "Fill the placeholders. Swap every [bracketed] item for your real company name, roles, tools, and contacts.",
+              "Cut and adapt. Delete sections that don't apply, tighten the ones that do, and add anything specific to your industry or contracts.",
+              "Circulate for feedback. Share the draft with the people who'll live under it and fix what doesn't match reality.",
+              "Have it reviewed. Get qualified counsel — an attorney and, where relevant, a security or compliance advisor — to review it before you adopt.",
+              "Set a review date and get sign-off. Put a date on the calendar to revisit it, and have each person acknowledge it."
+            ]
+          },
+          {
+            "type": "quote",
+            "text": "Template for review — not legal advice. This is a starting draft. Adapt it to your business and have qualified counsel review it before you adopt it. Your obligations depend on your industry, your contracts, and your local laws. RN Collins is a JD candidate, not a licensed attorney, and nothing here is legal advice."
+          }
+        ]
+      },
+      {
+        "title": "The template",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Here's the draft. It's written to be readable and genuinely adoptable after review. Copy it, make it yours, and don't skip the review step."
+          },
+          {
+            "type": "code",
+            "text": "[COMPANY NAME] — INTERNAL AI-USE POLICY Version [1.0] · Effective [DATE] · Next review [DATE] · Owner: [ROLE/NAME] TEMPLATE FOR REVIEW — This is a starting draft, not legal advice. Adapt it to your business and have a qualified professional review it before you adopt it. 1. PURPOSE & SCOPE This policy explains how we use AI tools at [COMPANY NAME] so we get the benefits without putting our clients, our data, or our reputation at risk. It applies to everyone who does work for us — employees, contractors, and anyone acting on our behalf. \"AI tools\" means any software that generates or analyzes content using machine learning or large language models — chat assistants, writing and image tools, coding assistants, transcription and summarization services, and similar tools, whether standalone or built into apps we already use. The rule underneath everything here: AI helps you work; it does not do the work for you. A person is always responsible for what goes out. 2. APPROVED USES You're encouraged to use approved AI tools to work faster and better. Good uses include: - Drafting first versions of emails, documents, and posts (you edit and own it) - Summarizing long documents, threads, meetings, or notes - Brainstorming ideas, angles, names, and outlines - Research starting points — to orient yourself, not to cite as fact - Code assistance — suggestions, explanations, and boilerplate The standing rule for all of these: a human owns and verifies every output. Whatever the tool produces, you read it, check it, correct it, and take responsibility for it before it goes anywhere. 3. PROHIBITED USES Do not: - Enter confidential, client, or personal data into any tool that isn't on our approved list (see Section 4). - Treat AI output as final legal, medical, or financial advice. It's a draft or a starting point; qualified people make those calls. - Present AI-generated text or media as human-created where honesty requires disclosure (see Section 7). - Use AI to make high-stakes decisions about people — hiring, firing, discipline, credit, benefits — without real human judgment reviewing the decision. - Bypass security controls, licensing terms, or another tool's usage rules to get an AI feature, or feed it content we don't have the right to use. When you're unsure whether something is prohibited, stop and ask [ROLE/CONTACT] before you do it. 4. APPROVED TOOLS & TIERS Only use tools on this list for work, at the tier and for the data noted. Keep this list current; [ROLE] maintains it. TOOL | APPROVED TIER | DATA ALLOWED --------------------|--------------------------|--------------------------- [Tool name] | [e.g. Enterprise/Team] | [e.g. internal, no client PII] [Tool name] | [e.g. Business] | [e.g. public info only] [Tool name] | [Free/consumer] | [Non-sensitive only] If a tool isn't listed, it isn't approved for company data. Ask [ROLE] to review it before you use it for work. 5. CONFIDENTIALITY & DATA HANDLING Never put the following into consumer or free-tier AI tools: - Client or customer personal information (PII) - Passwords, keys, or credentials - Trade secrets or unreleased plans - Regulated data (health, financial, or anything under a contract or law) For anything sensitive, use only an approved enterprise tier that we've vetted for data handling ([TIER/TOOL PLACEHOLDER]). When in doubt about whether data is safe to enter, don't — ask [ROLE] first. Describing a task in the abstract is usually enough; you rarely need to paste the real records. 6. HUMAN REVIEW & ACCOUNTABILITY Every AI-assisted output has a named human who is accountable for it — normally the person who created or requested it. That person verifies the work before it's used or shared: check facts, figures, quotes, code, and anything the tool might have invented. Higher stakes mean stronger review. A rough internal summary needs a quick read. Anything that goes to a client, the public, a regulator, or into a system of record needs careful checking, and for the highest-stakes work, a second set of eyes. Nothing external goes out on a tool's word alone. 7. DISCLOSURE & TRANSPARENCY Be honest about AI assistance where it matters. Disclose when: - A client, partner, or regulation requires it. - Someone would reasonably feel misled to learn AI wrote or heavily shaped it — for example, a personal message, a testimonial, or professional advice. - You're using AI in a context (like certain filings or submissions) where the rules require a human author or a disclosure. Routine drafting help you've fully edited and taken ownership of generally doesn't need a disclosure. If you're unsure, disclose or ask [ROLE]. 8. SECURITY - Use your own company-provisioned accounts. Don't share logins or let others use your AI access. - Follow our normal access and password rules; use approved sign-in methods. - Don't install unvetted AI browser extensions or plugins on work devices. - Report any suspected data exposure, account compromise, or misuse to [CONTACT/EMAIL] as soon as you notice it. Fast reporting limits harm and won't get you in trouble. 9. AUDIT & RECORD-KEEPING Keep a lightweight log of high-stakes AI-assisted work — what the work was, which tool, and who reviewed it. It doesn't need to be heavy; a simple shared list is fine. This helps us learn what's working and answer questions if they come up. [ROLE] reviews the approved tool list and this policy at least [quarterly/annually] and updates them as tools and rules change. Next scheduled review: [DATE]. 10. ACKNOWLEDGMENT I have read and understand [COMPANY NAME]'s Internal AI-Use Policy and agree to follow it. Name: ______________________________ Role: ____________________ Signature: _________________________ Date: ____________________"
+          },
+          {
+            "type": "quote",
+            "text": "One more time, because it matters: this is a template for review, not legal advice. It's a sensible starting draft, but your obligations depend on your industry, your contracts, and your local laws. Adapt it, then have qualified counsel review it before you adopt it. RN Collins is a JD candidate, not a licensed attorney, and nothing here is legal advice."
+          }
+        ]
+      },
+      {
+        "title": "Want this tailored to your business?",
+        "eyebrow": "Work with us",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "We'll adapt this policy to how your team actually works — your industry, your tools, your risk tolerance — and walk you through rolling it out so people follow it. Bring your stack; we'll help you turn a starter draft into a policy that fits."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "university/templates/ai-policy-starter-kit/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "ai-tool-evaluation-matrix-template",

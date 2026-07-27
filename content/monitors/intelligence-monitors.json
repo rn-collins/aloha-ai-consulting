@@ -108,7 +108,7 @@
     "kind": "monitor",
     "pathname": "/monitors/ai-creative-production",
     "eyebrow": "Creative-production intelligence",
-    "title": "AI Creative Production Intelligence",
+    "title": "Stop generating one-offs. Build a production pipeline.",
     "summary": "A monitor for converting ad-hoc AI generation into a repeatable, on-brand production pipeline with reference controls, revision tracking, quality gates, and visible provenance.",
     "audience": "AI filmmakers, creative directors, studio founders, and producers accountable for consistency at volume.",
     "maturity": "Beta",
@@ -204,7 +204,431 @@
         "type": "implements",
         "target": "methods"
       }
-    ]
+    ],
+    "seoTitle": "AI Creative Production Intelligence",
+    "editorialIntro": [
+      "A grounded creative system, not a prompt library. Turn ad-hoc AI generation into a repeatable, on-brand pipeline, so the tenth shot looks like the first, the studio scales past one operator, and the work holds up in a client review and on a festival screen.",
+      "Built by RN Collins. Neuroscientist (MS) · Visual-trust research · AI systemsTailored for: AI filmmakers, studios & creative directors"
+    ],
+    "editorialSections": [
+      {
+        "title": "Built for the people whose name is on the frame",
+        "eyebrow": "Who this is for",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The same pipeline reads four ways, because what \"on-brand and repeatable\" means shifts with the seat."
+          },
+          {
+            "type": "heading",
+            "text": "AI filmmakers"
+          },
+          {
+            "type": "paragraph",
+            "text": "Award-track directors who need shot-to-shot character and world consistency across a whole cut, not a lucky frame."
+          },
+          {
+            "type": "heading",
+            "text": "Creative directors"
+          },
+          {
+            "type": "paragraph",
+            "text": "Agency CDs shipping AI work on brand guidelines, where \"close enough\" gets the account pulled."
+          },
+          {
+            "type": "heading",
+            "text": "Studio founders"
+          },
+          {
+            "type": "paragraph",
+            "text": "Teams scaling past one prompt-whisperer. You need a system anyone on staff can run and repeat."
+          },
+          {
+            "type": "heading",
+            "text": "Producers"
+          },
+          {
+            "type": "paragraph",
+            "text": "The person accountable for cost, timeline, and revisions, who needs volume without quality drift."
+          }
+        ]
+      },
+      {
+        "title": "Ask a generic AI to be on-brand and repeatable. Watch it drift.",
+        "eyebrow": "The Operator Execution Gap · creative",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Generative models are dazzling on the single hero frame and unreliable across the fifty that follow. Same brief, two outcomes: the fluent, interchangeable one-off, and the grounded pipeline output that stays on-brand at volume. The distance between them is what a missed deadline or a re-shot campaign costs."
+          },
+          {
+            "type": "paragraph",
+            "text": "✕ Generic AI · ad-hoc prompting"
+          },
+          {
+            "type": "paragraph",
+            "text": "\"Give me 40 shots of our hero character, on brand, ready to cut.\""
+          },
+          {
+            "type": "paragraph",
+            "text": "\"Here are 40 striking images.\" Each is beautiful, and each is a slightly different person, palette, and lens. The face drifts, the brand blue wanders, and shot 31 has six fingers. It looks like AI, and it looks like anyone's AI."
+          },
+          {
+            "type": "paragraph",
+            "text": "Confident. Gorgeous. Unusable as a set, and unusable in exactly the way that blows a delivery date and burns client trust."
+          },
+          {
+            "type": "paragraph",
+            "text": "✓ Aloha AI · grounded pipeline CCL · brand-locked"
+          },
+          {
+            "type": "paragraph",
+            "text": "Same brief, run through a pipeline:"
+          },
+          {
+            "type": "paragraph",
+            "text": "A locked reference set drives every shot. Character, palette, and lens are pinned to a Creative Consistency Ledger; each asset passes four quality gates (identity, brand, artifact, deliverable-spec) before it's accepted. Shot 31 either matches or gets flagged and re-run, automatically."
+          },
+          {
+            "type": "paragraph",
+            "text": "The output isn't 40 pretty pictures. It's a coherent set that reads as one authored body of work, on your brand, reproducible next week when the client asks for three more."
+          },
+          {
+            "type": "paragraph",
+            "text": "Confidence: High Why you can rely on it: consistency is enforced by an explicit reference ledger and gate criteria, not by re-rolling until a frame happens to match."
+          },
+          {
+            "type": "paragraph",
+            "text": "OEG, the Operator Execution Gap, is the distance between what AI generates and what a studio can ship on brand, on deadline, again. Closing it is the entire job."
+          }
+        ]
+      },
+      {
+        "title": "Ad-hoc generation → production pipeline, by studio consequence",
+        "eyebrow": "What actually changes",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The four shifts that move real cost, real timeline, and real reputation when you replace prompt-luck with a system."
+          },
+          {
+            "type": "heading",
+            "text": "Brand consistency High impact"
+          },
+          {
+            "type": "heading",
+            "text": "Throughput at volume High impact"
+          },
+          {
+            "type": "heading",
+            "text": "Revision cost Moderate"
+          },
+          {
+            "type": "heading",
+            "text": "Team scale Nuance"
+          }
+        ]
+      },
+      {
+        "title": "Score your AI production readiness",
+        "eyebrow": "The instrument",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Answer four questions about your creative context. The tool returns a readiness score and a prioritized set of pipeline recommendations for your studio. Everything runs locally in your browser; nothing is sent anywhere."
+          },
+          {
+            "type": "list",
+            "items": [
+              "Answer the four questions to see your prioritized build plan."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "What ad-hoc generation actually costs",
+        "eyebrow": "The cost of getting it wrong",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The most common miss: pricing a job on hero-frame speed, then eating the re-rolls, QA, and revisions that a pipeline would prevent. Here's the price of shipping without a system."
+          },
+          {
+            "type": "list",
+            "items": [
+              "This is labor that a reference-locked pipeline with auto-gating largely removes."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "A repeatable production method, not a one-off prompt kit",
+        "eyebrow": "How it works",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Every Aloha AI creative build runs the same three-stage pipeline. It's why the tenth shot stays on-brand, not just the first."
+          },
+          {
+            "type": "heading",
+            "text": "Creative Reference Layer (CRL)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Your brand, characters, palette, and lens language captured as a locked reference set with provenance: the single source of truth every asset is generated against. No prompt-by-memory."
+          },
+          {
+            "type": "heading",
+            "text": "Resolve to a Production Layer (RPL)"
+          },
+          {
+            "type": "paragraph",
+            "text": "The reference set becomes a running pipeline: batched generation, four quality gates (identity, brand, artifact, deliverable-spec), and an accept/flag/re-run loop that closes the Operator Execution Gap between \"looks nice\" and \"ships on brand.\""
+          },
+          {
+            "type": "heading",
+            "text": "Refresh & version"
+          },
+          {
+            "type": "paragraph",
+            "text": "The pipeline re-checks against current model versions and your evolving brand on a schedule (Upstash · Vercel · Exa), and can alert you when a model update shifts output, so the system stays reproducible rather than silently drifting."
+          }
+        ]
+      },
+      {
+        "title": "Every pipeline claim, traced to its basis",
+        "eyebrow": "Method base · confidence-scored",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The rigor is the product. Each stage and quality gate carries its method basis, a source for any factual claim, and a confidence rating, so the pipeline is auditable, not a black box you have to trust on faith."
+          },
+          {
+            "type": "table",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Pipeline stage / claim",
+                    "header": true
+                  },
+                  {
+                    "text": "Basis & source",
+                    "header": true
+                  },
+                  {
+                    "text": "Reviewed",
+                    "header": true
+                  },
+                  {
+                    "text": "Confidence",
+                    "header": true
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Locked-reference conditioning improves cross-shot character and style consistency vs. free-form prompting"
+                  },
+                  {
+                    "text": "Established diffusion practice · reference/IP-adapter & LoRA conditioning literature"
+                  },
+                  {
+                    "text": "2026-07-04"
+                  },
+                  {
+                    "text": "High"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Multi-gate automated QA (identity · brand · artifact · deliverable-spec) raises accept-rate consistency"
+                  },
+                  {
+                    "text": "Aloha AI internal method · gate criteria defined per engagement"
+                  },
+                  {
+                    "text": "Med · method"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Visual coherence across a set increases perceived authorship and brand trust"
+                  },
+                  {
+                    "text": "Perceptual fluency research · processing-fluency & visual-consistency findings"
+                  },
+                  {
+                    "text": "Med · interpretive"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Batched generation with gating reduces operator time per accepted asset vs. manual re-rolling"
+                  },
+                  {
+                    "text": "Re-roll waste model · calculator above; figures are illustrative"
+                  },
+                  {
+                    "text": "Med · model"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Pipeline documentation lets non-founder staff reproduce output to the same standard"
+                  },
+                  {
+                    "text": "Aloha AI delivery practice · runbook shipped with every build"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Verification checkpoint: method claims reflect current generative-tooling practice as of the review date and are illustrative, not a guarantee of outcomes. Gate criteria and consistency targets are calibrated to your brand during scoping."
+          }
+        ]
+      },
+      {
+        "title": "The combination no template holds",
+        "eyebrow": "Why this, not a prompt pack",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Most offerings are one thing done adequately: a preset library, a style LoRA, a hired hand. This is built on named, defensible frameworks, so you leave owning a system, not renting a look."
+          },
+          {
+            "type": "paragraph",
+            "text": "CRL → RPL"
+          },
+          {
+            "type": "heading",
+            "text": "Creative Reference Layer"
+          },
+          {
+            "type": "paragraph",
+            "text": "Your brand and characters as a locked reference set, resolved into a production-ready pipeline."
+          },
+          {
+            "type": "paragraph",
+            "text": "OEG"
+          },
+          {
+            "type": "heading",
+            "text": "Operator Execution Gap"
+          },
+          {
+            "type": "paragraph",
+            "text": "The gap between what AI generates and what a studio can ship on brand, on deadline, again."
+          },
+          {
+            "type": "paragraph",
+            "text": "CCL"
+          },
+          {
+            "type": "heading",
+            "text": "Creative Consistency Ledger"
+          },
+          {
+            "type": "paragraph",
+            "text": "The auditable source of truth that pins identity, palette, and lens across every asset."
+          },
+          {
+            "type": "paragraph",
+            "text": "4-Gate QA"
+          },
+          {
+            "type": "heading",
+            "text": "Quality-Gate Model"
+          },
+          {
+            "type": "paragraph",
+            "text": "Identity · brand · artifact · deliverable-spec. Accept, flag, or auto-re-run every asset."
+          }
+        ]
+      },
+      {
+        "title": "How this becomes yours",
+        "eyebrow": "The service",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Studios and creative directors fly blind on why their AI output looks brilliant in isolation and inconsistent as a body of work, and burn hours re-rolling to force a match. I build a tailored production pipeline for your exact brand and formats that locks consistency and makes your output repeatable."
+          },
+          {
+            "type": "heading",
+            "text": "What I build"
+          },
+          {
+            "type": "paragraph",
+            "text": "A private production pipeline scoped to your characters, brand guidelines, and deliverable formats: reference-locked, gated, and documented."
+          },
+          {
+            "type": "heading",
+            "text": "What you get"
+          },
+          {
+            "type": "list",
+            "items": [
+              "A live, on-brand generation pipeline for your studio"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A Creative Consistency Ledger + a runbook your team can operate"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Version-alerts when a model update shifts your output"
+            ]
+          },
+          {
+            "type": "heading",
+            "text": "How to start"
+          },
+          {
+            "type": "paragraph",
+            "text": "A 20-minute scoping call. If it's a fit, a tailored build turns around in days, not weeks."
+          },
+          {
+            "type": "paragraph",
+            "text": "Pricing. Engagements start from $5,000 build + $1,500/mo, scoped to your studio. Three-month minimum on any retainer; 30 days' notice to stop."
+          }
+        ]
+      },
+      {
+        "title": "Ready when you are.",
+        "eyebrow": "Aloha AI · Honolulu",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "This page is a dated snapshot from a Content System build for creative production. Get one wired to your pipeline with a Build ($5,000–$10,000), or book a scoping call to map it to your workflow."
+          },
+          {
+            "type": "paragraph",
+            "text": "Prefer email? Email RN · or connect on LinkedIn"
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "monitors/ai-creative-production/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "arts-culture",
@@ -315,7 +739,7 @@
     "kind": "monitor",
     "pathname": "/monitors/biopharma-regulatory-intelligence",
     "eyebrow": "Biopharma regulatory monitor",
-    "title": "Biopharma Regulatory Intelligence Layer",
+    "title": "Your drug program's regulatory path, told straight. With the receipts.",
     "summary": "A primary-source-grounded monitor for clinical-stage drug programs covering development gates, review timing, exclusivity, controlled-substance tracks, and dated regulatory changes.",
     "audience": "Regulatory affairs teams, counsel, founders, boards, and clinical-stage sponsors.",
     "maturity": "Beta",
@@ -411,7 +835,454 @@
         "type": "implements",
         "target": "methods"
       }
-    ]
+    ],
+    "seoTitle": "Biopharma Regulatory Intelligence Layer",
+    "editorialIntro": [
+      "A sourced instrument, not a headline scraper. Model your program's regulatory exposure by development stage, see exactly what generic AI gets confidently wrong about FDA pathways and exclusivity, and trace every figure to its primary source. It holds up in a board update and in a regulatory strategy memo.",
+      "Built by RN Collins — Neuroscientist (MS) · Administrative Law (JD candidate) · AI systemsTailored for: regulatory-affairs leads, sponsors & founders in clinical-stage biopharma"
+    ],
+    "editorialSections": [
+      {
+        "title": "The latest psychedelic drug rulemaking, pulled live",
+        "eyebrow": "Live · Federal Register",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "This panel queries the Federal Register API from your browser every time the page loads, so it shows the primary source itself, not a stored summary."
+          },
+          {
+            "type": "list",
+            "items": [
+              "Loading the latest from the Federal Register…"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "The live Federal Register feed is unavailable right now; the dated analysis below still applies (as of 2026-07-04)."
+          }
+        ]
+      },
+      {
+        "title": "Built for the people who can't afford a confident wrong answer",
+        "eyebrow": "Who this is for",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The same intelligence layer reads four ways, because the stakes differ by seat."
+          },
+          {
+            "type": "heading",
+            "text": "Regulatory affairs"
+          },
+          {
+            "type": "paragraph",
+            "text": "Sequence your IND, exclusivity, and scheduling milestones before they collide with your timeline."
+          },
+          {
+            "type": "heading",
+            "text": "Counsel & GCs"
+          },
+          {
+            "type": "paragraph",
+            "text": "A sourced, dated brief on exclusivity and pathway you can cite directly, without re-verification."
+          },
+          {
+            "type": "heading",
+            "text": "Founders & boards"
+          },
+          {
+            "type": "paragraph",
+            "text": "One screenshot that makes the regulatory risk and exclusivity runway legible to a room in ten seconds."
+          },
+          {
+            "type": "heading",
+            "text": "Clinical-stage sponsors"
+          },
+          {
+            "type": "paragraph",
+            "text": "Evidence-grade provenance that supports a diligence pack, a partnering deck, or an FDA interaction."
+          }
+        ]
+      },
+      {
+        "title": "Ask a generic AI the one question that matters. Watch it fail.",
+        "eyebrow": "The Operator Execution Gap · live",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Large language models fail most confidently exactly where a drug program's stakes are highest: pathway and exclusivity facts. Same question, two answers. The fluent-but-wrong generic reply, and the primary-source-grounded one. The distance between them is what a wrong assumption costs your runway."
+          },
+          {
+            "type": "paragraph",
+            "text": "✕ Generic LLM · unsourced"
+          },
+          {
+            "type": "paragraph",
+            "text": "\"My small-molecule NCE gets orphan designation — how many years of market protection is that, and does designation itself block generics?\""
+          },
+          {
+            "type": "paragraph",
+            "text": "\"Orphan designation gives you 7 years of exclusivity that starts the day FDA designates the drug, and it blocks all generics for the whole condition — so you're protected from filing onward.\""
+          },
+          {
+            "type": "paragraph",
+            "text": "Confident. Fluent. Wrong on three counts — and wrong in the exact way that mis-sequences a launch, a raise, or a partnering term sheet."
+          },
+          {
+            "type": "paragraph",
+            "text": "✓ Aloha AI · primary-source grounded 21 CFR · FDCA"
+          },
+          {
+            "type": "paragraph",
+            "text": "Same question, answered from the record:"
+          },
+          {
+            "type": "paragraph",
+            "text": "Designation is not exclusivity. Orphan-drug exclusivity is 7 years but runs from the date of marketing approval, not from designation (21 CFR §316.31). It protects only the approved indication or use — not the whole rare disease — and can be broken if the holder can't assure supply."
+          },
+          {
+            "type": "paragraph",
+            "text": "Separately, a small-molecule new active moiety may earn 5-year NCE data exclusivity under Hatch-Waxman (a generic may file a Paragraph IV ANDA at year 4). Orphan and NCE exclusivity are distinct clocks that can overlap. Plan to both."
+          },
+          {
+            "type": "paragraph",
+            "text": "Confidence: High Why you can rely on it: it maps to 21 CFR Part 316, the FDCA exclusivity provisions, and FDA guidance, cited below with retrieval dates."
+          },
+          {
+            "type": "paragraph",
+            "text": "OEG — the Operator Execution Gap — is the distance between what AI says and what a regulated sponsor can act on. Closing it is the entire job."
+          }
+        ]
+      },
+      {
+        "title": "By development stage, by program consequence",
+        "eyebrow": "What actually changes",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The four shifts that move real capital and real risk as a program advances. Each maps to a specific FDA or DEA gate. Generic AI blurs all of them."
+          },
+          {
+            "type": "heading",
+            "text": "The IND gate High impact"
+          },
+          {
+            "type": "heading",
+            "text": "Marketing exclusivity High impact"
+          },
+          {
+            "type": "heading",
+            "text": "Review clock Moderate"
+          },
+          {
+            "type": "heading",
+            "text": "Controlled-substance track Nuance"
+          }
+        ]
+      },
+      {
+        "title": "Model your program's regulatory exposure",
+        "eyebrow": "The instrument",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Answer three questions. The tool returns the key milestones ahead, exclusivity and exposure notes, and what a Regulatory Intelligence Layer would monitor for your program, grounded in the framework above. Everything runs locally in your browser; nothing is sent anywhere."
+          },
+          {
+            "type": "list",
+            "items": [
+              "Model your program to see specifics."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "What one wrong assumption costs",
+        "eyebrow": "The cost of getting it wrong",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The most common error we see: mis-dating an exclusivity clock, assuming it starts at designation or filing rather than at approval. Here's the price of acting on the generic answer instead of the sourced one."
+          },
+          {
+            "type": "list",
+            "items": [
+              "Plus mis-timed launch spend, partnering terms priced on the wrong clock, and diligence findings that reprice a raise."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "This is the cost of trusting an unsourced \"exclusivity starts now\" answer."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "A repeatable intelligence method, not a one-off scrape",
+        "eyebrow": "How it works",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Every Aloha AI Regulatory Intelligence Layer runs the same three-stage pipeline. In a production build, that is what keeps the facts right next month, not just today."
+          },
+          {
+            "type": "heading",
+            "text": "Regulatory Intelligence Layer (RIL)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Primary sources only: the FDCA, 21 CFR, FDA guidance, the Orange Book, dockets, and DEA scheduling actions, each captured with source and retrieval date. No headline aggregation."
+          },
+          {
+            "type": "heading",
+            "text": "Resolve to an Operator Layer (ROL)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Raw law becomes a decision your program can act on: which milestone, which clock, for whom, with what confidence. This closes the Operator Execution Gap."
+          },
+          {
+            "type": "heading",
+            "text": "Auto-refresh & alert"
+          },
+          {
+            "type": "paragraph",
+            "text": "In a production build, the layer re-checks its primary sources on a schedule (Upstash · Vercel · Exa) and can ping you when a guidance updates, an exclusivity determination posts, or a scheduling docket opens, so it never goes stale."
+          }
+        ]
+      },
+      {
+        "title": "Every figure, traced to its primary source",
+        "eyebrow": "Audit-ready provenance",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The admin-law rigor is the product. Each fact carries its source, retrieval date, and a confidence rating. The same artifact that opens a conversation can support a diligence pack or a regulatory memo."
+          },
+          {
+            "type": "table",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Fact",
+                    "header": true
+                  },
+                  {
+                    "text": "Primary source",
+                    "header": true
+                  },
+                  {
+                    "text": "Retrieved",
+                    "header": true
+                  },
+                  {
+                    "text": "Confidence",
+                    "header": true
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "An IND is required before human dosing; the study may generally proceed 30 days after FDA receipt unless placed on clinical hold"
+                  },
+                  {
+                    "text": "21 CFR Part 312 · FDA \"Investigational New Drug (IND) Application\""
+                  },
+                  {
+                    "text": "2026-07-04"
+                  },
+                  {
+                    "text": "High"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "NDA marketing applications reviewed under Part 314; PDUFA goal ~10 mo standard / ~6 mo priority review"
+                  },
+                  {
+                    "text": "21 CFR Part 314 · FDA drug review process (PDUFA goals)"
+                  },
+                  {
+                    "text": "Med · goal, not a deadline"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "5-year NCE data exclusivity for a new active moiety; Paragraph IV ANDA may be filed at year 4 (Hatch-Waxman)"
+                  },
+                  {
+                    "text": "21 U. S. C. §355(j)(5)(F)(ii) · FDA/FDLI Hatch-Waxman materials"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "7-year orphan-drug exclusivity runs from marketing approval and protects only the approved indication/use"
+                  },
+                  {
+                    "text": "21 CFR §316.31 · Orphan Drug Act (21 U. S. C. §360cc)"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "A controlled-substance molecule requires a DEA scheduling action before commercial distribution after FDA approval"
+                  },
+                  {
+                    "text": "21 CFR Part 1308 · CSA 21 U. S. C. §811 (eight-factor analysis)"
+                  },
+                  {
+                    "text": "Med · interpretive"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Verification checkpoint: figures are current as of the retrieval date and the operative statute, regulation, or FDA determination. Re-confirm against the live source and your program's facts before using any figure in a regulatory submission or diligence pack."
+          }
+        ]
+      },
+      {
+        "title": "The combination no competitor holds",
+        "eyebrow": "Why this, not a generic monitor",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Most tools are one thing done adequately. This is built on named, defensible frameworks, so you leave speaking the language, not renting a dashboard."
+          },
+          {
+            "type": "paragraph",
+            "text": "RIL → ROL"
+          },
+          {
+            "type": "heading",
+            "text": "Regulatory Intelligence Layer"
+          },
+          {
+            "type": "paragraph",
+            "text": "Primary-source FDA/DEA monitoring resolved into a program-ready decision layer."
+          },
+          {
+            "type": "paragraph",
+            "text": "OEG"
+          },
+          {
+            "type": "heading",
+            "text": "Operator Execution Gap"
+          },
+          {
+            "type": "paragraph",
+            "text": "The gap between what AI says and what a sponsor can act on."
+          },
+          {
+            "type": "paragraph",
+            "text": "Exclusivity Clock Map"
+          },
+          {
+            "type": "heading",
+            "text": "Exclusivity Clock Map"
+          },
+          {
+            "type": "paragraph",
+            "text": "Sequences NCE, orphan, and patent clocks against your development timeline."
+          },
+          {
+            "type": "paragraph",
+            "text": "EDSA"
+          },
+          {
+            "type": "heading",
+            "text": "EDSA Framework"
+          },
+          {
+            "type": "paragraph",
+            "text": "Keeps regulated health content compliant and un-suppressed across platforms."
+          }
+        ]
+      },
+      {
+        "title": "How this becomes yours",
+        "eyebrow": "The service",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Regulatory leads, counsel, and founders fly blind on how each FDA guidance, exclusivity determination, or scheduling action hits their program's timeline and runway. I build a tailored Regulatory Intelligence Layer for your exact program that tracks the primary sources and resolves them into decisions you can act on."
+          },
+          {
+            "type": "heading",
+            "text": "What I build"
+          },
+          {
+            "type": "paragraph",
+            "text": "A private Regulatory Intelligence Layer scoped to your molecule, modality, and indication: sourced, dated, and confidence-scored."
+          },
+          {
+            "type": "heading",
+            "text": "What you get"
+          },
+          {
+            "type": "list",
+            "items": [
+              "A live, cited layer for your program"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "An audit-ready provenance ledger for diligence and FDA interactions"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Change-alerts when a guidance, exclusivity determination, or docket moves"
+            ]
+          },
+          {
+            "type": "heading",
+            "text": "How to start"
+          },
+          {
+            "type": "paragraph",
+            "text": "A Systems Audit and a 20-minute scoping call. If it's a fit, a tailored build turns around in days, not weeks."
+          },
+          {
+            "type": "paragraph",
+            "text": "Pricing — a Regulatory Intelligence Layer runs $5,000–$10,000 build + $1,500/mo to keep it live; a full-stack engagement (multi-source monitoring, alerts, and program dashboards) is scoped to what your program actually needs. Three-month minimum on any retainer; 30 days' notice to stop."
+          }
+        ]
+      },
+      {
+        "title": "Ready when you are.",
+        "eyebrow": "Aloha AI · Honolulu",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "This page is a dated snapshot from a Biopharma Regulatory Intelligence build. Get your own layer with a Build ($5,000–$10,000 + $1,500/mo), or book a scoping call to size it to your pipeline."
+          },
+          {
+            "type": "paragraph",
+            "text": "Prefer email? Email RN · or connect on LinkedIn"
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "monitors/biopharma-regulatory-intelligence/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
     "id": "biophilic-neuroarch",
@@ -1381,7 +2252,7 @@
     "kind": "monitor",
     "pathname": "/monitors/suppression-audit",
     "eyebrow": "Platform-visibility monitor",
-    "title": "Content Suppression & Platform Visibility Audit",
+    "title": "Your health content isn't bad. It's flagged.",
     "summary": "A platform-policy-grounded monitor for health and wellness content visibility, separating claims risk, advertising eligibility, off-platform links, sensitive audiences, and evidence-backed recovery actions.",
     "audience": "Health and wellness brands, visibility strategists, regulated-industry creators, and clinicians who publish.",
     "maturity": "Beta",
@@ -1478,6 +2349,439 @@
         "type": "implements",
         "target": "methods"
       }
-    ]
+    ],
+    "seoTitle": "Content Suppression & Platform Visibility Audit",
+    "editorialIntro": [
+      "Credible health, wellness, and regulated-industry content gets throttled for reasons that have nothing to do with quality. Platform policy is the cause. This audit diagnoses what is suppressing your reach, grounded in real policy categories, and returns an EDSA-structured plan to recover it. Not \"post more consistently.\"",
+      "Built by RN Collins · Neuroscientist (MS) · Administrative Law (JD candidate) · AI systemsTailored for: health & wellness brands and regulated-industry creators"
+    ],
+    "editorialSections": [
+      {
+        "title": "For people who publish rigorous content and watch it disappear",
+        "eyebrow": "Who this is for",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The problem isn't reach tactics. It's that policy systems read careful, evidence-based health content as a risk. Four seats feel it differently."
+          },
+          {
+            "type": "heading",
+            "text": "Health & wellness brands"
+          },
+          {
+            "type": "paragraph",
+            "text": "You cite studies and still get ads disapproved. Know which claim category triggered it before you rewrite blind."
+          },
+          {
+            "type": "heading",
+            "text": "Visibility strategists"
+          },
+          {
+            "type": "paragraph",
+            "text": "Give clients a policy-grounded diagnosis, not a hashtag list. Give them a fix that survives the next review."
+          },
+          {
+            "type": "heading",
+            "text": "Regulated-industry creators"
+          },
+          {
+            "type": "paragraph",
+            "text": "Supplements, telehealth, mental-health, medical. Publish inside the policy line without hollowing out the message."
+          },
+          {
+            "type": "heading",
+            "text": "Clinicians who publish"
+          },
+          {
+            "type": "paragraph",
+            "text": "Evidence-forward content that keeps getting demoted. Recover reach without diluting the science."
+          }
+        ]
+      },
+      {
+        "title": "Ask a generic AI why your reach dropped. Watch it guess.",
+        "eyebrow": "The Operator Execution Gap · live",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Ask the tools most creators reach for and you get engagement folklore: post consistently, use trending audio, add hashtags. None of it names the policy mechanism that actually suppressed the post. Same question, two answers. The distance between them is why the \"fix\" never works."
+          },
+          {
+            "type": "paragraph",
+            "text": "✕ Generic AI · engagement folklore"
+          },
+          {
+            "type": "paragraph",
+            "text": "\"My evidence-based supplement post got no reach. Why, and how do I fix it?\""
+          },
+          {
+            "type": "paragraph",
+            "text": "\"The algorithm probably deprioritized it for low engagement. Post more consistently, use 20–30 trending hashtags, hook viewers in the first 3 seconds, and repost at peak times. Reach will recover.\""
+          },
+          {
+            "type": "paragraph",
+            "text": "Confident. Generic. Wrong about the cause — so every \"fix\" treats a policy problem as a scheduling problem, and the throttle stays exactly where it was."
+          },
+          {
+            "type": "paragraph",
+            "text": "✓ Aloha AI · platform-policy grounded Policy category"
+          },
+          {
+            "type": "paragraph",
+            "text": "Same post, diagnosed against the actual policy surface:"
+          },
+          {
+            "type": "paragraph",
+            "text": "The suppression is a claims problem, not a schedule problem. Phrases that imply a direct physiological effect, such as \"boosts metabolism,\" \"balances hormones,\" or \"detoxifies,\" fall under platforms' health-and-wellness / unproven-claims category, which restricts distribution and ad eligibility regardless of how many studies you attach."
+          },
+          {
+            "type": "paragraph",
+            "text": "The EDSA fix: keep the Evidence, reframe the claim as discussion rather than promise, respect the reader's self-determination (\"here's what the research explores\" not \"this will fix you\"), and give a compliant action. Same rigor, inside the policy line."
+          },
+          {
+            "type": "paragraph",
+            "text": "Confidence: High Why you can rely on it: it maps to published platform health-and-wellness policy categories and the LegitScript ad-eligibility gate, described in the method ledger below, with review dates."
+          },
+          {
+            "type": "paragraph",
+            "text": "OEG (the Operator Execution Gap) is the distance between what AI says caused a problem and what actually did. Naming the real mechanism is the entire job."
+          }
+        ]
+      },
+      {
+        "title": "Four throttles, and the EDSA move that clears each",
+        "eyebrow": "What actually suppresses reach",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "These are policy categories platforms publish and enforce, not folklore. Each maps to one part of the EDSA structure: Evidence · Discussion · Self-determination · Action."
+          },
+          {
+            "type": "heading",
+            "text": "Unproven / prohibited health claims High risk"
+          },
+          {
+            "type": "heading",
+            "text": "Ad-eligibility gate (certification) High risk"
+          },
+          {
+            "type": "heading",
+            "text": "Off-platform links & sourcing Moderate"
+          },
+          {
+            "type": "heading",
+            "text": "Sensitive-audience targeting Nuance"
+          }
+        ]
+      },
+      {
+        "title": "Run the EDSA suppression-risk audit",
+        "eyebrow": "The instrument",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Pick your content type and platform, check the risk factors that apply, and the tool returns a suppression-risk score plus the specific EDSA fixes for your situation. Everything runs locally in your browser; nothing is sent anywhere."
+          },
+          {
+            "type": "list",
+            "items": [
+              "Select your content type, platform, and risk factors to see specific EDSA fixes."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "What suppressed reach actually costs",
+        "eyebrow": "The cost of getting it wrong",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Chasing engagement tactics against a policy throttle burns budget on impressions that never arrive. Here's the price of diagnosing the wrong cause."
+          },
+          {
+            "type": "list",
+            "items": [
+              "Plus the compounding cost: repeat flags lower account-level trust, so future posts start throttled."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "This is the price of treating a policy problem as a posting-schedule problem."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "A repeatable audit method, not a one-off reach hack",
+        "eyebrow": "How it works",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Every Aloha AI audit runs the same three-stage pipeline, so the diagnosis holds up against the next policy update, not just the current feed."
+          },
+          {
+            "type": "heading",
+            "text": "Regulatory Intelligence Layer (RIL)"
+          },
+          {
+            "type": "paragraph",
+            "text": "Read the actual policy surfaces: published platform content and ad standards, health-and-wellness categories, and certification requirements, captured with source and review date. No engagement folklore."
+          },
+          {
+            "type": "heading",
+            "text": "Resolve to an Operator Layer (ROL) via EDSA"
+          },
+          {
+            "type": "paragraph",
+            "text": "Raw policy becomes a content decision you can act on: which claim to reframe, which link to move, what to certify. Structured as Evidence · Discussion · Self-determination · Action, it closes the Operator Execution Gap."
+          },
+          {
+            "type": "heading",
+            "text": "Auto-refresh & alert"
+          },
+          {
+            "type": "paragraph",
+            "text": "Platform policies change often. The audit re-checks its policy sources on a schedule (Upstash · Vercel · Exa) and can ping you when a standard shifts, so your content system doesn't drift back into suppression."
+          }
+        ]
+      },
+      {
+        "title": "The basis for every diagnosis, traced and confidence-scored",
+        "eyebrow": "Audit-ready method ledger",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The rigor is the product. Each element carries its basis, review date, and a confidence rating. We describe published policy categories and cite the certification concept; we do not fabricate specific policy quotes."
+          },
+          {
+            "type": "table",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Element",
+                    "header": true
+                  },
+                  {
+                    "text": "Basis",
+                    "header": true
+                  },
+                  {
+                    "text": "Reviewed",
+                    "header": true
+                  },
+                  {
+                    "text": "Confidence",
+                    "header": true
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Platforms restrict distribution & ad eligibility for unproven / prohibited health claims (cure, diagnosis, direct-effect language)"
+                  },
+                  {
+                    "text": "Meta Transparency Center — Health & Wellness ad standards (category, not verbatim quote)"
+                  },
+                  {
+                    "text": "2026-07-04"
+                  },
+                  {
+                    "text": "High"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "LegitScript certification is required to advertise many healthcare, pharmacy, telehealth & addiction-treatment services on major platforms (Google, Meta, and others)"
+                  },
+                  {
+                    "text": "LegitScript — Healthcare Certification (concept & platform recognition)"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Sensitive-audience targeting (body-image, health conditions) carries restrictions: minor exclusions, placement limits, tracking limits"
+                  },
+                  {
+                    "text": "Meta Health & Wellness restricted-goods policy (category description)"
+                  },
+                  {
+                    "text": "Med · category-level"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "EDSA structure: Evidence · Discussion · Self-determination · Action, reframing claims to stay inside policy without losing rigor"
+                  },
+                  {
+                    "text": "RN Collins — EDSA framework (Aloha AI named IP)"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Outbound links & risky domains commonly deprioritized in organic distribution"
+                  },
+                  {
+                    "text": "Platform content-distribution norms (interpretive; verify per platform)"
+                  },
+                  {
+                    "text": "Med · interpretive"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Verification checkpoint: platform policies change frequently and vary by region and account. Figures describe policy categories as reviewed on the date shown; confirm the operative policy text on each platform before acting on any single claim."
+          }
+        ]
+      },
+      {
+        "title": "Named frameworks, not reach hacks",
+        "eyebrow": "Why this, not a growth agency",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Most reach advice is folklore done confidently. This is built on named, defensible frameworks, so you leave able to publish inside the policy line yourself, not renting a hashtag list."
+          },
+          {
+            "type": "paragraph",
+            "text": "EDSA"
+          },
+          {
+            "type": "heading",
+            "text": "EDSA Framework"
+          },
+          {
+            "type": "paragraph",
+            "text": "Evidence · Discussion · Self-determination · Action. The central structure that keeps rigorous health content compliant and un-suppressed."
+          },
+          {
+            "type": "paragraph",
+            "text": "RIL → ROL"
+          },
+          {
+            "type": "heading",
+            "text": "Regulatory Intelligence Layer"
+          },
+          {
+            "type": "paragraph",
+            "text": "Policy-surface monitoring resolved into content decisions you can act on."
+          },
+          {
+            "type": "paragraph",
+            "text": "OEG"
+          },
+          {
+            "type": "heading",
+            "text": "Operator Execution Gap"
+          },
+          {
+            "type": "paragraph",
+            "text": "The gap between what AI says caused a throttle and the policy mechanism that actually did."
+          },
+          {
+            "type": "paragraph",
+            "text": "Cert. gate"
+          },
+          {
+            "type": "heading",
+            "text": "Ad-eligibility mapping"
+          },
+          {
+            "type": "paragraph",
+            "text": "LegitScript & category gates mapped to your services, so paid reach is even available before you spend."
+          }
+        ]
+      },
+      {
+        "title": "How this becomes yours",
+        "eyebrow": "The service",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Health and wellness brands and regulated-industry creators lose reach they can't explain, then burn budget chasing the wrong fix. I audit your content and platforms against real policy categories and build an EDSA-structured content system that recovers reach without hollowing out the message."
+          },
+          {
+            "type": "heading",
+            "text": "What I build"
+          },
+          {
+            "type": "paragraph",
+            "text": "A suppression audit scoped to your platforms, services, and claim library, plus an EDSA content system and a compliant tag/phrasing bank."
+          },
+          {
+            "type": "heading",
+            "text": "What you get"
+          },
+          {
+            "type": "list",
+            "items": [
+              "A policy-grounded diagnosis with confidence scores"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "An EDSA rewrite system for your recurring content"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Certification / ad-eligibility mapping"
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Change-alerts when a platform policy shifts"
+            ]
+          },
+          {
+            "type": "heading",
+            "text": "How to start"
+          },
+          {
+            "type": "paragraph",
+            "text": "A 20-minute scoping call. If it's a fit, a tailored audit turns around in days, not weeks."
+          },
+          {
+            "type": "paragraph",
+            "text": "Pricing: audits + content systems start from $5,000 build + $1,500/mo, scoped to your platforms. Three-month minimum on any retainer; 30 days' notice to stop."
+          }
+        ]
+      },
+      {
+        "title": "Ready when you are.",
+        "eyebrow": "Aloha AI · Honolulu",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "This page is a dated snapshot from a Content & Visibility build that flags where your reach gets throttled. Get one built for your channels with a Build ($5,000–$10,000), or book a scoping call to map your surfaces."
+          },
+          {
+            "type": "paragraph",
+            "text": "Prefer email? Email RN · or connect on LinkedIn"
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "monitors/suppression-audit/index.html",
+      "restoredAt": "2026-07-26"
+    }
   }
 ]

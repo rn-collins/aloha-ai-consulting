@@ -1,72 +1,1484 @@
 [
   {
-    "id": "content-repurposing-tool-guide", "kind": "toolGuide", "pathname": "/university/tools/best-for-content-repurposing",
-    "eyebrow": "Tool guide · Content", "title": "Best AI Tools for Content Repurposing (2026)",
+    "id": "content-repurposing-tool-guide",
+    "kind": "toolGuide",
+    "pathname": "/university/tools/best-for-content-repurposing",
+    "eyebrow": "Tool guide · Content",
+    "title": "Best AI Tools for Content Repurposing (2026)",
     "summary": "A decision guide to AI content-repurposing tools, with honest strengths, limits, privacy, pricing, and a workflow for keeping the creator's voice intact.",
-    "audience": "Creators, experts, founders, and lean marketing teams selecting tools for source-grounded content repurposing.", "maturity": "Production",
-    "topics": ["tool-selection","content-repurposing","voice","privacy"], "industries": ["creator-economy","publishing","professional-services","small-business"],
-    "keywords": ["content repurposing tools","Opus Clip","Descript","Repurpose.io","AI content workflow"],
-    "learningPaths": ["Define the source and channel outputs","Compare editing and distribution capabilities","Verify privacy and current pricing","Run one representative source asset","Review factual and voice fidelity","Choose the smallest sufficient stack"],
-    "evidence": ["Current vendor documentation and terms","Representative source-to-output tests","Approved voice examples","Human-reviewed final assets"],
-    "methodology": ["Start from the workflow","Separate vendor claims from observed results","Test the intended plan","Score voice and factual preservation","Recheck time-sensitive product details"],
-    "assumptions": ["The team owns or may lawfully reuse the source material","A human editor approves publication"],
-    "limitations": ["Products, pricing, and policies change","Automated clips and drafts can remove context or distort voice"],
-    "relationships": [{"type":"depends_on","target":"university"},{"type":"supports","target":"content-repurposing-playbook"},{"type":"uses","target":"ai-tool-evaluation-matrix-template"}]
+    "audience": "Creators, experts, founders, and lean marketing teams selecting tools for source-grounded content repurposing.",
+    "maturity": "Production",
+    "topics": [
+      "tool-selection",
+      "content-repurposing",
+      "voice",
+      "privacy"
+    ],
+    "industries": [
+      "creator-economy",
+      "publishing",
+      "professional-services",
+      "small-business"
+    ],
+    "keywords": [
+      "content repurposing tools",
+      "Opus Clip",
+      "Descript",
+      "Repurpose.io",
+      "AI content workflow"
+    ],
+    "learningPaths": [
+      "Define the source and channel outputs",
+      "Compare editing and distribution capabilities",
+      "Verify privacy and current pricing",
+      "Run one representative source asset",
+      "Review factual and voice fidelity",
+      "Choose the smallest sufficient stack"
+    ],
+    "evidence": [
+      "Current vendor documentation and terms",
+      "Representative source-to-output tests",
+      "Approved voice examples",
+      "Human-reviewed final assets"
+    ],
+    "methodology": [
+      "Start from the workflow",
+      "Separate vendor claims from observed results",
+      "Test the intended plan",
+      "Score voice and factual preservation",
+      "Recheck time-sensitive product details"
+    ],
+    "assumptions": [
+      "The team owns or may lawfully reuse the source material",
+      "A human editor approves publication"
+    ],
+    "limitations": [
+      "Products, pricing, and policies change",
+      "Automated clips and drafts can remove context or distort voice"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "university"
+      },
+      {
+        "type": "supports",
+        "target": "content-repurposing-playbook"
+      },
+      {
+        "type": "uses",
+        "target": "ai-tool-evaluation-matrix-template"
+      }
+    ]
   },
   {
-    "id": "meeting-notes-tool-guide", "kind": "toolGuide", "pathname": "/university/tools/best-for-meeting-notes",
-    "eyebrow": "Tool guide · Meetings", "title": "Best AI Tools for Meeting Notes (2026)",
+    "id": "meeting-notes-tool-guide",
+    "kind": "toolGuide",
+    "pathname": "/university/tools/best-for-meeting-notes",
+    "eyebrow": "Tool guide · Meetings",
+    "title": "Best AI tools for meeting notes",
     "summary": "A decision guide to AI meeting-note tools with a serious examination of recording consent, notice, privacy, accuracy, and human review before use.",
-    "audience": "Teams comparing meeting assistants for internal, client, or research conversations.", "maturity": "Production",
-    "topics": ["tool-selection","meeting-notes","consent","privacy"], "industries": ["professional-services","legal","healthcare","small-business"],
-    "keywords": ["AI meeting notes","Otter","Fireflies","Fathom","Granola"],
-    "learningPaths": ["Define the meeting context","Resolve consent and notice requirements","Compare capture and access models","Test summaries and action extraction","Review retention and sharing controls","Approve a bounded operating policy"],
-    "evidence": ["Current vendor privacy and security materials","Applicable meeting and recording rules","Representative transcript tests","Documented consent and review procedures"],
-    "methodology": ["Classify meeting sensitivity","Verify current vendor behavior","Test intended settings","Compare transcript and summary accuracy","Require notice, approval, and accountable follow-through"],
-    "assumptions": ["Users obtain any required consent or authorization","A human verifies decisions and action items"],
-    "limitations": ["This guide is not legal advice","Recording laws and vendor practices vary and change"],
-    "relationships": [{"type":"depends_on","target":"university"},{"type":"supports","target":"ai-for-meeting-notes-lesson"},{"type":"uses","target":"meeting-summary-prompt-pack-template"}]
+    "audience": "Teams comparing meeting assistants for internal, client, or research conversations.",
+    "maturity": "Production",
+    "topics": [
+      "tool-selection",
+      "meeting-notes",
+      "consent",
+      "privacy"
+    ],
+    "industries": [
+      "professional-services",
+      "legal",
+      "healthcare",
+      "small-business"
+    ],
+    "keywords": [
+      "AI meeting notes",
+      "Otter",
+      "Fireflies",
+      "Fathom",
+      "Granola"
+    ],
+    "learningPaths": [
+      "Define the meeting context",
+      "Resolve consent and notice requirements",
+      "Compare capture and access models",
+      "Test summaries and action extraction",
+      "Review retention and sharing controls",
+      "Approve a bounded operating policy"
+    ],
+    "evidence": [
+      "Current vendor privacy and security materials",
+      "Applicable meeting and recording rules",
+      "Representative transcript tests",
+      "Documented consent and review procedures"
+    ],
+    "methodology": [
+      "Classify meeting sensitivity",
+      "Verify current vendor behavior",
+      "Test intended settings",
+      "Compare transcript and summary accuracy",
+      "Require notice, approval, and accountable follow-through"
+    ],
+    "assumptions": [
+      "Users obtain any required consent or authorization",
+      "A human verifies decisions and action items"
+    ],
+    "limitations": [
+      "This guide is not legal advice",
+      "Recording laws and vendor practices vary and change"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "university"
+      },
+      {
+        "type": "supports",
+        "target": "ai-for-meeting-notes-lesson"
+      },
+      {
+        "type": "uses",
+        "target": "meeting-summary-prompt-pack-template"
+      }
+    ],
+    "seoTitle": "Best AI Tools for Meeting Notes (2026)",
+    "editorialIntro": [
+      "A note-taker that transcribes, summarizes, and pulls action items can hand you back real hours. But recording a conversation is a legal and human question before it is a software one. Read the consent section first.",
+      "AI note-takers have gotten genuinely good: accurate transcripts, tidy summaries, and action items you can drop straight into your task list. The differences that matter are less about summary quality and more about how the tool joins your meetings, where it stores the recording, and whether it announces itself to everyone in the room. That last point is where most teams get themselves into trouble.",
+      "Details below reflect vendor information as of mid-2026 and change often; confirm current tiers and policies on the vendor's page. Nothing here is legal advice — recording law varies by place and situation, and RN Collins is a JD candidate, not a licensed attorney."
+    ],
+    "editorialSections": [
+      {
+        "title": "In depth",
+        "blocks": [
+          {
+            "type": "quote",
+            "text": "Consent and notice come first. Recording a conversation can carry legal obligations that differ sharply by jurisdiction. Some places require only one party to consent; others require everyone on the call to consent before recording begins, and cross-border calls can trigger the strictest rule that applies to any participant. Regardless of tool: get clear consent before recording, give visible notice at the start, say what is captured and where it is stored, honor any request to stop, and set a policy for who can access recordings afterward. For anything sensitive or across borders, confirm the rules for your situation with qualified counsel."
+          }
+        ]
+      },
+      {
+        "title": "Best use cases",
+        "eyebrow": "Where they fit",
+        "blocks": [
+          {
+            "type": "table",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "Job to be done",
+                    "header": true
+                  },
+                  {
+                    "text": "Reach for",
+                    "header": true
+                  },
+                  {
+                    "text": "Why",
+                    "header": true
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Bot-based capture on calls you host"
+                  },
+                  {
+                    "text": "Otter, Fireflies"
+                  },
+                  {
+                    "text": "Join as a visible participant, transcribe live, generate summaries and action items — good when notice is easy to give."
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Simple, low-friction recording"
+                  },
+                  {
+                    "text": "Fathom"
+                  },
+                  {
+                    "text": "Generous free tier and a clean summary experience; popular with individuals and small teams."
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Bot-free, less intrusive capture"
+                  },
+                  {
+                    "text": "Granola"
+                  },
+                  {
+                    "text": "Takes notes without joining as a separate participant — but a quieter tool makes visible notice more your responsibility, not less."
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Conversation intelligence"
+                  },
+                  {
+                    "text": "Fireflies"
+                  },
+                  {
+                    "text": "Tracks topics, sentiment, and team metrics across many calls; suits sales and customer teams."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Strengths and limitations",
+        "eyebrow": "The honest trade",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "What they do well"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Accurate transcripts let you be present in the conversation instead of scribbling."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Auto-summaries and action items turn an hour-long call into a scannable recap in seconds."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Searchable archives surface what was decided months later without rewatching anything."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Integrations push notes and tasks straight into your CRM, docs, or project tool."
+            ]
+          },
+          {
+            "type": "heading",
+            "text": "Where they fall short"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Summaries miss nuance, misattribute who said what, or promote a soft comment to a firm decision. Verify anything you will act on."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Transcription stumbles on names, jargon, accents, and crosstalk. Proofread before circulating."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A visible bot changes how people speak; some conversations get guarded once recording is announced. That is the honest cost of consent."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Bot-free tools cut friction but shift the whole burden of notice onto you. Quiet capture is not a substitute for telling people."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Free tiers cap minutes, storage, or summaries; heavy use pushes you to a paid plan fast."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Privacy considerations",
+        "eyebrow": "Read before you record",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Meeting recordings are among the most sensitive data a small business holds — named people, offhand remarks, sometimes confidential client detail. Before you standardize on a tool:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Storage and retention. Know where recordings and transcripts live, for how long, and set a deletion policy. Do not let a years-long archive accumulate by default."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Training use. Check whether the vendor uses your recordings to train models, and turn that off. Business and enterprise tiers are likelier to offer clear controls."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Access and sharing. Restrict who can view recordings, and be deliberate about auto-sharing summaries — a recap emailed to the wrong list is a real leak."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Sensitive meetings. For HR, legal, medical, or financial conversations, consider not recording at all, or use a tier with a signed data agreement and strict access controls."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Guest and client calls. Your consent obligations extend to everyone present, not just your team. Give notice every time."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Pricing considerations",
+        "eyebrow": "What it costs",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "Fathom is known for an unusually generous free tier (unlimited recording with a monthly cap on AI summaries), with paid tiers for more AI features. Confirm current limits on the vendor page."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Otter offers a free tier with a monthly minute cap; paid plans commonly land near $8–$10/user/month on annual billing."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Fireflies has a free tier plus Pro around $18/user/month and Business around $29/user/month."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Granola and similar bot-free tools price per user; confirm current tiers on the vendor page."
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "The free tiers are enough to test whether the summaries fit your workflow. Buy seats only after the tool captures your meetings accurately and your consent process is in place."
+          }
+        ]
+      },
+      {
+        "title": "Workflow fit",
+        "eyebrow": "How to sequence it",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "Set the policy first. Decide who gets recorded, how consent and notice are given, and how long recordings live — before you turn anything on."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Pilot on internal calls. Test accuracy and summary quality where the stakes are low."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Standardize notice. Add a recording notice to invites and a spoken heads-up at the start of each call."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Route the output. Send action items to your task tool and archive transcripts with a retention limit, not forever."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Alternatives & questions",
+        "eyebrow": "Other paths",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Use the native platform notes"
+          },
+          {
+            "type": "paragraph",
+            "text": "Zoom, Google Meet, and Teams increasingly include built-in AI summaries, which keep data inside a platform you already trust."
+          },
+          {
+            "type": "heading",
+            "text": "Pick a tool with consent notifications built in"
+          },
+          {
+            "type": "paragraph",
+            "text": "Tools like Fellow offer both bot and bot-free modes with consent notifications built in, which lowers the odds of an unannounced recording."
+          },
+          {
+            "type": "heading",
+            "text": "Record locally, transcribe separately"
+          },
+          {
+            "type": "paragraph",
+            "text": "For maximum control, record yourself and run the file through a transcription tool you govern."
+          },
+          {
+            "type": "heading",
+            "text": "Use a human note-taker"
+          },
+          {
+            "type": "paragraph",
+            "text": "For sensitive meetings, a trusted person taking notes avoids the recording question entirely."
+          },
+          {
+            "type": "heading",
+            "text": "So what actually matters most?"
+          },
+          {
+            "type": "paragraph",
+            "text": "The tool is the easy part. The policy — consent, notice, retention, access — is what keeps AI note-taking from becoming a liability. Get that right before you scale it."
+          }
+        ]
+      },
+      {
+        "title": "Related resources",
+        "eyebrow": "Keep going",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Lesson"
+          },
+          {
+            "type": "heading",
+            "text": "Privacy and confidentiality"
+          },
+          {
+            "type": "paragraph",
+            "text": "What is safe to put into an AI tool, and what to keep out — especially for recordings that include clients."
+          },
+          {
+            "type": "paragraph",
+            "text": "Template"
+          },
+          {
+            "type": "heading",
+            "text": "Meeting summary prompt pack"
+          },
+          {
+            "type": "paragraph",
+            "text": "Prompts for turning a raw transcript or notes into a structured, actionable recap."
+          },
+          {
+            "type": "heading",
+            "text": "Build a lean AI stack"
+          },
+          {
+            "type": "paragraph",
+            "text": "Add a note-taker as the specialist layer — here is how to keep the rest of your stack small."
+          }
+        ]
+      },
+      {
+        "title": "Need help choosing your AI stack?",
+        "eyebrow": "Work with us",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "We will help you pick a note-taker and build the consent, notice, and retention policy around it — so the time you save does not come back as risk."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "university/tools/best-for-meeting-notes/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
-    "id": "research-tool-guide", "kind": "toolGuide", "pathname": "/university/tools/best-for-research",
-    "eyebrow": "Tool guide · Research", "title": "Best AI Tools for Research (2026)",
+    "id": "research-tool-guide",
+    "kind": "toolGuide",
+    "pathname": "/university/tools/best-for-research",
+    "eyebrow": "Tool guide · Research",
+    "title": "Best AI tools for research",
     "summary": "An evidence-first decision guide to AI research tools and deep-research assistants, covering source coverage, citations, verification, privacy, and current limitations.",
-    "audience": "Researchers, analysts, students, and professional teams selecting AI-assisted research workflows.", "maturity": "Production",
-    "topics": ["tool-selection","research","citations","verification"], "industries": ["research","education","legal","professional-services"],
-    "keywords": ["AI research tools","Perplexity","Elicit","Consensus","deep research"],
-    "learningPaths": ["Define the research question and source standard","Match tools to discovery or synthesis","Test citation fidelity","Retrieve and inspect primary sources","Compare coverage and omissions","Document a verified research workflow"],
-    "evidence": ["Primary sources retrieved independently","Representative search and synthesis tests","Current product documentation","Citation-verification records"],
-    "methodology": ["Separate discovery from authority","Prefer primary sources","Test citation existence and entailment","Record search boundaries","Preserve uncertainty and contradictory evidence"],
-    "assumptions": ["The researcher can access and inspect authoritative sources","Consequential conclusions receive qualified review"],
-    "limitations": ["Search coverage is incomplete and model-dependent","Citations may be wrong, stale, or unsupported"],
-    "relationships": [{"type":"depends_on","target":"university"},{"type":"supports","target":"research-use-case"},{"type":"implements","target":"how-to-verify-ai-outputs-lesson"}]
+    "audience": "Researchers, analysts, students, and professional teams selecting AI-assisted research workflows.",
+    "maturity": "Production",
+    "topics": [
+      "tool-selection",
+      "research",
+      "citations",
+      "verification"
+    ],
+    "industries": [
+      "research",
+      "education",
+      "legal",
+      "professional-services"
+    ],
+    "keywords": [
+      "AI research tools",
+      "Perplexity",
+      "Elicit",
+      "Consensus",
+      "deep research"
+    ],
+    "learningPaths": [
+      "Define the research question and source standard",
+      "Match tools to discovery or synthesis",
+      "Test citation fidelity",
+      "Retrieve and inspect primary sources",
+      "Compare coverage and omissions",
+      "Document a verified research workflow"
+    ],
+    "evidence": [
+      "Primary sources retrieved independently",
+      "Representative search and synthesis tests",
+      "Current product documentation",
+      "Citation-verification records"
+    ],
+    "methodology": [
+      "Separate discovery from authority",
+      "Prefer primary sources",
+      "Test citation existence and entailment",
+      "Record search boundaries",
+      "Preserve uncertainty and contradictory evidence"
+    ],
+    "assumptions": [
+      "The researcher can access and inspect authoritative sources",
+      "Consequential conclusions receive qualified review"
+    ],
+    "limitations": [
+      "Search coverage is incomplete and model-dependent",
+      "Citations may be wrong, stale, or unsupported"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "university"
+      },
+      {
+        "type": "supports",
+        "target": "research-use-case"
+      },
+      {
+        "type": "implements",
+        "target": "how-to-verify-ai-outputs-lesson"
+      }
+    ],
+    "seoTitle": "Best AI Tools for Research (2026)",
+    "editorialIntro": [
+      "Some tools answer with citations. Some read forty papers so you do not have to. Some just sound authoritative. Here is how to tell them apart — and match the tool to the kind of research you are actually doing.",
+      "\"Research\" covers very different jobs. Checking a current fact with a source is not the same as running a literature review, and neither is the same as reasoning through a messy strategic question. The right tool depends on which of those you mean. This guide sorts by the job, flags where each tool cites honestly versus where it can fabricate, and gives you a check for verifying what any of them return.",
+      "Details below reflect vendor information as of mid-2026. Plans, models, and query limits change frequently, so confirm the current tier on the vendor's page before relying on it."
+    ],
+    "editorialSections": [
+      {
+        "title": "Best use cases",
+        "eyebrow": "Where they fit",
+        "blocks": [
+          {
+            "type": "table",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "The job",
+                    "header": true
+                  },
+                  {
+                    "text": "Reach for",
+                    "header": true
+                  },
+                  {
+                    "text": "Why",
+                    "header": true
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Current, sourced answers"
+                  },
+                  {
+                    "text": "Perplexity"
+                  },
+                  {
+                    "text": "An answer engine that searches the live web and cites its sources inline. Best when you need up-to-date information you can click through and verify."
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Academic literature reviews"
+                  },
+                  {
+                    "text": "Elicit"
+                  },
+                  {
+                    "text": "Extracts structured data from dozens of papers at once — populations, methods, findings — a genuine time-saver for systematic reviews."
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Evidence-weighted questions"
+                  },
+                  {
+                    "text": "Consensus"
+                  },
+                  {
+                    "text": "Surfaces what published studies actually conclude on a scientific question, emphasizing peer-reviewed sources."
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Deep multi-step reports"
+                  },
+                  {
+                    "text": "ChatGPT / Claude / Gemini deep research"
+                  },
+                  {
+                    "text": "Run longer, multi-source investigations and return a synthesized brief. Useful for market scans and background memos."
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Reasoning through a hard question"
+                  },
+                  {
+                    "text": "A capable general assistant"
+                  },
+                  {
+                    "text": "Still the best partner for thinking, drafting, and stress-testing an argument once you have the facts."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Strengths and limitations",
+        "eyebrow": "The honest trade",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "What they do well"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Citation-first tools let you verify claims at the source instead of trusting a black box — the single most important property in research."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Structured extraction turns a stack of PDFs into a comparable table in minutes, work that used to take days."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Deep-research modes are genuinely good at breadth: pulling many angles into one readable draft you then refine."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Live-web tools stay current, which matters for anything that changes month to month — regulations, pricing, competitors."
+            ]
+          },
+          {
+            "type": "heading",
+            "text": "Where they fall short"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Every one of these tools can misread a source or fabricate a citation that looks real. Open the link. If a paper or quote cannot be found, treat it as false."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Citations prove a source exists, not that the tool summarized it correctly. Skim the original for anything load-bearing."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Deep-research reports read as authoritative regardless of quality. Confidence in the output is not evidence."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Academic tools cover indexed literature; they miss paywalled, very recent, or non-English work relevant to your question."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "None replace domain expertise. They accelerate a knowledgeable researcher and mislead an unknowledgeable one."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Privacy considerations",
+        "eyebrow": "Read before you upload",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Research often means uploading documents you do not own or should not share — draft manuscripts, licensed PDFs, client materials. A few guardrails:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Check training use. Free and consumer tiers may use your uploads to improve the product. Paid and enterprise tiers usually do not, but confirm the setting on the vendor's page."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Mind file retention. Some tools keep uploads for a set window. Know the retention period before you upload anything confidential, and delete when done."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Respect licensing. Uploading a paywalled paper to a third-party tool may breach the publisher's terms even if the tool itself is trustworthy — a compliance question, not just a privacy one."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Keep client work separate. For anything covered by confidentiality, use a tier with a signed data agreement and training off — or do not upload it at all."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Pricing considerations",
+        "eyebrow": "What it costs",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "Perplexity has a usable free tier (limited daily Deep Research and Pro searches) and Pro at about $20/month; higher Max and Enterprise tiers exist, plus a discounted education plan. Confirm current limits on the vendor page."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Elicit runs roughly $49/month per user for its Pro plan (billed annually), aimed at people doing sustained literature work."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Consensus offers a free tier with paid plans for heavier use; check current numbers on the vendor page."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Deep-research modes come bundled with the major assistants' paid plans (near $20/month), with higher query allowances on their $100–$200 power tiers."
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "For most people, one citation-first web tool plus a general assistant covers the majority of research needs. Add a specialist academic tool only if you regularly run literature reviews."
+          }
+        ]
+      },
+      {
+        "title": "Workflow fit",
+        "eyebrow": "How to sequence it",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "A reliable research loop, regardless of tool:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Scope the question tightly with a general assistant — vague questions produce vague research."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Gather with a citation-first tool (Perplexity for the web, Elicit or Consensus for academic questions)."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Verify every load-bearing claim at its source. This step is non-negotiable and is where the tools quietly fail."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Synthesize your verified findings with an assistant, keeping your own note of which claim came from where."
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "The tools change the gather step from days to minutes. The verify step still belongs to you."
+          }
+        ]
+      },
+      {
+        "title": "Alternatives & questions",
+        "eyebrow": "Other paths",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Semantic Scholar and Google Scholar"
+          },
+          {
+            "type": "paragraph",
+            "text": "Free foundations for finding and tracing academic literature."
+          },
+          {
+            "type": "heading",
+            "text": "scite"
+          },
+          {
+            "type": "paragraph",
+            "text": "When you need to see how a paper has been cited — supported, contrasted, or merely mentioned."
+          },
+          {
+            "type": "heading",
+            "text": "NotebookLM"
+          },
+          {
+            "type": "paragraph",
+            "text": "When you want to research within a fixed set of documents you provide, with answers grounded only in those sources."
+          },
+          {
+            "type": "heading",
+            "text": "A librarian or subject expert"
+          },
+          {
+            "type": "paragraph",
+            "text": "For high-stakes work, a human who knows the field catches what every tool misses."
+          },
+          {
+            "type": "heading",
+            "text": "What separates good AI research from bad?"
+          },
+          {
+            "type": "paragraph",
+            "text": "These tools reward people who already know how to question a source. A workflow that stays honest at speed is worth building deliberately."
+          }
+        ]
+      },
+      {
+        "title": "Related resources",
+        "eyebrow": "Keep going",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Interactive tool"
+          },
+          {
+            "type": "heading",
+            "text": "Citation verifier"
+          },
+          {
+            "type": "paragraph",
+            "text": "Run a citation through this tool to check whether the source says what it is claimed to say."
+          },
+          {
+            "type": "paragraph",
+            "text": "Lesson"
+          },
+          {
+            "type": "heading",
+            "text": "How to verify AI outputs"
+          },
+          {
+            "type": "paragraph",
+            "text": "The verification step that research tools cannot do for you — a structured habit for catching errors."
+          },
+          {
+            "type": "heading",
+            "text": "Hallucinations and risk"
+          },
+          {
+            "type": "paragraph",
+            "text": "Why confident-sounding AI output can be wrong, and how to calibrate trust accordingly."
+          },
+          {
+            "type": "heading",
+            "text": "Build a lean AI stack"
+          },
+          {
+            "type": "paragraph",
+            "text": "Perplexity or Elicit as your specialist layer — here is how to size everything else around it."
+          }
+        ]
+      },
+      {
+        "title": "Need help choosing your AI stack?",
+        "eyebrow": "Work with us",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Tell us the kind of research you do most. We will map the two or three tools that fit — and the verification habit that keeps them trustworthy."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "university/tools/best-for-research/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
-    "id": "small-business-operations-tool-guide", "kind": "toolGuide", "pathname": "/university/tools/best-for-small-business-operations",
-    "eyebrow": "Tool guide · Operations", "title": "Best AI Tools for Small Business Operations (2026)",
+    "id": "small-business-operations-tool-guide",
+    "kind": "toolGuide",
+    "pathname": "/university/tools/best-for-small-business-operations",
+    "eyebrow": "Tool guide · Operations",
+    "title": "Best AI tools for small business operations",
     "summary": "A decision guide to AI tools for automation, bookkeeping support, internal knowledge, and customer service, with practical limits, privacy, pricing, and review controls.",
-    "audience": "Small-business owners and operators selecting tools for recurring operational work.", "maturity": "Production",
-    "topics": ["tool-selection","operations","automation","knowledge-management"], "industries": ["small-business","professional-services","retail","creator-economy"],
-    "keywords": ["small business AI tools","operations automation","AI bookkeeping support","knowledge tools"],
-    "learningPaths": ["Identify the operational bottleneck","Classify data and consequence","Compare native integrations","Test one bounded workflow","Measure time, quality, and failure handling","Adopt only with ownership and review"],
-    "evidence": ["Current process baseline","Vendor documentation and terms","Representative workflow tests","Human-reviewed outputs and exception logs"],
-    "methodology": ["Select by workflow rather than novelty","Minimize tool count","Test real integrations","Price the complete operating tier","Assign an accountable owner"],
-    "assumptions": ["Core financial and business records remain in authoritative systems","Humans approve consequential actions"],
-    "limitations": ["AI does not replace accounting, legal, security, or operational expertise","Integration and pricing details change"],
-    "relationships": [{"type":"depends_on","target":"university"},{"type":"supports","target":"small-businesses-use-case"},{"type":"uses","target":"ai-tool-evaluation-matrix-template"}]
+    "audience": "Small-business owners and operators selecting tools for recurring operational work.",
+    "maturity": "Production",
+    "topics": [
+      "tool-selection",
+      "operations",
+      "automation",
+      "knowledge-management"
+    ],
+    "industries": [
+      "small-business",
+      "professional-services",
+      "retail",
+      "creator-economy"
+    ],
+    "keywords": [
+      "small business AI tools",
+      "operations automation",
+      "AI bookkeeping support",
+      "knowledge tools"
+    ],
+    "learningPaths": [
+      "Identify the operational bottleneck",
+      "Classify data and consequence",
+      "Compare native integrations",
+      "Test one bounded workflow",
+      "Measure time, quality, and failure handling",
+      "Adopt only with ownership and review"
+    ],
+    "evidence": [
+      "Current process baseline",
+      "Vendor documentation and terms",
+      "Representative workflow tests",
+      "Human-reviewed outputs and exception logs"
+    ],
+    "methodology": [
+      "Select by workflow rather than novelty",
+      "Minimize tool count",
+      "Test real integrations",
+      "Price the complete operating tier",
+      "Assign an accountable owner"
+    ],
+    "assumptions": [
+      "Core financial and business records remain in authoritative systems",
+      "Humans approve consequential actions"
+    ],
+    "limitations": [
+      "AI does not replace accounting, legal, security, or operational expertise",
+      "Integration and pricing details change"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "university"
+      },
+      {
+        "type": "supports",
+        "target": "small-businesses-use-case"
+      },
+      {
+        "type": "uses",
+        "target": "ai-tool-evaluation-matrix-template"
+      }
+    ],
+    "seoTitle": "Best AI Tools for Small Business Operations (2026)",
+    "editorialIntro": [
+      "The back office is where AI earns its keep fastest — invoicing, scheduling, knowledge, and the hundred small handoffs between apps. Here is what to reach for, and where each tool quietly falls short.",
+      "Most owners do not need a dozen AI tools. They need three or four that remove the repetitive, low-judgment work eating their week: retyping the same data across apps, categorizing expenses, drafting the same replies, hunting for the one document nobody can find. This guide sorts the operations landscape by the job you are trying to finish, not by brand.",
+      "Prices and features below reflect what vendors published as of mid-2026. Plans change often, so confirm the current tier on the vendor's page before you buy. Nothing here is financial or legal advice."
+    ],
+    "editorialSections": [
+      {
+        "title": "Best use cases",
+        "eyebrow": "Where they fit",
+        "blocks": [
+          {
+            "type": "table",
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "text": "The job",
+                    "header": true
+                  },
+                  {
+                    "text": "Reach for",
+                    "header": true
+                  },
+                  {
+                    "text": "Why",
+                    "header": true
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Connecting apps that do not talk"
+                  },
+                  {
+                    "text": "Zapier, Make"
+                  },
+                  {
+                    "text": "When a booking, form, or payment should trigger follow-on actions without code. The highest-leverage operations move for most teams."
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Bookkeeping and invoicing"
+                  },
+                  {
+                    "text": "QuickBooks (Intuit Assist)"
+                  },
+                  {
+                    "text": "Categorizes transactions, matches receipts, drafts invoices from a note or photo, and flags anomalies before your accountant does."
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Company knowledge in one place"
+                  },
+                  {
+                    "text": "Notion (Notion AI)"
+                  },
+                  {
+                    "text": "Turns scattered docs, SOPs, and meeting notes into something searchable and answerable in plain language."
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Everyday drafting and analysis"
+                  },
+                  {
+                    "text": "ChatGPT, Claude, Gemini"
+                  },
+                  {
+                    "text": "Handles emails, policies, spreadsheets, and first drafts of nearly anything."
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "text": "Front-line support"
+                  },
+                  {
+                    "text": "AI-assisted inbox / help desk"
+                  },
+                  {
+                    "text": "Drafts replies from your own past answers so customers wait minutes, not days."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Strengths and limitations",
+        "eyebrow": "The honest trade",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "What they do well"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Automation platforms remove the invisible tax of manual data entry between apps — often several hours a week per person."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "AI bookkeeping shortens month-end close and catches miscategorized transactions you would otherwise miss."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "A shared knowledge tool ends the \"where is that file\" scramble and lets a new hire self-serve answers."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "General assistants give a solo owner the drafting speed of a small team without the payroll."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Most of these tools have usable free or low-cost tiers, so you can prove value before committing budget."
+            ]
+          },
+          {
+            "type": "heading",
+            "text": "Where they fall short"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Automations break silently when an app changes its layout or renames a field. Someone has to own and monitor them."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "AI bookkeeping guesses categories; it does not replace a bookkeeper's judgment on gray areas or tax treatment. Review before filing."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Assistants sound confident when they are wrong. Any number, quote, or legal-sounding claim needs a human check."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Stacking tools multiplies subscriptions and logins. Fewer, well-chosen tools beat a sprawling collection."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Setup is real work. Value shows up after you invest an afternoon configuring, not on day one."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Privacy considerations",
+        "eyebrow": "Read before you connect",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Operations tools touch your most sensitive data — customer contacts, financials, contracts. Before connecting anything, check three things on the vendor's own trust or privacy page:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Training use. Business and team tiers of the major assistants generally do not train on your inputs by default; consumer tiers sometimes do. Confirm the setting and turn training off where the option exists."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Data location and retention. Automation platforms pass your data between services. Know where it is stored and for how long, and prefer connectors that do not retain payloads."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Access scope. When you connect an app, grant the narrowest permission that does the job. A tool that only reads invoices should not have write access to your whole accounting file."
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "If you handle health, legal, or regulated financial data, look specifically for a signed business agreement or compliance attestation before routing that data through any tool."
+          }
+        ]
+      },
+      {
+        "title": "Pricing considerations",
+        "eyebrow": "What it costs",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "General assistants cluster around $20/month for a single paid seat (ChatGPT Plus, Claude Pro, Google AI Pro near $19.99), with team tiers roughly $25–$30/seat/month. Confirm current numbers on each vendor's page."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Notion AI adds roughly $10/month per member on top of a Notion workspace."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Zapier and Make price by task or operation volume; a lean team can often start free or on an entry paid tier and scale as automations multiply."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "QuickBooks is a separate accounting subscription with its own tiers; the AI assistance is bundled rather than a standalone charge."
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "The real cost is rarely the subscription — it is the seats you buy and forget. Audit quarterly and cancel what nobody opened."
+          }
+        ]
+      },
+      {
+        "title": "Workflow fit",
+        "eyebrow": "How to sequence it",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Start with the bottleneck, not the tool. A practical order for most small operations:"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Week 1: Pick one general assistant and use it daily for real drafting. Build the habit before you add anything."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Week 2–3: Map the two workflows that waste the most time and automate them in Zapier or Make. Test with real data before trusting them."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Month 2: Move your SOPs and key docs into one knowledge tool so answers live in one searchable place."
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "Ongoing: Let AI bookkeeping run continuously, but keep a human reviewing categories before close."
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Resist adding tool five until tools one through four are genuinely part of the routine."
+          }
+        ]
+      },
+      {
+        "title": "Alternatives & questions",
+        "eyebrow": "Other paths",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Make instead of Zapier"
+          },
+          {
+            "type": "paragraph",
+            "text": "A lower-cost, more visual alternative for owners comfortable building flows themselves."
+          },
+          {
+            "type": "heading",
+            "text": "Airtable or a spreadsheet with AI features"
+          },
+          {
+            "type": "paragraph",
+            "text": "When you need a lightweight operational database rather than a full knowledge base."
+          },
+          {
+            "type": "heading",
+            "text": "Microsoft 365 Copilot"
+          },
+          {
+            "type": "paragraph",
+            "text": "If your business already lives in Outlook, Excel, and Teams, the integration can outweigh a best-in-class standalone tool."
+          },
+          {
+            "type": "heading",
+            "text": "Xero or Wave"
+          },
+          {
+            "type": "paragraph",
+            "text": "Accounting alternatives to QuickBooks, each with their own AI-assisted features; confirm current capabilities on the vendor page."
+          },
+          {
+            "type": "heading",
+            "text": "How do I know which tool solves my bottleneck?"
+          },
+          {
+            "type": "paragraph",
+            "text": "The best stack is the smallest one that clears your actual constraint. If you are unsure which tool does that, a short strategy call settles it faster than trialing five."
+          }
+        ]
+      },
+      {
+        "title": "Related resources",
+        "eyebrow": "Keep going",
+        "blocks": [
+          {
+            "type": "heading",
+            "text": "Build a lean AI stack"
+          },
+          {
+            "type": "paragraph",
+            "text": "The framework for choosing how many tools you actually need — and a starter stack for most small businesses."
+          },
+          {
+            "type": "paragraph",
+            "text": "Template"
+          },
+          {
+            "type": "heading",
+            "text": "AI implementation roadmap"
+          },
+          {
+            "type": "paragraph",
+            "text": "A week-by-week template for rolling out AI tools without overwhelming your team or your budget."
+          },
+          {
+            "type": "paragraph",
+            "text": "Playbook"
+          },
+          {
+            "type": "heading",
+            "text": "SOP and operations playbook"
+          },
+          {
+            "type": "paragraph",
+            "text": "Turn your existing workflows into AI-assisted procedures your whole team can follow."
+          }
+        ]
+      },
+      {
+        "title": "Need help choosing your AI stack?",
+        "eyebrow": "Work with us",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Bring your workflows and your headaches. In one call we will map which two or three tools remove the most work — and which ones to skip."
+          }
+        ]
+      }
+    ],
+    "editorialSource": {
+      "baseline": "b0a1b3c",
+      "sourceFile": "university/tools/best-for-small-business-operations/index.html",
+      "restoredAt": "2026-07-26"
+    }
   },
   {
-    "id": "lean-ai-stack-tool-guide", "kind": "toolGuide", "pathname": "/university/tools/build-a-lean-ai-stack",
-    "eyebrow": "Tool guide · Stack design", "title": "How to Build a Lean AI Stack (2026)",
+    "id": "lean-ai-stack-tool-guide",
+    "kind": "toolGuide",
+    "pathname": "/university/tools/build-a-lean-ai-stack",
+    "eyebrow": "Tool guide · Stack design",
+    "title": "How to Build a Lean AI Stack (2026)",
     "summary": "A five-question framework for assembling the smallest AI stack that clears real bottlenecks while controlling duplication, cost, privacy exposure, and maintenance.",
-    "audience": "Small teams that need a practical first AI stack without accumulating redundant subscriptions.", "maturity": "Production",
-    "topics": ["ai-stack","tool-selection","cost","implementation"], "industries": ["small-business","professional-services","creator-economy"],
-    "keywords": ["lean AI stack","AI software stack","AI tool selection","AI subscription costs"],
-    "learningPaths": ["Name the bottleneck","Identify the system of record","Choose one general assistant","Add specialists only for proven gaps","Test privacy and integration requirements","Review cost and remove redundancy"],
-    "evidence": ["Workflow and software inventory","Representative task tests","Vendor terms and pricing","Usage, quality, and cost data"],
-    "methodology": ["Start with existing systems","Choose the fewest tools","Test before standardizing","Document data boundaries","Review adoption and remove unused software"],
-    "assumptions": ["The organization can inventory current tools and workflows","Owners can measure whether each addition produces value"],
-    "limitations": ["A starter stack must be adapted to industry and risk","Vendor capabilities and commercial terms change"],
-    "relationships": [{"type":"depends_on","target":"university"},{"type":"supports","target":"choose-your-first-ai-stack-lesson"},{"type":"uses","target":"ai-tool-evaluation-matrix-template"}]
+    "audience": "Small teams that need a practical first AI stack without accumulating redundant subscriptions.",
+    "maturity": "Production",
+    "topics": [
+      "ai-stack",
+      "tool-selection",
+      "cost",
+      "implementation"
+    ],
+    "industries": [
+      "small-business",
+      "professional-services",
+      "creator-economy"
+    ],
+    "keywords": [
+      "lean AI stack",
+      "AI software stack",
+      "AI tool selection",
+      "AI subscription costs"
+    ],
+    "learningPaths": [
+      "Name the bottleneck",
+      "Identify the system of record",
+      "Choose one general assistant",
+      "Add specialists only for proven gaps",
+      "Test privacy and integration requirements",
+      "Review cost and remove redundancy"
+    ],
+    "evidence": [
+      "Workflow and software inventory",
+      "Representative task tests",
+      "Vendor terms and pricing",
+      "Usage, quality, and cost data"
+    ],
+    "methodology": [
+      "Start with existing systems",
+      "Choose the fewest tools",
+      "Test before standardizing",
+      "Document data boundaries",
+      "Review adoption and remove unused software"
+    ],
+    "assumptions": [
+      "The organization can inventory current tools and workflows",
+      "Owners can measure whether each addition produces value"
+    ],
+    "limitations": [
+      "A starter stack must be adapted to industry and risk",
+      "Vendor capabilities and commercial terms change"
+    ],
+    "relationships": [
+      {
+        "type": "depends_on",
+        "target": "university"
+      },
+      {
+        "type": "supports",
+        "target": "choose-your-first-ai-stack-lesson"
+      },
+      {
+        "type": "uses",
+        "target": "ai-tool-evaluation-matrix-template"
+      }
+    ]
   }
 ]
