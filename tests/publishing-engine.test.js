@@ -416,6 +416,39 @@ test('places linked proof directly after homepage problem pathways', () => {
   assert.match(html, /href="\/builds"[\s\S]*Working systems/);
 });
 
+test('renders methods as inspectable proof before internal or promotional detail', () => {
+  const methods = {
+    ...resource('methods', [{ type: 'supports', target: 'alpha' }]),
+    kind: 'research',
+    pathname: '/methods',
+    title: 'The visible interface is the end of the method, not the beginning.',
+    actions: [{ label: 'Claims and limits', href: '#claims' }],
+    editorialSections: [
+      {
+        title: 'A useful system must answer eight questions.',
+        blocks: [{ type: 'paragraph', text: 'Who remains accountable?' }]
+      },
+      {
+        id: 'claims',
+        title: 'Confidence must not outrun the evidence.',
+        blocks: [{ type: 'paragraph', text: 'Activation rule: consequential automation remains inactive until approval.' }]
+      }
+    ],
+    methodology: ['Frame the decision', 'Maintain or retire'],
+    limitations: ['AI does not replace accountable human judgment.']
+  };
+  const alpha = resource('alpha', [{ type: 'supports', target: 'methods' }]);
+  const registry = new Map([[methods.id, methods], [alpha.id, alpha]]);
+  const html = renderStructuredPage({ resource: methods, registry });
+
+  assert.doesNotMatch(html, /Canonical ID: <code>methods<\/code>/);
+  assert.match(html, /id="claims"/);
+  assert.ok(html.indexOf('A useful system must answer eight questions.') < html.indexOf('Related Research'));
+  assert.ok(html.indexOf('Confidence must not outrun the evidence.') < html.indexOf('Related Research'));
+  assert.match(html, /Maintain or retire/);
+  assert.match(html, /AI does not replace accountable human judgment/);
+});
+
 test('renders priority proof collections before registry detail in explicit order', () => {
   const proof = {
     ...resource('proof', []),
