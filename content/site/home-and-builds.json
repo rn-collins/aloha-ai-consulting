@@ -428,12 +428,17 @@
             "text": "Nineteen working instruments, each sourced and interactive: the practice, demonstrated. These are a slice of a wider body of deployed work."
           },
           {
-            "type": "paragraph",
-            "text": "See all 40+ builds on the proof wall → · All free tools, grouped by category → · See the applied stacks →"
+            "type": "links",
+            "items": [
+              {"label": "See all builds", "href": "/builds"},
+              {"label": "Open all free tools", "href": "/tools"},
+              {"label": "See the applied stacks", "href": "/stacks"}
+            ]
           },
           {
             "type": "heading",
-            "text": "Cannabis Rescheduling Monitor"
+            "text": "Cannabis Rescheduling Monitor",
+            "href": "/monitors/cannabis-rescheduling"
           },
           {
             "type": "paragraph",
@@ -441,7 +446,8 @@
           },
           {
             "type": "heading",
-            "text": "Psychedelic Reg Radar"
+            "text": "Psychedelic Reg Radar",
+            "href": "/monitors/psychedelic-radar"
           },
           {
             "type": "paragraph",
@@ -449,7 +455,8 @@
           },
           {
             "type": "heading",
-            "text": "Legal AI Workflow Teardown"
+            "text": "Legal AI Workflow Teardown",
+            "href": "/teardowns/legal-ai-workflow"
           },
           {
             "type": "paragraph",
@@ -457,7 +464,8 @@
           },
           {
             "type": "heading",
-            "text": "Citation Verifier"
+            "text": "Citation Verifier",
+            "href": "/tools/citation-verifier"
           },
           {
             "type": "paragraph",
@@ -465,7 +473,8 @@
           },
           {
             "type": "heading",
-            "text": "Brand-Perception Intelligence"
+            "text": "Brand-Perception Intelligence",
+            "href": "/intelligence/brand-perception"
           },
           {
             "type": "paragraph",
@@ -473,7 +482,8 @@
           },
           {
             "type": "heading",
-            "text": "Agentic Brand Management"
+            "text": "Agentic Brand Management",
+            "href": "/monitors/agentic-brand-management"
           },
           {
             "type": "paragraph",
@@ -481,7 +491,8 @@
           },
           {
             "type": "heading",
-            "text": "AI Creative Production Intelligence"
+            "text": "AI Creative Production Intelligence",
+            "href": "/monitors/ai-creative-production"
           },
           {
             "type": "paragraph",
@@ -489,7 +500,8 @@
           },
           {
             "type": "heading",
-            "text": "Biophilic Design Intelligence"
+            "text": "Biophilic Design Intelligence",
+            "href": "/monitors/biophilic-neuroarch"
           },
           {
             "type": "paragraph",
@@ -497,7 +509,8 @@
           },
           {
             "type": "heading",
-            "text": "Content Suppression Audit"
+            "text": "Content Suppression Audit",
+            "href": "/monitors/suppression-audit"
           },
           {
             "type": "paragraph",
@@ -505,7 +518,8 @@
           },
           {
             "type": "heading",
-            "text": "Luxury Brand Protection"
+            "text": "Luxury Brand Protection",
+            "href": "/monitors/luxury-ip"
           },
           {
             "type": "paragraph",
@@ -513,7 +527,8 @@
           },
           {
             "type": "heading",
-            "text": "AI-Readiness Scorecard"
+            "text": "AI-Readiness Scorecard",
+            "href": "/tools/ai-readiness-scorecard"
           },
           {
             "type": "paragraph",
@@ -521,7 +536,8 @@
           },
           {
             "type": "heading",
-            "text": "Biopharma Regulatory Intelligence"
+            "text": "Biopharma Regulatory Intelligence",
+            "href": "/monitors/biopharma-regulatory-intelligence"
           },
           {
             "type": "paragraph",
@@ -529,7 +545,8 @@
           },
           {
             "type": "heading",
-            "text": "Market & Competitive Intelligence"
+            "text": "Market & Competitive Intelligence",
+            "href": "/monitors/market-intel"
           },
           {
             "type": "paragraph",
@@ -537,7 +554,8 @@
           },
           {
             "type": "heading",
-            "text": "Arts & Cultural Intelligence"
+            "text": "Arts & Cultural Intelligence",
+            "href": "/monitors/arts-culture"
           },
           {
             "type": "paragraph",
@@ -545,7 +563,8 @@
           },
           {
             "type": "heading",
-            "text": "Creator Content System"
+            "text": "Creator Content System",
+            "href": "/systems/creator-content"
           },
           {
             "type": "paragraph",
@@ -553,7 +572,8 @@
           },
           {
             "type": "heading",
-            "text": "Private-AI & Data-Retention Risk"
+            "text": "Private-AI & Data-Retention Risk",
+            "href": "/monitors/private-ai-risk"
           },
           {
             "type": "paragraph",
@@ -561,7 +581,8 @@
           },
           {
             "type": "heading",
-            "text": "AI Practice-Readiness Scorecard"
+            "text": "AI Practice-Readiness Scorecard",
+            "href": "/tools/practice-readiness"
           },
           {
             "type": "paragraph",
@@ -569,7 +590,8 @@
           },
           {
             "type": "heading",
-            "text": "Is Your AI Twin Legally Exposed?"
+            "text": "Is Your AI Twin Legally Exposed?",
+            "href": "/twins/exposure-check"
           },
           {
             "type": "paragraph",
@@ -577,7 +599,8 @@
           },
           {
             "type": "heading",
-            "text": "Trust-Safe Twins"
+            "text": "Trust-Safe Twins",
+            "href": "/twins"
           },
           {
             "type": "paragraph",
@@ -587,6 +610,7 @@
       },
       {
         "title": "The Regulated Trust Stack",
+        "href": "/trust-stack",
         "eyebrow": "Products · self-serve",
         "blocks": [
           {
@@ -595,7 +619,8 @@
           },
           {
             "type": "heading",
-            "text": "The Regulated Trust Stack"
+            "text": "The Regulated Trust Stack",
+            "href": "/trust-stack"
           },
           {
             "type": "paragraph",
@@ -603,7 +628,8 @@
           },
           {
             "type": "heading",
-            "text": "Where Is Your Trust Stack Leaking?"
+            "text": "Where Is Your Trust Stack Leaking?",
+            "href": "/trust-stack/leak-check"
           },
           {
             "type": "paragraph",
