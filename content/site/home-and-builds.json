@@ -910,7 +910,7 @@
           "familyLabel": "Check a claim",
           "title": "Citation Verifier",
           "plain": "See whether a source exists and whether it actually supports the sentence attached to it.",
-          "result": "Run a citation check and inspect the reasoning.",
+          "result": "Paste a passage, run the browser-local structural check, and inspect every detected citation.",
           "action": "Try the verifier"
         },
         {
@@ -947,7 +947,7 @@
           "title": "Build Your AI Team",
           "plain": "Turn repeated work into clear human and AI roles without hiding who remains responsible.",
           "result": "See how roles, permissions, and review gates fit together.",
-          "action": "Design the team"
+          "action": "Inspect the team-design service"
         },
         {
           "resourceId": "aloha-ai-ce",
