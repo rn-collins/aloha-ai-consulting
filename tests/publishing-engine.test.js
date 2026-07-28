@@ -881,7 +881,7 @@ test('does not present a documentation-only tool as publicly interactive', () =>
   };
   const alpha = resource('alpha', [{ type: 'supports', target: 'documented-concept' }]);
   const html = renderStructuredPage({ resource: tool, registry: new Map([[tool.id, tool], [alpha.id, alpha]]) });
-  assert.match(html, /There is no public interactive surface on this page yet/);
+  assert.match(html, /currently exposes the documented research-stage record, not interactive controls/);
   assert.match(html, /Documentation only/);
   assert.doesNotMatch(html, /id="interactive-workspace"/);
   assert.doesNotMatch(html, /Try it here/);
