@@ -502,7 +502,7 @@ test('renders canonical homepage actions and linked institutional cards', () => 
     kind: 'institutional',
     pathname: '/',
     actions: [{ label: 'Explore services', href: '/alpha' }],
-    institutionalSections: [{ title: 'Start here', items: [{ title: 'Services', text: 'Choose a path.', href: '/alpha' }] }]
+    institutionalSections: [{ priority: true, title: 'Start here', items: [{ title: 'Services', text: 'Choose a path.', href: '/alpha' }] }]
   };
   const alpha = resource('alpha', [{ type: 'supports', target: 'home' }]);
   const registry = new Map([[home.id, home], [alpha.id, alpha]]);
@@ -510,11 +510,11 @@ test('renders canonical homepage actions and linked institutional cards', () => 
   assert.match(html, /Explore services/);
   assert.match(html, /class="card card--hover" href="\/alpha"/);
   assert.match(html, /_vercel\/insights\/script\.js/);
-  assert.match(html, /href="\/university\/contact">Start a conversation/);
+  assert.doesNotMatch(html, /Evidence this resource depends on/);
   assert.doesNotMatch(html, /href="\/#start">Start a conversation/);
 });
 
-test('prioritizes homepage visitor pathways before editorial depth and hides registry identity', () => {
+test('prioritizes homepage visitor pathways and does not append the legacy institutional sequence', () => {
   const home = {
     ...resource('home', [{ type: 'supports', target: 'alpha' }]),
     kind: 'institutional',
@@ -529,7 +529,8 @@ test('prioritizes homepage visitor pathways before editorial depth and hides reg
   const registry = new Map([[home.id, home], [alpha.id, alpha]]);
   const html = renderStructuredPage({ resource: home, registry });
   assert.ok(html.indexOf('Start with your problem') < html.indexOf('How the system works'));
-  assert.ok(html.indexOf('How the system works') < html.indexOf('Background'));
+  assert.doesNotMatch(html, /Background/);
+  assert.doesNotMatch(html, /home-story/);
   assert.doesNotMatch(html, /Canonical ID: <code>home<\/code>/);
   assert.doesNotMatch(html, /<p class="eyebrow">Resource type<\/p>/);
 });
