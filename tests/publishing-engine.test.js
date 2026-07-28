@@ -883,6 +883,7 @@ test('renders contact as a clear three-path human conversion journey', () => {
   };
   const html = renderStructuredPage({ resource: contact, registry: new Map([[contact.id, contact]]) });
   assert.match(html, /class="page-hero section--ink page-hero--contact"/);
+  assert.doesNotMatch(html, /class="resource-status"/);
   assert.match(html, /Talk\. Write\.<br>Or look around first\./);
   assert.equal((html.match(/class="contact-path /g) || []).length, 3);
   assert.equal((html.match(/class="contact-prompt"/g) || []).length, 3);
@@ -1289,6 +1290,9 @@ test('renders about as a concise credibility record without registry identity or
   const registry = new Map([[about.id, about], [methods.id, methods]]);
   const html = renderStructuredPage({ resource: about, registry });
 
+  assert.match(html, /class="is-resource-detail is-institutional-detail"/);
+  assert.match(html, /class="page-hero page-hero--detail"/);
+  assert.match(html, /class="detail-cover detail-cover--institutional"/);
   assert.doesNotMatch(html, /Canonical ID: <code>about<\/code>/);
   assert.doesNotMatch(html, /Duplicated long-form formation/);
   assert.equal(html.match(/What the record supports\./g)?.length, 1);
