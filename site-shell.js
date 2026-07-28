@@ -3,21 +3,21 @@
 
   const NAV_GROUPS = [
     {
-      label:'Consulting',
+      label:'Work',
       items:[
         ['/services','Services'],['/strategy','Strategy'],['/legal-ai','Legal AI'],
         ['/ai-native-coo','AI-native COO'],['/build-your-team','Build your team']
       ]
     },
     {
-      label:'Products',
+      label:'Systems',
       items:[
         ['/trust-stack','Trust Stack'],['/tools','Tools'],['/twins','Twins'],
         ['/intelligence','Intelligence'],['/builds','Builds']
       ]
     },
     {
-      label:'University',
+      label:'Learn',
       items:[
         ['/university','University home'],['/university/learn','Learn'],
         ['/university/playbooks','Playbooks'],['/university/templates','Templates'],
@@ -25,7 +25,7 @@
       ]
     },
     {
-      label:'Company',
+      label:'About',
       items:[
         ['/methods','Methods'],['/engagements','Engagements'],['/partners','Partners'],
         ['/about','About'],['/practice','Practice']
@@ -61,8 +61,7 @@
     }).join('');
 
     return '<div class="nav__in site-nav__in">'
-      +'<a class="nav__brand" href="/" aria-label="Aloha AI home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>'
-      +'<span>Aloha&nbsp;AI<small>Human intelligence, amplified</small></span></a>'
+      +'<a class="nav__brand" href="/" aria-label="Aloha AI home"><span>Aloha&nbsp;AI</span><span class="brand-spark" aria-hidden="true">✣</span></a>'
       +'<nav class="site-nav" aria-label="Primary"><ul class="site-nav__list" id="site-nav-list">'+groups+'</ul></nav>'
       +'<div class="site-nav__actions">'+link('/search','Search','site-nav__search')+link('/university/contact','Let’s build','btn btn--primary btn--sm')+'</div>'
       +'<button class="nav__burger site-nav__burger" type="button" aria-label="Open menu" aria-controls="site-nav-list" aria-expanded="false">'

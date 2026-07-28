@@ -131,6 +131,22 @@ test('publishes an accessible plain-language search journey', () => {
   assert.match(outputs.get('/sitemap.xml'), /<loc>https:\/\/aloha-ai-consulting\.vercel\.app\/search<\/loc>/);
 });
 
+test('keeps Direction 2 collection covers free of legacy shell treatments', () => {
+  const resources = [
+    resource('alpha', [{ type: 'supports', target: 'beta' }]),
+    resource('beta', [{ type: 'supports', target: 'alpha' }])
+  ];
+  const outputs = generatedOutputs(resources, derivePlatform(resources));
+  const research = outputs.get('/research');
+  const shellCss = fs.readFileSync(new URL('../site-shell.css', import.meta.url), 'utf8');
+  const pageCss = fs.readFileSync(new URL('../page-system.css', import.meta.url), 'utf8');
+  assert.match(research, /class="collection-cover collection-cover--violet"/);
+  assert.match(shellCss, /\.nav\{[^}]*background:rgba\(10,10,11/);
+  assert.doesNotMatch(shellCss, /\.site-nav__trigger\{[^}]*border-radius:8px/);
+  assert.match(pageCss, /\.collection-cover \.btn--primary\{[^}]*border-radius:0/);
+  assert.doesNotMatch(pageCss, /\.collection-cover__poster\{[^}]*box-shadow:16px 18px 0 #fff/);
+});
+
 test('bounds search metadata without changing visible editorial titles or summaries', () => {
   const longTitle = 'A deliberately long editorial heading that should remain visible while search metadata receives a separate bounded representation';
   const shortDescription = 'Browse Aloha AI by topic.';
