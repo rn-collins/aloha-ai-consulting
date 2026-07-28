@@ -977,3 +977,49 @@ test('renders about as a concise credibility record without registry identity or
   assert.ok(html.indexOf('What the record supports.') < html.indexOf('One interdisciplinary through-line.'));
   assert.match(html, /href="\/methods"/);
 });
+
+test('renders research notes and monitor pages as complete Direction 2 detail records', () => {
+  const citation = {
+    ...resource('citation-verifier', [{ type: 'supports', target: 'note' }]),
+    kind: 'tool',
+    pathname: '/tools/citation-verifier',
+    title: 'Citation Verifier',
+    maturity: 'Beta'
+  };
+  const note = {
+    ...resource('note', [{ type: 'uses', target: 'citation-verifier' }]),
+    pathname: '/notes/note',
+    title: 'A research question',
+    editorialIntro: ['This note is anchored to the Citation Verifier.'],
+    editorialSections: [{
+      title: 'The argument',
+      blocks: [{ type: 'paragraph', text: 'Open the Citation Verifier before relying on the output.' }]
+    }]
+  };
+  const monitor = {
+    ...resource('signal-watch', [{ type: 'supports', target: 'note' }]),
+    kind: 'monitor',
+    pathname: '/monitors/signal-watch',
+    monitor: {
+      updated: '2026-07-27',
+      filters: ['Policy'],
+      signals: [{ date: '2026-07-27', category: 'Policy', confidence: 'High', title: 'A signal', status: 'Review', source: 'Primary source' }],
+      checks: ['Primary source preserved']
+    },
+    editorialSections: []
+  };
+  const registry = new Map([[citation.id, citation], [note.id, note], [monitor.id, monitor]]);
+  const noteHtml = renderStructuredPage({ resource: note, registry });
+  const monitorHtml = renderStructuredPage({ resource: monitor, registry });
+
+  assert.match(noteHtml, /is-resource-detail is-research-detail/);
+  assert.match(noteHtml, /detail-dossier__item/);
+  assert.match(noteHtml, /href="\/tools\/citation-verifier">Citation Verifier<\/a>/);
+  assert.doesNotMatch(noteHtml, /Canonical ID:/);
+  assert.equal(noteHtml.match(/The argument/g)?.length, 1);
+  assert.match(monitorHtml, /is-resource-detail is-monitor-detail/);
+  assert.match(monitorHtml, /class="monitor-workspace"/);
+  assert.match(monitorHtml, /nothing is sent or monitored externally/);
+  assert.match(monitorHtml, /id="monitor-signals"/);
+  assert.match(monitorHtml, /id="monitor-coverage"/);
+});
