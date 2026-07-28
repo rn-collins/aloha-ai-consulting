@@ -478,6 +478,31 @@ test('renders University as a goal-led free learning journey before institutiona
   assert.ok(html.indexOf('id="choose-a-path"') < html.indexOf('How the school works'));
 });
 
+test('renders every University learning kind as a linked complete learning record', () => {
+  for (const kind of ['lesson', 'course', 'playbook', 'template', 'toolGuide']) {
+    const item = {
+      ...resource(`university-${kind}`, []),
+      kind,
+      pathname: `/university/${kind}s/example`,
+      title: `${kind} example`,
+      audience: 'Curious operators',
+      editorialIntro: ['Begin with the real job.'],
+      editorialSections: [{ title: 'First move', blocks: [{ type: 'paragraph', text: 'Use the Claims Checker and compare ChatGPT with Claude before deciding.' }] }]
+    };
+    const checker = { ...resource('claims-checker', []), kind: 'tool', title: 'Claims Checker', pathname: '/tools/claims-checker' };
+    const html = renderStructuredPage({ resource: item, registry: new Map([[item.id, item], [checker.id, checker]]) });
+
+    assert.match(html, /class="[^"]*is-resource-detail[^"]*"/);
+    assert.match(html, /id="learning-record"/);
+    assert.match(html, /Who this is for/);
+    assert.match(html, /href="\/tools\/claims-checker"/);
+    assert.match(html, /href="https:\/\/chatgpt\.com\/">ChatGPT<\/a>/);
+    assert.match(html, /href="https:\/\/claude\.ai\/">Claude<\/a>/);
+    assert.match(html, /\$0 · no signup/);
+    assert.doesNotMatch(html, /Canonical ID:/);
+  }
+});
+
 test('renders selected engagements before generic service mechanics with explicit relationship status', () => {
   const engagements = JSON.parse(fs.readFileSync(new URL('../content/services/engagements.json', import.meta.url)));
   const html = renderStructuredPage({ resource: engagements, registry: new Map([[engagements.id, engagements]]) });
