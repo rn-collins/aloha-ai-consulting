@@ -500,7 +500,9 @@
 .service-depth__body table{width:100%;border-collapse:collapse}.service-depth__body th,.service-depth__body td{padding:.8rem;border:1px solid var(--line);text-align:left;vertical-align:top}
 
 /* Builds · cultural magazine × proof playground */
-.page-hero--builds{min-height:min(850px,92vh);display:grid;align-items:center;overflow:hidden}
+.page-hero--builds{min-height:min(850px,92vh);display:grid;align-items:center;overflow:hidden;background:#F3F0FF;color:#111;border-bottom:1px solid #111}
+.page-hero--builds .eyebrow{color:#111}
+.page-hero--builds .btn--primary{background:#111;color:#fff;border-color:#111}
 .page-hero--builds .page-hero__inner{grid-template-columns:minmax(0,1.02fr) minmax(420px,.98fr);align-items:center}
 .page-hero--builds .display{font-size:clamp(3.5rem,6.8vw,7.4rem);line-height:.84;max-width:10ch}
 .page-hero--builds .lead{max-width:54ch}

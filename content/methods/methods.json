@@ -16,7 +16,7 @@
   "actions": [
     {
       "label": "Inspect the method",
-      "href": "#method"
+      "href": "#detail-record"
     },
     {
       "label": "Claims and limits",
