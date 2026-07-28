@@ -915,6 +915,32 @@ test('renders services as a guided decision experience before registry and edito
   assert.match(html, /href="\/university\/contact"/);
 });
 
+test('renders collection front doors with the bright editorial hero instead of the legacy fallback', () => {
+  const collection = {
+    ...resource('university-lessons', []),
+    kind: 'collection',
+    pathname: '/university/learn',
+    title: 'University lessons',
+    summary: 'Choose a practical lesson.',
+    audience: 'People learning to use AI.',
+    eyebrow: 'Free lessons'
+  };
+  const html = renderStructuredPage({ resource: collection, registry: [collection] });
+  assert.match(html, /page-hero--collection/);
+  assert.doesNotMatch(html, /<section class="page-hero">/);
+});
+
+test('renders service and research records with the bright detail hero instead of the legacy fallback', () => {
+  for (const item of [
+    { ...resource('strategy', []), kind: 'service', pathname: '/strategy' },
+    { ...resource('workflow-teardown', []), kind: 'research', pathname: '/teardowns/legal-ai-workflow' }
+  ]) {
+    const html = renderStructuredPage({ resource: item, registry: [item] });
+    assert.match(html, /page-hero--detail/);
+    assert.doesNotMatch(html, /<section class="page-hero">/);
+  }
+});
+
 test('renders a browser-only structured assessment from question metadata', () => {
   const assessment = {
     ...resource('roadmap', [{ type: 'supports', target: 'alpha' }]),
