@@ -479,7 +479,7 @@ test('renders University as a goal-led free learning journey before institutiona
 });
 
 test('renders every University learning kind as a linked complete learning record', () => {
-  for (const kind of ['lesson', 'course', 'playbook', 'template', 'toolGuide']) {
+  for (const kind of ['lesson', 'course', 'playbook', 'template', 'toolGuide', 'useCase']) {
     const item = {
       ...resource(`university-${kind}`, []),
       kind,
@@ -500,6 +500,11 @@ test('renders every University learning kind as a linked complete learning recor
     assert.match(html, /href="https:\/\/claude\.ai\/">Claude<\/a>/);
     assert.match(html, /\$0 · no signup/);
     assert.doesNotMatch(html, /Canonical ID:/);
+    if (kind === 'useCase') {
+      assert.match(html, /UNIVERSITY USE CASE/);
+      assert.match(html, /The model drafts\. A person checks and decides\./);
+      assert.match(html, /href="\/university\/use-cases"/);
+    }
   }
 });
 
