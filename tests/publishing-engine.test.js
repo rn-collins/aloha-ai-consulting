@@ -509,10 +509,47 @@ test('renders builds as a plain-language filterable proof wall before deeper rec
   assert.match(html, /Built does not always mean finished\./);
   assert.match(html, /Citation Verifier/);
   assert.match(html, /Try the verifier/);
+  assert.match(html, /Paste a passage, run the browser-local structural check/);
+  assert.match(html, /Inspect the team-design service/);
+  assert.doesNotMatch(html, />Design the team <i/);
   assert.doesNotMatch(html, /before it reaches the court/);
   assert.doesNotMatch(html, /Canonical ID: <code>builds/);
   assert.equal((html.match(/data-priority-collection=/g) || []).length, 0);
   assert.ok(html.indexOf('id="build-wall"') < html.indexOf('Behind the wall'));
+});
+
+test('proof-wall action promises match runnable destination capabilities', () => {
+  const builds = JSON.parse(fs.readFileSync(new URL('../content/site/home-and-builds.json', import.meta.url))).find((item) => item.id === 'builds');
+  const citation = JSON.parse(fs.readFileSync(new URL('../content/tools/citation-verifier.json', import.meta.url)));
+  const readiness = JSON.parse(fs.readFileSync(new URL('../content/tools/ai-readiness-scorecard.json', import.meta.url)));
+  const registry = new Map([[citation.id, citation], [readiness.id, readiness]]);
+  const citationHtml = renderStructuredPage({ resource: citation, registry });
+  const readinessHtml = renderStructuredPage({ resource: readiness, registry });
+  const citationCard = builds.buildsExperience.items.find((item) => item.resourceId === citation.id);
+  const readinessCard = builds.buildsExperience.items.find((item) => item.resourceId === readiness.id);
+
+  assert.equal(citationCard.action, 'Try the verifier');
+  assert.match(citationHtml, /id="citation-verifier-form"/);
+  assert.match(citationHtml, /id="citation-draft"/);
+  assert.match(citationHtml, />Verify citations<\/button>/);
+  assert.equal(readinessCard.action, 'Take the scorecard');
+  assert.match(readinessHtml, /id="structured-assessment"/);
+  assert.equal((readinessHtml.match(/<fieldset class="card">/g) || []).length, 6);
+  assert.match(readinessHtml, />Show my roadmap<\/button>/);
+});
+
+test('deep-section controls use explicit open and close labels, not symbol-only states', () => {
+  const builds = JSON.parse(fs.readFileSync(new URL('../content/site/home-and-builds.json', import.meta.url))).find((item) => item.id === 'builds');
+  const selected = builds.buildsExperience.items.map((entry) => ({
+    ...resource(entry.resourceId, []),
+    id: entry.resourceId,
+    pathname: `/${entry.resourceId}`,
+    maturity: 'Beta'
+  }));
+  const html = renderStructuredPage({ resource: builds, registry: new Map([[builds.id, builds], ...selected.map((item) => [item.id, item])]) });
+  assert.match(html, /class="depth-open">Open</);
+  assert.match(html, /class="depth-close">Close</);
+  assert.doesNotMatch(html, /aria-hidden="true">\+<\/i>/);
 });
 
 test('renders University as a goal-led free learning journey before institutional detail', () => {
