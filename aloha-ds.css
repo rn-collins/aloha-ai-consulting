@@ -269,9 +269,9 @@ table.data{width:100%;border-collapse:collapse;font-size:var(--fs-sm);min-width:
 .acc__panel-inner{padding:0 1.15rem 1.1rem;color:var(--muted)}
 
 /* ---- 11. NAV --------------------------------------------- */
-.skip{position:absolute;left:-999px;top:0;background:var(--teal);color:#fff;padding:.6rem 1rem;
-  border-radius:0 0 8px 0;z-index:200;font-family:var(--mono);font-size:.8rem}
-.skip:focus{left:0;color:#fff}
+.skip{position:absolute;left:0;top:0;background:var(--teal);color:#fff;padding:.6rem 1rem;
+  border-radius:0 0 8px 0;z-index:200;font-family:var(--mono);font-size:.8rem;transform:translateY(-120%)}
+.skip:focus{color:#fff;transform:translateY(0)}
 .nav{position:sticky;top:0;z-index:100;background:rgba(255,252,246,.88);backdrop-filter:saturate(180%) blur(18px);
   border-bottom:1px solid var(--line);height:var(--nav-h);transition:box-shadow var(--dur) var(--ease),background var(--dur) var(--ease)}
 .nav.is-stuck{background:rgba(252,250,245,.94);box-shadow:0 1px 0 var(--line),0 8px 24px -14px rgba(20,32,28,.4)}

@@ -632,7 +632,8 @@ test('renders canonical homepage actions and linked institutional cards', () => 
   const html = renderStructuredPage({ resource: home, registry });
   assert.match(html, /Explore services/);
   assert.match(html, /class="card card--hover" href="\/alpha"/);
-  assert.match(html, /_vercel\/insights\/script\.js/);
+  assert.doesNotMatch(html, /_vercel\/insights\/script\.js/);
+  assert.match(html, /_vercel\/speed-insights\/script\.js/);
   assert.doesNotMatch(html, /Evidence this resource depends on/);
   assert.doesNotMatch(html, /href="\/#start">Start a conversation/);
 });
@@ -1350,4 +1351,13 @@ test('renders research notes and monitor pages as complete Direction 2 detail re
   assert.match(monitorHtml, /nothing is sent or monitored externally/);
   assert.match(monitorHtml, /id="monitor-signals"/);
   assert.match(monitorHtml, /id="monitor-coverage"/);
+});
+
+test('does not render the unavailable Vercel Web Analytics script', () => {
+  const home = resource('home');
+  home.pathname = '/';
+  const html = renderStructuredPage({ resource: home, registry: new Map([[home.id, home]]) });
+
+  assert.doesNotMatch(html, /\/_vercel\/insights\/script\.js/);
+  assert.match(html, /\/_vercel\/speed-insights\/script\.js/);
 });

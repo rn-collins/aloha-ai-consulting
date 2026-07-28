@@ -1236,7 +1236,7 @@
     "pathname": "/privacy",
     "eyebrow": "Privacy",
     "title": "The honest, short version.",
-    "summary": "Aloha AI sets no cookies, builds no advertising profile, uses cookieless aggregate analytics and speed measurement, runs interactive tools entirely in the browser, and holds only the information a visitor voluntarily sends by booking or email.",
+    "summary": "Aloha AI sets no cookies, builds no advertising profile, uses cookieless performance measurement, runs interactive tools entirely in the browser, and holds only the information a visitor voluntarily sends by booking or email.",
     "audience": "Visitors, prospective clients, partners, learners, and tool users who need to understand what Aloha AI collects, how it is used, and how to request access or deletion.",
     "maturity": "Production",
     "topics": [
@@ -1259,9 +1259,9 @@
     "policyOwner": "Aloha AI, a DBA of Rayven-Nikkita Collins LLC · Honolulu, HI",
     "policySections": [
       {
-        "title": "Cookieless analytics, no ad tracking, no profile of you",
+        "title": "Cookieless performance measurement, no ad tracking, no profile of you",
         "paragraphs": [
-          "The homepage loads Vercel Web Analytics and Speed Insights. These are cookieless: they record aggregate, non-identifying signals such as page views, referrer, country-level location, and load performance, so Aloha AI can see what is useful and whether pages are fast. They set no cookies, do not fingerprint you across other sites, and do not build an advertising profile. No advertising or third-party ad trackers run anywhere on the site."
+          "The site loads Vercel Speed Insights to measure aggregate, non-identifying load performance so Aloha AI can see whether pages are fast. It sets no cookies, does not fingerprint you across other sites, and does not build an advertising profile. No advertising or third-party ad trackers run anywhere on the site."
         ]
       },
       {
@@ -1331,7 +1331,7 @@
     "methodology": [
       "Minimize collection by default",
       "Keep public interactive processing in the browser",
-      "Use cookieless aggregate analytics only",
+      "Use cookieless aggregate performance measurement only",
       "Limit retained personal information to voluntary contact and engagement records",
       "Honor access and deletion requests directly"
     ],
@@ -1362,7 +1362,7 @@
       }
     ],
     "editorialIntro": [
-      "This site is close to invisible. It sets no cookies and builds no profile of you. The homepage uses Vercel's cookieless analytics to count aggregate visits and measure page speed; nothing there identifies you or follows you across other sites. The interactive tools run entirely in your browser and send nothing anywhere. The only information I ever hold is what you choose to send me, by booking a call or by email. That's the whole policy; the rest is detail."
+      "This site is close to invisible. It sets no cookies and builds no profile of you. It uses Vercel Speed Insights to measure aggregate page performance; nothing there identifies you or follows you across other sites. The interactive tools run entirely in your browser and send nothing anywhere. The only information I ever hold is what you choose to send me, by booking a call or by email. That's the whole policy; the rest is detail."
     ],
     "editorialSections": [
       {
@@ -1374,11 +1374,11 @@
           },
           {
             "type": "heading",
-            "text": "Cookieless analytics, no ad tracking, no profile of you"
+            "text": "Cookieless performance measurement, no ad tracking, no profile of you"
           },
           {
             "type": "paragraph",
-            "text": "The homepage loads Vercel Web Analytics and Speed Insights. These are cookieless: they record aggregate, non-identifying signals such as page views, referrer, country-level location, and load performance, so I can see what is useful and whether pages are fast. They set no cookies, do not fingerprint you to follow you across other sites, and do not build an advertising profile. No advertising or third-party ad trackers run anywhere on the site, and the interactive tools still send nothing."
+            "text": "The site loads Vercel Speed Insights to measure aggregate, non-identifying load performance so I can see whether pages are fast. It sets no cookies, does not fingerprint you to follow you across other sites, and does not build an advertising profile. No advertising or third-party ad trackers run anywhere on the site, and the interactive tools still send nothing."
           },
           {
             "type": "heading",
