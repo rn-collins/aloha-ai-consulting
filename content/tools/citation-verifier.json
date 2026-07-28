@@ -46,6 +46,10 @@
       "target": "trust-stack"
     }
   ],
+  "demo": {
+    "type": "citation-verifier",
+    "sample": "The draft cites Brown v. Board of Education, 347 U.S. 483 (1954), Example v. Fiction, 999 F.4d 12 (2027), and Sample v. Test, 42 F. Supp. 5th 100 (2024)."
+  },
   "seoTitle": "Citation Verifier",
   "editorialIntro": [
     "Paste an AI-drafted brief and this tool reads every US reporter citation, flags the ones that mark a fabrication (an invented reporter series, an impossible year, a malformed volume or page), and returns a risk score with a per-citation verdict. The structural checks run in your browser with no network call. A live existence check against real case law is one click away.",
