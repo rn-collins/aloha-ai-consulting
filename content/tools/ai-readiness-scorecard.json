@@ -39,6 +39,14 @@
     }
   ],
   "assessment": {
+    "questions": [
+      {"id":"decision_clarity","prompt":"Is there a written AI strategy tied to named business decisions and outcomes?","options":[{"value":"yes","label":"Yes, and leadership uses it","dimension":"decision_clarity","score":0},{"value":"partial","label":"Partly or informally","dimension":"decision_clarity","score":1},{"value":"no","label":"No","dimension":"decision_clarity","score":2}]},
+      {"id":"evidence","prompt":"Can the organization show current evidence for how its AI systems perform?","options":[{"value":"yes","label":"Yes, with maintained records","dimension":"evidence","score":0},{"value":"partial","label":"For some systems","dimension":"evidence","score":1},{"value":"no","label":"No","dimension":"evidence","score":2}]},
+      {"id":"governance","prompt":"Are approval authority, prohibited uses, and escalation paths explicit?","options":[{"value":"yes","label":"Yes","dimension":"governance","score":0},{"value":"partial","label":"Only in places","dimension":"governance","score":1},{"value":"no","label":"No","dimension":"governance","score":2}]},
+      {"id":"workflow","prompt":"Are human review gates built into the actual workflow?","options":[{"value":"yes","label":"Yes","dimension":"workflow","score":0},{"value":"partial","label":"Inconsistently","dimension":"workflow","score":1},{"value":"no","label":"No","dimension":"workflow","score":2}]},
+      {"id":"data","prompt":"Are data access, retention, and vendor boundaries documented?","options":[{"value":"yes","label":"Yes","dimension":"data","score":0},{"value":"partial","label":"Partly","dimension":"data","score":1},{"value":"no","label":"No","dimension":"data","score":2}]},
+      {"id":"implementation","prompt":"Does one named person own implementation, evaluation, and maintenance?","options":[{"value":"yes","label":"Yes, with authority","dimension":"implementation","score":0},{"value":"partial","label":"Named, but without a full mandate","dimension":"implementation","score":1},{"value":"no","label":"No","dimension":"implementation","score":2}]}
+    ],
     "dimensions": [
       "decision_clarity",
       "evidence",
