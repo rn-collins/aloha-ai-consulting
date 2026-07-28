@@ -952,6 +952,58 @@ test('renders institutional and legal-policy resources from structured contracts
   assert.match(policyHtml, /"@type":"WebPage"/);
 });
 
+test('renders product and governance resources as complete Direction 2 detail records', () => {
+  const product = {
+    ...resource('regulatory-intelligence', [{ type: 'implements', target: 'terms' }]),
+    kind: 'product',
+    pathname: '/trust-stack/regulatory-intelligence',
+    maturity: 'Research',
+    implementationStatus: 'Architecture exists; generalized packaging remains in research.',
+    architecture: ['Authority registry', 'Change detection'],
+    documentation: ['Verification rules'],
+    roadmap: ['Publish implementation package'],
+    changelog: ['2026-07: product contract added'],
+    licensing: 'Planned for defined institutional implementations.',
+    editorialSections: [{ title: 'What is inside', blocks: [{ type: 'paragraph', text: 'Use Citation Verifier and Novel Review Instrument before relying on a generated citation.' }] }]
+  };
+  const policy = {
+    ...resource('terms', [{ type: 'documents', target: 'regulatory-intelligence' }]),
+    kind: 'policy',
+    pathname: '/terms',
+    effectiveDate: '2026-07-04',
+    policySections: [{ order: 1, title: 'Informational use', paragraphs: ['Citation Verifier does not replace professional review.'] }]
+  };
+  const citation = {
+    ...resource('citation-verifier', []),
+    kind: 'tool',
+    pathname: '/tools/citation-verifier',
+    title: 'Citation Verifier'
+  };
+  const novel = {
+    ...resource('novel-review-instrument', []),
+    kind: 'tool',
+    pathname: '/tools/novel-review-instrument',
+    title: 'Novel Review Instrument'
+  };
+  const registry = new Map([[product.id, product], [policy.id, policy], [citation.id, citation], [novel.id, novel]]);
+  const productHtml = renderStructuredPage({ resource: product, registry });
+  const policyHtml = renderStructuredPage({ resource: policy, registry });
+
+  assert.match(productHtml, /is-resource-detail is-product-detail/);
+  assert.match(productHtml, /PRODUCT SYSTEM/);
+  assert.match(productHtml, /Architecture, status, and evidence in one place/);
+  assert.match(productHtml, /Architecture exists; generalized packaging remains in research/);
+  assert.match(productHtml, /href="\/tools\/citation-verifier">Citation Verifier<\/a>/);
+  assert.match(productHtml, /href="\/tools\/novel-review-instrument">Novel Review Instrument<\/a>/);
+  assert.doesNotMatch(productHtml, /Canonical ID:/);
+  assert.equal(productHtml.match(/Evidence, method, assumptions, and limits\./g)?.length, 1);
+  assert.match(policyHtml, /is-resource-detail is-policy-detail/);
+  assert.match(policyHtml, /POLICY RECORD/);
+  assert.match(policyHtml, /Effective 2026-07-04/);
+  assert.match(policyHtml, /href="\/tools\/citation-verifier">Citation Verifier<\/a>/);
+  assert.doesNotMatch(policyHtml, /style="margin-top:1rem"/);
+});
+
 test('renders about as a concise credibility record without registry identity or duplicated editorial biography', () => {
   const about = {
     ...resource('about', [{ type: 'uses', target: 'methods' }]),

@@ -256,6 +256,9 @@
 .detail-cover--monitor{background:var(--detail-pool);box-shadow:14px 14px 0 var(--detail-hot)}
 .detail-cover--tool{background:var(--detail-acid);box-shadow:14px 14px 0 var(--detail-electric)}
 .detail-cover--assessment{background:var(--detail-hot);box-shadow:14px 14px 0 var(--detail-pool)}
+.detail-cover--product{background:var(--detail-electric);box-shadow:14px 14px 0 var(--detail-acid)}
+.detail-cover--institutional{background:var(--detail-paper);box-shadow:14px 14px 0 var(--detail-hot)}
+.detail-cover--policy{background:var(--detail-acid);box-shadow:14px 14px 0 var(--detail-pool)}
 .detail-cover::before{content:"";position:absolute;inset:18px;border:1px solid rgba(16,18,15,.55)}
 .detail-cover__issue{position:absolute;top:32px;left:34px;margin:0;font:850 .65rem/1 var(--mono);letter-spacing:.11em}
 .detail-cover__type{position:absolute;inset:100px 30px auto;display:grid;font:950 clamp(3.3rem,6.4vw,6.3rem)/.75 var(--sans);letter-spacing:-.085em}
@@ -312,6 +315,14 @@
 .detail-dossier__body{max-width:78ch;margin-left:70px;padding:0 0 clamp(2rem,5vw,4rem);font-size:1.04rem}
 .detail-dossier__body h3{margin-top:2rem;font-family:var(--sans);font-weight:900}.detail-dossier__body a{font-weight:800;text-decoration-thickness:2px}
 .detail-dossier__body table{width:100%;border-collapse:collapse}.detail-dossier__body th,.detail-dossier__body td{padding:.75rem;border:1px solid var(--detail-ink);text-align:left;vertical-align:top}
+.product-record{background:var(--detail-paper)}
+.governance-record{background:#fffdf7}
+.governance-record__items{display:grid;gap:0;border-top:1px solid var(--detail-ink)}
+.governance-record__items article{display:grid;grid-template-columns:48px minmax(0,1fr);gap:1rem;padding:1.35rem 0;border-bottom:1px solid var(--detail-ink)}
+.governance-record__items article>span{font:850 .68rem/1 var(--mono)}
+.governance-record__items article h3{margin:0 0 .5rem}
+.governance-record__items article p{margin:.45rem 0}
+.governance-record__items article a{display:inline-block;margin-top:.5rem}
 .detail-accountability{padding-block:clamp(4.5rem,9vw,9rem);background:var(--detail-hot);color:var(--detail-ink)}
 .detail-accountability__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:2px solid var(--detail-ink);border-left:2px solid var(--detail-ink)}
 .detail-accountability__grid article{padding:clamp(1.3rem,3vw,2.4rem);border-right:2px solid var(--detail-ink);border-bottom:2px solid var(--detail-ink);background:#fffdf7}
@@ -338,6 +349,7 @@
   .detail-cover__stamp{width:82px;height:82px}
   .detail-facts div{grid-template-columns:76px 1fr}.detail-accountability__grid,.detail-related__grid{grid-template-columns:1fr}
   .detail-dossier__item summary{grid-template-columns:34px minmax(0,1fr) 38px}.detail-dossier__body{margin-left:0}
+  .governance-record__items article{grid-template-columns:32px minmax(0,1fr)}
   .monitor-panel{box-shadow:5px 5px 0 var(--detail-ink)}
 }
 @media(prefers-reduced-motion:reduce){
