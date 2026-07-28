@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "dev": "vite",
     "site:validate": "node scripts/build-site.js --validate",
     "site:build": "node scripts/build-site.js",
     "site:check": "node scripts/build-site.js --check",
@@ -13,6 +14,9 @@
     "site:smoke": "node scripts/smoke-test.js",
     "site:test": "node --test tests/*.test.js",
     "site:ci": "npm run site:test && npm run site:validate && npm run site:build && npm run site:audit && npm run site:check && npm run site:html"
+  },
+  "devDependencies": {
+    "vite": "^7.1.0"
   },
   "engines": {
     "node": "24.x"
