@@ -21,14 +21,14 @@
 .site-nav__search:hover,.site-nav__search[aria-current="page"]{color:#0a0a0b;background:var(--shell-acid);border-color:var(--shell-acid)}
 .site-nav__actions .btn--primary{min-height:40px;padding:.55rem .85rem;border:1px solid var(--shell-hot);border-radius:0;background:var(--shell-hot);color:#0a0a0b;box-shadow:none}
 .site-nav__actions .btn--primary:hover{background:var(--shell-acid);border-color:var(--shell-acid);transform:translate(-2px,-2px);box-shadow:4px 4px 0 #fff}
-.site-nav__burger{display:none}
+.site-nav__burger{display:none;color:var(--shell-paper)!important;border:1px solid rgba(245,234,216,.62)!important;border-radius:0!important}
 .site-nav__trigger:focus-visible,.site-nav__search:focus-visible,.site-nav__panel a:focus-visible,.site-nav__burger:focus-visible{outline:3px solid var(--shell-acid);outline-offset:3px}
 
 /* One authoritative Direction 2 shell. Page-specific legacy selectors must
    never switch the background while retaining light navigation text. */
-body .nav{background:rgba(10,10,11,.97);border-bottom:2px solid #ff5c40}
-body .nav__brand,body .site-nav__trigger,body .site-nav__search{color:#f5ead8}
-body .site-nav__search{border-color:rgba(245,234,216,.62)}
+body .nav{background:rgba(10,10,11,.97)!important;border-bottom:2px solid #ff5c40!important}
+body .nav__brand,body .site-nav__trigger,body .site-nav__search{color:#f5ead8!important}
+body .site-nav__search{border-color:rgba(245,234,216,.62)!important}
 .site-footer__grid{grid-template-columns:1.5fr repeat(3,1fr)}
 .site-footer__brand{display:inline-block;margin-bottom:var(--s3);font-family:var(--serif);font-size:1.45rem;color:var(--cream);text-decoration:none}
 .site-footer__intro{max-width:40ch;color:#CFDAD5}
