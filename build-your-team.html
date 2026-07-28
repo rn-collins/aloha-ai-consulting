@@ -228,9 +228,7 @@ $("#leadForm").addEventListener("submit", e=>{
     .then(r=>r.json())
     .then(j=>{ $("#leadForm").outerHTML=`<p style="color:var(--teal-mint);margin:0">${esc(j.message||"Thanks — RN will follow up with your mockup and next steps.")}</p>`; })
     .catch(()=>{
-      const subj=encodeURIComponent(`Aloha AI team mockup — ${does} / ${show}`);
-      const body=encodeURIComponent(`I'd like the AI team mockup for: ${does}, themed to ${show}. My email: ${email}`);
-      $("#leadMsg").innerHTML=`Saved. To reach RN directly: <a style="color:var(--teal-mint)" href="mailto:collins.ra@northeastern.edu?subject=${subj}&body=${body}">email the mockup</a> or use Book a call above.`;
+      $("#leadMsg").innerHTML=`Saved. Use Book a call above to reach RN directly for your mockup.`;
     });
 });
 
