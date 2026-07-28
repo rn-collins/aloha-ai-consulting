@@ -760,6 +760,36 @@ test('renders University institutional pages as complete linked orientation reco
   assert.doesNotMatch(html, /Canonical ID:/);
 });
 
+test('renders paid University services through the complete Direction 2 service journey', () => {
+  const registry = new Map();
+  const service = { ...resource('university-ai-strategy-sprint', []),
+    kind: 'service',
+    pathname: '/university/services/ai-strategy-sprint',
+    audience: 'Operators deciding where AI belongs.',
+    timeline: 'Two weeks',
+    fit: ['A decision-maker is available'],
+    deliverables: ['Prioritized roadmap'],
+    methodology: ['Map the workflows'],
+    evidence: ['Workflow interviews'],
+    assumptions: ['Representative examples are available'],
+    limitations: ['Not legal advice'],
+    editorialIntro: ['Replace scattered experiments with a sequenced plan.'],
+    editorialSections: [{ eyebrow: 'Scope', title: 'What is included', blocks: [{ type: 'paragraph', text: 'A complete working record.' }] }]
+  };
+  registry.set(service.id, service);
+  const html = renderStructuredPage({ resource: service, registry });
+  assert.match(html, /is-resource-detail is-service-detail/);
+  assert.match(html, /class="service-brief"/);
+  assert.match(html, /class="service-outcomes"/);
+  assert.match(html, /class="service-process"/);
+  assert.match(html, /class="service-record"/);
+  assert.match(html, /class="service-boundary"/);
+  assert.match(html, /class="service-close"/);
+  assert.doesNotMatch(html, /Canonical ID/);
+  assert.doesNotMatch(html, /class="section section--ink"/);
+  assert.doesNotMatch(html, /class="method-steps"/);
+});
+
 test('renders priority proof collections before registry detail in explicit order', () => {
   const proof = {
     ...resource('proof', []),
