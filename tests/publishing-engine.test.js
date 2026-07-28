@@ -898,6 +898,7 @@ test('renders services as a guided decision experience before registry and edito
   const html = renderStructuredPage({ resource: services, registry: new Map([[services.id, services], [intelligence.id, intelligence]]) });
   assert.match(html, /id="choose-problem"/);
   assert.match(html, /class="service-hero-map"/);
+  assert.match(html, /class="services-ticker"/);
   assert.match(html, /Find the/);
   assert.match(html, /People<br><b>\+<\/b> AI/);
   assert.match(html, /What keeps getting stuck\?/);
