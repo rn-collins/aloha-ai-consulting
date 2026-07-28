@@ -605,11 +605,12 @@ test('renders selected engagements before generic service mechanics with explici
   const html = renderStructuredPage({ resource: engagements, registry: new Map([[engagements.id, engagements]]) });
   const commissioned = html.indexOf('data-engagement-status="commissioned"');
   const independent = html.indexOf('data-engagement-status="independent"');
-  const identity = html.indexOf('Canonical ID:');
+  const serviceJourney = html.indexOf('class="service-brief"');
 
   assert.ok(commissioned > 0);
   assert.ok(independent > commissioned);
-  assert.ok(identity > independent);
+  assert.ok(serviceJourney > independent);
+  assert.doesNotMatch(html, /Canonical ID:/);
   assert.match(html, /Legal-AI workflow development on the Harvey platform/);
   assert.match(html, /RN’s role:/);
   assert.match(html, /Commissioned · active/);
@@ -970,6 +971,41 @@ test('renders service and research records with the bright detail hero instead o
     const html = renderStructuredPage({ resource: item, registry: [item] });
     assert.match(html, /page-hero--detail/);
     assert.doesNotMatch(html, /<section class="page-hero">/);
+  }
+});
+
+test('renders every consulting service as a complete contemporary service journey', () => {
+  const services = [
+    {
+      ...resource('strategy', []),
+      kind: 'service',
+      pathname: '/strategy',
+      audience: 'Leaders deciding where AI belongs.',
+      deliverables: ['Decision map'],
+      methodology: ['Map the work'],
+      fit: ['Ownership is unclear']
+    },
+    {
+      ...resource('university-service', []),
+      kind: 'service',
+      pathname: '/university/services/ai-strategy-sprint',
+      audience: 'Small teams.',
+      deliverables: ['Roadmap'],
+      methodology: ['Prioritize'],
+      fit: ['The first move is unclear']
+    }
+  ];
+  const registry = new Map(services.map((item) => [item.id, item]));
+
+  for (const service of services) {
+    const html = renderStructuredPage({ resource: service, registry });
+    assert.match(html, /class="service-brief"/);
+    assert.match(html, /class="service-outcomes"/);
+    assert.match(html, /class="service-process"/);
+    assert.match(html, /class="service-fit"/);
+    assert.match(html, /class="service-boundary"/);
+    assert.match(html, /class="service-close"/);
+    assert.doesNotMatch(html, /class="resource-identity"/);
   }
 });
 
