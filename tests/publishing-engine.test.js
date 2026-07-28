@@ -124,11 +124,31 @@ test('publishes an accessible plain-language search journey', () => {
   const outputs = generatedOutputs(resources, derivePlatform(resources));
   const search = outputs.get('/search');
   assert.match(search, /<form class="search-form" role="search"/);
-  assert.match(search, /What do you need help with\?/);
+  assert.match(search, /What are you trying/);
+  assert.match(search, /Loading the resource index/);
+  assert.match(search, /aria-busy="true"/);
+  assert.match(search, /Search needs JavaScript, but the site does not/);
+  assert.match(search, /The index did not load/);
   assert.ok(search.includes("fetch('/search-index.json')"));
   assert.match(search, /Start a conversation/);
   assert.ok(outputs.has('/search-index.json'));
   assert.match(outputs.get('/sitemap.xml'), /<loc>https:\/\/aloha-ai-consulting\.vercel\.app\/search<\/loc>/);
+});
+
+test('publishes an authored recovery journey for unknown routes', () => {
+  const resources = [
+    resource('alpha', [{ type: 'supports', target: 'beta' }]),
+    resource('beta', [{ type: 'supports', target: 'alpha' }])
+  ];
+  const outputs = generatedOutputs(resources, derivePlatform(resources));
+  const notFound = outputs.get('/404');
+  assert.match(notFound, /class="is-not-found"/);
+  assert.match(notFound, /This route does not exist/);
+  assert.match(notFound, /action="\/search"/);
+  assert.match(notFound, /href="\/tools"/);
+  assert.match(notFound, /href="\/methods"/);
+  assert.match(notFound, /noindex,follow/);
+  assert.doesNotMatch(outputs.get('/sitemap.xml'), /\/404<\/loc>/);
 });
 
 test('keeps Direction 2 collection covers free of legacy shell treatments', () => {

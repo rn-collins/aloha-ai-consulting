@@ -102,11 +102,21 @@
 
     const burger=document.querySelector('.site-nav__burger');
     const list=document.querySelector('.site-nav__list');
+    function setMenu(open,returnFocus){
+      if(!burger||!list) return;
+      burger.setAttribute('aria-expanded',String(open));
+      burger.setAttribute('aria-label',open?'Close menu':'Open menu');
+      list.classList.toggle('open',open);
+      document.body.classList.toggle('has-open-menu',open);
+      if(open){
+        const first=list.querySelector('button,a');
+        if(first) first.focus();
+      } else if(returnFocus) burger.focus();
+    }
     if(burger&&list){
       burger.addEventListener('click',function(){
         const open=burger.getAttribute('aria-expanded')==='true';
-        burger.setAttribute('aria-expanded',String(!open));
-        list.classList.toggle('open',!open);
+        setMenu(!open,false);
       });
     }
 
@@ -120,13 +130,20 @@
 
     document.addEventListener('click',function(event){
       if(!event.target.closest('.site-nav__group')) closeGroups();
+      if(burger&&list&&list.classList.contains('open')&&!event.target.closest('.site-nav__in')) setMenu(false,false);
     });
     document.addEventListener('keydown',function(event){
       if(event.key==='Escape'){
+        const menuWasOpen=Boolean(list&&list.classList.contains('open'));
         closeGroups();
-        if(burger&&list){burger.setAttribute('aria-expanded','false');list.classList.remove('open');}
+        setMenu(false,menuWasOpen);
       }
     });
+    if(list){
+      list.addEventListener('click',function(event){
+        if(event.target.closest('a')) setMenu(false,false);
+      });
+    }
 
     const observer='IntersectionObserver' in window ? new IntersectionObserver(function(entries){
       entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target);}});
