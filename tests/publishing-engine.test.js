@@ -941,6 +941,11 @@ test('renders service and research records with the bright detail hero instead o
   }
 });
 
+test('contains long code samples without widening the page', () => {
+  const css = fs.readFileSync(new URL('../page-system.css', import.meta.url), 'utf8');
+  assert.match(css, /pre\{max-width:100%;overflow-x:auto\}/);
+});
+
 test('renders a browser-only structured assessment from question metadata', () => {
   const assessment = {
     ...resource('roadmap', [{ type: 'supports', target: 'alpha' }]),
