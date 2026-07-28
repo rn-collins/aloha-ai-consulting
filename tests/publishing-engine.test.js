@@ -1361,3 +1361,12 @@ test('does not render the unavailable Vercel Web Analytics script', () => {
   assert.doesNotMatch(html, /\/_vercel\/insights\/script\.js/);
   assert.match(html, /\/_vercel\/speed-insights\/script\.js/);
 });
+
+test('allows long discovery-card titles to wrap within narrow mobile viewports', () => {
+  const css = fs.readFileSync(path.join(process.cwd(), 'page-system.css'), 'utf8');
+
+  assert.match(
+    css,
+    /\.discovery-resource>strong\{[^}]*min-width:0[^}]*overflow-wrap:anywhere[^}]*\}/
+  );
+});
