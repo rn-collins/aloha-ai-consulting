@@ -784,6 +784,10 @@ test('renders a browser-only structured assessment from question metadata', () =
   assert.match(html, /id="structured-assessment"/);
   assert.match(html, /What is the goal\?/);
   assert.match(html, /processed in this browser/);
+  assert.match(html, /is-resource-detail is-assessment-detail/);
+  assert.match(html, /id="interactive-workspace"/);
+  assert.match(html, /Do not skip this part/);
+  assert.doesNotMatch(html, /Canonical ID:/);
 });
 
 test('renders a declarative monitor dashboard with dated signals and local coverage scoring', () => {
@@ -863,6 +867,24 @@ test('renders a declarative browser-local operational tool', () => {
   assert.match(html, /id="browser-tool-input"/);
   assert.match(html, /processed in this browser/);
   assert.match(html, /Obligation/);
+  assert.match(html, /is-resource-detail is-tool-detail/);
+  assert.match(html, /Try it here/);
+  assert.match(html, /Output and boundary belong together/);
+  assert.doesNotMatch(html, /Canonical ID:/);
+});
+
+test('does not present a documentation-only tool as publicly interactive', () => {
+  const tool = {
+    ...resource('documented-concept', [{ type: 'supports', target: 'alpha' }]),
+    kind: 'tool',
+    maturity: 'Research'
+  };
+  const alpha = resource('alpha', [{ type: 'supports', target: 'documented-concept' }]);
+  const html = renderStructuredPage({ resource: tool, registry: new Map([[tool.id, tool], [alpha.id, alpha]]) });
+  assert.match(html, /There is no public interactive surface on this page yet/);
+  assert.match(html, /Documentation only/);
+  assert.doesNotMatch(html, /id="interactive-workspace"/);
+  assert.doesNotMatch(html, /Try it here/);
 });
 
 test('renders declarative structured forms for documents and scored diagnostics', () => {
