@@ -650,7 +650,8 @@ test('prioritizes homepage visitor pathways and does not append the legacy insti
   const alpha = resource('alpha', [{ type: 'supports', target: 'home' }]);
   const registry = new Map([[home.id, home], [alpha.id, alpha]]);
   const html = renderStructuredPage({ resource: home, registry });
-  assert.ok(html.indexOf('Start with your problem') < html.indexOf('How the system works'));
+  assert.ok(html.indexOf('Start with your problem') < html.indexOf('Choose the next move'));
+  assert.doesNotMatch(html, /How the system works/);
   assert.doesNotMatch(html, /Background/);
   assert.doesNotMatch(html, /home-story/);
   assert.doesNotMatch(html, /Canonical ID: <code>home<\/code>/);
@@ -674,7 +675,8 @@ test('places linked proof directly after homepage problem pathways', () => {
   const registry = new Map([[home.id, home], [alpha.id, alpha], [builds.id, builds]]);
   const html = renderStructuredPage({ resource: home, registry });
   assert.ok(html.indexOf('Start with your problem') < html.indexOf('See the work'));
-  assert.ok(html.indexOf('See the work') < html.indexOf('Practice narrative'));
+  assert.ok(html.indexOf('See the work') < html.indexOf('Choose the next move'));
+  assert.doesNotMatch(html, /Practice narrative/);
   assert.match(html, /href="\/builds"[\s\S]*Working systems/);
 });
 
