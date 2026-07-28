@@ -265,6 +265,7 @@
 .is-template-detail{--detail-hero:var(--detail-hot);--detail-hero-mark:var(--detail-pool)}
 .is-toolGuide-detail{--detail-hero:#f3f0ff;--detail-hero-mark:var(--detail-hot)}
 .is-useCase-detail{--detail-hero:#ffd86b;--detail-hero-mark:var(--detail-electric)}
+.is-learningHub-detail{--detail-hero:#f3f0ff;--detail-hero-mark:var(--detail-hot)}
 .is-resource-detail .nav{background:var(--detail-ink);color:#fff;border-bottom:1px solid rgba(255,255,255,.22)}
 .is-resource-detail .page-hero--detail{position:relative;min-height:min(850px,calc(100svh - var(--nav-h)));display:grid;align-items:center;background:var(--detail-hero);color:var(--detail-ink);overflow:hidden;border-bottom:3px solid var(--detail-ink)}
 .is-resource-detail .page-hero--detail::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(16,18,15,.075) 1px,transparent 1px),linear-gradient(90deg,rgba(16,18,15,.075) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to right,#000,transparent 64%)}
@@ -295,6 +296,8 @@
 .detail-cover--template{background:var(--detail-hot);box-shadow:14px 14px 0 var(--detail-pool)}
 .detail-cover--toolGuide{background:#f3f0ff;box-shadow:14px 14px 0 var(--detail-hot)}
 .detail-cover--useCase{background:#ffd86b;box-shadow:14px 14px 0 var(--detail-electric)}
+.detail-cover--methods{background:var(--detail-paper);box-shadow:14px 14px 0 var(--detail-electric)}
+.detail-cover--universityInstitutional{background:#f3f0ff;box-shadow:14px 14px 0 var(--detail-hot)}
 .detail-cover::before{content:"";position:absolute;inset:18px;border:1px solid rgba(16,18,15,.55)}
 .detail-cover__issue{position:absolute;top:32px;left:34px;margin:0;font:850 .65rem/1 var(--mono);letter-spacing:.11em}
 .detail-cover__type{position:absolute;inset:100px 30px auto;display:grid;font:950 clamp(3.3rem,6.4vw,6.3rem)/.75 var(--sans);letter-spacing:-.085em}

@@ -672,6 +672,32 @@ test('renders methods as inspectable proof before internal or promotional detail
   assert.match(html, /AI does not replace accountable human judgment/);
 });
 
+test('renders University institutional pages as complete linked orientation records', () => {
+  const guide = {
+    ...resource('university-start-here', [{ type: 'supports', target: 'alpha' }]),
+    kind: 'learningHub',
+    pathname: '/university/start-here',
+    title: 'Choose your first practical path',
+    audience: 'New learners choosing where to begin.',
+    editorialIntro: ['Start with the work you need to do.'],
+    editorialSections: [{
+      title: 'Choose by need',
+      blocks: [{ type: 'heading', text: 'Open alpha' }, { type: 'paragraph', text: 'Use alpha as the next step.' }]
+    }],
+    learningPaths: ['Orient', 'Choose', 'Begin']
+  };
+  const alpha = { ...resource('alpha', [{ type: 'supports', target: 'university-start-here' }]), title: 'alpha' };
+  const registry = new Map([[guide.id, guide], [alpha.id, alpha]]);
+  const html = renderStructuredPage({ resource: guide, registry });
+
+  assert.match(html, /is-resource-detail is-learningHub-detail/);
+  assert.match(html, /UNIVERSITY GUIDE/);
+  assert.match(html, /id="institutional-record"/);
+  assert.match(html, /href="\/alpha"/);
+  assert.match(html, /Evidence, method, assumptions, and limits stay visible/);
+  assert.doesNotMatch(html, /Canonical ID:/);
+});
+
 test('renders priority proof collections before registry detail in explicit order', () => {
   const proof = {
     ...resource('proof', []),
