@@ -353,10 +353,40 @@ test('renders taxonomy directories as navigable indexes with a search escape hat
   const legal = { ...resource('legal', [{ type: 'supports', target: 'health' }]), industries: ['legal'] };
   const health = { ...resource('health', [{ type: 'supports', target: 'legal' }]), industries: ['health'] };
   const html = generatedOutputs([legal, health], derivePlatform([legal, health])).get('/industries');
-  assert.match(html, /class="is-directory"/);
-  assert.match(html, /Another way into Aloha AI/);
-  assert.match(html, /describe your question instead/);
+  assert.match(html, /class="is-directory is-discovery-directory/);
+  assert.match(html, /Discovery lens · Field or market/);
+  assert.match(html, /describe your question in Search/);
   assert.match(html, /2 paths/);
+});
+
+test('renders taxonomy paths as filterable Direction 2 discovery records', () => {
+  const legal = { ...resource('legal-research', []), kind: 'researchNote', pathname: '/notes/legal-research', topics: ['legal-ai'], industries: ['legal'], maturity: 'Research' };
+  const tool = { ...resource('citation-tool', []), kind: 'tool', pathname: '/tools/citation-tool', topics: ['legal-ai'], industries: ['legal'], maturity: 'Beta' };
+  const platform = derivePlatform([legal, tool]);
+  const outputs = generatedOutputs([legal, tool], platform);
+  const directory = outputs.get('/topics');
+  const detail = outputs.get('/topics/legal-ai');
+  assert.match(directory, /is-discovery-directory/);
+  assert.match(directory, /Filter these paths/);
+  assert.match(directory, /class="discovery-empty" hidden/);
+  assert.match(detail, /is-discovery-collection/);
+  assert.match(detail, /data-resource-filter="all"/);
+  assert.match(detail, /href="\/tools\/citation-tool"/);
+  assert.match(detail, /Open the canonical page/);
+  assert.doesNotMatch(detail, /class="page-hero section--ink"/);
+});
+
+test('renders the stacks front door as a linked applied-systems index', () => {
+  const index = { ...resource('applied-ai-stacks', []), kind: 'collection', pathname: '/stacks', collection: { kinds: ['useCase'], pathPrefix: '/stacks/' } };
+  const stack = { ...resource('law-firm-stack', []), kind: 'useCase', pathname: '/stacks/law-firm', title: 'Law Firm AI Stack', maturity: 'Production' };
+  const registry = new Map([[index.id, index], [stack.id, stack]]);
+  const html = renderStructuredPage({ resource: index, registry });
+  assert.match(html, /class="is-stacks-index"/);
+  assert.match(html, /See how the layers work together/);
+  assert.match(html, /href="\/stacks\/law-firm"/);
+  assert.match(html, /Open the complete stack/);
+  assert.doesNotMatch(html, /Canonical ID:/);
+  assert.doesNotMatch(html, /class="page-hero section--ink"/);
 });
 
 test('tools collection is a question-led shelf with visible privacy and status boundaries', () => {
