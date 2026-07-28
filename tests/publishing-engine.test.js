@@ -145,6 +145,11 @@ test('keeps Direction 2 collection covers free of legacy shell treatments', () =
   assert.doesNotMatch(shellCss, /\.site-nav__trigger\{[^}]*border-radius:8px/);
   assert.match(pageCss, /\.collection-cover \.btn--primary\{[^}]*border-radius:0/);
   assert.doesNotMatch(pageCss, /\.collection-cover__poster\{[^}]*box-shadow:16px 18px 0 #fff/);
+  assert.match(pageCss, /\.collection-cover__poster\{[^}]*overflow:hidden/);
+  assert.match(pageCss, /\.collection-cover__poster i\{[^}]*max-width:calc\(100% - 3rem\)/);
+  assert.match(pageCss, /\.collection-cover__copy h1\{font-size:clamp\(2\.8rem,13\.5vw,4\.6rem\)/);
+  assert.match(research, /See how the thinking becomes something you can use\./);
+  assert.match(research, /ALOHA AI · INDEX 02/);
 });
 
 test('bounds search metadata without changing visible editorial titles or summaries', () => {
@@ -181,6 +186,25 @@ test('rejects malformed structured editorial copy', () => {
   assert.ok(errors.includes('alpha: editorial section 1 requires a title'));
   assert.ok(errors.includes('alpha: editorial section 1 block 1 list requires non-empty items'));
   assert.ok(errors.includes('alpha: editorial section 1 block 2 has an unsupported type'));
+});
+
+test('requires named homepage tools and products to link to their canonical pages', () => {
+  const linked = {
+    ...resource('linked-tools'),
+    editorialSections: [{
+      title: 'Live intelligence tools',
+      blocks: [{ type: 'heading', text: 'Citation Verifier', href: '/tools/citation-verifier' }]
+    }]
+  };
+  const unlinked = {
+    ...linked,
+    editorialSections: [{
+      title: 'Live intelligence tools',
+      blocks: [{ type: 'heading', text: 'Citation Verifier' }]
+    }]
+  };
+  assert.doesNotMatch(validatePlatform([linked], derivePlatform([linked])).errors.join('\n'), /does not link/);
+  assert.match(validatePlatform([unlinked], derivePlatform([unlinked])).errors.join('\n'), /names a resource but does not link it/);
 });
 
 test('derives controlled audience groups without fragmenting prose', () => {
@@ -319,7 +343,7 @@ test('renders generated collection front doors as plain-language editorial index
   const html = generatedOutputs([alpha, beta], derivePlatform([alpha, beta])).get('/monitors');
   assert.match(html, /class="is-editorial-collection is-collection-monitors"/);
   assert.match(html, /Watch what changes\. Understand why it matters\./);
-  assert.match(html, /Every entry tells you what it is and how far along it is/);
+  assert.match(html, /Every entry tells you what it is and whether it is ready to use/);
   assert.match(html, /Public beta/);
   assert.match(html, /Open the monitor/);
   assert.doesNotMatch(html, />Discovery</);
