@@ -1015,6 +1015,8 @@ test('renders product and governance resources as complete Direction 2 detail re
   const policyHtml = renderStructuredPage({ resource: policy, registry });
 
   assert.match(productHtml, /is-resource-detail is-product-detail/);
+  assert.match(productHtml, /class="page-hero page-hero--detail"/);
+  assert.doesNotMatch(productHtml, /class="page-hero section--ink page-hero--detail"/);
   assert.match(productHtml, /PRODUCT SYSTEM/);
   assert.match(productHtml, /Architecture, status, and evidence in one place/);
   assert.match(productHtml, /Architecture exists; generalized packaging remains in research/);
