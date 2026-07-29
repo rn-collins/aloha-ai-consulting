@@ -55,6 +55,12 @@ const forbiddenColors = [
   '#e8e4da'
 ];
 const findings = [];
+const retiredFaviconFingerprints = [
+  '#14201c',
+  '#1b7a68',
+  '#7fe0c4',
+  'm16 5c3.6 4.2'
+];
 
 for (const relative of forbiddenFiles) {
   if (fs.existsSync(path.join(root, relative))) {
@@ -73,6 +79,14 @@ for (const file of walk(root)) {
   const text = fs.readFileSync(file, 'utf8').toLowerCase();
   for (const color of forbiddenColors) {
     if (text.includes(color)) findings.push(`${relative}: forbidden legacy color ${color}`);
+  }
+}
+
+for (const file of walk(root).filter((candidate) => path.basename(candidate) === 'favicon.svg')) {
+  const relative = path.relative(root, file);
+  const text = fs.readFileSync(file, 'utf8').toLowerCase();
+  for (const fingerprint of retiredFaviconFingerprints) {
+    if (text.includes(fingerprint)) findings.push(`${relative}: retired favicon fingerprint ${fingerprint}`);
   }
 }
 
