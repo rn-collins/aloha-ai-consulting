@@ -421,7 +421,7 @@
       },
       {
         "type": "supports",
-        "target": "university-services-collection"
+        "target": "services"
       }
     ],
     "seoTitle": "Bring me the thing that keeps getting stuck.",
