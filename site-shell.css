@@ -68,7 +68,7 @@ body .site-nav__search{border-color:rgba(245,234,216,.62)!important}
 }
 
 /* Contact · Direction 2: cultural magazine × digital playground */
-.is-contact{background:#f5f0e6}
+.is-contact{background:#f3f0ff}
 .page-hero--contact{overflow:hidden;background:#12201c;color:#f7f1e7}
 .page-hero--contact .page-hero__inner{align-items:stretch;gap:clamp(2rem,5vw,6rem)}
 .page-hero--contact .page-hero__copy{display:flex;flex-direction:column;justify-content:center}
@@ -108,7 +108,7 @@ body .site-nav__search{border-color:rgba(245,234,216,.62)!important}
 .contact-prompt p{max-width:48rem;margin:0;font-size:1rem}
 .contact-note__email{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-top:2rem;padding:1.15rem 1.4rem;background:#12201c;color:#f7f1e7;font-family:var(--mono);font-size:.75rem;font-weight:800;text-transform:uppercase;text-decoration:none;border:2px solid #12201c}
 .contact-note__email:hover,.contact-note__email:focus-visible{background:#c82f65}
-.contact-next{background:#f5f0e6}
+.contact-next{background:#f3f0ff}
 .contact-next__steps{display:grid;grid-template-columns:repeat(3,1fr);border:2px solid #12201c}
 .contact-next__step{display:grid;grid-template-columns:auto 1fr;gap:1.2rem;min-height:16rem;padding:1.5rem;border-right:2px solid #12201c}
 .contact-next__step:last-child{border-right:0}
@@ -119,7 +119,7 @@ body .site-nav__search{border-color:rgba(245,234,216,.62)!important}
 .contact-next__step:nth-child(2){background:#8ed8ff}
 .contact-next__step:nth-child(3){background:#b9ff66}
 .contact-boundary{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:2rem;background:#12201c;border:2px solid #12201c}
-.contact-boundary p{display:grid;gap:.65rem;margin:0;padding:1.4rem;background:#f5f0e6}
+.contact-boundary p{display:grid;gap:.65rem;margin:0;padding:1.4rem;background:#f3f0ff}
 .contact-boundary b{font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.05em}
 .contact-boundary span{font-size:.88rem;line-height:1.5}
 
