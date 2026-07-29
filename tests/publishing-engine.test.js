@@ -764,11 +764,11 @@ test('renders University institutional pages as complete linked orientation reco
   assert.doesNotMatch(html, /Canonical ID:/);
 });
 
-test('renders paid University services through the complete Direction 2 service journey', () => {
+test('renders detailed consulting services beneath the canonical Services parent', () => {
   const registry = new Map();
   const service = { ...resource('university-ai-strategy-sprint', []),
     kind: 'service',
-    pathname: '/university/services/ai-strategy-sprint',
+    pathname: '/services/ai-strategy-sprint',
     audience: 'Operators deciding where AI belongs.',
     timeline: 'Two weeks',
     fit: ['A decision-maker is available'],
@@ -788,6 +788,8 @@ test('renders paid University services through the complete Direction 2 service 
   assert.match(html, /class="service-process"/);
   assert.match(html, /class="service-record"/);
   assert.match(html, /class="service-boundary"/);
+  assert.match(html, /href="\/services">Compare all services/);
+  assert.doesNotMatch(html, /href="\/university\/services"/);
   assert.match(html, /class="service-close"/);
   assert.doesNotMatch(html, /Canonical ID/);
   assert.doesNotMatch(html, /class="section section--ink"/);
@@ -1012,9 +1014,9 @@ test('renders every consulting service as a complete contemporary service journe
       fit: ['Ownership is unclear']
     },
     {
-      ...resource('university-service', []),
+      ...resource('strategy-sprint', []),
       kind: 'service',
-      pathname: '/university/services/ai-strategy-sprint',
+      pathname: '/services/ai-strategy-sprint',
       audience: 'Small teams.',
       deliverables: ['Roadmap'],
       methodology: ['Prioritize'],

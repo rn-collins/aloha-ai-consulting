@@ -2,7 +2,7 @@
   {
     "id": "university-ai-strategy-sprint",
     "kind": "service",
-    "pathname": "/university/services/ai-strategy-sprint",
+    "pathname": "/services/ai-strategy-sprint",
     "eyebrow": "Service · Strategy sprint",
     "title": "Two weeks to a roadmap you can actually run.",
     "summary": "A focused audit that inventories workflows, scores opportunities by impact, effort, and risk, and produces a sequenced AI roadmap.",
@@ -60,7 +60,7 @@
     "relationships": [
       {
         "type": "depends_on",
-        "target": "university-services-collection"
+        "target": "services"
       },
       {
         "type": "uses",
@@ -313,7 +313,7 @@
   {
     "id": "university-ai-workflow-design",
     "kind": "service",
-    "pathname": "/university/services/ai-workflow-design",
+    "pathname": "/services/ai-workflow-design",
     "eyebrow": "Service · Workflow design",
     "title": "Design the workflow before anyone builds it.",
     "summary": "A build-ready blueprint defining every AI step, prompt, decision rule, checkpoint, human review, and failure path before implementation.",
@@ -622,7 +622,7 @@
   {
     "id": "university-ai-implementation",
     "kind": "service",
-    "pathname": "/university/services/ai-implementation",
+    "pathname": "/services/ai-implementation",
     "eyebrow": "Service · Implementation",
     "title": "We build the thing, and hand you the keys.",
     "summary": "Implementation of a scoped assistant, workflow, or knowledge system, tested on real work and transferred with documentation and operator enablement.",
@@ -688,7 +688,7 @@
       },
       {
         "type": "produced_by",
-        "target": "university-services-collection"
+        "target": "services"
       }
     ],
     "editorialIntro": [
@@ -933,7 +933,7 @@
   {
     "id": "university-ai-governance-setup",
     "kind": "service",
-    "pathname": "/university/services/ai-governance-setup",
+    "pathname": "/services/ai-governance-setup",
     "eyebrow": "Service · Governance and safe use",
     "title": "Say yes to AI without saying yes to the exposure.",
     "summary": "A practical governance setup defining acceptable use, data handling, disclosure, review, and rollout for teams already adopting AI.",
@@ -992,7 +992,7 @@
     "relationships": [
       {
         "type": "depends_on",
-        "target": "university-services-collection"
+        "target": "services"
       },
       {
         "type": "implements",
@@ -1249,7 +1249,7 @@
   {
     "id": "university-team-training",
     "kind": "service",
-    "pathname": "/university/services/team-training",
+    "pathname": "/services/team-training",
     "eyebrow": "Service · Team training",
     "title": "Fluency for the whole team, not just the early adopters.",
     "summary": "Live, hands-on training built around the team’s actual work, teaching useful mechanics and the judgment to know when AI should not be used.",
@@ -1306,7 +1306,7 @@
     "relationships": [
       {
         "type": "depends_on",
-        "target": "university-services-collection"
+        "target": "services"
       },
       {
         "type": "teaches",
@@ -1559,7 +1559,7 @@
   {
     "id": "university-ongoing-advisory",
     "kind": "service",
-    "pathname": "/university/services/ongoing-advisory",
+    "pathname": "/services/ongoing-advisory",
     "eyebrow": "Service · Fractional AI lead",
     "title": "A senior AI partner, without the full-time hire.",
     "summary": "Ongoing strategy, prioritization, implementation support, governance maintenance, and team enablement for organizations treating AI as a durable capability.",
@@ -1617,7 +1617,7 @@
     "relationships": [
       {
         "type": "depends_on",
-        "target": "university-services-collection"
+        "target": "services"
       },
       {
         "type": "supports",
