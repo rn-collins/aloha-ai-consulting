@@ -901,6 +901,30 @@ test('routes the global navigation conversion action to the canonical contact en
   assert.doesNotMatch(shell, /link\('\/#start','Work with us'/);
 });
 
+test('presents five direct visitor doors instead of nested internal navigation', () => {
+  const shell = fs.readFileSync(new URL('../site-shell.js', import.meta.url), 'utf8');
+  assert.match(shell, /\['\/services','What We Build'\]/);
+  assert.match(shell, /\['\/builds','See the Work'\]/);
+  assert.match(shell, /\['\/methods','How It Works'\]/);
+  assert.match(shell, /\['\/university','Learn'\]/);
+  assert.match(shell, /\['\/about','About'\]/);
+  assert.doesNotMatch(shell, /NAV_GROUPS/);
+  assert.doesNotMatch(shell, /site-nav__panel/);
+});
+
+test('uses the current coral spark favicon and neutral browser chrome', () => {
+  const icon = fs.readFileSync(new URL('../favicon.svg', import.meta.url), 'utf8');
+  const pageRenderer = fs.readFileSync(new URL('../lib/site/page-renderer.js', import.meta.url), 'utf8');
+  const structuredRenderer = fs.readFileSync(new URL('../lib/site/structured-renderer.js', import.meta.url), 'utf8');
+  const publishingEngine = fs.readFileSync(new URL('../lib/site/publishing-engine.js', import.meta.url), 'utf8');
+  assert.match(icon, /#FF684C/);
+  assert.match(icon, /#0A0A0B/);
+  for (const source of [pageRenderer, structuredRenderer, publishingEngine]) {
+    assert.match(source, /theme-color" content="#0A0A0B"/);
+    assert.match(source, /rel="icon" href="\/favicon\.svg"/);
+  }
+});
+
 test('renders services as a guided decision experience before registry and editorial depth', () => {
   const services = {
     ...resource('services'),
