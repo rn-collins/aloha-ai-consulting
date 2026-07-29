@@ -1325,9 +1325,11 @@ test('renders about as a concise credibility record without registry identity or
   assert.match(html, /Record basis: research experience/);
   assert.match(html, /links show application, not independent verification/);
   assert.match(html, />Inspect the applied method →<\/a>/);
-  assert.match(html, /<div class="card"><span class="card__index">01<\/span><h3>Research rigor<\/h3>[\s\S]*?<a class="mini" href="\/methods">Inspect the applied method →<\/a><\/div>/);
+  assert.match(html, /<div class="governance-record__items"><article><span>01<\/span><div><h3>Research rigor<\/h3>[\s\S]*?<a href="\/methods">Inspect the applied method →<\/a><\/div><\/article><\/div>/);
   assert.doesNotMatch(html, /<a class="card card--hover" href="\/methods"><h3>Research rigor<\/h3>/);
-  assert.ok(html.indexOf('What the record supports.') < html.indexOf('One interdisciplinary through-line.'));
+  assert.ok(html.indexOf('One interdisciplinary through-line.') < html.indexOf('What the record supports.'));
+  assert.match(html, /class="primary-door-close"/);
+  assert.doesNotMatch(html, /About the practice<\/a>/);
   assert.match(html, /href="\/methods"/);
 });
 
