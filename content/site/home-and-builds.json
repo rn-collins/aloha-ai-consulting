@@ -182,6 +182,29 @@
         ]
       },
       {
+        "priority": true,
+        "eyebrow": "Related tools",
+        "title": "More tools across the Aloha AI ecosystem.",
+        "intro": "Aloha AI Consulting is the hub. These sibling tools are built and maintained under the same practice.",
+        "items": [
+          {
+            "title": "Behavioral Intelligence Layer",
+            "text": "A behavioral-signal layer for reading how people actually act, not just what they say.",
+            "href": "https://aloha-behavioral-intelligence.vercel.app"
+          },
+          {
+            "title": "Culture Intelligence Monitor",
+            "text": "A sourced, dated monitor for tracking culture and workplace signal across teams.",
+            "href": "https://aloha-culture-monitor.vercel.app"
+          },
+          {
+            "title": "Aloha Build Club",
+            "text": "The daily room where builders ship in public, in the open.",
+            "href": "https://aloha-build-club.vercel.app"
+          }
+        ]
+      },
+      {
         "eyebrow": "The transformation",
         "title": "From valuable knowledge to infrastructure others can operate.",
         "items": [
