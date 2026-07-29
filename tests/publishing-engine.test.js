@@ -163,7 +163,7 @@ test('keeps Direction 2 collection covers free of legacy shell treatments', () =
   const pageCss = fs.readFileSync(new URL('../page-system.css', import.meta.url), 'utf8');
   assert.match(research, /class="collection-cover collection-cover--violet"/);
   assert.match(shellCss, /body \.nav\{[^}]*background:rgba\(10,10,11,.97\)!important/);
-  assert.match(shellCss, /body \.nav__brand,body \.site-nav__trigger,body \.site-nav__search\{color:#f5ead8!important\}/);
+  assert.match(shellCss, /body \.nav__brand,body \.site-nav__trigger,body \.site-nav__search\{color:#ffffff!important\}/);
   assert.match(shellCss, /\.site-nav__burger\{[^}]*color:var\(--shell-paper\)!important[^}]*border:1px solid rgba\(245,234,216,.62\)!important/);
   assert.doesNotMatch(homeCss, /\.is-home \.nav\{[^}]*background:/);
   assert.match(homeCss, /\.js \.motion-ready\{opacity:1;transform:none\}/);

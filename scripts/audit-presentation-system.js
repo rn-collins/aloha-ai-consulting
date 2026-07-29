@@ -29,7 +29,30 @@ const forbiddenColors = [
   '#fff7e9',
   '#ffecdc',
   '#fffdf7',
-  '#f4efe5'
+  '#f4efe5',
+  '#f5ead8',
+  '#f8f5ed',
+  '#0e1815',
+  '#111815',
+  '#121a17',
+  '#18382f',
+  '#2c463e',
+  '#315047',
+  '#33504f',
+  '#3a564d',
+  '#45645a',
+  '#496057',
+  '#6c837b',
+  '#8fa69e',
+  '#9fb6ae',
+  '#badfd6',
+  '#c7c4bc',
+  '#cfdad5',
+  '#d5e2dd',
+  '#d6e2dd',
+  '#d6e4df',
+  '#dce7e2',
+  '#e8e4da'
 ];
 const findings = [];
 
