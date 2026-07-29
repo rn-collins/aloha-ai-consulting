@@ -41,7 +41,7 @@
   display:block;
   padding:0;
   overflow:hidden;
-  background:#f5f0e5;
+  background:#f3f0ff;
   color:#10120f;
 }
 .is-services .page-hero--services::before{display:none}
