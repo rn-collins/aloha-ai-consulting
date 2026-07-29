@@ -51,26 +51,8 @@
     "institutionalSections": [
       {
         "eyebrow": "What this practice is",
-        "title": "A systems practice for questions too consequential or too complicated for a generic template.",
-        "intro": "The interface may be a website, dashboard, agent, assessment, portal, curriculum, report, or monitor. The actual work is defining what the system should know, which sources it should trust, how decisions should be made, where humans remain responsible, and how the system stays current.",
-        "items": [
-          {
-            "title": "For",
-            "text": "Founders, institutions, legal and compliance teams, educators, researchers, regulated operators, and expert-led organizations."
-          },
-          {
-            "title": "Produces",
-            "text": "Research engines, decision systems, governed workflows, products, curricula, licensing assets, and operational plans."
-          },
-          {
-            "title": "Operating principle",
-            "text": "Visible evidence, explicit logic, bounded automation, and accountable human judgment."
-          }
-        ]
-      },
-      {
-        "eyebrow": "The system beneath the interface",
-        "title": "A credible answer needs more than a polished surface.",
+        "title": "The interface is only the visible part.",
+        "intro": "Aloha AI works with founders, institutions, legal and compliance teams, educators, researchers, regulated operators, and expert-led organizations. The deliverable may be a website, dashboard, agent, assessment, portal, curriculum, report, or monitor. The work underneath is deciding what the system should know, which sources it should trust, how decisions should be made, where humans remain responsible, and how the system stays current.",
         "items": [
           {
             "title": "Evidence",
@@ -178,85 +160,6 @@
             "title": "RN Collins",
             "text": "Read the interdisciplinary formation behind the practice and the limits stated around it.",
             "href": "/about"
-          }
-        ]
-      },
-      {
-        "priority": true,
-        "eyebrow": "Related tools",
-        "title": "More tools across the Aloha AI ecosystem.",
-        "intro": "Aloha AI Consulting is the hub. These sibling tools are built and maintained under the same practice.",
-        "items": [
-          {
-            "title": "Behavioral Intelligence Layer",
-            "text": "A behavioral-signal layer for reading how people actually act, not just what they say.",
-            "href": "https://aloha-behavioral-intelligence.vercel.app"
-          },
-          {
-            "title": "Culture Intelligence Monitor",
-            "text": "A sourced, dated monitor for tracking culture and workplace signal across teams.",
-            "href": "https://aloha-culture-monitor.vercel.app"
-          },
-          {
-            "title": "Aloha Build Club",
-            "text": "The daily room where builders ship in public, in the open.",
-            "href": "https://aloha-build-club.vercel.app"
-          }
-        ]
-      },
-      {
-        "eyebrow": "The transformation",
-        "title": "From valuable knowledge to infrastructure others can operate.",
-        "items": [
-          {
-            "title": "Scattered documents",
-            "text": "Become structured, maintained knowledge."
-          },
-          {
-            "title": "Expertise held by a few people",
-            "text": "Becomes guided workflows others can use."
-          },
-          {
-            "title": "Repeated manual research",
-            "text": "Becomes maintained intelligence from defined sources."
-          },
-          {
-            "title": "Unwritten judgment",
-            "text": "Becomes explicit logic, exceptions, and review paths."
-          },
-          {
-            "title": "AI experiments",
-            "text": "Become operational systems with accountable ownership."
-          },
-          {
-            "title": "One-time services",
-            "text": "Become reusable products, methods, programs, and licensed assets."
-          }
-        ]
-      },
-      {
-        "eyebrow": "Products, tools, and learning",
-        "title": "Use the ecosystem before commissioning a custom build.",
-        "items": [
-          {
-            "title": "Tools",
-            "text": "Readiness, citation, exposure, workflow, and risk tools.",
-            "href": "/tools"
-          },
-          {
-            "title": "Regulated Trust Stack",
-            "text": "Evidence, compliance, production, persuasion, distribution, and defense systems.",
-            "href": "/trust-stack"
-          },
-          {
-            "title": "Aloha AI University",
-            "text": "Lessons, playbooks, templates, use cases, assessments, and courses.",
-            "href": "/university"
-          },
-          {
-            "title": "Aloha AI Workspace",
-            "text": "Projects, workflows, evidence, reviews, evaluations, and delivery controls.",
-            "href": "/platform"
           }
         ]
       },
@@ -454,9 +357,18 @@
           {
             "type": "links",
             "items": [
-              {"label": "See all builds", "href": "/builds"},
-              {"label": "Open all free tools", "href": "/tools"},
-              {"label": "See the applied stacks", "href": "/stacks"}
+              {
+                "label": "See all builds",
+                "href": "/builds"
+              },
+              {
+                "label": "Open all free tools",
+                "href": "/tools"
+              },
+              {
+                "label": "See the applied stacks",
+                "href": "/stacks"
+              }
             ]
           },
           {
