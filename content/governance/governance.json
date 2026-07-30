@@ -1236,7 +1236,7 @@
     "pathname": "/privacy",
     "eyebrow": "Privacy",
     "title": "The honest, short version.",
-    "summary": "Aloha AI sets no cookies, builds no advertising profile, uses cookieless performance measurement, runs interactive tools entirely in the browser, and holds only the information a visitor voluntarily sends by booking or email.",
+    "summary": "Aloha AI sets no cookies or advertising trackers, uses cookieless performance measurement, and collects contact information only when a visitor chooses to book or email.",
     "audience": "Visitors, prospective clients, partners, learners, and tool users who need to understand what Aloha AI collects, how it is used, and how to request access or deletion.",
     "maturity": "Production",
     "topics": [
@@ -1261,7 +1261,7 @@
       {
         "title": "Cookieless performance measurement, no ad tracking, no profile of you",
         "paragraphs": [
-          "The site loads Vercel Speed Insights to measure aggregate, non-identifying load performance so Aloha AI can see whether pages are fast. It sets no cookies, does not fingerprint you across other sites, and does not build an advertising profile. No advertising or third-party ad trackers run anywhere on the site."
+          "The site loads Vercel Speed Insights to measure anonymous load-performance data so Aloha AI can see whether pages are fast. It sets no cookies, does not follow you across other sites, and does not build an advertising profile. No advertising or third-party ad trackers run on the site."
         ]
       },
       {

@@ -140,6 +140,8 @@ test('publishes an accessible plain-language search journey', () => {
   const search = outputs.get('/search');
   assert.match(search, /<form class="search-form" role="search"/);
   assert.match(search, /What are you trying/);
+  assert.match(search, /aria-label="What are you trying to do\?"/);
+  assert.match(search, /<b>2<br><small>canonical resources<\/small><\/b>/);
   assert.match(search, /Loading the resource index/);
   assert.match(search, /aria-busy="true"/);
   assert.match(search, /Search needs JavaScript, but the site does not/);
@@ -162,7 +164,8 @@ test('publishes an authored recovery journey for unknown routes', () => {
   assert.match(notFound, /action="\/search"/);
   assert.match(notFound, /href="\/tools"/);
   assert.match(notFound, /href="\/methods"/);
-  assert.match(notFound, /noindex,follow/);
+  assert.equal(notFound.match(/name="robots"/g)?.length, 1);
+  assert.match(notFound, /content="noindex, follow"/);
   assert.doesNotMatch(outputs.get('/sitemap.xml'), /\/404<\/loc>/);
 });
 
@@ -989,7 +992,7 @@ test('renders services as a guided decision experience before registry and edito
   assert.match(html, /Our research is scattered\./);
   assert.match(html, /id="engagement-paths"/);
   assert.match(html, /Systems Audit/);
-  assert.match(html, /Want to see exactly how the work is designed\?/);
+  assert.match(html, /Inspect the scope, deliverables, and boundaries\./);
   assert.match(html, /<details class="service-depth__item">/);
   assert.equal(html.match(/In-depth service detail/g)?.length, 1);
   assert.doesNotMatch(html, /Canonical ID: <code>services/);

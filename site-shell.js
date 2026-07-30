@@ -43,7 +43,7 @@
   function footerMarkup(){
     return '<div class="wrap wrap--wide">'
       +'<div class="footer__grid site-footer__grid">'
-      +'<div><a class="site-footer__brand" href="/">Aloha AI</a><p class="site-footer__intro">AI strategy, regulatory intelligence, education, and governed systems for work where trust matters.</p><p class="disc">A practice of RN Collins. Human accountability remains part of every consequential workflow.</p></div>'
+      +'<div><a class="site-footer__brand" href="/">Aloha AI</a><p class="site-footer__intro">Complex work, made usable.</p><p class="disc">RN Collins turns research, expertise, and recurring work into practical AI strategies, workflows, tools, and systems people can inspect, use, and maintain.</p></div>'
       +FOOTER_GROUPS.map(function(group){return '<div><h4>'+group.label+'</h4><ul>'+group.items.map(function(item){return '<li>'+link(item[0],item[1])+'</li>';}).join('')+'</ul></div>';}).join('')
       +'</div><div class="site-footer__bottom"><span>© '+new Date().getFullYear()+' Rayven-Nikkita Collins LLC</span><span>'+link('/privacy','Privacy')+' · '+link('/terms','Terms')+'</span></div></div>';
   }
