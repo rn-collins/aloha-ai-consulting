@@ -1528,6 +1528,21 @@ test('does not represent dated demonstrations as continuously connected or overs
   assert.match(corpus, /optional external connection is identified on its page/i);
 });
 
+test('citation verifier does not claim unimplemented live checks or misattribute Rule 11 duties', () => {
+  const citation = JSON.parse(fs.readFileSync(new URL('../content/tools/citation-verifier.json', import.meta.url)));
+  const operational = JSON.parse(fs.readFileSync(new URL('../content/tools/operational-tools.json', import.meta.url)));
+  const regulatory = JSON.parse(fs.readFileSync(new URL('../content/products/regulatory-intelligence.json', import.meta.url)));
+  const corpus = JSON.stringify([citation, operational, regulatory]);
+
+  assert.doesNotMatch(corpus, /live existence check.*one click away/i);
+  assert.doesNotMatch(corpus, /optional live check queries CourtListener/i);
+  assert.doesNotMatch(corpus, /download the machine-readable audit record this tool emits/i);
+  assert.doesNotMatch(corpus, /ABA(?:-512| Formal Opinion 512).*duty to verify.*non-delegable/i);
+  assert.doesNotMatch(corpus, /more than 1,590 cases|roughly ten a day/i);
+  assert.match(corpus, /Rule 11.*reasonable (?:pre-filing )?inquiry/i);
+  assert.match(corpus, /public page does not query CourtListener/i);
+});
+
 test('keeps one current commercial pricing architecture and avoids volatile vendor prices', () => {
   const contentRoot = path.join(process.cwd(), 'content');
   const files = [];

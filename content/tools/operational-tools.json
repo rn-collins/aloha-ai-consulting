@@ -1421,7 +1421,7 @@
           },
           {
             "type": "paragraph",
-            "text": "A non-delegable pre-filing gate: no AI-assisted filing until a responsible attorney certifies every authority."
+            "text": "A required pre-filing gate: no AI-assisted filing until a responsible attorney completes the firm's verification process for every authority."
           },
           {
             "type": "heading",
@@ -1935,7 +1935,7 @@
         "blocks": [
           {
             "type": "paragraph",
-            "text": "Under ABA Formal Opinion 512, the duty to verify AI output is non-delegable. This tool parses citations, flags structural impossibilities, and locks a pre-filing gate until a named attorney certifies. Sample citations are illustrative fabrications."
+            "text": "ABA Formal Opinion 512 explains how existing professional duties apply to generative-AI use; Rule 11 separately requires a reasonable inquiry before an attorney presents a filing. This demonstration parses supported citations and flags structural defects. It does not itself lock a filing or record attorney certification. Sample citations are illustrative fabrications."
           },
           {
             "type": "paragraph",
