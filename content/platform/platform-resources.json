@@ -346,7 +346,7 @@
           },
           {
             "type": "paragraph",
-            "text": "Custom AI workflow design and implementation for law firms and legal teams — on any platform. Harvey, Claude, ChatGPT, Gemini, multi-model stacks, or custom internal LLM products — the methodology is the same. Harvey context: $11B valuation (Mar 2026), 100K+ lawyers across 1,300+ organizations, ARR reached $190M (Jan 2026). Dominant implementation partner is Harbor Global (~900 professionals, 80%+ of Global 200 firms). SL4 is positioned as boutique-and-specialist — deep legal-domain knowledge and active practitioner experience that large implementation partners do not carry. Structured intake systems that feed directly into research memo generation. Document synthesis tools for briefs, depositions, discovery productions, and contract review. Firm-specific knowledge bases: key statutes, regulations, leading cases, house style, standard arguments, jurisdictional nuances — organized so the platform surfaces firm-specific precedent without hallucinating. Primary legal research conducted through LexisNexis and Westlaw; all legal citations verified through KeyCite and Shepard's before entering any knowledge base or deliverable. Platform implementation and attorney training. All deliverables and knowledge base entries formatted and cited to Bluebook standards — the same standard applied across seven active legal positions. Full firm AI workflow audit and prioritized implementation roadmap. Most legal AI workflow builders are either developers without legal knowledge or attorneys without systems design experience. This is both. The work is happening inside real firms right now — active law clerk experience across seven legal positions in 1L year, and active AI workflow development inside a commercial law firm (Harvey platform). Deep legal-domain knowledge, systems design, and current practitioner access — all concurrent."
+            "text": "Custom AI workflow design and implementation for law firms and legal teams — on Harvey, Claude, ChatGPT, Gemini, multi-model stacks, or custom internal products. The work can include structured intake, document synthesis, firm-specific knowledge organization, citation-verification gates, implementation planning, and attorney training. RN brings current legal education, law-clerk experience, legal research, and hands-on use of Harvey in a commercial law-firm setting. Licensed attorneys retain responsibility for legal judgment, supervision, confidentiality, and final work product."
           },
           {
             "type": "paragraph",
@@ -358,11 +358,11 @@
           },
           {
             "type": "paragraph",
-            "text": "AI transformation strategy for legal practitioners — from someone who is simultaneously a practicing law student, a builder of 40+ deployed AI tools, and a legal journalist. Not a technologist who learned legal. Not a lawyer who learned AI. Both at once, in active practice."
+            "text": "AI transformation strategy for legal practitioners from a JD candidate, law clerk, legal and science writer, and builder of public AI tools and workflow systems."
           },
           {
             "type": "paragraph",
-            "text": "Product evaluation and strategic positioning for legal tech founders — from a practitioner who builds and runs AI workflows in real legal practice. Not VC pattern-matching. Actual workflow friction assessment from someone with a desk in seven legal verticals."
+            "text": "Product evaluation and strategic positioning for legal-tech founders, grounded in current legal education, law-clerk work, legal research, and hands-on AI workflow development."
           },
           {
             "type": "paragraph",
@@ -782,7 +782,7 @@
     "seoTitle": "What a real AI stack looks like for your work",
     "editorialIntro": [
       "A single tool is one instrument. A stack is the whole set: research, knowledge, drafting, verification, governance, operations, working together as one system. These pages show what a full AI stack looks like for a specific audience, layer by layer, and which of my live tools and services map to each layer. Use them as a blueprint, then decide what is worth building properly first.",
-      "Built by RN Collins. Neuroscientist (MS) · Administrative & regulatory law (JD candidate) · 35+ builds shipped"
+      "Built by RN Collins · MS, Anatomy & Neurobiology · JD candidate · Public portfolio of AI tools and systems"
     ],
     "editorialSections": [
       {
@@ -1142,7 +1142,7 @@
     "seoTitle": "Founder / Startup AI Stack",
     "editorialIntro": [
       "A founder wears every hat, so the AI stack has to cover a lot with few people: a watch layer for the rules that affect the product, a review layer that catches a risky marketing claim before it ships, a knowledge layer so the team stops re-answering the same questions, an education layer for customers, and a diligence layer for when investors or partners start asking. Here is that stack, where AI is a real force multiplier, and where it will confidently get you in trouble.",
-      "Built by RN Collins. Regulatory & compliance background · Administrative law (JD candidate) · 35+ builds shipped"
+      "Built by RN Collins · Regulatory and compliance background · JD candidate · Public portfolio of AI tools and systems"
     ],
     "editorialSections": [
       {
@@ -1381,7 +1381,7 @@
     "seoTitle": "Law Firm AI Stack",
     "editorialIntro": [
       "A firm does not need one AI tool. It needs a stack: a layer that finds the law, a layer that holds the firm's own knowledge, a layer that drafts, a layer that verifies every cite before it leaves the building, and a governance layer that documents the whole thing. Below is what that stack looks like layer by layer, where AI earns its keep, where it still hallucinates on the exact thing that matters, and which of my live tools and services cover each layer.",
-      "Built by RN Collins. AI Workflow Developer inside an Am Law firm · Administrative & regulatory law (JD candidate) · 35+ builds shipped"
+      "Built by RN Collins · Legal research and AI-assisted workflow experience using Harvey · JD candidate"
     ],
     "editorialSections": [
       {
@@ -1676,7 +1676,7 @@
     "seoTitle": "Policy & Advocacy AI Stack",
     "editorialIntro": [
       "Advocacy runs on credibility. One wrong statutory citation in written testimony and the whole brief is suspect. A working AI stack for a policy shop separates the layers: a monitoring layer that watches the bills, a drafting layer for testimony and briefings, a research layer for coalition work, and a public-education layer that turns all of it into something a supporter can act on. Here is that stack, and the real tools behind each layer.",
-      "Built by RN Collins. Administrative & regulatory law (JD candidate) · primary-source monitors across 30+ jurisdictions · 35+ builds shipped"
+      "Built by RN Collins · JD candidate · Primary-source monitoring and public AI systems"
     ],
     "editorialSections": [
       {
@@ -2108,7 +2108,7 @@
     "seoTitle": "Research Lab / Academic AI Stack",
     "editorialIntro": [
       "A lab does not need a bigger model. It needs a stack that respects the evidence: a review layer that finds the literature, a structured layer that holds it, a note layer that connects ideas, a publication layer that supports writing, and a translation layer that turns findings into something a policymaker reads. Below is that stack, where AI saves real hours, where it invents citations, and which of my tools and services cover each layer.",
-      "Built by RN Collins. Neuroscience (MS, Anatomy & Neurobiology) · peer-reviewed & published · 35+ builds shipped"
+      "Built by RN Collins · MS, Anatomy & Neurobiology · Research and publication experience · Public AI systems"
     ],
     "editorialSections": [
       {
@@ -2367,7 +2367,7 @@
     "seoTitle": "Your expertise, turned into a system that never starts from a blank page",
     "editorialIntro": [
       "Not another AI writer that sounds like everyone else. A source-grounded, voice-true content and knowledge infrastructure, built on your notes, your research, and your actual voice, so every draft starts from what you already know and comes out sounding like you.",
-      "Built by RN Collins. Neuroscientist (MS) · Administrative Law (JD candidate) · AI systemsTailored for: authors, researchers & public-facing experts"
+      "Built by RN Collins · MS, Anatomy & Neurobiology · JD candidate · AI systems · Tailored for authors, researchers, and public-facing experts"
     ],
     "editorialSections": [
       {

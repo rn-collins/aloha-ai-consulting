@@ -102,7 +102,7 @@
     "seoTitle": "Regulatory Bill Analyzer",
     "editorialIntro": [
       "Paste bill or regulation text and this tool structures it for a first pass: the issues it touches, the parties it reaches, the obligations it imposes, a risk read from the density of penalties and deadlines, a plain-English summary, and a checklist of questions to put to counsel. The analysis runs in your browser with no network call. It sorts and surfaces; a licensed attorney interprets.",
-      "Built by RN Collins. Neuroscientist (MS) · Administrative & regulatory law (JD candidate) · AI Workflow Developer, Am Law firm"
+      "Built by RN Collins · MS, Anatomy & Neurobiology · JD candidate · Legal research and AI-assisted workflow experience"
     ],
     "editorialSections": [
       {
@@ -427,7 +427,7 @@
     "seoTitle": "Regulated Claims Checker",
     "editorialIntro": [
       "Paste the marketing, website, or label copy for a regulated product. A deterministic analyzer scans it against curated keyword and pattern lexicons, then flags risky claims by category, assigns a risk level, and names the regulator whose attention zone each one implicates: FDA, FTC, or state consumer protection. It runs in your browser. Nothing you paste leaves this page.",
-      "Built by RN Collins. Neuroscientist (MS) · Administrative & regulatory law (JD candidate) · AI Workflow Developer, Am Law firm"
+      "Built by RN Collins · MS, Anatomy & Neurobiology · JD candidate · Legal research and AI-assisted workflow experience"
     ],
     "editorialSections": [
       {
@@ -691,7 +691,7 @@
     "seoTitle": "Controlled Substances Regulatory Explainer",
     "editorialIntro": [
       "Pick a substance or category and a lens, and this tool explains the structure of the regulation around it: the Controlled Substances Act schedules and what each one means, which agencies do what, how a substance moves between schedules, and the federal-versus-state divergence pattern. It is built to help a non-expert understand how status is determined and where to verify it. It runs in your browser, and it does not tell you whether anything is legal for you, in your state, right now.",
-      "Built by RN Collins. Neuroscientist (MS) · Administrative & regulatory law (JD candidate) · AI Workflow Developer, Am Law firm"
+      "Built by RN Collins · MS, Anatomy & Neurobiology · JD candidate · Legal research and AI-assisted workflow experience"
     ],
     "editorialSections": [
       {
@@ -985,7 +985,7 @@
     "seoTitle": "Evidence Explainer",
     "editorialIntro": [
       "Paste a claim about cannabis, cannabinoids, psychedelics, or Cannabinoid Hyperemesis Syndrome. A deterministic analyzer reads the language, classifies the kind of claim it is, and maps it to the evidence hierarchy so you can see what tier of support it would need to hold up. It grades the strength of the evidence a claim would require. It does not tell you whether the claim is true, and it gives no medical advice. Everything runs in your browser. Nothing you paste leaves this page.",
-      "Built by RN Collins. Neuroscientist (MS) · Administrative & regulatory law (JD candidate) · not a licensed physician or attorney"
+      "Built by RN Collins · MS, Anatomy & Neurobiology · JD candidate · Not a licensed physician or attorney"
     ],
     "editorialSections": [
       {
@@ -1328,7 +1328,7 @@
     "seoTitle": "AI Governance Policy Generator",
     "editorialIntro": [
       "Answer a short form about your firm, your approved tools, and who holds sign-off. This generator drafts a policy mapped to ABA Formal Opinion 512 and Model Rules 1.1, 1.6, 3.3, 5.1, and 5.3, with your inputs written into the right clauses. Download it as Markdown or printable HTML. It runs in your browser. Nothing you enter leaves this page.",
-      "Built by RN Collins. Neuroscientist (MS) · Administrative & regulatory law (JD candidate) · AI Workflow Developer, Am Law firm"
+      "Built by RN Collins · MS, Anatomy & Neurobiology · JD candidate · Legal research and AI-assisted workflow experience"
     ],
     "editorialSections": [
       {
@@ -1604,7 +1604,7 @@
     "seoTitle": "Prompt-to-Workflow Converter",
     "editorialIntro": [
       "Paste a prompt you keep reusing. This converter reads it, detects the task, and returns a workflow scaffold with the parts a prompt leaves out: inputs, grounding, steps, a named human-review QA checkpoint, output storage, reuse notes, and risk flags. It runs in your browser. Nothing you paste leaves this page.",
-      "Built by RN Collins. Neuroscientist (MS) · Administrative & regulatory law (JD candidate) · AI Workflow Developer, Am Law firm"
+      "Built by RN Collins · MS, Anatomy & Neurobiology · JD candidate · Legal research and AI-assisted workflow experience"
     ],
     "editorialSections": [
       {

@@ -1419,3 +1419,25 @@ test('allows long discovery-card titles to wrap within narrow mobile viewports',
     /\.discovery-resource>strong\{[^}]*min-width:0[^}]*overflow-wrap:anywhere[^}]*\}/
   );
 });
+
+test('keeps public credential language exact and free of superseded claims', () => {
+  const contentRoot = path.join(process.cwd(), 'content');
+  const files = [];
+  const collect = (directory) => {
+    for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+      const absolute = path.join(directory, entry.name);
+      if (entry.isDirectory()) collect(absolute);
+      else if (entry.name.endsWith('.json')) files.push(absolute);
+    }
+  };
+  collect(contentRoot);
+  const corpus = files.map((file) => fs.readFileSync(file, 'utf8')).join('\n');
+
+  assert.doesNotMatch(corpus, /Am Law firm/i);
+  assert.doesNotMatch(corpus, /systemsTailored/i);
+  assert.doesNotMatch(corpus, /seven active legal positions/i);
+  assert.doesNotMatch(corpus, /40\+ deployed AI tools/i);
+  assert.doesNotMatch(corpus, /35\+ builds shipped/i);
+  assert.doesNotMatch(corpus, /4 articles in the Journal of Biophilic Design/i);
+  assert.doesNotMatch(corpus, /practicing law student/i);
+});

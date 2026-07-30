@@ -627,7 +627,7 @@
         "blocks": [
           {
             "type": "paragraph",
-            "text": "RN Collins is a neuroscientist (MS, Anatomy & Neurobiology), a JD candidate in administrative and regulatory law, and a hands-on AI systems builder. Before building AI for regulated organizations, RN did regulatory and compliance work inside psychedelic clinical science and legal AI workflow inside an Am Law firm."
+            "text": "RN Collins holds an MS in Anatomy & Neurobiology, is a JD candidate, and builds AI systems hands-on. Her experience includes regulatory and compliance work in psychedelic clinical science and legal research and AI-assisted workflow in a commercial law-firm setting."
           },
           {
             "type": "paragraph",
@@ -662,7 +662,7 @@
           {
             "type": "list",
             "items": [
-              "AI Workflow Developer, Am Law firm (Harvey)"
+              "Legal research and AI-assisted workflow experience using Harvey"
             ]
           },
           {
@@ -674,7 +674,7 @@
           {
             "type": "list",
             "items": [
-              "35+ builds shipped, several in production"
+              "Public portfolio of working tools, prototypes, and documented system architectures"
             ]
           }
         ]
