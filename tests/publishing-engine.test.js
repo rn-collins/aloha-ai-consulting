@@ -351,6 +351,9 @@ test('derives eighteen dedicated flagship lesson routes from the canonical cours
   assert.match(html, /id="lesson-delivery"/);
   assert.match(html, /Mark lesson complete/);
   assert.match(html, /not independently verified/i);
+  assert.match(html, /href="https:\/\/www\.americanbar\.org\/content\/dam\/aba\//);
+  assert.match(html, /href="https:\/\/www\.uscourts\.gov\/forms-rules\//);
+  assert.doesNotMatch(html, /&lt;a href=/);
   assert.match(html, /Course overview/);
 });
 
