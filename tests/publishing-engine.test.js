@@ -188,6 +188,10 @@ test('bounds search metadata without changing visible editorial titles or summar
   assert.ok(metadata.description.length >= 70 && metadata.description.length <= 180);
   assert.equal(metadata.openGraph.title, metadata.title);
   assert.equal(metadata.twitter.description, metadata.description);
+  assert.equal(metadata.openGraph.imageWidth, 1200);
+  assert.equal(metadata.openGraph.imageHeight, 630);
+  assert.match(metadata.openGraph.image, /og-image\.png\?v=20260729$/);
+  assert.equal(metadata.twitter.imageAlt, 'Aloha AI — governed AI systems for consequential work');
   assert.equal(decodeHtmlText('Luxury Brand Protection &amp; Anti-Counterfeiting'), 'Luxury Brand Protection & Anti-Counterfeiting');
   assert.equal(decodeHtmlText('RN&#039;s evidence'), "RN's evidence");
 });
