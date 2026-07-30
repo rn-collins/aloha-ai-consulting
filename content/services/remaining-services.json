@@ -1117,7 +1117,7 @@
           },
           {
             "type": "paragraph",
-            "text": "An Editorial Distribution & Signal Architecture turns the trust plan into a governed AI content engine, consistent by design to compound exposure. It re-checks its inputs on a schedule (Upstash · Vercel · Exa) and can alert you when perception or platform signals shift, so it never goes stale."
+            "text": "An Editorial Distribution & Signal Architecture turns the trust plan into a governed AI content engine. A production scope can include scheduled input checks through services such as Upstash, Vercel, and Exa, plus defined alert conditions when perception or platform signals shift. Cadence, sources, owners, and maintenance are specified for the engagement rather than implied."
           }
         ]
       },

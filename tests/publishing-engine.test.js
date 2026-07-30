@@ -1465,6 +1465,26 @@ test('does not publish the false claim that marijuana rescheduling took effect o
   assert.match(cannabis, /No broad move to Schedule III has taken effect/);
 });
 
+test('keeps time-sensitive AI law and monitor status claims procedurally exact', () => {
+  const contentRoot = path.join(process.cwd(), 'content');
+  const files = [];
+  const walk = (dir) => {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const target = path.join(dir, entry.name);
+      if (entry.isDirectory()) walk(target);
+      else if (entry.name.endsWith('.json')) files.push(target);
+    }
+  };
+  walk(contentRoot);
+  const corpus = files.map((file) => fs.readFileSync(file, 'utf8')).join('\n');
+
+  assert.doesNotMatch(corpus, /full application Aug 2, 2026/);
+  assert.doesNotMatch(corpus, /wider body of deployed work/);
+  assert.doesNotMatch(corpus, /tracks the federal rescheduling process this tool describes, as it moves/);
+  assert.match(corpus, /AI Omnibus moved major high-risk-system obligations to December 2, 2027/);
+  assert.match(corpus, /public demonstrations remain dated snapshots/);
+});
+
 test('keeps public credential language exact and free of superseded claims', () => {
   const contentRoot = path.join(process.cwd(), 'content');
   const files = [];

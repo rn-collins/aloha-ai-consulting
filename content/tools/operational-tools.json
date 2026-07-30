@@ -858,7 +858,7 @@
           },
           {
             "type": "paragraph",
-            "text": "Related work: the Cannabis Rescheduling Monitor tracks the federal rescheduling process this tool describes, as it moves. The Regulated Claims Checker screens marketing and product language for claims that regulators treat as high-risk. Both are demonstrations of the same regulatory-intelligence practice."
+            "text": "Related work: the Cannabis Rescheduling Monitor is a dated, maintained view of the federal rescheduling process, with its source and update boundaries stated on the page. The Regulated Claims Checker screens marketing and product language for patterns associated with regulatory scrutiny. Both demonstrate components of the same regulatory-intelligence practice; neither replaces current primary-source review."
           }
         ]
       },

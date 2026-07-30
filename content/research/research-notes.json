@@ -959,7 +959,7 @@
           },
           {
             "type": "paragraph",
-            "text": "A qualified human verifies the load-bearing steps (cites, holdings, privilege calls) before certification. Monitors re-check their sources on a schedule (Upstash · Vercel · Exa) so citators and rule changes stay current rather than freezing on build day."
+            "text": "A qualified human verifies the load-bearing steps (cites, holdings, privilege calls) before certification. In a production implementation, scheduled source checks can be wired through services such as Upstash, Vercel, and Exa; the public demonstrations remain dated snapshots unless their individual status record says otherwise."
           }
         ]
       },
