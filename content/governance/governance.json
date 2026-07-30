@@ -1267,7 +1267,7 @@
       {
         "title": "The tools run in your browser",
         "paragraphs": [
-          "Interactive tools, monitors, and figures compute entirely on your device. Information entered into a tool stays in the browser and is not transmitted to Aloha AI, a server, or a third party. Close the tab and it is gone."
+          "Public interactive tools, monitors, and figures compute on your device by default. Information entered into those browser-local tools is not transmitted to Aloha AI or a third party. If a page offers an optional connection to an external service, it identifies that connection and what you deliberately submit before you use it."
         ]
       },
       {
@@ -1362,7 +1362,7 @@
       }
     ],
     "editorialIntro": [
-      "This site is close to invisible. It sets no cookies and builds no profile of you. It uses Vercel Speed Insights to measure aggregate page performance; nothing there identifies you or follows you across other sites. The interactive tools run entirely in your browser and send nothing anywhere. The only information I ever hold is what you choose to send me, by booking a call or by email. That's the whole policy; the rest is detail."
+      "This site sets no advertising cookies and builds no advertising profile of you. It uses Vercel Speed Insights for cookieless performance measurement and does not follow you across other sites. Public interactive tools run in your browser by default; any optional external connection is identified on its page before you use it. I hold information you choose to send through booking or email."
     ],
     "editorialSections": [
       {
@@ -1378,7 +1378,7 @@
           },
           {
             "type": "paragraph",
-            "text": "The site loads Vercel Speed Insights to measure aggregate, non-identifying load performance so I can see whether pages are fast. It sets no cookies, does not fingerprint you to follow you across other sites, and does not build an advertising profile. No advertising or third-party ad trackers run anywhere on the site, and the interactive tools still send nothing."
+            "text": "The site loads Vercel Speed Insights for cookieless load-performance measurement so I can see whether pages are fast. It does not fingerprint you to follow you across other sites or build an advertising profile. No advertising or third-party ad trackers run on the site."
           },
           {
             "type": "heading",
@@ -1386,7 +1386,7 @@
           },
           {
             "type": "paragraph",
-            "text": "The interactive tools, monitors, and figures on this site compute entirely on your own device. When you enter numbers or answers into a tool, that input stays in your browser. It is not transmitted to me, to a server, or to any third party. Close the tab and it's gone."
+            "text": "Public interactive tools, monitors, and figures compute on your device by default. Information entered into those browser-local tools is not transmitted to me or a third party. A page that offers an optional external connection identifies the service and the information you deliberately submit before you use it."
           },
           {
             "type": "heading",

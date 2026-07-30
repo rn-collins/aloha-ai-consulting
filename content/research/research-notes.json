@@ -276,7 +276,7 @@
           },
           {
             "type": "paragraph",
-            "text": "The verifier in this piece is real; run it. The structural checks described here run in the Citation Verifier; the human-gated verification workflow is the Trust-Safe operating layer. Both are live and interactive."
+            "text": "The structural Citation Verifier is a working browser-local demonstration you can run. The Trust-Safe console demonstrates the human-gated operating layer around it. Each page states its own implementation status and limitations."
           },
           {
             "type": "paragraph",
@@ -595,7 +595,7 @@
           },
           {
             "type": "paragraph",
-            "text": "The taxonomy above is not hypothetical; a live monitor runs it daily. The comparison and audience-specific output described here are how the intelligence monitors work: signals sorted, set against the pattern, and sourced. Every figure is dated."
+            "text": "The taxonomy above is implemented in the dated intelligence-monitor demonstrations: signals are sorted, set against the wider pattern, and sourced. These public records do not run a continuous daily feed; each page states its own retrieval date and update boundary."
           },
           {
             "type": "paragraph",
