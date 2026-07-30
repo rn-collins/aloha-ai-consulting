@@ -1444,3 +1444,25 @@ test('keeps public credential language exact and free of superseded claims', () 
   assert.doesNotMatch(corpus, /4 articles in the Journal of Biophilic Design/i);
   assert.doesNotMatch(corpus, /practicing law student/i);
 });
+
+test('keeps one current commercial pricing architecture and avoids volatile vendor prices', () => {
+  const contentRoot = path.join(process.cwd(), 'content');
+  const files = [];
+  const collect = (directory) => {
+    for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+      const absolute = path.join(directory, entry.name);
+      if (entry.isDirectory()) collect(absolute);
+      else if (entry.name.endsWith('.json')) files.push(absolute);
+    }
+  };
+  collect(contentRoot);
+  const corpus = files.map((file) => fs.readFileSync(file, 'utf8')).join('\n');
+
+  assert.doesNotMatch(corpus, /\$1,000 per workflow|\$200\/hr/i);
+  assert.doesNotMatch(corpus, /\$500[–-]1,500\/mo|\$1,500\/mo/i);
+  assert.doesNotMatch(corpus, /\$(?:79|97|127|149|197|297)(?!\d)/);
+  assert.doesNotMatch(corpus, /(?:ChatGPT|Claude|Gemini|Notion|Zapier|Fathom|Otter|Fireflies|Perplexity|Elicit|Apollo|Sales Navigator)[^"\n]{0,160}\$\d/i);
+  assert.match(corpus, /Systems Audit at \$1,500–\$2,500/);
+  assert.match(corpus, /Working System from \$5,000/);
+  assert.match(corpus, /ongoing leadership from \$4,000 per month/);
+});
