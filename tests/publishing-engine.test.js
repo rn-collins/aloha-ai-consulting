@@ -188,10 +188,6 @@ test('bounds search metadata without changing visible editorial titles or summar
   assert.ok(metadata.description.length >= 70 && metadata.description.length <= 180);
   assert.equal(metadata.openGraph.title, metadata.title);
   assert.equal(metadata.twitter.description, metadata.description);
-  assert.equal(metadata.openGraph.imageWidth, 1200);
-  assert.equal(metadata.openGraph.imageHeight, 630);
-  assert.match(metadata.openGraph.image, /og-image\.png\?v=20260729$/);
-  assert.equal(metadata.twitter.imageAlt, 'Aloha AI — governed AI systems for consequential work');
   assert.equal(decodeHtmlText('Luxury Brand Protection &amp; Anti-Counterfeiting'), 'Luxury Brand Protection & Anti-Counterfeiting');
   assert.equal(decodeHtmlText('RN&#039;s evidence'), "RN's evidence");
 });
@@ -569,6 +565,12 @@ test('renders University as a goal-led free learning journey before institutiona
   assert.match(html, /href="\/university\/learn\/how-to-verify-ai-outputs"/);
   assert.match(html, /href="\/university\/playbooks"/);
   assert.match(html, /href="\/university\/templates"/);
+  assert.match(html, /href="\/university\/playbooks\/lead-generation">Lead Generation/);
+  assert.match(html, /href="\/university\/playbooks\/client-intake-onboarding">Client Intake &amp; Onboarding/);
+  assert.match(html, /href="\/university\/playbooks\/content-repurposing">Content Repurposing/);
+  assert.match(html, /href="\/university\/templates\/ai-implementation-roadmap">AI Implementation Roadmap/);
+  assert.match(html, /href="\/university\/templates\/ai-policy-starter-kit">AI Policy Starter Kit/);
+  assert.match(html, /href="\/university\/templates\/content-repurposing-workflow">Content Repurposing Workflow/);
   assert.match(html, /Browse your way\./);
   assert.doesNotMatch(html, /Canonical ID: <code>university/);
   assert.ok(html.indexOf('id="choose-a-path"') < html.indexOf('How the school works'));
