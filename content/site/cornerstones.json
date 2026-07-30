@@ -827,7 +827,8 @@
           },
           {
             "type": "heading",
-            "text": "What Generative AI Actually Is"
+            "text": "What Generative AI Actually Is",
+            "href": "/university/learn/what-generative-ai-is"
           },
           {
             "type": "paragraph",
@@ -835,7 +836,8 @@
           },
           {
             "type": "heading",
-            "text": "What AI Can and Cannot Do"
+            "text": "What AI Can and Cannot Do",
+            "href": "/university/learn/what-ai-can-and-cannot-do"
           },
           {
             "type": "paragraph",
@@ -843,7 +845,8 @@
           },
           {
             "type": "heading",
-            "text": "ChatGPT vs Claude vs Gemini vs Perplexity"
+            "text": "ChatGPT vs Claude vs Gemini vs Perplexity",
+            "href": "/university/learn/chatgpt-vs-claude-vs-gemini-vs-perplexity"
           },
           {
             "type": "paragraph",
@@ -851,7 +854,8 @@
           },
           {
             "type": "heading",
-            "text": "Prompting Fundamentals"
+            "text": "Prompting Fundamentals",
+            "href": "/university/learn/prompting-fundamentals"
           },
           {
             "type": "paragraph",
@@ -869,7 +873,8 @@
           },
           {
             "type": "heading",
-            "text": "Lead Generation"
+            "text": "Lead Generation",
+            "href": "/university/playbooks/lead-generation"
           },
           {
             "type": "paragraph",
@@ -877,7 +882,8 @@
           },
           {
             "type": "heading",
-            "text": "Client Intake & Onboarding"
+            "text": "Client Intake & Onboarding",
+            "href": "/university/playbooks/client-intake-onboarding"
           },
           {
             "type": "paragraph",
@@ -885,7 +891,8 @@
           },
           {
             "type": "heading",
-            "text": "Content Repurposing"
+            "text": "Content Repurposing",
+            "href": "/university/playbooks/content-repurposing"
           },
           {
             "type": "paragraph",
@@ -903,7 +910,8 @@
           },
           {
             "type": "heading",
-            "text": "AI Adoption Roadmap"
+            "text": "AI Implementation Roadmap",
+            "href": "/university/templates/ai-implementation-roadmap"
           },
           {
             "type": "paragraph",
@@ -911,7 +919,8 @@
           },
           {
             "type": "heading",
-            "text": "AI Acceptable Use Policy"
+            "text": "AI Policy Starter Kit",
+            "href": "/university/templates/ai-policy-starter-kit"
           },
           {
             "type": "paragraph",
@@ -919,7 +928,8 @@
           },
           {
             "type": "heading",
-            "text": "Content Repurposing Prompt Pack"
+            "text": "Content Repurposing Workflow",
+            "href": "/university/templates/content-repurposing-workflow"
           },
           {
             "type": "paragraph",
