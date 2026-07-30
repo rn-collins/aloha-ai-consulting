@@ -52,7 +52,7 @@
   },
   "seoTitle": "Citation Verifier",
   "editorialIntro": [
-    "Paste an AI-drafted brief and this tool reads every US reporter citation, flags the ones that mark a fabrication (an invented reporter series, an impossible year, a malformed volume or page), and returns a risk score with a per-citation verdict. The structural checks run in your browser with no network call. A live existence check against real case law is one click away.",
+    "Paste an AI-drafted brief and this tool reads supported US reporter citations, flags structural defects that may mark a fabrication (an unrecognized reporter series, an impossible year, or a malformed volume or page), and returns a citation-by-citation review list. The public check runs in your browser with no network call. It does not confirm that a case exists or supports the proposition for which it is cited.",
     "Built by RN Collins · MS, Anatomy & Neurobiology · JD candidate · Legal research and AI-assisted workflow experience"
   ],
   "editorialSections": [
@@ -62,7 +62,7 @@
       "blocks": [
         {
           "type": "paragraph",
-          "text": "Since 2023, courts have sanctioned lawyers for filing AI-fabricated citations. Generic AI hallucinates worst on exactly what a legal team can't get wrong: the citation, the reporter, the year. Under ABA Formal Opinion 512, the duty to verify AI-assisted output before it reaches a court sits with a licensed attorney and cannot be handed off to a tool. This instrument is the first gate: it catches the cites that are structurally impossible before a human even reads them, so the review that follows starts from a shorter, sharper list."
+          "text": "Since 2023, courts have sanctioned lawyers for filing AI-fabricated citations. A fluent draft can still invent a citation, reporter, year, holding, or quotation. ABA Formal Opinion 512 explains how existing professional duties apply when lawyers use generative AI. Separately, Rule 11 requires an attorney who presents a filing to certify that its legal contentions follow a reasonable inquiry. This instrument is only an initial structural screen; it cannot discharge either responsibility."
         },
         {
           "type": "heading",
@@ -78,7 +78,7 @@
         },
         {
           "type": "paragraph",
-          "text": "A well-formed citation can still point to no real opinion. The offline engine confirms structure only. Confirming that a plausible cite matches a real case takes the live existence check, and, in every case, a licensed attorney who opens the source."
+          "text": "A well-formed citation can still point to no real opinion, cite overruled law, or fail to support the sentence. This public engine checks structure only. A licensed attorney must open an authoritative source and verify existence, status, quotation, and proposition support before filing."
         }
       ]
     },
@@ -100,7 +100,7 @@
         },
         {
           "type": "paragraph",
-          "text": "This tool runs entirely in your browser. The only information that ever leaves your device is the email address you optionally submit below once Beehiiv is connected, or the draft text you deliberately submit through the optional live check below."
+          "text": "The public structural check runs entirely in your browser. The text pasted into the verifier is not sent to Aloha AI. Any separate email or booking action is handled by the provider identified at that action."
         },
         {
           "type": "heading",
@@ -112,19 +112,19 @@
         },
         {
           "type": "paragraph",
-          "text": "Under ABA Formal Opinion 512, the duty to verify AI-assisted output before it reaches a court is non-delegable. This draft stays blocked until a licensed attorney confirms each item and certifies."
+          "text": "This demonstration does not block a filing or record attorney certification. Rule 11 places responsibility for a reasonable pre-filing inquiry on the attorney presenting the paper. A real firm workflow should require a named attorney to confirm every authority before filing."
         },
         {
           "type": "heading",
-          "text": "Optional: live case-law verification"
+          "text": "Possible firm integration: case-law verification"
         },
         {
           "type": "heading",
-          "text": "Connect live case-law verification (CourtListener)"
+          "text": "Add authoritative case-law verification"
         },
         {
           "type": "paragraph",
-          "text": "The offline engine confirms structure. It cannot confirm that a well-formed citation points to a real opinion. A live existence check against CourtListener adds that signal. Pasting a token in a browser is meant for personal demo use only; a firm deployment routes this call through the bundled Python backend proxy so the token never sits in a browser."
+          "text": "The public page does not query CourtListener or another case-law service. A commissioned firm version can add an approved source through a private backend, keep credentials off the client, and return a link for attorney review. Existence matching is still not citator treatment or proposition verification."
         },
         {
           "type": "heading",
@@ -132,7 +132,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Download the machine-readable audit record this tool emits: a timestamp, a SHA-256 hash of the draft, every per-citation verdict, and the gate status. It mirrors the record the Python backend writes for the file."
+          "text": "This public demonstration does not create a downloadable audit record. A commissioned workflow can add a timestamped record of the draft hash, per-citation results, sources checked, reviewer, and gate status."
         },
         {
           "type": "paragraph",
@@ -149,12 +149,12 @@
       ]
     },
     {
-      "title": "Deterministic checks now, live existence check next",
+      "title": "Deterministic checks now, deeper verification in a commissioned workflow",
       "eyebrow": "How it works",
       "blocks": [
         {
           "type": "paragraph",
-          "text": "Two layers, in order. The fast structural layer runs on your device and needs no network. The live layer adds the one signal structure can't give: whether a plausible-looking cite matches a real published opinion."
+          "text": "The public layer is a fast structural screen that runs on your device and needs no network. A commissioned workflow can add approved research sources, human review, and a record of what was checked."
         },
         {
           "type": "heading",
@@ -178,15 +178,15 @@
         },
         {
           "type": "paragraph",
-          "text": "Verdicts roll into a 0–100 risk score. A pre-filing checklist stays blocked until a licensed attorney certifies each item, because the ABA-512 duty to verify is non-delegable."
+          "text": "The public result is a review list; it does not certify a filing or enforce a pre-filing block. In a firm deployment, the workflow can remain blocked until a named attorney records verification of each authority."
         },
         {
           "type": "heading",
-          "text": "Confirm existence, live"
+          "text": "Add source verification"
         },
         {
           "type": "paragraph",
-          "text": "The optional live check queries CourtListener for whether each well-formed cite matches a real opinion. In a browser this is a personal demo; a firm deployment routes it through a private backend so the token never sits client-side and CORS never blocks it."
+          "text": "A firm version can query an approved case-law source through a private backend and route the result to a licensed attorney. The integration must be tested against the source's current authentication, coverage, licensing, and citation behavior."
         }
       ]
     },
@@ -196,7 +196,7 @@
       "blocks": [
         {
           "type": "paragraph",
-          "text": "What you're using is the public, in-browser demo. A governed, firm-deployed version routes the existence check through a private backend, keeps API tokens off the client, writes a signed audit record for each filing, and integrates with the tools your team already runs. This is one gate in the verification-gated legal AI workflows I design, on any platform, Harvey included."
+          "text": "What you're using is the public, in-browser structural demo. A commissioned firm version can route approved-source checks through a private backend, keep credentials off the client, add an audit record and attorney sign-off, and integrate with the tools the team already uses. Those capabilities are scope options, not features of this public page."
         },
         {
           "type": "heading",

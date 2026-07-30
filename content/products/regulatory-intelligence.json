@@ -82,7 +82,7 @@
         },
         {
           "type": "paragraph",
-          "text": "In Mata v. Avianca (S. D. N. Y. 2023) a federal judge imposed a $5,000 Rule 11 sanction after a brief cited judicial decisions the model had invented. In Wadsworth v. Walmart (D. Wyo. 2025), eight of nine cited cases were invented and the court revoked one attorney's pro hac vice admission. As of mid-2026, one public database (maintained by researcher Damien Charlotin) catalogued more than 1,590 cases worldwide in which AI-fabricated authorities were identified in filings, a count rising by roughly ten a day; re-verify the live figure before citing it."
+          "text": "In Mata v. Avianca (S.D.N.Y. 2023), a federal judge imposed a $5,000 Rule 11 sanction after lawyers submitted nonexistent decisions and then stood by them. In Wadsworth v. Walmart (D. Wyo. 2025), a filing cited eight nonexistent cases; the court revoked the primary drafter's pro hac vice admission and imposed monetary sanctions. The lesson does not depend on a volatile global case count: an attorney presenting a filing must verify the authorities and the propositions for which they are cited."
         },
         {
           "type": "paragraph",
@@ -126,7 +126,7 @@
         {
           "type": "list",
           "items": [
-            "A live maintenance protocol tied to the Federal Register, eCFR, and GovInfo APIs, plus the IDR verification checklist: every gate a claim must clear before it leaves Layer 0."
+            "A maintenance-protocol design for Federal Register, eCFR, and GovInfo sources, plus the IDR verification checklist: every gate a claim must clear before it leaves Layer 0. The public page documents the method; it is not a continuously connected feed."
           ]
         }
       ]
