@@ -21,6 +21,7 @@
           { "$ref": "#/$defs/project" },
           { "$ref": "#/$defs/rubric" },
           { "$ref": "#/$defs/credential" }
+          ,{ "$ref": "#/$defs/outcome" }
         ]
       }
     }
@@ -175,6 +176,17 @@
         "issuanceStatus": { "enum": ["planned", "manual", "verifiable"] },
         "requirements": { "type": "array", "items": { "type": "string", "minLength": 1 }, "minItems": 1 },
         "verificationMethod": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": true
+    },
+    "outcome": {
+      "type": "object",
+      "required": ["id", "type", "statement", "level"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "type": { "const": "outcome" },
+        "statement": { "type": "string", "minLength": 1 },
+        "level": { "enum": ["understand", "apply", "analyze", "evaluate", "create"] }
       },
       "additionalProperties": true
     }
