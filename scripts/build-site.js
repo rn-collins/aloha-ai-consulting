@@ -2,13 +2,14 @@ import fs from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
 import { renderStructuredPage } from '../lib/site/structured-renderer.js';
+import { expandEducationResources } from '../lib/site/university-model.js';
 import { supportedKinds, validateTemplateContract } from '../lib/site/template-registry.js';
 import { derivePlatform, generatedOutputs, legacyMigrationInventory, validateCollectionPages, validateGeneratedSite, validatePlatform, validateRoutingConfig, writeOutputs } from '../lib/site/publishing-engine.js';
 
 const root = process.cwd();
 const contentRoot = path.join(root, 'content');
 const mode = process.argv.includes('--validate') ? 'validate' : process.argv.includes('--check') ? 'check' : 'build';
-const resources = loadResources(contentRoot);
+const resources = expandEducationResources(loadResources(contentRoot));
 const collectionPages = loadCollectionPages(path.join(contentRoot, 'collections', 'derived-pages.json'));
 const platform = derivePlatform(resources);
 const templateErrors = resources.flatMap((resource) => validateTemplateContract(resource));
