@@ -591,7 +591,7 @@ test('renders University as a goal-led free learning journey before institutiona
   assert.match(html, /href="\/university\/templates\/content-repurposing-workflow">Content Repurposing Workflow/);
   assert.match(html, /Browse your way\./);
   assert.doesNotMatch(html, /Canonical ID: <code>university/);
-  assert.ok(html.indexOf('id="choose-a-path"') < html.indexOf('How the school works'));
+  assert.ok(html.indexOf('id="choose-a-path"') < html.indexOf('Featured paths and teaching standards.'));
 });
 
 test('renders every University learning kind as a linked complete learning record', () => {
@@ -1421,6 +1421,21 @@ test('allows long discovery-card titles to wrap within narrow mobile viewports',
     css,
     /\.discovery-resource>strong\{[^}]*min-width:0[^}]*overflow-wrap:anywhere[^}]*\}/
   );
+});
+
+test('keeps University specific, audience-inclusive, and free of duplicate depth navigation', () => {
+  const university = JSON.parse(
+    fs.readFileSync(path.join(process.cwd(), 'content/site/cornerstones.json'), 'utf8')
+  ).find((entry) => entry.id === 'university');
+  const registry = new Map([[university.id, university]]);
+  const html = renderStructuredPage({ resource: university, registry });
+
+  assert.match(html, /Learn what AI does\. Then put it to work\./);
+  assert.match(html, /People, teams, and institutions/);
+  assert.doesNotMatch(html, /Free Generative AI University for Modern Businesses/);
+  assert.match(html, /Featured paths and teaching standards\./);
+  assert.equal(html.match(/class="university-depth__item"/g)?.length, 7);
+  assert.doesNotMatch(html, /<strong>Start here\. We route you the rest of the way\.<\/strong>/);
 });
 
 test('keeps public credential language exact and free of superseded claims', () => {
