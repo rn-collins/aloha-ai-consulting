@@ -261,25 +261,25 @@
           {
             "type": "list",
             "items": [
-              "Opus Clip has a free tier with limited monthly credits and a watermark; paid tiers start around $15/month and rise with credit volume and editing features. Confirm current credits on the vendor page."
+              "Opus Clip offers free and paid tiers that vary by credits, watermarking, and editing features. Confirm current limits and terms on the vendor page."
             ]
           },
           {
             "type": "list",
             "items": [
-              "Descript offers a free tier and a creator plan around $24/month, with higher tiers for pro features and longer transcription."
+              "Descript offers free and paid tiers that vary by transcription allowance and editing features. Confirm current limits and terms on the vendor page."
             ]
           },
           {
             "type": "list",
             "items": [
-              "Repurpose.io runs around $32/month for its distribution workflows."
+              "Repurpose.io offers paid distribution workflows. Confirm current features and pricing on the vendor page."
             ]
           },
           {
             "type": "list",
             "items": [
-              "General assistants near $20/month often cover the text-reshaping side entirely, which is why many small teams skip a dedicated text-repurposing tool."
+              "A general assistant may already cover the text-reshaping work, which is why many small teams test that route before adding a dedicated repurposing subscription."
             ]
           },
           {
@@ -706,13 +706,13 @@
           {
             "type": "list",
             "items": [
-              "Otter offers a free tier with a monthly minute cap; paid plans commonly land near $8–$10/user/month on annual billing."
+              "Otter offers free and paid tiers with different transcription allowances. Confirm current limits, retention, and billing terms on the vendor page."
             ]
           },
           {
             "type": "list",
             "items": [
-              "Fireflies has a free tier plus Pro around $18/user/month and Business around $29/user/month."
+              "Fireflies offers free and paid team tiers. Confirm current limits, data terms, and pricing on the vendor page."
             ]
           },
           {
@@ -1137,13 +1137,13 @@
           {
             "type": "list",
             "items": [
-              "Perplexity has a usable free tier (limited daily Deep Research and Pro searches) and Pro at about $20/month; higher Max and Enterprise tiers exist, plus a discounted education plan. Confirm current limits on the vendor page."
+              "Perplexity offers free, individual paid, and organizational tiers with different research limits. Confirm current limits and terms on the vendor page."
             ]
           },
           {
             "type": "list",
             "items": [
-              "Elicit runs roughly $49/month per user for its Pro plan (billed annually), aimed at people doing sustained literature work."
+              "Elicit offers a paid research tier for sustained literature work. Confirm current features and billing terms on the vendor page."
             ]
           },
           {
@@ -1155,7 +1155,7 @@
           {
             "type": "list",
             "items": [
-              "Deep-research modes come bundled with the major assistants' paid plans (near $20/month), with higher query allowances on their $100–$200 power tiers."
+              "Deep-research modes are available on several paid assistant plans, with query allowances varying by tier. Confirm current limits before relying on them."
             ]
           },
           {
@@ -1593,13 +1593,13 @@
           {
             "type": "list",
             "items": [
-              "General assistants cluster around $20/month for a single paid seat (ChatGPT Plus, Claude Pro, Google AI Pro near $19.99), with team tiers roughly $25–$30/seat/month. Confirm current numbers on each vendor's page."
+              "General assistants offer individual and team paid seats with different administrative controls and data terms. Confirm current pricing and terms on each vendor's page."
             ]
           },
           {
             "type": "list",
             "items": [
-              "Notion AI adds roughly $10/month per member on top of a Notion workspace."
+              "Notion's AI availability and packaging have changed over time. Confirm the current workspace tier and usage terms before purchasing."
             ]
           },
           {
@@ -1948,7 +1948,7 @@
                     "text": "1. One general assistant"
                   },
                   {
-                    "text": "ChatGPT, Claude, or Gemini (~$20/mo)"
+                    "text": "ChatGPT, Claude, or Gemini (verify the current plan and data terms)"
                   },
                   {
                     "text": "Your default for drafting, analysis, summarizing, and reshaping content. Replaces the need for many niche tools."
@@ -2077,7 +2077,7 @@
           {
             "type": "list",
             "items": [
-              "A lean starter stack often lands near $20–$60/month per person: one assistant around $20, an optional knowledge add-on around $10, and one specialist as needed. Confirm each on the vendor page."
+              "A lean starter stack usually begins with one general assistant and adds a knowledge or specialist tool only when the workflow proves the need. Confirm every current price and data term on the vendor page."
             ]
           },
           {
