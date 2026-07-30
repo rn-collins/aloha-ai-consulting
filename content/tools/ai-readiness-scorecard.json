@@ -199,7 +199,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Confidence: High Why you can rely on it: each front maps to a named duty in NIST AI RMF, the EU AI Act, or ISO/IEC 42001, cited in the method ledger below with retrieval dates."
+          "text": "Confidence: High on the framework mapping, with legal applicability dependent on jurisdiction, system classification, role, and date. Each front maps to a named NIST AI RMF function, EU AI Act provision, or ISO/IEC 42001 control area in the method ledger below."
         },
         {
           "type": "paragraph",
@@ -394,7 +394,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Verification checkpoint: frameworks are cited as of the retrieval date. NIST AI RMF 1.0 is voluntary guidance; the EU AI Act applies by jurisdiction and risk tier (full application Aug 2, 2026, with literacy and governance duties already live); ISO/IEC 42001 is a certifiable management-system standard. Confirm applicability to your organization before treating any duty as binding. See the disclaimer below: this is not legal advice."
+          "text": "Verification checkpoint: NIST AI RMF 1.0 is voluntary guidance. Under the EU AI Act, prohibited-practice and AI-literacy provisions have applied since February 2, 2025, while the July 2026 AI Omnibus moved major high-risk-system obligations to December 2, 2027 for Annex III systems and August 2, 2028 for Annex I product systems. Other provisions follow their own dates. ISO/IEC 42001 is a certifiable management-system standard. Confirm jurisdiction, role, system classification, and the current consolidated law before treating any provision as binding. This is not legal advice."
         }
       ]
     },
