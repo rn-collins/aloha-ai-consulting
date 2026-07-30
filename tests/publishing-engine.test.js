@@ -109,11 +109,26 @@ test('renders and indexes structured editorial copy', () => {
   const platform = derivePlatform(resources);
   const html = renderStructuredPage({ resource: alpha, registry: platform.registry });
   assert.match(html, /<title>Concise search title \| Aloha AI<\/title>/);
+  assert.match(html, /og-image\.png\?v=20260729b/);
+  assert.match(html, /Complex work, made usable/);
   assert.match(html, /A substantive retained paragraph/);
   assert.match(html, /<pre><code>VERIFY\(source\)<\/code><\/pre>/);
   assert.match(html, /<th>Signal<\/th>/);
   const search = JSON.parse(generatedOutputs(resources, platform).get('/search-index.json'));
   assert.match(search.find((item) => item.id === 'alpha').text, /human reviewer/);
+});
+
+test('keeps an authored homepage brand title from repeating the brand suffix', () => {
+  const home = {
+    ...resource('home', [{ type: 'supports', target: 'beta' }]),
+    pathname: '/',
+    seoTitle: 'Aloha AI | Complex work, made usable'
+  };
+  const beta = resource('beta', [{ type: 'supports', target: 'home' }]);
+  const platform = derivePlatform([home, beta]);
+  const html = renderStructuredPage({ resource: home, registry: platform.registry });
+  assert.match(html, /<title>Aloha AI \| Complex work, made usable<\/title>/);
+  assert.doesNotMatch(html, /Aloha AI \| Complex work, made usable \| Aloha AI/);
 });
 
 test('publishes an accessible plain-language search journey', () => {
