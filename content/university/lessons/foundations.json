@@ -2439,7 +2439,7 @@
       }
     ],
     "editorialIntro": [
-      "Before you paste one more thing into a chat box: here is what the tool keeps, who can see it, and the real gap between a free login and a business contract."
+      "Before you paste one more thing into a chat box: learn which product, contract, settings, retention rules, and connected services determine what happens to the information."
     ],
     "editorialSections": [
       {
@@ -2452,7 +2452,7 @@
           },
           {
             "type": "paragraph",
-            "text": "Is it stored? For how long? And can it be used to train a future model that other people will use? The answers depend almost entirely on which tier you are on. A personal free login and a paid business plan from the same company can handle your data in completely different ways."
+            "text": "Is it stored? For how long? Can it be used to improve models? Can an administrator, safety reviewer, connected app, web-search provider, or other subprocessor receive it? The answers depend on the exact product, account, contract, settings, features, and jurisdiction—not the vendor name alone."
           },
           {
             "type": "paragraph",
@@ -2460,7 +2460,7 @@
           },
           {
             "type": "paragraph",
-            "text": "Vendor policies described here were checked in mid-2026. Data terms change often, so treat this as a starting map. Confirm each vendor's current policy at the source before you rely on it."
+            "text": "The vendor documentation underlying this lesson was checked in July 2026. Product terms and controls change often. Confirm the current documents and the settings on the actual account before relying on any protection."
           }
         ]
       },
@@ -2542,21 +2542,21 @@
           },
           {
             "type": "paragraph",
-            "text": "Paid tiers reduce risk; they do not make a tool private by default. Human reviewers can still see flagged content, and misconfigured settings are common."
+            "text": "A paid label is not a privacy conclusion. The protection depends on the product terms, contract, administrator controls, enabled features, connected services, retention policy, and the kind of information involved."
           }
         ]
       },
       {
-        "title": "How the tiers actually differ",
-        "eyebrow": "Tools",
+        "title": "What to verify for the account you will actually use",
+        "eyebrow": "Vendor diligence",
         "blocks": [
           {
             "type": "paragraph",
-            "text": "The pattern is consistent: consumer plans may use your chats to improve models unless you opt out, while business and enterprise plans do not train on your data by default. Retention also drops as you move up."
+            "text": "Do not infer data handling from \"free,\" \"paid,\" \"business,\" or \"enterprise.\" OpenAI, Anthropic, Microsoft, and Google each separate products, features, account controls, and contractual commitments differently. Verify the exact service rather than transferring a promise from one tier or interface to another."
           },
           {
             "type": "paragraph",
-            "text": "Simplified comparison, verified mid-2026. Always re-check current terms at each vendor's own privacy page."
+            "text": "Current first-party documentation supports the questions below. It does not support one universal retention number for an entire vendor."
           },
           {
             "type": "table",
@@ -2564,15 +2564,15 @@
               {
                 "cells": [
                   {
-                    "text": "Vendor / tier",
+                    "text": "Service",
                     "header": true
                   },
                   {
-                    "text": "Trains on your content by default?",
+                    "text": "Verify before use",
                     "header": true
                   },
                   {
-                    "text": "Retention",
+                    "text": "Do not assume",
                     "header": true
                   }
                 ]
@@ -2580,78 +2580,78 @@
               {
                 "cells": [
                   {
-                    "text": "ChatGPT Free / Plus / Pro (consumer)"
+                    "text": "OpenAI consumer services"
                   },
                   {
-                    "text": "Yes, unless you opt out in Data Controls"
+                    "text": "Data Controls, Temporary Chat behavior, deletion timing, memory, connected apps, feedback, and any safety or legal exception"
                   },
                   {
-                    "text": "Kept until you delete; deleted chats purged within ~30 days. A copy of temporary chats is held ~30 days for abuse monitoring."
+                    "text": "That a consumer subscription has the business-data commitments published for organizational products"
                   }
                 ]
               },
               {
                 "cells": [
                   {
-                    "text": "ChatGPT Business / Enterprise"
+                    "text": "OpenAI business, enterprise, education, healthcare, or API services"
                   },
                   {
-                    "text": "No, not by default"
+                    "text": "The contract and service-specific retention, administrator settings, enabled apps, feedback choices, human-review boundary, and any approved zero-retention control"
                   },
                   {
-                    "text": "Admin controls retention; deleted conversations removed within ~30 days."
+                    "text": "That every organizational product, feature, or connected app has identical storage and review behavior"
                   }
                 ]
               },
               {
                 "cells": [
                   {
-                    "text": "Claude (consumer)"
+                    "text": "Anthropic consumer services"
                   },
                   {
-                    "text": "Only if you leave \"Improve Claude for everyone\" on; opted-in chats can be retained up to 5 years. Off returns you to 30-day retention with no training."
+                    "text": "The model-improvement setting, conversation deletion, safety-review treatment, model-specific retention, and whether a chat is new or resumed after a setting change"
                   },
                   {
-                    "text": "30 days when training is off; up to 5 years when on."
+                    "text": "That one 30-day or five-year figure describes every copy, purpose, model, or exception"
                   }
                 ]
               },
               {
                 "cells": [
                   {
-                    "text": "Claude for Work / API / Enterprise"
+                    "text": "Anthropic work, API, or enterprise services"
                   },
                   {
-                    "text": "No. API standard log retention is ~7 days. Zero Data Retention available for qualifying Enterprise customers."
+                    "text": "The commercial terms, product and model used, standard or custom retention, safety controls, feedback, integrations, and eligibility for any special retention arrangement"
                   },
                   {
-                    "text": "~7 days (API) to as low as zero (ZDR)."
+                    "text": "That an API or enterprise retention option automatically applies to a Claude consumer or work account"
                   }
                 ]
               },
               {
                 "cells": [
                   {
-                    "text": "Microsoft 365 Copilot (paid business)"
+                    "text": "Microsoft 365 Copilot and Copilot Chat with enterprise data protection"
                   },
                   {
-                    "text": "No. Content stays in your tenant and is not used to train the underlying models."
+                    "text": "Interaction logging, Purview retention and eDiscovery, Graph permissions, web-search treatment, agents and connectors, model choices, data residency, and the underlying subscription"
                   },
                   {
-                    "text": "Governed by your Microsoft 365 tenant policies."
+                    "text": "That \"not used to train foundation models\" means prompts are not stored, discoverable, processed elsewhere, or shared with an enabled service"
                   }
                 ]
               },
               {
                 "cells": [
                   {
-                    "text": "Gemini in Google Workspace (paid business)"
+                    "text": "Gemini in Google Workspace and the Gemini app for work"
                   },
                   {
-                    "text": "No. Workspace data is not used to train models outside your organization."
+                    "text": "Which interface is in use, conversation-history and deletion controls, administrator-selected retention, smart features, connected services, feedback, and the Workspace edition"
                   },
                   {
-                    "text": "Governed by your Workspace admin policies."
+                    "text": "That all Gemini interfaces share one history, retention, training, and administrator-access rule"
                   }
                 ]
               }
@@ -2659,7 +2659,7 @@
           },
           {
             "type": "paragraph",
-            "text": "One nuance to know: even when a vendor says it does not train on your data, most reserve the right to have a human review content flagged for safety or abuse. Anthropic's mid-2026 policy is explicit that conversations flagged for safety review can be used in ways that override a stated training preference, and it does not spell out what triggers a flag. Treat \"not used for training\" as strong protection, not an absolute guarantee of secrecy."
+            "text": "\"Not used to train foundation models\" answers one question. It does not by itself answer whether prompts are logged, how long copies remain, who can retrieve them, whether web search or an agent receives part of a prompt, how feedback is handled, what safety review applies, or whether the service satisfies a contract or professional duty."
           }
         ]
       },
@@ -2675,7 +2675,7 @@
               "Set the rule. Green goes anywhere. Yellow goes only into a business or enterprise tier with training off. Red does not go in at all unless a contract and configuration specifically permit it.",
               "Strip before you paste. For yellow items, remove names and identifiers first. \"Client A, a 54-year-old\" carries far less risk than a real name.",
               "Check the account settings once, in writing. Confirm the tier, the training toggle, and the retention setting. Screenshot it. Settings get changed and reset.",
-              "Turn off training and history where you can. On consumer tiers, use data controls and temporary or incognito modes for anything you would not want retained.",
+              "Use the narrowest approved product and settings. A temporary or no-history mode can reduce some retention or training uses, but it is not permission to submit information the contract, law, or professional duty prohibits.",
               "Write it down for the team. A one-page rule everyone can follow beats a perfect policy nobody reads."
             ]
           }
@@ -2737,7 +2737,7 @@
           },
           {
             "type": "paragraph",
-            "text": "On most consumer tiers, your chats can train the next model unless you opt out. This is the single most common mistake."
+            "text": "Consumer data controls vary by vendor, product, region, and feature. Check the current setting on the actual account; do not infer it from the subscription price or an old screenshot."
           },
           {
             "type": "heading",

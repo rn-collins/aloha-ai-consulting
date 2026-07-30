@@ -1543,6 +1543,20 @@ test('citation verifier does not claim unimplemented live checks or misattribute
   assert.match(corpus, /public page does not query CourtListener/i);
 });
 
+test('privacy lesson does not publish false universal vendor-retention rules', () => {
+  const foundations = JSON.parse(fs.readFileSync(new URL('../content/university/lessons/foundations.json', import.meta.url)));
+  const privacy = foundations.find((resource) => resource.id === 'privacy-and-confidentiality-lesson');
+  const corpus = JSON.stringify(privacy);
+
+  assert.doesNotMatch(corpus, /Paid tiers reduce risk/i);
+  assert.doesNotMatch(corpus, /Retention also drops as you move up/i);
+  assert.doesNotMatch(corpus, /Admin controls retention; deleted conversations removed within ~30 days/i);
+  assert.doesNotMatch(corpus, /30 days when training is off; up to 5 years when on/i);
+  assert.match(corpus, /It does not support one universal retention number for an entire vendor/i);
+  assert.match(corpus, /Microsoft 365 Copilot.*Purview retention and eDiscovery/i);
+  assert.match(corpus, /Gemini in Google Workspace.*administrator-selected retention/i);
+});
+
 test('keeps one current commercial pricing architecture and avoids volatile vendor prices', () => {
   const contentRoot = path.join(process.cwd(), 'content');
   const files = [];
