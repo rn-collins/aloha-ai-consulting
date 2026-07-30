@@ -5,9 +5,18 @@
     "pathname": "/university/courses/citation-verifier",
     "eyebrow": "Build-it course",
     "title": "Build a Trust-Safe Citation Verifier",
-    "summary": "Build a working, governed system that catches fabricated, mis-stated, and unsupported citations before they ship. Async course with a built-in AI tutor. No coding background needed.",
+    "summary": "Build a working, governed system that catches fabricated, mis-stated, and unsupported citations before they ship. The curriculum outline is public; lessons, enrollment, and the planned tutor are not yet available. No coding background is expected.",
     "audience": "Researchers, writers, legal teams, educators, and publishers responsible for claims that must be traceable and correct.",
     "maturity": "Beta",
+    "delivery": {
+      "status": "curriculum-preview",
+      "enrollmentOpen": false,
+      "lessons": "planned",
+      "tutor": "planned",
+      "progressTracking": "not-available",
+      "credential": "not-available",
+      "lastReviewed": "2026-07-29"
+    },
     "topics": [
       "citation-verification",
       "research",
@@ -74,7 +83,7 @@
     ],
     "editorialIntro": [
       "In a weekend, build a working system that catches fabricated, mis-stated, and unsupported citations before they ship — a governed AI checker you own and control.",
-      "No coding background needed · Async, lifetime access · Built-in AI tutor that answers in scope"
+      "Curriculum preview · enrollment closed · lessons and governed tutor planned"
     ],
     "editorialSections": [
       {
@@ -180,7 +189,7 @@
         "blocks": [
           {
             "type": "paragraph",
-            "text": "Every Aloha AI course ships with a governed AI tutor, grounded only in the course materials. It cites the lesson it is answering from, tells you when a question is out of scope, and never fabricates. It is built the same way the system you are building is. The product proves itself."
+            "text": "A governed course tutor is planned, but it is not connected or available on this public page. The intended design would ground answers in reviewed course materials, cite the relevant lesson, disclose uncertainty, and refuse out-of-scope questions. Those behaviors must be evaluated before release."
           },
           {
             "type": "list",
@@ -212,11 +221,11 @@
           },
           {
             "type": "paragraph",
-            "text": "Illustrative. The live tutor runs on your course materials."
+            "text": "Illustrative interface only. No course tutor is connected on the public site."
           },
           {
             "type": "paragraph",
-            "text": "Live governed tutor — answers only from this course's materials, cites the lesson, refuses out of scope. Connect the engine (serve.py) to enable."
+            "text": "Planned capability — a future tutor may answer from reviewed course materials, cite the relevant lesson, and refuse out-of-scope questions after evaluation and release."
           }
         ]
       },
@@ -276,7 +285,7 @@
           },
           {
             "type": "paragraph",
-            "text": "Async, lifetime access · 9 build-modules · templates and rubric · the AI tutor. You build your own verifier."
+            "text": "Planned course · 9 build-modules · templates and rubric · governed tutor planned. Enrollment is not open."
           },
           {
             "type": "heading",
@@ -348,7 +357,7 @@
           },
           {
             "type": "paragraph",
-            "text": "A governed assistant grounded in the course materials. It cites the lesson it is answering from, stays in scope, and will not fabricate, the same standard the tool you build holds."
+            "text": "A planned course assistant intended to answer from reviewed materials and cite the relevant lesson. It is not currently connected or available; its scope and refusal behavior must be evaluated before release."
           },
           {
             "type": "heading",
@@ -396,9 +405,18 @@
     "pathname": "/university/courses/claims-checker",
     "eyebrow": "Build-it course",
     "title": "Build a Regulated Claims Checker",
-    "summary": "Build a working tool that screens marketing, product, and label claims against the rules that apply before you publish. Async course with a built-in AI tutor.",
+    "summary": "Build a working tool that screens marketing, product, and label claims against the rules that apply before you publish. The curriculum outline is public; lessons, enrollment, and the planned tutor are not yet available.",
     "audience": "Marketing, product, compliance, and regulatory teams whose public claims may be reviewed by regulators.",
     "maturity": "Beta",
+    "delivery": {
+      "status": "curriculum-preview",
+      "enrollmentOpen": false,
+      "lessons": "planned",
+      "tutor": "planned",
+      "progressTracking": "not-available",
+      "credential": "not-available",
+      "lastReviewed": "2026-07-29"
+    },
     "topics": [
       "regulated-claims",
       "compliance",
@@ -465,7 +483,7 @@
     ],
     "editorialIntro": [
       "In a weekend, build a working tool that screens your marketing, product, and label claims against the rules that apply before you publish, flagging what is unsubstantiated, overstated, or prohibited, and telling you the rule and the substantiation it needs.",
-      "No coding background needed · Async, lifetime access · Built-in governed AI tutor"
+      "Curriculum preview · enrollment closed · lessons and governed tutor planned"
     ],
     "editorialSections": [
       {
@@ -571,7 +589,7 @@
         "blocks": [
           {
             "type": "paragraph",
-            "text": "Every Aloha AI course ships with a governed AI tutor, grounded only in the course materials. It cites the lesson it is answering from, tells you when a question is out of scope, and never fabricates. It is built the same way the system you are building is. The product proves itself."
+            "text": "A governed course tutor is planned, but it is not connected or available on this public page. The intended design would ground answers in reviewed course materials, cite the relevant lesson, disclose uncertainty, and refuse out-of-scope questions. Those behaviors must be evaluated before release."
           },
           {
             "type": "list",
@@ -603,11 +621,11 @@
           },
           {
             "type": "paragraph",
-            "text": "Illustrative. The live tutor runs on your course materials."
+            "text": "Illustrative interface only. No course tutor is connected on the public site."
           },
           {
             "type": "paragraph",
-            "text": "Live governed tutor — answers only from this course's materials, cites the lesson, refuses out of scope. Connect the engine (serve.py) to enable."
+            "text": "Planned capability — a future tutor may answer from reviewed course materials, cite the relevant lesson, and refuse out-of-scope questions after evaluation and release."
           }
         ]
       },
@@ -667,7 +685,7 @@
           },
           {
             "type": "paragraph",
-            "text": "Async, lifetime access · 9 build-modules · templates and rubric · the AI tutor. You build your own claims checker."
+            "text": "Planned course · 9 build-modules · templates and rubric · governed tutor planned. Enrollment is not open."
           },
           {
             "type": "heading",
@@ -739,7 +757,7 @@
           },
           {
             "type": "paragraph",
-            "text": "A governed assistant grounded in the course materials. It cites the lesson it is answering from, stays in scope, and will not fabricate, the same standard the tool you build holds."
+            "text": "A planned course assistant intended to answer from reviewed materials and cite the relevant lesson. It is not currently connected or available; its scope and refusal behavior must be evaluated before release."
           },
           {
             "type": "heading",
@@ -790,6 +808,15 @@
     "summary": "The on-ramp course. In one weekend, build a small, supervised AI team around one real workflow—named agents, a one-line role contract for each, and a human-approval step so nothing sends or spends without you.",
     "audience": "Founders, operators, creators, and small teams ready to move from informal prompting to one supervised AI workflow.",
     "maturity": "Beta",
+    "delivery": {
+      "status": "curriculum-preview",
+      "enrollmentOpen": false,
+      "lessons": "planned",
+      "tutor": "planned",
+      "progressTracking": "not-available",
+      "credential": "not-available",
+      "lastReviewed": "2026-07-29"
+    },
     "topics": [
       "ai-teams",
       "agents",
@@ -855,7 +882,7 @@
     ],
     "editorialIntro": [
       "Do not want to hire anyone yet? Start here. In one weekend you build a small, supervised AI team around one real workflow from your work — named agents, a one-line contract for each, and an approval step so nothing sends, posts, or spends without you.",
-      "No coding background needed · Async, lifetime access · Built-in AI tutor · The entry point to the full course line"
+      "Curriculum preview · enrollment closed · lessons and tutor planned · intended as the entry point to the full course line"
     ],
     "editorialSections": [
       {
@@ -978,7 +1005,7 @@
         "blocks": [
           {
             "type": "paragraph",
-            "text": "Every Aloha AI course ships with a governed AI tutor, grounded only in the course materials. It cites the lesson it is answering from, tells you when a question is out of scope, and never fabricates. It is built the same way the team you are building is. The product proves itself."
+            "text": "A governed course tutor is planned, but it is not connected or available on this public page. The intended design would ground answers in reviewed course materials, cite the relevant lesson, disclose uncertainty, and refuse out-of-scope questions. Those behaviors must be evaluated before release."
           },
           {
             "type": "list",
@@ -1010,11 +1037,11 @@
           },
           {
             "type": "paragraph",
-            "text": "Illustrative. The live tutor runs on your course materials."
+            "text": "Illustrative interface only. No course tutor is connected on the public site."
           },
           {
             "type": "paragraph",
-            "text": "Live governed tutor — answers only from this course's materials, cites the lesson, refuses out of scope. Connect the engine (serve.py) to enable."
+            "text": "Planned capability — a future tutor may answer from reviewed course materials, cite the relevant lesson, and refuse out-of-scope questions after evaluation and release."
           }
         ]
       },
@@ -1074,7 +1101,7 @@
           },
           {
             "type": "paragraph",
-            "text": "Async, lifetime access · 4 weekend build-blocks · role-contract template · the AI tutor. You build your first team."
+            "text": "Planned course · 4 weekend build-blocks · role-contract template · governed tutor planned. Enrollment is not open."
           },
           {
             "type": "heading",
@@ -1183,6 +1210,15 @@
     "summary": "Build a supervised AI that researches, drafts, and organizes in your voice and never sends, posts, or spends without your approval.",
     "audience": "Founders, executives, professionals, and creators who need leverage while retaining authority over external actions.",
     "maturity": "Beta",
+    "delivery": {
+      "status": "curriculum-preview",
+      "enrollmentOpen": false,
+      "lessons": "planned",
+      "tutor": "planned",
+      "progressTracking": "not-available",
+      "credential": "not-available",
+      "lastReviewed": "2026-07-29"
+    },
     "topics": [
       "ai-operators",
       "agents",
@@ -1250,7 +1286,7 @@
     ],
     "editorialIntro": [
       "Build a supervised AI that researches, drafts, and organizes across your tools in your voice, and never sends, posts, or spends without your approval.",
-      "Leverage without losing control · Async, lifetime access · Built-in governed AI tutor"
+      "Leverage without losing control · curriculum preview · enrollment closed · lessons and governed tutor planned"
     ],
     "editorialSections": [
       {
@@ -1375,7 +1411,7 @@
         "blocks": [
           {
             "type": "paragraph",
-            "text": "A governed tutor grounded only in the course materials. It cites the lesson it is answering from, stays in scope, and will not fabricate. Here it demonstrates the exact safety property you are building: it stops a consequential action for approval."
+            "text": "A governed course tutor is planned, but it is not connected or available on this public page. The intended design would cite reviewed course lessons, stay within scope, disclose uncertainty, and stop consequential actions for human approval. Those behaviors must be evaluated before release."
           },
           {
             "type": "list",
@@ -1407,11 +1443,11 @@
           },
           {
             "type": "paragraph",
-            "text": "Illustrative. The live tutor runs on your course materials."
+            "text": "Illustrative interface only. No course tutor is connected on the public site."
           },
           {
             "type": "paragraph",
-            "text": "Live governed tutor — answers only from this course's materials, cites the lesson, refuses out of scope. Connect the engine (serve.py) to enable."
+            "text": "Planned capability — a future tutor may answer from reviewed course materials, cite the relevant lesson, and refuse out-of-scope questions after evaluation and release."
           }
         ]
       },
@@ -1471,7 +1507,7 @@
           },
           {
             "type": "paragraph",
-            "text": "Async, lifetime access · 10 build-modules · templates and the governed AI tutor. You build your own supervised operator."
+            "text": "Planned course · 10 build-modules · templates · governed tutor planned. Enrollment is not open."
           },
           {
             "type": "heading",
@@ -1543,7 +1579,7 @@
           },
           {
             "type": "paragraph",
-            "text": "It is the deepest build and the one your other Aloha AI systems, and course tutors, run on."
+            "text": "It is the deepest planned build in the catalog and the intended foundation for future supervised operators and course tutors."
           },
           {
             "type": "heading",
@@ -1580,6 +1616,15 @@
     "summary": "Build a readiness checker that assesses coverage, freshness, structure, contradictions, and sensitive data, and prepares your knowledge base for safe, accurate retrieval.",
     "audience": "Teams preparing internal documents, policies, support content, or research collections for AI-assisted retrieval.",
     "maturity": "Beta",
+    "delivery": {
+      "status": "curriculum-preview",
+      "enrollmentOpen": false,
+      "lessons": "planned",
+      "tutor": "planned",
+      "progressTracking": "not-available",
+      "credential": "not-available",
+      "lastReviewed": "2026-07-29"
+    },
     "topics": [
       "knowledge-bases",
       "retrieval",
@@ -1646,7 +1691,7 @@
     ],
     "editorialIntro": [
       "In a weekend, build a readiness checker and method that assesses your knowledge base for coverage, freshness, structure, contradictions, and sensitive data, and prepares it so an AI assistant or RAG system uses it safely and accurately.",
-      "No coding background needed · Async, lifetime access · Built-in governed AI tutor"
+      "Curriculum preview · enrollment closed · lessons and governed tutor planned"
     ],
     "editorialSections": [
       {
@@ -1752,7 +1797,7 @@
         "blocks": [
           {
             "type": "paragraph",
-            "text": "Every Aloha AI course ships with a governed AI tutor, grounded only in the course materials. It cites the lesson it is answering from, tells you when a question is out of scope, and never fabricates. It is built the same way the system you are building is. The product proves itself."
+            "text": "A governed course tutor is planned, but it is not connected or available on this public page. The intended design would ground answers in reviewed course materials, cite the relevant lesson, disclose uncertainty, and refuse out-of-scope questions. Those behaviors must be evaluated before release."
           },
           {
             "type": "list",
@@ -1784,11 +1829,11 @@
           },
           {
             "type": "paragraph",
-            "text": "Illustrative. The live tutor runs on your course materials."
+            "text": "Illustrative interface only. No course tutor is connected on the public site."
           },
           {
             "type": "paragraph",
-            "text": "Live governed tutor — answers only from this course's materials, cites the lesson, refuses out of scope. Connect the engine (serve.py) to enable."
+            "text": "Planned capability — a future tutor may answer from reviewed course materials, cite the relevant lesson, and refuse out-of-scope questions after evaluation and release."
           }
         ]
       },
@@ -1848,7 +1893,7 @@
           },
           {
             "type": "paragraph",
-            "text": "Async, lifetime access · 9 build-modules · templates and rubric · the AI tutor. You build your own readiness checker."
+            "text": "Planned course · 9 build-modules · templates and rubric · governed tutor planned. Enrollment is not open."
           },
           {
             "type": "heading",
@@ -1920,7 +1965,7 @@
           },
           {
             "type": "paragraph",
-            "text": "A governed assistant grounded in the course materials. It cites the lesson it is answering from, stays in scope, and will not fabricate, the same standard the tool you build holds."
+            "text": "A planned course assistant intended to answer from reviewed materials and cite the relevant lesson. It is not currently connected or available; its scope and refusal behavior must be evaluated before release."
           },
           {
             "type": "heading",
@@ -1957,6 +2002,15 @@
     "summary": "Build a tool that monitors bills and rules across jurisdictions, scores relevance, and summarizes each change with a citation to the primary source.",
     "audience": "Legal, policy, compliance, advocacy, and regulated-industry teams that cannot afford to miss material changes.",
     "maturity": "Beta",
+    "delivery": {
+      "status": "curriculum-preview",
+      "enrollmentOpen": false,
+      "lessons": "planned",
+      "tutor": "planned",
+      "progressTracking": "not-available",
+      "credential": "not-available",
+      "lastReviewed": "2026-07-29"
+    },
     "topics": [
       "regulatory-intelligence",
       "legislation",
@@ -2023,7 +2077,7 @@
     ],
     "editorialIntro": [
       "In a weekend, build a working tool that monitors bills and rules across jurisdictions, scores what matters to your organization, and summarizes every change with a citation back to the primary source.",
-      "No coding background needed · Async, lifetime access · Built-in governed AI tutor"
+      "Curriculum preview · enrollment closed · lessons and governed tutor planned"
     ],
     "editorialSections": [
       {
@@ -2129,7 +2183,7 @@
         "blocks": [
           {
             "type": "paragraph",
-            "text": "Every Aloha AI course ships with a governed AI tutor, grounded only in the course materials. It cites the lesson it is answering from, tells you when a question is out of scope, and never fabricates. It is built the same way the system you are building is. The product proves itself."
+            "text": "A governed course tutor is planned, but it is not connected or available on this public page. The intended design would ground answers in reviewed course materials, cite the relevant lesson, disclose uncertainty, and refuse out-of-scope questions. Those behaviors must be evaluated before release."
           },
           {
             "type": "list",
@@ -2161,11 +2215,11 @@
           },
           {
             "type": "paragraph",
-            "text": "Illustrative. The live tutor runs on your course materials."
+            "text": "Illustrative interface only. No course tutor is connected on the public site."
           },
           {
             "type": "paragraph",
-            "text": "Live governed tutor — answers only from this course's materials, cites the lesson, refuses out of scope. Connect the engine (serve.py) to enable."
+            "text": "Planned capability — a future tutor may answer from reviewed course materials, cite the relevant lesson, and refuse out-of-scope questions after evaluation and release."
           }
         ]
       },
@@ -2225,7 +2279,7 @@
           },
           {
             "type": "paragraph",
-            "text": "Async, lifetime access · 9 build-modules · templates and rubric · the AI tutor. You build your own regulatory tracker."
+            "text": "Planned course · 9 build-modules · templates and rubric · governed tutor planned. Enrollment is not open."
           },
           {
             "type": "heading",
@@ -2297,7 +2351,7 @@
           },
           {
             "type": "paragraph",
-            "text": "A governed assistant grounded in the course materials. It cites the lesson it is answering from, stays in scope, and will not fabricate, the same standard the tool you build holds."
+            "text": "A planned course assistant intended to answer from reviewed materials and cite the relevant lesson. It is not currently connected or available; its scope and refusal behavior must be evaluated before release."
           },
           {
             "type": "heading",
@@ -2334,6 +2388,15 @@
     "summary": "Build an audit method and tool that maps workflows, scores AI-readiness, classifies risk, and outputs a defensible roadmap.",
     "audience": "Consultants, operators, transformation leaders, and internal AI owners who need a repeatable adoption method.",
     "maturity": "Beta",
+    "delivery": {
+      "status": "curriculum-preview",
+      "enrollmentOpen": false,
+      "lessons": "planned",
+      "tutor": "planned",
+      "progressTracking": "not-available",
+      "credential": "not-available",
+      "lastReviewed": "2026-07-29"
+    },
     "topics": [
       "ai-readiness",
       "workflow-audit",
@@ -2400,7 +2463,7 @@
     ],
     "editorialIntro": [
       "Build an audit method and tool that maps a business's workflows, scores where AI actually fits, classifies the risk, and outputs a prioritized, defensible roadmap, a service clients will pay you to run.",
-      "No coding background needed · Async, lifetime access · Built-in governed AI tutor"
+      "Curriculum preview · enrollment closed · lessons and governed tutor planned"
     ],
     "editorialSections": [
       {
@@ -2506,7 +2569,7 @@
         "blocks": [
           {
             "type": "paragraph",
-            "text": "Every Aloha AI course ships with a governed AI tutor, grounded only in the course materials. It cites the lesson it is answering from, tells you when a question is out of scope, and never fabricates. It is built the same way the system you are building is. The product proves itself."
+            "text": "A governed course tutor is planned, but it is not connected or available on this public page. The intended design would ground answers in reviewed course materials, cite the relevant lesson, disclose uncertainty, and refuse out-of-scope questions. Those behaviors must be evaluated before release."
           },
           {
             "type": "list",
@@ -2538,11 +2601,11 @@
           },
           {
             "type": "paragraph",
-            "text": "Illustrative. The live tutor runs on your course materials."
+            "text": "Illustrative interface only. No course tutor is connected on the public site."
           },
           {
             "type": "paragraph",
-            "text": "Live governed tutor — answers only from this course's materials, cites the lesson, refuses out of scope. Connect the engine (serve.py) to enable."
+            "text": "Planned capability — a future tutor may answer from reviewed course materials, cite the relevant lesson, and refuse out-of-scope questions after evaluation and release."
           }
         ]
       },
@@ -2602,7 +2665,7 @@
           },
           {
             "type": "paragraph",
-            "text": "Async, lifetime access · 9 build-modules · templates and rubric · the AI tutor. You build your own audit method and tool."
+            "text": "Planned course · 9 build-modules · templates and rubric · governed tutor planned. Enrollment is not open."
           },
           {
             "type": "heading",
@@ -2674,7 +2737,7 @@
           },
           {
             "type": "paragraph",
-            "text": "A governed assistant grounded in the course materials. It cites the lesson it is answering from, stays in scope, and will not fabricate, the same standard the tool you build holds."
+            "text": "A planned course assistant intended to answer from reviewed materials and cite the relevant lesson. It is not currently connected or available; its scope and refusal behavior must be evaluated before release."
           },
           {
             "type": "heading",
