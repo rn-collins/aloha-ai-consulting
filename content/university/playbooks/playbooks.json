@@ -210,7 +210,7 @@
           },
           {
             "type": "paragraph",
-            "text": "ChatGPT Plus or Claude Pro, both about $20/month, for turning intake answers into a profile, prepping the kickoff, and drafting the welcome sequence and onboarding plan. Free tiers are fine for testing; paid tiers give you stronger models and higher limits once this is a real part of your week."
+            "text": "ChatGPT or Claude can turn intake answers into a profile, prepare a kickoff, and draft a welcome sequence and onboarding plan. Test first, then compare current limits, data terms, and pricing."
           },
           {
             "type": "heading",
@@ -226,7 +226,7 @@
           },
           {
             "type": "paragraph",
-            "text": "Notion is a common choice — the Business tier runs about $20/user/month, and AI is now bundled into that tier rather than sold as the old separate add-on that was removed. Google Docs plus a spreadsheet works perfectly well too and costs nothing extra."
+            "text": "Notion is one workspace option; verify its current AI packaging and data terms. Google Docs plus a spreadsheet can also support the workflow without adding another specialized system."
           },
           {
             "type": "heading",
@@ -242,7 +242,7 @@
           },
           {
             "type": "paragraph",
-            "text": "Zapier or Make to move a form submission into your profile doc and kick off the drafts. Zapier's Professional plan starts around $19.99/month annual for 750 tasks; a multi-step Zap burns one task per step per run, so budget by steps, not runs."
+            "text": "Zapier or Make can move a form submission into the profile record and begin the drafting workflow. Verify current task accounting, limits, data terms, and pricing; multi-step automations may consume usage at each step."
           },
           {
             "type": "heading",
@@ -746,7 +746,7 @@
           },
           {
             "type": "paragraph",
-            "text": "ChatGPT Plus or Claude Pro, both about $20/month, for mining transcripts, drafting per channel, and generating hook variants. The paid tiers give you the stronger models and the longer context you will want when feeding in a full hour-long transcript."
+            "text": "ChatGPT or Claude can mine transcripts, draft for each channel, and generate hook variants. Compare current context limits, data terms, and pricing before processing long transcripts."
           },
           {
             "type": "heading",
@@ -762,7 +762,7 @@
           },
           {
             "type": "paragraph",
-            "text": "Notion is a natural home — one page per source, with the transcript, voice guide, and each channel's drafts together. Notion's AI features are bundled into the Business plan (about $20/user/month); the older standalone $10 AI add-on has been removed. A plain Google Doc works fine to start."
+            "text": "Notion can hold one page per source with the transcript, voice guide, and channel drafts together. Verify its current AI packaging and data terms; a plain Google Doc can work for the first version."
           },
           {
             "type": "heading",
@@ -778,7 +778,7 @@
           },
           {
             "type": "paragraph",
-            "text": "Zapier to move a finished transcript into your drafting workspace and route approved pieces to your scheduler. Zapier's Professional plan starts around $19.99/month annual for 750 tasks; a multi-step Zap burns one task per step per run, so budget by steps, not runs."
+            "text": "Zapier can move a finished transcript into the drafting workspace and route approved pieces to a scheduler. Verify current task accounting, limits, data terms, and pricing before automating volume."
           },
           {
             "type": "heading",
@@ -1837,7 +1837,7 @@
           },
           {
             "type": "paragraph",
-            "text": "ChatGPT Plus or Claude Pro, both about $20/month. This is what you use to clean up messy docs, draft FAQs, and — in the manual version — answer questions from context you paste in. Free tiers work for testing; paid tiers give you the stronger models and higher limits you will want once this is real."
+            "text": "ChatGPT or Claude can clean up documents, draft FAQs, and answer questions from supplied context. Test first, then compare current limits, data terms, and pricing before operational use."
           },
           {
             "type": "heading",
@@ -1845,7 +1845,7 @@
           },
           {
             "type": "paragraph",
-            "text": "Notion is a common home for this. Notion Business runs about $20/user/month, and the AI features (Ask Notion / AI search across your workspace) are bundled into the Business tier now — the old separate ~$10 AI add-on has been removed. Custom Agents, if you build them, draw on metered credits (roughly $10 per 1,000 credits) on top of the seat price, so watch usage."
+            "text": "Notion is one possible home for this. Verify its current AI packaging, search capabilities, metered usage, data terms, and pricing before building the workflow around them."
           },
           {
             "type": "heading",
@@ -1869,7 +1869,7 @@
           },
           {
             "type": "paragraph",
-            "text": "Zapier or Make to keep sources in sync — for example, pushing a resolved Slack decision into your doc hub. Zapier's Professional plan starts around $19.99/month annual for 750 tasks; a multi-step Zap burns one task per step per run, so budget by steps, not runs."
+            "text": "Zapier or Make can keep sources in sync—for example, by moving a resolved decision into the document hub. Verify current task accounting, limits, data terms, and pricing."
           },
           {
             "type": "heading",
@@ -2380,7 +2380,7 @@
           },
           {
             "type": "paragraph",
-            "text": "ChatGPT Plus or Claude Pro, both about $20/month, for research synthesis, qualification, and drafting. Free tiers work for testing; paid tiers give you the stronger models and higher limits you will want once this is real."
+            "text": "ChatGPT or Claude can support research synthesis, qualification, and drafting. Test first, then compare current limits, data terms, and pricing."
           },
           {
             "type": "heading",
@@ -2396,7 +2396,7 @@
           },
           {
             "type": "paragraph",
-            "text": "Apollo.io is a common choice; paid plans run roughly $49/user/month (Basic) to $79 (Professional) on annual billing, and the credit system — not the sticker price — is the real cost driver, so watch usage. LinkedIn Sales Navigator (about $99/month) is an alternative for people-first sourcing."
+            "text": "Apollo.io and LinkedIn Sales Navigator are common sourcing options. Compare current data coverage, credit accounting, permitted use, data terms, and pricing before choosing."
           },
           {
             "type": "heading",
@@ -2412,7 +2412,7 @@
           },
           {
             "type": "paragraph",
-            "text": "Zapier or Make to move rows between steps. Zapier's Professional plan starts around $19.99/month annual for 750 tasks; a multi-step Zap burns one task per step per run, so budget by steps, not runs."
+            "text": "Zapier or Make can move records between steps. Verify current task accounting, limits, data terms, and pricing before automating volume."
           },
           {
             "type": "heading",
@@ -2916,7 +2916,7 @@
           },
           {
             "type": "paragraph",
-            "text": "ChatGPT Plus or Claude Pro, both about $20/month, to turn a messy transcript into a structured SOP, audit it for gaps, and generate checklists. Free tiers work for testing; the paid tiers give you the stronger models and longer context you will want once you are feeding in real walkthroughs."
+            "text": "ChatGPT or Claude can turn a transcript into a structured SOP, audit it for gaps, and generate checklists. Test first, then compare current context limits, data terms, and pricing."
           },
           {
             "type": "heading",
@@ -2924,7 +2924,7 @@
           },
           {
             "type": "paragraph",
-            "text": "A screen recorder or step-capturer so you never start from a blank page: Loom or Descript to record and auto-transcribe a walkthrough, or Scribe or Tango to auto-generate step-by-step captures as you click through a task. Several have usable free tiers; paid plans typically run $12–$24/month."
+            "text": "Use a screen recorder or step-capture tool so you do not start from a blank page: Loom or Descript can record and transcribe a walkthrough, while Scribe or Tango can generate step-by-step captures. Compare current limits, data terms, and pricing."
           },
           {
             "type": "heading",
@@ -2932,7 +2932,7 @@
           },
           {
             "type": "paragraph",
-            "text": "Notion Business (about $20/user/month, with AI bundled into the Business tier now that the old $10 AI add-on has been removed) makes a strong searchable SOP library with owners and review dates as properties. Google Docs plus a shared folder works perfectly well and costs nothing extra if you already use Workspace."
+            "text": "Notion can support a searchable SOP library with owners and review dates. Verify its current AI packaging and data terms; Google Docs plus a shared folder can also support the library."
           },
           {
             "type": "heading",
@@ -2948,7 +2948,7 @@
           },
           {
             "type": "paragraph",
-            "text": "Zapier to nudge the maintenance loop — for example, flag any SOP past its review date. Zapier's Professional plan starts around $19.99/month annual for 750 tasks; a multi-step Zap burns one task per step per run, so budget by steps, not runs."
+            "text": "Zapier can support the maintenance loop—for example, by flagging an SOP past its review date. Verify current task accounting, limits, data terms, and pricing."
           },
           {
             "type": "heading",
