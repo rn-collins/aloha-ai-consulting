@@ -231,6 +231,52 @@ test('rejects malformed structured editorial copy', () => {
   assert.ok(errors.includes('alpha: editorial section 1 block 2 has an unsupported type'));
 });
 
+test('requires courses to publish an honest delivery contract', () => {
+  const course = {
+    ...resource('course-alpha', [{ type: 'supports', target: 'beta' }]),
+    kind: 'course',
+    delivery: {
+      status: 'curriculum-preview',
+      enrollmentOpen: false,
+      lessons: 'planned',
+      tutor: 'planned',
+      progressTracking: 'not-available',
+      credential: 'not-available',
+      lastReviewed: '2026-07-29'
+    }
+  };
+  const beta = resource('beta', [{ type: 'supports', target: 'course-alpha' }]);
+  assert.deepEqual(errorsFor([course, beta]), []);
+
+  const overstated = {
+    ...course,
+    editorialIntro: ['Async, lifetime access · Built-in governed AI tutor']
+  };
+  const errors = errorsFor([overstated, beta]);
+  assert.ok(errors.includes('course-alpha: course copy advertises a tutor that is not available'));
+  assert.ok(errors.includes('course-alpha: course copy advertises access while enrollment is closed'));
+});
+
+test('renders course delivery status instead of treating catalog maturity as availability', () => {
+  const course = {
+    ...resource('course-alpha', [{ type: 'supports', target: 'beta' }]),
+    kind: 'course',
+    delivery: {
+      status: 'curriculum-preview',
+      enrollmentOpen: false,
+      lessons: 'planned',
+      tutor: 'planned',
+      progressTracking: 'not-available',
+      credential: 'not-available',
+      lastReviewed: '2026-07-29'
+    }
+  };
+  const beta = resource('beta', [{ type: 'supports', target: 'course-alpha' }]);
+  const html = renderStructuredPage({ resource: course, registry: derivePlatform([course, beta]).registry });
+  assert.match(html, /Curriculum preview/);
+  assert.match(html, /Curriculum preview · enrollment closed/);
+});
+
 test('requires named homepage tools and products to link to their canonical pages', () => {
   const linked = {
     ...resource('linked-tools'),
