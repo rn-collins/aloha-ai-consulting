@@ -53,7 +53,7 @@
   "seoTitle": "Citation Verifier",
   "editorialIntro": [
     "Paste an AI-drafted brief and this tool reads every US reporter citation, flags the ones that mark a fabrication (an invented reporter series, an impossible year, a malformed volume or page), and returns a risk score with a per-citation verdict. The structural checks run in your browser with no network call. A live existence check against real case law is one click away.",
-    "Built by RN Collins. Neuroscientist (MS) · Administrative & regulatory law (JD candidate) · AI Workflow Developer, Am Law firm"
+    "Built by RN Collins · MS, Anatomy & Neurobiology · JD candidate · Legal research and AI-assisted workflow experience"
   ],
   "editorialSections": [
     {
