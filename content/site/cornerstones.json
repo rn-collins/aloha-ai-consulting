@@ -513,9 +513,9 @@
     "kind": "learningHub",
     "pathname": "/university",
     "eyebrow": "Educational layer",
-    "title": "Free Generative AI University for Modern Businesses",
-    "summary": "Free foundations, practical lessons, assessments, playbooks, templates, courses, and continuing education that explain the same methods used across Aloha AI consulting, products, research, and tools.",
-    "audience": "People and institutions that want to understand, evaluate, govern, and operate AI systems before or alongside implementation.",
+    "title": "Learn what AI does. Then put it to work.",
+    "summary": "Free lessons, playbooks, templates, tool guides, and courses for understanding AI, checking its output, and building work that holds up.",
+    "audience": "People, teams, and institutions that want to understand, evaluate, govern, and use AI before or alongside implementation.",
     "maturity": "Beta",
     "topics": [
       "education",
