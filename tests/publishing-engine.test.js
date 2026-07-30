@@ -3,7 +3,7 @@ import test from 'node:test';
 import { derivePlatform, generatedOutputs, legacyMigrationInventory, validateCollectionPages, validatePlatform, validateRoutingConfig } from '../lib/site/publishing-engine.js';
 import { renderStructuredPage } from '../lib/site/structured-renderer.js';
 import { buildMetadata, decodeHtmlText, metadataDescription, metadataTitle } from '../lib/site/metadata.js';
-import { UNIVERSITY_RECORD_TYPES, UNIVERSITY_SCHEMA_VERSION, validateUniversitySystem } from '../lib/site/university-model.js';
+import { UNIVERSITY_RECORD_TYPES, UNIVERSITY_SCHEMA_VERSION, expandEducationResources, validateUniversitySystem } from '../lib/site/university-model.js';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
@@ -322,6 +322,34 @@ test('renders the flagship citation course as complete open materials without cl
   assert.match(html, /href="https:\/\/www\.americanbar\.org\/content\/dam\/aba\//);
   assert.match(html, /href="\/tools\/citation-verifier"/);
   assert.match(html, /does not currently accept or grade submissions/i);
+  assert.match(html, /Private progress on this device/);
+  assert.match(html, /Executable knowledge check/);
+  assert.match(html, /\/university\/templates\/citation-verifier-lab-kit/);
+  assert.match(html, /\/university\/courses\/citation-verifier\/lessons\/failure/);
+});
+
+test('publishes the citation lab kit as a canonical page with a browser-local download', () => {
+  const kit = JSON.parse(fs.readFileSync(new URL('../content/university/templates/citation-verifier-lab-kit.json', import.meta.url)));
+  const html = renderStructuredPage({ resource: kit, registry: new Map([[kit.id, kit]]) });
+  assert.match(html, /id="template-download"/);
+  assert.match(html, /Download Markdown template/);
+  assert.match(html, /not a submission portal/i);
+  assert.match(html, /citation-verifier-lab-and-submission-kit\.md/);
+});
+
+test('derives eighteen dedicated flagship lesson routes from the canonical course records', () => {
+  const courses = JSON.parse(fs.readFileSync(new URL('../content/university/courses/build-courses.json', import.meta.url)));
+  const course = courses.find((item) => item.id === 'citation-verifier-course');
+  const expanded = expandEducationResources([course]);
+  const lessons = expanded.filter((item) => item.kind === 'lesson');
+  assert.equal(lessons.length, 18);
+  assert.equal(new Set(lessons.map((item) => item.pathname)).size, 18);
+  assert.equal(lessons[0].pathname, '/university/courses/citation-verifier/lessons/failure');
+  const html = renderStructuredPage({ resource: lessons[0], registry: new Map(expanded.map((item) => [item.id, item])) });
+  assert.match(html, /id="lesson-delivery"/);
+  assert.match(html, /Mark lesson complete/);
+  assert.match(html, /not independently verified/i);
+  assert.match(html, /Course overview/);
 });
 
 test('blocks an enrollment-open course without a complete educational system', () => {

@@ -429,7 +429,44 @@
           "assessmentType": "knowledge-check",
           "outcomeIds": ["citation-outcome-contract", "citation-outcome-classify"],
           "rubricId": "citation-rubric-practice",
-          "passingRule": "Earn at least 80 percent and correct every answer that would permit an unsupported pass."
+          "passingRule": "Earn at least 80 percent and correct every answer that would permit an unsupported pass.",
+          "questions": [
+            {
+              "id": "verification-layer",
+              "prompt": "A citation matches a recognized reporter pattern. What has the system established?",
+              "options": ["The cited case exists and remains good law", "Only that the text matches the implemented structural pattern", "The cited source supports the proposition"],
+              "correct": 1,
+              "explanation": "Structural parsing does not establish existence, current validity, or proposition support."
+            },
+            {
+              "id": "missing-source",
+              "prompt": "An approved source returns no match. Which verdict is defensible?",
+              "options": ["Fabricated", "Unsupported", "No source located through the checked coverage"],
+              "correct": 2,
+              "explanation": "A failed search must preserve the coverage boundary; it cannot prove fabrication by itself."
+            },
+            {
+              "id": "qualified-support",
+              "prompt": "The source supports a narrower claim than the draft states. What should the verifier return?",
+              "options": ["Supported", "Supported with qualification and the mismatch identified", "Contradicted"],
+              "correct": 1,
+              "explanation": "The verdict must preserve the condition or limitation the draft omitted."
+            },
+            {
+              "id": "release-authority",
+              "prompt": "Who owns the final release decision for a consequential filing?",
+              "options": ["The model that generated the best passage match", "The verifier developer", "The named authorized professional reviewer"],
+              "correct": 2,
+              "explanation": "The system assists review; accountable professional judgment and release authority stay with the authorized human."
+            },
+            {
+              "id": "accuracy-number",
+              "prompt": "What must accompany a published accuracy number?",
+              "options": ["Only the model name", "Dataset, denominator, labels, version, coverage, and error distribution", "A statement that the tool is a beta"],
+              "correct": 1,
+              "explanation": "A single score without its test basis hides the failures that matter."
+            }
+          ]
         },
         {
           "id": "citation-lab-parser",
