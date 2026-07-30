@@ -282,7 +282,7 @@ test('defines and validates the complete University educational record system', 
   assert.equal(UNIVERSITY_SCHEMA_VERSION, '1.0.0');
   assert.deepEqual(UNIVERSITY_RECORD_TYPES, [
     'course', 'module', 'lesson', 'assessment', 'source',
-    'link', 'tool', 'project', 'rubric', 'credential'
+    'link', 'tool', 'project', 'rubric', 'credential', 'outcome'
   ]);
   const records = [
     { id: 'course-one', type: 'course', title: 'Course', status: 'curriculum-preview', moduleIds: ['module-one'], outcomeIds: ['outcome-one'], assessmentIds: ['assessment-one'], projectIds: ['project-one'], sourceIds: ['source-one'], toolIds: ['tool-one'], credentialId: 'credential-one' },
@@ -295,7 +295,7 @@ test('defines and validates the complete University educational record system', 
     { id: 'project-one', type: 'project', title: 'Project', courseId: 'course-one', brief: 'Build and document the system.', deliverableIds: ['link-one'], rubricId: 'rubric-one', evidenceRequirements: ['Test results'] },
     { id: 'rubric-one', type: 'rubric', title: 'Rubric', criteria: [{ id: 'criterion-one', weight: 100 }], scoringMethod: 'Weighted criteria', passingScore: 80 },
     { id: 'credential-one', type: 'credential', title: 'Credential', courseId: 'course-one', issuanceStatus: 'planned', requirements: ['Pass the capstone.'], verificationMethod: 'No credential is issued while status is planned.' },
-    { id: 'outcome-one', type: 'link', label: 'Outcome definition', href: '/university', destinationType: 'internal-resource', lastVerified: '2026-07-29' }
+    { id: 'outcome-one', type: 'outcome', statement: 'Apply the verification method.', level: 'apply' }
   ];
   const course = {
     ...resource('course-resource', [{ type: 'supports', target: 'beta' }]),
@@ -304,6 +304,24 @@ test('defines and validates the complete University educational record system', 
     education: { schemaVersion: UNIVERSITY_SCHEMA_VERSION, records }
   };
   assert.deepEqual(validateUniversitySystem([course]), []);
+});
+
+test('renders the flagship citation course as complete open materials without claiming delivery systems', () => {
+  const courses = JSON.parse(fs.readFileSync(new URL('../content/university/courses/build-courses.json', import.meta.url)));
+  const course = courses.find((item) => item.id === 'citation-verifier-course');
+  const tool = JSON.parse(fs.readFileSync(new URL('../content/tools/citation-verifier.json', import.meta.url)));
+  const html = renderStructuredPage({ resource: course, registry: new Map([[course.id, course], [tool.id, tool]]) });
+  assert.equal(course.delivery.lessons, 'available');
+  assert.equal(course.delivery.enrollmentOpen, false);
+  assert.equal(course.education.records.filter((item) => item.type === 'module').length, 9);
+  assert.equal(course.education.records.filter((item) => item.type === 'lesson').length, 18);
+  assert.match(html, /id="course-materials"/);
+  assert.match(html, /9 modules\. 18 lessons\./);
+  assert.match(html, /The five different citation failures/);
+  assert.match(html, /Open materials · enrollment closed/);
+  assert.match(html, /href="https:\/\/www\.americanbar\.org\/content\/dam\/aba\//);
+  assert.match(html, /href="\/tools\/citation-verifier"/);
+  assert.match(html, /does not currently accept or grade submissions/i);
 });
 
 test('blocks an enrollment-open course without a complete educational system', () => {

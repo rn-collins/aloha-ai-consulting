@@ -5,17 +5,637 @@
     "pathname": "/university/courses/citation-verifier",
     "eyebrow": "Build-it course",
     "title": "Build a Trust-Safe Citation Verifier",
-    "summary": "Build a working, governed system that catches fabricated, mis-stated, and unsupported citations before they ship. The curriculum outline is public; lessons, enrollment, and the planned tutor are not yet available. No coding background is expected.",
+    "summary": "Build a bounded, governed system that catches malformed, unidentified, mis-stated, and unsupported citations before they ship. All nine modules and eighteen lessons are public; enrollment, saved progress, submissions, grading, credentials, and the planned tutor are not yet available.",
     "audience": "Researchers, writers, legal teams, educators, and publishers responsible for claims that must be traceable and correct.",
     "maturity": "Beta",
     "delivery": {
-      "status": "curriculum-preview",
+      "status": "enrollment-closed",
       "enrollmentOpen": false,
-      "lessons": "planned",
+      "lessons": "available",
       "tutor": "planned",
       "progressTracking": "not-available",
-      "credential": "not-available",
+      "credential": "planned",
       "lastReviewed": "2026-07-29"
+    },
+    "education": {
+      "schemaVersion": "1.0.0",
+      "records": [
+        {
+          "id": "citation-course",
+          "type": "course",
+          "title": "Build a Trust-Safe Citation Verifier",
+          "status": "enrollment-closed",
+          "moduleIds": ["citation-module-standard", "citation-module-workspace", "citation-module-extraction", "citation-module-existence", "citation-module-support", "citation-module-verdicts", "citation-module-governance", "citation-module-evaluation", "citation-module-capstone"],
+          "outcomeIds": ["citation-outcome-contract", "citation-outcome-parse", "citation-outcome-retrieve", "citation-outcome-support", "citation-outcome-classify", "citation-outcome-govern", "citation-outcome-evaluate", "citation-outcome-ship"],
+          "assessmentIds": ["citation-diagnostic", "citation-check-standard", "citation-lab-parser", "citation-lab-evidence", "citation-scenario-escalation", "citation-capstone-assessment"],
+          "projectIds": ["citation-capstone"],
+          "sourceIds": ["citation-source-aba-512", "citation-source-frcp", "citation-source-courtlistener", "citation-source-nist-genai", "citation-source-nist-rmf"],
+          "toolIds": ["citation-public-tool"],
+          "credentialId": "citation-credential"
+        },
+        {
+          "id": "citation-module-standard",
+          "type": "module",
+          "title": "Define what verified means",
+          "courseId": "citation-course",
+          "position": 1,
+          "lessonIds": ["citation-lesson-failure", "citation-lesson-contract"],
+          "outcomeIds": ["citation-outcome-contract"],
+          "summary": "Separate citation form, source existence, current status, quotation accuracy, and proposition support before choosing technology."
+        },
+        {
+          "id": "citation-module-workspace",
+          "type": "module",
+          "title": "Design the bounded workspace",
+          "courseId": "citation-course",
+          "position": 2,
+          "lessonIds": ["citation-lesson-data-boundary", "citation-lesson-record-model"],
+          "outcomeIds": ["citation-outcome-contract"],
+          "summary": "Choose the data boundary, authority hierarchy, record structure, and human roles that govern the build."
+        },
+        {
+          "id": "citation-module-extraction",
+          "type": "module",
+          "title": "Extract citations and propositions",
+          "courseId": "citation-course",
+          "position": 3,
+          "lessonIds": ["citation-lesson-parser", "citation-lesson-claim-window"],
+          "outcomeIds": ["citation-outcome-parse"],
+          "summary": "Turn a document into review units without pretending that pattern matching understands the legal proposition."
+        },
+        {
+          "id": "citation-module-existence",
+          "type": "module",
+          "title": "Retrieve and identify the authority",
+          "courseId": "citation-course",
+          "position": 4,
+          "lessonIds": ["citation-lesson-source-hierarchy", "citation-lesson-retrieval"],
+          "outcomeIds": ["citation-outcome-retrieve"],
+          "summary": "Resolve a citation against an approved source and preserve the exact result a reviewer inspected."
+        },
+        {
+          "id": "citation-module-support",
+          "type": "module",
+          "title": "Test proposition support",
+          "courseId": "citation-course",
+          "position": 5,
+          "lessonIds": ["citation-lesson-passage", "citation-lesson-entailment"],
+          "outcomeIds": ["citation-outcome-support"],
+          "summary": "Compare the proposition with the retrieved passage and distinguish direct support, qualified support, conflict, silence, and ambiguity."
+        },
+        {
+          "id": "citation-module-verdicts",
+          "type": "module",
+          "title": "Issue bounded verdicts",
+          "courseId": "citation-course",
+          "position": 6,
+          "lessonIds": ["citation-lesson-taxonomy", "citation-lesson-report"],
+          "outcomeIds": ["citation-outcome-classify"],
+          "summary": "Make every verdict inspectable, reversible, and no stronger than the evidence."
+        },
+        {
+          "id": "citation-module-governance",
+          "type": "module",
+          "title": "Build the human gate",
+          "courseId": "citation-course",
+          "position": 7,
+          "lessonIds": ["citation-lesson-ethics", "citation-lesson-audit"],
+          "outcomeIds": ["citation-outcome-govern"],
+          "summary": "Place named review, confidentiality, escalation, and release controls around the verifier."
+        },
+        {
+          "id": "citation-module-evaluation",
+          "type": "module",
+          "title": "Evaluate failure, not fluency",
+          "courseId": "citation-course",
+          "position": 8,
+          "lessonIds": ["citation-lesson-testset", "citation-lesson-metrics"],
+          "outcomeIds": ["citation-outcome-evaluate"],
+          "summary": "Test against representative errors, measure false assurance, and document coverage instead of advertising an unbounded accuracy rate."
+        },
+        {
+          "id": "citation-module-capstone",
+          "type": "module",
+          "title": "Package the verifier and its evidence",
+          "courseId": "citation-course",
+          "position": 9,
+          "lessonIds": ["citation-lesson-release", "citation-lesson-defense"],
+          "outcomeIds": ["citation-outcome-ship"],
+          "summary": "Produce a bounded implementation, evaluation report, audit record, and deployment decision."
+        },
+        {
+          "id": "citation-lesson-failure",
+          "type": "lesson",
+          "title": "The five different citation failures",
+          "moduleId": "citation-module-standard",
+          "position": 1,
+          "outcomeIds": ["citation-outcome-contract"],
+          "sourceIds": ["citation-source-aba-512", "citation-source-frcp"],
+          "activityIds": ["citation-diagnostic"],
+          "minutes": 35,
+          "content": [
+            "A citation can be malformed, point to no source, identify the wrong source, quote inaccurately, or fail to support the proposition. Those are different questions and require different evidence.",
+            "A structural parser can reject an impossible reporter series. It cannot establish that a well-formed citation exists, remains good law, or supports the sentence. Write those boundaries before writing code."
+          ],
+          "practice": "Classify ten supplied examples by failure layer and write what additional evidence would be needed to resolve each one."
+        },
+        {
+          "id": "citation-lesson-contract",
+          "type": "lesson",
+          "title": "The verification contract",
+          "moduleId": "citation-module-standard",
+          "position": 2,
+          "outcomeIds": ["citation-outcome-contract"],
+          "sourceIds": ["citation-source-nist-rmf"],
+          "activityIds": ["citation-check-standard"],
+          "minutes": 45,
+          "content": [
+            "Define accepted inputs, covered citation families, approved sources, possible verdicts, evidence returned, abstention rules, and the person authorized to release work.",
+            "The contract must say what a pass means. If only existence was checked, the result must not imply proposition support or current precedential status."
+          ],
+          "practice": "Complete a one-page contract with an explicit non-goal for every promised capability."
+        },
+        {
+          "id": "citation-lesson-data-boundary",
+          "type": "lesson",
+          "title": "Choose the data path before the model",
+          "moduleId": "citation-module-workspace",
+          "position": 1,
+          "outcomeIds": ["citation-outcome-contract"],
+          "sourceIds": ["citation-source-aba-512"],
+          "activityIds": ["citation-scenario-escalation"],
+          "minutes": 40,
+          "content": [
+            "Map the document from input through parsing, retrieval, model processing, human review, export, logs, and deletion. Identify every external service and every place confidential material could persist.",
+            "Use synthetic or public material until authority, contract, account settings, retention, and supervision are resolved."
+          ],
+          "practice": "Draw a data-flow record for a browser-local build and a connected firm build; mark every boundary where information leaves the device."
+        },
+        {
+          "id": "citation-lesson-record-model",
+          "type": "lesson",
+          "title": "Create the review-unit schema",
+          "moduleId": "citation-module-workspace",
+          "position": 2,
+          "outcomeIds": ["citation-outcome-contract"],
+          "sourceIds": ["citation-source-nist-rmf"],
+          "activityIds": ["citation-check-standard"],
+          "minutes": 45,
+          "content": [
+            "A useful review unit stores document ID, claim text, citation string, normalized citation, source snapshot, located passage, verdict, confidence, limitations, reviewer, timestamps, and version.",
+            "Keep machine output separate from human disposition. Never overwrite the evidence that produced an earlier result."
+          ],
+          "practice": "Create one known-good and one known-bad review record and confirm that another reviewer could reproduce the disposition."
+        },
+        {
+          "id": "citation-lesson-parser",
+          "type": "lesson",
+          "title": "Build a transparent citation parser",
+          "moduleId": "citation-module-extraction",
+          "position": 1,
+          "outcomeIds": ["citation-outcome-parse"],
+          "sourceIds": ["citation-source-courtlistener"],
+          "activityIds": ["citation-lab-parser", "citation-public-tool"],
+          "minutes": 60,
+          "content": [
+            "Start with a narrow citation family and deterministic patterns. Return the matched text and parsed fields so a learner can see exactly what the parser recognized.",
+            "Unknown formats should become unparsed review items, not disappear. Measure extraction recall on the document types you actually expect."
+          ],
+          "practice": "Run the public Citation Verifier against the sample, then add five boundary cases and record misses without changing the test labels."
+        },
+        {
+          "id": "citation-lesson-claim-window",
+          "type": "lesson",
+          "title": "Bind each citation to the proposition",
+          "moduleId": "citation-module-extraction",
+          "position": 2,
+          "outcomeIds": ["citation-outcome-parse"],
+          "sourceIds": ["citation-source-nist-genai"],
+          "activityIds": ["citation-lab-parser"],
+          "minutes": 55,
+          "content": [
+            "A citation is usually attached to a sentence, clause, quotation, or string of propositions. Capture enough context for review while preserving the exact proposition being tested.",
+            "When one sentence contains multiple claims or citations, split the review units or mark the mapping ambiguous. Do not let proximity silently become support."
+          ],
+          "practice": "Annotate a paragraph containing three claims and two citations; explain every claim-to-citation boundary."
+        },
+        {
+          "id": "citation-lesson-source-hierarchy",
+          "type": "lesson",
+          "title": "Rank sources by authority and purpose",
+          "moduleId": "citation-module-existence",
+          "position": 1,
+          "outcomeIds": ["citation-outcome-retrieve"],
+          "sourceIds": ["citation-source-frcp", "citation-source-courtlistener"],
+          "activityIds": ["citation-lab-evidence"],
+          "minutes": 45,
+          "content": [
+            "Use official court or government material when the task requires an authoritative rule or filing. Research databases and aggregators may be useful for discovery but have different coverage, licensing, status, and citator boundaries.",
+            "Record which source answered which question. A source that establishes existence may not establish current validity."
+          ],
+          "practice": "Create an approved-source hierarchy for one jurisdiction and define the fallback when the preferred source is unavailable."
+        },
+        {
+          "id": "citation-lesson-retrieval",
+          "type": "lesson",
+          "title": "Retrieve, normalize, and preserve",
+          "moduleId": "citation-module-existence",
+          "position": 2,
+          "outcomeIds": ["citation-outcome-retrieve"],
+          "sourceIds": ["citation-source-courtlistener"],
+          "activityIds": ["citation-lab-evidence"],
+          "minutes": 60,
+          "content": [
+            "Normalize the query, preserve the original citation, log the source and retrieval time, and return zero, one, or multiple candidates without forcing a match.",
+            "Store a permitted snapshot or stable reference to the reviewed material. Respect authentication, rate limits, licensing, and redistribution restrictions."
+          ],
+          "practice": "Design the response for no match, one match, and ambiguous matches; require a human choice whenever identity is uncertain."
+        },
+        {
+          "id": "citation-lesson-passage",
+          "type": "lesson",
+          "title": "Locate the supporting passage",
+          "moduleId": "citation-module-support",
+          "position": 1,
+          "outcomeIds": ["citation-outcome-support"],
+          "sourceIds": ["citation-source-nist-genai"],
+          "activityIds": ["citation-lab-evidence"],
+          "minutes": 55,
+          "content": [
+            "Retrieve candidate passages around meaningful terms, quotations, headings, and citations. Preserve page or paragraph locators where the source provides them.",
+            "Retrieval is a candidate-generation step. The best-scoring passage is not proof that the proposition is supported."
+          ],
+          "practice": "For three propositions, return the strongest candidate passage and one plausible distractor; explain why ranking alone cannot issue the verdict."
+        },
+        {
+          "id": "citation-lesson-entailment",
+          "type": "lesson",
+          "title": "Compare claim, qualification, and conflict",
+          "moduleId": "citation-module-support",
+          "position": 2,
+          "outcomeIds": ["citation-outcome-support"],
+          "sourceIds": ["citation-source-nist-genai"],
+          "activityIds": ["citation-lab-evidence"],
+          "minutes": 65,
+          "content": [
+            "Test who, what, when, jurisdiction, conditions, degree, and exceptions. A source may support a narrower proposition while the draft overstates it.",
+            "Require the system to quote the passage, identify the mismatch, and abstain when context is incomplete. A model explanation without inspectable source text is not a verification result."
+          ],
+          "practice": "Rewrite three overstated claims to the strongest formulation their sources actually support."
+        },
+        {
+          "id": "citation-lesson-taxonomy",
+          "type": "lesson",
+          "title": "Use a verdict taxonomy that cannot hide uncertainty",
+          "moduleId": "citation-module-verdicts",
+          "position": 1,
+          "outcomeIds": ["citation-outcome-classify"],
+          "sourceIds": ["citation-source-nist-genai"],
+          "activityIds": ["citation-check-standard"],
+          "minutes": 40,
+          "content": [
+            "Use bounded labels such as structurally invalid, no source located, identity ambiguous, supported, supported with qualification, contradicted, unsupported, and not verified.",
+            "Confidence describes the basis for a provisional result; it does not convert missing evidence into support."
+          ],
+          "practice": "Assign verdicts to twelve cases and write the permitted next action for each label."
+        },
+        {
+          "id": "citation-lesson-report",
+          "type": "lesson",
+          "title": "Produce an inspectable review report",
+          "moduleId": "citation-module-verdicts",
+          "position": 2,
+          "outcomeIds": ["citation-outcome-classify"],
+          "sourceIds": ["citation-source-nist-rmf"],
+          "activityIds": ["citation-capstone"],
+          "minutes": 50,
+          "content": [
+            "A reviewer needs the proposition, original citation, normalized record, source link, passage, verdict, reason, unresolved issue, reviewer status, and version in one place.",
+            "Separate machine suggestion, reviewer decision, and release decision. Make changes traceable."
+          ],
+          "practice": "Create a one-page report that lets a supervisor disagree with the result without rerunning the system."
+        },
+        {
+          "id": "citation-lesson-ethics",
+          "type": "lesson",
+          "title": "Keep professional responsibility with the professional",
+          "moduleId": "citation-module-governance",
+          "position": 1,
+          "outcomeIds": ["citation-outcome-govern"],
+          "sourceIds": ["citation-source-aba-512", "citation-source-frcp"],
+          "activityIds": ["citation-scenario-escalation"],
+          "minutes": 55,
+          "content": [
+            "ABA Formal Opinion 512 applies existing competence, confidentiality, communication, supervision, candor, and fee duties to lawyers using generative AI. Rule 11 separately governs representations made by presenting a paper in federal civil litigation.",
+            "The verifier assists inquiry. It does not become the lawyer, editor, researcher, or accountable releaser."
+          ],
+          "practice": "Identify the named approver, prohibited inputs, escalation triggers, and release evidence for a high-stakes filing workflow."
+        },
+        {
+          "id": "citation-lesson-audit",
+          "type": "lesson",
+          "title": "Design the audit and change record",
+          "moduleId": "citation-module-governance",
+          "position": 2,
+          "outcomeIds": ["citation-outcome-govern"],
+          "sourceIds": ["citation-source-nist-rmf"],
+          "activityIds": ["citation-capstone"],
+          "minutes": 50,
+          "content": [
+            "Record the document hash or version, tool version, ruleset, sources checked, timestamps, results, overrides, reviewer, and release status.",
+            "Log enough to reconstruct the decision without retaining confidential content longer than the approved policy permits."
+          ],
+          "practice": "Draft an audit record and retention rule that distinguish evidentiary need from indiscriminate storage."
+        },
+        {
+          "id": "citation-lesson-testset",
+          "type": "lesson",
+          "title": "Build the failure-focused test set",
+          "moduleId": "citation-module-evaluation",
+          "position": 1,
+          "outcomeIds": ["citation-outcome-evaluate"],
+          "sourceIds": ["citation-source-nist-genai"],
+          "activityIds": ["citation-capstone-assessment"],
+          "minutes": 60,
+          "content": [
+            "Construct representative cases for valid citations, malformed forms, nonexistent authorities, wrong metadata, inaccurate quotations, overstatement, contradiction, ambiguous mapping, unavailable sources, and unsupported formats.",
+            "Keep test labels independent of the system being tested and document the coverage boundary."
+          ],
+          "practice": "Create at least twenty labeled cases, including cases designed to expose false passes."
+        },
+        {
+          "id": "citation-lesson-metrics",
+          "type": "lesson",
+          "title": "Measure dangerous errors",
+          "moduleId": "citation-module-evaluation",
+          "position": 2,
+          "outcomeIds": ["citation-outcome-evaluate"],
+          "sourceIds": ["citation-source-nist-rmf"],
+          "activityIds": ["citation-capstone-assessment"],
+          "minutes": 55,
+          "content": [
+            "Report results by failure class. False passes are especially consequential because they create unwarranted assurance; false flags create review burden and may also hide systematic gaps.",
+            "Do not publish a single accuracy number without the dataset, denominator, labels, version, coverage, and error distribution."
+          ],
+          "practice": "Calculate the confusion matrix for each verdict family and write the release decision those results justify."
+        },
+        {
+          "id": "citation-lesson-release",
+          "type": "lesson",
+          "title": "Choose prototype, pilot, or deployment",
+          "moduleId": "citation-module-capstone",
+          "position": 1,
+          "outcomeIds": ["citation-outcome-ship"],
+          "sourceIds": ["citation-source-nist-rmf"],
+          "activityIds": ["citation-capstone"],
+          "minutes": 45,
+          "content": [
+            "A local demonstration, connected research pilot, governed workflow, and institutional system have different evidence, security, integration, and operational requirements.",
+            "Release only the capability level that was actually tested. Document exclusions and the conditions required to move to the next level."
+          ],
+          "practice": "Write a deployment decision memo with a precise status label, permitted users, permitted data, known limitations, and rollback trigger."
+        },
+        {
+          "id": "citation-lesson-defense",
+          "type": "lesson",
+          "title": "Defend the system without overselling it",
+          "moduleId": "citation-module-capstone",
+          "position": 2,
+          "outcomeIds": ["citation-outcome-ship"],
+          "sourceIds": ["citation-source-aba-512", "citation-source-nist-genai"],
+          "activityIds": ["citation-capstone-assessment"],
+          "minutes": 50,
+          "content": [
+            "Present the verifier through its contract, architecture, evidence, test results, limitations, human gate, and change plan. Demonstrate one success and one abstention.",
+            "A credible defense explains what the system cannot establish and shows how the workflow responds when evidence is missing."
+          ],
+          "practice": "Record a ten-minute capstone defense and answer the rubric questions using only evidence in the project package."
+        },
+        {
+          "id": "citation-diagnostic",
+          "type": "assessment",
+          "title": "Diagnostic: distinguish the verification layers",
+          "courseId": "citation-course",
+          "assessmentType": "diagnostic",
+          "outcomeIds": ["citation-outcome-contract"],
+          "rubricId": "citation-rubric-practice",
+          "passingRule": "Diagnostic only; record the baseline and revisit it after Module 6."
+        },
+        {
+          "id": "citation-check-standard",
+          "type": "assessment",
+          "title": "Knowledge check: contract and verdict boundaries",
+          "courseId": "citation-course",
+          "assessmentType": "knowledge-check",
+          "outcomeIds": ["citation-outcome-contract", "citation-outcome-classify"],
+          "rubricId": "citation-rubric-practice",
+          "passingRule": "Earn at least 80 percent and correct every answer that would permit an unsupported pass."
+        },
+        {
+          "id": "citation-lab-parser",
+          "type": "assessment",
+          "title": "Lab: parser and claim-unit coverage",
+          "courseId": "citation-course",
+          "assessmentType": "lab",
+          "outcomeIds": ["citation-outcome-parse"],
+          "rubricId": "citation-rubric-practice",
+          "passingRule": "Account for every test citation as parsed, partially parsed, unsupported format, or missed; silent loss is an automatic revision."
+        },
+        {
+          "id": "citation-lab-evidence",
+          "type": "assessment",
+          "title": "Lab: retrieval and proposition evidence",
+          "courseId": "citation-course",
+          "assessmentType": "lab",
+          "outcomeIds": ["citation-outcome-retrieve", "citation-outcome-support"],
+          "rubricId": "citation-rubric-practice",
+          "passingRule": "Earn at least 80 percent with a source, passage, locator, and bounded reason for every resolved review unit."
+        },
+        {
+          "id": "citation-scenario-escalation",
+          "type": "assessment",
+          "title": "Scenario: confidential filing under time pressure",
+          "courseId": "citation-course",
+          "assessmentType": "scenario",
+          "outcomeIds": ["citation-outcome-govern"],
+          "rubricId": "citation-rubric-practice",
+          "passingRule": "Identify all prohibited transfers and require a named authorized reviewer before release."
+        },
+        {
+          "id": "citation-capstone-assessment",
+          "type": "assessment",
+          "title": "Capstone: build and defend the verifier",
+          "courseId": "citation-course",
+          "assessmentType": "capstone",
+          "outcomeIds": ["citation-outcome-contract", "citation-outcome-parse", "citation-outcome-retrieve", "citation-outcome-support", "citation-outcome-classify", "citation-outcome-govern", "citation-outcome-evaluate", "citation-outcome-ship"],
+          "rubricId": "citation-rubric-capstone",
+          "passingRule": "Earn at least 80 of 100 overall, earn at least half of every criterion, and receive no automatic-fail finding."
+        },
+        {
+          "id": "citation-source-aba-512",
+          "type": "source",
+          "title": "ABA Formal Opinion 512: Generative Artificial Intelligence Tools",
+          "url": "https://www.americanbar.org/content/dam/aba/administrative/professional_responsibility/ethics-opinions/aba-formal-opinion-512.pdf",
+          "authority": "official",
+          "publisher": "American Bar Association Standing Committee on Ethics and Professional Responsibility",
+          "publishedOrUpdated": "2024-07-29",
+          "lastVerified": "2026-07-29",
+          "supports": ["citation-lesson-failure", "citation-lesson-data-boundary", "citation-lesson-ethics", "citation-lesson-defense"]
+        },
+        {
+          "id": "citation-source-frcp",
+          "type": "source",
+          "title": "Federal Rules of Civil Procedure",
+          "url": "https://www.uscourts.gov/forms-rules/current-rules-practice-procedure/federal-rules-civil-procedure",
+          "authority": "primary",
+          "publisher": "Administrative Office of the United States Courts",
+          "publishedOrUpdated": "2025-12-01",
+          "lastVerified": "2026-07-29",
+          "supports": ["citation-lesson-failure", "citation-lesson-source-hierarchy", "citation-lesson-ethics"]
+        },
+        {
+          "id": "citation-source-courtlistener",
+          "type": "source",
+          "title": "CourtListener REST API v4.4 overview",
+          "url": "https://wiki.free.law/c/courtlistener/help/api/rest/v4/overview",
+          "authority": "official",
+          "publisher": "Free Law Project",
+          "publishedOrUpdated": "2026-05-07",
+          "lastVerified": "2026-07-29",
+          "supports": ["citation-lesson-parser", "citation-lesson-source-hierarchy", "citation-lesson-retrieval"]
+        },
+        {
+          "id": "citation-source-nist-genai",
+          "type": "source",
+          "title": "Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile",
+          "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
+          "authority": "official",
+          "publisher": "National Institute of Standards and Technology",
+          "publishedOrUpdated": "2024-07-26",
+          "lastVerified": "2026-07-29",
+          "supports": ["citation-lesson-claim-window", "citation-lesson-passage", "citation-lesson-entailment", "citation-lesson-taxonomy", "citation-lesson-testset", "citation-lesson-defense"]
+        },
+        {
+          "id": "citation-source-nist-rmf",
+          "type": "source",
+          "title": "NIST AI Risk Management Framework 1.0",
+          "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf",
+          "authority": "official",
+          "publisher": "National Institute of Standards and Technology",
+          "publishedOrUpdated": "2023-01-26",
+          "lastVerified": "2026-07-29",
+          "supports": ["citation-lesson-contract", "citation-lesson-record-model", "citation-lesson-report", "citation-lesson-audit", "citation-lesson-metrics", "citation-lesson-release"]
+        },
+        {
+          "id": "citation-link-tool",
+          "type": "link",
+          "label": "Open the browser-local Citation Verifier",
+          "href": "/tools/citation-verifier",
+          "destinationType": "internal-resource",
+          "lastVerified": "2026-07-29"
+        },
+        {
+          "id": "citation-link-course",
+          "type": "link",
+          "label": "Open the flagship course",
+          "href": "/university/courses/citation-verifier",
+          "destinationType": "internal-resource",
+          "lastVerified": "2026-07-29"
+        },
+        {
+          "id": "citation-public-tool",
+          "type": "tool",
+          "title": "Citation Verifier",
+          "capabilityLevel": "local-instrument",
+          "implementationStatus": "public-beta",
+          "dataPath": "Text is parsed in the visitor's browser; the public tool makes no source-retrieval or model call.",
+          "limitations": ["Recognizes a bounded set of United States reporter citation patterns.", "Does not establish source existence, current validity, quotation accuracy, or proposition support.", "Does not create a filing gate or downloadable audit record."],
+          "lastTested": "2026-07-29"
+        },
+        {
+          "id": "citation-capstone",
+          "type": "project",
+          "title": "Trust-Safe Citation Verifier evidence package",
+          "courseId": "citation-course",
+          "brief": "Build or specify a bounded verifier for one real document class, evaluate it against independently labeled cases, and defend the release decision without overstating capability.",
+          "deliverableIds": ["citation-link-tool", "citation-link-course"],
+          "rubricId": "citation-rubric-capstone",
+          "evidenceRequirements": ["Verification contract and architecture diagram", "Source and data-flow register", "Working bounded prototype or executable technical specification", "At least twenty independently labeled test cases", "Per-class evaluation results and error analysis", "Sample audit record and human-review gate", "Deployment decision memo", "Ten-minute defense showing one success and one abstention"]
+        },
+        {
+          "id": "citation-rubric-practice",
+          "type": "rubric",
+          "title": "Practice assessment rubric",
+          "criteria": [{"id": "citation-practice-accuracy", "label": "Accuracy", "weight": 40, "standard": "Classifications match the evidence and no unsupported pass is issued."}, {"id": "citation-practice-traceability", "label": "Traceability", "weight": 30, "standard": "A reviewer can locate the source, passage, and reasoning."}, {"id": "citation-practice-boundary", "label": "Boundary discipline", "weight": 30, "standard": "Uncertainty, exclusions, and human gates are explicit."}],
+          "scoringMethod": "Weighted analytic rubric scored from 0 to 100.",
+          "passingScore": 80
+        },
+        {
+          "id": "citation-rubric-capstone",
+          "type": "rubric",
+          "title": "Capstone rubric",
+          "criteria": [{"id": "citation-capstone-contract", "label": "Verification contract", "weight": 15, "standard": "Inputs, outputs, coverage, verdicts, non-goals, and human authority are testable."}, {"id": "citation-capstone-implementation", "label": "Technical implementation", "weight": 20, "standard": "The system runs or is specified reproducibly, preserves failures, and matches its status label."}, {"id": "citation-capstone-evidence", "label": "Evidence traceability", "weight": 20, "standard": "Every resolved result exposes the authority, passage, locator, and reason."}, {"id": "citation-capstone-evaluation", "label": "Evaluation", "weight": 20, "standard": "Independent labels, denominators, per-class results, and error analysis support the release decision."}, {"id": "citation-capstone-governance", "label": "Governance and privacy", "weight": 15, "standard": "Data boundaries, review authority, escalation, audit, retention, and rollback are operational."}, {"id": "citation-capstone-defense", "label": "Defense and limitations", "weight": 10, "standard": "The learner demonstrates a success and abstention and answers without overstating capability."}],
+          "scoringMethod": "Weighted analytic rubric. Automatic failure applies to fabricated evidence, undisclosed data transfer, an unsupported pass represented as verified, or release without the required human authority.",
+          "passingScore": 80
+        },
+        {
+          "id": "citation-credential",
+          "type": "credential",
+          "title": "Aloha AI University: Trust-Safe Citation Verification",
+          "courseId": "citation-course",
+          "issuanceStatus": "planned",
+          "requirements": ["Complete all six assessments.", "Pass the capstone at 80 or higher.", "Earn at least half of every rubric criterion.", "Resolve every automatic-fail condition.", "Submit the required evidence package for human review."],
+          "verificationMethod": "No credential is currently issued. A future manually reviewed record must identify the learner, course version, rubric result, reviewer, issuance date, and a public verification ID."
+        },
+        {
+          "id": "citation-outcome-contract",
+          "type": "outcome",
+          "statement": "Define a bounded, testable verification contract and data path.",
+          "level": "create"
+        },
+        {
+          "id": "citation-outcome-parse",
+          "type": "outcome",
+          "statement": "Extract citations and bind them to explicit proposition review units.",
+          "level": "apply"
+        },
+        {
+          "id": "citation-outcome-retrieve",
+          "type": "outcome",
+          "statement": "Retrieve and identify candidate authorities through an approved source hierarchy.",
+          "level": "analyze"
+        },
+        {
+          "id": "citation-outcome-support",
+          "type": "outcome",
+          "statement": "Evaluate whether an inspectable passage supports, qualifies, contradicts, or does not resolve a proposition.",
+          "level": "evaluate"
+        },
+        {
+          "id": "citation-outcome-classify",
+          "type": "outcome",
+          "statement": "Issue a bounded verdict that preserves uncertainty and next action.",
+          "level": "evaluate"
+        },
+        {
+          "id": "citation-outcome-govern",
+          "type": "outcome",
+          "statement": "Design confidentiality, human-review, audit, escalation, and release controls.",
+          "level": "create"
+        },
+        {
+          "id": "citation-outcome-evaluate",
+          "type": "outcome",
+          "statement": "Evaluate the verifier with independent labels and per-failure-class results.",
+          "level": "evaluate"
+        },
+        {
+          "id": "citation-outcome-ship",
+          "type": "outcome",
+          "statement": "Defend a prototype, pilot, or deployment decision using evidence and explicit limitations.",
+          "level": "create"
+        }
+      ]
     },
     "topics": [
       "citation-verification",
@@ -83,7 +703,7 @@
     ],
     "editorialIntro": [
       "In a weekend, build a working system that catches fabricated, mis-stated, and unsupported citations before they ship — a governed AI checker you own and control.",
-      "Curriculum preview · enrollment closed · lessons and governed tutor planned"
+      "Open course materials · enrollment closed · progress, grading, credential issuance, and governed tutor not yet available"
     ],
     "editorialSections": [
       {
@@ -92,7 +712,7 @@
         "blocks": [
           {
             "type": "paragraph",
-            "text": "In 2026 courts are ruling on AI-generated filings and sanctioning fabricated and mis-stated citations. \"It sounded right\" is not a defense. For anyone who publishes sourced claims — lawyers, clerks, researchers, journalists, policy writers — an unverified citation is a real professional liability."
+            "text": "Courts have sanctioned lawyers for filings containing fabricated and mis-stated authorities. \"It sounded right\" is not a verification method. For anyone who publishes sourced claims — lawyers, clerks, researchers, journalists, and policy writers — an unverified citation creates professional risk."
           },
           {
             "type": "paragraph",
@@ -106,7 +726,7 @@
         "blocks": [
           {
             "type": "paragraph",
-            "text": "By the end you have a working system that takes a document and its citations and returns a per-citation verdict with evidence, governed so it never asserts a pass it cannot support."
+            "text": "The public course teaches you to build or specify a bounded system that takes a document and its citations and returns a per-citation review record with evidence. A working deployment depends on the learner's implementation, approved sources, testing, and human-review environment."
           },
           {
             "type": "heading",
@@ -236,7 +856,7 @@
           {
             "type": "list",
             "items": [
-              "A deployed, working citation verifier you own"
+              "A bounded citation-verifier prototype or executable technical specification you can defend"
             ]
           },
           {
@@ -285,7 +905,7 @@
           },
           {
             "type": "paragraph",
-            "text": "Planned course · 9 build-modules · templates and rubric · governed tutor planned. Enrollment is not open."
+            "text": "Open course materials · 9 build modules · 18 lessons · labs, assessments, capstone, and rubric. Enrollment, saved progress, grading, credential issuance, and the governed tutor are not available."
           },
           {
             "type": "heading",
@@ -349,7 +969,7 @@
           },
           {
             "type": "paragraph",
-            "text": "A working verifier you own, plus your rubric, an evaluation report, an audit-log sample, and a real document run end-to-end."
+            "text": "If you complete the public build independently: a bounded verifier prototype or executable specification, plus your contract, evaluation report, audit-record sample, and one documented run. The site does not currently accept or grade submissions."
           },
           {
             "type": "heading",
