@@ -638,6 +638,9 @@
                     "text": "Ease of use & adoption"
                   },
                   {
+                    "text": "15"
+                  },
+                  {
                     "text": "Your team can learn it fast and will actually use it, not abandon it after week one."
                   }
                 ]
@@ -659,6 +662,9 @@
                 "cells": [
                   {
                     "text": "Integration with your stack"
+                  },
+                  {
+                    "text": "10"
                   },
                   {
                     "text": "Connects to the tools you already run without a custom project or brittle workarounds."
@@ -704,10 +710,14 @@
           {
             "type": "table",
             "rows": [
-              {
-                "cells": [
-                  {
-                    "text": "Weight",
+            {
+              "cells": [
+                {
+                  "text": "Criterion",
+                  "header": true
+                },
+                {
+                  "text": "Weight",
                     "header": true
                   },
                   {
@@ -743,10 +753,13 @@
                   }
                 ]
               },
-              {
-                "cells": [
-                  {
-                    "text": "0.20"
+            {
+              "cells": [
+                {
+                  "text": "Data security & privacy"
+                },
+                {
+                  "text": "0.20"
                   },
                   {
                     "text": "4 (0.80)"
@@ -759,8 +772,30 @@
                   }
                 ]
               },
+            {
+              "cells": [
+                {
+                  "text": "Accuracy / reliability"
+                },
+                {
+                  "text": "0.15"
+                  },
+                  {
+                    "text": "4 (0.60)"
+                  },
+                  {
+                    "text": "3 (0.45)"
+                  },
+                  {
+                    "text": "4 (0.60)"
+                  }
+                ]
+              },
               {
                 "cells": [
+                  {
+                    "text": "Ease of use & adoption"
+                  },
                   {
                     "text": "0.15"
                   },
@@ -769,11 +804,7 @@
                   },
                   {
                     "text": "3 (0.45)"
-                  }
-                ]
-              },
-              {
-                "cells": [
+                  },
                   {
                     "text": "5 (0.75)"
                   }
@@ -798,20 +829,32 @@
                   }
                 ]
               },
-              {
-                "cells": [
-                  {
-                    "text": "Integration"
-                  },
-                  {
-                    "text": "4 (0.40)"
+            {
+              "cells": [
+                {
+                  "text": "Integration"
+                },
+                {
+                  "text": "0.10"
+                },
+                {
+                  "text": "4 (0.40)"
+                },
+                {
+                  "text": "3 (0.30)"
+                },
+                {
+                  "text": "4 (0.40)"
                   }
                 ]
               },
-              {
-                "cells": [
-                  {
-                    "text": "0.05"
+            {
+              "cells": [
+                {
+                  "text": "Vendor support & roadmap"
+                },
+                {
+                  "text": "0.05"
                   },
                   {
                     "text": "4 (0.20)"
@@ -1144,6 +1187,9 @@
               {
                 "cells": [
                   {
+                    "text": "2"
+                  },
+                  {
                     "text": "Marketing"
                   },
                   {
@@ -1157,11 +1203,26 @@
                   },
                   {
                     "text": "Draft platform versions from the source"
+                  },
+                  {
+                    "text": "5"
+                  },
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "3"
+                  },
+                  {
+                    "text": "Low"
                   }
                 ]
               },
               {
                 "cells": [
+                  {
+                    "text": "3"
+                  },
                   {
                     "text": "Ops"
                   },
@@ -1169,12 +1230,33 @@
                     "text": "Summarize vendor call notes"
                   },
                   {
+                    "text": "Weekly"
+                  },
+                  {
+                    "text": "3"
+                  },
+                  {
                     "text": "Turn transcripts into action items"
+                  },
+                  {
+                    "text": "4"
+                  },
+                  {
+                    "text": "1"
+                  },
+                  {
+                    "text": "3"
+                  },
+                  {
+                    "text": "Low"
                   }
                 ]
               },
               {
                 "cells": [
+                  {
+                    "text": "4"
+                  },
                   {
                     "text": "Sales"
                   },
@@ -1182,15 +1264,33 @@
                     "text": "Prospect research before calls"
                   },
                   {
+                    "text": "Weekly"
+                  },
+                  {
                     "text": "6"
                   },
                   {
                     "text": "Compile public info into a brief"
+                  },
+                  {
+                    "text": "4"
+                  },
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "2"
+                  },
+                  {
+                    "text": "Low"
                   }
                 ]
               },
               {
                 "cells": [
+                  {
+                    "text": "5"
+                  },
                   {
                     "text": "Finance"
                   },
@@ -1201,7 +1301,16 @@
                     "text": "Monthly"
                   },
                   {
+                    "text": "5"
+                  },
+                  {
                     "text": "Suggest categories from line items"
+                  },
+                  {
+                    "text": "3"
+                  },
+                  {
+                    "text": "3"
                   },
                   {
                     "text": "0"
@@ -1214,13 +1323,34 @@
               {
                 "cells": [
                   {
+                    "text": "6"
+                  },
+                  {
+                    "text": "Finance"
+                  },
+                  {
                     "text": "Reconcile invoices vs contracts"
+                  },
+                  {
+                    "text": "Monthly"
                   },
                   {
                     "text": "7"
                   },
                   {
                     "text": "Flag mismatches for a human"
+                  },
+                  {
+                    "text": "5"
+                  },
+                  {
+                    "text": "5"
+                  },
+                  {
+                    "text": "0"
+                  },
+                  {
+                    "text": "High"
                   }
                 ]
               }
@@ -1228,7 +1358,7 @@
           },
           {
             "type": "paragraph",
-            "text": "Rows 1 and 2 rise to the top: high value, low effort, low sensitivity. That is where you start. Row 8 is valuable but hard and touches sensitive data — a later project, not a first pilot."
+            "text": "Rows 1 and 2 rise to the top: high value, low effort, low sensitivity. That is where you start. The finance rows are valuable but touch sensitive data; they need stronger controls and are not first-pilot work."
           },
           {
             "type": "heading",
@@ -1505,6 +1635,9 @@
                     "text": "Rep looks up the customer's order or account history."
                   },
                   {
+                    "text": "Retrieve"
+                  },
+                  {
                     "text": "Rep confirms it's the right account before trusting it."
                   },
                   {
@@ -1568,6 +1701,9 @@
                     "text": "Rep hits send."
                   },
                   {
+                    "text": "No autonomous action"
+                  },
+                  {
                     "text": "Rep is the one who sends; AI never sends on its own."
                   },
                   {
@@ -1585,6 +1721,9 @@
                   },
                   {
                     "text": "Rep notes the outcome and sets a reminder if needed."
+                  },
+                  {
+                    "text": "Assist"
                   },
                   {
                     "text": "Review the log during weekly inbox review."

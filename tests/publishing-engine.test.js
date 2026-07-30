@@ -1438,6 +1438,33 @@ test('keeps University specific, audience-inclusive, and free of duplicate depth
   assert.doesNotMatch(html, /<strong>Start here\. We route you the rest of the way\.<\/strong>/);
 });
 
+test('renders incomplete editorial tables without shifting confidence into the date column', () => {
+  const item = resource('evidence-ledger');
+  item.editorialSections = [{
+    title: 'Evidence',
+    blocks: [{
+      type: 'table',
+      rows: [
+        { cells: [{ text: 'Claim', header: true }, { text: 'Source', header: true }, { text: 'Retrieved', header: true }, { text: 'Confidence', header: true }] },
+        { cells: [{ text: 'Missing date' }, { text: 'Primary source' }, { text: 'Med · interpretive' }] },
+        { cells: [{ text: 'Missing both' }, { text: 'Second source' }] }
+      ]
+    }]
+  }];
+  const html = renderStructuredPage({ resource: item, registry: new Map([[item.id, item]]) });
+
+  assert.match(html, /Missing date<\/td><td>Primary source<\/td><td>Not recorded<\/td><td>Med · interpretive/);
+  assert.match(html, /Missing both<\/td><td>Second source<\/td><td>Not recorded<\/td><td>Not recorded/);
+});
+
+test('does not publish the false claim that marijuana rescheduling took effect on April 28, 2026', () => {
+  const cannabis = fs.readFileSync(path.join(process.cwd(), 'content/monitors/cannabis-rescheduling.json'), 'utf8');
+
+  assert.doesNotMatch(cannabis, /Partial rescheduling to Schedule III effective Apr 28, 2026/);
+  assert.doesNotMatch(cannabis, /Only a partial move has taken effect/);
+  assert.match(cannabis, /No broad move to Schedule III has taken effect/);
+});
+
 test('keeps public credential language exact and free of superseded claims', () => {
   const contentRoot = path.join(process.cwd(), 'content');
   const files = [];

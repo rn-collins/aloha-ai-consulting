@@ -146,15 +146,15 @@
         },
         {
           "type": "paragraph",
-          "text": "Only a partial move has taken effect. As of April 28, 2026, a DEA final order moved two narrow categories to Schedule III: marijuana within an FDA-approved drug product, and marijuana under a state medical-marijuana license. Broad rescheduling is still contested in an ALJ hearing (Jun 29–Jul 15, 2026) where all seven designated participants oppose it."
+          "text": "No broad move to Schedule III has taken effect. On April 28, 2026, DEA withdrew the earlier hearing notice and published a new notice setting a hearing on the still-proposed transfer of marijuana from Schedule I to Schedule III. A hearing notice is not a final rule, and marijuana remains in Schedule I unless and until a final rule changes the schedule."
         },
         {
           "type": "paragraph",
-          "text": "Schedule III does not make state adult-use dispensaries federally legal: those substances still require a prescription and DEA registration, which state markets don't satisfy. What it does change: §280E taxes, research access, and FDA-approved products."
+          "text": "If broad rescheduling is finalized, it still would not make state adult-use dispensaries federally legal: Schedule III substances remain subject to federal prescription, registration, manufacturing, and distribution controls. Any effect on §280E, research, or a particular cannabis business depends on the final rule and the operation's facts."
         },
         {
           "type": "paragraph",
-          "text": "Confidence: High Why you can rely on it: it maps to the operative Federal Register order and the live docket, cited below, with retrieval dates."
+          "text": "Confidence: High on current procedural status. Why you can rely on it: the status maps to the April 28 Federal Register notices and should be rechecked against the live docket before use."
         },
         {
           "type": "paragraph",
@@ -168,7 +168,7 @@
       "blocks": [
         {
           "type": "paragraph",
-          "text": "The four shifts that move real money and real risk. The April 28 order already applied the first to FDA-approved products and state-licensed medical marijuana."
+          "text": "The four areas that could move real money and real risk if broad rescheduling becomes final. The April 28 hearing notices did not themselves reschedule marijuana."
         },
         {
           "type": "heading",
@@ -210,7 +210,7 @@
       "blocks": [
         {
           "type": "paragraph",
-          "text": "The most common error we see: claiming §280E relief before full rescheduling is final. Here's the price of acting on the generic answer instead of the sourced one."
+          "text": "A consequential error is claiming §280E relief before full rescheduling is final. This illustration shows the exposure created by acting on that assumption instead of checking the operative rule."
         },
         {
           "type": "list",
@@ -294,10 +294,10 @@
             {
               "cells": [
                 {
-                  "text": "Partial rescheduling to Schedule III effective Apr 28, 2026 (FDA-approved products + state medical licensees)"
+                  "text": "Broad transfer of marijuana to Schedule III remained proposed; April 28 notices reset the hearing process and did not issue a final rescheduling rule"
                 },
                 {
-                  "text": "Fed. Reg. 2026-08177 · DEA.gov Marijuana Rescheduling Regulatory Actions"
+                  "text": "91 FR 22777 (2026-08177) · 91 FR 22778 (2026-08178)"
                 },
                 {
                   "text": "2026-07-04"
@@ -310,10 +310,16 @@
             {
               "cells": [
                 {
-                  "text": "Broader Schedule III hearing before DEA Chief ALJ Derek Julius; Jun 29 – Jul 15, 2026; 7 designated participants, all opposing"
+                  "text": "New hearing proceedings were announced to begin June 29, 2026 on the proposed Schedule III transfer"
                 },
                 {
-                  "text": "DEA press release 2026-06-25 · ALJ scheduling order 2026-06-24"
+                  "text": "91 FR 22777 (2026-08177)"
+                },
+                {
+                  "text": "2026-07-29"
+                },
+                {
+                  "text": "High on procedural status"
                 }
               ]
             },
@@ -324,6 +330,12 @@
                 },
                 {
                   "text": "26 U. S. C. §280E"
+                },
+                {
+                  "text": "2026-07-29"
+                },
+                {
+                  "text": "High"
                 }
               ]
             },
@@ -334,6 +346,12 @@
                 },
                 {
                   "text": "21 CFR §1303.11"
+                },
+                {
+                  "text": "2026-07-29"
+                },
+                {
+                  "text": "High"
                 }
               ]
             },
@@ -346,6 +364,9 @@
                   "text": "21 U. S. C. §829 · 21 CFR §1301"
                 },
                 {
+                  "text": "2026-07-29"
+                },
+                {
                   "text": "Med · interpretive"
                 }
               ]
@@ -354,7 +375,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Verification checkpoint: figures are current as of the retrieval date and the operative order. Re-confirm against the live docket before using any figure in a filing."
+          "text": "Verification checkpoint: procedural status is current as of the retrieval date. Re-confirm the Federal Register and live docket before using any statement in a filing, tax position, investment decision, or client advice."
         }
       ]
     },
