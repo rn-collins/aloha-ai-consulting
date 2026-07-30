@@ -3077,7 +3077,7 @@
                     "text": "Drafting, brainstorming, summarizing, thinking out loud"
                   },
                   {
-                    "text": "ChatGPT (Free, Plus ~$20/mo, or Business), Claude (Free or paid), Gemini"
+                    "text": "ChatGPT, Claude, or Gemini (free, individual paid, and business tiers vary; verify current terms)"
                   }
                 ]
               },
@@ -3090,7 +3090,7 @@
                     "text": "AI inside the email, docs, and files you already use"
                   },
                   {
-                    "text": "Microsoft 365 Copilot (add-on, ~$30/user/mo) if you're on Microsoft; Gemini in Google Workspace if you're on Google"
+                    "text": "Microsoft 365 Copilot if you use Microsoft, or Gemini in Google Workspace if you use Google; verify current availability and licensing"
                   }
                 ]
               },
@@ -3555,10 +3555,10 @@
                     "text": "Yes"
                   },
                   {
-                    "text": "Plus, around $20/mo"
+                    "text": "Individual paid tier; verify current terms"
                   },
                   {
-                    "text": "Pro, around $200/mo"
+                    "text": "Higher-limit tier; verify current terms"
                   }
                 ]
               },
@@ -3568,10 +3568,10 @@
                     "text": "Claude (Anthropic)"
                   },
                   {
-                    "text": "Pro, around $20/mo"
+                    "text": "Individual paid tier; verify current terms"
                   },
                   {
-                    "text": "Max, around $100–$200/mo"
+                    "text": "Higher-limit tier; verify current terms"
                   }
                 ]
               },
@@ -3581,7 +3581,7 @@
                     "text": "Gemini (Google)"
                   },
                   {
-                    "text": "Google AI Pro, around $20/mo"
+                    "text": "Google AI paid tier; verify current terms"
                   },
                   {
                     "text": "Google AI Ultra, higher tier"
@@ -3594,7 +3594,7 @@
                     "text": "Perplexity"
                   },
                   {
-                    "text": "Max, around $200/mo"
+                    "text": "Higher-limit tier; verify current terms"
                   }
                 ]
               }
@@ -3602,7 +3602,7 @@
           },
           {
             "type": "paragraph",
-            "text": "The pattern is consistent: a free tier, a roughly $20 prosumer tier that most individuals and small teams should start on, and a premium tier (often around $200) for heavy users who need higher limits and the most capable models. Business and enterprise plans add admin controls and, importantly, agreements that your data will not be used to train models."
+            "text": "The pattern is usually a free tier, an individual paid tier, and a higher-limit tier for heavy users. Business and enterprise plans may add administrative controls and different data terms. Verify the current plan, limits, and data-use agreement before choosing."
           }
         ]
       },
@@ -3702,7 +3702,7 @@
           },
           {
             "type": "paragraph",
-            "text": "Start at the free or $20 tier; upgrade when limits actually bite."
+            "text": "Start with the lowest tier that safely supports the work; upgrade when documented limits actually interfere."
           },
           {
             "type": "heading",
