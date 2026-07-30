@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Aloha AI Promise–Delivery Ledger",
+  "type": "object",
+  "required": ["version", "baselineCommit", "counts", "records"],
+  "properties": {
+    "version": { "const": 1 },
+    "baselineCommit": { "type": "string" },
+    "counts": { "type": "object" },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "category", "exactPromise", "occurrences", "visitorExpectation", "presentReality", "maturity", "defect", "disposition", "dependencies", "acceptanceCriteria", "priority", "status"],
+        "properties": {
+          "id": { "pattern": "^PD-[A-F0-9]{12}$" },
+          "category": { "enum": ["resource-claim", "public-action"] },
+          "exactPromise": { "type": "string", "minLength": 1 },
+          "occurrences": { "type": "array", "minItems": 1 },
+          "visitorExpectation": { "type": "string", "minLength": 1 },
+          "presentReality": { "type": "string", "minLength": 1 },
+          "maturity": { "enum": ["absent", "placeholder", "thin-prototype", "functional-beta", "production", "guardrail", "unknown"] },
+          "defect": { "enum": ["none", "content-depth", "connection", "interaction", "architecture", "status-language", "evidence", "requires-review"] },
+          "disposition": { "enum": ["deliver", "complete", "deepen", "connect", "architect", "reframe", "mark-forthcoming", "consolidate", "retire", "verify-maintain"] },
+          "dependencies": { "type": "array" },
+          "acceptanceCriteria": { "type": "string", "minLength": 1 },
+          "priority": { "enum": ["P0", "P1", "P2", "P3"] },
+          "status": { "enum": ["classified", "planned", "building", "locally_validated", "pr_open", "gates_passed", "merged", "deployed", "production_verified", "independently_reaudited"] }
+        }
+      }
+    }
+  }
+}
