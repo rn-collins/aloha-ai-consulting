@@ -1503,8 +1503,29 @@ test('keeps public credential language exact and free of superseded claims', () 
   assert.doesNotMatch(corpus, /seven active legal positions/i);
   assert.doesNotMatch(corpus, /40\+ deployed AI tools/i);
   assert.doesNotMatch(corpus, /35\+ builds shipped/i);
+  assert.doesNotMatch(corpus, /40\+ articles/i);
   assert.doesNotMatch(corpus, /4 articles in the Journal of Biophilic Design/i);
   assert.doesNotMatch(corpus, /practicing law student/i);
+});
+
+test('does not represent dated demonstrations as continuously connected or overstate browser-local privacy', () => {
+  const contentRoot = path.join(process.cwd(), 'content');
+  const files = [];
+  const collect = (directory) => {
+    for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+      const absolute = path.join(directory, entry.name);
+      if (entry.isDirectory()) collect(absolute);
+      else if (entry.name.endsWith('.json')) files.push(absolute);
+    }
+  };
+  collect(contentRoot);
+  const corpus = files.map((file) => fs.readFileSync(file, 'utf8')).join('\n');
+
+  assert.doesNotMatch(corpus, /a live monitor runs it daily/i);
+  assert.doesNotMatch(corpus, /interactive tools run entirely in your browser and send nothing anywhere/i);
+  assert.doesNotMatch(corpus, /nothing there identifies you/i);
+  assert.match(corpus, /public records do not run a continuous daily feed/i);
+  assert.match(corpus, /optional external connection is identified on its page/i);
 });
 
 test('keeps one current commercial pricing architecture and avoids volatile vendor prices', () => {
