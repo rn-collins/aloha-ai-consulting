@@ -337,8 +337,8 @@ test('publishes the citation lab kit as a canonical page with a browser-local do
   assert.match(html, /Download Markdown template/);
   assert.match(html, /not a submission portal/i);
   assert.match(html, /citation-verifier-lab-and-submission-kit\.md/);
-  assert.match(html, /document\\.body\\.appendChild\\(a\\)/);
-  assert.match(html, /setTimeout\\(function\\(\\)\\{URL\\.revokeObjectURL\\(url\\);\\},1000\\)/);
+  assert.match(html, /document\.body\.appendChild\(a\)/);
+  assert.match(html, /setTimeout\(function\(\)\{URL\.revokeObjectURL\(url\);\},1000\)/);
 });
 
 test('derives eighteen dedicated flagship lesson routes from the canonical course records', () => {
