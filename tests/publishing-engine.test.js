@@ -323,6 +323,8 @@ test('renders the flagship citation course as complete open materials without cl
   assert.match(html, /href="\/tools\/citation-verifier"/);
   assert.match(html, /does not currently accept or grade submissions/i);
   assert.match(html, /Private progress on this device/);
+  assert.match(html, /account-synced progress/i);
+  assert.doesNotMatch(html, /saved progress/i);
   assert.match(html, /Executable knowledge check/);
   assert.match(html, /\/university\/templates\/citation-verifier-lab-kit/);
   assert.match(html, /\/university\/courses\/citation-verifier\/lessons\/failure/);

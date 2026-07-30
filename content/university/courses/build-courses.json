@@ -5,7 +5,7 @@
     "pathname": "/university/courses/citation-verifier",
     "eyebrow": "Build-it course",
     "title": "Build a Trust-Safe Citation Verifier",
-    "summary": "Build a bounded, governed system that catches malformed, unidentified, mis-stated, and unsupported citations before they ship. All nine modules and eighteen lessons are public; enrollment, saved progress, submissions, grading, credentials, and the planned tutor are not yet available.",
+    "summary": "Build a bounded, governed system that catches malformed, unidentified, mis-stated, and unsupported citations before they ship. All nine modules and eighteen lessons are public; enrollment, account-synced progress, submissions, grading, credentials, and the planned tutor are not yet available.",
     "audience": "Researchers, writers, legal teams, educators, and publishers responsible for claims that must be traceable and correct.",
     "maturity": "Beta",
     "delivery": {
@@ -942,7 +942,7 @@
           },
           {
             "type": "paragraph",
-            "text": "Open course materials · 9 build modules · 18 lessons · labs, assessments, capstone, and rubric. Enrollment, saved progress, grading, credential issuance, and the governed tutor are not available."
+            "text": "Open course materials · 9 build modules · 18 lessons · labs, assessments, capstone, and rubric. Enrollment, account-synced progress, grading, credential issuance, and the governed tutor are not available. Browser-local completion marks remain available as an unverified self-record."
           },
           {
             "type": "heading",
