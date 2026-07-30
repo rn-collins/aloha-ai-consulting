@@ -3,6 +3,7 @@ import test from 'node:test';
 import { derivePlatform, generatedOutputs, legacyMigrationInventory, validateCollectionPages, validatePlatform, validateRoutingConfig } from '../lib/site/publishing-engine.js';
 import { renderStructuredPage } from '../lib/site/structured-renderer.js';
 import { buildMetadata, decodeHtmlText, metadataDescription, metadataTitle } from '../lib/site/metadata.js';
+import { UNIVERSITY_RECORD_TYPES, UNIVERSITY_SCHEMA_VERSION, validateUniversitySystem } from '../lib/site/university-model.js';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
@@ -275,6 +276,43 @@ test('renders course delivery status instead of treating catalog maturity as ava
   const html = renderStructuredPage({ resource: course, registry: derivePlatform([course, beta]).registry });
   assert.match(html, /Curriculum preview/);
   assert.match(html, /Curriculum preview · enrollment closed/);
+});
+
+test('defines and validates the complete University educational record system', () => {
+  assert.equal(UNIVERSITY_SCHEMA_VERSION, '1.0.0');
+  assert.deepEqual(UNIVERSITY_RECORD_TYPES, [
+    'course', 'module', 'lesson', 'assessment', 'source',
+    'link', 'tool', 'project', 'rubric', 'credential'
+  ]);
+  const records = [
+    { id: 'course-one', type: 'course', title: 'Course', status: 'curriculum-preview', moduleIds: ['module-one'], outcomeIds: ['outcome-one'], assessmentIds: ['assessment-one'], projectIds: ['project-one'], sourceIds: ['source-one'], toolIds: ['tool-one'], credentialId: 'credential-one' },
+    { id: 'module-one', type: 'module', title: 'Module', courseId: 'course-one', position: 1, lessonIds: ['lesson-one'], outcomeIds: ['outcome-one'] },
+    { id: 'lesson-one', type: 'lesson', title: 'Lesson', moduleId: 'module-one', position: 1, outcomeIds: ['outcome-one'], sourceIds: ['source-one'], activityIds: ['assessment-one'] },
+    { id: 'assessment-one', type: 'assessment', title: 'Assessment', courseId: 'course-one', assessmentType: 'knowledge-check', outcomeIds: ['outcome-one'], rubricId: 'rubric-one', passingRule: 'Earn at least 80 percent.' },
+    { id: 'source-one', type: 'source', title: 'Source', url: 'https://example.com/source', authority: 'primary', publisher: 'Publisher', publishedOrUpdated: '2026-07-29', lastVerified: '2026-07-29' },
+    { id: 'link-one', type: 'link', label: 'Open source', href: 'https://example.com/source', destinationType: 'external-primary-source', lastVerified: '2026-07-29' },
+    { id: 'tool-one', type: 'tool', title: 'Tool', capabilityLevel: 'local-instrument', implementationStatus: 'public-beta', dataPath: 'Input remains in the browser.', limitations: ['Does not verify source existence.'], lastTested: '2026-07-29' },
+    { id: 'project-one', type: 'project', title: 'Project', courseId: 'course-one', brief: 'Build and document the system.', deliverableIds: ['link-one'], rubricId: 'rubric-one', evidenceRequirements: ['Test results'] },
+    { id: 'rubric-one', type: 'rubric', title: 'Rubric', criteria: [{ id: 'criterion-one', weight: 100 }], scoringMethod: 'Weighted criteria', passingScore: 80 },
+    { id: 'credential-one', type: 'credential', title: 'Credential', courseId: 'course-one', issuanceStatus: 'planned', requirements: ['Pass the capstone.'], verificationMethod: 'No credential is issued while status is planned.' },
+    { id: 'outcome-one', type: 'link', label: 'Outcome definition', href: '/university', destinationType: 'internal-resource', lastVerified: '2026-07-29' }
+  ];
+  const course = {
+    ...resource('course-resource', [{ type: 'supports', target: 'beta' }]),
+    kind: 'course',
+    delivery: { status: 'curriculum-preview', enrollmentOpen: false, lessons: 'planned', tutor: 'planned', progressTracking: 'not-available', credential: 'not-available', lastReviewed: '2026-07-29' },
+    education: { schemaVersion: UNIVERSITY_SCHEMA_VERSION, records }
+  };
+  assert.deepEqual(validateUniversitySystem([course]), []);
+});
+
+test('blocks an enrollment-open course without a complete educational system', () => {
+  const course = {
+    ...resource('course-alpha', []),
+    kind: 'course',
+    delivery: { status: 'enrollment-open', enrollmentOpen: true, lessons: 'available', tutor: 'planned', progressTracking: 'available', credential: 'planned', lastReviewed: '2026-07-29' }
+  };
+  assert.ok(validateUniversitySystem([course]).includes('course-alpha: enrollment-open course requires validated education records'));
 });
 
 test('requires named homepage tools and products to link to their canonical pages', () => {
