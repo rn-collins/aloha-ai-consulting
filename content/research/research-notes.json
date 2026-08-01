@@ -710,7 +710,7 @@
           },
           {
             "type": "paragraph",
-            "text": "You can see the two ends of this concretely in what I build. The Citation Verifier is a workflow: a bounded, repeatable act that takes citations, checks each one against a real source, and returns a verdict you can reproduce. Valuable on its own, and still a single step. The Trust-Safe AI Operating Layer console is the layer above it: the place where that verification step, and others like it, are orchestrated, evaluated, governed by policy, and logged for audit across a practice. One is a good answer to a narrow question. The other is the difference between using AI and being able to stand behind it. Most teams are shopping for the first while describing the second. Naming the gap is the first step toward closing it."
+            "text": "You can see the two ends of this concretely in what I build. The public Citation Verifier is a bounded browser-local structural check: it parses supported citation formats and flags structural problems, but it does not retrieve an authority or decide whether a source supports a proposition. The Trust-Safe AI Operating Layer console is a browser-local demonstration of the layer above it: orchestration, evaluation, policy, logging, and human approval are represented as inspectable interface and logic states, not as proof of an operating organizational system. One is a working narrow check. The other is a demonstration of the wider architecture. Naming that difference is the first step toward building the wider layer responsibly."
           },
           {
             "type": "heading",
@@ -718,7 +718,7 @@
           },
           {
             "type": "paragraph",
-            "text": "The workflow and the layer above it are both running, not diagrams. The Citation Verifier is a single governed workflow. The Trust-Safe AI Operating Layer console is where workflows like it are orchestrated, evaluated, governed, and logged across a practice. Both run in your browser."
+            "text": "Both public pages include browser-local interactions, but they prove different things. Citation Verifier performs the stated structural check. The Trust-Safe AI Operating Layer console demonstrates proposed orchestration, evaluation, governance, logging, and approval states; it is not evidence that those systems are connected or operating across a practice."
           },
           {
             "type": "paragraph",

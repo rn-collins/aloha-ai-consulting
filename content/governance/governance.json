@@ -1236,7 +1236,7 @@
     "pathname": "/privacy",
     "eyebrow": "Privacy",
     "title": "The honest, short version.",
-    "summary": "Aloha AI sets no cookies or advertising trackers, uses cookieless performance measurement, and collects contact information only when a visitor chooses to book or email.",
+    "summary": "Aloha AI sets no advertising cookies or trackers. Public tools and scoping records stay in the browser; the current external booking path is handled by Microsoft.",
     "audience": "Visitors, prospective clients, partners, learners, and tool users who need to understand what Aloha AI collects, how it is used, and how to request access or deletion.",
     "maturity": "Production",
     "topics": [
@@ -1255,7 +1255,7 @@
       "browser-local tools",
       "data deletion"
     ],
-    "effectiveDate": "2026-07-04",
+    "effectiveDate": "2026-07-31",
     "policyOwner": "Aloha AI, a DBA of Rayven-Nikkita Collins LLC · Honolulu, HI",
     "policySections": [
       {
@@ -1271,13 +1271,20 @@
         ]
       },
       {
+        "title": "Local conversion context and scoping records",
+        "paragraphs": [
+          "The contact page keeps only source route, offer ID, and inquiry type in session storage for no more than thirty minutes so the page can preserve where a visitor started. It does not store the answers entered into the scoping form. The attribution record can be cleared on the contact page and disappears when the browser session ends.",
+          "A scoping record is created in memory only. It leaves the page only if the visitor deliberately copies it, downloads it, or pastes selected text into a third-party booking form. Aloha AI does not receive the record through the public site."
+        ]
+      },
+      {
         "title": "What is collected",
         "paragraphs": [
-          "The only personal information Aloha AI holds is what you voluntarily provide when you get in touch. No account is required to use the public site."
+          "No account is required to use the public site. Aloha AI does not currently operate a brand-owned public intake endpoint or email channel."
         ],
         "points": [
-          "If you book a call: the details entered in the booking form, typically name, email address, and any note, handled through Microsoft Outlook Bookings.",
-          "If you email: your email address, your name if included, and the contents of the message."
+          "If you book a call: the details entered in Microsoft Bookings, typically name, email address, and any note, are handled through the Northeastern-associated Microsoft account shown before you leave the site.",
+          "The browser-local scoping record is not submitted to Aloha AI."
         ]
       },
       {
@@ -1289,7 +1296,7 @@
       {
         "title": "Storage and third parties",
         "paragraphs": [
-          "Bookings are processed by Microsoft Outlook Bookings under Microsoft’s terms and privacy practices. Email is handled by ordinary mail providers. These providers supply the message infrastructure; Aloha AI does not share information beyond what is needed to receive and reply."
+          "Bookings are processed by Microsoft Outlook Bookings under Microsoft’s terms and privacy practices. The current booking destination is associated with a Northeastern account. Aloha AI does not operate a public email or server-side intake path at this time."
         ]
       },
       {
@@ -1301,7 +1308,7 @@
       {
         "title": "Your rights",
         "paragraphs": [
-          "You may ask what information Aloha AI holds about you and request deletion. Because the retained information is limited to what you sent, either request can be made directly by email."
+          "The site-held source context can be cleared directly on the contact page. Information entered into Microsoft Bookings is governed by that service and the associated account. A brand-owned access, correction, and deletion request channel will be published before Aloha AI activates server-side intake."
         ]
       },
       {
@@ -1325,7 +1332,7 @@
     ],
     "evidence": [
       "The site’s configured analytics and interactive-tool behavior",
-      "The Microsoft Outlook Bookings and ordinary email collection paths",
+      "The Microsoft Outlook Bookings path and browser-local scoping workflow",
       "Documented absence of advertising trackers, public-site accounts, and server-submitted tool inputs"
     ],
     "methodology": [

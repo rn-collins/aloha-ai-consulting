@@ -36,6 +36,8 @@
     "demo": {
       "type": "structured-form",
       "mode": "document",
+      "ruleVersion": "1.0.0",
+      "requiredFields": ["role", "scope", "data", "prohibited", "evidence_rule", "approval", "escalation", "logging", "retention", "evaluation", "failure", "owner"],
       "title": "One agent, eighteen fields",
       "outputTitle": "Agent Role Contract",
       "downloadName": "agent-role-contract.md",
@@ -271,7 +273,7 @@
       "Twelve additional series developed as accreditation and demand justify",
       "Timed agendas, measurable learning outcomes, evaluation forms, and profession-specific credit pathways"
     ],
-    "implementationStatus": "Course content is being developed for submission; provider accreditation and co-sponsorship are in progress. Credit is not represented as available until the applicable approval is confirmed.",
+    "implementationStatus": "Curriculum concepts and credit-pathway research are in development. No provider application, co-sponsorship, accreditation, enrollment, or credit is represented as active or available.",
     "documentation": [
       "Primary-source citations verified against original authority",
       "Four-cycle correction and quality-assurance pass",
@@ -286,7 +288,7 @@
     ],
     "changelog": [
       "2026 launch catalog: eight AI courses and three psychedelic/neuroscience courses identified",
-      "Accreditation targets disclosed as targets rather than awarded credit"
+      "Potential accreditation pathways disclosed as research targets rather than applications, approvals, or awarded credit"
     ],
     "licensing": "Institutional delivery, accredited-provider partnerships, co-sponsorship, and curriculum licensing are scoped only after the applicable approval, presenter, attribution, and quality-control terms are confirmed.",
     "evidence": [
@@ -306,7 +308,7 @@
       "Qualified presenters and reviewers will be engaged where required"
     ],
     "limitations": [
-      "Accreditation is in progress and no unconfirmed credit is promised",
+      "No accreditation application or co-sponsorship arrangement is represented as submitted, pending, or approved; no credit is available",
       "Educational content is not legal, medical, clinical, tax, or other professional advice"
     ],
     "relationships": [
@@ -543,7 +545,7 @@
         "blocks": [
           {
             "type": "paragraph",
-            "text": "Course content is submission-ready. Provider accreditation and co-sponsorships are being pursued now. These are the pathways being sought; credit for a given board goes live only once that accreditation is confirmed. Join the list to be notified as each one lands."
+            "text": "These are research targets for future curriculum and potential credit pathways. No provider application, co-sponsorship, accreditation, enrollment, notification list, or credit is currently available. Any future course will publish its own confirmed provider, approval, presenter, jurisdiction, credit terms, and effective dates before enrollment opens."
           },
           {
             "type": "list",
@@ -728,6 +730,9 @@
     "demo": {
       "type": "structured-form",
       "mode": "score",
+      "ruleVersion": "1.0.0",
+      "requiredFields": ["category", "emotion", "familiarity", "traits"],
+      "scoreDirection": "need",
       "title": "Brand Trust Diagnostic",
       "outputTitle": "Your mechanism-mapped starting point",
       "maxScore": 6,
@@ -741,31 +746,31 @@
               "value": "professional",
               "label": "Professional service",
               "dimension": "credibility",
-              "score": 1
+          "score": 0
             },
             {
               "value": "consumer",
               "label": "Consumer product",
               "dimension": "exposure",
-              "score": 1
+          "score": 0
             },
             {
               "value": "health",
               "label": "Health or wellness",
               "dimension": "credibility",
-              "score": 1
+          "score": 0
             },
             {
               "value": "technology",
               "label": "Technology",
               "dimension": "fluency",
-              "score": 1
+          "score": 0
             },
             {
               "value": "culture",
               "label": "Culture or media",
               "dimension": "affect",
-              "score": 1
+          "score": 0
             }
           ]
         },
@@ -778,25 +783,25 @@
               "value": "calm",
               "label": "Calm or trust",
               "dimension": "affect",
-              "score": 2
+          "score": 0
             },
             {
               "value": "excitement",
               "label": "Excitement",
               "dimension": "affect",
-              "score": 2
+          "score": 0
             },
             {
               "value": "status",
               "label": "Status",
               "dimension": "credibility",
-              "score": 2
+          "score": 0
             },
             {
               "value": "none",
               "label": "No clear feeling",
               "dimension": "affect",
-              "score": 0
+          "score": 2
             }
           ]
         },
@@ -809,19 +814,19 @@
               "value": "high",
               "label": "High",
               "dimension": "exposure",
-              "score": 3
+          "score": 0
             },
             {
               "value": "mid",
               "label": "Some recognition",
               "dimension": "exposure",
-              "score": 2
+          "score": 1
             },
             {
               "value": "low",
               "label": "Low or new",
               "dimension": "exposure",
-              "score": 0
+          "score": 3
             }
           ]
         },
@@ -835,44 +840,44 @@
               "value": "claimheavy",
               "label": "Claim-heavy",
               "dimension": "credibility",
-              "score": 0
+          "score": 2
             },
             {
               "value": "complex",
               "label": "Visually complex",
               "dimension": "fluency",
-              "score": 0
+          "score": 2
             },
             {
               "value": "inconsistent",
               "label": "Inconsistent",
               "dimension": "exposure",
-              "score": 0
+          "score": 2
             },
             {
               "value": "proofthin",
               "label": "Thin on proof",
               "dimension": "credibility",
-              "score": 0
+          "score": 2
             }
           ]
         }
       ],
       "bands": [
         {
-          "min": 5,
-          "title": "Strong footing",
-          "summary": "The foundations are visible; concentrate on evidence, disciplined repetition, and category-specific testing."
+      "min": 5,
+      "title": "Higher indicated need",
+      "summary": "Several selected signals point to material perception friction. Treat this as a prioritization prompt, then test the observations with representative evidence."
         },
         {
           "min": 2,
-          "title": "Mixed footing",
-          "summary": "The brand has usable signals but material fluency, familiarity, affect, or credibility gaps remain."
+      "title": "Mixed indicated need",
+      "summary": "Some selected signals point to friction; inspect the answer-level rationale before choosing a response."
         },
         {
           "min": 0,
-          "title": "Foundational work first",
-          "summary": "Reduce processing friction and establish a consistent signal before asking the audience to absorb larger claims."
+      "title": "Lower indicated need",
+      "summary": "Few configured friction signals were selected. This does not establish strong brand perception or replace audience research."
         }
       ],
       "recommendations": [

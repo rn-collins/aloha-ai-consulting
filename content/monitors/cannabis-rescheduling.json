@@ -3,14 +3,25 @@
   "kind": "monitor",
   "pathname": "/monitors/cannabis-rescheduling",
   "title": "Cannabis rescheduling, told straight, with the receipts.",
-  "summary": "A maintained example of primary-source regulatory monitoring, source comparison, and dated status reporting.",
+  "summary": "A maintained-beta federal record of the marijuana rescheduling proceeding, with a named reviewer, weekly source review, run history, stale behavior, and correction controls.",
   "maturity": "Beta",
+  "version": "1.0.0",
+  "effectiveDate": "2026-07-31",
+  "lastReviewedOrTested": "2026-07-31",
+  "nextReviewOrTrigger": "2026-08-07 or an earlier material DEA/Federal Register action",
+  "lifecycleState": "maintained-beta-manual-review",
+  "privacyBoundary": "The public status record sends no visitor input. Any interactive exposure model runs in the visitor's browser under the separate browser-local tool contract.",
+  "evidenceLinks": [
+    "https://www.dea.gov/notice-proposed-rulemaking-nprm",
+    "https://www.federalregister.gov/documents/2026/04/28/2026-08177/schedules-of-controlled-substances-rescheduling-of-marijuana",
+    "https://www.dea.gov/sites/default/files/2026-07/Proposed%20Marijuana%20Rescheduling_Ord%20re%20Transcript%20Corr%20and%20PHB.pdf"
+  ],
   "topics": [
     "monitoring",
     "cannabis",
     "regulation"
   ],
-  "implementationStatus": "Maintained public monitor with defined source and update boundaries.",
+  "implementationStatus": "Maintained beta · manually reviewed against the defined federal source set each Friday.",
   "documentation": [
     "Source hierarchy",
     "Update cadence",
@@ -32,8 +43,60 @@
   ],
   "limitations": [
     "The monitor is informational and is not legal advice",
-    "Detection may lag a newly published change"
+    "The source review is manual and weekly, not continuous; a change may publish between reviews",
+    "The monitor covers the federal DEA rescheduling proceeding only and does not determine state-law status"
   ],
+  "monitorOperations": {
+    "version": "1.0.0",
+    "jurisdiction": "United States federal",
+    "scope": "DEA Docket No. 1362 / Hearing Docket No. 26-96 and federal authorities necessary to explain the procedural status and bounded operator consequences of the proposed transfer of marijuana from schedule I to schedule III.",
+    "owner": "RN Collins",
+    "reviewer": "RN Collins",
+    "cadence": "Manual review every Friday, Pacific/Honolulu; event-triggered review after a new DEA docket order, Federal Register document, final rule, or official correction.",
+    "lastSuccessfulReview": "2026-07-31",
+    "nextScheduledReview": "2026-08-07",
+    "staleAfter": "2026-08-08T23:59:59-10:00",
+    "staleBehavior": "Display the record as stale, stop describing the status as current, retain the last verified as-of date, and require direct primary-source review before reliance.",
+    "failureBehavior": "Preserve the last successful dated record, identify the source that could not be checked, publish no inferred change, and place the record in the human review queue.",
+    "correctionPolicy": "Record the affected statement, prior and corrected text, authority, reviewer, effective date, and reason; preserve the superseded record in the correction log.",
+    "sourceAuthorities": [
+      {
+        "name": "DEA marijuana rescheduling docket hub",
+        "url": "https://www.dea.gov/notice-proposed-rulemaking-nprm",
+        "authority": "Primary agency docket and tribunal filings",
+        "required": true
+      },
+      {
+        "name": "Federal Register document 2026-08177",
+        "url": "https://www.federalregister.gov/documents/2026/04/28/2026-08177/schedules-of-controlled-substances-rescheduling-of-marijuana",
+        "authority": "Official notice of hearing on proposed rulemaking",
+        "required": true
+      },
+      {
+        "name": "eCFR Title 21",
+        "url": "https://www.ecfr.gov/current/title-21",
+        "authority": "Current codified federal drug-control regulations",
+        "required": true
+      }
+    ],
+    "runHistory": [
+      {
+        "runId": "CR-2026-07-29",
+        "reviewedAt": "2026-07-29",
+        "result": "pass",
+        "observedState": "The proposed transfer remained pending after the hearing; no final rule was identified.",
+        "evidence": ["DEA Docket No. 1362", "91 FR 22777"]
+      },
+      {
+        "runId": "CR-2026-07-31",
+        "reviewedAt": "2026-07-31",
+        "result": "pass",
+        "observedState": "The hearing concluded July 15, 2026. Transcript-correction and post-hearing briefing procedures are pending; post-hearing briefs are due August 17, 2026. No final rule was identified.",
+        "evidence": ["DEA order for transcript corrections and post-hearing briefs", "DEA Docket No. 1362 / Hearing Docket No. 26-96", "91 FR 22777"]
+      }
+    ],
+    "corrections": []
+  },
   "relationships": [
     {
       "type": "evidences",
@@ -51,22 +114,47 @@
   ],
   "editorialSections": [
     {
-      "title": "The latest cannabis rulemaking, pulled live",
-      "eyebrow": "Live · Federal Register",
+      "title": "Maintained-beta operating record",
+      "eyebrow": "Reviewed 2026-07-31 · next review 2026-08-07",
       "blocks": [
         {
           "type": "paragraph",
-          "text": "This panel queries the Federal Register API from your browser every time the page loads, so it shows the primary source itself, not a stored summary."
+          "text": "Scope: the United States federal DEA proceeding to transfer marijuana from schedule I to schedule III. RN Collins manually checks the defined DEA, Federal Register, and eCFR sources every Friday and after a material official filing. This is not continuous monitoring, state-law coverage, or legal advice."
+        },
+        {
+          "type": "paragraph",
+          "text": "Governing as-of status: the merits hearing ran from June 29 through July 15, 2026. Transcript corrections and post-hearing briefing remain pending, with post-hearing briefs due August 17, 2026. No final rule transferring marijuana to schedule III was identified in the reviewed federal source set as of July 31, 2026."
+        },
+        {
+          "type": "table",
+          "rows": [
+            {"cells":[{"text":"Control","header":true},{"text":"Current record","header":true},{"text":"Evidence or response","header":true}]},
+            {"cells":[{"text":"Owner and reviewer"},{"text":"RN Collins"},{"text":"Named human review; no unattended publication"}]},
+            {"cells":[{"text":"Cadence"},{"text":"Every Friday; next 2026-08-07"},{"text":"Event-triggered review after material DEA or Federal Register action"}]},
+            {"cells":[{"text":"Last successful run"},{"text":"CR-2026-07-31"},{"text":"DEA docket order and 91 FR 22777 reviewed"}]},
+            {"cells":[{"text":"Stale or failed review"},{"text":"After 2026-08-08 or any required-source failure"},{"text":"Retain the last dated record, remove current-status language, identify the failed source, and require human review"}]},
+            {"cells":[{"text":"Corrections"},{"text":"No corrections recorded in v1.0.0"},{"text":"Future corrections preserve prior text, authority, reviewer, date, and reason"}]}
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The latest reviewed federal rulemaking record",
+      "eyebrow": "Primary sources · reviewed 2026-07-31",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "This maintained-beta record is checked manually against the defined DEA, Federal Register, and eCFR sources. It does not claim a continuous browser feed or automatic detection."
         },
         {
           "type": "list",
           "items": [
-            "Loading the latest from the Federal Register…"
+            "Hearing completed July 15, 2026; transcript corrections and post-hearing briefing remain pending."
           ]
         },
         {
           "type": "paragraph",
-          "text": "The live Federal Register feed is unavailable right now; the dated analysis below still applies (as of 2026-07-04)."
+          "text": "No final rule transferring marijuana to schedule III was identified in the reviewed federal source set as of 2026-07-31. Recheck the DEA docket and Federal Register before consequential reliance."
         }
       ]
     },
@@ -146,7 +234,7 @@
         },
         {
           "type": "paragraph",
-          "text": "No broad move to Schedule III has taken effect. On April 28, 2026, DEA withdrew the earlier hearing notice and published a new notice setting a hearing on the still-proposed transfer of marijuana from Schedule I to Schedule III. A hearing notice is not a final rule, and marijuana remains in Schedule I unless and until a final rule changes the schedule."
+          "text": "No broad move to Schedule III has taken effect. The new merits hearing ran from June 29 through July 15, 2026; transcript corrections and post-hearing briefing remain pending, with briefs due August 17, 2026. A completed hearing is not a final rule, and marijuana remains in Schedule I unless and until a final rule changes the schedule."
         },
         {
           "type": "paragraph",
@@ -154,7 +242,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Confidence: High on current procedural status. Why you can rely on it: the status maps to the April 28 Federal Register notices and should be rechecked against the live docket before use."
+          "text": "Confidence: High on procedural status as of 2026-07-31. Basis: 91 FR 22777 and the DEA tribunal order governing transcript corrections and post-hearing briefs. Recheck the live docket before use."
         },
         {
           "type": "paragraph",
@@ -309,18 +397,10 @@
             },
             {
               "cells": [
-                {
-                  "text": "New hearing proceedings were announced to begin June 29, 2026 on the proposed Schedule III transfer"
-                },
-                {
-                  "text": "91 FR 22777 (2026-08177)"
-                },
-                {
-                  "text": "2026-07-29"
-                },
-                {
-                  "text": "High on procedural status"
-                }
+                {"text":"The merits hearing concluded July 15, 2026; transcript corrections and post-hearing briefs remain pending, with briefs due August 17, 2026"},
+                {"text":"DEA Docket No. 1362 / Hearing Docket No. 26-96 · Order for Transcript Corrections and Post-Hearing Briefs"},
+                {"text":"2026-07-31"},
+                {"text":"High on procedural status"}
               ]
             },
             {

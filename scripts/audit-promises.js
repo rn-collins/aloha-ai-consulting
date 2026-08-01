@@ -6,7 +6,14 @@ const root = process.cwd();
 const outDir = path.join(root, 'program', 'promise-delivery');
 const write = process.argv.includes('--write');
 const check = process.argv.includes('--check');
-if (!write && !check) throw new Error('Use --write or --check.');
+const reviewRelease = process.argv.includes('--review-release');
+const releaseCheck = process.argv.includes('--release-check');
+if (![write, check, reviewRelease, releaseCheck].some(Boolean)) {
+  throw new Error('Use --write, --check, --review-release, or --release-check.');
+}
+if ([write, check, reviewRelease, releaseCheck].filter(Boolean).length !== 1) {
+  throw new Error('Select exactly one promise-audit mode.');
+}
 
 const resourcesPayload = readJson('api/resources.json');
 const interactions = readJson('artifacts/interaction-audit/report.json');
@@ -145,14 +152,69 @@ const outputs = {
   'dashboard.md': dashboard
 };
 
+const releaseRegistryPath = path.join(outDir, 'promise-release-registry.json');
+const releaseRegistry = {
+  schema: 'aloha-ai-promise-release-registry/1.0',
+  frozenBaseline: {
+    commit: 'deb1073d',
+    date: '2026-07-29',
+    promiseRecords: 4289,
+    promiseOccurrences: 9552
+  },
+  reviewBoundary: 'Repository-local structural promise inventory. This review does not certify responsive rendering, deployment, live production behavior, factual accuracy, legal sufficiency, maintained monitoring, enrollment, grading, credentials, external integrations, or service capacity.',
+  reviewedAt: '2026-07-31',
+  reviewedBy: 'Aloha AI promise-delivery remediation R06',
+  decision: 'approved-current-structural-inventory',
+  counts: {
+    routes: counts.publicRouteSurfaces,
+    resources: counts.canonicalResources,
+    interactiveOccurrences: counts.interactiveOccurrences,
+    promiseRecords: counts.promiseRecords,
+    promiseOccurrences: counts.totalPromiseOccurrences
+  },
+  hashes: {
+    routes: hash(routeInventory),
+    records: hash(records.map(releaseRecord))
+  },
+  records: records.map(releaseRecord)
+};
+
 if (write) {
   fs.mkdirSync(outDir, { recursive: true });
   for (const [name, content] of Object.entries(outputs)) fs.writeFileSync(path.join(outDir, name), content);
+}
+if (reviewRelease) {
+  fs.mkdirSync(outDir, { recursive: true });
+  fs.writeFileSync(releaseRegistryPath, `${JSON.stringify(releaseRegistry)}\n`);
 }
 if (check) {
   for (const [name, content] of Object.entries(outputs)) {
     const file = path.join(outDir, name);
     if (!fs.existsSync(file) || fs.readFileSync(file, 'utf8') !== content) errors.push(`${name} is missing or out of date.`);
+  }
+}
+if (releaseCheck) {
+  if (!fs.existsSync(releaseRegistryPath)) {
+    errors.push('promise-release-registry.json is missing; an explicit R06 review is required.');
+  } else {
+    const reviewed = JSON.parse(fs.readFileSync(releaseRegistryPath, 'utf8'));
+    if (reviewed.schema !== releaseRegistry.schema) errors.push('Promise release registry schema is unsupported.');
+    if (reviewed.decision !== 'approved-current-structural-inventory') errors.push('Promise release registry lacks an approved review decision.');
+    if (!reviewed.reviewedAt || !reviewed.reviewedBy || !reviewed.reviewBoundary) errors.push('Promise release registry lacks review provenance or boundary.');
+    if (reviewed.frozenBaseline?.promiseRecords !== 4289 || reviewed.frozenBaseline?.promiseOccurrences !== 9552) {
+      errors.push('Promise release registry does not preserve the frozen 4,289/9,552 baseline.');
+    }
+    const reviewedRecords = new Map((reviewed.records || []).map((record) => [record.promiseId, record]));
+    const currentRecords = new Map(releaseRegistry.records.map((record) => [record.promiseId, record]));
+    const added = [...currentRecords.keys()].filter((id) => !reviewedRecords.has(id));
+    const removed = [...reviewedRecords.keys()].filter((id) => !currentRecords.has(id));
+    const changed = [...currentRecords.keys()].filter((id) => reviewedRecords.has(id) && JSON.stringify(currentRecords.get(id)) !== JSON.stringify(reviewedRecords.get(id)));
+    if (added.length) errors.push(`${added.length} unrecorded promise signature(s): ${added.slice(0, 10).join(', ')}${added.length > 10 ? ', …' : ''}`);
+    if (removed.length) errors.push(`${removed.length} reviewed promise signature(s) disappeared: ${removed.slice(0, 10).join(', ')}${removed.length > 10 ? ', …' : ''}`);
+    if (changed.length) errors.push(`${changed.length} reviewed promise occurrence set(s) changed: ${changed.slice(0, 10).join(', ')}${changed.length > 10 ? ', …' : ''}`);
+    if (JSON.stringify(reviewed.counts) !== JSON.stringify(releaseRegistry.counts)) errors.push('Promise release registry counts differ from the current estate.');
+    if (reviewed.hashes?.routes !== releaseRegistry.hashes.routes) errors.push('Public route inventory differs from the reviewed release registry.');
+    if (reviewed.hashes?.records !== releaseRegistry.hashes.records) errors.push('Promise record inventory differs from the reviewed release registry.');
   }
 }
 console.log(`Promise inventory: ${counts.publicRouteSurfaces} public route surfaces (${counts.sitemapRoutes} sitemap + recovery); ${counts.canonicalResources} resources; ${counts.interactiveOccurrences} interactive occurrences; ${counts.promiseRecords} grouped promise records; ${counts.totalPromiseOccurrences} total occurrences.`);
@@ -161,7 +223,22 @@ if (errors.length) {
   for (const error of errors) console.error(`- ${error}`);
   process.exit(1);
 }
-console.log(write ? 'Frozen control package written.' : 'Frozen control package is current and internally reconciled.');
+console.log(write
+  ? 'Frozen control package written.'
+  : reviewRelease
+    ? 'Current promise release registry reviewed and written; frozen controls were not changed.'
+    : releaseCheck
+      ? 'Current promise inventory exactly matches the reviewed release registry.'
+      : 'Frozen control package is current and internally reconciled.');
+
+function releaseRecord(record) {
+  return {
+    promiseId: record.id,
+    category: record.category,
+    exactPromise: record.exactPromise,
+    occurrenceKeys: record.occurrences.map((occurrence) => hash(occurrence)).sort()
+  };
+}
 
 function classify(item) {
   const text = item.exactPromise;

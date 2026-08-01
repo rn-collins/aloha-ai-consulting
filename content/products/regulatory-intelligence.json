@@ -174,11 +174,11 @@
       ]
     },
     {
-      "title": "Get The IDR Engine",
+      "title": "The IDR Engine — not currently for sale",
       "blocks": [
         {
           "type": "paragraph",
-          "text": "Checkout is handled by Gumroad. The button opens the Aloha AI Gumroad storefront."
+          "text": "No checkout, purchase, license, or download is currently available. This artifact remains in the governed build queue; its eventual release obligation is not retired."
         },
         {
           "type": "paragraph",

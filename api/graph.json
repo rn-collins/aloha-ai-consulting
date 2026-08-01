@@ -1,0 +1,4650 @@
+{
+  "nodes": [
+    {
+      "id": "about",
+      "kind": "institutional",
+      "pathname": "/about",
+      "title": "I work on questions too messy for a single discipline.",
+      "maturity": "Production"
+    },
+    {
+      "id": "partners",
+      "kind": "institutional",
+      "pathname": "/partners",
+      "title": "Build the system with clear rights, responsibilities, and a path beyond the pilot.",
+      "maturity": "Production"
+    },
+    {
+      "id": "privacy",
+      "kind": "policy",
+      "pathname": "/privacy",
+      "title": "The honest, short version.",
+      "maturity": "Production"
+    },
+    {
+      "id": "terms",
+      "kind": "policy",
+      "pathname": "/terms",
+      "title": "Simple, fair, and clear.",
+      "maturity": "Production"
+    },
+    {
+      "id": "methods",
+      "kind": "research",
+      "pathname": "/methods",
+      "title": "The visible interface is the end of the method, not the beginning.",
+      "maturity": "Production"
+    },
+    {
+      "id": "cannabis-rescheduling",
+      "kind": "monitor",
+      "pathname": "/monitors/cannabis-rescheduling",
+      "title": "Cannabis rescheduling, told straight, with the receipts.",
+      "maturity": "Beta"
+    },
+    {
+      "id": "agentic-brand-management",
+      "kind": "monitor",
+      "pathname": "/monitors/agentic-brand-management",
+      "title": "Brand management run by agents. Signed off by a human.",
+      "maturity": "Beta"
+    },
+    {
+      "id": "ai-creative-production",
+      "kind": "monitor",
+      "pathname": "/monitors/ai-creative-production",
+      "title": "Stop generating one-offs. Build a production pipeline.",
+      "maturity": "Beta"
+    },
+    {
+      "id": "arts-culture",
+      "kind": "monitor",
+      "pathname": "/monitors/arts-culture",
+      "title": "AI for your collection and your audience, built on the standards you already answer to.",
+      "maturity": "Research"
+    },
+    {
+      "id": "biopharma-regulatory-intelligence",
+      "kind": "monitor",
+      "pathname": "/monitors/biopharma-regulatory-intelligence",
+      "title": "Your drug program's regulatory path, told straight. With the receipts.",
+      "maturity": "Beta"
+    },
+    {
+      "id": "biophilic-neuroarch",
+      "kind": "monitor",
+      "pathname": "/monitors/biophilic-neuroarch",
+      "title": "Space shapes the nervous system. Design it on purpose.",
+      "maturity": "Research"
+    },
+    {
+      "id": "luxury-ip",
+      "kind": "monitor",
+      "pathname": "/monitors/luxury-ip",
+      "title": "Brand protection, grounded in the statute. No takedown bots.",
+      "maturity": "Beta"
+    },
+    {
+      "id": "market-intel",
+      "kind": "monitor",
+      "pathname": "/monitors/market-intel",
+      "title": "Know what your market is doing, with the receipts.",
+      "maturity": "Beta"
+    },
+    {
+      "id": "private-ai-risk",
+      "kind": "monitor",
+      "pathname": "/monitors/private-ai-risk",
+      "title": "Before privileged data touches an AI vendor, know where it goes.",
+      "maturity": "Beta"
+    },
+    {
+      "id": "psychedelic-radar",
+      "kind": "monitor",
+      "pathname": "/monitors/psychedelic-radar",
+      "title": "Psychedelic regulation, told straight, with the receipts.",
+      "maturity": "Beta"
+    },
+    {
+      "id": "suppression-audit",
+      "kind": "monitor",
+      "pathname": "/monitors/suppression-audit",
+      "title": "Your health content isn't bad. It's flagged.",
+      "maturity": "Beta"
+    },
+    {
+      "id": "aloha-ai-platform",
+      "kind": "product",
+      "pathname": "/platform",
+      "title": "The trusted operating layer behind every Aloha AI system.",
+      "maturity": "Beta"
+    },
+    {
+      "id": "aloha-ai-practice",
+      "kind": "product",
+      "pathname": "/practice",
+      "title": "The organizations doing the most credible work face three compounding problems. Almost everyone treats each one as unrelated.",
+      "maturity": "Production"
+    },
+    {
+      "id": "applied-ai-stacks",
+      "kind": "collection",
+      "pathname": "/stacks",
+      "title": "What a real AI stack looks like for your kind of work.",
+      "maturity": "Production"
+    },
+    {
+      "id": "founder-startup-stack",
+      "kind": "useCase",
+      "pathname": "/stacks/founder-startup",
+      "title": "The Founder Stack, for a small team that cannot afford a wrong claim.",
+      "maturity": "Production"
+    },
+    {
+      "id": "law-firm-stack",
+      "kind": "useCase",
+      "pathname": "/stacks/law-firm",
+      "title": "The Law Firm AI Stack, built so speed never becomes a sanctions risk.",
+      "maturity": "Production"
+    },
+    {
+      "id": "policy-advocacy-stack",
+      "kind": "useCase",
+      "pathname": "/stacks/policy-advocacy",
+      "title": "The Policy Advocacy Stack, built on sources a committee can check.",
+      "maturity": "Production"
+    },
+    {
+      "id": "regulated-intelligence-stack",
+      "kind": "useCase",
+      "pathname": "/stacks/regulated-intelligence",
+      "title": "The Psychedelic Cannabis Stack, built on monitors already running in your market.",
+      "maturity": "Production"
+    },
+    {
+      "id": "research-lab-stack",
+      "kind": "useCase",
+      "pathname": "/stacks/research-lab",
+      "title": "The Research Lab Stack, sized to the work and honest about sources.",
+      "maturity": "Production"
+    },
+    {
+      "id": "creator-content-system",
+      "kind": "product",
+      "pathname": "/systems/creator-content",
+      "title": "Your expertise, turned into a system that never starts from a blank page.",
+      "maturity": "Research"
+    },
+    {
+      "id": "trust-stack-ai-content-system",
+      "kind": "tool",
+      "pathname": "/trust-stack/ai-content-system",
+      "title": "Your AI is writing faster than you can check it. That is the problem.",
+      "maturity": "Production"
+    },
+    {
+      "id": "edsa-framework",
+      "kind": "tool",
+      "pathname": "/trust-stack/edsa-framework",
+      "title": "Your content is being judged twice. You're only writing for one of the judges.",
+      "maturity": "Research"
+    },
+    {
+      "id": "psilocybin-regulatory-map",
+      "kind": "tool",
+      "pathname": "/trust-stack/psilocybin-map",
+      "title": "The three-state psilocybin map that a regulator can't poke a hole in.",
+      "maturity": "Research"
+    },
+    {
+      "id": "sb303-compliance-kit",
+      "kind": "tool",
+      "pathname": "/trust-stack/sb303-compliance-kit",
+      "title": "The reporting miss that costs a license is a data-entry error made upstream. This is the system that catches it before the deadline.",
+      "maturity": "Research"
+    },
+    {
+      "id": "suppression-monitoring-playbook",
+      "kind": "tool",
+      "pathname": "/trust-stack/suppression-playbook",
+      "title": "They will not tell you when they turn down your reach. This is how you find out anyway.",
+      "maturity": "Research"
+    },
+    {
+      "id": "trust-safe-twins",
+      "kind": "product",
+      "pathname": "/twins",
+      "title": "A Trust-Safe Twin is an AI twin that ships with its consent, provenance, and disclosure already attached.",
+      "maturity": "Beta"
+    },
+    {
+      "id": "trust-safe-twin-lab",
+      "kind": "tool",
+      "pathname": "/twins/console",
+      "title": "Trust-safe AI you can inspect, test, and challenge.",
+      "maturity": "Beta"
+    },
+    {
+      "id": "ai-twin-exposure-check",
+      "kind": "assessment",
+      "pathname": "/twins/exposure-check",
+      "title": "Is Your AI Twin Legally Exposed?",
+      "maturity": "Research"
+    },
+    {
+      "id": "workspace",
+      "kind": "product",
+      "pathname": "/workspace",
+      "title": "Workspace",
+      "maturity": "Research"
+    },
+    {
+      "id": "regulatory-intelligence",
+      "kind": "product",
+      "pathname": "/trust-stack/regulatory-intelligence",
+      "title": "One fabricated citation can end a case, a filing, or a reputation.",
+      "maturity": "Research"
+    },
+    {
+      "id": "notes",
+      "kind": "collection",
+      "pathname": "/notes",
+      "title": "Notes on building AI you can actually trust.",
+      "maturity": "Research"
+    },
+    {
+      "id": "hallucination-risk-legal-work",
+      "kind": "research",
+      "pathname": "/notes/hallucination-risk-legal-work",
+      "title": "How I think about hallucination risk in legal and regulatory work",
+      "maturity": "Research"
+    },
+    {
+      "id": "what-i-audit-first",
+      "kind": "research",
+      "pathname": "/notes/what-i-audit-first",
+      "title": "What I audit first when a team says it is already using AI",
+      "maturity": "Research"
+    },
+    {
+      "id": "tracking-isnt-intelligence",
+      "kind": "research",
+      "pathname": "/notes/tracking-isnt-intelligence",
+      "title": "Tracking is not intelligence: designing a regulatory-analysis system",
+      "maturity": "Research"
+    },
+    {
+      "id": "tool-workflow-operating-system",
+      "kind": "research",
+      "pathname": "/notes/tool-workflow-operating-system",
+      "title": "The difference between an AI tool, a workflow, and an operating system.",
+      "maturity": "Research"
+    },
+    {
+      "id": "legal-ai-workflow-teardown",
+      "kind": "research",
+      "pathname": "/teardowns/legal-ai-workflow",
+      "title": "A legal AI workflow you can defend, not a chatbot you have to babysit.",
+      "maturity": "Research"
+    },
+    {
+      "id": "ai-native-coo",
+      "kind": "service",
+      "pathname": "/ai-native-coo",
+      "title": "An AI-native operating partner for turning priorities into governed systems of work.",
+      "maturity": "Beta"
+    },
+    {
+      "id": "build-your-team",
+      "kind": "service",
+      "pathname": "/build-your-team",
+      "title": "Build an AI-enabled team with explicit roles, permissions, review gates, and accountable owners.",
+      "maturity": "Beta"
+    },
+    {
+      "id": "content",
+      "kind": "service",
+      "pathname": "/content",
+      "title": "Content infrastructure for organizations that cannot separate communication from evidence, risk, and operations.",
+      "maturity": "Production"
+    },
+    {
+      "id": "engagements",
+      "kind": "service",
+      "pathname": "/engagements",
+      "title": "Engagements designed around the level of uncertainty, implementation, and ongoing stewardship the work requires.",
+      "maturity": "Production"
+    },
+    {
+      "id": "launch-stack",
+      "kind": "service",
+      "pathname": "/launch-stack",
+      "title": "A launch stack that connects evidence, positioning, operations, distribution, and post-launch learning.",
+      "maturity": "Beta"
+    },
+    {
+      "id": "agent-role-contract",
+      "kind": "tool",
+      "pathname": "/agent-role-contract",
+      "title": "The Agent Role Contract",
+      "maturity": "Production"
+    },
+    {
+      "id": "aloha-ai-ce",
+      "kind": "product",
+      "pathname": "/ce",
+      "title": "Continuing education built to the same standard as everything else here.",
+      "maturity": "Research"
+    },
+    {
+      "id": "brand-perception-intelligence",
+      "kind": "service",
+      "pathname": "/intelligence/brand-perception",
+      "title": "How your audience trusts you is a mechanism, not a mood board.",
+      "maturity": "Beta"
+    },
+    {
+      "id": "nsag",
+      "kind": "product",
+      "pathname": "/nsag",
+      "title": "Institutions shape how people think, trust, and decide.",
+      "maturity": "Research"
+    },
+    {
+      "id": "services",
+      "kind": "service",
+      "pathname": "/services",
+      "title": "Your work is stuck. Let’s build the system that unsticks it.",
+      "maturity": "Production"
+    },
+    {
+      "id": "strategy",
+      "kind": "service",
+      "pathname": "/strategy",
+      "title": "AI strategy that assigns decisions, ownership, and limits before implementation.",
+      "maturity": "Production"
+    },
+    {
+      "id": "intelligence",
+      "kind": "service",
+      "pathname": "/intelligence",
+      "title": "Primary-source intelligence built to survive updates, conflict, and scrutiny.",
+      "maturity": "Production"
+    },
+    {
+      "id": "legal-ai",
+      "kind": "service",
+      "pathname": "/legal-ai",
+      "title": "Legal AI workflows where verification and professional judgment are part of the architecture.",
+      "maturity": "Beta"
+    },
+    {
+      "id": "trust-stack",
+      "kind": "product",
+      "pathname": "/trust-stack",
+      "title": "The Regulated Trust Stack",
+      "maturity": "Beta"
+    },
+    {
+      "id": "university",
+      "kind": "learningHub",
+      "pathname": "/university",
+      "title": "Learn what AI does. Then put it to work.",
+      "maturity": "Beta"
+    },
+    {
+      "id": "home",
+      "kind": "institutional",
+      "pathname": "/",
+      "title": "AI you can put in front of a regulator, a funder, or an audience.",
+      "maturity": "Production"
+    },
+    {
+      "id": "builds",
+      "kind": "build",
+      "pathname": "/builds",
+      "title": "Do not take our word for it. Open the work.",
+      "maturity": "Production"
+    },
+    {
+      "id": "ai-readiness-scorecard",
+      "kind": "assessment",
+      "pathname": "/tools/ai-readiness-scorecard",
+      "title": "You know you should take AI seriously. Nobody owns it yet.",
+      "maturity": "Beta"
+    },
+    {
+      "id": "citation-verifier",
+      "kind": "tool",
+      "pathname": "/tools/citation-verifier",
+      "title": "Catch the fake citation before it reaches the court.",
+      "maturity": "Beta"
+    },
+    {
+      "id": "leak-check",
+      "kind": "tool",
+      "pathname": "/trust-stack/leak-check",
+      "title": "Where Is Your Trust Stack Leaking?",
+      "maturity": "Beta"
+    },
+    {
+      "id": "bill-analyzer",
+      "kind": "tool",
+      "pathname": "/tools/bill-analyzer",
+      "title": "Read a bill for its obligations before you read it line by line.",
+      "maturity": "Beta"
+    },
+    {
+      "id": "claims-checker",
+      "kind": "tool",
+      "pathname": "/tools/claims-checker",
+      "title": "Which of your claims will a regulator read twice?",
+      "maturity": "Beta"
+    },
+    {
+      "id": "controlled-substances-explainer",
+      "kind": "tool",
+      "pathname": "/tools/controlled-substances-explainer",
+      "title": "How does the U. S. controlled-substances system actually work?",
+      "maturity": "Beta"
+    },
+    {
+      "id": "evidence-explainer",
+      "kind": "tool",
+      "pathname": "/tools/evidence-explainer",
+      "title": "How strong is the evidence behind that health claim?",
+      "maturity": "Beta"
+    },
+    {
+      "id": "policy-generator",
+      "kind": "tool",
+      "pathname": "/tools/policy-generator",
+      "title": "Generate a firm-specific AI governance policy template.",
+      "maturity": "Beta"
+    },
+    {
+      "id": "prompt-to-workflow",
+      "kind": "tool",
+      "pathname": "/tools/prompt-to-workflow",
+      "title": "You don't need a better prompt. You need a repeatable workflow.",
+      "maturity": "Beta"
+    },
+    {
+      "id": "trust-safe-console",
+      "kind": "tool",
+      "pathname": "/tools/trust-safe-console",
+      "title": "Trust-Safe AI Operating Layer Console",
+      "maturity": "Beta"
+    },
+    {
+      "id": "governance-readiness",
+      "kind": "assessment",
+      "pathname": "/tools/governance-readiness",
+      "title": "How ready is your firm's AI governance?",
+      "maturity": "Beta"
+    },
+    {
+      "id": "kb-readiness",
+      "kind": "assessment",
+      "pathname": "/tools/kb-readiness",
+      "title": "What knowledge system do you actually need?",
+      "maturity": "Beta"
+    },
+    {
+      "id": "practice-readiness",
+      "kind": "assessment",
+      "pathname": "/tools/practice-readiness",
+      "title": "You have the domain. The question is whether you can stand up the practice.",
+      "maturity": "Beta"
+    },
+    {
+      "id": "workflow-audit",
+      "kind": "assessment",
+      "pathname": "/tools/workflow-audit",
+      "title": "How mature are your AI workflows?",
+      "maturity": "Beta"
+    },
+    {
+      "id": "university-assessment",
+      "kind": "assessment",
+      "pathname": "/university/assessment",
+      "title": "Get Your AI Business Roadmap",
+      "maturity": "Production"
+    },
+    {
+      "id": "university-courses-collection",
+      "kind": "collection",
+      "pathname": "/university/courses",
+      "title": "Build the governed AI tool, then own it",
+      "maturity": "Production"
+    },
+    {
+      "id": "university-learn-collection",
+      "kind": "collection",
+      "pathname": "/university/learn",
+      "title": "The twelve lessons that make you dangerous with AI",
+      "maturity": "Production"
+    },
+    {
+      "id": "university-playbooks-collection",
+      "kind": "collection",
+      "pathname": "/university/playbooks",
+      "title": "Step-by-step builds you can finish this week",
+      "maturity": "Production"
+    },
+    {
+      "id": "university-templates-collection",
+      "kind": "collection",
+      "pathname": "/university/templates",
+      "title": "Copy-and-use prompts, policies, and docs",
+      "maturity": "Production"
+    },
+    {
+      "id": "university-tools-collection",
+      "kind": "collection",
+      "pathname": "/university/tools",
+      "title": "Clear, honest guides to the tools worth your time",
+      "maturity": "Production"
+    },
+    {
+      "id": "university-use-cases-collection",
+      "kind": "collection",
+      "pathname": "/university/use-cases",
+      "title": "See what AI actually does for a business like yours",
+      "maturity": "Production"
+    },
+    {
+      "id": "citation-verifier-course",
+      "kind": "course",
+      "pathname": "/university/courses/citation-verifier",
+      "title": "Build a Trust-Safe Citation Verifier",
+      "maturity": "Beta"
+    },
+    {
+      "id": "claims-checker-course",
+      "kind": "course",
+      "pathname": "/university/courses/claims-checker",
+      "title": "Build a Regulated Claims Checker",
+      "maturity": "Research"
+    },
+    {
+      "id": "first-ai-team-course",
+      "kind": "course",
+      "pathname": "/university/courses/first-ai-team",
+      "title": "Build Your First AI Team, in a Weekend",
+      "maturity": "Research"
+    },
+    {
+      "id": "governed-operator-course",
+      "kind": "course",
+      "pathname": "/university/courses/governed-operator",
+      "title": "Build a Governed AI Operator",
+      "maturity": "Research"
+    },
+    {
+      "id": "kb-readiness-course",
+      "kind": "course",
+      "pathname": "/university/courses/kb-readiness",
+      "title": "Get Your Org's Knowledge AI-Ready",
+      "maturity": "Research"
+    },
+    {
+      "id": "reg-tracker-course",
+      "kind": "course",
+      "pathname": "/university/courses/reg-tracker",
+      "title": "Build a Legislative and Regulatory Tracker",
+      "maturity": "Beta"
+    },
+    {
+      "id": "workflow-audit-course",
+      "kind": "course",
+      "pathname": "/university/courses/workflow-audit",
+      "title": "Audit Any Business for AI-Readiness",
+      "maturity": "Beta"
+    },
+    {
+      "id": "university-about",
+      "kind": "learningHub",
+      "pathname": "/university/about",
+      "title": "Grounded, honest, primary-source. That is the whole method",
+      "maturity": "Production"
+    },
+    {
+      "id": "university-start-here",
+      "kind": "learningHub",
+      "pathname": "/university/start-here",
+      "title": "Tell us who you are. We will point you to the right first step",
+      "maturity": "Production"
+    },
+    {
+      "id": "university-contact",
+      "kind": "learningHub",
+      "pathname": "/university/contact",
+      "title": "Bring me the thing that keeps getting stuck.",
+      "maturity": "Production"
+    },
+    {
+      "id": "what-generative-ai-is-lesson",
+      "kind": "lesson",
+      "pathname": "/university/learn/what-generative-ai-is",
+      "title": "What generative AI is and is not",
+      "maturity": "Production"
+    },
+    {
+      "id": "what-ai-can-and-cannot-do-lesson",
+      "kind": "lesson",
+      "pathname": "/university/learn/what-ai-can-and-cannot-do",
+      "title": "What AI can and cannot do for business",
+      "maturity": "Production"
+    },
+    {
+      "id": "when-not-to-use-ai-lesson",
+      "kind": "lesson",
+      "pathname": "/university/learn/when-not-to-use-ai",
+      "title": "When not to use AI",
+      "maturity": "Production"
+    },
+    {
+      "id": "prompting-fundamentals-lesson",
+      "kind": "lesson",
+      "pathname": "/university/learn/prompting-fundamentals",
+      "title": "Prompting fundamentals",
+      "maturity": "Production"
+    },
+    {
+      "id": "hallucinations-and-risk-lesson",
+      "kind": "lesson",
+      "pathname": "/university/learn/hallucinations-and-risk",
+      "title": "Hallucinations and risk",
+      "maturity": "Production"
+    },
+    {
+      "id": "how-to-verify-ai-outputs-lesson",
+      "kind": "lesson",
+      "pathname": "/university/learn/how-to-verify-ai-outputs",
+      "title": "How to verify AI outputs",
+      "maturity": "Production"
+    },
+    {
+      "id": "privacy-and-confidentiality-lesson",
+      "kind": "lesson",
+      "pathname": "/university/learn/privacy-and-confidentiality",
+      "title": "Privacy and confidentiality basics",
+      "maturity": "Production"
+    },
+    {
+      "id": "choose-your-first-ai-stack-lesson",
+      "kind": "lesson",
+      "pathname": "/university/learn/choose-your-first-ai-stack",
+      "title": "How to choose your first AI stack",
+      "maturity": "Production"
+    },
+    {
+      "id": "ai-assistant-comparison-lesson",
+      "kind": "lesson",
+      "pathname": "/university/learn/chatgpt-vs-claude-vs-gemini-vs-perplexity",
+      "title": "ChatGPT vs Claude vs Gemini vs Perplexity",
+      "maturity": "Production"
+    },
+    {
+      "id": "ai-for-email-lesson",
+      "kind": "lesson",
+      "pathname": "/university/learn/ai-for-email",
+      "title": "AI for email drafting and triage",
+      "maturity": "Production"
+    },
+    {
+      "id": "ai-for-meeting-notes-lesson",
+      "kind": "lesson",
+      "pathname": "/university/learn/ai-for-meeting-notes",
+      "title": "AI for meeting notes and follow-up",
+      "maturity": "Production"
+    },
+    {
+      "id": "ai-for-sop-drafting-lesson",
+      "kind": "lesson",
+      "pathname": "/university/learn/ai-for-sop-drafting",
+      "title": "AI for SOP drafting",
+      "maturity": "Production"
+    },
+    {
+      "id": "client-intake-onboarding-playbook",
+      "kind": "playbook",
+      "pathname": "/university/playbooks/client-intake-onboarding",
+      "title": "Onboard clients like a firm that has its act together",
+      "maturity": "Production"
+    },
+    {
+      "id": "content-repurposing-playbook",
+      "kind": "playbook",
+      "pathname": "/university/playbooks/content-repurposing",
+      "title": "One asset, a week of content — still in your voice",
+      "maturity": "Production"
+    },
+    {
+      "id": "governance-starter-playbook",
+      "kind": "playbook",
+      "pathname": "/university/playbooks/governance-starter",
+      "title": "The AI policy that makes everything else defensible",
+      "maturity": "Production"
+    },
+    {
+      "id": "internal-knowledge-base-playbook",
+      "kind": "playbook",
+      "pathname": "/university/playbooks/internal-knowledge-base",
+      "title": "An internal brain your team can actually ask",
+      "maturity": "Production"
+    },
+    {
+      "id": "lead-generation-playbook",
+      "kind": "playbook",
+      "pathname": "/university/playbooks/lead-generation",
+      "title": "AI lead generation that earns the reply",
+      "maturity": "Production"
+    },
+    {
+      "id": "sop-operations-playbook",
+      "kind": "playbook",
+      "pathname": "/university/playbooks/sop-operations",
+      "title": "SOPs that run the business without you",
+      "maturity": "Production"
+    },
+    {
+      "id": "university-ai-strategy-sprint",
+      "kind": "service",
+      "pathname": "/services/ai-strategy-sprint",
+      "title": "Two weeks to a roadmap you can actually run.",
+      "maturity": "Production"
+    },
+    {
+      "id": "university-ai-workflow-design",
+      "kind": "service",
+      "pathname": "/services/ai-workflow-design",
+      "title": "Design the workflow before anyone builds it.",
+      "maturity": "Production"
+    },
+    {
+      "id": "university-ai-implementation",
+      "kind": "service",
+      "pathname": "/services/ai-implementation",
+      "title": "We build the thing, and hand you the keys.",
+      "maturity": "Production"
+    },
+    {
+      "id": "university-ai-governance-setup",
+      "kind": "service",
+      "pathname": "/services/ai-governance-setup",
+      "title": "Say yes to AI without saying yes to the exposure.",
+      "maturity": "Production"
+    },
+    {
+      "id": "university-team-training",
+      "kind": "service",
+      "pathname": "/services/team-training",
+      "title": "Fluency for the whole team, not just the early adopters.",
+      "maturity": "Production"
+    },
+    {
+      "id": "university-ongoing-advisory",
+      "kind": "service",
+      "pathname": "/services/ongoing-advisory",
+      "title": "A senior AI partner, without the full-time hire.",
+      "maturity": "Production"
+    },
+    {
+      "id": "citation-verifier-lab-kit",
+      "kind": "template",
+      "pathname": "/university/templates/citation-verifier-lab-kit",
+      "title": "Trust-Safe Citation Verifier Lab and Submission Kit",
+      "maturity": "Beta"
+    },
+    {
+      "id": "ai-implementation-roadmap-template",
+      "kind": "template",
+      "pathname": "/university/templates/ai-implementation-roadmap",
+      "title": "AI Implementation Roadmap",
+      "maturity": "Production"
+    },
+    {
+      "id": "ai-policy-starter-kit-template",
+      "kind": "template",
+      "pathname": "/university/templates/ai-policy-starter-kit",
+      "title": "AI Policy Starter Kit",
+      "maturity": "Production"
+    },
+    {
+      "id": "ai-tool-evaluation-matrix-template",
+      "kind": "template",
+      "pathname": "/university/templates/ai-tool-evaluation-matrix",
+      "title": "AI Tool Evaluation Matrix",
+      "maturity": "Production"
+    },
+    {
+      "id": "ai-use-case-inventory-template",
+      "kind": "template",
+      "pathname": "/university/templates/ai-use-case-inventory",
+      "title": "AI Use Case Inventory",
+      "maturity": "Production"
+    },
+    {
+      "id": "ai-workflow-mapping-worksheet-template",
+      "kind": "template",
+      "pathname": "/university/templates/ai-workflow-mapping-worksheet",
+      "title": "AI Workflow Mapping Worksheet",
+      "maturity": "Production"
+    },
+    {
+      "id": "content-repurposing-workflow-template",
+      "kind": "template",
+      "pathname": "/university/templates/content-repurposing-workflow",
+      "title": "Content Repurposing Workflow",
+      "maturity": "Production"
+    },
+    {
+      "id": "meeting-summary-prompt-pack-template",
+      "kind": "template",
+      "pathname": "/university/templates/meeting-summary-prompt-pack",
+      "title": "Meeting Summary Prompt Pack",
+      "maturity": "Production"
+    },
+    {
+      "id": "sop-prompt-pack-template",
+      "kind": "template",
+      "pathname": "/university/templates/sop-prompt-pack",
+      "title": "SOP Prompt Pack",
+      "maturity": "Production"
+    },
+    {
+      "id": "content-repurposing-tool-guide",
+      "kind": "toolGuide",
+      "pathname": "/university/tools/best-for-content-repurposing",
+      "title": "Best AI tools for content repurposing",
+      "maturity": "Production"
+    },
+    {
+      "id": "meeting-notes-tool-guide",
+      "kind": "toolGuide",
+      "pathname": "/university/tools/best-for-meeting-notes",
+      "title": "Best AI tools for meeting notes",
+      "maturity": "Production"
+    },
+    {
+      "id": "research-tool-guide",
+      "kind": "toolGuide",
+      "pathname": "/university/tools/best-for-research",
+      "title": "Best AI tools for research",
+      "maturity": "Production"
+    },
+    {
+      "id": "small-business-operations-tool-guide",
+      "kind": "toolGuide",
+      "pathname": "/university/tools/best-for-small-business-operations",
+      "title": "Best AI tools for small business operations",
+      "maturity": "Production"
+    },
+    {
+      "id": "lean-ai-stack-tool-guide",
+      "kind": "toolGuide",
+      "pathname": "/university/tools/build-a-lean-ai-stack",
+      "title": "How to build a lean AI stack",
+      "maturity": "Production"
+    },
+    {
+      "id": "admin-use-case",
+      "kind": "useCase",
+      "pathname": "/university/use-cases/admin",
+      "title": "AI for Admin",
+      "maturity": "Production"
+    },
+    {
+      "id": "client-service-use-case",
+      "kind": "useCase",
+      "pathname": "/university/use-cases/client-service",
+      "title": "AI for Client Service",
+      "maturity": "Production"
+    },
+    {
+      "id": "governance-use-case",
+      "kind": "useCase",
+      "pathname": "/university/use-cases/governance",
+      "title": "AI for Governance",
+      "maturity": "Production"
+    },
+    {
+      "id": "knowledge-management-use-case",
+      "kind": "useCase",
+      "pathname": "/university/use-cases/knowledge-management",
+      "title": "AI for Knowledge Management",
+      "maturity": "Production"
+    },
+    {
+      "id": "law-firms-use-case",
+      "kind": "useCase",
+      "pathname": "/university/use-cases/law-firms",
+      "title": "AI for Law Firms",
+      "maturity": "Production"
+    },
+    {
+      "id": "leadership-use-case",
+      "kind": "useCase",
+      "pathname": "/university/use-cases/leadership",
+      "title": "AI for Leadership",
+      "maturity": "Production"
+    },
+    {
+      "id": "marketing-use-case",
+      "kind": "useCase",
+      "pathname": "/university/use-cases/marketing",
+      "title": "AI for Marketing",
+      "maturity": "Production"
+    },
+    {
+      "id": "operations-use-case",
+      "kind": "useCase",
+      "pathname": "/university/use-cases/operations",
+      "title": "AI for Operations",
+      "maturity": "Production"
+    },
+    {
+      "id": "research-use-case",
+      "kind": "useCase",
+      "pathname": "/university/use-cases/research",
+      "title": "AI for Research",
+      "maturity": "Production"
+    },
+    {
+      "id": "sales-use-case",
+      "kind": "useCase",
+      "pathname": "/university/use-cases/sales",
+      "title": "AI for Sales",
+      "maturity": "Production"
+    },
+    {
+      "id": "small-businesses-use-case",
+      "kind": "useCase",
+      "pathname": "/university/use-cases/small-businesses",
+      "title": "AI for Small Businesses",
+      "maturity": "Production"
+    },
+    {
+      "id": "training-use-case",
+      "kind": "useCase",
+      "pathname": "/university/use-cases/training",
+      "title": "AI for Training",
+      "maturity": "Production"
+    },
+    {
+      "id": "citation-verifier-course-citation-lesson-failure",
+      "kind": "lesson",
+      "pathname": "/university/courses/citation-verifier/lessons/failure",
+      "title": "The five different citation failures",
+      "maturity": "Beta"
+    },
+    {
+      "id": "citation-verifier-course-citation-lesson-contract",
+      "kind": "lesson",
+      "pathname": "/university/courses/citation-verifier/lessons/contract",
+      "title": "The verification contract",
+      "maturity": "Beta"
+    },
+    {
+      "id": "citation-verifier-course-citation-lesson-data-boundary",
+      "kind": "lesson",
+      "pathname": "/university/courses/citation-verifier/lessons/data-boundary",
+      "title": "Choose the data path before the model",
+      "maturity": "Beta"
+    },
+    {
+      "id": "citation-verifier-course-citation-lesson-record-model",
+      "kind": "lesson",
+      "pathname": "/university/courses/citation-verifier/lessons/record-model",
+      "title": "Create the review-unit schema",
+      "maturity": "Beta"
+    },
+    {
+      "id": "citation-verifier-course-citation-lesson-parser",
+      "kind": "lesson",
+      "pathname": "/university/courses/citation-verifier/lessons/parser",
+      "title": "Build a transparent citation parser",
+      "maturity": "Beta"
+    },
+    {
+      "id": "citation-verifier-course-citation-lesson-claim-window",
+      "kind": "lesson",
+      "pathname": "/university/courses/citation-verifier/lessons/claim-window",
+      "title": "Bind each citation to the proposition",
+      "maturity": "Beta"
+    },
+    {
+      "id": "citation-verifier-course-citation-lesson-source-hierarchy",
+      "kind": "lesson",
+      "pathname": "/university/courses/citation-verifier/lessons/source-hierarchy",
+      "title": "Rank sources by authority and purpose",
+      "maturity": "Beta"
+    },
+    {
+      "id": "citation-verifier-course-citation-lesson-retrieval",
+      "kind": "lesson",
+      "pathname": "/university/courses/citation-verifier/lessons/retrieval",
+      "title": "Retrieve, normalize, and preserve",
+      "maturity": "Beta"
+    },
+    {
+      "id": "citation-verifier-course-citation-lesson-passage",
+      "kind": "lesson",
+      "pathname": "/university/courses/citation-verifier/lessons/passage",
+      "title": "Locate the supporting passage",
+      "maturity": "Beta"
+    },
+    {
+      "id": "citation-verifier-course-citation-lesson-entailment",
+      "kind": "lesson",
+      "pathname": "/university/courses/citation-verifier/lessons/entailment",
+      "title": "Compare claim, qualification, and conflict",
+      "maturity": "Beta"
+    },
+    {
+      "id": "citation-verifier-course-citation-lesson-taxonomy",
+      "kind": "lesson",
+      "pathname": "/university/courses/citation-verifier/lessons/taxonomy",
+      "title": "Use a verdict taxonomy that cannot hide uncertainty",
+      "maturity": "Beta"
+    },
+    {
+      "id": "citation-verifier-course-citation-lesson-report",
+      "kind": "lesson",
+      "pathname": "/university/courses/citation-verifier/lessons/report",
+      "title": "Produce an inspectable review report",
+      "maturity": "Beta"
+    },
+    {
+      "id": "citation-verifier-course-citation-lesson-ethics",
+      "kind": "lesson",
+      "pathname": "/university/courses/citation-verifier/lessons/ethics",
+      "title": "Keep professional responsibility with the professional",
+      "maturity": "Beta"
+    },
+    {
+      "id": "citation-verifier-course-citation-lesson-audit",
+      "kind": "lesson",
+      "pathname": "/university/courses/citation-verifier/lessons/audit",
+      "title": "Design the audit and change record",
+      "maturity": "Beta"
+    },
+    {
+      "id": "citation-verifier-course-citation-lesson-testset",
+      "kind": "lesson",
+      "pathname": "/university/courses/citation-verifier/lessons/testset",
+      "title": "Build the failure-focused test set",
+      "maturity": "Beta"
+    },
+    {
+      "id": "citation-verifier-course-citation-lesson-metrics",
+      "kind": "lesson",
+      "pathname": "/university/courses/citation-verifier/lessons/metrics",
+      "title": "Measure dangerous errors",
+      "maturity": "Beta"
+    },
+    {
+      "id": "citation-verifier-course-citation-lesson-release",
+      "kind": "lesson",
+      "pathname": "/university/courses/citation-verifier/lessons/release",
+      "title": "Choose prototype, pilot, or deployment",
+      "maturity": "Beta"
+    },
+    {
+      "id": "citation-verifier-course-citation-lesson-defense",
+      "kind": "lesson",
+      "pathname": "/university/courses/citation-verifier/lessons/defense",
+      "title": "Defend the system without overselling it",
+      "maturity": "Beta"
+    },
+    {
+      "id": "claims-checker-course-claims-lesson-claim-types",
+      "kind": "lesson",
+      "pathname": "/university/courses/claims-checker/lessons/claim-types",
+      "title": "Separate claim types before screening",
+      "maturity": "Research"
+    },
+    {
+      "id": "claims-checker-course-claims-lesson-contract",
+      "kind": "lesson",
+      "pathname": "/university/courses/claims-checker/lessons/contract",
+      "title": "Write the checker contract",
+      "maturity": "Research"
+    },
+    {
+      "id": "claims-checker-course-claims-lesson-scope",
+      "kind": "lesson",
+      "pathname": "/university/courses/claims-checker/lessons/scope",
+      "title": "Resolve product, audience, channel, and jurisdiction",
+      "maturity": "Research"
+    },
+    {
+      "id": "claims-checker-course-claims-lesson-record-model",
+      "kind": "lesson",
+      "pathname": "/university/courses/claims-checker/lessons/record-model",
+      "title": "Create the claim-review record",
+      "maturity": "Research"
+    },
+    {
+      "id": "claims-checker-course-claims-lesson-express",
+      "kind": "lesson",
+      "pathname": "/university/courses/claims-checker/lessons/express",
+      "title": "Extract express claims without losing context",
+      "maturity": "Research"
+    },
+    {
+      "id": "claims-checker-course-claims-lesson-implied",
+      "kind": "lesson",
+      "pathname": "/university/courses/claims-checker/lessons/implied",
+      "title": "Test the net impression for implied claims",
+      "maturity": "Research"
+    },
+    {
+      "id": "claims-checker-course-claims-lesson-source-hierarchy",
+      "kind": "lesson",
+      "pathname": "/university/courses/claims-checker/lessons/source-hierarchy",
+      "title": "Rank authorities by question and date",
+      "maturity": "Research"
+    },
+    {
+      "id": "claims-checker-course-claims-lesson-rule-record",
+      "kind": "lesson",
+      "pathname": "/university/courses/claims-checker/lessons/rule-record",
+      "title": "Turn authority into inspectable rule records",
+      "maturity": "Research"
+    },
+    {
+      "id": "claims-checker-course-claims-lesson-rule-map",
+      "kind": "lesson",
+      "pathname": "/university/courses/claims-checker/lessons/rule-map",
+      "title": "Map each claim to the governing question",
+      "maturity": "Research"
+    },
+    {
+      "id": "claims-checker-course-claims-lesson-substantiation",
+      "kind": "lesson",
+      "pathname": "/university/courses/claims-checker/lessons/substantiation",
+      "title": "Match the claim to the evidence actually held",
+      "maturity": "Research"
+    },
+    {
+      "id": "claims-checker-course-claims-lesson-taxonomy",
+      "kind": "lesson",
+      "pathname": "/university/courses/claims-checker/lessons/taxonomy",
+      "title": "Use dispositions that preserve uncertainty",
+      "maturity": "Research"
+    },
+    {
+      "id": "claims-checker-course-claims-lesson-report",
+      "kind": "lesson",
+      "pathname": "/university/courses/claims-checker/lessons/report",
+      "title": "Produce a review report a human can challenge",
+      "maturity": "Research"
+    },
+    {
+      "id": "claims-checker-course-claims-lesson-escalation",
+      "kind": "lesson",
+      "pathname": "/university/courses/claims-checker/lessons/escalation",
+      "title": "Route consequential uncertainty to named people",
+      "maturity": "Research"
+    },
+    {
+      "id": "claims-checker-course-claims-lesson-audit",
+      "kind": "lesson",
+      "pathname": "/university/courses/claims-checker/lessons/audit",
+      "title": "Version the rules, evidence, and decisions",
+      "maturity": "Research"
+    },
+    {
+      "id": "claims-checker-course-claims-lesson-testset",
+      "kind": "lesson",
+      "pathname": "/university/courses/claims-checker/lessons/testset",
+      "title": "Build a representative claims test set",
+      "maturity": "Research"
+    },
+    {
+      "id": "claims-checker-course-claims-lesson-metrics",
+      "kind": "lesson",
+      "pathname": "/university/courses/claims-checker/lessons/metrics",
+      "title": "Measure false assurance and review burden",
+      "maturity": "Research"
+    },
+    {
+      "id": "claims-checker-course-claims-lesson-release",
+      "kind": "lesson",
+      "pathname": "/university/courses/claims-checker/lessons/release",
+      "title": "Package a bounded open-material prototype",
+      "maturity": "Research"
+    },
+    {
+      "id": "claims-checker-course-claims-lesson-defense",
+      "kind": "lesson",
+      "pathname": "/university/courses/claims-checker/lessons/defense",
+      "title": "Defend the decision without overstating it",
+      "maturity": "Research"
+    },
+    {
+      "id": "first-ai-team-course-team-lesson-select",
+      "kind": "lesson",
+      "pathname": "/university/courses/first-ai-team/lessons/select",
+      "title": "Choose a bounded, reversible workflow",
+      "maturity": "Research"
+    },
+    {
+      "id": "first-ai-team-course-team-lesson-map",
+      "kind": "lesson",
+      "pathname": "/university/courses/first-ai-team/lessons/map",
+      "title": "Map trigger, inputs, steps, decisions, output, and owner",
+      "maturity": "Research"
+    },
+    {
+      "id": "first-ai-team-course-team-lesson-classify",
+      "kind": "lesson",
+      "pathname": "/university/courses/first-ai-team/lessons/classify",
+      "title": "Classify steps as off-limits, augment, or automate",
+      "maturity": "Research"
+    },
+    {
+      "id": "first-ai-team-course-team-lesson-control",
+      "kind": "lesson",
+      "pathname": "/university/courses/first-ai-team/lessons/control",
+      "title": "Design the human-control and stop conditions",
+      "maturity": "Research"
+    },
+    {
+      "id": "first-ai-team-course-team-lesson-roles",
+      "kind": "lesson",
+      "pathname": "/university/courses/first-ai-team/lessons/roles",
+      "title": "Create roles from work, not personas",
+      "maturity": "Research"
+    },
+    {
+      "id": "first-ai-team-course-team-lesson-permissions",
+      "kind": "lesson",
+      "pathname": "/university/courses/first-ai-team/lessons/permissions",
+      "title": "Limit tools, data, memory, and handoffs",
+      "maturity": "Research"
+    },
+    {
+      "id": "first-ai-team-course-team-lesson-test",
+      "kind": "lesson",
+      "pathname": "/university/courses/first-ai-team/lessons/test",
+      "title": "Run representative cases and preserve evidence",
+      "maturity": "Research"
+    },
+    {
+      "id": "first-ai-team-course-team-lesson-release",
+      "kind": "lesson",
+      "pathname": "/university/courses/first-ai-team/lessons/release",
+      "title": "Package the supervised workflow and make a go/no-go decision",
+      "maturity": "Research"
+    },
+    {
+      "id": "governed-operator-course-operator-lesson-mandate",
+      "kind": "lesson",
+      "pathname": "/university/courses/governed-operator/lessons/mandate",
+      "title": "Name one job and its owner",
+      "maturity": "Research"
+    },
+    {
+      "id": "governed-operator-course-operator-lesson-consequence",
+      "kind": "lesson",
+      "pathname": "/university/courses/governed-operator/lessons/consequence",
+      "title": "Classify consequential actions",
+      "maturity": "Research"
+    },
+    {
+      "id": "governed-operator-course-operator-lesson-data",
+      "kind": "lesson",
+      "pathname": "/university/courses/governed-operator/lessons/data",
+      "title": "Set the data and secret boundary",
+      "maturity": "Research"
+    },
+    {
+      "id": "governed-operator-course-operator-lesson-sandbox",
+      "kind": "lesson",
+      "pathname": "/university/courses/governed-operator/lessons/sandbox",
+      "title": "Build a sandbox before a connection",
+      "maturity": "Research"
+    },
+    {
+      "id": "governed-operator-course-operator-lesson-states",
+      "kind": "lesson",
+      "pathname": "/university/courses/governed-operator/lessons/states",
+      "title": "Define perceive, plan, select, verify, and log states",
+      "maturity": "Research"
+    },
+    {
+      "id": "governed-operator-course-operator-lesson-abstain",
+      "kind": "lesson",
+      "pathname": "/university/courses/governed-operator/lessons/abstain",
+      "title": "Design uncertainty and abstention",
+      "maturity": "Research"
+    },
+    {
+      "id": "governed-operator-course-operator-lesson-packet",
+      "kind": "lesson",
+      "pathname": "/university/courses/governed-operator/lessons/packet",
+      "title": "Create an immutable pending-action packet",
+      "maturity": "Research"
+    },
+    {
+      "id": "governed-operator-course-operator-lesson-match",
+      "kind": "lesson",
+      "pathname": "/university/courses/governed-operator/lessons/match",
+      "title": "Void approval when the action changes",
+      "maturity": "Research"
+    },
+    {
+      "id": "governed-operator-course-operator-lesson-contracts",
+      "kind": "lesson",
+      "pathname": "/university/courses/governed-operator/lessons/contracts",
+      "title": "Write a contract for every tool",
+      "maturity": "Research"
+    },
+    {
+      "id": "governed-operator-course-operator-lesson-adapters",
+      "kind": "lesson",
+      "pathname": "/university/courses/governed-operator/lessons/adapters",
+      "title": "Separate preparation adapters from executors",
+      "maturity": "Research"
+    },
+    {
+      "id": "governed-operator-course-operator-lesson-retrieval",
+      "kind": "lesson",
+      "pathname": "/university/courses/governed-operator/lessons/retrieval",
+      "title": "Build a source-controlled context register",
+      "maturity": "Research"
+    },
+    {
+      "id": "governed-operator-course-operator-lesson-faithfulness",
+      "kind": "lesson",
+      "pathname": "/university/courses/governed-operator/lessons/faithfulness",
+      "title": "Check drafts against retrieved evidence",
+      "maturity": "Research"
+    },
+    {
+      "id": "governed-operator-course-operator-lesson-injection",
+      "kind": "lesson",
+      "pathname": "/university/courses/governed-operator/lessons/injection",
+      "title": "Treat retrieved instructions as untrusted data",
+      "maturity": "Research"
+    },
+    {
+      "id": "governed-operator-course-operator-lesson-control",
+      "kind": "lesson",
+      "pathname": "/university/courses/governed-operator/lessons/control",
+      "title": "Design kill, rollback, and audit controls",
+      "maturity": "Research"
+    },
+    {
+      "id": "governed-operator-course-operator-lesson-set",
+      "kind": "lesson",
+      "pathname": "/university/courses/governed-operator/lessons/set",
+      "title": "Build a representative evaluation set",
+      "maturity": "Research"
+    },
+    {
+      "id": "governed-operator-course-operator-lesson-metrics",
+      "kind": "lesson",
+      "pathname": "/university/courses/governed-operator/lessons/metrics",
+      "title": "Measure control effectiveness, not fluency",
+      "maturity": "Research"
+    },
+    {
+      "id": "governed-operator-course-operator-lesson-beachhead",
+      "kind": "lesson",
+      "pathname": "/university/courses/governed-operator/lessons/beachhead",
+      "title": "Choose a reversible beachhead",
+      "maturity": "Research"
+    },
+    {
+      "id": "governed-operator-course-operator-lesson-run",
+      "kind": "lesson",
+      "pathname": "/university/courses/governed-operator/lessons/run",
+      "title": "Preserve the full run record",
+      "maturity": "Research"
+    },
+    {
+      "id": "governed-operator-course-operator-lesson-release",
+      "kind": "lesson",
+      "pathname": "/university/courses/governed-operator/lessons/release",
+      "title": "Issue a bounded go or no-go decision",
+      "maturity": "Research"
+    },
+    {
+      "id": "governed-operator-course-operator-lesson-change",
+      "kind": "lesson",
+      "pathname": "/university/courses/governed-operator/lessons/change",
+      "title": "Govern change and recurring review",
+      "maturity": "Research"
+    },
+    {
+      "id": "kb-readiness-course-kb-lesson-purpose",
+      "kind": "lesson",
+      "pathname": "/university/courses/kb-readiness/lessons/purpose",
+      "title": "Name the use case and consequence",
+      "maturity": "Research"
+    },
+    {
+      "id": "kb-readiness-course-kb-lesson-rubric",
+      "kind": "lesson",
+      "pathname": "/university/courses/kb-readiness/lessons/rubric",
+      "title": "Write the readiness rubric",
+      "maturity": "Research"
+    },
+    {
+      "id": "kb-readiness-course-kb-lesson-register",
+      "kind": "lesson",
+      "pathname": "/university/courses/kb-readiness/lessons/register",
+      "title": "Create the source register",
+      "maturity": "Research"
+    },
+    {
+      "id": "kb-readiness-course-kb-lesson-authority",
+      "kind": "lesson",
+      "pathname": "/university/courses/kb-readiness/lessons/authority",
+      "title": "Resolve authority and ownership",
+      "maturity": "Research"
+    },
+    {
+      "id": "kb-readiness-course-kb-lesson-questions",
+      "kind": "lesson",
+      "pathname": "/university/courses/kb-readiness/lessons/questions",
+      "title": "Build the expected-question map",
+      "maturity": "Research"
+    },
+    {
+      "id": "kb-readiness-course-kb-lesson-gaps",
+      "kind": "lesson",
+      "pathname": "/university/courses/kb-readiness/lessons/gaps",
+      "title": "Record gaps without fabricating answers",
+      "maturity": "Research"
+    },
+    {
+      "id": "kb-readiness-course-kb-lesson-dates",
+      "kind": "lesson",
+      "pathname": "/university/courses/kb-readiness/lessons/dates",
+      "title": "Measure freshness with evidence",
+      "maturity": "Research"
+    },
+    {
+      "id": "kb-readiness-course-kb-lesson-lifecycle",
+      "kind": "lesson",
+      "pathname": "/university/courses/kb-readiness/lessons/lifecycle",
+      "title": "Design review, supersession, and retirement",
+      "maturity": "Research"
+    },
+    {
+      "id": "kb-readiness-course-kb-lesson-structure",
+      "kind": "lesson",
+      "pathname": "/university/courses/kb-readiness/lessons/structure",
+      "title": "Create addressable content units",
+      "maturity": "Research"
+    },
+    {
+      "id": "kb-readiness-course-kb-lesson-provenance",
+      "kind": "lesson",
+      "pathname": "/university/courses/kb-readiness/lessons/provenance",
+      "title": "Preserve metadata and provenance",
+      "maturity": "Research"
+    },
+    {
+      "id": "kb-readiness-course-kb-lesson-duplicates",
+      "kind": "lesson",
+      "pathname": "/university/courses/kb-readiness/lessons/duplicates",
+      "title": "Separate copies from competing sources",
+      "maturity": "Research"
+    },
+    {
+      "id": "kb-readiness-course-kb-lesson-conflicts",
+      "kind": "lesson",
+      "pathname": "/university/courses/kb-readiness/lessons/conflicts",
+      "title": "Route contradictions to human owners",
+      "maturity": "Research"
+    },
+    {
+      "id": "kb-readiness-course-kb-lesson-classification",
+      "kind": "lesson",
+      "pathname": "/university/courses/kb-readiness/lessons/classification",
+      "title": "Classify sensitive and restricted content",
+      "maturity": "Research"
+    },
+    {
+      "id": "kb-readiness-course-kb-lesson-permissions",
+      "kind": "lesson",
+      "pathname": "/university/courses/kb-readiness/lessons/permissions",
+      "title": "Enforce access before retrieval",
+      "maturity": "Research"
+    },
+    {
+      "id": "kb-readiness-course-kb-lesson-testset",
+      "kind": "lesson",
+      "pathname": "/university/courses/kb-readiness/lessons/testset",
+      "title": "Build the retrieval evaluation set",
+      "maturity": "Research"
+    },
+    {
+      "id": "kb-readiness-course-kb-lesson-results",
+      "kind": "lesson",
+      "pathname": "/university/courses/kb-readiness/lessons/results",
+      "title": "Interpret results without a false readiness score",
+      "maturity": "Research"
+    },
+    {
+      "id": "kb-readiness-course-kb-lesson-remediation",
+      "kind": "lesson",
+      "pathname": "/university/courses/kb-readiness/lessons/remediation",
+      "title": "Prioritize the remediation backlog",
+      "maturity": "Research"
+    },
+    {
+      "id": "kb-readiness-course-kb-lesson-release",
+      "kind": "lesson",
+      "pathname": "/university/courses/kb-readiness/lessons/release",
+      "title": "Issue a scoped go, conditional go, or no-go",
+      "maturity": "Research"
+    },
+    {
+      "id": "reg-tracker-course-tracker-lesson-coverage",
+      "kind": "lesson",
+      "pathname": "/university/courses/reg-tracker/lessons/coverage",
+      "title": "Write the coverage contract",
+      "maturity": "Beta"
+    },
+    {
+      "id": "reg-tracker-course-tracker-lesson-authority",
+      "kind": "lesson",
+      "pathname": "/university/courses/reg-tracker/lessons/authority",
+      "title": "Rank sources by legal function",
+      "maturity": "Beta"
+    },
+    {
+      "id": "reg-tracker-course-tracker-lesson-register",
+      "kind": "lesson",
+      "pathname": "/university/courses/reg-tracker/lessons/register",
+      "title": "Build the source register",
+      "maturity": "Beta"
+    },
+    {
+      "id": "reg-tracker-course-tracker-lesson-record",
+      "kind": "lesson",
+      "pathname": "/university/courses/reg-tracker/lessons/record",
+      "title": "Design a canonical legal-change record",
+      "maturity": "Beta"
+    },
+    {
+      "id": "reg-tracker-course-tracker-lesson-jurisdictions",
+      "kind": "lesson",
+      "pathname": "/university/courses/reg-tracker/lessons/jurisdictions",
+      "title": "Choose jurisdictions and instruments",
+      "maturity": "Beta"
+    },
+    {
+      "id": "reg-tracker-course-tracker-lesson-taxonomy",
+      "kind": "lesson",
+      "pathname": "/university/courses/reg-tracker/lessons/taxonomy",
+      "title": "Create topics without keyword tunnel vision",
+      "maturity": "Beta"
+    },
+    {
+      "id": "reg-tracker-course-tracker-lesson-interfaces",
+      "kind": "lesson",
+      "pathname": "/university/courses/reg-tracker/lessons/interfaces",
+      "title": "Select collection interfaces",
+      "maturity": "Beta"
+    },
+    {
+      "id": "reg-tracker-course-tracker-lesson-receipts",
+      "kind": "lesson",
+      "pathname": "/university/courses/reg-tracker/lessons/receipts",
+      "title": "Preserve collection receipts and failures",
+      "maturity": "Beta"
+    },
+    {
+      "id": "reg-tracker-course-tracker-lesson-versions",
+      "kind": "lesson",
+      "pathname": "/university/courses/reg-tracker/lessons/versions",
+      "title": "Compare immutable versions",
+      "maturity": "Beta"
+    },
+    {
+      "id": "reg-tracker-course-tracker-lesson-events",
+      "kind": "lesson",
+      "pathname": "/university/courses/reg-tracker/lessons/events",
+      "title": "Classify events and legal status",
+      "maturity": "Beta"
+    },
+    {
+      "id": "reg-tracker-course-tracker-lesson-propositions",
+      "kind": "lesson",
+      "pathname": "/university/courses/reg-tracker/lessons/propositions",
+      "title": "Write a bounded change proposition",
+      "maturity": "Beta"
+    },
+    {
+      "id": "reg-tracker-course-tracker-lesson-citations",
+      "kind": "lesson",
+      "pathname": "/university/courses/reg-tracker/lessons/citations",
+      "title": "Attach primary-source evidence",
+      "maturity": "Beta"
+    },
+    {
+      "id": "reg-tracker-course-tracker-lesson-rubric",
+      "kind": "lesson",
+      "pathname": "/university/courses/reg-tracker/lessons/rubric",
+      "title": "Score relevance without manufacturing certainty",
+      "maturity": "Beta"
+    },
+    {
+      "id": "reg-tracker-course-tracker-lesson-queue",
+      "kind": "lesson",
+      "pathname": "/university/courses/reg-tracker/lessons/queue",
+      "title": "Route to an accountable review queue",
+      "maturity": "Beta"
+    },
+    {
+      "id": "reg-tracker-course-tracker-lesson-approval",
+      "kind": "lesson",
+      "pathname": "/university/courses/reg-tracker/lessons/approval",
+      "title": "Build the human release gate",
+      "maturity": "Beta"
+    },
+    {
+      "id": "reg-tracker-course-tracker-lesson-incidents",
+      "kind": "lesson",
+      "pathname": "/university/courses/reg-tracker/lessons/incidents",
+      "title": "Handle missed, wrong, and late alerts",
+      "maturity": "Beta"
+    },
+    {
+      "id": "reg-tracker-course-tracker-lesson-testset",
+      "kind": "lesson",
+      "pathname": "/university/courses/reg-tracker/lessons/testset",
+      "title": "Evaluate detection and false assurance",
+      "maturity": "Beta"
+    },
+    {
+      "id": "reg-tracker-course-tracker-lesson-release",
+      "kind": "lesson",
+      "pathname": "/university/courses/reg-tracker/lessons/release",
+      "title": "Make a bounded release decision",
+      "maturity": "Beta"
+    },
+    {
+      "id": "workflow-audit-course-audit-lesson-scope-1",
+      "kind": "lesson",
+      "pathname": "/university/courses/workflow-audit/lessons/scope-1",
+      "title": "The audit question and reliance boundary",
+      "maturity": "Beta"
+    },
+    {
+      "id": "workflow-audit-course-audit-lesson-scope-2",
+      "kind": "lesson",
+      "pathname": "/university/courses/workflow-audit/lessons/scope-2",
+      "title": "Owners, participants, and stop conditions",
+      "maturity": "Beta"
+    },
+    {
+      "id": "workflow-audit-course-audit-lesson-inventory-1",
+      "kind": "lesson",
+      "pathname": "/university/courses/workflow-audit/lessons/inventory-1",
+      "title": "Evidence before opinion",
+      "maturity": "Beta"
+    },
+    {
+      "id": "workflow-audit-course-audit-lesson-inventory-2",
+      "kind": "lesson",
+      "pathname": "/university/courses/workflow-audit/lessons/inventory-2",
+      "title": "The canonical workflow register",
+      "maturity": "Beta"
+    },
+    {
+      "id": "workflow-audit-course-audit-lesson-map-1",
+      "kind": "lesson",
+      "pathname": "/university/courses/workflow-audit/lessons/map-1",
+      "title": "Task, decision, and handoff mapping",
+      "maturity": "Beta"
+    },
+    {
+      "id": "workflow-audit-course-audit-lesson-map-2",
+      "kind": "lesson",
+      "pathname": "/university/courses/workflow-audit/lessons/map-2",
+      "title": "Failure and variation mapping",
+      "maturity": "Beta"
+    },
+    {
+      "id": "workflow-audit-course-audit-lesson-score-1",
+      "kind": "lesson",
+      "pathname": "/university/courses/workflow-audit/lessons/score-1",
+      "title": "Value and feasibility are different questions",
+      "maturity": "Beta"
+    },
+    {
+      "id": "workflow-audit-course-audit-lesson-score-2",
+      "kind": "lesson",
+      "pathname": "/university/courses/workflow-audit/lessons/score-2",
+      "title": "Consequence, uncertainty, and blocking controls",
+      "maturity": "Beta"
+    },
+    {
+      "id": "workflow-audit-course-audit-lesson-govern-1",
+      "kind": "lesson",
+      "pathname": "/university/courses/workflow-audit/lessons/govern-1",
+      "title": "Data and access classification",
+      "maturity": "Beta"
+    },
+    {
+      "id": "workflow-audit-course-audit-lesson-govern-2",
+      "kind": "lesson",
+      "pathname": "/university/courses/workflow-audit/lessons/govern-2",
+      "title": "Authority and accountability",
+      "maturity": "Beta"
+    },
+    {
+      "id": "workflow-audit-course-audit-lesson-prioritize-1",
+      "kind": "lesson",
+      "pathname": "/university/courses/workflow-audit/lessons/prioritize-1",
+      "title": "Candidate comparison without false precision",
+      "maturity": "Beta"
+    },
+    {
+      "id": "workflow-audit-course-audit-lesson-prioritize-2",
+      "kind": "lesson",
+      "pathname": "/university/courses/workflow-audit/lessons/prioritize-2",
+      "title": "Define the bounded pilot",
+      "maturity": "Beta"
+    },
+    {
+      "id": "workflow-audit-course-audit-lesson-evaluate-1",
+      "kind": "lesson",
+      "pathname": "/university/courses/workflow-audit/lessons/evaluate-1",
+      "title": "Baselines, test sets, and thresholds",
+      "maturity": "Beta"
+    },
+    {
+      "id": "workflow-audit-course-audit-lesson-evaluate-2",
+      "kind": "lesson",
+      "pathname": "/university/courses/workflow-audit/lessons/evaluate-2",
+      "title": "Human review, incidents, and rollback",
+      "maturity": "Beta"
+    },
+    {
+      "id": "workflow-audit-course-audit-lesson-roadmap-1",
+      "kind": "lesson",
+      "pathname": "/university/courses/workflow-audit/lessons/roadmap-1",
+      "title": "Sequence decisions, not shopping lists",
+      "maturity": "Beta"
+    },
+    {
+      "id": "workflow-audit-course-audit-lesson-roadmap-2",
+      "kind": "lesson",
+      "pathname": "/university/courses/workflow-audit/lessons/roadmap-2",
+      "title": "Make every recommendation defensible",
+      "maturity": "Beta"
+    },
+    {
+      "id": "workflow-audit-course-audit-lesson-operate-1",
+      "kind": "lesson",
+      "pathname": "/university/courses/workflow-audit/lessons/operate-1",
+      "title": "Create the audit evidence packet",
+      "maturity": "Beta"
+    },
+    {
+      "id": "workflow-audit-course-audit-lesson-operate-2",
+      "kind": "lesson",
+      "pathname": "/university/courses/workflow-audit/lessons/operate-2",
+      "title": "Validate the method and decide its permitted use",
+      "maturity": "Beta"
+    }
+  ],
+  "edges": [
+    {
+      "source": "about",
+      "type": "documents",
+      "target": "aloha-ai-practice"
+    },
+    {
+      "source": "about",
+      "type": "uses",
+      "target": "methods"
+    },
+    {
+      "source": "about",
+      "type": "supports",
+      "target": "university"
+    },
+    {
+      "source": "about",
+      "type": "related_to",
+      "target": "partners"
+    },
+    {
+      "source": "partners",
+      "type": "supports",
+      "target": "engagements"
+    },
+    {
+      "source": "partners",
+      "type": "supports",
+      "target": "services"
+    },
+    {
+      "source": "partners",
+      "type": "supports",
+      "target": "university"
+    },
+    {
+      "source": "partners",
+      "type": "related_to",
+      "target": "about"
+    },
+    {
+      "source": "partners",
+      "type": "uses",
+      "target": "methods"
+    },
+    {
+      "source": "privacy",
+      "type": "implements",
+      "target": "trust-stack"
+    },
+    {
+      "source": "privacy",
+      "type": "documents",
+      "target": "leak-check"
+    },
+    {
+      "source": "privacy",
+      "type": "related_to",
+      "target": "terms"
+    },
+    {
+      "source": "privacy",
+      "type": "uses",
+      "target": "methods"
+    },
+    {
+      "source": "terms",
+      "type": "documents",
+      "target": "services"
+    },
+    {
+      "source": "terms",
+      "type": "documents",
+      "target": "engagements"
+    },
+    {
+      "source": "terms",
+      "type": "related_to",
+      "target": "privacy"
+    },
+    {
+      "source": "terms",
+      "type": "related_to",
+      "target": "about"
+    },
+    {
+      "source": "methods",
+      "type": "supports",
+      "target": "strategy"
+    },
+    {
+      "source": "methods",
+      "type": "supports",
+      "target": "intelligence"
+    },
+    {
+      "source": "methods",
+      "type": "supports",
+      "target": "legal-ai"
+    },
+    {
+      "source": "methods",
+      "type": "teaches",
+      "target": "university"
+    },
+    {
+      "source": "cannabis-rescheduling",
+      "type": "evidences",
+      "target": "intelligence"
+    },
+    {
+      "source": "cannabis-rescheduling",
+      "type": "implements",
+      "target": "trust-stack"
+    },
+    {
+      "source": "agentic-brand-management",
+      "type": "supports",
+      "target": "content"
+    },
+    {
+      "source": "agentic-brand-management",
+      "type": "implements",
+      "target": "trust-stack"
+    },
+    {
+      "source": "ai-creative-production",
+      "type": "supports",
+      "target": "content"
+    },
+    {
+      "source": "ai-creative-production",
+      "type": "implements",
+      "target": "methods"
+    },
+    {
+      "source": "arts-culture",
+      "type": "supports",
+      "target": "intelligence"
+    },
+    {
+      "source": "arts-culture",
+      "type": "implements",
+      "target": "trust-stack"
+    },
+    {
+      "source": "biopharma-regulatory-intelligence",
+      "type": "supports",
+      "target": "regulatory-intelligence"
+    },
+    {
+      "source": "biopharma-regulatory-intelligence",
+      "type": "implements",
+      "target": "methods"
+    },
+    {
+      "source": "biophilic-neuroarch",
+      "type": "supports",
+      "target": "intelligence"
+    },
+    {
+      "source": "biophilic-neuroarch",
+      "type": "uses",
+      "target": "citation-verifier"
+    },
+    {
+      "source": "luxury-ip",
+      "type": "supports",
+      "target": "legal-ai"
+    },
+    {
+      "source": "luxury-ip",
+      "type": "implements",
+      "target": "trust-stack"
+    },
+    {
+      "source": "market-intel",
+      "type": "supports",
+      "target": "intelligence"
+    },
+    {
+      "source": "market-intel",
+      "type": "implements",
+      "target": "methods"
+    },
+    {
+      "source": "private-ai-risk",
+      "type": "supports",
+      "target": "leak-check"
+    },
+    {
+      "source": "private-ai-risk",
+      "type": "implements",
+      "target": "trust-stack"
+    },
+    {
+      "source": "psychedelic-radar",
+      "type": "supports",
+      "target": "regulatory-intelligence"
+    },
+    {
+      "source": "psychedelic-radar",
+      "type": "teaches",
+      "target": "controlled-substances-explainer"
+    },
+    {
+      "source": "suppression-audit",
+      "type": "supports",
+      "target": "content"
+    },
+    {
+      "source": "suppression-audit",
+      "type": "implements",
+      "target": "methods"
+    },
+    {
+      "source": "aloha-ai-platform",
+      "type": "implements",
+      "target": "trust-stack"
+    },
+    {
+      "source": "aloha-ai-platform",
+      "type": "uses",
+      "target": "workspace"
+    },
+    {
+      "source": "aloha-ai-platform",
+      "type": "supports",
+      "target": "ai-native-coo"
+    },
+    {
+      "source": "aloha-ai-practice",
+      "type": "supports",
+      "target": "services"
+    },
+    {
+      "source": "aloha-ai-practice",
+      "type": "implements",
+      "target": "methods"
+    },
+    {
+      "source": "aloha-ai-practice",
+      "type": "uses",
+      "target": "aloha-ai-platform"
+    },
+    {
+      "source": "applied-ai-stacks",
+      "type": "depends_on",
+      "target": "aloha-ai-platform"
+    },
+    {
+      "source": "applied-ai-stacks",
+      "type": "documents",
+      "target": "methods"
+    },
+    {
+      "source": "founder-startup-stack",
+      "type": "depends_on",
+      "target": "applied-ai-stacks"
+    },
+    {
+      "source": "founder-startup-stack",
+      "type": "uses",
+      "target": "citation-verifier"
+    },
+    {
+      "source": "founder-startup-stack",
+      "type": "supports",
+      "target": "strategy"
+    },
+    {
+      "source": "law-firm-stack",
+      "type": "depends_on",
+      "target": "applied-ai-stacks"
+    },
+    {
+      "source": "law-firm-stack",
+      "type": "uses",
+      "target": "citation-verifier"
+    },
+    {
+      "source": "law-firm-stack",
+      "type": "uses",
+      "target": "legal-ai"
+    },
+    {
+      "source": "policy-advocacy-stack",
+      "type": "depends_on",
+      "target": "applied-ai-stacks"
+    },
+    {
+      "source": "policy-advocacy-stack",
+      "type": "uses",
+      "target": "intelligence"
+    },
+    {
+      "source": "policy-advocacy-stack",
+      "type": "uses",
+      "target": "citation-verifier"
+    },
+    {
+      "source": "regulated-intelligence-stack",
+      "type": "depends_on",
+      "target": "applied-ai-stacks"
+    },
+    {
+      "source": "regulated-intelligence-stack",
+      "type": "uses",
+      "target": "regulatory-intelligence"
+    },
+    {
+      "source": "regulated-intelligence-stack",
+      "type": "uses",
+      "target": "cannabis-rescheduling"
+    },
+    {
+      "source": "research-lab-stack",
+      "type": "depends_on",
+      "target": "applied-ai-stacks"
+    },
+    {
+      "source": "research-lab-stack",
+      "type": "uses",
+      "target": "methods"
+    },
+    {
+      "source": "research-lab-stack",
+      "type": "uses",
+      "target": "citation-verifier"
+    },
+    {
+      "source": "creator-content-system",
+      "type": "implements",
+      "target": "content"
+    },
+    {
+      "source": "creator-content-system",
+      "type": "uses",
+      "target": "methods"
+    },
+    {
+      "source": "creator-content-system",
+      "type": "uses",
+      "target": "aloha-ai-platform"
+    },
+    {
+      "source": "trust-stack-ai-content-system",
+      "type": "depends_on",
+      "target": "trust-stack"
+    },
+    {
+      "source": "trust-stack-ai-content-system",
+      "type": "implements",
+      "target": "content"
+    },
+    {
+      "source": "edsa-framework",
+      "type": "depends_on",
+      "target": "trust-stack"
+    },
+    {
+      "source": "edsa-framework",
+      "type": "supports",
+      "target": "trust-stack-ai-content-system"
+    },
+    {
+      "source": "psilocybin-regulatory-map",
+      "type": "depends_on",
+      "target": "trust-stack"
+    },
+    {
+      "source": "psilocybin-regulatory-map",
+      "type": "uses",
+      "target": "regulatory-intelligence"
+    },
+    {
+      "source": "sb303-compliance-kit",
+      "type": "depends_on",
+      "target": "trust-stack"
+    },
+    {
+      "source": "sb303-compliance-kit",
+      "type": "uses",
+      "target": "regulatory-intelligence"
+    },
+    {
+      "source": "suppression-monitoring-playbook",
+      "type": "depends_on",
+      "target": "trust-stack"
+    },
+    {
+      "source": "suppression-monitoring-playbook",
+      "type": "supports",
+      "target": "content"
+    },
+    {
+      "source": "trust-safe-twins",
+      "type": "implements",
+      "target": "trust-stack"
+    },
+    {
+      "source": "trust-safe-twins",
+      "type": "uses",
+      "target": "aloha-ai-platform"
+    },
+    {
+      "source": "trust-safe-twins",
+      "type": "supports",
+      "target": "legal-ai"
+    },
+    {
+      "source": "trust-safe-twin-lab",
+      "type": "depends_on",
+      "target": "trust-safe-twins"
+    },
+    {
+      "source": "trust-safe-twin-lab",
+      "type": "uses",
+      "target": "aloha-ai-platform"
+    },
+    {
+      "source": "ai-twin-exposure-check",
+      "type": "depends_on",
+      "target": "trust-safe-twins"
+    },
+    {
+      "source": "ai-twin-exposure-check",
+      "type": "available_in_workspace",
+      "target": "workspace"
+    },
+    {
+      "source": "ai-twin-exposure-check",
+      "type": "supports",
+      "target": "legal-ai"
+    },
+    {
+      "source": "workspace",
+      "type": "implements",
+      "target": "trust-stack"
+    },
+    {
+      "source": "workspace",
+      "type": "supports",
+      "target": "build-your-team"
+    },
+    {
+      "source": "workspace",
+      "type": "supports",
+      "target": "ai-native-coo"
+    },
+    {
+      "source": "workspace",
+      "type": "teaches",
+      "target": "university"
+    },
+    {
+      "source": "regulatory-intelligence",
+      "type": "implements",
+      "target": "trust-stack"
+    },
+    {
+      "source": "regulatory-intelligence",
+      "type": "uses",
+      "target": "intelligence"
+    },
+    {
+      "source": "regulatory-intelligence",
+      "type": "evidences",
+      "target": "cannabis-rescheduling"
+    },
+    {
+      "source": "notes",
+      "type": "documents",
+      "target": "hallucination-risk-legal-work"
+    },
+    {
+      "source": "notes",
+      "type": "documents",
+      "target": "what-i-audit-first"
+    },
+    {
+      "source": "notes",
+      "type": "documents",
+      "target": "tracking-isnt-intelligence"
+    },
+    {
+      "source": "notes",
+      "type": "documents",
+      "target": "tool-workflow-operating-system"
+    },
+    {
+      "source": "notes",
+      "type": "supports",
+      "target": "intelligence"
+    },
+    {
+      "source": "hallucination-risk-legal-work",
+      "type": "uses",
+      "target": "citation-verifier"
+    },
+    {
+      "source": "hallucination-risk-legal-work",
+      "type": "supports",
+      "target": "legal-ai"
+    },
+    {
+      "source": "hallucination-risk-legal-work",
+      "type": "implements",
+      "target": "trust-stack"
+    },
+    {
+      "source": "hallucination-risk-legal-work",
+      "type": "related_to",
+      "target": "notes"
+    },
+    {
+      "source": "what-i-audit-first",
+      "type": "uses",
+      "target": "workflow-audit"
+    },
+    {
+      "source": "what-i-audit-first",
+      "type": "supports",
+      "target": "strategy"
+    },
+    {
+      "source": "what-i-audit-first",
+      "type": "implements",
+      "target": "methods"
+    },
+    {
+      "source": "what-i-audit-first",
+      "type": "related_to",
+      "target": "notes"
+    },
+    {
+      "source": "tracking-isnt-intelligence",
+      "type": "supports",
+      "target": "intelligence"
+    },
+    {
+      "source": "tracking-isnt-intelligence",
+      "type": "uses",
+      "target": "methods"
+    },
+    {
+      "source": "tracking-isnt-intelligence",
+      "type": "documents",
+      "target": "regulatory-intelligence"
+    },
+    {
+      "source": "tracking-isnt-intelligence",
+      "type": "related_to",
+      "target": "notes"
+    },
+    {
+      "source": "tool-workflow-operating-system",
+      "type": "uses",
+      "target": "citation-verifier"
+    },
+    {
+      "source": "tool-workflow-operating-system",
+      "type": "implements",
+      "target": "trust-stack"
+    },
+    {
+      "source": "tool-workflow-operating-system",
+      "type": "supports",
+      "target": "ai-native-coo"
+    },
+    {
+      "source": "tool-workflow-operating-system",
+      "type": "related_to",
+      "target": "notes"
+    },
+    {
+      "source": "legal-ai-workflow-teardown",
+      "type": "supports",
+      "target": "legal-ai"
+    },
+    {
+      "source": "legal-ai-workflow-teardown",
+      "type": "uses",
+      "target": "citation-verifier"
+    },
+    {
+      "source": "legal-ai-workflow-teardown",
+      "type": "implements",
+      "target": "trust-stack"
+    },
+    {
+      "source": "legal-ai-workflow-teardown",
+      "type": "related_to",
+      "target": "hallucination-risk-legal-work"
+    },
+    {
+      "source": "ai-native-coo",
+      "type": "uses",
+      "target": "strategy"
+    },
+    {
+      "source": "ai-native-coo",
+      "type": "uses",
+      "target": "intelligence"
+    },
+    {
+      "source": "ai-native-coo",
+      "type": "implements",
+      "target": "build-your-team"
+    },
+    {
+      "source": "ai-native-coo",
+      "type": "available_in_workspace",
+      "target": "workspace"
+    },
+    {
+      "source": "ai-native-coo",
+      "type": "extends",
+      "target": "services"
+    },
+    {
+      "source": "build-your-team",
+      "type": "implements",
+      "target": "strategy"
+    },
+    {
+      "source": "build-your-team",
+      "type": "available_in_workspace",
+      "target": "workspace"
+    },
+    {
+      "source": "build-your-team",
+      "type": "uses",
+      "target": "trust-stack"
+    },
+    {
+      "source": "build-your-team",
+      "type": "extends",
+      "target": "services"
+    },
+    {
+      "source": "content",
+      "type": "uses",
+      "target": "intelligence"
+    },
+    {
+      "source": "content",
+      "type": "implements",
+      "target": "trust-stack"
+    },
+    {
+      "source": "content",
+      "type": "teaches",
+      "target": "university"
+    },
+    {
+      "source": "content",
+      "type": "extends",
+      "target": "services"
+    },
+    {
+      "source": "engagements",
+      "type": "supports",
+      "target": "services"
+    },
+    {
+      "source": "engagements",
+      "type": "supports",
+      "target": "strategy"
+    },
+    {
+      "source": "engagements",
+      "type": "supports",
+      "target": "intelligence"
+    },
+    {
+      "source": "engagements",
+      "type": "supports",
+      "target": "legal-ai"
+    },
+    {
+      "source": "engagements",
+      "type": "supports",
+      "target": "ai-native-coo"
+    },
+    {
+      "source": "launch-stack",
+      "type": "uses",
+      "target": "content"
+    },
+    {
+      "source": "launch-stack",
+      "type": "uses",
+      "target": "intelligence"
+    },
+    {
+      "source": "launch-stack",
+      "type": "uses",
+      "target": "trust-stack"
+    },
+    {
+      "source": "launch-stack",
+      "type": "extends",
+      "target": "services"
+    },
+    {
+      "source": "agent-role-contract",
+      "type": "implements",
+      "target": "build-your-team"
+    },
+    {
+      "source": "agent-role-contract",
+      "type": "implements",
+      "target": "trust-stack"
+    },
+    {
+      "source": "agent-role-contract",
+      "type": "uses",
+      "target": "methods"
+    },
+    {
+      "source": "aloha-ai-ce",
+      "type": "supports",
+      "target": "university"
+    },
+    {
+      "source": "aloha-ai-ce",
+      "type": "uses",
+      "target": "methods"
+    },
+    {
+      "source": "aloha-ai-ce",
+      "type": "supports",
+      "target": "university-team-training"
+    },
+    {
+      "source": "aloha-ai-ce",
+      "type": "related_to",
+      "target": "legal-ai"
+    },
+    {
+      "source": "brand-perception-intelligence",
+      "type": "supports",
+      "target": "intelligence"
+    },
+    {
+      "source": "brand-perception-intelligence",
+      "type": "implements",
+      "target": "trust-stack-ai-content-system"
+    },
+    {
+      "source": "brand-perception-intelligence",
+      "type": "uses",
+      "target": "market-intel"
+    },
+    {
+      "source": "brand-perception-intelligence",
+      "type": "supports",
+      "target": "content"
+    },
+    {
+      "source": "nsag",
+      "type": "related_to",
+      "target": "aloha-ai-practice"
+    },
+    {
+      "source": "nsag",
+      "type": "uses",
+      "target": "methods"
+    },
+    {
+      "source": "nsag",
+      "type": "supports",
+      "target": "strategy"
+    },
+    {
+      "source": "nsag",
+      "type": "related_to",
+      "target": "biophilic-neuroarch"
+    },
+    {
+      "source": "services",
+      "type": "supports",
+      "target": "strategy"
+    },
+    {
+      "source": "services",
+      "type": "supports",
+      "target": "intelligence"
+    },
+    {
+      "source": "services",
+      "type": "supports",
+      "target": "legal-ai"
+    },
+    {
+      "source": "services",
+      "type": "supports",
+      "target": "content"
+    },
+    {
+      "source": "services",
+      "type": "supports",
+      "target": "build-your-team"
+    },
+    {
+      "source": "services",
+      "type": "supports",
+      "target": "ai-native-coo"
+    },
+    {
+      "source": "services",
+      "type": "supports",
+      "target": "launch-stack"
+    },
+    {
+      "source": "services",
+      "type": "supports",
+      "target": "engagements"
+    },
+    {
+      "source": "services",
+      "type": "implements",
+      "target": "trust-stack"
+    },
+    {
+      "source": "services",
+      "type": "teaches",
+      "target": "university"
+    },
+    {
+      "source": "strategy",
+      "type": "extends",
+      "target": "services"
+    },
+    {
+      "source": "strategy",
+      "type": "supports",
+      "target": "build-your-team"
+    },
+    {
+      "source": "strategy",
+      "type": "uses",
+      "target": "methods"
+    },
+    {
+      "source": "strategy",
+      "type": "uses",
+      "target": "ai-readiness-scorecard"
+    },
+    {
+      "source": "strategy",
+      "type": "teaches",
+      "target": "university"
+    },
+    {
+      "source": "intelligence",
+      "type": "extends",
+      "target": "services"
+    },
+    {
+      "source": "intelligence",
+      "type": "uses",
+      "target": "citation-verifier"
+    },
+    {
+      "source": "intelligence",
+      "type": "uses",
+      "target": "methods"
+    },
+    {
+      "source": "intelligence",
+      "type": "documents",
+      "target": "cannabis-rescheduling"
+    },
+    {
+      "source": "intelligence",
+      "type": "teaches",
+      "target": "university"
+    },
+    {
+      "source": "legal-ai",
+      "type": "extends",
+      "target": "services"
+    },
+    {
+      "source": "legal-ai",
+      "type": "uses",
+      "target": "citation-verifier"
+    },
+    {
+      "source": "legal-ai",
+      "type": "implements",
+      "target": "trust-stack"
+    },
+    {
+      "source": "legal-ai",
+      "type": "uses",
+      "target": "methods"
+    },
+    {
+      "source": "legal-ai",
+      "type": "teaches",
+      "target": "university"
+    },
+    {
+      "source": "trust-stack",
+      "type": "implements",
+      "target": "services"
+    },
+    {
+      "source": "trust-stack",
+      "type": "supports",
+      "target": "legal-ai"
+    },
+    {
+      "source": "trust-stack",
+      "type": "supports",
+      "target": "leak-check"
+    },
+    {
+      "source": "trust-stack",
+      "type": "supports",
+      "target": "regulatory-intelligence"
+    },
+    {
+      "source": "trust-stack",
+      "type": "teaches",
+      "target": "university"
+    },
+    {
+      "source": "university",
+      "type": "documents",
+      "target": "services"
+    },
+    {
+      "source": "university",
+      "type": "teaches",
+      "target": "strategy"
+    },
+    {
+      "source": "university",
+      "type": "teaches",
+      "target": "intelligence"
+    },
+    {
+      "source": "university",
+      "type": "teaches",
+      "target": "legal-ai"
+    },
+    {
+      "source": "university",
+      "type": "teaches",
+      "target": "trust-stack"
+    },
+    {
+      "source": "university",
+      "type": "teaches",
+      "target": "citation-verifier-course"
+    },
+    {
+      "source": "university",
+      "type": "teaches",
+      "target": "claims-checker-course"
+    },
+    {
+      "source": "university",
+      "type": "teaches",
+      "target": "first-ai-team-course"
+    },
+    {
+      "source": "university",
+      "type": "teaches",
+      "target": "governed-operator-course"
+    },
+    {
+      "source": "university",
+      "type": "teaches",
+      "target": "kb-readiness-course"
+    },
+    {
+      "source": "university",
+      "type": "teaches",
+      "target": "reg-tracker-course"
+    },
+    {
+      "source": "university",
+      "type": "teaches",
+      "target": "workflow-audit-course"
+    },
+    {
+      "source": "university",
+      "type": "teaches",
+      "target": "what-generative-ai-is-lesson"
+    },
+    {
+      "source": "university",
+      "type": "teaches",
+      "target": "what-ai-can-and-cannot-do-lesson"
+    },
+    {
+      "source": "university",
+      "type": "teaches",
+      "target": "when-not-to-use-ai-lesson"
+    },
+    {
+      "source": "university",
+      "type": "teaches",
+      "target": "prompting-fundamentals-lesson"
+    },
+    {
+      "source": "university",
+      "type": "teaches",
+      "target": "hallucinations-and-risk-lesson"
+    },
+    {
+      "source": "university",
+      "type": "teaches",
+      "target": "how-to-verify-ai-outputs-lesson"
+    },
+    {
+      "source": "university",
+      "type": "teaches",
+      "target": "privacy-and-confidentiality-lesson"
+    },
+    {
+      "source": "university",
+      "type": "teaches",
+      "target": "choose-your-first-ai-stack-lesson"
+    },
+    {
+      "source": "university",
+      "type": "teaches",
+      "target": "ai-assistant-comparison-lesson"
+    },
+    {
+      "source": "university",
+      "type": "teaches",
+      "target": "ai-for-email-lesson"
+    },
+    {
+      "source": "university",
+      "type": "teaches",
+      "target": "ai-for-meeting-notes-lesson"
+    },
+    {
+      "source": "university",
+      "type": "teaches",
+      "target": "ai-for-sop-drafting-lesson"
+    },
+    {
+      "source": "home",
+      "type": "supports",
+      "target": "services"
+    },
+    {
+      "source": "home",
+      "type": "supports",
+      "target": "builds"
+    },
+    {
+      "source": "home",
+      "type": "documents",
+      "target": "methods"
+    },
+    {
+      "source": "home",
+      "type": "supports",
+      "target": "university"
+    },
+    {
+      "source": "home",
+      "type": "supports",
+      "target": "workspace"
+    },
+    {
+      "source": "home",
+      "type": "related_to",
+      "target": "about"
+    },
+    {
+      "source": "builds",
+      "type": "documents",
+      "target": "citation-verifier"
+    },
+    {
+      "source": "builds",
+      "type": "documents",
+      "target": "trust-stack"
+    },
+    {
+      "source": "builds",
+      "type": "documents",
+      "target": "trust-safe-twins"
+    },
+    {
+      "source": "builds",
+      "type": "documents",
+      "target": "university"
+    },
+    {
+      "source": "builds",
+      "type": "documents",
+      "target": "build-your-team"
+    },
+    {
+      "source": "builds",
+      "type": "documents",
+      "target": "aloha-ai-ce"
+    },
+    {
+      "source": "builds",
+      "type": "documents",
+      "target": "cannabis-rescheduling"
+    },
+    {
+      "source": "builds",
+      "type": "documents",
+      "target": "psychedelic-radar"
+    },
+    {
+      "source": "builds",
+      "type": "documents",
+      "target": "legal-ai-workflow-teardown"
+    },
+    {
+      "source": "builds",
+      "type": "documents",
+      "target": "ai-readiness-scorecard"
+    },
+    {
+      "source": "builds",
+      "type": "documents",
+      "target": "workspace"
+    },
+    {
+      "source": "builds",
+      "type": "related_to",
+      "target": "engagements"
+    },
+    {
+      "source": "builds",
+      "type": "uses",
+      "target": "methods"
+    },
+    {
+      "source": "ai-readiness-scorecard",
+      "type": "supports",
+      "target": "strategy"
+    },
+    {
+      "source": "ai-readiness-scorecard",
+      "type": "available_in_workspace",
+      "target": "workspace"
+    },
+    {
+      "source": "citation-verifier",
+      "type": "supports",
+      "target": "intelligence"
+    },
+    {
+      "source": "citation-verifier",
+      "type": "supports",
+      "target": "legal-ai"
+    },
+    {
+      "source": "citation-verifier",
+      "type": "implements",
+      "target": "trust-stack"
+    },
+    {
+      "source": "leak-check",
+      "type": "implements",
+      "target": "trust-stack"
+    },
+    {
+      "source": "leak-check",
+      "type": "supports",
+      "target": "content"
+    },
+    {
+      "source": "bill-analyzer",
+      "type": "supports",
+      "target": "intelligence"
+    },
+    {
+      "source": "bill-analyzer",
+      "type": "implements",
+      "target": "methods"
+    },
+    {
+      "source": "claims-checker",
+      "type": "supports",
+      "target": "content"
+    },
+    {
+      "source": "claims-checker",
+      "type": "uses",
+      "target": "citation-verifier"
+    },
+    {
+      "source": "controlled-substances-explainer",
+      "type": "supports",
+      "target": "regulatory-intelligence"
+    },
+    {
+      "source": "controlled-substances-explainer",
+      "type": "teaches",
+      "target": "regulated-intelligence-stack"
+    },
+    {
+      "source": "evidence-explainer",
+      "type": "supports",
+      "target": "intelligence"
+    },
+    {
+      "source": "evidence-explainer",
+      "type": "uses",
+      "target": "citation-verifier"
+    },
+    {
+      "source": "policy-generator",
+      "type": "supports",
+      "target": "legal-ai"
+    },
+    {
+      "source": "policy-generator",
+      "type": "implements",
+      "target": "trust-stack"
+    },
+    {
+      "source": "prompt-to-workflow",
+      "type": "implements",
+      "target": "methods"
+    },
+    {
+      "source": "prompt-to-workflow",
+      "type": "supports",
+      "target": "ai-native-coo"
+    },
+    {
+      "source": "trust-safe-console",
+      "type": "implements",
+      "target": "trust-stack"
+    },
+    {
+      "source": "trust-safe-console",
+      "type": "supports",
+      "target": "legal-ai"
+    },
+    {
+      "source": "governance-readiness",
+      "type": "supports",
+      "target": "legal-ai"
+    },
+    {
+      "source": "governance-readiness",
+      "type": "uses",
+      "target": "policy-generator"
+    },
+    {
+      "source": "kb-readiness",
+      "type": "supports",
+      "target": "workspace"
+    },
+    {
+      "source": "kb-readiness",
+      "type": "uses",
+      "target": "methods"
+    },
+    {
+      "source": "practice-readiness",
+      "type": "supports",
+      "target": "aloha-ai-practice"
+    },
+    {
+      "source": "practice-readiness",
+      "type": "uses",
+      "target": "build-your-team"
+    },
+    {
+      "source": "workflow-audit",
+      "type": "supports",
+      "target": "methods"
+    },
+    {
+      "source": "workflow-audit",
+      "type": "uses",
+      "target": "prompt-to-workflow"
+    },
+    {
+      "source": "university-assessment",
+      "type": "depends_on",
+      "target": "university"
+    },
+    {
+      "source": "university-assessment",
+      "type": "supports",
+      "target": "university-start-here"
+    },
+    {
+      "source": "university-assessment",
+      "type": "available_in_workspace",
+      "target": "workspace"
+    },
+    {
+      "source": "university-courses-collection",
+      "type": "depends_on",
+      "target": "university"
+    },
+    {
+      "source": "university-courses-collection",
+      "type": "teaches",
+      "target": "first-ai-team-course"
+    },
+    {
+      "source": "university-learn-collection",
+      "type": "depends_on",
+      "target": "university"
+    },
+    {
+      "source": "university-learn-collection",
+      "type": "teaches",
+      "target": "what-generative-ai-is-lesson"
+    },
+    {
+      "source": "university-playbooks-collection",
+      "type": "depends_on",
+      "target": "university"
+    },
+    {
+      "source": "university-playbooks-collection",
+      "type": "teaches",
+      "target": "governance-starter-playbook"
+    },
+    {
+      "source": "university-templates-collection",
+      "type": "depends_on",
+      "target": "university"
+    },
+    {
+      "source": "university-templates-collection",
+      "type": "teaches",
+      "target": "ai-tool-evaluation-matrix-template"
+    },
+    {
+      "source": "university-tools-collection",
+      "type": "depends_on",
+      "target": "university"
+    },
+    {
+      "source": "university-tools-collection",
+      "type": "teaches",
+      "target": "lean-ai-stack-tool-guide"
+    },
+    {
+      "source": "university-use-cases-collection",
+      "type": "depends_on",
+      "target": "university"
+    },
+    {
+      "source": "university-use-cases-collection",
+      "type": "teaches",
+      "target": "governance-use-case"
+    },
+    {
+      "source": "citation-verifier-course",
+      "type": "depends_on",
+      "target": "university"
+    },
+    {
+      "source": "citation-verifier-course",
+      "type": "uses",
+      "target": "citation-verifier"
+    },
+    {
+      "source": "citation-verifier-course",
+      "type": "implements",
+      "target": "trust-stack"
+    },
+    {
+      "source": "claims-checker-course",
+      "type": "depends_on",
+      "target": "university"
+    },
+    {
+      "source": "claims-checker-course",
+      "type": "implements",
+      "target": "regulatory-intelligence"
+    },
+    {
+      "source": "claims-checker-course",
+      "type": "uses",
+      "target": "citation-verifier"
+    },
+    {
+      "source": "first-ai-team-course",
+      "type": "depends_on",
+      "target": "university"
+    },
+    {
+      "source": "first-ai-team-course",
+      "type": "uses",
+      "target": "build-your-team"
+    },
+    {
+      "source": "first-ai-team-course",
+      "type": "implements",
+      "target": "strategy"
+    },
+    {
+      "source": "governed-operator-course",
+      "type": "depends_on",
+      "target": "university"
+    },
+    {
+      "source": "governed-operator-course",
+      "type": "implements",
+      "target": "trust-stack"
+    },
+    {
+      "source": "governed-operator-course",
+      "type": "uses",
+      "target": "workspace"
+    },
+    {
+      "source": "kb-readiness-course",
+      "type": "depends_on",
+      "target": "university"
+    },
+    {
+      "source": "kb-readiness-course",
+      "type": "supports",
+      "target": "intelligence"
+    },
+    {
+      "source": "kb-readiness-course",
+      "type": "available_in_workspace",
+      "target": "workspace"
+    },
+    {
+      "source": "reg-tracker-course",
+      "type": "depends_on",
+      "target": "university"
+    },
+    {
+      "source": "reg-tracker-course",
+      "type": "implements",
+      "target": "regulatory-intelligence"
+    },
+    {
+      "source": "reg-tracker-course",
+      "type": "documents",
+      "target": "cannabis-rescheduling"
+    },
+    {
+      "source": "workflow-audit-course",
+      "type": "depends_on",
+      "target": "university"
+    },
+    {
+      "source": "workflow-audit-course",
+      "type": "uses",
+      "target": "ai-readiness-scorecard"
+    },
+    {
+      "source": "workflow-audit-course",
+      "type": "implements",
+      "target": "strategy"
+    },
+    {
+      "source": "university-about",
+      "type": "depends_on",
+      "target": "university"
+    },
+    {
+      "source": "university-about",
+      "type": "documents",
+      "target": "methods"
+    },
+    {
+      "source": "university-start-here",
+      "type": "depends_on",
+      "target": "university"
+    },
+    {
+      "source": "university-start-here",
+      "type": "supports",
+      "target": "university-assessment"
+    },
+    {
+      "source": "university-start-here",
+      "type": "supports",
+      "target": "university-learn-collection"
+    },
+    {
+      "source": "university-contact",
+      "type": "depends_on",
+      "target": "university"
+    },
+    {
+      "source": "university-contact",
+      "type": "supports",
+      "target": "services"
+    },
+    {
+      "source": "what-generative-ai-is-lesson",
+      "type": "depends_on",
+      "target": "university"
+    },
+    {
+      "source": "what-generative-ai-is-lesson",
+      "type": "supports",
+      "target": "what-ai-can-and-cannot-do-lesson"
+    },
+    {
+      "source": "what-generative-ai-is-lesson",
+      "type": "supports",
+      "target": "prompting-fundamentals-lesson"
+    },
+    {
+      "source": "what-ai-can-and-cannot-do-lesson",
+      "type": "depends_on",
+      "target": "what-generative-ai-is-lesson"
+    },
+    {
+      "source": "what-ai-can-and-cannot-do-lesson",
+      "type": "uses",
+      "target": "ai-readiness-scorecard"
+    },
+    {
+      "source": "what-ai-can-and-cannot-do-lesson",
+      "type": "supports",
+      "target": "when-not-to-use-ai-lesson"
+    },
+    {
+      "source": "when-not-to-use-ai-lesson",
+      "type": "depends_on",
+      "target": "what-ai-can-and-cannot-do-lesson"
+    },
+    {
+      "source": "when-not-to-use-ai-lesson",
+      "type": "implements",
+      "target": "trust-stack"
+    },
+    {
+      "source": "when-not-to-use-ai-lesson",
+      "type": "supports",
+      "target": "privacy-and-confidentiality-lesson"
+    },
+    {
+      "source": "prompting-fundamentals-lesson",
+      "type": "depends_on",
+      "target": "what-generative-ai-is-lesson"
+    },
+    {
+      "source": "prompting-fundamentals-lesson",
+      "type": "supports",
+      "target": "ai-for-email-lesson"
+    },
+    {
+      "source": "prompting-fundamentals-lesson",
+      "type": "supports",
+      "target": "ai-for-sop-drafting-lesson"
+    },
+    {
+      "source": "hallucinations-and-risk-lesson",
+      "type": "depends_on",
+      "target": "what-generative-ai-is-lesson"
+    },
+    {
+      "source": "hallucinations-and-risk-lesson",
+      "type": "supports",
+      "target": "how-to-verify-ai-outputs-lesson"
+    },
+    {
+      "source": "hallucinations-and-risk-lesson",
+      "type": "uses",
+      "target": "citation-verifier"
+    },
+    {
+      "source": "how-to-verify-ai-outputs-lesson",
+      "type": "depends_on",
+      "target": "hallucinations-and-risk-lesson"
+    },
+    {
+      "source": "how-to-verify-ai-outputs-lesson",
+      "type": "uses",
+      "target": "citation-verifier"
+    },
+    {
+      "source": "how-to-verify-ai-outputs-lesson",
+      "type": "implements",
+      "target": "methods"
+    },
+    {
+      "source": "privacy-and-confidentiality-lesson",
+      "type": "depends_on",
+      "target": "when-not-to-use-ai-lesson"
+    },
+    {
+      "source": "privacy-and-confidentiality-lesson",
+      "type": "implements",
+      "target": "trust-stack"
+    },
+    {
+      "source": "privacy-and-confidentiality-lesson",
+      "type": "supports",
+      "target": "ai-for-meeting-notes-lesson"
+    },
+    {
+      "source": "choose-your-first-ai-stack-lesson",
+      "type": "depends_on",
+      "target": "what-ai-can-and-cannot-do-lesson"
+    },
+    {
+      "source": "choose-your-first-ai-stack-lesson",
+      "type": "uses",
+      "target": "ai-readiness-scorecard"
+    },
+    {
+      "source": "choose-your-first-ai-stack-lesson",
+      "type": "supports",
+      "target": "first-ai-team-course"
+    },
+    {
+      "source": "ai-assistant-comparison-lesson",
+      "type": "depends_on",
+      "target": "choose-your-first-ai-stack-lesson"
+    },
+    {
+      "source": "ai-assistant-comparison-lesson",
+      "type": "supports",
+      "target": "how-to-verify-ai-outputs-lesson"
+    },
+    {
+      "source": "ai-assistant-comparison-lesson",
+      "type": "supports",
+      "target": "ai-for-email-lesson"
+    },
+    {
+      "source": "ai-for-email-lesson",
+      "type": "depends_on",
+      "target": "prompting-fundamentals-lesson"
+    },
+    {
+      "source": "ai-for-email-lesson",
+      "type": "depends_on",
+      "target": "privacy-and-confidentiality-lesson"
+    },
+    {
+      "source": "ai-for-email-lesson",
+      "type": "supports",
+      "target": "first-ai-team-course"
+    },
+    {
+      "source": "ai-for-meeting-notes-lesson",
+      "type": "depends_on",
+      "target": "privacy-and-confidentiality-lesson"
+    },
+    {
+      "source": "ai-for-meeting-notes-lesson",
+      "type": "depends_on",
+      "target": "prompting-fundamentals-lesson"
+    },
+    {
+      "source": "ai-for-meeting-notes-lesson",
+      "type": "implements",
+      "target": "trust-stack"
+    },
+    {
+      "source": "ai-for-sop-drafting-lesson",
+      "type": "depends_on",
+      "target": "prompting-fundamentals-lesson"
+    },
+    {
+      "source": "ai-for-sop-drafting-lesson",
+      "type": "supports",
+      "target": "kb-readiness-course"
+    },
+    {
+      "source": "ai-for-sop-drafting-lesson",
+      "type": "supports",
+      "target": "workflow-audit-course"
+    },
+    {
+      "source": "client-intake-onboarding-playbook",
+      "type": "depends_on",
+      "target": "university"
+    },
+    {
+      "source": "client-intake-onboarding-playbook",
+      "type": "implements",
+      "target": "trust-stack"
+    },
+    {
+      "source": "client-intake-onboarding-playbook",
+      "type": "supports",
+      "target": "ai-for-email-lesson"
+    },
+    {
+      "source": "content-repurposing-playbook",
+      "type": "depends_on",
+      "target": "university"
+    },
+    {
+      "source": "content-repurposing-playbook",
+      "type": "supports",
+      "target": "content"
+    },
+    {
+      "source": "content-repurposing-playbook",
+      "type": "implements",
+      "target": "how-to-verify-ai-outputs-lesson"
+    },
+    {
+      "source": "governance-starter-playbook",
+      "type": "depends_on",
+      "target": "university"
+    },
+    {
+      "source": "governance-starter-playbook",
+      "type": "implements",
+      "target": "trust-stack"
+    },
+    {
+      "source": "governance-starter-playbook",
+      "type": "supports",
+      "target": "privacy-and-confidentiality-lesson"
+    },
+    {
+      "source": "internal-knowledge-base-playbook",
+      "type": "depends_on",
+      "target": "university"
+    },
+    {
+      "source": "internal-knowledge-base-playbook",
+      "type": "supports",
+      "target": "kb-readiness-course"
+    },
+    {
+      "source": "internal-knowledge-base-playbook",
+      "type": "implements",
+      "target": "intelligence"
+    },
+    {
+      "source": "lead-generation-playbook",
+      "type": "depends_on",
+      "target": "university"
+    },
+    {
+      "source": "lead-generation-playbook",
+      "type": "implements",
+      "target": "strategy"
+    },
+    {
+      "source": "lead-generation-playbook",
+      "type": "supports",
+      "target": "build-your-team"
+    },
+    {
+      "source": "sop-operations-playbook",
+      "type": "depends_on",
+      "target": "university"
+    },
+    {
+      "source": "sop-operations-playbook",
+      "type": "supports",
+      "target": "ai-for-sop-drafting-lesson"
+    },
+    {
+      "source": "sop-operations-playbook",
+      "type": "supports",
+      "target": "workflow-audit-course"
+    },
+    {
+      "source": "university-ai-strategy-sprint",
+      "type": "depends_on",
+      "target": "services"
+    },
+    {
+      "source": "university-ai-strategy-sprint",
+      "type": "uses",
+      "target": "ai-tool-evaluation-matrix-template"
+    },
+    {
+      "source": "university-ai-strategy-sprint",
+      "type": "supports",
+      "target": "university-ai-workflow-design"
+    },
+    {
+      "source": "university-ai-workflow-design",
+      "type": "depends_on",
+      "target": "university-ai-strategy-sprint"
+    },
+    {
+      "source": "university-ai-workflow-design",
+      "type": "uses",
+      "target": "ai-workflow-mapping-worksheet-template"
+    },
+    {
+      "source": "university-ai-workflow-design",
+      "type": "supports",
+      "target": "university-ai-implementation"
+    },
+    {
+      "source": "university-ai-implementation",
+      "type": "depends_on",
+      "target": "university-ai-workflow-design"
+    },
+    {
+      "source": "university-ai-implementation",
+      "type": "implements",
+      "target": "trust-stack"
+    },
+    {
+      "source": "university-ai-implementation",
+      "type": "produced_by",
+      "target": "services"
+    },
+    {
+      "source": "university-ai-governance-setup",
+      "type": "depends_on",
+      "target": "services"
+    },
+    {
+      "source": "university-ai-governance-setup",
+      "type": "implements",
+      "target": "governance-starter-playbook"
+    },
+    {
+      "source": "university-ai-governance-setup",
+      "type": "implements",
+      "target": "trust-stack"
+    },
+    {
+      "source": "university-team-training",
+      "type": "depends_on",
+      "target": "services"
+    },
+    {
+      "source": "university-team-training",
+      "type": "teaches",
+      "target": "prompting-fundamentals-lesson"
+    },
+    {
+      "source": "university-team-training",
+      "type": "teaches",
+      "target": "privacy-and-confidentiality-lesson"
+    },
+    {
+      "source": "university-ongoing-advisory",
+      "type": "depends_on",
+      "target": "services"
+    },
+    {
+      "source": "university-ongoing-advisory",
+      "type": "supports",
+      "target": "university-ai-strategy-sprint"
+    },
+    {
+      "source": "university-ongoing-advisory",
+      "type": "supports",
+      "target": "ai-native-coo"
+    },
+    {
+      "source": "citation-verifier-lab-kit",
+      "type": "depends_on",
+      "target": "university"
+    },
+    {
+      "source": "citation-verifier-lab-kit",
+      "type": "supports",
+      "target": "citation-verifier-course"
+    },
+    {
+      "source": "citation-verifier-lab-kit",
+      "type": "uses",
+      "target": "citation-verifier"
+    },
+    {
+      "source": "ai-implementation-roadmap-template",
+      "type": "depends_on",
+      "target": "university"
+    },
+    {
+      "source": "ai-implementation-roadmap-template",
+      "type": "uses",
+      "target": "ai-readiness-scorecard"
+    },
+    {
+      "source": "ai-implementation-roadmap-template",
+      "type": "supports",
+      "target": "workflow-audit-course"
+    },
+    {
+      "source": "ai-policy-starter-kit-template",
+      "type": "depends_on",
+      "target": "governance-starter-playbook"
+    },
+    {
+      "source": "ai-policy-starter-kit-template",
+      "type": "implements",
+      "target": "trust-stack"
+    },
+    {
+      "source": "ai-policy-starter-kit-template",
+      "type": "supports",
+      "target": "privacy-and-confidentiality-lesson"
+    },
+    {
+      "source": "ai-tool-evaluation-matrix-template",
+      "type": "depends_on",
+      "target": "choose-your-first-ai-stack-lesson"
+    },
+    {
+      "source": "ai-tool-evaluation-matrix-template",
+      "type": "uses",
+      "target": "ai-readiness-scorecard"
+    },
+    {
+      "source": "ai-tool-evaluation-matrix-template",
+      "type": "supports",
+      "target": "ai-assistant-comparison-lesson"
+    },
+    {
+      "source": "ai-use-case-inventory-template",
+      "type": "depends_on",
+      "target": "workflow-audit-course"
+    },
+    {
+      "source": "ai-use-case-inventory-template",
+      "type": "uses",
+      "target": "ai-readiness-scorecard"
+    },
+    {
+      "source": "ai-use-case-inventory-template",
+      "type": "implements",
+      "target": "strategy"
+    },
+    {
+      "source": "ai-workflow-mapping-worksheet-template",
+      "type": "depends_on",
+      "target": "workflow-audit-course"
+    },
+    {
+      "source": "ai-workflow-mapping-worksheet-template",
+      "type": "supports",
+      "target": "first-ai-team-course"
+    },
+    {
+      "source": "ai-workflow-mapping-worksheet-template",
+      "type": "implements",
+      "target": "methods"
+    },
+    {
+      "source": "content-repurposing-workflow-template",
+      "type": "depends_on",
+      "target": "content-repurposing-playbook"
+    },
+    {
+      "source": "content-repurposing-workflow-template",
+      "type": "supports",
+      "target": "content"
+    },
+    {
+      "source": "content-repurposing-workflow-template",
+      "type": "implements",
+      "target": "how-to-verify-ai-outputs-lesson"
+    },
+    {
+      "source": "meeting-summary-prompt-pack-template",
+      "type": "depends_on",
+      "target": "ai-for-meeting-notes-lesson"
+    },
+    {
+      "source": "meeting-summary-prompt-pack-template",
+      "type": "implements",
+      "target": "trust-stack"
+    },
+    {
+      "source": "meeting-summary-prompt-pack-template",
+      "type": "supports",
+      "target": "privacy-and-confidentiality-lesson"
+    },
+    {
+      "source": "sop-prompt-pack-template",
+      "type": "depends_on",
+      "target": "sop-operations-playbook"
+    },
+    {
+      "source": "sop-prompt-pack-template",
+      "type": "supports",
+      "target": "ai-for-sop-drafting-lesson"
+    },
+    {
+      "source": "sop-prompt-pack-template",
+      "type": "supports",
+      "target": "workflow-audit-course"
+    },
+    {
+      "source": "content-repurposing-tool-guide",
+      "type": "depends_on",
+      "target": "university"
+    },
+    {
+      "source": "content-repurposing-tool-guide",
+      "type": "supports",
+      "target": "content-repurposing-playbook"
+    },
+    {
+      "source": "content-repurposing-tool-guide",
+      "type": "uses",
+      "target": "ai-tool-evaluation-matrix-template"
+    },
+    {
+      "source": "meeting-notes-tool-guide",
+      "type": "depends_on",
+      "target": "university"
+    },
+    {
+      "source": "meeting-notes-tool-guide",
+      "type": "supports",
+      "target": "ai-for-meeting-notes-lesson"
+    },
+    {
+      "source": "meeting-notes-tool-guide",
+      "type": "uses",
+      "target": "meeting-summary-prompt-pack-template"
+    },
+    {
+      "source": "research-tool-guide",
+      "type": "depends_on",
+      "target": "university"
+    },
+    {
+      "source": "research-tool-guide",
+      "type": "supports",
+      "target": "research-use-case"
+    },
+    {
+      "source": "research-tool-guide",
+      "type": "implements",
+      "target": "how-to-verify-ai-outputs-lesson"
+    },
+    {
+      "source": "small-business-operations-tool-guide",
+      "type": "depends_on",
+      "target": "university"
+    },
+    {
+      "source": "small-business-operations-tool-guide",
+      "type": "supports",
+      "target": "small-businesses-use-case"
+    },
+    {
+      "source": "small-business-operations-tool-guide",
+      "type": "uses",
+      "target": "ai-tool-evaluation-matrix-template"
+    },
+    {
+      "source": "lean-ai-stack-tool-guide",
+      "type": "depends_on",
+      "target": "university"
+    },
+    {
+      "source": "lean-ai-stack-tool-guide",
+      "type": "supports",
+      "target": "choose-your-first-ai-stack-lesson"
+    },
+    {
+      "source": "lean-ai-stack-tool-guide",
+      "type": "uses",
+      "target": "ai-tool-evaluation-matrix-template"
+    },
+    {
+      "source": "admin-use-case",
+      "type": "depends_on",
+      "target": "university"
+    },
+    {
+      "source": "admin-use-case",
+      "type": "supports",
+      "target": "ai-for-email-lesson"
+    },
+    {
+      "source": "admin-use-case",
+      "type": "supports",
+      "target": "ai-for-meeting-notes-lesson"
+    },
+    {
+      "source": "client-service-use-case",
+      "type": "depends_on",
+      "target": "university"
+    },
+    {
+      "source": "client-service-use-case",
+      "type": "implements",
+      "target": "client-intake-onboarding-playbook"
+    },
+    {
+      "source": "client-service-use-case",
+      "type": "supports",
+      "target": "ai-for-email-lesson"
+    },
+    {
+      "source": "governance-use-case",
+      "type": "depends_on",
+      "target": "university"
+    },
+    {
+      "source": "governance-use-case",
+      "type": "implements",
+      "target": "governance-starter-playbook"
+    },
+    {
+      "source": "governance-use-case",
+      "type": "implements",
+      "target": "trust-stack"
+    },
+    {
+      "source": "knowledge-management-use-case",
+      "type": "depends_on",
+      "target": "university"
+    },
+    {
+      "source": "knowledge-management-use-case",
+      "type": "implements",
+      "target": "internal-knowledge-base-playbook"
+    },
+    {
+      "source": "knowledge-management-use-case",
+      "type": "supports",
+      "target": "kb-readiness-course"
+    },
+    {
+      "source": "law-firms-use-case",
+      "type": "depends_on",
+      "target": "university"
+    },
+    {
+      "source": "law-firms-use-case",
+      "type": "implements",
+      "target": "legal-ai"
+    },
+    {
+      "source": "law-firms-use-case",
+      "type": "uses",
+      "target": "citation-verifier-course"
+    },
+    {
+      "source": "leadership-use-case",
+      "type": "depends_on",
+      "target": "university"
+    },
+    {
+      "source": "leadership-use-case",
+      "type": "supports",
+      "target": "strategy"
+    },
+    {
+      "source": "leadership-use-case",
+      "type": "uses",
+      "target": "ai-implementation-roadmap-template"
+    },
+    {
+      "source": "marketing-use-case",
+      "type": "depends_on",
+      "target": "university"
+    },
+    {
+      "source": "marketing-use-case",
+      "type": "implements",
+      "target": "content-repurposing-playbook"
+    },
+    {
+      "source": "marketing-use-case",
+      "type": "supports",
+      "target": "content"
+    },
+    {
+      "source": "operations-use-case",
+      "type": "depends_on",
+      "target": "university"
+    },
+    {
+      "source": "operations-use-case",
+      "type": "implements",
+      "target": "sop-operations-playbook"
+    },
+    {
+      "source": "operations-use-case",
+      "type": "supports",
+      "target": "workflow-audit-course"
+    },
+    {
+      "source": "research-use-case",
+      "type": "depends_on",
+      "target": "university"
+    },
+    {
+      "source": "research-use-case",
+      "type": "implements",
+      "target": "research-tool-guide"
+    },
+    {
+      "source": "research-use-case",
+      "type": "supports",
+      "target": "citation-verifier-course"
+    },
+    {
+      "source": "sales-use-case",
+      "type": "depends_on",
+      "target": "university"
+    },
+    {
+      "source": "sales-use-case",
+      "type": "supports",
+      "target": "lead-generation-playbook"
+    },
+    {
+      "source": "sales-use-case",
+      "type": "supports",
+      "target": "client-service-use-case"
+    },
+    {
+      "source": "small-businesses-use-case",
+      "type": "depends_on",
+      "target": "university"
+    },
+    {
+      "source": "small-businesses-use-case",
+      "type": "uses",
+      "target": "lean-ai-stack-tool-guide"
+    },
+    {
+      "source": "small-businesses-use-case",
+      "type": "uses",
+      "target": "ai-readiness-scorecard"
+    },
+    {
+      "source": "training-use-case",
+      "type": "depends_on",
+      "target": "university"
+    },
+    {
+      "source": "training-use-case",
+      "type": "supports",
+      "target": "sop-operations-playbook"
+    },
+    {
+      "source": "training-use-case",
+      "type": "supports",
+      "target": "first-ai-team-course"
+    },
+    {
+      "source": "citation-verifier-course-citation-lesson-failure",
+      "type": "depends_on",
+      "target": "citation-verifier-course"
+    },
+    {
+      "source": "citation-verifier-course-citation-lesson-contract",
+      "type": "depends_on",
+      "target": "citation-verifier-course"
+    },
+    {
+      "source": "citation-verifier-course-citation-lesson-data-boundary",
+      "type": "depends_on",
+      "target": "citation-verifier-course"
+    },
+    {
+      "source": "citation-verifier-course-citation-lesson-record-model",
+      "type": "depends_on",
+      "target": "citation-verifier-course"
+    },
+    {
+      "source": "citation-verifier-course-citation-lesson-parser",
+      "type": "depends_on",
+      "target": "citation-verifier-course"
+    },
+    {
+      "source": "citation-verifier-course-citation-lesson-claim-window",
+      "type": "depends_on",
+      "target": "citation-verifier-course"
+    },
+    {
+      "source": "citation-verifier-course-citation-lesson-source-hierarchy",
+      "type": "depends_on",
+      "target": "citation-verifier-course"
+    },
+    {
+      "source": "citation-verifier-course-citation-lesson-retrieval",
+      "type": "depends_on",
+      "target": "citation-verifier-course"
+    },
+    {
+      "source": "citation-verifier-course-citation-lesson-passage",
+      "type": "depends_on",
+      "target": "citation-verifier-course"
+    },
+    {
+      "source": "citation-verifier-course-citation-lesson-entailment",
+      "type": "depends_on",
+      "target": "citation-verifier-course"
+    },
+    {
+      "source": "citation-verifier-course-citation-lesson-taxonomy",
+      "type": "depends_on",
+      "target": "citation-verifier-course"
+    },
+    {
+      "source": "citation-verifier-course-citation-lesson-report",
+      "type": "depends_on",
+      "target": "citation-verifier-course"
+    },
+    {
+      "source": "citation-verifier-course-citation-lesson-ethics",
+      "type": "depends_on",
+      "target": "citation-verifier-course"
+    },
+    {
+      "source": "citation-verifier-course-citation-lesson-audit",
+      "type": "depends_on",
+      "target": "citation-verifier-course"
+    },
+    {
+      "source": "citation-verifier-course-citation-lesson-testset",
+      "type": "depends_on",
+      "target": "citation-verifier-course"
+    },
+    {
+      "source": "citation-verifier-course-citation-lesson-metrics",
+      "type": "depends_on",
+      "target": "citation-verifier-course"
+    },
+    {
+      "source": "citation-verifier-course-citation-lesson-release",
+      "type": "depends_on",
+      "target": "citation-verifier-course"
+    },
+    {
+      "source": "citation-verifier-course-citation-lesson-defense",
+      "type": "depends_on",
+      "target": "citation-verifier-course"
+    },
+    {
+      "source": "claims-checker-course-claims-lesson-claim-types",
+      "type": "depends_on",
+      "target": "claims-checker-course"
+    },
+    {
+      "source": "claims-checker-course-claims-lesson-contract",
+      "type": "depends_on",
+      "target": "claims-checker-course"
+    },
+    {
+      "source": "claims-checker-course-claims-lesson-scope",
+      "type": "depends_on",
+      "target": "claims-checker-course"
+    },
+    {
+      "source": "claims-checker-course-claims-lesson-record-model",
+      "type": "depends_on",
+      "target": "claims-checker-course"
+    },
+    {
+      "source": "claims-checker-course-claims-lesson-express",
+      "type": "depends_on",
+      "target": "claims-checker-course"
+    },
+    {
+      "source": "claims-checker-course-claims-lesson-implied",
+      "type": "depends_on",
+      "target": "claims-checker-course"
+    },
+    {
+      "source": "claims-checker-course-claims-lesson-source-hierarchy",
+      "type": "depends_on",
+      "target": "claims-checker-course"
+    },
+    {
+      "source": "claims-checker-course-claims-lesson-rule-record",
+      "type": "depends_on",
+      "target": "claims-checker-course"
+    },
+    {
+      "source": "claims-checker-course-claims-lesson-rule-map",
+      "type": "depends_on",
+      "target": "claims-checker-course"
+    },
+    {
+      "source": "claims-checker-course-claims-lesson-substantiation",
+      "type": "depends_on",
+      "target": "claims-checker-course"
+    },
+    {
+      "source": "claims-checker-course-claims-lesson-taxonomy",
+      "type": "depends_on",
+      "target": "claims-checker-course"
+    },
+    {
+      "source": "claims-checker-course-claims-lesson-report",
+      "type": "depends_on",
+      "target": "claims-checker-course"
+    },
+    {
+      "source": "claims-checker-course-claims-lesson-escalation",
+      "type": "depends_on",
+      "target": "claims-checker-course"
+    },
+    {
+      "source": "claims-checker-course-claims-lesson-audit",
+      "type": "depends_on",
+      "target": "claims-checker-course"
+    },
+    {
+      "source": "claims-checker-course-claims-lesson-testset",
+      "type": "depends_on",
+      "target": "claims-checker-course"
+    },
+    {
+      "source": "claims-checker-course-claims-lesson-metrics",
+      "type": "depends_on",
+      "target": "claims-checker-course"
+    },
+    {
+      "source": "claims-checker-course-claims-lesson-release",
+      "type": "depends_on",
+      "target": "claims-checker-course"
+    },
+    {
+      "source": "claims-checker-course-claims-lesson-defense",
+      "type": "depends_on",
+      "target": "claims-checker-course"
+    },
+    {
+      "source": "first-ai-team-course-team-lesson-select",
+      "type": "depends_on",
+      "target": "first-ai-team-course"
+    },
+    {
+      "source": "first-ai-team-course-team-lesson-map",
+      "type": "depends_on",
+      "target": "first-ai-team-course"
+    },
+    {
+      "source": "first-ai-team-course-team-lesson-classify",
+      "type": "depends_on",
+      "target": "first-ai-team-course"
+    },
+    {
+      "source": "first-ai-team-course-team-lesson-control",
+      "type": "depends_on",
+      "target": "first-ai-team-course"
+    },
+    {
+      "source": "first-ai-team-course-team-lesson-roles",
+      "type": "depends_on",
+      "target": "first-ai-team-course"
+    },
+    {
+      "source": "first-ai-team-course-team-lesson-permissions",
+      "type": "depends_on",
+      "target": "first-ai-team-course"
+    },
+    {
+      "source": "first-ai-team-course-team-lesson-test",
+      "type": "depends_on",
+      "target": "first-ai-team-course"
+    },
+    {
+      "source": "first-ai-team-course-team-lesson-release",
+      "type": "depends_on",
+      "target": "first-ai-team-course"
+    },
+    {
+      "source": "governed-operator-course-operator-lesson-mandate",
+      "type": "depends_on",
+      "target": "governed-operator-course"
+    },
+    {
+      "source": "governed-operator-course-operator-lesson-consequence",
+      "type": "depends_on",
+      "target": "governed-operator-course"
+    },
+    {
+      "source": "governed-operator-course-operator-lesson-data",
+      "type": "depends_on",
+      "target": "governed-operator-course"
+    },
+    {
+      "source": "governed-operator-course-operator-lesson-sandbox",
+      "type": "depends_on",
+      "target": "governed-operator-course"
+    },
+    {
+      "source": "governed-operator-course-operator-lesson-states",
+      "type": "depends_on",
+      "target": "governed-operator-course"
+    },
+    {
+      "source": "governed-operator-course-operator-lesson-abstain",
+      "type": "depends_on",
+      "target": "governed-operator-course"
+    },
+    {
+      "source": "governed-operator-course-operator-lesson-packet",
+      "type": "depends_on",
+      "target": "governed-operator-course"
+    },
+    {
+      "source": "governed-operator-course-operator-lesson-match",
+      "type": "depends_on",
+      "target": "governed-operator-course"
+    },
+    {
+      "source": "governed-operator-course-operator-lesson-contracts",
+      "type": "depends_on",
+      "target": "governed-operator-course"
+    },
+    {
+      "source": "governed-operator-course-operator-lesson-adapters",
+      "type": "depends_on",
+      "target": "governed-operator-course"
+    },
+    {
+      "source": "governed-operator-course-operator-lesson-retrieval",
+      "type": "depends_on",
+      "target": "governed-operator-course"
+    },
+    {
+      "source": "governed-operator-course-operator-lesson-faithfulness",
+      "type": "depends_on",
+      "target": "governed-operator-course"
+    },
+    {
+      "source": "governed-operator-course-operator-lesson-injection",
+      "type": "depends_on",
+      "target": "governed-operator-course"
+    },
+    {
+      "source": "governed-operator-course-operator-lesson-control",
+      "type": "depends_on",
+      "target": "governed-operator-course"
+    },
+    {
+      "source": "governed-operator-course-operator-lesson-set",
+      "type": "depends_on",
+      "target": "governed-operator-course"
+    },
+    {
+      "source": "governed-operator-course-operator-lesson-metrics",
+      "type": "depends_on",
+      "target": "governed-operator-course"
+    },
+    {
+      "source": "governed-operator-course-operator-lesson-beachhead",
+      "type": "depends_on",
+      "target": "governed-operator-course"
+    },
+    {
+      "source": "governed-operator-course-operator-lesson-run",
+      "type": "depends_on",
+      "target": "governed-operator-course"
+    },
+    {
+      "source": "governed-operator-course-operator-lesson-release",
+      "type": "depends_on",
+      "target": "governed-operator-course"
+    },
+    {
+      "source": "governed-operator-course-operator-lesson-change",
+      "type": "depends_on",
+      "target": "governed-operator-course"
+    },
+    {
+      "source": "kb-readiness-course-kb-lesson-purpose",
+      "type": "depends_on",
+      "target": "kb-readiness-course"
+    },
+    {
+      "source": "kb-readiness-course-kb-lesson-rubric",
+      "type": "depends_on",
+      "target": "kb-readiness-course"
+    },
+    {
+      "source": "kb-readiness-course-kb-lesson-register",
+      "type": "depends_on",
+      "target": "kb-readiness-course"
+    },
+    {
+      "source": "kb-readiness-course-kb-lesson-authority",
+      "type": "depends_on",
+      "target": "kb-readiness-course"
+    },
+    {
+      "source": "kb-readiness-course-kb-lesson-questions",
+      "type": "depends_on",
+      "target": "kb-readiness-course"
+    },
+    {
+      "source": "kb-readiness-course-kb-lesson-gaps",
+      "type": "depends_on",
+      "target": "kb-readiness-course"
+    },
+    {
+      "source": "kb-readiness-course-kb-lesson-dates",
+      "type": "depends_on",
+      "target": "kb-readiness-course"
+    },
+    {
+      "source": "kb-readiness-course-kb-lesson-lifecycle",
+      "type": "depends_on",
+      "target": "kb-readiness-course"
+    },
+    {
+      "source": "kb-readiness-course-kb-lesson-structure",
+      "type": "depends_on",
+      "target": "kb-readiness-course"
+    },
+    {
+      "source": "kb-readiness-course-kb-lesson-provenance",
+      "type": "depends_on",
+      "target": "kb-readiness-course"
+    },
+    {
+      "source": "kb-readiness-course-kb-lesson-duplicates",
+      "type": "depends_on",
+      "target": "kb-readiness-course"
+    },
+    {
+      "source": "kb-readiness-course-kb-lesson-conflicts",
+      "type": "depends_on",
+      "target": "kb-readiness-course"
+    },
+    {
+      "source": "kb-readiness-course-kb-lesson-classification",
+      "type": "depends_on",
+      "target": "kb-readiness-course"
+    },
+    {
+      "source": "kb-readiness-course-kb-lesson-permissions",
+      "type": "depends_on",
+      "target": "kb-readiness-course"
+    },
+    {
+      "source": "kb-readiness-course-kb-lesson-testset",
+      "type": "depends_on",
+      "target": "kb-readiness-course"
+    },
+    {
+      "source": "kb-readiness-course-kb-lesson-results",
+      "type": "depends_on",
+      "target": "kb-readiness-course"
+    },
+    {
+      "source": "kb-readiness-course-kb-lesson-remediation",
+      "type": "depends_on",
+      "target": "kb-readiness-course"
+    },
+    {
+      "source": "kb-readiness-course-kb-lesson-release",
+      "type": "depends_on",
+      "target": "kb-readiness-course"
+    },
+    {
+      "source": "reg-tracker-course-tracker-lesson-coverage",
+      "type": "depends_on",
+      "target": "reg-tracker-course"
+    },
+    {
+      "source": "reg-tracker-course-tracker-lesson-authority",
+      "type": "depends_on",
+      "target": "reg-tracker-course"
+    },
+    {
+      "source": "reg-tracker-course-tracker-lesson-register",
+      "type": "depends_on",
+      "target": "reg-tracker-course"
+    },
+    {
+      "source": "reg-tracker-course-tracker-lesson-record",
+      "type": "depends_on",
+      "target": "reg-tracker-course"
+    },
+    {
+      "source": "reg-tracker-course-tracker-lesson-jurisdictions",
+      "type": "depends_on",
+      "target": "reg-tracker-course"
+    },
+    {
+      "source": "reg-tracker-course-tracker-lesson-taxonomy",
+      "type": "depends_on",
+      "target": "reg-tracker-course"
+    },
+    {
+      "source": "reg-tracker-course-tracker-lesson-interfaces",
+      "type": "depends_on",
+      "target": "reg-tracker-course"
+    },
+    {
+      "source": "reg-tracker-course-tracker-lesson-receipts",
+      "type": "depends_on",
+      "target": "reg-tracker-course"
+    },
+    {
+      "source": "reg-tracker-course-tracker-lesson-versions",
+      "type": "depends_on",
+      "target": "reg-tracker-course"
+    },
+    {
+      "source": "reg-tracker-course-tracker-lesson-events",
+      "type": "depends_on",
+      "target": "reg-tracker-course"
+    },
+    {
+      "source": "reg-tracker-course-tracker-lesson-propositions",
+      "type": "depends_on",
+      "target": "reg-tracker-course"
+    },
+    {
+      "source": "reg-tracker-course-tracker-lesson-citations",
+      "type": "depends_on",
+      "target": "reg-tracker-course"
+    },
+    {
+      "source": "reg-tracker-course-tracker-lesson-rubric",
+      "type": "depends_on",
+      "target": "reg-tracker-course"
+    },
+    {
+      "source": "reg-tracker-course-tracker-lesson-queue",
+      "type": "depends_on",
+      "target": "reg-tracker-course"
+    },
+    {
+      "source": "reg-tracker-course-tracker-lesson-approval",
+      "type": "depends_on",
+      "target": "reg-tracker-course"
+    },
+    {
+      "source": "reg-tracker-course-tracker-lesson-incidents",
+      "type": "depends_on",
+      "target": "reg-tracker-course"
+    },
+    {
+      "source": "reg-tracker-course-tracker-lesson-testset",
+      "type": "depends_on",
+      "target": "reg-tracker-course"
+    },
+    {
+      "source": "reg-tracker-course-tracker-lesson-release",
+      "type": "depends_on",
+      "target": "reg-tracker-course"
+    },
+    {
+      "source": "workflow-audit-course-audit-lesson-scope-1",
+      "type": "depends_on",
+      "target": "workflow-audit-course"
+    },
+    {
+      "source": "workflow-audit-course-audit-lesson-scope-2",
+      "type": "depends_on",
+      "target": "workflow-audit-course"
+    },
+    {
+      "source": "workflow-audit-course-audit-lesson-inventory-1",
+      "type": "depends_on",
+      "target": "workflow-audit-course"
+    },
+    {
+      "source": "workflow-audit-course-audit-lesson-inventory-2",
+      "type": "depends_on",
+      "target": "workflow-audit-course"
+    },
+    {
+      "source": "workflow-audit-course-audit-lesson-map-1",
+      "type": "depends_on",
+      "target": "workflow-audit-course"
+    },
+    {
+      "source": "workflow-audit-course-audit-lesson-map-2",
+      "type": "depends_on",
+      "target": "workflow-audit-course"
+    },
+    {
+      "source": "workflow-audit-course-audit-lesson-score-1",
+      "type": "depends_on",
+      "target": "workflow-audit-course"
+    },
+    {
+      "source": "workflow-audit-course-audit-lesson-score-2",
+      "type": "depends_on",
+      "target": "workflow-audit-course"
+    },
+    {
+      "source": "workflow-audit-course-audit-lesson-govern-1",
+      "type": "depends_on",
+      "target": "workflow-audit-course"
+    },
+    {
+      "source": "workflow-audit-course-audit-lesson-govern-2",
+      "type": "depends_on",
+      "target": "workflow-audit-course"
+    },
+    {
+      "source": "workflow-audit-course-audit-lesson-prioritize-1",
+      "type": "depends_on",
+      "target": "workflow-audit-course"
+    },
+    {
+      "source": "workflow-audit-course-audit-lesson-prioritize-2",
+      "type": "depends_on",
+      "target": "workflow-audit-course"
+    },
+    {
+      "source": "workflow-audit-course-audit-lesson-evaluate-1",
+      "type": "depends_on",
+      "target": "workflow-audit-course"
+    },
+    {
+      "source": "workflow-audit-course-audit-lesson-evaluate-2",
+      "type": "depends_on",
+      "target": "workflow-audit-course"
+    },
+    {
+      "source": "workflow-audit-course-audit-lesson-roadmap-1",
+      "type": "depends_on",
+      "target": "workflow-audit-course"
+    },
+    {
+      "source": "workflow-audit-course-audit-lesson-roadmap-2",
+      "type": "depends_on",
+      "target": "workflow-audit-course"
+    },
+    {
+      "source": "workflow-audit-course-audit-lesson-operate-1",
+      "type": "depends_on",
+      "target": "workflow-audit-course"
+    },
+    {
+      "source": "workflow-audit-course-audit-lesson-operate-2",
+      "type": "depends_on",
+      "target": "workflow-audit-course"
+    }
+  ]
+}

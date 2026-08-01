@@ -1,75 +1,452 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://aloha-ai-consulting.vercel.app/</loc><lastmod>2026-07-26</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-
-  <!-- Core commercial architecture -->
-  <url><loc>https://aloha-ai-consulting.vercel.app/services</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/strategy</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/intelligence</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/content</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/legal-ai</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/build-your-team</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/ai-native-coo</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/launch-stack</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-
-  <!-- Proof, practice, and company -->
-  <url><loc>https://aloha-ai-consulting.vercel.app/builds</loc><lastmod>2026-07-26</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/methods</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/engagements</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/partners</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/about</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/practice</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/privacy</loc><lastmod>2026-07-26</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/terms</loc><lastmod>2026-07-26</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-
-  <!-- Product estates -->
-  <url><loc>https://aloha-ai-consulting.vercel.app/trust-stack</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/trust-stack/leak-check</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/trust-stack/regulatory-intelligence</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/trust-stack/psilocybin-map</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/trust-stack/sb303-compliance-kit</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/trust-stack/ai-content-system</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/trust-stack/edsa-framework</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/trust-stack/suppression-playbook</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/twins</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/twins/exposure-check</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/twins/console</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-
-  <!-- Tools and diagnostics -->
-  <url><loc>https://aloha-ai-consulting.vercel.app/tools</loc><lastmod>2026-07-26</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/monitors/agentic-brand-management</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/monitors/cannabis-rescheduling</loc><lastmod>2026-07-26</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/monitors/psychedelic-radar</loc><lastmod>2026-07-26</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/monitors/biopharma-regulatory-intelligence</loc><lastmod>2026-07-26</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/teardowns/legal-ai-workflow</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/tools/citation-verifier</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/intelligence/brand-perception</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/monitors/ai-creative-production</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/monitors/biophilic-neuroarch</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/monitors/suppression-audit</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/monitors/luxury-ip</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/tools/ai-readiness-scorecard</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/monitors/market-intel</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/monitors/arts-culture</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/systems/creator-content</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/monitors/private-ai-risk</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/tools/practice-readiness</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-
-  <!-- University hubs -->
-  <url><loc>https://aloha-ai-consulting.vercel.app/university</loc><lastmod>2026-07-26</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/university/start-here</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/university/learn</loc><lastmod>2026-07-26</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/university/playbooks</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/university/templates</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/university/use-cases</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/university/tools</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/university/services</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/university/about</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/university/contact</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/university/assessment</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/ce</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
-  <!-- University lessons -->
+  <url><loc>https://aloha-ai-consulting.vercel.app/</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/about</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/agent-role-contract</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/ai-native-coo</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/audiences</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/audiences/brands-and-creators</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/audiences/educators-and-learners</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/audiences/founders-and-small-businesses</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/audiences/funders-and-investors</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/audiences/health-and-life-sciences</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/audiences/institutions-and-nonprofits</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/audiences/leaders-and-decision-makers</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/audiences/legal-professionals</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/audiences/operators-and-teams</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/audiences/policy-and-regulatory-teams</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/audiences/researchers-and-experts</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/build-your-team</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/builds</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/ce</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/content</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/engagements</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/governance</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/industries</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/industries/biopharma</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/industries/cannabis</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/industries/consumer-products</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/industries/creator-economy</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/industries/education</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/industries/emerging-industries</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/industries/financial-services</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/industries/government</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/industries/health</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/industries/healthcare</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/industries/legal</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/industries/nonprofit</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/industries/nonprofits</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/industries/professional-services</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/industries/psychedelics</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/industries/public-policy</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/industries/publishing</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/industries/regulated-markets</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/industries/research</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/industries/retail</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/industries/small-business</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/industries/startups</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/industries/technology</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/intelligence</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/intelligence/brand-perception</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/launch-stack</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/legal-ai</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/maturity</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/maturity/beta</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/maturity/production</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/maturity/research</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/methods</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/monitors</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/monitors/agentic-brand-management</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/monitors/ai-creative-production</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/monitors/arts-culture</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/monitors/biopharma-regulatory-intelligence</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/monitors/biophilic-neuroarch</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/monitors/cannabis-rescheduling</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/monitors/luxury-ip</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/monitors/market-intel</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/monitors/private-ai-risk</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/monitors/psychedelic-radar</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/monitors/suppression-audit</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/notes</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/notes/hallucination-risk-legal-work</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/notes/tool-workflow-operating-system</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/notes/tracking-isnt-intelligence</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/notes/what-i-audit-first</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/nsag</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/partners</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/platform</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/practice</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/privacy</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/products</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/research</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/search</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/services</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/services/ai-governance-setup</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/services/ai-implementation</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/services/ai-strategy-sprint</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/services/ai-workflow-design</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/services/ongoing-advisory</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/services/team-training</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/stacks</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/stacks/founder-startup</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/stacks/law-firm</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/stacks/policy-advocacy</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/stacks/regulated-intelligence</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/stacks/research-lab</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/strategy</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/systems/creator-content</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/teardowns/legal-ai-workflow</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/terms</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/tools</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/tools/ai-readiness-scorecard</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/tools/bill-analyzer</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/tools/citation-verifier</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/tools/claims-checker</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/tools/controlled-substances-explainer</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/tools/evidence-explainer</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/tools/governance-readiness</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/tools/kb-readiness</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/tools/policy-generator</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/tools/practice-readiness</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/tools/prompt-to-workflow</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/tools/trust-safe-console</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/tools/workflow-audit</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/acceptable-use</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/access-control</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/accessibility</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/accountability</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/administration</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/adoption</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/advisory</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/advocacy</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/agent-governance</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/agents</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/ai-audit</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/ai-literacy</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/ai-native</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/ai-operators</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/ai-policy</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/ai-readiness</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/ai-stack</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/ai-strategy</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/ai-systems</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/ai-teams</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/ai-twins</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/analytics</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/approval-gates</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/arts</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/assessment</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/audit</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/automation</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/biopharma</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/biophilic-design</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/brand-intelligence</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/brands</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/browser-local-tools</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/business-functions</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/cannabis</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/citation-verification</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/citations</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/claims</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/client-onboarding</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/client-service</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/clinical-development</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/commercial-paths</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/commercialization</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/communication</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/comparison</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/competition</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/compliance</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/confidentiality</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/consent</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/consultation</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/consumer-neuroscience</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/contact</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/content</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/content-distribution</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/content-operations</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/content-repurposing</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/content-systems</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/continuing-education</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/controlled-substances</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/cost</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/counterfeiting</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/courses</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/crm</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/culture</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/data-classification</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/data-governance</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/data-minimization</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/data-quality</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/decision-support</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/decision-systems</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/decisions</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/diligence</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/disclosure</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/distribution</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/editorial-systems</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/education</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/education-products</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/email</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/engagements</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/ethics</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/evaluation</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/evidence</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/failure-handling</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/follow-up</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/fractional-leadership</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/funding</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/generative-ai</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/governance</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/governed-workflows</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/guardrails</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/hallucinations</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/handover</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/health-claims</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/human-adoption</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/human-review</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/implementation</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/institutional-design</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/intellectual-property</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/interdisciplinary-work</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/knowledge-bases</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/knowledge-management</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/launch</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/lead-generation</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/leadership</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/learning-path</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/legal-ai</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/legal-risk</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/legislation</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/lessons</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/licensing</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/market-intelligence</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/marketing</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/meeting-notes</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/methodology</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/model-capabilities</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/monitoring</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/nervous-system</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/neuroscience</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/onboarding</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/operating-models</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/operations</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/opportunity-prioritization</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/orientation</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/partnerships</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/personalization</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/platform</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/platform-risk</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/platforms</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/playbooks</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/policy</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/portfolio</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/positioning</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/practice</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/practice-building</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/primary-sources</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/prioritization</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/privacy</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/procurement</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/production</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/professional-boundaries</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/professional-responsibility</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/prompting</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/prompts</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/provenance</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/psilocybin</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/psychedelics</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/public-education</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/publication</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/readiness</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/regulated-claims</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/regulated-markets</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/regulation</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/regulatory-intelligence</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/reporting</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/research</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/research-intelligence</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/retrieval</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/risk</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/roadmap</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/role-design</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/safe-use</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/sales</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/scheduling</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/science-communication</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/scoping</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/security</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/service-delivery</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/services</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/small-business</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/standard-operating-procedures</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/startups</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/strategy</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/synthesis</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/synthetic-media</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/systems-architecture</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/systems-design</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/taxonomy</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/teams</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/templates</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/terms-of-use</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/testing</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/text-analysis</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/tool-selection</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/training</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/trust</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/use-cases</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/verification</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/voice</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/workflow</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/workflow-audit</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/workflow-design</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/workflow-teardown</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/workflows</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/topics/workspace</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/trust-stack</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/trust-stack/ai-content-system</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/trust-stack/edsa-framework</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/trust-stack/leak-check</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/trust-stack/psilocybin-map</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/trust-stack/regulatory-intelligence</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/trust-stack/sb303-compliance-kit</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/trust-stack/suppression-playbook</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/twins</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/twins/console</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/twins/exposure-check</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/about</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/assessment</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/contact</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/citation-verifier</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/citation-verifier/lessons/audit</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/citation-verifier/lessons/claim-window</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/citation-verifier/lessons/contract</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/citation-verifier/lessons/data-boundary</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/citation-verifier/lessons/defense</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/citation-verifier/lessons/entailment</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/citation-verifier/lessons/ethics</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/citation-verifier/lessons/failure</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/citation-verifier/lessons/metrics</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/citation-verifier/lessons/parser</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/citation-verifier/lessons/passage</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/citation-verifier/lessons/record-model</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/citation-verifier/lessons/release</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/citation-verifier/lessons/report</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/citation-verifier/lessons/retrieval</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/citation-verifier/lessons/source-hierarchy</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/citation-verifier/lessons/taxonomy</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/citation-verifier/lessons/testset</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/claims-checker</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/claims-checker/lessons/audit</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/claims-checker/lessons/claim-types</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/claims-checker/lessons/contract</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/claims-checker/lessons/defense</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/claims-checker/lessons/escalation</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/claims-checker/lessons/express</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/claims-checker/lessons/implied</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/claims-checker/lessons/metrics</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/claims-checker/lessons/record-model</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/claims-checker/lessons/release</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/claims-checker/lessons/report</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/claims-checker/lessons/rule-map</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/claims-checker/lessons/rule-record</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/claims-checker/lessons/scope</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/claims-checker/lessons/source-hierarchy</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/claims-checker/lessons/substantiation</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/claims-checker/lessons/taxonomy</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/claims-checker/lessons/testset</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/first-ai-team</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/first-ai-team/lessons/classify</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/first-ai-team/lessons/control</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/first-ai-team/lessons/map</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/first-ai-team/lessons/permissions</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/first-ai-team/lessons/release</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/first-ai-team/lessons/roles</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/first-ai-team/lessons/select</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/first-ai-team/lessons/test</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/governed-operator</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/governed-operator/lessons/abstain</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/governed-operator/lessons/adapters</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/governed-operator/lessons/beachhead</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/governed-operator/lessons/change</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/governed-operator/lessons/consequence</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/governed-operator/lessons/contracts</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/governed-operator/lessons/control</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/governed-operator/lessons/data</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/governed-operator/lessons/faithfulness</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/governed-operator/lessons/injection</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/governed-operator/lessons/mandate</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/governed-operator/lessons/match</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/governed-operator/lessons/metrics</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/governed-operator/lessons/packet</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/governed-operator/lessons/release</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/governed-operator/lessons/retrieval</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/governed-operator/lessons/run</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/governed-operator/lessons/sandbox</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/governed-operator/lessons/set</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/governed-operator/lessons/states</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/kb-readiness</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/kb-readiness/lessons/authority</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/kb-readiness/lessons/classification</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/kb-readiness/lessons/conflicts</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/kb-readiness/lessons/dates</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/kb-readiness/lessons/duplicates</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/kb-readiness/lessons/gaps</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/kb-readiness/lessons/lifecycle</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/kb-readiness/lessons/permissions</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/kb-readiness/lessons/provenance</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/kb-readiness/lessons/purpose</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/kb-readiness/lessons/questions</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/kb-readiness/lessons/register</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/kb-readiness/lessons/release</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/kb-readiness/lessons/remediation</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/kb-readiness/lessons/results</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/kb-readiness/lessons/rubric</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/kb-readiness/lessons/structure</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/kb-readiness/lessons/testset</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/reg-tracker</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/reg-tracker/lessons/approval</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/reg-tracker/lessons/authority</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/reg-tracker/lessons/citations</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/reg-tracker/lessons/coverage</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/reg-tracker/lessons/events</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/reg-tracker/lessons/incidents</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/reg-tracker/lessons/interfaces</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/reg-tracker/lessons/jurisdictions</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/reg-tracker/lessons/propositions</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/reg-tracker/lessons/queue</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/reg-tracker/lessons/receipts</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/reg-tracker/lessons/record</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/reg-tracker/lessons/register</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/reg-tracker/lessons/release</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/reg-tracker/lessons/rubric</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/reg-tracker/lessons/taxonomy</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/reg-tracker/lessons/testset</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/reg-tracker/lessons/versions</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/workflow-audit</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/workflow-audit/lessons/evaluate-1</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/workflow-audit/lessons/evaluate-2</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/workflow-audit/lessons/govern-1</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/workflow-audit/lessons/govern-2</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/workflow-audit/lessons/inventory-1</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/workflow-audit/lessons/inventory-2</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/workflow-audit/lessons/map-1</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/workflow-audit/lessons/map-2</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/workflow-audit/lessons/operate-1</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/workflow-audit/lessons/operate-2</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/workflow-audit/lessons/prioritize-1</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/workflow-audit/lessons/prioritize-2</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/workflow-audit/lessons/roadmap-1</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/workflow-audit/lessons/roadmap-2</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/workflow-audit/lessons/scope-1</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/workflow-audit/lessons/scope-2</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/workflow-audit/lessons/score-1</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/courses/workflow-audit/lessons/score-2</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/learn</loc></url>
   <url><loc>https://aloha-ai-consulting.vercel.app/university/learn/ai-for-email</loc></url>
   <url><loc>https://aloha-ai-consulting.vercel.app/university/learn/ai-for-meeting-notes</loc></url>
   <url><loc>https://aloha-ai-consulting.vercel.app/university/learn/ai-for-sop-drafting</loc></url>
@@ -82,41 +459,31 @@
   <url><loc>https://aloha-ai-consulting.vercel.app/university/learn/what-ai-can-and-cannot-do</loc></url>
   <url><loc>https://aloha-ai-consulting.vercel.app/university/learn/what-generative-ai-is</loc></url>
   <url><loc>https://aloha-ai-consulting.vercel.app/university/learn/when-not-to-use-ai</loc></url>
-
-  <!-- University playbooks -->
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/playbooks</loc></url>
   <url><loc>https://aloha-ai-consulting.vercel.app/university/playbooks/client-intake-onboarding</loc></url>
   <url><loc>https://aloha-ai-consulting.vercel.app/university/playbooks/content-repurposing</loc></url>
   <url><loc>https://aloha-ai-consulting.vercel.app/university/playbooks/governance-starter</loc></url>
   <url><loc>https://aloha-ai-consulting.vercel.app/university/playbooks/internal-knowledge-base</loc></url>
   <url><loc>https://aloha-ai-consulting.vercel.app/university/playbooks/lead-generation</loc></url>
   <url><loc>https://aloha-ai-consulting.vercel.app/university/playbooks/sop-operations</loc></url>
-
-  <!-- University service pages: retained pending page-by-page comparison -->
-  <url><loc>https://aloha-ai-consulting.vercel.app/university/services/ai-governance-setup</loc></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/university/services/ai-implementation</loc></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/university/services/ai-strategy-sprint</loc></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/university/services/ai-workflow-design</loc></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/university/services/ongoing-advisory</loc></url>
-  <url><loc>https://aloha-ai-consulting.vercel.app/university/services/team-training</loc></url>
-
-  <!-- University templates -->
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/start-here</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/templates</loc></url>
   <url><loc>https://aloha-ai-consulting.vercel.app/university/templates/ai-implementation-roadmap</loc></url>
   <url><loc>https://aloha-ai-consulting.vercel.app/university/templates/ai-policy-starter-kit</loc></url>
   <url><loc>https://aloha-ai-consulting.vercel.app/university/templates/ai-tool-evaluation-matrix</loc></url>
   <url><loc>https://aloha-ai-consulting.vercel.app/university/templates/ai-use-case-inventory</loc></url>
   <url><loc>https://aloha-ai-consulting.vercel.app/university/templates/ai-workflow-mapping-worksheet</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/templates/citation-verifier-lab-kit</loc></url>
   <url><loc>https://aloha-ai-consulting.vercel.app/university/templates/content-repurposing-workflow</loc></url>
   <url><loc>https://aloha-ai-consulting.vercel.app/university/templates/meeting-summary-prompt-pack</loc></url>
   <url><loc>https://aloha-ai-consulting.vercel.app/university/templates/sop-prompt-pack</loc></url>
-
-  <!-- University tool guides -->
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/tools</loc></url>
   <url><loc>https://aloha-ai-consulting.vercel.app/university/tools/best-for-content-repurposing</loc></url>
   <url><loc>https://aloha-ai-consulting.vercel.app/university/tools/best-for-meeting-notes</loc></url>
   <url><loc>https://aloha-ai-consulting.vercel.app/university/tools/best-for-research</loc></url>
   <url><loc>https://aloha-ai-consulting.vercel.app/university/tools/best-for-small-business-operations</loc></url>
   <url><loc>https://aloha-ai-consulting.vercel.app/university/tools/build-a-lean-ai-stack</loc></url>
-
-  <!-- University use cases -->
+  <url><loc>https://aloha-ai-consulting.vercel.app/university/use-cases</loc></url>
   <url><loc>https://aloha-ai-consulting.vercel.app/university/use-cases/admin</loc></url>
   <url><loc>https://aloha-ai-consulting.vercel.app/university/use-cases/client-service</loc></url>
   <url><loc>https://aloha-ai-consulting.vercel.app/university/use-cases/governance</loc></url>
@@ -129,4 +496,5 @@
   <url><loc>https://aloha-ai-consulting.vercel.app/university/use-cases/sales</loc></url>
   <url><loc>https://aloha-ai-consulting.vercel.app/university/use-cases/small-businesses</loc></url>
   <url><loc>https://aloha-ai-consulting.vercel.app/university/use-cases/training</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/workspace</loc></url>
 </urlset>

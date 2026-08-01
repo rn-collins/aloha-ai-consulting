@@ -3,23 +3,7 @@ name: Structured site validation
 on:
   push:
     branches: [main]
-    paths:
-      - 'content/**'
-      - 'lib/site/**'
-      - 'scripts/build-site.js'
-      - 'scripts/validate-generated-html.js'
-      - 'package.json'
-      - '.nvmrc'
-      - '.github/workflows/site-content.yml'
   pull_request:
-    paths:
-      - 'content/**'
-      - 'lib/site/**'
-      - 'scripts/build-site.js'
-      - 'scripts/validate-generated-html.js'
-      - 'package.json'
-      - '.nvmrc'
-      - '.github/workflows/site-content.yml'
 
 permissions:
   contents: read

@@ -365,7 +365,7 @@
     "pathname": "/university/contact",
     "eyebrow": "Talk to RN",
     "title": "Bring me the thing that keeps getting stuck.",
-    "summary": "Tell RN what you are trying to change. Book a conversation or send a short email—whichever feels easier.",
+    "summary": "Tell RN what you are trying to change. Build a nonsensitive scoping record in your browser, then choose whether to retain it or continue to the current booking provider.",
     "audience": "Anyone with a real question, messy process, early idea, or existing system that needs a clearer next step.",
     "maturity": "Production",
     "topics": [
@@ -389,8 +389,8 @@
         "href": "https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous"
       },
       {
-        "label": "Email RN",
-        "href": "mailto:collins.ra@northeastern.edu?subject=Aloha%20AI%20inquiry"
+        "label": "Create a scoping record",
+        "href": "/university/contact#contextual-intake"
       }
     ],
     "learningPaths": [
@@ -434,15 +434,15 @@
           "plain": "Choose a time and explain the situation out loud. A few rough notes are enough.",
           "action": "Choose a time",
           "href": "https://outlook.office.com/bookwithme/user/3ff7c8299177431a8fc2b099238c5e43@northeastern.edu?anonymous",
-          "note": "Opens Microsoft Bookings"
+          "note": "Opens a Northeastern-associated Microsoft Bookings account; the scoping record is not attached"
         },
         {
           "label": "Write first",
-          "title": "Send RN an email",
-          "plain": "Useful when you want to share links, documents, context, or think before you speak.",
-          "action": "Open an email",
-          "href": "mailto:collins.ra@northeastern.edu?subject=Aloha%20AI%20inquiry",
-          "note": "No mailing list. Just a reply."
+          "title": "Create a local scoping record",
+          "plain": "Answer the intake questions and review a structured record in your browser. Do not include client, confidential, privileged, health, security, or other sensitive material.",
+          "action": "Open the intake",
+          "href": "/university/contact#contextual-intake",
+          "note": "Nothing is transmitted automatically."
         },
         {
           "label": "Not ready yet",
@@ -470,7 +470,7 @@
       "nextSteps": [
         {
           "title": "RN reads the context",
-          "plain": "Your note is reviewed by a person, not dropped into an automated sales sequence."
+          "plain": "If you deliberately paste a note into Microsoft Bookings, RN can review it. A browser-local scoping record is not transmitted."
         },
         {
           "title": "You test the fit",
@@ -483,7 +483,7 @@
       ]
     },
     "editorialIntro": [
-      "The fastest way to talk is to book a time. Prefer email? Write first. Either way, a short note about the situation helps RN come prepared."
+      "The currently available external path is Microsoft Bookings. The local scoping record can help you prepare, but the site does not transmit it and does not offer a brand-owned email channel yet."
     ],
     "editorialSections": [
       {

@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npm run site:build",
+  "buildCommand": "npm run site:hydrate && npm run release:claims && npm run site:build",
   "outputDirectory": ".",
   "cleanUrls": true,
   "trailingSlash": false,

@@ -8,8 +8,14 @@ import { derivePlatform, generatedOutputs, legacyMigrationInventory, validateCol
 
 const root = process.cwd();
 const contentRoot = path.join(root, 'content');
+const releaseRegistryFile = path.join(contentRoot, 'governance', 'release-registry.json');
+const releaseRegistry = JSON.parse(fs.readFileSync(releaseRegistryFile, 'utf8'));
+const releaseByCanonicalId = new Map(releaseRegistry.objects.map((item) => [item.canonicalId, item]));
 const mode = process.argv.includes('--validate') ? 'validate' : process.argv.includes('--check') ? 'check' : 'build';
-const resources = expandEducationResources(loadResources(contentRoot));
+const resources = expandEducationResources(loadResources(contentRoot)).map((resource) => ({
+  ...resource,
+  releaseState: releaseByCanonicalId.get(resource.id) || null
+}));
 const collectionPages = loadCollectionPages(path.join(contentRoot, 'collections', 'derived-pages.json'));
 const platform = derivePlatform(resources);
 const templateErrors = resources.flatMap((resource) => validateTemplateContract(resource));
@@ -18,6 +24,10 @@ const collectionErrors = validateCollectionPages(collectionPages, resources, pla
 const routingConfig = JSON.parse(fs.readFileSync(path.join(root, 'vercel.json'), 'utf8'));
 const routingErrors = validateRoutingConfig(resources, routingConfig);
 const errors = [...templateErrors, ...platformErrors, ...collectionErrors, ...routingErrors];
+for (const resource of resources) {
+  if (!resource.releaseState) errors.push(`${resource.id}: missing canonical release-registry record`);
+  else if (resource.releaseState.approvalDecision !== 'approved-conservative-local') errors.push(`${resource.id}: release state is not approved for rendering`);
+}
 
 for (const warning of platformWarnings) console.warn(`Warning: ${warning}`);
 if (errors.length) {

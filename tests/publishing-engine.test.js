@@ -140,6 +140,10 @@ test('publishes an accessible plain-language search journey', () => {
   const outputs = generatedOutputs(resources, derivePlatform(resources));
   const search = outputs.get('/search');
   assert.match(search, /<form class="search-form" role="search"/);
+  assert.match(search, /data-ev-contract="EV-ACT-001"/);
+  assert.match(search, /Search needs a query/);
+  assert.match(search, /Your query remains in the field/);
+  assert.match(search, /Reload search index/);
   assert.match(search, /What are you trying/);
   assert.match(search, /aria-label="What are you trying to do\?"/);
   assert.match(search, /<b>2<br><small>canonical resources<\/small><\/b>/);
@@ -149,6 +153,7 @@ test('publishes an accessible plain-language search journey', () => {
   assert.match(search, /The index did not load/);
   assert.ok(search.includes("fetch('/search-index.json')"));
   assert.match(search, /Start a conversation/);
+  assert.match(search, /source=%2Fsearch&offer=site-search&inquiry=not-sure/);
   assert.ok(outputs.has('/search-index.json'));
   assert.match(outputs.get('/sitemap.xml'), /<loc>https:\/\/aloha-ai-consulting\.vercel\.app\/search<\/loc>/);
 });
@@ -326,6 +331,13 @@ test('renders the flagship citation course as complete open materials without cl
   assert.match(html, /account-synced progress/i);
   assert.doesNotMatch(html, /saved progress/i);
   assert.match(html, /Executable knowledge check/);
+  assert.match(html, /data-ev-contract="EV-ACT-CITATION-KNOWLEDGE-CHECK"/);
+  assert.match(html, /id="course-check-errors"[^>]*role="alert"/);
+  assert.match(html, /aloha-ai-course-self-check\/1\.0/);
+  assert.match(html, /id="course-check-copy"[^>]*disabled/);
+  assert.match(html, /id="course-check-json"[^>]*disabled/);
+  assert.match(html, /data-ev-contract="EV-ACT-CITATION-PROGRESS-RECOVERY"/);
+  assert.match(html, /storage-probe/);
   assert.match(html, /\/university\/templates\/citation-verifier-lab-kit/);
   assert.match(html, /\/university\/courses\/citation-verifier\/lessons\/failure/);
 });
@@ -337,8 +349,9 @@ test('publishes the citation lab kit as a canonical page with a browser-local do
   assert.match(html, /Download Markdown template/);
   assert.match(html, /not a submission portal/i);
   assert.match(html, /citation-verifier-lab-and-submission-kit\.md/);
-  assert.match(html, /document\.body\.appendChild\(a\)/);
-  assert.match(html, /setTimeout\(function\(\)\{URL\.revokeObjectURL\(url\);\},1000\)/);
+  assert.match(html, /AlohaActions\.download/);
+  assert.match(html, /text\/markdown;charset=utf-8/);
+  assert.doesNotMatch(html, /URL\.createObjectURL/);
 });
 
 test('derives eighteen dedicated flagship lesson routes from the canonical course records', () => {
@@ -352,11 +365,143 @@ test('derives eighteen dedicated flagship lesson routes from the canonical cours
   const html = renderStructuredPage({ resource: lessons[0], registry: new Map(expanded.map((item) => [item.id, item])) });
   assert.match(html, /id="lesson-delivery"/);
   assert.match(html, /Mark lesson complete/);
+  assert.match(html, /data-ev-contract="EV-ACT-CITATION-PROGRESS-RECOVERY"/);
+  assert.match(html, /AlohaActions&&window\.AlohaActions\.storage\('local'\)/);
+  assert.doesNotMatch(html, /localStorage\.(getItem|setItem|removeItem)/);
   assert.match(html, /not independently verified/i);
   assert.match(html, /href="https:\/\/www\.americanbar\.org\/content\/dam\/aba\//);
   assert.match(html, /href="https:\/\/www\.uscourts\.gov\/forms-rules\//);
   assert.doesNotMatch(html, /&lt;a href=/);
   assert.match(html, /Course overview/);
+});
+
+test('publishes Claims Checker as a complete bounded open course', () => {
+  const courses = JSON.parse(fs.readFileSync(new URL('../content/university/courses/build-courses.json', import.meta.url)));
+  const course = courses.find((item) => item.id === 'claims-checker-course');
+  const expanded = expandEducationResources([course]);
+  const lessons = expanded.filter((item) => item.kind === 'lesson');
+  const html = renderStructuredPage({ resource: course, registry: new Map(expanded.map((item) => [item.id, item])) });
+  assert.equal(course.delivery.lessons, 'available');
+  assert.equal(course.delivery.enrollmentOpen, false);
+  assert.equal(course.education.records.filter((item) => item.type === 'module').length, 9);
+  assert.equal(lessons.length, 18);
+  assert.equal(lessons[0].pathname, '/university/courses/claims-checker/lessons/claim-types');
+  assert.match(html, /9 modules\. 18 lessons\./);
+  assert.match(html, /Separate claim types before screening/);
+  assert.match(html, /Executable knowledge check/);
+  assert.match(html, /What must happen when product classification or jurisdiction is unresolved/);
+  assert.match(html, /href="\/tools\/claims-checker"/);
+  assert.doesNotMatch(html, /href="\/tools\/citation-verifier"/);
+  assert.match(html, /No credential is currently issued/);
+  assert.match(html, /account-synced progress/i);
+  assert.match(html, /not submitted, graded, or attached to a credential/i);
+});
+
+test('publishes First AI Team as a complete supervised-workflow course', () => {
+  const courses = JSON.parse(fs.readFileSync(new URL('../content/university/courses/build-courses.json', import.meta.url)));
+  const course = courses.find((item) => item.id === 'first-ai-team-course');
+  const expanded = expandEducationResources([course]);
+  const lessons = expanded.filter((item) => item.kind === 'lesson');
+  const html = renderStructuredPage({ resource: course, registry: new Map(expanded.map((item) => [item.id, item])) });
+  assert.equal(course.delivery.lessons, 'available');
+  assert.equal(course.delivery.enrollmentOpen, false);
+  assert.equal(course.education.records.filter((item) => item.type === 'module').length, 4);
+  assert.equal(lessons.length, 8);
+  assert.equal(lessons[0].pathname, '/university/courses/first-ai-team/lessons/select');
+  assert.match(html, /4 modules\. 8 lessons\./);
+  assert.match(html, /Choose a bounded, reversible workflow/);
+  assert.match(html, /Permission Matrix/);
+  assert.match(html, /Human Control record/);
+  assert.match(html, /href="\/agent-role-contract"/);
+  assert.doesNotMatch(html, /href="\/tools\/citation-verifier"/);
+  assert.match(html, /No identity verification, instructor grading, issuance, badge, certificate, or public verification endpoint is available/);
+  assert.match(html, /production deployment are unavailable/i);
+});
+
+test('publishes Governed AI Operator as a complete ten-module control course', () => {
+  const courses = JSON.parse(fs.readFileSync(new URL('../content/university/courses/build-courses.json', import.meta.url)));
+  const course = courses.find((item) => item.id === 'governed-operator-course');
+  const expanded = expandEducationResources([course]);
+  const lessons = expanded.filter((item) => item.kind === 'lesson');
+  const html = renderStructuredPage({ resource: course, registry: new Map(expanded.map((item) => [item.id, item])) });
+  assert.equal(course.delivery.lessons, 'available');
+  assert.equal(course.delivery.enrollmentOpen, false);
+  assert.equal(course.education.records.filter((item) => item.type === 'module').length, 10);
+  assert.equal(lessons.length, 20);
+  assert.equal(lessons[0].pathname, '/university/courses/governed-operator/lessons/mandate');
+  assert.match(html, /10 modules\. 20 lessons\./);
+  assert.match(html, /immutable pending-action packet/i);
+  assert.match(html, /Open the Agent Role Contract builder/);
+  assert.match(html, /No identity verification, instructor grading, issuance, badge, certificate, or public verification endpoint is available/);
+  assert.match(html, /connected accounts, and production deployment are unavailable/i);
+  assert.doesNotMatch(html, /href="\/tools\/citation-verifier"/);
+});
+
+test('publishes Knowledge Base Readiness as a bounded nine-module evidence course', () => {
+  const courses = JSON.parse(fs.readFileSync(new URL('../content/university/courses/build-courses.json', import.meta.url)));
+  const course = courses.find((item) => item.id === 'kb-readiness-course');
+  const expanded = expandEducationResources([course]);
+  const lessons = expanded.filter((item) => item.kind === 'lesson');
+  const html = renderStructuredPage({ resource: course, registry: new Map(expanded.map((item) => [item.id, item])) });
+  assert.equal(course.delivery.lessons, 'available');
+  assert.equal(course.delivery.enrollmentOpen, false);
+  assert.equal(course.education.records.filter((item) => item.type === 'module').length, 9);
+  assert.equal(lessons.length, 18);
+  assert.equal(lessons[0].pathname, '/university/courses/kb-readiness/lessons/purpose');
+  assert.match(html, /9 modules\. 18 lessons\./);
+  assert.match(html, /use-case contract and criterion-level rubric/i);
+  assert.match(html, /Open the browser-local Knowledge Base Readiness assessment/);
+  assert.match(html, /No identity verification, instructor grading, issuance, badge, certificate, or public verification endpoint is available/);
+  assert.match(html, /organization-wide readiness/i);
+  assert.match(html, /automated detection is fallible/i);
+  assert.doesNotMatch(html, /href="\/tools\/citation-verifier"/);
+});
+
+test('publishes Legislative and Regulatory Tracker as a bounded source-grounded course', () => {
+  const courses = JSON.parse(fs.readFileSync(new URL('../content/university/courses/build-courses.json', import.meta.url)));
+  const course = courses.find((item) => item.id === 'reg-tracker-course');
+  const expanded = expandEducationResources([course]);
+  const lessons = expanded.filter((item) => item.kind === 'lesson');
+  const html = renderStructuredPage({ resource: course, registry: new Map(expanded.map((item) => [item.id, item])) });
+  assert.equal(course.delivery.lessons, 'available');
+  assert.equal(course.delivery.enrollmentOpen, false);
+  assert.equal(course.education.records.filter((item) => item.type === 'module').length, 9);
+  assert.equal(lessons.length, 18);
+  assert.equal(lessons[0].pathname, '/university/courses/reg-tracker/lessons/coverage');
+  assert.match(html, /9 modules\. 18 lessons\./);
+  assert.match(html, /Write the coverage contract/);
+  assert.match(html, /Open the regulatory-intelligence method/);
+  assert.match(html, /does not accept submissions, grade work, verify identity, or issue credentials/);
+  assert.match(html, /does not continuously monitor/i);
+  assert.match(html, /jurisdiction-specific legal advice/i);
+  assert.doesNotMatch(html, /href="\/tools\/citation-verifier"/);
+});
+
+test('publishes AI-readiness audit as a bounded evidence-backed course', () => {
+  const courses = JSON.parse(fs.readFileSync(new URL('../content/university/courses/build-courses.json', import.meta.url)));
+  const course = courses.find((item) => item.id === 'workflow-audit-course');
+  const expanded = expandEducationResources([course]);
+  const lessons = expanded.filter((item) => item.kind === 'lesson');
+  const html = renderStructuredPage({ resource: course, registry: new Map(expanded.map((item) => [item.id, item])) });
+  assert.equal(course.delivery.lessons, 'available');
+  assert.equal(course.delivery.enrollmentOpen, false);
+  assert.equal(course.education.records.filter((item) => item.type === 'module').length, 9);
+  assert.equal(lessons.length, 18);
+  assert.equal(lessons[0].pathname, '/university/courses/workflow-audit/lessons/scope-1');
+  assert.match(html, /9 modules\. 18 lessons\./);
+  assert.match(html, /The audit question and reliance boundary/);
+  assert.match(html, /Open the browser-local AI-readiness scorecard/);
+  assert.match(html, /does not accept submissions, grade work, verify identity, or issue credentials/);
+  assert.match(html, /does not certify readiness/i);
+  assert.match(html, /organization-specific evidence and qualified review/i);
+  assert.doesNotMatch(html, /href="\/tools\/citation-verifier"/);
+});
+
+test('keeps lesson records out of broad audience shelves', () => {
+  const courses = JSON.parse(fs.readFileSync(new URL('../content/university/courses/build-courses.json', import.meta.url)));
+  const expanded = expandEducationResources(courses);
+  const platform = derivePlatform(expanded);
+  assert.ok([...platform.audiences.values()].every((items) => items.every((item) => item.kind !== 'lesson')));
 });
 
 test('blocks an enrollment-open course without a complete educational system', () => {
@@ -394,7 +539,7 @@ test('derives controlled audience groups without fragmenting prose', () => {
   };
   const learning = {
     ...resource('learning-resource', [{ type: 'supports', target: 'legal-team-tool' }]),
-    kind: 'lesson',
+    kind: 'course',
     audience: 'People beginning a practical learning path.'
   };
   const platform = derivePlatform([legal, learning]);
@@ -686,7 +831,12 @@ test('proof-wall action promises match runnable destination capabilities', () =>
   assert.equal(citationCard.action, 'Try the verifier');
   assert.match(citationHtml, /id="citation-verifier-form"/);
   assert.match(citationHtml, /id="citation-draft"/);
-  assert.match(citationHtml, />Verify citations<\/button>/);
+  assert.match(citationHtml, /data-ev-contract="EV-ACT-002"/);
+  assert.match(citationHtml, />Check citation structure<\/button>/);
+  assert.match(citationHtml, /aloha-ai-citation-structure-review\/1\.0/);
+  assert.match(citationHtml, /Paste a passage before running the structural parser/);
+  assert.match(citationHtml, /id="citation-copy"/);
+  assert.match(citationHtml, /id="citation-json"/);
   assert.equal(readinessCard.action, 'Take the scorecard');
   assert.match(readinessHtml, /id="structured-assessment"/);
   assert.equal((readinessHtml.match(/<fieldset class="card">/g) || []).length, 6);
@@ -1012,7 +1162,7 @@ test('routes commercial conversion to a real contact endpoint and renders direct
   const registry = new Map([[service.id, service], [contact.id, contact]]);
   const serviceHtml = renderStructuredPage({ resource: service, registry });
   const contactHtml = renderStructuredPage({ resource: contact, registry });
-  assert.match(serviceHtml, /href="\/university\/contact">Start a conversation/);
+  assert.match(serviceHtml, /href="\/university\/contact\?source=%2Fservice&offer=service[^\"]*">Start a conversation/);
   assert.doesNotMatch(serviceHtml, /href="\/#start">Start a conversation/);
   assert.match(contactHtml, /href="https:\/\/example\.com\/book"><span>Book a call/);
   assert.match(contactHtml, /href="mailto:rn@example\.com"><span>Email RN/);
@@ -1053,9 +1203,50 @@ test('renders contact as a clear three-path human conversion journey', () => {
   assert.equal((html.match(/class="contact-prompt"/g) || []).length, 3);
   assert.equal((html.match(/class="contact-next__step"/g) || []).length, 3);
   assert.match(html, /No mystery\.<br>No sales maze\./);
-  assert.match(html, /Contact details are used to reply to you/);
+  assert.match(html, /data-contextual-intake/);
+  assert.match(html, /name="source_route"/);
+  assert.match(html, /name="offer_id"/);
+  assert.match(html, /name="data_classification"/);
+  assert.match(html, /Do not upload or paste sensitive documents/);
+  assert.match(html, /transmission remains unavailable/i);
+  assert.match(html, /data-copy-booking-summary/);
+  assert.match(html, /data-clear-attribution/);
+  assert.match(html, /Northeastern account/);
+  assert.match(html, /privacy and retention boundary/);
+  assert.match(html, /contact-intake\.js/);
+  assert.doesNotMatch(html, /Copy the three questions into an email/);
   assert.doesNotMatch(html, /How the work moves from inputs to accountable output/);
   assert.doesNotMatch(html, /Choose the easiest way to reach RN/);
+});
+
+test('bounds contact attribution and keeps sensitive scoping answers out of session storage', () => {
+  const script = fs.readFileSync(new URL('../contact-intake.js', import.meta.url), 'utf8');
+  assert.match(script, /aloha-ai-conversion-attribution\/v1/);
+  assert.match(script, /30 \* 60 \* 1000/);
+  assert.match(script, /source_route: context\.source_route/);
+  assert.match(script, /offer_id: context\.offer_id/);
+  assert.match(script, /inquiry_type: context\.inquiry_type/);
+  assert.doesNotMatch(script, /sessionStorage\.setItem\([^\n]+currentRecord/);
+  assert.match(script, /data-copy-booking-summary/);
+  assert.match(script, /does not receive this scoping record automatically|not attached or submitted/);
+});
+
+test('preserves a service offer and source route in its conversion URL', () => {
+  const service = {
+    ...resource('workflow-audit'),
+    kind: 'service',
+    pathname: '/services/workflow-audit',
+    title: 'Workflow Audit',
+    audience: 'Operations leaders',
+    industries: ['professional-services'],
+    topics: ['audit'],
+    editorialSections: [],
+    deliverables: [],
+    methodology: []
+  };
+  const html = renderStructuredPage({ resource: service, registry: new Map([[service.id, service]]) });
+  assert.match(html, /\/university\/contact\?source=%2Fservices%2Fworkflow-audit&offer=workflow-audit/);
+  assert.match(html, /branch=audit/);
 });
 
 test('routes the global navigation conversion action to the canonical contact endpoint', () => {
@@ -1134,7 +1325,7 @@ test('renders services as a guided decision experience before registry and edito
   assert.equal(html.match(/In-depth service detail/g)?.length, 1);
   assert.doesNotMatch(html, /Canonical ID: <code>services/);
   assert.ok(html.indexOf('What keeps getting stuck?') < html.indexOf('In-depth service detail'));
-  assert.match(html, /href="\/university\/contact"/);
+  assert.match(html, /href="\/university\/contact\?source=%2Fservices&amp;offer=services/);
 });
 
 test('renders collection front doors with the bright editorial hero instead of the legacy fallback', () => {
@@ -1220,14 +1411,33 @@ test('renders a browser-only structured assessment from question metadata', () =
   const html = renderStructuredPage({ resource: assessment, registry });
   assert.match(html, /id="structured-assessment"/);
   assert.match(html, /What is the goal\?/);
-  assert.match(html, /processed in this browser/);
+  assert.match(html, /Browser-local directional self-review only/);
+  assert.match(html, /Unknown or not yet verified/);
+  assert.match(html, /id="assessment-errors"[^>]*role="alert"/);
+  assert.match(html, /Why this result appeared/);
+  assert.match(html, /data-ev-contract="EV-ACT-ASSESSMENT-FAMILY"/);
+  assert.match(html, /aloha-ai-assessment-self-review\/1\.0/);
+  assert.match(html, /id="assessment-copy"[^>]*disabled/);
+  assert.match(html, /id="assessment-json"[^>]*disabled/);
+  assert.match(html, /window\.AlohaActions\.copy/);
+  assert.match(html, /window\.AlohaActions\.download/);
+  assert.match(html, /not a readiness, legal, compliance, or professional certification/);
   assert.match(html, /is-resource-detail is-assessment-detail/);
   assert.match(html, /id="interactive-workspace"/);
   assert.match(html, /Do not skip this part/);
   assert.doesNotMatch(html, /Canonical ID:/);
 });
 
-test('renders a declarative monitor dashboard with dated signals and local coverage scoring', () => {
+test('gives the University roadmap its own routing-assessment evidence contract', () => {
+  const assessment = JSON.parse(fs.readFileSync(new URL('../content/university/assessments/business-roadmap.json', import.meta.url)));
+  const html = renderStructuredPage({ resource: assessment, registry: new Map([[assessment.id, assessment]]) });
+  assert.match(html, /data-ev-contract="EV-ACT-UNIVERSITY-ROUTING-ASSESSMENT"/);
+  assert.match(html, /Answer every question/);
+  assert.match(html, /recommendedResourceIds/);
+  assert.match(html, /Browser-local directional self-review only/);
+});
+
+test('renders a declarative monitor dashboard with complete evidence states and a versioned CSV record', () => {
   const monitor = {
     ...resource('signal-watch', [{ type: 'supports', target: 'alpha' }]),
     kind: 'monitor',
@@ -1247,6 +1457,20 @@ test('renders a declarative monitor dashboard with dated signals and local cover
   assert.match(html, /Rule changed/);
   assert.match(html, /id="monitor-coverage"/);
   assert.match(html, /nothing is sent or monitored externally/);
+  assert.match(html, /data-ev-contract="EV-ACT-003:012"/);
+  assert.match(html, /value="evidenced"/);
+  assert.match(html, /value="not-evidenced"/);
+  assert.match(html, /value="unknown"/);
+  assert.match(html, /value="not-applicable"/);
+  assert.match(html, /Evidence reference and date/);
+  assert.match(html, /Add a dated evidence reference/);
+  assert.match(html, /Answer-level record/);
+  assert.match(html, /aloha-ai-monitor-coverage\/1\.0/);
+  assert.match(html, /text\/csv;charset=utf-8/);
+  assert.match(html, /id="monitor-export-csv"[^>]*disabled/);
+  assert.match(html, /window\.AlohaState\.create/);
+  assert.match(html, /window\.AlohaActions\.download/);
+  assert.match(html, /JavaScript is required to calculate or export/);
 });
 
 test('renders weighted assessment options and a browser-local product demo', () => {
@@ -1279,6 +1503,7 @@ test('renders weighted assessment options and a browser-local product demo', () 
   const demoHtml = renderStructuredPage({ resource: demo, registry });
   assert.match(assessmentHtml, /data-score="2"/);
   assert.match(assessmentHtml, /Directional signal total/);
+  assert.match(assessmentHtml, /data-ev-contract="EV-ACT-ASSESSMENT-FAMILY"/);
   assert.match(demoHtml, /id="demo-records"/);
   assert.match(demoHtml, /Production delivery remains disabled/);
 });
@@ -1302,7 +1527,10 @@ test('renders a declarative browser-local operational tool', () => {
   const registry = new Map([[tool.id, tool], [alpha.id, alpha]]);
   const html = renderStructuredPage({ resource: tool, registry });
   assert.match(html, /id="browser-tool-input"/);
-  assert.match(html, /processed in this browser/);
+  assert.match(html, /processed only in this browser/);
+  assert.match(html, /id="browser-tool-errors"[^>]*role="alert"/);
+  assert.match(html, /Copy result/);
+  assert.match(html, /Download Markdown/);
   assert.match(html, /Obligation/);
   assert.match(html, /is-resource-detail is-tool-detail/);
   assert.match(html, /Try it here/);
@@ -1356,12 +1584,13 @@ test('renders declarative structured forms for documents and scored diagnostics'
   const registry = new Map([[documentTool.id, documentTool], [diagnostic.id, diagnostic]]);
   const documentHtml = renderStructuredPage({ resource: documentTool, registry });
   const diagnosticHtml = renderStructuredPage({ resource: diagnostic, registry });
-  assert.match(documentHtml, /id="structured-form-tool"/);
-  assert.match(documentHtml, /Download Markdown/);
-  assert.match(documentHtml, /new Blob/);
+  assert.match(documentHtml, /id="state-form"/);
+  assert.match(documentHtml, /Download completed Markdown/);
+  assert.match(documentHtml, /AlohaActions\.download/);
+  assert.match(documentHtml, /version:c\.ruleVersion\|\|'1\.0\.0'/);
   assert.match(diagnosticHtml, /Generate diagnostic/);
-  assert.match(diagnosticHtml, /Mechanisms surfaced/);
-  assert.match(diagnosticHtml, /nothing you enter is sent or stored/i);
+  assert.match(diagnosticHtml, /Why this appeared/);
+  assert.match(diagnosticHtml, /No input leaves this page/i);
 });
 
 test('renders institutional and legal-policy resources from structured contracts', () => {
@@ -1600,6 +1829,12 @@ test('does not publish the false claim that marijuana rescheduling took effect o
   assert.doesNotMatch(cannabis, /Partial rescheduling to Schedule III effective Apr 28, 2026/);
   assert.doesNotMatch(cannabis, /Only a partial move has taken effect/);
   assert.match(cannabis, /No broad move to Schedule III has taken effect/);
+  const record = JSON.parse(cannabis);
+  assert.equal(record.monitorOperations.lastSuccessfulReview, '2026-07-31');
+  assert.equal(record.monitorOperations.nextScheduledReview, '2026-08-07');
+  assert.equal(record.monitorOperations.runHistory.length, 2);
+  assert.match(record.monitorOperations.runHistory[1].observedState, /hearing concluded July 15, 2026/i);
+  assert.doesNotMatch(cannabis, /queries the Federal Register API from your browser every time the page loads/i);
 });
 
 test('keeps time-sensitive AI law and monitor status claims procedurally exact', () => {

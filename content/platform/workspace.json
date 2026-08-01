@@ -2,11 +2,11 @@
   "id": "workspace",
   "kind": "product",
   "pathname": "/workspace",
-  "eyebrow": "Authenticated operating layer",
+  "eyebrow": "Authenticated workspace architecture",
   "title": "Workspace",
-  "summary": "The authenticated environment where assessments, evidence, recommendations, approvals, projects, generated reports, and governed AI workflows become operational work.",
+  "summary": "A documented architecture for a future authenticated environment where assessments, evidence, recommendations, approvals, projects, generated reports, and governed AI workflows could become operational work. No public or provisioned workspace access is demonstrated by this page.",
   "audience": "Clients, partners, researchers, reviewers, learners, and operators using Aloha AI systems.",
-  "maturity": "Beta",
+  "maturity": "Research",
   "topics": [
     "workspace",
     "workflow",
@@ -21,7 +21,7 @@
     "Projects and delivery",
     "Evaluation and audit"
   ],
-  "implementationStatus": "Authenticated platform foundations and review-oriented workflows are under active implementation.",
+  "implementationStatus": "Architecture and selected platform foundations are under development. No public sign-in, account creation, provisioned client workspace, or production access is represented as available.",
   "documentation": [
     "Access and role model",
     "Resource and workflow contracts",
@@ -104,7 +104,7 @@
       "blocks": [
         {
           "type": "paragraph",
-          "text": "The authenticated workspace begins with an organization and a first project. Sign in or create an account, then create the workspace that will hold its governed drafts, evidence, reviews, and delivery records."
+          "text": "The intended authenticated workspace would begin with an organization and a first project. Public sign-in, account creation, and workspace provisioning are not available from this page."
         },
         {
           "type": "list",
