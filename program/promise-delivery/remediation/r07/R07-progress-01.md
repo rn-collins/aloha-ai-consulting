@@ -2,7 +2,7 @@
 
 Date: 2026-07-31
 
-Status: local gates passed; production release pending
+Status: passed; R07 remains open
 
 Baseline production commit: `531398bc0a58409ce792c32e32343e596be68f34`
 
@@ -53,9 +53,18 @@ Disposition: completed foundation; evaluation and domain certification deferred 
 - Methods conformance must be instantiated and evidenced object by object; publication of the method alone proves nothing about implementation.
 - Rendered responsive and live API verification remain required after deployment.
 
-## Local decision
+## Production verification
 
-PASS for production-candidate release. Final round decision requires commit, main-branch deployment, live Methods and assurance-manifest verification, and recorded production evidence.
+PASS. GitHub `main` commit `952ef15de9c39210d906ce6f8a6a9baebf3e49f0` deployed through Vercel production deployment `dpl_2icaJGGnC9WAMxph7Jb3gZbj4aUM`, which reached `READY` and owns the canonical production alias.
+
+Production verification established:
+
+- Homepage, `/methods`, and `/api/assurance-manifest.json` returned HTTP 200.
+- The manifest reported 12 method controls, five queued and zero evaluated high-stakes tools, seven required and zero certified assurance domains, and zero errors.
+- The Methods page retained the explicit activation, evidence, professional-review, and dated-snapshot limitations.
+- Vercel reported no runtime errors in the one-hour verification window.
+
+R07 Unit 1 is closed. R07 remains open for the five named tool evaluations and the seven evidence-producing site-assurance domains.
 
 Verifier: Codex remediation agent
 
