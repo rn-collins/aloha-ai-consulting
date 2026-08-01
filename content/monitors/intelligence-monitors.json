@@ -2796,7 +2796,7 @@
         "blocks": [
           {
             "type": "paragraph",
-            "text": "Every Aloha AI monitor runs the same three-stage pipeline. In a production build, that is what keeps the facts right next month, not just today."
+            "text": "This maintained beta uses a three-stage method: retrieve the defined primary authorities, resolve the bounded operator question, and record the dated human review."
           },
           {
             "type": "heading",
@@ -4177,7 +4177,7 @@
     "pathname": "/monitors/psychedelic-radar",
     "eyebrow": "Psychedelic regulatory monitor",
     "title": "Psychedelic regulation, told straight, with the receipts.",
-    "summary": "A primary-source-grounded status monitor separating psilocybin programs, MDMA-related federal developments, ketamine practice and telehealth, and state–federal legal layers.",
+    "summary": "A maintained-beta, manually reviewed radar separating federal MDMA and ketamine developments from Oregon and Colorado psilocybin-program authority.",
     "audience": "Psychedelic-health organizations, ketamine platforms, legal operations teams, counsel, funders, and boards.",
     "maturity": "Beta",
     "topics": [
@@ -4196,14 +4196,85 @@
       "psilocybin law",
       "ketamine telehealth"
     ],
-    "implementationStatus": "Public demonstration; illustrative records are not a statement of current law.",
+    "implementationStatus": "Maintained beta; manually reviewed weekly against a defined federal, Oregon, and Colorado source set. Current only through the stated as-of date and coverage boundary.",
+    "version": "1.0.0",
+    "lastReviewedOrTested": "2026-07-31",
+    "nextReviewOrTrigger": "2026-08-07 or earlier after a material FDA, DEA, Federal Register, Oregon OPS, or Colorado Natural Medicine authority change",
+    "lifecycleState": "maintained-beta-manual-review",
+    "monitorOperations": {
+      "version": "1.0.0",
+      "jurisdiction": "United States federal; Oregon; Colorado",
+      "scope": "Federal FDA and DEA status for MDMA and controlled-substance telemedicine; Oregon and Colorado regulated psilocybin-service programs. No other state, local, professional-board, payer, facility, prescribing, or clinical-practice regime is certified.",
+      "owner": "RN Collins",
+      "reviewer": "RN Collins",
+      "cadence": "Manual review every Friday, Pacific/Honolulu; event-triggered review after a material official FDA, DEA, Federal Register, Oregon OPS, or Colorado Natural Medicine publication.",
+      "lastSuccessfulReview": "2026-07-31",
+      "nextScheduledReview": "2026-08-07",
+      "staleAfter": "2026-08-08T23:59:59-10:00",
+      "staleBehavior": "Display the radar as stale, stop describing any status as current, preserve the last verified as-of record, and require direct primary-source review before reliance.",
+      "failureBehavior": "Preserve the last successful dated record, identify each source that could not be checked, infer no change, and place the affected track in the human review queue.",
+      "correctionPolicy": "Record the affected statement, prior and corrected text, authority, reviewer, effective date, and reason; preserve the superseded record in the correction log.",
+      "sourceAuthorities": [
+        {
+          "name": "FDA complete response letter for NDA 215455",
+          "url": "https://download.open.fda.gov/crl/CRL_NDA215455_20240808.pdf",
+          "authority": "Primary FDA action on the MDMA capsule application",
+          "required": true
+        },
+        {
+          "name": "DEA fourth temporary telemedicine extension",
+          "url": "https://www.dea.gov/press-releases/2025/12/31/dea-extends-telemedicine-flexibilities-ensure-continued-access-care",
+          "authority": "Primary agency statement on controlled-medication telemedicine through December 31, 2026",
+          "required": true
+        },
+        {
+          "name": "Oregon Psilocybin Services",
+          "url": "https://www.oregon.gov/oha/ph/preventionwellness/pages/oregon-psilocybin-services.aspx",
+          "authority": "Primary state program hub under ORS 475A",
+          "required": true
+        },
+        {
+          "name": "Oregon psilocybin administrative rules",
+          "url": "https://www.oregon.gov/oha/ph/preventionwellness/pages/psilocybin-administrative-rules.aspx",
+          "authority": "Primary state rules and rulemaking hub",
+          "required": true
+        },
+        {
+          "name": "Colorado Natural Medicine program",
+          "url": "https://dpo.colorado.gov/NaturalMedicine",
+          "authority": "Primary state licensing and program hub",
+          "required": true
+        },
+        {
+          "name": "Colorado Natural Medicine Division rules",
+          "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?fileName=1+CCR+213-1&ruleVersionId=11721",
+          "authority": "Official Code of Colorado Regulations",
+          "required": true
+        }
+      ],
+      "runHistory": [
+        {
+          "runId": "PR-2026-07-31",
+          "reviewedAt": "2026-07-31",
+          "result": "pass-bounded",
+          "observedState": "FDA's 2024 complete response letter did not approve NDA 215455; DEA's fourth temporary telemedicine extension runs through December 31, 2026; Oregon and Colorado maintain regulated state psilocybin-service frameworks. Federal Schedule I conflict and jurisdiction-specific operating requirements remain.",
+          "evidence": [
+            "FDA CRL NDA 215455",
+            "DEA fourth temporary telemedicine extension",
+            "Oregon OPS program and rules hubs",
+            "Colorado Natural Medicine program and rules"
+          ]
+        }
+      ],
+      "corrections": []
+    },
     "documentation": [
       "Filter illustrative substance and jurisdiction signals",
       "Score primary-source coverage",
       "Verify the current jurisdiction, activity, and authority"
     ],
     "monitor": {
-      "updated": "2026-07-26",
+      "updated": "2026-07-31",
       "filters": [
         "Psilocybin",
         "MDMA",
@@ -4262,7 +4333,9 @@
     ],
     "limitations": [
       "Informational only and not legal or medical advice",
-      "Illustrative signals must not be treated as current law"
+      "Current only through July 31, 2026 and only for the defined federal, Oregon, and Colorado source universe",
+      "No other state, local, professional-board, payer, facility, prescribing, or clinical-practice regime is covered",
+      "Manual weekly review can miss an official change between runs"
     ],
     "relationships": [
       {
@@ -4276,27 +4349,29 @@
     ],
     "seoTitle": "Psychedelic Regulatory Radar",
     "editorialIntro": [
-      "A sourced instrument, not a headline scraper. Track psilocybin, MDMA-assisted therapy, and ketamine telehealth across every state and the federal line. See exactly what generic AI gets confidently wrong, and trace every status to its primary source. So it holds up in a board deck and in a compliance memo.",
+      "A manually maintained, primary-source radar for a bounded source universe: federal MDMA and controlled-substance telemedicine developments, plus Oregon and Colorado psilocybin programs. Each status is dated and must be re-verified before a consequential decision.",
       "Built by RN Collins · MS, Anatomy & Neurobiology · JD candidate · AI systems · Tailored for psychedelic-health organizations, ketamine-telehealth platforms, and legal-operations teams"
     ],
     "editorialSections": [
       {
-        "title": "The latest psilocybin & psychedelic actions, pulled live",
-        "eyebrow": "Live · Federal Register",
+        "title": "The current bounded source review",
+        "eyebrow": "Maintained beta · reviewed July 31, 2026",
         "blocks": [
           {
             "type": "paragraph",
-            "text": "This panel queries the Federal Register API from your browser every time the page loads, so it shows the primary source itself, not a stored summary."
+            "text": "RN Collins manually reviews the defined FDA, DEA, Oregon, and Colorado authorities each Friday and after identified material official events. This is not a continuous feed or an all-jurisdiction monitor."
           },
           {
             "type": "list",
             "items": [
-              "Loading the latest from the Federal Register…"
+              "FDA: NDA 215455 was not approved in the August 8, 2024 complete response letter.",
+              "DEA: the fourth temporary controlled-medication telemedicine extension runs through December 31, 2026.",
+              "Oregon and Colorado: regulated psilocybin-service programs remain active under their state frameworks, subject to current rules and license verification."
             ]
           },
           {
             "type": "paragraph",
-            "text": "The live Federal Register feed is unavailable right now; the dated analysis below still applies (as of 2026-07-04)."
+            "text": "As of July 31, 2026. If the next review date has passed, or a required source could not be checked, treat the page as stale and verify the primary authority directly."
           }
         ]
       },
@@ -4480,7 +4555,7 @@
           },
           {
             "type": "paragraph",
-            "text": "Primary sources only: Federal Register, CSA schedules, FDA actions, state statutes and agency dashboards, each captured with source and retrieval date. No headline aggregation."
+            "text": "The governing source set is limited to the named FDA and DEA records and the Oregon and Colorado program and rules hubs, each captured with a retrieval date."
           },
           {
             "type": "heading",
@@ -4488,15 +4563,15 @@
           },
           {
             "type": "paragraph",
-            "text": "Raw law becomes a decision an operator can act on: what's licensable where, what changes for whom, with what confidence, closing the Operator Execution Gap."
+            "text": "The dated record separates what the source says from the operator question, confidence, unresolved dependencies, and required professional review."
           },
           {
             "type": "heading",
-            "text": "Auto-refresh & alert"
+            "text": "Manual refresh and review"
           },
           {
             "type": "paragraph",
-            "text": "In a production build, the monitor re-checks its primary sources on a schedule (Upstash · Vercel · Exa) and can ping you when an FDA action posts, a state rule changes, or the telehealth extension moves, so it never goes stale."
+            "text": "RN Collins checks the required sources each Friday and after an identified material official event. If a run is missed or a required source fails, the record becomes stale; no automatic detection or alert is promised."
           }
         ]
       },
@@ -4506,7 +4581,7 @@
         "blocks": [
           {
             "type": "paragraph",
-            "text": "The admin-law rigor is the product. Each fact carries its source, retrieval date, and a confidence rating, so the same artifact that opens a conversation can support a compliance memo."
+            "text": "Each governed status carries its authority, retrieval date, scope, and confidence. It remains informational and must be re-verified by responsible counsel or another qualified professional before consequential use."
           },
           {
             "type": "table",
@@ -4692,7 +4767,7 @@
           {
             "type": "list",
             "items": [
-              "A live, cited status radar for your program"
+              "A cited, dated status radar for the jurisdictions and activities named in the engagement"
             ]
           },
           {
@@ -4704,7 +4779,7 @@
           {
             "type": "list",
             "items": [
-              "Change-alerts when a state program or federal rule moves"
+              "A defined review cadence and human-reviewed change notices when the agreed source set moves"
             ]
           },
           {
@@ -4727,7 +4802,7 @@
         "blocks": [
           {
             "type": "paragraph",
-            "text": "This page is a dated Regulatory Intelligence demonstration. Continue to Services for current starting points, or book a scoping call to size a psychedelics monitor."
+            "text": "This maintained beta is current only through its stated review date and bounded source universe. Continue to Services to scope additional jurisdictions, professional rules, or operating questions."
           },
           {
             "type": "paragraph",

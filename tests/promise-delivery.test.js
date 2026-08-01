@@ -73,10 +73,10 @@ test('R02 release registry covers and conservatively decides every canonical res
   assert.ok(registry.objects.every((object) => object.status.publication === 'published'));
   assert.ok(registry.objects.every((object) => object.status.integration !== 'verified'));
   const maintainedMonitors = registry.objects.filter((object) => object.status.maintenance === 'maintained');
-  assert.deepEqual(maintainedMonitors.map((object) => object.id), ['monitor:cannabis-rescheduling']);
+  assert.deepEqual(maintainedMonitors.map((object) => object.id), ['monitor:cannabis-rescheduling', 'monitor:psychedelic-radar']);
   assert.ok(registry.objects.every((object) => object.governanceControls?.contradiction?.state === 'registry-consistent'));
-  assert.ok(registry.objects.filter((object) => object.id !== 'monitor:cannabis-rescheduling').every((object) => object.governanceControls?.staleness?.reviewBy === '2026-10-31'));
-  assert.equal(maintainedMonitors[0].governanceControls.staleness.reviewBy, '2026-08-07');
+  assert.ok(registry.objects.filter((object) => !['monitor:cannabis-rescheduling', 'monitor:psychedelic-radar'].includes(object.id)).every((object) => object.governanceControls?.staleness?.reviewBy === '2026-10-31'));
+  assert.ok(maintainedMonitors.every((object) => object.governanceControls.staleness.reviewBy === '2026-08-07'));
   assert.ok(registry.objects.filter((object) => object.objectType === 'service').every((object) => object.governanceControls.capacity.state === 'not-certified'));
   assert.ok(registry.objects.filter((object) => object.objectType === 'service').every((object) => object.governanceControls.contractingIdentity.entity === 'Rayven-Nikkita Collins LLC d/b/a Aloha AI'));
   assert.ok(registry.objects.every((object) => object.governanceControls?.professionalAccountability?.state === 'bounded'));
@@ -245,4 +245,31 @@ test('R06 separates the immutable baseline from the reviewed current release inv
   assert.match(pkg.scripts['site:ci'], /promise:release-check/);
   assert.doesNotMatch(pkg.scripts['site:ci'], /promise:check(?:\s|$)/);
   assert.doesNotMatch(workflow, /\n\s+paths:/);
+});
+
+test('R06 Unit 3 bounds and operates the Psychedelic Radar maintained beta', () => {
+  const monitors = JSON.parse(fs.readFileSync('content/monitors/intelligence-monitors.json', 'utf8'));
+  const radar = monitors.find((item) => item.id === 'psychedelic-radar');
+  assert.equal(radar.version, '1.0.0');
+  assert.equal(radar.lifecycleState, 'maintained-beta-manual-review');
+  assert.equal(radar.monitorOperations.owner, 'RN Collins');
+  assert.equal(radar.monitorOperations.reviewer, 'RN Collins');
+  assert.equal(radar.monitorOperations.lastSuccessfulReview, '2026-07-31');
+  assert.equal(radar.monitorOperations.nextScheduledReview, '2026-08-07');
+  assert.equal(radar.monitorOperations.sourceAuthorities.length, 6);
+  assert.ok(radar.monitorOperations.sourceAuthorities.every((source) => source.required && source.url.startsWith('https://')));
+  assert.ok(radar.monitorOperations.runHistory.length >= 1);
+  assert.match(radar.monitorOperations.scope, /No other state, local, professional-board/);
+
+  const publicCopy = JSON.stringify(radar);
+  for (const prohibited of [
+    'across every state',
+    'pulled live',
+    'queries the Federal Register API from your browser',
+    'so it never goes stale',
+    'Change-alerts when a state program or federal rule moves',
+    'This page is a dated Regulatory Intelligence demonstration'
+  ]) {
+    assert.equal(publicCopy.includes(prohibited), false, `Psychedelic Radar overclaim remains: ${prohibited}`);
+  }
 });

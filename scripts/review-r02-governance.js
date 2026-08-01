@@ -51,12 +51,12 @@ function reviewObject(object) {
   const deliveryLike = ['assessment', 'course', 'institutional', 'learningHub', 'monitor', 'product', 'service', 'tool'].includes(object.objectType);
   const contentLike = ['lesson', 'playbook', 'policy', 'research', 'template', 'toolGuide', 'useCase'].includes(object.objectType);
   const monitor = object.objectType === 'monitor';
-  const maintainedCannabisMonitor = object.canonicalId === 'cannabis-rescheduling'
+  const maintainedMonitor = ['cannabis-rescheduling', 'psychedelic-radar'].includes(object.canonicalId)
     && object.version === '1.0.0'
     && object.lastReviewedOrTested === reviewDate
     && object.nextReviewOrTrigger;
   const toolLike = ['assessment', 'tool'].includes(object.objectType);
-  const unavailable = object.status.access === 'unavailable' && object.canonicalId !== 'cannabis-rescheduling';
+  const unavailable = object.status.access === 'unavailable' && !['cannabis-rescheduling', 'psychedelic-radar'].includes(object.canonicalId);
   const evidenceLinks = object.evidenceLinks || [];
   const dependencyObjects = object.dependencies.map((id) => releaseByCanonicalId.get(id)).filter(Boolean);
 
@@ -67,7 +67,7 @@ function reviewObject(object) {
     integration: 'none',
     access: unavailable ? 'unavailable' : pageExists ? 'public' : 'unavailable',
     commercial: object.objectType === 'service' ? 'scoped' : 'not-applicable',
-    maintenance: maintainedCannabisMonitor ? 'maintained' : monitor ? 'dated' : 'not-applicable',
+    maintenance: maintainedMonitor ? 'maintained' : monitor ? 'dated' : 'not-applicable',
     evaluation: toolLike ? 'not-evaluated' : 'not-applicable',
     evidence: evidenceLinks.length ? 'published' : object.status.evidence === 'described' ? 'described' : 'missing'
   };
@@ -95,9 +95,9 @@ function reviewObject(object) {
       staleness: {
         state: 'review-current',
         reviewedAt: reviewDate,
-        reviewBy: maintainedCannabisMonitor ? '2026-08-07' : '2026-10-31',
-        staleAfterDays: maintainedCannabisMonitor ? 8 : 92,
-        actionWhenStale: maintainedCannabisMonitor
+        reviewBy: maintainedMonitor ? '2026-08-07' : '2026-10-31',
+        staleAfterDays: maintainedMonitor ? 8 : 92,
+        actionWhenStale: maintainedMonitor
           ? 'Render the monitor stale, preserve the last verified as-of record, and require direct primary-source review before reliance.'
           : 'Fail release certification and render no stronger claim until re-reviewed.'
       },
@@ -151,7 +151,7 @@ function reviewException(exception) {
 
 function languageFor(object, status) {
   if (status.publication === 'unpublished') return 'No public page is certified for this object.';
-  if (object.canonicalId === 'cannabis-rescheduling' && status.maintenance === 'maintained') return 'Maintained beta · manually reviewed against the defined federal source set each Friday; current only through the stated as-of date.';
+  if (status.maintenance === 'maintained') return 'Maintained beta · manually reviewed against the monitor’s defined source set each Friday; current only through the stated as-of date and coverage boundary.';
   if (status.access === 'unavailable') return 'A public description exists; the represented access or delivery path is unavailable.';
   if (object.objectType === 'monitor') return 'Published dated monitor record; ongoing maintenance and currentness are not certified.';
   if (['assessment', 'tool'].includes(object.objectType)) return `Published browser-local ${object.objectType}; external integration, validated evaluation, and production operation are not certified.`;
@@ -176,7 +176,7 @@ function validateObjectDecisions(decisions, objects) {
   if (new Set(decisions.map((item) => item.objectId)).size !== objects.length) throw new Error('Duplicate object decision ID');
   for (const decision of decisions) {
     if (decision.status.integration !== 'none') throw new Error(`${decision.objectId}: integration exceeds local proof`);
-    if (decision.status.maintenance === 'maintained' && decision.objectId !== 'monitor:cannabis-rescheduling') throw new Error(`${decision.objectId}: maintenance exceeds local proof`);
+    if (decision.status.maintenance === 'maintained' && !['monitor:cannabis-rescheduling', 'monitor:psychedelic-radar'].includes(decision.objectId)) throw new Error(`${decision.objectId}: maintenance exceeds local proof`);
     if (decision.status.evaluation === 'passed') throw new Error(`${decision.objectId}: evaluation exceeds local proof`);
     if (!decision.governanceControls) throw new Error(`${decision.objectId}: governance controls missing`);
     if (decision.governanceControls.capacity.state === 'available') throw new Error(`${decision.objectId}: capacity exceeds local proof`);

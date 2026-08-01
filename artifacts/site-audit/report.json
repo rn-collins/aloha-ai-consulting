@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-01T00:03:03.415Z",
+  "generatedAt": "2026-08-01T02:13:41.715Z",
   "summary": {
     "routes": 497,
     "found": 497,
@@ -501,7 +501,7 @@
         "buttons": 4,
         "links": 15,
         "workspaceLinks": 0,
-        "pageBytes": 9152
+        "pageBytes": 9124
       },
       "findings": []
     },
@@ -549,7 +549,7 @@
         "buttons": 4,
         "links": 16,
         "workspaceLinks": 0,
-        "pageBytes": 9591
+        "pageBytes": 9563
       },
       "findings": []
     },
@@ -645,7 +645,7 @@
         "buttons": 11,
         "links": 40,
         "workspaceLinks": 0,
-        "pageBytes": 24071
+        "pageBytes": 24043
       },
       "findings": []
     },
@@ -693,7 +693,7 @@
         "buttons": 9,
         "links": 23,
         "workspaceLinks": 0,
-        "pageBytes": 14352
+        "pageBytes": 14324
       },
       "findings": []
     },
@@ -741,7 +741,7 @@
         "buttons": 16,
         "links": 106,
         "workspaceLinks": 2,
-        "pageBytes": 61179
+        "pageBytes": 61151
       },
       "findings": []
     },
@@ -932,7 +932,7 @@
         "buttons": 5,
         "links": 19,
         "workspaceLinks": 1,
-        "pageBytes": 24063
+        "pageBytes": 24051
       },
       "findings": []
     },
@@ -1652,7 +1652,7 @@
         "buttons": 9,
         "links": 34,
         "workspaceLinks": 0,
-        "pageBytes": 20053
+        "pageBytes": 20025
       },
       "findings": []
     },
@@ -1700,7 +1700,7 @@
         "buttons": 17,
         "links": 69,
         "workspaceLinks": 0,
-        "pageBytes": 40637
+        "pageBytes": 40609
       },
       "findings": []
     },
@@ -1892,7 +1892,7 @@
         "buttons": 6,
         "links": 18,
         "workspaceLinks": 0,
-        "pageBytes": 10756
+        "pageBytes": 10728
       },
       "findings": []
     },
@@ -2564,7 +2564,7 @@
         "buttons": 10,
         "links": 100,
         "workspaceLinks": 1,
-        "pageBytes": 59834
+        "pageBytes": 59806
       },
       "findings": []
     },
@@ -2755,7 +2755,7 @@
         "buttons": 0,
         "links": 14,
         "workspaceLinks": 0,
-        "pageBytes": 10712
+        "pageBytes": 10684
       },
       "findings": []
     },
@@ -3098,7 +3098,7 @@
         "buttons": 3,
         "links": 7,
         "workspaceLinks": 0,
-        "pageBytes": 30979
+        "pageBytes": 30998
       },
       "findings": []
     },
@@ -3217,7 +3217,7 @@
       "file": "monitors/psychedelic-radar.html",
       "exists": true,
       "title": "Psychedelic Regulatory Radar | Aloha AI",
-      "description": "A primary-source-grounded status monitor separating psilocybin programs, MDMA-related federal developments, ketamine practice and telehealth, and state–federal legal layers.",
+      "description": "A maintained-beta, manually reviewed radar separating federal MDMA and ketamine developments from Oregon and Colorado psilocybin-program authority.",
       "canonical": "https://aloha-ai-consulting.vercel.app/monitors/psychedelic-radar",
       "score": 100,
       "checks": {
@@ -3245,7 +3245,7 @@
         "buttons": 3,
         "links": 7,
         "workspaceLinks": 1,
-        "pageBytes": 32371
+        "pageBytes": 32878
       },
       "findings": []
     },
@@ -8249,7 +8249,7 @@
         "buttons": 3,
         "links": 11,
         "workspaceLinks": 0,
-        "pageBytes": 6559
+        "pageBytes": 6531
       },
       "findings": []
     },
@@ -10985,7 +10985,7 @@
         "buttons": 7,
         "links": 25,
         "workspaceLinks": 0,
-        "pageBytes": 15156
+        "pageBytes": 15128
       },
       "findings": []
     },
@@ -12425,7 +12425,7 @@
         "buttons": 4,
         "links": 12,
         "workspaceLinks": 0,
-        "pageBytes": 7225
+        "pageBytes": 7197
       },
       "findings": []
     },
@@ -12713,7 +12713,7 @@
         "buttons": 5,
         "links": 15,
         "workspaceLinks": 0,
-        "pageBytes": 8876
+        "pageBytes": 8848
       },
       "findings": []
     },
