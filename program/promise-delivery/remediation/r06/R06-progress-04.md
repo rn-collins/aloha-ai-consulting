@@ -2,7 +2,7 @@
 
 Date: 2026-07-31
 
-Status: local gates passed; production release pending
+Status: passed; R06 closed
 
 Baseline production commit: `f423b7c03c6034693b11377bbb3ba63db6a77737`
 
@@ -49,7 +49,16 @@ This unit closes R06 by making the maintenance contract release-blocking and pub
 
 ## Exit decision
 
-PASS as a production candidate. R06 closes only after release and live verification show that the operations manifest reports exactly two maintained betas, nine demonstrations, zero errors, both maintained routes remain reachable, and the runtime error scan remains clean.
+PASS. GitHub `main` commit `96567e9ad4a0a88f7bccc19e706c31d4aee2d090` deployed through Vercel production deployment `dpl_EjidnpFik39j1TvwfZxWzZpxCquF`, which reached `READY` and owns the canonical production alias.
+
+Production verification established:
+
+- Homepage, Cannabis Rescheduling, Psychedelic Radar, and `/api/monitor-operations.json` returned HTTP 200.
+- The operations manifest reported exactly two maintained betas, nine dated demonstrations, zero errors, and an August 7 next review.
+- Both maintained routes rendered manual-review and July 31 as-of boundaries.
+- Vercel reported no runtime errors in the one-hour verification window.
+
+R06 is closed. No other monitor is authorized to claim maintenance or currentness without first satisfying the same source, ownership, run-history, stale, correction, CI, and production-verification contract.
 
 Verifier: Codex remediation agent
 
