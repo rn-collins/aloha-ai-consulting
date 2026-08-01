@@ -8,3 +8,5 @@
 docs/
 scripts/*
 !scripts/build-site.js
+!scripts/build-claim-registry.js
+!scripts/hydrate-build-snapshots.js
