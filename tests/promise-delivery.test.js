@@ -104,6 +104,22 @@ test('R02 claim registry reconciles every frozen record and governs every site-l
   assert.ok(registry.claims.every((claim) => claim.reviewedBy && claim.reviewedAt && claim.decisionBasis));
 });
 
+test('R07 assurance foundation fails closed without overstating evaluation or certification', () => {
+  const assurance = JSON.parse(fs.readFileSync('content/governance/assurance-registry.json', 'utf8'));
+  const manifest = JSON.parse(fs.readFileSync('api/assurance-manifest.json', 'utf8'));
+  assert.equal(assurance.methodConformance.controls.length, 12);
+  assert.equal(assurance.methodConformance.exceptions.length, 0);
+  assert.equal(assurance.methodConformance.decision, 'foundation-approved-not-site-certified');
+  assert.equal(assurance.highStakesEvaluationQueue.length, 5);
+  assert.ok(assurance.highStakesEvaluationQueue.every((item) => item.state === 'not-evaluated' && item.requiredNext));
+  assert.equal(assurance.siteAssuranceDomains.length, 7);
+  assert.ok(assurance.siteAssuranceDomains.every((item) => item.state === 'required-not-yet-certified' && item.requiredEvidence));
+  assert.equal(manifest.counts.methodControls, 12);
+  assert.equal(manifest.counts.evaluatedHighStakesTools, 0);
+  assert.equal(manifest.counts.assuranceDomainsCertified, 0);
+  assert.equal(manifest.counts.errors, 0);
+});
+
 test('R02 production generation renders reviewed release state instead of authored maturity labels', () => {
   const htmlFiles = fs.readdirSync('tools').filter((file) => file.endsWith('.html')).map((file) => fs.readFileSync(`tools/${file}`, 'utf8'));
   assert.ok(htmlFiles.length > 0);

@@ -7,6 +7,13 @@
   "seoTitle": "Methods, Evidence & Governance",
   "summary": "Aloha AI systems begin by defining the decision, sources, data model, rules, exceptions, model roles, human responsibilities, evaluation, and maintenance. This page states the standard, including what the work can support and what it cannot responsibly claim.",
   "metaDescription": "How Aloha AI defines sources, structures knowledge, assigns model roles, verifies outputs, governs human review, evaluates systems, and maintains them.",
+  "version": "1.0.0",
+  "owner": "RN Collins / Aloha AI",
+  "effectiveDate": "2026-07-31",
+  "lastReviewedOrTested": "2026-07-31",
+  "nextReviewOrTrigger": "2026-10-31 or any material method, assurance schema, evaluation, privacy, accessibility, legal-authority, or release-control change",
+  "lifecycleState": "release-enforced-method-standard",
+  "privacyBoundary": "This public method record contains no visitor data. System-specific data flows, retention, vendors, permissions, and professional-review duties require separate evidence before release.",
   "maturity": "Production",
   "topics": [
     "methodology",
@@ -321,6 +328,12 @@
     "A valid citation does not by itself prove the proposition attributed to it, and fluent generated text is not evidence of correctness.",
     "A dated snapshot is not continuously current; consequential systems require named maintenance ownership and rechecking triggers.",
     "These methods do not replace licensed legal, clinical, financial, security, or other accountable professional judgment."
+  ],
+  "evidenceLinks": [
+    "/api/assurance-manifest.json",
+    "/api/release-manifest.json",
+    "/api/release-control-report.json",
+    "/api/monitor-operations.json"
   ],
   "relationships": [
     {
