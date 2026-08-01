@@ -273,3 +273,22 @@ test('R06 Unit 3 bounds and operates the Psychedelic Radar maintained beta', () 
     assert.equal(publicCopy.includes(prohibited), false, `Psychedelic Radar overclaim remains: ${prohibited}`);
   }
 });
+
+test('R06 closeout fails stale monitors closed and keeps every other monitor a demonstration', () => {
+  const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+  const operationsScript = fs.readFileSync('scripts/validate-monitor-operations.js', 'utf8');
+  const cannabis = JSON.parse(fs.readFileSync('content/monitors/cannabis-rescheduling.json', 'utf8'));
+  const intelligence = JSON.parse(fs.readFileSync('content/monitors/intelligence-monitors.json', 'utf8'));
+  const maintained = [cannabis, ...intelligence].filter((record) => record.lifecycleState === 'maintained-beta-manual-review');
+  const demonstrations = intelligence.filter((record) => record.id !== 'psychedelic-radar');
+
+  assert.deepEqual(maintained.map((record) => record.id), ['cannabis-rescheduling', 'psychedelic-radar']);
+  assert.equal(demonstrations.length, 9);
+  assert.ok(demonstrations.every((record) => !record.monitorOperations));
+  assert.ok(demonstrations.every((record) => !/maintained|current/i.test(record.lifecycleState || '')));
+  assert.match(pkg.scripts['site:ci'], /monitors:check/);
+  assert.match(operationsScript, /now > stale/);
+  assert.match(operationsScript, /record a new successful review before release/);
+  assert.match(operationsScript, /required source authority is incomplete/);
+  assert.match(operationsScript, /last successful review lacks a matching evidenced run/);
+});
