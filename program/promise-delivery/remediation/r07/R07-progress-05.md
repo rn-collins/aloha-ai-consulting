@@ -52,9 +52,19 @@ Disposition: passed-limited for the exact regulatory-language-triage scope after
 
 ## Production verification
 
-Pending deployment. Record the exact GitHub commit, Vercel deployment, canonical page, evaluation API, assurance manifest, visible bounded status, runtime error scan, and production metrics before closing Unit 5.
+PASS within the stated boundary. GitHub `main` evaluation commit `aa2102e774994ebc4fd9f0cf6fe95a6f9b2b5dcc` deployed through Vercel production deployment `dpl_FECnrCeWqZF5eVNuBZrG8KPovYUo`. Live review then found four residual capability overstatements in the summary and dossier. Corrective commit `fd92d8a32382be567c22af37a8d4dcf5f8897721`, whose remote tree `631849061d712cca98c1dc837cfa4cbea97ebb5b` exactly matched the locally tested tree, deployed through Vercel production deployment `dpl_9fVNfQ5y1K4SdHQekqHn6yqkpAFq`.
 
-R07 Unit 5 is locally complete but remains open pending production verification. R07 remains open for Controlled Substances Explainer and seven evidence-producing site-assurance domains.
+Production verification established:
+
+- Both deployments reached `READY`, targeted production, and Vercel metadata identified the exact GitHub commits.
+- `/tools/bill-analyzer`, `/api/evaluations/bill-analyzer.json`, and `/api/assurance-manifest.json` returned HTTP 200 from the canonical domain.
+- The canonical tool page visibly says `bounded evaluation` and rule `1.1.0` and contains no stale `not evaluated` label.
+- The live evaluation reports 30 cases, 30 passes, zero failures, four correct abstentions, zero unexpected category flags, zero false clearances, five unsupported-inference cases, and the `passed-limited-regulatory-language-triage-scope` decision.
+- The live assurance manifest reports four evaluated high-stakes tools, Regulatory Bill Analyzer as `passed-limited`, Controlled Substances Explainer as `not-evaluated`, seven uncertified assurance domains, and zero assurance errors.
+- The live summary accurately describes lexical triage, and the page no longer claims stakeholder inference, surrounding-clause quotation, obligation-density risk scoring, or an assembled plain-English summary.
+- No clause-completeness, jurisdiction, authority-status, applicability, legal-effect, risk, compliance, or legal-advice conclusion is claimed.
+
+R07 Unit 5 is closed. R07 remains open for Controlled Substances Explainer and seven evidence-producing site-assurance domains.
 
 Verifier: Codex remediation agent
 
