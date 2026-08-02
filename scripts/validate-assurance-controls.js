@@ -14,6 +14,7 @@ const evidenceEvaluation = read('api/evaluations/evidence-explainer.json');
 const billEvaluation = read('api/evaluations/bill-analyzer.json');
 const controlledSubstancesEvaluation = read('api/evaluations/controlled-substances-explainer.json');
 const privacyEvaluation = read('api/evaluations/privacy.json');
+const securityEvaluation = read('api/evaluations/security.json');
 
 for (const field of ['schema','version','effectiveDate','owner','reviewer','nextReviewOrTrigger','policy']) if (!registry[field]) errors.push(`registry: ${field} missing`);
 if (methods.version !== conformance.methodVersion || methods.id !== conformance.methodId) errors.push('methods record and conformance version do not match');
@@ -71,6 +72,11 @@ for (const id of requiredDomains) {
     if (privacyEvaluation.decision !== 'passed-limited-public-site-boundary' || privacyEvaluation.metrics.failedChecks !== 0 || privacyEvaluation.metrics.passedChecks !== privacyEvaluation.metrics.totalChecks) errors.push('privacy: evidence does not satisfy the bounded threshold');
     if (!privacyEvaluation.dataFlows?.length || !privacyEvaluation.deployedNetworkAndScriptInventory || !privacyEvaluation.requestProcess || !privacyEvaluation.owner || !privacyEvaluation.review?.lastReviewed || !privacyEvaluation.incidentPath) errors.push('privacy: required evidence is incomplete');
     if (!privacyEvaluation.prohibitedInference) errors.push('privacy: prohibited-inference boundary is missing');
+  } else if (id === 'security') {
+    if (item.state !== 'passed-limited' || !item.evidenceHref || !item.decision || !item.retestTrigger) errors.push('security: bounded assurance decision is incomplete');
+    if (securityEvaluation.decision !== 'passed-limited-repository-and-public-deployment-boundary' || securityEvaluation.metrics.failedChecks !== 0 || securityEvaluation.metrics.passedChecks !== securityEvaluation.metrics.totalChecks) errors.push('security: evidence does not satisfy the bounded threshold');
+    if (!securityEvaluation.permissionsBoundary || !securityEvaluation.secretsAndLoggingControls || !securityEvaluation.incidentPath || !securityEvaluation.owner || !securityEvaluation.review?.lastReviewed) errors.push('security: required evidence is incomplete');
+    if (!securityEvaluation.prohibitedInference) errors.push('security: prohibited-inference boundary is missing');
   } else if (item.state !== 'required-not-yet-certified') errors.push(`${id}: assurance domain must fail closed`);
 }
 

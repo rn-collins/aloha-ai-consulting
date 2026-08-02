@@ -132,7 +132,11 @@
     },
     {
       "id": "security",
-      "state": "required-not-yet-certified",
+      "state": "passed-limited",
+      "decision": "Passed within the dated checked-in repository and public-deployment boundary; this is not a penetration test, vulnerability-free guarantee, operational-account certification, or certification of Supabase row-level security.",
+      "evaluatedAt": "2026-08-02",
+      "evidenceHref": "/api/evaluations/security.json",
+      "retestTrigger": "Any API handler, authentication, authorization, cookie, secret, environment, logging, error, CSP/header, dependency, workflow, disclosure-path, database-policy, or deployment change; otherwise 2026-11-02.",
       "requiredEvidence": "Responsible-disclosure channel, permissions boundary, secrets and logging controls, incident path, owner, and review date"
     },
     {
@@ -167,7 +171,7 @@
     "methodRevisions": 1,
     "highStakesToolsQueued": 5,
     "evaluatedHighStakesTools": 5,
-    "evaluatedAssuranceDomains": 1,
+    "evaluatedAssuranceDomains": 2,
     "assuranceDomainsCertified": 0,
     "errors": 0
   },

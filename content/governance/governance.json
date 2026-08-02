@@ -1326,7 +1326,7 @@
       {
         "title": "Privacy or security incidents",
         "paragraphs": [
-          "If you believe information was exposed or the site behaved differently from this policy, use the current Microsoft Bookings link and put “privacy incident — no meeting needed” in the note. Include only the affected route, approximate date and time, and a safe way to reply; do not paste credentials, confidential material, or the exposed information itself. RN will preserve the report, investigate the affected path, suspend it when warranted, and document the disposition."
+          "If you believe information was exposed or the site behaved differently from this policy, use the current Microsoft Bookings link and put “privacy incident — no meeting needed” in the note. For a suspected vulnerability, write “security report — no meeting needed.” Include only the affected route, approximate date and time, a concise non-exploitative description, and a safe way to reply; do not paste working exploits, credentials, confidential material, or exposed information. RN will preserve the report, investigate the affected path, suspend it when warranted, and document the disposition."
         ]
       },
       {

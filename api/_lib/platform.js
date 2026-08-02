@@ -1,6 +1,6 @@
 const crypto = require('crypto');
 
-const required = ['SUPABASE_URL','SUPABASE_ANON_KEY','SUPABASE_SERVICE_ROLE_KEY'];
+const required = ['SUPABASE_URL','SUPABASE_ANON_KEY'];
 
 function config() {
   const missing = required.filter((key) => !process.env[key]);
@@ -12,7 +12,7 @@ function config() {
   return {
     url: process.env.SUPABASE_URL.replace(/\/$/, ''),
     anon: process.env.SUPABASE_ANON_KEY,
-    service: process.env.SUPABASE_SERVICE_ROLE_KEY
+    service: process.env.SUPABASE_SERVICE_ROLE_KEY || null
   };
 }
 
@@ -31,6 +31,11 @@ function clearCookie(name) { return cookie(name, '', 0); }
 
 async function supabase(path, {method='GET', body, accessToken, service=false, headers={}}={}) {
   const cfg = config();
+  if (service && !cfg.service) {
+    const error = new Error('Service-role access is not configured');
+    error.statusCode = 503;
+    throw error;
+  }
   const key = service ? cfg.service : cfg.anon;
   const response = await fetch(`${cfg.url}${path}`, {
     method,
@@ -84,7 +89,15 @@ async function requireSession(req, res) {
 
 function hash(value) { return crypto.createHash('sha256').update(String(value)).digest('hex'); }
 function slug(value) { return String(value).toLowerCase().trim().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,63); }
-function jsonError(res, error) { res.status(error.statusCode || 500).json({ok:false,error:error.message,details:error.details || undefined}); }
-function method(req,res,allowed) { if (!allowed.includes(req.method)) { res.setHeader('Allow',allowed); res.status(405).json({ok:false,error:'method_not_allowed'}); return false; } return true; }
+function jsonError(res, error) {
+  const status = Number.isInteger(error?.statusCode) && error.statusCode >= 400 && error.statusCode < 500 ? error.statusCode : 500;
+  const code = status === 500 ? 'internal_error' : 'request_failed';
+  res.status(status).json({ok:false,error:code});
+}
+function method(req,res,allowed) {
+  res.setHeader('Cache-Control','no-store');
+  if (!allowed.includes(req.method)) { res.setHeader('Allow',allowed); res.status(405).json({ok:false,error:'method_not_allowed'}); return false; }
+  return true;
+}
 
 module.exports = {config,supabase,session,requireSession,cookie,clearCookie,hash,slug,jsonError,method};

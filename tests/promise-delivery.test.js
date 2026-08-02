@@ -107,7 +107,7 @@ test('R02 claim registry reconciles every frozen record and governs every site-l
   assert.ok(registry.claims.every((claim) => claim.reviewedBy && claim.reviewedAt && claim.decisionBasis));
 });
 
-test('R07 records five bounded tool evaluations and bounded privacy assurance without overstating certification', () => {
+test('R07 records five bounded tool evaluations plus bounded privacy and security assurance without overstating certification', () => {
   const assurance = JSON.parse(fs.readFileSync('content/governance/assurance-registry.json', 'utf8'));
   const manifest = JSON.parse(fs.readFileSync('api/assurance-manifest.json', 'utf8'));
   const citationEvaluation = JSON.parse(fs.readFileSync('api/evaluations/citation-verifier.json', 'utf8'));
@@ -116,6 +116,7 @@ test('R07 records five bounded tool evaluations and bounded privacy assurance wi
   const billEvaluation = JSON.parse(fs.readFileSync('api/evaluations/bill-analyzer.json', 'utf8'));
   const controlledSubstancesEvaluation = JSON.parse(fs.readFileSync('api/evaluations/controlled-substances-explainer.json', 'utf8'));
   const privacyEvaluation = JSON.parse(fs.readFileSync('api/evaluations/privacy.json', 'utf8'));
+  const securityEvaluation = JSON.parse(fs.readFileSync('api/evaluations/security.json', 'utf8'));
   assert.equal(assurance.methodConformance.controls.length, 12);
   assert.equal(assurance.methodConformance.exceptions.length, 0);
   assert.equal(assurance.methodConformance.decision, 'foundation-approved-not-site-certified');
@@ -177,10 +178,16 @@ test('R07 records five bounded tool evaluations and bounded privacy assurance wi
   assert.equal(privacyEvaluation.metrics.failedChecks, 0);
   assert.ok(privacyEvaluation.dataFlows.length >= 7);
   assert.ok(privacyEvaluation.requestProcess && privacyEvaluation.incidentPath && privacyEvaluation.review.lastReviewed);
-  assert.ok(assurance.siteAssuranceDomains.filter((item) => item.id !== 'privacy').every((item) => item.state === 'required-not-yet-certified' && item.requiredEvidence));
+  const security = assurance.siteAssuranceDomains.find((item) => item.id === 'security');
+  assert.equal(security.state, 'passed-limited');
+  assert.equal(security.evidenceHref, '/api/evaluations/security.json');
+  assert.equal(securityEvaluation.decision, 'passed-limited-repository-and-public-deployment-boundary');
+  assert.equal(securityEvaluation.metrics.failedChecks, 0);
+  assert.ok(securityEvaluation.permissionsBoundary && securityEvaluation.secretsAndLoggingControls && securityEvaluation.incidentPath && securityEvaluation.review.lastReviewed);
+  assert.ok(assurance.siteAssuranceDomains.filter((item) => !['privacy','security'].includes(item.id)).every((item) => item.state === 'required-not-yet-certified' && item.requiredEvidence));
   assert.equal(manifest.counts.methodControls, 12);
   assert.equal(manifest.counts.evaluatedHighStakesTools, 5);
-  assert.equal(manifest.counts.evaluatedAssuranceDomains, 1);
+  assert.equal(manifest.counts.evaluatedAssuranceDomains, 2);
   assert.equal(manifest.counts.assuranceDomainsCertified, 0);
   assert.equal(manifest.counts.errors, 0);
 });

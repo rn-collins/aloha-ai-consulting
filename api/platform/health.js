@@ -7,26 +7,20 @@ module.exports = async function handler(req, res) {
     return res.status(405).json({ ok: false, error: 'method_not_allowed' });
   }
 
-  const configured = {
-    supabaseUrl: Boolean(process.env.SUPABASE_URL),
-    supabaseAnonKey: Boolean(process.env.SUPABASE_ANON_KEY),
-    supabaseServiceRole: Boolean(process.env.SUPABASE_SERVICE_ROLE_KEY)
-  };
-
-  const persistenceReady = Object.values(configured).every(Boolean);
+  const persistenceReady = Boolean(process.env.SUPABASE_URL && process.env.SUPABASE_ANON_KEY);
+  const platformEnabled = process.env.PLATFORM_PUBLIC_AUTH_ENABLED === 'true';
   const environment = process.env.PLATFORM_ENV || process.env.VERCEL_ENV || 'development';
 
-  return res.status(persistenceReady ? 200 : 503).json({
-    ok: persistenceReady,
+  return res.status(persistenceReady && platformEnabled ? 200 : 503).json({
+    ok: persistenceReady && platformEnabled,
     service: 'aloha-ai-platform',
     environment,
     version: 'foundation-v1',
     boundaries: {
       publicLab: 'browser-local',
-      authenticatedPlatform: persistenceReady ? 'configured' : 'awaiting-environment-variables',
+      authenticatedPlatform: persistenceReady && platformEnabled ? 'available' : 'unavailable',
       externalDelivery: 'disabled-until-approval-gate'
     },
-    configured,
     timestamp: new Date().toISOString()
   });
 };

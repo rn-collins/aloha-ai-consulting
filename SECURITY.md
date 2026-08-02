@@ -2,7 +2,9 @@
 
 ## Reporting
 
-Do not open a public issue containing a credential, personal information, confidential material, or an exploitable vulnerability. Contact the repository owner privately through the contact method published on the Aloha AI website.
+Do not open a public issue containing a credential, personal information, confidential material, or an exploitable vulnerability. Use the Microsoft Bookings link on the Aloha AI contact page, choose any available time, and write “security report — no meeting needed.” Include only the affected route or component, approximate time, a concise non-exploitative description, and a safe reply path. Do not include a working exploit, credential, confidential material, or exposed data in the booking note. RN will treat the booking as a private report rather than a meeting.
+
+There is no public bounty program and no authorization to access data, disrupt service, test third-party systems, or exceed ordinary good-faith observation. Stop testing if personal data, credentials, or another person’s account may be affected.
 
 ## Secret handling
 
@@ -29,4 +31,4 @@ Do not commit client information, consultation notes, user-submitted form data, 
 
 ## Supported surface
 
-Security support covers files and workflows in this repository. Separately deployed monitoring systems, booking services, email providers, and Vercel account configuration must be reviewed under their own access and incident controls.
+Security support covers files and workflows in this repository and the bounded public-site deployment evidence recorded by the assurance process. Separately deployed monitoring systems, Microsoft Bookings, Supabase configuration and row-level-security policies, GitHub and Vercel account controls, client systems, and future integrations require their own access and incident reviews.
