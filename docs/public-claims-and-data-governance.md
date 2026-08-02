@@ -23,7 +23,7 @@ The following claims require continuous verification before material publication
 1. Aloha AI is a DBA or operating brand of Rayven-Nikkita Collins LLC.
 2. RN Collins's degrees, JD-candidate status, roles, and professional descriptions are current and accurately framed.
 3. Public tools run locally in the browser unless a page expressly documents another data flow.
-4. The site uses no tracking, cookies, or analytics.
+4. The site uses no advertising tracking or advertising cookies; Vercel Speed Insights performs cookieless performance measurement on published routes.
 5. Regulatory-intelligence tools rely on identified sources and state when records were last verified.
 6. Service descriptions do not imply legal representation, guaranteed outcomes, or professional licensure that does not exist.
 7. Named tool counts, page counts, resource counts, and coverage claims match the deployed site.
@@ -54,15 +54,18 @@ Where externally hosted Google Fonts are used, the visitor's browser may contact
 
 Linked tools on other Vercel deployments or repositories require separate inspection. This repository cannot certify their data behavior merely by linking to them.
 
-## Privacy behavior — resolved (2026-07-22)
+## Privacy behavior — superseded by R07 evidence (2026-08-02)
 
-`privacy.html` states no analytics, no cookies, and no third-party trackers. That claim is now accurate across every route:
+The July 22 note below became stale when Vercel Speed Insights was restored site-wide. The canonical, machine-checkable privacy record is now `/api/evaluations/privacy.json`; it controls over this historical note.
 
-- The Vercel Insights and Speed Insights beacons were removed from all pages that carried them (`/practice` and six `/university/tools/*` pages).
-- The behavioral-analytics apparatus on `/practice` (page views, scroll depth, section-visibility, and CTA-click events sent to an external endpoint with user-agent and referrer) was disabled; `trackEvent` is now a no-op.
-- No Google Analytics or Google Tag Manager scripts are present, and the `vercel.json` CSP does not permit them. The CSP currently permits connections to `'self'`, `aloha-dea-tracker.vercel.app`, and CourtListener domains, but permission in a browser policy is not evidence that a public tool makes those connections. The current Citation Verifier performs only a browser-local structural check.
+- Vercel Speed Insights is present on generated public HTML and is disclosed as cookieless performance measurement.
+- No Google Analytics, Google Tag Manager, Meta Pixel, Hotjar, or advertising tracker is configured.
+- The local scoping form creates a browser-local record and stores only short-lived source attribution in session storage.
+- Microsoft Bookings is the only active contact submission path and is governed by Microsoft and the associated Northeastern account.
+- Platform API foundations are deployed but not linked as public workspace access. Public sign-up and sign-in fail closed unless `PLATFORM_PUBLIC_AUTH_ENABLED=true`; authenticated data routes require a valid session; external model delivery remains disabled.
+- The CSP allow-list is a permission boundary, not proof that a route makes a request. Route and script behavior remain subject to the R07 inventory and production verification.
 
-Voluntary form submissions (booking a call, emailing, or submitting an assessment/enroll form) remain and are disclosed in the policy ("the only data collected is what you send"). Re-verify deployed network activity after any future change touching scripts or forms before re-certifying.
+Re-run the privacy assurance gate and re-verify deployed network behavior after any change to scripts, forms, storage, cookies, analytics, APIs, authentication, CSP, booking, or third-party destinations.
 
 ## Third-party assets and rights register
 

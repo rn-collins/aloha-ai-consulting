@@ -1,6 +1,9 @@
 const {supabase,cookie,jsonError,method} = require('../../_lib/platform');
 module.exports = async function handler(req,res){
   if(!method(req,res,['POST'])) return;
+  if(process.env.PLATFORM_PUBLIC_AUTH_ENABLED !== 'true') {
+    return res.status(503).json({ok:false,error:'public_sign_in_unavailable'});
+  }
   try{
     const {email,password}=req.body||{};
     if(!email||!password) return res.status(400).json({ok:false,error:'email_and_password_required'});

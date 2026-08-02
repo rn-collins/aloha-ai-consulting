@@ -107,7 +107,7 @@ test('R02 claim registry reconciles every frozen record and governs every site-l
   assert.ok(registry.claims.every((claim) => claim.reviewedBy && claim.reviewedAt && claim.decisionBasis));
 });
 
-test('R07 assurance records five bounded evaluations without overstating certification', () => {
+test('R07 records five bounded tool evaluations and bounded privacy assurance without overstating certification', () => {
   const assurance = JSON.parse(fs.readFileSync('content/governance/assurance-registry.json', 'utf8'));
   const manifest = JSON.parse(fs.readFileSync('api/assurance-manifest.json', 'utf8'));
   const citationEvaluation = JSON.parse(fs.readFileSync('api/evaluations/citation-verifier.json', 'utf8'));
@@ -115,6 +115,7 @@ test('R07 assurance records five bounded evaluations without overstating certifi
   const evidenceEvaluation = JSON.parse(fs.readFileSync('api/evaluations/evidence-explainer.json', 'utf8'));
   const billEvaluation = JSON.parse(fs.readFileSync('api/evaluations/bill-analyzer.json', 'utf8'));
   const controlledSubstancesEvaluation = JSON.parse(fs.readFileSync('api/evaluations/controlled-substances-explainer.json', 'utf8'));
+  const privacyEvaluation = JSON.parse(fs.readFileSync('api/evaluations/privacy.json', 'utf8'));
   assert.equal(assurance.methodConformance.controls.length, 12);
   assert.equal(assurance.methodConformance.exceptions.length, 0);
   assert.equal(assurance.methodConformance.decision, 'foundation-approved-not-site-certified');
@@ -169,9 +170,17 @@ test('R07 assurance records five bounded evaluations without overstating certifi
   assert.match(renderer, /status\.evaluation === 'limited'/);
   assert.match(renderer, /Browser-local \$\{resource\.kind\} · bounded evaluation/);
   assert.equal(assurance.siteAssuranceDomains.length, 7);
-  assert.ok(assurance.siteAssuranceDomains.every((item) => item.state === 'required-not-yet-certified' && item.requiredEvidence));
+  const privacy = assurance.siteAssuranceDomains.find((item) => item.id === 'privacy');
+  assert.equal(privacy.state, 'passed-limited');
+  assert.equal(privacy.evidenceHref, '/api/evaluations/privacy.json');
+  assert.equal(privacyEvaluation.decision, 'passed-limited-public-site-boundary');
+  assert.equal(privacyEvaluation.metrics.failedChecks, 0);
+  assert.ok(privacyEvaluation.dataFlows.length >= 7);
+  assert.ok(privacyEvaluation.requestProcess && privacyEvaluation.incidentPath && privacyEvaluation.review.lastReviewed);
+  assert.ok(assurance.siteAssuranceDomains.filter((item) => item.id !== 'privacy').every((item) => item.state === 'required-not-yet-certified' && item.requiredEvidence));
   assert.equal(manifest.counts.methodControls, 12);
   assert.equal(manifest.counts.evaluatedHighStakesTools, 5);
+  assert.equal(manifest.counts.evaluatedAssuranceDomains, 1);
   assert.equal(manifest.counts.assuranceDomainsCertified, 0);
   assert.equal(manifest.counts.errors, 0);
 });

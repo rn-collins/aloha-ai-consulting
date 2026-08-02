@@ -123,7 +123,11 @@
   "siteAssuranceDomains": [
     {
       "id": "privacy",
-      "state": "required-not-yet-certified",
+      "state": "passed-limited",
+      "decision": "Passed within the dated public-site technical and policy boundary; this is not a legal-compliance certification or a certification of third-party, client, satellite, or future-system behavior.",
+      "evaluatedAt": "2026-08-02",
+      "evidenceHref": "/api/evaluations/privacy.json",
+      "retestTrigger": "Any script, form, storage, cookie, analytics, API, authentication, CSP, booking, third-party destination, privacy-copy, or deployment change; otherwise 2026-11-02.",
       "requiredEvidence": "Data-flow inventory, deployed network and script inventory, request process, owner, review date, and incident path"
     },
     {
@@ -163,6 +167,7 @@
     "methodRevisions": 1,
     "highStakesToolsQueued": 5,
     "evaluatedHighStakesTools": 5,
+    "evaluatedAssuranceDomains": 1,
     "assuranceDomainsCertified": 0,
     "errors": 0
   },

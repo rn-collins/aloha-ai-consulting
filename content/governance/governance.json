@@ -1255,7 +1255,7 @@
       "browser-local tools",
       "data deletion"
     ],
-    "effectiveDate": "2026-07-31",
+    "effectiveDate": "2026-08-02",
     "policyOwner": "Aloha AI, a DBA of Rayven-Nikkita Collins LLC · Honolulu, HI",
     "policySections": [
       {
@@ -1280,7 +1280,7 @@
       {
         "title": "What is collected",
         "paragraphs": [
-          "No account is required to use the public site. Aloha AI does not currently operate a brand-owned public intake endpoint or email channel."
+          "No account is required to use the public site. Public account creation and sign-in are disabled. Aloha AI does not currently operate a brand-owned public intake endpoint or email channel. Unlinked platform API foundations are deployed for development, but authenticated routes require a valid session, model delivery is disabled, and the public authentication endpoints fail closed unless an explicit production enablement flag is set."
         ],
         "points": [
           "If you book a call: the details entered in Microsoft Bookings, typically name, email address, and any note, are handled through the Northeastern-associated Microsoft account shown before you leave the site.",
@@ -1308,19 +1308,25 @@
       {
         "title": "Your rights",
         "paragraphs": [
-          "The site-held source context can be cleared directly on the contact page. Information entered into Microsoft Bookings is governed by that service and the associated account. A brand-owned access, correction, and deletion request channel will be published before Aloha AI activates server-side intake."
+          "The site-held source context can be cleared directly on the contact page. To request access, correction, or deletion for information deliberately sent through Microsoft Bookings, open the current booking link, choose any available time, and put “privacy request — no meeting needed” in the note. Do not add sensitive information. RN will treat the booking as a request rather than a meeting and respond through the address you provide. A brand-owned request channel will replace this interim path before Aloha AI activates server-side intake."
         ]
       },
       {
         "title": "Children",
         "paragraphs": [
-          "The site is intended for professionals and is not directed to children under 13. Aloha AI does not knowingly collect information from children. If you believe a child has sent information, request deletion by email."
+          "The site is intended for professionals and is not directed to children under 13. Aloha AI does not knowingly collect information from children. If you believe a child has sent information through Microsoft Bookings, use the current booking link and put “privacy request” in the note; do not include additional personal information."
         ]
       },
       {
         "title": "Changes",
         "paragraphs": [
           "If this policy changes, the effective date will change with it. Material changes are unlikely under the collect-almost-nothing approach."
+        ]
+      },
+      {
+        "title": "Privacy or security incidents",
+        "paragraphs": [
+          "If you believe information was exposed or the site behaved differently from this policy, use the current Microsoft Bookings link and put “privacy incident — no meeting needed” in the note. Include only the affected route, approximate date and time, and a safe way to reply; do not paste credentials, confidential material, or the exposed information itself. RN will preserve the report, investigate the affected path, suspend it when warranted, and document the disposition."
         ]
       },
       {
@@ -1340,7 +1346,7 @@
       "Keep public interactive processing in the browser",
       "Use cookieless aggregate performance measurement only",
       "Limit retained personal information to voluntary contact and engagement records",
-      "Honor access and deletion requests directly"
+      "Route access, correction, deletion, and incident reports through the disclosed interim request path"
     ],
     "assumptions": [
       "Deployed analytics and tool behavior remain consistent with this published policy",
@@ -1369,7 +1375,7 @@
       }
     ],
     "editorialIntro": [
-      "This site sets no advertising cookies and builds no advertising profile of you. It uses Vercel Speed Insights for cookieless performance measurement and does not follow you across other sites. Public interactive tools run in your browser by default; any optional external connection is identified on its page before you use it. I hold information you choose to send through booking or email."
+      "This site sets no advertising cookies and builds no advertising profile of you. It uses Vercel Speed Insights for cookieless performance measurement and does not follow you across other sites. Public interactive tools run in your browser by default; any optional external connection is identified on its page before you use it. I hold information you choose to send through Microsoft Bookings."
     ],
     "editorialSections": [
       {
@@ -1377,7 +1383,7 @@
         "blocks": [
           {
             "type": "paragraph",
-            "text": "Effective 2026-07-04 · Aloha AI, a DBA of Rayven-Nikkita Collins LLC · Honolulu, HI"
+            "text": "Effective 2026-08-02 · Aloha AI, a DBA of Rayven-Nikkita Collins LLC · Honolulu, HI"
           },
           {
             "type": "heading",
@@ -1412,12 +1418,12 @@
           {
             "type": "list",
             "items": [
-              "If you email me: your email address, your name if you include it, and whatever you write in the message."
+              "There is no public Aloha AI email or server-side intake channel at this time."
             ]
           },
           {
             "type": "paragraph",
-            "text": "That's it. No account is required to use anything on this site."
+            "text": "No account is required to use the public site. Public account creation and sign-in are disabled."
           },
           {
             "type": "heading",
@@ -1444,7 +1450,7 @@
           {
             "type": "list",
             "items": [
-              "Email lives in my ordinary mail client and reaches me through your own mail provider. No separate email platform or CRM sits in between."
+              "Public account creation and sign-in fail closed; unlinked platform API foundations are not represented as public workspace access."
             ]
           },
           {
@@ -1465,7 +1471,7 @@
           },
           {
             "type": "paragraph",
-            "text": "You can ask me what information I hold about you, and you can ask me to delete it. Since the only data I have is what you sent, honoring either request is simple. Just email me (below) and I'll take care of it."
+            "text": "To request access, correction, or deletion for information deliberately sent through Microsoft Bookings, use the current booking link and write “privacy request — no meeting needed” in the note."
           },
           {
             "type": "heading",
@@ -1473,7 +1479,7 @@
           },
           {
             "type": "paragraph",
-            "text": "This site is intended for professionals and is not directed to children under 13. I don't knowingly collect information from children. If you believe a child has sent me information, email me and I'll delete it."
+            "text": "This site is intended for professionals and is not directed to children under 13. I don't knowingly collect information from children. If you believe a child sent information through Microsoft Bookings, use the privacy-request path without adding more personal information."
           },
           {
             "type": "heading",
@@ -1499,7 +1505,7 @@
         "blocks": [
           {
             "type": "paragraph",
-            "text": "Reach me directly: Email RN · or connect on LinkedIn"
+            "text": "Use the disclosed Microsoft Bookings privacy-request path; no meeting is required."
           }
         ]
       }

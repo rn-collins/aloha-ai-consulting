@@ -13,6 +13,7 @@ const claimsEvaluation = read('api/evaluations/claims-checker.json');
 const evidenceEvaluation = read('api/evaluations/evidence-explainer.json');
 const billEvaluation = read('api/evaluations/bill-analyzer.json');
 const controlledSubstancesEvaluation = read('api/evaluations/controlled-substances-explainer.json');
+const privacyEvaluation = read('api/evaluations/privacy.json');
 
 for (const field of ['schema','version','effectiveDate','owner','reviewer','nextReviewOrTrigger','policy']) if (!registry[field]) errors.push(`registry: ${field} missing`);
 if (methods.version !== conformance.methodVersion || methods.id !== conformance.methodId) errors.push('methods record and conformance version do not match');
@@ -64,7 +65,13 @@ const domains = registry.siteAssuranceDomains || [];
 if (domains.length !== requiredDomains.length || new Set(domains.map((item) => item.id)).size !== requiredDomains.length) errors.push(`site assurance domain coverage is ${domains.length}/${requiredDomains.length}`);
 for (const id of requiredDomains) {
   const item = domains.find((candidate) => candidate.id === id);
-  if (!item || item.state !== 'required-not-yet-certified' || !item.requiredEvidence) errors.push(`${id}: assurance domain must fail closed`);
+  if (!item || !item.requiredEvidence) errors.push(`${id}: assurance domain record is incomplete`);
+  else if (id === 'privacy') {
+    if (item.state !== 'passed-limited' || !item.evidenceHref || !item.decision || !item.retestTrigger) errors.push('privacy: bounded assurance decision is incomplete');
+    if (privacyEvaluation.decision !== 'passed-limited-public-site-boundary' || privacyEvaluation.metrics.failedChecks !== 0 || privacyEvaluation.metrics.passedChecks !== privacyEvaluation.metrics.totalChecks) errors.push('privacy: evidence does not satisfy the bounded threshold');
+    if (!privacyEvaluation.dataFlows?.length || !privacyEvaluation.deployedNetworkAndScriptInventory || !privacyEvaluation.requestProcess || !privacyEvaluation.owner || !privacyEvaluation.review?.lastReviewed || !privacyEvaluation.incidentPath) errors.push('privacy: required evidence is incomplete');
+    if (!privacyEvaluation.prohibitedInference) errors.push('privacy: prohibited-inference boundary is missing');
+  } else if (item.state !== 'required-not-yet-certified') errors.push(`${id}: assurance domain must fail closed`);
 }
 
 const manifest = {
@@ -75,7 +82,7 @@ const manifest = {
   methodConformance: conformance,
   highStakesEvaluationQueue: queue,
   siteAssuranceDomains: domains,
-  counts: { methodControls: controls.length, methodExceptions: conformance.exceptions.length, methodRevisions: conformance.revisions.length, highStakesToolsQueued: queue.length, evaluatedHighStakesTools: queue.filter((item) => item.state !== 'not-evaluated').length, assuranceDomainsCertified: domains.filter((item) => item.state === 'certified').length, errors: errors.length },
+  counts: { methodControls: controls.length, methodExceptions: conformance.exceptions.length, methodRevisions: conformance.revisions.length, highStakesToolsQueued: queue.length, evaluatedHighStakesTools: queue.filter((item) => item.state !== 'not-evaluated').length, evaluatedAssuranceDomains: domains.filter((item) => item.state !== 'required-not-yet-certified').length, assuranceDomainsCertified: domains.filter((item) => item.state === 'certified').length, errors: errors.length },
   errors
 };
 fs.mkdirSync('api', { recursive: true });
@@ -85,6 +92,6 @@ if (errors.length) {
   for (const error of errors) console.error(`- ${error}`);
   process.exit(1);
 }
-console.log(`Assurance controls passed: ${controls.length} method controls; ${queue.filter((item) => item.state !== 'not-evaluated').length}/${queue.length} high-stakes tools evaluated; ${domains.length} site domains fail closed.`);
+console.log(`Assurance controls passed: ${controls.length} method controls; ${queue.filter((item) => item.state !== 'not-evaluated').length}/${queue.length} high-stakes tools evaluated; ${domains.filter((item) => item.state === 'passed-limited').length}/${domains.length} site domains passed within bounded scope.`);
 
 function read(file) { return JSON.parse(fs.readFileSync(file, 'utf8')); }
