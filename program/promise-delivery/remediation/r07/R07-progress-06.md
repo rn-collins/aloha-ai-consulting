@@ -51,9 +51,19 @@ Disposition: passed-limited for the exact federal-authority-routing scope after 
 
 ## Production verification
 
-Pending deployment of this bounded unit.
+PASS within the stated boundary. GitHub `main` evaluation commit `b19f9fead287a251009f909122e360f889dce9e8`, whose remote tree exactly matched the locally tested tree, deployed through Vercel production deployment `dpl_6T9AU51ymX8ACDEmwpVdzBWugqGB`. Live review then found inherited dossier language that still described schedule, agency-role, rescheduling, and federal-state explanations as tool output. Corrective commit `ce85345457e56dbddb654e738149b0b6b029cbf8`, whose remote tree also exactly matched the corrected local tree, deployed through Vercel production deployment `dpl_CtGpAUHaL376DxyHTJYXdnbNk9it`.
 
-R07 Unit 6 completes the five high-stakes tool evaluations. R07 remains open for seven evidence-producing site-assurance domains: privacy, security, accessibility, corrections, legal authority, rights and attribution, and institutional credentials.
+Production verification established:
+
+- Both deployments reached `READY`, targeted production, and Vercel metadata identified the exact GitHub commits.
+- `/tools/controlled-substances-explainer`, `/api/evaluations/controlled-substances-explainer.json`, and `/api/assurance-manifest.json` returned HTTP 200 from the canonical domain.
+- The canonical tool page visibly says `bounded evaluation`, identifies rule `1.1.0`, and describes federal-only routing for four configured substances.
+- The live evaluation reports 24 cases, 24 passes, zero failures, six correct abstentions, zero unexpected routes, zero false clearances, five unsupported-inference cases, and the `passed-limited-federal-authority-routing-scope` decision.
+- The live assurance manifest reports all five high-stakes tools as evaluated within bounded scope, seven uncertified assurance domains, and zero assurance errors.
+- The live page states that no-match output is an abstention and no longer claims generated schedule-system, agency-role, rescheduling-process, federal-state, or Beehiiv functionality.
+- No legality, permission, approval, registration, prescribing, research-authorization, activity-specific, or nonfederal conclusion is claimed.
+
+R07 Unit 6 is closed and completes the five high-stakes tool evaluations. R07 remains open for seven evidence-producing site-assurance domains: privacy, security, accessibility, corrections, legal authority, rights and attribution, and institutional credentials.
 
 Verifier: Codex remediation agent
 
