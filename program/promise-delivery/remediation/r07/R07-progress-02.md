@@ -2,7 +2,7 @@
 
 Date: 2026-07-31
 
-Status: passed locally; production verification pending
+Status: passed; R07 remains open
 
 Baseline production commit: `952ef15de9c39210d906ce6f8a6a9baebf3e49f0`
 
@@ -54,7 +54,22 @@ Disposition: passed-limited for the exact structural scope; broader verification
 - The parser omits statutes, regulations, docket citations, database identifiers, slip opinions, state reporters, and many parallel-citation forms.
 - A structurally plausible citation can still be fabricated, overruled, misquoted, or attached to an unsupported proposition.
 - No external source integration, citator treatment, filing gate, audit trail, or professional certification is included in the public tool.
-- Production deployment, live API checks, and rendered browser verification remain required before this unit closes.
+- Automated cloud-browser attachment was unavailable during production verification; static HTML, interaction audits, and live HTTP/API checks passed, but a fresh rendered-browser inspection remains a retest item.
+
+## Production verification
+
+PASS within the stated boundary. GitHub `main` commit `f1d9d6f36e80e6b23b0d8ad624066f26f6686fe8`, whose tree exactly matched the locally validated tree `ca4569b81bcc8d9623f9b7979ee43fbb9c0c40e2`, deployed through Vercel production deployment `dpl_CwbM3vV4ZwouCz4uP37W6gB3KBNA`. The deployment reached `READY`, targets production, and owns the canonical alias.
+
+Production verification established:
+
+- `/`, `/tools/citation-verifier`, `/api/evaluations/citation-verifier.json`, and `/api/assurance-manifest.json` returned HTTP 200 from the canonical domain.
+- The live tool page publishes the corrected structural-screen title and the no-source-existence/no-proposition-support boundary.
+- The live evaluation reports 20 total cases, 20 passes, zero failures, 100% in-scope case accuracy, zero high-consequence false passes, and the `passed-limited-structural-scope` decision.
+- The live assurance manifest reports one evaluated high-stakes tool, Citation Verifier as `passed-limited`, and zero assurance errors.
+- Vercel metadata identifies the exact GitHub commit and the deployment state as `READY`.
+- Vercel runtime-error and build-log endpoints returned team-scope 403 responses; no claim about the absence of runtime errors is made.
+
+R07 Unit 2 is closed. R07 remains open for four tool evaluations and seven evidence-producing site-assurance domains.
 
 Verifier: Codex remediation agent
 
