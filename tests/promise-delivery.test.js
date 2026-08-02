@@ -131,6 +131,9 @@ test('R07 assurance records two bounded evaluations without overstating certific
   assert.equal(claimsEvaluation.metrics.falseClearances, 0);
   assert.equal(claimsEvaluation.metrics.abstentionAccuracy, 1);
   assert.equal(claimsEvaluation.decision, 'passed-limited-lexical-screening-scope');
+  const renderer = fs.readFileSync('lib/site/structured-renderer.js', 'utf8');
+  assert.match(renderer, /status\.evaluation === 'limited'/);
+  assert.match(renderer, /Browser-local \$\{resource\.kind\} · bounded evaluation/);
   assert.equal(assurance.siteAssuranceDomains.length, 7);
   assert.ok(assurance.siteAssuranceDomains.every((item) => item.state === 'required-not-yet-certified' && item.requiredEvidence));
   assert.equal(manifest.counts.methodControls, 12);

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-02T09:04:00.290Z",
+  "generatedAt": "2026-08-02T09:10:45.588Z",
   "summary": {
     "routes": 497,
     "found": 497,
@@ -932,7 +932,7 @@
         "buttons": 5,
         "links": 19,
         "workspaceLinks": 1,
-        "pageBytes": 24051
+        "pageBytes": 24056
       },
       "findings": []
     },
@@ -2324,7 +2324,7 @@
         "buttons": 0,
         "links": 8,
         "workspaceLinks": 0,
-        "pageBytes": 9961
+        "pageBytes": 9966
       },
       "findings": []
     },
@@ -2468,7 +2468,7 @@
         "buttons": 0,
         "links": 8,
         "workspaceLinks": 0,
-        "pageBytes": 10347
+        "pageBytes": 10352
       },
       "findings": []
     },
@@ -3000,7 +3000,7 @@
         "buttons": 3,
         "links": 7,
         "workspaceLinks": 0,
-        "pageBytes": 32038
+        "pageBytes": 32043
       },
       "findings": []
     },
@@ -3390,7 +3390,7 @@
         "buttons": 0,
         "links": 12,
         "workspaceLinks": 0,
-        "pageBytes": 16944
+        "pageBytes": 16949
       },
       "findings": []
     },
@@ -3438,7 +3438,7 @@
         "buttons": 0,
         "links": 11,
         "workspaceLinks": 0,
-        "pageBytes": 15397
+        "pageBytes": 15402
       },
       "findings": []
     },
@@ -4347,7 +4347,7 @@
         "buttons": 0,
         "links": 10,
         "workspaceLinks": 0,
-        "pageBytes": 14245
+        "pageBytes": 14250
       },
       "findings": []
     },
@@ -4395,7 +4395,7 @@
         "buttons": 0,
         "links": 12,
         "workspaceLinks": 0,
-        "pageBytes": 16401
+        "pageBytes": 16406
       },
       "findings": []
     },
@@ -4443,7 +4443,7 @@
         "buttons": 0,
         "links": 9,
         "workspaceLinks": 0,
-        "pageBytes": 13558
+        "pageBytes": 13563
       },
       "findings": []
     },
@@ -4539,7 +4539,7 @@
         "buttons": 0,
         "links": 10,
         "workspaceLinks": 0,
-        "pageBytes": 14248
+        "pageBytes": 14253
       },
       "findings": []
     },
@@ -4927,7 +4927,7 @@
         "buttons": 5,
         "links": 9,
         "workspaceLinks": 1,
-        "pageBytes": 21165
+        "pageBytes": 21185
       },
       "findings": []
     },
@@ -4976,7 +4976,7 @@
         "buttons": 5,
         "links": 8,
         "workspaceLinks": 1,
-        "pageBytes": 22166
+        "pageBytes": 22191
       },
       "findings": []
     },
@@ -5074,7 +5074,7 @@
         "buttons": 5,
         "links": 7,
         "workspaceLinks": 1,
-        "pageBytes": 23109
+        "pageBytes": 23114
       },
       "findings": []
     },
@@ -15572,7 +15572,7 @@
         "buttons": 6,
         "links": 57,
         "workspaceLinks": 0,
-        "pageBytes": 45263
+        "pageBytes": 45268
       },
       "findings": []
     },
@@ -16484,7 +16484,7 @@
         "buttons": 6,
         "links": 51,
         "workspaceLinks": 0,
-        "pageBytes": 44099
+        "pageBytes": 44104
       },
       "findings": []
     },
@@ -21866,7 +21866,7 @@
         "buttons": 0,
         "links": 17,
         "workspaceLinks": 0,
-        "pageBytes": 18778
+        "pageBytes": 18783
       },
       "findings": []
     },
@@ -21915,7 +21915,7 @@
         "buttons": 0,
         "links": 16,
         "workspaceLinks": 0,
-        "pageBytes": 18773
+        "pageBytes": 18778
       },
       "findings": []
     },
@@ -22892,7 +22892,7 @@
         "buttons": 1,
         "links": 12,
         "workspaceLinks": 0,
-        "pageBytes": 13836
+        "pageBytes": 13841
       },
       "findings": []
     },
