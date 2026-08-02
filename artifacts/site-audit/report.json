@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-02T09:42:15.898Z",
+  "generatedAt": "2026-08-02T09:46:15.298Z",
   "summary": {
     "routes": 497,
     "found": 497,
@@ -741,7 +741,7 @@
         "buttons": 16,
         "links": 106,
         "workspaceLinks": 2,
-        "pageBytes": 61151
+        "pageBytes": 61139
       },
       "findings": []
     },
@@ -789,7 +789,7 @@
         "buttons": 7,
         "links": 21,
         "workspaceLinks": 0,
-        "pageBytes": 12757
+        "pageBytes": 12745
       },
       "findings": []
     },
@@ -1700,7 +1700,7 @@
         "buttons": 17,
         "links": 69,
         "workspaceLinks": 0,
-        "pageBytes": 40609
+        "pageBytes": 40597
       },
       "findings": []
     },
@@ -1940,7 +1940,7 @@
         "buttons": 4,
         "links": 12,
         "workspaceLinks": 0,
-        "pageBytes": 7094
+        "pageBytes": 7082
       },
       "findings": []
     },
@@ -2036,7 +2036,7 @@
         "buttons": 10,
         "links": 36,
         "workspaceLinks": 1,
-        "pageBytes": 21484
+        "pageBytes": 21472
       },
       "findings": []
     },
@@ -2564,7 +2564,7 @@
         "buttons": 10,
         "links": 100,
         "workspaceLinks": 1,
-        "pageBytes": 59897
+        "pageBytes": 59885
       },
       "findings": []
     },
@@ -4850,7 +4850,7 @@
       "file": "tools/bill-analyzer.html",
       "exists": true,
       "title": "Regulatory Bill Analyzer | Aloha AI",
-      "description": "A browser-local triage tool that turns pasted bill or regulatory text into an inspectable map of obligations, actors, dates, enforcement language, and open questions.",
+      "description": "A browser-local lexical triage tool that flags configured obligation, prohibition, deadline, threshold, authority, and enforcement terms for human review.",
       "canonical": "https://aloha-ai-consulting.vercel.app/tools/bill-analyzer",
       "score": 100,
       "checks": {
@@ -4878,7 +4878,7 @@
         "buttons": 6,
         "links": 8,
         "workspaceLinks": 1,
-        "pageBytes": 23401
+        "pageBytes": 23069
       },
       "findings": []
     },
@@ -10601,7 +10601,7 @@
         "buttons": 3,
         "links": 11,
         "workspaceLinks": 0,
-        "pageBytes": 6555
+        "pageBytes": 6543
       },
       "findings": []
     },
@@ -12761,7 +12761,7 @@
         "buttons": 6,
         "links": 14,
         "workspaceLinks": 0,
-        "pageBytes": 8858
+        "pageBytes": 8846
       },
       "findings": []
     },
@@ -14153,7 +14153,7 @@
         "buttons": 2,
         "links": 10,
         "workspaceLinks": 0,
-        "pageBytes": 5765
+        "pageBytes": 5753
       },
       "findings": []
     },

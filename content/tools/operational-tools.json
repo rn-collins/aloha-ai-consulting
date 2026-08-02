@@ -5,7 +5,7 @@
     "pathname": "/tools/bill-analyzer",
     "eyebrow": "Regulatory intelligence tool",
     "title": "Read a bill for its obligations before you read it line by line.",
-    "summary": "A browser-local triage tool that turns pasted bill or regulatory text into an inspectable map of obligations, actors, dates, enforcement language, and open questions.",
+    "summary": "A browser-local lexical triage tool that flags configured obligation, prohibition, deadline, threshold, authority, and enforcement terms for human review.",
     "audience": "Policy, legal-operations, advocacy, and regulated-market teams reviewing new authority.",
     "maturity": "Beta",
     "topics": [
@@ -145,7 +145,7 @@
         "blocks": [
           {
             "type": "paragraph",
-            "text": "A compliance or policy team watching a legislature reads dozens of bills to find the handful that create real obligations. The signal sits in predictable places: mandatory \"shall\" and \"must\" clauses, prohibitions, filing deadlines, dollar thresholds, and rulemaking hooks. This tool does the mechanical first pass so a human starts from a structured map instead of a wall of text. It marks where the obligations are; it does not decide what they mean."
+            "text": "A compliance or policy team watching a legislature reads dozens of bills to find the handful that may create real obligations. Certain review candidates use recurring terms such as \"shall,\" \"must,\" \"prohibited,\" and \"penalty.\" This tool performs that narrow lexical first pass. It flags configured terms; it does not identify every obligation or decide what any provision means."
           },
           {
             "type": "heading",
@@ -249,31 +249,31 @@
           },
           {
             "type": "paragraph",
-            "text": "The text is scanned against keyword lexicons for privacy and data, AI and automated decisions, licensing, penalties and enforcement, fees and taxes, reporting and disclosure, definitions, effective dates, rulemaking delegation, and preemption."
+            "text": "The text is scanned against six published lexicons: obligations, prohibitions, deadlines, thresholds, public authority, and enforcement."
           },
           {
             "type": "heading",
-            "text": "Infer the stakeholders"
+            "text": "Leave actors to the reviewer"
           },
           {
             "type": "paragraph",
-            "text": "Terms like operator, licensee, consumer, agency, employer, and provider map to the parties a text reaches, so you see at a glance who carries the obligations."
+            "text": "The engine does not infer who is covered or who carries a duty. The category question directs the reviewer back to the complete clause, definitions, exceptions, and cross-references."
           },
           {
             "type": "heading",
-            "text": "Pull the triggers"
+            "text": "List the matched terms"
           },
           {
             "type": "paragraph",
-            "text": "Mandatory language (\"shall\", \"must\", \"required to\", \"no person shall\", \"prohibited\"), calendar deadlines, and dollar thresholds are quoted with the surrounding sentence, so nothing is paraphrased."
+            "text": "The result lists only the configured terms that matched. It does not extract, quote, highlight, or paraphrase the surrounding sentence."
           },
           {
             "type": "heading",
-            "text": "Read risk, summarize, and hand off"
+            "text": "Abstain or hand off"
           },
           {
             "type": "paragraph",
-            "text": "Obligation density rolls into a High, Medium, or Low read. A plain-English summary is assembled from section counts, defined terms, and any effective date. A questions-for-counsel checklist frames the handoff to a licensed attorney."
+            "text": "If no configured term matches, the tool abstains without clearing the text. If terms match, fixed category questions frame the handoff. No risk level, summary, legal conclusion, or compliance result is produced."
           }
         ]
       },

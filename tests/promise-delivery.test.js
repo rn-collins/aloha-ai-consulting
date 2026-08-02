@@ -151,6 +151,10 @@ test('R07 assurance records four bounded evaluations without overstating certifi
   assert.equal(billEvaluation.metrics.abstentionAccuracy, 1);
   assert.equal(billEvaluation.metrics.unsupportedInferenceRejections, 1);
   assert.equal(billEvaluation.decision, 'passed-limited-regulatory-language-triage-scope');
+  const billSource = JSON.stringify(JSON.parse(fs.readFileSync('content/tools/operational-tools.json', 'utf8')).find((item) => item.id === 'bill-analyzer'));
+  const billRenderer = fs.readFileSync('lib/site/structured-renderer.js', 'utf8');
+  assert.match(billRenderer, /'bill-analyzer'\) return billAnalyzerSection/);
+  for (const staleClaim of ['Infer the stakeholders', 'quoted with the surrounding sentence', 'Obligation density rolls into a High, Medium, or Low read', 'plain-English summary is assembled']) assert.equal(billSource.includes(staleClaim), false);
   const renderer = fs.readFileSync('lib/site/structured-renderer.js', 'utf8');
   assert.match(renderer, /status\.evaluation === 'limited'/);
   assert.match(renderer, /Browser-local \$\{resource\.kind\} · bounded evaluation/);

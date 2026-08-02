@@ -1,6 +1,6 @@
 {
   "schema": "aloha-ai-monitor-operations/1.0",
-  "asOf": "2026-08-02T09:42:11.218Z",
+  "asOf": "2026-08-02T09:46:11.053Z",
   "policy": "Maintained means manually reviewed only against the named source set and jurisdiction. It does not mean continuous retrieval, automatic alerts, legal advice, or comprehensive coverage.",
   "counts": {
     "monitorRecords": 11,
