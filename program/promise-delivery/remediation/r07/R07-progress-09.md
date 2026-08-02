@@ -2,7 +2,7 @@
 
 Date: 2026-08-02
 
-Status: passed locally within the documented static-structure and interaction-contract boundary; production verification pending; R07 remains open
+Status: passed within the documented static-structure and interaction-contract boundary and verified in production; Unit 9 closed; R07 remains open
 
 Frozen audit baseline: 4,289 promise records / 9,552 occurrences; unchanged
 
@@ -51,6 +51,19 @@ The canonical `/accessibility` statement now publishes:
 
 ## Production verification
 
-Pending publication. This section must record the exact GitHub evaluation commit, Vercel production deployment, live accessibility statement, live evidence and assurance manifest, representative corrected table markup, named Trust-Safe Console controls, and response status before Unit 9 closes.
+PASS within the stated boundary. GitHub `main` evaluation commit `9de98036cbf53018183f3263e94c06ceb08c2262` has Git tree `2976e78cb85e1934dbddc49738cf4d1c6f6ed977`, exactly matching the locally tested tree. It deployed through Vercel production deployment `dpl_8cfxoxiPURQz1SCtCsXxQ7z1bAFj`.
+
+Production verification established:
+
+- The deployment reached `READY`, targeted production, and Vercel metadata identified exact GitHub commit `9de98036cbf53018183f3263e94c06ceb08c2262`.
+- `/accessibility`, `/api/evaluations/accessibility.json`, `/api/assurance-manifest.json`, `/methods`, and `/tools/trust-safe-console` returned HTTP 200 from the canonical domain.
+- The live accessibility statement publishes both private reporting instructions, the alternative-format/accommodation path, the remediation commitment, and the manual-testing exclusions.
+- The live evaluation reports 12 checks, 12 passes, zero failures, zero structural findings, 498 sitemap routes, 41 tables, 1,868 controls, and 30 forms.
+- The live assurance manifest reports three boundedly evaluated site-assurance domains, four remaining required domains, zero certified domains, and zero errors.
+- The live Methods table contains an accessible caption and `scope="col"` header associations.
+- The live Trust-Safe Console gives both textareas programmatic names and exposes its changed human-review result through `role="status"` and `aria-live="polite"`.
+- The live record preserves the explicit non-certification boundary for WCAG conformance, legal compliance, complete rendered contrast, assistive technology, third-party destinations, and future deployments.
+
+R07 Unit 9 is closed.
 
 R07 remains open for four evidence-producing site-assurance domains after this unit closes: corrections, legal authority, rights and attribution, and institutional credentials.
