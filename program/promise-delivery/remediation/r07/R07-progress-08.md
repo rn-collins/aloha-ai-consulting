@@ -2,7 +2,7 @@
 
 Date: 2026-08-02
 
-Status: passed locally within the documented checked-in repository and public-deployment boundary; production verification pending; R07 remains open
+Status: passed within the documented checked-in repository and public-deployment boundary and verified in production; Unit 8 closed; R07 remains open
 
 Frozen audit baseline: 4,289 promise records / 9,552 occurrences; unchanged
 
@@ -51,7 +51,22 @@ Disposition: passed-limited for the dated repository and public-deployment bound
 
 ## Production verification
 
-Pending publication. This section must record the exact GitHub evaluation commit, Vercel production deployment, live route results, response headers, disabled platform behavior, and live evidence/manifest contents before Unit 8 closes.
+PASS within the stated boundary. GitHub `main` evaluation commit `67e33ec9e36cf462ba46bf82317c791e3f903cc9`, whose remote tree exactly matched the locally tested tree, deployed through Vercel production deployment `dpl_6V7eHe44Emnaf8mW4vLJZXX6ApWm`. Live verification exposed CommonJS/ESM runtime failures in the deployed platform handlers. Corrective commits `d9410a6e928b734f24eb725e3ea84d74bbe1f611` and `b919b5ef7ff839425cc8638408f0e3e9f0ae8123`, each published with remote tree equality, deployed through `dpl_6MoQLCSqdDPaCy2RwaxFsGh26czs` and final production deployment `dpl_Di4e1PruijPa46BV68tPmNVZsx7W`.
+
+Production verification established:
+
+- The final deployment reached `READY`, targeted production, and Vercel metadata identified exact GitHub commit `b919b5ef7ff839425cc8638408f0e3e9f0ae8123`.
+- `/privacy`, `/api/evaluations/security.json`, and `/api/assurance-manifest.json` returned HTTP 200 from the canonical domain.
+- The live privacy page publishes the private “security report — no meeting needed” instruction and safe-reporting boundary.
+- The live security evaluation reports 14 checks, 14 passes, zero failures, 16 platform handlers, 11 session-gated handlers, zero service-role callers, zero tracked environment files, and zero checked-tree secret hits.
+- The live assurance manifest reports two boundedly evaluated site-assurance domains, five remaining required domains, zero certified domains, and zero errors.
+- `/api/platform/health` executes and returns deliberate HTTP 503 with `Cache-Control: no-store`, `authenticatedPlatform: unavailable`, and no backend credential-class enumeration.
+- Public auth handlers execute and reject unsupported GET requests with bounded HTTP 405 JSON and `Cache-Control: no-store` rather than crashing.
+- `/api/platform/ai/generate` executes and rejects unsupported GET requests with bounded HTTP 405 JSON and `Cache-Control: no-store`; external model execution remains disabled for POST processing.
+- Live responses include CSP, HSTS, `nosniff`, frame denial, referrer policy, and permissions policy headers.
+- The live record preserves the explicit non-certification boundary for penetration testing, vulnerability absence, third-party systems, operational accounts, and Supabase row-level security.
+
+R07 Unit 8 is closed.
 
 R07 remains open for five evidence-producing site-assurance domains: accessibility, corrections, legal authority, rights and attribution, and institutional credentials.
 
