@@ -73,8 +73,11 @@
       "evaluationId": "EVAL-CITATION-VERIFIER",
       "canonicalId": "citation-verifier",
       "title": "Citation Verifier",
-      "state": "not-evaluated",
-      "requiredNext": "Publish labeled corpus, method version, expected and observed results, failure taxonomy, threshold, reviewer, limitations, decision, and regression gate."
+      "state": "passed-limited",
+      "decision": "Passed only for the browser-local structural scope in rule version 1.0.0; no source existence, status, quotation, or proposition-support inference is permitted.",
+      "evaluatedAt": "2026-07-31",
+      "evidenceHref": "/api/evaluations/citation-verifier.json",
+      "retestTrigger": "Any parser, reporter allow-list, regular expression, result taxonomy, browser runtime, or public capability claim change; otherwise 2026-10-31."
     },
     {
       "evaluationId": "EVAL-REGULATED-CLAIMS",
@@ -147,7 +150,7 @@
     "methodExceptions": 0,
     "methodRevisions": 1,
     "highStakesToolsQueued": 5,
-    "evaluatedHighStakesTools": 0,
+    "evaluatedHighStakesTools": 1,
     "assuranceDomainsCertified": 0,
     "errors": 0
   },

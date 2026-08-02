@@ -417,7 +417,7 @@
       "id": "citation-verifier",
       "kind": "tool",
       "pathname": "/tools/citation-verifier",
-      "title": "Catch the fake citation before it reaches the court.",
+      "title": "Catch a structurally suspicious citation before it reaches the court.",
       "maturity": "Beta"
     },
     {

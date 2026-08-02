@@ -8,6 +8,7 @@ const requiredControls = ['frame-decision','map-work','source-hierarchy','data-m
 const requiredTools = ['citation-verifier','claims-checker','evidence-explainer','bill-analyzer','controlled-substances-explainer'];
 const requiredDomains = ['privacy','security','accessibility','corrections','legal-authority','rights-attribution','institutional-credentials'];
 const conformance = registry.methodConformance;
+const citationEvaluation = read('api/evaluations/citation-verifier.json');
 
 for (const field of ['schema','version','effectiveDate','owner','reviewer','nextReviewOrTrigger','policy']) if (!registry[field]) errors.push(`registry: ${field} missing`);
 if (methods.version !== conformance.methodVersion || methods.id !== conformance.methodId) errors.push('methods record and conformance version do not match');
@@ -23,10 +24,16 @@ const queue = registry.highStakesEvaluationQueue || [];
 if (queue.length !== requiredTools.length || new Set(queue.map((item) => item.evaluationId)).size !== requiredTools.length) errors.push(`high-stakes evaluation queue coverage is ${queue.length}/${requiredTools.length}`);
 for (const id of requiredTools) {
   const item = queue.find((candidate) => candidate.canonicalId === id);
-  if (!item || item.state !== 'not-evaluated' || !item.requiredNext) errors.push(`${id}: must remain explicitly queued and not evaluated`);
+  if (!item) errors.push(`${id}: missing from evaluation queue`);
+  else if (id === 'citation-verifier') {
+    if (item.state !== 'passed-limited' || !item.evidenceHref || !item.decision || !item.retestTrigger) errors.push(`${id}: bounded evaluation decision is incomplete`);
+    if (citationEvaluation.decision !== 'passed-limited-structural-scope' || citationEvaluation.metrics.totalCases < 20 || citationEvaluation.metrics.failedCases !== 0 || citationEvaluation.metrics.highConsequenceFalsePasses !== 0) errors.push(`${id}: evaluation evidence does not satisfy the bounded threshold`);
+    if (citationEvaluation.prohibitedInference !== 'A passing structural result does not establish that an authority exists, remains good law, is quoted accurately, or supports a proposition.') errors.push(`${id}: prohibited inference boundary changed`);
+  } else if (item.state !== 'not-evaluated' || !item.requiredNext) errors.push(`${id}: must remain explicitly queued and not evaluated`);
   const object = release.objects.find((candidate) => candidate.canonicalId === id);
   if (!object) errors.push(`${id}: no canonical release object`);
-  else if (object.status.evaluation === 'passed') errors.push(`${id}: release registry claims a passed evaluation before evidence`);
+  else if (id === 'citation-verifier' && object.status.evaluation !== 'limited') errors.push(`${id}: release registry must record limited evaluation`);
+  else if (id !== 'citation-verifier' && object.status.evaluation !== 'not-evaluated') errors.push(`${id}: release registry claims evaluation before evidence`);
 }
 
 const domains = registry.siteAssuranceDomains || [];
@@ -44,7 +51,7 @@ const manifest = {
   methodConformance: conformance,
   highStakesEvaluationQueue: queue,
   siteAssuranceDomains: domains,
-  counts: { methodControls: controls.length, methodExceptions: conformance.exceptions.length, methodRevisions: conformance.revisions.length, highStakesToolsQueued: queue.length, evaluatedHighStakesTools: queue.filter((item) => item.state === 'passed').length, assuranceDomainsCertified: domains.filter((item) => item.state === 'certified').length, errors: errors.length },
+  counts: { methodControls: controls.length, methodExceptions: conformance.exceptions.length, methodRevisions: conformance.revisions.length, highStakesToolsQueued: queue.length, evaluatedHighStakesTools: queue.filter((item) => item.state !== 'not-evaluated').length, assuranceDomainsCertified: domains.filter((item) => item.state === 'certified').length, errors: errors.length },
   errors
 };
 fs.mkdirSync('api', { recursive: true });
@@ -54,6 +61,6 @@ if (errors.length) {
   for (const error of errors) console.error(`- ${error}`);
   process.exit(1);
 }
-console.log(`Assurance foundation passed: ${controls.length} method controls; ${queue.length} high-stakes tools remain queued; ${domains.length} site domains fail closed.`);
+console.log(`Assurance controls passed: ${controls.length} method controls; ${queue.filter((item) => item.state !== 'not-evaluated').length}/${queue.length} high-stakes tools evaluated; ${domains.length} site domains fail closed.`);
 
 function read(file) { return JSON.parse(fs.readFileSync(file, 'utf8')); }

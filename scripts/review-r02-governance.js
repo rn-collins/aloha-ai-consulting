@@ -9,6 +9,8 @@ const exceptionDecisionFile = path.join(root, 'content/governance/editorial-exce
 const reviewDate = '2026-07-31';
 const reviewer = 'Aloha AI remediation program';
 const contractingIdentity = 'Rayven-Nikkita Collins LLC d/b/a Aloha AI';
+const citationEvaluationFile = path.join(root, 'api/evaluations/citation-verifier.json');
+const citationEvaluation = fs.existsSync(citationEvaluationFile) ? readJson(citationEvaluationFile) : null;
 
 const release = readJson(releaseFile);
 const exceptionRegistry = readJson(exceptionFile);
@@ -56,6 +58,10 @@ function reviewObject(object) {
     && object.lastReviewedOrTested === reviewDate
     && object.nextReviewOrTrigger;
   const toolLike = ['assessment', 'tool'].includes(object.objectType);
+  const limitedEvaluation = object.canonicalId === 'citation-verifier'
+    && citationEvaluation?.decision === 'passed-limited-structural-scope'
+    && citationEvaluation?.metrics?.failedCases === 0
+    && citationEvaluation?.metrics?.highConsequenceFalsePasses === 0;
   const unavailable = object.status.access === 'unavailable' && !['cannabis-rescheduling', 'psychedelic-radar'].includes(object.canonicalId);
   const evidenceLinks = object.evidenceLinks || [];
   const dependencyObjects = object.dependencies.map((id) => releaseByCanonicalId.get(id)).filter(Boolean);
@@ -68,7 +74,7 @@ function reviewObject(object) {
     access: unavailable ? 'unavailable' : pageExists ? 'public' : 'unavailable',
     commercial: object.objectType === 'service' ? 'scoped' : 'not-applicable',
     maintenance: maintainedMonitor ? 'maintained' : monitor ? 'dated' : 'not-applicable',
-    evaluation: toolLike ? 'not-evaluated' : 'not-applicable',
+    evaluation: limitedEvaluation ? 'limited' : toolLike ? 'not-evaluated' : 'not-applicable',
     evidence: evidenceLinks.length ? 'published' : object.status.evidence === 'described' ? 'described' : 'missing'
   };
 
@@ -154,6 +160,7 @@ function languageFor(object, status) {
   if (status.maintenance === 'maintained') return 'Maintained beta · manually reviewed against the monitor’s defined source set each Friday; current only through the stated as-of date and coverage boundary.';
   if (status.access === 'unavailable') return 'A public description exists; the represented access or delivery path is unavailable.';
   if (object.objectType === 'monitor') return 'Published dated monitor record; ongoing maintenance and currentness are not certified.';
+  if (object.canonicalId === 'citation-verifier' && status.evaluation === 'limited') return 'Published browser-local structural parser evaluated only against its versioned synthetic rule corpus; source existence, status, quotation accuracy, proposition support, external integration, and production suitability are not certified.';
   if (['assessment', 'tool'].includes(object.objectType)) return `Published browser-local ${object.objectType}; external integration, validated evaluation, and production operation are not certified.`;
   if (object.objectType === 'service') return 'Published scoped service description; capacity, engagement acceptance, and delivery are confirmed only through a written engagement.';
   if (['course', 'institutional', 'learningHub', 'product'].includes(object.objectType)) return 'Published partial delivery resource; completeness, enrollment, external delivery, and commercial availability are not certified.';
@@ -166,7 +173,7 @@ function basisFor(object, status) {
     `The canonical source is ${object.sourceFile}.`,
     status.interaction === 'working' ? 'Browser-local controls are present; repository tests remain the only local behavioral evidence.' : 'No operational interaction is certified.',
     'No external integration or production deployment evidence is recorded in the canonical object.',
-    status.evaluation === 'not-evaluated' ? 'No published evaluation dataset or performance result is recorded.' : 'No evaluation claim is applicable to this object type.'
+    status.evaluation === 'limited' ? 'A published synthetic evaluation supports only the explicitly bounded structural parser scope.' : status.evaluation === 'not-evaluated' ? 'No published evaluation dataset or performance result is recorded.' : 'No evaluation claim is applicable to this object type.'
   ];
   return facts.join(' ');
 }
@@ -178,6 +185,7 @@ function validateObjectDecisions(decisions, objects) {
     if (decision.status.integration !== 'none') throw new Error(`${decision.objectId}: integration exceeds local proof`);
     if (decision.status.maintenance === 'maintained' && !['monitor:cannabis-rescheduling', 'monitor:psychedelic-radar'].includes(decision.objectId)) throw new Error(`${decision.objectId}: maintenance exceeds local proof`);
     if (decision.status.evaluation === 'passed') throw new Error(`${decision.objectId}: evaluation exceeds local proof`);
+    if (decision.status.evaluation === 'limited' && decision.objectId !== 'tool:citation-verifier') throw new Error(`${decision.objectId}: limited evaluation lacks approved evidence`);
     if (!decision.governanceControls) throw new Error(`${decision.objectId}: governance controls missing`);
     if (decision.governanceControls.capacity.state === 'available') throw new Error(`${decision.objectId}: capacity exceeds local proof`);
     if (decision.governanceControls.dependency.declaredCanonicalIds.length && decision.governanceControls.dependency.releaseReady) throw new Error(`${decision.objectId}: dependency readiness exceeds local proof`);

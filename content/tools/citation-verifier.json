@@ -2,8 +2,8 @@
   "id": "citation-verifier",
   "kind": "tool",
   "pathname": "/tools/citation-verifier",
-  "title": "Catch the fake citation before it reaches the court.",
-  "summary": "A review tool for checking whether a source supports the claim attached to it.",
+  "title": "Catch a structurally suspicious citation before it reaches the court.",
+  "summary": "A browser-local structural screen for a bounded set of United States reporter citation forms; it does not check source existence or proposition support.",
   "maturity": "Beta",
   "topics": [
     "citations",
@@ -30,7 +30,16 @@
     "The cited source can be accessed"
   ],
   "limitations": [
-    "The tool does not determine legal truth or replace expert review"
+    "The tool does not determine legal truth or replace expert review",
+    "Passing structure does not establish that an authority exists, remains good law, is quoted accurately, or supports a proposition",
+    "Rule version 1.0.0 omits statutes, regulations, docket citations, database identifiers, slip opinions, state reporters, and many parallel-citation forms"
+  ],
+  "version": "1.0.0",
+  "lastReviewedOrTested": "2026-07-31",
+  "nextReviewOrTrigger": "Any parser, reporter allow-list, regular expression, result taxonomy, browser runtime, or public capability claim change; otherwise 2026-10-31",
+  "privacyBoundary": "The public structural parser runs in the visitor's browser and makes no network request with pasted text. Separate email or booking actions follow the provider identified at that action.",
+  "evidenceLinks": [
+    "/api/evaluations/citation-verifier.json"
   ],
   "relationships": [
     {

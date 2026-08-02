@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-01T05:03:49.982Z",
+  "generatedAt": "2026-08-02T02:04:29.142Z",
   "summary": {
     "routes": 497,
     "found": 497,
@@ -2324,7 +2324,7 @@
         "buttons": 0,
         "links": 8,
         "workspaceLinks": 0,
-        "pageBytes": 9944
+        "pageBytes": 9961
       },
       "findings": []
     },
@@ -2468,7 +2468,7 @@
         "buttons": 0,
         "links": 8,
         "workspaceLinks": 0,
-        "pageBytes": 10330
+        "pageBytes": 10347
       },
       "findings": []
     },
@@ -2564,7 +2564,7 @@
         "buttons": 10,
         "links": 100,
         "workspaceLinks": 1,
-        "pageBytes": 59806
+        "pageBytes": 59897
       },
       "findings": []
     },
@@ -3000,7 +3000,7 @@
         "buttons": 3,
         "links": 7,
         "workspaceLinks": 0,
-        "pageBytes": 32021
+        "pageBytes": 32038
       },
       "findings": []
     },
@@ -3390,7 +3390,7 @@
         "buttons": 0,
         "links": 12,
         "workspaceLinks": 0,
-        "pageBytes": 16927
+        "pageBytes": 16944
       },
       "findings": []
     },
@@ -3438,7 +3438,7 @@
         "buttons": 0,
         "links": 11,
         "workspaceLinks": 0,
-        "pageBytes": 15380
+        "pageBytes": 15397
       },
       "findings": []
     },
@@ -4347,7 +4347,7 @@
         "buttons": 0,
         "links": 10,
         "workspaceLinks": 0,
-        "pageBytes": 14228
+        "pageBytes": 14245
       },
       "findings": []
     },
@@ -4395,7 +4395,7 @@
         "buttons": 0,
         "links": 12,
         "workspaceLinks": 0,
-        "pageBytes": 16384
+        "pageBytes": 16401
       },
       "findings": []
     },
@@ -4443,7 +4443,7 @@
         "buttons": 0,
         "links": 9,
         "workspaceLinks": 0,
-        "pageBytes": 13541
+        "pageBytes": 13558
       },
       "findings": []
     },
@@ -4539,7 +4539,7 @@
         "buttons": 0,
         "links": 10,
         "workspaceLinks": 0,
-        "pageBytes": 14231
+        "pageBytes": 14248
       },
       "findings": []
     },
@@ -4685,7 +4685,7 @@
         "buttons": 0,
         "links": 9,
         "workspaceLinks": 0,
-        "pageBytes": 21045
+        "pageBytes": 21136
       },
       "findings": []
     },
@@ -4829,7 +4829,7 @@
         "buttons": 4,
         "links": 9,
         "workspaceLinks": 2,
-        "pageBytes": 33241
+        "pageBytes": 33258
       },
       "findings": []
     },
@@ -4899,7 +4899,7 @@
       "file": "tools/citation-verifier.html",
       "exists": true,
       "title": "Citation Verifier | Aloha AI",
-      "description": "A review tool for checking whether a source supports the claim attached to it.",
+      "description": "A browser-local structural screen for a bounded set of United States reporter citation forms; it does not check source existence or proposition support.",
       "canonical": "https://aloha-ai-consulting.vercel.app/tools/citation-verifier",
       "score": 100,
       "checks": {
@@ -4927,7 +4927,7 @@
         "buttons": 5,
         "links": 9,
         "workspaceLinks": 1,
-        "pageBytes": 20446
+        "pageBytes": 21165
       },
       "findings": []
     },
@@ -4976,7 +4976,7 @@
         "buttons": 5,
         "links": 8,
         "workspaceLinks": 1,
-        "pageBytes": 19869
+        "pageBytes": 19886
       },
       "findings": []
     },
@@ -5074,7 +5074,7 @@
         "buttons": 5,
         "links": 7,
         "workspaceLinks": 1,
-        "pageBytes": 23092
+        "pageBytes": 23109
       },
       "findings": []
     },
@@ -5123,7 +5123,7 @@
         "buttons": 4,
         "links": 9,
         "workspaceLinks": 1,
-        "pageBytes": 24363
+        "pageBytes": 24380
       },
       "findings": []
     },
@@ -5172,7 +5172,7 @@
         "buttons": 4,
         "links": 12,
         "workspaceLinks": 3,
-        "pageBytes": 23932
+        "pageBytes": 23949
       },
       "findings": []
     },
@@ -5417,7 +5417,7 @@
         "buttons": 4,
         "links": 9,
         "workspaceLinks": 1,
-        "pageBytes": 25267
+        "pageBytes": 25284
       },
       "findings": []
     },
@@ -7193,7 +7193,7 @@
         "buttons": 5,
         "links": 15,
         "workspaceLinks": 0,
-        "pageBytes": 8697
+        "pageBytes": 8788
       },
       "findings": []
     },
@@ -14393,7 +14393,7 @@
         "buttons": 13,
         "links": 27,
         "workspaceLinks": 0,
-        "pageBytes": 16484
+        "pageBytes": 16575
       },
       "findings": []
     },
@@ -15284,7 +15284,7 @@
         "buttons": 4,
         "links": 10,
         "workspaceLinks": 2,
-        "pageBytes": 40108
+        "pageBytes": 40125
       },
       "findings": []
     },
@@ -15572,7 +15572,7 @@
         "buttons": 6,
         "links": 57,
         "workspaceLinks": 0,
-        "pageBytes": 45246
+        "pageBytes": 45263
       },
       "findings": []
     },
@@ -16484,7 +16484,7 @@
         "buttons": 6,
         "links": 51,
         "workspaceLinks": 0,
-        "pageBytes": 44082
+        "pageBytes": 44099
       },
       "findings": []
     },
@@ -21866,7 +21866,7 @@
         "buttons": 0,
         "links": 17,
         "workspaceLinks": 0,
-        "pageBytes": 18761
+        "pageBytes": 18778
       },
       "findings": []
     },
@@ -21915,7 +21915,7 @@
         "buttons": 0,
         "links": 16,
         "workspaceLinks": 0,
-        "pageBytes": 18756
+        "pageBytes": 18773
       },
       "findings": []
     },
@@ -22892,7 +22892,7 @@
         "buttons": 1,
         "links": 12,
         "workspaceLinks": 0,
-        "pageBytes": 13819
+        "pageBytes": 13836
       },
       "findings": []
     },

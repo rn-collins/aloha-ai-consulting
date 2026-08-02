@@ -104,18 +104,26 @@ test('R02 claim registry reconciles every frozen record and governs every site-l
   assert.ok(registry.claims.every((claim) => claim.reviewedBy && claim.reviewedAt && claim.decisionBasis));
 });
 
-test('R07 assurance foundation fails closed without overstating evaluation or certification', () => {
+test('R07 assurance records one bounded evaluation without overstating certification', () => {
   const assurance = JSON.parse(fs.readFileSync('content/governance/assurance-registry.json', 'utf8'));
   const manifest = JSON.parse(fs.readFileSync('api/assurance-manifest.json', 'utf8'));
+  const citationEvaluation = JSON.parse(fs.readFileSync('api/evaluations/citation-verifier.json', 'utf8'));
   assert.equal(assurance.methodConformance.controls.length, 12);
   assert.equal(assurance.methodConformance.exceptions.length, 0);
   assert.equal(assurance.methodConformance.decision, 'foundation-approved-not-site-certified');
   assert.equal(assurance.highStakesEvaluationQueue.length, 5);
-  assert.ok(assurance.highStakesEvaluationQueue.every((item) => item.state === 'not-evaluated' && item.requiredNext));
+  const citation = assurance.highStakesEvaluationQueue.find((item) => item.canonicalId === 'citation-verifier');
+  assert.equal(citation.state, 'passed-limited');
+  assert.match(citation.decision, /structural scope/);
+  assert.ok(assurance.highStakesEvaluationQueue.filter((item) => item.canonicalId !== 'citation-verifier').every((item) => item.state === 'not-evaluated' && item.requiredNext));
+  assert.equal(citationEvaluation.metrics.totalCases, 20);
+  assert.equal(citationEvaluation.metrics.failedCases, 0);
+  assert.equal(citationEvaluation.metrics.highConsequenceFalsePasses, 0);
+  assert.equal(citationEvaluation.decision, 'passed-limited-structural-scope');
   assert.equal(assurance.siteAssuranceDomains.length, 7);
   assert.ok(assurance.siteAssuranceDomains.every((item) => item.state === 'required-not-yet-certified' && item.requiredEvidence));
   assert.equal(manifest.counts.methodControls, 12);
-  assert.equal(manifest.counts.evaluatedHighStakesTools, 0);
+  assert.equal(manifest.counts.evaluatedHighStakesTools, 1);
   assert.equal(manifest.counts.assuranceDomainsCertified, 0);
   assert.equal(manifest.counts.errors, 0);
 });
