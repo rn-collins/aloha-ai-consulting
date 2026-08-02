@@ -12,6 +12,7 @@ const citationEvaluation = read('api/evaluations/citation-verifier.json');
 const claimsEvaluation = read('api/evaluations/claims-checker.json');
 const evidenceEvaluation = read('api/evaluations/evidence-explainer.json');
 const billEvaluation = read('api/evaluations/bill-analyzer.json');
+const controlledSubstancesEvaluation = read('api/evaluations/controlled-substances-explainer.json');
 
 for (const field of ['schema','version','effectiveDate','owner','reviewer','nextReviewOrTrigger','policy']) if (!registry[field]) errors.push(`registry: ${field} missing`);
 if (methods.version !== conformance.methodVersion || methods.id !== conformance.methodId) errors.push('methods record and conformance version do not match');
@@ -44,6 +45,10 @@ for (const id of requiredTools) {
     if (item.state !== 'passed-limited' || !item.evidenceHref || !item.decision || !item.retestTrigger) errors.push(`${id}: bounded evaluation decision is incomplete`);
     if (billEvaluation.decision !== 'passed-limited-regulatory-language-triage-scope' || billEvaluation.metrics.totalCases < 20 || billEvaluation.metrics.failedCases !== 0 || billEvaluation.metrics.falseClearances !== 0 || billEvaluation.metrics.abstentionAccuracy !== 1 || billEvaluation.metrics.unsupportedInferenceRejections !== 1) errors.push(`${id}: evaluation evidence does not satisfy the bounded threshold`);
     if (!billEvaluation.jurisdictionPolicyBoundary || !billEvaluation.prohibitedInference) errors.push(`${id}: jurisdiction or prohibited-inference boundary is missing`);
+  } else if (id === 'controlled-substances-explainer') {
+    if (item.state !== 'passed-limited' || !item.evidenceHref || !item.decision || !item.retestTrigger) errors.push(`${id}: bounded evaluation decision is incomplete`);
+    if (controlledSubstancesEvaluation.decision !== 'passed-limited-federal-authority-routing-scope' || controlledSubstancesEvaluation.metrics.totalCases < 20 || controlledSubstancesEvaluation.metrics.failedCases !== 0 || controlledSubstancesEvaluation.metrics.falseClearances !== 0 || controlledSubstancesEvaluation.metrics.abstentionAccuracy !== 1 || controlledSubstancesEvaluation.metrics.unsupportedInferenceRejections !== 1) errors.push(`${id}: evaluation evidence does not satisfy the bounded threshold`);
+    if (!controlledSubstancesEvaluation.jurisdictionPolicyBoundary || !controlledSubstancesEvaluation.prohibitedInference) errors.push(`${id}: jurisdiction or prohibited-inference boundary is missing`);
   } else if (item.state !== 'not-evaluated' || !item.requiredNext) errors.push(`${id}: must remain explicitly queued and not evaluated`);
   const object = release.objects.find((candidate) => candidate.canonicalId === id);
   if (!object) errors.push(`${id}: no canonical release object`);
@@ -51,7 +56,8 @@ for (const id of requiredTools) {
   else if (id === 'claims-checker' && object.status.evaluation !== 'limited') errors.push(`${id}: release registry must record limited evaluation`);
   else if (id === 'evidence-explainer' && object.status.evaluation !== 'limited') errors.push(`${id}: release registry must record limited evaluation`);
   else if (id === 'bill-analyzer' && object.status.evaluation !== 'limited') errors.push(`${id}: release registry must record limited evaluation`);
-  else if (!['citation-verifier','claims-checker','evidence-explainer','bill-analyzer'].includes(id) && object.status.evaluation !== 'not-evaluated') errors.push(`${id}: release registry claims evaluation before evidence`);
+  else if (id === 'controlled-substances-explainer' && object.status.evaluation !== 'limited') errors.push(`${id}: release registry must record limited evaluation`);
+  else if (!['citation-verifier','claims-checker','evidence-explainer','bill-analyzer','controlled-substances-explainer'].includes(id) && object.status.evaluation !== 'not-evaluated') errors.push(`${id}: release registry claims evaluation before evidence`);
 }
 
 const domains = registry.siteAssuranceDomains || [];

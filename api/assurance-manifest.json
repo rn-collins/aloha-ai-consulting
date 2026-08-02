@@ -113,8 +113,11 @@
       "evaluationId": "EVAL-CONTROLLED-SUBSTANCES",
       "canonicalId": "controlled-substances-explainer",
       "title": "Controlled Substances Explainer",
-      "state": "not-evaluated",
-      "requiredNext": "Publish jurisdiction-scoped scheduling and program cases, expected answers, authority checks, error analysis, threshold, reviewer, limitations, and decision."
+      "state": "passed-limited",
+      "decision": "Passed only for deterministic routing of four configured substance names to dated U.S. federal schedule records and primary-source links in rule version 1.1.0; no legality, permission, approval, registration, activity-specific, or nonfederal inference is permitted.",
+      "evaluatedAt": "2026-08-02",
+      "evidenceHref": "/api/evaluations/controlled-substances-explainer.json",
+      "retestTrigger": "Any substance record, alias, schedule field, source link, matching logic, output field, jurisdiction boundary, or public capability claim change; otherwise 2026-11-02."
     }
   ],
   "siteAssuranceDomains": [
@@ -159,7 +162,7 @@
     "methodExceptions": 0,
     "methodRevisions": 1,
     "highStakesToolsQueued": 5,
-    "evaluatedHighStakesTools": 4,
+    "evaluatedHighStakesTools": 5,
     "assuranceDomainsCertified": 0,
     "errors": 0
   },

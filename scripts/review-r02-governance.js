@@ -15,7 +15,8 @@ const limitedEvaluationDecisions = new Map([
   ['citation-verifier', 'passed-limited-structural-scope'],
   ['claims-checker', 'passed-limited-lexical-screening-scope'],
   ['evidence-explainer', 'passed-limited-claim-language-triage-scope'],
-  ['bill-analyzer', 'passed-limited-regulatory-language-triage-scope']
+  ['bill-analyzer', 'passed-limited-regulatory-language-triage-scope'],
+  ['controlled-substances-explainer', 'passed-limited-federal-authority-routing-scope']
 ]);
 
 const release = readJson(releaseFile);

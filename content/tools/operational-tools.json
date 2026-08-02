@@ -694,12 +694,13 @@
     }
   },
   {
-    "id": "controlled-substances-explainer",
+  "id": "controlled-substances-explainer",
+  "version": "1.1.0",
     "kind": "tool",
     "pathname": "/tools/controlled-substances-explainer",
     "eyebrow": "Regulatory education tool",
     "title": "How does the U. S. controlled-substances system actually work?",
-    "summary": "A browser-local framework for distinguishing federal scheduling, state law, research controls, medical programs, and changing administrative status.",
+  "summary": "A browser-local router to dated federal schedule records and agency sources for four configured substances. It abstains outside that boundary and does not determine legality.",
     "audience": "Researchers, operators, writers, students, and policy teams needing a structured starting point.",
     "maturity": "Beta",
     "topics": [
@@ -719,42 +720,42 @@
       "DEA scheduling",
       "drug policy"
     ],
-    "implementationStatus": "Public browser-local educational framework.",
+  "implementationStatus": "Public browser-local federal authority router with bounded evaluation.",
     "documentation": [
-      "Describe the substance and question",
-      "Separate federal and state lenses",
-      "Verify current primary authority"
+    "Name one of four configured substances",
+    "Open its dated federal schedule and process sources",
+    "Verify current primary authority before consequential use"
     ],
     "demo": {
       "type": "browser-tool",
-      "mode": "framework",
+    "mode": "authority-router",
       "inputLabel": "Name a substance and the question you are trying to answer",
       "sample": "Psilocybin — may a university researcher possess it for an approved clinical study?",
-      "outputTitle": "Authority-checking framework",
-      "steps": [
-        "Identify the substance and exact activity",
-        "Check current federal schedule and DEA requirements",
-        "Check state classification and program rules",
-        "Identify FDA, IRB, institutional, and licensing controls",
-        "Verify every conclusion against current primary authority"
-      ]
+    "outputTitle": "Federal authority routing record",
+    "records": [
+      {"label":"Psilocybin","aliases":["psilocybin","psilocin","magic mushrooms"],"schedule":"Schedule I reference record","asOf":"2026-08-02","authorityHref":"https://www.ecfr.gov/current/title-21/chapter-II/part-1308/section-1308.11","federalRegisterHref":"https://www.federalregister.gov/agencies/drug-enforcement-administration","verification":"Verify the current eCFR entry, DEA registration requirements, FDA/IRB controls, and every activity-specific requirement with responsible institutional officials and qualified counsel."},
+      {"label":"MDMA","aliases":["mdma","ecstasy","3,4-methylenedioxymethamphetamine"],"schedule":"Schedule I reference record","asOf":"2026-08-02","authorityHref":"https://www.ecfr.gov/current/title-21/chapter-II/part-1308/section-1308.11","federalRegisterHref":"https://www.federalregister.gov/agencies/drug-enforcement-administration","verification":"Verify the current eCFR entry, DEA registration requirements, FDA/IRB controls, and every activity-specific requirement with responsible institutional officials and qualified counsel."},
+      {"label":"Cannabis","aliases":["cannabis","marijuana","marihuana","thc"],"schedule":"Schedule I reference record; rescheduling proceedings require separate current review","asOf":"2026-08-02","authorityHref":"https://www.ecfr.gov/current/title-21/chapter-II/part-1308/section-1308.11","federalRegisterHref":"https://www.federalregister.gov/d/2024-11137","verification":"Check the current eCFR and the operative DEA docket or final rule. Do not infer current federal or state legality from this dated routing record."},
+      {"label":"Ketamine","aliases":["ketamine","ketalar"],"schedule":"Schedule III reference record","asOf":"2026-08-02","authorityHref":"https://www.ecfr.gov/current/title-21/chapter-II/part-1308/section-1308.13","federalRegisterHref":"https://www.federalregister.gov/agencies/drug-enforcement-administration","verification":"Verify the current eCFR entry, product labeling, prescribing rules, and activity-specific federal and state requirements with current primary sources and qualified professionals."}
+    ]
     },
     "evidence": [
-      "User-defined substance and activity",
-      "Current federal and state primary authority"
+    "User-supplied text containing a configured substance alias",
+    "Dated federal eCFR and Federal Register routes"
     ],
     "methodology": [
-      "Define the activity",
-      "Separate sovereign and agency layers",
-      "Identify permissions and prohibitions",
-      "Date and verify the answer"
+    "Match only configured aliases",
+    "Return the corresponding dated federal reference record",
+    "Abstain when no configured substance matches",
+    "Require current primary-source and qualified human verification"
     ],
     "assumptions": [
-      "The user will identify the relevant jurisdiction and activity"
+    "The user understands that the output is federal-only source routing, not an answer about an activity"
     ],
     "limitations": [
-      "Educational only and not legal advice",
-      "Scheduling and program status can change"
+    "Covers only four configured substances and U.S. federal source routes",
+    "Does not determine legality, permission, approval, registration, prescribing, research, or state-law status",
+    "Dated schedule references can become stale and require current primary-source verification"
     ],
     "relationships": [
       {

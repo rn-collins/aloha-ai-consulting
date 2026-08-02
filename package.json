@@ -16,7 +16,7 @@
     "promise:review-release": "node scripts/audit-promises.js --review-release",
     "promise:release-check": "node scripts/audit-promises.js --release-check",
     "monitors:check": "node scripts/validate-monitor-operations.js",
-    "assurance:check": "node scripts/evaluate-citation-verifier.js && node scripts/evaluate-claims-checker.js && node scripts/evaluate-evidence-explainer.js && node scripts/evaluate-bill-analyzer.js && node scripts/validate-assurance-controls.js",
+    "assurance:check": "node scripts/evaluate-citation-verifier.js && node scripts/evaluate-claims-checker.js && node scripts/evaluate-evidence-explainer.js && node scripts/evaluate-bill-analyzer.js && node scripts/evaluate-controlled-substances-explainer.js && node scripts/validate-assurance-controls.js",
     "release:registry": "node scripts/build-release-registry.js",
     "release:review": "node scripts/review-r02-governance.js",
     "release:claims": "node scripts/build-claim-registry.js",

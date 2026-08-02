@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-02T09:46:18.012Z",
+  "generatedAt": "2026-08-02T18:31:05.752Z",
   "runtimeVersion": "1.0.0",
   "pagesInspected": 498,
   "representedActions": 94,
@@ -203,12 +203,12 @@
     {
       "route": "/tools/controlled-substances-explainer",
       "kind": "copy",
-      "label": "Copy result"
+      "label": "Copy record"
     },
     {
       "route": "/tools/controlled-substances-explainer",
       "kind": "export",
-      "label": "Download Markdown"
+      "label": "Download JSON"
     },
     {
       "route": "/tools/evidence-explainer",
