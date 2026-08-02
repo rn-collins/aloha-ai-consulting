@@ -58,6 +58,7 @@
     "responsible-disclosure-path-published": true,
     "testing-boundary-published": true,
     "public-auth-fails-closed": true,
+    "platform-module-runtime-declared": true,
     "authenticated-routes-require-session": true,
     "service-role-not-required-by-default": true,
     "backend-errors-redacted": true,
@@ -70,8 +71,8 @@
     "checked-tree-secret-scan-clear": true
   },
   "metrics": {
-    "totalChecks": 13,
-    "passedChecks": 13,
+    "totalChecks": 14,
+    "passedChecks": 14,
     "failedChecks": 0
   },
   "failures": [],

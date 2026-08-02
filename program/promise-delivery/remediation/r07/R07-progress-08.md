@@ -23,13 +23,14 @@ Disposition: passed-limited for the dated repository and public-deployment bound
 - Changed shared API errors to return bounded `request_failed` or `internal_error` codes without provider/database messages or detail objects.
 - Removed the service-role credential from default platform requirements; service-role use now fails closed if a future caller explicitly requests it without configuration.
 - Applied `Cache-Control: no-store` through the shared platform method gate and retained it on the health endpoint.
+- Declared the `api/` runtime as CommonJS so Vercel can execute the checked-in CommonJS platform handlers under the repository's ESM root package.
 - Confirmed that public sign-up and sign-in fail closed unless explicitly enabled, 11 platform handlers require a valid session, and model and external-delivery adapters remain disabled.
 - Confirmed that checked-in handlers make zero service-role calls; Supabase row-level security remains an explicit unverified authorization dependency.
 - Added a release-blocking 13-check security evaluator, canonical evidence record, public API evidence record, assurance-manifest integration, and regression assertions.
 
 ## Automated results
 
-- 13/13 bounded security-assurance checks passed.
+- 14/14 bounded security-assurance checks passed.
 - 16 platform handlers inventoried; 11 require authenticated sessions.
 - Zero checked-in service-role callers, environment files, or configured secret-pattern hits found by the repository evaluator.
 - Full-history Gitleaks workflow remains configured for pull requests, `main` pushes, weekly schedule, and manual dispatch.

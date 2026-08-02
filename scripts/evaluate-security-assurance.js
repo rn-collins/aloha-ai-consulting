@@ -15,6 +15,7 @@ const securityPolicy = read('SECURITY.md');
 const privacyPolicy = read('privacy.html');
 const workflow = read('.github/workflows/secret-history-scan.yml');
 const envExample = read('.env.example');
+const apiPackage = JSON.parse(read('api/package.json'));
 const serviceRoleCallers = platformFiles.filter((file) => /service\s*:\s*true/.test(read(file)));
 const trackedEnvironmentFiles = walk('.').filter((file) => /(^|\/)\.env($|\.)/.test(file) && file !== '.env.example');
 const secretPatterns = [/-----BEGIN (?:RSA |OPENSSH |EC |DSA )?PRIVATE KEY-----/, /AKIA[0-9A-Z]{16}/, /gh[pousr]_[A-Za-z0-9_]{20,}/, /sk-[A-Za-z0-9]{20,}/];
@@ -28,6 +29,7 @@ const checks = [
   ['responsible-disclosure-path-published', securityPolicy.includes('security report — no meeting needed') && privacyPolicy.includes('security report — no meeting needed')],
   ['testing-boundary-published', securityPolicy.includes('no authorization to access data') && securityPolicy.includes('Stop testing')],
   ['public-auth-fails-closed', publicAuthFiles.every((file) => read(file).includes("PLATFORM_PUBLIC_AUTH_ENABLED !== 'true'"))],
+  ['platform-module-runtime-declared', apiPackage.type === 'commonjs' && platformFiles.every((file) => /module\.exports|require\(/.test(read(file)))],
   ['authenticated-routes-require-session', authenticatedFiles.length >= 10],
   ['service-role-not-required-by-default', !platformLibrary.match(/const required = \[[^\]]*SUPABASE_SERVICE_ROLE_KEY/) && serviceRoleCallers.length === 0],
   ['backend-errors-redacted', platformLibrary.includes("status === 500 ? 'internal_error' : 'request_failed'") && !platformLibrary.includes('details:error.details')],
