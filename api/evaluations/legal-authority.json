@@ -1,0 +1,51 @@
+{
+  "schema": "aloha-ai-site-assurance/1.0",
+  "assuranceId": "ASSURANCE-LEGAL-AUTHORITY-001",
+  "domain": "legal-authority",
+  "evaluatedAt": "2026-08-02",
+  "owner": "RN Collins / Aloha AI",
+  "decision": "passed-limited-selected-authority-control-scope",
+  "scope": "Public legal-authority policy, selected machine-readable authority records, professional boundary, source hierarchy, jurisdiction and effective-state fields, conflict rule, review ownership, and release controls.",
+  "exclusions": [
+    "Complete proposition-level legal research audit of every site page",
+    "Independent citator or negative-treatment verification of every authority",
+    "Matter-specific applicability, legal effect, permission, prohibition, liability, compliance, or advice",
+    "State, tribal, territorial, local, foreign, client, third-party, and future-deployment conclusions unless expressly registered"
+  ],
+  "sourceRegister": {
+    "href": "/api/legal-authority-register.json",
+    "schema": "aloha-ai-legal-authority-register/1.0",
+    "records": 2,
+    "completeRecords": 2
+  },
+  "professionalBoundary": "RN Collins is a JD candidate, not a licensed attorney. Licensed counsel controls legal judgment and reliance where required.",
+  "conflictRule": "Preserve conflicts and route them to qualified review; do not silently select, merge, or average authorities. Recheck hierarchy, jurisdiction, version, effective state, amendments, treatment, and applicability.",
+  "checks": {
+    "public-policy-defined": true,
+    "professional-boundary-explicit": true,
+    "source-hierarchy-defined": true,
+    "jurisdiction-and-effective-state-required": true,
+    "retrieval-date-required": true,
+    "conflict-rule-defined": true,
+    "selected-source-register-present": true,
+    "registered-records-complete": true,
+    "official-https-sources": true,
+    "public-surfaces-declared": true,
+    "qualified-review-boundary": true,
+    "prohibited-inferences-published": true
+  },
+  "findings": [],
+  "metrics": {
+    "totalChecks": 12,
+    "passedChecks": 12,
+    "failedChecks": 0,
+    "registeredRecords": 2,
+    "recordFindings": 0
+  },
+  "review": {
+    "lastReviewed": "2026-08-02",
+    "nextReview": "2026-11-02",
+    "trigger": "Any cited authority, legal or regulatory claim, jurisdiction, effective status, professional-status statement, source link, conflict, correction, evaluator, or deployment change."
+  },
+  "prohibitedInference": "This bounded pass is not legal advice, an attorney-client relationship, a complete legal research audit, a good-law determination, or evidence that every legal statement is current, correct, controlling, complete, applicable, or compliant."
+}

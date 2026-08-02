@@ -1,19 +1,19 @@
 # Aloha AI whole-site audit
 
-Generated: 2026-08-02T22:28:29.107Z
+Generated: 2026-08-02T22:44:40.969Z
 
-Routes audited: 499
-Static pages found: 499
+Routes audited: 501
+Static pages found: 501
 Missing route files: 0
 Average page score: 100%
-Pages loading all shared style layers: 499/499
+Pages loading all shared style layers: 501/501
 Critical structural or accessibility failures: 0
 
 ## Estate summary
 
 | Estate | Routes | Found | Average score |
 |---|---:|---:|---:|
-| Unclassified | 259 | 259 | 100% |
+| Unclassified | 261 | 261 | 100% |
 | Aloha AI University | 180 | 180 | 100% |
 | Tools and Diagnostics | 29 | 29 | 100% |
 | Aloha AI | 15 | 15 | 100% |
@@ -79,6 +79,7 @@ Critical structural or accessibility failures: 0
 | `/intelligence/brand-perception` | Tools and Diagnostics | landing | intelligence/brand-perception.html | 100% | No baseline structural finding. |
 | `/launch-stack` | Aloha AI | landing | launch-stack.html | 100% | No baseline structural finding. |
 | `/legal-ai` | Aloha AI | landing | legal-ai.html | 100% | No baseline structural finding. |
+| `/legal-authority` | Unclassified | landing | legal-authority.html | 100% | No baseline structural finding. |
 | `/maturity` | Unclassified | landing | maturity.html | 100% | No baseline structural finding. |
 | `/maturity/beta` | Unclassified | landing | maturity/beta.html | 100% | No baseline structural finding. |
 | `/maturity/production` | Unclassified | landing | maturity/production.html | 100% | No baseline structural finding. |
@@ -242,6 +243,7 @@ Critical structural or accessibility failures: 0
 | `/topics/knowledge-bases` | Unclassified | landing | topics/knowledge-bases.html | 100% | No baseline structural finding. |
 | `/topics/knowledge-management` | Unclassified | landing | topics/knowledge-management.html | 100% | No baseline structural finding. |
 | `/topics/launch` | Unclassified | landing | topics/launch.html | 100% | No baseline structural finding. |
+| `/topics/law` | Unclassified | landing | topics/law.html | 100% | No baseline structural finding. |
 | `/topics/lead-generation` | Unclassified | landing | topics/lead-generation.html | 100% | No baseline structural finding. |
 | `/topics/leadership` | Unclassified | landing | topics/leadership.html | 100% | No baseline structural finding. |
 | `/topics/learning-path` | Unclassified | landing | topics/learning-path.html | 100% | No baseline structural finding. |

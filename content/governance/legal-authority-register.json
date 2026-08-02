@@ -1,0 +1,40 @@
+{
+  "schema": "aloha-ai-legal-authority-register/1.0",
+  "version": "1.0.0",
+  "owner": "RN Collins / Aloha AI",
+  "reviewedAt": "2026-08-02",
+  "reviewBy": "2026-11-02",
+  "notice": "Selected authority-control records, not a complete sitewide legal-research audit or legal advice.",
+  "conflictRule": "Preserve conflicts and route them to qualified review; do not silently select, merge, or average authorities. Recheck hierarchy, jurisdiction, version, effective state, amendments, treatment, and applicability.",
+  "professionalBoundary": "RN Collins is a JD candidate, not a licensed attorney. Licensed counsel controls legal judgment and reliance where required.",
+  "records": [
+    {
+      "id": "LA-001",
+      "proposition": "Federal Rule of Civil Procedure 11 imposes certification duties concerning representations to a federal court.",
+      "publicSurfaces": ["/teardowns/legal-ai-workflow"],
+      "jurisdiction": "United States federal civil procedure",
+      "authorityType": "court rule",
+      "authorityTitle": "Federal Rule of Civil Procedure 11",
+      "officialSource": "https://www.uscourts.gov/forms-rules/current-rules-practice-procedure/federal-rules-civil-procedure",
+      "retrievedAt": "2026-07-04",
+      "effectiveState": "current-as-of-retrieval-recheck-required",
+      "conflictsOrNegativeTreatment": "Not independently citator-checked in this assurance unit; amendments, local rules, procedural posture, and application remain matter-specific.",
+      "reviewOwner": "RN Collins / Aloha AI",
+      "professionalReview": "Licensed attorney required before matter-specific reliance, filing, or advice."
+    },
+    {
+      "id": "LA-002",
+      "proposition": "Federal controlled-substance schedule information is routed to the official electronic Code of Federal Regulations and DEA source material for the four configured substances.",
+      "publicSurfaces": ["/tools/controlled-substances-explainer"],
+      "jurisdiction": "United States federal law only",
+      "authorityType": "federal regulation and agency material",
+      "authorityTitle": "21 C.F.R. Part 1308 and DEA drug scheduling materials",
+      "officialSource": "https://www.ecfr.gov/current/title-21/chapter-II/part-1308",
+      "retrievedAt": "2026-08-02",
+      "effectiveState": "dated-routing-record-recheck-required",
+      "conflictsOrNegativeTreatment": "Does not resolve state, tribal, territorial, local, activity-specific, registration, approval, analogue, or enforcement questions.",
+      "reviewOwner": "RN Collins / Aloha AI",
+      "professionalReview": "Qualified counsel or responsible regulator required before conduct or compliance decisions."
+    }
+  ]
+}

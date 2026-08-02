@@ -1,0 +1,37 @@
+{
+  "id": "legal-authority-policy",
+  "kind": "policy",
+  "pathname": "/legal-authority",
+  "eyebrow": "Legal authority and professional boundary",
+  "title": "A legal statement is usable only inside its recorded authority boundary.",
+  "summary": "The source, jurisdiction, effective-state, conflict, review, and professional-accountability controls applied to public legal and regulatory statements on Aloha AI.",
+  "audience": "Visitors, clients, partners, learners, tool users, and reviewers who may encounter legal or regulatory information on Aloha AI.",
+  "maturity": "Production",
+  "topics": ["accountability", "governance", "law"],
+  "industries": ["professional-services", "technology", "education"],
+  "keywords": ["Aloha AI legal authority", "source hierarchy", "jurisdiction", "legal information boundary"],
+  "effectiveDate": "2026-08-02",
+  "policyOwner": "Aloha AI, a DBA of Rayven-Nikkita Collins LLC · Honolulu, HI",
+  "releaseReview": {
+    "reviewedAt": "2026-08-02",
+    "reviewBy": "2026-11-02",
+    "staleAfterDays": 92,
+    "nextReviewOrTrigger": "2026-11-02 or any change in cited authority, jurisdiction, effective status, legal or regulatory claim, professional status, conflict, source link, or deployment",
+    "status": {"publication":"published","completeness":"complete","interaction":"read-only","integration":"none","access":"public","commercial":"not-applicable","maintenance":"maintained","evaluation":"not-applicable","evidence":"described"},
+    "permittedPublicLanguage": "Published legal-authority process and bounded source register; this is not legal advice, a complete legal research record, or a determination that every legal statement is current or correct.",
+    "decisionBasis": "The source hierarchy, authority register, jurisdiction and effective-state fields, conflict rule, professional boundary, owner, review trigger, and release-blocking evaluator are present."
+  },
+  "policySections": [
+    {"title":"Professional boundary","paragraphs":["RN Collins is a JD candidate, not a licensed attorney. Aloha AI provides research, education, workflow design, and technical or operational support; it does not provide legal advice, create an attorney-client relationship, make a legal determination, or replace counsel responsible for a matter. A licensed attorney must control legal judgment, advice, representation, filing, and sign-off whenever the task or jurisdiction requires one."]},
+    {"title":"Source hierarchy","paragraphs":["For a legal-status statement, use the constitution, enacted law, filed rule or regulation, official court opinion, docketed order, or official agency action with jurisdiction before secondary summaries. Official codifications and government repositories are preferred access points. Secondary sources may help locate or explain authority but do not silently replace controlling primary authority."]},
+    {"title":"Jurisdiction, version, and effective state","paragraphs":["A registered statement identifies the governing jurisdiction, authority type, official source, retrieval date, and effective-state status. Proposed, introduced, pending, stayed, vacated, superseded, repealed, expired, and effective authorities are not interchangeable. A date on a page establishes when it was checked, not that it remains current today."]},
+    {"title":"Conflicts and negative treatment","paragraphs":["When authorities conflict, the record preserves the conflict and routes the issue for qualified review; it does not average the sources or select the preferred outcome silently. Later, higher, controlling, jurisdiction-specific, or more directly applicable authority may change the result. Case treatment, amendments, effective dates, exceptions, definitions, and incorporated materials must be checked before reliance."]},
+    {"title":"What tools and explainers may do","paragraphs":["A browser-local flag, lexical match, source link, schedule record, citation-format result, summary, or review question is triage evidence only. It does not establish existence, good-law status, legal effect, applicability, permission, prohibition, compliance, eligibility, liability, or a complete answer. No match is not clearance."]},
+    {"title":"Review and correction","paragraphs":["The public authority register at /api/legal-authority-register.json records only bounded claims selected for authority review; it is not a complete inventory of every legal phrase on the site. A material change, conflict, stale review, broken official source, or correction report reopens the record. Use the Corrections route for a possible error and qualified counsel for reliance in a real matter."]}
+  ],
+  "evidence": ["A machine-readable source register with jurisdiction, authority, retrieval, effective-state, and review fields", "A public professional-accountability and non-advice boundary", "A release-blocking evaluator for source hierarchy, conflicts, staleness, and prohibited inferences"],
+  "methodology": ["Frame the precise proposition and jurisdiction", "Retrieve and preserve controlling primary authority", "Record version, effective state, conflicts, and limitations", "Route legal judgment and reliance to the responsible licensed professional"],
+  "assumptions": ["Official source links and recorded retrieval facts accurately identify the material inspected", "The deployed site matches the evaluated repository tree"],
+  "limitations": ["The register is selected and bounded rather than a complete legal-research audit of the site", "Authority may change after retrieval", "The process does not establish legal advice, attorney-client relationship, good-law status, applicability, or compliance"],
+  "relationships": [{"type":"uses","target":"methods"},{"type":"related_to","target":"corrections-policy"},{"type":"implements","target":"trust-stack"}]
+}

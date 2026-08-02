@@ -62,28 +62,30 @@ test('R01 preserves the frozen baseline and blocks known S0 reliance language', 
 test('R02 release registry covers and conservatively decides every canonical resource', () => {
   const registry = JSON.parse(fs.readFileSync('content/governance/release-registry.json', 'utf8'));
   const manifest = JSON.parse(fs.readFileSync('api/release-manifest.json', 'utf8'));
-  assert.equal(registry.counts.objects, 259);
-  assert.equal(registry.objects.length, 259);
-  assert.equal(manifest.objects.length, 259);
-  assert.equal(new Set(registry.objects.map((object) => object.id)).size, 259);
+  assert.equal(registry.counts.objects, 260);
+  assert.equal(registry.objects.length, 260);
+  assert.equal(manifest.objects.length, 260);
+  assert.equal(new Set(registry.objects.map((object) => object.id)).size, 260);
   assert.ok(registry.objects.every((object) => object.approvalDecision === 'approved-conservative-local'));
   assert.ok(registry.objects.every((object) => object.lifecycleState === 'locally-reviewed-not-release-certified'));
-  assert.ok(registry.objects.filter((object) => !['tool:claims-checker', 'tool:evidence-explainer', 'tool:bill-analyzer', 'tool:controlled-substances-explainer', 'policy:accessibility-statement', 'policy:corrections-policy'].includes(object.id)).every((object) => object.lastReviewedOrTested === '2026-07-31'));
+  assert.ok(registry.objects.filter((object) => !['tool:claims-checker', 'tool:evidence-explainer', 'tool:bill-analyzer', 'tool:controlled-substances-explainer', 'policy:accessibility-statement', 'policy:corrections-policy', 'policy:legal-authority-policy'].includes(object.id)).every((object) => object.lastReviewedOrTested === '2026-07-31'));
   assert.ok(['tool:claims-checker', 'tool:evidence-explainer', 'tool:bill-analyzer'].every((id) => registry.objects.find((object) => object.id === id).lastReviewedOrTested === '2026-08-01'));
   assert.equal(registry.objects.find((object) => object.id === 'tool:controlled-substances-explainer').lastReviewedOrTested, '2026-08-02');
   assert.equal(registry.objects.find((object) => object.id === 'policy:accessibility-statement').lastReviewedOrTested, '2026-08-02');
   assert.equal(registry.objects.find((object) => object.id === 'policy:corrections-policy').lastReviewedOrTested, '2026-08-02');
+  assert.equal(registry.objects.find((object) => object.id === 'policy:legal-authority-policy').lastReviewedOrTested, '2026-08-02');
   assert.ok(registry.objects.every((object) => object.permittedPublicLanguage));
   assert.ok(registry.objects.every((object) => object.status.publication === 'published'));
   assert.ok(registry.objects.every((object) => object.status.integration !== 'verified'));
   const maintainedMonitors = registry.objects.filter((object) => object.objectType === 'monitor' && object.status.maintenance === 'maintained');
   assert.deepEqual(maintainedMonitors.map((object) => object.id), ['monitor:cannabis-rescheduling', 'monitor:psychedelic-radar']);
   assert.ok(registry.objects.every((object) => object.governanceControls?.contradiction?.state === 'registry-consistent'));
-  assert.ok(registry.objects.filter((object) => !['monitor:cannabis-rescheduling', 'monitor:psychedelic-radar', 'tool:citation-verifier', 'tool:claims-checker', 'tool:evidence-explainer', 'tool:bill-analyzer', 'tool:controlled-substances-explainer', 'policy:accessibility-statement', 'policy:corrections-policy'].includes(object.id)).every((object) => object.governanceControls?.staleness?.reviewBy === '2026-10-31'));
+  assert.ok(registry.objects.filter((object) => !['monitor:cannabis-rescheduling', 'monitor:psychedelic-radar', 'tool:citation-verifier', 'tool:claims-checker', 'tool:evidence-explainer', 'tool:bill-analyzer', 'tool:controlled-substances-explainer', 'policy:accessibility-statement', 'policy:corrections-policy', 'policy:legal-authority-policy'].includes(object.id)).every((object) => object.governanceControls?.staleness?.reviewBy === '2026-10-31'));
   assert.ok(['tool:citation-verifier', 'tool:claims-checker', 'tool:evidence-explainer', 'tool:bill-analyzer', 'tool:controlled-substances-explainer'].every((id) => registry.objects.find((object) => object.id === id).governanceControls.staleness.reviewBy === '2026-11-01'));
   assert.ok(maintainedMonitors.every((object) => object.governanceControls.staleness.reviewBy === '2026-08-07'));
   assert.equal(registry.objects.find((object) => object.id === 'policy:accessibility-statement').governanceControls.staleness.reviewBy, '2026-11-02');
   assert.equal(registry.objects.find((object) => object.id === 'policy:corrections-policy').governanceControls.staleness.reviewBy, '2026-11-02');
+  assert.equal(registry.objects.find((object) => object.id === 'policy:legal-authority-policy').governanceControls.staleness.reviewBy, '2026-11-02');
   assert.ok(registry.objects.filter((object) => object.objectType === 'service').every((object) => object.governanceControls.capacity.state === 'not-certified'));
   assert.ok(registry.objects.filter((object) => object.objectType === 'service').every((object) => object.governanceControls.contractingIdentity.entity === 'Rayven-Nikkita Collins LLC d/b/a Aloha AI'));
   assert.ok(registry.objects.every((object) => object.governanceControls?.professionalAccountability?.state === 'bounded'));
@@ -111,7 +113,7 @@ test('R02 claim registry reconciles every frozen record and governs every site-l
   assert.ok(registry.claims.every((claim) => claim.reviewedBy && claim.reviewedAt && claim.decisionBasis));
 });
 
-test('R07 records five bounded tool evaluations plus four bounded site-assurance domains without overstating certification', () => {
+test('R07 records five bounded tool evaluations plus five bounded site-assurance domains without overstating certification', () => {
   const assurance = JSON.parse(fs.readFileSync('content/governance/assurance-registry.json', 'utf8'));
   const manifest = JSON.parse(fs.readFileSync('api/assurance-manifest.json', 'utf8'));
   const citationEvaluation = JSON.parse(fs.readFileSync('api/evaluations/citation-verifier.json', 'utf8'));
@@ -123,6 +125,7 @@ test('R07 records five bounded tool evaluations plus four bounded site-assurance
   const securityEvaluation = JSON.parse(fs.readFileSync('api/evaluations/security.json', 'utf8'));
   const accessibilityEvaluation = JSON.parse(fs.readFileSync('api/evaluations/accessibility.json', 'utf8'));
   const correctionsEvaluation = JSON.parse(fs.readFileSync('api/evaluations/corrections.json', 'utf8'));
+  const legalAuthorityEvaluation = JSON.parse(fs.readFileSync('api/evaluations/legal-authority.json', 'utf8'));
   assert.equal(assurance.methodConformance.controls.length, 12);
   assert.equal(assurance.methodConformance.exceptions.length, 0);
   assert.equal(assurance.methodConformance.decision, 'foundation-approved-not-site-certified');
@@ -205,10 +208,16 @@ test('R07 records five bounded tool evaluations plus four bounded site-assurance
   assert.equal(correctionsEvaluation.metrics.failedChecks, 0);
   assert.ok(correctionsEvaluation.revisionLedger.entries >= 2);
   assert.ok(correctionsEvaluation.affectedOutputAnalysis.totalDispositionedOutputs >= 6);
-  assert.ok(assurance.siteAssuranceDomains.filter((item) => !['privacy','security','accessibility','corrections'].includes(item.id)).every((item) => item.state === 'required-not-yet-certified' && item.requiredEvidence));
+  const legalAuthority = assurance.siteAssuranceDomains.find((item) => item.id === 'legal-authority');
+  assert.equal(legalAuthority.state, 'passed-limited');
+  assert.equal(legalAuthority.evidenceHref, '/api/evaluations/legal-authority.json');
+  assert.equal(legalAuthorityEvaluation.decision, 'passed-limited-selected-authority-control-scope');
+  assert.equal(legalAuthorityEvaluation.metrics.failedChecks, 0);
+  assert.ok(legalAuthorityEvaluation.sourceRegister.records >= 2);
+  assert.ok(assurance.siteAssuranceDomains.filter((item) => !['privacy','security','accessibility','corrections','legal-authority'].includes(item.id)).every((item) => item.state === 'required-not-yet-certified' && item.requiredEvidence));
   assert.equal(manifest.counts.methodControls, 12);
   assert.equal(manifest.counts.evaluatedHighStakesTools, 5);
-  assert.equal(manifest.counts.evaluatedAssuranceDomains, 4);
+  assert.equal(manifest.counts.evaluatedAssuranceDomains, 5);
   assert.equal(manifest.counts.assuranceDomainsCertified, 0);
   assert.equal(manifest.counts.errors, 0);
 });

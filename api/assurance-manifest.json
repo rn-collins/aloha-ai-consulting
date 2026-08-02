@@ -159,7 +159,11 @@
     },
     {
       "id": "legal-authority",
-      "state": "required-not-yet-certified",
+      "state": "passed-limited",
+      "decision": "Passed only for the dated public process and selected authority-register integrity boundary; this is not legal advice, a complete sitewide legal-research audit, or a determination of currentness, good-law status, applicability, or compliance.",
+      "evaluatedAt": "2026-08-02",
+      "evidenceHref": "/api/evaluations/legal-authority.json",
+      "retestTrigger": "Any cited authority, legal or regulatory claim, jurisdiction, effective status, professional-status statement, source link, conflict, correction, evaluator, or deployment change; otherwise 2026-11-02.",
       "requiredEvidence": "Source register, jurisdiction, effective dates, retrieval dates, professional boundary, conflicts, and review owner"
     },
     {
@@ -179,7 +183,7 @@
     "methodRevisions": 1,
     "highStakesToolsQueued": 5,
     "evaluatedHighStakesTools": 5,
-    "evaluatedAssuranceDomains": 4,
+    "evaluatedAssuranceDomains": 5,
     "assuranceDomainsCertified": 0,
     "errors": 0
   },

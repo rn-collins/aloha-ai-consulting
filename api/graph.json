@@ -43,6 +43,13 @@
       "maturity": "Production"
     },
     {
+      "id": "legal-authority-policy",
+      "kind": "policy",
+      "pathname": "/legal-authority",
+      "title": "A legal statement is usable only inside its recorded authority boundary.",
+      "maturity": "Production"
+    },
+    {
       "id": "methods",
       "kind": "research",
       "pathname": "/methods",
@@ -1929,6 +1936,21 @@
       "source": "terms",
       "type": "related_to",
       "target": "about"
+    },
+    {
+      "source": "legal-authority-policy",
+      "type": "uses",
+      "target": "methods"
+    },
+    {
+      "source": "legal-authority-policy",
+      "type": "related_to",
+      "target": "corrections-policy"
+    },
+    {
+      "source": "legal-authority-policy",
+      "type": "implements",
+      "target": "trust-stack"
     },
     {
       "source": "methods",
