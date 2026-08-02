@@ -1,19 +1,19 @@
 # Aloha AI whole-site audit
 
-Generated: 2026-08-02T22:10:34.785Z
+Generated: 2026-08-02T22:28:29.107Z
 
-Routes audited: 498
-Static pages found: 498
+Routes audited: 499
+Static pages found: 499
 Missing route files: 0
 Average page score: 100%
-Pages loading all shared style layers: 498/498
+Pages loading all shared style layers: 499/499
 Critical structural or accessibility failures: 0
 
 ## Estate summary
 
 | Estate | Routes | Found | Average score |
 |---|---:|---:|---:|
-| Unclassified | 258 | 258 | 100% |
+| Unclassified | 259 | 259 | 100% |
 | Aloha AI University | 180 | 180 | 100% |
 | Tools and Diagnostics | 29 | 29 | 100% |
 | Aloha AI | 15 | 15 | 100% |
@@ -48,6 +48,7 @@ Critical structural or accessibility failures: 0
 | `/builds` | Aloha AI | company | builds.html | 100% | No baseline structural finding. |
 | `/ce` | Programs and Continuing Education | landing | ce.html | 100% | No baseline structural finding. |
 | `/content` | Aloha AI | landing | content.html | 100% | No baseline structural finding. |
+| `/corrections` | Unclassified | landing | corrections.html | 100% | No baseline structural finding. |
 | `/engagements` | Aloha AI | landing | engagements.html | 100% | No baseline structural finding. |
 | `/governance` | Unclassified | landing | governance.html | 100% | No baseline structural finding. |
 | `/industries` | Unclassified | landing | industries.html | 100% | No baseline structural finding. |

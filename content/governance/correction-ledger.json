@@ -1,0 +1,59 @@
+{
+  "schema": "aloha-ai-correction-ledger/1.0",
+  "version": "1.0.0",
+  "effectiveDate": "2026-08-02",
+  "owner": "RN Collins / Aloha AI",
+  "publicRoute": "/corrections",
+  "reportInstruction": "Microsoft Bookings note: correction report — no meeting needed",
+  "states": ["received", "triage", "investigating", "confirmed", "not-substantiated", "correcting", "monitoring", "closed"],
+  "entries": [
+    {
+      "id": "COR-2026-001",
+      "reportedAt": "2026-08-02",
+      "decidedAt": "2026-08-02",
+      "closedAt": "2026-08-02",
+      "owner": "RN Collins / Aloha AI",
+      "category": "privacy-disclosure",
+      "severity": "material",
+      "state": "closed",
+      "priorState": "The governance copy said Vercel Speed Insights was removed and directed visitors to request deletion by email.",
+      "correctedState": "The policy discloses current Speed Insights coverage and provides the available Microsoft Bookings privacy-request path; it no longer represents a nonexistent public email channel.",
+      "authority": ["Repository-wide checked-in HTML/runtime inventory", "Canonical privacy-policy source", "R07 Privacy evaluation evidence"],
+      "rootCause": "The policy and legacy editorial copy drifted from the generated estate and the actual public contact architecture.",
+      "affectedOutputs": [
+        {"output": "/privacy", "disposition": "corrected and rebuilt"},
+        {"output": "/governance", "disposition": "corrected and rebuilt"},
+        {"output": "/api/evaluations/privacy.json", "disposition": "published as bounded evidence"}
+      ],
+      "propagation": "Canonical and legacy governance copy were corrected; generated outputs and the governed promise registry were rebuilt and reconciled.",
+      "prevention": ["Release-blocking privacy inventory", "Public request-path assertion", "Legacy-copy regression assertion"],
+      "closureEvidence": {"evaluationCommit":"73a9028e5fc9e6e3a8518caa300b0cadde438fd4", "productionClosureCommit":"0a890152d290a9f00101ad24dd0c5c225122d50c", "evidenceHref":"/api/evaluations/privacy.json"},
+      "notification": "No individually identifiable affected recipient was established; the corrected policy and evidence were published publicly.",
+      "limitations": "Previously cached or copied versions may persist outside Aloha AI control."
+    },
+    {
+      "id": "COR-2026-002",
+      "reportedAt": "2026-08-02",
+      "decidedAt": "2026-08-02",
+      "closedAt": "2026-08-02",
+      "owner": "RN Collins / Aloha AI",
+      "category": "runtime-security",
+      "severity": "material",
+      "state": "closed",
+      "priorState": "The production platform health and AI handlers crashed because CommonJS handlers crossed the repository's ESM module boundary.",
+      "correctedState": "API- and platform-library-scoped CommonJS boundaries allow the handlers to execute and return deliberate no-store bounded responses.",
+      "authority": ["Production endpoint verification", "Vercel runtime behavior", "R07 Security evaluation evidence"],
+      "rootCause": "Static repository tests did not execute the serverless handlers under the production module-resolution boundary.",
+      "affectedOutputs": [
+        {"output": "/api/platform/health", "disposition": "runtime corrected; deliberate 503/no-store when unavailable"},
+        {"output": "/api/platform/ai", "disposition": "runtime corrected; bounded method response/no-store"},
+        {"output": "/api/evaluations/security.json", "disposition": "updated with runtime-boundary evidence"}
+      ],
+      "propagation": "Both handler and imported platform-library module boundaries were corrected and production-retested.",
+      "prevention": ["Security gate requires API CommonJS boundary", "Security gate requires platform-library CommonJS boundary", "Live endpoint verification before closure"],
+      "closureEvidence": {"evaluationCommit":"67e33ec9e36cf462ba46bf82317c791e3f903cc9", "correctionCommits":["d9410a6e928b734f24eb725e3ea84d74bbe1f611","b919b5ef7ff839425cc8638408f0e3e9f0ae8123"], "productionClosureCommit":"09f76d3898a1c5292fe783d16d73f789b9574528", "evidenceHref":"/api/evaluations/security.json"},
+      "notification": "No public platform availability had been promised; the corrected runtime and bounded evidence were published publicly.",
+      "limitations": "The correction does not certify third-party infrastructure or establish that no other vulnerability exists."
+    }
+  ]
+}

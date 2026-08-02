@@ -16,6 +16,7 @@ const controlledSubstancesEvaluation = read('api/evaluations/controlled-substanc
 const privacyEvaluation = read('api/evaluations/privacy.json');
 const securityEvaluation = read('api/evaluations/security.json');
 const accessibilityEvaluation = read('api/evaluations/accessibility.json');
+const correctionsEvaluation = read('api/evaluations/corrections.json');
 
 for (const field of ['schema','version','effectiveDate','owner','reviewer','nextReviewOrTrigger','policy']) if (!registry[field]) errors.push(`registry: ${field} missing`);
 if (methods.version !== conformance.methodVersion || methods.id !== conformance.methodId) errors.push('methods record and conformance version do not match');
@@ -83,6 +84,11 @@ for (const id of requiredDomains) {
     if (accessibilityEvaluation.decision !== 'passed-limited-static-structure-and-interaction-contract-scope' || accessibilityEvaluation.metrics.failedChecks !== 0 || accessibilityEvaluation.metrics.structuralFindings !== 0 || accessibilityEvaluation.metrics.passedChecks !== accessibilityEvaluation.metrics.totalChecks) errors.push('accessibility: evidence does not satisfy the bounded threshold');
     if (!accessibilityEvaluation.assistiveTechnologyEvidence || accessibilityEvaluation.assistiveTechnologyEvidence.notPerformed.length < 4 || !accessibilityEvaluation.owner || !accessibilityEvaluation.review?.lastReviewed) errors.push('accessibility: required evidence is incomplete');
     if (!accessibilityEvaluation.prohibitedInference) errors.push('accessibility: prohibited-inference boundary is missing');
+  } else if (id === 'corrections') {
+    if (item.state !== 'passed-limited' || !item.evidenceHref || !item.decision || !item.retestTrigger) errors.push('corrections: bounded assurance decision is incomplete');
+    if (correctionsEvaluation.decision !== 'passed-limited-public-correction-process-and-ledger-integrity-scope' || correctionsEvaluation.metrics.failedChecks !== 0 || correctionsEvaluation.metrics.passedChecks !== correctionsEvaluation.metrics.totalChecks) errors.push('corrections: evidence does not satisfy the bounded threshold');
+    if (!correctionsEvaluation.correctionRoute?.pathname || !correctionsEvaluation.revisionLedger?.entries || !correctionsEvaluation.affectedOutputAnalysis?.required || !correctionsEvaluation.owner || !correctionsEvaluation.responseStates?.length || !correctionsEvaluation.closureEvidence?.requiredForClosedEntries) errors.push('corrections: required evidence is incomplete');
+    if (!correctionsEvaluation.prohibitedInference) errors.push('corrections: prohibited-inference boundary is missing');
   } else if (item.state !== 'required-not-yet-certified') errors.push(`${id}: assurance domain must fail closed`);
 }
 

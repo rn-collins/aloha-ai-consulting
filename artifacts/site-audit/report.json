@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-08-02T22:10:34.785Z",
+  "generatedAt": "2026-08-02T22:28:29.107Z",
   "summary": {
-    "routes": 498,
-    "found": 498,
+    "routes": 499,
+    "found": 499,
     "missing": 0,
     "averageScore": 100,
-    "sharedStyleCoverage": 498,
+    "sharedStyleCoverage": 499,
     "criticalFailures": 0
   },
   "estates": [
     {
       "key": "unclassified",
       "label": "Unclassified",
-      "routes": 258,
-      "found": 258,
+      "routes": 259,
+      "found": 259,
       "averageScore": 100
     },
     {
@@ -425,7 +425,7 @@
       "file": "audiences/educators-and-learners.html",
       "exists": true,
       "title": "For Educators And Learners | Aloha AI",
-      "description": "Browse 20 Aloha AI resources connected to Educators And Learners. Explore source-grounded guidance, evidence, and practical implementation details from Aloha AI.",
+      "description": "Browse 21 Aloha AI resources connected to Educators And Learners. Explore source-grounded guidance, evidence, and practical implementation details from Aloha AI.",
       "canonical": "https://aloha-ai-consulting.vercel.app/audiences/educators-and-learners",
       "score": 100,
       "checks": {
@@ -451,9 +451,9 @@
         "images": 0,
         "missingAlt": 0,
         "buttons": 12,
-        "links": 29,
+        "links": 30,
         "workspaceLinks": 1,
-        "pageBytes": 17619
+        "pageBytes": 18171
       },
       "findings": []
     },
@@ -1081,6 +1081,54 @@
       "findings": []
     },
     {
+      "path": "/corrections",
+      "estate": "unclassified",
+      "estateLabel": "Unclassified",
+      "pageType": "landing",
+      "requiredContent": [
+        "clear audience",
+        "specific promise",
+        "evidence",
+        "primary action",
+        "secondary path",
+        "related estate links"
+      ],
+      "file": "corrections.html",
+      "exists": true,
+      "title": "A correction is not complete until the affected record is traceable…",
+      "description": "The public route for reporting a possible error and the dated control for reviewing, correcting, propagating, and closing confirmed errors across Aloha AI outputs.",
+      "canonical": "https://aloha-ai-consulting.vercel.app/corrections",
+      "score": 100,
+      "checks": {
+        "title": true,
+        "description": true,
+        "canonical": true,
+        "oneH1": true,
+        "main": true,
+        "header": true,
+        "footer": true,
+        "viewport": true,
+        "language": true,
+        "skipLink": true,
+        "sharedStyles": true,
+        "imageAlternatives": true,
+        "inputLabels": true,
+        "pageWeight": true
+      },
+      "metrics": {
+        "h1Count": 1,
+        "inlineStyles": 0,
+        "forms": 0,
+        "images": 0,
+        "missingAlt": 0,
+        "buttons": 0,
+        "links": 8,
+        "workspaceLinks": 0,
+        "pageBytes": 12049
+      },
+      "findings": []
+    },
+    {
       "path": "/engagements",
       "estate": "commercial",
       "estateLabel": "Aloha AI",
@@ -1170,9 +1218,9 @@
         "images": 0,
         "missingAlt": 0,
         "buttons": 0,
-        "links": 9,
+        "links": 10,
         "workspaceLinks": 0,
-        "pageBytes": 7666
+        "pageBytes": 8216
       },
       "findings": []
     },
@@ -1432,7 +1480,7 @@
       "file": "industries/education.html",
       "exists": true,
       "title": "Industry: Education | Aloha AI",
-      "description": "Browse 38 Aloha AI resources connected to Education. Explore source-grounded guidance, evidence, and practical implementation details from Aloha AI.",
+      "description": "Browse 39 Aloha AI resources connected to Education. Explore source-grounded guidance, evidence, and practical implementation details from Aloha AI.",
       "canonical": "https://aloha-ai-consulting.vercel.app/industries/education",
       "score": 100,
       "checks": {
@@ -1458,9 +1506,9 @@
         "images": 0,
         "missingAlt": 0,
         "buttons": 16,
-        "links": 47,
+        "links": 48,
         "workspaceLinks": 0,
-        "pageBytes": 27680
+        "pageBytes": 28232
       },
       "findings": []
     },
@@ -1864,7 +1912,7 @@
       "file": "industries/professional-services.html",
       "exists": true,
       "title": "Industry: Professional Services | Aloha AI",
-      "description": "Browse 91 Aloha AI resources connected to Professional Services. Explore source-grounded guidance, evidence, and practical implementation details from Aloha AI.",
+      "description": "Browse 92 Aloha AI resources connected to Professional Services. Explore source-grounded guidance, evidence, and practical implementation details from Aloha AI.",
       "canonical": "https://aloha-ai-consulting.vercel.app/industries/professional-services",
       "score": 100,
       "checks": {
@@ -1890,9 +1938,9 @@
         "images": 0,
         "missingAlt": 0,
         "buttons": 18,
-        "links": 100,
+        "links": 101,
         "workspaceLinks": 1,
-        "pageBytes": 57083
+        "pageBytes": 57635
       },
       "findings": []
     },
@@ -2296,7 +2344,7 @@
       "file": "industries/technology.html",
       "exists": true,
       "title": "Industry: Technology | Aloha AI",
-      "description": "Browse 12 Aloha AI resources connected to Technology. Explore source-grounded guidance, evidence, and practical implementation details from Aloha AI.",
+      "description": "Browse 13 Aloha AI resources connected to Technology. Explore source-grounded guidance, evidence, and practical implementation details from Aloha AI.",
       "canonical": "https://aloha-ai-consulting.vercel.app/industries/technology",
       "score": 100,
       "checks": {
@@ -2322,9 +2370,9 @@
         "images": 0,
         "missingAlt": 0,
         "buttons": 8,
-        "links": 21,
+        "links": 22,
         "workspaceLinks": 1,
-        "pageBytes": 12672
+        "pageBytes": 13224
       },
       "findings": []
     },
@@ -2632,7 +2680,7 @@
       "file": "maturity/production.html",
       "exists": true,
       "title": "Production resources | Aloha AI",
-      "description": "Browse 81 Aloha AI resources connected to Production. Explore source-grounded guidance, evidence, and practical implementation details from Aloha AI.",
+      "description": "Browse 82 Aloha AI resources connected to Production. Explore source-grounded guidance, evidence, and practical implementation details from Aloha AI.",
       "canonical": "https://aloha-ai-consulting.vercel.app/maturity/production",
       "score": 100,
       "checks": {
@@ -2658,9 +2706,9 @@
         "images": 0,
         "missingAlt": 0,
         "buttons": 16,
-        "links": 90,
+        "links": 91,
         "workspaceLinks": 0,
-        "pageBytes": 50550
+        "pageBytes": 51102
       },
       "findings": []
     },
@@ -5677,7 +5725,7 @@
       "file": "topics/accountability.html",
       "exists": true,
       "title": "Topic: Accountability | Aloha AI",
-      "description": "Browse 2 Aloha AI resources connected to Accountability. Explore source-grounded guidance, evidence, and practical implementation details from Aloha AI.",
+      "description": "Browse 3 Aloha AI resources connected to Accountability. Explore source-grounded guidance, evidence, and practical implementation details from Aloha AI.",
       "canonical": "https://aloha-ai-consulting.vercel.app/topics/accountability",
       "score": 100,
       "checks": {
@@ -5703,9 +5751,9 @@
         "images": 0,
         "missingAlt": 0,
         "buttons": 3,
-        "links": 11,
+        "links": 12,
         "workspaceLinks": 0,
-        "pageBytes": 6434
+        "pageBytes": 6986
       },
       "findings": []
     },
@@ -9661,7 +9709,7 @@
       "file": "topics/governance.html",
       "exists": true,
       "title": "Topic: Governance | Aloha AI",
-      "description": "Browse 33 Aloha AI resources connected to Governance. Explore source-grounded guidance, evidence, and practical implementation details from Aloha AI.",
+      "description": "Browse 34 Aloha AI resources connected to Governance. Explore source-grounded guidance, evidence, and practical implementation details from Aloha AI.",
       "canonical": "https://aloha-ai-consulting.vercel.app/topics/governance",
       "score": 100,
       "checks": {
@@ -9686,10 +9734,10 @@
         "forms": 0,
         "images": 0,
         "missingAlt": 0,
-        "buttons": 15,
-        "links": 42,
+        "buttons": 16,
+        "links": 43,
         "workspaceLinks": 2,
-        "pageBytes": 25409
+        "pageBytes": 26074
       },
       "findings": []
     },
@@ -9949,7 +9997,7 @@
       "file": "topics/human-adoption.html",
       "exists": true,
       "title": "Topic: Human Adoption | Aloha AI",
-      "description": "Browse 2 Aloha AI resources connected to Human Adoption. Explore source-grounded guidance, evidence, and practical implementation details from Aloha AI.",
+      "description": "Browse 3 Aloha AI resources connected to Human Adoption. Explore source-grounded guidance, evidence, and practical implementation details from Aloha AI.",
       "canonical": "https://aloha-ai-consulting.vercel.app/topics/human-adoption",
       "score": 100,
       "checks": {
@@ -9975,9 +10023,9 @@
         "images": 0,
         "missingAlt": 0,
         "buttons": 3,
-        "links": 11,
+        "links": 12,
         "workspaceLinks": 0,
-        "pageBytes": 6477
+        "pageBytes": 7029
       },
       "findings": []
     },

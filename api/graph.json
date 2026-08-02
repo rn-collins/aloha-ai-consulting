@@ -1,6 +1,13 @@
 {
   "nodes": [
     {
+      "id": "corrections-policy",
+      "kind": "policy",
+      "pathname": "/corrections",
+      "title": "A correction is not complete until the affected record is traceable.",
+      "maturity": "Production"
+    },
+    {
       "id": "about",
       "kind": "institutional",
       "pathname": "/about",
@@ -1808,6 +1815,21 @@
     }
   ],
   "edges": [
+    {
+      "source": "corrections-policy",
+      "type": "uses",
+      "target": "methods"
+    },
+    {
+      "source": "corrections-policy",
+      "type": "related_to",
+      "target": "accessibility-statement"
+    },
+    {
+      "source": "corrections-policy",
+      "type": "implements",
+      "target": "trust-stack"
+    },
     {
       "source": "about",
       "type": "documents",

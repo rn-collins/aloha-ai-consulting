@@ -150,7 +150,11 @@
     },
     {
       "id": "corrections",
-      "state": "required-not-yet-certified",
+      "state": "passed-limited",
+      "decision": "Passed only for the dated public reporting-process and checked-in ledger-integrity boundary; error discovery, substantive correctness, confidential outputs, and correction of third-party or copied versions are not implied.",
+      "evaluatedAt": "2026-08-02",
+      "evidenceHref": "/api/evaluations/corrections.json",
+      "retestTrigger": "Any confirmed error, correction report, governed public-output change, correction-policy or ledger change, assurance-control change, or deployment change; otherwise 2026-11-02.",
       "requiredEvidence": "Public correction route, revision ledger, affected-output analysis, owner, response state, and closure evidence"
     },
     {
@@ -175,7 +179,7 @@
     "methodRevisions": 1,
     "highStakesToolsQueued": 5,
     "evaluatedHighStakesTools": 5,
-    "evaluatedAssuranceDomains": 3,
+    "evaluatedAssuranceDomains": 4,
     "assuranceDomainsCertified": 0,
     "errors": 0
   },
