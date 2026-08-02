@@ -103,8 +103,11 @@
       "evaluationId": "EVAL-BILL-ANALYZER",
       "canonicalId": "bill-analyzer",
       "title": "Regulatory Bill Analyzer",
-      "state": "not-evaluated",
-      "requiredNext": "Publish labeled obligation, prohibition, deadline, threshold, and abstention cases with per-class errors, reviewer, limitations, and decision."
+      "state": "passed-limited",
+      "decision": "Passed only for deterministic English-language regulatory-language triage in rule version 1.1.0; no clause-completeness, jurisdiction, authority-status, applicability, legal-effect, risk, or compliance inference is permitted.",
+      "evaluatedAt": "2026-08-01",
+      "evidenceHref": "/api/evaluations/bill-analyzer.json",
+      "retestTrigger": "Any lexicon, matching logic, category, review question, output field, jurisdiction boundary, prohibited-inference boundary, or public capability claim change; otherwise 2026-11-01."
     },
     {
       "evaluationId": "EVAL-CONTROLLED-SUBSTANCES",
@@ -156,7 +159,7 @@
     "methodExceptions": 0,
     "methodRevisions": 1,
     "highStakesToolsQueued": 5,
-    "evaluatedHighStakesTools": 3,
+    "evaluatedHighStakesTools": 4,
     "assuranceDomainsCertified": 0,
     "errors": 0
   },

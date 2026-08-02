@@ -24,6 +24,7 @@
       "legislative analysis"
     ],
     "implementationStatus": "Public browser-local structured-text analyzer.",
+    "version": "1.1.0",
     "documentation": [
       "Paste primary-source text",
       "Run deterministic issue spotting",
@@ -41,8 +42,21 @@
           "terms": [
             "shall",
             "must",
-            "required"
-          ]
+            "required",
+            "is required to"
+          ],
+          "reviewQuestion": "Who is the actor, what action is stated, and what exceptions or definitions change the clause?"
+        },
+        {
+          "label": "Prohibitions",
+          "terms": [
+            "shall not",
+            "must not",
+            "may not",
+            "prohibited",
+            "is unlawful"
+          ],
+          "reviewQuestion": "What conduct is barred, who is covered, and what exceptions or defenses appear elsewhere?"
         },
         {
           "label": "Deadlines",
@@ -50,16 +64,31 @@
             "no later than",
             "within",
             "deadline",
-            "annual"
-          ]
+            "annual",
+            "effective on"
+          ],
+          "reviewQuestion": "What event starts the clock, how is time calculated, and can the date change?"
+        },
+        {
+          "label": "Thresholds",
+          "terms": [
+            "$",
+            "percent",
+            "at least",
+            "more than",
+            "fewer than"
+          ],
+          "reviewQuestion": "What quantity or condition activates the provision, and how is it measured?"
         },
         {
           "label": "Authority",
           "terms": [
             "department",
             "agency",
-            "commission"
-          ]
+            "commission",
+            "secretary"
+          ],
+          "reviewQuestion": "Which public body receives power or responsibility, and what limits govern it?"
         },
         {
           "label": "Enforcement",
@@ -67,14 +96,19 @@
             "penalty",
             "violation",
             "enforce",
-            "fine"
-          ]
+            "fine",
+            "liable"
+          ],
+          "reviewQuestion": "What conduct triggers enforcement, who enforces it, and what procedure or remedy applies?"
         }
       ]
     },
     "evidence": [
       "User-supplied primary-source text",
       "Visible deterministic signal rules"
+    ],
+    "evidenceLinks": [
+      "/api/evaluations/bill-analyzer.json"
     ],
     "methodology": [
       "Preserve the supplied text",
@@ -101,7 +135,7 @@
     ],
     "seoTitle": "Regulatory Bill Analyzer",
     "editorialIntro": [
-      "Paste bill or regulation text and this tool structures it for a first pass: the issues it touches, the parties it reaches, the obligations it imposes, a risk read from the density of penalties and deadlines, a plain-English summary, and a checklist of questions to put to counsel. The analysis runs in your browser with no network call. It sorts and surfaces; a licensed attorney interprets.",
+      "Paste English-language bill or regulation text and this tool performs a fixed lexical first pass for candidate obligations, prohibitions, deadlines, thresholds, public authority, and enforcement language. It returns the matched terms and review questions in your browser with no network call. It does not identify every relevant clause, quote context, summarize the instrument, or determine legal effect; a licensed attorney interprets the complete source.",
       "Built by RN Collins · MS, Anatomy & Neurobiology · JD candidate · Legal research and AI-assisted workflow experience"
     ],
     "editorialSections": [
@@ -119,7 +153,7 @@
           },
           {
             "type": "paragraph",
-            "text": "Issue tags from keyword lexicons, the stakeholders a text implicates, obligation language quoted in context, deadlines and dollar thresholds, and a risk read that reflects how much of that language is present."
+            "text": "Six visible lexical categories: candidate obligations, prohibitions, deadlines, thresholds, public authority, and enforcement language. Each match is paired with a review question. The result reports configured terms only; it does not infer stakeholders, quote clauses, assign risk, or summarize the instrument."
           },
           {
             "type": "heading",
@@ -137,7 +171,7 @@
         "blocks": [
           {
             "type": "paragraph",
-            "text": "Paste the text and run the analysis. The engine runs on your device with no network calls. Load the illustrative sample to see it tag issues, quote compliance triggers in context, and generate a questions-for-counsel checklist."
+            "text": "Paste the text and run the analysis. The engine runs on your device with no network calls. Load the illustrative sample to see it identify configured terms and attach category-specific review questions."
           },
           {
             "type": "heading",
@@ -145,7 +179,7 @@
           },
           {
             "type": "paragraph",
-            "text": "The analyzer scans for issue themes, stakeholder terms, obligation language, deadlines, and dollar thresholds, then assembles a plain-English summary and a checklist for counsel. It runs on your device with no network calls."
+            "text": "The analyzer scans for configured obligation, prohibition, deadline, threshold, authority, and enforcement terms. It runs on your device with no network calls and abstains when none of those fixed terms appears."
           },
           {
             "type": "paragraph",
@@ -157,27 +191,27 @@
           },
           {
             "type": "paragraph",
-            "text": "Themes detected from keyword lexicons. The count shows how many matching terms fired."
+            "text": "Categories detected from fixed keyword lexicons. The result shows which configured terms fired."
           },
           {
             "type": "paragraph",
-            "text": "Parties inferred from the terms present in the text."
+            "text": "No parties or stakeholders are inferred. The reviewer must identify the actor and covered person from the complete text."
           },
           {
             "type": "paragraph",
-            "text": "Obligation language, deadlines, and dollar thresholds, quoted in context. The highlighted span is the matched phrase."
+            "text": "Matched terms are listed by category. The engine does not extract or quote the surrounding clause."
           },
           {
             "type": "paragraph",
-            "text": "A relative read of obligation density, not a legal assessment."
+            "text": "No risk score or obligation-density rating is produced."
           },
           {
             "type": "paragraph",
-            "text": "Assembled from the structural elements the engine detected."
+            "text": "No plain-English summary is produced. The supplied source remains visible for human review."
           },
           {
             "type": "paragraph",
-            "text": "A checklist a licensed attorney should work through. The tool assists; counsel decides."
+            "text": "Each matched category supplies a fixed question for a licensed attorney or other qualified reviewer. The tool assists; the reviewer decides."
           },
           {
             "type": "heading",
