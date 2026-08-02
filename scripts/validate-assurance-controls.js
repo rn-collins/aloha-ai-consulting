@@ -10,6 +10,7 @@ const requiredDomains = ['privacy','security','accessibility','corrections','leg
 const conformance = registry.methodConformance;
 const citationEvaluation = read('api/evaluations/citation-verifier.json');
 const claimsEvaluation = read('api/evaluations/claims-checker.json');
+const evidenceEvaluation = read('api/evaluations/evidence-explainer.json');
 
 for (const field of ['schema','version','effectiveDate','owner','reviewer','nextReviewOrTrigger','policy']) if (!registry[field]) errors.push(`registry: ${field} missing`);
 if (methods.version !== conformance.methodVersion || methods.id !== conformance.methodId) errors.push('methods record and conformance version do not match');
@@ -34,12 +35,17 @@ for (const id of requiredTools) {
     if (item.state !== 'passed-limited' || !item.evidenceHref || !item.decision || !item.retestTrigger) errors.push(`${id}: bounded evaluation decision is incomplete`);
     if (claimsEvaluation.decision !== 'passed-limited-lexical-screening-scope' || claimsEvaluation.metrics.totalCases < 20 || claimsEvaluation.metrics.failedCases !== 0 || claimsEvaluation.metrics.falseClearances !== 0 || claimsEvaluation.metrics.abstentionAccuracy !== 1) errors.push(`${id}: evaluation evidence does not satisfy the bounded threshold`);
     if (!claimsEvaluation.jurisdictionPolicyBoundary || !claimsEvaluation.prohibitedInference) errors.push(`${id}: jurisdiction or prohibited-inference boundary is missing`);
+  } else if (id === 'evidence-explainer') {
+    if (item.state !== 'passed-limited' || !item.evidenceHref || !item.decision || !item.retestTrigger) errors.push(`${id}: bounded evaluation decision is incomplete`);
+    if (evidenceEvaluation.decision !== 'passed-limited-claim-language-triage-scope' || evidenceEvaluation.metrics.totalCases < 20 || evidenceEvaluation.metrics.failedCases !== 0 || evidenceEvaluation.metrics.falseClearances !== 0 || evidenceEvaluation.metrics.abstentionAccuracy !== 1 || evidenceEvaluation.metrics.unsupportedInferenceRejections !== 1) errors.push(`${id}: evaluation evidence does not satisfy the bounded threshold`);
+    if (!evidenceEvaluation.prohibitedInference) errors.push(`${id}: prohibited-inference boundary is missing`);
   } else if (item.state !== 'not-evaluated' || !item.requiredNext) errors.push(`${id}: must remain explicitly queued and not evaluated`);
   const object = release.objects.find((candidate) => candidate.canonicalId === id);
   if (!object) errors.push(`${id}: no canonical release object`);
   else if (id === 'citation-verifier' && object.status.evaluation !== 'limited') errors.push(`${id}: release registry must record limited evaluation`);
   else if (id === 'claims-checker' && object.status.evaluation !== 'limited') errors.push(`${id}: release registry must record limited evaluation`);
-  else if (!['citation-verifier','claims-checker'].includes(id) && object.status.evaluation !== 'not-evaluated') errors.push(`${id}: release registry claims evaluation before evidence`);
+  else if (id === 'evidence-explainer' && object.status.evaluation !== 'limited') errors.push(`${id}: release registry must record limited evaluation`);
+  else if (!['citation-verifier','claims-checker','evidence-explainer'].includes(id) && object.status.evaluation !== 'not-evaluated') errors.push(`${id}: release registry claims evaluation before evidence`);
 }
 
 const domains = registry.siteAssuranceDomains || [];

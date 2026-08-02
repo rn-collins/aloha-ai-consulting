@@ -93,8 +93,11 @@
       "evaluationId": "EVAL-EVIDENCE-EXPLAINER",
       "canonicalId": "evidence-explainer",
       "title": "Evidence Explainer",
-      "state": "not-evaluated",
-      "requiredNext": "Publish representative evidence cases, expected explanations, unsupported-inference failures, threshold, reviewer, limitations, and decision."
+      "state": "passed-limited",
+      "decision": "Passed only for deterministic English-language claim-language triage in rule version 1.1.0; no truth, evidence-quality, study-design sufficiency, literature-review, or medical inference is permitted.",
+      "evaluatedAt": "2026-08-01",
+      "evidenceHref": "/api/evaluations/evidence-explainer.json",
+      "retestTrigger": "Any lexicon, matching logic, category, evidence-design prompt, confounder, output field, prohibited-inference boundary, or public capability claim change; otherwise 2026-11-01."
     },
     {
       "evaluationId": "EVAL-BILL-ANALYZER",
@@ -153,7 +156,7 @@
     "methodExceptions": 0,
     "methodRevisions": 1,
     "highStakesToolsQueued": 5,
-    "evaluatedHighStakesTools": 2,
+    "evaluatedHighStakesTools": 3,
     "assuranceDomainsCertified": 0,
     "errors": 0
   },

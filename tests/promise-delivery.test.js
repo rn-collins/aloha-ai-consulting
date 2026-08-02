@@ -68,16 +68,16 @@ test('R02 release registry covers and conservatively decides every canonical res
   assert.equal(new Set(registry.objects.map((object) => object.id)).size, 257);
   assert.ok(registry.objects.every((object) => object.approvalDecision === 'approved-conservative-local'));
   assert.ok(registry.objects.every((object) => object.lifecycleState === 'locally-reviewed-not-release-certified'));
-  assert.ok(registry.objects.filter((object) => object.id !== 'tool:claims-checker').every((object) => object.lastReviewedOrTested === '2026-07-31'));
-  assert.equal(registry.objects.find((object) => object.id === 'tool:claims-checker').lastReviewedOrTested, '2026-08-01');
+  assert.ok(registry.objects.filter((object) => !['tool:claims-checker', 'tool:evidence-explainer'].includes(object.id)).every((object) => object.lastReviewedOrTested === '2026-07-31'));
+  assert.ok(['tool:claims-checker', 'tool:evidence-explainer'].every((id) => registry.objects.find((object) => object.id === id).lastReviewedOrTested === '2026-08-01'));
   assert.ok(registry.objects.every((object) => object.permittedPublicLanguage));
   assert.ok(registry.objects.every((object) => object.status.publication === 'published'));
   assert.ok(registry.objects.every((object) => object.status.integration !== 'verified'));
   const maintainedMonitors = registry.objects.filter((object) => object.status.maintenance === 'maintained');
   assert.deepEqual(maintainedMonitors.map((object) => object.id), ['monitor:cannabis-rescheduling', 'monitor:psychedelic-radar']);
   assert.ok(registry.objects.every((object) => object.governanceControls?.contradiction?.state === 'registry-consistent'));
-  assert.ok(registry.objects.filter((object) => !['monitor:cannabis-rescheduling', 'monitor:psychedelic-radar', 'tool:claims-checker'].includes(object.id)).every((object) => object.governanceControls?.staleness?.reviewBy === '2026-10-31'));
-  assert.equal(registry.objects.find((object) => object.id === 'tool:claims-checker').governanceControls.staleness.reviewBy, '2026-11-01');
+  assert.ok(registry.objects.filter((object) => !['monitor:cannabis-rescheduling', 'monitor:psychedelic-radar', 'tool:claims-checker', 'tool:evidence-explainer'].includes(object.id)).every((object) => object.governanceControls?.staleness?.reviewBy === '2026-10-31'));
+  assert.ok(['tool:claims-checker', 'tool:evidence-explainer'].every((id) => registry.objects.find((object) => object.id === id).governanceControls.staleness.reviewBy === '2026-11-01'));
   assert.ok(maintainedMonitors.every((object) => object.governanceControls.staleness.reviewBy === '2026-08-07'));
   assert.ok(registry.objects.filter((object) => object.objectType === 'service').every((object) => object.governanceControls.capacity.state === 'not-certified'));
   assert.ok(registry.objects.filter((object) => object.objectType === 'service').every((object) => object.governanceControls.contractingIdentity.entity === 'Rayven-Nikkita Collins LLC d/b/a Aloha AI'));
@@ -106,11 +106,12 @@ test('R02 claim registry reconciles every frozen record and governs every site-l
   assert.ok(registry.claims.every((claim) => claim.reviewedBy && claim.reviewedAt && claim.decisionBasis));
 });
 
-test('R07 assurance records two bounded evaluations without overstating certification', () => {
+test('R07 assurance records three bounded evaluations without overstating certification', () => {
   const assurance = JSON.parse(fs.readFileSync('content/governance/assurance-registry.json', 'utf8'));
   const manifest = JSON.parse(fs.readFileSync('api/assurance-manifest.json', 'utf8'));
   const citationEvaluation = JSON.parse(fs.readFileSync('api/evaluations/citation-verifier.json', 'utf8'));
   const claimsEvaluation = JSON.parse(fs.readFileSync('api/evaluations/claims-checker.json', 'utf8'));
+  const evidenceEvaluation = JSON.parse(fs.readFileSync('api/evaluations/evidence-explainer.json', 'utf8'));
   assert.equal(assurance.methodConformance.controls.length, 12);
   assert.equal(assurance.methodConformance.exceptions.length, 0);
   assert.equal(assurance.methodConformance.decision, 'foundation-approved-not-site-certified');
@@ -121,7 +122,10 @@ test('R07 assurance records two bounded evaluations without overstating certific
   const claims = assurance.highStakesEvaluationQueue.find((item) => item.canonicalId === 'claims-checker');
   assert.equal(claims.state, 'passed-limited');
   assert.match(claims.decision, /lexical screening/);
-  assert.ok(assurance.highStakesEvaluationQueue.filter((item) => !['citation-verifier', 'claims-checker'].includes(item.canonicalId)).every((item) => item.state === 'not-evaluated' && item.requiredNext));
+  const evidence = assurance.highStakesEvaluationQueue.find((item) => item.canonicalId === 'evidence-explainer');
+  assert.equal(evidence.state, 'passed-limited');
+  assert.match(evidence.decision, /claim-language triage/);
+  assert.ok(assurance.highStakesEvaluationQueue.filter((item) => !['citation-verifier', 'claims-checker', 'evidence-explainer'].includes(item.canonicalId)).every((item) => item.state === 'not-evaluated' && item.requiredNext));
   assert.equal(citationEvaluation.metrics.totalCases, 20);
   assert.equal(citationEvaluation.metrics.failedCases, 0);
   assert.equal(citationEvaluation.metrics.highConsequenceFalsePasses, 0);
@@ -131,13 +135,19 @@ test('R07 assurance records two bounded evaluations without overstating certific
   assert.equal(claimsEvaluation.metrics.falseClearances, 0);
   assert.equal(claimsEvaluation.metrics.abstentionAccuracy, 1);
   assert.equal(claimsEvaluation.decision, 'passed-limited-lexical-screening-scope');
+  assert.equal(evidenceEvaluation.metrics.totalCases, 30);
+  assert.equal(evidenceEvaluation.metrics.failedCases, 0);
+  assert.equal(evidenceEvaluation.metrics.falseClearances, 0);
+  assert.equal(evidenceEvaluation.metrics.abstentionAccuracy, 1);
+  assert.equal(evidenceEvaluation.metrics.unsupportedInferenceRejections, 1);
+  assert.equal(evidenceEvaluation.decision, 'passed-limited-claim-language-triage-scope');
   const renderer = fs.readFileSync('lib/site/structured-renderer.js', 'utf8');
   assert.match(renderer, /status\.evaluation === 'limited'/);
   assert.match(renderer, /Browser-local \$\{resource\.kind\} · bounded evaluation/);
   assert.equal(assurance.siteAssuranceDomains.length, 7);
   assert.ok(assurance.siteAssuranceDomains.every((item) => item.state === 'required-not-yet-certified' && item.requiredEvidence));
   assert.equal(manifest.counts.methodControls, 12);
-  assert.equal(manifest.counts.evaluatedHighStakesTools, 2);
+  assert.equal(manifest.counts.evaluatedHighStakesTools, 3);
   assert.equal(manifest.counts.assuranceDomainsCertified, 0);
   assert.equal(manifest.counts.errors, 0);
 });

@@ -1,6 +1,6 @@
 # Aloha AI whole-site audit
 
-Generated: 2026-08-02T09:10:45.588Z
+Generated: 2026-08-02T09:20:56.637Z
 
 Routes audited: 497
 Static pages found: 497

@@ -951,11 +951,17 @@
       "health evidence",
       "claim strength"
     ],
-    "implementationStatus": "Public browser-local evidence-screening tool.",
+    "version": "1.1.0",
+    "effectiveDate": "2026-08-01",
+    "lastReviewedOrTested": "2026-08-01",
+    "nextReviewOrTrigger": "Any lexicon, matching logic, category, evidence-design prompt, confounder, output field, prohibited-inference boundary, or public capability claim change; otherwise 2026-11-01.",
+    "privacyBoundary": "Claim text is processed in the browser and is not transmitted by the tool. The page still loads the separately disclosed site scripts and services.",
+    "implementationStatus": "Public browser-local claim-language triage tool with a bounded evaluation of deterministic rule version 1.1.0.",
     "documentation": [
       "Enter a health claim",
-      "Inspect claim-type signals",
-      "Build an evidence question before drawing a conclusion"
+      "Inspect five configured claim-language categories",
+      "Use the evidence-design prompts and confounders as questions for human review",
+      "Treat no detected category as an abstention, not clearance"
     ],
     "demo": {
       "type": "browser-tool",
@@ -968,42 +974,83 @@
           "label": "Causal claim",
           "terms": [
             "causes",
+            "cause",
+            "cures",
+            "cure",
+            "prevents",
+            "prevent",
+            "treats",
+            "treat",
             "leads to",
             "results in"
-          ]
+          ],
+          "evidenceQuestion": "What comparison, outcome, time window, and alternative explanation would distinguish causation from association?",
+          "evidenceDesign": "Look for appropriately controlled human evidence and converging replication proportionate to the claim; a testimonial or uncontrolled observation cannot establish causation.",
+          "confounders": ["selection and baseline differences", "co-exposures and concurrent treatment", "reverse causation", "measurement and reporting bias"]
         },
         {
-          "label": "Universal claim",
+          "label": "Mechanism claim",
           "terms": [
-            "every",
+            "works by",
+            "binds to",
+            "activates receptor",
+            "activates receptors",
+            "inhibits",
+            "modulates"
+          ],
+          "evidenceQuestion": "Was the proposed mechanism measured in the relevant population, and was the claimed outcome measured separately?",
+          "evidenceDesign": "Mechanistic evidence can support plausibility but does not by itself establish a clinical effect.",
+          "confounders": ["in vitro versus in vivo conditions", "dose and exposure mismatch", "surrogate outcomes", "pathway redundancy"]
+        },
+        {
+          "label": "Association claim",
+          "terms": [
+            "linked to",
+            "associated with",
+            "observed more",
+            "users report lower",
+            "correlates with"
+          ],
+          "evidenceQuestion": "What population and comparison produced the association, and which alternative explanations were measured?",
+          "evidenceDesign": "Inspect the observational design, temporality, effect size, uncertainty, replication, and adjustment strategy before inferring cause.",
+          "confounders": ["selection effects", "reverse causation", "unmeasured confounding", "multiple comparisons"]
+        },
+        {
+          "label": "Anecdotal framing",
+          "terms": [
+            "people report",
+            "i felt",
+            "many say",
+            "a patient said",
+            "in my experience"
+          ],
+          "evidenceQuestion": "What population-level evidence tests whether the reported experience generalizes beyond the selected account?",
+          "evidenceDesign": "Treat the account as an observation that may generate a question, not as proof of frequency, comparison, or causation.",
+          "confounders": ["selection and recall bias", "placebo and expectancy effects", "natural history", "concurrent changes"]
+        },
+        {
+          "label": "Absolute or overstated language",
+          "terms": [
+            "proven",
+            "guaranteed",
+            "100%",
+            "miracle",
+            "every patient",
             "always",
             "all users"
-          ]
-        },
-        {
-          "label": "Clinical claim",
-          "terms": [
-            "syndrome",
-            "disease",
-            "symptom",
-            "treatment"
-          ]
-        },
-        {
-          "label": "Dose or time claim",
-          "terms": [
-            "daily",
-            "long-term",
-            "dose",
-            "years"
-          ]
+          ],
+          "evidenceQuestion": "Does the evidence justify the stated certainty across the named population, outcomes, and conditions?",
+          "evidenceDesign": "Inspect absolute effects, uncertainty, exclusions, harms, replication, and applicability; strong language raises the evidentiary burden.",
+          "confounders": ["selective reporting", "small or unrepresentative samples", "excluded nonresponders", "uncertainty hidden by relative effects"]
         }
       ]
     },
     "evidence": [
       "User-supplied claim",
-      "Claim-design and evidence-hierarchy principles"
+      "Published rule 1.1.0 category definitions and evidence-design prompts",
+      "Bounded 30-case regression evaluation at /api/evaluations/evidence-explainer.json"
     ],
+    "evidenceLinks": ["/api/evaluations/evidence-explainer.json"],
     "methodology": [
       "Identify the claim type",
       "Name the necessary comparison and outcome",
@@ -1014,7 +1061,9 @@
       "The claim can be evaluated against accessible research"
     ],
     "limitations": [
-      "The tool does not conduct a systematic review or grade a complete evidence base"
+      "The tool does not conduct a systematic review, read sources, grade a study or evidence base, determine truth, prescribe a universally sufficient study design, or provide medical advice",
+      "Configured English-language lexical signals cannot reliably understand negation, quotation, implied claims, or surrounding context",
+      "No detected category is an abstention, not evidence that a claim is supported"
     ],
     "relationships": [
       {
@@ -1028,7 +1077,7 @@
     ],
     "seoTitle": "Evidence Explainer",
     "editorialIntro": [
-      "Paste a claim about cannabis, cannabinoids, psychedelics, or Cannabinoid Hyperemesis Syndrome. A deterministic analyzer reads the language, classifies the kind of claim it is, and maps it to the evidence hierarchy so you can see what tier of support it would need to hold up. It grades the strength of the evidence a claim would require. It does not tell you whether the claim is true, and it gives no medical advice. Everything runs in your browser. Nothing you paste leaves this page.",
+      "Paste one English-language health claim. Deterministic rule 1.1.0 checks for five visible language categories and returns evidence-design questions and confounders for human review. It does not read research, grade an evidence base, determine whether the claim is true, prescribe a universally sufficient study design, or give medical advice. No detected category is an abstention, not clearance. The claim text is processed in your browser and is not sent by the tool.",
       "Built by RN Collins · MS, Anatomy & Neurobiology · JD candidate · Not a licensed physician or attorney"
     ],
     "editorialSections": [
@@ -1046,7 +1095,7 @@
           },
           {
             "type": "paragraph",
-            "text": "Reads the language of a claim for signal words, classifies it (causal, mechanism, correlation, anecdotal, or overstated), and maps that type to the tier of evidence it would take to support it. It explains the evidence hierarchy, lists common confounders to check, and hands you questions to ask before repeating the claim."
+            "text": "Checks the language of one claim against five visible lexical categories—causal, mechanism, association, anecdotal, and absolute or overstated—and returns a prewritten evidence question, evidence-design prompt, and confounders for each match."
           },
           {
             "type": "heading",
@@ -1064,7 +1113,7 @@
         "blocks": [
           {
             "type": "paragraph",
-            "text": "Paste a single health claim below. The analyzer classifies the claim type and maps it to the evidence hierarchy. It computes on your device with no network call. It does not return a truth verdict and it gives no medical advice."
+            "text": "Paste a single English-language health claim below. The analyzer checks it against five configured lexical categories and returns questions for human review. It computes the claim text on your device. It does not return a truth verdict, read research, grade evidence, or give medical advice."
           },
           {
             "type": "heading",
@@ -1166,7 +1215,7 @@
         "blocks": [
           {
             "type": "paragraph",
-            "text": "The analyzer looks for the signal words that mark each claim type, then explains what tier of evidence a claim of that type would need and what confounders to check. It never grades the underlying science. It grades the language and points you at the questions."
+            "text": "The analyzer looks for the configured signal words that mark each category, then returns an evidence-design prompt and confounders to check. These are starting questions, not a grade of the underlying science or a prescription that one study design is always sufficient. No configured signal means the tool abstained."
           },
           {
             "type": "heading",
