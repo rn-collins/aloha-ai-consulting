@@ -2,7 +2,7 @@
 
 Date: 2026-08-02
 
-Status: passed locally within the documented public-site technical and policy boundary; production verification pending; R07 remains open
+Status: passed within the documented public-site technical and policy boundary and verified in production; Unit 7 closed; R07 remains open
 
 Frozen audit baseline: 4,289 promise records / 9,552 occurrences; unchanged
 
@@ -50,7 +50,18 @@ Disposition: passed-limited for the dated public-site boundary after correction.
 
 ## Production verification
 
-Pending deployment of the exact reviewed commit. Close this unit only after the canonical privacy page, privacy evidence record, assurance manifest, default-denied authentication endpoints, and production deployment metadata are verified live.
+PASS within the stated boundary. GitHub `main` evaluation commit `73a9028e5fc9e6e3a8518caa300b0cadde438fd4`, whose remote tree exactly matched the locally tested tree, deployed through Vercel production deployment `dpl_Gcbyb7Qjo6XChMQ1HNwMvZ7iDyqL`.
+
+Production verification established:
+
+- The deployment reached `READY`, targeted production, and Vercel metadata identified the exact GitHub commit.
+- `/privacy`, `/api/evaluations/privacy.json`, and `/api/assurance-manifest.json` returned HTTP 200 from the canonical domain.
+- The live privacy page discloses Vercel Speed Insights, browser-local processing, Microsoft Bookings, disabled public authentication, the interim privacy-request path, and the incident-report path.
+- The live privacy evaluation reports 12 checks, 12 passes, zero failures, seven inventoried data flows, 257 Speed Insights routes, zero advertising-tracker hits, and the `passed-limited-public-site-boundary` decision.
+- The live assurance manifest reports one boundedly evaluated site-assurance domain, six remaining required domains, zero certified domains, and zero assurance errors.
+- The live record preserves the explicit boundary that this is not a legal-compliance certification or a certification of third-party, client, satellite, or future-system behavior.
+
+R07 Unit 7 is closed. R07 remains open for six evidence-producing site-assurance domains: security, accessibility, corrections, legal authority, rights and attribution, and institutional credentials.
 
 Verifier: Codex remediation agent
 
