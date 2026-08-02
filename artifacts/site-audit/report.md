@@ -1,19 +1,19 @@
 # Aloha AI whole-site audit
 
-Generated: 2026-08-02T22:44:40.969Z
+Generated: 2026-08-02T23:24:25.808Z
 
-Routes audited: 501
-Static pages found: 501
+Routes audited: 503
+Static pages found: 503
 Missing route files: 0
 Average page score: 100%
-Pages loading all shared style layers: 501/501
+Pages loading all shared style layers: 503/503
 Critical structural or accessibility failures: 0
 
 ## Estate summary
 
 | Estate | Routes | Found | Average score |
 |---|---:|---:|---:|
-| Unclassified | 261 | 261 | 100% |
+| Unclassified | 263 | 263 | 100% |
 | Aloha AI University | 180 | 180 | 100% |
 | Tools and Diagnostics | 29 | 29 | 100% |
 | Aloha AI | 15 | 15 | 100% |
@@ -63,6 +63,7 @@ Critical structural or accessibility failures: 0
 | `/industries/health` | Unclassified | landing | industries/health.html | 100% | No baseline structural finding. |
 | `/industries/healthcare` | Unclassified | landing | industries/healthcare.html | 100% | No baseline structural finding. |
 | `/industries/legal` | Unclassified | landing | industries/legal.html | 100% | No baseline structural finding. |
+| `/industries/media` | Unclassified | landing | industries/media.html | 100% | No baseline structural finding. |
 | `/industries/nonprofit` | Unclassified | landing | industries/nonprofit.html | 100% | No baseline structural finding. |
 | `/industries/nonprofits` | Unclassified | landing | industries/nonprofits.html | 100% | No baseline structural finding. |
 | `/industries/professional-services` | Unclassified | landing | industries/professional-services.html | 100% | No baseline structural finding. |
@@ -109,6 +110,7 @@ Critical structural or accessibility failures: 0
 | `/privacy` | Legal and Policy | legal | privacy.html | 100% | No baseline structural finding. |
 | `/products` | Unclassified | landing | products.html | 100% | No baseline structural finding. |
 | `/research` | Unclassified | landing | research.html | 100% | No baseline structural finding. |
+| `/rights-attribution` | Unclassified | landing | rights-attribution.html | 100% | No baseline structural finding. |
 | `/search` | Unclassified | landing | search.html | 100% | No baseline structural finding. |
 | `/services` | Aloha AI | landing | services.html | 100% | No baseline structural finding. |
 | `/services/ai-governance-setup` | Unclassified | landing | services/ai-governance-setup.html | 100% | No baseline structural finding. |

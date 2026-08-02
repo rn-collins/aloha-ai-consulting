@@ -18,6 +18,7 @@ const securityEvaluation = read('api/evaluations/security.json');
 const accessibilityEvaluation = read('api/evaluations/accessibility.json');
 const correctionsEvaluation = read('api/evaluations/corrections.json');
 const legalAuthorityEvaluation = read('api/evaluations/legal-authority.json');
+const rightsAttributionEvaluation = read('api/evaluations/rights-attribution.json');
 
 for (const field of ['schema','version','effectiveDate','owner','reviewer','nextReviewOrTrigger','policy']) if (!registry[field]) errors.push(`registry: ${field} missing`);
 if (methods.version !== conformance.methodVersion || methods.id !== conformance.methodId) errors.push('methods record and conformance version do not match');
@@ -95,6 +96,11 @@ for (const id of requiredDomains) {
     if (legalAuthorityEvaluation.decision !== 'passed-limited-selected-authority-control-scope' || legalAuthorityEvaluation.metrics.failedChecks !== 0 || legalAuthorityEvaluation.metrics.passedChecks !== legalAuthorityEvaluation.metrics.totalChecks) errors.push('legal-authority: evidence does not satisfy the bounded threshold');
     if (!legalAuthorityEvaluation.sourceRegister?.records || !legalAuthorityEvaluation.professionalBoundary || !legalAuthorityEvaluation.conflictRule || !legalAuthorityEvaluation.owner || !legalAuthorityEvaluation.review?.lastReviewed) errors.push('legal-authority: required evidence is incomplete');
     if (!legalAuthorityEvaluation.prohibitedInference) errors.push('legal-authority: prohibited-inference boundary is missing');
+  } else if (id === 'rights-attribution') {
+    if (item.state !== 'passed-limited' || !item.evidenceHref || !item.decision || !item.retestTrigger) errors.push('rights-attribution: bounded assurance decision is incomplete');
+    if (rightsAttributionEvaluation.decision !== 'passed-limited-checked-in-public-asset-and-rights-process-scope' || rightsAttributionEvaluation.metrics.failedChecks !== 0 || rightsAttributionEvaluation.metrics.recordFindings !== 0 || rightsAttributionEvaluation.metrics.passedChecks !== rightsAttributionEvaluation.metrics.totalChecks) errors.push('rights-attribution: evidence does not satisfy the bounded threshold');
+    if (!rightsAttributionEvaluation.rightsRegister?.assets || !rightsAttributionEvaluation.assetIntegrity?.files || !rightsAttributionEvaluation.reportingRoute?.pathname || !rightsAttributionEvaluation.owner || !rightsAttributionEvaluation.review?.lastReviewed) errors.push('rights-attribution: required evidence is incomplete');
+    if (!rightsAttributionEvaluation.prohibitedInference) errors.push('rights-attribution: prohibited-inference boundary is missing');
   } else if (item.state !== 'required-not-yet-certified') errors.push(`${id}: assurance domain must fail closed`);
 }
 

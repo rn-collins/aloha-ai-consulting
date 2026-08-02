@@ -1,0 +1,38 @@
+{
+  "id": "rights-attribution-policy",
+  "kind": "policy",
+  "pathname": "/rights-attribution",
+  "eyebrow": "Rights, provenance, and attribution",
+  "title": "A published asset is not cleared merely because its source can be named.",
+  "summary": "The ownership, license, provenance, attribution, restriction, and correction controls applied to public Aloha AI content, code, datasets, images, marks, and downloads.",
+  "audience": "Visitors, clients, partners, learners, source owners, licensors, and reviewers who create, supply, reuse, or evaluate material published by Aloha AI.",
+  "maturity": "Production",
+  "topics": ["accountability", "governance", "intellectual-property"],
+  "industries": ["professional-services", "technology", "education", "media"],
+  "keywords": ["Aloha AI copyright", "asset provenance", "attribution", "reuse permissions"],
+  "effectiveDate": "2026-08-02",
+  "policyOwner": "Aloha AI, a DBA of Rayven-Nikkita Collins LLC · Honolulu, HI",
+  "releaseReview": {
+    "reviewedAt": "2026-08-02",
+    "reviewBy": "2026-11-02",
+    "staleAfterDays": 92,
+    "nextReviewOrTrigger": "2026-11-02 or any new or changed asset, dataset, source excerpt, license, permission, attribution, trademark use, download, contributor, dispute, correction, or deployment",
+    "status": {"publication":"published","completeness":"complete","interaction":"read-only","integration":"none","access":"public","commercial":"not-applicable","maintenance":"maintained","evaluation":"not-applicable","evidence":"described"},
+    "permittedPublicLanguage": "Published rights process and dated checked-in asset inventory; this is not a legal opinion, title guarantee, copyright registration, trademark clearance, or certification of every underlying right.",
+    "decisionBasis": "The rights classes, provenance fields, asset hashes, attribution rules, restrictions, dispute route, review owner, and release-blocking evaluator are present."
+  },
+  "policySections": [
+    {"title":"What Aloha AI claims","paragraphs":["Unless a record says otherwise, original site copy, original frameworks, original code, original interface design, and first-party graphics are claimed by Rayven-Nikkita Collins LLC. That claim does not extend to facts, ideas, legal authorities, government works, third-party marks, quotations, linked materials, open-source dependencies, client material, or another creator’s expression. Publication alone is not proof of registrability, exclusivity, non-infringement, or title."]},
+    {"title":"Provenance before publication","paragraphs":["A governed asset records its path or public surface, asset class, source or creator, rights basis, license or permission state, required attribution, restrictions, owner, review date, and change trigger. Binary and vector assets in the checked-in public estate receive a cryptographic hash so replacement or drift reopens review. A link, citation, purchase, download, or AI-assisted workflow is not by itself a license."]},
+    {"title":"Sources, quotations, and datasets","paragraphs":["Facts and legal authorities may be cited without claiming ownership of the underlying source. Quoted or adapted expression must remain bounded to an identified purpose and rights basis, with attribution where required. A dataset record must distinguish the data, schema, compilation, transformations, and generated analysis; public availability does not silently authorize collection, redistribution, model training, or commercial reuse."]},
+    {"title":"Marks and third-party names","paragraphs":["Names and marks such as Microsoft, Vercel, GitHub, Supabase, Beehiiv, and organizations cited as sources remain the property of their respective owners. Nominative reference or linking does not imply sponsorship, endorsement, partnership, affiliation, or permission to reproduce a logo. No third-party logo is authorized merely because a name appears on the site."]},
+    {"title":"Visitor reuse and downloads","paragraphs":["Visitors may read, link to, and make ordinary fair references to public pages. No broader license to copy, republish, sell, train a model on, create derivative products from, or redistribute site content is granted by public access. Browser-generated records are supplied for the visitor’s own review and adaptation, subject to third-party rights in any material the visitor supplies; they do not transfer Aloha AI frameworks, source content, or marks. Commercial, institutional, republication, translation, dataset, and product reuse requires written terms from the relevant rights holder."]},
+    {"title":"Report a rights or attribution concern","paragraphs":["Use the current Microsoft Bookings link, choose any available time, and write “rights report — no meeting needed” in the note. Identify the route or asset, the claimed rights holder, the disputed use or missing credit, supporting evidence, requested disposition, when you observed it, and a safe reply address. Do not include credentials or confidential material. A credible report may result in temporary withdrawal while ownership, license, permission, attribution, and affected outputs are reviewed under the Corrections policy."]},
+    {"title":"Public register and limits","paragraphs":["The machine-readable inventory at /api/rights-attribution-register.json covers checked-in public image and vector assets plus selected rights classes and third-party references. It is not a copyright registration, chain-of-title opinion, trademark search, repository-wide dependency-license audit, client-material audit, or determination of fair use, public-domain status, non-infringement, or enforceability."]}
+  ],
+  "evidence": ["A hash-based inventory of checked-in public image and vector assets", "A rights-class and third-party-reference register with provenance, attribution, restrictions, owner, and review fields", "A release-blocking evaluator for inventory coverage, required fields, prohibited inferences, and reporting route"],
+  "methodology": ["Classify the material and the expression or data actually used", "Record creator, source, rights basis, license or permission, attribution, restrictions, and intended uses", "Hash checked-in public visual assets and reopen review on drift", "Correct, credit, replace, restrict, license, or withdraw when the evidence does not support publication"],
+  "assumptions": ["The checked-in asset files match the deployed public estate", "The recorded first-party asset source and generation process are accurate"],
+  "limitations": ["The process does not establish title, validity, registrability, fair use, public-domain status, non-infringement, or trademark clearance", "Linked third-party pages and user-supplied material are outside the checked-in asset inventory", "Open-source dependency licenses remain governed by their own packages and notices"],
+  "relationships": [{"type":"uses","target":"methods"},{"type":"related_to","target":"corrections-policy"},{"type":"related_to","target":"legal-authority-policy"},{"type":"implements","target":"trust-stack"}]
+}

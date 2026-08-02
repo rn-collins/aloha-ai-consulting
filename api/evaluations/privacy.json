@@ -24,7 +24,7 @@
       "id": "speed-insights",
       "data": "Cookieless web-performance measurements",
       "destination": "Vercel Speed Insights",
-      "trigger": "260 checked-in HTML routes load the Speed Insights script",
+      "trigger": "261 checked-in HTML routes load the Speed Insights script",
       "retention": "Controlled by Vercel"
     },
     {
@@ -64,9 +64,9 @@
     }
   ],
   "deployedNetworkAndScriptInventory": {
-    "checkedHtmlFiles": 502,
+    "checkedHtmlFiles": 504,
     "checkedRuntimeJsFiles": 38,
-    "speedInsightRouteCount": 260,
+    "speedInsightRouteCount": 261,
     "speedInsightRoutes": [
       "/about",
       "/accessibility",
@@ -106,6 +106,7 @@
       "/platform",
       "/practice",
       "/privacy",
+      "/rights-attribution",
       "/services/ai-governance-setup",
       "/services/ai-implementation",
       "/services/ai-strategy-sprint",

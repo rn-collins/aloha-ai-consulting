@@ -1,0 +1,60 @@
+{
+  "schema": "aloha-ai-site-assurance/1.0",
+  "assuranceId": "ASSURANCE-RIGHTS-ATTRIBUTION-001",
+  "domain": "rights-attribution",
+  "evaluatedAt": "2026-08-02",
+  "owner": "RN Collins / Aloha AI",
+  "decision": "passed-limited-checked-in-public-asset-and-rights-process-scope",
+  "scope": "Public rights and attribution policy, selected rights classes and third-party references, and a hash-based inventory of checked-in public image and vector assets.",
+  "exclusions": [
+    "Copyright registration, chain of title, work-for-hire and contributor-agreement verification, trademark search, fair-use or public-domain legal opinion, and non-infringement determination",
+    "Repository-wide software-composition or dependency-license audit",
+    "Client, confidential, linked, remotely hosted, user-supplied, and future-deployment material",
+    "Independent verification of authorship, originality, ownership, permission, license compatibility, or every quotation and dataset"
+  ],
+  "rightsRegister": {
+    "href": "/api/rights-attribution-register.json",
+    "schema": "aloha-ai-rights-attribution-register/1.0",
+    "rightsClasses": 5,
+    "thirdPartyReferences": 2,
+    "assets": 61
+  },
+  "assetIntegrity": {
+    "algorithm": "sha256",
+    "files": 61,
+    "completeFiles": 61
+  },
+  "reportingRoute": {
+    "pathname": "/rights-attribution",
+    "instruction": "rights report — no meeting needed",
+    "channel": "Microsoft Bookings note"
+  },
+  "checks": {
+    "public-policy-defined": true,
+    "ownership-claim-bounded": true,
+    "link-is-not-license-rule": true,
+    "sources-and-datasets-distinguished": true,
+    "third-party-marks-bounded": true,
+    "visitor-reuse-terms-published": true,
+    "private-reporting-route-published": true,
+    "rights-classes-complete": true,
+    "third-party-references-complete": true,
+    "public-asset-inventory-present": true,
+    "public-assets-hashed-and-complete": true,
+    "prohibited-inferences-published": true
+  },
+  "findings": [],
+  "metrics": {
+    "totalChecks": 12,
+    "passedChecks": 12,
+    "failedChecks": 0,
+    "recordFindings": 0,
+    "assets": 61
+  },
+  "review": {
+    "lastReviewed": "2026-08-02",
+    "nextReview": "2026-11-02",
+    "trigger": "Any new or changed asset, dataset, source excerpt, license, permission, attribution, mark, download, contributor, dispute, correction, evaluator, or deployment."
+  },
+  "prohibitedInference": "This bounded pass is not a copyright registration, title or chain-of-title opinion, trademark clearance, fair-use or public-domain determination, dependency-license audit, or evidence of originality, ownership, permission, license compatibility, enforceability, or non-infringement."
+}

@@ -168,7 +168,11 @@
     },
     {
       "id": "rights-attribution",
-      "state": "required-not-yet-certified",
+      "state": "passed-limited",
+      "decision": "Passed only for the dated public rights process, selected rights classes and third-party references, and hash-based inventory of checked-in public visual assets; title, originality, permissions, license compatibility, fair use, trademark clearance, dependency licenses, and non-infringement are not certified.",
+      "evaluatedAt": "2026-08-02",
+      "evidenceHref": "/api/evaluations/rights-attribution.json",
+      "retestTrigger": "Any new or changed asset, dataset, source excerpt, license, permission, attribution, mark, download, contributor, dispute, correction, evaluator, or deployment; otherwise 2026-11-02.",
       "requiredEvidence": "Asset and dataset rights, licenses, attribution, restrictions, provenance, owner, and review date"
     },
     {
@@ -183,7 +187,7 @@
     "methodRevisions": 1,
     "highStakesToolsQueued": 5,
     "evaluatedHighStakesTools": 5,
-    "evaluatedAssuranceDomains": 5,
+    "evaluatedAssuranceDomains": 6,
     "assuranceDomainsCertified": 0,
     "errors": 0
   },

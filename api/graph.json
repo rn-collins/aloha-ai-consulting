@@ -50,6 +50,13 @@
       "maturity": "Production"
     },
     {
+      "id": "rights-attribution-policy",
+      "kind": "policy",
+      "pathname": "/rights-attribution",
+      "title": "A published asset is not cleared merely because its source can be named.",
+      "maturity": "Production"
+    },
+    {
       "id": "methods",
       "kind": "research",
       "pathname": "/methods",
@@ -1949,6 +1956,26 @@
     },
     {
       "source": "legal-authority-policy",
+      "type": "implements",
+      "target": "trust-stack"
+    },
+    {
+      "source": "rights-attribution-policy",
+      "type": "uses",
+      "target": "methods"
+    },
+    {
+      "source": "rights-attribution-policy",
+      "type": "related_to",
+      "target": "corrections-policy"
+    },
+    {
+      "source": "rights-attribution-policy",
+      "type": "related_to",
+      "target": "legal-authority-policy"
+    },
+    {
+      "source": "rights-attribution-policy",
       "type": "implements",
       "target": "trust-stack"
     },
