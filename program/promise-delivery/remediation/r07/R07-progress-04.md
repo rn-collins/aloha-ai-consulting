@@ -55,7 +55,20 @@ Disposition: passed-limited for the exact claim-language-triage scope after repa
 - The tool does not retrieve or appraise research and cannot establish whether a claim is true, false, adequately supported, or medically appropriate.
 - Production behavior and public artifact availability require verification after deployment.
 
-R07 Unit 4 is locally complete. R07 remains open for Regulatory Bill Analyzer, Controlled Substances Explainer, and seven evidence-producing site-assurance domains.
+## Production verification
+
+PASS within the stated boundary. GitHub `main` evaluation commit `9e67572472b4b91c4e757e3b82ea447a0ada9521`, whose tree exactly matched the locally validated tree `acec83a1b11b915d32e39b45830e0c32d03030f2`, deployed through Vercel production deployment `dpl_AwXvP4h88x2d1pTVWj1JtiHUaXj3`.
+
+Production verification established:
+
+- The deployment reached `READY`, targeted production, and Vercel metadata identified the exact GitHub commit.
+- `/tools/evidence-explainer`, `/api/evaluations/evidence-explainer.json`, and `/api/assurance-manifest.json` returned HTTP 200 from the canonical domain.
+- The canonical tool page visibly says `bounded evaluation` and rule `1.1.0` and contains no stale `not evaluated` label.
+- The live evaluation reports 30 cases, 30 passes, zero failures, four correct abstentions, zero unexpected category flags, zero false clearances, five unsupported-inference cases, and the `passed-limited-claim-language-triage-scope` decision.
+- The live assurance manifest reports three evaluated high-stakes tools, Evidence Explainer as `passed-limited`, two tools as `not-evaluated`, seven uncertified assurance domains, and zero assurance errors.
+- No truth, evidence-quality, study-design sufficiency, literature-review, or medical conclusion is claimed.
+
+R07 Unit 4 is closed. R07 remains open for Regulatory Bill Analyzer, Controlled Substances Explainer, and seven evidence-producing site-assurance domains.
 
 Verifier: Codex remediation agent
 
