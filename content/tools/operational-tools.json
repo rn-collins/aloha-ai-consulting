@@ -360,38 +360,82 @@
       "inputLabel": "Paste proposed product or marketing copy",
       "sample": "Our clinically proven formula cures anxiety, guarantees better sleep, and is completely safe for everyone.",
       "outputTitle": "Claims requiring review",
-      "signals": [
-        {
-          "label": "Disease or treatment claims",
-          "terms": [
-            "cure",
-            "treat",
-            "prevent",
-            "diagnose"
-          ]
-        },
-        {
-          "label": "Absolute efficacy claims",
-          "terms": [
-            "guarantee",
-            "always",
-            "proven"
-          ]
-        },
-        {
-          "label": "Safety claims",
-          "terms": [
-            "completely safe",
-            "risk-free",
-            "no side effects"
-          ]
-        },
-        {
-          "label": "Universal claims",
-          "terms": [
-            "everyone",
-            "all users",
-            "anyone"
+    "signals": [
+      {
+        "label": "Disease or treatment claims",
+        "risk": "High",
+        "regulator": "FDA + FTC attention zone",
+        "question": "Does the copy expressly or impliedly claim to diagnose, cure, mitigate, treat, or prevent disease, and what product-specific authority and substantiation support it?",
+        "terms": [
+          "cure",
+          "cures",
+          "treat",
+          "treats",
+          "mitigate",
+          "mitigates",
+          "prevent",
+          "prevents",
+          "diagnose",
+          "diagnoses"
+        ]
+      },
+      {
+        "label": "Structure/function or therapeutic framing",
+        "risk": "Medium",
+        "regulator": "FDA + FTC attention zone",
+        "question": "What product category, labeling context, implied message, notification or disclaimer requirement, and evidence govern this structure/function or therapeutic language?",
+        "terms": [
+          "heals",
+          "repairs",
+          "restores",
+          "relieves pain",
+          "reduces inflammation",
+          "boosts immunity",
+          "supports immune function"
+        ]
+      },
+      {
+        "label": "Substantiation or proof claims",
+        "risk": "High",
+        "regulator": "FTC + applicable FDA attention zone",
+        "question": "What competent evidence supports the express and implied objective claim, for this product, audience, channel, and level of certainty?",
+        "terms": [
+          "clinically proven",
+          "studies show",
+          "scientifically proven",
+          "doctor recommended",
+          "guarantee",
+          "guarantees",
+          "guaranteed",
+          "100%",
+          "#1"
+        ]
+      },
+      {
+        "label": "Deceptive or unsupported safety patterns",
+        "risk": "High",
+        "regulator": "FTC + FDA + state consumer-protection attention zone",
+        "question": "Is the safety, approval, or risk representation accurate, properly qualified, applicable to this product, and supported by the complete record?",
+        "terms": [
+          "miracle",
+          "completely safe",
+          "risk-free",
+          "no side effects",
+          "fda approved"
+        ]
+      },
+      {
+        "label": "Superlatives, absolutes, or universal claims",
+        "risk": "Medium",
+        "regulator": "FTC + state consumer-protection attention zone",
+        "question": "Can the advertiser substantiate the unqualified comparative, universal, or absolute message reasonably conveyed in context?",
+        "terms": [
+          "always",
+          "never fails",
+          "the best",
+          "everyone",
+          "all users",
+          "anyone"
           ]
         }
       ]
@@ -462,7 +506,7 @@
         "blocks": [
           {
             "type": "paragraph",
-            "text": "Paste your copy below and select the product category so the analyzer can weight the right risks. Then run the check. Everything computes on your device with no network call."
+        "text": "Paste your copy below and run the check. Rule version 1.1.0 applies the same visible U.S.-focused screening lexicon to every submission; it does not infer product category, jurisdiction, channel, or legal status. Everything computes on your device with no network call."
           },
           {
             "type": "heading",
@@ -492,7 +536,7 @@
         "blocks": [
           {
             "type": "paragraph",
-            "text": "Each flag names the category the phrase falls into, a risk level, and the regulator whose attention zone it tends to touch. The overall risk score weights High findings heaviest, then Medium, then Low."
+          "text": "Each configured match names a screening category, a triage level, a regulator attention zone, and the substantiation question for human review. The tool does not calculate an overall risk score or determine which regulator has jurisdiction."
           },
           {
             "type": "heading",

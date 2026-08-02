@@ -83,8 +83,11 @@
       "evaluationId": "EVAL-REGULATED-CLAIMS",
       "canonicalId": "claims-checker",
       "title": "Regulated Claims Checker",
-      "state": "not-evaluated",
-      "requiredNext": "Publish representative labeled claims, jurisdiction and policy boundary, per-class errors, abstentions, threshold, reviewer, limitations, and decision."
+      "state": "passed-limited",
+      "decision": "Passed only for deterministic English-language U.S.-focused lexical screening in rule version 1.1.0; no jurisdiction, product-classification, substantiation, legality, or compliance inference is permitted.",
+      "evaluatedAt": "2026-08-01",
+      "evidenceHref": "/api/evaluations/claims-checker.json",
+      "retestTrigger": "Any lexicon, matching logic, category, triage level, regulator-zone label, output field, authority boundary, or public capability claim change; otherwise 2026-11-01."
     },
     {
       "evaluationId": "EVAL-EVIDENCE-EXPLAINER",
@@ -150,7 +153,7 @@
     "methodExceptions": 0,
     "methodRevisions": 1,
     "highStakesToolsQueued": 5,
-    "evaluatedHighStakesTools": 1,
+    "evaluatedHighStakesTools": 2,
     "assuranceDomainsCertified": 0,
     "errors": 0
   },

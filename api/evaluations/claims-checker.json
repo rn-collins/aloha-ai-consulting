@@ -1,0 +1,460 @@
+{
+  "schema": "aloha-ai-tool-evaluation/1.0",
+  "evaluationId": "EVAL-REGULATED-CLAIMS",
+  "canonicalId": "claims-checker",
+  "toolVersion": "1.1.0",
+  "methodVersion": "1.0.0",
+  "corpusVersion": "1.0.0",
+  "evaluatedAt": "2026-08-01",
+  "owner": "RN Collins / Aloha AI",
+  "reviewer": "Codex remediation agent",
+  "scope": "Deterministic, browser-local lexical screening of English-language U.S. health-product marketing copy against five visible review categories. The same rules apply regardless of product, channel, audience, or state.",
+  "jurisdictionPolicyBoundary": "The labels identify general FDA, FTC, and state consumer-protection attention zones; they do not determine jurisdiction, product classification, legality, substantiation, premarket status, or state-law requirements.",
+  "prohibitedInference": "A signal is not a violation, and no configured signal is not clearance, substantiation, approval, or evidence that no regulator or legal duty applies.",
+  "decisionThreshold": {
+    "requiredCaseAccuracy": 1,
+    "requiredPerClassRecall": 1,
+    "maximumUnexpectedCategoryFlags": 0,
+    "maximumFalseClearances": 0,
+    "requiredAbstentionAccuracy": 1
+  },
+  "authorityRecord": [
+    {
+      "authority": "FDA Structure/Function Claims",
+      "url": "https://www.fda.gov/food/nutrition-food-labeling-and-critical-foods/structurefunction-claims",
+      "verified": "2026-08-01"
+    },
+    {
+      "authority": "FDA Small Entity Compliance Guide on Structure/Function Claims",
+      "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/small-entity-compliance-guide-structurefunction-claims",
+      "verified": "2026-08-01"
+    },
+    {
+      "authority": "FTC Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "verified": "2026-08-01"
+    },
+    {
+      "authority": "FTC Policy Statement Regarding Advertising Substantiation",
+      "url": "https://www.ftc.gov/legal-library/browse/ftc-policy-statement-regarding-advertising-substantiation",
+      "verified": "2026-08-01"
+    }
+  ],
+  "metrics": {
+    "totalCases": 30,
+    "passedCases": 30,
+    "failedCases": 0,
+    "accuracy": 1,
+    "perClass": {
+      "disease-treatment": {
+        "cases": 5,
+        "passed": 5,
+        "recall": 1
+      },
+      "structure-therapeutic": {
+        "cases": 5,
+        "passed": 5,
+        "recall": 1
+      },
+      "substantiation-proof": {
+        "cases": 5,
+        "passed": 5,
+        "recall": 1
+      },
+      "deceptive-safety": {
+        "cases": 4,
+        "passed": 4,
+        "recall": 1
+      },
+      "absolutes-universal": {
+        "cases": 3,
+        "passed": 3,
+        "recall": 1
+      },
+      "multi-category": {
+        "cases": 2,
+        "passed": 2,
+        "recall": 1
+      },
+      "boundary-no-substring": {
+        "cases": 2,
+        "passed": 2,
+        "recall": 1
+      },
+      "neutral-abstention": {
+        "cases": 2,
+        "passed": 2,
+        "recall": 1
+      },
+      "out-of-scope": {
+        "cases": 2,
+        "passed": 2,
+        "recall": 1
+      }
+    },
+    "abstentionCases": 6,
+    "correctAbstentions": 6,
+    "abstentionAccuracy": 1,
+    "unexpectedCategoryFlags": 0,
+    "falseClearances": 0
+  },
+  "decision": "passed-limited-lexical-screening-scope",
+  "knownLimitations": [
+    "The corpus is synthetic and tests deterministic lexical behavior, not legal accuracy or real-world enforcement prediction.",
+    "The tool does not identify implied claims that use unlisted language, analyze images or surrounding context, or understand negation, quotation, product category, audience, channel, or evidence.",
+    "The lexicon is English-only and U.S.-focused; state-law references are a generic attention zone, not fifty-state coverage.",
+    "Triage levels prioritize human review and are not probabilities, violation findings, or regulator-assigned classifications.",
+    "Product-specific FDA status, FTC substantiation, labeling rules, cannabis restrictions, and state requirements must be checked against current primary authority and complete facts."
+  ],
+  "retestTrigger": "Any lexicon, matching logic, category, triage level, regulator-zone label, output field, authority boundary, or public capability claim change; otherwise 2026-11-01.",
+  "results": [
+    {
+      "id": "RC-001",
+      "class": "disease-treatment",
+      "expectedCategories": [
+        "Disease or treatment claims"
+      ],
+      "observedCategories": [
+        "Disease or treatment claims"
+      ],
+      "abstained": false,
+      "passed": true
+    },
+    {
+      "id": "RC-002",
+      "class": "disease-treatment",
+      "expectedCategories": [
+        "Disease or treatment claims"
+      ],
+      "observedCategories": [
+        "Disease or treatment claims"
+      ],
+      "abstained": false,
+      "passed": true
+    },
+    {
+      "id": "RC-003",
+      "class": "disease-treatment",
+      "expectedCategories": [
+        "Disease or treatment claims"
+      ],
+      "observedCategories": [
+        "Disease or treatment claims"
+      ],
+      "abstained": false,
+      "passed": true
+    },
+    {
+      "id": "RC-004",
+      "class": "disease-treatment",
+      "expectedCategories": [
+        "Disease or treatment claims"
+      ],
+      "observedCategories": [
+        "Disease or treatment claims"
+      ],
+      "abstained": false,
+      "passed": true
+    },
+    {
+      "id": "RC-005",
+      "class": "disease-treatment",
+      "expectedCategories": [
+        "Disease or treatment claims"
+      ],
+      "observedCategories": [
+        "Disease or treatment claims"
+      ],
+      "abstained": false,
+      "passed": true
+    },
+    {
+      "id": "RC-006",
+      "class": "structure-therapeutic",
+      "expectedCategories": [
+        "Structure/function or therapeutic framing"
+      ],
+      "observedCategories": [
+        "Structure/function or therapeutic framing"
+      ],
+      "abstained": false,
+      "passed": true
+    },
+    {
+      "id": "RC-007",
+      "class": "structure-therapeutic",
+      "expectedCategories": [
+        "Structure/function or therapeutic framing"
+      ],
+      "observedCategories": [
+        "Structure/function or therapeutic framing"
+      ],
+      "abstained": false,
+      "passed": true
+    },
+    {
+      "id": "RC-008",
+      "class": "structure-therapeutic",
+      "expectedCategories": [
+        "Structure/function or therapeutic framing"
+      ],
+      "observedCategories": [
+        "Structure/function or therapeutic framing"
+      ],
+      "abstained": false,
+      "passed": true
+    },
+    {
+      "id": "RC-009",
+      "class": "structure-therapeutic",
+      "expectedCategories": [
+        "Structure/function or therapeutic framing"
+      ],
+      "observedCategories": [
+        "Structure/function or therapeutic framing"
+      ],
+      "abstained": false,
+      "passed": true
+    },
+    {
+      "id": "RC-010",
+      "class": "structure-therapeutic",
+      "expectedCategories": [
+        "Structure/function or therapeutic framing"
+      ],
+      "observedCategories": [
+        "Structure/function or therapeutic framing"
+      ],
+      "abstained": false,
+      "passed": true
+    },
+    {
+      "id": "RC-011",
+      "class": "substantiation-proof",
+      "expectedCategories": [
+        "Substantiation or proof claims"
+      ],
+      "observedCategories": [
+        "Substantiation or proof claims"
+      ],
+      "abstained": false,
+      "passed": true
+    },
+    {
+      "id": "RC-012",
+      "class": "substantiation-proof",
+      "expectedCategories": [
+        "Substantiation or proof claims"
+      ],
+      "observedCategories": [
+        "Substantiation or proof claims"
+      ],
+      "abstained": false,
+      "passed": true
+    },
+    {
+      "id": "RC-013",
+      "class": "substantiation-proof",
+      "expectedCategories": [
+        "Substantiation or proof claims"
+      ],
+      "observedCategories": [
+        "Substantiation or proof claims"
+      ],
+      "abstained": false,
+      "passed": true
+    },
+    {
+      "id": "RC-014",
+      "class": "substantiation-proof",
+      "expectedCategories": [
+        "Substantiation or proof claims"
+      ],
+      "observedCategories": [
+        "Substantiation or proof claims"
+      ],
+      "abstained": false,
+      "passed": true
+    },
+    {
+      "id": "RC-015",
+      "class": "substantiation-proof",
+      "expectedCategories": [
+        "Substantiation or proof claims",
+        "Superlatives, absolutes, or universal claims"
+      ],
+      "observedCategories": [
+        "Substantiation or proof claims",
+        "Superlatives, absolutes, or universal claims"
+      ],
+      "abstained": false,
+      "passed": true
+    },
+    {
+      "id": "RC-016",
+      "class": "deceptive-safety",
+      "expectedCategories": [
+        "Deceptive or unsupported safety patterns"
+      ],
+      "observedCategories": [
+        "Deceptive or unsupported safety patterns"
+      ],
+      "abstained": false,
+      "passed": true
+    },
+    {
+      "id": "RC-017",
+      "class": "deceptive-safety",
+      "expectedCategories": [
+        "Deceptive or unsupported safety patterns"
+      ],
+      "observedCategories": [
+        "Deceptive or unsupported safety patterns"
+      ],
+      "abstained": false,
+      "passed": true
+    },
+    {
+      "id": "RC-018",
+      "class": "deceptive-safety",
+      "expectedCategories": [
+        "Deceptive or unsupported safety patterns"
+      ],
+      "observedCategories": [
+        "Deceptive or unsupported safety patterns"
+      ],
+      "abstained": false,
+      "passed": true
+    },
+    {
+      "id": "RC-019",
+      "class": "deceptive-safety",
+      "expectedCategories": [
+        "Deceptive or unsupported safety patterns"
+      ],
+      "observedCategories": [
+        "Deceptive or unsupported safety patterns"
+      ],
+      "abstained": false,
+      "passed": true
+    },
+    {
+      "id": "RC-020",
+      "class": "absolutes-universal",
+      "expectedCategories": [
+        "Superlatives, absolutes, or universal claims"
+      ],
+      "observedCategories": [
+        "Superlatives, absolutes, or universal claims"
+      ],
+      "abstained": false,
+      "passed": true
+    },
+    {
+      "id": "RC-021",
+      "class": "absolutes-universal",
+      "expectedCategories": [
+        "Superlatives, absolutes, or universal claims"
+      ],
+      "observedCategories": [
+        "Superlatives, absolutes, or universal claims"
+      ],
+      "abstained": false,
+      "passed": true
+    },
+    {
+      "id": "RC-022",
+      "class": "absolutes-universal",
+      "expectedCategories": [
+        "Superlatives, absolutes, or universal claims"
+      ],
+      "observedCategories": [
+        "Superlatives, absolutes, or universal claims"
+      ],
+      "abstained": false,
+      "passed": true
+    },
+    {
+      "id": "RC-023",
+      "class": "multi-category",
+      "expectedCategories": [
+        "Deceptive or unsupported safety patterns",
+        "Disease or treatment claims",
+        "Substantiation or proof claims",
+        "Superlatives, absolutes, or universal claims"
+      ],
+      "observedCategories": [
+        "Deceptive or unsupported safety patterns",
+        "Disease or treatment claims",
+        "Substantiation or proof claims",
+        "Superlatives, absolutes, or universal claims"
+      ],
+      "abstained": false,
+      "passed": true
+    },
+    {
+      "id": "RC-024",
+      "class": "multi-category",
+      "expectedCategories": [
+        "Deceptive or unsupported safety patterns",
+        "Structure/function or therapeutic framing",
+        "Substantiation or proof claims"
+      ],
+      "observedCategories": [
+        "Deceptive or unsupported safety patterns",
+        "Structure/function or therapeutic framing",
+        "Substantiation or proof claims"
+      ],
+      "abstained": false,
+      "passed": true
+    },
+    {
+      "id": "RC-025",
+      "class": "boundary-no-substring",
+      "expectedCategories": [],
+      "observedCategories": [],
+      "abstained": true,
+      "passed": true
+    },
+    {
+      "id": "RC-026",
+      "class": "boundary-no-substring",
+      "expectedCategories": [],
+      "observedCategories": [],
+      "abstained": true,
+      "passed": true
+    },
+    {
+      "id": "RC-027",
+      "class": "neutral-abstention",
+      "expectedCategories": [],
+      "observedCategories": [],
+      "abstained": true,
+      "passed": true
+    },
+    {
+      "id": "RC-028",
+      "class": "neutral-abstention",
+      "expectedCategories": [],
+      "observedCategories": [],
+      "abstained": true,
+      "passed": true
+    },
+    {
+      "id": "RC-029",
+      "class": "out-of-scope",
+      "expectedCategories": [],
+      "observedCategories": [],
+      "abstained": true,
+      "passed": true
+    },
+    {
+      "id": "RC-030",
+      "class": "out-of-scope",
+      "expectedCategories": [],
+      "observedCategories": [],
+      "abstained": true,
+      "passed": true
+    }
+  ]
+}
