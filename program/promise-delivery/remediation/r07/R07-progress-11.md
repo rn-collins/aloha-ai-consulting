@@ -2,7 +2,7 @@
 
 Date: 2026-08-02
 
-Status: passed locally within the documented public-process and selected-authority-register boundary; production verification pending; Unit 11 remains open; R07 remains open
+Status: passed within the documented public-process and selected-authority-register boundary after exact-tree publication and production verification; Unit 11 closed; R07 remains open
 
 Frozen audit baseline: 4,289 promise records / 9,552 occurrences; unchanged
 
@@ -10,7 +10,7 @@ Frozen audit baseline: 4,289 promise records / 9,552 occurrences; unchanged
 
 Unit 11 evaluated whether Aloha AI publishes and release-enforces a source hierarchy, jurisdiction and effective-state record, retrieval date, conflict rule, professional boundary, review owner, and prohibited-inference boundary for selected high-stakes legal statements. It does not constitute a complete proposition-level legal research audit of every page, independent citator review, a good-law determination, legal advice, an attorney-client relationship, or a matter-specific conclusion about applicability, permission, prohibition, liability, or compliance.
 
-Local disposition: passed-limited for the dated public process and selected authority-register integrity boundary. Production disposition remains pending until the exact tested tree is published and verified.
+Disposition: passed-limited for the dated public process and selected authority-register integrity boundary after exact-tree publication and production verification.
 
 ## Material findings and remediation
 
@@ -36,8 +36,12 @@ The register is explicitly selected rather than represented as a complete sitewi
 
 ## Production verification
 
-Pending. The required GitHub publishing workflow cannot commit or push in the current environment because the `gh` CLI is not installed and authenticated. No production commit or deployment is claimed.
+- Evaluation commit: `58373a48d6cff02e87017b5e3d325ddbb6c4ef75`.
+- The GitHub evaluation tree is `e562f1f048f39017b00947f3760fe3ab85bfcb68`, exactly matching the locally tested tree.
+- Production deployment: `dpl_38fgkJiXd1MaCGfhgkcMrFdEqxyp`, state `READY`, target `production`, tied to the exact evaluation commit.
+- The canonical `/legal-authority` policy, `/api/legal-authority-register.json`, `/api/evaluations/legal-authority.json`, and `/api/assurance-manifest.json` each returned HTTP 200 in production.
+- Live evidence reported 12/12 checks passed, zero failed checks, two registered authority records, and zero record findings.
+- The live assurance manifest reported five evaluated assurance domains, zero certified domains, and kept Rights and Attribution and Institutional Credentials unevaluated and failed closed.
+- The live professional boundary and prohibited-inference language remained intact.
 
-R07 Unit 11 remains open until exact-tree publication, Vercel production readiness, and live verification of the policy, register, evaluation evidence, and assurance manifest are recorded.
-
-Two R07 assurance domains remain after local evaluation: Rights and Attribution and Institutional Credentials.
+R07 Unit 11 is closed. Two R07 assurance domains remain: Rights and Attribution and Institutional Credentials.
