@@ -2,7 +2,7 @@
 
 Date: 2026-08-02
 
-Status: passed locally within the documented public rights-process, selected rights-class, third-party-reference, and checked-in visual-asset inventory boundary; production verification pending; R07 remains open
+Status: passed within the documented public rights-process, selected rights-class, third-party-reference, and checked-in visual-asset inventory boundary after exact-tree publication and production verification; Unit 12 closed; R07 remains open
 
 ## Decision boundary
 
@@ -30,9 +30,17 @@ Unit 12 evaluates whether Aloha AI publishes and release-enforces a bounded righ
 - Current promise registry: 5,344 records / 11,979 occurrences across 504 public surfaces, exactly reconciled.
 - Immutable audit baseline: 4,289 records / 9,552 occurrences, unchanged.
 
-## Production closure requirement
+## Production verification
 
-The unit remains open until the exact tested tree is committed and published, the production deployment is tied to that commit and reaches `READY`, the policy/register/evaluation/assurance endpoints are verified live, and those production facts are added to this record in a closure-only commit.
+- Evaluation commit: `83a1003a507909d20b325356baf710ca0ff1c05e`.
+- The GitHub evaluation tree is `4242e548990a281a0e196c11d4d139ae4a72d493`, exactly matching the locally tested tree.
+- Production deployment: `dpl_85AEPMdmgpyVQW6nM7mn5v7oujgd`, state `READY`, target `production`, tied to the exact evaluation commit.
+- The canonical `/rights-attribution` policy, `/api/rights-attribution-register.json`, `/api/evaluations/rights-attribution.json`, and `/api/assurance-manifest.json` each returned HTTP 200 in production.
+- Live evidence reported 12/12 checks passed, zero failed checks, five rights classes, two third-party-reference records, and 61/61 checked-in public visual assets hashed with zero record findings.
+- The live evidence preserved the exclusions against copyright registration, chain-of-title review, trademark clearance, fair-use or public-domain opinion, dependency-license audit, and any inference of originality, ownership, permission, license compatibility, enforceability, or non-infringement.
+- The live assurance manifest reported six bounded assurance domains, zero certified domains, and kept Institutional Credentials unevaluated and failed closed.
+
+R07 Unit 12 is closed. One R07 assurance domain remains: Institutional Credentials.
 
 ## Remaining R07 work
 
