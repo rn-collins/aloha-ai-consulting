@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-02T21:49:00.108Z",
+  "generatedAt": "2026-08-02T22:10:32.194Z",
   "policy": "A passed control means the limitation and release behavior are explicit. It does not certify capacity, integration, evaluation, maintenance, or production operation.",
   "counts": {
-    "objects": 257,
+    "objects": 258,
     "frozenCanonicalObjectBaseline": 157,
-    "postBaselineObjects": 100,
+    "postBaselineObjects": 101,
     "claims": 4289,
     "exceptionContracts": 287,
     "servicesCapacityNotCertified": 16,
-    "dependenciesDeclared": 65,
-    "dependencyReleaseBlockers": 65,
+    "dependenciesDeclared": 66,
+    "dependencyReleaseBlockers": 66,
     "externalDependencyWarnings": 0,
     "errors": 0
   },
@@ -264,6 +264,16 @@
         "service:strategy"
       ],
       "unresolvedCanonicalIds": []
+    },
+    {
+      "objectId": "policy:accessibility-statement",
+      "dependencies": [
+        "trust-stack"
+      ],
+      "resolvedObjectIds": [],
+      "unresolvedCanonicalIds": [
+        "trust-stack"
+      ]
     },
     {
       "objectId": "policy:privacy",

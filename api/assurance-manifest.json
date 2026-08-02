@@ -141,7 +141,11 @@
     },
     {
       "id": "accessibility",
-      "state": "required-not-yet-certified",
+      "state": "passed-limited",
+      "decision": "Passed only for the dated static structure and interaction-contract boundary across every sitemap route; manual assistive-technology, complete rendered contrast, third-party, legal-compliance, and WCAG-conformance determinations remain open and are not implied.",
+      "evaluatedAt": "2026-08-02",
+      "evidenceHref": "/api/evaluations/accessibility.json",
+      "retestTrigger": "Any template, HTML, CSS, interaction, form, media, accessibility-copy, third-party destination, or deployment change; availability of a compatible manual assistive-technology environment; otherwise 2026-11-02.",
       "requiredEvidence": "Accessibility statement, test matrix, findings, assistive-technology evidence, owner, remediation decisions, and review date"
     },
     {
@@ -171,7 +175,7 @@
     "methodRevisions": 1,
     "highStakesToolsQueued": 5,
     "evaluatedHighStakesTools": 5,
-    "evaluatedAssuranceDomains": 2,
+    "evaluatedAssuranceDomains": 3,
     "assuranceDomainsCertified": 0,
     "errors": 0
   },

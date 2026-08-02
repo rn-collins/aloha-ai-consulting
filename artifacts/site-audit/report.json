@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-08-02T21:49:02.770Z",
+  "generatedAt": "2026-08-02T22:10:34.785Z",
   "summary": {
-    "routes": 497,
-    "found": 497,
+    "routes": 498,
+    "found": 498,
     "missing": 0,
     "averageScore": 100,
-    "sharedStyleCoverage": 497,
+    "sharedStyleCoverage": 498,
     "criticalFailures": 0
   },
   "estates": [
     {
       "key": "unclassified",
       "label": "Unclassified",
-      "routes": 257,
-      "found": 257,
+      "routes": 258,
+      "found": 258,
       "averageScore": 100
     },
     {
@@ -166,6 +166,54 @@
         "links": 13,
         "workspaceLinks": 0,
         "pageBytes": 19562
+      },
+      "findings": []
+    },
+    {
+      "path": "/accessibility",
+      "estate": "unclassified",
+      "estateLabel": "Unclassified",
+      "pageType": "landing",
+      "requiredContent": [
+        "clear audience",
+        "specific promise",
+        "evidence",
+        "primary action",
+        "secondary path",
+        "related estate links"
+      ],
+      "file": "accessibility.html",
+      "exists": true,
+      "title": "Access is part of whether the work is actually usable. | Aloha AI",
+      "description": "A dated, bounded account of Aloha AI’s public-site accessibility controls, known testing limits, reporting path, accommodation path, and remediation commitment.",
+      "canonical": "https://aloha-ai-consulting.vercel.app/accessibility",
+      "score": 100,
+      "checks": {
+        "title": true,
+        "description": true,
+        "canonical": true,
+        "oneH1": true,
+        "main": true,
+        "header": true,
+        "footer": true,
+        "viewport": true,
+        "language": true,
+        "skipLink": true,
+        "sharedStyles": true,
+        "imageAlternatives": true,
+        "inputLabels": true,
+        "pageWeight": true
+      },
+      "metrics": {
+        "h1Count": 1,
+        "inlineStyles": 0,
+        "forms": 0,
+        "images": 0,
+        "missingAlt": 0,
+        "buttons": 0,
+        "links": 8,
+        "workspaceLinks": 0,
+        "pageBytes": 12167
       },
       "findings": []
     },
@@ -377,7 +425,7 @@
       "file": "audiences/educators-and-learners.html",
       "exists": true,
       "title": "For Educators And Learners | Aloha AI",
-      "description": "Browse 19 Aloha AI resources connected to Educators And Learners. Explore source-grounded guidance, evidence, and practical implementation details from Aloha AI.",
+      "description": "Browse 20 Aloha AI resources connected to Educators And Learners. Explore source-grounded guidance, evidence, and practical implementation details from Aloha AI.",
       "canonical": "https://aloha-ai-consulting.vercel.app/audiences/educators-and-learners",
       "score": 100,
       "checks": {
@@ -403,9 +451,9 @@
         "images": 0,
         "missingAlt": 0,
         "buttons": 12,
-        "links": 28,
+        "links": 29,
         "workspaceLinks": 1,
-        "pageBytes": 17080
+        "pageBytes": 17619
       },
       "findings": []
     },
@@ -1122,9 +1170,9 @@
         "images": 0,
         "missingAlt": 0,
         "buttons": 0,
-        "links": 8,
+        "links": 9,
         "workspaceLinks": 0,
-        "pageBytes": 7129
+        "pageBytes": 7666
       },
       "findings": []
     },
@@ -1384,7 +1432,7 @@
       "file": "industries/education.html",
       "exists": true,
       "title": "Industry: Education | Aloha AI",
-      "description": "Browse 37 Aloha AI resources connected to Education. Explore source-grounded guidance, evidence, and practical implementation details from Aloha AI.",
+      "description": "Browse 38 Aloha AI resources connected to Education. Explore source-grounded guidance, evidence, and practical implementation details from Aloha AI.",
       "canonical": "https://aloha-ai-consulting.vercel.app/industries/education",
       "score": 100,
       "checks": {
@@ -1409,10 +1457,10 @@
         "forms": 0,
         "images": 0,
         "missingAlt": 0,
-        "buttons": 15,
-        "links": 46,
+        "buttons": 16,
+        "links": 47,
         "workspaceLinks": 0,
-        "pageBytes": 27028
+        "pageBytes": 27680
       },
       "findings": []
     },
@@ -1816,7 +1864,7 @@
       "file": "industries/professional-services.html",
       "exists": true,
       "title": "Industry: Professional Services | Aloha AI",
-      "description": "Browse 90 Aloha AI resources connected to Professional Services. Explore source-grounded guidance, evidence, and practical implementation details from Aloha AI.",
+      "description": "Browse 91 Aloha AI resources connected to Professional Services. Explore source-grounded guidance, evidence, and practical implementation details from Aloha AI.",
       "canonical": "https://aloha-ai-consulting.vercel.app/industries/professional-services",
       "score": 100,
       "checks": {
@@ -1842,9 +1890,9 @@
         "images": 0,
         "missingAlt": 0,
         "buttons": 18,
-        "links": 99,
+        "links": 100,
         "workspaceLinks": 1,
-        "pageBytes": 56544
+        "pageBytes": 57083
       },
       "findings": []
     },
@@ -2248,7 +2296,7 @@
       "file": "industries/technology.html",
       "exists": true,
       "title": "Industry: Technology | Aloha AI",
-      "description": "Browse 11 Aloha AI resources connected to Technology. Explore source-grounded guidance, evidence, and practical implementation details from Aloha AI.",
+      "description": "Browse 12 Aloha AI resources connected to Technology. Explore source-grounded guidance, evidence, and practical implementation details from Aloha AI.",
       "canonical": "https://aloha-ai-consulting.vercel.app/industries/technology",
       "score": 100,
       "checks": {
@@ -2274,9 +2322,9 @@
         "images": 0,
         "missingAlt": 0,
         "buttons": 8,
-        "links": 20,
+        "links": 21,
         "workspaceLinks": 1,
-        "pageBytes": 12133
+        "pageBytes": 12672
       },
       "findings": []
     },
@@ -2372,7 +2420,7 @@
         "buttons": 2,
         "links": 9,
         "workspaceLinks": 0,
-        "pageBytes": 34657
+        "pageBytes": 34836
       },
       "findings": []
     },
@@ -2584,7 +2632,7 @@
       "file": "maturity/production.html",
       "exists": true,
       "title": "Production resources | Aloha AI",
-      "description": "Browse 80 Aloha AI resources connected to Production. Explore source-grounded guidance, evidence, and practical implementation details from Aloha AI.",
+      "description": "Browse 81 Aloha AI resources connected to Production. Explore source-grounded guidance, evidence, and practical implementation details from Aloha AI.",
       "canonical": "https://aloha-ai-consulting.vercel.app/maturity/production",
       "score": 100,
       "checks": {
@@ -2610,9 +2658,9 @@
         "images": 0,
         "missingAlt": 0,
         "buttons": 16,
-        "links": 89,
+        "links": 90,
         "workspaceLinks": 0,
-        "pageBytes": 50011
+        "pageBytes": 50550
       },
       "findings": []
     },
@@ -2707,7 +2755,7 @@
         "buttons": 0,
         "links": 9,
         "workspaceLinks": 0,
-        "pageBytes": 17735
+        "pageBytes": 17866
       },
       "findings": []
     },
@@ -2853,7 +2901,7 @@
         "buttons": 3,
         "links": 7,
         "workspaceLinks": 0,
-        "pageBytes": 30319
+        "pageBytes": 30495
       },
       "findings": []
     },
@@ -2902,7 +2950,7 @@
         "buttons": 3,
         "links": 7,
         "workspaceLinks": 0,
-        "pageBytes": 30782
+        "pageBytes": 30948
       },
       "findings": []
     },
@@ -2951,7 +2999,7 @@
         "buttons": 3,
         "links": 8,
         "workspaceLinks": 0,
-        "pageBytes": 31528
+        "pageBytes": 31683
       },
       "findings": []
     },
@@ -3000,7 +3048,7 @@
         "buttons": 3,
         "links": 7,
         "workspaceLinks": 0,
-        "pageBytes": 32043
+        "pageBytes": 32239
       },
       "findings": []
     },
@@ -3049,7 +3097,7 @@
         "buttons": 0,
         "links": 7,
         "workspaceLinks": 0,
-        "pageBytes": 20624
+        "pageBytes": 20924
       },
       "findings": []
     },
@@ -3098,7 +3146,7 @@
         "buttons": 3,
         "links": 7,
         "workspaceLinks": 0,
-        "pageBytes": 30998
+        "pageBytes": 31165
       },
       "findings": []
     },
@@ -3147,7 +3195,7 @@
         "buttons": 3,
         "links": 7,
         "workspaceLinks": 0,
-        "pageBytes": 30764
+        "pageBytes": 30916
       },
       "findings": []
     },
@@ -3196,7 +3244,7 @@
         "buttons": 3,
         "links": 8,
         "workspaceLinks": 0,
-        "pageBytes": 31605
+        "pageBytes": 31764
       },
       "findings": []
     },
@@ -3245,7 +3293,7 @@
         "buttons": 3,
         "links": 7,
         "workspaceLinks": 1,
-        "pageBytes": 32883
+        "pageBytes": 33038
       },
       "findings": []
     },
@@ -3294,7 +3342,7 @@
         "buttons": 3,
         "links": 7,
         "workspaceLinks": 0,
-        "pageBytes": 31420
+        "pageBytes": 31568
       },
       "findings": []
     },
@@ -4636,7 +4684,7 @@
         "buttons": 0,
         "links": 9,
         "workspaceLinks": 1,
-        "pageBytes": 20801
+        "pageBytes": 20958
       },
       "findings": []
     },
@@ -4685,7 +4733,7 @@
         "buttons": 0,
         "links": 9,
         "workspaceLinks": 0,
-        "pageBytes": 21136
+        "pageBytes": 21284
       },
       "findings": []
     },
@@ -4829,7 +4877,7 @@
         "buttons": 4,
         "links": 9,
         "workspaceLinks": 2,
-        "pageBytes": 33258
+        "pageBytes": 33453
       },
       "findings": []
     },
@@ -5270,7 +5318,7 @@
         "buttons": 4,
         "links": 8,
         "workspaceLinks": 1,
-        "pageBytes": 30325
+        "pageBytes": 30465
       },
       "findings": []
     },
@@ -5368,7 +5416,7 @@
         "buttons": 4,
         "links": 10,
         "workspaceLinks": 1,
-        "pageBytes": 19943
+        "pageBytes": 20292
       },
       "findings": []
     },
@@ -5465,7 +5513,7 @@
         "buttons": 0,
         "links": 201,
         "workspaceLinks": 4,
-        "pageBytes": 54738
+        "pageBytes": 54741
       },
       "findings": []
     },
@@ -5581,7 +5629,7 @@
       "file": "topics/accessibility.html",
       "exists": true,
       "title": "Topic: Accessibility | Aloha AI",
-      "description": "Browse 1 Aloha AI resources connected to Accessibility. Explore source-grounded guidance, evidence, and practical implementation details from Aloha AI.",
+      "description": "Browse 2 Aloha AI resources connected to Accessibility. Explore source-grounded guidance, evidence, and practical implementation details from Aloha AI.",
       "canonical": "https://aloha-ai-consulting.vercel.app/topics/accessibility",
       "score": 100,
       "checks": {
@@ -5606,10 +5654,10 @@
         "forms": 0,
         "images": 0,
         "missingAlt": 0,
-        "buttons": 2,
-        "links": 10,
+        "buttons": 3,
+        "links": 11,
         "workspaceLinks": 0,
-        "pageBytes": 5812
+        "pageBytes": 6464
       },
       "findings": []
     },
@@ -5629,7 +5677,7 @@
       "file": "topics/accountability.html",
       "exists": true,
       "title": "Topic: Accountability | Aloha AI",
-      "description": "Browse 1 Aloha AI resources connected to Accountability. Explore source-grounded guidance, evidence, and practical implementation details from Aloha AI.",
+      "description": "Browse 2 Aloha AI resources connected to Accountability. Explore source-grounded guidance, evidence, and practical implementation details from Aloha AI.",
       "canonical": "https://aloha-ai-consulting.vercel.app/topics/accountability",
       "score": 100,
       "checks": {
@@ -5654,10 +5702,10 @@
         "forms": 0,
         "images": 0,
         "missingAlt": 0,
-        "buttons": 2,
-        "links": 10,
+        "buttons": 3,
+        "links": 11,
         "workspaceLinks": 0,
-        "pageBytes": 5782
+        "pageBytes": 6434
       },
       "findings": []
     },
@@ -9901,7 +9949,7 @@
       "file": "topics/human-adoption.html",
       "exists": true,
       "title": "Topic: Human Adoption | Aloha AI",
-      "description": "Browse 1 Aloha AI resources connected to Human Adoption. Explore source-grounded guidance, evidence, and practical implementation details from Aloha AI.",
+      "description": "Browse 2 Aloha AI resources connected to Human Adoption. Explore source-grounded guidance, evidence, and practical implementation details from Aloha AI.",
       "canonical": "https://aloha-ai-consulting.vercel.app/topics/human-adoption",
       "score": 100,
       "checks": {
@@ -9926,10 +9974,10 @@
         "forms": 0,
         "images": 0,
         "missingAlt": 0,
-        "buttons": 2,
-        "links": 10,
+        "buttons": 3,
+        "links": 11,
         "workspaceLinks": 0,
-        "pageBytes": 5825
+        "pageBytes": 6477
       },
       "findings": []
     },
@@ -15233,7 +15281,7 @@
         "buttons": 4,
         "links": 7,
         "workspaceLinks": 2,
-        "pageBytes": 13497
+        "pageBytes": 13784
       },
       "findings": []
     },
@@ -21768,7 +21816,7 @@
         "buttons": 0,
         "links": 38,
         "workspaceLinks": 1,
-        "pageBytes": 20572
+        "pageBytes": 20737
       },
       "findings": []
     },
@@ -21817,7 +21865,7 @@
         "buttons": 0,
         "links": 28,
         "workspaceLinks": 7,
-        "pageBytes": 19822
+        "pageBytes": 19954
       },
       "findings": []
     },
@@ -21915,7 +21963,7 @@
         "buttons": 0,
         "links": 16,
         "workspaceLinks": 0,
-        "pageBytes": 18778
+        "pageBytes": 18887
       },
       "findings": []
     },
@@ -21964,7 +22012,7 @@
         "buttons": 0,
         "links": 25,
         "workspaceLinks": 3,
-        "pageBytes": 23099
+        "pageBytes": 23240
       },
       "findings": []
     },
@@ -22013,7 +22061,7 @@
         "buttons": 0,
         "links": 21,
         "workspaceLinks": 0,
-        "pageBytes": 18526
+        "pageBytes": 18632
       },
       "findings": []
     },
@@ -22257,7 +22305,7 @@
         "buttons": 0,
         "links": 16,
         "workspaceLinks": 1,
-        "pageBytes": 30334
+        "pageBytes": 30475
       },
       "findings": []
     },
@@ -22306,7 +22354,7 @@
         "buttons": 0,
         "links": 22,
         "workspaceLinks": 0,
-        "pageBytes": 28994
+        "pageBytes": 29135
       },
       "findings": []
     },
@@ -22355,7 +22403,7 @@
         "buttons": 0,
         "links": 15,
         "workspaceLinks": 1,
-        "pageBytes": 30832
+        "pageBytes": 30973
       },
       "findings": []
     },
@@ -22404,7 +22452,7 @@
         "buttons": 0,
         "links": 17,
         "workspaceLinks": 0,
-        "pageBytes": 28246
+        "pageBytes": 28387
       },
       "findings": []
     },
@@ -22453,7 +22501,7 @@
         "buttons": 0,
         "links": 15,
         "workspaceLinks": 1,
-        "pageBytes": 25233
+        "pageBytes": 25374
       },
       "findings": []
     },
@@ -22502,7 +22550,7 @@
         "buttons": 0,
         "links": 21,
         "workspaceLinks": 1,
-        "pageBytes": 29299
+        "pageBytes": 29440
       },
       "findings": []
     },
@@ -22745,7 +22793,7 @@
         "buttons": 0,
         "links": 9,
         "workspaceLinks": 0,
-        "pageBytes": 18727
+        "pageBytes": 19077
       },
       "findings": []
     },
@@ -22794,7 +22842,7 @@
         "buttons": 0,
         "links": 9,
         "workspaceLinks": 0,
-        "pageBytes": 14787
+        "pageBytes": 15049
       },
       "findings": []
     },
@@ -22843,7 +22891,7 @@
         "buttons": 0,
         "links": 10,
         "workspaceLinks": 0,
-        "pageBytes": 17803
+        "pageBytes": 18017
       },
       "findings": []
     },
@@ -22941,7 +22989,7 @@
         "buttons": 0,
         "links": 9,
         "workspaceLinks": 0,
-        "pageBytes": 21095
+        "pageBytes": 21283
       },
       "findings": []
     },
@@ -22990,7 +23038,7 @@
         "buttons": 0,
         "links": 9,
         "workspaceLinks": 0,
-        "pageBytes": 22199
+        "pageBytes": 22341
       },
       "findings": []
     },
@@ -23136,7 +23184,7 @@
         "buttons": 0,
         "links": 18,
         "workspaceLinks": 0,
-        "pageBytes": 17080
+        "pageBytes": 17203
       },
       "findings": []
     },
@@ -23185,7 +23233,7 @@
         "buttons": 0,
         "links": 18,
         "workspaceLinks": 0,
-        "pageBytes": 18161
+        "pageBytes": 18291
       },
       "findings": []
     },
@@ -23234,7 +23282,7 @@
         "buttons": 0,
         "links": 25,
         "workspaceLinks": 0,
-        "pageBytes": 17965
+        "pageBytes": 18088
       },
       "findings": []
     },
@@ -23283,7 +23331,7 @@
         "buttons": 0,
         "links": 21,
         "workspaceLinks": 0,
-        "pageBytes": 17979
+        "pageBytes": 18102
       },
       "findings": []
     },
@@ -23332,7 +23380,7 @@
         "buttons": 0,
         "links": 17,
         "workspaceLinks": 2,
-        "pageBytes": 18728
+        "pageBytes": 18861
       },
       "findings": []
     },

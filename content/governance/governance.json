@@ -1517,6 +1517,93 @@
     }
   },
   {
+    "id": "accessibility-statement",
+    "kind": "policy",
+    "pathname": "/accessibility",
+    "eyebrow": "Accessibility statement",
+    "title": "Access is part of whether the work is actually usable.",
+    "summary": "A dated, bounded account of Aloha AI’s public-site accessibility controls, known testing limits, reporting path, accommodation path, and remediation commitment.",
+    "audience": "Visitors, prospective clients, partners, learners, and tool users who encounter an access barrier or need an alternative way to receive public Aloha AI material.",
+    "maturity": "Production",
+    "topics": ["accessibility", "human-adoption", "accountability"],
+    "industries": ["professional-services", "technology", "education"],
+    "keywords": ["Aloha AI accessibility statement", "accessibility report", "accessibility accommodation", "keyboard access"],
+    "effectiveDate": "2026-08-02",
+    "policyOwner": "Aloha AI, a DBA of Rayven-Nikkita Collins LLC · Honolulu, HI",
+    "releaseReview": {
+      "reviewedAt": "2026-08-02",
+      "reviewBy": "2026-11-02",
+      "staleAfterDays": 92,
+      "nextReviewOrTrigger": "2026-11-02 or any material template, interaction, form, media, accessibility-copy, third-party-destination, or deployment change",
+      "status": {"publication":"published","completeness":"complete","interaction":"read-only","integration":"none","access":"public","commercial":"not-applicable","maintenance":"not-applicable","evaluation":"not-applicable","evidence":"described"},
+      "permittedPublicLanguage": "Published bounded accessibility statement; publication and static evaluation do not certify WCAG conformance, legal compliance, assistive-technology compatibility, or third-party accessibility.",
+      "decisionBasis": "The statement accurately distinguishes checked source and interaction contracts from unperformed manual assistive-technology and rendered-conformance testing."
+    },
+    "policySections": [
+      {
+        "title": "What this statement covers",
+        "paragraphs": [
+          "This statement covers the public pages, browser-local tools, shared navigation, forms, and downloadable public material published on the canonical Aloha AI site. It does not certify Microsoft Bookings, linked third-party sites, client systems, satellite deployments, or future versions."
+        ]
+      },
+      {
+        "title": "Controls currently checked",
+        "paragraphs": [
+          "The dated repository evaluation checks every sitemap route for document language, a keyboard skip path, one page-level heading, heading order, unique identifiers, valid ARIA references, named links and controls, labelled form controls, image alternatives, titled embedded frames, table names and header associations, unrestricted browser zoom, and the absence of positive tabindex, autoplay media, access keys, and non-semantic click targets. Shared styles and scripts are also checked for visible focus, reduced-motion behavior, and status announcements."
+        ]
+      },
+      {
+        "title": "Testing limits",
+        "paragraphs": [
+          "This is not a certification of WCAG conformance or legal compliance. Automated and source-level checks cannot establish that every computed color contrast, responsive state, browser, device, or user workflow is accessible. Screen-reader and voice-control testing has not yet been completed. Switch-control and screen-magnifier testing have not yet been completed. Those are open retest requirements, not implied passes."
+        ]
+      },
+      {
+        "title": "Report a barrier privately",
+        "paragraphs": [
+          "Use the current Microsoft Bookings link, choose any available time, and write “accessibility report — no meeting needed” in the note. Include the affected route, what you were trying to do, the barrier you encountered, your browser or assistive technology if you choose to share it, and a safe reply address. Do not include sensitive information. RN will treat the booking as a report rather than a meeting, reproduce the issue when possible, record its disposition, and prioritize barriers that prevent access to core information or actions."
+        ]
+      },
+      {
+        "title": "Request an alternative format or accommodation",
+        "paragraphs": [
+          "Use the same booking path and write “accessibility accommodation — no meeting needed.” Identify the public material or task and the alternative format or communication method that would help. RN will respond through the address you provide and will make a reasonable effort to provide an accessible alternative without requiring a meeting."
+        ]
+      },
+      {
+        "title": "Remediation and review",
+        "paragraphs": [
+          "Confirmed barriers are documented, assessed for affected routes and shared components, corrected or bounded, and added to regression checks where practical. This statement and its evidence are reviewed after material template, interaction, form, media, accessibility-copy, third-party-destination, or deployment changes, and otherwise by the listed review date."
+        ]
+      }
+    ],
+    "evidence": [
+      "A release-blocking structural evaluation across every sitemap route",
+      "Shared focus, reduced-motion, keyboard-navigation, and status-announcement contracts",
+      "A public barrier-reporting and accommodation-request path with disclosed testing gaps"
+    ],
+    "methodology": [
+      "Test repeatable source and interaction contracts across the complete public route inventory",
+      "Fail closed when a checked accessibility control or evidence requirement is absent",
+      "Disclose manual assistive-technology gaps instead of converting missing evidence into a pass",
+      "Record and regression-test confirmed shared-component barriers"
+    ],
+    "assumptions": [
+      "The deployed site matches the tested repository tree",
+      "The Microsoft Bookings path remains available for private reports and accommodation requests"
+    ],
+    "limitations": [
+      "The bounded evaluation is not WCAG conformance, legal compliance, or accessibility certification",
+      "Manual assistive-technology and complete rendered contrast testing remain open",
+      "Third-party destinations and independently governed systems are outside this statement’s assurance boundary"
+    ],
+    "relationships": [
+      {"type": "uses", "target": "methods"},
+      {"type": "related_to", "target": "privacy"},
+      {"type": "implements", "target": "trust-stack"}
+    ]
+  },
+  {
     "id": "terms",
     "kind": "policy",
     "pathname": "/terms",

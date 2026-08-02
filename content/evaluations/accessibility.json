@@ -1,0 +1,64 @@
+{
+  "schema": "aloha-ai-site-assurance/1.0",
+  "assuranceId": "ASSURANCE-ACCESSIBILITY-001",
+  "domain": "accessibility",
+  "decision": "passed-limited-static-structure-and-interaction-contract-scope",
+  "evaluatedAt": "2026-08-02",
+  "owner": "RN Collins / Aloha AI",
+  "reviewer": "Codex remediation agent",
+  "scope": "All 498 sitemap routes; checked-in HTML, shared CSS, and shared interaction scripts.",
+  "exclusions": [
+    "Rendered visual contrast measurement across every computed state and viewport",
+    "Manual screen-reader, voice-control, switch-control, magnification, and other assistive-technology sessions",
+    "Third-party destinations including Microsoft Bookings",
+    "Legal conformance determination or WCAG certification"
+  ],
+  "inventory": {
+    "pages": 498,
+    "images": 0,
+    "controls": 1868,
+    "forms": 30,
+    "tables": 41,
+    "iframes": 0,
+    "videos": 0,
+    "audio": 0
+  },
+  "findings": [],
+  "assistiveTechnologyEvidence": {
+    "performed": [],
+    "notPerformed": [
+      "Screen reader",
+      "Voice control",
+      "Switch control",
+      "Screen magnifier"
+    ],
+    "reason": "No compatible rendered assistive-technology environment was available. The public statement and assurance decision disclose this gap; it is a required retest item."
+  },
+  "review": {
+    "lastReviewed": "2026-08-02",
+    "nextReview": "2026-11-02",
+    "trigger": "Any template, HTML, CSS, interaction, form, media, accessibility-copy, third-party destination, or deployment change; or availability of a compatible manual assistive-technology environment."
+  },
+  "checks": {
+    "all-sitemap-pages-structurally-checked": true,
+    "public-accessibility-statement": true,
+    "public-report-and-accommodation-path": true,
+    "statement-does-not-claim-certification": true,
+    "keyboard-skip-contract": true,
+    "focus-indicator-contract": true,
+    "reduced-motion-contract": true,
+    "status-announcement-contract": true,
+    "no-zoom-restriction": true,
+    "no-positive-tabindex": true,
+    "no-autoplay-media": true,
+    "manual-assistive-technology-not-overstated": true
+  },
+  "metrics": {
+    "totalChecks": 12,
+    "passedChecks": 12,
+    "failedChecks": 0,
+    "structuralFindings": 0
+  },
+  "failures": [],
+  "prohibitedInference": "This bounded pass is not WCAG 2.1/2.2 conformance, legal compliance, accessibility certification, or evidence that every user, assistive technology, browser, device, state, third-party destination, or future deployment can use the site without a barrier."
+}

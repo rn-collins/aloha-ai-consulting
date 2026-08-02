@@ -93,16 +93,18 @@ function toReleaseObject(resource) {
     approvalDecision: 'migration-pending-review',
     supersessionHistory: [],
     dependencies: (resource.relationships || []).filter((r) => ['implements', 'requires', 'depends-on'].includes(r.type)).map((r) => r.target),
-    permittedPublicLanguage: permittedLanguage({ resource, demo, explicitlyUnavailable, isMonitor }) ,
-    sourceFile: resource.sourceFile
+    permittedPublicLanguage: permittedLanguage({ resource, demo, explicitlyUnavailable, isMonitor }),
+    sourceFile: resource.sourceFile,
+    releaseReview: resource.releaseReview || null
   };
 }
 
 function applyReviewDecision(object) {
-  const decision = decisionByObject.get(object.id);
-  if (!decision) return object;
+  const decision = decisionByObject.get(object.id) || embeddedReviewDecision(object);
+  const { releaseReview, ...cleanObject } = object;
+  if (!decision) return cleanObject;
   return {
-    ...object,
+    ...cleanObject,
     lifecycleState: decision.lifecycleState,
     status: decision.status,
     lastReviewedOrTested: decision.reviewedAt,
@@ -112,6 +114,30 @@ function applyReviewDecision(object) {
     reviewEvidence: decision.reviewEvidence,
     governanceControls: decision.governanceControls,
     decisionBasis: decision.decisionBasis
+  };
+}
+
+function embeddedReviewDecision(object) {
+  if (!object.releaseReview) return null;
+  const review = object.releaseReview;
+  return {
+    approvalDecision: 'approved-conservative-local',
+    reviewedAt: review.reviewedAt,
+    lifecycleState: 'locally-reviewed-not-release-certified',
+    status: review.status,
+    reviewEvidence: { sourceFile: object.sourceFile, publicRoute: object.pathname, generatedPagePresent: true, browserLocalInteractionDetected: false, evidenceLinksRecorded: object.evidenceLinks.length },
+    nextReviewOrTrigger: review.nextReviewOrTrigger,
+    governanceControls: {
+      contradiction: { state: 'registry-consistent', basis: 'The reviewed dimensional state is the controlling release record; stronger authored maturity labels are not authorized.' },
+      staleness: { state: 'review-current', reviewedAt: review.reviewedAt, reviewBy: review.reviewBy, staleAfterDays: review.staleAfterDays, actionWhenStale: 'Fail release certification and render no stronger claim until re-reviewed.' },
+      dependency: { state: 'declared-not-release-certified', declaredCanonicalIds: object.dependencies, resolvedObjectIds: [], unresolvedCanonicalIds: object.dependencies, releaseReady: false, action: 'Resolve each dependency to a governed object or site system before certifying dependent operation.' },
+      supersession: { state: 'current-no-predecessor-recorded', supersedes: [], supersededBy: null, actionWhenSuperseded: 'Remove from current collections, retain the historical record, and redirect to the successor where appropriate.' },
+      capacity: { state: 'not-applicable', basis: 'Capacity is not a release dimension for this object type.' },
+      contractingIdentity: { state: 'not-applicable', entity: null, acceptanceInstrument: null },
+      professionalAccountability: { state: 'bounded', accountablePublisher: 'RN Collins / Aloha AI', boundary: 'This resource is a bounded public statement, not legal advice, legal compliance, or third-party certification.', escalation: 'Qualified professional review remains required where law, contract, or institutional policy requires it.' }
+    },
+    permittedPublicLanguage: review.permittedPublicLanguage,
+    decisionBasis: review.decisionBasis
   };
 }
 

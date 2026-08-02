@@ -114,7 +114,8 @@ test('renders and indexes structured editorial copy', () => {
   assert.match(html, /Complex work, made usable/);
   assert.match(html, /A substantive retained paragraph/);
   assert.match(html, /<pre><code>VERIFY\(source\)<\/code><\/pre>/);
-  assert.match(html, /<th>Signal<\/th>/);
+  assert.match(html, /<caption class="visually-hidden">Signal, Owner table<\/caption>/);
+  assert.match(html, /<th scope="col">Signal<\/th>/);
   const search = JSON.parse(generatedOutputs(resources, platform).get('/search-index.json'));
   assert.match(search.find((item) => item.id === 'alpha').text, /human reviewer/);
 });

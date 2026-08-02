@@ -15,6 +15,7 @@ const billEvaluation = read('api/evaluations/bill-analyzer.json');
 const controlledSubstancesEvaluation = read('api/evaluations/controlled-substances-explainer.json');
 const privacyEvaluation = read('api/evaluations/privacy.json');
 const securityEvaluation = read('api/evaluations/security.json');
+const accessibilityEvaluation = read('api/evaluations/accessibility.json');
 
 for (const field of ['schema','version','effectiveDate','owner','reviewer','nextReviewOrTrigger','policy']) if (!registry[field]) errors.push(`registry: ${field} missing`);
 if (methods.version !== conformance.methodVersion || methods.id !== conformance.methodId) errors.push('methods record and conformance version do not match');
@@ -77,6 +78,11 @@ for (const id of requiredDomains) {
     if (securityEvaluation.decision !== 'passed-limited-repository-and-public-deployment-boundary' || securityEvaluation.metrics.failedChecks !== 0 || securityEvaluation.metrics.passedChecks !== securityEvaluation.metrics.totalChecks) errors.push('security: evidence does not satisfy the bounded threshold');
     if (!securityEvaluation.permissionsBoundary || !securityEvaluation.secretsAndLoggingControls || !securityEvaluation.incidentPath || !securityEvaluation.owner || !securityEvaluation.review?.lastReviewed) errors.push('security: required evidence is incomplete');
     if (!securityEvaluation.prohibitedInference) errors.push('security: prohibited-inference boundary is missing');
+  } else if (id === 'accessibility') {
+    if (item.state !== 'passed-limited' || !item.evidenceHref || !item.decision || !item.retestTrigger) errors.push('accessibility: bounded assurance decision is incomplete');
+    if (accessibilityEvaluation.decision !== 'passed-limited-static-structure-and-interaction-contract-scope' || accessibilityEvaluation.metrics.failedChecks !== 0 || accessibilityEvaluation.metrics.structuralFindings !== 0 || accessibilityEvaluation.metrics.passedChecks !== accessibilityEvaluation.metrics.totalChecks) errors.push('accessibility: evidence does not satisfy the bounded threshold');
+    if (!accessibilityEvaluation.assistiveTechnologyEvidence || accessibilityEvaluation.assistiveTechnologyEvidence.notPerformed.length < 4 || !accessibilityEvaluation.owner || !accessibilityEvaluation.review?.lastReviewed) errors.push('accessibility: required evidence is incomplete');
+    if (!accessibilityEvaluation.prohibitedInference) errors.push('accessibility: prohibited-inference boundary is missing');
   } else if (item.state !== 'required-not-yet-certified') errors.push(`${id}: assurance domain must fail closed`);
 }
 
