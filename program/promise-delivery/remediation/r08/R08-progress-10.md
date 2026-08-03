@@ -3,7 +3,7 @@
 **Frozen audit baseline:** 4,289 grouped claims / 9,552 occurrences  
 **Current reviewed estate:** 262 canonical resources / 505 public surfaces / 9,782 interactions / 5,368 promise records / 12,013 occurrences  
 **Tranche:** R08 — Existing asset connection and substantive destination depth  
-**Status:** passed locally within the forty-resource destination-family boundary; publication and production verification pending
+**Status:** passed within the forty-resource destination-family boundary after exact-tree GitHub publication and production verification; Unit 10 closed; R08 remains open for formal tranche reconciliation
 
 ## Purpose and boundary
 
@@ -38,7 +38,14 @@ A passing result does not certify product operation, external integrations, Work
 
 ## Publication and production verification
 
-Pending exact-tree GitHub publication and Vercel production verification.
+- GitHub `main` evaluated implementation commit: `7a0e5f393796922f6a809c4e765655a0082f87da`.
+- Exact evaluated Git tree: `83e1e8b94e75bc89b87a2633881351f124ea5e5d`.
+- Vercel production deployment: `dpl_56GkATiQhM6oqx6FtSqzE17ijf8T`, state `READY`, target `production`, tied to the exact evaluated commit.
+- `/artifacts/destination-family-evidence-evaluation.json`, `/api/destination-family-evidence-register.json`, `/api/release-control-report.json`, and `/program/promise-delivery/promise-release-registry.json` returned HTTP 200.
+- The live evaluator reported 12/12 checks, forty canonical resources, nine products, sixteen services, eight collections, three institutional pages, four learning hubs, three unavailable products, one unavailable learning hub, and zero findings.
+- Live release totals remained 262 resources and 5,368 promise records / 12,013 occurrences, with zero release-control errors.
+- Vercel reported no runtime errors in the targeted verification window.
+- Browser-control tooling was not exposed in this session, so verification does not claim screenshot capture, browser-console review, responsive-layout review, or visual-design certification.
 
 ## Remaining R08 work
 
@@ -48,4 +55,4 @@ Pending exact-tree GitHub publication and Vercel production verification.
 
 ## Decision
 
-PASS locally within the stated forty-resource boundary. Unit 10 remains open until exact-tree publication and production verification. R08 remains open.
+PASS within the stated forty-resource boundary. Unit 10 is production-closed. R08 remains open only for formal tranche-wide acceptance reconciliation and closeout.
