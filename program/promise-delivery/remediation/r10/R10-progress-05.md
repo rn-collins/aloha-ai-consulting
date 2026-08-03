@@ -30,3 +30,12 @@
 ## Decision
 
 The R01 manifest proves what remediation disposition was assigned to 149 additional frozen promises. It does not by itself prove that the correction remains present, that a disabled action remains inaccessible, or that a deferred obligation is now complete. Those substantive questions remain open, and all 325 reconstructed units remain deferred.
+
+## Production verification
+
+- Evaluated commit: `c2536acb49225d1b0c3ca06dcfbdf1471923f242`.
+- Evaluated tree: `bbbed49402e4761cd4ca23678bbe0e20e115750b`.
+- Deployment: `dpl_6vZ5QnP3Pa5qZKek3t7pwdHoCpuW` (`READY`, production).
+- Live R10 evaluation: 29 / 31 controls; closure blocked only by R10-19 and R10-20.
+- Live commerce readiness: HTTP 503 / closed; no Workspace entitlement.
+- Runtime errors: none in the deployment verification window.
