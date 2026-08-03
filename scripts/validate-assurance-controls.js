@@ -19,6 +19,7 @@ const accessibilityEvaluation = read('api/evaluations/accessibility.json');
 const correctionsEvaluation = read('api/evaluations/corrections.json');
 const legalAuthorityEvaluation = read('api/evaluations/legal-authority.json');
 const rightsAttributionEvaluation = read('api/evaluations/rights-attribution.json');
+const institutionalCredentialsEvaluation = read('api/evaluations/institutional-credentials.json');
 
 for (const field of ['schema','version','effectiveDate','owner','reviewer','nextReviewOrTrigger','policy']) if (!registry[field]) errors.push(`registry: ${field} missing`);
 if (methods.version !== conformance.methodVersion || methods.id !== conformance.methodId) errors.push('methods record and conformance version do not match');
@@ -101,7 +102,12 @@ for (const id of requiredDomains) {
     if (rightsAttributionEvaluation.decision !== 'passed-limited-checked-in-public-asset-and-rights-process-scope' || rightsAttributionEvaluation.metrics.failedChecks !== 0 || rightsAttributionEvaluation.metrics.recordFindings !== 0 || rightsAttributionEvaluation.metrics.passedChecks !== rightsAttributionEvaluation.metrics.totalChecks) errors.push('rights-attribution: evidence does not satisfy the bounded threshold');
     if (!rightsAttributionEvaluation.rightsRegister?.assets || !rightsAttributionEvaluation.assetIntegrity?.files || !rightsAttributionEvaluation.reportingRoute?.pathname || !rightsAttributionEvaluation.owner || !rightsAttributionEvaluation.review?.lastReviewed) errors.push('rights-attribution: required evidence is incomplete');
     if (!rightsAttributionEvaluation.prohibitedInference) errors.push('rights-attribution: prohibited-inference boundary is missing');
-  } else if (item.state !== 'required-not-yet-certified') errors.push(`${id}: assurance domain must fail closed`);
+  } else if (id === 'institutional-credentials') {
+    if (item.state !== 'passed-limited' || !item.evidenceHref || !item.decision || !item.retestTrigger) errors.push('institutional-credentials: bounded assurance decision is incomplete');
+    if (institutionalCredentialsEvaluation.decision !== 'passed-limited-selected-public-claim-control-scope' || institutionalCredentialsEvaluation.metrics.failedChecks !== 0 || institutionalCredentialsEvaluation.metrics.recordFindings !== 0 || institutionalCredentialsEvaluation.metrics.unmatchedClaimOccurrences !== 0 || institutionalCredentialsEvaluation.metrics.ambiguousClaimVariants !== 0 || institutionalCredentialsEvaluation.metrics.passedChecks !== institutionalCredentialsEvaluation.metrics.totalChecks) errors.push('institutional-credentials: evidence does not satisfy the bounded threshold');
+    if (!institutionalCredentialsEvaluation.credentialRegister?.records || !institutionalCredentialsEvaluation.credentialRegister?.publicClaimOccurrences || !institutionalCredentialsEvaluation.evidenceBoundary?.rule || !institutionalCredentialsEvaluation.reportingRoute?.pathname || !institutionalCredentialsEvaluation.owner || !institutionalCredentialsEvaluation.review?.lastReviewed) errors.push('institutional-credentials: required evidence is incomplete');
+    if (!institutionalCredentialsEvaluation.prohibitedInference) errors.push('institutional-credentials: prohibited-inference boundary is missing');
+  }
 }
 
 const manifest = {

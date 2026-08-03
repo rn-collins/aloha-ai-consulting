@@ -177,8 +177,12 @@
     },
     {
       "id": "institutional-credentials",
-      "state": "required-not-yet-certified",
-      "requiredEvidence": "Institution, credential or affiliation, exact claim, authoritative evidence, date, scope, owner, and expiry trigger"
+      "state": "passed-limited",
+      "decision": "Passed only for the dated selected public-claim inventory, evidence-class disclosures, and exact-claim mapping controls; identity, degree, enrollment, employment, appointment, publication review, licensure, certification, current standing, endorsement, and every biographical statement are not independently verified.",
+      "evaluatedAt": "2026-08-02",
+      "evidenceHref": "/api/evaluations/institutional-credentials.json",
+      "retestTrigger": "Any education, enrollment, degree, role, affiliation, publication, licensure, certification, name, evidence, status, learning-credential feature, or public-copy change; otherwise 2026-11-02.",
+      "requiredEvidence": "Institution, credential or affiliation, exact claim, authoritative evidence class, date, scope, owner, and expiry trigger"
     }
   ],
   "counts": {
@@ -187,7 +191,7 @@
     "methodRevisions": 1,
     "highStakesToolsQueued": 5,
     "evaluatedHighStakesTools": 5,
-    "evaluatedAssuranceDomains": 6,
+    "evaluatedAssuranceDomains": 7,
     "assuranceDomainsCertified": 0,
     "errors": 0
   },

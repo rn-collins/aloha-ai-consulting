@@ -1,19 +1,19 @@
 # Aloha AI whole-site audit
 
-Generated: 2026-08-02T23:24:25.808Z
+Generated: 2026-08-03T03:59:09.546Z
 
-Routes audited: 503
-Static pages found: 503
+Routes audited: 504
+Static pages found: 504
 Missing route files: 0
 Average page score: 100%
-Pages loading all shared style layers: 503/503
+Pages loading all shared style layers: 504/504
 Critical structural or accessibility failures: 0
 
 ## Estate summary
 
 | Estate | Routes | Found | Average score |
 |---|---:|---:|---:|
-| Unclassified | 263 | 263 | 100% |
+| Unclassified | 264 | 264 | 100% |
 | Aloha AI University | 180 | 180 | 100% |
 | Tools and Diagnostics | 29 | 29 | 100% |
 | Aloha AI | 15 | 15 | 100% |
@@ -76,6 +76,7 @@ Critical structural or accessibility failures: 0
 | `/industries/small-business` | Unclassified | landing | industries/small-business.html | 100% | No baseline structural finding. |
 | `/industries/startups` | Unclassified | landing | industries/startups.html | 100% | No baseline structural finding. |
 | `/industries/technology` | Unclassified | landing | industries/technology.html | 100% | No baseline structural finding. |
+| `/institutional-credentials` | Unclassified | landing | institutional-credentials.html | 100% | No baseline structural finding. |
 | `/intelligence` | Aloha AI | landing | intelligence.html | 100% | No baseline structural finding. |
 | `/intelligence/brand-perception` | Tools and Diagnostics | landing | intelligence/brand-perception.html | 100% | No baseline structural finding. |
 | `/launch-stack` | Aloha AI | landing | launch-stack.html | 100% | No baseline structural finding. |

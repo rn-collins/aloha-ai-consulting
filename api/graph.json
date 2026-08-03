@@ -43,6 +43,13 @@
       "maturity": "Production"
     },
     {
+      "id": "institutional-credentials-policy",
+      "kind": "policy",
+      "pathname": "/institutional-credentials",
+      "title": "A credential claim should say exactly what the evidence can support.",
+      "maturity": "Production"
+    },
+    {
       "id": "legal-authority-policy",
       "kind": "policy",
       "pathname": "/legal-authority",
@@ -1943,6 +1950,31 @@
       "source": "terms",
       "type": "related_to",
       "target": "about"
+    },
+    {
+      "source": "institutional-credentials-policy",
+      "type": "uses",
+      "target": "methods"
+    },
+    {
+      "source": "institutional-credentials-policy",
+      "type": "related_to",
+      "target": "corrections-policy"
+    },
+    {
+      "source": "institutional-credentials-policy",
+      "type": "related_to",
+      "target": "rights-attribution-policy"
+    },
+    {
+      "source": "institutional-credentials-policy",
+      "type": "related_to",
+      "target": "legal-authority-policy"
+    },
+    {
+      "source": "institutional-credentials-policy",
+      "type": "implements",
+      "target": "trust-stack"
     },
     {
       "source": "legal-authority-policy",
