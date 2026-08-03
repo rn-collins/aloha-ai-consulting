@@ -1,6 +1,6 @@
 {
   "schema": "aloha-ai-r10-closure-evaluation/1.0",
-  "generatedAt": "2026-08-03T22:43:37.739Z",
+  "generatedAt": "2026-08-03T22:58:46.502Z",
   "decision": "closure-blocked",
   "frozenEvidenceUnits": 325,
   "checks": [
@@ -122,7 +122,7 @@
     {
       "id": "R10-26",
       "pass": true,
-      "detail": "Every non-verbatim frozen promise must reconcile to a confirmed successor, confirmed remediation disposition, or unresolved lineage decision."
+      "detail": "Every non-verbatim frozen promise must reconcile to a supported lineage class or unresolved lineage decision."
     },
     {
       "id": "R10-27",
@@ -137,17 +137,32 @@
     {
       "id": "R10-29",
       "pass": true,
-      "detail": "R01 manifest reconciliation must confirm 149 unambiguous dispositions while preserving 840 unresolved lineage decisions."
+      "detail": "R01 manifest reconciliation must preserve all 149 unambiguous dispositions through later lineage passes."
     },
     {
       "id": "R10-30",
       "pass": true,
-      "detail": "Every non-verbatim promise must reconcile to a successor, remediation disposition, or unresolved decision."
+      "detail": "Every non-verbatim promise must reconcile to one supported lineage class or an unresolved decision."
     },
     {
       "id": "R10-31",
       "pass": true,
       "detail": "Every confirmed remediation disposition must resolve through the explicit R01 manifest evidence template."
+    },
+    {
+      "id": "R10-32",
+      "pass": true,
+      "detail": "Unique route-target continuity must confirm exactly 667 successors while preserving 173 unresolved lineage decisions."
+    },
+    {
+      "id": "R10-33",
+      "pass": true,
+      "detail": "Every non-verbatim promise must reconcile to one supported lineage class or remain unresolved."
+    },
+    {
+      "id": "R10-34",
+      "pass": true,
+      "detail": "Every route-target successor must name a current successor and resolve through the interaction-audit evidence template."
     },
     {
       "id": "R10-19",
