@@ -1,0 +1,27 @@
+{
+  "schema": "aloha-ai-monitor-research-evidence-register/1.0",
+  "version": "1.0.0",
+  "reviewedAt": "2026-08-02",
+  "reviewedBy": "Aloha AI promise-delivery remediation R08",
+  "scope": "All seventeen canonical resources classified as monitors or research publications in the current public resource registry.",
+  "boundary": "This register distinguishes two manually maintained monitors from nine dated demonstrations and six read-only research publications. A passing record proves checked-in source, cadence, freshness, publication, and rendered-boundary contracts within the repository; it does not prove unattended retrieval, real-time alerts, comprehensive coverage, external integrations, professional correctness, or independent browser execution.",
+  "records": [
+    {"resourceId":"cannabis-rescheduling","deliveryMode":"maintained-manual"},
+    {"resourceId":"psychedelic-radar","deliveryMode":"maintained-manual"},
+    {"resourceId":"agentic-brand-management","deliveryMode":"dated-demonstration"},
+    {"resourceId":"ai-creative-production","deliveryMode":"dated-demonstration"},
+    {"resourceId":"arts-culture","deliveryMode":"dated-demonstration"},
+    {"resourceId":"biopharma-regulatory-intelligence","deliveryMode":"dated-demonstration"},
+    {"resourceId":"biophilic-neuroarch","deliveryMode":"dated-demonstration"},
+    {"resourceId":"luxury-ip","deliveryMode":"dated-demonstration"},
+    {"resourceId":"market-intel","deliveryMode":"dated-demonstration"},
+    {"resourceId":"private-ai-risk","deliveryMode":"dated-demonstration"},
+    {"resourceId":"suppression-audit","deliveryMode":"dated-demonstration"},
+    {"resourceId":"methods","deliveryMode":"research-publication"},
+    {"resourceId":"hallucination-risk-legal-work","deliveryMode":"research-publication"},
+    {"resourceId":"what-i-audit-first","deliveryMode":"research-publication"},
+    {"resourceId":"tracking-isnt-intelligence","deliveryMode":"research-publication"},
+    {"resourceId":"tool-workflow-operating-system","deliveryMode":"research-publication"},
+    {"resourceId":"legal-ai-workflow-teardown","deliveryMode":"research-publication"}
+  ]
+}

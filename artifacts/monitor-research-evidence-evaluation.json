@@ -1,0 +1,28 @@
+{
+  "schema": "aloha-ai-monitor-research-evidence-evaluation/1.0",
+  "evaluatedAt": "2026-08-02",
+  "scope": "All seventeen canonical resources classified as monitors or research publications in the current public resource registry.",
+  "boundary": "This register distinguishes two manually maintained monitors from nine dated demonstrations and six read-only research publications. A passing record proves checked-in source, cadence, freshness, publication, and rendered-boundary contracts within the repository; it does not prove unattended retrieval, real-time alerts, comprehensive coverage, external integrations, professional correctness, or independent browser execution.",
+  "counts": {
+    "canonicalResources": 17,
+    "monitors": 11,
+    "researchPublications": 6,
+    "maintainedManual": 2,
+    "datedDemonstrations": 9,
+    "readOnlyResearch": 6
+  },
+  "checks": {
+    "registerSchema": true,
+    "exactCanonicalCoverage": true,
+    "uniqueRecords": true,
+    "canonicalPages": true,
+    "substantiveMetadata": true,
+    "releaseMetadata": true,
+    "maintainedOperatingContracts": true,
+    "demonstrationBoundaries": true,
+    "researchPublicationBoundaries": true,
+    "renderedBoundaries": true,
+    "noFindings": true
+  },
+  "findings": []
+}
