@@ -1,0 +1,30 @@
+{
+  "schema": "nsapri-fixtures/1.0",
+  "rule": "Lower control limit = max(0, mean - 3 sample standard deviations). A below-limit value is a signal requiring alternative-explanation testing; an official notice or eligibility state is needed to label confirmed enforcement.",
+  "scenarios": [
+    {
+      "id": "normal-variation",
+      "mean": 1000,
+      "sd": 79.0569,
+      "current": 950,
+      "officialNotice": false,
+      "expected": "observe"
+    },
+    {
+      "id": "suspected-reduction",
+      "mean": 1000,
+      "sd": 79.0569,
+      "current": 500,
+      "officialNotice": false,
+      "expected": "investigate"
+    },
+    {
+      "id": "confirmed-enforcement",
+      "mean": 1000,
+      "sd": 79.0569,
+      "current": 500,
+      "officialNotice": true,
+      "expected": "respond"
+    }
+  ]
+}

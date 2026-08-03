@@ -1,0 +1,7 @@
+tool,platform,role,price,source_class,status,verified_at
+"YouTube Analytics","YouTube","native analytics","included with account","official","verify-current","2026-08-03"
+"Meta Business Suite / Instagram Insights","Meta/Instagram","native analytics","included where account is eligible","official","verify-current","2026-08-03"
+"TikTok Analytics","TikTok","native analytics","included with eligible account","official","verify-current","2026-08-03"
+"Google Sheets","cross-platform","baseline workbook alternative","consumer availability varies","vendor","price-not-asserted","2026-08-03"
+"Microsoft Excel","cross-platform","baseline workbook alternative","license varies","vendor","price-not-asserted","2026-08-03"
+"Archive screenshots and CSV exports","cross-platform","evidence preservation","internal operating cost","internal","not-a-vendor-price","2026-08-03"

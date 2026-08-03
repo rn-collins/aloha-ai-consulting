@@ -1,0 +1,23 @@
+{
+  "schema": "nsapri-stack/1.0",
+  "stack": [
+    {
+      "layer": 1,
+      "name": "native analytics",
+      "role": "export reach, impressions, recommendation traffic, follower/non-follower split, watch/retention, dates and content identifiers",
+      "proofLimit": "platform metrics are observations, not explanations"
+    },
+    {
+      "layer": 2,
+      "name": "official account-status and enforcement surfaces",
+      "role": "preserve notices, eligibility, restrictions, appeals and timestamps",
+      "proofLimit": "absence of a notice does not prove absence of reduced distribution"
+    },
+    {
+      "layer": 3,
+      "name": "controlled observation and third-party signals",
+      "role": "matched posts, audience/region checks, archival screenshots, optional checkers",
+      "proofLimit": "third-party results are signals, never platform verdicts"
+    }
+  ]
+}

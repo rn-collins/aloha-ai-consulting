@@ -1,0 +1,95 @@
+{
+  "schema": "nsapri-sources/1.0",
+  "cutoff": "2026-08-03",
+  "boundary": "A dated monitoring and response aid, not proof of suppression, diagnosis of any person, legal or medical advice, platform access, appeal-success assurance, or restored-distribution guarantee. Platform ranking and enforcement systems are opaque and change; reverify every policy, price, account surface, and decision before consequential use.",
+  "sources": [
+    {
+      "id": "YT-BORDERLINE",
+      "platform": "YouTube",
+      "title": "Continuing our work to improve recommendations on YouTube",
+      "url": "https://blog.youtube/news-and-events/continuing-our-work-to-improve/",
+      "type": "official-blog",
+      "retrievedAt": "2026-08-03",
+      "status": "current-page-available-reverify",
+      "treatment": "paraphrase",
+      "claim": "YouTube describes reducing recommendations of borderline content while leaving some content available."
+    },
+    {
+      "id": "YT-CG",
+      "platform": "YouTube",
+      "title": "YouTube Community Guidelines",
+      "url": "https://www.youtube.com/howyoutubeworks/policies/community-guidelines/",
+      "type": "official-policy-hub",
+      "retrievedAt": "2026-08-03",
+      "status": "current-page-available-reverify",
+      "treatment": "paraphrase",
+      "claim": "Removal and recommendation treatment are different events; inspect notices and analytics separately."
+    },
+    {
+      "id": "META-REC",
+      "platform": "Meta",
+      "title": "Recommendation Guidelines",
+      "url": "https://transparency.meta.com/policies/community-standards/recommendation-guidelines/",
+      "type": "official-policy",
+      "retrievedAt": "2026-08-03",
+      "status": "current-page-available-reverify",
+      "treatment": "paraphrase",
+      "claim": "Meta applies a higher recommendation-eligibility standard than the standard for content allowed on its services."
+    },
+    {
+      "id": "META-POL",
+      "platform": "Meta",
+      "title": "Policies",
+      "url": "https://transparency.meta.com/policies/",
+      "type": "official-policy-hub",
+      "retrievedAt": "2026-08-03",
+      "status": "current-page-available-reverify",
+      "treatment": "paraphrase",
+      "claim": "Meta publishes recommendation and community policies for Facebook and Instagram."
+    },
+    {
+      "id": "IG-STATUS",
+      "platform": "Instagram",
+      "title": "Account Status and recommendation eligibility",
+      "url": "https://help.instagram.com/338481628002750",
+      "type": "official-help",
+      "retrievedAt": "2026-08-03",
+      "status": "url-recorded-manual-verification-required",
+      "treatment": "paraphrase",
+      "claim": "Eligible professional accounts can inspect Account Status for recommendation eligibility; the surface does not prove why reach changed."
+    },
+    {
+      "id": "TT-FYF",
+      "platform": "TikTok",
+      "title": "For You feed eligibility standards",
+      "url": "https://www.tiktok.com/community-guidelines/en/fyf-standards",
+      "type": "official-policy",
+      "retrievedAt": "2026-08-03",
+      "status": "current-url-robots-blocked-manual-verification-required",
+      "treatment": "paraphrase",
+      "claim": "TikTok distinguishes content allowed on the service from content eligible for For You recommendation."
+    },
+    {
+      "id": "TT-REG",
+      "platform": "TikTok",
+      "title": "Regulated goods and commercial activities",
+      "url": "https://www.tiktok.com/community-guidelines/en/regulated-commercial-activities",
+      "type": "official-policy",
+      "retrievedAt": "2026-08-03",
+      "status": "current-url-robots-blocked-manual-verification-required",
+      "treatment": "paraphrase",
+      "claim": "TikTok separately governs regulated goods, including drugs; exact scope and recommendation consequence require live verification."
+    },
+    {
+      "id": "NIST-RMF",
+      "platform": "NIST",
+      "title": "Artificial Intelligence Risk Management Framework 1.0",
+      "url": "https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-1.pdf",
+      "type": "government-framework",
+      "retrievedAt": "2026-08-03",
+      "status": "published-2023",
+      "treatment": "paraphrase",
+      "claim": "NIST AI RMF organizes voluntary risk-management activity through Govern, Map, Measure, and Manage; its actions are not a universal checklist."
+    }
+  ]
+}

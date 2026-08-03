@@ -1,0 +1,43 @@
+{
+  "schema": "aloha-ai-r09-platform-risk-intelligence-artifact-register/1.0",
+  "reviewedAt": "2026-08-03",
+  "scope": "R09 Unit 8 builds and internally accepts the sixth and final acquisition artifact against the frozen Unit 2 delivery architecture.",
+  "boundary": "This is a dated monitoring and response package, not proof of suppression, diagnosis, legal or medical advice, platform access, appeal-success assurance, or restored-distribution guarantee. Package completeness is not an acquisition release and creates no Workspace entitlement.",
+  "artifact": {
+    "resourceId": "suppression-monitoring-playbook",
+    "artifactName": "Nervous-System-Aware Platform-Risk Intelligence",
+    "version": "2026.08.0",
+    "state": "built-frozen-pre-release",
+    "packagePath": "artifacts/products/nervous-system-aware-platform-risk-intelligence/2026.08.0",
+    "acquisitionState": "unavailable",
+    "workspaceEntitlement": false,
+    "specificAcceptanceTests": [
+      "Recalculate all sample baselines, control limits, and decision rules from raw fixtures.",
+      "Confirm every platform-policy statement has an official source, retrieval date, quotation/paraphrase label, and verification status.",
+      "Run normal variation, suspected reduction, and confirmed enforcement scenarios through the three-tier protocol.",
+      "Ensure outputs distinguish signal from proof and never promise diagnosis, appeal success, or restored distribution."
+    ],
+    "acceptedUniversalTests": [
+      1,
+      2,
+      3,
+      4,
+      8
+    ],
+    "deferredUniversalTests": [
+      5,
+      6,
+      7
+    ],
+    "releaseBlockers": [
+      "checkout",
+      "payment",
+      "order record",
+      "receipt",
+      "signed fulfillment",
+      "redelivery",
+      "refund operations",
+      "production purchase test"
+    ]
+  }
+}

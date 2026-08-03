@@ -1,0 +1,78 @@
+{
+  "schema": "nsapri-taxonomy/1.0",
+  "rule": "Mechanism labels describe testable hypotheses or documented states; only direct platform records can establish a platform action.",
+  "taxonomy": [
+    {
+      "id": "RD01",
+      "mechanism": "removal-or-strike",
+      "visibility": "explicit",
+      "evidence": [
+        "platform notice",
+        "content state"
+      ],
+      "classification": "confirmed-enforcement-only-when-notice-or-state-is-preserved"
+    },
+    {
+      "id": "RD02",
+      "mechanism": "recommendation-ineligibility",
+      "visibility": "sometimes-explicit",
+      "evidence": [
+        "official eligibility/account-status surface",
+        "policy record"
+      ],
+      "classification": "confirmed-only-for-the-recorded-content-and-time"
+    },
+    {
+      "id": "RD03",
+      "mechanism": "reduced-recommendation-treatment",
+      "visibility": "usually-inferred",
+      "evidence": [
+        "comparable distribution metrics",
+        "baseline deviation",
+        "policy context"
+      ],
+      "classification": "signal-not-proof"
+    },
+    {
+      "id": "RD04",
+      "mechanism": "search-or-feature-exclusion",
+      "visibility": "mixed",
+      "evidence": [
+        "controlled search/feature observation",
+        "status surface"
+      ],
+      "classification": "observation-not-causal-proof"
+    },
+    {
+      "id": "RD05",
+      "mechanism": "audience-or-region-gating",
+      "visibility": "mixed",
+      "evidence": [
+        "age/region/account controls",
+        "controlled observer"
+      ],
+      "classification": "confirm-control-before-attributing-cause"
+    },
+    {
+      "id": "RD06",
+      "mechanism": "ordinary-ranking-variation",
+      "visibility": "silent",
+      "evidence": [
+        "historical variance",
+        "matched-content controls",
+        "seasonality"
+      ],
+      "classification": "default-alternative-explanation"
+    },
+    {
+      "id": "RD07",
+      "mechanism": "measurement-or-tracking-failure",
+      "visibility": "silent",
+      "evidence": [
+        "analytics health",
+        "tag/export reconciliation"
+      ],
+      "classification": "exclude-before-escalation"
+    }
+  ]
+}

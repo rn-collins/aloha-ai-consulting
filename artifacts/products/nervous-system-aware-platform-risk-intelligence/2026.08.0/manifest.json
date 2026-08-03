@@ -1,0 +1,144 @@
+{
+  "schema": "nsapri-release-manifest/1.0",
+  "artifactId": "suppression-monitoring-playbook",
+  "artifactName": "Nervous-System-Aware Platform-Risk Intelligence",
+  "version": "2026.08.0",
+  "releaseDate": null,
+  "state": "frozen-pre-release",
+  "evidenceCutoff": "2026-08-03",
+  "contents": [
+    "nervous-system-aware operating crosswalk",
+    "documented reduced-distribution taxonomy",
+    "dated YouTube/Meta/Instagram/TikTok policy ledger",
+    "three-layer monitoring stack",
+    "tool and pricing ledger",
+    "baseline and control-limit workbook",
+    "45-minute monthly review",
+    "three-tier NIST-mapped response protocol",
+    "appeal record and worksheets",
+    "references"
+  ],
+  "files": [
+    {
+      "path": "ACCESSIBILITY.md",
+      "bytes": 188,
+      "sha256": "2e5bd9afbfaa37b781e2df41a69cecaa45ccd68a00578300988acc5a295a5861"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 173,
+      "sha256": "54f8b39f79e050b8f77d2108b812e8164e5c2f5704f6048fef36a6af20a19194"
+    },
+    {
+      "path": "LICENSE.md",
+      "bytes": 270,
+      "sha256": "07ef6e68913c2c104500caf078a1fd4584e49ceffb8af5a2c4b920612abf5fc4"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2588,
+      "sha256": "c2038c70312bfe7b6b6994d53d96c8d09c614dd139871a19e4a20a4e78b1c334"
+    },
+    {
+      "path": "REFERENCES.md",
+      "bytes": 221,
+      "sha256": "44f165646b16644ebf10a49da37acb6203fe6fe57aefa78c2c75bc5e8818891a"
+    },
+    {
+      "path": "RIGHTS-AND-ATTRIBUTION.md",
+      "bytes": 260,
+      "sha256": "fc3aaa07ff2d5aaec6522039d5762590de847a30ac4fc0411e7348bf10b1b965"
+    },
+    {
+      "path": "SUPPORT-AND-MAINTENANCE.md",
+      "bytes": 225,
+      "sha256": "5a806d0ffcb524528d014bed141b40d77c41e5aaaefdf1936f948d17be259a05"
+    },
+    {
+      "path": "appeal-and-review-worksheets.docx",
+      "bytes": 10728,
+      "sha256": "29f1bbd9772cf3ef0a233e2f836d43ea1238dd4aa9209e0dd287b69fe9b96bb8"
+    },
+    {
+      "path": "appeal-and-review-worksheets.md",
+      "bytes": 654,
+      "sha256": "6d3ddea19b04eb1fd9b8c63082ae0e88b7f96bab9b09c8722af00bebb3d0b9bf"
+    },
+    {
+      "path": "decision-fixtures.json",
+      "bytes": 808,
+      "sha256": "0f73c196067d904f5dca8a969bad33fdd63ef9e478f710c76d211ceb6ef563c9"
+    },
+    {
+      "path": "monitoring-stack.json",
+      "bytes": 876,
+      "sha256": "16c562977e1c58f5ed7dd2d9f4fd0970aba6752d2b3f9b313128a629d5e6f850"
+    },
+    {
+      "path": "monitoring-workbook.csv",
+      "bytes": 469,
+      "sha256": "ec75cb1818ae7eea21e67eb54e63737fff1e09d93aefd5c33e4b38700a8a4f43"
+    },
+    {
+      "path": "monitoring-workbook.xlsx",
+      "bytes": 7366,
+      "sha256": "81127ac2c3c4edeaebf12b7fd2efef203f0d34c0e2415698b663dd7e43e480a6"
+    },
+    {
+      "path": "monthly-review.ics",
+      "bytes": 340,
+      "sha256": "ca328534aefee25d94e20c5345fa5e55593f5992a1ec0765f5ac339f9d077f6a"
+    },
+    {
+      "path": "monthly-review.md",
+      "bytes": 936,
+      "sha256": "ba549419998300d6b53b76dc811b3df10f714b69779d672c4479c21234d00743"
+    },
+    {
+      "path": "nervous-system-crosswalk.json",
+      "bytes": 1199,
+      "sha256": "9315f65554fb985d8f776b81163284cc17e8d4dc63d62fb1c337b3128ac21e5b"
+    },
+    {
+      "path": "nist-response-protocol.json",
+      "bytes": 1612,
+      "sha256": "9ebf542bcc4cb757734f3d46fabee3d96a65cbd320f7f91de9b5ab3f22875ca8"
+    },
+    {
+      "path": "observation-ledger.csv",
+      "bytes": 245,
+      "sha256": "ed7a99fdaef8a48078fe201cfe3973ac8bb0fa32562a2d1b4092b2d96df06179"
+    },
+    {
+      "path": "platform-risk-intelligence-playbook.pdf",
+      "bytes": 117041,
+      "sha256": "af5961b38acaebd8e9b246d65ccd19ea5190ec0b06dc9d50d8ad46c450539f5d"
+    },
+    {
+      "path": "platform-risk-playbook.md",
+      "bytes": 2588,
+      "sha256": "c2038c70312bfe7b6b6994d53d96c8d09c614dd139871a19e4a20a4e78b1c334"
+    },
+    {
+      "path": "policy-ledger.csv",
+      "bytes": 2313,
+      "sha256": "02cec73169ac215786537ee472fa8a0d39e4c2df7c052eef85173d3eb7862f78"
+    },
+    {
+      "path": "reduced-distribution-taxonomy.json",
+      "bytes": 2175,
+      "sha256": "28fed7b49e338ab3ffa94a90febc4ed9bdda79e3cba800e51509ac6ec012f89c"
+    },
+    {
+      "path": "source-ledger.json",
+      "bytes": 4344,
+      "sha256": "3e61e0880ba7724298a28e79f2f6a8e2a51b580b93b458ebb4e02b82430bf08d"
+    },
+    {
+      "path": "tool-and-pricing-ledger.csv",
+      "bytes": 865,
+      "sha256": "d9719bbd36cf100324befb93a7886ab1c8ae3c2b3c2a1ba9182267c0eb742044"
+    }
+  ],
+  "boundary": "A dated monitoring and response aid, not proof of suppression, diagnosis of any person, legal or medical advice, platform access, appeal-success assurance, or restored-distribution guarantee. Platform ranking and enforcement systems are opaque and change; reverify every policy, price, account surface, and decision before consequential use."
+}

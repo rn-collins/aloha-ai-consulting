@@ -1,0 +1,4 @@
+Scenario,Mean,Sample SD,Current,Lower Control Limit,Below Limit,Official Notice,Decision
+normal-variation,1000,79.0569,950,"=MAX(0,B2-3*C2)","=D2<E2",0,"=IF(G2=1,""respond"",IF(F2=1,""investigate"",""observe""))"
+suspected-reduction,1000,79.0569,500,"=MAX(0,B3-3*C3)","=D3<E3",0,"=IF(G3=1,""respond"",IF(F3=1,""investigate"",""observe""))"
+confirmed-enforcement,1000,79.0569,500,"=MAX(0,B4-3*C4)","=D4<E4",1,"=IF(G4=1,""respond"",IF(F4=1,""investigate"",""observe""))"

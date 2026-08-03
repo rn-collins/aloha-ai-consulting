@@ -1,0 +1,54 @@
+{
+  "schema": "nsapri-response/1.0",
+  "mappingNote": "Adaptation of NIST AI RMF functions for internal platform-risk operations; not NIST endorsement or a claim that platform ranking is itself an AI-RMF implementation.",
+  "protocol": [
+    {
+      "tier": 1,
+      "name": "Observe",
+      "nist": [
+        "GOVERN",
+        "MAP"
+      ],
+      "trigger": "inside control limits; no official notice",
+      "actions": [
+        "preserve data",
+        "continue cadence",
+        "record alternatives"
+      ],
+      "stop": "no escalation without new evidence"
+    },
+    {
+      "tier": 2,
+      "name": "Investigate",
+      "nist": [
+        "MAP",
+        "MEASURE"
+      ],
+      "trigger": "below control limit or repeated comparable anomaly; no confirming platform state",
+      "actions": [
+        "validate measurement",
+        "run matched controls",
+        "inspect official status",
+        "independent review"
+      ],
+      "stop": "return to Observe when data fault or ordinary variation explains signal; escalate only on corroboration"
+    },
+    {
+      "tier": 3,
+      "name": "Respond",
+      "nist": [
+        "GOVERN",
+        "MEASURE",
+        "MANAGE"
+      ],
+      "trigger": "official enforcement/eligibility record or independently reviewed convergent evidence",
+      "actions": [
+        "preserve notice and policy version",
+        "pause risky repetition",
+        "submit bounded appeal if available",
+        "monitor outcome"
+      ],
+      "stop": "close on documented resolution, exhausted route, or owner decision; never infer guaranteed restoration"
+    }
+  ]
+}
