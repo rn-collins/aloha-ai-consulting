@@ -2,7 +2,7 @@
 
 Date: 2026-08-02
 
-Status: passed locally within the 34-route public download/export boundary; publication and production verification pending; R08 remains open
+Status: passed within the 34-route public download/export boundary after exact-tree GitHub publication and production verification; Unit 5 closed; R08 remains open
 
 Frozen audit baseline: 4,289 promise records / 9,552 occurrences; unchanged
 
@@ -43,7 +43,14 @@ The release suite verified that export-labelled pages loaded the shared browser 
 
 ## Production verification
 
-Pending GitHub publication and exact-tree Vercel production verification.
+- GitHub `main` implementation commit: `390fe33eb592fee7184b92fc68e83bae7db204b0`.
+- Exact published Git tree: `2fee6732521cb1f3c6c4c503e152e263049519b6`.
+- Vercel production deployment: `dpl_F6YGYAPuxvLb9khLJ8VAeEEgjczd`, state `READY`, target `production`, with Git metadata tied to the exact implementation commit.
+- `/artifacts/public-download-evidence-evaluation.json`, `/api/public-download-evidence-register.json`, `/api/release-control-report.json`, and `/program/promise-delivery/promise-release-registry.json` returned HTTP 200.
+- The live evaluator reported 10/10 checks, 34 governed routes, 38 represented actions, five delivery families, and zero findings.
+- Live release totals matched 262 resources, 505 public surfaces including recovery, 9,782 interactions, and 5,368 promise records / 12,013 occurrences; release-control errors remained zero.
+- Vercel reported no runtime errors for the project in the verification window.
+- Browser-control tooling was not exposed in this session, so this verification does not claim an independent button click, saved-file inspection, screenshot, browser-console capture, responsive-layout review, or visual-design certification.
 
 ## Remaining R08 work
 
@@ -53,4 +60,4 @@ Pending GitHub publication and exact-tree Vercel production verification.
 
 ## Decision
 
-LOCAL PASS within the stated 34-route, 38-action boundary. Unit 5 is release-ready but not production-closed. R08 remains open.
+PASS within the stated 34-route, 38-action boundary. Unit 5 is production-closed. R08 remains open.
