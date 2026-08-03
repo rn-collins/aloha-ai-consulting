@@ -3,7 +3,7 @@
 **Frozen audit baseline:** 4,289 grouped claims / 9,552 occurrences  
 **Current reviewed estate:** 262 canonical resources / 505 public surfaces / 9,782 interactions / 5,368 promise records / 12,013 occurrences  
 **Tranche:** R08 — Existing asset connection and substantive destination depth  
-**Status:** passed locally within the twenty-nine-resource use-case and standalone-learning boundary; publication and production verification pending; R08 remains open
+**Status:** passed within the twenty-nine-resource use-case and standalone-learning boundary after exact-tree GitHub publication and production verification; Unit 9 closed; R08 remains open
 
 ## Purpose and boundary
 
@@ -34,7 +34,14 @@ A passing result does not certify implementation outcomes, professional suitabil
 
 ## Publication and production verification
 
-Pending exact-tree GitHub publication and production deployment verification.
+- GitHub `main` evaluated implementation commit: `9fe82a79040b0be09bb205fddad620b6ac8a6ede`.
+- Exact evaluated Git tree: `f495bdfb7cc0bde883dbc5e2ecfb11f11993762e`.
+- Vercel production deployment: `dpl_CbRerm2HyxGbJp2cfYXYTAwSnQ1L`, state `READY`, target `production`, tied to the exact evaluated commit.
+- `/artifacts/use-case-learning-evidence-evaluation.json`, `/api/use-case-learning-evidence-register.json`, `/api/release-control-report.json`, and `/program/promise-delivery/promise-release-registry.json` returned HTTP 200.
+- The live evaluator reported 11/11 checks, twenty-nine canonical resources, seventeen use cases, five applied stacks, twelve University use cases, twelve standalone lessons, 118 excluded course lessons, and zero findings.
+- Live release totals remained 262 resources and 5,368 promise records / 12,013 occurrences, with zero release-control errors.
+- The dedicated Vercel runtime-error and build-log queries returned HTTP 403 because the active connector credential was not authorized for that team-scoped log resource. Production verification therefore does not claim a private runtime-log scan; it relies on the exact `READY` deployment record and successful live requests to all required surfaces.
+- Browser-control tooling was not exposed in this session, so verification does not claim screenshot capture, browser-console review, responsive-layout review, or visual-design certification.
 
 ## Remaining R08 work
 
@@ -44,4 +51,4 @@ Pending exact-tree GitHub publication and production deployment verification.
 
 ## Decision
 
-PASS locally within the stated twenty-nine-resource boundary. Unit 9 awaits publication and production verification. R08 remains open.
+PASS within the stated twenty-nine-resource boundary. Unit 9 is production-closed. R08 remains open.
