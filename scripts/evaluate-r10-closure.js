@@ -40,6 +40,11 @@ check('R10-15', registeredIds.length === 4289 && new Set(registeredIds).size ===
 check('R10-16', evidence?.units?.every((unit) => unit.provenance && unit.provenanceGrade), 'Every reconstructed unit must disclose its provenance and provenance grade.');
 check('R10-17', evidence?.recoveryMethod && Array.isArray(evidence?.limitations) && evidence.limitations.length >= 3, 'Controlled denominator recovery must disclose its method and material limitations.');
 check('R10-18', evidence?.counts?.deferred === evidence?.units?.filter((unit) => unit.terminalState === 'deferred').length, 'Declared deferred count must match unit states.');
+check('R10-21', evidence?.reAudit?.reviewedPromiseRecords === 4289, 'The current-registry lineage pass must review all 4,289 frozen promise records.');
+check('R10-22', evidence?.reAudit?.presentVerbatim === 3210 && evidence?.reAudit?.notPresentVerbatim === 1079, 'Lineage results must reconcile to 3,210 verbatim survivors and 1,079 records requiring disposition lineage.');
+check('R10-23', evidence?.reAudit?.fullyVerbatimSlots === 7 && evidence?.reAudit?.slotsRequiringDispositionLineage === 318, 'Slot-level lineage results must reconcile to seven fully verbatim slots and 318 requiring disposition lineage.');
+check('R10-24', evidence?.units?.every((unit) => unit.reAudit?.reviewedPromiseCount === unit.promiseIds.length && unit.reAudit.promiseReview.length === unit.promiseIds.length), 'Every reconstructed slot must contain a promise-level lineage decision for every assigned frozen promise.');
+check('R10-25', evidence?.units?.every((unit) => unit.reAudit?.presentVerbatim + unit.reAudit?.notPresentVerbatim === unit.promiseIds.length), 'Every slot lineage summary must reconcile to its assigned promise count.');
 check('R10-19', evidence?.counts?.deferred === 0, 'Program closure requires every reconstructed unit to reach a supported passed or explicitly blocked terminal decision.');
 check('R10-20', findings.length === 0, 'Program closure requires zero R10 findings.');
 

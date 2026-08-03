@@ -1,6 +1,6 @@
 {
   "schema": "aloha-ai-r10-closure-evaluation/1.0",
-  "generatedAt": "2026-08-03T21:42:51.151Z",
+  "generatedAt": "2026-08-03T22:09:34.598Z",
   "decision": "closure-blocked",
   "frozenEvidenceUnits": 325,
   "checks": [
@@ -93,6 +93,31 @@
       "id": "R10-18",
       "pass": true,
       "detail": "Declared deferred count must match unit states."
+    },
+    {
+      "id": "R10-21",
+      "pass": true,
+      "detail": "The current-registry lineage pass must review all 4,289 frozen promise records."
+    },
+    {
+      "id": "R10-22",
+      "pass": true,
+      "detail": "Lineage results must reconcile to 3,210 verbatim survivors and 1,079 records requiring disposition lineage."
+    },
+    {
+      "id": "R10-23",
+      "pass": true,
+      "detail": "Slot-level lineage results must reconcile to seven fully verbatim slots and 318 requiring disposition lineage."
+    },
+    {
+      "id": "R10-24",
+      "pass": true,
+      "detail": "Every reconstructed slot must contain a promise-level lineage decision for every assigned frozen promise."
+    },
+    {
+      "id": "R10-25",
+      "pass": true,
+      "detail": "Every slot lineage summary must reconcile to its assigned promise count."
     },
     {
       "id": "R10-19",
