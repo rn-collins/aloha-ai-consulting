@@ -2,7 +2,7 @@
 
 Date: 2026-08-02
 
-Status: passed locally within the seventeen-resource monitor and research boundary; publication and production verification pending; R08 remains open
+Status: passed within the seventeen-resource monitor and research boundary after exact-tree GitHub publication and production verification; Unit 7 closed; R08 remains open
 
 Frozen audit baseline: 4,289 promise records / 9,552 occurrences; unchanged
 
@@ -45,7 +45,16 @@ It does not certify unattended retrieval, automatic or real-time alerts, compreh
 
 ## Production verification
 
-Pending exact-tree GitHub publication and Vercel production verification.
+- GitHub `main` implementation commit: `22700d63f9c7ee6b09f9beacc73f91385354e60c`.
+- Exact published Git tree: `c31dbb3137e1a2b219ba012cc74eb02e1a2f50e3`.
+- Vercel production deployment: `dpl_B51cK8PdTbuEGra77KhmY62R5QVm`, state `READY`, target `production`, with Git metadata tied to the exact implementation commit.
+- `/artifacts/monitor-research-evidence-evaluation.json`, `/api/monitor-research-evidence-register.json`, `/api/release-control-report.json`, `/program/promise-delivery/promise-release-registry.json`, `/notes`, `/builds`, and `/search-index.json` returned HTTP 200.
+- The live evaluator reported 11/11 checks, 17 canonical resources, 11 monitors, 6 research publications, 2 maintained-manual records, 9 dated demonstrations, 6 read-only research publications, and zero findings.
+- The live Research Notes route rendered the publication-versus-maintenance boundary and did not render the superseded blanket maintained-resource claim.
+- The live search artifact contained the corrected illustrative-stream language and did not contain the superseded `six live streams` claim. The aggregate collection heading is canonical governed source copy but is not rendered on the current priority Builds route; verification therefore does not misstate it as a visible heading.
+- Live release totals matched 262 resources and 5,368 promise records / 12,013 occurrences; release-control errors remained zero.
+- Vercel reported no runtime errors for the project in the verification window.
+- Browser-control tooling was not exposed in this session, so this verification does not claim independent field entry, button activation, screenshot, browser-console capture, responsive-layout review, or visual-design certification.
 
 ## Remaining R08 work
 
@@ -55,4 +64,4 @@ Pending exact-tree GitHub publication and Vercel production verification.
 
 ## Decision
 
-PASS locally within the stated seventeen-resource boundary. Production closure remains pending. R08 remains open.
+PASS within the stated seventeen-resource boundary. Unit 7 is production-closed. R08 remains open.
