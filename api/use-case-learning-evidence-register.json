@@ -1,0 +1,126 @@
+{
+  "schema": "aloha-ai-use-case-learning-evidence-register/1.0",
+  "version": "1.0.0",
+  "reviewedAt": "2026-08-02",
+  "reviewedBy": "Aloha AI promise-delivery remediation R08",
+  "scope": "All seventeen canonical use cases and the twelve standalone public lessons under /university/learn in the current resource registry.",
+  "boundary": "This register proves that each represented use case or standalone lesson has a canonical public page, substantive checked-in guidance, evidence and limitation metadata, and an honest read-only publication boundary. It does not certify implementation outcomes, professional suitability, ongoing maintenance, current vendor features, external execution, course completion, grading, credentials, or the 118 course-lesson records governed with their parent courses under R05.",
+  "records": [
+    {
+      "resourceId": "founder-startup-stack",
+      "deliveryMode": "read-only-applied-stack"
+    },
+    {
+      "resourceId": "law-firm-stack",
+      "deliveryMode": "read-only-applied-stack"
+    },
+    {
+      "resourceId": "policy-advocacy-stack",
+      "deliveryMode": "read-only-applied-stack"
+    },
+    {
+      "resourceId": "regulated-intelligence-stack",
+      "deliveryMode": "read-only-applied-stack"
+    },
+    {
+      "resourceId": "research-lab-stack",
+      "deliveryMode": "read-only-applied-stack"
+    },
+    {
+      "resourceId": "admin-use-case",
+      "deliveryMode": "read-only-university-use-case"
+    },
+    {
+      "resourceId": "client-service-use-case",
+      "deliveryMode": "read-only-university-use-case"
+    },
+    {
+      "resourceId": "governance-use-case",
+      "deliveryMode": "read-only-university-use-case"
+    },
+    {
+      "resourceId": "knowledge-management-use-case",
+      "deliveryMode": "read-only-university-use-case"
+    },
+    {
+      "resourceId": "law-firms-use-case",
+      "deliveryMode": "read-only-university-use-case"
+    },
+    {
+      "resourceId": "leadership-use-case",
+      "deliveryMode": "read-only-university-use-case"
+    },
+    {
+      "resourceId": "marketing-use-case",
+      "deliveryMode": "read-only-university-use-case"
+    },
+    {
+      "resourceId": "operations-use-case",
+      "deliveryMode": "read-only-university-use-case"
+    },
+    {
+      "resourceId": "research-use-case",
+      "deliveryMode": "read-only-university-use-case"
+    },
+    {
+      "resourceId": "sales-use-case",
+      "deliveryMode": "read-only-university-use-case"
+    },
+    {
+      "resourceId": "small-businesses-use-case",
+      "deliveryMode": "read-only-university-use-case"
+    },
+    {
+      "resourceId": "training-use-case",
+      "deliveryMode": "read-only-university-use-case"
+    },
+    {
+      "resourceId": "what-generative-ai-is-lesson",
+      "deliveryMode": "read-only-standalone-lesson"
+    },
+    {
+      "resourceId": "what-ai-can-and-cannot-do-lesson",
+      "deliveryMode": "read-only-standalone-lesson"
+    },
+    {
+      "resourceId": "when-not-to-use-ai-lesson",
+      "deliveryMode": "read-only-standalone-lesson"
+    },
+    {
+      "resourceId": "prompting-fundamentals-lesson",
+      "deliveryMode": "read-only-standalone-lesson"
+    },
+    {
+      "resourceId": "hallucinations-and-risk-lesson",
+      "deliveryMode": "read-only-standalone-lesson"
+    },
+    {
+      "resourceId": "how-to-verify-ai-outputs-lesson",
+      "deliveryMode": "read-only-standalone-lesson"
+    },
+    {
+      "resourceId": "privacy-and-confidentiality-lesson",
+      "deliveryMode": "read-only-standalone-lesson"
+    },
+    {
+      "resourceId": "choose-your-first-ai-stack-lesson",
+      "deliveryMode": "read-only-standalone-lesson"
+    },
+    {
+      "resourceId": "ai-assistant-comparison-lesson",
+      "deliveryMode": "read-only-standalone-lesson"
+    },
+    {
+      "resourceId": "ai-for-email-lesson",
+      "deliveryMode": "read-only-standalone-lesson"
+    },
+    {
+      "resourceId": "ai-for-meeting-notes-lesson",
+      "deliveryMode": "read-only-standalone-lesson"
+    },
+    {
+      "resourceId": "ai-for-sop-drafting-lesson",
+      "deliveryMode": "read-only-standalone-lesson"
+    }
+  ]
+}

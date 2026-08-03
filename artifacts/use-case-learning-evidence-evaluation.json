@@ -1,0 +1,28 @@
+{
+  "schema": "aloha-ai-use-case-learning-evidence-evaluation/1.0",
+  "evaluatedAt": "2026-08-02",
+  "scope": "All seventeen canonical use cases and the twelve standalone public lessons under /university/learn in the current resource registry.",
+  "boundary": "This register proves that each represented use case or standalone lesson has a canonical public page, substantive checked-in guidance, evidence and limitation metadata, and an honest read-only publication boundary. It does not certify implementation outcomes, professional suitability, ongoing maintenance, current vendor features, external execution, course completion, grading, credentials, or the 118 course-lesson records governed with their parent courses under R05.",
+  "counts": {
+    "canonicalResources": 29,
+    "useCases": 17,
+    "appliedStacks": 5,
+    "universityUseCases": 12,
+    "standaloneLessons": 12,
+    "excludedCourseLessons": 118
+  },
+  "checks": {
+    "registerSchema": true,
+    "exactCanonicalCoverage": true,
+    "uniqueRecords": true,
+    "canonicalPages": true,
+    "substantiveMetadata": true,
+    "contentDepth": true,
+    "releaseMetadata": true,
+    "readOnlyBoundaries": true,
+    "familyContracts": true,
+    "renderedBoundaries": true,
+    "noFindings": true
+  },
+  "findings": []
+}
