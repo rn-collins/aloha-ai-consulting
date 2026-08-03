@@ -2,7 +2,7 @@
 
 Date: 2026-08-02
 
-Status: passed locally within the six-record cross-practice boundary; GitHub publication and production verification pending; Unit 3 remains open until production verification; R08 remains open
+Status: passed within the six-record cross-practice boundary after exact-tree GitHub publication and production verification; Unit 3 closed; R08 remains open
 
 Frozen audit baseline: 4,289 promise records / 9,552 occurrences; unchanged
 
@@ -36,7 +36,7 @@ It does not publish private repositories or client records; certify account anal
 - Cross-practice evaluator: 10/10 checks passed.
 - Represented practices and projects: 6.
 - Confirmed connected repositories: 4.
-- Confirmed connected Vercel projects: 3.
+- Confirmed connected Vercel projects: 2.
 - Governed public destinations: 2.
 - Reachable external destinations: 1; NSAG returned HTTP 200 on the review date.
 - Evaluator findings: 0.
@@ -51,23 +51,22 @@ It does not publish private repositories or client records; certify account anal
 
 ## Production verification
 
-Pending GitHub publication and exact-tree Vercel verification.
-
-Required production checks:
-
-- GitHub `main` must contain the exact locally validated tree.
-- The corresponding Vercel production deployment must reach `READY` and identify the implementation commit.
-- `/practice`, `/artifacts/cross-practice-estate-evaluation.json`, `/api/release-control-report.json`, and `/program/promise-delivery/promise-release-registry.json` must return HTTP 200.
-- Live Practice copy must contain the governed public-proof, private-record, editorial, newsletter, and NSAG boundaries and the inspectable NSAG link.
-- Live Practice copy must not contain the superseded live-build total, position/outreach totals, fixed newsletter cadence/date, retired editorial launch claim, or plain-text “full framework” destination.
-- Live evaluator and release totals must match the evaluated tree, and relevant production runtime errors must be reviewed.
+- GitHub `main` implementation commit: `7d9a30113fc40fe1ba8955c2969ba5aa2cfa7876`.
+- Exact published Git tree: `16c5885ee7702c0065cc56fa4ed8f8f79cb6aa5b`.
+- Vercel production deployment: `dpl_ExzWuwWkDGf8jXSbrzYzst6uuZQ5`, state `READY`, target `production`, with Git metadata tied to the exact implementation commit.
+- `/practice`, `/artifacts/cross-practice-estate-evaluation.json`, `/api/release-control-report.json`, and `/program/promise-delivery/promise-release-registry.json` returned HTTP 200.
+- Live Practice copy rendered the governed public-proof boundary, private clerking and outreach boundaries, editorial and planned-newsletter qualifications, and an inspectable NSAG link with the separate assurance boundary.
+- Live Practice copy did not render the superseded twenty-three-live-build total, position or outreach totals, fixed newsletter cadence or release date, retired “Unregulated” launch claim, or the plain-text “full framework” destination.
+- The live evaluator reported 10/10 checks, six represented practices/projects, four confirmed repositories, two confirmed Vercel projects, two governed public destinations, one reachable external destination, and zero findings.
+- Live release totals matched 262 resources, 505 public surfaces including recovery, 9,782 interactions, and 5,368 promise records / 12,013 occurrences; release-control errors remained zero.
+- Vercel reported no runtime errors for the checked Practice and evidence routes in the verification window.
+- Browser-control tooling was not exposed in this session, so this verification does not claim an independent screenshot, browser-console capture, responsive-layout review, or visual-design certification.
 
 ## Remaining R08 work
 
-- Publish and production-verify this six-record correction.
 - Inventory other publicly represented repositories, deployments, downloads, prototypes, engagements, and private systems outside the bounded cross-practice section.
 - Continue artifact-depth and destination work in dependency order.
 
 ## Decision
 
-PASS locally within the stated six-record boundary. Publication evidence is pending, so Unit 3 is not production-closed. R08 remains open.
+PASS within the stated six-record boundary. Unit 3 is production-closed. R08 remains open for the wider represented-asset and destination inventory.
