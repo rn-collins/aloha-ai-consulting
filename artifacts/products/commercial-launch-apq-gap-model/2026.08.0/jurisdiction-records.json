@@ -1,0 +1,120 @@
+{
+  "schema": "apq-jurisdictions/1.0",
+  "cutoff": "2026-08-03",
+  "boundary": "This dated educational comparison is not legal, investment, licensing, clinical, or market advice. A state authorization is not proof that a program is operational, an applicant is eligible, a license will issue, funding exists, or federal law permits the conduct. Reverify every consequential value with the named authority and qualified counsel.",
+  "records": [
+    {
+      "state": "Oregon",
+      "authority": 3,
+      "posture": 3,
+      "quantification": 3,
+      "status": "operational",
+      "effectiveDate": "2021-01-01",
+      "implementationDate": "2023-01-02",
+      "primary": [
+        "OR-STAT",
+        "OR-RULE",
+        "OR-OPS",
+        "OR-FEE"
+      ],
+      "fees": [
+        {
+          "item": "Service-center annual license",
+          "amount": 10000,
+          "currency": "USD",
+          "status": "current-at-cutoff",
+          "sourceId": "OR-FEE"
+        }
+      ],
+      "deadlines": [
+        {
+          "item": "License renewal continuity",
+          "value": "Complete renewal application at least 60 days before expiry",
+          "status": "current-at-cutoff",
+          "sourceId": "OR-RULE"
+        }
+      ],
+      "unknowns": [
+        "Fees and rules can change; verify the live OPS and Secretary of State sources before filing."
+      ],
+      "total": 9,
+      "max": 9,
+      "scoreStatus": "dated-score"
+    },
+    {
+      "state": "Colorado",
+      "authority": 3,
+      "posture": 3,
+      "quantification": 2,
+      "status": "operational-regulated-rollout",
+      "effectiveDate": "2023-01-01",
+      "implementationDate": "2025-01-01",
+      "primary": [
+        "CO-STAT",
+        "CO-DORA",
+        "CO-RULE",
+        "CO-REV"
+      ],
+      "fees": [
+        {
+          "item": "Applicant-specific license and application fees",
+          "amount": null,
+          "currency": "USD",
+          "status": "verify-current-schedule",
+          "sourceId": "CO-REV"
+        }
+      ],
+      "deadlines": [
+        {
+          "item": "Applicant deadline",
+          "value": null,
+          "status": "applicant-specific-or-unpublished",
+          "sourceId": "CO-DORA"
+        }
+      ],
+      "unknowns": [
+        "Do not infer a fee or filing deadline from a secondary summary; use the current regulator schedule."
+      ],
+      "total": 8,
+      "max": 9,
+      "scoreStatus": "dated-score"
+    },
+    {
+      "state": "New Mexico",
+      "authority": 3,
+      "posture": 1,
+      "quantification": 1,
+      "status": "enacted-implementation-pending",
+      "effectiveDate": null,
+      "implementationDate": null,
+      "primary": [
+        "NM-ACT",
+        "NM-TEXT",
+        "NM-FIR"
+      ],
+      "fees": [
+        {
+          "item": "Program license or participation fees",
+          "amount": null,
+          "currency": "USD",
+          "status": "unpublished-at-cutoff",
+          "sourceId": "NM-TEXT"
+        }
+      ],
+      "deadlines": [
+        {
+          "item": "Operational application opening",
+          "value": null,
+          "status": "unpublished-at-cutoff",
+          "sourceId": "NM-TEXT"
+        }
+      ],
+      "unknowns": [
+        "Enactment is not operational availability; agency rules, forms, fees, and opening dates require verification."
+      ],
+      "total": 5,
+      "max": 9,
+      "scoreStatus": "hold-for-verification"
+    }
+  ]
+}

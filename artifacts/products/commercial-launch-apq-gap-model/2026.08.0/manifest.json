@@ -1,0 +1,127 @@
+{
+  "schema": "apq-release-manifest/1.0",
+  "artifactId": "psilocybin-regulatory-map",
+  "artifactName": "Commercial-Launch APQ Gap Model",
+  "version": "2026.08.0",
+  "releaseDate": null,
+  "state": "frozen-pre-release",
+  "evidenceCutoff": "2026-08-03",
+  "contents": [
+    "APQ scoring specification and rubric",
+    "Oregon, Colorado, and New Mexico source-pinned records",
+    "per-state comparison tables",
+    "fee and deadline ledger",
+    "funder verification method",
+    "candidate funder/client classification worksheet",
+    "verification ledger",
+    "change-watch register"
+  ],
+  "files": [
+    {
+      "path": "ACCESSIBILITY.md",
+      "bytes": 220,
+      "sha256": "a0c083cc4346c9e4fc94fd8517dde22fe4a3a90f02b700c7c35933c916c5002f"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 202,
+      "sha256": "31b86bc7cec358f1946e0d5bf6c155d3ce419d2a390d77e77fc34b4c93156010"
+    },
+    {
+      "path": "LICENSE.md",
+      "bytes": 415,
+      "sha256": "a27cba476a9a49832aaae2ba58038820834eb9bebcccf3bdc22050df9ae5cd52"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2136,
+      "sha256": "0e5f6052ece4003724449efdb0fcb2dfb4270d74b2fd075035a2e5f0078eb675"
+    },
+    {
+      "path": "RIGHTS-AND-ATTRIBUTION.md",
+      "bytes": 269,
+      "sha256": "bc0c2804279fcd515d55f2146fb622e294337173e2c37d480dd2e1bcb19f9cc6"
+    },
+    {
+      "path": "SUPPORT-AND-MAINTENANCE.md",
+      "bytes": 310,
+      "sha256": "e57ffd5dfd91178717e2d040c35178b0ec1907b9d190db403a1f5100195931fd"
+    },
+    {
+      "path": "apq-model.csv",
+      "bytes": 213,
+      "sha256": "d1cbcc794329faf2cb65ecbd49b3db1300664219fdc2168445296816f043cc5a"
+    },
+    {
+      "path": "apq-model.xlsx",
+      "bytes": 7222,
+      "sha256": "a8edf1afc88b1d272f9e5a773b4bcac01f51f6bf31b7f3318e0f919a4ec38a6d"
+    },
+    {
+      "path": "apq-rubric.json",
+      "bytes": 1815,
+      "sha256": "e98ca8e3b7dc840e9d527a8adbd2390bb1c978819f51fc207b828f4917831bed"
+    },
+    {
+      "path": "candidate-classification-examples.json",
+      "bytes": 2284,
+      "sha256": "0a975ccd4497bca68194cb2205949a9026a30c2b46118723eb99f08b8f2160b5"
+    },
+    {
+      "path": "candidate-funder-client-worksheet.csv",
+      "bytes": 1082,
+      "sha256": "6593ae5b300a637f388e9ebc2c338708e8ea27ad1e4894323ab99d1f279cb57a"
+    },
+    {
+      "path": "change-watch-register.json",
+      "bytes": 5919,
+      "sha256": "422de1edcb17ac4fac9fe64012255d29778fd679ab44d350c7fc84d30c9dfb69"
+    },
+    {
+      "path": "commercial-launch-apq-gap-model-guide.pdf",
+      "bytes": 116215,
+      "sha256": "682b9a21137cf252a19c971e17b4a9ad193652be8a3c3ac53cd651d7c6494f5d"
+    },
+    {
+      "path": "fee-deadline-ledger.csv",
+      "bytes": 713,
+      "sha256": "05cbc97122e56bf8afc93f98752ad36737d7a2a90f8b0a69d070e3d33a0c3b10"
+    },
+    {
+      "path": "jurisdiction-records.json",
+      "bytes": 3419,
+      "sha256": "5d9bb85fe59271dfaf69a47552e8305eccc53d51583db7150a399e09f57329f5"
+    },
+    {
+      "path": "methodology.md",
+      "bytes": 2136,
+      "sha256": "0e5f6052ece4003724449efdb0fcb2dfb4270d74b2fd075035a2e5f0078eb675"
+    },
+    {
+      "path": "source-ledger.csv",
+      "bytes": 2734,
+      "sha256": "280573c5d150eaa4205fed36a1a004249fdd5d414137063d1094720f18815698"
+    },
+    {
+      "path": "source-ledger.json",
+      "bytes": 4374,
+      "sha256": "78cc8920f289925eaa27d6581d4678bbdf6d4c3e46438fae30eaa4f4b53f294b"
+    },
+    {
+      "path": "state-comparison.md",
+      "bytes": 2136,
+      "sha256": "0e5f6052ece4003724449efdb0fcb2dfb4270d74b2fd075035a2e5f0078eb675"
+    },
+    {
+      "path": "verification-ledger.csv",
+      "bytes": 1619,
+      "sha256": "4948242490846f2e43ffc85a68aa07311f9ede8f9aae07cd885862e2b1cf91bf"
+    },
+    {
+      "path": "verification-ledger.json",
+      "bytes": 3476,
+      "sha256": "05ebfa78e64b6a643880ac929d7370e66fc1b893cb0ce82db55c62f6c404282f"
+    }
+  ],
+  "boundary": "Package completeness does not make acquisition available; checkout and fulfillment remain unimplemented."
+}

@@ -1,0 +1,7 @@
+state,type,item,amount,currency,value,status,source_id
+"Oregon","fee","Service-center annual license","10000","USD","","current-at-cutoff","OR-FEE"
+"Oregon","deadline","License renewal continuity","","","Complete renewal application at least 60 days before expiry","current-at-cutoff","OR-RULE"
+"Colorado","fee","Applicant-specific license and application fees","","USD","","verify-current-schedule","CO-REV"
+"Colorado","deadline","Applicant deadline","","","","applicant-specific-or-unpublished","CO-DORA"
+"New Mexico","fee","Program license or participation fees","","USD","","unpublished-at-cutoff","NM-TEXT"
+"New Mexico","deadline","Operational application opening","","","","unpublished-at-cutoff","NM-TEXT"

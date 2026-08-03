@@ -1,0 +1,171 @@
+{
+  "schema": "apq-change-watch/1.0",
+  "cutoff": "2026-08-03",
+  "events": [
+    {
+      "jurisdiction": "Oregon",
+      "sourceId": "OR-STAT",
+      "watchFor": [
+        "statutory amendment",
+        "rulemaking",
+        "fee or form change",
+        "application opening or closure",
+        "license class or eligibility change",
+        "judicial or federal conflict"
+      ],
+      "cadence": "quarterly-and-before-consequential-use",
+      "owner": "assigned-human-reviewer",
+      "onChange": "freeze affected score, preserve prior version, verify source, document delta, issue a new version"
+    },
+    {
+      "jurisdiction": "Oregon",
+      "sourceId": "OR-RULE",
+      "watchFor": [
+        "statutory amendment",
+        "rulemaking",
+        "fee or form change",
+        "application opening or closure",
+        "license class or eligibility change",
+        "judicial or federal conflict"
+      ],
+      "cadence": "quarterly-and-before-consequential-use",
+      "owner": "assigned-human-reviewer",
+      "onChange": "freeze affected score, preserve prior version, verify source, document delta, issue a new version"
+    },
+    {
+      "jurisdiction": "Oregon",
+      "sourceId": "OR-OPS",
+      "watchFor": [
+        "statutory amendment",
+        "rulemaking",
+        "fee or form change",
+        "application opening or closure",
+        "license class or eligibility change",
+        "judicial or federal conflict"
+      ],
+      "cadence": "quarterly-and-before-consequential-use",
+      "owner": "assigned-human-reviewer",
+      "onChange": "freeze affected score, preserve prior version, verify source, document delta, issue a new version"
+    },
+    {
+      "jurisdiction": "Oregon",
+      "sourceId": "OR-FEE",
+      "watchFor": [
+        "statutory amendment",
+        "rulemaking",
+        "fee or form change",
+        "application opening or closure",
+        "license class or eligibility change",
+        "judicial or federal conflict"
+      ],
+      "cadence": "quarterly-and-before-consequential-use",
+      "owner": "assigned-human-reviewer",
+      "onChange": "freeze affected score, preserve prior version, verify source, document delta, issue a new version"
+    },
+    {
+      "jurisdiction": "Colorado",
+      "sourceId": "CO-STAT",
+      "watchFor": [
+        "statutory amendment",
+        "rulemaking",
+        "fee or form change",
+        "application opening or closure",
+        "license class or eligibility change",
+        "judicial or federal conflict"
+      ],
+      "cadence": "quarterly-and-before-consequential-use",
+      "owner": "assigned-human-reviewer",
+      "onChange": "freeze affected score, preserve prior version, verify source, document delta, issue a new version"
+    },
+    {
+      "jurisdiction": "Colorado",
+      "sourceId": "CO-DORA",
+      "watchFor": [
+        "statutory amendment",
+        "rulemaking",
+        "fee or form change",
+        "application opening or closure",
+        "license class or eligibility change",
+        "judicial or federal conflict"
+      ],
+      "cadence": "quarterly-and-before-consequential-use",
+      "owner": "assigned-human-reviewer",
+      "onChange": "freeze affected score, preserve prior version, verify source, document delta, issue a new version"
+    },
+    {
+      "jurisdiction": "Colorado",
+      "sourceId": "CO-RULE",
+      "watchFor": [
+        "statutory amendment",
+        "rulemaking",
+        "fee or form change",
+        "application opening or closure",
+        "license class or eligibility change",
+        "judicial or federal conflict"
+      ],
+      "cadence": "quarterly-and-before-consequential-use",
+      "owner": "assigned-human-reviewer",
+      "onChange": "freeze affected score, preserve prior version, verify source, document delta, issue a new version"
+    },
+    {
+      "jurisdiction": "Colorado",
+      "sourceId": "CO-REV",
+      "watchFor": [
+        "statutory amendment",
+        "rulemaking",
+        "fee or form change",
+        "application opening or closure",
+        "license class or eligibility change",
+        "judicial or federal conflict"
+      ],
+      "cadence": "quarterly-and-before-consequential-use",
+      "owner": "assigned-human-reviewer",
+      "onChange": "freeze affected score, preserve prior version, verify source, document delta, issue a new version"
+    },
+    {
+      "jurisdiction": "New Mexico",
+      "sourceId": "NM-ACT",
+      "watchFor": [
+        "statutory amendment",
+        "rulemaking",
+        "fee or form change",
+        "application opening or closure",
+        "license class or eligibility change",
+        "judicial or federal conflict"
+      ],
+      "cadence": "monthly-and-event-driven",
+      "owner": "assigned-human-reviewer",
+      "onChange": "freeze affected score, preserve prior version, verify source, document delta, issue a new version"
+    },
+    {
+      "jurisdiction": "New Mexico",
+      "sourceId": "NM-TEXT",
+      "watchFor": [
+        "statutory amendment",
+        "rulemaking",
+        "fee or form change",
+        "application opening or closure",
+        "license class or eligibility change",
+        "judicial or federal conflict"
+      ],
+      "cadence": "monthly-and-event-driven",
+      "owner": "assigned-human-reviewer",
+      "onChange": "freeze affected score, preserve prior version, verify source, document delta, issue a new version"
+    },
+    {
+      "jurisdiction": "New Mexico",
+      "sourceId": "NM-FIR",
+      "watchFor": [
+        "statutory amendment",
+        "rulemaking",
+        "fee or form change",
+        "application opening or closure",
+        "license class or eligibility change",
+        "judicial or federal conflict"
+      ],
+      "cadence": "monthly-and-event-driven",
+      "owner": "assigned-human-reviewer",
+      "onChange": "freeze affected score, preserve prior version, verify source, document delta, issue a new version"
+    }
+  ]
+}

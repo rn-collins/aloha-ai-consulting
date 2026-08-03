@@ -1,0 +1,4 @@
+State,Authority,Posture,Quantification,Calculated Total,Maximum,Evidence Status
+Oregon,3,3,3,=SUM(B2:D2),9,dated-score
+Colorado,3,3,2,=SUM(B3:D3),9,dated-score
+New Mexico,3,1,1,=SUM(B4:D4),9,hold-for-verification

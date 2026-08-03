@@ -1,0 +1,42 @@
+{
+  "schema": "apq-rubric/1.0",
+  "dimensions": [
+    {
+      "id": "A",
+      "name": "Authority",
+      "definition": "How complete and operative the primary legal authorization is.",
+      "anchors": {
+        "0": "No verified authority",
+        "1": "Proposal or nonbinding material only",
+        "2": "Enacted authority with material dependency",
+        "3": "Operative statute and accountable regulator"
+      }
+    },
+    {
+      "id": "P",
+      "name": "Posture-to-practice",
+      "definition": "How far the jurisdiction has moved from authorization to a usable regulated pathway.",
+      "anchors": {
+        "0": "No pathway",
+        "1": "Implementation pending",
+        "2": "Applications or partial rollout",
+        "3": "Operational regulated pathway"
+      }
+    },
+    {
+      "id": "Q",
+      "name": "Quantification",
+      "definition": "How fully a decision-maker can verify fees, dates, forms, license classes, and other launch inputs.",
+      "anchors": {
+        "0": "No verified inputs",
+        "1": "Material unknowns",
+        "2": "Some current official inputs",
+        "3": "Current official inputs sufficient for scoped comparison"
+      }
+    }
+  ],
+  "formula": "A + P + Q",
+  "maximum": 9,
+  "rule": "A numeric score is dated analytical judgment, not probability. Unknown, proposed, unpublished, superseded, or nonbinding inputs must be held or visibly flagged and cannot be represented as final facts.",
+  "boundary": "This dated educational comparison is not legal, investment, licensing, clinical, or market advice. A state authorization is not proof that a program is operational, an applicant is eligible, a license will issue, funding exists, or federal law permits the conduct. Reverify every consequential value with the named authority and qualified counsel."
+}
