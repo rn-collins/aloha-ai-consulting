@@ -31,4 +31,11 @@ Stable source-route and destination identity provides strong lineage evidence fo
 
 ## Production verification
 
-Pending bounded publication and exact-deployment verification.
+- Evaluated commit: `1e54cfb1e86ac2526be1f79d80e23202af9970b4`.
+- Evaluated tree: `7142c92643b7bab4389d0a89a7902fc850718a3a`.
+- Deployment: `dpl_8nRHPhxjMoDpN6uVNidzfqiLqC26` (`READY`, production).
+- Live R10 evaluation: 32 / 34 controls; closure blocked only by R10-19 and R10-20.
+- Live public estate: 504 sitemap routes, 505 surfaces, and 9,782 interactions.
+- Live commerce readiness: HTTP 503 / closed; six products unavailable; no Workspace entitlement.
+- Oregon product page: description only, access unavailable, and not currently for sale.
+- Runtime errors: none in the deployment verification window.
