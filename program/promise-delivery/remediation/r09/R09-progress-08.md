@@ -1,6 +1,6 @@
 # R09 progress 08 — Platform-Risk Intelligence artifact build
 
-Status: local-acceptance-complete
+Status: production-closed
 
 R09 Unit 8 builds the sixth and final acquisition package, Nervous-System-Aware Platform-Risk Intelligence v2026.08.0, against the frozen Unit 2 architecture. It remains unavailable for checkout, purchase, license, download, or Workspace entitlement.
 
@@ -30,4 +30,15 @@ This is a dated monitoring and response aid. It does not prove hidden platform a
 - Promise registry remained exact at 5,368 records / 12,013 occurrences
 - Acquisition and Workspace entitlement remain unavailable
 
-Production evidence will be recorded only after the bounded implementation is live and independently verified.
+## Production evidence
+
+- Evaluated implementation: `f2fc1c69f3079b0f652d98ca158bef03dec74328`
+- Evaluated tree: `5862909ae60e7a373664e7648e72315cddf93c93`
+- Production deployment: `dpl_4Y5D7dfVjvbk6gFtauP6PWJ347A9` (`READY`, production)
+- Live evaluator, register, manifest, product page, and release-control surfaces returned HTTP 200
+- Live evaluator preserved 19/19 controls, 24 files, ten contents, seven policy sources, four platforms, seven taxonomy mechanisms, three fixtures, three tiers, and zero findings
+- Live manifest remained frozen pre-release; product page remained unavailable and not for sale
+- Release controls preserved 262 objects, 4,289 current claims, 287 exception contracts, and zero errors
+- Vercel reported no runtime errors in the targeted production window
+
+R09 Unit 8 is production-closed within its artifact-build boundary. All six artifact packages now exist as frozen pre-release builds. Commerce, fulfillment, and Workspace access remain deferred.
