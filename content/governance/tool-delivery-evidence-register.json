@@ -1,0 +1,33 @@
+{
+  "schema": "aloha-ai-tool-delivery-evidence-register/1.0",
+  "version": "1.0.0",
+  "reviewedAt": "2026-08-02",
+  "reviewedBy": "Aloha AI promise-delivery remediation R08",
+  "scope": "All twenty-three canonical resources classified as tools or assessments in the current public resource registry.",
+  "boundary": "This register distinguishes browser-local tools and directional assessments from public reference pages whose interactive access is unavailable. A passing record proves canonical delivery metadata and checked-in interface contracts; it does not establish professional advice, legal or factual correctness, external integration, validated measurement, consequential fitness, independent browser execution, or delivery of separately deferred commercial artifacts.",
+  "records": [
+    {"resourceId":"trust-stack-ai-content-system","deliveryMode":"reference-only"},
+    {"resourceId":"edsa-framework","deliveryMode":"reference-only"},
+    {"resourceId":"psilocybin-regulatory-map","deliveryMode":"reference-only"},
+    {"resourceId":"sb303-compliance-kit","deliveryMode":"reference-only"},
+    {"resourceId":"suppression-monitoring-playbook","deliveryMode":"reference-only"},
+    {"resourceId":"trust-safe-twin-lab","deliveryMode":"browser-local"},
+    {"resourceId":"ai-twin-exposure-check","deliveryMode":"browser-local"},
+    {"resourceId":"agent-role-contract","deliveryMode":"browser-local"},
+    {"resourceId":"ai-readiness-scorecard","deliveryMode":"browser-local"},
+    {"resourceId":"citation-verifier","deliveryMode":"browser-local"},
+    {"resourceId":"leak-check","deliveryMode":"demonstration-only"},
+    {"resourceId":"bill-analyzer","deliveryMode":"browser-local"},
+    {"resourceId":"claims-checker","deliveryMode":"browser-local"},
+    {"resourceId":"controlled-substances-explainer","deliveryMode":"browser-local"},
+    {"resourceId":"evidence-explainer","deliveryMode":"browser-local"},
+    {"resourceId":"policy-generator","deliveryMode":"browser-local"},
+    {"resourceId":"prompt-to-workflow","deliveryMode":"browser-local"},
+    {"resourceId":"trust-safe-console","deliveryMode":"browser-local"},
+    {"resourceId":"governance-readiness","deliveryMode":"browser-local"},
+    {"resourceId":"kb-readiness","deliveryMode":"browser-local"},
+    {"resourceId":"practice-readiness","deliveryMode":"browser-local"},
+    {"resourceId":"workflow-audit","deliveryMode":"browser-local"},
+    {"resourceId":"university-assessment","deliveryMode":"browser-local"}
+  ]
+}
