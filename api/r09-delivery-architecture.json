@@ -1,0 +1,351 @@
+{
+  "schema": "aloha-ai-r09-delivery-architecture/1.0",
+  "version": "2026-08-03.1",
+  "reviewedAt": "2026-08-03",
+  "reviewedBy": "Codex working with RN Collins",
+  "scope": "Complete delivery architecture for the six acquisition artifacts and the separate Workspace provisioning model governed by R09.",
+  "boundary": "This architecture is a build contract, not a release claim. No artifact becomes purchasable, licensed, downloadable, maintained, or supported until its named package and every universal and artifact-specific acceptance test pass in production. Workspace remains unavailable until its separate capability and authorization gates pass.",
+  "versionPolicy": {
+    "scheme": "calendar version YYYY.MM.patch",
+    "immutableReleaseRule": "A fulfilled release is immutable. Corrections or source updates create a new version and changelog entry; the receipt and manifest preserve the version acquired.",
+    "manifestFields": [
+      "artifact ID",
+      "artifact name",
+      "version",
+      "release date",
+      "files and formats",
+      "SHA-256 checksums",
+      "license ID",
+      "source-review cutoff",
+      "changelog",
+      "support and maintenance state"
+    ]
+  },
+  "licenseArchitecture": {
+    "defaultLicense": "Named-organization internal-use license",
+    "permittedUses": [
+      "internal implementation",
+      "internal adaptation",
+      "internal training",
+      "retention of acquired version"
+    ],
+    "prohibitedUses": [
+      "resale",
+      "public redistribution of source files",
+      "removal of attribution or notices",
+      "representation as legal, medical, compliance, or platform assurance"
+    ],
+    "requiredTerms": [
+      "licensee identity and seat or organization scope",
+      "effective version",
+      "refund terms",
+      "privacy notice",
+      "professional-accountability boundary",
+      "third-party source and rights notices",
+      "governing contracting entity"
+    ]
+  },
+  "acquisitionArchitecture": {
+    "states": [
+      "unavailable",
+      "available-for-acquisition",
+      "checkout-started",
+      "payment-failed",
+      "payment-succeeded",
+      "fulfillment-pending",
+      "fulfilled",
+      "redelivery-requested",
+      "refunded",
+      "superseded"
+    ],
+    "requiredSurfaces": [
+      "canonical product page",
+      "version and contents manifest",
+      "license and use summary",
+      "price and tax disclosure",
+      "checkout",
+      "payment success and failure",
+      "receipt",
+      "download delivery",
+      "redelivery",
+      "support contact",
+      "changelog and supersession notice"
+    ],
+    "fulfillmentContract": "Successful payment creates one immutable order record, identifies the exact licensed version, sends a receipt and time-bounded download delivery, and permits verified redelivery without creating a second order.",
+    "securityAndPrivacy": "Use a hosted PCI-compliant payment provider; store no raw card data; minimize purchaser data; disclose processors, retention, support use, and deletion limits; sign download URLs; prevent object enumeration; rate-limit redelivery.",
+    "failureContract": "A failed, abandoned, duplicated, delayed, or refunded transaction must show a recoverable state, create no contradictory entitlement, and preserve an auditable event record without exposing payment secrets.",
+    "supportContract": "Receipt and product page identify support channel, response target, refund path, file-access recovery, current maintenance state, and what support does not include.",
+    "productionProof": [
+      "successful test purchase",
+      "declined-payment test",
+      "duplicate-submit/idempotency test",
+      "receipt verification",
+      "authorized download and checksum verification",
+      "expired/altered URL rejection",
+      "redelivery test",
+      "refund/revocation test",
+      "mobile and keyboard checkout review",
+      "runtime and webhook-error review"
+    ]
+  },
+  "maintenanceArchitecture": {
+    "states": [
+      "maintained",
+      "maintenance-window-defined",
+      "frozen-version",
+      "superseded",
+      "withdrawn"
+    ],
+    "requiredDisclosure": "Every product states its source-review cutoff, maintenance state, next review trigger, update entitlement, and whether a new version is included or separately acquired.",
+    "urgentCorrectionRule": "Material safety, authority, calculation, rights, or security defects trigger withdrawal or a conspicuous correction and purchaser notice; silent file replacement is prohibited."
+  },
+  "universalArtifactAcceptanceTests": [
+    "Every file named in the manifest exists, opens in its declared format, and matches its SHA-256 checksum.",
+    "The package has a README, version manifest, changelog, license, rights/attribution record, accessibility note, support terms, maintenance disclosure, and professional-accountability boundary.",
+    "Examples, templates, formulas, schemas, prompts, and internal links are complete and resolve within the package.",
+    "All dated legal, regulatory, platform, pricing, scientific, and vendor claims identify their source-review cutoff and verification status.",
+    "A clean-device acquisition test completes checkout, receipt, authorized download, extraction, and first-use instructions for the exact version.",
+    "Failure, duplicate, expiry, redelivery, refund, and supersession states behave according to the acquisition contract.",
+    "Public copy, release registry, order record, delivered manifest, and downloaded files agree on artifact name, version, contents, license, price, maintenance, and availability.",
+    "No release language implies individualized advice, guaranteed compliance, guaranteed platform distribution, guaranteed outcomes, or continuing updates beyond the stated maintenance contract."
+  ],
+  "artifacts": [
+    {
+      "resourceId": "trust-stack-ai-content-system",
+      "artifactName": "Five-Domain Knowledge Base",
+      "packageType": "knowledge-base implementation system",
+      "contents": [
+        "five-domain folder and metadata specification",
+        "file naming and provenance rules",
+        "20 complete annotated prompts",
+        "voice-configuration template",
+        "claim and source records",
+        "setup checklist",
+        "platform-stack pricing ledger",
+        "when-to-hire decision guide",
+        "worked example knowledge base"
+      ],
+      "formats": [
+        "PDF handbook",
+        "Markdown source pack",
+        "CSV source and pricing ledgers",
+        "JSON schemas and example records",
+        "DOCX voice template",
+        "plain-text prompt pack",
+        "ZIP package"
+      ],
+      "artifactAcceptanceTests": [
+        "Build the worked example from an empty directory using only the package instructions.",
+        "Validate all example records against the supplied JSON schemas.",
+        "Trace every generated example claim to a source and approval record.",
+        "Confirm the 20 promised prompts and all five domains are present and indexed."
+      ]
+    },
+    {
+      "resourceId": "edsa-framework",
+      "artifactName": "Neuroscience-of-Trust Content Architecture",
+      "packageType": "evidence-aware content architecture kit",
+      "contents": [
+        "dual-appraisal crosswalk",
+        "Evidence-Discussion-Self-Determination-Action framework",
+        "three worked before-and-after rewrites",
+        "annotated 0:00-12:00 script template",
+        "quick-reference card",
+        "five hard-never rules",
+        "dated platform-policy ledger",
+        "scientific references and claim map"
+      ],
+      "formats": [
+        "PDF handbook",
+        "DOCX script template",
+        "XLSX/CSV crosswalk",
+        "PDF quick-reference card",
+        "Markdown source ledger",
+        "ZIP package"
+      ],
+      "artifactAcceptanceTests": [
+        "Confirm every neuroscience mechanism and platform constraint maps to a cited source and bounded claim.",
+        "Confirm all three promised worked examples and the complete twelve-minute template are present.",
+        "Run one unseen content brief through the framework and document each decision without claiming distribution or individual-response prediction.",
+        "Verify every platform-policy statement carries platform, URL, retrieval date, and current/unverified status."
+      ]
+    },
+    {
+      "resourceId": "psilocybin-regulatory-map",
+      "artifactName": "Commercial-Launch APQ Gap Model",
+      "packageType": "dated regulatory comparison and verification model",
+      "contents": [
+        "APQ scoring specification and rubric",
+        "Oregon, Colorado, and New Mexico source-pinned records",
+        "per-state comparison tables",
+        "fee and deadline ledger",
+        "funder verification method",
+        "candidate funder/client classification worksheet",
+        "verification ledger",
+        "change-watch register"
+      ],
+      "formats": [
+        "PDF analytical guide",
+        "XLSX model with protected formulas",
+        "CSV source and verification ledgers",
+        "JSON record export",
+        "Markdown methodology",
+        "ZIP package"
+      ],
+      "artifactAcceptanceTests": [
+        "Recalculate every APQ score from documented inputs and obtain the published result.",
+        "Verify every operative date, fee, authority, and implementation-status statement against a cited primary source as of the cutoff.",
+        "Confirm unknown, proposed, unpublished, and nonbinding values cannot be scored as final facts.",
+        "Test the funder classifier on disclosed examples and preserve source and classification rationale."
+      ]
+    },
+    {
+      "resourceId": "regulatory-intelligence",
+      "artifactName": "The IDR Engine",
+      "packageType": "legal-authority intake, verification, and claim-record system",
+      "contents": [
+        "Ingest-Digest-Regurgitate operating method",
+        "authority hierarchy and jurisdiction rules",
+        "claim-level JSON schema",
+        "filled records",
+        "verification checklist",
+        "change-watch protocol",
+        "Federal Register/eCFR/GovInfo maintenance procedures",
+        "Mata and Wadsworth worked failure analyses",
+        "quality-control and human-review protocol"
+      ],
+      "formats": [
+        "PDF operating manual",
+        "JSON schema and fixtures",
+        "CSV claim and authority ledgers",
+        "Markdown checklists",
+        "DOCX review form",
+        "ZIP package"
+      ],
+      "artifactAcceptanceTests": [
+        "Validate all fixtures against the supplied schema and reject missing authority, pinpoint, retrieval-date, confidence, or change-watch fields.",
+        "Process a disclosed primary-source set through all three stages and reproduce the final claim records.",
+        "Seed fabricated, nonbinding, superseded, and jurisdictionally irrelevant authorities and confirm each is blocked or accurately labeled.",
+        "Require human verification before any consequential output and state that the package is not a continuously connected feed."
+      ]
+    },
+    {
+      "resourceId": "sb303-compliance-kit",
+      "artifactName": "Audit-Ready Operations",
+      "packageType": "dated Oregon psilocybin operations and reporting kit",
+      "contents": [
+        "SB 303 and division-333 requirements map",
+        "collect/store/report/share duty matrix",
+        "OPS current-form verification procedure",
+        "reporting calendar",
+        "intake and companion record",
+        "session and reaction log",
+        "adverse-event SOP",
+        "written confidentiality plan",
+        "equity-data strategy",
+        "compliance checklist",
+        "verification ledger"
+      ],
+      "formats": [
+        "PDF implementation manual",
+        "DOCX editable policies and forms",
+        "XLSX calendar and reporting workbook",
+        "CSV verification ledger",
+        "ICS deadline calendar",
+        "ZIP package"
+      ],
+      "artifactAcceptanceTests": [
+        "Qualified Oregon legal/compliance review confirms the dated source map and all required disclaimers before release.",
+        "Reconcile every field and definition against the current OPS form and governing authority at the source cutoff.",
+        "Run boundary-value and opt-out scenarios through totals and formulas without misclassification or double counting.",
+        "Confirm the calendar distinguishes official deadlines from internal targets and does not silently imply continuing legal updates."
+      ]
+    },
+    {
+      "resourceId": "suppression-monitoring-playbook",
+      "artifactName": "Nervous-System-Aware Platform-Risk Intelligence",
+      "packageType": "platform-distribution monitoring and response playbook",
+      "contents": [
+        "nervous-system-aware operating crosswalk",
+        "documented reduced-distribution taxonomy",
+        "dated YouTube/Meta/Instagram/TikTok policy ledger",
+        "three-layer monitoring stack",
+        "tool and pricing ledger",
+        "baseline and control-limit workbook",
+        "45-minute monthly review",
+        "three-tier NIST-mapped response protocol",
+        "appeal record and worksheets",
+        "references"
+      ],
+      "formats": [
+        "PDF playbook",
+        "XLSX monitoring workbook",
+        "CSV observation and policy ledgers",
+        "DOCX appeal and review worksheets",
+        "ICS review calendar",
+        "ZIP package"
+      ],
+      "artifactAcceptanceTests": [
+        "Recalculate all sample baselines, control limits, and decision rules from raw fixtures.",
+        "Confirm every platform-policy statement has an official source, retrieval date, quotation/paraphrase label, and verification status.",
+        "Run normal variation, suspected reduction, and confirmed enforcement scenarios through the three-tier protocol.",
+        "Ensure outputs distinguish signal from proof and never promise diagnosis, appeal success, or restored distribution."
+      ]
+    }
+  ],
+  "workspaceAccessArchitecture": {
+    "currentState": "research-architecture-no-access",
+    "commercialRelationship": "Workspace access is a separately provisioned engagement, pilot, program, or licensed implementation; artifact acquisition creates no Workspace account or entitlement.",
+    "identityAndProvisioning": [
+      "verified user identity",
+      "organization and project binding",
+      "invitation and acceptance",
+      "role assignment",
+      "terms and privacy acceptance",
+      "revocation and offboarding"
+    ],
+    "requiredCapabilityFamilies": [
+      "authentication",
+      "persistence",
+      "permissions",
+      "collaboration",
+      "review",
+      "audit",
+      "monitoring",
+      "personalization"
+    ],
+    "requiredStateMatrix": [
+      "happy",
+      "empty",
+      "loading",
+      "error",
+      "unauthorized",
+      "forbidden",
+      "expired/revoked",
+      "concurrent-change",
+      "recovery"
+    ],
+    "releaseTests": [
+      "tenant and project isolation",
+      "least-privilege role tests",
+      "invitation/revocation/offboarding",
+      "draft and evidence persistence",
+      "review and approval integrity",
+      "immutable audit event coverage",
+      "monitoring and alert handling",
+      "export/deletion/retention behavior",
+      "session security and recovery",
+      "backup and restoration",
+      "accessibility and responsive review",
+      "production runtime and authorization-error review"
+    ]
+  },
+  "buildSequence": [
+    "Freeze this architecture and keep every acquisition and Workspace state unavailable.",
+    "Build and independently accept one complete artifact package at a time.",
+    "Implement shared licensing, checkout, order, fulfillment, support, and maintenance infrastructure.",
+    "Run artifact-specific and universal clean-device acquisition tests before enabling that artifact.",
+    "Build Workspace identity, data, permissions, review, audit, and operational states as a separate program.",
+    "Enable only the individually proven artifact or Workspace capability; do not batch-promote the estate."
+  ]
+}
