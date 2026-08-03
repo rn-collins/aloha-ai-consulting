@@ -1,0 +1,31 @@
+{
+  "schema": "aloha-ai-destination-family-evidence-evaluation/1.0",
+  "evaluatedAt": "2026-08-03",
+  "scope": "All forty canonical products, services, collections, institutional pages, and learning-hub pages in the current resource registry.",
+  "boundary": "This register proves canonical destination coverage, substantive checked-in content, family-specific delivery contracts, and visible conservative release states. It does not certify product operation, external integrations, workspace access, enrollment, credentials, service capacity, engagement acceptance, implementation outcomes, collection currency beyond the generated registry, or the five paid artifacts deferred to R09.",
+  "counts": {
+    "canonicalResources": 40,
+    "products": 9,
+    "services": 16,
+    "collections": 8,
+    "institutionals": 3,
+    "learningHubs": 4,
+    "unavailableProducts": 3,
+    "unavailableLearningHubs": 1
+  },
+  "checks": {
+    "registerSchema": true,
+    "exactCanonicalCoverage": true,
+    "uniqueRecords": true,
+    "canonicalPages": true,
+    "substantiveMetadata": true,
+    "releaseMetadata": true,
+    "renderedBoundaries": true,
+    "productContracts": true,
+    "serviceContracts": true,
+    "collectionContracts": true,
+    "institutionalLearningContracts": true,
+    "noFindings": true
+  },
+  "findings": []
+}
