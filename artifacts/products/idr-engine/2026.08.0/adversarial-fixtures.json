@@ -1,0 +1,33 @@
+{
+  "schema": "idr-adversarial-fixtures/1.0",
+  "fixtures": [
+    {
+      "id": "TEST-FABRICATED",
+      "defect": "fabricated",
+      "input": "Invented Reporter v. Fictional Agency, 999 F.9th 1",
+      "expected": "rejected",
+      "reason": "No resolvable primary authority."
+    },
+    {
+      "id": "TEST-NONBINDING",
+      "defect": "nonbinding",
+      "input": "FederalRegister.gov explanatory page offered as operative regulation",
+      "expected": "accurately-labeled",
+      "reason": "Navigation or explanatory material is not the legal rule."
+    },
+    {
+      "id": "TEST-SUPERSEDED",
+      "defect": "superseded",
+      "input": "Historical CFR text offered as current",
+      "expected": "blocked",
+      "reason": "Effective dates and current eCFR/Federal Register history must be reconciled."
+    },
+    {
+      "id": "TEST-JURISDICTION",
+      "defect": "jurisdictionally-irrelevant",
+      "input": "Out-of-forum trial order offered as mandatory authority",
+      "expected": "blocked",
+      "reason": "Forum and authority weight do not support the proposition."
+    }
+  ]
+}

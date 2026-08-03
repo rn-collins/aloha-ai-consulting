@@ -1,0 +1,71 @@
+{
+  "schema": "idr-source-ledger/1.0",
+  "cutoff": "2026-08-03",
+  "sources": [
+    {
+      "id": "MATA-ORDER",
+      "title": "Mata v. Avianca sanctions opinion and order",
+      "jurisdiction": "S.D.N.Y.",
+      "authorityType": "judicial-opinion",
+      "weight": "primary-persuasive-outside-forum",
+      "url": "https://www.govinfo.gov/content/pkg/USCOURTS-nysd-1_22-cv-01461/pdf/USCOURTS-nysd-1_22-cv-01461-2.pdf",
+      "pinpoint": "pp. 1-2, 28-31",
+      "retrievedAt": "2026-08-03",
+      "status": "operative-record",
+      "changeWatch": "docket or appellate disposition",
+      "binding": false
+    },
+    {
+      "id": "WADSWORTH-ORDER",
+      "title": "Wadsworth v. Walmart sanctions order",
+      "jurisdiction": "D. Wyo.",
+      "authorityType": "judicial-order",
+      "weight": "primary-persuasive-outside-forum",
+      "url": "https://www.govinfo.gov/app/details/USCOURTS-wyd-2_23-cv-00118",
+      "pinpoint": "sanctions discussion and decretal provisions",
+      "retrievedAt": "2026-08-03",
+      "status": "verify-document-version-before-use",
+      "changeWatch": "docket or appellate disposition",
+      "binding": false
+    },
+    {
+      "id": "APA-553",
+      "title": "Administrative Procedure Act rulemaking provision",
+      "jurisdiction": "United States",
+      "authorityType": "statute",
+      "weight": "primary-mandatory-within-scope",
+      "url": "https://www.govinfo.gov/link/uscode/5/553",
+      "pinpoint": "5 U.S.C. § 553",
+      "retrievedAt": "2026-08-03",
+      "status": "operative-at-cutoff",
+      "changeWatch": "statutory amendment",
+      "binding": true
+    },
+    {
+      "id": "FR-READER",
+      "title": "Federal Register Reader Aids",
+      "jurisdiction": "United States",
+      "authorityType": "official-publication-guidance",
+      "weight": "official-secondary-navigation",
+      "url": "https://www.federalregister.gov/reader-aids",
+      "pinpoint": "Using FederalRegister.Gov",
+      "retrievedAt": "2026-08-03",
+      "status": "navigation-only",
+      "changeWatch": "site or publication-process change",
+      "binding": false
+    },
+    {
+      "id": "ECFR-STATUS",
+      "title": "eCFR currentness and historical status",
+      "jurisdiction": "United States",
+      "authorityType": "official-codification-status",
+      "weight": "official-secondary-codification",
+      "url": "https://www.ecfr.gov/current/title-1/chapter-I/subchapter-A/part-8",
+      "pinpoint": "1 CFR part 8",
+      "retrievedAt": "2026-08-03",
+      "status": "official-but-not-legal-edition",
+      "changeWatch": "rule or editorial-status change",
+      "binding": false
+    }
+  ]
+}

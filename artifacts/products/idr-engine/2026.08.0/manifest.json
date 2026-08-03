@@ -1,0 +1,118 @@
+{
+  "schema": "idr-release-manifest/1.0",
+  "artifactId": "regulatory-intelligence",
+  "artifactName": "The IDR Engine",
+  "version": "2026.08.0",
+  "releaseDate": null,
+  "state": "frozen-pre-release",
+  "evidenceCutoff": "2026-08-03",
+  "contents": [
+    "Ingest-Digest-Regurgitate operating method",
+    "authority hierarchy and jurisdiction rules",
+    "claim-level JSON schema",
+    "filled records",
+    "verification checklist",
+    "change-watch protocol",
+    "Federal Register/eCFR/GovInfo maintenance procedures",
+    "Mata and Wadsworth worked failure analyses",
+    "quality-control and human-review protocol"
+  ],
+  "files": [
+    {
+      "path": "ACCESSIBILITY.md",
+      "bytes": 166,
+      "sha256": "e6cb0404ad34fd42731eda8c20c52b41bac0bf81be583227ef01495e7ca7e5c8"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 206,
+      "sha256": "26ae485e9d14d3abb7514dc266196f38d14dc783c156b86a9db9e4acfc10fda2"
+    },
+    {
+      "path": "LICENSE.md",
+      "bytes": 304,
+      "sha256": "ba9610849b7380518c6e7051f5a712bbb15dd1446c805c3b541be5d9762f31f3"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3439,
+      "sha256": "c192ec5e425dd2c59e9abda4caf52a69baab4f5effeeaf542caabbaeda10dad2"
+    },
+    {
+      "path": "RIGHTS-AND-ATTRIBUTION.md",
+      "bytes": 240,
+      "sha256": "e649cec654e98c9d332ed5ca7b50120429a90c02d1616ce70a840b26953b37fc"
+    },
+    {
+      "path": "SUPPORT-AND-MAINTENANCE.md",
+      "bytes": 245,
+      "sha256": "ea530c69692e7b2a9157d29df2aaa616782b1e27c5a76caa34ce563db9006369"
+    },
+    {
+      "path": "adversarial-fixtures.json",
+      "bytes": 1097,
+      "sha256": "31b41acc4d56c289da26aed78ddb1253ce986d0fb75a9eb25619c63ca33158cf"
+    },
+    {
+      "path": "authority-ledger.csv",
+      "bytes": 1565,
+      "sha256": "f61c26f8e03bfffdc930e9b1a9d604f7c43c867cd9bc400f66e1c6f148db26b0"
+    },
+    {
+      "path": "change-watch-protocol.md",
+      "bytes": 398,
+      "sha256": "19b416c85ce233eb53f43caf0b570bf77cdb1b4cb1e96e0b269d74d9f999b618"
+    },
+    {
+      "path": "claim-ledger.csv",
+      "bytes": 597,
+      "sha256": "db433e15edbbb048d96e9f3f1d3789c56764ef98b1c84841443b4e6f9b2a5310"
+    },
+    {
+      "path": "claim-record.schema.json",
+      "bytes": 2428,
+      "sha256": "86fee3c3e3e9e5c5198cee26a41335865608f19e5b28fdefda2e544d059a19f4"
+    },
+    {
+      "path": "filled-claim-records.json",
+      "bytes": 2209,
+      "sha256": "2c5cd45bce4d820e678ee5c5349c0b49b9367115b0c3d434e7f77c82efd8d388"
+    },
+    {
+      "path": "idr-engine-operating-manual.pdf",
+      "bytes": 117683,
+      "sha256": "b5606bba447b7d965a1b9046ac75f776441801e0c419e3230031396981fc8f97"
+    },
+    {
+      "path": "idr-human-review-form.docx",
+      "bytes": 10013,
+      "sha256": "407643bafbd2651b2c2325b30428f70e80ec2ed9424106a88743d52abec86130"
+    },
+    {
+      "path": "operating-manual.md",
+      "bytes": 3439,
+      "sha256": "c192ec5e425dd2c59e9abda4caf52a69baab4f5effeeaf542caabbaeda10dad2"
+    },
+    {
+      "path": "quality-control.md",
+      "bytes": 337,
+      "sha256": "97dc06bb9872a7f7d7e555a528c22771b5aa0e4074a69068d6dec092153d93ec"
+    },
+    {
+      "path": "review-form.md",
+      "bytes": 335,
+      "sha256": "7796e11b55b42204b05fd35ca33f364d553589cd217b2e59bd6fd7921c36520b"
+    },
+    {
+      "path": "source-ledger.json",
+      "bytes": 2630,
+      "sha256": "c1a9027d403eb34197881402e3cea3836efe87ae624a7606b60be22ba7f44cc7"
+    },
+    {
+      "path": "verification-checklist.md",
+      "bytes": 535,
+      "sha256": "d239ebcc7244bef36a2184dd944225bef7616e55da088b7991f7eb4155eef466"
+    }
+  ],
+  "boundary": "Package completeness does not make acquisition available; checkout and fulfillment remain unimplemented."
+}

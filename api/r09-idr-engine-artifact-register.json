@@ -1,0 +1,43 @@
+{
+  "schema": "aloha-ai-r09-idr-engine-artifact-register/1.0",
+  "reviewedAt": "2026-08-03",
+  "scope": "R09 Unit 6 builds and internally accepts the fourth acquisition artifact against the frozen Unit 2 delivery architecture.",
+  "boundary": "This is a research-record and human-review system, not legal advice, a continuously connected feed, or a guarantee that a claim is current, complete, binding, or fit for consequential use. Package completeness is not an acquisition release and creates no Workspace entitlement.",
+  "artifact": {
+    "resourceId": "regulatory-intelligence",
+    "artifactName": "The IDR Engine",
+    "version": "2026.08.0",
+    "state": "built-frozen-pre-release",
+    "packagePath": "artifacts/products/idr-engine/2026.08.0",
+    "acquisitionState": "unavailable",
+    "workspaceEntitlement": false,
+    "specificAcceptanceTests": [
+      "Validate all fixtures against the supplied schema and reject missing authority, pinpoint, retrieval-date, confidence, or change-watch fields.",
+      "Process a disclosed primary-source set through all three stages and reproduce the final claim records.",
+      "Seed fabricated, nonbinding, superseded, and jurisdictionally irrelevant authorities and confirm each is blocked or accurately labeled.",
+      "Require human verification before any consequential output and state that the package is not a continuously connected feed."
+    ],
+    "acceptedUniversalTests": [
+      1,
+      2,
+      3,
+      4,
+      8
+    ],
+    "deferredUniversalTests": [
+      5,
+      6,
+      7
+    ],
+    "releaseBlockers": [
+      "checkout",
+      "payment",
+      "order record",
+      "receipt",
+      "signed fulfillment",
+      "redelivery",
+      "refund operations",
+      "production purchase test"
+    ]
+  }
+}
