@@ -63,7 +63,7 @@
     {
       "path": "edsa-quick-reference-card.pdf",
       "bytes": 105544,
-      "sha256": "9877d38a34df1df7775bbab71a86dab5ebd2d50f65d8b448e906edfbcd9f90ac"
+      "sha256": "1a1b94e75b29d12d08626a4ec29378b889b098cadb07c59acdfb15d07eb38ba3"
     },
     {
       "path": "handbook.md",
@@ -73,7 +73,7 @@
     {
       "path": "neuroscience-trust-content-architecture-handbook.pdf",
       "bytes": 116158,
-      "sha256": "374e3ab4f4054e75f5cee796b1e05d31d5baed02c45b6e6d718a973ca66fd955"
+      "sha256": "a55182c19f51c795a67ea0ccad9916f2e7a678a17350ed4ef8b15c01dcd2bb28"
     },
     {
       "path": "platform-policy-ledger.json",
@@ -102,8 +102,8 @@
     },
     {
       "path": "twelve-minute-script-template.docx",
-      "bytes": 10972,
-      "sha256": "f6cf9523ae08b1c243e820fc545a7089ec24cd47ad1ec967924f8bfc5bc25f7d"
+      "bytes": 10971,
+      "sha256": "fc8c01bec17d3f35108be21efd47bc1c293322f3c02466979c2aec99a01a5674"
     },
     {
       "path": "twelve-minute-script-template.json",
@@ -122,13 +122,13 @@
     },
     {
       "path": "worked-rewrites.json",
-      "bytes": 2156,
-      "sha256": "e8c80934d916882eb01db3d5395ad2cbe61ad5cc8995c39e68afe1fb37e17fc1"
+      "bytes": 3618,
+      "sha256": "202f9e6d3bd4c3602279ef81bdaacf9e93f1dd883273a8aa95874c0bd8cb7ed7"
     },
     {
       "path": "worked-rewrites.md",
-      "bytes": 1760,
-      "sha256": "4cdea32327a763ed1e8c24b5ff2c2f823aae14afa616aa1e28d71709b2090d0a"
+      "bytes": 3119,
+      "sha256": "dcfc49d4b1965aedf5f28263e94b081822050a428eeb55a0ad64d75a6a9f29fa"
     }
   ],
   "changelog": "CHANGELOG.md",

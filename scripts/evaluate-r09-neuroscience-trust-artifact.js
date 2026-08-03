@@ -31,7 +31,7 @@ for(const name of ['README.md','neuroscience-trust-content-architecture-handbook
 if(contract.contents.length!==8||!contract.contents.every(c=>manifest.contents.includes(c)))findings.push('Manifest does not exactly preserve all eight architecture contents.');
 if(claims.claims?.length<4||claims.claims.some(c=>!c.id||!c.claim||!c.status||!c.sourceIds?.length||!c.allowedUse||!c.prohibitedUse))findings.push('Scientific claim map lacks bounded claims, sources, or use rules.');
 if(policies.policies?.length<4||policies.policies.some(p=>!p.platform||!/^https:\/\//.test(p.url)||p.retrievedAt!=='2026-08-03'||!['current','unverified'].includes(p.status)||!/not|no |does not|never|depends/i.test(p.boundedStatement)))findings.push('Platform-policy ledger lacks dated, status-bearing bounded records.');
-if(rewrites.count!==3||rewrites.examples?.length!==3||rewrites.examples.some(e=>e.decisions?.length!==4))findings.push('Three complete EDSA worked rewrites are not present.');
+if(rewrites.count!==3||rewrites.examples?.length!==3||rewrites.examples.some(e=>e.decisions?.length!==4)||rewrites.examples.map(e=>e.topic).join(',')!=='psilocybin,cannabis,prescription-antidepressants')findings.push('The exact three promised psilocybin, cannabis, and prescription-antidepressant EDSA rewrites are not present.');
 if(script.durationSeconds!==720||script.segments?.length!==10||script.segments[0]?.time!=='0:00–0:30'||script.segments.at(-1)?.time!=='11:15–12:00'||script.segments.some(s=>s.requiredFields?.length!==4))findings.push('Complete annotated 0:00–12:00 template is absent.');
 const handbook=fs.readFileSync(path.join(dir,'handbook.md'),'utf8');
 if(!['Evidence','Discussion','Self-Determination','Action'].every(x=>handbook.includes(`**${x}**`))||(handbook.match(/Never /g)||[]).length<5)findings.push('EDSA method or five hard-never rules are incomplete.');
@@ -54,7 +54,7 @@ const checks={
  dualAppraisalAndEdsa:exists('dual-appraisal-crosswalk.csv')&&['Evidence','Discussion','Self-Determination','Action'].every(x=>handbook.includes(`**${x}**`)),
  boundedScientificClaimMap:claims.claims?.length>=4&&!findings.some(f=>f.startsWith('Scientific')),
  datedPlatformPolicyLedger:policies.policies?.length>=4&&!findings.some(f=>f.startsWith('Platform')),
- threeWorkedRewrites:rewrites.examples?.length===3,
+ threeWorkedRewrites:rewrites.examples?.length===3&&rewrites.examples.map(e=>e.topic).join(',')==='psilocybin,cannabis,prescription-antidepressants',
  completeTwelveMinuteTemplate:script.durationSeconds===720&&script.segments?.length===10,
  unseenBriefAndHardNeverRules:unseen.includes('No distribution')&&(handbook.match(/Never /g)||[]).length>=5,
  validPdfDocxAndZip:!findings.some(f=>/PDF|DOCX|ZIP/.test(f)),

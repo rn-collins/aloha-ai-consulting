@@ -16,7 +16,7 @@ This unit builds and internally accepts the second complete R09 package, the Neu
 - CSV dual-appraisal crosswalk separating audience intelligibility and choice from platform eligibility and ranking.
 - Four bounded neuroscience claims with sources, status, permitted use, and prohibited inference.
 - Four first-party platform-policy records with platform, URL, retrieval date, current status, bounded statement, and reverification cadence.
-- Three complete before-and-after rewrites, each annotated across Evidence, Discussion, Self-Determination, and Action.
+- Three complete before-and-after rewrites covering the exact publicly promised subjects—psilocybin, cannabis, and prescription antidepressants—each annotated across Evidence, Discussion, Self-Determination, and Action.
 - Complete ten-segment, 720-second script template in JSON, Markdown, and DOCX.
 - PDF and Markdown quick-reference card, editorial review checklist, and unseen-brief validation.
 - License specimen, rights and attribution record, accessibility note, support and maintenance disclosure, and changelog.
