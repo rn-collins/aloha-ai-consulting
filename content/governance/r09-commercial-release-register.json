@@ -1,0 +1,40 @@
+{
+  "schema": "aloha-ai-r09-commercial-release-register/1.0",
+  "reviewedAt": "2026-08-03",
+  "targetVersion": "2026.08.1",
+  "state": "preparation-complete-external-evidence-pending",
+  "boundary": "This register proves the private packaging and release-certification controls, not the existence of private payloads, provider credentials, Oregon review, or purchase evidence. No product is available for acquisition.",
+  "privateInputRoot": ".commerce-private/source",
+  "privateStagingRoot": ".commerce-private/staged",
+  "publicEvidencePath": "artifacts/r09-commercial-release-evaluation.json",
+  "products": [
+    {"resourceId":"trust-stack-ai-content-system","slug":"five-domain-knowledge-base","version":"2026.08.1","state":"blocked"},
+    {"resourceId":"edsa-framework","slug":"neuroscience-trust-content-architecture","version":"2026.08.1","state":"blocked"},
+    {"resourceId":"psilocybin-regulatory-map","slug":"commercial-launch-apq-gap-model","version":"2026.08.1","state":"blocked"},
+    {"resourceId":"regulatory-intelligence","slug":"idr-engine","version":"2026.08.1","state":"blocked"},
+    {"resourceId":"sb303-compliance-kit","slug":"audit-ready-operations","version":"2026.08.1","state":"blocked","additionalGate":"qualified Oregon legal/compliance review"},
+    {"resourceId":"suppression-playbook","slug":"nervous-system-aware-platform-risk-intelligence","version":"2026.08.1","state":"blocked"}
+  ],
+  "requiredPrivatePackageFiles": ["manifest.json", "LICENSE.md", "SUPPORT-AND-MAINTENANCE.md", "CHANGELOG.md"],
+  "materialFreshnessRules": [
+    "commercial package version is 2026.08.1",
+    "commercial ZIP SHA-256 differs from the public 2026.08.0 ZIP",
+    "commercial manifest SHA-256 differs from the public 2026.08.0 manifest",
+    "manifest declares commercial-release-candidate and named-organization license",
+    "package contains an approved support and refund disclosure",
+    "package bytes and private source directory remain outside public Git"
+  ],
+  "productionProofScenarios": [
+    "successful test purchase",
+    "declined-payment test",
+    "duplicate-submit/idempotency test",
+    "receipt verification",
+    "authorized download and checksum verification",
+    "expired/altered URL rejection",
+    "redelivery test",
+    "refund/revocation test",
+    "mobile and keyboard checkout review",
+    "runtime and webhook-error review"
+  ],
+  "releasePolicy": "Products are certified and enabled individually. A missing, false, stale, or mismatched evidence field blocks that product and cannot be overridden by COMMERCE_ENABLED alone."
+}

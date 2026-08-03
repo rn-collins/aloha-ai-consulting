@@ -1,0 +1,45 @@
+{
+  "schema": "aloha-ai-r09-commercial-release-evaluation/1.0",
+  "evaluatedAt": "2026-08-03",
+  "status": "passed-private-release-controls-external-evidence-pending",
+  "boundary": "This register proves the private packaging and release-certification controls, not the existence of private payloads, provider credentials, Oregon review, or purchase evidence. No product is available for acquisition.",
+  "counts": {
+    "products": 6,
+    "checks": 18,
+    "productionProofScenarios": 10,
+    "externalEvidenceRecords": 0
+  },
+  "checks": {
+    "exactSixProducts": true,
+    "targetVersionFrozen": true,
+    "privateRootsIgnored": true,
+    "requiredFilesDefined": true,
+    "zipFreshnessGate": true,
+    "manifestFreshnessGate": true,
+    "licenseGate": true,
+    "workspaceBoundary": true,
+    "supportDisclosureGate": true,
+    "refundDisclosureGate": true,
+    "noPublicUpload": true,
+    "exactProductionProofDenominator": true,
+    "oregonGatePreserved": true,
+    "perProductReadiness": true,
+    "checkoutFailClosed": true,
+    "allProductsBlocked": true,
+    "commerceClosed": true,
+    "noFindings": true
+  },
+  "remainingExternalBlockers": [
+    "configured brand-owned support email not production-verified",
+    "provider credentials not production-verified",
+    "private commercial payloads not uploaded",
+    "clean-device production purchase suite not passed",
+    "v2026.08.0 payloads are exposed in public Git history and cannot be sold as secured downloads"
+  ],
+  "productSpecificBlockers": {
+    "sb303-compliance-kit": [
+      "qualified Oregon legal/compliance review not recorded"
+    ]
+  },
+  "findings": []
+}

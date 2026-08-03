@@ -17,6 +17,9 @@ function env(name) { if (!process.env[name]) { const e = new Error(`Missing comm
 function stripe() { return new Stripe(env('STRIPE_SECRET_KEY'), {apiVersion:'2025-06-30.basil'}); }
 function enabled() { return process.env.COMMERCE_ENABLED === 'true' && catalogSource.commercialState === 'open'; }
 function requireEnabled() { if (!enabled()) { const e=new Error('Commerce is unavailable'); e.statusCode=503; throw e; } }
+function envPresent(name){return Boolean(process.env[name]);}
+function productEnvSuffix(id){return id.toUpperCase().replace(/[^A-Z0-9]/g,'_');}
+function productReleaseReady(id){const suffix=productEnvSuffix(id);const required=[`STRIPE_PRICE_${suffix}`,`COMMERCE_BLOB_${suffix}`,`COMMERCE_MANIFEST_SHA256_${suffix}`,`COMMERCE_RELEASE_EVIDENCE_${suffix}`];if(id==='sb303-compliance-kit')required.push('COMMERCE_OREGON_REVIEW_EVIDENCE');return required.every(envPresent);}
 function product(id) { const value=products().find((p)=>p.resourceId===id); if(!value){const e=new Error('Unknown product');e.statusCode=404;throw e;} return value; }
 function priceIdFor(id) { return env(`STRIPE_PRICE_${id.toUpperCase().replace(/[^A-Z0-9]/g,'_')}`); }
 function privatePathFor(id) { return env(`COMMERCE_BLOB_${id.toUpperCase().replace(/[^A-Z0-9]/g,'_')}`); }
@@ -28,4 +31,4 @@ function verifyDelivery(token) { const [body,sig]=String(token||'').split('.'); 
 function hash(value){return crypto.createHash('sha256').update(String(value)).digest('hex');}
 async function service(path, options={}) { return supabase(path,{...options,service:true}); }
 async function sendEmail({to,subject,text}){const response=await fetch('https://api.resend.com/emails',{method:'POST',headers:{Authorization:`Bearer ${env('RESEND_API_KEY')}`,'Content-Type':'application/json'},body:JSON.stringify({from:env('COMMERCE_FROM_EMAIL'),to,subject,text})});if(!response.ok){const e=new Error('Email delivery failed');e.statusCode=502;throw e;}return response.json();}
-module.exports={catalog,enabled,requireEnabled,product,priceIdFor,privatePathFor,manifestHashFor,siteUrl,safeIdempotency,signDelivery,verifyDelivery,hash,stripe,service,env,sendEmail};
+module.exports={catalog,enabled,requireEnabled,envPresent,productReleaseReady,product,priceIdFor,privatePathFor,manifestHashFor,siteUrl,safeIdempotency,signDelivery,verifyDelivery,hash,stripe,service,env,sendEmail};

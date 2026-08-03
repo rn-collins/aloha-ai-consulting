@@ -16,3 +16,7 @@ artifacts/interaction-audit/report.json
 program/promise-delivery/promise-release-registry.json
 search-index.json
 workspace/resource-registry.json
+
+# Commercial source packages and staged payloads are private release inputs.
+.commerce-private/
+commercial-private/
