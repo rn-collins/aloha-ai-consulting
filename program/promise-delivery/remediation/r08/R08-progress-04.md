@@ -2,7 +2,7 @@
 
 Date: 2026-08-02
 
-Status: passed locally within the three-record legacy satellite-system boundary; publication and production verification pending; R08 remains open
+Status: passed within the three-record legacy satellite-system boundary after exact-tree GitHub publication and production verification; Unit 4 closed; R08 remains open
 
 Frozen audit baseline: 4,289 promise records / 9,552 occurrences; unchanged
 
@@ -48,7 +48,14 @@ It does not establish that a historical hostname is currently reachable or unrea
 
 ## Production verification
 
-Pending GitHub publication and exact-tree Vercel verification.
+- GitHub `main` implementation commit: `f63ff9c03b0a71a54e688e8db9b8ff6ab1621ba9`.
+- Exact published Git tree: `a136efa874c77830eb6e5e79460911c10cfad49f`.
+- Vercel production deployment: `dpl_6kt1Q2vRAXU9L3NTi7yzAVKUaWZD`, state `READY`, target `production`, with Git metadata tied to the exact implementation commit.
+- `/artifacts/satellite-system-evidence-evaluation.json`, `/api/release-control-report.json`, and `/program/promise-delivery/promise-release-registry.json` returned HTTP 200.
+- The live evaluator reported 10/10 checks, three governed records, zero confirmed current project mappings, zero confirmed current deployments, and zero findings.
+- Live release totals matched 262 resources, 505 public surfaces including recovery, 9,782 interactions, and 5,368 promise records / 12,013 occurrences; release-control errors remained zero.
+- Vercel reported no runtime errors for the project in the verification window.
+- This unit changes a checked-in migration utility and machine-readable evidence surfaces, not a rendered visitor page. Browser screenshot, responsive-layout, and visual-design review are therefore outside this unit's boundary.
 
 ## Remaining R08 work
 
@@ -57,4 +64,4 @@ Pending GitHub publication and exact-tree Vercel verification.
 
 ## Decision
 
-PASS locally within the stated three-record boundary. Unit 4 remains publication-pending. R08 remains open for the wider represented-asset and destination inventory.
+PASS within the stated three-record boundary. Unit 4 is production-closed. R08 remains open for the wider represented-asset and destination inventory.
