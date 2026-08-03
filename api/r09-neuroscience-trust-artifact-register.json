@@ -1,0 +1,50 @@
+{
+  "schema": "aloha-ai-r09-neuroscience-trust-artifact-register/1.0",
+  "version": "2026-08-03.1",
+  "reviewedAt": "2026-08-03",
+  "reviewedBy": "Codex working with RN Collins",
+  "scope": "Artifact-build evidence for the second R09 acquisition obligation.",
+  "boundary": "A built and internally accepted pre-release editorial package is not an acquisition release. It does not diagnose, predict individual response, guarantee trust or platform distribution, or create Workspace access. Checkout, payment, signed fulfillment, redelivery, refunds, operational support, and production purchase testing remain unimplemented.",
+  "artifact": {
+    "resourceId": "edsa-framework",
+    "artifactName": "Neuroscience-of-Trust Content Architecture",
+    "version": "2026.08.0",
+    "state": "built-frozen-pre-release",
+    "packagePath": "artifacts/products/neuroscience-trust-content-architecture/2026.08.0",
+    "manifestPath": "artifacts/products/neuroscience-trust-content-architecture/2026.08.0/manifest.json",
+    "archivePath": "artifacts/products/neuroscience-trust-content-architecture/2026.08.0/neuroscience-trust-content-architecture-2026.08.0.zip",
+    "sourceReviewCutoff": "2026-08-03",
+    "maintenanceState": "frozen-version-policy-reverification-required",
+    "acquisitionState": "unavailable",
+    "workspaceEntitlement": false,
+    "specificAcceptanceTests": [
+      "Confirm every neuroscience mechanism and platform constraint maps to a cited source and bounded claim.",
+      "Confirm all three promised worked examples and the complete twelve-minute template are present.",
+      "Run one unseen content brief through the framework and document each decision without claiming distribution or individual-response prediction.",
+      "Verify every platform-policy statement carries platform, URL, retrieval date, and current/unverified status."
+    ],
+    "acceptedUniversalTests": [
+      1,
+      2,
+      3,
+      4,
+      8
+    ],
+    "deferredUniversalTests": [
+      5,
+      6,
+      7
+    ],
+    "deferredReason": "Universal tests 5–7 require the shared checkout, order, fulfillment, failure, redelivery, refund, supersession, and public-copy infrastructure assigned to a later R09 unit.",
+    "releaseBlockers": [
+      "commercial terms and final license execution",
+      "price and tax disclosure",
+      "hosted checkout and payment-state handling",
+      "immutable order and entitlement records",
+      "receipt and signed download fulfillment",
+      "redelivery, expiry, refund, and revocation behavior",
+      "clean-device production purchase tests",
+      "operational support channel and response target"
+    ]
+  }
+}

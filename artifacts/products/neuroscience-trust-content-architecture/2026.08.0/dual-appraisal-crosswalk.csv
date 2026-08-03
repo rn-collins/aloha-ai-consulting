@@ -1,0 +1,6 @@
+audience_question,audience_evidence,editorial_move,platform_question,platform_source_id,platform_status,prohibited_inference
+Can the audience identify the claim and stakes?,Named proposition plus context,Evidence,Can the system and viewer identify the topic and relevance?,PLAT-LINKEDIN-SUGGESTED,current,Clear context does not guarantee recommendation
+Can the audience inspect authority and date?,Resolvable source and retrieval date,Evidence,Is the content eligible under applicable recommendation and safety rules?,PLAT-META-RECOMMEND,current,Eligibility does not guarantee reach
+Are alternatives and uncertainty visible?,Competing explanations and limits,Discussion,Do text media and topic cohere for an outside audience?,PLAT-LINKEDIN-SUGGESTED,current,Coherence does not prove quality or reach
+Does the audience retain meaningful choice?,Noncoercive language pause and exit,Self-Determination,Can negative feedback and user preferences affect personalization?,PLAT-TIKTOK-FYF,current,No editor can predict a particular user's ranking
+Is the next step proportionate and reversible?,One bounded CTA with escalation rule,Action,Are engagement and satisfaction signals among recommendation inputs?,PLAT-YOUTUBE-RECS,current,Engagement tactics do not guarantee distribution

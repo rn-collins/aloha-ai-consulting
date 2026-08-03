@@ -1,0 +1,136 @@
+{
+  "schema": "edsa-release-manifest/1.0",
+  "artifactId": "edsa-framework",
+  "artifactName": "Neuroscience-of-Trust Content Architecture",
+  "version": "2026.08.0",
+  "releaseDate": null,
+  "state": "frozen-pre-release",
+  "sourceReviewCutoff": "2026-08-03",
+  "licenseId": "named-organization-internal-use-pre-release-specimen",
+  "maintenanceState": "frozen-version-policy-reverification-required",
+  "supportState": "not-offered-before-release",
+  "contents": [
+    "dual-appraisal crosswalk",
+    "Evidence-Discussion-Self-Determination-Action framework",
+    "three worked before-and-after rewrites",
+    "annotated 0:00-12:00 script template",
+    "quick-reference card",
+    "five hard-never rules",
+    "dated platform-policy ledger",
+    "scientific references and claim map"
+  ],
+  "files": [
+    {
+      "path": "ACCESSIBILITY.md",
+      "bytes": 320,
+      "sha256": "c2515e7d0acb844c4e8c0e595010d7f50735ee5b25c23d8a7b566c9ff26d06f8"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 268,
+      "sha256": "bce13173d641cae2ba3b18f3ed90a5769833c13a53b8d27d1205f774d8c529f6"
+    },
+    {
+      "path": "LICENSE.md",
+      "bytes": 511,
+      "sha256": "629420a7fe883f34ba4d588a3d503c1a1a1daae7480e6a87030bdae0ce2cb47a"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3940,
+      "sha256": "caa3d9e3984d28b2969b0ff2c6f7a54d38f6b7b2c654a74f6bd70620740ed5ec"
+    },
+    {
+      "path": "RIGHTS-AND-ATTRIBUTION.md",
+      "bytes": 310,
+      "sha256": "5ab773d1af68df6743f0a00743a99893d1373350edb4a1b0448d52a86d600fd2"
+    },
+    {
+      "path": "SUPPORT-AND-MAINTENANCE.md",
+      "bytes": 455,
+      "sha256": "b6546ceb9c741af4033bcdbd43ebd39ee137bf95fc524f904814e9f9807f7e8c"
+    },
+    {
+      "path": "dual-appraisal-crosswalk.csv",
+      "bytes": 1275,
+      "sha256": "701b2b5fd338ac786df3948c4ced6780e91d6e0bc4f338c6fd2b757be8d5fc04"
+    },
+    {
+      "path": "editorial-review-checklist.md",
+      "bytes": 686,
+      "sha256": "bfee26b84d3e766c3558d87ed72ea1f7bf510d2369757b3cc6279a5e349ab7ae"
+    },
+    {
+      "path": "edsa-quick-reference-card.pdf",
+      "bytes": 105544,
+      "sha256": "9877d38a34df1df7775bbab71a86dab5ebd2d50f65d8b448e906edfbcd9f90ac"
+    },
+    {
+      "path": "handbook.md",
+      "bytes": 3940,
+      "sha256": "caa3d9e3984d28b2969b0ff2c6f7a54d38f6b7b2c654a74f6bd70620740ed5ec"
+    },
+    {
+      "path": "neuroscience-trust-content-architecture-handbook.pdf",
+      "bytes": 116158,
+      "sha256": "374e3ab4f4054e75f5cee796b1e05d31d5baed02c45b6e6d718a973ca66fd955"
+    },
+    {
+      "path": "platform-policy-ledger.json",
+      "bytes": 2011,
+      "sha256": "7010109f5c16a7d77351b07efad5f6b37617d537fa5626100a8edb070bf9c989"
+    },
+    {
+      "path": "platform-policy-ledger.md",
+      "bytes": 1529,
+      "sha256": "2a8e51dabbaa313c046793bb5b967832d50b83c4b73842aba0d22e6f9cb8d449"
+    },
+    {
+      "path": "quick-reference-card.md",
+      "bytes": 909,
+      "sha256": "8c418ac92e9dede112c33acb5ec6a5d6f8f9e7025a60e6b30b7bd568f1ffcdd8"
+    },
+    {
+      "path": "scientific-claim-map.json",
+      "bytes": 2280,
+      "sha256": "4e4a8016b4e1963c4c176f725d11482a12f44cd1c912de55558e98582215b745"
+    },
+    {
+      "path": "scientific-references.md",
+      "bytes": 1376,
+      "sha256": "7ae7aa78fb73aa36a1c9028e32496d56908d99e5be35ad1c19870e71dc41dfaf"
+    },
+    {
+      "path": "twelve-minute-script-template.docx",
+      "bytes": 10972,
+      "sha256": "f6cf9523ae08b1c243e820fc545a7089ec24cd47ad1ec967924f8bfc5bc25f7d"
+    },
+    {
+      "path": "twelve-minute-script-template.json",
+      "bytes": 3634,
+      "sha256": "5c8544eb1eb1f214da63b5023b278d6d2f9f581924b34b87d4918fa5d334491c"
+    },
+    {
+      "path": "twelve-minute-script-template.md",
+      "bytes": 2449,
+      "sha256": "70304ca0c68c993d9600f3609c8d47b4a9546d33c7afeeabe1609d241ee6659c"
+    },
+    {
+      "path": "unseen-brief-validation.md",
+      "bytes": 993,
+      "sha256": "125f402a484ea0b5d7466737b610cb7fba26a437e3f701dc0f46e34fb7d67b3e"
+    },
+    {
+      "path": "worked-rewrites.json",
+      "bytes": 2156,
+      "sha256": "e8c80934d916882eb01db3d5395ad2cbe61ad5cc8995c39e68afe1fb37e17fc1"
+    },
+    {
+      "path": "worked-rewrites.md",
+      "bytes": 1760,
+      "sha256": "4cdea32327a763ed1e8c24b5ff2c2f823aae14afa616aa1e28d71709b2090d0a"
+    }
+  ],
+  "changelog": "CHANGELOG.md",
+  "boundary": "Package completeness does not make acquisition available; checkout and fulfillment remain unimplemented."
+}

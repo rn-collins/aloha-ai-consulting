@@ -1,0 +1,42 @@
+{
+  "schema": "edsa-worked-rewrites/1.0",
+  "count": 3,
+  "examples": [
+    {
+      "id": "EX-01",
+      "title": "AI governance invitation",
+      "before": "Your company is already behind on AI. Book a call now before your competitors make you irrelevant.",
+      "after": "If your team is deciding where AI belongs, begin with one workflow, its evidence, its owner, and its stop conditions. The linked checklist shows the review sequence; a call is optional.",
+      "decisions": [
+        "Evidence: replaces an unsupported competitive threat with a defined operating problem.",
+        "Discussion: names the four decision dimensions.",
+        "Self-Determination: removes shame and makes contact optional.",
+        "Action: offers one inspectable, reversible next step."
+      ]
+    },
+    {
+      "id": "EX-02",
+      "title": "Health-science explainer",
+      "before": "This brain hack calms your nervous system in sixty seconds.",
+      "after": "A slower exhale is used in some paced-breathing practices, but responses vary and this is not treatment. If breathing exercises feel uncomfortable, stop; seek qualified care for symptoms or urgent concerns.",
+      "decisions": [
+        "Evidence: removes an uncited causal guarantee.",
+        "Discussion: preserves variability and treatment boundary.",
+        "Self-Determination: supplies a stop option.",
+        "Action: routes consequential concerns to care."
+      ]
+    },
+    {
+      "id": "EX-03",
+      "title": "Platform-content advice",
+      "before": "Use this hook and the algorithm will push your video.",
+      "after": "This opening states the topic and stakes early, which may help a viewer decide whether to continue. Platform distribution depends on changing, personalized systems and is never guaranteed; test the opening against your own audience data.",
+      "decisions": [
+        "Evidence: limits the claim to an observable editorial property.",
+        "Discussion: distinguishes viewer comprehension from ranking.",
+        "Self-Determination: avoids manipulating the viewer.",
+        "Action: proposes measurement without a reach promise."
+      ]
+    }
+  ]
+}
