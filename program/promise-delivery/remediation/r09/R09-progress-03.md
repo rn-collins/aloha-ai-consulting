@@ -3,7 +3,7 @@
 **Frozen audit baseline:** 4,289 grouped claims / 9,552 occurrences  
 **Current reviewed estate:** 262 canonical resources / 505 public surfaces / 9,782 interactions / 5,368 promise records / 12,013 occurrences  
 **Tranche:** R09 — Deferred acquisition artifacts and Workspace access model  
-**Status:** locally accepted after full snapshot-hydrated verification; production publication and verification pending
+**Status:** passed after exact-tree GitHub publication and production verification; Unit 3 closed
 
 ## Purpose and boundary
 
@@ -38,4 +38,12 @@ The four package-specific tests and universal artifact tests 1–4 and 8 are sat
 
 ## Publication and production verification
 
-Pending bounded GitHub publication, exact Vercel deployment match, live evidence checks, and runtime-error review.
+- GitHub `main` evaluated implementation commit: `cb4e974384d008008cc2f16182d45926e063bfca`.
+- Exact evaluated Git tree: `c4f1d5ce26608c66b4273c8c71d9e1a3fa60e267`.
+- Vercel production deployment: `dpl_DXiXqcHsMLKjGZ7oF25hBGR7yCom`, state `READY`, target `production`, tied to the exact evaluated commit.
+- `/artifacts/r09-artifact-build-evaluation.json`, `/api/r09-artifact-build-register.json`, `/api/release-control-report.json`, and `/trust-stack/ai-content-system` each returned HTTP 200.
+- The live evaluator reported 14/14 checks, 26 checksum-backed files, twenty prompts, five domains, five accepted and three deferred universal tests, eight release blockers, and zero findings.
+- The live product page remained explicitly `Description only · access unavailable` and stated that the Five-Domain Knowledge Base is not currently for sale; no checkout, purchase, license, or download was exposed.
+- Live release totals remained 262 canonical resources with zero release-control errors and 5,368 promise records / 12,013 occurrences.
+- Vercel reported no runtime errors in the targeted verification window.
+- Browser-control tooling was not exposed in this session, so verification does not claim screenshot capture, browser-console review, responsive-layout review, or visual-design certification.
