@@ -45,6 +45,9 @@ check('R10-22', evidence?.reAudit?.presentVerbatim === 3210 && evidence?.reAudit
 check('R10-23', evidence?.reAudit?.fullyVerbatimSlots === 7 && evidence?.reAudit?.slotsRequiringDispositionLineage === 318, 'Slot-level lineage results must reconcile to seven fully verbatim slots and 318 requiring disposition lineage.');
 check('R10-24', evidence?.units?.every((unit) => unit.reAudit?.reviewedPromiseCount === unit.promiseIds.length && unit.reAudit.promiseReview.length === unit.promiseIds.length), 'Every reconstructed slot must contain a promise-level lineage decision for every assigned frozen promise.');
 check('R10-25', evidence?.units?.every((unit) => unit.reAudit?.presentVerbatim + unit.reAudit?.notPresentVerbatim === unit.promiseIds.length), 'Every slot lineage summary must reconcile to its assigned promise count.');
+check('R10-26', evidence?.reAudit?.confirmedSemanticSuccessors > 0 && evidence?.reAudit?.confirmedSemanticSuccessors + evidence?.reAudit?.lineageUnresolved === 1079, 'Every non-verbatim frozen promise must reconcile to a confirmed unique semantic successor or an unresolved lineage decision.');
+check('R10-27', evidence?.units?.every((unit) => unit.reAudit?.confirmedSemanticSuccessors + unit.reAudit?.lineageUnresolved === unit.reAudit?.notPresentVerbatim), 'Every slot must reconcile its non-verbatim records by lineage disposition.');
+check('R10-28', evidence?.units?.every((unit) => unit.reAudit?.promiseReview?.every((record) => record.disposition && Object.hasOwn(record, 'successorPromiseId'))), 'Every promise review must record a lineage disposition and explicit successor field.');
 check('R10-19', evidence?.counts?.deferred === 0, 'Program closure requires every reconstructed unit to reach a supported passed or explicitly blocked terminal decision.');
 check('R10-20', findings.length === 0, 'Program closure requires zero R10 findings.');
 

@@ -9,6 +9,18 @@ const outputPath = 'program/promise-delivery/r10-evidence-unit-register.json';
 const ledger = JSON.parse(fs.readFileSync(path.join(root, ledgerPath), 'utf8'));
 const currentRegistry = JSON.parse(fs.readFileSync(path.join(root, currentRegistryPath), 'utf8'));
 const currentById = new Map(currentRegistry.records.map((record) => [record.promiseId, record]));
+const semanticKey = (value) => value
+  .replace(/^\s*\d+\s*·\s*/, '')
+  .toLowerCase()
+  .replace(/[^a-z0-9]+/g, ' ')
+  .trim();
+const successorsBySemanticKey = new Map();
+for (const record of currentRegistry.records) {
+  const key = `${record.category}|${semanticKey(record.exactPromise)}`;
+  const matches = successorsBySemanticKey.get(key) || [];
+  matches.push(record);
+  successorsBySemanticKey.set(key, matches);
+}
 const totalUnits = 325;
 const records = [...ledger.records].sort((a, b) => a.id.localeCompare(b.id));
 
@@ -25,23 +37,46 @@ const units = Array.from({ length: totalUnits }, (_, index) => {
   const ordinal = String(index + 1).padStart(3, '0');
   const promiseReview = slice.map((record) => {
     const current = currentById.get(record.id);
+    const semanticMatches = current
+      ? []
+      : successorsBySemanticKey.get(`${record.category}|${semanticKey(record.exactPromise)}`) || [];
+    const successor = semanticMatches.length === 1 ? semanticMatches[0] : null;
     return {
       promiseId: record.id,
       category: record.category,
-      currentRegistryState: current ? 'present-verbatim' : 'not-present-verbatim',
+      currentRegistryState: current
+        ? 'present-verbatim'
+        : successor
+          ? 'confirmed-semantic-successor'
+          : 'lineage-unresolved',
+      disposition: current
+        ? 'direct-survivor'
+        : successor
+          ? 'rewrite-successor-confirmed'
+          : 'requires-lineage-adjudication',
+      successorPromiseId: successor?.promiseId || null,
       frozenOccurrenceCount: record.occurrences.length,
       frozenRoutes: [...new Set(record.occurrences.map((occurrence) => occurrence.route))].sort(),
       currentOccurrenceKeyCount: current?.occurrenceKeys?.length || 0,
       evidence: current
         ? [`${currentRegistryPath}#records[promiseId=${record.id}]`]
+        : successor
+          ? [
+              `${ledgerPath}#records[id=${record.id}]`,
+              `${currentRegistryPath}#records[promiseId=${successor.promiseId}]`
+            ]
         : [`${ledgerPath}#records[id=${record.id}]`, `${currentRegistryPath}#records`],
       remainingDecision: current
         ? 'Substantive delivery and any applicable factual, legal, operational, or production evidence still require independent review.'
-        : 'Determine whether the frozen promise was intentionally retired, rewritten into a successor promise, or omitted; record successor lineage or a defect decision.'
+        : successor
+          ? 'Successor lineage is resolved; substantive delivery and any applicable factual, legal, operational, or production evidence still require independent review.'
+          : 'Determine whether the frozen promise was intentionally retired, rewritten into a materially changed successor, or omitted; record successor lineage or a defect decision.'
     };
   });
   const presentVerbatim = promiseReview.filter((record) => record.currentRegistryState === 'present-verbatim').length;
-  const notPresentVerbatim = promiseReview.length - presentVerbatim;
+  const confirmedSemanticSuccessors = promiseReview.filter((record) => record.currentRegistryState === 'confirmed-semantic-successor').length;
+  const lineageUnresolved = promiseReview.filter((record) => record.currentRegistryState === 'lineage-unresolved').length;
+  const notPresentVerbatim = confirmedSemanticSuccessors + lineageUnresolved;
   return {
     id: `R10-REC-${ordinal}`,
     provenance: 'controlled-denominator-reconstruction',
@@ -54,6 +89,8 @@ const units = Array.from({ length: totalUnits }, (_, index) => {
       reviewedPromiseCount: promiseReview.length,
       presentVerbatim,
       notPresentVerbatim,
+      confirmedSemanticSuccessors,
+      lineageUnresolved,
       promiseReview
     },
     evidence: [
@@ -61,9 +98,9 @@ const units = Array.from({ length: totalUnits }, (_, index) => {
       `${currentRegistryPath}#records`,
       'program/promise-delivery/remediation/r10/R10-denominator-recovery-method.md'
     ],
-    dependency: notPresentVerbatim
-      ? `${notPresentVerbatim} frozen promise ID(s) require retirement, rewrite-successor, or omission lineage; all ${promiseReview.length} promises still require substantive evidence review.`
-      : `All ${promiseReview.length} frozen promise IDs survive verbatim, but substantive evidence review remains incomplete.`,
+    dependency: lineageUnresolved
+      ? `${lineageUnresolved} frozen promise ID(s) still require retirement, materially changed successor, or omission lineage; ${confirmedSemanticSuccessors} non-verbatim successor lineage decision(s) are confirmed; all ${promiseReview.length} promises still require substantive evidence review.`
+      : `All ${promiseReview.length} frozen promise IDs have direct or confirmed-successor lineage, but substantive evidence review remains incomplete.`,
     reconsiderationTrigger: 'Resolve every promise-level remainingDecision, attach observable evidence, and record a supported terminal decision for the complete slot.'
   };
 });
@@ -98,6 +135,8 @@ const register = {
     reviewedPromiseRecords: records.length,
     presentVerbatim: records.filter((record) => currentById.has(record.id)).length,
     notPresentVerbatim: records.filter((record) => !currentById.has(record.id)).length,
+    confirmedSemanticSuccessors: units.reduce((sum, unit) => sum + unit.reAudit.confirmedSemanticSuccessors, 0),
+    lineageUnresolved: units.reduce((sum, unit) => sum + unit.reAudit.lineageUnresolved, 0),
     fullyVerbatimSlots: units.filter((unit) => unit.reAudit.notPresentVerbatim === 0).length,
     slotsRequiringDispositionLineage: units.filter((unit) => unit.reAudit.notPresentVerbatim > 0).length,
     boundary: 'Lineage reconciliation is not substantive promise acceptance.'

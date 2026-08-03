@@ -1,6 +1,6 @@
 {
   "schema": "aloha-ai-r10-closure-evaluation/1.0",
-  "generatedAt": "2026-08-03T22:09:34.598Z",
+  "generatedAt": "2026-08-03T22:24:56.556Z",
   "decision": "closure-blocked",
   "frozenEvidenceUnits": 325,
   "checks": [
@@ -118,6 +118,21 @@
       "id": "R10-25",
       "pass": true,
       "detail": "Every slot lineage summary must reconcile to its assigned promise count."
+    },
+    {
+      "id": "R10-26",
+      "pass": true,
+      "detail": "Every non-verbatim frozen promise must reconcile to a confirmed unique semantic successor or an unresolved lineage decision."
+    },
+    {
+      "id": "R10-27",
+      "pass": true,
+      "detail": "Every slot must reconcile its non-verbatim records by lineage disposition."
+    },
+    {
+      "id": "R10-28",
+      "pass": true,
+      "detail": "Every promise review must record a lineage disposition and explicit successor field."
     },
     {
       "id": "R10-19",
