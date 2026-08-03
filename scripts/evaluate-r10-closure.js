@@ -20,7 +20,7 @@ const evidenceFile = 'program/promise-delivery/r10-evidence-unit-register.json';
 const evidence = exists(evidenceFile) ? read(evidenceFile) : null;
 const frozenLedger = read('program/promise-delivery/ledger.json');
 const frozenIds = frozenLedger.records.map((record) => record.id).sort();
-const registeredIds = evidence?.units?.flatMap((unit) => unit.promiseIds || []).sort() || [];
+const registeredIds = evidence?.units?.flatMap((unit) => unit.reAudit?.promiseReview?.map((record) => record.i) || []).sort() || [];
 
 check('R10-01', freeze.baselineCommit === 'deb1073d', 'Immutable baseline commit must remain deb1073d.');
 check('R10-02', freeze.counts.promiseRecords === 4289 && freeze.counts.totalPromiseOccurrences === 9552, 'Frozen promise denominator must remain 4,289 records / 9,552 occurrences.');
@@ -34,7 +34,7 @@ check('R10-09', evidence?.units?.length === 325, 'The evidence-unit register mus
 check('R10-10', evidence?.units?.every((unit) => unit.id && ['passed', 'blocked', 'deferred'].includes(unit.terminalState)), 'Every evidence unit must have a stable ID and explicit terminal state.');
 check('R10-11', evidence?.units?.every((unit) => Array.isArray(unit.evidence) && unit.evidence.length), 'Every evidence unit must point to observable evidence.');
 check('R10-12', evidence?.units?.every((unit) => unit.terminalState === 'passed' || (unit.dependency && unit.reconsiderationTrigger)), 'Every non-passing unit must name its dependency and reconsideration trigger.');
-check('R10-13', evidence?.units?.every((unit) => Array.isArray(unit.promiseIds) && unit.promiseIds.length), 'Every evidence unit must preserve lineage to one or more frozen promise IDs.');
+check('R10-13', evidence?.units?.every((unit) => Array.isArray(unit.reAudit?.promiseReview) && unit.reAudit.promiseReview.length && unit.reAudit.promiseReview.every((record) => record.i)), 'Every evidence unit must preserve lineage to one or more frozen promise IDs through compact promise-review membership.');
 check('R10-14', evidence?.counts?.total === 325 && evidence?.counts?.total === (evidence?.counts?.passed || 0) + (evidence?.counts?.blocked || 0) + (evidence?.counts?.deferred || 0), 'Evidence-unit terminal-state counts must reconcile to 325.');
 check('R10-15', registeredIds.length === 4289 && new Set(registeredIds).size === 4289 && JSON.stringify(registeredIds) === JSON.stringify(frozenIds), 'The recovered register must cover every frozen promise ID exactly once.');
 check('R10-16', evidence?.units?.every((unit) => unit.provenance && unit.provenanceGrade), 'Every reconstructed unit must disclose its provenance and provenance grade.');
@@ -43,11 +43,14 @@ check('R10-18', evidence?.counts?.deferred === evidence?.units?.filter((unit) =>
 check('R10-21', evidence?.reAudit?.reviewedPromiseRecords === 4289, 'The current-registry lineage pass must review all 4,289 frozen promise records.');
 check('R10-22', evidence?.reAudit?.presentVerbatim === 3210 && evidence?.reAudit?.notPresentVerbatim === 1079, 'Lineage results must reconcile to 3,210 verbatim survivors and 1,079 records requiring disposition lineage.');
 check('R10-23', evidence?.reAudit?.fullyVerbatimSlots === 7 && evidence?.reAudit?.slotsRequiringDispositionLineage === 318, 'Slot-level lineage results must reconcile to seven fully verbatim slots and 318 requiring disposition lineage.');
-check('R10-24', evidence?.units?.every((unit) => unit.reAudit?.reviewedPromiseCount === unit.promiseIds.length && unit.reAudit.promiseReview.length === unit.promiseIds.length), 'Every reconstructed slot must contain a promise-level lineage decision for every assigned frozen promise.');
-check('R10-25', evidence?.units?.every((unit) => unit.reAudit?.presentVerbatim + unit.reAudit?.notPresentVerbatim === unit.promiseIds.length), 'Every slot lineage summary must reconcile to its assigned promise count.');
-check('R10-26', evidence?.reAudit?.confirmedSemanticSuccessors > 0 && evidence?.reAudit?.confirmedSemanticSuccessors + evidence?.reAudit?.lineageUnresolved === 1079, 'Every non-verbatim frozen promise must reconcile to a confirmed unique semantic successor or an unresolved lineage decision.');
-check('R10-27', evidence?.units?.every((unit) => unit.reAudit?.confirmedSemanticSuccessors + unit.reAudit?.lineageUnresolved === unit.reAudit?.notPresentVerbatim), 'Every slot must reconcile its non-verbatim records by lineage disposition.');
-check('R10-28', evidence?.units?.every((unit) => unit.reAudit?.promiseReview?.every((record) => record.disposition && Object.hasOwn(record, 'successorPromiseId'))), 'Every promise review must record a lineage disposition and explicit successor field.');
+check('R10-24', evidence?.units?.every((unit) => unit.reAudit?.reviewedPromiseCount === unit.reAudit.promiseReview.length), 'Every reconstructed slot must contain a promise-level lineage decision for every assigned frozen promise.');
+check('R10-25', evidence?.units?.every((unit) => unit.reAudit?.presentVerbatim + unit.reAudit?.notPresentVerbatim === unit.reAudit?.promiseReview?.length), 'Every slot lineage summary must reconcile to its assigned promise count.');
+check('R10-26', evidence?.reAudit?.confirmedSemanticSuccessors > 0 && evidence?.reAudit?.confirmedSemanticSuccessors + evidence?.reAudit?.confirmedRemediationDispositions + evidence?.reAudit?.lineageUnresolved === 1079, 'Every non-verbatim frozen promise must reconcile to a confirmed successor, confirmed remediation disposition, or unresolved lineage decision.');
+check('R10-27', evidence?.units?.every((unit) => unit.reAudit?.confirmedSemanticSuccessors + unit.reAudit?.confirmedRemediationDispositions + unit.reAudit?.lineageUnresolved === unit.reAudit?.notPresentVerbatim), 'Every slot must reconcile its non-verbatim records by lineage disposition.');
+check('R10-28', evidence?.reAudit?.compactRecordSchema?.fields?.i === 'promiseId' && evidence?.units?.every((unit) => unit.reAudit?.promiseReview?.every((record) => record.i && record.d && Object.hasOwn(record, 'x'))), 'Every compact promise review must record a stable ID, lineage disposition, and explicit successor field.');
+check('R10-29', evidence?.reAudit?.confirmedRemediationDispositions === 149 && evidence?.reAudit?.lineageUnresolved === 840, 'R01 manifest reconciliation must confirm 149 unambiguous dispositions while preserving 840 unresolved lineage decisions.');
+check('R10-30', evidence?.reAudit?.confirmedSemanticSuccessors + evidence?.reAudit?.confirmedRemediationDispositions + evidence?.reAudit?.lineageUnresolved === 1079, 'Every non-verbatim promise must reconcile to a successor, remediation disposition, or unresolved decision.');
+check('R10-31', evidence?.reAudit?.compactRecordSchema?.evidenceTemplates?.['ledger-plus-r01-disposition']?.includes('s0-occurrence-manifest.json') && evidence?.units?.every((unit) => unit.reAudit?.promiseReview?.filter((record) => record.s === 'confirmed-remediation-disposition').every((record) => record.r && record.e === 'ledger-plus-r01-disposition')), 'Every confirmed remediation disposition must resolve through the explicit R01 manifest evidence template.');
 check('R10-19', evidence?.counts?.deferred === 0, 'Program closure requires every reconstructed unit to reach a supported passed or explicitly blocked terminal decision.');
 check('R10-20', findings.length === 0, 'Program closure requires zero R10 findings.');
 

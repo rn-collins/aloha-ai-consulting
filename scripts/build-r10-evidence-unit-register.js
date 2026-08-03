@@ -5,9 +5,11 @@ import path from 'node:path';
 const root = process.cwd();
 const ledgerPath = 'program/promise-delivery/ledger.json';
 const currentRegistryPath = 'program/promise-delivery/promise-release-registry.json';
+const r01DispositionPath = 'program/promise-delivery/remediation/r01/s0-occurrence-manifest.json';
 const outputPath = 'program/promise-delivery/r10-evidence-unit-register.json';
 const ledger = JSON.parse(fs.readFileSync(path.join(root, ledgerPath), 'utf8'));
 const currentRegistry = JSON.parse(fs.readFileSync(path.join(root, currentRegistryPath), 'utf8'));
+const r01DispositionManifest = JSON.parse(fs.readFileSync(path.join(root, r01DispositionPath), 'utf8'));
 const currentById = new Map(currentRegistry.records.map((record) => [record.promiseId, record]));
 const semanticKey = (value) => value
   .replace(/^\s*\d+\s*·\s*/, '')
@@ -20,6 +22,12 @@ for (const record of currentRegistry.records) {
   const matches = successorsBySemanticKey.get(key) || [];
   matches.push(record);
   successorsBySemanticKey.set(key, matches);
+}
+const r01DispositionByPromiseId = new Map();
+for (const occurrence of r01DispositionManifest.occurrences) {
+  const records = r01DispositionByPromiseId.get(occurrence.promiseId) || [];
+  records.push(occurrence);
+  r01DispositionByPromiseId.set(occurrence.promiseId, records);
 }
 const totalUnits = 325;
 const records = [...ledger.records].sort((a, b) => a.id.localeCompare(b.id));
@@ -41,55 +49,58 @@ const units = Array.from({ length: totalUnits }, (_, index) => {
       ? []
       : successorsBySemanticKey.get(`${record.category}|${semanticKey(record.exactPromise)}`) || [];
     const successor = semanticMatches.length === 1 ? semanticMatches[0] : null;
+    const priorDispositionRecords = current || successor ? [] : r01DispositionByPromiseId.get(record.id) || [];
+    const priorDispositions = [...new Set(priorDispositionRecords.map((item) => item.disposition))].sort();
+    const confirmedPriorDisposition = priorDispositions.length === 1 ? priorDispositions[0] : null;
     return {
-      promiseId: record.id,
-      category: record.category,
-      currentRegistryState: current
+      i: record.id,
+      s: current
         ? 'present-verbatim'
         : successor
           ? 'confirmed-semantic-successor'
+          : confirmedPriorDisposition
+            ? 'confirmed-remediation-disposition'
           : 'lineage-unresolved',
-      disposition: current
+      d: current
         ? 'direct-survivor'
         : successor
           ? 'rewrite-successor-confirmed'
+          : confirmedPriorDisposition
+            ? `remediation-${confirmedPriorDisposition}-confirmed`
           : 'requires-lineage-adjudication',
-      successorPromiseId: successor?.promiseId || null,
-      frozenOccurrenceCount: record.occurrences.length,
-      frozenRoutes: [...new Set(record.occurrences.map((occurrence) => occurrence.route))].sort(),
-      currentOccurrenceKeyCount: current?.occurrenceKeys?.length || 0,
-      evidence: current
-        ? [`${currentRegistryPath}#records[promiseId=${record.id}]`]
+      x: successor?.promiseId || null,
+      r: confirmedPriorDisposition,
+      e: current
+        ? 'current-registry-direct'
         : successor
-          ? [
-              `${ledgerPath}#records[id=${record.id}]`,
-              `${currentRegistryPath}#records[promiseId=${successor.promiseId}]`
-            ]
-        : [`${ledgerPath}#records[id=${record.id}]`, `${currentRegistryPath}#records`],
-      remainingDecision: current
-        ? 'Substantive delivery and any applicable factual, legal, operational, or production evidence still require independent review.'
-        : successor
-          ? 'Successor lineage is resolved; substantive delivery and any applicable factual, legal, operational, or production evidence still require independent review.'
-          : 'Determine whether the frozen promise was intentionally retired, rewritten into a materially changed successor, or omitted; record successor lineage or a defect decision.'
+          ? 'ledger-plus-current-successor'
+          : confirmedPriorDisposition
+            ? 'ledger-plus-r01-disposition'
+            : 'ledger-plus-current-registry-search',
+      q: current || successor
+        ? 'substantive-review-required'
+        : confirmedPriorDisposition
+          ? 'remediation-state-verification-required'
+          : 'lineage-adjudication-required'
     };
   });
-  const presentVerbatim = promiseReview.filter((record) => record.currentRegistryState === 'present-verbatim').length;
-  const confirmedSemanticSuccessors = promiseReview.filter((record) => record.currentRegistryState === 'confirmed-semantic-successor').length;
-  const lineageUnresolved = promiseReview.filter((record) => record.currentRegistryState === 'lineage-unresolved').length;
-  const notPresentVerbatim = confirmedSemanticSuccessors + lineageUnresolved;
+  const presentVerbatim = promiseReview.filter((record) => record.s === 'present-verbatim').length;
+  const confirmedSemanticSuccessors = promiseReview.filter((record) => record.s === 'confirmed-semantic-successor').length;
+  const confirmedRemediationDispositions = promiseReview.filter((record) => record.s === 'confirmed-remediation-disposition').length;
+  const lineageUnresolved = promiseReview.filter((record) => record.s === 'lineage-unresolved').length;
+  const notPresentVerbatim = confirmedSemanticSuccessors + confirmedRemediationDispositions + lineageUnresolved;
   return {
     id: `R10-REC-${ordinal}`,
     provenance: 'controlled-denominator-reconstruction',
     provenanceGrade: 'reconstructed-not-original',
     terminalState: 'deferred',
-    promiseIds: slice.map((record) => record.id),
-    promiseCategories: [...new Set(slice.map((record) => record.category))].sort(),
     reAudit: {
       phase: 'current-registry-lineage-reconciliation',
       reviewedPromiseCount: promiseReview.length,
       presentVerbatim,
       notPresentVerbatim,
       confirmedSemanticSuccessors,
+      confirmedRemediationDispositions,
       lineageUnresolved,
       promiseReview
     },
@@ -99,7 +110,7 @@ const units = Array.from({ length: totalUnits }, (_, index) => {
       'program/promise-delivery/remediation/r10/R10-denominator-recovery-method.md'
     ],
     dependency: lineageUnresolved
-      ? `${lineageUnresolved} frozen promise ID(s) still require retirement, materially changed successor, or omission lineage; ${confirmedSemanticSuccessors} non-verbatim successor lineage decision(s) are confirmed; all ${promiseReview.length} promises still require substantive evidence review.`
+      ? `${lineageUnresolved} frozen promise ID(s) still require retirement, materially changed successor, or omission lineage; ${confirmedSemanticSuccessors} successor and ${confirmedRemediationDispositions} remediation disposition lineage decision(s) are confirmed; all ${promiseReview.length} promises still require substantive evidence review.`
       : `All ${promiseReview.length} frozen promise IDs have direct or confirmed-successor lineage, but substantive evidence review remains incomplete.`,
     reconsiderationTrigger: 'Resolve every promise-level remainingDecision, attach observable evidence, and record a supported terminal decision for the complete slot.'
   };
@@ -132,10 +143,35 @@ const register = {
   },
   reAudit: {
     phase: 'current-registry-lineage-reconciliation',
+    compactRecordSchema: {
+      sourceDetail: 'Category, exact promise, occurrences, routes, and baseline classification remain canonical in program/promise-delivery/ledger.json.',
+      fields: {
+        i: 'promiseId',
+        s: 'currentRegistryState',
+        d: 'disposition',
+        x: 'successorPromiseId',
+        r: 'remediationDisposition',
+        e: 'evidenceCode',
+        q: 'remainingDecisionCode'
+      },
+      unitMembership: 'Each unit\'s promiseReview.i values are its authoritative frozen promise-ID membership; category and route detail resolve through the immutable ledger.',
+      evidenceTemplates: {
+        'current-registry-direct': `${currentRegistryPath}#records[promiseId={promiseId}]`,
+        'ledger-plus-current-successor': `${ledgerPath}#records[id={promiseId}] + ${currentRegistryPath}#records[promiseId={successorPromiseId}]`,
+        'ledger-plus-r01-disposition': `${ledgerPath}#records[id={promiseId}] + ${r01DispositionPath}#occurrences[promiseId={promiseId}]`,
+        'ledger-plus-current-registry-search': `${ledgerPath}#records[id={promiseId}] + ${currentRegistryPath}#records`
+      },
+      remainingDecisionTemplates: {
+        'substantive-review-required': 'Substantive delivery and applicable factual, legal, operational, or production evidence require independent review.',
+        'remediation-state-verification-required': 'Historical remediation lineage is resolved; current implementation state still requires independent verification.',
+        'lineage-adjudication-required': 'Determine whether the frozen promise was retired, rewritten into a materially changed successor, or omitted.'
+      }
+    },
     reviewedPromiseRecords: records.length,
     presentVerbatim: records.filter((record) => currentById.has(record.id)).length,
     notPresentVerbatim: records.filter((record) => !currentById.has(record.id)).length,
     confirmedSemanticSuccessors: units.reduce((sum, unit) => sum + unit.reAudit.confirmedSemanticSuccessors, 0),
+    confirmedRemediationDispositions: units.reduce((sum, unit) => sum + unit.reAudit.confirmedRemediationDispositions, 0),
     lineageUnresolved: units.reduce((sum, unit) => sum + unit.reAudit.lineageUnresolved, 0),
     fullyVerbatimSlots: units.filter((unit) => unit.reAudit.notPresentVerbatim === 0).length,
     slotsRequiringDispositionLineage: units.filter((unit) => unit.reAudit.notPresentVerbatim > 0).length,
@@ -145,5 +181,5 @@ const register = {
   units
 };
 
-fs.writeFileSync(path.join(root, outputPath), `${JSON.stringify(register, null, 2)}\n`);
+fs.writeFileSync(path.join(root, outputPath), `${JSON.stringify(register)}\n`);
 console.log(`Wrote ${units.length} reconstructed evidence slots covering ${cursor} frozen promise records.`);
