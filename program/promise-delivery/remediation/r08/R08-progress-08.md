@@ -3,7 +3,7 @@
 **Frozen audit baseline:** 4,289 grouped claims / 9,552 occurrences  
 **Current reviewed estate:** 262 canonical resources / 505 public surfaces / 9,782 interactions / 5,368 promise records / 12,013 occurrences  
 **Tranche:** R08 — Existing asset connection and substantive destination depth  
-**Status:** passed locally within the twenty-resource playbook, template, and tool-guide boundary; publication and production verification pending; Unit 8 open; R08 remains open
+**Status:** passed within the twenty-resource playbook, template, and tool-guide boundary after exact-tree GitHub publication and production verification; Unit 8 closed; R08 remains open
 
 ## Purpose and boundary
 
@@ -34,7 +34,16 @@ A passing result does not certify professional suitability, ongoing maintenance,
 
 ## Publication and production verification
 
-Pending exact-tree publication to GitHub `main`, automatic Vercel deployment, live evidence and page assertions, release-total confirmation, and targeted runtime-error review.
+- GitHub `main` evaluated implementation commit: `fcba646da1778c55792725d2ed5b37cecbafa54b`.
+- Exact evaluated Git tree: `3626d42d5390ff7fccc58151478b95e38a7ef2bb`.
+- Vercel production deployment: `dpl_2tm5jXATcgkRxLJueJWYfWZvYeVb`, state `READY`, target `production`, tied to the exact evaluated commit.
+- `/artifacts/practical-guidance-evidence-evaluation.json`, `/api/practical-guidance-evidence-register.json`, `/university/templates/citation-verifier-lab-kit`, `/api/release-control-report.json`, and `/program/promise-delivery/promise-release-registry.json` returned HTTP 200.
+- The live evaluator reported 11/11 checks, twenty canonical resources, six playbooks, nine templates, five tool guides, and zero findings.
+- The live Citation Verifier Lab Kit rendered `Browser-local downloadable template`, retained the `Download Markdown template` control, and did not render the superseded unavailable-access badge.
+- Live release totals remained 262 resources and 5,368 promise records / 12,013 occurrences.
+- Vercel reported no runtime errors in the targeted verification window.
+- Two superseded deployment attempts failed before serving production: `dpl_Dftwe9CeGQ1ZvD6x9mfESG1PXtLP` contained truncated gzip blobs and `dpl_7T1HKQcWYrSy1FvZJox3qd3rxyZU` contained a truncated renderer blob. Both publication-transport defects were repaired in later non-forced commits; neither failed deployment became the verified production artifact.
+- Browser-control tooling was not exposed in this session, so verification does not claim independent button activation, downloaded-file inspection, screenshot capture, browser-console review, responsive-layout review, or visual-design certification.
 
 ## Remaining R08 work
 
@@ -44,4 +53,4 @@ Pending exact-tree publication to GitHub `main`, automatic Vercel deployment, li
 
 ## Decision
 
-PASS locally within the stated twenty-resource practical-guidance boundary. Production closeout remains pending. R08 remains open.
+PASS within the stated twenty-resource practical-guidance boundary. Unit 8 is production-closed. R08 remains open.
