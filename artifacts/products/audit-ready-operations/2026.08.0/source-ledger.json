@@ -1,0 +1,69 @@
+{
+  "schema": "aro-sources/1.0",
+  "cutoff": "2026-08-03",
+  "sources": [
+    {
+      "id": "ORS-475A-372",
+      "title": "ORS 475A.372",
+      "type": "statute",
+      "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors475a.html",
+      "pinpoint": "475A.372",
+      "status": "operative-verify-current",
+      "retrievedAt": "2026-08-03"
+    },
+    {
+      "id": "OAR-333-333-4820",
+      "title": "Client Records",
+      "type": "rule",
+      "url": "https://secure.sos.state.or.us/oard/displayDivisionRules.action?selectedDivision=7102",
+      "pinpoint": "333-333-4820",
+      "status": "effective-2026-01-01",
+      "retrievedAt": "2026-08-03"
+    },
+    {
+      "id": "OAR-333-333-4900",
+      "title": "Collection and Maintenance of 303 Client Data",
+      "type": "rule",
+      "url": "https://secure.sos.state.or.us/oard/displayDivisionRules.action?selectedDivision=7102",
+      "pinpoint": "333-333-4900",
+      "status": "operative",
+      "retrievedAt": "2026-08-03"
+    },
+    {
+      "id": "OAR-333-333-4910",
+      "title": "Required Reporting of Data",
+      "type": "rule",
+      "url": "https://secure.sos.state.or.us/oard/displayDivisionRules.action?selectedDivision=7102",
+      "pinpoint": "333-333-4910",
+      "status": "effective-2026-01-01",
+      "retrievedAt": "2026-08-03"
+    },
+    {
+      "id": "OAR-333-333-5100",
+      "title": "Facilitator Conduct",
+      "type": "rule",
+      "url": "https://secure.sos.state.or.us/oard/displayDivisionRules.action?selectedDivision=7102",
+      "pinpoint": "333-333-5100",
+      "status": "operative-verify-current",
+      "retrievedAt": "2026-08-03"
+    },
+    {
+      "id": "OPS-303-FORM-2026",
+      "title": "303 Client Data Form",
+      "type": "agency-form",
+      "url": "https://www.oregon.gov/oha/PH/PREVENTIONWELLNESS/Documents/303-Client-Data-Form.pdf",
+      "pinpoint": "Updated November 2025; for use beginning 2026-01-01",
+      "status": "current-at-cutoff",
+      "retrievedAt": "2026-08-03"
+    },
+    {
+      "id": "OPS-303-GUIDE-2026",
+      "title": "303 Data Reporting Guide for Service Centers",
+      "type": "agency-guide",
+      "url": "https://www.oregon.gov/oha/PH/PREVENTIONWELLNESS/Documents/303-Data-Reporting-Guide-for-Service-Centers.pdf",
+      "pinpoint": "Updated 2026-02-24",
+      "status": "current-at-cutoff",
+      "retrievedAt": "2026-08-03"
+    }
+  ]
+}

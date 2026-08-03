@@ -1,0 +1,25 @@
+{
+  "schema": "aloha-ai-r09-cannabis-os-artifact-register/1.0",
+  "reviewedAt": "2026-08-03",
+  "scope": "R09 Unit 7 builds and internally accepts the fifth acquisition artifact against the frozen Unit 2 delivery architecture.",
+  "boundary": "This is a dated educational Oregon psilocybin operations package, not legal advice or a guarantee of compliance. Qualified Oregon legal/compliance review is required before commercial release. Package completeness is not an acquisition release and creates no Workspace entitlement.",
+  "artifact": {
+    "resourceId": "sb303-compliance-kit",
+    "artifactName": "Audit-Ready Operations",
+    "version": "2026.08.0",
+    "state": "built-frozen-pre-release",
+    "packagePath": "artifacts/products/audit-ready-operations/2026.08.0",
+    "acquisitionState": "unavailable",
+    "workspaceEntitlement": false,
+    "qualifiedOregonReview": "required-before-release-not-yet-completed",
+    "specificAcceptanceTests": [
+      "Qualified Oregon legal/compliance review confirms the dated source map and all required disclaimers before release.",
+      "Reconcile every field and definition against the current OPS form and governing authority at the source cutoff.",
+      "Run boundary-value and opt-out scenarios through totals and formulas without misclassification or double counting.",
+      "Confirm the calendar distinguishes official deadlines from internal targets and does not silently imply continuing legal updates."
+    ],
+    "acceptedUniversalTests": [1, 2, 3, 4, 8],
+    "deferredUniversalTests": [5, 6, 7],
+    "releaseBlockers": ["qualified Oregon legal/compliance review", "checkout", "payment", "order record", "receipt", "signed fulfillment", "redelivery", "refund operations", "production purchase test"]
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "schema": "aro-scenarios/1.0",
+  "rule": "Opt-out excludes client-response aggregation only; the client remains in service-center operational totals and the opt-out count.",
+  "scenarios": [
+    {
+      "id": "S01",
+      "clients": 0,
+      "totalSessions": 0,
+      "groupSessions": 0,
+      "groupParticipants": 0,
+      "totalDoseMg": 0,
+      "optOuts": 0,
+      "expected": {
+        "avgSessions": "NA",
+        "avgGroupSize": "NA",
+        "avgDose": "NA",
+        "includedClientResponses": 0
+      }
+    },
+    {
+      "id": "S02",
+      "clients": 1,
+      "totalSessions": 1,
+      "groupSessions": 0,
+      "groupParticipants": 0,
+      "totalDoseMg": 20,
+      "optOuts": 0,
+      "expected": {
+        "avgSessions": 1,
+        "avgGroupSize": "NA",
+        "avgDose": 20,
+        "includedClientResponses": 1
+      }
+    },
+    {
+      "id": "S03",
+      "clients": 2,
+      "totalSessions": 3,
+      "groupSessions": 1,
+      "groupParticipants": 2,
+      "totalDoseMg": 60,
+      "optOuts": 1,
+      "expected": {
+        "avgSessions": 1.5,
+        "avgGroupSize": 2,
+        "avgDose": 20,
+        "includedClientResponses": 1
+      }
+    },
+    {
+      "id": "S04",
+      "clients": 2,
+      "totalSessions": 2,
+      "groupSessions": 1,
+      "groupParticipants": 2,
+      "totalDoseMg": 0,
+      "optOuts": 2,
+      "expected": {
+        "avgSessions": 1,
+        "avgGroupSize": 2,
+        "avgDose": 0,
+        "includedClientResponses": 0
+      }
+    }
+  ]
+}

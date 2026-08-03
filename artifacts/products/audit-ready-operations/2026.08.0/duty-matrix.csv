@@ -1,0 +1,9 @@
+id,phase,duty,source_id,cadence,data_class,owner,verification
+"D01","collect","Use the current Authority form before every administration session, including clients who opt out.","OAR-333-333-4900","prior-to-session","client-form","assign-before-use","qualified-review-required"
+"D02","store","Prevent unauthorized access; protect confidentiality; restrict access to licensees and designated representatives.","OAR-333-333-4900","continuous","client-record","assign-before-use","qualified-review-required"
+"D03","store","Maintain the written confidentiality plan and make it available to OHA on request.","OAR-333-333-4820","continuous","plan","assign-before-use","qualified-review-required"
+"D04","report","Submit previous-quarter data through TLC no later than the 25th calendar day after quarter end.","OAR-333-333-4910","quarterly","aggregate","assign-before-use","qualified-review-required"
+"D05","report","Exclude opted-out client responses from aggregated client data, but report the number of opt-outs as service-center data.","OAR-333-333-4910","quarterly","aggregate","assign-before-use","qualified-review-required"
+"D06","report","Compile adverse and post-session reactions using current division-333 definitions.","OAR-333-333-4910","quarterly","aggregate","assign-before-use","qualified-review-required"
+"D07","share","Report only to the Authority; do not share except with representatives collecting and maintaining the data.","OAR-333-333-4910","continuous","restricted","assign-before-use","qualified-review-required"
+"D08","store","Retain required records for five years unless a specific rule supplies another period.","OAR-333-333-4820","continuous","record","assign-before-use","qualified-review-required"
