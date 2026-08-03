@@ -2,20 +2,20 @@
   "schema": "aloha-ai-r09-commerce-infrastructure-evaluation/1.0",
   "evaluatedAt": "2026-08-03",
   "status": "passed-infrastructure-closed",
-  "boundary": "This catalog configures a fail-closed commerce control plane. It is not price approval, an offer for sale, a license grant, or proof of production fulfillment. The six public pre-release payloads are evidence builds and are not eligible commercial payloads.",
+  "boundary": "Prices, license scope, refund terms, and the support response target are approved commercial terms, but this remains a fail-closed catalog rather than an offer for sale. No checkout may open until a fresh v2026.08.1 payload is built, stored privately, matched to its immutable manifest, provider configuration is verified, every product-specific blocker is cleared, and the production purchase suite passes. The six public v2026.08.0 evidence builds are not eligible commercial payloads.",
   "counts": {
     "products": 6,
     "apiSurfaces": 8,
     "persistenceTables": 4,
     "productionProofTests": 10,
     "publiclyExposedPreReleaseZips": 6,
-    "globalReleaseBlockers": 7
+    "globalReleaseBlockers": 5
   },
   "checks": {
     "exactCatalog": true,
     "failClosed": true,
-    "priceApprovalRequired": true,
-    "refundAndSupportApprovalRequired": true,
+    "pricesRecorded": true,
+    "refundAndSupportRecorded": true,
     "publicPayloadExposureDetected": true,
     "oregonReviewPreserved": true,
     "checkoutSurface": true,

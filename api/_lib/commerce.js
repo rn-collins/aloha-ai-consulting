@@ -6,7 +6,9 @@ const { supabase } = require('./platform');
 function products() {
   return catalogSource.products.map(([resourceId, artifactName, slug, version]) => ({
     resourceId, artifactName, slug, version,
-    state: 'unavailable', price: null,
+    commercialVersionTarget: catalogSource.commercialVersionTarget,
+    state: 'unavailable', price: catalogSource.approvedPrices[resourceId],
+    license: catalogSource.license,
     blockers: [...catalogSource.globalBlockers, ...(catalogSource.productBlockers[resourceId] || [])]
   }));
 }

@@ -14,7 +14,7 @@ const productRows=catalog.products||[];
 const publicZipPaths=[];
 for(const row of productRows){const slug=row[2],version=row[3];const dir=path.join(root,'artifacts/products',slug,version);if(fs.existsSync(dir)){for(const name of fs.readdirSync(dir))if(name.endsWith('.zip'))publicZipPaths.push(path.relative(root,path.join(dir,name)));}}
 
-if(catalog.schema!=='aloha-ai-r09-commerce-catalog/1.0')findings.push('Commerce catalog schema mismatch.');
+if(catalog.schema!=='aloha-ai-r09-commerce-catalog/1.1')findings.push('Commerce catalog schema mismatch.');
 if(catalog.commercialState!=='closed')findings.push('Commerce opened without production proof.');
 if(productRows.length!==6||new Set(productRows.map(r=>r[0])).size!==6)findings.push('Catalog does not cover six unique artifacts.');
 if(!catalog.globalBlockers.some(v=>/public Git history/i.test(v)))findings.push('Public-payload exposure is not a release blocker.');
@@ -36,8 +36,8 @@ if((architecture.acquisitionArchitecture?.productionProof||[]).length!==10)findi
 const checks={
   exactCatalog:productRows.length===6&&new Set(productRows.map(r=>r[0])).size===6,
   failClosed:catalog.commercialState==='closed',
-  priceApprovalRequired:catalog.globalBlockers.some(v=>/prices not approved/i.test(v)),
-  refundAndSupportApprovalRequired:catalog.refundPolicy.state==='approval-required'&&!catalog.support.channel,
+  pricesRecorded:Object.keys(catalog.approvedPrices||{}).length===6,
+  refundAndSupportRecorded:catalog.refundPolicy.state==='approved-not-active'&&Boolean(catalog.support.channel)&&Boolean(catalog.support.responseTarget),
   publicPayloadExposureDetected:publicZipPaths.length===6&&catalog.globalBlockers.some(v=>/public Git history/i.test(v)),
   oregonReviewPreserved:Boolean(catalog.productBlockers?.['sb303-compliance-kit']?.length),
   checkoutSurface:Boolean(sources['api/commerce/checkout.js']),
