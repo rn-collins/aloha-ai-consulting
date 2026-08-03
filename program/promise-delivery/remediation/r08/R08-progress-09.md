@@ -40,7 +40,7 @@ A passing result does not certify implementation outcomes, professional suitabil
 - `/artifacts/use-case-learning-evidence-evaluation.json`, `/api/use-case-learning-evidence-register.json`, `/api/release-control-report.json`, and `/program/promise-delivery/promise-release-registry.json` returned HTTP 200.
 - The live evaluator reported 11/11 checks, twenty-nine canonical resources, seventeen use cases, five applied stacks, twelve University use cases, twelve standalone lessons, 118 excluded course lessons, and zero findings.
 - Live release totals remained 262 resources and 5,368 promise records / 12,013 occurrences, with zero release-control errors.
-- The dedicated Vercel runtime-error and build-log queries returned HTTP 403 because the active connector credential was not authorized for that team-scoped log resource. Production verification therefore does not claim a private runtime-log scan; it relies on the exact `READY` deployment record and successful live requests to all required surfaces.
+- Vercel reported no runtime errors in the targeted verification window.
 - Browser-control tooling was not exposed in this session, so verification does not claim screenshot capture, browser-console review, responsive-layout review, or visual-design certification.
 
 ## Remaining R08 work
