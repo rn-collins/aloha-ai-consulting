@@ -2,7 +2,7 @@
 
 Date: 2026-08-02
 
-Status: passed within the documented selected-public-claim inventory, evidence-class disclosure, and exact-claim mapping boundary in the fully hydrated local release tree; Unit 13 implementation complete; exact-tree GitHub publication and production verification pending; R07 is eligible to close only after that publication verification succeeds
+Status: passed within the documented selected-public-claim inventory, evidence-class disclosure, and exact-claim mapping boundary after exact-tree GitHub publication and production verification; Unit 13 closed; R07 closed
 
 ## Decision boundary
 
@@ -43,17 +43,17 @@ Unit 13 evaluates whether Aloha AI publishes and release-enforces a bounded inst
 
 ## Production verification
 
-Pending. No evaluation commit, exact-tree GitHub tree, Vercel deployment ID, production state, or live HTTP verification is recorded until the publication workflow succeeds.
-
-The required live checks are:
-
-- exact evaluation commit and tree match;
-- production deployment state `READY`, target `production`, tied to the exact evaluation commit;
-- HTTP 200 for `/institutional-credentials`, `/api/institutional-credentials-register.json`, `/api/evaluations/institutional-credentials.json`, and `/api/assurance-manifest.json`;
-- live evaluator evidence reporting 13/13 checks, six records, 88 mapped claim occurrences, and zero findings;
-- live assurance manifest reporting seven bounded site domains, zero certified domains, and no failed-closed domain;
-- live release and promise totals matching 262 governed resources and 5,368 records / 12,013 occurrences across 505 public surfaces.
+- GitHub `main` evaluation commit: `79c6775dbb05ea8ed8839f6d94758f51dbb47876`.
+- Exact evaluated and published Git tree: `1362824217c0b19be3b2ae0e95e39b8af73f5624`.
+- Vercel production deployment: `dpl_Dwqm15RKG33cRxh5vRRUPTy9Zs26`, state `READY`, target `production`, with Git metadata tied to the exact evaluation commit.
+- The canonical `/institutional-credentials`, `/api/institutional-credentials-register.json`, `/api/evaluations/institutional-credentials.json`, `/api/assurance-manifest.json`, `/api/release-control-report.json`, `/program/promise-delivery/promise-release-registry.json`, and `/artifacts/interaction-audit/report.json` each returned HTTP 200.
+- The rendered policy response contained the expected title, evidence-class boundary, navigation, six policy sections, and accountability record.
+- Live evaluator evidence reported 13/13 checks, six records, 88/88 mapped claim occurrences, zero unmatched occurrences, zero ambiguous variants, and zero findings.
+- The live assurance manifest reported seven of seven site-assurance domains `passed-limited`, zero certified domains, and zero errors.
+- Live release and promise totals matched 262 governed resources and 5,368 records / 12,013 occurrences across 505 public surfaces, with 9,782 interactions and zero interaction failures.
+- Vercel reported no runtime errors for the checked Unit 13 routes in the verification window.
+- Browser-control tooling was not exposed in the publication session, so this verification does not claim an independent screenshot, browser-console capture, or visual-layout certification; the deployment, HTTP, response-content, live-data, and runtime-error boundaries above were directly checked.
 
 ## R07 closure decision
 
-The local release tree satisfies the bounded acceptance criteria for all thirteen R07 units. R07 may close after exact-tree publication and production verification confirm the same evidence. Until then, Unit 13 implementation is complete but R07 remains administratively open.
+PASS within the stated boundary. The exact evaluated tree was published to GitHub `main`, deployed to Vercel production, and reproduced the expected live evidence and release totals. Unit 13 is closed. All thirteen R07 units now satisfy their documented bounded acceptance criteria, so R07 is formally closed. No R07 result is an independent certification of credentials, institutional standing, legal accuracy, security, privacy, accessibility, rights clearance, or any other excluded real-world condition.
