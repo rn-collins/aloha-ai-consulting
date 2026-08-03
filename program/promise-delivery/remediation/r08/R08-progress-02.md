@@ -2,7 +2,7 @@
 
 Date: 2026-08-02
 
-Status: passed locally within the six-build SL0 portfolio boundary; GitHub publication and production verification pending; Unit 2 remains open until production verification; R08 remains open
+Status: passed within the six-build SL0 portfolio boundary after exact-tree GitHub publication and production verification; Unit 2 closed; R08 remains open
 
 Frozen audit baseline: 4,289 promise records / 9,552 occurrences; unchanged
 
@@ -48,20 +48,19 @@ Connected GitHub evidence confirmed six mapped private repositories. Connected V
 
 ## Production verification
 
-Pending GitHub publication and exact-tree Vercel verification.
-
-Required production checks:
-
-- GitHub `main` must contain the exact locally validated tree.
-- The corresponding Vercel production deployment must reach `READY` and identify the implementation commit.
-- `/platform` and `/artifacts/external-build-evidence-evaluation.json` must return HTTP 200.
-- Live Platform copy must contain the relationship, access, deployment, and continuous-operation boundaries and must not contain the superseded blanket claims.
-- Live evaluator totals must report 10/10 checks, six named builds, six confirmed private repositories, four confirmed Vercel projects, zero public destinations, and zero findings.
-- Release totals and runtime-error evidence must match the evaluated tree.
+- GitHub `main` implementation commit: `d5e7179fabb9a9c3e595a5e6a5117d84e67f5658`.
+- Exact published Git tree: `e7b081f7f06744aa7f595d06f9b58dff81aac708`.
+- Vercel production deployment: `dpl_GphAXd29zc9yY68WPxNBUrXB24yD`, state `READY`, target `production`, with Git metadata tied to the exact implementation commit.
+- `/practice`, `/platform`, `/artifacts/external-build-evidence-evaluation.json`, `/api/release-control-report.json`, and `/program/promise-delivery/promise-release-registry.json` returned HTTP 200.
+- The governed SL0 paragraph renders at `/practice`; `/platform` is a separate product-detail surface and does not contain the SL0 portfolio paragraph. The earlier pending checklist's use of `/platform` alone was a documentation defect corrected by this record.
+- Live `/practice` copy rendered the relationship, access, deployment, maintenance, and continuous-operation boundaries, expressly identified the end-of-life care system as independent pre-engagement work, and did not render the superseded collective client or `You get a URL. It runs. It updates. It does work.` claims.
+- The live evaluator reported 10/10 checks, six named builds, six confirmed private repositories, four confirmed Vercel projects, zero public destinations, and zero findings.
+- Live release totals matched 262 resources, 505 public surfaces including recovery, 9,782 interactions, and 5,368 promise records / 12,013 occurrences; release-control errors remained zero.
+- Vercel reported no runtime errors for the production project in the verification window.
+- Browser-control tooling was not exposed in this session, so this verification does not claim an independent screenshot, browser-console capture, responsive-layout review, or visual-design certification.
 
 ## Remaining R08 work
 
-- Publish and production-verify this six-build correction.
 - Inventory additional public claims that name or unmistakably describe a separate repository, deployment, downloadable artifact, independent prototype, commissioned engagement, or private system.
 - Reconcile the broader connected GitHub and Vercel estate only where an asset is represented publicly or is intentionally selected for a public portfolio destination.
 - Keep confidential or unpublished work behind an explicit non-publication boundary rather than exposing a private URL or repository.
@@ -69,4 +68,4 @@ Required production checks:
 
 ## Decision
 
-PASS locally within the stated six-build boundary. Publication evidence is pending, so Unit 2 is not production-closed. R08 remains open for the wider represented-asset and destination inventory.
+PASS within the stated six-build boundary. Unit 2 is production-closed. R08 remains open for the wider represented-asset and destination inventory.
