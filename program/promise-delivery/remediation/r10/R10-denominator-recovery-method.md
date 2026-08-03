@@ -1,0 +1,24 @@
+# R10 Controlled Denominator-Recovery Method
+
+## Decision
+
+The frozen denominator of 325 evidence units is preserved, but the missing original rows are not recreated by inference. The recovery register creates 325 stable reconstruction slots and maps every one of the 4,289 immutable promise records to exactly one slot.
+
+## Source search
+
+The original row-level register was sought in the checked-in program files, available Git objects and paths, retained workspace control packages, generated audit artifacts, and all R01-R09 progress reports. Those sources preserve the number 325 and a small set of later evidence-contract names, but not the original 325 rows or their evidence decisions.
+
+## Deterministic construction
+
+1. Read `program/promise-delivery/ledger.json`, fixed to baseline commit `deb1073d`.
+2. Require exactly 4,289 unique frozen promise IDs.
+3. Sort those IDs lexicographically.
+4. Partition the sorted sequence contiguously into 325 slots. The first 64 slots contain 14 records; the remaining 261 contain 13.
+5. Assign stable IDs `R10-REC-001` through `R10-REC-325`.
+6. Preserve every promise ID exactly once and record a SHA-256 hash of the ordered ID sequence.
+
+## Evidentiary boundary
+
+The recovered rows establish denominator integrity and exhaustive frozen-promise lineage. They do not establish the identity, scope, finding, or terminal decision of any missing original evidence unit. Every slot therefore remains `deferred` with the same explicit dependency and reconsideration trigger.
+
+A slot may move to `passed` only after the original row is restored with verifiable lineage or every assigned promise is independently re-audited and observable evidence is recorded. Repository-wide tests, route checks, or current-site health cannot by themselves satisfy that requirement.

@@ -1,0 +1,113 @@
+{
+  "schema": "aloha-ai-r10-closure-evaluation/1.0",
+  "generatedAt": "2026-08-03T21:42:51.151Z",
+  "decision": "closure-blocked",
+  "frozenEvidenceUnits": 325,
+  "checks": [
+    {
+      "id": "R10-01",
+      "pass": true,
+      "detail": "Immutable baseline commit must remain deb1073d."
+    },
+    {
+      "id": "R10-02",
+      "pass": true,
+      "detail": "Frozen promise denominator must remain 4,289 records / 9,552 occurrences."
+    },
+    {
+      "id": "R10-03",
+      "pass": true,
+      "detail": "Current reviewed registry must cover 505 public surfaces and 262 resources."
+    },
+    {
+      "id": "R10-04",
+      "pass": true,
+      "detail": "Current registry must cover 5,368 records / 12,013 occurrences."
+    },
+    {
+      "id": "R10-05",
+      "pass": true,
+      "detail": "Clean local inventory must cover 504 sitemap routes with no missing files."
+    },
+    {
+      "id": "R10-06",
+      "pass": true,
+      "detail": "Clean local interaction inventory must cover 505 surfaces / 9,782 elements with no failures."
+    },
+    {
+      "id": "R10-07",
+      "pass": true,
+      "detail": "The frozen evidence-unit denominator must remain 325."
+    },
+    {
+      "id": "R10-08",
+      "pass": true,
+      "detail": "A checked-in 325-row evidence-unit register is required for reproducible terminal reconciliation."
+    },
+    {
+      "id": "R10-09",
+      "pass": true,
+      "detail": "The evidence-unit register must enumerate exactly 325 stable unit IDs."
+    },
+    {
+      "id": "R10-10",
+      "pass": true,
+      "detail": "Every evidence unit must have a stable ID and explicit terminal state."
+    },
+    {
+      "id": "R10-11",
+      "pass": true,
+      "detail": "Every evidence unit must point to observable evidence."
+    },
+    {
+      "id": "R10-12",
+      "pass": true,
+      "detail": "Every non-passing unit must name its dependency and reconsideration trigger."
+    },
+    {
+      "id": "R10-13",
+      "pass": true,
+      "detail": "Every evidence unit must preserve lineage to one or more frozen promise IDs."
+    },
+    {
+      "id": "R10-14",
+      "pass": true,
+      "detail": "Evidence-unit terminal-state counts must reconcile to 325."
+    },
+    {
+      "id": "R10-15",
+      "pass": true,
+      "detail": "The recovered register must cover every frozen promise ID exactly once."
+    },
+    {
+      "id": "R10-16",
+      "pass": true,
+      "detail": "Every reconstructed unit must disclose its provenance and provenance grade."
+    },
+    {
+      "id": "R10-17",
+      "pass": true,
+      "detail": "Controlled denominator recovery must disclose its method and material limitations."
+    },
+    {
+      "id": "R10-18",
+      "pass": true,
+      "detail": "Declared deferred count must match unit states."
+    },
+    {
+      "id": "R10-19",
+      "pass": false,
+      "detail": "Program closure requires every reconstructed unit to reach a supported passed or explicitly blocked terminal decision."
+    },
+    {
+      "id": "R10-20",
+      "pass": false,
+      "detail": "Program closure requires zero R10 findings."
+    }
+  ],
+  "findings": [
+    "R10-19: Program closure requires every reconstructed unit to reach a supported passed or explicitly blocked terminal decision.",
+    "R10-20: Program closure requires zero R10 findings."
+  ],
+  "interpretation": "The controlled register restores denominator integrity and exhaustive frozen-promise lineage without impersonating the missing original audit rows. R10 remains fail-closed while reconstructed units are deferred."
+}
