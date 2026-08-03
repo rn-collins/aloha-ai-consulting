@@ -3,7 +3,7 @@
 **Frozen audit baseline:** 4,289 grouped claims / 9,552 occurrences  
 **Current reviewed estate:** 262 canonical resources / 505 public surfaces / 9,782 interactions / 5,368 promise records / 12,013 occurrences  
 **Tranche:** R09 — Deferred acquisition artifacts and Workspace access model  
-**Status:** passed locally; publication and production verification pending
+**Status:** passed after exact-tree GitHub publication and production verification; Unit 2 closed
 
 ## Purpose and boundary
 
@@ -39,4 +39,11 @@ Unit 2 establishes the release architecture. All six artifact acquisition states
 
 ## Publication and production verification
 
-- Pending.
+- GitHub `main` evaluated implementation commit: `6693c7e69ffbabfb72e38f4025888aa1a8258dc2`.
+- Exact evaluated Git tree: `ccb5e6dbbfc08d41d49cae792dd596dd6f705306`.
+- Vercel production deployment: `dpl_2zgzE9UZGFEvaQj6Skph38pQCLq5`, state `READY`, target `production`, tied to the exact evaluated commit.
+- `/artifacts/r09-delivery-architecture-evaluation.json`, `/api/r09-delivery-architecture.json`, `/api/release-control-report.json`, and `/program/promise-delivery/promise-release-registry.json` each returned HTTP 200.
+- The live evaluator reported 15/15 checks, six artifacts, 24 artifact-specific acceptance tests, eight universal artifact acceptance tests, twelve Workspace release tests, and zero findings.
+- Live release totals remained 262 canonical resources with zero release-control errors and 5,368 promise records / 12,013 occurrences.
+- Vercel reported no runtime errors in the targeted verification window.
+- Browser-control tooling was not exposed in this session, so verification does not claim screenshot capture, browser-console review, responsive-layout review, or visual-design certification.
