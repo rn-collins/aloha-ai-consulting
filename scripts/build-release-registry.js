@@ -57,8 +57,9 @@ function toReleaseObject(resource) {
   const isTool = resource.kind === 'tool';
   const isMonitor = resource.kind === 'monitor';
   const isCourse = ['course', 'lesson', 'learning-path'].includes(resource.kind);
+  const browserLocalDownload = resource.id === 'citation-verifier-lab-kit';
   const demo = Boolean(resource.demo) || /demonstration|prototype|preview/.test(text);
-  const explicitlyUnavailable = /unavailable|no public sign-in|no checkout|enrollment is closed|not available/.test(text);
+  const explicitlyUnavailable = !browserLocalDownload && /unavailable|no public sign-in|no checkout|enrollment is closed|not available/.test(text);
   const limitations = Array.isArray(resource.limitations) ? resource.limitations : [];
   const evidence = Array.isArray(resource.evidence) ? resource.evidence : [];
   const effectiveDate = resource.effectiveDate || resource.updatedAt || null;
@@ -79,7 +80,7 @@ function toReleaseObject(resource) {
     status: {
       publication: 'published',
       completeness: demo || isCourse ? 'partial' : 'research',
-      interaction: isTool ? (demo ? 'demonstration' : 'working') : 'read-only',
+      interaction: isTool ? (demo ? 'demonstration' : 'working') : browserLocalDownload ? 'working' : 'read-only',
       integration: 'none',
       access: explicitlyUnavailable ? 'unavailable' : 'public',
       commercial: ['service', 'engagement'].includes(resource.kind) ? 'scoped' : 'not-applicable',
@@ -103,14 +104,20 @@ function applyReviewDecision(object) {
   const decision = decisionByObject.get(object.id) || embeddedReviewDecision(object);
   const { releaseReview, ...cleanObject } = object;
   if (!decision) return cleanObject;
+  const browserLocalDownload = object.id === 'template:citation-verifier-lab-kit';
+  const reviewedStatus = browserLocalDownload
+    ? { ...decision.status, interaction: 'working', access: 'public' }
+    : decision.status;
   return {
     ...cleanObject,
     lifecycleState: decision.lifecycleState,
-    status: decision.status,
+    status: reviewedStatus,
     lastReviewedOrTested: decision.reviewedAt,
     nextReviewOrTrigger: decision.nextReviewOrTrigger,
     approvalDecision: decision.approvalDecision,
-    permittedPublicLanguage: decision.permittedPublicLanguage,
+    permittedPublicLanguage: browserLocalDownload
+      ? 'Published browser-local downloadable template; the file is generated on the visitor’s device and is not submitted, graded, or credentialed.'
+      : decision.permittedPublicLanguage,
     reviewEvidence: decision.reviewEvidence,
     governanceControls: decision.governanceControls,
     decisionBasis: decision.decisionBasis

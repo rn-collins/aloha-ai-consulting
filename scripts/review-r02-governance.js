@@ -72,6 +72,7 @@ function reviewObject(object) {
     && object.lastReviewedOrTested >= reviewDate
     && object.nextReviewOrTrigger;
   const toolLike = ['assessment', 'tool'].includes(object.objectType);
+  const browserLocalTemplate = object.objectType === 'template' && interactive && object.status.interaction === 'working' && object.status.access === 'public';
   const expectedEvaluationDecision = limitedEvaluationDecisions.get(object.canonicalId);
   const evaluationFile = expectedEvaluationDecision ? path.join(root, 'api/evaluations', `${object.canonicalId}.json`) : null;
   const evaluation = evaluationFile && fs.existsSync(evaluationFile) ? readJson(evaluationFile) : object.canonicalId === 'citation-verifier' ? citationEvaluation : null;
@@ -90,7 +91,7 @@ function reviewObject(object) {
   const status = {
     publication: pageExists ? 'published' : 'unpublished',
     completeness: contentLike ? 'complete' : deliveryLike ? 'partial' : 'research',
-    interaction: toolLike ? (interactive ? 'working' : 'demonstration') : 'read-only',
+    interaction: toolLike ? (interactive ? 'working' : 'demonstration') : browserLocalTemplate ? 'working' : 'read-only',
     integration: 'none',
     access: unavailable ? 'unavailable' : pageExists ? 'public' : 'unavailable',
     commercial: object.objectType === 'service' ? 'scoped' : 'not-applicable',
@@ -183,6 +184,7 @@ function languageFor(object, status) {
   if (object.objectType === 'monitor') return 'Published dated monitor record; ongoing maintenance and currentness are not certified.';
   if (status.evaluation === 'limited') return 'Published browser-local deterministic tool evaluated only within its named, versioned synthetic rule corpus; completeness, interpretation, professional conclusions, external integration, and production suitability are not certified.';
   if (['assessment', 'tool'].includes(object.objectType)) return `Published browser-local ${object.objectType}; external integration, validated evaluation, and production operation are not certified.`;
+  if (object.objectType === 'template' && status.interaction === 'working') return 'Published browser-local downloadable template; the file is generated on the visitor’s device and is not submitted, graded, or credentialed.';
   if (object.objectType === 'service') return 'Published scoped service description; capacity, engagement acceptance, and delivery are confirmed only through a written engagement.';
   if (['course', 'institutional', 'learningHub', 'product'].includes(object.objectType)) return 'Published partial delivery resource; completeness, enrollment, external delivery, and commercial availability are not certified.';
   return 'Published content resource; publication does not certify ongoing maintenance, external delivery, or professional suitability.';
