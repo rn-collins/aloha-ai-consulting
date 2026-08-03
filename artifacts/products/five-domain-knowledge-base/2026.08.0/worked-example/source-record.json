@@ -1,0 +1,11 @@
+{
+  "sourceId": "SRC-NIST-AIRMF",
+  "title": "NIST AI Risk Management Framework",
+  "publisher": "NIST",
+  "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+  "retrievedAt": "2026-08-03",
+  "sourceType": "primary",
+  "rightsStatus": "link-only",
+  "verificationStatus": "current",
+  "notes": "Used to support a bounded governance statement."
+}

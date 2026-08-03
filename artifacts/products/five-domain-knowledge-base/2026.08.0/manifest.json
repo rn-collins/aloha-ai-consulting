@@ -1,0 +1,157 @@
+{
+  "schema": "five-domain-release-manifest/1.0",
+  "artifactId": "trust-stack-ai-content-system",
+  "artifactName": "Five-Domain Knowledge Base",
+  "version": "2026.08.0",
+  "releaseDate": null,
+  "state": "frozen-pre-release",
+  "sourceReviewCutoff": "2026-08-03",
+  "licenseId": "named-organization-internal-use-pre-release-specimen",
+  "maintenanceState": "frozen-version",
+  "supportState": "not-offered-before-release",
+  "files": [
+    {
+      "path": "ACCESSIBILITY.md",
+      "bytes": 347,
+      "sha256": "35e0f849f8d5ba1221f85b91d73c4b446d137fe701b408a5932dad66d96774e0"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 261,
+      "sha256": "e33c274095e873e560bf53afdecc300b74a299eede5f197306a4720cd98f610b"
+    },
+    {
+      "path": "LICENSE.md",
+      "bytes": 639,
+      "sha256": "c7815da078bf3c1be12ac6e5b2b8fdfb851ee5932b4c60200af8927c2e690f83"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3808,
+      "sha256": "47461ec01051300a7cf961ac9a9a0552a3ad3e65d1636edeed4a1b1cc9c21759"
+    },
+    {
+      "path": "RIGHTS-AND-ATTRIBUTION.md",
+      "bytes": 385,
+      "sha256": "d853cf63d4dd7ed9434a8253cf945d36cf163302a40a6f93840314bafee66d8d"
+    },
+    {
+      "path": "SUPPORT-AND-MAINTENANCE.md",
+      "bytes": 540,
+      "sha256": "4ee0e32a93a5480805983fc932ad2e6f130d553a28e6b444560c424f914ee1b5"
+    },
+    {
+      "path": "annotated-prompts.json",
+      "bytes": 11362,
+      "sha256": "1edaaf8f82950ad717ae77811bcb2487565bf6e0e71ceb2c517fef67eac780a3"
+    },
+    {
+      "path": "five-domain-knowledge-base-handbook.pdf",
+      "bytes": 141516,
+      "sha256": "06c95702086a97aef349465ea24d0757e2e53e3eac46cc5831ad8564778cf448"
+    },
+    {
+      "path": "five-domain-specification.json",
+      "bytes": 1266,
+      "sha256": "0d86fae76a5897f6aa27b22039023ee799e10f5e2d137dcbfb2256d89387992c"
+    },
+    {
+      "path": "handbook.md",
+      "bytes": 3808,
+      "sha256": "47461ec01051300a7cf961ac9a9a0552a3ad3e65d1636edeed4a1b1cc9c21759"
+    },
+    {
+      "path": "pricing-ledger.csv",
+      "bytes": 559,
+      "sha256": "34c2ceab8917554c798e29c858b06b324d8d90f3a4c4e1d95275635cf982b90b"
+    },
+    {
+      "path": "prompts.txt",
+      "bytes": 8419,
+      "sha256": "3396297f9c240dae444a620e169f87823f7ce4210090c3d6d68e2da64a5ba90a"
+    },
+    {
+      "path": "record-schemas.json",
+      "bytes": 3467,
+      "sha256": "fadd47f56c28bc75096205bbb02be9d665d9fcd4b371a27307ccb0c755e11cd3"
+    },
+    {
+      "path": "setup-checklist.md",
+      "bytes": 622,
+      "sha256": "d693020bec9cc24a47208b6ab4cd557e90f9bdc5dc612aff1ba535bc1b50c867"
+    },
+    {
+      "path": "source-ledger.csv",
+      "bytes": 474,
+      "sha256": "3cb737528764d87ff01d64d8c0a4f76e026b9e98810cebdb6b3f4b3d4e9ace7b"
+    },
+    {
+      "path": "voice-configuration-template.docx",
+      "bytes": 10489,
+      "sha256": "3847ad7ac61ec94a2cbd71a90e879cc045f3746f31acb87849f2f465859608c8"
+    },
+    {
+      "path": "voice-template.md",
+      "bytes": 736,
+      "sha256": "6d48f41f564f12313bd591a49f30c69efc49ade08a174da25764a4b1af88d0f1"
+    },
+    {
+      "path": "when-to-hire.md",
+      "bytes": 486,
+      "sha256": "3cc036d99a8360d7dccd7378d99daa3fddc0af28dea83ea325647ba09b1075bc"
+    },
+    {
+      "path": "worked-example/INDEX.md",
+      "bytes": 240,
+      "sha256": "9c99fdb71466cf77c151ab50718bc50ed9e9e0c12a0c1b2891b40f1442a9adfe"
+    },
+    {
+      "path": "worked-example/audience-record.json",
+      "bytes": 315,
+      "sha256": "cc1208f89b10a042e0e8859543c505a3d23a74f24b380ccaa050c98a6649f419"
+    },
+    {
+      "path": "worked-example/claim-record.json",
+      "bytes": 312,
+      "sha256": "ed08e00ca5af6d55adae8bb859b95a3a4f2d6747c24502f6e9da459f0c15f185"
+    },
+    {
+      "path": "worked-example/example-record.json",
+      "bytes": 447,
+      "sha256": "a63076957d6b1eac4dce2b17951eddc01f5ec54ce6436901b717c6a7d16c499b"
+    },
+    {
+      "path": "worked-example/review-record.json",
+      "bytes": 252,
+      "sha256": "0e3a58d172b1748829a4a27d8f5ceb066518b4b928b985e4d64baf3ccbd0688e"
+    },
+    {
+      "path": "worked-example/source-record.json",
+      "bytes": 358,
+      "sha256": "57974dd5b31a839408782e7bd5a631b30091f90c55bce3ca0e714381d3e933eb"
+    },
+    {
+      "path": "worked-example/validate-example.js",
+      "bytes": 656,
+      "sha256": "481298132cfce639de6b970b64e561b2ffd6b1e487693cf2721bdcb567bdff50"
+    },
+    {
+      "path": "worked-example/voice-record.json",
+      "bytes": 321,
+      "sha256": "7707ac6b74251a4a3e6cb08fc93d64d62ffc85e754181e0a29805194bc64f6b1"
+    }
+  ],
+  "contents": [
+    "five-domain specification",
+    "file and provenance rules",
+    "20 annotated prompts",
+    "voice template",
+    "claim and source records",
+    "setup checklist",
+    "pricing ledger",
+    "when-to-hire guide",
+    "worked example"
+  ],
+  "changelog": "CHANGELOG.md",
+  "boundary": "Package completeness does not make acquisition available; checkout and fulfillment remain unimplemented."
+}

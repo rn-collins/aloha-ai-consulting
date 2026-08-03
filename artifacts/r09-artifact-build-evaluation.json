@@ -1,0 +1,33 @@
+{
+  "schema": "aloha-ai-r09-artifact-build-evaluation/1.0",
+  "evaluatedAt": "2026-08-03",
+  "scope": "Artifact-build evidence for the first R09 acquisition obligation.",
+  "boundary": "A built and internally accepted pre-release package is not an acquisition release. Checkout, payment, order records, receipts, signed delivery, redelivery, refunds, support operations, and production purchase tests remain unimplemented, so public acquisition stays unavailable.",
+  "counts": {
+    "artifacts": 1,
+    "manifestFiles": 26,
+    "prompts": 20,
+    "domains": 5,
+    "specificAcceptanceTests": 4,
+    "acceptedUniversalTests": 5,
+    "deferredUniversalTests": 3,
+    "releaseBlockers": 8
+  },
+  "checks": {
+    "exactFirstArtifact": true,
+    "obligationAndNamePreserved": true,
+    "immutableVersionManifest": true,
+    "checksumIntegrity": true,
+    "requiredContentsAndFormats": true,
+    "exactFiveDomains": true,
+    "twentyAnnotatedPrompts": true,
+    "schemasAndFixtures": true,
+    "traceableWorkedExample": true,
+    "validPdfDocxAndZip": true,
+    "universalAcceptanceAccounted": true,
+    "acquisitionRemainsUnavailable": true,
+    "workspaceNotEntitled": true,
+    "noFindings": true
+  },
+  "findings": []
+}

@@ -1,0 +1,176 @@
+{
+  "source": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://aloha.ai/schemas/source-record.json",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "sourceId",
+      "title",
+      "publisher",
+      "url",
+      "retrievedAt",
+      "sourceType",
+      "rightsStatus",
+      "verificationStatus"
+    ],
+    "properties": {
+      "sourceId": {
+        "type": "string",
+        "pattern": "^SRC-"
+      },
+      "title": {
+        "type": "string",
+        "minLength": 3
+      },
+      "publisher": {
+        "type": "string"
+      },
+      "url": {
+        "type": "string",
+        "format": "uri"
+      },
+      "retrievedAt": {
+        "type": "string",
+        "format": "date"
+      },
+      "sourceType": {
+        "enum": [
+          "primary",
+          "secondary",
+          "internal"
+        ]
+      },
+      "rightsStatus": {
+        "enum": [
+          "link-only",
+          "licensed",
+          "public-domain",
+          "internal-authorized"
+        ]
+      },
+      "verificationStatus": {
+        "enum": [
+          "current",
+          "historical",
+          "unverified",
+          "superseded"
+        ]
+      },
+      "notes": {
+        "type": "string"
+      }
+    }
+  },
+  "claim": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://aloha.ai/schemas/claim-record.json",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "claimId",
+      "text",
+      "sourceIds",
+      "status",
+      "confidence",
+      "limitations",
+      "approval"
+    ],
+    "properties": {
+      "claimId": {
+        "type": "string",
+        "pattern": "^CLM-"
+      },
+      "text": {
+        "type": "string",
+        "minLength": 10
+      },
+      "sourceIds": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "type": "string",
+          "pattern": "^SRC-"
+        }
+      },
+      "status": {
+        "enum": [
+          "current",
+          "historical",
+          "proposed",
+          "disputed",
+          "superseded",
+          "withdrawn"
+        ]
+      },
+      "confidence": {
+        "enum": [
+          "high",
+          "medium",
+          "low"
+        ]
+      },
+      "limitations": {
+        "type": "string",
+        "minLength": 3
+      },
+      "approval": {
+        "enum": [
+          "approved",
+          "revise",
+          "reject",
+          "escalate"
+        ]
+      }
+    }
+  },
+  "review": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://aloha.ai/schemas/review-record.json",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "reviewId",
+      "outputId",
+      "reviewer",
+      "reviewedAt",
+      "claimIds",
+      "decision"
+    ],
+    "properties": {
+      "reviewId": {
+        "type": "string",
+        "pattern": "^REV-"
+      },
+      "outputId": {
+        "type": "string"
+      },
+      "reviewer": {
+        "type": "string"
+      },
+      "reviewedAt": {
+        "type": "string",
+        "format": "date"
+      },
+      "claimIds": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "type": "string",
+          "pattern": "^CLM-"
+        }
+      },
+      "decision": {
+        "enum": [
+          "approve",
+          "revise",
+          "reject",
+          "escalate"
+        ]
+      },
+      "notes": {
+        "type": "string"
+      }
+    }
+  }
+}

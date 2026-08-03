@@ -1,0 +1,11 @@
+{
+  "reviewId": "REV-DEMO-001",
+  "outputId": "OUT-DEMO-001",
+  "reviewer": "Example human reviewer",
+  "reviewedAt": "2026-08-03",
+  "claimIds": [
+    "CLM-GOV-001"
+  ],
+  "decision": "approve",
+  "notes": "Approved only as a dated worked example."
+}

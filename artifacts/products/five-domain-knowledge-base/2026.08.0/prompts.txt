@@ -1,0 +1,139 @@
+1. PRM-SOURCE-INTAKE
+Purpose: source intake
+Inputs: named record IDs; intended channel; human reviewer
+Instruction: Convert a supplied source into a source record. Do not infer missing publisher, date, rights, or verification fields; mark them for human completion.
+Output: Return structured findings with record IDs, unknowns, and required human decisions.
+Boundary: Use only supplied records; no individualized professional advice or assurance.
+
+2. PRM-CLAIM-EXTRACTION
+Purpose: claim extraction
+Inputs: named record IDs; intended channel; human reviewer
+Instruction: Extract atomic claims from the named source records. Preserve scope, modality, dates, jurisdiction, and uncertainty.
+Output: Return structured findings with record IDs, unknowns, and required human decisions.
+Boundary: Use only supplied records; no individualized professional advice or assurance.
+
+3. PRM-CLAIM-RECONCILIATION
+Purpose: claim reconciliation
+Inputs: named record IDs; intended channel; human reviewer
+Instruction: Compare a draft sentence by sentence with approved claim records. Return supported, overstated, unsupported, or needs escalation.
+Output: Return structured findings with record IDs, unknowns, and required human decisions.
+Boundary: Use only supplied records; no individualized professional advice or assurance.
+
+4. PRM-AUTHORITY-CONFLICT
+Purpose: authority conflict
+Inputs: named record IDs; intended channel; human reviewer
+Instruction: Identify conflicts among supplied sources and explain hierarchy, date, jurisdiction, and unresolved uncertainty without choosing silently.
+Output: Return structured findings with record IDs, unknowns, and required human decisions.
+Boundary: Use only supplied records; no individualized professional advice or assurance.
+
+5. PRM-VOICE-BRIEF
+Purpose: voice brief
+Inputs: named record IDs; intended channel; human reviewer
+Instruction: Translate the named voice record into a short drafting brief; retain all prohibited habits and review rules.
+Output: Return structured findings with record IDs, unknowns, and required human decisions.
+Boundary: Use only supplied records; no individualized professional advice or assurance.
+
+6. PRM-AUDIENCE-BRIEF
+Purpose: audience brief
+Inputs: named record IDs; intended channel; human reviewer
+Instruction: Translate the audience record into reading level, context, access, and misunderstanding safeguards without stereotyping.
+Output: Return structured findings with record IDs, unknowns, and required human decisions.
+Boundary: Use only supplied records; no individualized professional advice or assurance.
+
+7. PRM-OUTLINE
+Purpose: outline
+Inputs: named record IDs; intended channel; human reviewer
+Instruction: Create an outline using only approved claims; list claim IDs beside every section.
+Output: Return structured findings with record IDs, unknowns, and required human decisions.
+Boundary: Use only supplied records; no individualized professional advice or assurance.
+
+8. PRM-FIRST-DRAFT
+Purpose: first draft
+Inputs: named record IDs; intended channel; human reviewer
+Instruction: Draft from the approved outline and claims. Append claim IDs to each paragraph and do not add outside facts.
+Output: Return structured findings with record IDs, unknowns, and required human decisions.
+Boundary: Use only supplied records; no individualized professional advice or assurance.
+
+9. PRM-PLAIN-LANGUAGE
+Purpose: plain language
+Inputs: named record IDs; intended channel; human reviewer
+Instruction: Rewrite for clarity without changing legal, scientific, quantitative, or temporal meaning; flag any unavoidable precision loss.
+Output: Return structured findings with record IDs, unknowns, and required human decisions.
+Boundary: Use only supplied records; no individualized professional advice or assurance.
+
+10. PRM-ACCESSIBILITY-REVIEW
+Purpose: accessibility review
+Inputs: named record IDs; intended channel; human reviewer
+Instruction: Review headings, link language, table structure, reading order, jargon, and alternatives; do not claim formal conformance.
+Output: Return structured findings with record IDs, unknowns, and required human decisions.
+Boundary: Use only supplied records; no individualized professional advice or assurance.
+
+11. PRM-RIGHTS-REVIEW
+Purpose: rights review
+Inputs: named record IDs; intended channel; human reviewer
+Instruction: List quotations, images, datasets, and third-party material requiring rights confirmation; do not infer permission.
+Output: Return structured findings with record IDs, unknowns, and required human decisions.
+Boundary: Use only supplied records; no individualized professional advice or assurance.
+
+12. PRM-CITATION-REVIEW
+Purpose: citation review
+Inputs: named record IDs; intended channel; human reviewer
+Instruction: Check whether each citation resolves to a supplied source and supports the adjacent claim; require human verification.
+Output: Return structured findings with record IDs, unknowns, and required human decisions.
+Boundary: Use only supplied records; no individualized professional advice or assurance.
+
+13. PRM-COUNTEREXAMPLE
+Purpose: counterexample
+Inputs: named record IDs; intended channel; human reviewer
+Instruction: Create a deliberately unsafe counterexample from the same records and annotate every failure for training use only.
+Output: Return structured findings with record IDs, unknowns, and required human decisions.
+Boundary: Use only supplied records; no individualized professional advice or assurance.
+
+14. PRM-EXAMPLE-ANNOTATION
+Purpose: example annotation
+Inputs: named record IDs; intended channel; human reviewer
+Instruction: Explain why an approved example works by mapping its sentences to claims, voice rules, and audience needs.
+Output: Return structured findings with record IDs, unknowns, and required human decisions.
+Boundary: Use only supplied records; no individualized professional advice or assurance.
+
+15. PRM-UPDATE-IMPACT
+Purpose: update impact
+Inputs: named record IDs; intended channel; human reviewer
+Instruction: Given a superseded source, identify dependent claims and outputs that require review; do not update them automatically.
+Output: Return structured findings with record IDs, unknowns, and required human decisions.
+Boundary: Use only supplied records; no individualized professional advice or assurance.
+
+16. PRM-CHANGE-LOG
+Purpose: change log
+Inputs: named record IDs; intended channel; human reviewer
+Instruction: Draft a changelog from approved record differences, distinguishing corrections, source updates, and editorial changes.
+Output: Return structured findings with record IDs, unknowns, and required human decisions.
+Boundary: Use only supplied records; no individualized professional advice or assurance.
+
+17. PRM-DECISION-RECORD
+Purpose: decision record
+Inputs: named record IDs; intended channel; human reviewer
+Instruction: Create a review record capturing evidence used, unresolved issues, reviewer, decision, and next action.
+Output: Return structured findings with record IDs, unknowns, and required human decisions.
+Boundary: Use only supplied records; no individualized professional advice or assurance.
+
+18. PRM-HIGH-STAKES-ESCALATION
+Purpose: high stakes escalation
+Inputs: named record IDs; intended channel; human reviewer
+Instruction: Detect legal, medical, safety, financial, privacy, security, or regulated-conduct implications and route to qualified review.
+Output: Return structured findings with record IDs, unknowns, and required human decisions.
+Boundary: Use only supplied records; no individualized professional advice or assurance.
+
+19. PRM-FINAL-PREFLIGHT
+Purpose: final preflight
+Inputs: named record IDs; intended channel; human reviewer
+Instruction: Run the package preflight: sources, claims, voice, audience, examples, rights, accessibility, dates, limitations, and approval.
+Output: Return structured findings with record IDs, unknowns, and required human decisions.
+Boundary: Use only supplied records; no individualized professional advice or assurance.
+
+20. PRM-ARCHIVE-INDEX
+Purpose: archive index
+Inputs: named record IDs; intended channel; human reviewer
+Instruction: Create an index of output, record versions, reviewer decision, and supersession status without modifying source records.
+Output: Return structured findings with record IDs, unknowns, and required human decisions.
+Boundary: Use only supplied records; no individualized professional advice or assurance.

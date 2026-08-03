@@ -1,0 +1,19 @@
+{
+  "voiceId": "VOC-ALOHA-001",
+  "principles": [
+    "plain language",
+    "bounded confidence",
+    "evidence beside claims"
+  ],
+  "preferredTerms": [
+    "AI system",
+    "evidence record"
+  ],
+  "avoid": [
+    "guaranteed",
+    "fully compliant"
+  ],
+  "reviewRules": [
+    "human approval before publication"
+  ]
+}
