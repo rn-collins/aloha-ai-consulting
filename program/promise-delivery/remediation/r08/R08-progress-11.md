@@ -3,7 +3,7 @@
 **Frozen audit baseline:** 4,289 grouped claims / 9,552 occurrences  
 **Current reviewed estate:** 262 canonical resources / 505 public surfaces / 9,782 interactions / 5,368 promise records / 12,013 occurrences  
 **Tranche:** R08 — Existing asset connection and substantive destination depth  
-**Status:** locally passed; publication and production verification pending
+**Status:** passed after exact-tree GitHub publication and production verification; Unit 11 closed; R08 formally closed
 
 ## Decision boundary
 
@@ -48,8 +48,15 @@ A passing result does not independently certify external operation, commercial c
 
 ## Publication and production verification
 
-Pending exact-tree GitHub publication and Vercel production verification.
+- GitHub `main` evaluated implementation commit: `7008bcacadec5e3efec5a22d058b5ec4d7c5a1da`.
+- Exact evaluated Git tree: `7fd95c8e7880875842f8f3a0d82a2bcb6b95311d`.
+- Vercel production deployment: `dpl_G6sLiSy8NzfKDoYETjsrryRXBgao`, state `READY`, target `production`, tied to the exact evaluated commit.
+- `/artifacts/r08-acceptance-evaluation.json`, `/api/r08-acceptance-evaluation.json`, `/api/release-control-report.json`, and `/program/promise-delivery/promise-release-registry.json` each returned HTTP 200.
+- The live R08 evaluator reported 11/11 checks, 129 uniquely owned R08 destinations, 262 canonical resources exactly partitioned, ten unit reports, ten passing unit evaluation artifacts, and zero findings.
+- The live release report remained at 262 canonical resources with zero release-control errors; the promise registry remained at 5,368 records / 12,013 occurrences.
+- Vercel reported no runtime errors for the checked closeout routes in the verification window.
+- Browser-control tooling was not exposed in this session, so verification does not claim screenshot capture, browser-console review, responsive-layout review, or visual-design certification.
 
 ## Closure decision
 
-LOCAL PASS. R08 is acceptance-ready but is not formally closed until the exact evaluated tree is published, the matching Vercel production deployment reaches `READY`, the live closeout artifact and release totals reproduce the local result, and the targeted runtime-error scan is clean. R09 remains responsible for the five paid artifacts and Workspace access model.
+PASS within the stated tranche-wide boundary. The exact evaluated tree was published, deployed, and reproduced the expected evidence and release totals in production. All eleven R08 units satisfy their documented bounded acceptance criteria, so R08 is formally closed. R09 remains responsible for the five paid artifacts and Workspace access model.
