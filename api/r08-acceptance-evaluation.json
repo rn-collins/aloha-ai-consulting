@@ -1,0 +1,30 @@
+{
+  "schema": "aloha-ai-r08-acceptance-evaluation/1.0",
+  "evaluatedAt": "2026-08-03",
+  "scope": "Formal R08 tranche-wide reconciliation of Units 1–10, canonical destination ownership, overlay controls, and cross-tranche exclusions.",
+  "boundary": "This evaluation verifies checked-in coverage, evidence controls, and honest delivery states. It does not import the paid-artifact or Workspace access work assigned to R09 or independently certify external operation, commercial capacity, professional correctness, credentials, visual design, or browser behavior beyond governed contracts.",
+  "counts": {
+    "canonicalResources": 262,
+    "r08CanonicalDestinations": 129,
+    "r05CourseAndCourseLessonExclusions": 125,
+    "r07PolicyExclusions": 7,
+    "unit1BuildIndexExclusions": 1,
+    "overlayEvaluations": 5,
+    "destinationEvaluations": 5,
+    "unitReports": 10
+  },
+  "checks": {
+    "exactR08DestinationCoverage": true,
+    "uniqueDestinationOwnership": true,
+    "exactCanonicalPartition": true,
+    "r05CourseBoundary": true,
+    "r07PolicyBoundary": true,
+    "unit1BuildIndexBoundary": true,
+    "overlayEvaluationsPassed": true,
+    "destinationEvaluationsPassed": true,
+    "allUnitsClosed": true,
+    "r09ExclusionsPreserved": true,
+    "noFindings": true
+  },
+  "findings": []
+}
