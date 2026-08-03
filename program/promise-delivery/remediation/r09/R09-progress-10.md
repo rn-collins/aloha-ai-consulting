@@ -40,3 +40,16 @@ Refund requests may be made within 14 calendar days only when no package downloa
 ## Decision
 
 Approval of business terms removes the price, refund-policy, and response-target decision blockers. It does not authorize fabricated provider credentials, a nonexistent support mailbox, simulated Oregon review, or a false purchase test. Commerce therefore remains closed and all six public product pages must continue to state that acquisition is unavailable.
+
+## Publication and production verification
+
+- GitHub `main` evaluated implementation commit: `d660944eb11d3e3c239f36a95b5b2cb30d1c5ab7`.
+- Exact evaluated Git tree: `f7baf62b04a84028f0233a660814ae8098006996`.
+- Vercel production deployment: `dpl_4GQGPmUZKD8mPyW6xi2UeigAB7Wz`, state `READY`, target `production`, tied to the exact evaluated commit.
+- `/artifacts/r09-commercial-terms-evaluation.json` returned HTTP 200 and reported 19/19 checks, six products, six exact prices, five remaining global blockers, one product-specific blocker, and zero findings.
+- `/api/commerce/catalog` returned HTTP 200 with `enabled: false`, `commercialState: closed`, six approved prices, the approved refund and support rules, and no Workspace entitlement.
+- `/api/commerce/readiness` returned the intended HTTP 503 fail-closed response; provider configuration remained absent, five global blockers remained, and every product was unavailable.
+- `/trust-stack/ai-content-system` returned HTTP 200 and remained `Description only · access unavailable` and `not currently for sale`.
+- Vercel reported no runtime errors in the targeted verification window.
+
+R09 Unit 10 closes the business-terms decision stage only. Private commercial builds, provider provisioning, Oregon review, and production purchase certification remain open release work.
