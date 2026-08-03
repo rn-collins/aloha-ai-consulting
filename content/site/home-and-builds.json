@@ -845,8 +845,8 @@
           "family": "check",
           "familyLabel": "Check a claim",
           "title": "Citation Verifier",
-          "plain": "See whether a source exists and whether it actually supports the sentence attached to it.",
-          "result": "Paste a passage, run the browser-local structural check, and inspect every detected citation.",
+          "plain": "Find citation-like text that needs a real source check before anyone relies on it.",
+          "result": "Paste a passage, run the browser-local structural parser, and export a review list for human source verification.",
           "action": "Try the verifier"
         },
         {
@@ -1128,7 +1128,7 @@
           },
           {
             "type": "paragraph",
-            "text": "A demonstration of citation-existence and source-checking workflows, with the important distinction that a real citation may still fail to support a proposition."
+            "text": "A browser-local structural parser that detects citation-like text and produces a human review list. It does not retrieve sources, establish that an authority exists, or decide whether a source supports a proposition."
           },
           {
             "type": "paragraph",

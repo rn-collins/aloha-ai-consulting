@@ -810,7 +810,7 @@ test('renders builds as a plain-language filterable proof wall before deeper rec
   assert.match(html, /Built does not always mean finished\./);
   assert.match(html, /Citation Verifier/);
   assert.match(html, /Try the verifier/);
-  assert.match(html, /Paste a passage, run the browser-local structural check/);
+  assert.match(html, /Paste a passage, run the browser-local structural parser, and export a review list for human source verification/);
   assert.match(html, /Inspect the team-design service/);
   assert.doesNotMatch(html, />Design the team <i/);
   assert.doesNotMatch(html, /before it reaches the court/);

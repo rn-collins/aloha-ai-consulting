@@ -18,6 +18,13 @@ const limitedEvaluationDecisions = new Map([
   ['bill-analyzer', 'passed-limited-regulatory-language-triage-scope'],
   ['controlled-substances-explainer', 'passed-limited-federal-authority-routing-scope']
 ]);
+const postFoundationReviewIds = new Set([
+  'policy:accessibility-statement',
+  'policy:corrections-policy',
+  'policy:legal-authority-policy',
+  'policy:rights-attribution-policy',
+  'policy:institutional-credentials-policy'
+]);
 
 const release = readJson(releaseFile);
 const exceptionRegistry = readJson(exceptionFile);
@@ -62,7 +69,7 @@ function reviewObject(object) {
   const monitor = object.objectType === 'monitor';
   const maintainedMonitor = ['cannabis-rescheduling', 'psychedelic-radar'].includes(object.canonicalId)
     && object.version === '1.0.0'
-    && object.lastReviewedOrTested === reviewDate
+    && object.lastReviewedOrTested >= reviewDate
     && object.nextReviewOrTrigger;
   const toolLike = ['assessment', 'tool'].includes(object.objectType);
   const expectedEvaluationDecision = limitedEvaluationDecisions.get(object.canonicalId);
@@ -71,7 +78,11 @@ function reviewObject(object) {
   const limitedEvaluation = Boolean(expectedEvaluationDecision)
     && evaluation?.decision === expectedEvaluationDecision
     && evaluation?.metrics?.failedCases === 0;
-  const objectReviewDate = limitedEvaluation ? evaluation.evaluatedAt : reviewDate;
+  const objectReviewDate = limitedEvaluation
+    ? evaluation.evaluatedAt
+    : postFoundationReviewIds.has(object.id) && object.lastReviewedOrTested > reviewDate
+      ? object.lastReviewedOrTested
+      : reviewDate;
   const unavailable = object.status.access === 'unavailable' && !['cannabis-rescheduling', 'psychedelic-radar'].includes(object.canonicalId);
   const evidenceLinks = object.evidenceLinks || [];
   const dependencyObjects = object.dependencies.map((id) => releaseByCanonicalId.get(id)).filter(Boolean);
@@ -111,7 +122,7 @@ function reviewObject(object) {
       staleness: {
         state: 'review-current',
         reviewedAt: objectReviewDate,
-        reviewBy: maintainedMonitor ? '2026-08-07' : limitedEvaluation ? '2026-11-01' : '2026-10-31',
+        reviewBy: maintainedMonitor ? '2026-08-07' : limitedEvaluation ? '2026-11-01' : postFoundationReviewIds.has(object.id) ? '2026-11-02' : '2026-10-31',
         staleAfterDays: maintainedMonitor ? 8 : 92,
         actionWhenStale: maintainedMonitor
           ? 'Render the monitor stale, preserve the last verified as-of record, and require direct primary-source review before reliance.'

@@ -1,0 +1,24 @@
+{
+  "schema": "aloha-ai-build-evidence-evaluation/1.0",
+  "evaluatedAt": "2026-08-02",
+  "scope": "The eleven entries intentionally selected for the public Builds experience.",
+  "boundary": "A registered entry proves only that the public portfolio card resolves to the named canonical Aloha AI resource and that its portfolio language remains within that resource's recorded implementation and limitation boundary. It does not prove client delivery, external deployment, continuous operation, independent validation, commercial availability, ownership of third-party systems, or fitness for consequential reliance.",
+  "counts": {
+    "portfolioEntries": 11,
+    "registeredRecords": 11,
+    "canonicalDestinations": 11
+  },
+  "checks": {
+    "registerSchema": true,
+    "exactCardCoverage": true,
+    "uniqueCards": true,
+    "canonicalResources": true,
+    "canonicalDestinations": true,
+    "maturityPresent": true,
+    "evidencePresent": true,
+    "limitationsPresent": true,
+    "boundedCopy": true,
+    "noFindings": true
+  },
+  "findings": []
+}

@@ -17,6 +17,7 @@
     "promise:release-check": "node scripts/audit-promises.js --release-check",
     "monitors:check": "node scripts/validate-monitor-operations.js",
     "assurance:check": "node scripts/evaluate-citation-verifier.js && node scripts/evaluate-claims-checker.js && node scripts/evaluate-evidence-explainer.js && node scripts/evaluate-bill-analyzer.js && node scripts/evaluate-controlled-substances-explainer.js && node scripts/evaluate-privacy-assurance.js && node scripts/evaluate-security-assurance.js && node scripts/evaluate-accessibility-assurance.js && node scripts/evaluate-corrections-assurance.js && node scripts/evaluate-legal-authority-assurance.js && node scripts/evaluate-rights-attribution-assurance.js && node scripts/evaluate-institutional-credentials-assurance.js && node scripts/validate-assurance-controls.js",
+    "builds:check": "node scripts/evaluate-build-evidence.js",
     "release:registry": "node scripts/build-release-registry.js",
     "release:review": "node scripts/review-r02-governance.js",
     "release:claims": "node scripts/build-claim-registry.js",
@@ -30,7 +31,7 @@
     "site:restore-parity": "node scripts/restore-editorial-parity.js",
     "site:smoke": "node scripts/smoke-test.js",
     "site:test": "node --test tests/*.test.js",
-    "site:ci": "npm run site:hydrate && npm run release:claims && npm run monitors:check && npm run assurance:check && npm run site:test && npm run release:gates && npm run learning:check && npm run site:validate && npm run site:build && npm run site:audit && npm run site:check && npm run site:html && npm run site:interactions && npm run site:actions && npm run site:presentation && npm run promise:release-check"
+    "site:ci": "npm run site:hydrate && npm run release:claims && npm run monitors:check && npm run assurance:check && npm run builds:check && npm run site:test && npm run release:gates && npm run learning:check && npm run site:validate && npm run site:build && npm run site:audit && npm run site:check && npm run site:html && npm run site:interactions && npm run site:actions && npm run site:presentation && npm run promise:release-check"
   },
   "devDependencies": {
     "vite": "^7.1.0"

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-03T03:59:09.546Z",
+  "generatedAt": "2026-08-03T04:14:08.247Z",
   "summary": {
     "routes": 504,
     "found": 504,
@@ -980,7 +980,7 @@
         "buttons": 5,
         "links": 19,
         "workspaceLinks": 1,
-        "pageBytes": 24056
+        "pageBytes": 24124
       },
       "findings": []
     },
