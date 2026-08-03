@@ -1,0 +1,256 @@
+{
+  "schema": "aloha-public-download-evidence/v1",
+  "reviewedAt": "2026-08-02",
+  "deliveryBoundary": "Browser-generated files are private visitor records created locally from the current page state. They are not submissions, credentials, certifications, legal advice, or evidence that deferred commercial artifacts are available.",
+  "requiredContract": [
+    "content",
+    "filename",
+    "mimeType",
+    "version",
+    "license"
+  ],
+  "records": [
+    {
+      "route": "/agent-role-contract",
+      "family": "governance-template",
+      "actions": [
+        "Download completed Markdown",
+        "Download blank template"
+      ]
+    },
+    {
+      "route": "/monitors/agentic-brand-management",
+      "family": "monitor-coverage-record",
+      "actions": [
+        "Download CSV record"
+      ]
+    },
+    {
+      "route": "/monitors/ai-creative-production",
+      "family": "monitor-coverage-record",
+      "actions": [
+        "Download CSV record"
+      ]
+    },
+    {
+      "route": "/monitors/arts-culture",
+      "family": "monitor-coverage-record",
+      "actions": [
+        "Download CSV record"
+      ]
+    },
+    {
+      "route": "/monitors/biopharma-regulatory-intelligence",
+      "family": "monitor-coverage-record",
+      "actions": [
+        "Download CSV record"
+      ]
+    },
+    {
+      "route": "/monitors/biophilic-neuroarch",
+      "family": "monitor-coverage-record",
+      "actions": [
+        "Download CSV record"
+      ]
+    },
+    {
+      "route": "/monitors/luxury-ip",
+      "family": "monitor-coverage-record",
+      "actions": [
+        "Download CSV record"
+      ]
+    },
+    {
+      "route": "/monitors/market-intel",
+      "family": "monitor-coverage-record",
+      "actions": [
+        "Download CSV record"
+      ]
+    },
+    {
+      "route": "/monitors/private-ai-risk",
+      "family": "monitor-coverage-record",
+      "actions": [
+        "Download CSV record"
+      ]
+    },
+    {
+      "route": "/monitors/psychedelic-radar",
+      "family": "monitor-coverage-record",
+      "actions": [
+        "Download CSV record"
+      ]
+    },
+    {
+      "route": "/monitors/suppression-audit",
+      "family": "monitor-coverage-record",
+      "actions": [
+        "Download CSV record"
+      ]
+    },
+    {
+      "route": "/tools/ai-readiness-scorecard",
+      "family": "tool-review-record",
+      "actions": [
+        "Download JSON"
+      ]
+    },
+    {
+      "route": "/tools/bill-analyzer",
+      "family": "tool-review-record",
+      "actions": [
+        "Download Markdown",
+        "Download JSON"
+      ]
+    },
+    {
+      "route": "/tools/citation-verifier",
+      "family": "tool-review-record",
+      "actions": [
+        "Download JSON"
+      ]
+    },
+    {
+      "route": "/tools/claims-checker",
+      "family": "tool-review-record",
+      "actions": [
+        "Download Markdown"
+      ]
+    },
+    {
+      "route": "/tools/controlled-substances-explainer",
+      "family": "tool-review-record",
+      "actions": [
+        "Download JSON"
+      ]
+    },
+    {
+      "route": "/tools/evidence-explainer",
+      "family": "tool-review-record",
+      "actions": [
+        "Download Markdown"
+      ]
+    },
+    {
+      "route": "/tools/governance-readiness",
+      "family": "tool-review-record",
+      "actions": [
+        "Download JSON"
+      ]
+    },
+    {
+      "route": "/tools/kb-readiness",
+      "family": "tool-review-record",
+      "actions": [
+        "Download JSON"
+      ]
+    },
+    {
+      "route": "/tools/policy-generator",
+      "family": "tool-review-record",
+      "actions": [
+        "Download Markdown"
+      ]
+    },
+    {
+      "route": "/tools/practice-readiness",
+      "family": "tool-review-record",
+      "actions": [
+        "Download JSON"
+      ]
+    },
+    {
+      "route": "/tools/prompt-to-workflow",
+      "family": "tool-review-record",
+      "actions": [
+        "Download Markdown"
+      ]
+    },
+    {
+      "route": "/tools/workflow-audit",
+      "family": "tool-review-record",
+      "actions": [
+        "Download JSON"
+      ]
+    },
+    {
+      "route": "/twins/exposure-check",
+      "family": "tool-review-record",
+      "actions": [
+        "Download JSON"
+      ]
+    },
+    {
+      "route": "/university/assessment",
+      "family": "learning-self-record",
+      "actions": [
+        "Download JSON"
+      ]
+    },
+    {
+      "route": "/university/contact",
+      "family": "learning-self-record",
+      "actions": [
+        "Download JSON"
+      ]
+    },
+    {
+      "route": "/university/courses/citation-verifier",
+      "family": "learning-self-record",
+      "actions": [
+        "Export my learning record",
+        "Download JSON"
+      ]
+    },
+    {
+      "route": "/university/courses/claims-checker",
+      "family": "learning-self-record",
+      "actions": [
+        "Export my learning record",
+        "Download JSON"
+      ]
+    },
+    {
+      "route": "/university/courses/first-ai-team",
+      "family": "learning-self-record",
+      "actions": [
+        "Export my learning record"
+      ]
+    },
+    {
+      "route": "/university/courses/governed-operator",
+      "family": "learning-self-record",
+      "actions": [
+        "Export my learning record"
+      ]
+    },
+    {
+      "route": "/university/courses/kb-readiness",
+      "family": "learning-self-record",
+      "actions": [
+        "Export my learning record"
+      ]
+    },
+    {
+      "route": "/university/courses/reg-tracker",
+      "family": "learning-self-record",
+      "actions": [
+        "Export my learning record"
+      ]
+    },
+    {
+      "route": "/university/courses/workflow-audit",
+      "family": "learning-self-record",
+      "actions": [
+        "Export my learning record"
+      ]
+    },
+    {
+      "route": "/university/templates/citation-verifier-lab-kit",
+      "family": "open-learning-template",
+      "actions": [
+        "Download Markdown template"
+      ]
+    }
+  ]
+}
