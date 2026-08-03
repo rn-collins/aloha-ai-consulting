@@ -2,7 +2,7 @@
 
 Date: 2026-08-02
 
-Status: passed locally within the twenty-three-resource tool and assessment boundary; exact-tree publication and production verification pending; R08 remains open
+Status: passed within the twenty-three-resource tool and assessment boundary after exact-tree GitHub publication and production verification; Unit 6 closed; R08 remains open
 
 Frozen audit baseline: 4,289 promise records / 9,552 occurrences; unchanged
 
@@ -41,7 +41,14 @@ The site already rendered conservative per-resource release states, and individu
 
 ## Production verification
 
-Pending exact-tree GitHub publication and Vercel production verification.
+- GitHub `main` implementation commit: `03fa7f00221f7c940980086db56d3e7a4d679ae2`.
+- Exact published Git tree: `b8aa16e28c9d311aeacd529f16e43c88f33eb258`.
+- Vercel production deployment: `dpl_63kXRAAd7tpeLHVALZ6PKTuGjCai`, state `READY`, target `production`, with Git metadata tied to the exact implementation commit.
+- `/artifacts/tool-delivery-evidence-evaluation.json`, `/api/tool-delivery-evidence-register.json`, `/api/release-control-report.json`, and `/program/promise-delivery/promise-release-registry.json` returned HTTP 200.
+- The live evaluator reported 11/11 checks, 23 canonical resources, 16 tools, 7 assessments, 17 browser-local experiences, 1 demonstration-only page, 5 reference-only pages, and zero findings.
+- Live release totals matched 262 resources and 5,368 promise records / 12,013 occurrences; release-control errors remained zero.
+- Vercel reported no runtime errors for the project in the verification window.
+- Browser-control tooling was not exposed in this session, so this verification does not claim independent field entry, button activation, result inspection, screenshot, browser-console capture, responsive-layout review, or visual-design certification.
 
 ## Remaining R08 work
 
@@ -51,4 +58,4 @@ Pending exact-tree GitHub publication and Vercel production verification.
 
 ## Decision
 
-PASS locally within the stated twenty-three-resource boundary. Production closure is pending. R08 remains open.
+PASS within the stated twenty-three-resource boundary. Unit 6 is production-closed. R08 remains open.
