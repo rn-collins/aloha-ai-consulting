@@ -3,7 +3,7 @@
 **Frozen audit baseline:** 4,289 grouped claims / 9,552 occurrences  
 **Current reviewed estate:** 262 canonical resources / 505 public surfaces / 9,782 interactions / 5,368 promise records / 12,013 occurrences  
 **Tranche:** R09 — Deferred acquisition artifacts and Workspace access model  
-**Status:** locally passed after full snapshot-hydrated verification; publication and production verification pending
+**Status:** passed after exact-tree GitHub publication and production verification; Unit 4 closed
 
 ## Purpose and boundary
 
@@ -38,4 +38,15 @@ All four package-specific tests and universal artifact tests 1–4 and 8 are sat
 
 ## Publication and production verification
 
-Pending exact-tree GitHub publication and Vercel production verification.
+- GitHub `main` evaluated implementation commit: `cc5424c11b3dd761e9a9a6bf123215f600da0bfd`.
+- Exact evaluated Git tree: `48042652f35d4fd21273c88fc1cdd9214e3403ab`.
+- The initial Unit 4 implementation deployed successfully at `c55e0580af27e43eaa47206ed8a8d90a753a874e`, but live-page comparison exposed that the public contract promised rewrites specifically covering psilocybin, cannabis, and prescription antidepressants while the first package used generic examples. That implementation was superseded before closeout.
+- The strengthened evaluator now requires the exact three-topic set, and the package was rebuilt with bounded health, legal-status, medication, and platform-distribution language.
+- Final Vercel production deployment: `dpl_8HiBZmiLFYZL94K3v71VzmpwNQan`, state `READY`, target `production`, tied to the exact evaluated commit.
+- `/artifacts/r09-neuroscience-trust-artifact-evaluation.json`, `/api/r09-neuroscience-trust-artifact-register.json`, `/artifacts/products/neuroscience-trust-content-architecture/2026.08.0/worked-rewrites.json`, `/api/release-control-report.json`, and `/trust-stack/edsa-framework` each returned HTTP 200.
+- The live evaluator reported 16/16 checks, 22 checksum-backed files, eight architecture contents, four bounded scientific claims, four dated platform-policy records, three rewrites, ten script segments / 720 seconds, five accepted and three deferred universal tests, eight release blockers, and zero findings.
+- The delivered rewrite JSON exposed the exact topic sequence `psilocybin`, `cannabis`, and `prescription-antidepressants`, each with four EDSA decisions and explicit professional and outcome boundaries.
+- The live product page remained `Description only · access unavailable`, stated that the artifact is not currently for sale, and exposed no checkout, purchase, license, or download.
+- Live release totals remained 262 canonical resources with zero release-control errors and 5,368 promise records / 12,013 occurrences.
+- Vercel reported no runtime errors in the targeted verification window.
+- Browser-control tooling was not exposed in this session, so verification does not claim screenshot capture, browser-console review, responsive-layout review, or visual-design certification.
