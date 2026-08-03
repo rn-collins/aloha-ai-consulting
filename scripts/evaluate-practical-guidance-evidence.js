@@ -37,6 +37,7 @@ for (const resource of resources) {
   const languagePattern = resource.downloadTemplate ? /browser-local downloadable template.*not submitted, graded, or credentialed/i : /publication does not certify ongoing maintenance, external delivery, or professional suitability/i;
   if (!languagePattern.test(resource.releaseState?.permittedPublicLanguage || '')) findings.push(`${resource.id} permitted language does not preserve the publication boundary.`);
   if (!html.includes(`data-resource-id="${resource.id}"`) || !html.includes('data-release-state=')) findings.push(`${resource.id} does not render its canonical identity and release boundary.`);
+  if (resource.downloadTemplate && !html.includes('data-release-state="Browser-local downloadable template"')) findings.push(`${resource.id} does not visibly render its browser-local downloadable-template boundary.`);
   if (resource.kind === 'template' && !resource.downloadTemplate?.content && !blocks.some((block) => ['code', 'table'].includes(block.type))) findings.push(`${resource.id} does not include a usable template, worksheet, prompt, or structured table block.`);
   if (resource.kind === 'playbook' && !(resource.learningPaths || []).length) findings.push(`${resource.id} does not include an ordered practical path.`);
   if (resource.kind === 'toolGuide' && !/confirm|recheck|change|current|pricing|features/i.test([...(resource.limitations || []), ...(resource.editorialIntro || [])].join(' '))) findings.push(`${resource.id} does not disclose the time-sensitive vendor-information boundary.`);
@@ -53,7 +54,7 @@ const checks = {
   releaseMetadata: resources.every((resource) => resource.releaseState?.lastReviewedOrTested && resource.releaseState?.nextReviewOrTrigger && resource.releaseState?.permittedPublicLanguage),
   deliveryBoundaries: resources.every((resource) => resource.releaseState?.status?.publication === 'published' && resource.releaseState?.status?.access === 'public' && (resource.downloadTemplate ? resource.releaseState?.status?.interaction === 'working' : resource.releaseState?.status?.interaction === 'read-only')),
   familyContracts: resources.every((resource) => resource.kind !== 'template' || resource.downloadTemplate?.content || blocksFor(resource).some((block) => ['code', 'table'].includes(block.type))) && resources.every((resource) => resource.kind !== 'playbook' || resource.learningPaths?.length),
-  renderedBoundaries: resources.every((resource) => { const html = fs.readFileSync(pageFor(resource), 'utf8'); return html.includes(`data-resource-id="${resource.id}"`) && html.includes('data-release-state='); }),
+  renderedBoundaries: resources.every((resource) => { const html = fs.readFileSync(pageFor(resource), 'utf8'); return html.includes(`data-resource-id="${resource.id}"`) && html.includes('data-release-state=') && (!resource.downloadTemplate || html.includes('data-release-state="Browser-local downloadable template"')); }),
   noFindings: findings.length === 0
 };
 
