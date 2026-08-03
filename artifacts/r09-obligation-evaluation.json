@@ -1,0 +1,28 @@
+{
+  "schema": "aloha-ai-r09-obligation-evaluation/1.0",
+  "evaluatedAt": "2026-08-03",
+  "scope": "R09 acquisition and Workspace obligations inherited from the frozen R01 reliance manifest.",
+  "boundary": "This register establishes the exact R09 denominator and preserves fail-closed public states. It does not represent any artifact as purchasable or downloadable, and it does not represent authentication, accounts, provisioning, persistence, permissions, collaboration, review, audit, monitoring, or personalization as operational.",
+  "counts": {
+    "acquisitionPromises": 6,
+    "toolArtifacts": 5,
+    "productArtifacts": 1,
+    "workspaceCapabilityFamilies": 8
+  },
+  "checks": {
+    "registerSchema": true,
+    "exactFrozenPurchaseDenominator": true,
+    "exactAcquisitionCoverage": true,
+    "uniqueAcquisitionRecords": true,
+    "canonicalArtifactRoutes": true,
+    "visibleUnavailableArtifactStates": true,
+    "noEnabledPurchaseLanguage": true,
+    "workspaceCanonicalBoundary": true,
+    "exactWorkspaceCapabilityFamilies": true,
+    "visibleWorkspaceNoAccessState": true,
+    "noWorkspaceAuthControl": true,
+    "dependenciesAndTriggers": true,
+    "noFindings": true
+  },
+  "findings": []
+}
