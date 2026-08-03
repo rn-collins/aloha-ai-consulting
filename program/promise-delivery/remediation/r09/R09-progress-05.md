@@ -1,7 +1,7 @@
 # R09 Progress Report 05 — Commercial-Launch APQ Gap Model Build
 
 **Tranche:** R09 — Deferred acquisition artifacts and Workspace access model  
-**Status:** locally accepted; exact-tree publication and production evidence pending
+**Status:** passed after exact-tree GitHub publication and production verification; Unit 5 closed
 
 ## Purpose and boundary
 
@@ -32,3 +32,15 @@ All four package-specific tests and universal artifact tests 1–4 and 8 are sat
 - Current promise registry: unchanged at 5,368 records / 12,013 occurrences.
 - Immutable baseline: unchanged at 4,289 records / 9,552 occurrences.
 - Full snapshot-hydrated `npm run site:ci`: passed.
+
+## Publication and production verification
+
+- GitHub `main` evaluated implementation commit: `d68f7e52dc711d299102cbb34dcaac61b20d02e2`.
+- Exact evaluated Git tree: `faeb53b63e55d81bb6d62a24e344ed1723b093e7`.
+- Vercel production deployment: `dpl_54QPitueXyjF4c3i36rRN2U7AZ3m`, state `READY`, target `production`, tied to the exact evaluated commit.
+- `/artifacts/r09-commercial-launch-apq-artifact-evaluation.json`, `/api/r09-commercial-launch-apq-artifact-register.json`, `/api/release-control-report.json`, and `/trust-stack/psilocybin-map` each returned HTTP 200.
+- The live evaluator reported 17/17 checks, 21 checksum-backed files, eight contents, three jurisdictions, eleven source and verification records, three classifier examples, eleven change-watch records, five accepted and three deferred universal tests, eight release blockers, and zero findings.
+- The live product page remained `Description only · access unavailable`, stated that the artifact is not currently for sale, and exposed no checkout, purchase, license, or download.
+- Live release totals remained 262 canonical resources with zero release-control errors and 5,368 promise records / 12,013 occurrences.
+- Vercel reported no runtime errors in the targeted verification window.
+- Browser-control tooling was not exposed in this session, so verification does not claim screenshot capture, browser-console review, responsive-layout review, or visual-design certification.
