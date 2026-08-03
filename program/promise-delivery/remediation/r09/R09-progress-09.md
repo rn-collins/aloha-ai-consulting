@@ -6,7 +6,7 @@
 
 **Tranche:** R09 — Deferred acquisition artifacts and Workspace access model
 
-**Status:** infrastructure accepted locally; commerce remains closed; production publication pending
+**Status:** infrastructure accepted and production-verified; commerce remains closed; Unit 9 closed
 
 ## Purpose and boundary
 
@@ -59,3 +59,16 @@ Therefore v2026.08.0 is evidence-only and ineligible to serve as the paid payloa
 ## Decision
 
 The shared commerce infrastructure is internally accepted in a fail-closed state. No product is commercially released, no public page changes to purchase language, and no Workspace entitlement exists. Unit 10 must resolve commercial terms, create fresh private payload versions, configure providers, apply the reviewed persistence migration, and execute all ten test-mode and production-proof scenarios before any individual product may be enabled.
+
+## Publication and production verification
+
+- GitHub `main` evaluated implementation commit: `96a0c3eab45fd04e1e0dd7624f139a72607f567d`.
+- Exact evaluated Git tree: `2f7d70987e4d02648b82f4f5155a54f7c0faf2e7`.
+- Vercel production deployment: `dpl_3aVDYQmaSEkcQqnXgoVw6D8WTM3p`, state `READY`, target `production`, tied to the exact evaluated commit.
+- `/artifacts/r09-commerce-infrastructure-evaluation.json` returned HTTP 200 and reported 23/23 checks, six products, eight API surfaces, four persistence tables, ten preserved production-proof tests, six exposed pre-release ZIPs, seven global blockers, and zero control findings.
+- `/api/commerce/catalog` returned HTTP 200 with `enabled: false`, `commercialState: closed`, six unavailable products, null prices, and no Workspace entitlement.
+- `/api/commerce/readiness` returned the intended HTTP 503 fail-closed response with all provider configuration absent, seven global blockers, and every product unavailable.
+- `/trust-stack/ai-content-system` returned HTTP 200 and remained `Description only · access unavailable`, `not currently for sale`, with no checkout, purchase, license, or download exposed.
+- Vercel reported no runtime errors in the targeted verification window.
+
+R09 Unit 9 is production-closed within this boundary. Commerce is not released.
