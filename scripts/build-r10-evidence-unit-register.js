@@ -7,12 +7,20 @@ const ledgerPath = 'program/promise-delivery/ledger.json';
 const currentRegistryPath = 'program/promise-delivery/promise-release-registry.json';
 const r01DispositionPath = 'program/promise-delivery/remediation/r01/s0-occurrence-manifest.json';
 const interactionAuditPath = 'artifacts/interaction-audit/report.json';
+const resourcesPath = 'api/resources.json';
 const outputPath = 'program/promise-delivery/r10-evidence-unit-register.json';
 const ledger = JSON.parse(fs.readFileSync(path.join(root, ledgerPath), 'utf8'));
 const currentRegistry = JSON.parse(fs.readFileSync(path.join(root, currentRegistryPath), 'utf8'));
 const r01DispositionManifest = JSON.parse(fs.readFileSync(path.join(root, r01DispositionPath), 'utf8'));
 const interactionAudit = JSON.parse(fs.readFileSync(path.join(root, interactionAuditPath), 'utf8'));
+const resources = JSON.parse(fs.readFileSync(path.join(root, resourcesPath), 'utf8')).resources;
 const currentById = new Map(currentRegistry.records.map((record) => [record.promiseId, record]));
+const currentByExactPromise = new Map(currentRegistry.records.map((record) => [record.exactPromise, record]));
+const resourceById = new Map(resources.map((resource) => [resource.id, resource]));
+const valueAtFieldPath = (object, fieldPath) => fieldPath
+  .replace(/\[(\d+)\]/g, '.$1')
+  .split('.')
+  .reduce((value, key) => value?.[key], object);
 const currentActionIdByExactPromise = new Map(
   currentRegistry.records
     .filter((record) => record.category === 'public-action')
@@ -76,6 +84,18 @@ const units = Array.from({ length: totalUnits }, (_, index) => {
     const routeTargetSuccessorId = routeTargetSuccessorIds.length === 1 && currentById.has(routeTargetSuccessorIds[0])
       ? routeTargetSuccessorIds[0]
       : null;
+    const resourceFieldMatches = current || successor || confirmedPriorDisposition || routeTargetSuccessorId || record.category !== 'resource-claim'
+      ? []
+      : record.occurrences.map((occurrence) => {
+          const value = valueAtFieldPath(resourceById.get(occurrence.resourceId), occurrence.field);
+          return typeof value === 'string' ? currentByExactPromise.get(value) || null : null;
+        });
+    const resourceFieldSuccessorIds = resourceFieldMatches.length && resourceFieldMatches.every(Boolean)
+      ? [...new Set(resourceFieldMatches.map((match) => match.promiseId))]
+      : [];
+    const resourceFieldSuccessorId = resourceFieldSuccessorIds.length === 1 && currentById.has(resourceFieldSuccessorIds[0])
+      ? resourceFieldSuccessorIds[0]
+      : null;
     return {
       i: record.id,
       s: current
@@ -86,6 +106,8 @@ const units = Array.from({ length: totalUnits }, (_, index) => {
             ? 'r'
             : routeTargetSuccessorId
               ? 't'
+              : resourceFieldSuccessorId
+                ? 'f'
           : 'u',
       d: current
         ? 'v'
@@ -95,8 +117,10 @@ const units = Array.from({ length: totalUnits }, (_, index) => {
             ? 'r'
             : routeTargetSuccessorId
               ? 't'
+              : resourceFieldSuccessorId
+                ? 'f'
           : 'u',
-      x: successor?.promiseId || routeTargetSuccessorId,
+      x: successor?.promiseId || routeTargetSuccessorId || resourceFieldSuccessorId,
       r: confirmedPriorDisposition,
       e: current
         ? 'v'
@@ -106,8 +130,10 @@ const units = Array.from({ length: totalUnits }, (_, index) => {
             ? 'r'
             : routeTargetSuccessorId
               ? 't'
+              : resourceFieldSuccessorId
+                ? 'f'
             : 'u',
-      q: current || successor || routeTargetSuccessorId
+      q: current || successor || routeTargetSuccessorId || resourceFieldSuccessorId
         ? 's'
         : confirmedPriorDisposition
           ? 'r'
@@ -118,8 +144,9 @@ const units = Array.from({ length: totalUnits }, (_, index) => {
   const confirmedSemanticSuccessors = promiseReview.filter((record) => record.s === 's').length;
   const confirmedRemediationDispositions = promiseReview.filter((record) => record.s === 'r').length;
   const confirmedRouteTargetSuccessors = promiseReview.filter((record) => record.s === 't').length;
+  const confirmedResourceFieldSuccessors = promiseReview.filter((record) => record.s === 'f').length;
   const lineageUnresolved = promiseReview.filter((record) => record.s === 'u').length;
-  const notPresentVerbatim = confirmedSemanticSuccessors + confirmedRemediationDispositions + confirmedRouteTargetSuccessors + lineageUnresolved;
+  const notPresentVerbatim = confirmedSemanticSuccessors + confirmedRemediationDispositions + confirmedRouteTargetSuccessors + confirmedResourceFieldSuccessors + lineageUnresolved;
   return {
     id: `R10-REC-${ordinal}`,
     provenance: 'controlled-denominator-reconstruction',
@@ -133,6 +160,7 @@ const units = Array.from({ length: totalUnits }, (_, index) => {
       confirmedSemanticSuccessors,
       confirmedRemediationDispositions,
       confirmedRouteTargetSuccessors,
+      confirmedResourceFieldSuccessors,
       lineageUnresolved,
       promiseReview
     },
@@ -142,7 +170,7 @@ const units = Array.from({ length: totalUnits }, (_, index) => {
       'program/promise-delivery/remediation/r10/R10-denominator-recovery-method.md'
     ],
     dependency: lineageUnresolved
-      ? `${lineageUnresolved} frozen promise ID(s) still require lineage adjudication; ${confirmedSemanticSuccessors} semantic successor, ${confirmedRemediationDispositions} remediation disposition, and ${confirmedRouteTargetSuccessors} route-target successor decision(s) are confirmed; all ${promiseReview.length} promises still require substantive evidence review.`
+      ? `${lineageUnresolved} frozen promise ID(s) still require lineage adjudication; ${confirmedSemanticSuccessors} semantic successor, ${confirmedRemediationDispositions} remediation disposition, ${confirmedRouteTargetSuccessors} route-target successor, and ${confirmedResourceFieldSuccessors} resource-field successor decision(s) are confirmed; all ${promiseReview.length} promises still require substantive evidence review.`
       : `All ${promiseReview.length} frozen promise IDs have direct or confirmed-successor lineage, but substantive evidence review remains incomplete.`,
     reconsiderationTrigger: 'Resolve every promise-level remainingDecision, attach observable evidence, and record a supported terminal decision for the complete slot.'
   };
@@ -179,11 +207,11 @@ const register = {
       sourceDetail: 'Category, exact promise, occurrences, routes, and baseline classification remain canonical in program/promise-delivery/ledger.json.',
       fields: {
         i: 'promiseId',
-        s: 'state: v=verbatim, s=semantic-successor, r=remediation-disposition, t=route-target-successor, u=unresolved',
-        d: 'disposition code using the same v/s/r/t/u legend',
+        s: 'state: v=verbatim, s=semantic-successor, r=remediation-disposition, t=route-target-successor, f=resource-field-successor, u=unresolved',
+        d: 'disposition code using the same v/s/r/t/f/u legend',
         x: 'successorPromiseId',
         r: 'remediationDisposition',
-        e: 'evidence: v=registry, s=semantic, r=R01, t=route-target, u=search',
+        e: 'evidence: v=registry, s=semantic, r=R01, t=route-target, f=resource-field, u=search',
         q: 'remaining decision: s=substantive, r=remediation verification, l=lineage'
       },
       unitMembership: 'Each unit\'s promiseReview.i values are its authoritative frozen promise-ID membership; category and route detail resolve through the immutable ledger.',
@@ -192,6 +220,7 @@ const register = {
         s: `${ledgerPath}#records[id={promiseId}] + ${currentRegistryPath}#records[promiseId={successorPromiseId}]`,
         r: `${ledgerPath}#records[id={promiseId}] + ${r01DispositionPath}#occurrences[promiseId={promiseId}]`,
         t: `${ledgerPath}#records[id={promiseId}].occurrences[route,target] + ${interactionAuditPath}#inventory[route,target] + ${currentRegistryPath}#records[promiseId={successorPromiseId}]`,
+        f: `${ledgerPath}#records[id={promiseId}].occurrences[resourceId,field] + ${resourcesPath}#resources[id={resourceId}][field] + ${currentRegistryPath}#records[promiseId={successorPromiseId}]`,
         u: `${ledgerPath}#records[id={promiseId}] + ${currentRegistryPath}#records`
       },
       remainingDecisionTemplates: {
@@ -206,6 +235,7 @@ const register = {
     confirmedSemanticSuccessors: units.reduce((sum, unit) => sum + unit.reAudit.confirmedSemanticSuccessors, 0),
     confirmedRemediationDispositions: units.reduce((sum, unit) => sum + unit.reAudit.confirmedRemediationDispositions, 0),
     confirmedRouteTargetSuccessors: units.reduce((sum, unit) => sum + unit.reAudit.confirmedRouteTargetSuccessors, 0),
+    confirmedResourceFieldSuccessors: units.reduce((sum, unit) => sum + unit.reAudit.confirmedResourceFieldSuccessors, 0),
     lineageUnresolved: units.reduce((sum, unit) => sum + unit.reAudit.lineageUnresolved, 0),
     fullyVerbatimSlots: units.filter((unit) => unit.reAudit.notPresentVerbatim === 0).length,
     slotsRequiringDispositionLineage: units.filter((unit) => unit.reAudit.notPresentVerbatim > 0).length,

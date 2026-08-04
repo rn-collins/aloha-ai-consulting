@@ -28,3 +28,9 @@ A slot may move to `passed` only after the original row is restored with verifia
 Each frozen promise ID is compared with the current reviewed promise-release registry. A verbatim survivor receives a direct registry evidence pointer and its current occurrence-key count. A non-surviving ID receives an explicit open decision: determine whether remediation intentionally retired it, rewrote it into a successor, or omitted it.
 
 This phase is exhaustive but deliberately narrow. Verbatim presence establishes lineage, not factual accuracy, legal sufficiency, operational capacity, or production behavior. No slot changes terminal state until every promise in that slot also completes the applicable substantive review.
+
+## Independent re-audit phase 5: canonical resource-field continuity
+
+For unresolved resource claims only, a frozen promise is linked to a current successor when every frozen occurrence resolves to an existing canonical resource and the same exact field path, every current field value is a claim string represented in the reviewed registry, and all occurrences converge on one current promise ID. This rule does not use text similarity and does not apply to removed fields, non-string values, missing resources, or divergent successors.
+
+Field continuity proves which current claim replaced a claim at a stable schema location. It does not prove the current claim true or sufficient. Every matched promise therefore continues to require substantive review, and no reconstructed slot changes terminal state from lineage evidence alone.

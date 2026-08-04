@@ -1,6 +1,6 @@
 {
   "schema": "aloha-ai-r10-closure-evaluation/1.0",
-  "generatedAt": "2026-08-03T22:58:46.502Z",
+  "generatedAt": "2026-08-04T01:03:24.954Z",
   "decision": "closure-blocked",
   "frozenEvidenceUnits": 325,
   "checks": [
@@ -152,7 +152,7 @@
     {
       "id": "R10-32",
       "pass": true,
-      "detail": "Unique route-target continuity must confirm exactly 667 successors while preserving 173 unresolved lineage decisions."
+      "detail": "Unique route-target continuity must preserve its 667 successors and the complete 173-record post-Unit-6 boundary."
     },
     {
       "id": "R10-33",
@@ -163,6 +163,21 @@
       "id": "R10-34",
       "pass": true,
       "detail": "Every route-target successor must name a current successor and resolve through the interaction-audit evidence template."
+    },
+    {
+      "id": "R10-35",
+      "pass": true,
+      "detail": "Unique resource-field continuity must confirm exactly 62 successors while preserving 111 unresolved lineage decisions."
+    },
+    {
+      "id": "R10-36",
+      "pass": true,
+      "detail": "Every resource-field successor must name one current successor and use the resource-field evidence code."
+    },
+    {
+      "id": "R10-37",
+      "pass": true,
+      "detail": "Resource-field lineage must retain complete reconciliation of all 1,079 non-verbatim promises."
     },
     {
       "id": "R10-19",
