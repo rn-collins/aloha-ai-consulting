@@ -1,4 +1,24 @@
 {
-  "generatedAt": "2026-08-03T04:25:45.939Z",
-  "findings": []
+  "generatedAt": "2026-08-04T23:44:02.793Z",
+  "findings": [
+    "legacy events/hawaii-tech-week/resources.html: missing canonical",
+    "legacy events/hawaii-tech-week.html: missing canonical",
+    "legacy events/hawaii-tech-week.html: unresolved internal link /events/hawaii-tech-week/resources",
+    "legacy events/hawaii-tech-week.html: unresolved internal link /learning/decision-desk",
+    "legacy events/hawaii-tech-week.html: unresolved internal link /work/ai-opportunity-clinic",
+    "legacy learning/decision-desk/issues/01.html: missing description",
+    "legacy learning/decision-desk/issues/01.html: missing canonical",
+    "legacy learning/decision-desk/issues/01.html: unresolved internal link /learning/decision-desk",
+    "legacy learning/decision-desk/issues/02.html: missing description",
+    "legacy learning/decision-desk/issues/02.html: missing canonical",
+    "legacy learning/decision-desk/issues/02.html: unresolved internal link /learning/decision-desk",
+    "legacy learning/decision-desk/issues/03.html: missing description",
+    "legacy learning/decision-desk/issues/03.html: missing canonical",
+    "legacy learning/decision-desk/issues/03.html: unresolved internal link /learning/decision-desk",
+    "legacy learning/decision-desk.html: missing canonical",
+    "legacy learning/decision-desk.html: unresolved internal link /learning/decision-desk/issues/01",
+    "legacy learning/decision-desk.html: unresolved internal link /learning/decision-desk/issues/02",
+    "legacy learning/decision-desk.html: unresolved internal link /learning/decision-desk/issues/03",
+    "legacy work/ai-opportunity-clinic.html: missing canonical"
+  ]
 }
