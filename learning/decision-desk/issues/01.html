@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Decision Desk 01 | AI and prospective-client intake</title><link rel="stylesheet" href="/aloha-ds.css"><link rel="stylesheet" href="/site-shell.css"><link rel="stylesheet" href="/program.css"></head>
+<body><a class="skip" href="#main">Skip to content</a><header class="nav"></header><main id="main" class="article-shell">
+<p class="eyebrow">Decision Desk 01 · paid editorial draft · not published</p>
+<h1>Should a small law firm use AI to summarize prospective-client intake?</h1>
+<p class="lead">A fluent synopsis can save minutes and still cost the firm the matter. Intake is the point at which unverified facts, prospective-client confidences, party names, limitations periods, emergencies, and a person’s expectations first enter the firm. The question is not whether a model can shorten the text. It is whether the firm can add a secondary representation without allowing it to become the record people actually trust.</p>
+<aside class="paywall-preview"><strong>Decision in one sentence:</strong> pilot a synopsis only after the firm has structured the underlying intake, approved the data environment, preserved the original submission, and assigned a trained person to compare source and summary before any routing decision.</aside>
+
+<h2>The scene before the software</h2>
+<p>A person usually arrives at intake with a story, not a data model. Names may be misspelled. A date may be buried in a paragraph. The person may not know which fact creates urgency. They may disclose information before the firm agrees to represent them. Under ABA Model Rule 1.18, even a person who does not become a client can be a prospective client, and information learned in the consultation can carry duties. ABA Formal Opinion 512 adds a separate warning for generative AI: lawyers must understand the tool well enough to protect information, supervise its use, communicate when required, and verify its work.<sup><a href="#s1">1</a></sup><sup><a href="#s2">2</a></sup></p>
+<p>That changes the design problem. The firm is not buying “summaries.” It is changing who or what gets the first opportunity to frame a legal story.</p>
+
+<h2>System X-Ray: where a synopsis can distort the work</h2>
+<div class="finding"><ol>
+<li><strong>Submission:</strong> the person supplies names, dates, allegations, documents, contact details, and expectations.</li>
+<li><strong>Preservation:</strong> the original becomes the authoritative record; access and retention rules attach.</li>
+<li><strong>Conflict screen:</strong> structured party data is checked. A generated synopsis must never be the sole input.</li>
+<li><strong>Urgency and issue screen:</strong> a trained human looks for deadlines, safety concerns, jurisdiction, and missing facts.</li>
+<li><strong>Routing decision:</strong> the firm schedules, seeks more information, declines, or refers without implying representation.</li>
+<li><strong>Communication:</strong> the person receives an accurate next step and knows what the firm has—and has not—agreed to do.</li>
+</ol></div>
+<p>The model belongs, if anywhere, between preservation and human review. It produces a labeled aid. It does not clear conflicts, calculate deadlines, accept or reject matters, decide legal merit, or replace the source record.</p>
+
+<h2>RN’s finding</h2>
+<div class="finding"><h2>Proceed only with a bounded assistive pilot—after redesigning intake controls.</h2>
+<p>Use AI to create a secondary synopsis for a narrow matter class. Require the reviewer to see the original and synopsis together. Keep conflict fields, dates, jurisdiction, urgency indicators, consent, and contact information in structured fields independent of the model. Use only a system whose retention, training, access, deletion, and incident terms have been reviewed and approved.</p></div>
+<p>This is a conditional “yes,” not a procurement recommendation. NIST’s Generative AI Profile identifies confabulation, privacy, information integrity, human–AI configuration, and value-chain risk as distinct risk areas, and recommends testing, documentation, monitoring, and incident processes proportionate to context.<sup><a href="#s3">3</a></sup> A firm that cannot name the authoritative record, the reviewer, the error taxonomy, and the stop authority is not ready for the pilot.</p>
+
+<h2>Implementation conditions</h2>
+<h3>1. Define the boundary</h3><ul><li>One office, one approved system, one or two low-complexity matter categories, and a fixed test period.</li><li>No autonomous conflict clearance, deadline calculation, legal assessment, engagement, declination, referral, or outbound advice.</li><li>No use of the synopsis outside intake without a separately documented purpose.</li></ul>
+<h3>2. Control the information</h3><ul><li>Document what the vendor receives, retains, logs, trains on, exposes to subcontractors, and deletes.</li><li>Minimize free text where a structured field is safer and more reliable.</li><li>Preserve the original submission and an audit trail tying each synopsis to its source and model/configuration version.</li></ul>
+<h3>3. Design human review</h3><ul><li>The reviewer compares source and synopsis—not synopsis alone.</li><li>The screen explicitly checks parties, dates, requested relief, urgency, jurisdiction, contradictory facts, and missing attachments.</li><li>Overrides and corrections are captured as evidence about the system, not treated as invisible cleanup.</li></ul>
+<h3>4. Communicate accurately</h3><ul><li>The intake experience must not imply that an attorney has reviewed the submission when none has.</li><li>Any automation disclosure should be understandable, placed where it matters, and consistent with the actual workflow.</li><li>Engagement and non-engagement communications remain human-approved.</li></ul>
+
+<h2>Success measures and stop rules</h2>
+<table><thead><tr><th>Measure</th><th>Evidence</th><th>Stop condition</th></tr></thead><tbody>
+<tr><td>Material fidelity</td><td>Human comparison against original submissions</td><td>Any invented party, date, allegation, or requested action</td></tr>
+<tr><td>Urgency detection</td><td>Known-signal test set plus live review</td><td>Any missed deadline, safety, or emergency signal</td></tr>
+<tr><td>Confidentiality</td><td>Access, retention, and incident logs</td><td>Any unauthorized disclosure or unapproved reuse</td></tr>
+<tr><td>Reviewer behavior</td><td>Observation and exception log</td><td>Repeated reliance on synopsis without source comparison</td></tr>
+<tr><td>Operational value</td><td>Cycle time and rework, measured together</td><td>Faster first pass but higher corrections, repeat contacts, or routing errors</td></tr>
+</tbody></table>
+
+<h2>The reusable tool: Intake Summarization Pilot Card</h2>
+<p>Subscribers receive a completed example and a blank version. The card records: business purpose; in-scope matters; prohibited uses; approved fields; system and configuration; authoritative record; reviewer; sample plan; error taxonomy; success threshold; stop authority; incident path; review date; and final disposition. The weekly exception log records what the model omitted, invented, distorted, or made too easy to overlook.</p>
+
+<h2>Photojournalism and visual-evidence docket</h2>
+<p>The Beehiiv edition should use documentary evidence, not generic “robot lawyer” art. The planned visual sequence is: (1) a rights-cleared photograph of a real intake environment without client information; (2) a tightly cropped, legible primary-document image from ABA Formal Opinion 512 or the published Model Rules page; and (3) the original System X-Ray diagram above. Every image requires a factual caption, descriptive alt text, creator/institution credit, source URL, rights basis, and an entry in the image ledger. No staged screen may contain real or plausibly identifying client data.</p>
+
+<h2>Source Desk</h2>
+<ol class="source-list">
+<li id="s1"><a href="https://www.americanbar.org/groups/professional_responsibility/publications/model_rules_of_professional_conduct/rule_1_18_duties_of_prospective_client/">ABA Model Rule 1.18: Duties to Prospective Client</a> — governing primary text; verify the controlling jurisdiction’s adopted rule before use.</li>
+<li id="s2"><a href="https://www.americanbar.org/groups/professional_responsibility/publications/ethics_opinions/aba_formal_ethics_opinions_index_by_issue_dates/">ABA Formal Opinion 512: Generative Artificial Intelligence Tools</a> — competence, confidentiality, communication, supervision, candor, and fees.</li>
+<li id="s3"><a href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence">NIST AI 600-1: Generative AI Profile</a> — voluntary cross-sector risk-management profile.</li>
+<li id="s4"><a href="https://www.ftc.gov/policy/advocacy-research/tech-at-ftc/2024/01/ai-companies-uphold-your-privacy-confidentiality-commitments">FTC: AI Companies—Uphold Your Privacy and Confidentiality Commitments</a> — primary regulator statement on representations and data practices.</li>
+</ol>
+<h2>Further reading and learning</h2><ul><li>Read the firm’s jurisdiction-specific professional-conduct rules and ethics opinions; ABA Model Rules are not themselves the controlling law everywhere.</li><li>Map the existing intake process before evaluating a tool. If the source workflow has no authoritative record or accountable reviewer, fix that first.</li><li>Use the NIST profile to expand the pilot card into a fuller risk register when the use case grows.</li></ul>
+<p class="paywall-preview"><strong>Editorial state:</strong> R1 scoped narrative prototype—not publishable. The claim ledger, exhaustive primary research, jurisdiction/current-law review, counterevidence, completed tool, documentary photography, rights, and visual-integrity verification remain open. Nothing has been published, emailed, sold, or scheduled.</p>
+<p><a href="/learning/decision-desk">← Decision Desk</a></p></main><footer class="footer"></footer><script src="/site-shell.js" defer></script></body></html>
