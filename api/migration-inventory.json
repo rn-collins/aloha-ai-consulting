@@ -1,6 +1,58 @@
 {
   "version": 1,
-  "count": 0,
-  "byFamily": {},
-  "routes": []
+  "count": 7,
+  "byFamily": {
+    "services": 7
+  },
+  "routes": [
+    {
+      "pathname": "/events/hawaii-tech-week",
+      "sourceFile": "events/hawaii-tech-week.html",
+      "family": "services",
+      "targetDirectory": "content/services",
+      "status": "handwritten"
+    },
+    {
+      "pathname": "/events/hawaii-tech-week/resources",
+      "sourceFile": "events/hawaii-tech-week/resources.html",
+      "family": "services",
+      "targetDirectory": "content/services",
+      "status": "handwritten"
+    },
+    {
+      "pathname": "/learning/decision-desk",
+      "sourceFile": "learning/decision-desk.html",
+      "family": "services",
+      "targetDirectory": "content/services",
+      "status": "handwritten"
+    },
+    {
+      "pathname": "/learning/decision-desk/issues/01",
+      "sourceFile": "learning/decision-desk/issues/01.html",
+      "family": "services",
+      "targetDirectory": "content/services",
+      "status": "handwritten"
+    },
+    {
+      "pathname": "/learning/decision-desk/issues/02",
+      "sourceFile": "learning/decision-desk/issues/02.html",
+      "family": "services",
+      "targetDirectory": "content/services",
+      "status": "handwritten"
+    },
+    {
+      "pathname": "/learning/decision-desk/issues/03",
+      "sourceFile": "learning/decision-desk/issues/03.html",
+      "family": "services",
+      "targetDirectory": "content/services",
+      "status": "handwritten"
+    },
+    {
+      "pathname": "/work/ai-opportunity-clinic",
+      "sourceFile": "work/ai-opportunity-clinic.html",
+      "family": "services",
+      "targetDirectory": "content/services",
+      "status": "handwritten"
+    }
+  ]
 }
