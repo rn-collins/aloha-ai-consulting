@@ -4,7 +4,7 @@
 <p class="eyebrow">Decision Desk 01 · paid editorial draft · not published</p>
 <h1>Should a small law firm use AI to summarize prospective-client intake?</h1>
 <p class="lead">A fluent synopsis can save minutes and still cost the firm the matter. Intake is the point at which unverified facts, prospective-client confidences, party names, limitations periods, emergencies, and a person’s expectations first enter the firm. The question is not whether a model can shorten the text. It is whether the firm can add a secondary representation without allowing it to become the record people actually trust.</p>
-<aside class="paywall-preview"><strong>Decision in one sentence:</strong> pilot a synopsis only after the firm has structured the underlying intake, approved the data environment, preserved the original submission, and assigned a trained person to compare source and summary before any routing decision.</aside>
+<aside class="paywall-preview"><strong>Decision in one sentence:</strong> do not begin a live AI-intake pilot yet; redesign the intake first, evaluate a named product and configuration against representative test cases, and proceed only if the system, reviewers, data environment, and controlling jurisdiction pass every predetermined gate.</aside>
 
 <h2>The scene before the software</h2>
 <p>A person usually arrives at intake with a story, not a data model. Names may be misspelled. A date may be buried in a paragraph. The person may not know which fact creates urgency. They may disclose information before the firm agrees to represent them. Under ABA Model Rule 1.18, even a person who does not become a client can be a prospective client, and information learned in the consultation can carry duties. ABA Formal Opinion 512 adds a separate warning for generative AI: lawyers must understand the tool well enough to protect information, supervise its use, communicate when required, and verify its work.<sup><a href="#s1">1</a></sup><sup><a href="#s2">2</a></sup></p>
@@ -22,17 +22,31 @@
 <p>The model belongs, if anywhere, between preservation and human review. It produces a labeled aid. It does not clear conflicts, calculate deadlines, accept or reject matters, decide legal merit, or replace the source record.</p>
 
 <h2>RN’s finding</h2>
-<div class="finding"><h2>Proceed only with a bounded assistive pilot—after redesigning intake controls.</h2>
-<p>Use AI to create a secondary synopsis for a narrow matter class. Require the reviewer to see the original and synopsis together. Keep conflict fields, dates, jurisdiction, urgency indicators, consent, and contact information in structured fields independent of the model. Use only a system whose retention, training, access, deletion, and incident terms have been reviewed and approved.</p></div>
-<p>This is a conditional “yes,” not a procurement recommendation. NIST’s Generative AI Profile identifies confabulation, privacy, information integrity, human–AI configuration, and value-chain risk as distinct risk areas, and recommends testing, documentation, monitoring, and incident processes proportionate to context.<sup><a href="#s3">3</a></sup> A firm that cannot name the authoritative record, the reviewer, the error taxonomy, and the stop authority is not ready for the pilot.</p>
+<div class="finding"><h2>Redesign and evaluate before any live pilot.</h2>
+<p>The current evidence supports duties, safeguards, and evaluation requirements. It does not establish that a particular AI system can summarize prospective-client intake accurately, equitably, or usefully in a real firm. No directly applicable primary study was located in this research pass. That is an evidence boundary—not proof that no such study exists.</p></div>
+<p>The sequence matters. A firm should first make the human workflow legible: preserve the original, collect conflict and urgency fields independently, identify the controlling jurisdictions, and assign responsibility. It may then run a pre-deployment shadow evaluation of a named product and configuration on representative fictional, synthetic, or appropriately governed historical cases. A live pilot is a later decision, not the starting point.</p>
 
-<h2>Implementation conditions</h2>
+<h2>What the empirical evidence can—and cannot—tell us</h2>
+<p>Adjacent primary research makes three cautions visible. A 2024 comparative study of patent-document summarization identified incompleteness and hallucination as separate error modes; a single aggregate quality score can conceal the difference. A 2026 legal-deposition research prototype used source-linked “fact nuggets” to expose missing, unsupported, or inaccurate content, but it tested nine public transcripts and did not report a controlled operational-effectiveness trial. NIST’s 2026 monitoring report separates functionality, operations, human factors, security, compliance, and large-scale effects, while acknowledging that validated post-deployment methods remain nascent.<sup><a href="#s5">5</a></sup><sup><a href="#s6">6</a></sup><sup><a href="#s7">7</a></sup></p>
+<p>None of those sources supplies an intake accuracy rate. None validates a vendor. None shows that a reviewer will reliably resist a fluent but incomplete synopsis. Their proper use is to shape the evaluation—not to manufacture confidence.</p>
+
+<h2>Decision sequence</h2>
+<div class="finding"><ol>
+<li><strong>Redesign:</strong> document the non-AI workflow, authoritative record, structured fields, owners, and escalation paths.</li>
+<li><strong>Specify:</strong> name the product, model, configuration, integrations, matter class, users, and jurisdictions.</li>
+<li><strong>Govern:</strong> complete ethics, contract, privacy, security, accessibility, retention, and data-flow review.</li>
+<li><strong>Evaluate:</strong> use representative test cases and a fact-level rubric for omissions, distortions, unsupported additions, urgency signals, and routing consequences.</li>
+<li><strong>Observe humans:</strong> test whether reviewers actually compare source and synopsis and whether the tool changes judgment, rework, or delay.</li>
+<li><strong>Decide:</strong> authorize a bounded live pilot only after every gate passes; otherwise redesign, reject the product, or keep intake human-led.</li>
+</ol></div>
+
+<h2>Pre-deployment evaluation conditions</h2>
 <h3>1. Define the boundary</h3><ul><li>One office, one approved system, one or two low-complexity matter categories, and a fixed test period.</li><li>No autonomous conflict clearance, deadline calculation, legal assessment, engagement, declination, referral, or outbound advice.</li><li>No use of the synopsis outside intake without a separately documented purpose.</li></ul>
 <h3>2. Control the information</h3><ul><li>Document what the vendor receives, retains, logs, trains on, exposes to subcontractors, and deletes.</li><li>Minimize free text where a structured field is safer and more reliable.</li><li>Preserve the original submission and an audit trail tying each synopsis to its source and model/configuration version.</li></ul>
 <h3>3. Design human review</h3><ul><li>The reviewer compares source and synopsis—not synopsis alone.</li><li>The screen explicitly checks parties, dates, requested relief, urgency, jurisdiction, contradictory facts, and missing attachments.</li><li>Overrides and corrections are captured as evidence about the system, not treated as invisible cleanup.</li></ul>
 <h3>4. Communicate accurately</h3><ul><li>The intake experience must not imply that an attorney has reviewed the submission when none has.</li><li>Any automation disclosure should be understandable, placed where it matters, and consistent with the actual workflow.</li><li>Engagement and non-engagement communications remain human-approved.</li></ul>
 
-<h2>Success measures and stop rules</h2>
+<h2>Evaluation gates and stop rules</h2>
 <table><thead><tr><th>Measure</th><th>Evidence</th><th>Stop condition</th></tr></thead><tbody>
 <tr><td>Material fidelity</td><td>Human comparison against original submissions</td><td>Any invented party, date, allegation, or requested action</td></tr>
 <tr><td>Urgency detection</td><td>Known-signal test set plus live review</td><td>Any missed deadline, safety, or emergency signal</td></tr>
@@ -41,8 +55,8 @@
 <tr><td>Operational value</td><td>Cycle time and rework, measured together</td><td>Faster first pass but higher corrections, repeat contacts, or routing errors</td></tr>
 </tbody></table>
 
-<h2>The reusable tool: Intake Summarization Pilot Card</h2>
-<p>Subscribers receive a completed example and a blank version. The card records: business purpose; in-scope matters; prohibited uses; approved fields; system and configuration; authoritative record; reviewer; sample plan; error taxonomy; success threshold; stop authority; incident path; review date; and final disposition. The weekly exception log records what the model omitted, invented, distorted, or made too easy to overlook.</p>
+<h2>The reusable tool: Intake Summarization Evaluation Card</h2>
+<p>Subscribers receive a completed example and a blank version. The card separates the pre-deployment decision from any later live pilot. It records: business purpose; jurisdictions; in-scope matters; prohibited uses; named system and configuration; data lifecycle; authoritative record; representative test set; reviewer protocol; fact-level error taxonomy; accessibility and language checks; human-factors observations; gate thresholds; stop authority; incident path; review date; and final disposition. The disposition is one of four outcomes: reject, redesign and retest, continue human-led, or authorize a separately governed bounded pilot.</p>
 
 <h2>Photojournalism and visual-evidence docket</h2>
 <p>The Beehiiv edition should use documentary evidence, not generic “robot lawyer” art. The planned visual sequence is: (1) a rights-cleared photograph of a real intake environment without client information; (2) a tightly cropped, legible primary-document image from ABA Formal Opinion 512 or the published Model Rules page; and (3) the original System X-Ray diagram above. Every image requires a factual caption, descriptive alt text, creator/institution credit, source URL, rights basis, and an entry in the image ledger. No staged screen may contain real or plausibly identifying client data.</p>
@@ -53,7 +67,10 @@
 <li id="s2"><a href="https://www.americanbar.org/groups/professional_responsibility/publications/ethics_opinions/aba_formal_ethics_opinions_index_by_issue_dates/">ABA Formal Opinion 512: Generative Artificial Intelligence Tools</a> — competence, confidentiality, communication, supervision, candor, and fees.</li>
 <li id="s3"><a href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence">NIST AI 600-1: Generative AI Profile</a> — voluntary cross-sector risk-management profile.</li>
 <li id="s4"><a href="https://www.ftc.gov/policy/advocacy-research/tech-at-ftc/2024/01/ai-companies-uphold-your-privacy-confidentiality-commitments">FTC: AI Companies—Uphold Your Privacy and Confidentiality Commitments</a> — primary regulator statement on representations and data practices.</li>
+<li id="s5"><a href="https://arxiv.org/abs/2407.00747">Nguyen et al., A Comparative Study of Quality Evaluation Methods for Text Summarization</a> — adjacent primary research on patent-document summaries; useful for error taxonomy, not an intake performance estimate.</li>
+<li id="s6"><a href="https://arxiv.org/abs/2601.15182">Akter et al., Supporting Humans in Evaluating AI Summaries of Legal Depositions</a> — a nine-transcript prototype for source-linked verification; not an operational-effectiveness trial.</li>
+<li id="s7"><a href="https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.800-4.pdf">NIST AI 800-4: Challenges to the Monitoring of Deployed AI Systems</a> — official cross-sector report separating monitoring categories and documenting methodological gaps.</li>
 </ol>
 <h2>Further reading and learning</h2><ul><li>Read the firm’s jurisdiction-specific professional-conduct rules and ethics opinions; ABA Model Rules are not themselves the controlling law everywhere.</li><li>Map the existing intake process before evaluating a tool. If the source workflow has no authoritative record or accountable reviewer, fix that first.</li><li>Use the NIST profile to expand the pilot card into a fuller risk register when the use case grows.</li></ul>
-<p class="paywall-preview"><strong>Editorial state:</strong> R1 scoped narrative prototype—not publishable. The claim ledger, exhaustive primary research, jurisdiction/current-law review, counterevidence, completed tool, documentary photography, rights, and visual-integrity verification remain open. Nothing has been published, emailed, sold, or scheduled.</p>
+<p class="paywall-preview"><strong>Editorial state:</strong> R3 evidence-shaped working draft—not publishable. The claim ledger, exhaustive primary research, jurisdiction/current-law review, counterevidence, completed tool, documentary photography, rights, and visual-integrity verification remain open. Nothing has been published, emailed, sold, or scheduled.</p>
 <p><a href="/learning/decision-desk">← Decision Desk</a></p></main><footer class="footer"></footer><script src="/site-shell.js" defer></script></body></html>
