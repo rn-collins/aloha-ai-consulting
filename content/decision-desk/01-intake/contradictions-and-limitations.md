@@ -45,6 +45,30 @@ If any one is absent, the defensible finding may be “redesign first” or “d
 - Exact quantitative thresholds for the pilot. The present “any invented fact” and “any missed urgency signal” rules are normative safety choices and must be labeled as such, not presented as empirically derived universal thresholds.
 - Rights-cleared original reporting photography. Official-document crops require rights and fair-use/editorial review; ABA reproduction terms must be checked before embedding opinion pages.
 
+## Empirical evidence boundary
+
+The completed first empirical pass located no primary study directly validating generative-AI summarization for prospective-client law-firm intake. Adjacent studies cannot be converted into an intake accuracy rate:
+
+- Nguyen et al. evaluate summarization on patent abstracts and claims, not narratives submitted by prospective clients. Their error taxonomy supports measuring incompleteness separately from hallucination; it does not establish expected intake performance.
+- Akter et al. describe a source-linked prototype for nine public civil-deposition transcripts. It is a design demonstration, not a controlled user-outcome or operational-effectiveness trial, and it uses LLM-based evaluators in parts of the pipeline.
+- NIST AI 800-4 reports that post-deployment monitoring practice and terminology remain nascent and separates human-factors monitoring from functionality, security, compliance, and operational monitoring.
+
+The absence finding is bounded by the databases, queries, and date in the search log. Proprietary or unpublished evaluations may exist. The article must say "no directly applicable primary study was located," not "none exists."
+
+## Revised decision sequence
+
+The draft previously collapsed two different stages: pre-deployment evaluation and a live pilot. They must be separated.
+
+1. Redesign and document the non-AI intake workflow.
+2. Select a named product and exact configuration.
+3. Complete jurisdiction, contract, privacy, security, accessibility, and data-flow review.
+4. Run a pre-deployment shadow evaluation on representative fictional, synthetic, or appropriately governed historical data.
+5. Compare source and synopsis using a fact-level error taxonomy, not only an aggregate quality score.
+6. Evaluate reviewer behavior and total-process effects.
+7. Authorize a live bounded pilot only if every predetermined gate passes.
+
+A failure at any stage results in redesign, product rejection, or continued human-led intake.
+
 ## Required article correction
 
-The current R1 sentence stating that the firm should “pilot a synopsis” is ahead of the evidence. Until the unresolved modules are completed, the finding must be framed as a hypothesis under investigation, not the final Decision Desk determination.
+The current article must not recommend a live pilot. The defensible interim finding is “redesign and evaluate before any live pilot.” A live pilot becomes a possible later decision only after the named product and configuration pass all pre-deployment gates.
