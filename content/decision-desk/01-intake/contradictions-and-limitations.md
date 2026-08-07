@@ -17,6 +17,9 @@ There is no single controlling nationwide professional-responsibility answer for
 - California's 2026 Practical Guidance replaces its 2023 guidance; stale references to the 2023 version must be removed or historically labeled.
 - Virginia LEO 1901 moved from proposal to approval effective November 24, 2025; proposal-stage descriptions are stale.
 - Michigan RI-392 concerns access to and disposition of client files after representation. It is not an artificial-intelligence opinion and cannot support an AI proposition. Michigan AI and intake analysis must instead rely on the current court-adopted rules and separately identified AI materials, with their authority levels kept distinct.
+- Arizona's 2024 Supreme Court committee guidance expressly discusses disclosure when prospective clients communicate with AI, but it is nonbinding guidance and cannot substitute for the controlling Arizona rules or product-specific evidence.
+- Kentucky E-457 is formally adopted bar guidance on lawyers' use of AI generally. It expressly leaves advertising questions outside its scope and does not validate prospective-client intake summarization.
+- Idaho remains an acquisition gap in this recovery tranche; no current consolidated official Rule 1.18 text or exact pinpoint has been added.
 
 ## Disconfirming considerations
 
