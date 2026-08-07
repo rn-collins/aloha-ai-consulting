@@ -189,3 +189,5 @@ Sign-offs:
 ## Source and change record
 
 For every authority, study, vendor document, and internal dataset, record title, issuer, date, version, URL/file location, pinpoint, authority level, limitation, and last verification date.
+
+New Mexico requires separate treatment of controlling and advisory authority. Rule 16-118 NMRA governs prospective-client information and conflicts. Formal Ethics Advisory Opinion 2024-004 permits responsible generative-AI use only within existing duties and emphasizes confidentiality, vendor practices, supervision, and independent verification. It does not authorize AI intake summarization as a category or establish that a named tool is accurate, secure, or effective; those questions remain product- and configuration-specific gates.
