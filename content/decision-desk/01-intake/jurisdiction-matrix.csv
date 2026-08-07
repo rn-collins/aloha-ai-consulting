@@ -2,7 +2,7 @@ jurisdiction,rule_1_18_status,controlling_source_ids,ai_authority_status,ai_sour
 Alabama,open,,open,,open,2026-08-06,"Acquire current court-adopted Rule 1.18 and search official AI authorities","No jurisdiction-specific conclusion"
 Alaska,open,,open,,open,2026-08-06,"Acquire current court-adopted Rule 1.18 and search official AI authorities","No jurisdiction-specific conclusion"
 Arizona,open,,official nonbinding guidance,"S016;S027",partial,2026-08-06,"Acquire current court-adopted ER 1.18 and pinpoints","Guidance is not controlling law or product validation"
-Arkansas,open,,open,,open,2026-08-06,"Acquire current court-adopted Rule 1.18 and search official AI authorities","No jurisdiction-specific conclusion"
+Arkansas,verified,"S030;S031",court-administration order,S032,verified-baseline,2026-08-06,"Acquire current consolidated Rule 1.18 comments and any private-lawyer intake-specific AI authority","Rule 1.18(b) confidentiality baseline is verified; Administrative Order 25 concerns court information and is not intake-product validation"
 California,open,,official nonbinding guidance,S005,partial,2026-08-06,"Acquire current court-adopted Rule 1.18 and rule-specific pinpoints","Guidance is not controlling law or intake-product validation"
 Colorado,open,,open,,open,2026-08-06,"Acquire current court-adopted Rule 1.18 and search official AI authorities","No jurisdiction-specific conclusion"
 Connecticut,open,,open,,open,2026-08-06,"Acquire current official rule text and any 2026 AI amendments directly from the issuing court","Reported developments remain quarantined until official acquisition"
