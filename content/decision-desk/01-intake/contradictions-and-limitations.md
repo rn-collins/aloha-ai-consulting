@@ -12,9 +12,11 @@ There is no single controlling nationwide professional-responsibility answer for
 - NIST AI 600-1 is a voluntary cross-sector profile, not a rule of professional conduct.
 - The FTC Office of Technology post is an official regulator statement, not a regulation or adjudicated finding.
 - Florida Opinion 24-1 expressly identifies itself as advisory and nonbinding.
+- Florida Opinion 24-1 is nevertheless intake-specific in part: its advertising section addresses generative-AI chatbots used for client intake, disclosure, misleading communications, and screening. It must not be described as "not intake-specific."
 - New York City Bar opinions must not be described as controlling every New York lawyer.
 - California's 2026 Practical Guidance replaces its 2023 guidance; stale references to the 2023 version must be removed or historically labeled.
 - Virginia LEO 1901 moved from proposal to approval effective November 24, 2025; proposal-stage descriptions are stale.
+- Michigan RI-392 concerns access to and disposition of client files after representation. It is not an artificial-intelligence opinion and cannot support an AI proposition. Michigan AI and intake analysis must instead rely on the current court-adopted rules and separately identified AI materials, with their authority levels kept distinct.
 
 ## Disconfirming considerations
 
