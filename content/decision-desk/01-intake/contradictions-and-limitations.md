@@ -15,6 +15,7 @@ There is no single controlling nationwide professional-responsibility answer for
 - Florida Opinion 24-1 is nevertheless intake-specific in part: its advertising section addresses generative-AI chatbots used for client intake, disclosure, misleading communications, and screening. It must not be described as "not intake-specific."
 - New York City Bar opinions must not be described as controlling every New York lawyer.
 - California's 2026 Practical Guidance replaces its 2023 guidance; stale references to the 2023 version must be removed or historically labeled.
+- California Rule 1.18(a)-(d), published in the State Bar's current court-adopted rules, supplies the controlling prospective-client, confidentiality, conflict, consent, limited-exposure, screening, and notice baseline. The 2026 Practical Guidance remains nonbinding; neither authority validates AI intake summarization.
 - Virginia LEO 1901 moved from proposal to approval effective November 24, 2025; proposal-stage descriptions are stale.
 - Michigan RI-392 concerns access to and disposition of client files after representation. It is not an artificial-intelligence opinion and cannot support an AI proposition. Michigan AI and intake analysis must instead rely on the current court-adopted rules and separately identified AI materials, with their authority levels kept distinct.
 - Michigan's AI FAQs are official State Bar guidance, but not a formal ethics opinion. They supply general AI-practice cautions rather than prospective-client intake validation.
