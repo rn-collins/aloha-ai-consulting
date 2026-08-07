@@ -105,3 +105,5 @@ A failure at any stage results in redesign, product rejection, or continued huma
 ## Required article correction
 
 The current article must not recommend a live pilot. The defensible interim finding is “redesign and evaluate before any live pilot.” A live pilot becomes a possible later decision only after the named product and configuration pass all pre-deployment gates.
+
+Nevada's controlling Rule 1.18 includes state-specific paragraphs (e) and (f) addressing communications made without a reasonable expectation or good-faith intent and advance informed-consent conditions. Those provisions must not be flattened into an undifferentiated ABA-model summary. The Nevada Bar AI materials located in this tranche are educational resources, not adopted intake-specific ethics authority or product validation.
