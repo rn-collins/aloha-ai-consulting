@@ -20,3 +20,7 @@ P018,C024,S029,Idaho,controlling professional-conduct baseline,"Rule 1.18(a)-(b)
 P019,C025,S030,Arkansas,official primary source,"current-rules table lines 12-17; Arkansas Rules of Professional Conduct marked current as of June 12 2025",context-direct,verified,2026-08-06,"Index establishes current status but not paragraph text"
 P020,C025,S031,Arkansas,official disciplinary application,"p. 1; Rule 1.18(b) finding",direct,verified,2026-08-06,"Matter-specific application; no electronic-intake holding"
 P021,C026,S032,Arkansas courts,controlling court-administration order,"2025 Ark. 117; Administrative Order No. 25",direct,verified,2026-08-06,"Court-information scope is not private-firm intake validation"
+P022,C027,S033,Alabama,official bar formal opinion,"pp. 3-5; sections III-IV",direct,verified,2026-08-06,"General AI-practice guidance; no intake-specific prospective-client holding"
+P023,C028,S034,Alabama,official nonbinding practice guidance,"Initial Client Contact p. 18 of PDF; displayed page 17",direct,verified,2026-08-06,"Risk-management handbook rather than controlling authority"
+P024,C029,S035,Georgia,controlling professional-conduct baseline,"current official rules index; Rule 1.18 entry",context-direct,verified,2026-08-06,"Paragraph-level official text remains an acquisition item"
+P025,C030,S036,Georgia,official nonbinding guidance,"p. 8 lines 293-334; pp. 12-13 intake-mitigation section",direct,verified,2026-08-06,"Toolkit is not a formal advisory opinion or product validation"
