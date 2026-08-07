@@ -19,7 +19,7 @@ There is no single controlling nationwide professional-responsibility answer for
 - Michigan RI-392 concerns access to and disposition of client files after representation. It is not an artificial-intelligence opinion and cannot support an AI proposition. Michigan AI and intake analysis must instead rely on the current court-adopted rules and separately identified AI materials, with their authority levels kept distinct.
 - Arizona's 2024 Supreme Court committee guidance expressly discusses disclosure when prospective clients communicate with AI, but it is nonbinding guidance and cannot substitute for the controlling Arizona rules or product-specific evidence.
 - Kentucky E-457 is formally adopted bar guidance on lawyers' use of AI generally. It expressly leaves advertising questions outside its scope and does not validate prospective-client intake summarization.
-- Idaho remains an acquisition gap in this recovery tranche; no current consolidated official Rule 1.18 text or exact pinpoint has been added.
+- Idaho's current consolidated court-adopted Rule 1.18 is now verified. Its adopted comments address invited electronic submissions, clear warnings, and limiting initial collection, but the rule does not validate AI summarization or establish that every unilateral message is a consultation.
 
 ## Disconfirming considerations
 
