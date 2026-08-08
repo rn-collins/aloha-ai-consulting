@@ -1,12 +1,12 @@
 # Named-vendor selection decision
 
-Status: shortlist reviewed against public vendor evidence on 2026-08-07; no product nominated; synthetic evaluation remains blocked pending account- and contract-level evidence.
+Status: shortlist reviewed against public vendor evidence on 2026-08-07; no product nominated; final product disposition for the first release candidate is `human_led_only`.
 
 ## Decision
 
 Do not select a named product from public marketing and help material alone. The current shortlist establishes plausible capability adjacency, but no candidate publicly establishes the exact intake-summarization feature, tier, model/version, tenant configuration, data flow, retention behavior, exportable audit record, and change controls required by the frozen dossier.
 
-This is a completed selection decision, not an unfinished search: **no candidate is presently eligible for nomination**. The disposition remains `human_led_only`.
+This is a completed selection decision, not an unfinished search: **no candidate is presently eligible for nomination**. The disposition for the first article, masterclass, and clinic release candidate is `human_led_only`. Vendor response or account access is not a release dependency and cannot keep Issue 01 open indefinitely.
 
 ## Bounded shortlist
 
@@ -43,6 +43,10 @@ A candidate becomes eligible for synthetic evaluation only after the owner obtai
 
 If a candidate cannot disclose or freeze a field, record it as vendor-controlled and unobservable. Any unresolved high-impact field keeps the candidate ineligible for live data and may make it ineligible even for a meaningful synthetic comparison.
 
-## Next authorized action
+## Release disposition and governed reopening
 
-Request the same reopening packet and synthetic-only demonstration from the candidates. Selection occurs only after the evidence matrix is complete enough to compare like with like. No purchase, upload of real prospective-client information, live integration, public endorsement, or product-performance claim is authorized.
+The first release candidate proceeds with the no-product finding and `human_led_only` disposition. The article and teaching materials may demonstrate the diligence method, frozen synthetic benchmark, Evaluation Card, and reasons for non-nomination, but they must not report observed product results or imply that testing occurred.
+
+Vendor outreach may continue as expansion work. A candidate reopens synthetic evaluation only after supplying the same reopening packet and synthetic-only demonstration. Reopening requires a bounded change record identifying the exact candidate and configuration, evidence received, evaluation owner, added work, and effect on existing priorities. A later reopening does not retroactively make the public-evidence finding incomplete or inaccurate as of its stated date.
+
+No purchase, upload of real prospective-client information, live integration, public endorsement, or product-performance claim is authorized.
