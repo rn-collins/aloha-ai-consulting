@@ -33,4 +33,4 @@ Before conflicts clearance and a human decision to continue intake, request only
 
 ## Current decision
 
-No vendor, account tier, contract, configuration, or data flow has been nominated. Every vendor-specific field is unresolved. Live data, live integrations, and a live pilot are prohibited.
+The [named-vendor selection decision](./vendor-selection-decision.md) reviewed a bounded four-candidate shortlist using public documentation. Public evidence did not resolve an exact intake feature, account tier, contract, configuration, or data flow for any candidate. Every vendor-specific field therefore remains unresolved. Live data, live integrations, purchase, endorsement, and a live pilot are prohibited.

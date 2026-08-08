@@ -1,6 +1,6 @@
 # Product and configuration dossier
 
-Status: governed pre-evaluation record; no product selected; no live-data use authorized.
+Status: governed pre-evaluation record; bounded shortlist reviewed; no product eligible or selected; no live-data use authorized.
 
 ## Purpose
 
@@ -32,4 +32,4 @@ Reopen review and rerun affected tests when any model, prompt, account tier, int
 
 ## Current decision
 
-No named product or frozen configuration exists. This package supports protocol readiness only. It does not support procurement, live-data testing, a bounded pilot, publication of a product recommendation, or a claim of product accuracy, safety, security, accessibility, or effectiveness.
+The [named-vendor selection decision](./vendor-selection-decision.md) reviewed four plausible candidates against public vendor evidence. None publicly establishes the exact intake-summarization feature and freezeable configuration required here, so no product is eligible or selected. This package supports protocol readiness and a controlled procurement evidence request only. It does not support purchase, live-data testing, a bounded pilot, publication of a product recommendation, or a claim of product accuracy, safety, security, accessibility, or effectiveness.
