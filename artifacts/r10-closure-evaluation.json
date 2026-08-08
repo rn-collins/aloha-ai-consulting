@@ -1,6 +1,6 @@
 {
   "schema": "aloha-ai-r10-closure-evaluation/1.0",
-  "generatedAt": "2026-08-04T01:03:24.954Z",
+  "generatedAt": "2026-08-08T04:57:23.672Z",
   "decision": "closure-blocked",
   "frozenEvidenceUnits": 325,
   "checks": [
@@ -17,22 +17,22 @@
     {
       "id": "R10-03",
       "pass": true,
-      "detail": "Current reviewed registry must cover 505 public surfaces and 262 resources."
+      "detail": "Current reviewed registry must cover 512 public surfaces and 262 resources."
     },
     {
       "id": "R10-04",
       "pass": true,
-      "detail": "Current registry must cover 5,368 records / 12,013 occurrences."
+      "detail": "Current registry must cover 5,462 records / 12,122 occurrences."
     },
     {
       "id": "R10-05",
       "pass": true,
-      "detail": "Clean local inventory must cover 504 sitemap routes with no missing files."
+      "detail": "Clean local inventory must cover 511 sitemap routes with no missing files."
     },
     {
       "id": "R10-06",
       "pass": true,
-      "detail": "Clean local interaction inventory must cover 505 surfaces / 9,782 elements with no failures."
+      "detail": "Clean local interaction inventory must cover 512 surfaces / 9,891 elements with no failures."
     },
     {
       "id": "R10-07",

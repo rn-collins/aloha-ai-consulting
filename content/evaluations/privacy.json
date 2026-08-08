@@ -64,8 +64,8 @@
     }
   ],
   "deployedNetworkAndScriptInventory": {
-    "checkedHtmlFiles": 505,
-    "checkedRuntimeJsFiles": 38,
+    "checkedHtmlFiles": 512,
+    "checkedRuntimeJsFiles": 47,
     "speedInsightRouteCount": 262,
     "speedInsightRoutes": [
       "/about",
@@ -332,7 +332,16 @@
       "/workspace"
     ],
     "advertisingTrackerHits": [],
-    "directExternalRuntimeRequests": [],
+    "directExternalRuntimeRequests": [
+      {
+        "file": "api/_lib/commerce.js",
+        "destination": "https://api.resend.com"
+      },
+      {
+        "file": "api/commerce/redelivery.js",
+        "destination": "https://api.resend.com"
+      }
+    ],
     "platformApiFileCount": 16,
     "authenticatedPlatformFileCount": 11,
     "contentSecurityPolicy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://www.federalregister.gov https://aloha-dea-tracker.vercel.app https://courtlistener.com https://www.courtlistener.com; img-src 'self' data: https:; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://aloha-dea-tracker.vercel.app"

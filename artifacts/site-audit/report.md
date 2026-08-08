@@ -1,19 +1,19 @@
 # Aloha AI whole-site audit
 
-Generated: 2026-08-03T04:25:46.269Z
+Generated: 2026-08-08T04:58:55.273Z
 
-Routes audited: 504
-Static pages found: 504
+Routes audited: 511
+Static pages found: 511
 Missing route files: 0
 Average page score: 100%
-Pages loading all shared style layers: 504/504
+Pages loading all shared style layers: 511/511
 Critical structural or accessibility failures: 0
 
 ## Estate summary
 
 | Estate | Routes | Found | Average score |
 |---|---:|---:|---:|
-| Unclassified | 264 | 264 | 100% |
+| Unclassified | 271 | 271 | 100% |
 | Aloha AI University | 180 | 180 | 100% |
 | Tools and Diagnostics | 29 | 29 | 100% |
 | Aloha AI | 15 | 15 | 100% |
@@ -50,6 +50,8 @@ Critical structural or accessibility failures: 0
 | `/content` | Aloha AI | landing | content.html | 100% | No baseline structural finding. |
 | `/corrections` | Unclassified | landing | corrections.html | 100% | No baseline structural finding. |
 | `/engagements` | Aloha AI | landing | engagements.html | 100% | No baseline structural finding. |
+| `/events/hawaii-tech-week` | Unclassified | landing | events/hawaii-tech-week.html | 100% | No baseline structural finding. |
+| `/events/hawaii-tech-week/resources` | Unclassified | landing | events/hawaii-tech-week/resources.html | 100% | No baseline structural finding. |
 | `/governance` | Unclassified | landing | governance.html | 100% | No baseline structural finding. |
 | `/industries` | Unclassified | landing | industries.html | 100% | No baseline structural finding. |
 | `/industries/biopharma` | Unclassified | landing | industries/biopharma.html | 100% | No baseline structural finding. |
@@ -80,6 +82,10 @@ Critical structural or accessibility failures: 0
 | `/intelligence` | Aloha AI | landing | intelligence.html | 100% | No baseline structural finding. |
 | `/intelligence/brand-perception` | Tools and Diagnostics | landing | intelligence/brand-perception.html | 100% | No baseline structural finding. |
 | `/launch-stack` | Aloha AI | landing | launch-stack.html | 100% | No baseline structural finding. |
+| `/learning/decision-desk` | Unclassified | landing | learning/decision-desk.html | 100% | No baseline structural finding. |
+| `/learning/decision-desk/issues/01` | Unclassified | landing | learning/decision-desk/issues/01.html | 100% | No baseline structural finding. |
+| `/learning/decision-desk/issues/02` | Unclassified | landing | learning/decision-desk/issues/02.html | 100% | No baseline structural finding. |
+| `/learning/decision-desk/issues/03` | Unclassified | landing | learning/decision-desk/issues/03.html | 100% | No baseline structural finding. |
 | `/legal-ai` | Aloha AI | landing | legal-ai.html | 100% | No baseline structural finding. |
 | `/legal-authority` | Unclassified | landing | legal-authority.html | 100% | No baseline structural finding. |
 | `/maturity` | Unclassified | landing | maturity.html | 100% | No baseline structural finding. |
@@ -530,6 +536,7 @@ Critical structural or accessibility failures: 0
 | `/university/use-cases/sales` | Aloha AI University | learningItem | university/use-cases/sales.html | 100% | No baseline structural finding. |
 | `/university/use-cases/small-businesses` | Aloha AI University | learningItem | university/use-cases/small-businesses.html | 100% | No baseline structural finding. |
 | `/university/use-cases/training` | Aloha AI University | learningItem | university/use-cases/training.html | 100% | No baseline structural finding. |
+| `/work/ai-opportunity-clinic` | Unclassified | landing | work/ai-opportunity-clinic.html | 100% | No baseline structural finding. |
 | `/workspace` | Aloha AI Platform | application | workspace.html | 100% | No baseline structural finding. |
 
 ## Interpretation

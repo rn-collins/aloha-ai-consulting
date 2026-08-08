@@ -236,8 +236,13 @@ function releaseRecord(record) {
     promiseId: record.id,
     category: record.category,
     exactPromise: record.exactPromise,
-    occurrenceKeys: record.occurrences.map((occurrence) => hash(occurrence)).sort()
+    occurrenceKeys: record.occurrences.map((occurrence) => hash(stableOccurrence(occurrence))).sort()
   };
+}
+
+function stableOccurrence(occurrence) {
+  const { auditOrdinal: _unstableGlobalOrdinal, ...stable } = occurrence;
+  return stable;
 }
 
 function classify(item) {

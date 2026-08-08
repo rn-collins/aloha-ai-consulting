@@ -24,10 +24,10 @@ const registeredIds = evidence?.units?.flatMap((unit) => unit.reAudit?.promiseRe
 
 check('R10-01', freeze.baselineCommit === 'deb1073d', 'Immutable baseline commit must remain deb1073d.');
 check('R10-02', freeze.counts.promiseRecords === 4289 && freeze.counts.totalPromiseOccurrences === 9552, 'Frozen promise denominator must remain 4,289 records / 9,552 occurrences.');
-check('R10-03', registry.counts.routes === 505 && registry.counts.resources === 262, 'Current reviewed registry must cover 505 public surfaces and 262 resources.');
-check('R10-04', registry.counts.promiseRecords === 5368 && registry.counts.promiseOccurrences === 12013, 'Current registry must cover 5,368 records / 12,013 occurrences.');
-check('R10-05', site.summary?.routes === 504 && site.summary?.found === 504 && site.summary?.missing === 0, 'Clean local inventory must cover 504 sitemap routes with no missing files.');
-check('R10-06', interactions.pages === 505 && interactions.interactiveElements === 9782 && interactions.failures?.length === 0, 'Clean local interaction inventory must cover 505 surfaces / 9,782 elements with no failures.');
+check('R10-03', registry.counts.routes === 512 && registry.counts.resources === 262, 'Current reviewed registry must cover 512 public surfaces and 262 resources.');
+check('R10-04', registry.counts.promiseRecords === 5462 && registry.counts.promiseOccurrences === 12122, 'Current registry must cover 5,462 records / 12,122 occurrences.');
+check('R10-05', site.summary?.routes === 511 && site.summary?.found === 511 && site.summary?.missing === 0, 'Clean local inventory must cover 511 sitemap routes with no missing files.');
+check('R10-06', interactions.pages === 512 && interactions.interactiveElements === 9891 && interactions.failures?.length === 0, 'Clean local interaction inventory must cover 512 surfaces / 9,891 elements with no failures.');
 check('R10-07', learning.frozenAuditEvidenceUnits === 325, 'The frozen evidence-unit denominator must remain 325.');
 check('R10-08', Boolean(evidence), 'A checked-in 325-row evidence-unit register is required for reproducible terminal reconciliation.');
 check('R10-09', evidence?.units?.length === 325, 'The evidence-unit register must enumerate exactly 325 stable unit IDs.');

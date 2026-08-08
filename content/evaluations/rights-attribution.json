@@ -17,12 +17,12 @@
     "schema": "aloha-ai-rights-attribution-register/1.0",
     "rightsClasses": 5,
     "thirdPartyReferences": 2,
-    "assets": 61
+    "assets": 68
   },
   "assetIntegrity": {
     "algorithm": "sha256",
-    "files": 61,
-    "completeFiles": 61
+    "files": 68,
+    "completeFiles": 68
   },
   "reportingRoute": {
     "pathname": "/rights-attribution",
@@ -49,7 +49,7 @@
     "passedChecks": 12,
     "failedChecks": 0,
     "recordFindings": 0,
-    "assets": 61
+    "assets": 68
   },
   "review": {
     "lastReviewed": "2026-08-02",

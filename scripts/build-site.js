@@ -36,7 +36,8 @@ if (errors.length) {
   process.exit(1);
 }
 
-const derived = generatedOutputs(resources, platform, collectionPages);
+const supplementalRoutes = publicHtmlRoutes(root);
+const derived = generatedOutputs(resources, platform, collectionPages, supplementalRoutes);
 derived.set('/api/migration-inventory.json', JSON.stringify(legacyMigrationInventory(root, resources, derived), null, 2));
 if (mode === 'validate') {
   console.log(`Validated ${resources.length} canonical resources across ${platform.collections.size} generated collections.`);
@@ -108,4 +109,22 @@ function walk(directory) {
 function outputFile(pathname) {
   if (pathname === '/') return 'index.html';
   return `${pathname.replace(/^\//, '')}.html`;
+}
+
+function publicHtmlRoutes(directory) {
+  const ignored = new Set(['.git', 'artifacts', 'node_modules']);
+  const files = [];
+  const visit = (current) => {
+    for (const entry of fs.readdirSync(current, { withFileTypes: true })) {
+      if (ignored.has(entry.name)) continue;
+      const full = path.join(current, entry.name);
+      if (entry.isDirectory()) visit(full);
+      else if (entry.name.endsWith('.html')) files.push(full);
+    }
+  };
+  visit(directory);
+  return files.map((file) => {
+    const relative = path.relative(directory, file).replaceAll(path.sep, '/').replace(/\.html$/, '');
+    return relative === 'index' ? '/' : `/${relative}`;
+  });
 }
