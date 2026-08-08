@@ -16,3 +16,7 @@ When, for what meeting classes, and under what legal, labor, privacy, security, 
 ## Disconfirmation question
 
 What evidence shows that even a named meeting class should remain uncaptured?
+
+## Governed authority infrastructure
+
+The `MCAP-1.0` authority-packet method, 51-jurisdiction inventory, federal/cross-border source and claim registers, search log, and contradictions record are complete as research infrastructure. They clear zero jurisdictions and authorize no participant capture. Each row requires current controlling sources, pinpoints, independent verification, implicated-layer review, and a packet-specific qualified reviewer before it can advance.

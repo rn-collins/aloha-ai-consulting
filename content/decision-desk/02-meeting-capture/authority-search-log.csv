@@ -1,0 +1,7 @@
+search_id,date,layer,jurisdiction,query,source_domains,result,next_step
+MS001,2026-08-07,recording,federal,"18 USC 2510 2511 2520 current official",uscode.house.gov,"Controlling federal text located and registered","Verify edition and later amendments before packet decision"
+MS002,2026-08-07,labor,federal,"NLRA protected concerted activity recording monitoring official",nlrb.gov,"Statutory materials and official protected-activity guidance located","Research current Board and controlling circuit authority for actual workplace"
+MS003,2026-08-07,labor,federal,"NLRB surreptitious recording collective bargaining GC 25-07",nlrb.gov,"Official 2025 General Counsel position located","Check later rescission replacement Board treatment and circuit law"
+MS004,2026-08-07,accessibility,federal,"ADA effective communication meetings captions official",ada.gov,"DOJ effective-communication guidance located","Determine Title I II III or Rehabilitation Act coverage and participant need"
+MS005,2026-08-07,cross_border,European Union,"GDPR processing processor DPIA international transfer official",eur-lex.europa.eu,"Official consolidated regulation located","Map territorial scope roles lawful basis special-category data and Chapter V mechanism"
+MS006,2026-08-07,all,51 jurisdictions,"jurisdiction-specific authority inventory initialization",,"All 51 rows initialized as unverified and fail-closed","Research controlling state authority row by row with independent verification"
