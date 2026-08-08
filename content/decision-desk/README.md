@@ -6,7 +6,7 @@ Current status on 2026-08-07:
 
 | Issue | Provisional grade | Why it is not publishable |
 |---|---|---|
-| 01 — prospective-client intake | R1 | The 51-jurisdiction baseline audit is complete: 49 jurisdictions have a verified prospective-client rule, while Alabama and Mississippi remain explicitly limited because no adopted Rule 1.18 analogue was located in the official rules inventories reviewed. Jurisdiction-specific AI authority is separately classified by authority weight. Product/configuration evidence, privacy and vendor review, empirical intake testing, visual rights, and completed tool files remain open, so the issue is not publishable. |
+| 01 — prospective-client intake | R1 | The 51-jurisdiction baseline audit is complete: 49 jurisdictions have a verified prospective-client rule, Alabama has a court-confirmed limited confidentiality framework without adopted Rule 1.18, and Mississippi has a statutory prospective-client confidentiality analogue without the full Model Rule framework. Jurisdiction-specific AI authority is separately classified by authority weight. Product/configuration evidence, privacy and vendor review, empirical intake testing, visual rights, and completed tool files remain open, so the issue is not publishable. |
 | 02 — meeting capture | R1 | Jurisdiction-specific recording/labor/privacy research, product-specific data flows, empirical behavioral evidence, stakeholder record, visual rights, and completed tool files remain open. |
 | 03 — customer support | R1 | Sector-specific law, product/architecture evidence, incident and complaint record, accessibility/fairness evidence, visual rights, and completed tool files remain open. |
 
