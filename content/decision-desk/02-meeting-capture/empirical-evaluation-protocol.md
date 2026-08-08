@@ -10,6 +10,8 @@ For one frozen meeting class and product configuration, does capture improve the
 
 Before testing a configured product, freeze the completed Permission and Record Map, authority packet, meeting-class specification, configuration dossier, synthetic scenario manifest, scoring guide, access/retention settings, stop authority, and analysis plan. Use fictional meetings first. Real people or organizational data require separate authority, privacy, security, labor, records, consent, and owner approvals.
 
+Benchmark version `MCB-1.0` supplies 24 governed synthetic cases: 12 development cases and 12 sealed-confirmation cases across twelve matched failure strata. Its manifest, custody, scoring, adjudication, incident, and rerun rules are part of this protocol and cannot be relaxed after results are seen.
+
 ## Conditions
 
 - Human notes plus human-approved decision record; no recording.
