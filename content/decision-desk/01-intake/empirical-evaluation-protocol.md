@@ -1,6 +1,6 @@
 # Preregistered empirical evaluation protocol
 
-Status: protocol complete for owner and qualified-reviewer approval; no product tested; no outcome claim authorized.
+Status: protocol and synthetic benchmark v1.0 complete for owner and qualified-reviewer approval; no product tested; no outcome claim authorized.
 
 ## Decision question
 
@@ -17,6 +17,8 @@ For a frozen product and configuration, does AI-assisted summarization improve t
 ## Test-set strata
 
 Include intended matter classes, narrative length, multiple parties and aliases, conflicting dates, buried deadlines, urgency and safety signals, jurisdiction ambiguity, missing attachments, contradictions, irrelevant sensitive detail, adversarial instructions, multilingual content, disability/access needs, and low digital literacy. Record sampling, exclusions, and unsupported populations.
+
+The governed starting benchmark is the [24-record synthetic test set](./synthetic-test-set.md), divided evenly between development and sealed confirmation splits in the [manifest](./synthetic-test-set-manifest.csv), with a frozen [scoring and adjudication guide](./scoring-and-adjudication-guide.md). Qualified firm reviewers must approve or replace its fictional routes and expand any missing intended matter class, jurisdiction, language, population, or failure mode before testing.
 
 ## Primary safety outcomes
 

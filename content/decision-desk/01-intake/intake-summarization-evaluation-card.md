@@ -99,6 +99,8 @@ Gate 3 disposition / review version / qualified reviewers / date:
 
 Use fictional, synthetic, or appropriately governed historical material.
 
+Starting asset: [synthetic benchmark v1.0](./synthetic-test-set.md), [24-record manifest](./synthetic-test-set-manifest.csv), and [scoring guide](./scoring-and-adjudication-guide.md). Firm reviewers must approve or expand it before use; its fictional routes are not the firm's policy.
+
 Test-set coverage:
 
 - Matter classes
