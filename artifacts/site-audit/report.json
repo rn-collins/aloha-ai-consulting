@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-08-03T04:25:46.269Z",
+  "generatedAt": "2026-08-08T04:58:55.273Z",
   "summary": {
-    "routes": 504,
-    "found": 504,
+    "routes": 511,
+    "found": 511,
     "missing": 0,
     "averageScore": 100,
-    "sharedStyleCoverage": 504,
+    "sharedStyleCoverage": 511,
     "criticalFailures": 0
   },
   "estates": [
     {
       "key": "unclassified",
       "label": "Unclassified",
-      "routes": 264,
-      "found": 264,
+      "routes": 271,
+      "found": 271,
       "averageScore": 100
     },
     {
@@ -1173,6 +1173,102 @@
         "links": 8,
         "workspaceLinks": 0,
         "pageBytes": 15065
+      },
+      "findings": []
+    },
+    {
+      "path": "/events/hawaii-tech-week",
+      "estate": "unclassified",
+      "estateLabel": "Unclassified",
+      "pageType": "landing",
+      "requiredContent": [
+        "clear audience",
+        "specific promise",
+        "evidence",
+        "primary action",
+        "secondary path",
+        "related estate links"
+      ],
+      "file": "events/hawaii-tech-week.html",
+      "exists": true,
+      "title": "What Should We Actually Use AI For? | Aloha AI",
+      "description": "A free 90-minute Hawaiʻi Tech Week masterclass on examining the work before choosing an AI tool.",
+      "canonical": "https://aloha-ai-consulting.vercel.app/events/hawaii-tech-week",
+      "score": 100,
+      "checks": {
+        "title": true,
+        "description": true,
+        "canonical": true,
+        "oneH1": true,
+        "main": true,
+        "header": true,
+        "footer": true,
+        "viewport": true,
+        "language": true,
+        "skipLink": true,
+        "sharedStyles": true,
+        "imageAlternatives": true,
+        "inputLabels": true,
+        "pageWeight": true
+      },
+      "metrics": {
+        "h1Count": 1,
+        "inlineStyles": 0,
+        "forms": 0,
+        "images": 0,
+        "missingAlt": 0,
+        "buttons": 0,
+        "links": 4,
+        "workspaceLinks": 0,
+        "pageBytes": 3265
+      },
+      "findings": []
+    },
+    {
+      "path": "/events/hawaii-tech-week/resources",
+      "estate": "unclassified",
+      "estateLabel": "Unclassified",
+      "pageType": "landing",
+      "requiredContent": [
+        "clear audience",
+        "specific promise",
+        "evidence",
+        "primary action",
+        "secondary path",
+        "related estate links"
+      ],
+      "file": "events/hawaii-tech-week/resources.html",
+      "exists": true,
+      "title": "Hawaiʻi Tech Week Attendee Desk | Aloha AI",
+      "description": "Framework, vocabulary, sources, accessibility, and replay status for Aloha AI",
+      "canonical": "https://aloha-ai-consulting.vercel.app/events/hawaii-tech-week/resources",
+      "score": 100,
+      "checks": {
+        "title": true,
+        "description": true,
+        "canonical": true,
+        "oneH1": true,
+        "main": true,
+        "header": true,
+        "footer": true,
+        "viewport": true,
+        "language": true,
+        "skipLink": true,
+        "sharedStyles": true,
+        "imageAlternatives": true,
+        "inputLabels": true,
+        "pageWeight": true
+      },
+      "metrics": {
+        "h1Count": 1,
+        "inlineStyles": 0,
+        "forms": 0,
+        "images": 0,
+        "missingAlt": 0,
+        "buttons": 0,
+        "links": 5,
+        "workspaceLinks": 0,
+        "pageBytes": 3065
       },
       "findings": []
     },
@@ -2617,6 +2713,198 @@
       "findings": []
     },
     {
+      "path": "/learning/decision-desk",
+      "estate": "unclassified",
+      "estateLabel": "Unclassified",
+      "pageType": "landing",
+      "requiredContent": [
+        "clear audience",
+        "specific promise",
+        "evidence",
+        "primary action",
+        "secondary path",
+        "related estate links"
+      ],
+      "file": "learning/decision-desk.html",
+      "exists": true,
+      "title": "Aloha AI Decision Desk",
+      "description": "Paid decision intelligence for people deciding whether and how AI belongs in real work.",
+      "canonical": "https://aloha-ai-consulting.vercel.app/learning/decision-desk",
+      "score": 100,
+      "checks": {
+        "title": true,
+        "description": true,
+        "canonical": true,
+        "oneH1": true,
+        "main": true,
+        "header": true,
+        "footer": true,
+        "viewport": true,
+        "language": true,
+        "skipLink": true,
+        "sharedStyles": true,
+        "imageAlternatives": true,
+        "inputLabels": true,
+        "pageWeight": true
+      },
+      "metrics": {
+        "h1Count": 1,
+        "inlineStyles": 0,
+        "forms": 0,
+        "images": 0,
+        "missingAlt": 0,
+        "buttons": 0,
+        "links": 4,
+        "workspaceLinks": 0,
+        "pageBytes": 2689
+      },
+      "findings": []
+    },
+    {
+      "path": "/learning/decision-desk/issues/01",
+      "estate": "unclassified",
+      "estateLabel": "Unclassified",
+      "pageType": "landing",
+      "requiredContent": [
+        "clear audience",
+        "specific promise",
+        "evidence",
+        "primary action",
+        "secondary path",
+        "related estate links"
+      ],
+      "file": "learning/decision-desk/issues/01.html",
+      "exists": true,
+      "title": "Decision Desk 01 | AI and prospective-client intake",
+      "description": "An evidence-led editorial preview examining whether a small law firm should use AI to summarize prospective-client intake.",
+      "canonical": "https://aloha-ai-consulting.vercel.app/learning/decision-desk/issues/01",
+      "score": 100,
+      "checks": {
+        "title": true,
+        "description": true,
+        "canonical": true,
+        "oneH1": true,
+        "main": true,
+        "header": true,
+        "footer": true,
+        "viewport": true,
+        "language": true,
+        "skipLink": true,
+        "sharedStyles": true,
+        "imageAlternatives": true,
+        "inputLabels": true,
+        "pageWeight": true
+      },
+      "metrics": {
+        "h1Count": 1,
+        "inlineStyles": 0,
+        "forms": 0,
+        "images": 0,
+        "missingAlt": 0,
+        "buttons": 0,
+        "links": 78,
+        "workspaceLinks": 0,
+        "pageBytes": 41490
+      },
+      "findings": []
+    },
+    {
+      "path": "/learning/decision-desk/issues/02",
+      "estate": "unclassified",
+      "estateLabel": "Unclassified",
+      "pageType": "landing",
+      "requiredContent": [
+        "clear audience",
+        "specific promise",
+        "evidence",
+        "primary action",
+        "secondary path",
+        "related estate links"
+      ],
+      "file": "learning/decision-desk/issues/02.html",
+      "exists": true,
+      "title": "Decision Desk 02 | AI meeting bots",
+      "description": "An editorial preview examining the evidence, risks, and decision conditions for using AI meeting bots across a team.",
+      "canonical": "https://aloha-ai-consulting.vercel.app/learning/decision-desk/issues/02",
+      "score": 100,
+      "checks": {
+        "title": true,
+        "description": true,
+        "canonical": true,
+        "oneH1": true,
+        "main": true,
+        "header": true,
+        "footer": true,
+        "viewport": true,
+        "language": true,
+        "skipLink": true,
+        "sharedStyles": true,
+        "imageAlternatives": true,
+        "inputLabels": true,
+        "pageWeight": true
+      },
+      "metrics": {
+        "h1Count": 1,
+        "inlineStyles": 0,
+        "forms": 0,
+        "images": 0,
+        "missingAlt": 0,
+        "buttons": 0,
+        "links": 8,
+        "workspaceLinks": 0,
+        "pageBytes": 8854
+      },
+      "findings": []
+    },
+    {
+      "path": "/learning/decision-desk/issues/03",
+      "estate": "unclassified",
+      "estateLabel": "Unclassified",
+      "pageType": "landing",
+      "requiredContent": [
+        "clear audience",
+        "specific promise",
+        "evidence",
+        "primary action",
+        "secondary path",
+        "related estate links"
+      ],
+      "file": "learning/decision-desk/issues/03.html",
+      "exists": true,
+      "title": "Decision Desk 03 | AI customer support",
+      "description": "An editorial preview examining when a small business should—and should not—use AI to answer customer-support messages.",
+      "canonical": "https://aloha-ai-consulting.vercel.app/learning/decision-desk/issues/03",
+      "score": 100,
+      "checks": {
+        "title": true,
+        "description": true,
+        "canonical": true,
+        "oneH1": true,
+        "main": true,
+        "header": true,
+        "footer": true,
+        "viewport": true,
+        "language": true,
+        "skipLink": true,
+        "sharedStyles": true,
+        "imageAlternatives": true,
+        "inputLabels": true,
+        "pageWeight": true
+      },
+      "metrics": {
+        "h1Count": 1,
+        "inlineStyles": 0,
+        "forms": 0,
+        "images": 0,
+        "missingAlt": 0,
+        "buttons": 0,
+        "links": 9,
+        "workspaceLinks": 0,
+        "pageBytes": 9231
+      },
+      "findings": []
+    },
+    {
       "path": "/legal-ai",
       "estate": "commercial",
       "estateLabel": "Aloha AI",
@@ -3582,7 +3870,7 @@
         "buttons": 0,
         "links": 14,
         "workspaceLinks": 0,
-        "pageBytes": 14051
+        "pageBytes": 14117
       },
       "findings": []
     },
@@ -3964,7 +4252,7 @@
         "buttons": 0,
         "links": 17,
         "workspaceLinks": 2,
-        "pageBytes": 50229
+        "pageBytes": 50659
       },
       "findings": []
     },
@@ -22934,7 +23222,7 @@
         "buttons": 0,
         "links": 16,
         "workspaceLinks": 0,
-        "pageBytes": 13036
+        "pageBytes": 13033
       },
       "findings": []
     },
@@ -23228,7 +23516,7 @@
         "buttons": 1,
         "links": 12,
         "workspaceLinks": 0,
-        "pageBytes": 13841
+        "pageBytes": 13829
       },
       "findings": []
     },
@@ -24305,6 +24593,54 @@
         "links": 12,
         "workspaceLinks": 0,
         "pageBytes": 16678
+      },
+      "findings": []
+    },
+    {
+      "path": "/work/ai-opportunity-clinic",
+      "estate": "unclassified",
+      "estateLabel": "Unclassified",
+      "pageType": "landing",
+      "requiredContent": [
+        "clear audience",
+        "specific promise",
+        "evidence",
+        "primary action",
+        "secondary path",
+        "related estate links"
+      ],
+      "file": "work/ai-opportunity-clinic.html",
+      "exists": true,
+      "title": "AI Opportunity Clinic | Aloha AI",
+      "description": "A four-person, two-hour working clinic for one real, bounded, nonconfidential problem per participant.",
+      "canonical": "https://aloha-ai-consulting.vercel.app/work/ai-opportunity-clinic",
+      "score": 100,
+      "checks": {
+        "title": true,
+        "description": true,
+        "canonical": true,
+        "oneH1": true,
+        "main": true,
+        "header": true,
+        "footer": true,
+        "viewport": true,
+        "language": true,
+        "skipLink": true,
+        "sharedStyles": true,
+        "imageAlternatives": true,
+        "inputLabels": true,
+        "pageWeight": true
+      },
+      "metrics": {
+        "h1Count": 1,
+        "inlineStyles": 0,
+        "forms": 0,
+        "images": 0,
+        "missingAlt": 0,
+        "buttons": 0,
+        "links": 1,
+        "workspaceLinks": 0,
+        "pageBytes": 2293
       },
       "findings": []
     },
