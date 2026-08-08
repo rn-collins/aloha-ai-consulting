@@ -5,7 +5,7 @@ Status: open governed record for authority packet `MCAP-1.0`.
 ## Current boundary
 
 - The method, 51-row inventory, source hierarchy, federal baseline register, and cross-border issue map are complete as research infrastructure.
-- Zero jurisdiction rows are verified or cleared. No row may be described as one-party, all-party, two-party, mixed, or lawful until controlling authority and scope are recorded with pinpoints and independent verification.
+- One jurisdiction—Hawaiʻi—has a verified recording-authority layer; zero jurisdiction packets are fully verified or cleared. The Hawaiʻi row may not be shortened to a universal “one-party state” label or treated as meeting-capture authority because six required layers, the exact configuration, participant locations, and conflict analysis remain open. Every other row remains unverified.
 - Federal participant-consent language is not a nationwide operational clearance. Stricter state law, different definitions, confidentiality/privacy rules, labor law, privilege, records duties, sector law, accessibility obligations, contracts, and foreign law may independently prohibit or condition capture and later processing.
 - Consent to recording is not consent to transcription, summarization, model processing, search, export, retention, training, voiceprint extraction, automated decisions, or publication.
 - A visible bot, calendar notice, continued attendance, or a host's consent does not by itself prove valid consent for every participant or later use.
@@ -16,8 +16,12 @@ Status: open governed record for authority packet `MCAP-1.0`.
 1. The 2025 NLRB General Counsel memorandum is an enforcement position, not a Board holding; later history and controlling circuit authority must be checked.
 2. ADA effective-communication guidance supplies a design and review obligation, not a conclusion that automated captions are accurate or sufficient for a particular person.
 3. GDPR registration identifies issue families only. Territorial scope, controller/processor roles, lawful basis, special-category data, data-subject rights, DPIA duties, and transfer mechanisms remain unassessed.
-4. No state wiretap/eavesdropping statute, state constitutional/privacy rule, employment-monitoring statute, biometric/voice law, public-records law, open-meetings rule, sector rule, or controlling appellate decision has yet been entered for Issue 02.
+4. Hawaiʻi’s current interception definitions, prohibition and participant-consent provision, civil-remedies section, constitutional privacy overlay, and a recent official participant-recording disposition are entered. No other state row has state authority, and Hawaiʻi’s labor/employment, privilege/confidentiality, records, sector/privacy, accessibility/language, cross-border, exact-configuration, and multistate-conflict layers remain open.
 5. Tribal, territorial, local, contractual, collective-agreement, court-order, and professional-duty authorities are outside the 51-row state inventory and must be added when implicated.
+
+## Hawaiʻi-specific limitation
+
+HRS § 803-42(b)(3)(A) supports a bounded participant/prior-consent classification for a private actor, subject to its criminal-or-tortious-purpose limitation. That proposition does not establish valid employee consent, permission for transcription or model processing, privilege preservation, records treatment, accessibility sufficiency, cross-border transfer authority, or which law governs a multistate meeting. The official 2026 Aquino-Martinez disposition concerns a law-enforcement participant under subsection (b)(4) and is not a precedential private-workplace clearance.
 
 ## Stop conditions
 
