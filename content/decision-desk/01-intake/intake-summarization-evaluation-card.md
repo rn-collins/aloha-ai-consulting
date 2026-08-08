@@ -1,6 +1,18 @@
 # Intake Summarization Evaluation Card
 
-Status: working subscriber artifact for Decision Desk 01. Not legal advice. Not approved for publication.
+Status: governed subscriber decision instrument for Decision Desk 01. Protocol-ready; no product tested. Not legal advice. Not approved for publication.
+
+Use this card with the [product and configuration dossier](./product-configuration-dossier.md), [vendor/privacy review](./vendor-privacy-review.md), and [preregistered empirical protocol](./empirical-evaluation-protocol.md). Blank fields are unresolved—not implied approvals.
+
+## Decision state
+
+Mark each gate `pass`, `fail`, or `unresolved`:
+
+- Any `fail` → **reject or redesign**.
+- No `fail`, but any `unresolved` → **continue human-led intake; no live data or pilot**.
+- Gates 1–4 pass → **synthetic evaluation may begin**; this is not pilot approval.
+- Gates 1–4 plus the preregistered synthetic evaluation pass → **consider a separately governed bounded pilot**.
+- No card state authorizes deployment, publication, sale, or legal-compliance claims without named approvals and RN's release decision.
 
 ## 1. Decision record
 
@@ -28,6 +40,8 @@ Status: working subscriber artifact for Decision Desk 01. Not legal advice. Not 
 
 Gate 1: If the current workflow, owner, source record, and baseline are not documented, stop and redesign.
 
+Gate 1 disposition / evidence / reviewer / date:
+
 ## 3. Exact system under evaluation
 
 - Vendor:
@@ -44,6 +58,8 @@ Gate 1: If the current workflow, owner, source record, and baseline are not docu
 - Change-control owner:
 
 Gate 2: If the product or configuration cannot be named and frozen for evaluation, stop.
+
+Gate 2 disposition / dossier version / reviewer / date:
 
 ## 4. Authority and data review
 
@@ -77,6 +93,8 @@ Vendor/data fields:
 
 Gate 3: Any unresolved high-risk authority, contract, privacy, security, or data-flow question means no live data and no live pilot.
 
+Gate 3 disposition / review version / qualified reviewers / date:
+
 ## 5. Representative pre-deployment test set
 
 Use fictional, synthetic, or appropriately governed historical material.
@@ -100,6 +118,8 @@ Test-set coverage:
 Document sampling method, exclusions, known blind spots, and why the set represents intended use.
 
 Gate 4: If affected users or material failure modes are absent from the set, expand it before evaluation.
+
+Gate 4 disposition / test-set manifest / reviewer / date:
 
 ## 6. Fact-level evaluation
 
@@ -136,6 +156,8 @@ Observe the real review behavior, not only model output.
 - Who can stop the evaluation?
 
 Gate 5: If reviewers routinely rely on the synopsis without source comparison, the control has failed even when model accuracy appears high.
+
+Gate 5 disposition / observed evidence / reviewer / date:
 
 ## 8. Whole-process effects
 
@@ -185,6 +207,26 @@ Remaining uncertainty:
 Conditions:
 Expiration / change-watch date:
 Sign-offs:
+
+## Machine-checkable handoff
+
+```text
+card_version:
+product_dossier_version:
+vendor_privacy_review_version:
+protocol_version:
+test_set_version:
+gate_1: pass | fail | unresolved
+gate_2: pass | fail | unresolved
+gate_3: pass | fail | unresolved
+gate_4: pass | fail | unresolved
+gate_5: pass | fail | unresolved | not_run
+decision: reject | redesign | human_led_only | synthetic_test_authorized | bounded_pilot_for_separate_approval
+decision_owner:
+qualified_reviewers:
+decision_date:
+expiration_or_change_trigger:
+```
 
 ## Source and change record
 
