@@ -22,6 +22,7 @@ const paths = [
   "/events/hawaii-tech-week",
   "/events/hawaii-tech-week/resources",
   "/learning",
+  "/learning/decision-desk",
   "/tools",
   "/insights",
   "/questions",
