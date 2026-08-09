@@ -1,5 +1,0 @@
-component,provider,pricing_url,retrieved_at,status,planning_note
-Version control,GitHub,https://github.com/pricing,2026-08-03,verify-before-purchase,Free and paid plans vary
-Document storage,Google Workspace,https://workspace.google.com/pricing.html,2026-08-03,verify-before-purchase,Use approved organizational tenant
-Model access,OpenAI API,https://openai.com/api/pricing/,2026-08-03,verify-before-purchase,Usage based; package is provider-neutral
-Automation,n8n,https://n8n.io/pricing/,2026-08-03,verify-before-purchase,Optional; manual workflow supported

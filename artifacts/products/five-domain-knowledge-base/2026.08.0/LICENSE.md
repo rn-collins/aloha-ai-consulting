@@ -1,3 +1,0 @@
-# Named-organization internal-use license — pre-release specimen
-
-Copyright 2026 Rayven-Nikkita Collins LLC. No license or purchase is presently offered. When a named-organization license is executed, the licensed organization may use, adapt, train from, and retain its acquired version internally. Resale, public redistribution of source files, removal of notices, and representation as legal, medical, compliance, security, accessibility, or outcome assurance are prohibited. Third-party sources remain under their respective terms. Contracting identity, price, tax, refund, privacy, and support terms must be supplied at acquisition.

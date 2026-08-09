@@ -1,5 +1,0 @@
-Scenario,Clients,Sessions,Group Sessions,Group Participants,Total Dose mg,Opt Outs,Avg Sessions,Avg Group Size,Avg Dose,Included Client Responses
-S01,0,0,0,0,0,0,"=IF(B2=0,""NA"",C2/B2)","=IF(D2=0,""NA"",E2/D2)","=IF(C2=0,""NA"",F2/C2)","=MAX(0,B2-G2)"
-S02,1,1,0,0,20,0,"=IF(B3=0,""NA"",C3/B3)","=IF(D3=0,""NA"",E3/D3)","=IF(C3=0,""NA"",F3/C3)","=MAX(0,B3-G3)"
-S03,2,3,1,2,60,1,"=IF(B4=0,""NA"",C4/B4)","=IF(D4=0,""NA"",E4/D4)","=IF(C4=0,""NA"",F4/C4)","=MAX(0,B4-G4)"
-S04,2,2,1,2,0,2,"=IF(B5=0,""NA"",C5/B5)","=IF(D5=0,""NA"",E5/D5)","=IF(C5=0,""NA"",F5/C5)","=MAX(0,B5-G5)"

@@ -1,50 +1,45 @@
 {
-  "name": "aloha-ai-consulting",
+  "name": "aloha-ai-replacement",
+  "version": "0.1.0",
   "private": true,
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "site:validate": "node scripts/build-site.js --validate",
-    "site:build": "node scripts/build-site.js",
-    "site:check": "node scripts/build-site.js --check",
-    "site:html": "node scripts/validate-generated-html.js",
-    "site:interactions": "node scripts/audit-interactions.js",
-    "site:actions": "node scripts/audit-shared-actions.js",
-    "site:presentation": "node scripts/audit-presentation-system.js",
-    "promise:audit": "node scripts/audit-promises.js --write",
-    "promise:check": "node scripts/audit-promises.js --check",
-    "promise:review-release": "node scripts/audit-promises.js --review-release",
-    "promise:release-check": "node scripts/audit-promises.js --release-check",
-    "monitors:check": "node scripts/validate-monitor-operations.js",
-    "assurance:check": "node scripts/evaluate-citation-verifier.js && node scripts/evaluate-claims-checker.js && node scripts/evaluate-evidence-explainer.js && node scripts/evaluate-bill-analyzer.js && node scripts/evaluate-controlled-substances-explainer.js && node scripts/evaluate-privacy-assurance.js && node scripts/evaluate-security-assurance.js && node scripts/evaluate-accessibility-assurance.js && node scripts/evaluate-corrections-assurance.js && node scripts/evaluate-legal-authority-assurance.js && node scripts/evaluate-rights-attribution-assurance.js && node scripts/evaluate-institutional-credentials-assurance.js && node scripts/validate-assurance-controls.js",
-    "builds:check": "node scripts/evaluate-build-evidence.js && node scripts/evaluate-external-build-evidence.js && node scripts/evaluate-cross-practice-estate.js && node scripts/evaluate-satellite-system-evidence.js && node scripts/evaluate-public-download-evidence.js && node scripts/evaluate-tool-delivery-evidence.js && node scripts/evaluate-monitor-research-evidence.js && node scripts/evaluate-practical-guidance-evidence.js && node scripts/evaluate-use-case-learning-evidence.js && node scripts/evaluate-destination-family-evidence.js && node scripts/evaluate-r08-acceptance.js && node scripts/evaluate-r09-obligations.js && node scripts/evaluate-r09-delivery-architecture.js && node scripts/evaluate-r09-artifact-build.js && node scripts/evaluate-r09-neuroscience-trust-artifact.js && node scripts/evaluate-r09-commercial-launch-apq-artifact.js && node scripts/evaluate-r09-idr-engine-artifact.js && node scripts/evaluate-r09-cannabis-os-artifact.js && node scripts/evaluate-r09-platform-risk-intelligence-artifact.js && node scripts/evaluate-r09-commerce-infrastructure.js && node scripts/evaluate-r09-commercial-terms.js && node scripts/evaluate-r09-commercial-release.js",
-    "commerce:stage-private": "node scripts/stage-r09-commercial-payloads.js",
-    "closure:build-register": "node scripts/build-r10-evidence-unit-register.js",
-    "closure:evaluate": "node scripts/evaluate-r10-closure.js",
-    "closure:require-ready": "node scripts/evaluate-r10-closure.js --require-ready",
-    "release:registry": "node scripts/build-release-registry.js",
-    "release:review": "node scripts/review-r02-governance.js",
-    "release:claims": "node scripts/build-claim-registry.js",
-    "site:hydrate": "node scripts/hydrate-build-snapshots.js",
-    "release:claim-review": "node scripts/review-r02-claims.js",
-    "release:gates": "node scripts/validate-release-controls.js",
-    "learning:audit": "node scripts/audit-learning-runtime.js",
-    "learning:check": "node scripts/audit-learning-runtime.js --check",
-    "site:audit": "node scripts/audit-entire-site.js",
-    "site:parity": "node scripts/audit-migration-parity.js",
-    "site:restore-parity": "node scripts/restore-editorial-parity.js",
-    "site:smoke": "node scripts/smoke-test.js",
-    "site:test": "node --test tests/*.test.js",
-    "site:ci": "npm run site:hydrate && npm run release:claims && npm run monitors:check && npm run assurance:check && npm run builds:check && npm run site:test && npm run release:gates && npm run learning:check && npm run site:validate && npm run site:build && npm run site:audit && npm run site:check && npm run site:html && npm run site:interactions && npm run site:actions && npm run site:presentation && npm run promise:release-check"
-  },
-  "devDependencies": {
-    "vite": "^7.1.0"
-  },
   "engines": {
-    "node": "24.x"
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "install:ci": "bash scripts/install-ci.sh",
+    "dev": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vite",
+    "build": "next build",
+    "build:sites": "bash scripts/build-verified.sh",
+    "start": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext start",
+    "test": "node --test tests/rendered-html.test.mjs",
+    "validate:artifact": "bash scripts/validate-artifact.sh",
+    "lint": "bash scripts/sites-env.sh -- eslint . --ignore-pattern dist --ignore-pattern .next",
+    "db:generate": "bash scripts/sites-env.sh -- drizzle-kit generate"
   },
   "dependencies": {
-    "@vercel/blob": "^2.6.1",
-    "stripe": "^18.5.0"
-  }
+    "drizzle-orm": "0.45.2",
+    "next": "16.2.6",
+    "react": "19.2.6",
+    "react-dom": "19.2.6"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "1.37.1",
+    "@tailwindcss/postcss": "4.2.1",
+    "@types/node": "22.19.19",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.0.2",
+    "@vitejs/plugin-rsc": "0.5.26",
+    "drizzle-kit": "0.31.10",
+    "eslint": "9.39.4",
+    "eslint-config-next": "16.2.6",
+    "react-server-dom-webpack": "19.2.6",
+    "tailwindcss": "4.2.1",
+    "typescript": "5.9.3",
+    "vinext": "0.0.50",
+    "vite": "8.0.13",
+    "wrangler": "4.92.0"
+  },
+  "type": "module",
+  "displayName": "Aloha AI Replacement"
 }

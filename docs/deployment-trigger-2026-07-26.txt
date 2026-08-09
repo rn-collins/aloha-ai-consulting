@@ -1,1 +1,0 @@
-Deployment trigger after Vercel Pro upgrade. Canonical production project: aloha-ai-consulting. Expected source branch: main.

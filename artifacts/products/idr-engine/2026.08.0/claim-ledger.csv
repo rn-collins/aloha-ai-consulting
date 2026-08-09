@@ -1,3 +1,0 @@
-id,claim,jurisdiction,sourceId,pinpoint,retrievedAt,confidence,humanReview,status
-"IDR-C001","In Mata v. Avianca, the court imposed a $5,000 penalty after counsel submitted nonexistent decisions and failed to correct the record adequately.","S.D.N.Y.","MATA-ORDER","pp. 1-2, 28-31","2026-08-03","high","verified","verified-for-bounded-use"
-"IDR-C002","Section 553 of the Administrative Procedure Act establishes federal notice-and-comment rulemaking procedures and specified exceptions.","United States","APA-553","5 U.S.C. § 553(b)-(d)","2026-08-03","high","verified","verified-for-bounded-use"
