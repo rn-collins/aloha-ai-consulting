@@ -62,10 +62,10 @@ Do not discount the first cohort publicly. If access or audience development req
 ### Clinic
 
 - A participant submits the minimal fit screen before any payment link appears.
-- Fit screen closes Thursday, October 1, 2026 at 10:00 a.m. HST or earlier when four participants are accepted and paid.
-- RN responds to a complete fit screen within two business days.
-- An acceptance-linked checkout hold expires after 48 hours.
-- Full refund through Thursday, October 1, 2026 at 10:00 a.m. HST.
+- Fit screen closes Monday, September 28, 2026 at 10:00 a.m. HST or earlier when the review queue can no longer produce four supported acceptances.
+- RN responds to a complete fit screen within two business days, no later than Wednesday, September 30 for an on-time submission.
+- An acceptance-linked checkout hold expires after 48 hours and no later than Friday, October 2 at 10:00 a.m. HST for this pilot.
+- Full refund through Saturday, October 3, 2026 at 10:00 a.m. HST. Checkout must display the participant's exact deadline before payment; no participant may receive less than 24 hours after confirmed payment to cancel for a full refund.
 - A screened transfer may be requested through Monday, October 5 at 10:00 a.m. HST; transfer is never automatic.
 - Decline after payment, organizer cancellation, material organizer change, duplicate charge, or organizer-caused access failure: full refund.
 - Minimum viable clinic: 2 paid participants. RN may convert a single accepted participant to a private 75-minute session only with affirmative agreement and no scope reduction, or provide a full refund.
@@ -94,7 +94,7 @@ The schedule minimizes data while preserving transaction, correction, and incide
 | Record | Recommended retention | Disposition |
 |---|---|---|
 | Abandoned, incomplete, or expired browser/session state | 24 hours maximum; no narrative | automatic deletion |
-| Rejected clinic description and screen | 30 days after final decline/refund/appeal disposition | delete narrative; retain only minimal aggregate outcome if needed |
+| Rejected clinic description and screen | 30 days after the decline, refund, and any timely screening-question closure | delete narrative; retain only minimal aggregate outcome if needed |
 | Accepted clinic intake description | 90 days after delivery and correction close | delete narrative; retain final participant-supplied deliverable only if affirmatively requested |
 | Accessibility-request details | 30 days after session or final resolution | delete details; retain nonidentifying improvement finding where useful |
 | Participant roster and operational messages | 24 months after session | delete or de-identify unless an unresolved dispute or obligation applies |
