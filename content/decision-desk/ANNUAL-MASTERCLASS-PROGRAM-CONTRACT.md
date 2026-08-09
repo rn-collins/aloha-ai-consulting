@@ -14,7 +14,7 @@ This contract changes Issues 02–12 from an indefinite expansion roadmap to pla
 
 ## Program promise
 
-The internal program goal is twelve distinct 90-minute working masterclasses. Participants practice how to decide whether, where, and under what controls an AI use belongs in real work. The series is not a product-tour sequence, generalized AI literacy course, legal advice service, CLE program, certification, or guarantee of outcomes.
+The internal program goal is twelve distinct 90-minute working masterclasses, each with its own complete paired clinic. Participants practice how to decide whether, where, and under what controls an AI use belongs in real work. The series is not a product-tour sequence, generalized AI literacy course, legal advice service, CLE program, certification, or guarantee of outcomes.
 
 A monthly slot is a production target, not permission to publish. No date, price, seat, checkout, or communication becomes public until that month's release gate passes and RN approves it.
 
@@ -29,13 +29,13 @@ Every month must contain:
 5. an exact product/configuration evaluation when lawful and evidentially possible, or a transparent no-product/no-test finding;
 6. a complete 90-minute teaching package;
 7. accessible participant, preparation, follow-up, and correction materials;
-8. a bounded clinic translation or an explicit reason the clinic is inappropriate;
+8. a complete paired bounded clinic applying that month’s instrument to one nonconfidential workflow; if a safe clinic cannot be designed, the issue must be redesigned, deferred, replaced, or left dark;
 9. an inactive visitor journey and complete commercial/communications specification;
 10. visual-evidence and rights records proportionate to the claims;
 11. observed technical, editorial, accessibility, operational, and rehearsal QA within recorded scopes; and
 12. RN go/no-go approval.
 
-Issue-specific completion contracts may narrow irrelevant elements but may not waive factual integrity, privacy, security, accessibility, rights, operational testing, or RN approval.
+Issue-specific completion contracts may adapt genuinely irrelevant mechanics but may not reduce the parity standard or waive research depth, the paired clinic, factual integrity, privacy, security, accessibility, rights, operational testing, rehearsals, or RN approval. The controlling parity requirements are recorded in `TWELVE-MONTH-MASTERCLASS-CLINIC-PARITY-CONTRACT.md`.
 
 ## Standard teaching architecture
 
