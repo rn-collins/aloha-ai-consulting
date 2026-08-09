@@ -1,6 +1,6 @@
 # Decision Desk curriculum coverage and expansion review
 
-Status: governed coverage record; not a launch bundle, recurring schedule, or release authorization  
+Status: governed coverage and annual internal production record; not a public schedule, sale, or release authorization  
 Owner: RN Collins / Aloha AI  
 Original selection date: 2026-08-07  
 Scope correction: 2026-08-08  
@@ -8,11 +8,11 @@ Review trigger: a material audience, delivery, coverage, or flagship assumption 
 
 ## Decision
 
-Decision Desk has a twelve-question coverage roadmap and one active flagship: Issue 01, prospective-client intake.
+Decision Desk has a twelve-question coverage roadmap and a governed twelve-month internal production program. Issue 01, prospective-client intake, remains the only near-release flagship at adoption.
 
-Issue 01 is governed by the [flagship completion contract](./ISSUE-01-FLAGSHIP-COMPLETION-CONTRACT.md). It may reach release readiness independently when that finite contract passes. Issues 02–12 are expansion cases and are not prerequisites for the first Decision Desk release, masterclass, clinic, or advisory demonstration.
+Issue 01 is governed by the [flagship completion contract](./ISSUE-01-FLAGSHIP-COMPLETION-CONTRACT.md). It may reach release readiness independently when that finite contract passes. The [annual program contract](./ANNUAL-MASTERCLASS-PROGRAM-CONTRACT.md), [production calendar](./ANNUAL-MASTERCLASS-CALENDAR-2026-2027.md), and [monthly briefs](./MONTHLY-MASTERCLASS-BRIEFS.md) establish planning for Issues 02–12 without mislabeling them complete.
 
-The roadmap does not promise monthly publication, a twelve-issue inaugural bundle, or simultaneous R7 completion. Cadence and activation require later owner decisions informed by completed work, participant evidence, and demand.
+The internal target is one distinct masterclass per month from September 2026 through August 2027. This is not a public publication promise, subscription, sale, or authorization to lower any monthly release gate. Each unit requires its own activation/completion record, evidence, assets, operational QA, rehearsal, and RN approval.
 
 ## What the method should teach over time
 
@@ -40,17 +40,17 @@ A future case remains in the roadmap when it adds a materially different combina
 | No. | Governed question | Primary contribution | Reusable tool | State |
 |---|---|---|---|---|
 | 01 | Should a small law firm use AI to summarize prospective-client intake? | Sensitive intake; professional duties; summarization; conflict and confidentiality boundaries | Intake Summarization Evaluation Card | R1; active flagship |
-| 02 | Should a team put an AI meeting bot in every room? | Notice and consent; workplace power; recording; transcription; institutional memory | Meeting Capture Permission and Record Map | R1; frozen expansion research |
-| 03 | Should a small business let AI answer customer-support messages? | Customer-facing generation; consumer representations; escalation; accessibility | Support Automation Authority Map | R1; expansion backlog |
-| 04 | Should an organization let AI answer questions from its internal knowledge? | Retrieval; source authority; permissions; stale records; provenance | Knowledge Answerability and Source-Authority Test | R0; roadmap |
-| 05 | Should AI screen, rank, or recommend people for an opportunity? | Opportunity allocation; proxy discrimination; accommodations; contestability | Human Opportunity Decision Impact Map | R0; roadmap |
-| 06 | Should a team use AI to draft public claims about its products or work? | Substantiation; endorsements; version control; approval ownership | Public-Claim Substantiation Gate | R0; roadmap |
-| 07 | Should AI translate complex health, legal, financial, or safety information? | Comprehension; uncertainty; professional boundary; language and disability access | High-Stakes Explanation Fidelity Test | R0; roadmap |
-| 08 | When may an organization use synthetic voice, likeness, or documentary-style media? | Identity; consent; provenance; deception; labor; cultural context | Synthetic Media Permission and Provenance Record | R0; roadmap |
-| 09 | When may an AI agent send, spend, change records, or act in another system? | Authorization; reversibility; credentials; transaction and incident controls | Agent Action Authority and Reversibility Matrix | R0; roadmap |
-| 10 | How should a small organization choose and contract for an AI vendor? | Data flows; subprocessors; retention; security; exit and portability | AI Vendor Evidence and Contract Dossier | R0; roadmap |
-| 11 | Should an educator use AI to assess, respond to, or personalize learner work? | Development; authorship; feedback; accommodations; surveillance; validity | Learner-Affecting AI Use Review | R0; roadmap |
-| 12 | When should an organization pause, roll back, replace, or retire AI? | Monitoring; incidents; drift; workarounds; termination and redress | AI Continuation and Retirement Decision Record | R0; roadmap |
+| 02 | Should a team put an AI meeting bot in every room? | Notice and consent; workplace power; recording; transcription; institutional memory | Meeting Capture Permission and Record Map | R1; next planned production unit |
+| 03 | Should a small business let AI answer customer-support messages? | Customer-facing generation; consumer representations; escalation; accessibility | Support Automation Authority Map | R1; planned Nov 2026 production |
+| 04 | Should an organization let AI answer questions from its internal knowledge? | Retrieval; source authority; permissions; stale records; provenance | Knowledge Answerability and Source-Authority Test | R0; planned Dec 2026 production |
+| 05 | Should AI screen, rank, or recommend people for an opportunity? | Opportunity allocation; proxy discrimination; accommodations; contestability | Human Opportunity Decision Impact Map | R0; planned Jan 2027 production |
+| 06 | Should a team use AI to draft public claims about its products or work? | Substantiation; endorsements; version control; approval ownership | Public-Claim Substantiation Gate | R0; planned Feb 2027 production |
+| 07 | Should AI translate complex health, legal, financial, or safety information? | Comprehension; uncertainty; professional boundary; language and disability access | High-Stakes Explanation Fidelity Test | R0; planned Mar 2027 production |
+| 08 | When may an organization use synthetic voice, likeness, or documentary-style media? | Identity; consent; provenance; deception; labor; cultural context | Synthetic Media Permission and Provenance Record | R0; planned Apr 2027 production |
+| 09 | When may an AI agent send, spend, change records, or act in another system? | Authorization; reversibility; credentials; transaction and incident controls | Agent Action Authority and Reversibility Matrix | R0; planned May 2027 production |
+| 10 | How should a small organization choose and contract for an AI vendor? | Data flows; subprocessors; retention; security; exit and portability | AI Vendor Evidence and Contract Dossier | R0; planned Jun 2027 production |
+| 11 | Should an educator use AI to assess, respond to, or personalize learner work? | Development; authorship; feedback; accommodations; surveillance; validity | Learner-Affecting AI Use Review | R0; planned Jul 2027 production |
+| 12 | When should an organization pause, roll back, replace, or retire AI? | Monitoring; incidents; drift; workarounds; termination and redress | AI Continuation and Retirement Decision Record | R0; planned Aug 2027 production |
 
 ## Activation rule
 
@@ -64,13 +64,13 @@ A roadmap issue becomes active only through a written owner decision that record
 - the owner and target review date; and
 - the release boundary.
 
-Completing a matrix row, locating an additional authority, or reaching a calendar month does not activate an issue.
+The annual calendar establishes a planning slot, but does not by itself establish release readiness. Each issue still requires a written activation/completion record and must pass its month-specific gates before any public offer.
 
-## Issue 02 freeze
+## Issue 02 transition
 
-The Issue 02 records remain preserved as valid expansion research at their stated limits. The remaining 44 recording-law rows, additional jurisdiction layers, product selection, testing, stakeholder work, and visual production are frozen. They may resume only when an activated Issue 02 contract, a real client scope, or another documented operational dependency establishes their necessity.
+Issue 02 is the next planned production unit for October 2026. Its existing records remain valid only at their stated limits: seven states have one verified recording-authority layer and zero complete jurisdiction packets are cleared. Activation must define the target audience, fictional scenario, relevant jurisdictions, evidence burden, displacement, owners, and completion contract before additional research resumes.
 
-No existing Issue 02 record authorizes recording, transcription, product selection, a pilot, or legal clearance.
+The annual plan does not require a misleading nationwide clearance claim. It requires the evidence actually necessary for the bounded class and transparent disclosure of excluded jurisdictions and unresolved layers. No existing Issue 02 record authorizes recording, transcription, product selection, a pilot, or legal clearance.
 
 ## Cross-cutting standards
 
@@ -102,8 +102,9 @@ Reopen this coverage record if:
 ## Gate disposition
 
 Roadmap coverage: complete and revisable.  
+Annual internal monthly production plan: authorized.  
 Issue 01 flagship production: active under its finite completion contract.  
-Issue 02 production: frozen; research preserved.  
-Issues 03–12 production: inactive.  
-Recurring cadence: unapproved.  
+Issue 02: next planned activation; research preserved at stated limits.  
+Issues 03–12: planned production units; not researched or release-ready merely because scheduled.  
+Public recurring cadence or subscription: unapproved.  
 Enrollment, payment, publication, scheduling, sending, merge, and public launch: not authorized.
