@@ -12,7 +12,7 @@ The output is a bounded decision record and next-action plan. It is not legal or
 
 Required shared states: eligible, clarification required, deferred, declined, capacity held, payment pending, confirmed, cancelled, refunded, attended, follow-up sent, correction open, closed, and incident hold.
 
-## 01 — Intake Decision Desk Clinic
+## 01 — Improve Your Client Intake Workflow
 
 - Application: one prospective-client intake workflow.
 - Eligible participant: owner or authorized workflow lead able to discuss the process without case facts.
@@ -22,7 +22,7 @@ Required shared states: eligible, clarification required, deferred, declined, ca
 - Fictional clinic rehearsal: a small firm considering summary drafting after structured intake.
 - Current state: substantially drafted under Issue 01; operational gates remain open.
 
-## 02 — Meeting Capture Decision Desk Clinic
+## 02 — Plan a Safer AI-Assisted Meeting
 
 - Application: one defined meeting class, not “all meetings.”
 - Eligible participant: meeting owner, operations lead, counsel/compliance lead, or authorized policy owner who can identify participant roles and locations without naming people.
@@ -36,7 +36,7 @@ Required shared states: eligible, clarification required, deferred, declined, ca
 - Required visual: meeting-boundary System X-Ray showing entry, notice, capture modes, record classes, exits, and deletion/correction.
 - Current state: brief governed; full completion contract and clinic package next.
 
-## 03 — Customer Support Authority Clinic
+## 03 — Set Rules for AI Customer Support
 
 - Application: one support-message class and its escalation path.
 - Eligible participant: authorized support, operations, trust/safety, product, or compliance owner.
@@ -48,7 +48,7 @@ Required shared states: eligible, clarification required, deferred, declined, ca
 - Critical stop conditions: material complaint or harm not recognized, weak authentication, unsupported representation, inaccessible alternative, irreversible action, or no correction/escalation path.
 - Required visual: message-class authority ladder and escalation handoff X-Ray.
 
-## 04 — Knowledge Answerability Clinic
+## 04 — Make Internal AI Answers More Reliable
 
 - Application: one internal question class and a bounded approved-source collection.
 - Eligible participant: authorized knowledge, IT, operations, compliance, or internal-service owner.
@@ -60,7 +60,7 @@ Required shared states: eligible, clarification required, deferred, declined, ca
 - Critical stop conditions: no source owner, access mismatch, unresolved authority conflict, missing citations, stale-content risk without monitoring, or no correction path.
 - Required visual: source-authority and permission flow X-Ray.
 
-## 05 — Human Opportunity Decision Clinic
+## 05 — Review AI in Hiring and Selection
 
 - Application: one stage of one opportunity workflow.
 - Eligible participant: authorized owner of hiring, fellowship, admissions, grant, accelerator, creator, or procurement-opportunity process.
@@ -72,7 +72,7 @@ Required shared states: eligible, clarification required, deferred, declined, ca
 - Critical stop conditions: invalid criteria, unmeasured material subgroup harm, inaccessible participation, illusory appeal, or consequential automated rejection.
 - Required visual: opportunity-stage consequence and contestability X-Ray.
 
-## 06 — Public Claim Substantiation Clinic
+## 06 — Check AI-Written Public Claims
 
 - Application: one nonconfidential public-claim class and approval workflow.
 - Eligible participant: authorized marketing, communications, product, scientific/regulatory, legal, or founder-side claim owner.
@@ -84,7 +84,7 @@ Required shared states: eligible, clarification required, deferred, declined, ca
 - Critical stop conditions: missing competent evidence, unauthorized endorsement, misleading comparison, unverifiable inference, or no approval/correction record.
 - Required visual: source-to-claim-to-approval lineage X-Ray.
 
-## 07 — High-Stakes Explanation Clinic
+## 07 — Make High-Stakes AI Explanations Clear
 
 - Application: one authoritative notice or explanation class, never individual advice.
 - Eligible participant: authorized health, legal-information, financial-information, benefits, safety, or public-service content owner.
@@ -96,7 +96,7 @@ Required shared states: eligible, clarification required, deferred, declined, ca
 - Critical stop conditions: meaning drift, omitted exception, false certainty, inaccessible output, or advice-like personalization.
 - Required visual: authority-to-explanation fidelity and escalation X-Ray.
 
-## 08 — Synthetic Media Permission Clinic
+## 08 — Plan Synthetic Media With Permission
 
 - Application: one proposed, rights-cleared synthetic-media use.
 - Eligible participant: authorized media, archive, museum, education, entertainment, or communications owner able to discuss the concept without uploading protected assets.
@@ -108,7 +108,7 @@ Required shared states: eligible, clarification required, deferred, declined, ca
 - Critical stop conditions: absent authority, misleading documentary effect, unmanageable revocation, insecure model/asset handling, or material cultural harm.
 - Required visual: person/asset/permission/provenance/withdrawal X-Ray.
 
-## 09 — Agent Action Authority Clinic
+## 09 — Set Safe Limits for AI Agents
 
 - Application: one nonproduction action class using synthetic records only.
 - Eligible participant: authorized operations, finance, IT, security, product, or compliance workflow owner.
@@ -120,7 +120,7 @@ Required shared states: eligible, clarification required, deferred, declined, ca
 - Critical stop conditions: ambiguous authority, excess credentials, irreversibility, no idempotency/reconciliation, or nonfunctional stop control.
 - Required visual: action authority, system boundary, confirmation, and rollback X-Ray.
 
-## 10 — AI Vendor Decision Clinic
+## 10 — Review an AI Vendor Before You Buy
 
 - Application: one nonconfidential acquisition/use proposal.
 - Eligible participant: authorized executive, procurement, IT/security, privacy, operations, implementation, or counsel-side owner.
@@ -132,7 +132,7 @@ Required shared states: eligible, clarification required, deferred, declined, ca
 - Critical stop conditions: material evidence gap, unacceptable reuse, unilateral change, weak incident/exit rights, or configuration mismatch.
 - Required visual: vendor claim-to-contract-to-configuration evidence X-Ray.
 
-## 11 — Learner-Affecting AI Clinic
+## 11 — Set Rules for AI in Teaching and Assessment
 
 - Application: one bounded instructional stage using fictional learner records.
 - Eligible participant: authorized educator, program owner, instructional designer, assessment owner, accessibility/student-support lead, or procurement owner.
@@ -144,7 +144,7 @@ Required shared states: eligible, clarification required, deferred, declined, ca
 - Critical stop conditions: invalid inference, inaccessible process, excessive surveillance, unreviewable consequence, or displaced educator accountability.
 - Required visual: learning-stage consequence, evidence, educator review, and contest X-Ray.
 
-## 12 — AI Continuation and Retirement Clinic
+## 12 — Decide Whether to Keep, Change, or Stop an AI System
 
 - Application: one fictionalized or nonconfidential continuation/retirement decision.
 - Eligible participant: authorized executive, system owner, audit/risk, operations, procurement, compliance, or affected-person advocate.
