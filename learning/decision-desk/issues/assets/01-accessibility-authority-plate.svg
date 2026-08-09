@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" viewBox="0 0 1200 720">
+<title id="title">Documentary authority plate for United States Department of Justice web accessibility guidance</title>
+<desc id="desc">A recreated editorial plate, not a screenshot, identifies the Department of Justice Civil Rights Division guidance titled Guidance on Web Accessibility and the ADA, dated March 18, 2022. It records that labels, clear instructions, error identification, keyboard access, and manual testing are material considerations, while warning that the guidance is informal and not an independent source of binding legal effect.</desc>
+<rect width="1200" height="720" fill="#101815"/><rect x="70" y="65" width="1060" height="590" fill="#fff" stroke="#c9f5e5" stroke-width="8"/>
+<style>.k{font:700 15px Arial,sans-serif;letter-spacing:1.5px;fill:#41504b}.h{font:700 48px Georgia,serif;fill:#101815}.t{font:400 23px Arial,sans-serif;fill:#101815}.b{font:700 22px Arial,sans-serif;fill:#101815}.n{font:400 17px Arial,sans-serif;fill:#41504b}</style>
+<text x="120" y="125" class="k">PRIMARY-AUTHORITY DOCUMENTARY PLATE · RECREATED, NOT A SCREENSHOT</text>
+<line x1="120" y1="150" x2="1080" y2="150" stroke="#101815" stroke-width="3"/>
+<text x="120" y="215" class="k">ISSUING BODY</text><text x="120" y="250" class="b">U.S. Department of Justice · Civil Rights Division</text>
+<text x="120" y="315" class="k">DOCUMENT</text><text x="120" y="365" class="h">Guidance on Web</text><text x="120" y="420" class="h">Accessibility and the ADA</text>
+<text x="120" y="475" class="k">DATE · SOURCE RECORD</text><text x="120" y="510" class="t">March 18, 2022 · S025 · C017/C018</text>
+<rect x="120" y="545" width="960" height="62" fill="#ffe58a"/><text x="145" y="582" class="b">Evidence: labels · instructions · error recovery · keyboard access · manual testing</text>
+<text x="120" y="635" class="n">Limit: informal guidance; legal application remains matter-specific. Full source linked in the Source Desk.</text>
+</svg>

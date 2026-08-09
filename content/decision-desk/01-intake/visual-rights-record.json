@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "1.0",
+  "issueId": "01",
+  "status": "draft-branch visual rights record",
+  "reviewedAt": "2026-08-08",
+  "assets": [
+    {
+      "visualId": "V001",
+      "path": "learning/decision-desk/issues/assets/01-intake-system-xray.svg",
+      "creator": "Aloha AI",
+      "class": "first-party editorial diagram",
+      "rightsBasis": "original work based on cited authorities and governed workflow analysis",
+      "permissionStatus": "not required",
+      "credit": "System X-Ray by Aloha AI",
+      "claimIds": [
+        "C001",
+        "C002",
+        "C006",
+        "C007",
+        "C015"
+      ],
+      "manipulationDisclosure": "Normative workflow model; not observed firm practice; no client data.",
+      "releaseStatus": "ready for factual, responsive, and accessibility QA"
+    },
+    {
+      "visualId": "V002",
+      "path": "learning/decision-desk/issues/assets/01-accessibility-authority-plate.svg",
+      "creator": "Aloha AI",
+      "class": "first-party documentary plate referencing a U.S. federal government source",
+      "rightsBasis": "original editorial layout; source metadata and paraphrase from official DOJ guidance; no third-party screenshot or seal reproduced",
+      "permissionStatus": "not required on recorded basis",
+      "credit": "Documentary plate by Aloha AI; source: U.S. Department of Justice Civil Rights Division",
+      "claimIds": [
+        "C017",
+        "C018"
+      ],
+      "manipulationDisclosure": "Recreated editorial plate, not a screenshot or facsimile. Full authority linked in Source Desk.",
+      "releaseStatus": "ready for factual, responsive, and accessibility QA"
+    },
+    {
+      "visualId": "V003",
+      "path": null,
+      "creator": null,
+      "class": "original reporting photograph",
+      "rightsBasis": "written property and participant permission required",
+      "permissionStatus": "pending",
+      "credit": null,
+      "claimIds": [
+        "C006",
+        "C007",
+        "C008"
+      ],
+      "manipulationDisclosure": "Only exposure, white balance, straightening, restrained crop, and metadata removal permitted.",
+      "releaseStatus": "pending; omit rather than substitute if permission fails"
+    }
+  ],
+  "prohibitions": [
+    "No generated or stock substitute for V003",
+    "No real or plausibly identifying client data",
+    "No product screenshot unless a specific evidence-qualified configuration exists",
+    "No claim of completed photojournalistic package until V003 is completed or the release claim is narrowed"
+  ]
+}
