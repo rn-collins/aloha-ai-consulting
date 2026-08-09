@@ -1,0 +1,148 @@
+# Issue 01 — RN offer decision packet
+
+Status: recommended operating defaults; inactive; RN approval required before implementation or public display  
+Version: 1.0  
+Prepared: 2026-08-08  
+Owner: RN Collins / Aloha AI
+
+## Decision requested
+
+Approve, revise, or decline the recommended first-release operating model below. This record does not open registration, collect data, charge anyone, reserve a seat, schedule an event, send a message, or authorize release.
+
+## Executive recommendation
+
+Launch one deliberately small, live masterclass cohort followed two weeks later by one screened clinic. Keep the Decision Desk article and Source Desk free. Use the masterclass to teach the method with fictional material; use the clinic only for participants whose one nonconfidential workflow passes human screening.
+
+| Decision | Recommended default | Acceptable alternative | Why |
+|---|---|---|---|
+| Free editorial title | **Decision Desk 01: Before You Automate Intake** | **The Intake Decision Desk** | Names the decision and avoids a product-endorsement or legal-clearance claim. |
+| Masterclass title | **Before You Automate Intake: A Decision Desk Masterclass** | **Decision Desk Live: AI-Assisted Intake** | Outcome-led, specific, and distinct from a webinar, CLE, certification, or generic AI course. |
+| Clinic title | **Decision Desk Clinic: One Workflow, One Defensible Next Move** | **AI Opportunity Clinic: Intake Edition** | Connects the clinic to the governed method and states its bounded output. |
+| Masterclass price | **US$295 per person** | Pilot floor US$225; standard next-cohort price US$395 after observed demand and feedback | The first cohort is a 90-minute live working session with a full participant package, not a passive webinar. The pilot price is intentionally below multi-session premium cohort-course pricing while preserving expert positioning. |
+| Masterclass capacity | **12 paid participants** | 8 for a higher-touch pilot; never more than 16 without a second facilitator or revised exercises | Twelve supports individual work and debrief without creating a delivery or accessibility burden that has not been rehearsed. |
+| Clinic price | **US$750 per person** | US$2,800 private team clinic for up to four screened colleagues from one organization | Four public seats yield US$3,000 gross while covering screening, two-hour facilitation, four written records, and one correction cycle. Do not sell the public clinic below US$600 per person. |
+| Clinic capacity | **4 screened participants maximum** | Reduce to 3 for access, sensitivity, or workload; do not expand for the first release | Matches the operating specification and gives each participant roughly 25–30 minutes of focused facilitated work. |
+| Currency and fees | **USD; listed price includes ordinary platform/processor fees; applicable sales tax added only where legally required** | Tax-inclusive price after tax advice and nexus configuration | Clearer than passing variable processing fees to participants. Tax collection must remain off until configured and reviewed. |
+| Masterclass date | **Thursday, September 24, 2026, 10:00–11:30 a.m. HST** | Tuesday, September 29 at the same time | 10:00 a.m. HST is 4:00 p.m. Eastern while U.S. daylight saving time is in effect, enabling Hawaiʻi and mainland participation. |
+| Clinic date | **Thursday, October 8, 2026, 10:00 a.m.–12:00 p.m. HST** | Thursday, October 15 at the same time | Leaves two weeks for clinic screening, operational correction, and participant preparation after the masterclass. |
+| Delivery | **Zoom Workplace paid meeting, recording disabled, automated captions enabled and rehearsed** | Google Meet only after equivalent caption, keyboard, dial-in, host-control, and fallback tests pass | Familiar access and appropriate duration; platform selection does not replace observed accessibility testing. |
+| Backup delivery | **A separately rehearsed Zoom meeting plus dial-in and complete materials-first fallback** | Reschedule/refund if the primary and rehearsed backup fail | No untested emergency platform and no public join link. |
+| Payment | **Stripe-hosted Checkout after acceptance; server-verified payment; no card data stored by Aloha AI** | Stripe Payment Links only if capacity, screening, idempotency, refunds, and confirmation can still be enforced server-side | The existing state model requires payment to occur after fit acceptance and before confirmation. |
+| Registration and screening | **First-party Aloha AI forms and state machine; human clinic decision by RN** | Tally or Fillout only after data-processing, retention, accessibility, webhook, export/deletion, and sensitive-field review | Preserves the project’s governed states and prevents clinic narrative from leaking into payment, calendar, or analytics metadata. |
+| Email | **Resend transactional email from a verified Aloha AI domain; marketing consent separate and off by default** | Manual transactional delivery for the pilot if every send is logged, reconciled, and privacy-safe | The repository already contains Resend-aware architecture; production sending still requires domain, suppression, bounce, retry, and failure testing. |
+| Scheduling | **Fixed session inventory on the Aloha AI site; calendar invitation only after confirmation** | Cal.com only after capacity, screening, privacy, timezone, cancellation, and webhook tests | Fixed cohorts do not need open-ended appointment scheduling. |
+| Recording | **No recording, transcript retention, or AI meeting assistant for the first release** | None for release one | Consistent with current participant and clinic records and reduces privacy and consent complexity. |
+
+## Financial model
+
+These are planning figures, not revenue promises.
+
+| Offer | Seats | Price | Gross | Illustrative Stripe domestic-card fee at 2.9% + US$0.30 | Approximate net before taxes, labor, refunds, and other costs |
+|---|---:|---:|---:|---:|---:|
+| Masterclass | 12 | US$295 | US$3,540 | US$106.32 | US$3,433.68 |
+| Public clinic | 4 | US$750 | US$3,000 | US$88.20 | US$2,911.80 |
+| Combined first release | 16 purchases | — | **US$6,540** | **US$194.52** | **US$6,345.48** |
+
+The price decision is based on scope and positioning, not a claim of validated willingness to pay. Current Maven guidance describes live cohort-course prices commonly ranging from US$800 to US$2,500 and emphasizes outcomes, live interaction, and projects. This 90-minute first-release masterclass is narrower and therefore recommended at US$295. Stripe’s current standard U.S. domestic-card price is 2.9% + US$0.30 per successful transaction. Re-verify both sources at activation.
+
+Do not discount the first cohort publicly. If access or audience development requires flexibility, reserve up to two masterclass seats at an RN-approved reduced price or scholarship, without exposing recipients or implying a permanent discount.
+
+## Registration and deadline defaults
+
+### Masterclass
+
+- Registration opens only after all release gates pass and RN authorizes activation.
+- Registration closes Monday, September 21, 2026 at 10:00 a.m. HST, or when 12 paid seats are confirmed.
+- Full refund through Thursday, September 17, 2026 at 10:00 a.m. HST.
+- After that deadline, one screened transfer or one future-session credit may be offered through Tuesday, September 22 at 10:00 a.m. HST.
+- No automatic refund for a late cancellation or no-show, except an access failure attributable to the organizer, an RN-approved emergency exception, or applicable law.
+- Organizer cancellation or a material organizer change: full refund or affirmative acceptance of the alternative.
+- Minimum viable cohort: 5 paid participants. RN may still deliver below five; if RN cancels for low enrollment, participants receive a full refund and optional priority for a later date.
+
+### Clinic
+
+- A participant submits the minimal fit screen before any payment link appears.
+- Fit screen closes Thursday, October 1, 2026 at 10:00 a.m. HST or earlier when four participants are accepted and paid.
+- RN responds to a complete fit screen within two business days.
+- An acceptance-linked checkout hold expires after 48 hours.
+- Full refund through Thursday, October 1, 2026 at 10:00 a.m. HST.
+- A screened transfer may be requested through Monday, October 5 at 10:00 a.m. HST; transfer is never automatic.
+- Decline after payment, organizer cancellation, material organizer change, duplicate charge, or organizer-caused access failure: full refund.
+- Minimum viable clinic: 2 paid participants. RN may convert a single accepted participant to a private 75-minute session only with affirmative agreement and no scope reduction, or provide a full refund.
+
+## Service levels and owners
+
+For the first release, RN should retain substantive authority while operational tasks remain explicitly assigned.
+
+| Function | Accountable owner | Operating role | Initial service level |
+|---|---|---|---|
+| Offer and release approval | RN | final decision-maker | explicit recorded approval required |
+| Facilitation and clinic screening | RN | facilitator and human screener | complete screens answered within 2 business days |
+| Privacy | RN until a named delegate is trained | approves fields, processors, retention, incidents, and data-subject requests | acknowledge privacy request within 2 business days |
+| Accessibility | RN until a named delegate is trained | private access-request response and alternative-format coordination | acknowledge within 1 business day; agree plan before refund deadline |
+| Participant support | Named shared inbox monitored by RN for pilot | logistics, access, payment/refund triage | 1 business day normally; 2 hours during the session-day support window |
+| Refund authority | RN | approves exceptions and all nonautomatic dispositions | initiate approved refund within 2 business days |
+| Technical operations | Named implementation owner before testing | state machine, webhooks, email, calendar, reconciliation, rollback | staffed during sales window and live session |
+| Day-of backup | Named person other than facilitator | support monitoring and contingency execution | online 30 minutes before through 30 minutes after |
+
+RN should not facilitate and simultaneously serve as the only day-of technical/accessibility support person. If no second person is named, reduce the masterclass to eight and the clinic to three, and use a materials-first fallback.
+
+## Recommended retention schedule
+
+The schedule minimizes data while preserving transaction, correction, and incident evidence. It remains subject to tax, accounting, insurance, contract, and applicable-law review before activation.
+
+| Record | Recommended retention | Disposition |
+|---|---|---|
+| Abandoned, incomplete, or expired browser/session state | 24 hours maximum; no narrative | automatic deletion |
+| Rejected clinic description and screen | 30 days after final decline/refund/appeal disposition | delete narrative; retain only minimal aggregate outcome if needed |
+| Accepted clinic intake description | 90 days after delivery and correction close | delete narrative; retain final participant-supplied deliverable only if affirmatively requested |
+| Accessibility-request details | 30 days after session or final resolution | delete details; retain nonidentifying improvement finding where useful |
+| Participant roster and operational messages | 24 months after session | delete or de-identify unless an unresolved dispute or obligation applies |
+| Feedback with identifiers | 12 months | de-identify earlier when feasible; optional quotation permission stored separately |
+| Terms/consent/version acceptance evidence | 24 months after session | delete unless dispute, chargeback, or legal obligation extends the hold |
+| Payment processor IDs, invoices, refunds, and accounting records | 7 years | restrict access; retain no card data or workflow narrative |
+| Security, privacy, payment, or access incident record | 7 years from closure, or longer only on documented legal/insurance advice | segregate and restrict |
+| Marketing contact | Until opt-out or 24 months of inactivity, whichever comes first | suppress immediately on opt-out; do not treat suppression record as marketing permission |
+| Recording/transcript/AI meeting output | None | recording and meeting assistants prohibited |
+
+Any legal hold, dispute, chargeback, or incident pauses deletion only for the affected record class and must be documented.
+
+## Provider configuration recommendation
+
+1. Use the site’s first-party registration, screening, inventory, and state machine.
+2. Use Stripe Checkout for accepted participants; keep tax collection disabled until a tax decision is made.
+3. Use Resend solely for transactional messages from a verified domain. Do not use the retired `new.email` product or enable marketing automation as part of launch.
+4. Use fixed session records rather than a public scheduler.
+5. Use Zoom Workplace with recording, cloud transcript, AI Companion meeting summary, and third-party bots disabled.
+6. Generate an ICS attachment and private join instructions only after confirmation.
+7. Keep sensitive clinic narrative in the screened intake record only; never copy it into Stripe, Resend, Zoom, calendar, analytics, logs, or support subject lines.
+8. Maintain a manual reconciliation export and rollback path for the pilot even if automation passes.
+
+## RN approval card
+
+RN can approve the complete recommendation with one statement:
+
+> I approve Issue 01 offer decision packet v1.0 as the operating target for test-mode implementation. This approval does not authorize public registration, payment, sending, booking, merge, or release.
+
+Or revise only the consequential fields below:
+
+| Field | Recommended | RN decision |
+|---|---|---|
+| Masterclass title | Before You Automate Intake: A Decision Desk Masterclass | pending |
+| Masterclass price/capacity | US$295 / 12 | pending |
+| Masterclass date/time | 2026-09-24, 10:00–11:30 a.m. HST | pending |
+| Clinic title | Decision Desk Clinic: One Workflow, One Defensible Next Move | pending |
+| Clinic price/capacity | US$750 / 4 | pending |
+| Clinic date/time | 2026-10-08, 10:00 a.m.–12:00 p.m. HST | pending |
+| Delivery | Zoom Workplace; no recording | pending |
+| Payment | Stripe Checkout after acceptance | pending |
+| Registration/state | first-party Aloha AI implementation | pending |
+| Transactional email | Resend / verified Aloha AI domain | pending |
+| Retention | schedule in this packet | pending |
+| Accountable owner | RN | pending |
+| Day-of support owner | must be named before rehearsal | pending |
+| Technical operations owner | must be named before testing | pending |
+
+## Implementation boundary
+
+Approval of this packet authorizes only test-mode implementation if RN says so explicitly. Public display of prices/dates, real data collection, production credentials, payment, booking, email, calendar creation, participant acceptance, merge, and release remain separately gated by the 24-scenario commercial QA matrix, rehearsals, observed accessibility/responsive testing, required legal/privacy/tax dispositions, and RN’s final release approval.
