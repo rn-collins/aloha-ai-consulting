@@ -16,8 +16,8 @@ Launch one deliberately small, live masterclass cohort followed two weeks later 
 | Decision | Recommended default | Acceptable alternative | Why |
 |---|---|---|---|
 | Free editorial title | **Decision Desk 01: Before You Automate Intake** | **The Intake Decision Desk** | Names the decision and avoids a product-endorsement or legal-clearance claim. |
-| Masterclass title | **Before You Automate Intake: A Decision Desk Masterclass** | **Decision Desk Live: AI-Assisted Intake** | Outcome-led, specific, and distinct from a webinar, CLE, certification, or generic AI course. |
-| Clinic title | **Decision Desk Clinic: One Workflow, One Defensible Next Move** | **AI Opportunity Clinic: Intake Edition** | Connects the clinic to the governed method and states its bounded output. |
+| Masterclass title | **Before You Use AI for Client Intake** | **Decision Desk Live: AI-Assisted Intake** | Outcome-led, specific, and distinct from a webinar, CLE, certification, or generic AI course. |
+| Clinic title | **Improve Your Client Intake Workflow** | **AI Opportunity Clinic: Intake Edition** | Connects the clinic to the governed method and states its bounded output. |
 | Masterclass price | **US$295 per person** | Pilot floor US$225; standard next-cohort price US$395 after observed demand and feedback | The first cohort is a 90-minute live working session with a full participant package, not a passive webinar. The pilot price is intentionally below multi-session premium cohort-course pricing while preserving expert positioning. |
 | Masterclass capacity | **12 paid participants** | 8 for a higher-touch pilot; never more than 16 without a second facilitator or revised exercises | Twelve supports individual work and debrief without creating a delivery or accessibility burden that has not been rehearsed. |
 | Clinic price | **US$750 per person** | US$2,800 private team clinic for up to four screened colleagues from one organization | Four public seats yield US$3,000 gross while covering screening, two-hour facilitation, four written records, and one correction cycle. Do not sell the public clinic below US$600 per person. |
@@ -128,10 +128,10 @@ Or revise only the consequential fields below:
 
 | Field | Recommended | RN decision |
 |---|---|---|
-| Masterclass title | Before You Automate Intake: A Decision Desk Masterclass | pending |
+| Masterclass title | Before You Use AI for Client Intake | pending |
 | Masterclass price/capacity | US$295 / 12 | pending |
 | Masterclass date/time | 2026-09-24, 10:00–11:30 a.m. HST | pending |
-| Clinic title | Decision Desk Clinic: One Workflow, One Defensible Next Move | pending |
+| Clinic title | Improve Your Client Intake Workflow | pending |
 | Clinic price/capacity | US$750 / 4 | pending |
 | Clinic date/time | 2026-10-08, 10:00 a.m.–12:00 p.m. HST | pending |
 | Delivery | Zoom Workplace; no recording | pending |
