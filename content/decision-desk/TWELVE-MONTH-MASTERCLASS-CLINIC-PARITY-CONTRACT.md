@@ -8,7 +8,7 @@ Applies to: Decision Desk Issues 01–12
 
 ## Owner direction
 
-Every month begins with one free Decision Desk masterclass in week 1 and continues with the same accompanying US$295-per-participant, bounded clinic in every remaining week: three clinic cohorts in a four-week month or four clinic cohorts in a five-week month. Issues 02–12 must receive the same depth, diligence, evidentiary discipline, operational design, participant protection, and release scrutiny applied to Issue 01.
+Every month begins with one free Decision Desk masterclass in week 1 and continues with the same US$295-per-participant group clinic in weeks 2–5 only: three cohorts in a four-week month or four in a five-week month. A separate US$750 private 1:1 Decision Review may be scheduled at any mutually agreed time and is not counted as a cohort. The US$2,800 private team clinic for up to four screened colleagues remains distinct. Issues 02–12 must receive the same depth, diligence, evidentiary discipline, operational design, participant protection, and release scrutiny applied to Issue 01.
 
 The annual program is not satisfied by eleven topic outlines, renamed Issue 01 templates, generic clinic copy, or a calendar. Each month must become its own coherent article, teaching, clinic, commercial, visual, accessibility, and operational release unit.
 
@@ -112,7 +112,7 @@ The clinic package must include:
 
 ### G. Commercial and communications journey
 
-- distinct article, masterclass, clinic, and advisory roles;
+- distinct article, free masterclass, US$295 group clinic, US$750 private 1:1 Decision Review, US$2,800 private team clinic, and broader advisory roles;
 - month-specific titles, dates, prices, capacity, minimum viable cohort, scholarship policy, delivery method, inclusions, exclusions, and value/unit-economics review;
 - pre-purchase terms, privacy, accessibility-request, support, cancellation, and refund surfaces;
 - data-minimizing masterclass eligibility and clinic fit-screen paths;

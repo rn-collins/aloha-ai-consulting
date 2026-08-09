@@ -19,18 +19,20 @@ Launch one free, deliberately small live masterclass in week 1, followed by the 
 | Masterclass title | **Before You Use AI for Client Intake** | **Decision Desk Live: AI-Assisted Intake** | Outcome-led, specific, and distinct from a webinar, CLE, certification, or generic AI course. |
 | Clinic title | **Improve Your Client Intake Workflow** | **AI Opportunity Clinic: Intake Edition** | Connects the clinic to the governed method and states its bounded output. |
 | Masterclass price | **Free (US$0)** | No paid tier for the monthly masterclass | The masterclass is the free week-1 teaching and audience-development layer. It uses fictional material and does not include individualized workflow application. |
-| Masterclass capacity | **12 paid participants** | 8 for a higher-touch pilot; never more than 16 without a second facilitator or revised exercises | Twelve supports individual work and debrief without creating a delivery or accessibility burden that has not been rehearsed. |
+| Masterclass capacity | **12 registered participants** | 8 for a higher-touch pilot; never more than 16 without a second facilitator or revised exercises | Twelve supports individual work and debrief without creating a delivery or accessibility burden that has not been rehearsed. |
 | Clinic price | **US$295 per person, per cohort** | Any variation requires explicit RN approval | Each remaining week carries the same screened clinic for a separate cohort. At four seats, one full cohort yields US$1,180 gross. |
 | Clinic capacity | **4 screened participants maximum** | Reduce to 3 for access, sensitivity, or workload; do not expand for the first release | Matches the operating specification and gives each participant roughly 25–30 minutes of focused facilitated work. |
+| Private 1:1 Decision Review | **US$750; by appointment at any mutually available time** | Reschedule by agreement | Distinct from the recurring group clinic; separate intake, scope, payment, privacy, scheduling, and follow-up records required. |
+| Private team clinic | **US$2,800 for up to four screened colleagues** | Timing by agreement | Separate organizational tier; not the US$750 1:1 or a weekly public cohort. |
 | Currency and fees | **USD; listed price includes ordinary platform/processor fees; applicable sales tax added only where legally required** | Tax-inclusive price after tax advice and nexus configuration | Clearer than passing variable processing fees to participants. Tax collection must remain off until configured and reviewed. |
-| Masterclass date | **Thursday, September 24, 2026, 10:00–11:30 a.m. HST** | Tuesday, September 29 at the same time | 10:00 a.m. HST is 4:00 p.m. Eastern while U.S. daylight saving time is in effect, enabling Hawaiʻi and mainland participation. |
+| Masterclass timing | **Week 1 only; exact date/time pending monthly** | None outside week 1 | Separates the free teaching event from clinic weeks. |
 | Clinic dates | **Every remaining week of the month; exact dates/times pending** | Three cohorts in a four-week month; four in a five-week month | Each cohort uses the same governed clinic scope and separate operational records. |
 | Delivery | **Zoom Workplace paid meeting, recording disabled, automated captions enabled and rehearsed** | Google Meet only after equivalent caption, keyboard, dial-in, host-control, and fallback tests pass | Familiar access and appropriate duration; platform selection does not replace observed accessibility testing. |
 | Backup delivery | **A separately rehearsed Zoom meeting plus dial-in and complete materials-first fallback** | Reschedule/refund if the primary and rehearsed backup fail | No untested emergency platform and no public join link. |
 | Payment | **Stripe-hosted Checkout after acceptance; server-verified payment; no card data stored by Aloha AI** | Stripe Payment Links only if capacity, screening, idempotency, refunds, and confirmation can still be enforced server-side | The existing state model requires payment to occur after fit acceptance and before confirmation. |
 | Registration and screening | **First-party Aloha AI forms and state machine; human clinic decision by RN** | Tally or Fillout only after data-processing, retention, accessibility, webhook, export/deletion, and sensitive-field review | Preserves the project’s governed states and prevents clinic narrative from leaking into payment, calendar, or analytics metadata. |
 | Email | **Resend transactional email from a verified Aloha AI domain; marketing consent separate and off by default** | Manual transactional delivery for the pilot if every send is logged, reconciled, and privacy-safe | The repository already contains Resend-aware architecture; production sending still requires domain, suppression, bounce, retry, and failure testing. |
-| Scheduling | **Fixed session inventory on the Aloha AI site; calendar invitation only after confirmation** | Cal.com only after capacity, screening, privacy, timezone, cancellation, and webhook tests | Fixed cohorts do not need open-ended appointment scheduling. |
+| Scheduling | **Fixed inventory for week-1 masterclasses and weeks-2–5 group clinics; appointment inventory for private 1:1 reviews** | Cal.com only after capacity, screening, privacy, timezone, cancellation, and webhook tests | Recurring sessions use fixed cohorts; the US$750 private 1:1 may occur at any mutually available time. |
 | Recording | **No recording, transcript retention, or AI meeting assistant for the first release** | None for release one | Consistent with current participant and clinic records and reduces privacy and consent complexity. |
 
 ## Financial model
@@ -43,7 +45,8 @@ These are planning figures, not revenue promises.
 | One public clinic cohort | 4 | US$295 | US$1,180 | US$35.42 | US$1,144.58 |
 | Four-week month clinic total | 12 across 3 cohorts | US$295 | US$3,540 | US$106.26 | US$3,433.74 |
 | Five-week month clinic total | 16 across 4 cohorts | US$295 | US$4,720 | US$141.68 | US$4,578.32 |
-| Combined first release | 16 purchases | — | **US$6,540** | **US$194.52** | **US$6,345.48** |
+| One private 1:1 Decision Review | 1 | US$750 | US$750 | US$22.05 | US$727.95 |
+| One private team clinic | up to 4 colleagues | US$2,800 | US$2,800 | US$81.50 | US$2,718.50 |
 
 The clinic price is RN’s owner-directed planning price, not a claim of validated willingness to pay. The masterclass is free. The fee illustrations use the previously recorded Stripe domestic-card assumption of 2.9% + US$0.30 per successful transaction; re-verify provider pricing at activation.
 
@@ -53,24 +56,23 @@ The masterclass is free. If clinic access requires flexibility, RN may approve a
 
 ### Masterclass
 
-- Registration opens only after all release gates pass and RN authorizes activation.
-- Registration closes Monday, September 21, 2026 at 10:00 a.m. HST, or when 12 paid seats are confirmed.
-- Full refund through Thursday, September 17, 2026 at 10:00 a.m. HST.
-- After that deadline, one screened transfer or one future-session credit may be offered through Tuesday, September 22 at 10:00 a.m. HST.
-- No automatic refund for a late cancellation or no-show, except an access failure attributable to the organizer, an RN-approved emergency exception, or applicable law.
-- Organizer cancellation or a material organizer change: full refund or affirmative acceptance of the alternative.
-- Minimum viable cohort: 5 paid participants. RN may still deliver below five; if RN cancels for low enrollment, participants receive a full refund and optional priority for a later date.
+- Runs only in week 1 of each month.
+- Opens only after release gates pass and RN authorizes activation; closes at the approved deadline or capacity.
+- Because it is free, no purchase, paid-seat, payment-refund, or low-enrollment refund rule applies.
+- Organizer cancellation or material change requires prompt notice and a clear rescheduling or withdrawal path.
 
-### Clinic
+### Group clinic
 
-- A participant submits the minimal fit screen before any payment link appears.
-- Fit screen closes Monday, September 28, 2026 at 10:00 a.m. HST or earlier when the review queue can no longer produce four supported acceptances.
-- RN responds to a complete fit screen within two business days, no later than Wednesday, September 30 for an on-time submission.
-- An acceptance-linked checkout hold expires after 48 hours and no later than Friday, October 2 at 10:00 a.m. HST for this pilot.
-- Full refund through Saturday, October 3, 2026 at 10:00 a.m. HST. Checkout must display the participant's exact deadline before payment; no participant may receive less than 24 hours after confirmed payment to cancel for a full refund.
-- A screened transfer may be requested through Monday, October 5 at 10:00 a.m. HST; transfer is never automatic.
-- Decline after payment, organizer cancellation, material organizer change, duplicate charge, or organizer-caused access failure: full refund.
-- Minimum viable clinic: 2 paid participants. RN may convert a single accepted participant to a private 75-minute session only with affirmative agreement and no scope reduction, or provide a full refund.
+- Runs only in weeks 2–5: once in every week remaining after that month’s masterclass.
+- Each cohort has separate fit screening, checkout, refund, capacity, confirmation, attendance, follow-up, and reconciliation records.
+- Decline after payment, organizer cancellation, material change, duplicate charge, or organizer-caused access failure: full refund.
+- A single accepted participant may move only by affirmative agreement to the separately scoped US$750 private 1:1 Decision Review, with the US$295 payment credited or refunded as applicable; otherwise provide a full refund.
+
+### Private services
+
+- The US$750 private 1:1 Decision Review may be booked at any mutually available time, including week 1 or weeks 2–5; it is not a masterclass or group-clinic cohort.
+- The US$2,800 private team clinic may be scheduled by agreement after screening; it is not the US$750 1:1 tier.
+- Each private engagement requires separate scope, fit, payment, confirmation, cancellation/refund, confidentiality, privacy, deliverable, follow-up, and reconciliation records.
 
 ## Service levels and owners
 
@@ -135,7 +137,9 @@ Or revise only the consequential fields below:
 | Masterclass date/time | week 1; exact date/time pending | pending |
 | Clinic title | Improve Your Client Intake Workflow | pending |
 | Clinic price/capacity | US$295 per participant / 4 | owner-directed planning decision; activation pending |
-| Clinic dates/times | every remaining week; exact dates/times pending | pending |
+| Clinic dates/times | weeks 2–5 only; one cohort per remaining week | owner-directed; activation pending |
+| Private 1:1 Decision Review | US$750; anytime by mutually agreed appointment | owner-directed; activation pending |
+| Private team clinic | US$2,800; up to four screened colleagues; by agreement | retained separate tier; activation pending |
 | Delivery | Zoom Workplace; no recording | pending |
 | Payment | Stripe Checkout after acceptance | pending |
 | Registration/state | first-party Aloha AI implementation | pending |

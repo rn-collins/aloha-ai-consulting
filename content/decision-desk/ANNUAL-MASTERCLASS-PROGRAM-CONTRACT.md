@@ -21,9 +21,11 @@ A monthly slot and its weekly clinic repetitions are production targets, not per
 ## Monthly delivery cadence
 
 - Week 1: one free monthly masterclass teaching that month’s governed question and decision instrument.
-- Every remaining week: one delivery of the same paid, bounded clinic applying that instrument to one nonconfidential workflow per participant.
+- Weeks 2–5 only: one delivery of the same US$295-per-participant group clinic in every week remaining after the masterclass, applying that instrument to one nonconfidential workflow per participant.
 - Four-week month: three clinic cohorts.
 - Five-week month: four clinic cohorts.
+- The US$750 private 1:1 Decision Review is separate and may be scheduled at any mutually agreed time; it is not counted as a monthly cohort.
+- The US$2,800 private team clinic for up to four screened colleagues remains a separate organizational tier.
 - Clinic repetitions are separate cohorts, not new clinic products. The governed scope, instrument, eligibility, exclusions, and core materials remain the same throughout the month unless evidence changes or observed defects require a controlled correction.
 - Each cohort must maintain its own capacity, screening, payment, confirmation, attendance, support, incident, follow-up, refund, and reconciliation records.
 - A missed or unsafe clinic week may be cancelled or left dark; it may not be compressed into another cohort or used to exceed the approved capacity.

@@ -3,7 +3,8 @@
 Status: recommended internal target calendar; dates and offers inactive pending RN approval and month-specific release gates  
 Timezone: Hawaiʻi Standard Time (UTC−10; no daylight-saving change)  
 Masterclass delivery rule: one free session in week 1 of each month  
-Clinic delivery rule: the same paid clinic in every remaining week—three cohorts in a four-week month or four cohorts in a five-week month  
+Group-clinic delivery rule: the same US$295-per-participant clinic in weeks 2–5 only—three cohorts in a four-week month or four cohorts in a five-week month  
+Private 1:1 rule: the US$750 Decision Review may be scheduled at any mutually agreed time and is not counted as a monthly cohort  
 Exact weekdays and times: inactive planning decisions pending RN approval and month-specific release gates
 
 ## Calendar
@@ -63,7 +64,7 @@ Until RN changes them:
 - paid clinic sold by cohort, with three or four cohorts per month according to the number of remaining weeks;
 - 90 minutes live for the masterclass; clinic duration remains month-specific and must be approved before release;
 - default 12 seats;
-- the masterclass price is US$0 and the standard clinic price is US$295 per participant per cohort; any variation requires explicit RN approval and a month-specific value review;
+- the masterclass is US$0; the group clinic is US$295 per participant; the private 1:1 Decision Review is US$750 by appointment; the private team clinic is US$2,800 for up to four screened colleagues; variations require explicit RN approval;
 - supplied fictional/synthetic exercises only;
 - no recording for first delivery of a new issue;
 - fixed session rather than public scheduling;
