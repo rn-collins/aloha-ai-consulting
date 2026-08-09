@@ -17,18 +17,31 @@
     form.addEventListener("submit", (event) => {
       event.preventDefault();
       const boxes = [...form.querySelectorAll('input[type="checkbox"]')];
-      const missing = boxes.filter((box) => !box.checked).length;
+      const missingBoxes = boxes.filter((box) => !box.checked);
+      boxes.forEach((box) => {
+        if (box.checked) box.removeAttribute("aria-invalid");
+        else box.setAttribute("aria-invalid", "true");
+      });
+      const missing = missingBoxes.length;
       if (missing) {
-        render(result, "State · needs attention", "The synthetic fit check is incomplete.", `${missing} required condition${missing === 1 ? "" : "s"} remain unchecked. Nothing was submitted, stored, sent, booked, or charged.`);
+        render(result, "State · needs attention", "The synthetic fit check is incomplete.", `${missing} required condition${missing === 1 ? "" : "s"} remain unchecked. Required unchecked conditions are now marked invalid. Nothing was submitted, stored, sent, booked, or charged.`);
         return;
       }
+      boxes.forEach((box) => box.removeAttribute("aria-invalid"));
       if (form.dataset.journey === "clinic") {
         render(result, "State · screening preview", "The synthetic case could proceed to human review.", "This is not acceptance. A live reviewer—not an automated score—would decide accept, clarify, defer, or decline before payment.");
       } else {
         render(result, "State · eligible preview", "The synthetic participant could proceed to session selection.", "Registration remains inactive. No session, price, inventory, checkout, confirmation, or participant record exists.");
       }
     });
-    form.addEventListener("reset", () => requestAnimationFrame(() => { result.innerHTML = initial; result.focus(); }));
+    form.addEventListener("change", (event) => {
+      if (event.target.matches('input[type="checkbox"]') && event.target.checked) event.target.removeAttribute("aria-invalid");
+    });
+    form.addEventListener("reset", () => requestAnimationFrame(() => {
+      form.querySelectorAll('input[aria-invalid]').forEach((box) => box.removeAttribute("aria-invalid"));
+      result.innerHTML = initial;
+      result.focus();
+    }));
   });
   document.querySelectorAll("[data-preview-state]").forEach((button) => {
     button.addEventListener("click", () => {
