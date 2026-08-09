@@ -8,7 +8,7 @@ Placeholders in braces must be resolved before use. Every message must use the s
 
 Subject: Confirmed: Decision Desk 01 masterclass — {date and timezone}
 
-You are confirmed for “The Decision Before the Tool,” a 90-minute Aloha AI Decision Desk masterclass.
+You are confirmed for “{approved masterclass title},” a 90-minute Aloha AI Decision Desk masterclass.
 
 Date/time: {date, start–end, timezone}  
 Delivery: {platform/location}  
@@ -77,7 +77,7 @@ State exactly what changed, the effective date, participant options, refund/resc
 Before any message is activated:
 
 - [ ] enrollment and consent source verified;
-- [ ] placeholders resolved;
+- [ ] approved title and all placeholders resolved;
 - [ ] links and timezone tested;
 - [ ] access and support channels staffed;
 - [ ] privacy and cancellation terms approved;
