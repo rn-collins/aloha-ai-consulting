@@ -21,7 +21,7 @@ No purchase creates a recurring subscription. No participant must buy the clinic
 
 ## Canonical journey
 
-discover → understand → compare offers → check fit → select session → register → screen → pay → confirm → prepare → attend → receive materials → correct/clarify → close → optionally inquire
+discover → understand → compare offers → check fit → select session → register → masterclass eligibility validation or clinic human screen → pay → confirm → prepare → attend → receive materials → correct/clarify → close → optionally inquire
 
 Every transition requires a durable event ID, timestamp, offer/version, actor, outcome, and failure reason. Sensitive narrative must never be copied into payment, analytics, calendar, or email metadata.
 
