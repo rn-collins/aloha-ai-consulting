@@ -62,7 +62,7 @@ Until RN changes them:
 
 - free monthly masterclass rather than subscription;
 - paid clinic sold by cohort, with three or four cohorts per month according to the number of remaining weeks;
-- 90 minutes live for the masterclass; clinic duration remains month-specific and must be approved before release;
+- 60 minutes live for the masterclass; clinic duration remains month-specific and must be approved before release;
 - default 12 seats;
 - the masterclass is US$0; the group clinic is US$295 per participant; the private 1:1 Decision Review is US$750 by appointment; the private team clinic is US$2,800 for up to four screened colleagues; variations require explicit RN approval;
 - supplied fictional/synthetic exercises only;

@@ -61,7 +61,7 @@ Acceptance criteria:
 
 External vendor silence expires as a dependency on the response deadline recorded in the production tracker. The fallback is the no-product finding; silence cannot keep the flagship open indefinitely.
 
-### 5. Ninety-minute masterclass
+### 5. Sixty-minute masterclass
 
 Learning outcome: participants can redesign an intake workflow, determine what evidence is authoritative, evaluate an exact AI proposal, apply the Evaluation Card, and reach a bounded disposition without mistaking marketing claims or model output for proof.
 
@@ -69,13 +69,15 @@ Run of show:
 
 | Time | Segment | Participant output |
 |---|---|---|
-| 0–10 min | The intake decision and why summarization is not the first question | Initial decision statement |
-| 10–25 min | Prospective-client duties, data boundaries, and jurisdiction | Risk-and-authority map |
-| 25–40 min | Workflow before product: source record, conflict, urgency, routing | Redrawn intake flow |
-| 40–55 min | Product/configuration evidence and the no-product finding | Diligence gap list |
-| 55–72 min | Synthetic case exercise using the frozen benchmark method | Scored Evaluation Card |
-| 72–82 min | Human review, automation bias, accessibility, correction, and stop rules | Safeguard set |
-| 82–90 min | Disposition and next-action record | Bounded decision |
+| 0–7 min | Private opening view; bound the intake decision | Initial decision statement |
+| 7–16 min | Prospective-client duties, data boundaries, and jurisdiction | Risk-and-authority map |
+| 16–28 min | Actual workflow, exceptions, handoffs, and authoritative source | Redrawn intake flow |
+| 28–37 min | Product/configuration evidence and no-product finding | Diligence gaps |
+| 37–49 min | Synthetic case and disconfirming-evidence exercise | Scored Evaluation Card |
+| 49–57 min | Human review, dissent, accessibility, if–then action, and stop rules | Safeguard/maintenance set |
+| 57–60 min | Disposition, owner, and review trigger | Bounded decision |
+
+The masterclass follows the participatory standard. Participants do structured work on supplied fictional facts; RN teaches, challenges, and synthesizes rather than privately delivering an answer.
 
 Required teaching assets:
 

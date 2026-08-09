@@ -4,7 +4,7 @@ Version 1.0 · draft participant communication
 
 ## What this session is
 
-This 90-minute masterclass uses one wholly fictional law-firm intake case to teach a repeatable method for deciding whether an exact AI-assisted workflow is supported by evidence.
+This 60-minute masterclass uses one wholly fictional law-firm intake case to teach a repeatable method for deciding whether an exact AI-assisted workflow is supported by evidence.
 
 You will leave with a bounded decision record, not a vendor recommendation, legal advice, certification, CLE credit, procurement approval, or permission to use live data.
 
@@ -32,6 +32,8 @@ Estimated preparation time: 20–30 minutes. Preparation is helpful but not a co
 The completed example and answer key are released only during or after debrief.
 
 ## Participation choices
+
+This is a working session, not a passive webinar. You privately record an opening view, map supplied fictional work, test evidence, revise the answer, and assign an owner and review trigger. RN supplies structure and challenge; you do the reasoning.
 
 You may work individually instead of in a breakout, respond in writing instead of speaking, keep your camera off, take breaks, and use the untimed workbook path. No activity depends on color, handwriting, dragging, or public disclosure.
 

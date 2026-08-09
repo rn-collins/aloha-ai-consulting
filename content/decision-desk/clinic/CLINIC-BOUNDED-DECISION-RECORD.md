@@ -29,6 +29,10 @@ Version: 0.1
 - Retention/deletion:
 - Existing correction path:
 - Existing stop authority:
+- Workarounds/exceptions:
+- Incentives/pressures:
+- Knowledge held by other roles:
+- Difference between written and actual practice:
 
 ## 3. Proposed AI-assisted step
 
@@ -67,7 +71,15 @@ Keep law, policy, vendor statements, technical documentation, observed results, 
 |---|---|---|---|---|
 |  |  |  |  |  |
 
-## 7. Disposition
+## 7. Perspective and dissent log
+
+- Private opening view:
+- Missing role/perspective:
+- Disconfirming evidence sought:
+- Material disagreement/minority view:
+- How participant input changed the record:
+
+## 8. Disposition
 
 Select one:
 
@@ -84,13 +96,20 @@ Evidence still missing:
 
 What this disposition does **not** authorize:
 
-## 8. Next actions
+## 9. Implementation and maintenance
 
-| Action | Owner | Due date | Evidence of completion |
+| Action | Owner | Due date | Observable evidence of completion |
 |---|---|---|---|
 |  |  |  |  |
 
-## 9. Participant confirmation and correction
+If–then plan: If `[trigger]`, `[owner]` will `[action]`, record it in `[location]`, and escalate to `[role]` within `[time]`.
+
+- Adoption/use owner:
+- Review date or change trigger:
+- Defect/exception and affected-person-feedback route:
+- Condition that reopens the decision:
+
+## 10. Participant confirmation and correction
 
 - I understand the boundary and disposition: yes / needs clarification
 - I identified any factual error before finalization: yes / no / none identified

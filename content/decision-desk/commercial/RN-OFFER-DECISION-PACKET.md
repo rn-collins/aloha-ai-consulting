@@ -19,11 +19,12 @@ Launch one free, deliberately small live masterclass in week 1, followed by the 
 | Masterclass title | **Before You Use AI for Client Intake** | **Decision Desk Live: AI-Assisted Intake** | Outcome-led, specific, and distinct from a webinar, CLE, certification, or generic AI course. |
 | Clinic title | **Improve Your Client Intake Workflow** | **AI Opportunity Clinic: Intake Edition** | Connects the clinic to the governed method and states its bounded output. |
 | Masterclass price | **Free (US$0)** | No paid tier for the monthly masterclass | The masterclass is the free week-1 teaching and audience-development layer. It uses fictional material and does not include individualized workflow application. |
+| Masterclass duration | **60 minutes** | Redesign/rehearsal required to vary | Participatory teaching on fictional facts. |
 | Masterclass capacity | **12 registered participants** | 8 for a higher-touch pilot; never more than 16 without a second facilitator or revised exercises | Twelve supports individual work and debrief without creating a delivery or accessibility burden that has not been rehearsed. |
 | Clinic price | **US$295 per person, per cohort** | Any variation requires explicit RN approval | Each remaining week carries the same screened clinic for a separate cohort. At four seats, one full cohort yields US$1,180 gross. |
 | Clinic capacity | **4 screened participants maximum** | Reduce to 3 for access, sensitivity, or workload; do not expand for the first release | Matches the operating specification and gives each participant roughly 25–30 minutes of focused facilitated work. |
-| Private 1:1 Decision Review | **US$750; by appointment at any mutually available time** | Reschedule by agreement | Distinct from the recurring group clinic; separate intake, scope, payment, privacy, scheduling, and follow-up records required. |
-| Private team clinic | **US$2,800 for up to four screened colleagues** | Timing by agreement | Separate organizational tier; not the US$750 1:1 or a weekly public cohort. |
+| Private 1:1 Decision Review | **US$750; 90 minutes; by appointment at any mutually available time** | Reschedule by agreement | Distinct from the recurring group clinic; separate intake, scope, payment, privacy, scheduling, and follow-up records required. |
+| Private Team Decision Lab | **US$2,800 for up to four screened colleagues** | Timing by agreement | Separate organizational tier; not the US$750 1:1 or a weekly public cohort. |
 | Currency and fees | **USD; listed price includes ordinary platform/processor fees; applicable sales tax added only where legally required** | Tax-inclusive price after tax advice and nexus configuration | Clearer than passing variable processing fees to participants. Tax collection must remain off until configured and reviewed. |
 | Masterclass timing | **Week 1 only; exact date/time pending monthly** | None outside week 1 | Separates the free teaching event from clinic weeks. |
 | Clinic dates | **Every remaining week of the month; exact dates/times pending** | Three cohorts in a four-week month; four in a five-week month | Each cohort uses the same governed clinic scope and separate operational records. |
@@ -34,6 +35,10 @@ Launch one free, deliberately small live masterclass in week 1, followed by the 
 | Email | **Resend transactional email from a verified Aloha AI domain; marketing consent separate and off by default** | Manual transactional delivery for the pilot if every send is logged, reconciled, and privacy-safe | The repository already contains Resend-aware architecture; production sending still requires domain, suppression, bounce, retry, and failure testing. |
 | Scheduling | **Fixed inventory for week-1 masterclasses and weeks-2–5 group clinics; appointment inventory for private 1:1 reviews** | Cal.com only after capacity, screening, privacy, timezone, cancellation, and webhook tests | Recurring sessions use fixed cohorts; the US$750 private 1:1 may occur at any mutually available time. |
 | Recording | **No recording, transcript retention, or AI meeting assistant for the first release** | None for release one | Consistent with current participant and clinic records and reduces privacy and consent complexity. |
+
+## Method and value boundary
+
+Participants do not buy an answer made privately by RN. They supply tacit/distributed knowledge, map actual work, test assumptions, make or route decisions within authority, and own implementation/maintenance. RN supplies research discipline, facilitation, challenge, and synthesis. The group clinic produces a participant decision/implementation record; the private review adds confidential preparation and application; the Team Decision Lab adds customized collective sensemaking. These distinctions—not minutes alone—support the ladder.
 
 ## Financial model
 
@@ -46,7 +51,7 @@ These are planning figures, not revenue promises.
 | Four-week month clinic total | 12 across 3 cohorts | US$295 | US$3,540 | US$106.26 | US$3,433.74 |
 | Five-week month clinic total | 16 across 4 cohorts | US$295 | US$4,720 | US$141.68 | US$4,578.32 |
 | One private 1:1 Decision Review | 1 | US$750 | US$750 | US$22.05 | US$727.95 |
-| One private team clinic | up to 4 colleagues | US$2,800 | US$2,800 | US$81.50 | US$2,718.50 |
+| One Private Team Decision Lab | up to 4 colleagues | US$2,800 | US$2,800 | US$81.50 | US$2,718.50 |
 
 The clinic price is RN’s owner-directed planning price, not a claim of validated willingness to pay. The masterclass is free. The fee illustrations use the previously recorded Stripe domestic-card assumption of 2.9% + US$0.30 per successful transaction; re-verify provider pricing at activation.
 
@@ -71,7 +76,7 @@ The masterclass is free. If clinic access requires flexibility, RN may approve a
 ### Private services
 
 - The US$750 private 1:1 Decision Review may be booked at any mutually available time, including week 1 or weeks 2–5; it is not a masterclass or group-clinic cohort.
-- The US$2,800 private team clinic may be scheduled by agreement after screening; it is not the US$750 1:1 tier.
+- The US$2,800 Private Team Decision Lab may be scheduled by agreement after screening; it is not the US$750 1:1 tier.
 - Each private engagement requires separate scope, fit, payment, confirmation, cancellation/refund, confidentiality, privacy, deliverable, follow-up, and reconciliation records.
 
 ## Service levels and owners
@@ -139,7 +144,7 @@ Or revise only the consequential fields below:
 | Clinic price/capacity | US$295 per participant / 4 | owner-directed planning decision; activation pending |
 | Clinic dates/times | weeks 2–5 only; one cohort per remaining week | owner-directed; activation pending |
 | Private 1:1 Decision Review | US$750; anytime by mutually agreed appointment | owner-directed; activation pending |
-| Private team clinic | US$2,800; up to four screened colleagues; by agreement | retained separate tier; activation pending |
+| Private Team Decision Lab | US$2,800; up to four screened colleagues; by agreement | retained separate tier; activation pending |
 | Delivery | Zoom Workplace; no recording | pending |
 | Payment | Stripe Checkout after acceptance | pending |
 | Registration/state | first-party Aloha AI implementation | pending |

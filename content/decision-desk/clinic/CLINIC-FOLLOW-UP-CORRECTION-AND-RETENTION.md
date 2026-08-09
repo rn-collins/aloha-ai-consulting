@@ -12,7 +12,9 @@ Within the published service level, provide:
 3. evidence gaps and unverified assumptions;
 4. safeguards and stop conditions;
 5. assigned next actions and review date;
-6. the generic Decision Desk resources promised at purchase.
+6. the generic Decision Desk resources promised at purchase;
+7. participant-authored if–then action, owner, stop authority, and review trigger;
+8. material dissent or unresolved alternative.
 
 Do not include facilitator-only notes, other participants’ information, sensitive details that were interrupted, sealed answers, or unsupported conclusions.
 
@@ -25,6 +27,10 @@ Do not include facilitator-only notes, other participants’ information, sensit
 - Record what changed, why, who approved it, and the revision date.
 - If an error could affect other participant materials, assess and correct those materials without revealing the reporting participant.
 - A participant may request clarification without purchasing advisory services.
+
+## Implementation and maintenance follow-up
+
+Ask whether the named owner accepted the record, the first action occurred, any stop/defect appeared, and the planned review happened. Nonresponse is unknown, not success. Attendance, satisfaction, confidence, and worksheet completion are not adoption or sustainment. A defect, exception, access barrier, changed authority/configuration, or affected-person harm must route through the recorded stop/review mechanism and may reopen the decision.
 
 ## Follow-up boundary
 

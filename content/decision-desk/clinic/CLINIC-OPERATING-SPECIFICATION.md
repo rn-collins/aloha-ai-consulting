@@ -11,6 +11,10 @@ The clinic is a facilitated application of the Decision Desk method to one nonco
 
 It is educational and operational. It does not provide legal advice, create an attorney-client relationship, certify a product, approve procurement, clear a jurisdiction, or authorize live sensitive-data processing.
 
+## Participatory method
+
+RN supplies structure, evidence discipline, challenge, psychological-safety controls, and synthesis. Participants supply contextual knowledge, map actual work, surface exceptions and dependencies, make or route decisions within their authority, and own implementation and maintenance. Private reflection precedes group discussion; dissent remains recorded; group confidentiality cannot be guaranteed.
+
 ## Delivery boundary
 
 - Format: one two-hour facilitated small-group clinic.
@@ -54,13 +58,13 @@ The facilitator may pause or stop any case when new information triggers an excl
 
 | Time | Activity | Record produced |
 |---|---|---|
-| Before session | Fit and sensitivity screen | accept, clarify, defer, or decline |
-| 0–15 min | Bound the decision and restate limits | decision statement |
-| 15–40 min | Map workflow and authoritative record | current-state map |
-| 40–65 min | Identify people, data, harms, and dependencies | risk/evidence map |
-| 65–90 min | Evaluate proposal and evidence quality | diligence gaps |
-| 90–110 min | Select disposition and safeguards | bounded decision |
-| 110–120 min | Confirm ownership, dates, and correction route | next-action record |
+| Before session | Fit screen and private pre-work | outcome; opening view |
+| 0–15 min | Bound decision, rights, people, and limits | decision statement |
+| 15–40 min | Individually map actual work, then reconcile | actual-work/source map |
+| 40–65 min | Surface exceptions, incentives, harms, dependencies, dissent | risk/evidence/dissent map |
+| 65–90 min | Test evidence and disconfirming information | gaps and alternatives |
+| 90–110 min | Choose disposition, safeguards, if–then actions, stop authority | decision/implementation plan |
+| 110–120 min | Confirm owners, evidence, review, maintenance, correction | appraisal record |
 
 ## Staffing and capacity gate
 

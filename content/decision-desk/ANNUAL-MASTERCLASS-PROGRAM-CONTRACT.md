@@ -14,7 +14,7 @@ This contract changes Issues 02–12 from an indefinite expansion roadmap to pla
 
 ## Program promise
 
-The internal program goal is twelve distinct 90-minute working masterclasses, each with its own complete paired clinic delivered to separate small cohorts three times in a four-week month or four times in a five-week month. Participants practice how to decide whether, where, and under what controls an AI use belongs in real work. The series is not a product-tour sequence, generalized AI literacy course, legal advice service, CLE program, certification, or guarantee of outcomes.
+The internal program goal is twelve distinct 60-minute working masterclasses, each with its own complete paired clinic delivered to separate small cohorts three times in a four-week month or four times in a five-week month. Participants practice how to decide whether, where, and under what controls an AI use belongs in real work. The series is not a product-tour sequence, generalized AI literacy course, legal advice service, CLE program, certification, or guarantee of outcomes.
 
 A monthly slot and its weekly clinic repetitions are production targets, not permission to publish. No date, price, seat, checkout, or communication becomes public until that month's release gate passes and RN approves it.
 
@@ -39,7 +39,7 @@ Every month must contain:
 3. a Decision Desk article and public Source Desk;
 4. one reusable decision instrument;
 5. an exact product/configuration evaluation when lawful and evidentially possible, or a transparent no-product/no-test finding;
-6. a complete 90-minute teaching package;
+6. a complete 60-minute teaching package;
 7. accessible participant, preparation, follow-up, and correction materials;
 8. a complete paired bounded clinic applying that month’s instrument to one nonconfidential workflow; if a safe clinic cannot be designed, the issue must be redesigned, deferred, replaced, or left dark;
 9. an inactive visitor journey and complete commercial/communications specification;
@@ -49,21 +49,23 @@ Every month must contain:
 
 Issue-specific completion contracts may adapt genuinely irrelevant mechanics but may not reduce the parity standard or waive research depth, the paired clinic, factual integrity, privacy, security, accessibility, rights, operational testing, rehearsals, or RN approval. The controlling parity requirements are recorded in `TWELVE-MONTH-MASTERCLASS-CLINIC-PARITY-CONTRACT.md`.
 
-## Standard teaching architecture
+## Canonical method
 
-Each class must produce participant work, not passive exposure:
+Every month and offer complies with the participatory standard: participant labor, psychological-safety/anti-groupthink controls, decision rights, implementation intentions, maintenance ownership, appraisal, correction, and honest measurement are designed together with evidence, operations, and public promises.
+
+## Standard teaching architecture
 
 | Segment | Time | Required participant output |
 |---|---:|---|
-| Decision and stakes | 0–10 | bounded decision statement |
-| Authority, people, and data | 10–25 | authority/affected-person map |
-| Workflow before product | 25–40 | redrawn current-state workflow |
-| Product and configuration evidence | 40–55 | evidence and diligence gaps |
-| Fictional or safely synthetic exercise | 55–72 | completed issue-specific instrument |
-| Safeguards, escalation, and stop rules | 72–82 | control set |
-| Disposition | 82–90 | bounded next-action record |
+| Private opening view and decision | 0–7 | statement and assumption |
+| Authority, people, and data | 7–16 | authority/affected-person map |
+| Actual workflow | 16–28 | workflow, exceptions, handoffs, source map |
+| Product/configuration evidence | 28–37 | gaps and disconfirming test |
+| Fictional/synthetic exercise | 37–49 | issue instrument |
+| Safeguards and maintenance | 49–57 | if–then action, stop authority, review trigger |
+| Disposition | 57–60 | decision, owner, next evidence |
 
-No exercise may require participants to disclose client, employer, health, financial, student, customer, or other confidential/personal facts.
+No exercise requires confidential, privileged, identifying, regulated, or security-sensitive facts.
 
 ## Rolling production system
 

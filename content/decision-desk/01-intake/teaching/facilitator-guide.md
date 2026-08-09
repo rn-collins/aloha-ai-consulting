@@ -1,6 +1,6 @@
 # Decision Desk 01 — facilitator guide
 
-Version 1.0 · 90 minutes · draft teaching release candidate
+Version 1.1 · 60 minutes · draft teaching release candidate
 
 ## Purpose
 
@@ -16,62 +16,32 @@ Room/virtual setup: source and synopsis must be viewable side by side; captions 
 
 ## Run of show
 
-### 0–10 — Frame the decision
+### 0–7 — Private opening view
+Participants write the decision and one assumption before discussion. Output: bounded statement.
 
-Show slides 1–5. Collect initial answers privately. Ask: “What evidence shows a summarization problem rather than a workflow problem?”
+### 7–16 — Authority, people, and data
+Participants label source weight and affected people. Do not let seniority set the answer. Output: authority map.
 
-Output: exact decision statement.
+### 16–28 — Actual work
+Individually, then together where appropriate, map sources, handoffs, workarounds, exceptions, judgment, access needs, and downstream reliance. Output: actual-work map and Gate 1.
 
-Misconception: “The goal is choosing the best product.” Correction: the goal is determining what, if anything, the evidence authorizes next.
+### 28–37 — Evidence and disconfirmation
+Convert brand claims into evidence fields; ask what would make the proposal wrong. Output: gaps and Gates 2–3.
 
-### 10–25 — Duties, data, jurisdiction
+### 37–49 — Synthetic case
+Score independently before debrief. Invite the strongest alternative and record disagreement. Output: corrected synopsis and Gate 4.
 
-Show slides 6–7. Participants fill the authority map. Ask them to label the evidentiary weight of every source.
+### 49–57 — Implementation and maintenance
+Turn “human in the loop” into observable behavior, if–then action, stop authority, escalation, and review trigger. Output: safeguard/maintenance set.
 
-Output: risk-and-authority map.
-
-Misconception: ABA Model Rule 1.18 is automatically controlling everywhere. Correction: it is a model baseline; adoption and interpretation require local verification.
-
-### 25–40 — Workflow before product
-
-Show slides 8–10. In pairs or individually, redraw Kaimana & Vale’s pathway and mark where the source could be lost.
-
-Output: redesigned flow and Gate 1 disposition.
-
-Expected: Gate 1 fail. Do not accept “human review” unless the reviewer’s source, task, authority, and observable behavior are named.
-
-### 40–55 — Product/configuration evidence
-
-Show slides 11–14. Participants convert a brand-level proposal into required evidence fields and list gaps.
-
-Output: diligence gap list; Gates 2 and 3.
-
-Expected: both unresolved. Emphasize that no-product nomination is a completed current finding, not proof that no vendor could ever qualify.
-
-### 55–72 — Synthetic case exercise
-
-Show slides 15–17. Give participants 2 minutes to read the source before revealing the draft synopsis. Allow 8 minutes for scoring and 5 minutes for debrief.
-
-Output: scored case, corrected synopsis, Gate 4.
-
-Expected: Gate 4 unresolved for the firm even though the benchmark is well-governed; representation and threshold evidence remains incomplete.
-
-### 72–82 — Human factors and safeguards
-
-Show slides 18–21. Ask groups to convert “human in the loop” into observable measures and stop conditions.
-
-Output: safeguard set; Gate 5 not run.
-
-Accessibility prompt: “Can a person submit, understand confirmation, correct the record, and receive follow-up using their mode of access?”
-
-### 82–90 — Disposition
-
-Show slides 22–25. Participants complete the final record, then compare it with the opening answer.
-
-Expected disposition: continue human-led; finite redesign actions; no nomination, synthetic run, live data, or pilot.
+### 57–60 — Disposition
+Record disposition, owner, next evidence, change trigger, dissent, and what is not authorized. Compare with opening view.
 
 ## Facilitation principles
 
+- Apply the canonical participatory decision and implementation standard.
+- Collect individual input before discussion; preserve dissent and unknowns.
+- Ask what actual practice, another role, or disconfirming evidence could change the map.
 - Ask “what is the evidence?” before “what do you think?”
 - Preserve unresolved as a legitimate state.
 - Do not perform individualized legal analysis.

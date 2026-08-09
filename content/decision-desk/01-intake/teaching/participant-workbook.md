@@ -6,7 +6,7 @@ Version 1.0 · fictional-data classroom use only
 
 Do not enter client, prospective-client, privileged, confidential, personal, or employer-sensitive information. This workbook teaches a governance method; it is not legal advice, a vendor recommendation, or deployment authorization.
 
-## 1. Opening decision (minutes 0–10)
+## 1. Opening decision (minutes 0–7)
 
 Initial answer: yes / no / maybe
 
@@ -14,7 +14,9 @@ Complete: “`[decision owner]` is deciding whether `[exact proposed use]` shoul
 
 What evidence supports the problem? What is merely assumed?
 
-## 2. Risk-and-authority map (minutes 10–25)
+Privately record: what might another role know, and what would make your view wrong?
+
+## 2. Risk-and-authority map (minutes 7–16)
 
 | Question | Required authority/evidence | Current state | Owner / next action |
 |---|---|---|---|
@@ -27,7 +29,7 @@ What evidence supports the problem? What is merely assumed?
 
 Label every item: controlling authority / model authority / advisory guidance / vendor statement / empirical evidence / analysis / unknown.
 
-## 3. Workflow redraw (minutes 25–40)
+## 3. Workflow redraw (minutes 16–28)
 
 Document the current pathway:
 
@@ -42,9 +44,11 @@ Document the current pathway:
 
 Circle every place a synopsis might become mistaken for the source. Mark where human judgment is required.
 
+List one workaround, exception, incentive, access need, and dependency the written process may omit. Label each fact, assertion, analysis, or unknown.
+
 Gate 1: pass / fail / unresolved. Evidence and reason:
 
-## 4. Exact-system diligence (minutes 40–55)
+## 4. Exact-system diligence (minutes 28–37)
 
 Record only what is evidenced:
 
@@ -62,7 +66,7 @@ Record only what is evidenced:
 
 Gate 2: pass / fail / unresolved. Gate 3: pass / fail / unresolved.
 
-## 5. Synthetic case exercise (minutes 55–72)
+## 5. Synthetic case exercise (minutes 37–49)
 
 Use the supplied I01-002 case. Compare the draft synopsis directly with the source.
 
@@ -84,7 +88,7 @@ What additional cases would make the test set representative of this firm?
 
 Gate 4: pass / fail / unresolved.
 
-## 6. Safeguards and human factors (minutes 72–82)
+## 6. Safeguards and human factors (minutes 49–57)
 
 | Safeguard | Observable evidence | Stop condition | Owner |
 |---|---|---|---|
@@ -98,7 +102,7 @@ Gate 4: pass / fail / unresolved.
 
 Gate 5: pass / fail / unresolved / not run.
 
-## 7. Final disposition (minutes 82–90)
+## 7. Final disposition (minutes 57–60)
 
 Choose one:
 
@@ -111,11 +115,19 @@ Reasoning:
 
 Counterevidence and uncertainty:
 
-Three next actions, owners, and evidence required:
+Three next actions, owners, due dates, and observable evidence:
+
+If–then plan: If `[trigger]`, `[owner]` will `[action]`, record it in `[location]`, and escalate to `[role]` within `[time]`.
+
+Dissent/unresolved alternative:
 
 Expiration or change trigger:
 
 Stop authority:
+
+Review owner and review date/change trigger:
+
+Defect, exception, affected-person-feedback, and correction route:
 
 ## 8. Reflection
 
