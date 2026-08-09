@@ -8,18 +8,18 @@ Default delivery target: Thursday, 10:00–11:30 a.m. HST
 
 | Month | Internal target | Working public title | Governed question | Reusable tool | Adoption readiness |
 |---|---|---|---|---|---|
-| 01 · Sep 2026 | Sep 24 | Before You Automate Intake | Should a small law firm use AI to summarize prospective-client intake? | Intake Summarization Evaluation Card | near-release candidate; NO-GO until open Issue 01 gates close |
-| 02 · Oct 2026 | Oct 22 | Before the Bot Joins the Meeting | Should a team put an AI meeting bot in every room? | Meeting Capture Permission and Record Map | R1 partial research; 7 recording layers, 0 cleared packets |
-| 03 · Nov 2026 | Nov 19 | Before AI Answers the Customer | Should a small business let AI answer customer-support messages? | Support Automation Authority Map | R1 research question only |
-| 04 · Dec 2026 | Dec 17 | Can AI Answer From What Your Organization Knows? | Should an organization let AI answer questions from internal knowledge? | Knowledge Answerability and Source-Authority Test | R0; activation package required |
-| 05 · Jan 2027 | Jan 28 | Before AI Ranks a Person | Should AI screen, rank, or recommend people for an opportunity? | Human Opportunity Decision Impact Map | R0; activation package required |
-| 06 · Feb 2027 | Feb 25 | Before AI Makes the Claim | Should a team use AI to draft public claims about products or work? | Public-Claim Substantiation Gate | R0; activation package required |
-| 07 · Mar 2027 | Mar 25 | When AI Explains Something High-Stakes | Should AI translate complex health, legal, financial, or safety information? | High-Stakes Explanation Fidelity Test | R0; activation package required |
-| 08 · Apr 2027 | Apr 22 | Before You Synthesize a Person | When may an organization use synthetic voice, likeness, or documentary-style media? | Synthetic Media Permission and Provenance Record | R0; activation package required |
-| 09 · May 2027 | May 27 | Before an AI Agent Acts | When may an AI agent send, spend, change records, or act in another system? | Agent Action Authority and Reversibility Matrix | R0; activation package required |
-| 10 · Jun 2027 | Jun 24 | Before You Sign the AI Vendor | How should a small organization choose and contract for an AI vendor? | AI Vendor Evidence and Contract Dossier | R0; activation package required |
-| 11 · Jul 2027 | Jul 22 | Before AI Judges a Learner | Should an educator use AI to assess, respond to, or personalize learner work? | Learner-Affecting AI Use Review | R0; activation package required |
-| 12 · Aug 2027 | Aug 26 | When to Stop Using the AI | When should an organization pause, roll back, replace, or retire AI? | AI Continuation and Retirement Decision Record | R0; activation package required |
+| 01 · Sep 2026 | Sep 24 | Before You Use AI for Client Intake | Should a small law firm use AI to summarize prospective-client intake? | Intake Summarization Evaluation Card | near-release candidate; NO-GO until open Issue 01 gates close |
+| 02 · Oct 2026 | Oct 22 | Should AI Record This Meeting? | Should a team put an AI meeting bot in every room? | Meeting Capture Permission and Record Map | R1 partial research; 7 recording layers, 0 cleared packets |
+| 03 · Nov 2026 | Nov 19 | Should AI Answer Your Customers? | Should a small business let AI answer customer-support messages? | Support Automation Authority Map | R1 research question only |
+| 04 · Dec 2026 | Dec 17 | Can Your AI Find the Right Answer? | Should an organization let AI answer questions from internal knowledge? | Knowledge Answerability and Source-Authority Test | R0; activation package required |
+| 05 · Jan 2027 | Jan 28 | Should AI Help Choose People? | Should AI screen, rank, or recommend people for an opportunity? | Human Opportunity Decision Impact Map | R0; activation package required |
+| 06 · Feb 2027 | Feb 25 | Can You Prove That AI-Written Claim? | Should a team use AI to draft public claims about products or work? | Public-Claim Substantiation Gate | R0; activation package required |
+| 07 · Mar 2027 | Mar 25 | Can People Trust This AI Explanation? | Should AI translate complex health, legal, financial, or safety information? | High-Stakes Explanation Fidelity Test | R0; activation package required |
+| 08 · Apr 2027 | Apr 22 | Can You Use Someone’s AI Voice or Image? | When may an organization use synthetic voice, likeness, or documentary-style media? | Synthetic Media Permission and Provenance Record | R0; activation package required |
+| 09 · May 2027 | May 27 | What Should Your AI Agent Be Allowed to Do? | When may an AI agent send, spend, change records, or act in another system? | Agent Action Authority and Reversibility Matrix | R0; activation package required |
+| 10 · Jun 2027 | Jun 24 | What to Check Before Buying an AI Tool | How should a small organization choose and contract for an AI vendor? | AI Vendor Evidence and Contract Dossier | R0; activation package required |
+| 11 · Jul 2027 | Jul 22 | Should AI Review a Student’s Work? | Should an educator use AI to assess, respond to, or personalize learner work? | Learner-Affecting AI Use Review | R0; activation package required |
+| 12 · Aug 2027 | Aug 26 | Is It Time to Stop Using This AI? | When should an organization pause, roll back, replace, or retire AI? | AI Continuation and Retirement Decision Record | R0; activation package required |
 
 November and December targets move earlier than the fourth Thursday to avoid U.S. holiday conflicts. Dates are internal planning assumptions—not published commitments.
 
