@@ -15,7 +15,7 @@ Please:
 1. Read the Issue 01 article and its public Source Desk.
 2. Download or open the participant workbook and fictional case packet.
 3. Choose your preferred format and test that you can navigate headings, tables, links, and form fields.
-4. Bring one nonconfidential AI proposal you can describe at a high level. Do not bring or paste real client, prospective-client, privileged, confidential, employer-sensitive, or personal data.
+4. Use the supplied fictional proposal. If you want to practice transfer, bring only a fictionalized product question with no organization, workflow, matter, client, employee, or other identifying facts. Do not bring or paste real client, prospective-client, privileged, confidential, employer-sensitive, or personal data.
 5. Send access or format requests through the private support path stated in your confirmation.
 
 Estimated preparation time: 20–30 minutes. Preparation is helpful but not a condition of participation.
