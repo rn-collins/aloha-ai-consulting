@@ -10,8 +10,9 @@ Version: 0.1
 | discovered | anonymous visit | informed | no personal data required |
 | informed | disclosures viewed | registering, closed | preserve offer version |
 | registering | form started | submitted, abandoned | minimize and expire draft data |
-| submitted | valid form | screening, declined | issue submission acknowledgment |
-| screening | human review assigned | clarify, accepted, deferred, declined | never imply acceptance |
+| submitted | valid form | eligibility_check, screening, declined | issue submission acknowledgment |
+| eligibility_check | masterclass rules and capacity validation | accepted, declined, closed | no individualized merits review; do not imply a seat |
+| screening | clinic human review assigned | clarify, accepted, deferred, declined | never imply acceptance |
 | clarify | one bounded question | screening, withdrawn | do not solicit sensitive facts |
 | accepted | screen passed and inventory available | payment_pending, expired | create reserved inventory token |
 | payment_pending | provider session created | paid, failed, expired | verify server-side |
@@ -28,7 +29,7 @@ Terminal/exception states: declined, deferred, withdrawn, failed, expired, cance
 
 ## Invariants
 
-1. No confirmed seat without accepted screen, verified payment, capacity, and delivered confirmation.
+1. No confirmed seat without masterclass eligibility validation or clinic human-screen acceptance, verified payment, capacity, and delivered confirmation.
 2. No attendance link before confirmation.
 3. No sensitive narrative in payment, email, calendar, analytics, or event payloads.
 4. No optional consent blocks required participation.
