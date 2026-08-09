@@ -6,15 +6,15 @@
     "node": ">=22.13.0"
   },
   "scripts": {
-    "install:ci": "bash scripts/install-ci.sh",
+    "install:ci": "npm ci",
     "dev": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vite",
     "build": "next build && rm -rf dist && cp -R out dist",
-    "build:sites": "bash scripts/build-verified.sh",
+    "build:sites": "npm run build",
     "start": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext start",
-    "test": "node --test tests/rendered-html.test.mjs",
-    "validate:artifact": "bash scripts/validate-artifact.sh",
-    "lint": "bash scripts/sites-env.sh -- eslint . --ignore-pattern dist --ignore-pattern .next",
-    "db:generate": "bash scripts/sites-env.sh -- drizzle-kit generate"
+    "test": "node --test tests/site-contract.test.mjs",
+    "validate:artifact": "npm run test && npm run lint && npm run build",
+    "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
+    "db:generate": "drizzle-kit generate"
   },
   "dependencies": {
     "drizzle-orm": "0.45.2",
