@@ -9,7 +9,7 @@ Use synthetic identities, test-mode payments, nonproduction calendars, and appro
 
 | ID | Scenario | Required outcome |
 |---|---|---|
-| CJ-01 | masterclass happy path | disclose → register → pay → confirm → calendar → reminders → attend → materials → close |
+| CJ-01 | masterclass happy path | disclose → register → eligibility/capacity validation → pay → confirm → calendar → reminders → attend → materials → close |
 | CJ-02 | clinic happy path | disclose → register → human accept → pay → confirm → prepare → attend → bounded record → correction → close |
 | CJ-03 | clinic decline before payment | neutral decline; no charge; minimum record |
 | CJ-04 | clinic decline after payment | full refund; seat released; confirmation suppressed |
