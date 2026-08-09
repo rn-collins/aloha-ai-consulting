@@ -2,26 +2,30 @@
 
 Status: recommended internal target calendar; dates and offers inactive pending RN approval and month-specific release gates  
 Timezone: Hawaiʻi Standard Time (UTC−10; no daylight-saving change)  
-Default delivery target: Thursday, 10:00–11:30 a.m. HST
+Masterclass delivery rule: one free session in week 1 of each month  
+Clinic delivery rule: the same paid clinic in every remaining week—three cohorts in a four-week month or four cohorts in a five-week month  
+Exact weekdays and times: inactive planning decisions pending RN approval and month-specific release gates
 
 ## Calendar
 
-| Month | Internal target | Working public title | Governed question | Reusable tool | Adoption readiness |
-|---|---|---|---|---|---|
-| 01 · Sep 2026 | Sep 24 | Before You Use AI for Client Intake | Should a small law firm use AI to summarize prospective-client intake? | Intake Summarization Evaluation Card | near-release candidate; NO-GO until open Issue 01 gates close |
-| 02 · Oct 2026 | Oct 22 | Should AI Record This Meeting? | Should a team put an AI meeting bot in every room? | Meeting Capture Permission and Record Map | R1 partial research; 7 recording layers, 0 cleared packets |
-| 03 · Nov 2026 | Nov 19 | Should AI Answer Your Customers? | Should a small business let AI answer customer-support messages? | Support Automation Authority Map | R1 research question only |
-| 04 · Dec 2026 | Dec 17 | Can Your AI Find the Right Answer? | Should an organization let AI answer questions from internal knowledge? | Knowledge Answerability and Source-Authority Test | R0; activation package required |
-| 05 · Jan 2027 | Jan 28 | Should AI Help Choose People? | Should AI screen, rank, or recommend people for an opportunity? | Human Opportunity Decision Impact Map | R0; activation package required |
-| 06 · Feb 2027 | Feb 25 | Can You Prove That AI-Written Claim? | Should a team use AI to draft public claims about products or work? | Public-Claim Substantiation Gate | R0; activation package required |
-| 07 · Mar 2027 | Mar 25 | Can People Trust This AI Explanation? | Should AI translate complex health, legal, financial, or safety information? | High-Stakes Explanation Fidelity Test | R0; activation package required |
-| 08 · Apr 2027 | Apr 22 | Can You Use Someone’s AI Voice or Image? | When may an organization use synthetic voice, likeness, or documentary-style media? | Synthetic Media Permission and Provenance Record | R0; activation package required |
-| 09 · May 2027 | May 27 | What Should Your AI Agent Be Allowed to Do? | When may an AI agent send, spend, change records, or act in another system? | Agent Action Authority and Reversibility Matrix | R0; activation package required |
-| 10 · Jun 2027 | Jun 24 | What to Check Before Buying an AI Tool | How should a small organization choose and contract for an AI vendor? | AI Vendor Evidence and Contract Dossier | R0; activation package required |
-| 11 · Jul 2027 | Jul 22 | Should AI Review a Student’s Work? | Should an educator use AI to assess, respond to, or personalize learner work? | Learner-Affecting AI Use Review | R0; activation package required |
-| 12 · Aug 2027 | Aug 26 | Is It Time to Stop Using This AI? | When should an organization pause, roll back, replace, or retire AI? | AI Continuation and Retirement Decision Record | R0; activation package required |
+Each row governs one monthly content pair, not one event. The masterclass occurs once in week 1; the same clinic repeats in every remaining week for separate small cohorts.
 
-November and December targets move earlier than the fourth Thursday to avoid U.S. holiday conflicts. Dates are internal planning assumptions—not published commitments.
+| Month | Masterclass target | Clinic cadence | Working public title | Governed question | Reusable tool | Adoption readiness |
+|---|---|---|---|---|---|
+| 01 · Sep 2026 | week 1 · exact date pending | weeks 2–4/5 · 3–4 cohorts | Before You Use AI for Client Intake | Should a small law firm use AI to summarize prospective-client intake? | Intake Summarization Evaluation Card | near-release candidate; NO-GO until open Issue 01 gates close |
+| 02 · Oct 2026 | week 1 · exact date pending | weeks 2–4/5 · 3–4 cohorts | Should AI Record This Meeting? | Should a team put an AI meeting bot in every room? | Meeting Capture Permission and Record Map | R1 partial research; 7 recording layers, 0 cleared packets |
+| 03 · Nov 2026 | week 1 · exact date pending | weeks 2–4/5 · 3–4 cohorts | Should AI Answer Your Customers? | Should a small business let AI answer customer-support messages? | Support Automation Authority Map | R1 research question only |
+| 04 · Dec 2026 | week 1 · exact date pending | weeks 2–4/5 · 3–4 cohorts | Can Your AI Find the Right Answer? | Should an organization let AI answer questions from internal knowledge? | Knowledge Answerability and Source-Authority Test | R0; activation package required |
+| 05 · Jan 2027 | week 1 · exact date pending | weeks 2–4/5 · 3–4 cohorts | Should AI Help Choose People? | Should AI screen, rank, or recommend people for an opportunity? | Human Opportunity Decision Impact Map | R0; activation package required |
+| 06 · Feb 2027 | week 1 · exact date pending | weeks 2–4/5 · 3–4 cohorts | Can You Prove That AI-Written Claim? | Should a team use AI to draft public claims about products or work? | Public-Claim Substantiation Gate | R0; activation package required |
+| 07 · Mar 2027 | week 1 · exact date pending | weeks 2–4/5 · 3–4 cohorts | Can People Trust This AI Explanation? | Should AI translate complex health, legal, financial, or safety information? | High-Stakes Explanation Fidelity Test | R0; activation package required |
+| 08 · Apr 2027 | week 1 · exact date pending | weeks 2–4/5 · 3–4 cohorts | Can You Use Someone’s AI Voice or Image? | When may an organization use synthetic voice, likeness, or documentary-style media? | Synthetic Media Permission and Provenance Record | R0; activation package required |
+| 09 · May 2027 | week 1 · exact date pending | weeks 2–4/5 · 3–4 cohorts | What Should Your AI Agent Be Allowed to Do? | When may an AI agent send, spend, change records, or act in another system? | Agent Action Authority and Reversibility Matrix | R0; activation package required |
+| 10 · Jun 2027 | week 1 · exact date pending | weeks 2–4/5 · 3–4 cohorts | What to Check Before Buying an AI Tool | How should a small organization choose and contract for an AI vendor? | AI Vendor Evidence and Contract Dossier | R0; activation package required |
+| 11 · Jul 2027 | week 1 · exact date pending | weeks 2–4/5 · 3–4 cohorts | Should AI Review a Student’s Work? | Should an educator use AI to assess, respond to, or personalize learner work? | Learner-Affecting AI Use Review | R0; activation package required |
+| 12 · Aug 2027 | week 1 · exact date pending | weeks 2–4/5 · 3–4 cohorts | Is It Time to Stop Using This AI? | When should an organization pause, roll back, replace, or retire AI? | AI Continuation and Retirement Decision Record | R0; activation package required |
+
+Exact dates are intentionally not fixed in this calendar. Each month must first be mapped to its actual four- or five-week operating calendar, holidays, RN availability, support coverage, and release gates. Dates remain internal planning assumptions—not published commitments.
 
 ## Rolling activation deadlines
 
@@ -55,14 +59,15 @@ This sequence moves from a bounded workflow through increasingly consequential a
 
 Until RN changes them:
 
-- individual class rather than subscription;
-- 90 minutes live;
+- free monthly masterclass rather than subscription;
+- paid clinic sold by cohort, with three or four cohorts per month according to the number of remaining weeks;
+- 90 minutes live for the masterclass; clinic duration remains month-specific and must be approved before release;
 - default 12 seats;
-- Issue 01 recommended price of US$295 is a starting hypothesis, not an automatic price for all months;
+- the masterclass price is US$0; every monthly clinic requires its own approved price and value review;
 - supplied fictional/synthetic exercises only;
 - no recording for first delivery of a new issue;
 - fixed session rather than public scheduling;
-- separate clinic offer only when the issue can be responsibly bounded;
+- the paired clinic is required and repeats in every remaining week only when the issue can be responsibly bounded and each cohort passes its capacity and operating gates;
 - scholarship and refund terms require month-specific confirmation; and
 - no date, price, or capacity appears publicly before RN approval and operational QA.
 
