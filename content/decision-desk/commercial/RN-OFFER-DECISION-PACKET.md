@@ -11,20 +11,20 @@ Approve, revise, or decline the recommended first-release operating model below.
 
 ## Executive recommendation
 
-Launch one deliberately small, live masterclass cohort followed two weeks later by one screened clinic. Keep the Decision Desk article and Source Desk free. Use the masterclass to teach the method with fictional material; use the clinic only for participants whose one nonconfidential workflow passes human screening.
+Launch one free, deliberately small live masterclass in week 1, followed by the same screened US$295-per-participant clinic in every remaining week of the month. A four-week month has three clinic cohorts; a five-week month has four. Keep the Decision Desk article and Source Desk free. Use the masterclass to teach the method with fictional material; use each clinic cohort only for participants whose one nonconfidential workflow passes human screening.
 
 | Decision | Recommended default | Acceptable alternative | Why |
 |---|---|---|---|
 | Free editorial title | **Decision Desk 01: Before You Automate Intake** | **The Intake Decision Desk** | Names the decision and avoids a product-endorsement or legal-clearance claim. |
 | Masterclass title | **Before You Use AI for Client Intake** | **Decision Desk Live: AI-Assisted Intake** | Outcome-led, specific, and distinct from a webinar, CLE, certification, or generic AI course. |
 | Clinic title | **Improve Your Client Intake Workflow** | **AI Opportunity Clinic: Intake Edition** | Connects the clinic to the governed method and states its bounded output. |
-| Masterclass price | **US$295 per person** | Pilot floor US$225; standard next-cohort price US$395 after observed demand and feedback | The first cohort is a 90-minute live working session with a full participant package, not a passive webinar. The pilot price is intentionally below multi-session premium cohort-course pricing while preserving expert positioning. |
+| Masterclass price | **Free (US$0)** | No paid tier for the monthly masterclass | The masterclass is the free week-1 teaching and audience-development layer. It uses fictional material and does not include individualized workflow application. |
 | Masterclass capacity | **12 paid participants** | 8 for a higher-touch pilot; never more than 16 without a second facilitator or revised exercises | Twelve supports individual work and debrief without creating a delivery or accessibility burden that has not been rehearsed. |
-| Clinic price | **US$750 per person** | US$2,800 private team clinic for up to four screened colleagues from one organization | Four public seats yield US$3,000 gross while covering screening, two-hour facilitation, four written records, and one correction cycle. Do not sell the public clinic below US$600 per person. |
+| Clinic price | **US$295 per person, per cohort** | Any variation requires explicit RN approval | Each remaining week carries the same screened clinic for a separate cohort. At four seats, one full cohort yields US$1,180 gross. |
 | Clinic capacity | **4 screened participants maximum** | Reduce to 3 for access, sensitivity, or workload; do not expand for the first release | Matches the operating specification and gives each participant roughly 25–30 minutes of focused facilitated work. |
 | Currency and fees | **USD; listed price includes ordinary platform/processor fees; applicable sales tax added only where legally required** | Tax-inclusive price after tax advice and nexus configuration | Clearer than passing variable processing fees to participants. Tax collection must remain off until configured and reviewed. |
 | Masterclass date | **Thursday, September 24, 2026, 10:00–11:30 a.m. HST** | Tuesday, September 29 at the same time | 10:00 a.m. HST is 4:00 p.m. Eastern while U.S. daylight saving time is in effect, enabling Hawaiʻi and mainland participation. |
-| Clinic date | **Thursday, October 8, 2026, 10:00 a.m.–12:00 p.m. HST** | Thursday, October 15 at the same time | Leaves two weeks for clinic screening, operational correction, and participant preparation after the masterclass. |
+| Clinic dates | **Every remaining week of the month; exact dates/times pending** | Three cohorts in a four-week month; four in a five-week month | Each cohort uses the same governed clinic scope and separate operational records. |
 | Delivery | **Zoom Workplace paid meeting, recording disabled, automated captions enabled and rehearsed** | Google Meet only after equivalent caption, keyboard, dial-in, host-control, and fallback tests pass | Familiar access and appropriate duration; platform selection does not replace observed accessibility testing. |
 | Backup delivery | **A separately rehearsed Zoom meeting plus dial-in and complete materials-first fallback** | Reschedule/refund if the primary and rehearsed backup fail | No untested emergency platform and no public join link. |
 | Payment | **Stripe-hosted Checkout after acceptance; server-verified payment; no card data stored by Aloha AI** | Stripe Payment Links only if capacity, screening, idempotency, refunds, and confirmation can still be enforced server-side | The existing state model requires payment to occur after fit acceptance and before confirmation. |
@@ -39,13 +39,15 @@ These are planning figures, not revenue promises.
 
 | Offer | Seats | Price | Gross | Illustrative Stripe domestic-card fee at 2.9% + US$0.30 | Approximate net before taxes, labor, refunds, and other costs |
 |---|---:|---:|---:|---:|---:|
-| Masterclass | 12 | US$295 | US$3,540 | US$106.32 | US$3,433.68 |
-| Public clinic | 4 | US$750 | US$3,000 | US$88.20 | US$2,911.80 |
+| Free masterclass | 12 | US$0 | US$0 | US$0 | US$0 |
+| One public clinic cohort | 4 | US$295 | US$1,180 | US$35.42 | US$1,144.58 |
+| Four-week month clinic total | 12 across 3 cohorts | US$295 | US$3,540 | US$106.26 | US$3,433.74 |
+| Five-week month clinic total | 16 across 4 cohorts | US$295 | US$4,720 | US$141.68 | US$4,578.32 |
 | Combined first release | 16 purchases | — | **US$6,540** | **US$194.52** | **US$6,345.48** |
 
-The price decision is based on scope and positioning, not a claim of validated willingness to pay. Current Maven guidance describes live cohort-course prices commonly ranging from US$800 to US$2,500 and emphasizes outcomes, live interaction, and projects. This 90-minute first-release masterclass is narrower and therefore recommended at US$295. Stripe’s current standard U.S. domestic-card price is 2.9% + US$0.30 per successful transaction. Re-verify both sources at activation.
+The clinic price is RN’s owner-directed planning price, not a claim of validated willingness to pay. The masterclass is free. The fee illustrations use the previously recorded Stripe domestic-card assumption of 2.9% + US$0.30 per successful transaction; re-verify provider pricing at activation.
 
-Do not discount the first cohort publicly. If access or audience development requires flexibility, reserve up to two masterclass seats at an RN-approved reduced price or scholarship, without exposing recipients or implying a permanent discount.
+The masterclass is free. If clinic access requires flexibility, RN may approve a bounded scholarship or reduced-price clinic seat without exposing recipients or implying a permanent discount.
 
 ## Registration and deadline defaults
 
@@ -129,11 +131,11 @@ Or revise only the consequential fields below:
 | Field | Recommended | RN decision |
 |---|---|---|
 | Masterclass title | Before You Use AI for Client Intake | pending |
-| Masterclass price/capacity | US$295 / 12 | pending |
-| Masterclass date/time | 2026-09-24, 10:00–11:30 a.m. HST | pending |
+| Masterclass price/capacity | US$0 / 12 | owner-directed planning decision; activation pending |
+| Masterclass date/time | week 1; exact date/time pending | pending |
 | Clinic title | Improve Your Client Intake Workflow | pending |
-| Clinic price/capacity | US$750 / 4 | pending |
-| Clinic date/time | 2026-10-08, 10:00 a.m.–12:00 p.m. HST | pending |
+| Clinic price/capacity | US$295 per participant / 4 | owner-directed planning decision; activation pending |
+| Clinic dates/times | every remaining week; exact dates/times pending | pending |
 | Delivery | Zoom Workplace; no recording | pending |
 | Payment | Stripe Checkout after acceptance | pending |
 | Registration/state | first-party Aloha AI implementation | pending |
