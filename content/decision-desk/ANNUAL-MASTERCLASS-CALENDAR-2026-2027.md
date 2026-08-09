@@ -63,7 +63,7 @@ Until RN changes them:
 - paid clinic sold by cohort, with three or four cohorts per month according to the number of remaining weeks;
 - 90 minutes live for the masterclass; clinic duration remains month-specific and must be approved before release;
 - default 12 seats;
-- the masterclass price is US$0; every monthly clinic requires its own approved price and value review;
+- the masterclass price is US$0 and the standard clinic price is US$295 per participant per cohort; any variation requires explicit RN approval and a month-specific value review;
 - supplied fictional/synthetic exercises only;
 - no recording for first delivery of a new issue;
 - fixed session rather than public scheduling;
