@@ -104,6 +104,97 @@
   "notice": "This selected, dated register records the stated publication basis; it is not a copyright registration, title opinion, trademark clearance, fair-use determination, dependency audit, or non-infringement certification.",
   "assets": [
     {
+      "path": "artifacts/products/audit-ready-operations/2026.08.0/audit-ready-operations-manual.pdf",
+      "sha256": "d6a1c2ee4358f0b3ede4a6958be839b5228a63b0d39857b72fd98ce4bd94d1f5",
+      "bytes": 89155,
+      "class": "first-party-generated-visuals",
+      "creatorOrSource": "Aloha AI source artwork and site build process",
+      "rightsBasis": "Claimed first-party source design; bounded by the public policy",
+      "licenseOrPermission": "Public display on Aloha AI; no separate public reuse license",
+      "attribution": "No third-party credit required on the recorded first-party basis",
+      "restrictions": "Hash or source-process drift reopens review",
+      "reviewOwner": "RN Collins",
+      "reviewedAt": "2026-08-02"
+    },
+    {
+      "path": "artifacts/products/commercial-launch-apq-gap-model/2026.08.0/commercial-launch-apq-gap-model-guide.pdf",
+      "sha256": "682b9a21137cf252a19c971e17b4a9ad193652be8a3c3ac53cd651d7c6494f5d",
+      "bytes": 116215,
+      "class": "first-party-generated-visuals",
+      "creatorOrSource": "Aloha AI source artwork and site build process",
+      "rightsBasis": "Claimed first-party source design; bounded by the public policy",
+      "licenseOrPermission": "Public display on Aloha AI; no separate public reuse license",
+      "attribution": "No third-party credit required on the recorded first-party basis",
+      "restrictions": "Hash or source-process drift reopens review",
+      "reviewOwner": "RN Collins",
+      "reviewedAt": "2026-08-02"
+    },
+    {
+      "path": "artifacts/products/five-domain-knowledge-base/2026.08.0/five-domain-knowledge-base-handbook.pdf",
+      "sha256": "06c95702086a97aef349465ea24d0757e2e53e3eac46cc5831ad8564778cf448",
+      "bytes": 141516,
+      "class": "first-party-generated-visuals",
+      "creatorOrSource": "Aloha AI source artwork and site build process",
+      "rightsBasis": "Claimed first-party source design; bounded by the public policy",
+      "licenseOrPermission": "Public display on Aloha AI; no separate public reuse license",
+      "attribution": "No third-party credit required on the recorded first-party basis",
+      "restrictions": "Hash or source-process drift reopens review",
+      "reviewOwner": "RN Collins",
+      "reviewedAt": "2026-08-02"
+    },
+    {
+      "path": "artifacts/products/idr-engine/2026.08.0/idr-engine-operating-manual.pdf",
+      "sha256": "b5606bba447b7d965a1b9046ac75f776441801e0c419e3230031396981fc8f97",
+      "bytes": 117683,
+      "class": "first-party-generated-visuals",
+      "creatorOrSource": "Aloha AI source artwork and site build process",
+      "rightsBasis": "Claimed first-party source design; bounded by the public policy",
+      "licenseOrPermission": "Public display on Aloha AI; no separate public reuse license",
+      "attribution": "No third-party credit required on the recorded first-party basis",
+      "restrictions": "Hash or source-process drift reopens review",
+      "reviewOwner": "RN Collins",
+      "reviewedAt": "2026-08-02"
+    },
+    {
+      "path": "artifacts/products/nervous-system-aware-platform-risk-intelligence/2026.08.0/platform-risk-intelligence-playbook.pdf",
+      "sha256": "af5961b38acaebd8e9b246d65ccd19ea5190ec0b06dc9d50d8ad46c450539f5d",
+      "bytes": 117041,
+      "class": "first-party-generated-visuals",
+      "creatorOrSource": "Aloha AI source artwork and site build process",
+      "rightsBasis": "Claimed first-party source design; bounded by the public policy",
+      "licenseOrPermission": "Public display on Aloha AI; no separate public reuse license",
+      "attribution": "No third-party credit required on the recorded first-party basis",
+      "restrictions": "Hash or source-process drift reopens review",
+      "reviewOwner": "RN Collins",
+      "reviewedAt": "2026-08-02"
+    },
+    {
+      "path": "artifacts/products/neuroscience-trust-content-architecture/2026.08.0/edsa-quick-reference-card.pdf",
+      "sha256": "1a1b94e75b29d12d08626a4ec29378b889b098cadb07c59acdfb15d07eb38ba3",
+      "bytes": 105544,
+      "class": "first-party-generated-visuals",
+      "creatorOrSource": "Aloha AI source artwork and site build process",
+      "rightsBasis": "Claimed first-party source design; bounded by the public policy",
+      "licenseOrPermission": "Public display on Aloha AI; no separate public reuse license",
+      "attribution": "No third-party credit required on the recorded first-party basis",
+      "restrictions": "Hash or source-process drift reopens review",
+      "reviewOwner": "RN Collins",
+      "reviewedAt": "2026-08-02"
+    },
+    {
+      "path": "artifacts/products/neuroscience-trust-content-architecture/2026.08.0/neuroscience-trust-content-architecture-handbook.pdf",
+      "sha256": "a55182c19f51c795a67ea0ccad9916f2e7a678a17350ed4ef8b15c01dcd2bb28",
+      "bytes": 116158,
+      "class": "first-party-generated-visuals",
+      "creatorOrSource": "Aloha AI source artwork and site build process",
+      "rightsBasis": "Claimed first-party source design; bounded by the public policy",
+      "licenseOrPermission": "Public display on Aloha AI; no separate public reuse license",
+      "attribution": "No third-party credit required on the recorded first-party basis",
+      "restrictions": "Hash or source-process drift reopens review",
+      "reviewOwner": "RN Collins",
+      "reviewedAt": "2026-08-02"
+    },
+    {
       "path": "favicon.svg",
       "sha256": "103fb63a76f367ec38d42883428d0c8eb98d6a9e0ee17553ee6700d7b5e086da",
       "bytes": 415,
@@ -900,7 +991,7 @@
   "counts": {
     "rightsClasses": 5,
     "thirdPartyReferences": 2,
-    "assets": 61,
+    "assets": 68,
     "findings": 0
   }
 }

@@ -6,7 +6,7 @@
   "evaluatedAt": "2026-08-02",
   "owner": "RN Collins / Aloha AI",
   "reviewer": "Codex remediation agent",
-  "scope": "All 504 sitemap routes; checked-in HTML, shared CSS, and shared interaction scripts.",
+  "scope": "All 511 sitemap routes; checked-in HTML, shared CSS, and shared interaction scripts.",
   "exclusions": [
     "Rendered visual contrast measurement across every computed state and viewport",
     "Manual screen-reader, voice-control, switch-control, magnification, and other assistive-technology sessions",
@@ -14,11 +14,11 @@
     "Legal conformance determination or WCAG certification"
   ],
   "inventory": {
-    "pages": 504,
+    "pages": 511,
     "images": 0,
     "controls": 1876,
     "forms": 30,
-    "tables": 41,
+    "tables": 45,
     "iframes": 0,
     "videos": 0,
     "audio": 0

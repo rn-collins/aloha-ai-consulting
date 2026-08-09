@@ -25,6 +25,8 @@ jobs:
           python-version: '3.12'
       - name: Install site dependencies
         run: npm ci
+      - name: Hydrate governed build snapshots
+        run: npm run site:hydrate
       - name: Build canonical site routes
         run: npm run site:build
       - name: Check internal repository links

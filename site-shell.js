@@ -6,12 +6,13 @@
     ['/builds','See the Work'],
     ['/methods','How It Works'],
     ['/university','Learn'],
+    ['/learning/decision-desk','Decision Desk'],
     ['/about','About']
   ];
 
   const FOOTER_GROUPS = [
     {label:'Work with Aloha AI',items:[['/services','Consulting'],['/strategy','Strategy'],['/legal-ai','Legal AI'],['/engagements','Engagements']]},
-    {label:'Use and learn',items:[['/tools','Tools'],['/trust-stack','Trust Stack'],['/university','University'],['/ce','Continuing education']]},
+    {label:'Use and learn',items:[['/tools','Tools'],['/trust-stack','Trust Stack'],['/university','University'],['/learning/decision-desk','Decision Desk'],['/events/hawaii-tech-week','Hawaiʻi Tech Week']]},
     {label:'Company',items:[['/about','About'],['/builds','Builds'],['/methods','Methods'],['/partners','Partners']]}
   ];
 

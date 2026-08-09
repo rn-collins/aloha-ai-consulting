@@ -23,6 +23,8 @@
   <url><loc>https://aloha-ai-consulting.vercel.app/content</loc></url>
   <url><loc>https://aloha-ai-consulting.vercel.app/corrections</loc></url>
   <url><loc>https://aloha-ai-consulting.vercel.app/engagements</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/events/hawaii-tech-week</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/events/hawaii-tech-week/resources</loc></url>
   <url><loc>https://aloha-ai-consulting.vercel.app/governance</loc></url>
   <url><loc>https://aloha-ai-consulting.vercel.app/industries</loc></url>
   <url><loc>https://aloha-ai-consulting.vercel.app/industries/biopharma</loc></url>
@@ -53,6 +55,12 @@
   <url><loc>https://aloha-ai-consulting.vercel.app/intelligence</loc></url>
   <url><loc>https://aloha-ai-consulting.vercel.app/intelligence/brand-perception</loc></url>
   <url><loc>https://aloha-ai-consulting.vercel.app/launch-stack</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/learning/decision-desk</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/learning/decision-desk/issues/01</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/learning/decision-desk/issues/01-source-desk</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/learning/decision-desk/issues/02</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/learning/decision-desk/issues/02-source-desk</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/learning/decision-desk/issues/03</loc></url>
   <url><loc>https://aloha-ai-consulting.vercel.app/legal-ai</loc></url>
   <url><loc>https://aloha-ai-consulting.vercel.app/legal-authority</loc></url>
   <url><loc>https://aloha-ai-consulting.vercel.app/maturity</loc></url>
@@ -503,5 +511,6 @@
   <url><loc>https://aloha-ai-consulting.vercel.app/university/use-cases/sales</loc></url>
   <url><loc>https://aloha-ai-consulting.vercel.app/university/use-cases/small-businesses</loc></url>
   <url><loc>https://aloha-ai-consulting.vercel.app/university/use-cases/training</loc></url>
+  <url><loc>https://aloha-ai-consulting.vercel.app/work/ai-opportunity-clinic</loc></url>
   <url><loc>https://aloha-ai-consulting.vercel.app/workspace</loc></url>
 </urlset>

@@ -1,0 +1,88 @@
+DECISION DESK 01 — ACCESSIBLE PLAIN-TEXT RELEASE CANDIDATE
+Verified: 2026-08-08
+Status: Draft; not published; not legal advice
+Canonical HTML: https://aloha-ai-consulting.vercel.app/learning/decision-desk/issues/01
+Source Desk: https://aloha-ai-consulting.vercel.app/learning/decision-desk/issues/01-source-desk
+
+Decision Desk 01 | AI and prospective-client intake 
+Skip to content 
+Decision Desk 01 · editorial release candidate · not published
+Should a small law firm use AI to summarize prospective-client intake?
+Not from the evidence presently available. Keep intake human-led, redesign the source workflow, and require a separately governed evaluation before any bounded pilot.
+The decision: A fluent synopsis is a secondary representation of a person’s account. Until a firm can name and freeze the product, preserve the original submission, independently structure conflict and urgency data, prove source comparison, and pass predetermined legal, privacy, accessibility, security, and human-factors gates, the synopsis should not enter live intake.
+Evidence state: This finding rests on 83 governed claims, 108 registered sources, 78 verified claim-to-source mappings, 69 reproducible searches, a bounded 51-jurisdiction acquisition baseline, a frozen 24-record fictional benchmark, and a completed public-evidence review of four candidate products. No named product was tested. No observed performance result is reported.
+1. The intake summary arrives before the engagement decision
+Prospective-client intake happens in an unusually delicate interval. A person may disclose names, dates, allegations, documents, health information, financial facts, safety concerns, or a looming deadline before the firm has agreed to act. Under the ABA model-rule baseline, duties can arise even when no lawyer-client relationship follows. But the adopted rule, its comments, and its application vary by jurisdiction; a website submission does not receive an identical legal treatment everywhere.
+The operational problem begins earlier than “accuracy.” The first person to read an intake often decides whether the matter looks urgent, conflicts with an existing client, belongs to the firm, needs more facts, or should be declined or referred. A generated synopsis can quietly become the version that later readers trust, even when the original submission says something different.
+That is why minutes saved cannot be the governing metric. The relevant question is whether adding a synopsis improves the whole intake decision without degrading confidentiality, conflict screening, urgency detection, accessibility, correction, or the person’s understanding of what the firm has—and has not—agreed to do.
+2. The first decision is workflow design, not product selection
+A firm should make the human workflow legible before evaluating software. The original submission should be preserved as the authoritative record. Party names, adverse parties, dates, jurisdiction, requested action, and urgency signals should be collected in structured fields where possible and reviewed independently of generated prose.
+System X-Ray: the governed intake flow
+Submission: the person provides information and receives accurate warnings and expectations.
+Preservation: the original submission and attachments become the source record.
+Conflict screen: structured identity and party data—not a synopsis alone—drive the check.
+Urgency screen: a trained human reviews deadlines, safety signals, jurisdiction, and missing facts.
+Routing: the firm seeks information, schedules, declines, or refers without implying representation.
+Communication: a human-approved response states the actual next step.
+System X-Ray: The original submission remains authoritative. Structured conflict and urgency fields feed human review; an optional synopsis is isolated and compared against the source before a human-owned disposition. Original diagram by Aloha AI, August 8, 2026. Normative workflow model—not observed firm practice. 
+If a synopsis is ever added, it belongs after preservation and before an accountable source review. It must remain labeled, linked to the original, and barred from autonomously clearing conflicts, calculating deadlines, judging merit, accepting or rejecting matters, or sending engagement and non-engagement communications.
+3. What the law and ethics sources establish—and what they do not
+ABA Formal Opinion 512 applies existing duties—including competence, confidentiality, communication, supervision, candor, and reasonable fees—to lawyers’ use of generative AI. It is national model guidance, not binding law in every jurisdiction. State rules, court orders, ethics opinions, and local interpretations retain their actual legal weight.
+Some authorities speak directly to electronic intake or AI chatbots. Florida Opinion 24-1, for example, addresses generative-AI chatbots used for intake, disclosure that a visitor is communicating with AI, and lawyer responsibility for chatbot communications. It is advisory and nonbinding, and it does not validate an intake-summarization product. Other jurisdictions use different prospective-client definitions, conflict triggers, warning language, or screening mechanisms. Alabama and Mississippi also demonstrate why a missing Model Rule 1.18 analogue cannot simply be filled with ABA text.
+The 51-row matrix is therefore an acquisition-status baseline, not nationwide legal clearance. For a real firm, controlling law must be resolved for its facts, jurisdictions, communications, warnings, data, and intended use. Ethics permission and professional responsibility safeguards are also not empirical proof that a system is accurate, secure, accessible, or useful.
+4. The authoritative-record problem
+Summaries compress. Compression necessarily selects. Adjacent primary research on patent-document summarization distinguishes incomplete coverage from hallucinated content; a legal-deposition prototype uses source-linked “fact nuggets” to make missing, unsupported, and inaccurate statements easier to inspect. Neither study measures prospective-client intake, and neither supplies a vendor accuracy rate. Their proper use here is methodological: evaluate material facts one by one and keep every synopsis visibly tethered to its source.
+A reviewer should be able to move from each summary statement to the relevant source passage, see uncertainty and contradiction, correct the output without overwriting the original, and record the reason for the correction. Downstream users should know which version they are reading and which configuration produced it.
+“A human checks it” is not a complete control. Adjacent controlled studies in clinical decision-support settings show that erroneous AI suggestions can influence people, including experienced readers. Those studies do not predict law-firm behavior. They justify testing reviewer behavior directly: seed representative errors, observe whether reviewers consult the source, measure corrections and overrides, and stop when fluent output is trusted without adequate comparison.
+5. The four-candidate public-evidence review
+The review considered workflow proximity, not brand prestige. Official vendor materials were treated as vendor statements—not independent validation, negotiated commitments, or observed evidence.
+Candidate What public material supports What remains unestablished 
+Clio Manage AI with Clio Grow Matter/contact summaries, source-context review controls, security statements, and an adjacent intake/CRM product. Raw prospective-client intake summarization, exact tier and tenant, model/version, intake-to-output flow, retention, deletion, audit export, and freezeable configuration. 
+Harvey Workflow Builder Configurable workflows, source-validated summaries, access controls, tenant separation, encryption, and published provider data-use statements. An intake-specific workflow, exact tier and model, contract and tenant configuration, reviewer interface, deletion/export testing, and reproducible freeze. 
+Lexis+ with Protégé Document analysis and summarization, workflow automation, security and privacy statements, and published retention behavior. A prospective-client intake integration, fixed model and prompt, exact data path, tenant controls, audit export, and contract-level configuration. 
+CoCounsel Legal Matter-aware work, source visibility, and published privacy and security representations. A raw-intake summarization feature, intake integration, model/configuration freeze, retention and deletion schedule, reviewer behavior, and exportable audit record. 
+Absence from the reviewed public record does not mean a vendor cannot supply the missing evidence. It means the evidence was not established strongly enough to nominate the candidate for this governed use.
+6. Why no candidate presently qualifies
+A meaningful evaluation needs an exact contracting entity, product, feature, tier, tenant, model or model-control regime, system instructions or equivalent, data-flow map, subprocessor inventory, retention and deletion behavior, training-use terms, permissions, audit/export capability, accessibility record, incident path, and material-change controls. Public adjacency cannot substitute for that configuration packet.
+Completed disposition: human_led_only 
+No candidate is nominated for the first release. This is not an unfinished vendor search and not a claim that no suitable product exists. It is the bounded result of the public-evidence review as verified on August 8, 2026. Vendor silence cannot keep the flagship open indefinitely.
+The result is deliberately asymmetric: the firm may improve human-led intake now, but it may not infer that a live AI pilot is justified. A later product can reopen synthetic evaluation only by supplying the same governed evidence packet.
+7. The frozen synthetic evaluation method—without invented results
+The project includes 24 fictional intake records divided into development and sealed confirmation sets, plus fact-level scoring and adjudication rules. They represent difficult but plausible conditions: misspelled parties, buried deadlines, conflicting dates, ambiguous jurisdiction, safety signals, inaccessible formatting, multiple languages, long narratives, attachments, and information that should not be elevated into an unsupported legal conclusion.
+No candidate has been run against the benchmark. The benchmark is a teaching and future-evaluation instrument, not performance evidence.
+Dimension Evidence required Illustrative stop condition 
+Material fidelity Fact-level comparison with the original Invented party, date, allegation, or requested action 
+Urgency Known-signal cases and source review Missed deadline, safety, or emergency signal 
+Confidentiality Configuration, access, retention, and incident evidence Unauthorized disclosure or unapproved reuse 
+Reviewer behavior Observed source comparison and exception logs Repeated reliance on synopsis without source review 
+Accessibility Automated, manual, assistive-technology, and user evaluation Blocker to submission, review, correction, confirmation, or follow-up 
+Operational value Cycle time, rework, repeat contact, and routing quality together Faster first pass with increased corrections or routing errors 
+Thresholds must be predetermined and owned by the firm. They are governance decisions grounded in the use and its risks—not universal constants disguised as science.
+8. The Evaluation Card and the bounded disposition
+The Intake Summarization Evaluation Card records the decision before a tool is allowed to create momentum. It captures purpose, jurisdictions, matter scope, prohibited uses, authoritative record, exact configuration, data lifecycle, representative tests, reviewers, thresholds, stop authority, incident path, review date, and evidence gaps.
+It permits only four dispositions: reject ; redesign and retest ; continue human-led ; or authorize a separately governed bounded pilot . It does not output “legally cleared,” certify a product, or authorize live sensitive data.
+Accessibility applies to the whole pathway: submission, attachments, confirmation, synopsis, source review, correction, and follow-up. U.S. Department of Justice guidance explains why automated checks alone are insufficient. Manual keyboard, screen-reader, zoom and reflow, labels, instructions, error recovery, language needs, and representative disabled-user evaluation must remain visible gates. When human validation has not occurred, the record must say so.
+Documentary authority plate: DOJ guidance makes labels, instructions, error recovery, keyboard access, and manual testing visible as evidence requirements. Recreated editorial plate by Aloha AI; not a screenshot or facsimile. Source: U.S. Department of Justice Civil Rights Division. The guidance is informal and application remains matter-specific. 
+9. What evidence would justify reopening
+A candidate may reopen synthetic evaluation only after the owner can freeze and preserve:
+the exact entity, product, feature, tier, tenant, pricing/proposal date, and contract;
+a synthetic-only demonstration with the source displayed beside the synopsis;
+model/configuration visibility, output schema, retry behavior, and material-change notice;
+the complete intake-to-output data flow and subprocessors;
+terms, DPA, security schedule, retention/deletion, training use, incident notice, data location, and exit rights;
+permissions, audit/export, deletion testing, accessibility, and supported-language evidence;
+controls that preserve the original, prohibit automatic downstream action, and require source review; and
+named legal, privacy, security, operational, and stop-authority owners.
+Any unobservable high-impact field remains a recorded limitation. Reopening is a bounded change decision; it does not make the present no-nomination finding incomplete as of its date.
+10. Limits, selected bibliography, and Source Desk
+This article does not provide legal advice, product endorsement, procurement approval, or permission to process live prospective-client data. It does not claim that every jurisdiction has identical prospective-client rules, that no viable product exists, that adjacent studies establish a law-firm error rate, or that technical accessibility checks establish user access.
+The complete evidence inventory contains 108 registered sources. A selected reading list appears below; the separate claim-level Source Desk maps the material public claims to canonical claim IDs, source IDs, authority levels, pinpoints, limitations, and verification dates.
+ABA Model Rule 1.18 — model baseline; controlling only where adopted and as interpreted locally.
+ABA Formal Opinion 512 — official nonbinding guidance on lawyers’ generative-AI duties.
+Florida Opinion 24-1 — advisory intake-chatbot guidance; not product validation.
+NIST AI 600-1 and NIST AI 800-4 — voluntary cross-sector risk and monitoring frameworks.
+Nguyen et al. and Akter et al. — adjacent summarization research, not intake validation.
+Kücking et al. and Dratsch et al. — adjacent automation-bias experiments, not legal-workflow estimates.
+U.S. Department of Justice web-accessibility guidance — official technical assistance; legal application remains fact-specific.
+Production state: The ten-part editorial structure and public Source Desk are now drafted. Final link/pinpoint refresh, independent legal-review disposition, documentary visual package, rights clearance, responsive and assistive-technology QA, and RN release approval remain open. Nothing has been published, emailed, sold, scheduled, merged, or released.
+← Decision Desk
