@@ -85,7 +85,7 @@ Months overlap. At least three issue states must be visible at all times: curren
 - RN is the substantive owner and default facilitator.
 - A named day-of support/technical operator is required before any live session.
 - Default first-cohort capacity is 12 unless a month-specific exercise requires fewer.
-- The monthly masterclass is free. Each clinic requires an explicit month-specific price and value review; no annual subscription is implied.
+- The monthly masterclass is free. The standard clinic price is US$295 per participant per cohort; any month-specific variation requires explicit RN approval and a recorded value review. No annual subscription is implied.
 - Two complete rehearsals are required before the first delivery of a new masterclass/clinic pair. Later clinic cohorts in the same month may use a delta rehearsal only after an observed successful clinic delivery and review of any defects, evidence changes, or configuration changes.
 - Critical or high defects block release.
 - Evidence freshness, product configuration, policy links, and participant-facing claims are rechecked within seven days of delivery.
