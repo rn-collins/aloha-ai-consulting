@@ -8,15 +8,25 @@ Review cadence: after every delivered session and at least quarterly
 
 ## Decision
 
-Aloha AI will prepare a twelve-month Decision Desk masterclass program: one bounded masterclass per month, each built from one governed Decision Desk question and one reusable decision tool.
+Aloha AI will prepare a twelve-month Decision Desk program: one free bounded masterclass in the first week of each month, followed by the same paid, bounded clinic in every remaining week of that month. Each monthly pair is built from one governed Decision Desk question and one reusable decision tool.
 
 This contract changes Issues 02–12 from an indefinite expansion roadmap to planned production units. It does not claim that those issues are researched, rehearsed, accessible, scheduled publicly, or ready to sell. Issue 01 remains the only near-release candidate at adoption.
 
 ## Program promise
 
-The internal program goal is twelve distinct 90-minute working masterclasses, each with its own complete paired clinic. Participants practice how to decide whether, where, and under what controls an AI use belongs in real work. The series is not a product-tour sequence, generalized AI literacy course, legal advice service, CLE program, certification, or guarantee of outcomes.
+The internal program goal is twelve distinct 90-minute working masterclasses, each with its own complete paired clinic delivered to separate small cohorts three times in a four-week month or four times in a five-week month. Participants practice how to decide whether, where, and under what controls an AI use belongs in real work. The series is not a product-tour sequence, generalized AI literacy course, legal advice service, CLE program, certification, or guarantee of outcomes.
 
-A monthly slot is a production target, not permission to publish. No date, price, seat, checkout, or communication becomes public until that month's release gate passes and RN approves it.
+A monthly slot and its weekly clinic repetitions are production targets, not permission to publish. No date, price, seat, checkout, or communication becomes public until that month's release gate passes and RN approves it.
+
+## Monthly delivery cadence
+
+- Week 1: one free monthly masterclass teaching that month’s governed question and decision instrument.
+- Every remaining week: one delivery of the same paid, bounded clinic applying that instrument to one nonconfidential workflow per participant.
+- Four-week month: three clinic cohorts.
+- Five-week month: four clinic cohorts.
+- Clinic repetitions are separate cohorts, not new clinic products. The governed scope, instrument, eligibility, exclusions, and core materials remain the same throughout the month unless evidence changes or observed defects require a controlled correction.
+- Each cohort must maintain its own capacity, screening, payment, confirmation, attendance, support, incident, follow-up, refund, and reconciliation records.
+- A missed or unsafe clinic week may be cancelled or left dark; it may not be compressed into another cohort or used to exceed the approved capacity.
 
 ## Standard monthly release unit
 
@@ -75,8 +85,8 @@ Months overlap. At least three issue states must be visible at all times: curren
 - RN is the substantive owner and default facilitator.
 - A named day-of support/technical operator is required before any live session.
 - Default first-cohort capacity is 12 unless a month-specific exercise requires fewer.
-- Standard price may inherit the Issue 01 recommendation, but every month requires an explicit price and value review; no annual subscription is implied.
-- Two complete rehearsals are required for a new issue. A repeated, unchanged session may use one delta rehearsal only after an observed successful delivery.
+- The monthly masterclass is free. Each clinic requires an explicit month-specific price and value review; no annual subscription is implied.
+- Two complete rehearsals are required before the first delivery of a new masterclass/clinic pair. Later clinic cohorts in the same month may use a delta rehearsal only after an observed successful clinic delivery and review of any defects, evidence changes, or configuration changes.
 - Critical or high defects block release.
 - Evidence freshness, product configuration, policy links, and participant-facing claims are rechecked within seven days of delivery.
 
