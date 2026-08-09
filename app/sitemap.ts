@@ -1,5 +1,40 @@
-import type {MetadataRoute} from "next";
-export const dynamic="force-static";
-const base="https://aloha-ai-consulting-rn-collins.vercel.app";
-const paths=["/","/start","/about","/studio","/work","/work/ai-opportunity-clinic","/work/ai-decision-review","/work/workflow-diagnostic-redesign","/work/ai-tool-vendor-decision","/work/prototype-pilot-sprint","/work/ai-operating-partnership","/work/custom-organizational-program","/organizations","/sponsor","/events","/events/hawaii-tech-week","/events/hawaii-tech-week/resources","/learning","/tools","/insights","/questions","/procurement","/policies","/support"];
-export default function sitemap():MetadataRoute.Sitemap{return paths.map(path=>({url:`${base}${path}`,lastModified:new Date("2026-08-03"),changeFrequency:path==="/"?"weekly":"monthly",priority:path==="/"?1:path==="/studio"?0.9:0.7}))}
+import type { MetadataRoute } from "next";
+
+export const dynamic = "force-static";
+
+const base = "https://aloha-ai-consulting.vercel.app";
+const paths = [
+  "/",
+  "/start",
+  "/about",
+  "/studio",
+  "/work",
+  "/work/ai-opportunity-clinic",
+  "/work/ai-decision-review",
+  "/work/workflow-diagnostic-redesign",
+  "/work/ai-tool-vendor-decision",
+  "/work/prototype-pilot-sprint",
+  "/work/ai-operating-partnership",
+  "/work/custom-organizational-program",
+  "/organizations",
+  "/sponsor",
+  "/events",
+  "/events/hawaii-tech-week",
+  "/events/hawaii-tech-week/resources",
+  "/learning",
+  "/tools",
+  "/insights",
+  "/questions",
+  "/procurement",
+  "/policies",
+  "/support",
+];
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  return paths.map((path) => ({
+    url: `${base}${path}`,
+    lastModified: new Date("2026-08-09"),
+    changeFrequency: path === "/" ? "weekly" : "monthly",
+    priority: path === "/" ? 1 : path === "/studio" ? 0.9 : 0.7,
+  }));
+}
