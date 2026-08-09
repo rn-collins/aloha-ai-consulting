@@ -8,7 +8,7 @@ Applies to: Decision Desk Issues 01–12
 
 ## Owner direction
 
-Every month begins with one free Decision Desk masterclass in week 1 and continues with the same accompanying paid, bounded clinic in every remaining week: three clinic cohorts in a four-week month or four clinic cohorts in a five-week month. Issues 02–12 must receive the same depth, diligence, evidentiary discipline, operational design, participant protection, and release scrutiny applied to Issue 01.
+Every month begins with one free Decision Desk masterclass in week 1 and continues with the same accompanying US$295-per-participant, bounded clinic in every remaining week: three clinic cohorts in a four-week month or four clinic cohorts in a five-week month. Issues 02–12 must receive the same depth, diligence, evidentiary discipline, operational design, participant protection, and release scrutiny applied to Issue 01.
 
 The annual program is not satisfied by eleven topic outlines, renamed Issue 01 templates, generic clinic copy, or a calendar. Each month must become its own coherent article, teaching, clinic, commercial, visual, accessibility, and operational release unit.
 
@@ -89,7 +89,7 @@ Each Issue 02–12 dossier must contain all of the following.
 
 ### F. Complete accompanying clinic
 
-Every month requires one governed clinic product that applies that month’s decision method to one bounded, nonconfidential participant workflow. That same clinic is delivered to a separate small cohort in every week remaining after the free week-1 masterclass: three cohorts in a four-week month or four cohorts in a five-week month. A clinic may not be silently omitted. If a proposed topic cannot support a safe clinic, the issue must be redesigned, deferred, replaced, or left dark.
+Every month requires one governed US$295-per-participant clinic product that applies that month’s decision method to one bounded, nonconfidential participant workflow. That same clinic is delivered to a separate small cohort in every week remaining after the free week-1 masterclass: three cohorts in a four-week month or four cohorts in a five-week month. A clinic may not be silently omitted. If a proposed topic cannot support a safe clinic, the issue must be redesigned, deferred, replaced, or left dark.
 
 Repetition does not permit scope drift. The core promise, instrument, eligibility, exclusions, privacy boundary, capacity, and materials remain constant across the month unless a controlled correction is required. Each cohort must have separate screening, payment, confirmation, attendance, support, incident, follow-up, refund, and reconciliation records.
 
