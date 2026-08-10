@@ -40,6 +40,23 @@ test("consumer entry points describe the currently usable estate accurately", as
   assert.match(shell, /href="\/learning"/);
 });
 
+test("consumer orientation and time-to-value controls remain available", async () => {
+  const shell = await read("app/site-shell.tsx");
+  const nav = await read("app/nav-links.tsx");
+  const css = await read("app/globals.css");
+  assert.match(shell, /<NavLinks\/>/);
+  assert.match(nav, /usePathname/);
+  assert.match(nav, /aria-current/);
+  assert.match(css, /nav a\[aria-current="page"\]/);
+  assert.match(css, /@media\(max-width:760px\)[\s\S]*\.nav-action\{display:none\}/);
+  for (const path of ["app/tools/decision-record/page.tsx", "app/tools/vendor-comparison/page.tsx", "app/tools/pilot-design/page.tsx"]) {
+    assert.match(await read(path), /href="#workspace"/);
+  }
+  for (const path of ["app/tools/decision-record/record-builder.tsx", "app/tools/vendor-comparison/vendor-comparison-builder.tsx", "app/tools/pilot-design/pilot-design-kit.tsx"]) {
+    assert.match(await read(path), /id="workspace"/);
+  }
+});
+
 test("principal destinations have distinct discovery metadata and a useful recovery route", async () => {
   const destinations = [
     ["app/start/page.tsx", /title:\s*["']Start here/],
