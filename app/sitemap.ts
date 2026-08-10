@@ -25,6 +25,7 @@ const paths = [
   "/learning/decision-desk",
   "/learning/citation-verifier",
   "/tools",
+  "/tools/decision-record",
   "/insights",
   "/questions",
   "/procurement",
