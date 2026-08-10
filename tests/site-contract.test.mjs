@@ -72,3 +72,23 @@ test("Vendor Comparison Builder is gated, local, portable, and non-certifying", 
   assert.doesNotMatch(builder, /fetch\(|XMLHttpRequest|navigator\.sendBeacon/);
   assert.doesNotMatch(builder, /approveVendor|certifiedVendor|complianceScore/);
 });
+
+test("Pilot Design Kit is gated, local, portable, and blocks deployment drift", async () => {
+  const page = await read("app/tools/pilot-design/page.tsx");
+  const kit = await read("app/tools/pilot-design/pilot-design-kit.tsx");
+  assert.match(page, /PilotDesignKit/);
+  assert.match(kit, /localStorage/);
+  assert.match(kit, /pilot-design-record\.md/);
+  assert.match(kit, /pilot-design-record\.json/);
+  assert.match(kit, /Do not start/i);
+  assert.match(kit, /Bounded purpose and hypothesis/);
+  assert.match(kit, /Baseline, measures, and evidence plan/);
+  assert.match(kit, /affected-party input/i);
+  assert.match(kit, /Stop conditions/);
+  assert.match(kit, /Rollback and fallback/);
+  assert.match(kit, /End-of-pilot decision firewall/);
+  assert.match(kit, /A pilot is not a quiet path to production/);
+  assert.match(kit, /not verified, approved, authorized, certified, or a deployment decision/i);
+  assert.doesNotMatch(kit, /fetch\(|XMLHttpRequest|navigator\.sendBeacon/);
+  assert.doesNotMatch(kit, /approvePilot|authorizeDeployment|complianceScore/);
+});

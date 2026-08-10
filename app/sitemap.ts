@@ -27,6 +27,7 @@ const paths = [
   "/tools",
   "/tools/decision-record",
   "/tools/vendor-comparison",
+  "/tools/pilot-design",
   "/insights",
   "/questions",
   "/procurement",
