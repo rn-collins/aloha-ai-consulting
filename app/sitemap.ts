@@ -23,6 +23,7 @@ const paths = [
   "/events/hawaii-tech-week/resources",
   "/learning",
   "/learning/decision-desk",
+  "/learning/citation-verifier",
   "/tools",
   "/insights",
   "/questions",
@@ -36,6 +37,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${base}${path}`,
     lastModified: new Date("2026-08-09"),
     changeFrequency: path === "/" ? "weekly" : "monthly",
-    priority: path === "/" ? 1 : path === "/studio" ? 0.9 : 0.7,
+    priority: path === "/" ? 1 : path === "/studio" || path === "/learning/citation-verifier" ? 0.9 : 0.7,
   }));
 }
