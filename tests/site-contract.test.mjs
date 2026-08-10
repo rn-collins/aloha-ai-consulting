@@ -57,6 +57,35 @@ test("consumer orientation and time-to-value controls remain available", async (
   }
 });
 
+test("interactive workspaces expose save, finish, resume, and safe reset states", async () => {
+  const builders = [
+    await read("app/tools/decision-record/record-builder.tsx"),
+    await read("app/tools/vendor-comparison/vendor-comparison-builder.tsx"),
+    await read("app/tools/pilot-design/pilot-design-kit.tsx"),
+  ];
+  for (const builder of builders) {
+    assert.match(builder, /Saved automatically on this device/);
+    assert.match(builder, /href="#workspace-actions"/);
+    assert.match(builder, /id="workspace-actions"/);
+    assert.match(builder, /danger-action/);
+  }
+  const course = await read("app/learning/citation-verifier/course-workspace.tsx");
+  const reader = await read("app/learning/citation-verifier/page.tsx");
+  assert.match(course, /Next unfinished/);
+  assert.match(course, /Resume reading/);
+  assert.match(course, /setAttribute\("open"/);
+  assert.match(reader, /id={`lesson-/);
+  assert.match(course, /Delete local learning record/);
+});
+
+test("Opportunity Studio routes finished results only to current destinations", async () => {
+  const studio = await read("app/studio/studio.tsx");
+  for (const destination of ["/tools/pilot-design", "/tools/decision-record", "/learning", "/insights"]) {
+    assert.match(studio, new RegExp(destination.replaceAll("/", "\\/")));
+  }
+  assert.doesNotMatch(studio, /prototype-pilot-sprint|free monthly masterclass/);
+});
+
 test("principal destinations have distinct discovery metadata and a useful recovery route", async () => {
   const destinations = [
     ["app/start/page.tsx", /title:\s*["']Start here/],
