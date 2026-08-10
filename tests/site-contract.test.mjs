@@ -30,3 +30,14 @@ test("Decision Desk remains an inactive program record", async () => {
   assert.match(page, /no-go for public enrollment/i);
   assert.doesNotMatch(page, /href=["'](?:https?:\/\/)?(?:buy|checkout|stripe)/i);
 });
+
+test("Citation Verifier workspace is local, portable, and non-credentialed", async () => {
+  const page = await read("app/learning/citation-verifier/page.tsx");
+  const workspace = await read("app/learning/citation-verifier/course-workspace.tsx");
+  assert.match(page, /CourseWorkspace/);
+  assert.match(workspace, /localStorage/);
+  assert.match(workspace, /citation-verifier-lab-kit\.md/);
+  assert.match(workspace, /citation-verifier-learning-record\.json/);
+  assert.match(workspace, /not verified, graded, certified, or credentialed/i);
+  assert.doesNotMatch(workspace, /fetch\(|XMLHttpRequest|navigator\.sendBeacon/);
+});
