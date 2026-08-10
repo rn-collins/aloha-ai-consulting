@@ -41,3 +41,17 @@ test("Citation Verifier workspace is local, portable, and non-credentialed", asy
   assert.match(workspace, /not verified, graded, certified, or credentialed/i);
   assert.doesNotMatch(workspace, /fetch\(|XMLHttpRequest|navigator\.sendBeacon/);
 });
+
+test("Decision Record Builder is local, portable, and does not approve decisions", async () => {
+  const page = await read("app/tools/decision-record/page.tsx");
+  const builder = await read("app/tools/decision-record/record-builder.tsx");
+  assert.match(page, /DecisionRecordBuilder/);
+  assert.match(builder, /localStorage/);
+  assert.match(builder, /decision-record\.md/);
+  assert.match(builder, /decision-record\.json/);
+  assert.match(builder, /not verified, approved, or certified/i);
+  assert.match(builder, /Stop conditions/);
+  assert.match(builder, /Affected people/);
+  assert.doesNotMatch(builder, /fetch\(|XMLHttpRequest|navigator\.sendBeacon/);
+  assert.doesNotMatch(builder, /riskScore|approveDecision|complianceScore/);
+});
