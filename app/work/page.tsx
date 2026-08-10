@@ -1,5 +1,7 @@
 import Link from "next/link";
+import type {Metadata} from "next";
 import {SiteShell} from "../site-shell";
+export const metadata:Metadata={title:"Ways to work together",description:"Use Aloha AI’s self-directed tools now and review the honest boundaries around facilitated work still under validation."};
 const paths=[
  {n:"01",name:"Opportunity Clinic",state:"candidate · unavailable",when:"A bounded, group-safe problem may benefit from facilitated inquiry.",href:"/work/ai-opportunity-clinic"},
  {n:"02",name:"Decision Record Review",state:"candidate · unavailable",when:"One consequential decision needs evidence, assumptions, ownership, and review preserved.",href:"/work/ai-decision-review"},
