@@ -24,6 +24,22 @@ test("canonical discovery files use the production domain", async () => {
   assert.match(await read("app/robots.ts"), new RegExp(expected.replaceAll(".", "\\.")));
 });
 
+test("consumer entry points describe the currently usable estate accurately", async () => {
+  const home = await read("app/home-experience.tsx");
+  const start = await read("app/start/page.tsx");
+  const work = await read("app/work/page.tsx");
+  const shell = await read("app/site-shell.tsx");
+  for (const source of [home, start, work]) {
+    assert.match(source, /tools\/decision-record/);
+    assert.match(source, /tools\/vendor-comparison/);
+    assert.match(source, /tools\/pilot-design/);
+  }
+  assert.doesNotMatch(home, /only currently usable tool/i);
+  assert.doesNotMatch(start, /free monthly|paid clinic/i);
+  assert.match(shell, /href="\/tools"/);
+  assert.match(shell, /href="\/learning"/);
+});
+
 test("Decision Desk remains an inactive program record", async () => {
   const page = await read("app/learning/decision-desk/page.tsx");
   assert.match(page, /Enrollment inactive/);

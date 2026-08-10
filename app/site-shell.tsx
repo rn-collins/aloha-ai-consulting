@@ -7,12 +7,12 @@ export function SiteShell({ children, immersive = false }: { children: React.Rea
       <div className="wrap nav-wrap">
         <Link className="brand" href="/" aria-label="Aloha AI home"><span className="brand-mark" aria-hidden="true">✳</span>ALOHA AI<small>RN COLLINS / HONOLULU</small></Link>
         <nav aria-label="Primary navigation">
-          <Link href="/start">Start here</Link><Link href="/studio">Studio</Link><Link href="/work">Work together</Link><Link href="/insights">Insights</Link><Link href="/search">Search</Link><Link href="/about">About</Link>
+          <Link href="/start">Start here</Link><Link href="/tools">Tools</Link><Link href="/learning">Learning</Link><Link href="/work">Work together</Link><Link href="/insights">Source Desk</Link><Link href="/about">About</Link>
         </nav>
         <details className="mobile-menu">
           <summary>Menu</summary>
           <nav aria-label="Mobile navigation">
-            <Link href="/start">Start here</Link><Link href="/studio">Studio</Link><Link href="/work">Work together</Link><Link href="/insights">Insights</Link><Link href="/search">Search</Link><Link href="/about">About</Link>
+            <Link href="/start">Start here</Link><Link href="/tools">Tools</Link><Link href="/learning">Learning</Link><Link href="/work">Work together</Link><Link href="/insights">Source Desk</Link><Link href="/search">Search</Link><Link href="/about">About</Link>
           </nav>
         </details>
         <Link className="nav-action" href="/start">Start here <span aria-hidden="true">↗</span></Link>
