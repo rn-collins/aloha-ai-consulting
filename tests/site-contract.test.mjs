@@ -55,3 +55,20 @@ test("Decision Record Builder is local, portable, and does not approve decisions
   assert.doesNotMatch(builder, /fetch\(|XMLHttpRequest|navigator\.sendBeacon/);
   assert.doesNotMatch(builder, /riskScore|approveDecision|complianceScore/);
 });
+
+test("Vendor Comparison Builder is gated, local, portable, and non-certifying", async () => {
+  const page = await read("app/tools/vendor-comparison/page.tsx");
+  const builder = await read("app/tools/vendor-comparison/vendor-comparison-builder.tsx");
+  assert.match(page, /VendorComparisonBuilder/);
+  assert.match(builder, /localStorage/);
+  assert.match(builder, /tool-vendor-comparison\.md/);
+  assert.match(builder, /tool-vendor-comparison\.json/);
+  assert.match(builder, /Current process/);
+  assert.match(builder, /Do not advance/);
+  assert.match(builder, /Privacy, data authority/);
+  assert.match(builder, /Accessibility and equitable access/);
+  assert.match(builder, /Exit, portability, and continuity/);
+  assert.match(builder, /not verified, approved, recommended, or certified/i);
+  assert.doesNotMatch(builder, /fetch\(|XMLHttpRequest|navigator\.sendBeacon/);
+  assert.doesNotMatch(builder, /approveVendor|certifiedVendor|complianceScore/);
+});
