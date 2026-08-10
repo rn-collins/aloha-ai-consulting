@@ -1,5 +1,7 @@
 import Link from "next/link";
+import type {Metadata} from "next";
 import {SiteShell} from "../site-shell";
+export const metadata:Metadata={title:"Support and accessibility",description:"Understand Aloha AI’s keyboard, zoom, motion, browser-local privacy, record-recovery, and public-feedback boundaries."};
 const access=[
   ["Keyboard", "A skip link appears on focus. Native links, buttons, fieldsets, labels, and progress elements support keyboard navigation."],
   ["Reading and zoom", "Pages reflow for smaller screens and browser zoom. Tools use text labels rather than color alone to communicate status."],

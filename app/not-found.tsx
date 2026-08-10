@@ -1,0 +1,7 @@
+import Link from "next/link";
+import {SiteShell} from "./site-shell";
+
+export default function NotFound(){return <SiteShell><main id="main">
+  <section className="page-hero wrap"><p className="kicker">404 · route not found</p><h1>This record is not here—<em>but your next useful step can be.</em></h1><p className="lede">The address may be mistyped, retired, or moved. Nothing has been substituted for it, and no draft page is being presented as a finished destination.</p><div className="actions"><Link className="button primary" href="/start">Choose a starting point</Link><Link className="button" href="/search">Search public records</Link></div></section>
+  <section className="wrap service-cards"><article><p className="section-label">Use something now</p><h2>Four private decision tools</h2><p>Map an opportunity, preserve a decision, compare candidates, or design a bounded pilot. No account or payment is required.</p><Link className="text-link" href="/tools">Explore the tools →</Link></article><article><p className="section-label">Learn</p><h2>Open Citation Verifier course</h2><p>Use all eighteen lessons, the knowledge check, workbook, and browser-local progress record.</p><Link className="text-link" href="/learning/citation-verifier">Start the course →</Link></article><article><p className="section-label">Inspect</p><h2>Source Desk</h2><p>See the official sources, limits, review date, and evidence method behind the live decision tools.</p><Link className="text-link" href="/insights">Inspect the evidence →</Link></article></section>
+</main></SiteShell>}

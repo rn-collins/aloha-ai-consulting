@@ -1,5 +1,8 @@
 import Link from "next/link";
+import type {Metadata} from "next";
 import {SiteShell} from "../site-shell";
+
+export const metadata:Metadata={title:"About RN Collins",description:"Meet RN Collins and inspect the research, decision-design, implementation, and education method behind Aloha AI."};
 
 const practice = [
   ["Research", "Read the governing sources, map uncertainty, and separate evidence from assumption."],

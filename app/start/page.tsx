@@ -1,5 +1,8 @@
 import Link from "next/link";
+import type {Metadata} from "next";
 import { SiteShell } from "../site-shell";
+
+export const metadata:Metadata={title:"Start here",description:"Choose the right Aloha AI tool, open course, or work-together record for the decision you need to make."};
 
 const choices=[
  ["01","I am deciding whether AI belongs in a workflow","Map the work, people, evidence, consequences, and constraints before choosing an intervention.","/studio","Use the Opportunity Studio"],

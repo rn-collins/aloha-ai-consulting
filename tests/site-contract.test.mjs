@@ -40,6 +40,31 @@ test("consumer entry points describe the currently usable estate accurately", as
   assert.match(shell, /href="\/learning"/);
 });
 
+test("principal destinations have distinct discovery metadata and a useful recovery route", async () => {
+  const destinations = [
+    ["app/start/page.tsx", /title:\s*["']Start here/],
+    ["app/about/page.tsx", /title:\s*["']About RN Collins/],
+    ["app/work/page.tsx", /title:\s*["']Ways to work together/],
+    ["app/learning/page.tsx", /title:\s*["']Learning/],
+    ["app/learning/citation-verifier/page.tsx", /title:\s*["']Citation Verifier course/],
+    ["app/tools/page.tsx", /title:\s*["']Private decision tools/],
+    ["app/insights/page.tsx", /title:\s*["']Source Desk/],
+    ["app/policies/page.tsx", /title:\s*["']Site policies/],
+    ["app/support/page.tsx", /title:\s*["']Support and accessibility/],
+    ["app/procurement/page.tsx", /title:\s*["']Procurement readiness/],
+  ];
+  for (const [path, title] of destinations) {
+    const source = await read(path);
+    assert.match(source, title, `missing distinct title in ${path}`);
+    assert.match(source, /description:\s*["'][^"']{40,}/, `missing useful description in ${path}`);
+  }
+  const notFound = await read("app/not-found.tsx");
+  assert.match(notFound, /href="\/start"/);
+  assert.match(notFound, /href="\/search"/);
+  assert.match(notFound, /href="\/tools"/);
+  assert.match(notFound, /href="\/learning\/citation-verifier"/);
+});
+
 test("trust surfaces provide verifiable proof and truthful operational boundaries", async () => {
   const about = await read("app/about/page.tsx");
   const insights = await read("app/insights/page.tsx");

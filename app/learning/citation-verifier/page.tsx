@@ -1,6 +1,9 @@
 import Link from "next/link";
+import type {Metadata} from "next";
 import {SiteShell} from "../../site-shell";
 import {CourseWorkspace} from "./course-workspace";
+
+export const metadata:Metadata={title:"Citation Verifier course",description:"Take Aloha AI’s complete eighteen-lesson course on trust-safe citation retrieval, support analysis, evaluation, and human review."};
 
 const modules = [
   {title:"Define what verified means",summary:"Separate citation form, source existence, current status, quotation accuracy, and proposition support before choosing technology.",lessons:[

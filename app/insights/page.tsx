@@ -1,5 +1,7 @@
 import Link from "next/link";
+import type {Metadata} from "next";
 import {SiteShell} from "../site-shell";
+export const metadata:Metadata={title:"Source Desk",description:"Inspect the official sources, evidence method, limits, and review controls behind Aloha AI’s public decision tools."};
 const sources = [
   ["NIST AI Risk Management Framework 1.0", "U.S. National Institute of Standards and Technology · January 2023", "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf"],
   ["NIST AI RMF Playbook", "U.S. National Institute of Standards and Technology · living companion resource", "https://airc.nist.gov/airmf-resources/playbook/"],
