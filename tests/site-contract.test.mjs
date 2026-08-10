@@ -40,6 +40,23 @@ test("consumer entry points describe the currently usable estate accurately", as
   assert.match(shell, /href="\/learning"/);
 });
 
+test("trust surfaces provide verifiable proof and truthful operational boundaries", async () => {
+  const about = await read("app/about/page.tsx");
+  const insights = await read("app/insights/page.tsx");
+  const support = await read("app/support/page.tsx");
+  const policies = await read("app/policies/page.tsx");
+  assert.match(about, /pubmed\.ncbi\.nlm\.nih\.gov/);
+  assert.match(about, /doi\.org\/10\.3389/);
+  assert.match(insights, /nvlpubs\.nist\.gov/);
+  assert.match(insights, /gao\.gov\/products\/gao-21-519sp/);
+  assert.match(insights, /w3\.org\/TR\/WCAG22/);
+  assert.match(support, /cannot recover local records/i);
+  assert.match(support, /no response time is promised/i);
+  assert.doesNotMatch(support, /Route inactive during implementation/);
+  assert.match(policies, /No active commerce or accounts/);
+  assert.doesNotMatch(policies, /controlled drafts|masterclass|clinic/);
+});
+
 test("Decision Desk remains an inactive program record", async () => {
   const page = await read("app/learning/decision-desk/page.tsx");
   assert.match(page, /Enrollment inactive/);
