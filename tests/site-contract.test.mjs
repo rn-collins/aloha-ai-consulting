@@ -150,12 +150,32 @@ test("Aloha AI learning remains separate from Hawaii Tech Week", async () => {
   }
   const masterclass = await read("app/learning/masterclass/page.tsx");
   assert.match(masterclass, /Free Aloha AI Masterclass/);
-  assert.match(masterclass, /Registration preparing/);
-  assert.match(masterclass, /href="\/insights"/);
+  assert.match(masterclass, /open now/i);
+  assert.match(masterclass, /45–60 minutes/);
+  assert.match(masterclass, /aloha-ai-masterclass-working-guide\.md/);
   assert.match(masterclass, /href="\/work\/ai-opportunity-clinic"/);
   for (const source of [publicSources[0], publicSources[2], publicSources[3], publicSources[5], publicSources[6]]) {
     assert.match(source, /\/learning\/masterclass/);
   }
+});
+
+test("masterclass and Clinic expose complete, truthful operating states", async () => {
+  const masterclass = await read("app/learning/masterclass/page.tsx");
+  const guide = await read("public/aloha-ai-masterclass-working-guide.md");
+  const clinic = await read("app/work/ai-opportunity-clinic/page.tsx");
+  const learning = await read("app/learning/page.tsx");
+  const search = await read("app/search/public-search.tsx");
+  assert.match(masterclass, /Self-paced text/);
+  assert.match(masterclass, /Account<\/span><strong>Not required/);
+  assert.match(guide, /Name the decision—not the technology/);
+  assert.match(guide, /Test the operating conditions/);
+  assert.match(clinic, /90 minutes/);
+  assert.match(clinic, /Up to 6/);
+  assert.match(clinic, /\$275 \/ person/);
+  assert.match(clinic, /LinkedIn link opens a nonconfidential scope conversation/);
+  assert.doesNotMatch(clinic, /booking preparing|unsettled/i);
+  assert.match(learning, /No registration or recording required/);
+  assert.match(search, /Open now/);
 });
 
 test("Citation Verifier workspace is local, portable, and non-credentialed", async () => {
