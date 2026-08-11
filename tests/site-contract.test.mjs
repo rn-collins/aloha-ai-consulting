@@ -135,6 +135,29 @@ test("Decision Desk remains an inactive program record", async () => {
   assert.doesNotMatch(page, /href=["'](?:https?:\/\/)?(?:buy|checkout|stripe)/i);
 });
 
+test("Aloha AI learning remains separate from Hawaii Tech Week", async () => {
+  const publicSources = [
+    await read("app/learning/page.tsx"),
+    await read("app/learning/masterclass/page.tsx"),
+    await read("app/start/page.tsx"),
+    await read("app/work/ai-opportunity-clinic/page.tsx"),
+    await read("app/learning/decision-desk/page.tsx"),
+    await read("app/search/public-search.tsx"),
+    await read("app/sitemap.ts"),
+  ];
+  for (const source of publicSources) {
+    assert.doesNotMatch(source, /Hawaiʻi Tech Week|Hawaii Tech Week|hawaii-tech-week|\/events\/hawaii/i);
+  }
+  const masterclass = await read("app/learning/masterclass/page.tsx");
+  assert.match(masterclass, /Free Aloha AI Masterclass/);
+  assert.match(masterclass, /Registration preparing/);
+  assert.match(masterclass, /href="\/insights"/);
+  assert.match(masterclass, /href="\/work\/ai-opportunity-clinic"/);
+  for (const source of [publicSources[0], publicSources[2], publicSources[3], publicSources[5], publicSources[6]]) {
+    assert.match(source, /\/learning\/masterclass/);
+  }
+});
+
 test("Citation Verifier workspace is local, portable, and non-credentialed", async () => {
   const page = await read("app/learning/citation-verifier/page.tsx");
   const workspace = await read("app/learning/citation-verifier/course-workspace.tsx");
