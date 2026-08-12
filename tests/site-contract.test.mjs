@@ -171,6 +171,12 @@ test("Decision Desk Issue 05 governs one human-opportunity stage without decidin
  assert.equal((page.match(/\["(?:0\d|1[0-2])"/g)||[]).length,12);assert.match(tool,/localStorage/);assert.match(tool,/28/);assert.match(tool,/Export Impact Map/);assert.match(tool,/Delete local map/);
 });
 
+test("Decision Desk Issue 06 requires substantiation before publication",async()=>{
+ const page=await read("app/learning/decision-desk/issue-06/page.tsx"),tool=await read("app/learning/decision-desk/issue-06/substantiation-gate.tsx");
+ for(const term of ["objective","comparative","performance","scientific","sustainability","endorsement","source fact from inference","version drift","No real claim clearance"]) assert.match(page,new RegExp(term,"i"));
+ assert.equal((page.match(/\["(?:0\d|1[0-2])"/g)||[]).length,12);assert.match(tool,/localStorage/);assert.match(tool,/30/);assert.match(tool,/Export Substantiation Gate/);assert.match(tool,/Delete local gate/);
+});
+
 test("Aloha AI learning remains separate from Hawaii Tech Week", async () => {
   const publicSources = [
     await read("app/learning/page.tsx"),
