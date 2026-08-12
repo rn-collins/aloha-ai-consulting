@@ -3,6 +3,12 @@ export const clinicConfig = {
   maximumParticipants: 6,
   pricePerParticipant: 275,
   cohortMaximum: 1650,
+  offeredSlotHoldHours: 48,
+  freeRescheduleNoticeHours: 72,
+  fullRefundNoticeDays: 7,
+  partialRefundNoticeDays: 3,
+  partialRefundPercent: 50,
+  refundInitiationBusinessDays: 5,
 } as const;
 
 export const clinicEnrollmentConfigured = () =>
