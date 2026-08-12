@@ -92,8 +92,8 @@ test("principal destinations have distinct discovery metadata and a useful recov
     ["app/about/page.tsx", /title:\s*["']About RN Collins/],
     ["app/work/page.tsx", /title:\s*["']Ways to work together/],
     ["app/learning/page.tsx", /title:\s*["']Learning/],
-    ["app/learning/citation-verifier/page.tsx", /title:\s*["']Citation Verifier course/],
-    ["app/tools/page.tsx", /title:\s*["']Private decision tools/],
+    ["app/learning/citation-verifier/page.tsx", /title:\s*["']Build a Trust-Safe Citation Verifier/],
+    ["app/tools/page.tsx", /title:\s*["']Decision tools/],
     ["app/insights/page.tsx", /title:\s*["']Source Desk/],
     ["app/policies/page.tsx", /title:\s*["']Site policies/],
     ["app/support/page.tsx", /title:\s*["']Support and accessibility/],
@@ -108,7 +108,7 @@ test("principal destinations have distinct discovery metadata and a useful recov
   assert.match(notFound, /href="\/start"/);
   assert.match(notFound, /href="\/search"/);
   assert.match(notFound, /href="\/tools"/);
-  assert.match(notFound, /href="\/learning\/citation-verifier"/);
+  assert.match(notFound, /href="\/learning"/);
 });
 
 test("trust surfaces provide verifiable proof and truthful operational boundaries", async () => {
@@ -130,10 +130,12 @@ test("trust surfaces provide verifiable proof and truthful operational boundarie
   assert.doesNotMatch(policies, /controlled drafts|masterclass|clinic/);
 });
 
-test("Decision Desk remains an inactive program record", async () => {
+test("Decision Desk preserves the canonical annual plan without activating enrollment", async () => {
   const page = await read("app/learning/decision-desk/page.tsx");
-  assert.match(page, /Enrollment inactive/);
-  assert.match(page, /no-go for public enrollment/i);
+  assert.match(page, /Sep 2026–Aug 2027/);
+  assert.match(page, /Program plan—not enrollment/);
+  assert.match(page, /The plan is complete\. Most monthly products are not/);
+  assert.match(page, /\/learning\/decision-desk\/issue-01/);
   assert.doesNotMatch(page, /href=["'](?:https?:\/\/)?(?:buy|checkout|stripe)/i);
 });
 
@@ -151,9 +153,9 @@ test("Aloha AI learning remains separate from Hawaii Tech Week", async () => {
     assert.doesNotMatch(source, /Hawaiʻi Tech Week|Hawaii Tech Week|hawaii-tech-week|\/events\/hawaii/i);
   }
   const masterclass = await read("app/learning/masterclass/page.tsx");
-  assert.match(masterclass, /Free Aloha AI Masterclass/);
-  assert.match(masterclass, /open now/i);
-  assert.match(masterclass, /45–60 minutes/);
+  assert.match(masterclass, /AI &amp; Your Work/);
+  assert.match(masterclass, /90 minutes/);
+  assert.match(masterclass, /Twenty-four cumulative chapters/);
   assert.match(masterclass, /aloha-ai-masterclass-working-guide\.md/);
   assert.match(masterclass, /href="\/work\/ai-opportunity-clinic"/);
   for (const source of [publicSources[0], publicSources[2], publicSources[3], publicSources[5], publicSources[6]]) {
@@ -167,17 +169,18 @@ test("masterclass and Clinic expose complete, truthful operating states", async 
   const clinic = await read("app/work/ai-opportunity-clinic/page.tsx");
   const learning = await read("app/learning/page.tsx");
   const search = await read("app/search/public-search.tsx");
-  assert.match(masterclass, /Self-paced text/);
-  assert.match(masterclass, /Account<\/span><strong>Not required/);
-  assert.match(guide, /Name the decision—not the technology/);
-  assert.match(guide, /Test the operating conditions/);
+  assert.match(masterclass, /complete 90-minute edition/);
+  assert.match(masterclass, /Define · Examine · Decide · Build/);
+  assert.match(guide, /Translate the tool request into a work problem/);
+  assert.match(guide, /Friction/);
+  assert.match(guide, /Kōkua Studio/);
   assert.match(clinic, /90 minutes/);
   assert.match(clinic, /Up to 6/);
   assert.match(clinic, /\$275 \/ person/);
   assert.match(clinic, /An inquiry is not a booking/);
   assert.doesNotMatch(clinic, /booking preparing|unsettled/i);
-  assert.match(learning, /No registration or recording required/);
-  assert.match(search, /Open now/);
+  assert.match(learning, /Completed teaching system/);
+  assert.match(search, /Complete flagship curriculum/);
 });
 
 test("Clinic inquiry is private, bounded, capacity-limited, and inactive without secure mail configuration", async () => {
@@ -186,7 +189,7 @@ test("Clinic inquiry is private, bounded, capacity-limited, and inactive without
   const action = await read("app/work/ai-opportunity-clinic/actions.ts");
   const config = await read("app/work/ai-opportunity-clinic/clinic-config.ts");
   const nextConfig = await read("next.config.ts");
-  assert.match(page, /Start a cohort inquiry/);
+  assert.match(page, /Check inquiry status/);
   assert.match(page, /Payment and Zoom details follow only after written scope/);
   assert.match(form, /Do not describe medical details here/);
   assert.match(form, /nonconfidential and authorize Aloha AI/);

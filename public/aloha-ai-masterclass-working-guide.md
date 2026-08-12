@@ -1,237 +1,263 @@
-# What Should We Actually Use AI For?
+# AI & Your Work
 
-## Masterclass Workbook
+## Examine the Work Before You Automate It
 
-Use this workbook with the free 45–60 minute Aloha AI masterclass. Work on one real, low-sensitivity workflow or use the fictional case below. Do not enter confidential, privileged, personal, regulated, credential, payment, or security-sensitive information.
+### Participant Workbook · 90-minute flagship masterclass
 
-Completion means you can show your reasoning. It does not approve a tool, authorize a pilot, certify compliance, or replace legal, privacy, security, accessibility, procurement, labor, or domain review.
+Use this workbook with the Aloha AI flagship masterclass. Hold one recurring piece of work privately in mind or use the fictional Kōkua Studio case. Do not record confidential, privileged, proprietary, personal, health, financial, employee, client, tax, payment, credential, or security-sensitive information.
 
----
-
-## Worked example: university student-service questions
-
-**Initial request:** Deploy an AI chatbot to reduce student-service email.
-
-**Decision statement:** Decide how to improve timely, accessible answers to routine student questions, owned by the Director of Student Services, while preserving correct handling of individual cases and a usable human escalation path.
-
-**What the team knows:** Email volume and response time are measured. Staff report repeated questions. Several policy pages conflict. Staff frequently clarify incomplete questions and repair incorrect routing.
-
-**What the team does not know:** What share of questions can be answered from approved public sources; error rates in current answers; accessibility and language needs; the amount of staff time spent on clarification versus substantive judgment.
-
-**Disposition:** Process repair plus investigation—not a chatbot pilot yet. Assign policy owners, resolve source conflicts, sample 200 inquiries, establish baseline accuracy and escalation needs, then review whether a bounded retrieval-only test is justified.
+This workbook supports general education. It does not recommend a vendor, authorize implementation, certify readiness or compliance, or provide individualized legal, tax, security, clinical, accounting, employment, financial, or investment advice.
 
 ---
 
-# Lesson 1 — Name the decision, not the technology
+# Part 1 — Define
 
-## 1A. Separate request from need
+## Translate the tool request into a work problem
 
-- Initial technology request:
-- Who made it, and what prompted it:
-- What problem do they believe it solves:
-- What decision would remain if AI products disappeared tomorrow:
+**Tool request or proposed technology:**
 
-## 1B. Name people and ownership
+**Recurring work beneath the request:**
 
-| Role | Name or group | What they need | Consequence if wrong |
-|---|---|---|---|
-| Accountable decision owner |  |  |  |
-| People doing the work |  |  |  |
-| People receiving the service |  |  |  |
-| People handling exceptions or harm |  |  |  |
+**Desired outcome:**
 
-## 1C. Write an observable decision statement
+**Constraint that cannot be violated:**
 
-> We must decide how to **[improve/change the work]** for **[affected people]**, owned by **[accountable role]**, so that **[observable outcome]** changes from **[baseline]** to **[target]** by **[date]**, while preserving **[essential quality, right, or service]**.
+**Accountable owner:**
 
-- Draft:
-- Does it name a product? If yes, rewrite it:
-- What baseline is missing:
+**People doing, receiving, reviewing, or repairing the work:**
 
-**Knowledge check answer:** The strongest statement names the work, affected people, owner, outcome, and guardrail without preselecting a tool.
+Complete this statement:
+
+> We need to decide how to improve **[recurring work]** for **[affected people]**, owned by **[role]**, so that **[observable outcome]** improves while preserving **[constraint, right, quality, or relationship]**.
+
+If the statement still names a product, rewrite it.
 
 ---
 
-# Lesson 2 — Make the current work visible
+# Part 2 — Examine
 
-## 2A. Follow one representative case
+## Opportunity Map
 
-Mark judgment **J**, exception **E**, handoff **H**, repair **R**, and evidence gap **?**.
+### 1. Friction
 
-| Step | Person/system | Input or evidence | Action/judgment | Output/handoff | Marker |
+Friction is repeated loss of time, attention, money, capacity, or trust. It is a signal—not automatically the cause.
+
+- Where is the visible delay, repetition, rework, error, or frustration?
+- Who experiences it?
+- How often does it occur?
+- What evidence establishes it?
+- What might actually cause it?
+- Which current strengths must not be destroyed?
+
+### 2. Inputs
+
+Correct work depends on information that is available, current, complete, authoritative, and permitted for the intended use.
+
+| Required input | Current source | Authority/owner | Current? | Permitted? | Missing or conflicting? |
+|---|---|---|---|---|---|
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
+
+### 3. Judgment
+
+Mark every interpretation, approval, empathy, negotiation, taste, professional duty, or responsibility a person must own.
+
+| Judgment | Current owner | Evidence used | Consequence if wrong | May AI assist? | Must remain human-owned? |
+|---|---|---|---|---|---|
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
+
+### 4. Risk
+
+Design how failure will be detected—not merely how it might be prevented.
+
+| Failure | Person/information affected | Detection method | Response owner | Stop trigger | Repair/fallback |
+|---|---|---|---|---|---|
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
+
+### 5. Value
+
+Define the measure before a demonstration can rewrite the standard.
+
+- Current baseline:
+- Intended improvement:
+- Measurement method:
+- Review period and sample:
+- Guardrail against a worse substantive outcome:
+- Correction/review workload:
+- Evidence that would show the intervention is not worthwhile:
+
+---
+
+# Part 3 — Make the current system visible
+
+Follow one representative case from trigger to destination. Mark judgment **J**, exception **E**, handoff **H**, repair **R**, and evidence gap **?**.
+
+| Step | Person/system | Input | Action or judgment | Output/handoff | J/E/H/R/? |
 |---|---|---|---|---|---|
 | Trigger |  |  |  |  |  |
 | 2 |  |  |  |  |  |
 | 3 |  |  |  |  |  |
 | 4 |  |  |  |  |  |
-| Outcome |  |  |  |  |  |
+| 5 |  |  |  |  |  |
+| Destination |  |  |  |  |  |
 
-## 2B. Surface invisible labor
+## Evidence ledger
 
-- Where do people clarify ambiguous requests:
-- Where do they reconstruct missing context:
-- Where do they use discretion that is not in the written procedure:
-- Where do they repair mistakes or calm frustrated people:
-- Which strengths of the current process must be preserved:
+Label each claim **measured**, **observed**, **reported**, **inferred**, or **unknown**.
 
-## 2C. Evidence ledger
-
-Use **observed**, **measured**, **reported**, **inferred**, or **unknown**.
-
-| Important claim | Status | Source | Confidence | What would verify it |
-|---|---|---|---|---|
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-**Knowledge check answer:** Map both the official process and real practice. Workarounds may carry essential context, judgment, or repair.
+| Claim | Status | Source/date | What it supports | Limitation | What would verify it |
+|---|---|---|---|---|---|
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
 
 ---
 
-# Lesson 3 — Keep five paths open
+# Prepared fictional case — Kōkua Studio
 
-Score each criterion 1 (weak) to 5 (strong). For failure impact, 5 means low or containable impact. Do not total scores until you have written the evidence.
+Kōkua Studio is a fictional composite, not a client story or performance claim.
 
-| Path | Expected benefit | Evidence strength | Delivery burden | Reversibility | Failure impact | Key evidence/reasoning |
-|---|---:|---:|---:|---:|---:|---|
-| Repair or simplify the process |  |  |  |  |  |  |
-| Improve human-led work |  |  |  |  |  |  |
-| Investigate / gather evidence |  |  |  |  |  |  |
-| No new intervention now |  |  |  |  |  |  |
-| Bounded AI assistance |  |  |  |  |  |  |
+Two owners provide customized services in Hawaiʻi. Each week, they spend approximately six owner-hours apiece turning discovery notes into proposals. Notes are scattered. Service details, current prices, availability, prior language, and client-specific fit must be checked. One owner drafts; another reviews before delivery.
 
-- Strongest non-AI path and why:
-- What AI uniquely contributes, if anything:
-- Which path depends least on unverified assumptions:
-- Who bears new work or risk under each leading path:
+Important judgments include client fit, scope, price, promises, exceptions, and final responsibility. Important risks include confidential notes entering an inappropriate service, invented deliverables, stale prices, omitted limitations, and confident-sounding errors.
 
-**Knowledge check answer:** When inconsistent source material causes inconsistent answers, repair and govern the sources before automating their use.
+## Your initial view
 
----
+- What is the decision—not the tool request?
+- What appears to be friction?
+- What might be the underlying cause?
+- Which inputs require authority or cleanup?
+- Which judgments remain human-owned?
+- What baseline and guardrail would you define?
+- Which of the four findings would you choose now?
 
-# Lesson 4 — Test the operating conditions
+## Prepared disposition
 
-Mark **present**, **missing**, or **uncertain**. “Planned” is not “present.”
+Assuming the inputs can be stabilized, the lowest responsible AI-related intervention is a bounded experiment:
 
-| Condition | Status | Evidence | Owner | Required action |
-|---|---|---|---|---|
-| Authority to decide and operate |  |  |  |  |
-| Appropriate data and permission |  |  |  |  |
-| Affected-party input |  |  |  |  |
-| Accessibility and language access |  |  |  |  |
-| Privacy and data minimization |  |  |  |  |
-| Security and misuse controls |  |  |  |  |
-| Defined human review and capacity |  |  |  |  |
-| Baseline and success measures |  |  |  |  |
-| Incident owner and response |  |  |  |  |
-| Working fallback service |  |  |  |  |
-| Measurable stop conditions |  |  |  |  |
-| Records and review schedule |  |  |  |  |
-
-## Write one operational control
-
-Weak: “A human will review.”
-
-Testable: “The service specialist reviews every proposed answer before release during the four-week test, may reject it without penalty, records the reason, and escalates policy conflicts to the service owner within one business day.”
-
-- Your control:
-- Reviewer and authority:
-- Response time:
-- Capacity evidence:
-- Escalation path:
-
-## Write a stop condition
-
-> Pause **[scope]** within **[time]** when **[metric/event]** reaches **[threshold]** in **[sample/window]**. **[Owner]** decides whether and how it may resume.
-
-- Stop condition:
-- Fallback after stopping:
-
-**Knowledge check answer:** A valid stop condition specifies a metric or event, threshold, sample or window, response time, owner, and fallback.
+- ten fabricated or deliberately redacted historical cases;
+- one current, approved source packet;
+- draft-only output;
+- owner review of fit, scope, price, promises, missing facts, exceptions, and prohibited language;
+- comparison with baseline time, turnaround, and correction burden;
+- current process remains available;
+- stop if confidential material enters the system;
+- stop if an unapproved promise survives review; and
+- stop if correction burden eliminates the time benefit.
 
 ---
 
-# Lesson 5 — Choose the smallest honest next step
+# Part 4 — Decide
 
-## 5A. Select one disposition
+## Four legitimate findings
 
-- [ ] Keep the work human-led
-- [ ] Repair or simplify the process
-- [ ] Investigate and gather missing evidence
-- [ ] Compare options under defined requirements
-- [ ] Design a bounded, reversible pilot
-- [ ] Stop / no new intervention
+Choose one. Do not treat AI adoption as the successful answer by default.
 
-## 5B. Decision Record
+- [ ] **Bounded experiment:** enough evidence and control exist to test one narrow claim reversibly.
+- [ ] **Redesign first:** ownership, sources, permissions, steps, or handoffs are not stable enough to test AI responsibly.
+- [ ] **Keep human-led:** relationship, craft, care, discretion, duty, or accountability is central to the value of the work.
+- [ ] **Insufficient information:** the responsible next step is to gather evidence rather than manufacture certainty.
 
-- **Decision:**
-- **Accountable owner:**
-- **Date and next review date:**
-- **Outcome and baseline:**
-- **People affected:**
-- **Evidence supporting the decision:**
-- **Important assumptions/unknowns:**
-- **Alternatives considered:**
-- **Why the selected path is proportionate:**
-- **Dissent or unresolved concern:**
-- **Conditions that must remain true:**
-- **Evidence required to advance:**
-- **Evidence or event requiring pause/stop:**
+**Finding:**
 
-## 5C. Monday-morning plan
+**Evidence supporting it:**
 
-| First action | Owner | Due date | Deliverable/evidence | Review point |
-|---|---|---|---|---|
-|  |  |  |  |  |
+**Contradictory evidence or dissent:**
 
-If the disposition is a pilot, also define:
+**What could change the finding:**
 
-| Pilot boundary | Your definition |
+## Intervention ladder
+
+Choose the lowest sufficient intervention capable of producing the required result.
+
+1. Clarify ownership.
+2. Improve a template or checklist.
+3. Use ordinary rules-based automation.
+4. Add one AI-assisted step with review.
+5. Create an integrated workflow.
+6. Build a custom system.
+
+**Selected rung and why lower rungs are insufficient:**
+
+**Setup, testing, training, maintenance, security, and exit work introduced:**
+
+---
+
+# Part 5 — Build the smallest next action
+
+## Bounded experiment specification
+
+Complete only if your finding supports an experiment.
+
+| Element | Definition |
 |---|---|
-| Users and tasks included |  |
+| Claim being tested |  |
+| Users and task |  |
 | Explicit exclusions |  |
-| Data allowed / prohibited |  |
-| Duration and sample size |  |
-| Human review |  |
-| Success and guardrail metrics |  |
-| Incident and fallback process |  |
-| Stop rules |  |
+| Permitted/prohibited inputs |  |
+| Approved references |  |
+| Structured instruction |  |
+| Draft/output boundary |  |
+| Human review checklist |  |
+| Decision owner |  |
+| Destination |  |
+| Evidence log |  |
+| Baseline and measure |  |
+| Guardrail |  |
+| Duration/sample |  |
+| Stop rule |  |
+| Rollback/fallback |  |
 
-**Knowledge check answer:** A pilot is justified only when the claim is testable, prerequisites and baseline exist, exposure is bounded, review is real, and rollback works.
+## Testable human review
+
+“A person checks it” is not a control.
+
+- Reviewer:
+- Evidence and checklist:
+- Authority to reject or stop:
+- Review capacity and response time:
+- Escalation path:
+- Record produced:
+
+## Stop rule
+
+> Pause **[scope]** within **[time]** when **[event or metric]** reaches **[threshold]** during **[sample/window]**. **[owner]** determines whether the work stops, is repaired, or is separately authorized to resume. Until then, **[fallback]** continues.
 
 ---
 
-# Final assessment rubric
+# Monday Plan
 
-Score each item 0 (absent), 1 (partial), or 2 (clear and supported). A complete record scores at least 16/20 with no zero in ownership, evidence, affected people, controls, or stop conditions.
+Do these before buying a platform:
 
-| Criterion | 0–2 |
-|---|---:|
-| Decision, owner, and outcome are explicit |  |
-| Current workflow includes judgment, exceptions, and repair |  |
-| Affected people and consequences are identified |  |
-| Evidence is separated from assumptions |  |
-| All five paths receive a fair comparison |  |
-| Required operating conditions are evidenced |  |
-| Human review, incident response, and fallback are operational |  |
-| Disposition follows from the evidence |  |
-| Next action, owner, date, and review point are named |  |
-| Advance and stop evidence are measurable |  |
-| **Total / 20** |  |
+1. Document one recurring process exactly as it happens.
+2. Mark every point containing sensitive inputs or human judgment.
+3. Define one reversible improvement and its measure.
 
-## Reflection
+| First action | Owner | Due date | Evidence produced | Review point |
+|---|---|---|---|---|
+|  |  |  |  |  |
 
-- What did you believe at the start that changed:
-- Which affected perspective is still missing:
-- What evidence would most change the decision:
-- Can another person understand and challenge your reasoning:
+- Evidence required to advance:
+- Evidence or event requiring pause/stop:
+- People who must review or participate:
+- Next review date:
 
-## Glossary
+---
 
-- **Decision statement:** A product-neutral description of the choice, owner, affected people, outcome, and guardrail.
-- **Disposition:** The selected path: human-led, repair, investigate, compare, pilot, or stop.
-- **Operating condition:** A capability or control that must actually exist for responsible operation.
-- **Bounded pilot:** A time-, task-, user-, and data-limited test of a specific claim with review and rollback.
-- **Stop condition:** A measurable event or threshold that triggers pause or termination.
-- **Decision Record:** The durable account of evidence, alternatives, reasoning, conditions, ownership, and review.
+# Completion check
+
+- [ ] I translated the tool request into a work problem.
+- [ ] I mapped friction without assuming it was the cause.
+- [ ] I identified the inputs, authorities, permissions, and conflicts.
+- [ ] I preserved human-owned judgments and responsibilities.
+- [ ] I designed detection, response, fallback, and stop rules.
+- [ ] I defined value and guardrails before a test.
+- [ ] I considered all four legitimate findings.
+- [ ] I chose the lowest sufficient intervention.
+- [ ] Any experiment is bounded, reversible, reviewable, and measured.
+- [ ] My Monday Plan names an action, owner, evidence, and review date.
+
+Completion demonstrates that you recorded a decision method. It does not establish that the evidence is correct, the tool is appropriate, a test is authorized, legal or professional requirements are satisfied, or implementation is safe.
