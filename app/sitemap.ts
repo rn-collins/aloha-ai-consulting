@@ -31,6 +31,7 @@ const paths = [
   "/procurement",
   "/policies",
   "/support",
+  "/search",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
