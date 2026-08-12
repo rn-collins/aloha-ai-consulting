@@ -151,6 +151,14 @@ test("Decision Desk Issue 02 is a complete public learning product with fail-clo
   assert.match(workspace,/Delete local record/);
 });
 
+test("Decision Desk Issue 03 governs support authority by function and message class",async()=>{
+  const page=await read("app/learning/decision-desk/issue-03/page.tsx");
+  const map=await read("app/learning/decision-desk/issue-03/support-authority-map.tsx");
+  for(const term of ["Classify","retrieve","draft","send","act","Critical stop conditions","No production agent access"]) assert.match(page,new RegExp(term,"i"));
+  assert.equal((page.match(/\["(?:0\d|10)"/g)||[]).length,10);
+  assert.match(map,/localStorage/);assert.match(map,/Support Automation Authority Map/);assert.match(map,/30/);assert.match(map,/Export Authority Map/);assert.match(map,/Delete local map/);
+});
+
 test("Aloha AI learning remains separate from Hawaii Tech Week", async () => {
   const publicSources = [
     await read("app/learning/page.tsx"),
