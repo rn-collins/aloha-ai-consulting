@@ -15,7 +15,7 @@ const issues=[
   ["08","Apr 2027","Can You Use Someone’s AI Voice or Image?","When may an organization create and distribute one bounded synthetic voice, likeness, performance, or documentary-style asset?","Synthetic Media Permission and Provenance Record","Complete public learning edition; operational release gated","/learning/decision-desk/issue-08"],
   ["09","May 2027","What Should Your AI Agent Be Allowed to Do?","When may an AI agent send, spend, change records, move data, schedule work, or act in another system?","Agent Action Authority and Reversibility Matrix","Complete public learning edition; operational release gated","/learning/decision-desk/issue-09"],
   ["10","Jun 2027","What to Check Before Buying an AI Tool","How should a small organization evaluate, contract for, implement, and remain able to leave one exact AI product?","AI Vendor Evidence and Contract Dossier","Complete public learning edition; operational release gated","/learning/decision-desk/issue-10"],
-  ["11","Jul 2027","Should AI Review a Student’s Work?","Should an educator use AI to assess, respond to, or personalize learner work?","Learner-Affecting AI Use Review","Planned production unit","#program-boundary"],
+  ["11","Jul 2027","Should AI Review a Student’s Work?","When may an educator use AI to support feedback, assessment, personalization, or intervention while remaining responsible?","Learner-Affecting AI Use Review","Complete public learning edition; operational release gated","/learning/decision-desk/issue-11"],
   ["12","Aug 2027","Is It Time to Stop Using This AI?","When should an organization pause, roll back, replace, or retire AI?","AI Continuation and Retirement Decision Record","Planned production unit","#program-boundary"]
 ];
 
