@@ -122,7 +122,8 @@ test("trust surfaces provide verifiable proof and truthful operational boundarie
   assert.match(insights, /gao\.gov\/products\/gao-21-519sp/);
   assert.match(insights, /w3\.org\/TR\/WCAG22/);
   assert.match(support, /cannot recover local records/i);
-  assert.match(support, /no response time is promised/i);
+  assert.match(support, /normally sent within five business days/i);
+  assert.match(support, /timing is not guaranteed/i);
   assert.doesNotMatch(support, /Route inactive during implementation/);
   assert.match(policies, /No active checkout or accounts/);
   assert.match(policies, /Clinic inquiry data/);
@@ -193,10 +194,33 @@ test("Clinic inquiry is private, bounded, capacity-limited, and inactive without
   assert.match(action, /participantCount > clinicConfig\.maximumParticipants/);
   assert.match(action, /resend\.batch\.send/);
   assert.match(action, /challenges\.cloudflare\.com\/turnstile\/v0\/siteverify/);
+  assert.match(action, /allowedTurnstileHostnames/);
+  assert.match(action, /result\.hostname/);
+  assert.match(action, /idempotencyKey/);
+  assert.match(action, /text:`Aloha AI Opportunity Clinic inquiry/);
+  assert.match(action, /text:`Hello \$\{name\}/);
+  assert.match(action, /five business days/);
+  assert.match(action, /Delete an unaccepted inquiry within 30 days/);
   assert.match(form, /cf-turnstile/);
+  assert.match(form, /Unaccepted inquiries are deleted within 30 days/);
   assert.match(config, /maximumParticipants: 6/);
   assert.doesNotMatch(nextConfig, /output:\s*["']export["']/);
   assert.doesNotMatch(action, /console\.(?:log|error).*email/);
+});
+
+test("Clinic pre-activation contract documents every credential and keeps payment disabled", async () => {
+  const env = await read(".env.example");
+  const support = await read("app/support/page.tsx");
+  const policies = await read("app/policies/page.tsx");
+  for (const key of ["RESEND_API_KEY", "CLINIC_INBOX_EMAIL", "CLINIC_FROM_EMAIL", "TURNSTILE_SECRET_KEY", "NEXT_PUBLIC_TURNSTILE_SITE_KEY"]) {
+    assert.match(env, new RegExp(`^${key}=$`, "m"));
+  }
+  assert.match(env, /^STRIPE_WEBHOOK_SECRET=$/m);
+  assert.match(env, /^STRIPE_PRICE_ID=$/m);
+  assert.match(support, /private access-conversation option/);
+  assert.match(support, /LinkedIn is not an emergency, security-incident, accommodation/);
+  assert.match(policies, /Unaccepted inquiries are deleted within 30 days/);
+  assert.match(policies, /retained longer when reasonably required/);
 });
 
 test("Citation Verifier workspace is local, portable, and non-credentialed", async () => {

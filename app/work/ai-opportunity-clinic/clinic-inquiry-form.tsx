@@ -25,5 +25,6 @@ export function ClinicInquiryForm({enabled}:{enabled:boolean}) {
     <label className="bot-field" aria-hidden="true">Website<input name="website" tabIndex={-1} autoComplete="off"/></label>
     <button className="button primary" type="submit" disabled={pending}>{pending?"Sending…":"Send secure inquiry"}</button>
     <p className={`form-status ${state.status}`} role="status" aria-live="polite">{state.message}</p>
+    <p className="quiet-note">You should receive an email with a reference number. A response is normally sent within five business days, but that timing is not guaranteed. Unaccepted inquiries are deleted within 30 days.</p>
   </form>;
 }
