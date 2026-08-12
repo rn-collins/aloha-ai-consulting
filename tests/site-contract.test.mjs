@@ -223,6 +223,25 @@ test("Clinic pre-activation contract documents every credential and keeps paymen
   assert.match(policies, /retained longer when reasonably required/);
 });
 
+test("Clinic publishes a dated reservation and complete cancellation contract before checkout activation", async () => {
+  const page = await read("app/work/ai-opportunity-clinic/page.tsx");
+  const config = await read("app/work/ai-opportunity-clinic/clinic-config.ts");
+  assert.match(page, /specific date, start time, time zone, cohort size, and total price/);
+  assert.match(page, /held for 48 hours/);
+  assert.match(page, /full stated total is paid/);
+  assert.match(page, /seven calendar days before the scheduled start for a full refund/);
+  assert.match(page, /between 72 hours and seven calendar days[^]*50% refund/);
+  assert.match(page, /less than 72 hours[^]*not refundable/);
+  assert.match(page, /substitute participants at no charge/);
+  assert.match(page, /One reschedule is available without charge/);
+  assert.match(page, /replacement date or receive a full refund/);
+  assert.match(page, /initiated within five business days/);
+  assert.match(page, /docs\.stripe\.com\/refunds/);
+  assert.match(page, /Accessibility requests do not reduce refund or rescheduling rights/);
+  assert.match(config, /offeredSlotHoldHours: 48/);
+  assert.match(config, /partialRefundPercent: 50/);
+});
+
 test("Citation Verifier workspace is local, portable, and non-credentialed", async () => {
   const page = await read("app/learning/citation-verifier/page.tsx");
   const workspace = await read("app/learning/citation-verifier/course-workspace.tsx");
