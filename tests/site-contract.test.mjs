@@ -124,7 +124,8 @@ test("trust surfaces provide verifiable proof and truthful operational boundarie
   assert.match(support, /cannot recover local records/i);
   assert.match(support, /no response time is promised/i);
   assert.doesNotMatch(support, /Route inactive during implementation/);
-  assert.match(policies, /No active commerce or accounts/);
+  assert.match(policies, /No active checkout or accounts/);
+  assert.match(policies, /Clinic inquiry data/);
   assert.doesNotMatch(policies, /controlled drafts|masterclass|clinic/);
 });
 
@@ -172,10 +173,30 @@ test("masterclass and Clinic expose complete, truthful operating states", async 
   assert.match(clinic, /90 minutes/);
   assert.match(clinic, /Up to 6/);
   assert.match(clinic, /\$275 \/ person/);
-  assert.match(clinic, /LinkedIn link opens a nonconfidential scope conversation/);
+  assert.match(clinic, /An inquiry is not a booking/);
   assert.doesNotMatch(clinic, /booking preparing|unsettled/i);
   assert.match(learning, /No registration or recording required/);
   assert.match(search, /Open now/);
+});
+
+test("Clinic inquiry is private, bounded, capacity-limited, and inactive without secure mail configuration", async () => {
+  const page = await read("app/work/ai-opportunity-clinic/page.tsx");
+  const form = await read("app/work/ai-opportunity-clinic/clinic-inquiry-form.tsx");
+  const action = await read("app/work/ai-opportunity-clinic/actions.ts");
+  const config = await read("app/work/ai-opportunity-clinic/clinic-config.ts");
+  const nextConfig = await read("next.config.ts");
+  assert.match(page, /Start a cohort inquiry/);
+  assert.match(page, /Payment and Zoom details follow only after written scope/);
+  assert.match(form, /Do not describe medical details here/);
+  assert.match(form, /nonconfidential and authorize Aloha AI/);
+  assert.match(action, /No information was sent/);
+  assert.match(action, /participantCount > clinicConfig\.maximumParticipants/);
+  assert.match(action, /resend\.batch\.send/);
+  assert.match(action, /challenges\.cloudflare\.com\/turnstile\/v0\/siteverify/);
+  assert.match(form, /cf-turnstile/);
+  assert.match(config, /maximumParticipants: 6/);
+  assert.doesNotMatch(nextConfig, /output:\s*["']export["']/);
+  assert.doesNotMatch(action, /console\.(?:log|error).*email/);
 });
 
 test("Citation Verifier workspace is local, portable, and non-credentialed", async () => {

@@ -80,3 +80,7 @@ body:not(:has(.home-dark)){background:var(--signal-paper);--ink:#111318;--ink-so
   .page-hero .lede{font-size:17px}
   .workspace-jump{margin-top:22px}
 }
+
+/* Clinic inquiry: minimum-data intake and accessible status feedback */
+.clinic-intake{padding:80px 0;scroll-margin-top:90px}.clinic-inquiry{max-width:850px;border-top:1px solid var(--line);padding-top:30px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.clinic-inquiry label{display:grid;gap:8px;font:13px var(--mono);letter-spacing:.03em}.clinic-inquiry input,.clinic-inquiry select,.clinic-inquiry textarea{width:100%;border:1px solid var(--line);background:#fffdf7;color:var(--ink);font:17px/1.45 var(--sans);padding:13px 14px}.clinic-inquiry textarea{resize:vertical}.clinic-inquiry .check-row{display:flex;align-items:flex-start;gap:10px;margin:18px 0;font:16px/1.45 var(--sans);letter-spacing:0}.clinic-inquiry .check-row input{width:auto;margin-top:4px}.clinic-inquiry .button{margin-top:12px}.form-status{min-height:1.5em}.form-status.error{color:#8b1e1e}.form-status.success{color:#125c45}.bot-field{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important}
+@media(max-width:760px){.form-grid{grid-template-columns:1fr}.clinic-intake{padding:55px 0}}
