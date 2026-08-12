@@ -177,6 +177,12 @@ test("Decision Desk Issue 06 requires substantiation before publication",async()
  assert.equal((page.match(/\["(?:0\d|1[0-2])"/g)||[]).length,12);assert.match(tool,/localStorage/);assert.match(tool,/30/);assert.match(tool,/Export Substantiation Gate/);assert.match(tool,/Delete local gate/);
 });
 
+test("Decision Desk Issue 07 preserves meaning, access, uncertainty, and advice boundaries",async()=>{
+ const page=await read("app/learning/decision-desk/issue-07/page.tsx"),tool=await read("app/learning/decision-desk/issue-07/fidelity-test.tsx");
+ for(const term of ["authoritative meaning","conditions and exceptions","uncertainty","comprehension","language access","disability","individualized advice","No individualized explanation"]) assert.match(page,new RegExp(term,"i"));
+ assert.equal((page.match(/\["(?:0\d|1[0-2])"/g)||[]).length,12);assert.match(tool,/localStorage/);assert.match(tool,/30/);assert.match(tool,/Export Fidelity Test/);assert.match(tool,/Delete local test/);
+});
+
 test("Aloha AI learning remains separate from Hawaii Tech Week", async () => {
   const publicSources = [
     await read("app/learning/page.tsx"),
