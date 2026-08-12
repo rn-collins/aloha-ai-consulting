@@ -8,7 +8,7 @@ const situations = [
   { label: "We need to choose a tool or vendor", route: "/tools/vendor-comparison", destination: "Tool & Vendor Comparison Builder", promise: "Compare the current process and two candidates without letting features or price erase unresolved safeguards." },
   { label: "We need a defensible decision record", route: "/tools/decision-record", destination: "Decision Record Builder", promise: "Preserve the owner, alternatives, evidence, affected people, uncertainty, stop conditions, and next review." },
   { label: "We are planning an AI pilot", route: "/tools/pilot-design", destination: "Pilot Design Kit", promise: "Precommit the hypothesis, baseline, evidence plan, authority, stop, rollback, and end-of-pilot decision." },
-  { label: "I want to learn before hiring anyone", route: "/learning", destination: "Open learning materials", promise: "Choose a concise AI-decision guide or the eighteen-part Citation Verifier course reader, with their current depth and limits stated before you begin." },
+  { label: "I want to learn before hiring anyone", route: "/learning", destination: "Complete open learning", promise: "Choose the 45–60 minute AI masterclass, 15-hour Citation Verifier course, or 75–90 minute Decision Desk case lab." },
 ];
 
 export function HomeExperience() {
