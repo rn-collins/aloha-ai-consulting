@@ -204,6 +204,12 @@ test("Decision Desk Issue 10 makes vendor procurement exact, contractual, and ex
  assert.doesNotMatch(tool,/fetch\(|XMLHttpRequest|navigator\.sendBeacon/);
 });
 
+test("Decision Desk Issue 11 protects learning purpose, access, educator judgment, and challenge",async()=>{
+ const page=await read("app/learning/decision-desk/issue-11/page.tsx"),tool=await read("app/learning/decision-desk/issue-11/learner-review.tsx");
+ for(const term of ["learning purpose","student work and educational data","meaningful choice","disability, language, and device access","construct validity","subgroup performance","educator responsible","challenge and correction","No grading or educational approval"]) assert.match(page,new RegExp(term,"i"));
+ assert.equal((page.match(/\["(?:0\d|1[0-2])"/g)||[]).length,12);assert.match(tool,/localStorage/);assert.match(tool,/30/);assert.match(tool,/Export Learner Review/);assert.match(tool,/Delete local review/);assert.doesNotMatch(tool,/fetch\(|XMLHttpRequest|navigator\.sendBeacon/);
+});
+
 test("Aloha AI learning remains separate from Hawaii Tech Week", async () => {
   const publicSources = [
     await read("app/learning/page.tsx"),
