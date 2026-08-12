@@ -139,6 +139,18 @@ test("Decision Desk preserves the canonical annual plan without activating enrol
   assert.doesNotMatch(page, /href=["'](?:https?:\/\/)?(?:buy|checkout|stripe)/i);
 });
 
+test("Decision Desk Issue 02 is a complete public learning product with fail-closed controls", async () => {
+  const page=await read("app/learning/decision-desk/issue-02/page.tsx");
+  const workspace=await read("app/learning/decision-desk/issue-02/meeting-capture-workspace.tsx");
+  for(const term of ["seven authority layers","five records","synthetic meetings","Presumptive no-capture","Zero universal jurisdiction clearance"]) assert.match(page,new RegExp(term,"i"));
+  assert.equal((page.match(/\["0\d"/g)||[]).length,9);
+  assert.match(workspace,/localStorage/);
+  assert.match(workspace,/Meeting Capture Permission and Record Map/);
+  assert.match(workspace,/cannot grant legal clearance or permission to record/);
+  assert.match(workspace,/Export decision map/);
+  assert.match(workspace,/Delete local record/);
+});
+
 test("Aloha AI learning remains separate from Hawaii Tech Week", async () => {
   const publicSources = [
     await read("app/learning/page.tsx"),
