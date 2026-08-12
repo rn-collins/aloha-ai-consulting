@@ -197,6 +197,13 @@ test("Decision Desk Issue 09 makes agent authority action-specific, enforceable,
  assert.doesNotMatch(tool,/fetch\(|XMLHttpRequest|navigator\.sendBeacon/);
 });
 
+test("Decision Desk Issue 10 makes vendor procurement exact, contractual, and exit-ready",async()=>{
+ const page=await read("app/learning/decision-desk/issue-10/page.tsx"),tool=await read("app/learning/decision-desk/issue-10/vendor-dossier.tsx");
+ for(const term of ["current process","exact vendor and product","data and model terms","accessibility and unequal impact","total cost","operating contract","exit, portability, and continuity","No vendor recommendation or approval"]) assert.match(page,new RegExp(term,"i"));
+ assert.equal((page.match(/\["(?:0\d|1[0-2])"/g)||[]).length,12);assert.match(tool,/localStorage/);assert.match(tool,/30/);assert.match(tool,/Export Vendor Dossier/);assert.match(tool,/Delete local dossier/);
+ assert.doesNotMatch(tool,/fetch\(|XMLHttpRequest|navigator\.sendBeacon/);
+});
+
 test("Aloha AI learning remains separate from Hawaii Tech Week", async () => {
   const publicSources = [
     await read("app/learning/page.tsx"),
