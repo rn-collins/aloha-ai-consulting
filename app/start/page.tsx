@@ -9,7 +9,7 @@ const choices=[
  ["02","I need to document one consequential decision","Preserve the alternatives, evidence, owner, affected people, uncertainty, stop conditions, and review triggers.","/tools/decision-record","Build a decision record"],
  ["03","I need to compare tools or vendors","Compare the current process and two candidates against five non-negotiable gates and your own weighted criteria.","/tools/vendor-comparison","Compare the options"],
  ["04","I am preparing a bounded pilot","Define the hypothesis, baseline, measures, authority, affected-party input, stop, rollback, and final decision before testing.","/tools/pilot-design","Design the pilot"],
- ["05","I want to study how a citation-verification system could be governed","Use an eighteen-part course reader with short explanations, practice prompts, a knowledge check, and a downloadable lab workbook.","/learning/citation-verifier","Open the course reader"],
+ ["05","I want to build and govern a citation-verification system","Take the complete 15-hour open course with eighteen lessons and practices, a lab kit, knowledge checks, capstone, and assessment rubric.","/learning/citation-verifier","Start the course"],
  ["06","I want a concise AI decision guide","Read five decision prompts and download a working guide—free, with no account or recording required.","/learning/masterclass","Open the decision guide"],
  ["07","I may want to work with Aloha AI","See what is available now, what remains under validation, and how to prepare a useful inquiry without encountering a false booking path.","/work","Explore ways to work together"],
 ];
