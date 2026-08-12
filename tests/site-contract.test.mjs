@@ -155,7 +155,7 @@ test("Aloha AI learning remains separate from Hawaii Tech Week", async () => {
   const masterclass = await read("app/learning/masterclass/page.tsx");
   assert.match(masterclass, /AI &amp; Your Work/);
   assert.match(masterclass, /90 minutes/);
-  assert.match(masterclass, /Twenty-four cumulative chapters/);
+  assert.match(masterclass, /24 cumulative chapters/);
   assert.match(masterclass, /aloha-ai-masterclass-working-guide\.md/);
   assert.match(masterclass, /href="\/work\/ai-opportunity-clinic"/);
   for (const source of [publicSources[0], publicSources[2], publicSources[3], publicSources[5], publicSources[6]]) {
@@ -169,7 +169,7 @@ test("masterclass and Clinic expose complete, truthful operating states", async 
   const clinic = await read("app/work/ai-opportunity-clinic/page.tsx");
   const learning = await read("app/learning/page.tsx");
   const search = await read("app/search/public-search.tsx");
-  assert.match(masterclass, /complete 90-minute edition/);
+  assert.match(masterclass, /complete self-paced edition/);
   assert.match(masterclass, /Define · Examine · Decide · Build/);
   assert.match(guide, /Translate the tool request into a work problem/);
   assert.match(guide, /Friction/);
@@ -181,6 +181,21 @@ test("masterclass and Clinic expose complete, truthful operating states", async 
   assert.doesNotMatch(clinic, /booking preparing|unsettled/i);
   assert.match(learning, /Completed teaching system/);
   assert.match(search, /Complete flagship curriculum/);
+});
+
+test("flagship masterclass is a complete self-paced product, not a chapter outline", async () => {
+  const page = await read("app/learning/masterclass/page.tsx");
+  const data = await read("app/learning/masterclass/course-data.ts");
+  const workspace = await read("app/learning/masterclass/masterclass-workspace.tsx");
+  assert.equal((data.match(/c\("\d\d"/g)||[]).length,24);
+  for(const term of ["Friction","Inputs","Judgment","Risk","Value","Kōkua Studio","bounded experiment","Monday Plan"]) assert.match(data,new RegExp(term));
+  assert.match(page,/complete self-paced edition/);
+  assert.match(workspace,/localStorage/);
+  assert.match(workspace,/24 chapters/);
+  assert.match(workspace,/Private working note/);
+  assert.match(workspace,/Final knowledge check/);
+  assert.match(workspace,/Export learning record/);
+  assert.match(workspace,/Delete local course record/);
 });
 
 test("Clinic inquiry is private, bounded, capacity-limited, and inactive without secure mail configuration", async () => {
