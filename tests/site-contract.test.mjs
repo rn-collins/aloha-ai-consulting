@@ -190,6 +190,13 @@ test("Decision Desk Issue 08 binds synthetic identity permission to provenance a
  assert.doesNotMatch(tool,/fetch\(|XMLHttpRequest|navigator\.sendBeacon/);
 });
 
+test("Decision Desk Issue 09 makes agent authority action-specific, enforceable, and reversible",async()=>{
+ const page=await read("app/learning/decision-desk/issue-09/page.tsx"),tool=await read("app/learning/decision-desk/issue-09/authority-matrix.tsx");
+ for(const term of ["recommendations from actions","least privilege","human approval before consequence","outside the model","partial failure and duplication","reversibility","kill switch","No production authorization"]) assert.match(page,new RegExp(term,"i"));
+ assert.equal((page.match(/\["(?:0\d|1[0-2])"/g)||[]).length,12);assert.match(tool,/localStorage/);assert.match(tool,/30/);assert.match(tool,/Export Authority Matrix/);assert.match(tool,/Delete local matrix/);
+ assert.doesNotMatch(tool,/fetch\(|XMLHttpRequest|navigator\.sendBeacon/);
+});
+
 test("Aloha AI learning remains separate from Hawaii Tech Week", async () => {
   const publicSources = [
     await read("app/learning/page.tsx"),
