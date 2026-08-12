@@ -165,6 +165,12 @@ test("Decision Desk Issue 04 makes internal answerability source- and permission
  assert.equal((page.match(/\["(?:0\d|1[01])"/g)||[]).length,11);assert.match(tool,/localStorage/);assert.match(tool,/30/);assert.match(tool,/Export Answerability Test/);assert.match(tool,/Delete local test/);
 });
 
+test("Decision Desk Issue 05 governs one human-opportunity stage without deciding for people",async()=>{
+ const page=await read("app/learning/decision-desk/issue-05/page.tsx"),tool=await read("app/learning/decision-desk/issue-05/impact-map.tsx");
+ for(const term of ["Eligibility","Screening","Scoring","Ranking","Recommendation","criteria","proxies","accommodation","contest","No candidate evaluation"]) assert.match(page,new RegExp(term,"i"));
+ assert.equal((page.match(/\["(?:0\d|1[0-2])"/g)||[]).length,12);assert.match(tool,/localStorage/);assert.match(tool,/28/);assert.match(tool,/Export Impact Map/);assert.match(tool,/Delete local map/);
+});
+
 test("Aloha AI learning remains separate from Hawaii Tech Week", async () => {
   const publicSources = [
     await read("app/learning/page.tsx"),
