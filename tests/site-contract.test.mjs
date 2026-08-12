@@ -183,6 +183,13 @@ test("Decision Desk Issue 07 preserves meaning, access, uncertainty, and advice 
  assert.equal((page.match(/\["(?:0\d|1[0-2])"/g)||[]).length,12);assert.match(tool,/localStorage/);assert.match(tool,/30/);assert.match(tool,/Export Fidelity Test/);assert.match(tool,/Delete local test/);
 });
 
+test("Decision Desk Issue 08 binds synthetic identity permission to provenance and withdrawal",async()=>{
+ const page=await read("app/learning/decision-desk/issue-08/page.tsx"),tool=await read("app/learning/decision-desk/issue-08/provenance-record.tsx");
+ for(const term of ["identity authority","permission specific","power and vulnerable people","training and source-input rights","provenance","audience disclosure","withdrawal operational","No legal clearance or consent"]) assert.match(page,new RegExp(term,"i"));
+ assert.equal((page.match(/\["(?:0\d|1[0-2])"/g)||[]).length,12);assert.match(tool,/localStorage/);assert.match(tool,/30/);assert.match(tool,/Export Provenance Record/);assert.match(tool,/Delete local record/);
+ assert.doesNotMatch(tool,/fetch\(|XMLHttpRequest|navigator\.sendBeacon/);
+});
+
 test("Aloha AI learning remains separate from Hawaii Tech Week", async () => {
   const publicSources = [
     await read("app/learning/page.tsx"),
