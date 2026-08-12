@@ -3,7 +3,7 @@ import type {Metadata} from "next";
 import {SiteShell} from "../../site-shell";
 import {CourseWorkspace} from "./course-workspace";
 
-export const metadata:Metadata={title:"Citation Verifier course",description:"Take Aloha AI’s complete eighteen-lesson course on trust-safe citation retrieval, support analysis, evaluation, and human review."};
+export const metadata:Metadata={title:"Citation Verifier course reader",description:"Use eighteen concise lesson notes and practices on citation retrieval, support analysis, evaluation, and human review."};
 
 const modules = [
   {title:"Define what verified means",summary:"Separate citation form, source existence, current status, quotation accuracy, and proposition support before choosing technology.",lessons:[
@@ -54,11 +54,11 @@ const sources=[
 
 export default function CitationVerifierCourse(){
   return <SiteShell><main id="main">
-    <section className="page-hero wrap"><p className="kicker">Aloha AI University · open course reader</p><h1>Build a Trust-Safe <em>Citation Verifier.</em></h1><p className="lede">Build a bounded, governed system that catches malformed, unidentified, misstated, and unsupported citations before they ship.</p>
-      <div className="booking-state"><strong>Open materials; enrollment closed.</strong><br/>All nine modules and eighteen lessons are readable here. Accounts, synced progress, submissions, grading, tutor access, and credentials are not available.</div>
+    <section className="page-hero wrap"><p className="kicker">Open course reader · developing instructional product</p><h1>Build a Trust-Safe <em>Citation Verifier.</em></h1><p className="lede">Use a structured outline for designing a bounded, governed system that catches malformed, unidentified, misstated, and unsupported citations before they ship.</p>
+      <div className="booking-state"><strong>Usable reader; not yet a complete 15-hour course.</strong><br/>The eighteen entries are concise lesson notes with one practice prompt each. Developed lectures, worked examples, a complete assessment system, feedback, grading, tutor access, and credentials are not available.</div>
     </section>
-    <section className="wrap policy-list" aria-labelledby="curriculum"><p className="section-label">Curriculum · approximately 15 hours</p><h2 id="curriculum">Nine modules. Eighteen evidence-led lessons.</h2>
-      {modules.map((module,mi)=><article key={module.title}><span className="path-num">{String(mi+1).padStart(2,"0")}</span><div><h2>{module.title}</h2><p>{module.summary}</p>{module.lessons.map((lesson,li)=><details id={`lesson-${mi*2+li+1}`} className="answer-record lesson-reader" key={lesson.title}><summary><span>Lesson {mi+1}.{li+1} · {lesson.minutes} minutes</span><strong>{lesson.title}</strong></summary><div style={{padding:"0 18px 18px"}}>{lesson.body.map(p=><p key={p}>{p}</p>)}<p><strong>Practice:</strong> {lesson.practice}</p></div></details>)}</div><span className="state-label">Open reader</span></article>)}
+    <section className="wrap policy-list" aria-labelledby="curriculum"><p className="section-label">Reader architecture · nine modules</p><h2 id="curriculum">Eighteen concise lesson notes and practices.</h2>
+      {modules.map((module,mi)=><article key={module.title}><span className="path-num">{String(mi+1).padStart(2,"0")}</span><div><h2>{module.title}</h2><p>{module.summary}</p>{module.lessons.map((lesson,li)=><details id={`lesson-${mi*2+li+1}`} className="answer-record lesson-reader" key={lesson.title}><summary><span>Note {mi+1}.{li+1} · suggested working time {lesson.minutes} minutes</span><strong>{lesson.title}</strong></summary><div style={{padding:"0 18px 18px"}}>{lesson.body.map(p=><p key={p}>{p}</p>)}<p><strong>Practice:</strong> {lesson.practice}</p></div></details>)}</div><span className="state-label">Open reader</span></article>)}
     </section>
     <CourseWorkspace/>
     <section className="inside-sprint"><div className="wrap sprint-grid"><div><p className="section-label">Capstone boundary</p><h2>Evidence before assurance.</h2><p>Produce a verification contract, architecture and data-flow record, bounded prototype or executable specification, independently labeled test set, per-class evaluation, audit record, human-review gate, and deployment memo.</p></div><div><h3>No credential is issued</h3><p>This public reader does not accept work, verify identity, grade submissions, or certify mastery. Keep completed work in your own records.</p><p><Link className="button" href="/learning">Return to Learning</Link></p></div></div></section>
