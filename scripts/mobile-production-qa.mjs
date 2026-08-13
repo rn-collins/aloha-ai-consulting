@@ -38,8 +38,8 @@ for (const route of routes) {
 }
 
 await page.goto(base, { waitUntil: "networkidle", timeout: 30000 });
-const menuButton = page.getByRole("button", { name: /menu/i });
-await menuButton.click();
+const menuSummary = page.locator("details.mobile-menu > summary");
+await menuSummary.click();
 const menuState = await page.evaluate(() => {
   const button = [...document.querySelectorAll("button")].find(element => /menu/i.test(element.textContent || ""));
   const visibleNavLinks = [...document.querySelectorAll("nav a[href]")].filter(element => {
