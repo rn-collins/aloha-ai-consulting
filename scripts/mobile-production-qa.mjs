@@ -21,6 +21,10 @@ page.on("console", message => {
 });
 page.on("pageerror", error => consoleErrors.push(error.message));
 
+if (process.env.SHARE_URL) {
+  await page.goto(process.env.SHARE_URL, { waitUntil: "networkidle", timeout: 30000 });
+}
+
 const results = [];
 for (const route of routes) {
   const response = await page.goto(base + route, { waitUntil: "networkidle", timeout: 30000 });
