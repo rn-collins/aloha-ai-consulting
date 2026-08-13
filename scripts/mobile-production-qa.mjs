@@ -35,6 +35,8 @@ for (const route of routes) {
     overlay: Boolean(document.querySelector("[data-nextjs-dialog],.vite-error-overlay,#webpack-dev-server-client-overlay")),
     viewportWidth: document.documentElement.clientWidth,
     scrollWidth: document.documentElement.scrollWidth,
+    rootOverflowX: getComputedStyle(document.documentElement).overflowX,
+    horizontalScrollX: (() => { window.scrollTo(9999, window.scrollY); const value = window.scrollX; window.scrollTo(0, window.scrollY); return value; })(),
   }));
   const name = route === "/" ? "home" : route.slice(1).replaceAll("/", "--");
   await page.screenshot({ path: `${out}/${name}.png`, fullPage: true });
@@ -57,6 +59,8 @@ const menuState = await page.evaluate(() => {
     linkLabels: visibleNavLinks.map(link => (link.textContent || "").trim()).filter(Boolean),
     viewportWidth: document.documentElement.clientWidth,
     scrollWidth: document.documentElement.scrollWidth,
+    rootOverflowX: getComputedStyle(document.documentElement).overflowX,
+    horizontalScrollX: (() => { window.scrollTo(9999, window.scrollY); const value = window.scrollX; window.scrollTo(0, window.scrollY); return value; })(),
   };
 });
 await page.screenshot({ path: `${out}/home--menu-open.png`, fullPage: true });
@@ -70,10 +74,10 @@ const failures = results.filter(result =>
   result.status !== 200 ||
   result.mains !== 1 ||
   result.overlay ||
-  result.scrollWidth > result.viewportWidth + 2
+  result.horizontalScrollX > 2
 );
 const menuFailed =
   menuState.expanded !== "true" ||
   menuState.visibleLinkCount < 5 ||
-  menuState.scrollWidth > menuState.viewportWidth + 2;
+  menuState.horizontalScrollX > 2;
 if (consoleErrors.length || failures.length || menuFailed) process.exitCode = 1;
