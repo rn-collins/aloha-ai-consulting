@@ -7,6 +7,7 @@ const paths = [
   "/",
   "/start",
   "/about",
+  "/contact",
   "/studio",
   "/work",
   "/work/ai-opportunity-clinic",

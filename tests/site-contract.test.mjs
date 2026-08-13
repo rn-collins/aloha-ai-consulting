@@ -90,7 +90,7 @@ test("principal destinations have distinct discovery metadata and a useful recov
   const destinations = [
     ["app/start/page.tsx", /title:\s*["']Start here/],
     ["app/about/page.tsx", /title:\s*["']About RN Collins/],
-    ["app/work/page.tsx", /title:\s*["']Ways to work together/],
+    ["app/work/page.tsx", /title:\s*["']Work with RN/],
     ["app/learning/page.tsx", /title:\s*["']Learning/],
     ["app/learning/citation-verifier/page.tsx", /title:\s*["']Build a Trust-Safe Citation Verifier/],
     ["app/tools/page.tsx", /title:\s*["']Decision tools/],
