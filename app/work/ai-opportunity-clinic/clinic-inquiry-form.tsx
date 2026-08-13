@@ -8,7 +8,13 @@ import {clinicConfig} from "./clinic-config";
 const initialState:ClinicInquiryState={status:"idle",message:""};
 export function ClinicInquiryForm({enabled}:{enabled:boolean}) {
   const [state,action,pending]=useActionState(submitClinicInquiry,initialState);
-  if (!enabled) return <div className="booking-state"><strong>Secure inquiry is being configured.</strong><br/>The form will open only after its private mail channel is verified. No information is collected here yet.</div>;
+  if (!enabled) return <div className="booking-state">
+    <strong>Private-cohort inquiries are open through RN’s public LinkedIn.</strong>
+    <p>The secure site form is still being configured, but you can begin a nonconfidential fit conversation now. A message is not a booking, does not reserve a date, and does not require payment.</p>
+    <p><strong>Copy this message:</strong><br/>I’m interested in the Aloha AI Opportunity Clinic for a private cohort of [number, up to six]. The nonconfidential workflow we want to examine is [brief description]. We hope to make [decision or outcome] clearer. Our preferred timing is [range].</p>
+    <a className="button primary" href="https://www.linkedin.com/in/rn-collins" target="_blank" rel="noreferrer">Message RN on LinkedIn ↗</a>
+    <p className="quiet-note">Do not include client names, health information, credentials, privileged material, security details, regulated data, or other confidential information.</p>
+  </div>;
   return <form action={action} className="clinic-inquiry">
     <Script src="https://challenges.cloudflare.com/turnstile/v0/api.js" strategy="lazyOnload"/>
     <div className="form-grid">
