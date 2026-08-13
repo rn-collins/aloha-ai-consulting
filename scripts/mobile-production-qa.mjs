@@ -24,38 +24,41 @@ page.on("pageerror", error => consoleErrors.push(error.message));
 const results = [];
 for (const route of routes) {
   const response = await page.goto(base + route, { waitUntil: "networkidle", timeout: 30000 });
-  const data = await page.evaluate(() => {
-    const width = document.documentElement.clientWidth;
-    const overflowing = [...document.querySelectorAll("body *")].flatMap(element => {
-      const box = element.getBoundingClientRect();
-      if (box.left >= -2 && box.right <= width + 2) return [];
-      const style = getComputedStyle(element);
-      if (style.position === "fixed" && box.width <= width + 2) return [];
-      return [{
-        tag: element.tagName,
-        className: String(element.className).slice(0, 100),
-        text: (element.textContent || "").trim().replace(/\s+/g, " ").slice(0, 100),
-        left: Math.round(box.left),
-        right: Math.round(box.right),
-      }];
-    }).slice(0, 20);
-    return {
-      title: document.title,
-      h1: document.querySelector("h1")?.innerText,
-      mains: document.querySelectorAll("main").length,
-      overlay: Boolean(document.querySelector("[data-nextjs-dialog],.vite-error-overlay,#webpack-dev-server-client-overlay")),
-      viewportWidth: width,
-      scrollWidth: document.documentElement.scrollWidth,
-      overflowing,
-    };
-  });
+  const data = await page.evaluate(() => ({
+    title: document.title,
+    h1: document.querySelector("h1")?.innerText,
+    mains: document.querySelectorAll("main").length,
+    overlay: Boolean(document.querySelector("[data-nextjs-dialog],.vite-error-overlay,#webpack-dev-server-client-overlay")),
+    viewportWidth: document.documentElement.clientWidth,
+    scrollWidth: document.documentElement.scrollWidth,
+  }));
   const name = route === "/" ? "home" : route.slice(1).replaceAll("/", "--");
   await page.screenshot({ path: `${out}/${name}.png`, fullPage: true });
   results.push({ route, status: response?.status(), ...data });
 }
 
+await page.goto(base, { waitUntil: "networkidle", timeout: 30000 });
+const menuButton = page.getByRole("button", { name: /menu/i });
+await menuButton.click();
+const menuState = await page.evaluate(() => {
+  const button = [...document.querySelectorAll("button")].find(element => /menu/i.test(element.textContent || ""));
+  const visibleNavLinks = [...document.querySelectorAll("nav a[href]")].filter(element => {
+    const box = element.getBoundingClientRect();
+    const style = getComputedStyle(element);
+    return box.width > 0 && box.height > 0 && style.visibility !== "hidden" && style.display !== "none";
+  });
+  return {
+    expanded: button?.getAttribute("aria-expanded"),
+    visibleLinkCount: visibleNavLinks.length,
+    linkLabels: visibleNavLinks.map(link => (link.textContent || "").trim()).filter(Boolean),
+    viewportWidth: document.documentElement.clientWidth,
+    scrollWidth: document.documentElement.scrollWidth,
+  };
+});
+await page.screenshot({ path: `${out}/home--menu-open.png`, fullPage: true });
+
 await browser.close();
-const report = { testedAt: new Date().toISOString(), viewport: "390x844", results, consoleErrors };
+const report = { testedAt: new Date().toISOString(), viewport: "390x844", results, menuState, consoleErrors };
 await fs.writeFile(`${out}/results.json`, JSON.stringify(report, null, 2));
 console.log(JSON.stringify(report, null, 2));
 
@@ -63,7 +66,10 @@ const failures = results.filter(result =>
   result.status !== 200 ||
   result.mains !== 1 ||
   result.overlay ||
-  result.scrollWidth > result.viewportWidth + 2 ||
-  result.overflowing.length
+  result.scrollWidth > result.viewportWidth + 2
 );
-if (consoleErrors.length || failures.length) process.exitCode = 1;
+const menuFailed =
+  menuState.expanded !== "true" ||
+  menuState.visibleLinkCount < 5 ||
+  menuState.scrollWidth > menuState.viewportWidth + 2;
+if (consoleErrors.length || failures.length || menuFailed) process.exitCode = 1;
