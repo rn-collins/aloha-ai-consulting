@@ -25,8 +25,8 @@ jobs:
         run: npx playwright install --with-deps chromium
       - name: Test Vercel preview at 390x844
         env:
-          BASE_URL: https://aloha-ai-consulting-git-agent-mobile-production-qa-rn-collins.vercel.app
-          SHARE_URL: https://aloha-ai-consulting-git-agent-mobile-production-qa-rn-collins.vercel.app/?_vercel_share=SyHjVho2VN0Tc5JR2y6ow21UxKJjVEMv
+          BASE_URL: https://aloha-ai-consulting-rbimpku8v-rn-collins.vercel.app
+          SHARE_URL: https://aloha-ai-consulting-rbimpku8v-rn-collins.vercel.app/?_vercel_share=fERgSJXTtXgPoEfSNeU908wagsaRTLa6
         run: node scripts/mobile-production-qa.mjs
       - name: Upload screenshots and report
         if: always()
