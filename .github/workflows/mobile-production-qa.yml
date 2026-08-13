@@ -23,7 +23,9 @@ jobs:
         run: npm install --no-save --package-lock=false playwright@1.55.0
       - name: Install Chromium
         run: npx playwright install --with-deps chromium
-      - name: Test live production at 390x844
+      - name: Test Vercel preview at 390x844
+        env:
+          BASE_URL: https://aloha-ai-consulting-ge8ofoi5n-rn-collins.vercel.app
         run: node scripts/mobile-production-qa.mjs
       - name: Upload screenshots and report
         if: always()
