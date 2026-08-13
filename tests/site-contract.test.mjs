@@ -130,11 +130,11 @@ test("trust surfaces provide verifiable proof and truthful operational boundarie
   assert.doesNotMatch(policies, /controlled drafts|masterclass|clinic/);
 });
 
-test("Decision Desk preserves the canonical annual plan without activating enrollment", async () => {
+test("Decision Desk presents the annual plan without activating enrollment", async () => {
   const page = await read("app/learning/decision-desk/page.tsx");
   assert.match(page, /Sep 2026–Aug 2027/);
   assert.match(page, /Program plan—not enrollment/);
-  assert.match(page, /The plan is complete\. Most monthly products are not/);
+  assert.match(page, /Public self-paced editions are not live masterclasses/);
   assert.match(page, /\/learning\/decision-desk\/issue-01/);
   assert.doesNotMatch(page, /href=["'](?:https?:\/\/)?(?:buy|checkout|stripe)/i);
 });
