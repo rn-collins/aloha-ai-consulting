@@ -1,7 +1,7 @@
 import { chromium } from "playwright";
 import fs from "node:fs/promises";
 
-const base = "https://aloha-ai-consulting.vercel.app";
+const base = process.env.BASE_URL || "https://aloha-ai-consulting.vercel.app";
 const routes = ["/", "/start", "/work", "/organizations", "/learning", "/tools", "/contact", "/work/ai-opportunity-clinic", "/learning/decision-desk"];
 const out = "mobile-production-qa";
 await fs.mkdir(out, { recursive: true });
