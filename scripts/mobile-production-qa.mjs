@@ -48,7 +48,7 @@ const menuState = await page.evaluate(() => {
     return box.width > 0 && box.height > 0 && style.visibility !== "hidden" && style.display !== "none";
   });
   return {
-    expanded: button?.getAttribute("aria-expanded"),
+    expanded: document.querySelector("details.mobile-menu")?.open ? "true" : "false",
     visibleLinkCount: visibleNavLinks.length,
     linkLabels: visibleNavLinks.map(link => (link.textContent || "").trim()).filter(Boolean),
     viewportWidth: document.documentElement.clientWidth,
