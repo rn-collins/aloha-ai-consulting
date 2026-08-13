@@ -26,6 +26,7 @@ jobs:
       - name: Test Vercel preview at 390x844
         env:
           BASE_URL: https://aloha-ai-consulting-ge8ofoi5n-rn-collins.vercel.app
+          SHARE_URL: https://aloha-ai-consulting-ge8ofoi5n-rn-collins.vercel.app/?_vercel_share=bxxwafmY7Fh1aOHwpMVXBp3VC1JOtqRn
         run: node scripts/mobile-production-qa.mjs
       - name: Upload screenshots and report
         if: always()
