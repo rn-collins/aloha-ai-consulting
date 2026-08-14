@@ -10,7 +10,7 @@ const choices=[
  ["03","I need to compare tools or vendors","Compare the current process and two candidates against five non-negotiable gates and your own weighted criteria.","/tools/vendor-comparison","Compare the options"],
  ["04","I am preparing a bounded pilot","Define the hypothesis, baseline, measures, authority, affected-party input, stop, rollback, and final decision before testing.","/tools/pilot-design","Design the pilot"],
  ["05","I want to build and govern a citation-verification system","Take the complete 15-hour open course with eighteen lessons and practices, a lab kit, knowledge checks, capstone, and assessment rubric.","/learning/citation-verifier","Start the course"],
- ["06","I want to examine work before automating it","Take the complete 90-minute AI & Your Work flagship masterclass with 24 chapters, the Kōkua Studio case, participant workbook, four findings, intervention ladder, and Monday Plan.","/learning/masterclass","Begin the masterclass"],
+ ["06","I want to examine work before automating it","Take the complete AI & Your Work self-paced flagship with 24 chapters totaling 105 minutes of labeled lesson time, the Kōkua Studio case, participant workbook, four findings, intervention ladder, and Monday Plan. Allow about two hours.","/learning/masterclass","Begin the masterclass"],
  ["07","I want a year of practical AI decision learning","Explore the twelve-month Decision Desk plan, its distinct questions and instruments, and the honest readiness of every issue.","/learning/decision-desk","Open Decision Desk"],
  ["08","I may want to work with Aloha AI","See what is available now, what is still being built, and how to begin a useful nonconfidential conversation.","/work","Explore ways to work together"],
 ];
