@@ -33,6 +33,7 @@ const paths = [
     "/learning/decision-desk/issue-09",
     "/learning/decision-desk/issue-10",
     "/learning/decision-desk/issue-11",
+    "/learning/decision-desk/issue-12",
   "/learning/citation-verifier",
   "/tools",
   "/tools/decision-record",
@@ -49,7 +50,7 @@ const paths = [
 export default function sitemap(): MetadataRoute.Sitemap {
   return paths.map((path) => ({
     url: `${base}${path}`,
-    lastModified: new Date("2026-08-12"),
+    lastModified: new Date("2026-08-13"),
     changeFrequency: path === "/" ? "weekly" : "monthly",
     priority: path === "/" ? 1 : path === "/studio" || path === "/learning/citation-verifier" ? 0.9 : 0.7,
   }));
