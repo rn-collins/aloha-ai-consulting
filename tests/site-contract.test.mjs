@@ -93,7 +93,7 @@ test("principal destinations have distinct discovery metadata and a useful recov
     ["app/work/page.tsx", /title:\s*["']Work with RN/],
     ["app/learning/page.tsx", /title:\s*["']Learning/],
     ["app/learning/citation-verifier/page.tsx", /title:\s*["']Build a Trust-Safe Citation Verifier/],
-    ["app/tools/page.tsx", /title:\s*["']Decision tools/],
+    ["app/tools/page.tsx", /title:\s*["'](?:Free )?decision tools/i],
     ["app/insights/page.tsx", /title:\s*["']Source Desk/],
     ["app/policies/page.tsx", /title:\s*["']Site policies/],
     ["app/support/page.tsx", /title:\s*["']Support and accessibility/],
@@ -118,7 +118,7 @@ test("trust surfaces provide verifiable proof and truthful operational boundarie
   const policies = await read("app/policies/page.tsx");
   assert.match(about, /pubmed\.ncbi\.nlm\.nih\.gov/);
   assert.match(about, /doi\.org\/10\.3389/);
-  assert.match(insights, /nvlpubs\.nist\.gov/);
+  assert.match(insights, /nist\.gov\/publications/);
   assert.match(insights, /gao\.gov\/products\/gao-21-519sp/);
   assert.match(insights, /w3\.org\/TR\/WCAG22/);
   assert.match(support, /cannot recover local records/i);
@@ -133,7 +133,7 @@ test("trust surfaces provide verifiable proof and truthful operational boundarie
 test("Decision Desk presents the annual plan without activating enrollment", async () => {
   const page = await read("app/learning/decision-desk/page.tsx");
   assert.match(page, /Sep 2026–Aug 2027/);
-  assert.match(page, /Program plan—not enrollment/);
+  assert.match(page, /Live enrollment<\/span><strong>Closed/);
   assert.match(page, /Public self-paced editions are not live masterclasses/);
   assert.match(page, /\/learning\/decision-desk\/issue-01/);
   assert.doesNotMatch(page, /href=["'](?:https?:\/\/)?(?:buy|checkout|stripe)/i);
@@ -225,7 +225,7 @@ test("Aloha AI learning remains separate from Hawaii Tech Week", async () => {
   }
   const masterclass = await read("app/learning/masterclass/page.tsx");
   assert.match(masterclass, /AI &amp; Your Work/);
-  assert.match(masterclass, /90 minutes/);
+  assert.match(masterclass, /105 minutes/);
   assert.match(masterclass, /24 cumulative chapters/);
   assert.match(masterclass, /aloha-ai-masterclass-working-guide\.md/);
   assert.match(masterclass, /href="\/work\/ai-opportunity-clinic"/);
@@ -250,7 +250,7 @@ test("masterclass and Clinic expose complete, truthful operating states", async 
   assert.match(clinic, /\$275 \/ person/);
   assert.match(clinic, /An inquiry is not a booking/);
   assert.doesNotMatch(clinic, /booking preparing|unsettled/i);
-  assert.match(learning, /Completed teaching system/);
+  assert.match(learning, /complete self-paced web edition/i);
   assert.match(search, /Complete flagship curriculum/);
 });
 
@@ -391,4 +391,42 @@ test("Pilot Design Kit is gated, local, portable, and blocks deployment drift", 
   assert.match(kit, /not verified, approved, authorized, certified, or a deployment decision/i);
   assert.doesNotMatch(kit, /fetch\(|XMLHttpRequest|navigator\.sendBeacon/);
   assert.doesNotMatch(kit, /approvePilot|authorizeDeployment|complianceScore/);
+});
+
+test("print output preserves courses, evidence, and decision records", async () => {
+  const css = await read("app/globals.css");
+  assert.match(css, /@media print/);
+  assert.match(css, /details:not\(\[open\]\)>summary~\*/);
+  assert.match(css, /break-inside:\s*avoid/);
+  assert.match(css, /table/);
+  assert.match(css, /textarea/);
+});
+
+test("PWA provides install assets and explicit offline recovery", async () => {
+  const manifest = await read("app/manifest.ts");
+  const lifecycle = await read("app/pwa-lifecycle.tsx");
+  const worker = await read("public/sw.js");
+  const offline = await read("app/offline/page.tsx");
+  assert.match(manifest, /standalone/);
+  assert.match(manifest, /maskable/);
+  assert.match(lifecycle, /serviceWorker\.register\("\/sw\.js",/);
+  assert.match(worker, /aloha-ai-v1/);
+  assert.match(worker, /caches\.keys/);
+  assert.match(worker, /\/offline/);
+  assert.match(offline, /You are offline/);
+  for (const name of ["icon-192.png", "icon-512.png", "icon-maskable-512.png"]) {
+    const png = await readFile(new URL(`../public/${name}`, import.meta.url));
+    assert.deepEqual([...png.subarray(0, 8)], [137, 80, 78, 71, 13, 10, 26, 10]);
+  }
+});
+
+test("machine-readable catalog, schema, and feed remain public", async () => {
+  const catalog = await read("app/public-catalog.ts");
+  const route = await read("app/api/catalog/route.ts");
+  const schema = await read("app/api/catalog/schema/1/route.ts");
+  const feed = await read("app/feed.xml/route.ts");
+  assert.match(catalog, /decision-desk\/issue-\$\{String\(index\+1\)/);
+  assert.match(route, /Access-Control-Allow-Origin/);
+  assert.match(schema, /application\/schema\+json/);
+  assert.match(feed, /application\/rss\+xml/);
 });
