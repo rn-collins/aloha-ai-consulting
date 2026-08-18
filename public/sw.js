@@ -1,4 +1,4 @@
-const VERSION="aloha-ai-v1";
+const VERSION="aloha-ai-v2";
 const SHELL=["/","/start/","/tools/","/learning/","/insights/","/support/","/policies/","/offline/","/manifest.webmanifest","/favicon.svg","/icon-192.png","/icon-512.png","/icon-maskable-512.png"];
 self.addEventListener("install",event=>{event.waitUntil(caches.open(VERSION).then(cache=>cache.addAll(SHELL)).then(()=>self.skipWaiting()))});
 self.addEventListener("activate",event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==VERSION).map(key=>caches.delete(key)))).then(()=>self.clients.claim()))});

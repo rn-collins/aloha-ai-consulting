@@ -410,7 +410,7 @@ test("PWA provides install assets and explicit offline recovery", async () => {
   assert.match(manifest, /standalone/);
   assert.match(manifest, /maskable/);
   assert.match(lifecycle, /serviceWorker\.register\("\/sw\.js",/);
-  assert.match(worker, /aloha-ai-v1/);
+  assert.match(worker, /aloha-ai-v2/);
   assert.match(worker, /caches\.keys/);
   assert.match(worker, /\/offline/);
   assert.match(offline, /You are offline/);
