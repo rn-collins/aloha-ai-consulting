@@ -51,7 +51,7 @@ const paths = [
 export default function sitemap(): MetadataRoute.Sitemap {
   return paths.map((path) => ({
     url: `${base}${path}`,
-    lastModified: new Date("2026-08-17"),
+    lastModified: new Date("2026-08-19"),
     changeFrequency: path === "/" ? "weekly" : "monthly",
     priority: path === "/" ? 1 : path === "/studio" || path === "/learning/citation-verifier" ? 0.9 : 0.7,
   }));

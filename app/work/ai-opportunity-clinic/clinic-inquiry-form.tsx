@@ -25,7 +25,7 @@ export function ClinicInquiryForm({enabled}:{enabled:boolean}) {
     </div>
     <label>One nonconfidential workflow<textarea name="workflow" minLength={30} maxLength={1200} rows={7} required aria-describedby="workflow-help"/></label>
     <p id="workflow-help" className="quiet-note">Describe the work and desired decision—not client names, health information, credentials, privileged material, security details, or regulated data.</p>
-    <label className="check-row"><input type="checkbox" name="accessConversation" value="yes"/> I want a private access or accommodation conversation. Do not describe medical details here.</label>
+    <label className="check-row"><input type="checkbox" name="accessConversation" value="yes"/> I want a separate follow-up about access needs. Do not describe medical details here.</label>
     <label className="check-row"><input type="checkbox" name="consent" value="yes" required/> I confirm this inquiry is nonconfidential and authorize Aloha AI to use it only to assess and respond to this Clinic request.</label>
     <div className="cf-turnstile" data-sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY} data-theme="light" aria-label="Human verification"/>
     <label className="bot-field" aria-hidden="true">Website<input name="website" tabIndex={-1} autoComplete="off"/></label>

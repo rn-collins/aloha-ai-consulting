@@ -306,9 +306,9 @@ test("Clinic pre-activation contract documents every credential and keeps paymen
   }
   assert.match(env, /^STRIPE_WEBHOOK_SECRET=$/m);
   assert.match(env, /^STRIPE_PRICE_ID=$/m);
-  assert.match(support, /private access-conversation option/);
+  assert.match(support, /access follow-up option/);
   assert.match(support, /LinkedIn is not an emergency, security-incident, accommodation/);
-  assert.match(policies, /Unaccepted inquiries are deleted within 30 days/);
+  assert.match(policies, /targets deletion within 30 days/);
   assert.match(policies, /retained longer when reasonably required/);
 });
 
@@ -410,7 +410,7 @@ test("PWA provides install assets and explicit offline recovery", async () => {
   assert.match(manifest, /standalone/);
   assert.match(manifest, /maskable/);
   assert.match(lifecycle, /serviceWorker\.register\("\/sw\.js",/);
-  assert.match(worker, /aloha-ai-v2/);
+  assert.match(worker, /aloha-ai-v3/);
   assert.match(worker, /caches\.keys/);
   assert.match(worker, /\/offline/);
   assert.match(offline, /You are offline/);

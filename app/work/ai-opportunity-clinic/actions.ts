@@ -21,7 +21,7 @@ async function isHuman(token:string) {
 export async function submitClinicInquiry(_previous:ClinicInquiryState, formData:FormData):Promise<ClinicInquiryState> {
   if (!clinicEnrollmentConfigured()) return {status:"error",message:"Secure inquiry is not open yet. No information was sent."};
   if (clean(formData.get("website"),200)) return {status:"success",message:"Thank you. Your inquiry has been received."};
-  if (!await isHuman(clean(formData.get("cf-turnstile-response"),2048))) return {status:"error",message:"Complete the privacy-preserving human check and try again."};
+  if (!await isHuman(clean(formData.get("cf-turnstile-response"),2048))) return {status:"error",message:"Complete the human verification and try again."};
 
   const name=clean(formData.get("name"),100);
   const email=clean(formData.get("email"),254).toLowerCase();
