@@ -1,5 +1,5 @@
-const VERSION="aloha-ai-v3";
-const SHELL=["/","/start/","/tools/","/learning/","/insights/","/support/","/policies/","/offline/","/manifest.webmanifest","/favicon.svg","/icon-192.png","/icon-512.png","/icon-maskable-512.png"];
+const VERSION="aloha-ai-v4";
+const SHELL=["/","/start/","/tools/","/learning/","/insights/","/support/","/policies/","/offline/","/manifest.webmanifest","/favicon.svg","/icon-192.png","/icon-512.png","/icon-maskable-512.png","/apple-touch-icon.png","/favicon-48.png"];
 self.addEventListener("install",event=>{event.waitUntil(caches.open(VERSION).then(cache=>cache.addAll(SHELL)))});
 self.addEventListener("activate",event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==VERSION).map(key=>caches.delete(key)))).then(()=>self.clients.claim()))});
 self.addEventListener("message",event=>{if(event.data?.type==="ACTIVATE_UPDATE")self.skipWaiting()});

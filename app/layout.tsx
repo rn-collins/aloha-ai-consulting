@@ -11,8 +11,9 @@ export const metadata: Metadata = {
   creator: "RN Collins",
   publisher: "Aloha AI",
   keywords: ["AI strategy","AI governance","workflow design","AI decision tools","responsible AI","RN Collins","Honolulu"],
-  alternates: {types:{"application/rss+xml":"/feed.xml"}},
+  alternates: {canonical:"./", types:{"application/rss+xml":"/feed.xml"}},
   manifest: "/manifest.webmanifest",
+  icons: {icon:[{url:"/favicon.svg",type:"image/svg+xml"},{url:"/favicon-48.png",type:"image/png",sizes:"48x48"}], shortcut:"/favicon-48.png", apple:[{url:"/apple-touch-icon.png",sizes:"180x180"}]},
   openGraph: {title:"Aloha AI — Make complex AI work concrete",description:"Research, decision infrastructure, practical tools, and learning for examining consequential AI work before acting.",url:"/",siteName:"Aloha AI",locale:"en_US",type:"website"},
   twitter: {card:"summary_large_image",title:"Aloha AI — Make complex AI work concrete",description:"Research, decision infrastructure, practical tools, and learning for examining consequential AI work before acting."},
 };

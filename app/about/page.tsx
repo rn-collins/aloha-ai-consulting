@@ -13,7 +13,7 @@ const practice = [
 
 const publicWork = [
   ["Disability in Radiology", "Peer-reviewed research indexed by the U.S. National Library of Medicine.", "https://pubmed.ncbi.nlm.nih.gov/37996364/"],
-  ["Psychedelics as medicine", "Science-policy analysis published by the MIT Science Policy Review.", "https://sciencepolicyreview.org/2023/08/mitspr-191618004013/"],
+  ["Psychedelics as medicine", "Science-policy analysis published by the MIT Science Policy Review.", "https://doi.org/10.38105/spr.osqbpecncp"],
   ["Caregivers in research funding", "Open-access policy proposal published in Frontiers in Education.", "https://doi.org/10.3389/feduc.2024.1472517"],
   ["NYC Youth Agenda research", "Public civic-research record from the City of New York.", "https://www.nyc.gov/assets/dycd/digital_toolkit/NYCYouth_TownHall/we-the-youth-advisors/index.html"],
 ];

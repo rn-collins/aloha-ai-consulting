@@ -3,6 +3,12 @@ import {notFound,redirect} from "next/navigation";
 import {SiteShell} from "../../site-shell";
 import {offerBySlug} from "../offer-data";
 
+export async function generateMetadata({params}:{params:Promise<{offer:string}>}){
+  const {offer:slug}=await params; const offer=offerBySlug[slug];
+  if(!offer) return {title:"Candidate service"};
+  return {title:`${offer.name} · candidate service`,description:`${offer.promise} A candidate package format — ${offer.price.toLowerCase()} — not a standardized offer that can be booked or bought today.`};
+}
+
 export function generateStaticParams(){return [...Object.keys(offerBySlug),"workflow-redesign-intensive","tool-and-vendor-evaluation","responsible-build-sprint","fractional-ai-strategy-implementation","organizational-ai-program"].map(offer=>({offer}));}
 
 export default async function OfferPage({params}:{params:Promise<{offer:string}>}){
